@@ -9,12 +9,13 @@
 ## Table of Contents
 1. [Concept Overview](#concept-overview)
 2. [Casket Weight Classes](#casket-weight-classes)
-3. [Soul-Point Action Economy](#soul-point-action-economy)
-4. [Soulstone Power System](#soulstone-power-system)
-5. [Game Modes](#game-modes)
-6. [Mission Deck System](#mission-deck-system)
-7. [Monster AI System](#monster-ai-system)
-8. [Combat & Positioning](#combat--positioning)
+3. [Racial Casket Variants](#racial-casket-variants)
+4. [Soul-Point Action Economy](#soul-point-action-economy)
+5. [Soulstone Power System](#soulstone-power-system)
+6. [Game Modes](#game-modes)
+7. [Mission Deck System](#mission-deck-system)
+8. [Monster AI System](#monster-ai-system)
+9. [Combat & Positioning](#combat--positioning)
 
 ---
 
@@ -56,14 +57,16 @@ A tactical hex-based card game where players pilot massive armored suits called 
 **Weaknesses**:
 - Fragile - few hits will disable systems
 - Low firepower
-- Limited equipment slots
+- Only 1 Relic slot (focused, specialized builds)
 
 **Unique Mechanic**: **Sensor Sweep** - Reveal enemy cards or AI behavior
 
+**Equipment Slots**: Right Arm, Left Arm, 1 Relic slot
+
 **Example Loadouts**:
-- Dual pistols, jump jets, active camouflage
-- Light rifle, grappling hook, smoke launchers
-- Recon drone, EMP pulse, escape thrusters
+- Rapier blade, buckler shield, jump jets (relic)
+- Longbow, dagger, grappling hook (relic)
+- Dual daggers, smoke launchers (relic)
 
 **Strain Table** (Roll 1d6 + Heat when pushing into Danger Zone):
 - 1-3: **Servo Whine** - Gain 1 Heat token
@@ -93,10 +96,12 @@ A tactical hex-based card game where players pilot massive armored suits called 
 
 **Unique Mechanic**: **Field Repairs** - Remove damage cards from allies' decks
 
+**Equipment Slots**: Right Arm, Left Arm, 2 Relic slots
+
 **Example Loadouts**:
-- Medical rig, shield projector, support cannon
-- Repair drone, smoke screen, flare gun
-- Ammo resupply, portable cover, rally beacon
+- Mace, tower shield, repair kit (relic), banner (relic)
+- Spear, buckler, smoke launcher (relic), medical supplies (relic)
+- Crossbow, shield, field toolkit (relic), flare gun (relic)
 
 **Strain Table**:
 - 1-4: **Power Fluctuation** - Gain 1 Heat token
@@ -126,10 +131,12 @@ A tactical hex-based card game where players pilot massive armored suits called 
 
 **Unique Mechanic**: **Brace Protocols** - Root in place for massive defensive bonus
 
+**Equipment Slots**: Right Arm, Left Arm, 3 Relic slots
+
 **Example Loadouts**:
-- Tower shield, battle rifle, reactive armor
-- Heavy autocannon, ablative plating, anchor system
-- Fortress shield, heavy sword, redundant systems
+- Great shield, warhammer, ablative plating (relic), gyro-stabilizers (relic), emergency vents (relic)
+- Ballista arm, tower shield, reinforced joints (relic), auto-loader (relic), relic plating (relic)
+- Greatsword (two-hand), fortress armor (relic), anchor system (relic), repair kit (relic)
 
 **Strain Table**:
 - 1-5: **Engine Strain** - Gain 1 Heat token
@@ -160,10 +167,12 @@ A tactical hex-based card game where players pilot massive armored suits called 
 
 **Unique Mechanic**: **Siege Mode** - Multi-turn attacks that reshape the battlefield
 
+**Equipment Slots**: Right Arm, Left Arm, 3 Relic slots
+
 **Example Loadouts**:
-- Siege cannon, fortress armor, seismic anchors
-- Dual heavy weapons, ablative plating, reactor overdrive
-- Wrecking blade, bunker shield, tremor generators
+- Siege ballista arm, great shield, reinforced frame (relic), seismic anchors (relic), coolant system (relic)
+- Giant maul (two-hand), ablative plating (relic), tremor generator (relic), reactor overdrive (relic)
+- Flameheart cannon (relic tech), bunker shield, emergency vents (relic), relic armor (relic)
 
 **Strain Table**:
 - 1-6: **Reactor Spike** - Gain 2 Heat tokens
@@ -194,10 +203,12 @@ A tactical hex-based card game where players pilot massive armored suits called 
 
 **Unique Mechanic**: **Warp Flux** - Reality-bending effects with unpredictable outcomes
 
+**Equipment Slots**: Right Arm, Left Arm, 2 Relic slots
+
 **Example Loadouts**:
-- Living weapon grafts, void shield, mutation cards
-- Phase cannon, dimensional anchor, chaos field
-- Bone blades, corruption aura, reality tear
+- Blade arm (corruption-grafted), void shield, warp anchor (relic), mutation catalyst (relic)
+- Source conduit arm (void school), bone claws, dimensional tether (relic), chaos field (relic)
+- Morphing weapon graft, living armor, reality shard (relic), hunger relic (relic)
 
 **Strain Table** (Weird effects):
 - 1-3: **Whispers** - Gain 1 Taint token
@@ -205,6 +216,166 @@ A tactical hex-based card game where players pilot massive armored suits called 
 - 6-7: **Mutation** - Gain random buff/debuff until next turn
 - 8-9: **Possession** - AI controls your next action
 - 10+: **Void Touch** - Adjacent enemies gain 1 Taint, you gain 2
+
+---
+
+## Racial Casket Variants
+
+All weight classes are available to all races, but each race brings unique mechanics and aesthetics to their Caskets.
+
+### 1. Human - "Penitent Frames"
+
+**Philosophy**: Redemption through suffering, religious devotion, modular pragmatism
+
+**Aesthetic**: Gothic knight armor, chains, prayer scrolls, religious iconography, heavy plate
+
+**Unique Mechanic: Vow System**
+- Choose 1 Vow at mission start (restriction + bonus)
+- **Vow of Mercy**: Cannot kill disabled enemies, +1 SP Safe Zone
+- **Vow of Poverty**: Cannot use Relic Tech (firearms/ancient tech), -1 Taint gain
+- **Vow of Wrath**: Must attack each turn if able, +1 damage on all attacks
+- **Vow of Penance**: Start at 1 Taint, but can purge 1 Taint per mission if objective completed
+- **Vow of Protection**: Must shield allies when adjacent, gain +1 Defense when protecting
+
+**Equipment Naming**:
+- Weapons: "Faithkeeper Blade", "Godstrike Maul", "Absolution's Edge"
+- Armor: "Martyr's Burden", "Penitent's Wall"
+- Tech Relics: "Thunderspeaker" (rifle), "Stormwhisper Lance"
+
+---
+
+### 2. Elven - "Verdant Walkers"
+
+**Philosophy**: Nature integrated with machinery, elegant biomechanics, harmony over domination
+
+**Aesthetic**: Wood grain, living vines, crystal power cores, flowing organic lines, leaf motifs
+
+**Unique Mechanic: Symbiosis**
+- Casket "heals" naturally over time
+- At end of each round: Remove 1 Damage card from discard pile (shuffle it out)
+- BUT: Vulnerable to fire (all fire damage +1)
+- Living components require sunlight (penalty in underground/dark missions)
+
+**Equipment Naming**:
+- Weapons: "Willowstrike Blade", "Ironbark Greatbow", "Thornwhisper Glaive"
+- Armor: "Rootbound Aegis", "Dreamwood Shell"
+- Living Relics: "Vinegrasp Tendrils", "Moonshard Arrows"
+
+---
+
+### 3. Dwarven - "Forge Titans"
+
+**Philosophy**: Overengineered masterworks, stone and steel, brutal efficiency, ancestral craftsmanship
+
+**Aesthetic**: Riveted plates, runic engravings, steam vents, anvil-shaped armor, industrial brutality
+
+**Unique Mechanic: Runic Overcharge**
+- Can inscribe Runes on equipment cards (once per campaign, permanent)
+- Rune effect triggers once per mission, then goes dormant (recharges between missions)
+- **Rune of Stone**: Ignore next 3 damage
+- **Rune of Flame**: Next attack deals double damage
+- **Rune of Iron**: Ignore forced movement/rotation for 1 round
+- **Rune of Warding**: +2 Defense against magic/corruption attacks for 1 round
+
+**Equipment Naming**:
+- Weapons: "Anvilfall Hammer", "Mountainsplitter Axe", "Grudgebearer Ballista"
+- Armor: "Ironheart Bulwark", "Stonebreaker Plate"
+- Tech Relics: "Flameheart Cannon", "Runescribed Mechanism"
+
+---
+
+### 4. Orcish - "War Hulks"
+
+**Philosophy**: Scrap metal monsters, brutal and loud, intimidation over elegance, more is better
+
+**Aesthetic**: Jagged edges, war paint, trophies (skulls, banners), asymmetrical design, crude welds
+
+**Unique Mechanic: Scrap Fury**
+- When you reshuffle deck, gain +1 damage on all attacks until end of mission (stacks)
+- More cycles = more damage (getting angrier as fight continues)
+- At 3+ reshuffles: Gain "Berserk" status:
+  - Must attack if able (cannot use support/defensive actions)
+  - +2 damage on all attacks
+  - Ignore pain (first damage card each round doesn't count toward hand clog)
+
+**Equipment Naming**:
+- Weapons: "Choppaklaw", "Bashablade", "Skullkrusha Maul", "Dakka-Ballista"
+- Armor: "Spikey Bitz", "Scrap Plating"
+- Crude Relics: "More Dakka Module", "Grot-Patched Armor"
+
+---
+
+### 5. Draconid - "Dragonborn Shells"
+
+**Philosophy**: Ancient draconic power, crystalline cores, scales and fire, pride and honor
+
+**Aesthetic**: Dragon-scale plating, horn decorations, breath weapon vents, gem inlays, reptilian
+
+**Unique Mechanic: Draconic Breath**
+- Built-in breath weapon (doesn't take equipment slot or add cards to deck)
+- Choose element at Casket creation: Fire/Ice/Lightning/Poison/Acid
+- **Once per mission**: Spend 3 SP, AOE attack in front arc (3 hexes, cone shape)
+  - Fire: 3 damage, targets gain 2 Heat
+  - Ice: 2 damage, targets slowed (movement -1 next turn)
+  - Lightning: 4 damage to primary target, 1 damage to adjacent enemies
+  - Poison: 2 damage, ongoing damage (1 damage per turn for 2 turns)
+  - Acid: 3 damage, ignores armor
+- Generates 3 Heat when used
+
+**Equipment Naming**:
+- Weapons: "Clawrend Talons", "Fanged Glaive", "Tailblade Scythe"
+- Armor: "Scaleheart Guardian", "Wyrmforged Plate"
+- Draconic Relics: "Hoarded Soulstone" (ancient dragon heart)
+
+---
+
+### 6. Undead - "Bonecage Sentinels"
+
+**Philosophy**: Death-powered machinery, necromantic engines, cursed relics, no fear
+
+**Aesthetic**: Bone grafts, tattered banners, ghostly energy, ossified armor, decay aesthetic
+
+**Unique Mechanic: Unliving Resilience**
+- Start at 3 Taint (already corrupted, but stable)
+- Immune to morale/fear effects
+- Immune to poison/disease
+- **Death's Door**: When reduced to 0 cards in deck AND hand (normally defeated):
+  - Don't die immediately
+  - Roll 1d6: 4+ = Continue fighting
+  - Draw 5 cards from "Soul Reserve" (special emergency deck)
+  - Last stand for 1 more round, then collapse
+- Cannot be healed by normal means (requires necromantic repair)
+
+**Equipment Naming**:
+- Weapons: "Soulreaver Blade", "Boneshatter Maul", "Cryptkeeper's Staff"
+- Armor: "Gravewarden Frame", "Deathmarch Plate"
+- Necrotech: "Wraith-Engine Heart", "Phylactery Core", "Lifestealer Grafts"
+
+---
+
+### 7. Fae/Fey - "Glamour Suits"
+
+**Philosophy**: Illusion and trickery, impossible geometry, dreamlike, bargains and prices
+
+**Aesthetic**: Butterfly wings, mirror surfaces, shifting colors, ethereal glow, delicate but deadly
+
+**Unique Mechanic: Fae Bargain**
+- **Once per mission**: Activate "Deal" mode (declare at start of turn)
+- For 3 turns:
+  - +2 SP Safe Zone (Scout gets 7 SP!)
+  - Ignore terrain penalties
+  - +2 initiative on all cards (act faster)
+  - Attacks ignore partial cover
+- **After 3 turns, payment due**:
+  - Gain 2 Taint
+  - -1 SP Safe Zone for rest of mission
+  - All Strain rolls +1 for rest of mission
+- Risk/reward: Powerful burst, but consequences linger
+
+**Equipment Naming**:
+- Weapons: "Starfall Rapier", "Dreamthorn Daggers", "Gossamer Lance"
+- Armor: "Twilight Vestment", "Moonveil Cloak"
+- Fae Relics: "Trickster's Mirror", "True Name Seal", "Glamour Veil"
 
 ---
 
@@ -643,6 +814,158 @@ Equipment cards specify which facings they affect:
 **Clear LOS**: No obstructions, normal attack  
 **Partial Cover**: Terrain/obstacles between, -1 to hit, +1 Defense  
 **Full Cover**: Cannot target directly, must use indirect fire
+
+---
+
+## Victory & Defeat Conditions
+
+### Arena (PvP) Mode
+
+**Victory Conditions**:
+- **Last Casket Standing**: Disable all enemy Caskets (deck + hand = 0)
+- **Points Victory**: Reach X Victory Points first (typically 10-15 VP)
+  - Kill enemy Casket: 5 VP
+  - Destroy specific component: 2 VP
+  - Control objective hex for 2 turns: 3 VP
+- **Time Limit**: Most VP when timer expires (typically 8-10 rounds)
+
+**Defeat Conditions**:
+- Your Casket is disabled (deck + hand = 0)
+- Chassis takes 9+ damage (core destroyed)
+- Opponent reaches victory threshold first
+
+**Between Matches**: Caskets reset to full health, no permanent damage
+
+---
+
+### Campaign (Co-op) Mode
+
+**Mission Victory Conditions** (varies by scenario):
+- **Objective Completion**: Secure artifact, reach extraction, hold position
+- **Elimination**: Destroy all enemy units
+- **Survival**: Last X rounds against overwhelming odds
+- **Escort**: Protect NPC/target to destination
+- **Timed**: Complete objective before timer expires
+
+**Mission Defeat Conditions**:
+- All players' Caskets disabled
+- Primary objective fails (VIP dies, artifact destroyed, etc.)
+- Time limit expires
+
+**Campaign Consequences**:
+- **Victory**: Earn credits, experience, loot
+  - Advance story
+  - Unlock new equipment/missions
+  - Reduce settlement threat level
+- **Defeat**:
+  - Pilot may die (permadeath if enabled)
+  - Expensive repairs needed
+  - Story consequences (locked paths, penalties)
+  - Settlement may be raided
+
+---
+
+### Raid (Boss Fight) Mode
+
+**Victory Conditions**:
+- Reduce boss to 0 HP
+- Destroy specific boss components (some bosses have multi-stage defeat)
+- Survive X rounds (some boss missions are about endurance, not killing)
+
+**Defeat Conditions**:
+- All players' Caskets disabled
+- Boss completes its objective (destroys settlement, escapes, etc.)
+- Time limit expires
+
+**Rewards**:
+- Legendary equipment drops
+- Rare Soulstone fragments
+- Unique relic tech
+- Campaign story advancement
+
+---
+
+### Skirmish (Mixed) Mode
+
+**Victory Conditions** (multiple objectives active):
+- **Primary Objective**: Worth 10 VP (e.g., control center hex for 3 turns)
+- **Secondary Objectives**: Worth 3-5 VP each (e.g., eliminate enemy leader, scavenge resources)
+- **Hidden Agendas**: Worth 2 VP (secret personal goals)
+- **Eliminations**: 5 VP per enemy Casket destroyed
+
+**First to 20 VP wins** (or highest VP when time expires)
+
+**Defeat Condition**:
+- Your Casket is disabled (but you still score VP for objectives completed before death)
+
+---
+
+### Casket Disabled State
+
+**What "Disabled" Means**:
+1. **Deck empty AND hand empty**: Cannot draw or play cards
+2. **Chassis component at 9+ damage**: Core destroyed, catastrophic failure
+3. **Mission-specific**: Some scenarios have unique disable conditions
+
+**When Disabled**:
+- **Arena/Skirmish**: You lose the match, opponent scores VP
+- **Campaign/Raid (Solo)**: Mission failure, campaign consequences
+- **Campaign/Raid (Co-op)**:
+  - You are out of combat (cannot act)
+  - Mission continues if allies survive
+  - You can be "revived" if allies use repair abilities (variant rule)
+  - If all players disabled = mission failure
+
+---
+
+### Special Victory Conditions
+
+**Corruption Victory** (Variant Rule):
+- If a player reaches 10 Taint and transforms into Abomination
+- They become AI-controlled boss enemy
+- Other players must destroy them
+- If Abomination wins, campaign ends (dark ending)
+
+**Survival Victory** (Some Campaign Missions):
+- Hold out for X rounds against waves
+- Victory = surviving, not killing everything
+- Rewards based on rounds survived
+
+**Extraction Victory** (Arena/Campaign):
+- Reach designated hex zone
+- Survive 2 turns in extraction zone
+- Exit battlefield (Casket intact = bonus rewards)
+
+---
+
+### Tiebreakers
+
+**If multiple players/teams have same VP**:
+1. Least damage taken (component damage totals)
+2. Least Heat accumulated
+3. Lowest Taint level
+4. Fewest turns to complete objective
+5. Sudden death round (first to score next VP wins)
+
+---
+
+### Campaign Permadeath (Optional Rule)
+
+**When Pilot Dies**:
+- Casket is disabled in critical mission (story-critical loss)
+- Chassis destroyed (9+ damage to Chassis)
+- Execution (captured in mission, failed rescue)
+
+**Consequences**:
+- Pilot is permanently dead (cannot be used again)
+- Create new pilot (lose experience, keep some equipment)
+- Campaign continues with new character
+- Story acknowledges death (memorial, consequences)
+
+**Resurrection** (Rare):
+- Specific campaign missions can revive dead pilots (necromancy, rare tech)
+- High cost (corruption, permanent debuff, story cost)
+- Limited uses
 
 ---
 

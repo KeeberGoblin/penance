@@ -76,35 +76,67 @@ Kingdom Death-inspired AI system - monsters have behavior decks that create unpr
 
 ### Completed
 - [x] Core concept and theme
-- [x] Weight class system
+- [x] Weight class system (5 classes)
+- [x] Racial variants (7 races with unique mechanics)
 - [x] Soul-Point action economy
 - [x] Corruption/Soulstone mechanics
 - [x] Game mode variety
+- [x] Card anatomy and types
+- [x] Damage and component system
+- [x] Deck-as-health mechanics
+- [x] Universal cards (10 base cards)
+- [x] Victory conditions (all modes)
+- [x] Interactive HTML reference site
+- [x] Printable card templates
 
 ### In Progress
-- [ ] Card anatomy and types
-- [ ] Damage and component system
-- [ ] Deck construction rules
-- [ ] Combat resolution mechanics
+- [ ] Full equipment card catalog
+- [ ] Combat resolution mechanics (detailed)
 - [ ] Workshop/campaign progression
+- [ ] 3D printable Casket models
 
 ### Planned
-- [ ] Full card set design
 - [ ] AI behavior decks
 - [ ] Mission deck system
-- [ ] Playtest prototype
-- [ ] Art direction
+- [ ] Monster bestiary
+- [ ] Terrain & environmental rules
+- [ ] Playtest protocol & feedback system
+- [ ] Art direction & final card designs
+- [ ] Kickstarter campaign materials
+
+---
+
+## 🚀 Quick Start
+
+### Play Now
+1. **Browse the Interactive Reference**: Open [tools/card-generator/index.html](tools/card-generator/index.html) in your browser
+2. **Print & Play**: Open [tools/card-generator/printable-cards.html](tools/card-generator/printable-cards.html) to print test cards
+3. **Read the Rules**: Check out [docs/CoreDesign.md](docs/CoreDesign.md) for complete game rules
+
+See [QUICKSTART.md](QUICKSTART.md) for detailed setup instructions!
 
 ---
 
 ## Repository Structure
 
 ```
-/docs          - Design documents and rules
-/cards         - Card designs and templates
-/assets        - Art, icons, and visual resources
-/playtesting   - Playtest reports and feedback
-/examples      - Sample decks and scenarios
+penance/
+├── QUICKSTART.md                  # 👈 Start here!
+├── docs/                          # Complete design documents
+│   ├── CoreDesign.md              # Main rulebook
+│   ├── card-anatomy.md            # Card design reference
+│   ├── damage-system.md           # Injury & component damage
+│   ├── universal-cards.md         # 10 base cards
+│   └── 3d-printable-system.md     # Modular Casket system
+├── tools/
+│   └── card-generator/
+│       ├── index.html             # 🌐 Interactive reference
+│       ├── printable-cards.html   # 🖨 Print & play cards
+│       └── README.md
+├── cards/                         # Card designs (future)
+├── assets/                        # Art & visual resources (future)
+├── playtesting/                   # Playtest reports (future)
+└── examples/                      # Sample decks & scenarios (future)
 ```
 
 ---
