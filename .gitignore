@@ -1,0 +1,46 @@
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor Files
+*.swp
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.bak
+*.log
+
+# Asset Working Files (uncomment if you don't want to track these)
+# *.psd
+# *.ai
+# *.xcf
+
+# Export/Build Folders
+exports/
+builds/
+print-files/
+tts-exports/
+
+# Playtest & Personal Notes
+playtest-notes-private/
+personal-notes/
+scratchpad/
+
+# Large Binary Files (consider using Git LFS)
+*.pdf
+# Uncomment above if PDFs get too large
+
+# Documentation Builds
+docs/_build/
+docs/.doctrees/
