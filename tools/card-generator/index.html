@@ -391,7 +391,27 @@
 
         @media print {
             body { background: white; color: black; }
-            nav, footer, .print-button { display: none; }
+            nav, footer, .print-button, header, .section:not(#print) { display: none; }
+
+            .print-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5cm;
+                page-break-inside: avoid;
+            }
+
+            .print-card {
+                width: 6.3cm;
+                height: 8.8cm;
+                border: 2px solid #000;
+                background: white;
+                page-break-inside: avoid;
+                display: block !important;
+            }
+
+            #print h2, #print p, #print > div:not(.print-grid) {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1478,6 +1498,207 @@
                     <li>2 Jump Jet cards (Relic)</li>
                     <li>3 player choice cards</li>
                 </ul>
+            </div>
+
+            <!-- PRINTABLE CARDS GRID (Hidden on screen, visible when printing) -->
+            <div class="print-grid">
+                <!-- Universal Cards -->
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">⚡ DESPERATE LUNGE</span>
+                        <span class="card-initiative">[1]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 1</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Move up to 2 hexes in any direction. You may rotate once during movement.<br><br>
+                        Generate 1 Heat.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: +1 | Universal
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">⚡ WARDEN'S PIVOT</span>
+                        <span class="card-initiative">[2]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 0</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Rotate to any facing (free action).<br><br>
+                        This does not generate Heat.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: 0 | Universal
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">⚡ IRONSTRIDER'S RUSH</span>
+                        <span class="card-initiative">[1]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 2</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Move up to 3 hexes in a straight line.<br><br>
+                        Ignore difficult terrain. Generate 2 Heat.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: +2 | Universal
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">🛡 UNYIELDING BULWARK</span>
+                        <span class="card-initiative">[—]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL (Reaction)</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 0</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Play when targeted by attack.<br><br>
+                        Reduce damage by 2 (minimum 1). Discard after use.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: 0 | Reactive
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">🛡 SECOND SKIN</span>
+                        <span class="card-initiative">[—]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL (Reaction)</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 0</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Play when targeted by attack.<br><br>
+                        Reduce damage by 1. Discard after use.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: 0 | Reactive
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">🛡 GUARDIAN'S DEFIANCE</span>
+                        <span class="card-initiative">[5]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 1</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Gain +2 Defense until your next turn.<br><br>
+                        You may use this with Reactive cards.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: 0 | Universal
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">🔥 BREATHE THE CORE</span>
+                        <span class="card-initiative">[3]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 2</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Roll 1d3.<br><br>
+                        Remove that much Heat from your Casket.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: -1d3 | Universal
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">🔧 FIELD SUTURE</span>
+                        <span class="card-initiative">[4]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 2</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Remove 1 Damage card from your discard pile permanently.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: 0 | Universal
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">📖 SOUL'S RECALL</span>
+                        <span class="card-initiative">[2]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 1</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Draw 2 cards from your deck.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: 0 | Universal
+                    </div>
+                </div>
+
+                <div class="card-preview print-card">
+                    <div class="card-header">
+                        <span class="card-title">📖 TATTERED HOPE</span>
+                        <span class="card-initiative">[—]</span>
+                    </div>
+                    <div class="card-type">UNIVERSAL (Reaction)</div>
+                    <div class="card-cost">
+                        <span><strong>SP:</strong> 0</span>
+                        <span><strong>Range:</strong> Self</span>
+                    </div>
+                    <div class="card-effect">
+                        <strong>EFFECT:</strong><br>
+                        Discard your entire hand, then draw 3 cards.
+                    </div>
+                    <div class="card-keywords">
+                        Heat: 0 | Reactive
+                    </div>
+                </div>
             </div>
         </section>
     </div>
