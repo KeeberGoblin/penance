@@ -72,7 +72,7 @@ Kingdom Death-inspired AI system - monsters have behavior decks that create unpr
 
 ## Project Status
 
-🚧 **Early Development** - Core systems being designed
+**Early Development** - Core systems being designed
 
 ### Completed
 - [x] Core concept and theme
@@ -106,7 +106,7 @@ Kingdom Death-inspired AI system - monsters have behavior decks that create unpr
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Play Now
 1. **Browse the Interactive Reference**: Open [tools/card-generator/index.html](tools/card-generator/index.html) in your browser
@@ -121,7 +121,7 @@ See [QUICKSTART.md](QUICKSTART.md) for detailed setup instructions!
 
 ```
 penance/
-├── QUICKSTART.md                  # 👈 Start here!
+├── QUICKSTART.md                  # Start here!
 ├── docs/                          # Complete design documents
 │   ├── CoreDesign.md              # Main rulebook
 │   ├── card-anatomy.md            # Card design reference
@@ -130,8 +130,8 @@ penance/
 │   └── 3d-printable-system.md     # Modular Casket system
 ├── tools/
 │   └── card-generator/
-│       ├── index.html             # 🌐 Interactive reference
-│       ├── printable-cards.html   # 🖨 Print & play cards
+│       ├── index.html             #  Interactive reference
+│       ├── printable-cards.html   #  Print & play cards
 │       └── README.md
 ├── cards/                         # Card designs (future)
 ├── assets/                        # Art & visual resources (future)
