@@ -507,6 +507,195 @@
                 padding: 4rem 1rem;
             }
         }
+
+        /* ===== APPLE-INSPIRED ENHANCEMENTS ===== */
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Parallax Background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(45deg, var(--black) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--black) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--black) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--black) 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+            opacity: 0.03;
+            z-index: 0;
+            animation: subtleShift 60s linear infinite;
+        }
+
+        @keyframes subtleShift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(40px, 40px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Enhanced Timeline Animations */
+        .timeline-item {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        /* Enhanced Card Hover Effects */
+        .npc-card {
+            transition:
+                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .npc-card:hover {
+            border-color: var(--blood-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.2);
+        }
+
+        .faction-card {
+            transition:
+                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .faction-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Cinematic Playtest CTA */
+        .playtest-cta {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            border: 3px solid var(--blood-red);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .playtest-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(139, 0, 0, 0.05) 50%,
+                transparent 70%
+            );
+            animation: shimmer 8s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .playtest-cta > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--blood-red);
+            color: var(--white);
+            padding: 1.5rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: none;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(139, 0, 0, 0.4);
+        }
+
+        /* Stat Number Animation on Scroll */
+        .stat-number {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-stats:hover .stat-number {
+            transform: scale(1.05);
+        }
+
+        /* Section Header Enhancement */
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--blood-red);
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .section-header.visible::after {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -1130,7 +1319,7 @@
             </div>
 
             <div class="npc-grid" style="margin-bottom: 4rem;">
-                <div class="npc-card">
+                <div class="npc-card playtest-card">
                     <div class="npc-name" style="color: var(--blood-red);">Core Rules</div>
                     <div class="npc-title">Foundation Systems</div>
                     <div class="npc-description" style="margin-bottom: 1rem;">
@@ -1142,7 +1331,7 @@
                     <a href="turn-structure-final.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Rules →</a>
                 </div>
 
-                <div class="npc-card">
+                <div class="npc-card playtest-card">
                     <div class="npc-name" style="color: var(--blood-red);">Church of Absolution</div>
                     <div class="npc-title">Complete Faction Deck</div>
                     <div class="npc-description" style="margin-bottom: 1rem;">
@@ -1155,7 +1344,7 @@
                     <a href="faction-deck-church-complete.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Deck →</a>
                 </div>
 
-                <div class="npc-card">
+                <div class="npc-card playtest-card">
                     <div class="npc-name" style="color: var(--blood-red);">Dwarven Clans</div>
                     <div class="npc-title">Complete Faction Deck</div>
                     <div class="npc-description" style="margin-bottom: 1rem;">
@@ -1172,7 +1361,7 @@
             <h3 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--white); padding-bottom: 1rem;">PLAYTEST SCENARIOS</h3>
 
             <div class="npc-grid" style="margin-bottom: 4rem;">
-                <div class="npc-card" style="border-color: var(--blood-red);">
+                <div class="npc-card scenario-card" style="border-color: var(--blood-red);">
                     <div class="npc-name">Scenario #1: The Proving Grounds</div>
                     <div class="npc-title" style="color: var(--blood-red);">Pure Deathmatch</div>
                     <div class="npc-description" style="margin-bottom: 1rem;">
@@ -1186,7 +1375,7 @@
                     <a href="arena-scenario-01-proving-grounds.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Scenario →</a>
                 </div>
 
-                <div class="npc-card" style="border-color: var(--blood-red);">
+                <div class="npc-card scenario-card" style="border-color: var(--blood-red);">
                     <div class="npc-name">Scenario #2: Reliquary Ruins</div>
                     <div class="npc-title" style="color: var(--blood-red);">Objective Control</div>
                     <div class="npc-description" style="margin-bottom: 1rem;">
@@ -1200,7 +1389,7 @@
                     <a href="arena-scenario-02-reliquary-ruins.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Scenario →</a>
                 </div>
 
-                <div class="npc-card">
+                <div class="npc-card scenario-card">
                     <div class="npc-name">Example of Play</div>
                     <div class="npc-title">5-Turn Walkthrough</div>
                     <div class="npc-description" style="margin-bottom: 1rem;">
@@ -1243,16 +1432,111 @@
                 </div>
             </div>
 
-            <div style="text-align: center; padding: 3rem 0;">
-                <a href="PLAYTEST-READY.md" style="display: inline-block; background: var(--blood-red); color: var(--white); padding: 1.5rem 3rem; text-decoration: none; font-weight: 700; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; border: 2px solid var(--blood-red); transition: all 0.2s;" onmouseover="this.style.background='var(--black)'" onmouseout="this.style.background='var(--blood-red)'">
+            <div class="playtest-cta">
+                <h3 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--white);">START PLAYING NOW</h3>
+                <p style="color: var(--light-gray); margin-bottom: 2rem; font-size: 1.1rem;">
+                    Everything you need for brutal tactical mech combat. Print, build, and battle.
+                </p>
+                <a href="PLAYTEST-READY.md" class="cta-button">
                     DOWNLOAD COMPLETE PLAYTEST PACKAGE
                 </a>
-                <p style="color: var(--light-gray); margin-top: 1rem; font-size: 0.875rem;">
+                <p style="color: var(--light-gray); margin-top: 1.5rem; font-size: 0.875rem;">
                     64 pages • 2 complete factions • 2 scenarios • Ready for table play
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- Apple-Inspired Scroll Animation Script -->
+    <script>
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Apply fade-in animation to timeline items
+        document.addEventListener('DOMContentLoaded', () => {
+            // Timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                item.classList.add('fade-in');
+                observer.observe(item);
+            });
+
+            // NPC cards
+            const npcCards = document.querySelectorAll('.npc-card');
+            npcCards.forEach(card => {
+                card.classList.add('fade-in');
+                observer.observe(card);
+            });
+
+            // Faction cards
+            const factionCards = document.querySelectorAll('.faction-card');
+            factionCards.forEach(card => {
+                card.classList.add('fade-in');
+                observer.observe(card);
+            });
+
+            // Section headers
+            const sectionHeaders = document.querySelectorAll('.section-header');
+            sectionHeaders.forEach(header => {
+                observer.observe(header);
+            });
+
+            // Playtest cards
+            const playtestCards = document.querySelectorAll('.playtest-card, .scenario-card');
+            playtestCards.forEach(card => {
+                card.classList.add('fade-in');
+                observer.observe(card);
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to nav links on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
