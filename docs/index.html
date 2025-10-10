@@ -176,116 +176,98 @@
             background: var(--dark-gray);
         }
 
-        /* Chronicle Section - Tall for scroll-based panning */
+        /* ===== CHRONICLE TIMELINE - CLEAN START ===== */
+
+        /* Chronicle section: tall for scroll distance */
         #chronicle {
-            min-height: 400vh;
-            display: block;
+            min-height: 500vh;
             padding: 0;
-            align-items: flex-start;
             position: relative;
         }
 
-        #chronicle .section-content {
-            max-width: 100%;
-            width: 100%;
-            padding: 0;
-        }
-
+        /* Sticky header */
         #chronicle .section-header {
             position: sticky;
             top: 60px;
             background: var(--dark-gray);
             z-index: 100;
-            font-size: clamp(2rem, 5vw, 4rem);
-            padding: 2rem 4rem 1rem 4rem;
+            padding: 2rem 4rem 1rem;
             margin: 0;
             border-bottom: 3px solid var(--white);
         }
 
         #chronicle .section-intro {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            color: var(--light-gray);
-            padding: 2rem 4rem 4rem 4rem;
+            padding: 2rem 4rem 4rem;
             margin: 0;
-            max-width: 100%;
             background: var(--dark-gray);
         }
 
-        /* Horizontal Timeline - Sticky with Expanding Cards */
+        /* Timeline container: sticky, holds everything */
         .timeline-container {
             position: sticky;
-            top: 60px;
+            top: 150px;
             width: 100%;
-            height: 85vh;
+            height: 80vh;
             overflow: hidden;
             background: var(--dark-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
+        /* Timeline track: horizontal flex, pans left/right */
         .timeline-track {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 0;
             height: 100%;
-            width: max-content;
-            position: relative;
-            transition: transform 0.1s ease-out;
-            will-change: transform;
+            transform: translateX(0);
+            transition: transform 0.15s ease-out;
         }
 
-        /* Timeline Rail - horizontal line */
+        /* Horizontal rail behind everything */
         .timeline-rail {
             position: absolute;
             top: 50%;
             left: 0;
-            right: 0;
-            height: 4px;
+            width: 100%;
+            height: 3px;
             background: var(--medium-gray);
             transform: translateY(-50%);
-            pointer-events: none;
-            z-index: 1;
         }
 
-        /* Decade markers (|) - vertical bars on horizontal rail */
+        /* Vertical markers | */
         .timeline-marker {
             flex-shrink: 0;
-            width: 4px;
-            height: 50px;
+            width: 3px;
+            height: 40px;
             background: var(--light-gray);
-            position: relative;
-            z-index: 2;
-            margin: 0 4rem;
+            margin: 0 5rem;
         }
 
         .timeline-marker.small {
-            height: 25px;
-            opacity: 0.5;
-            margin: 0 2rem;
+            height: 20px;
+            opacity: 0.6;
+            margin: 0 2.5rem;
         }
 
-        /* Year cards - expand vertically when centered */
+        /* Event cards: start collapsed, expand when centered */
         .timeline-item {
             flex-shrink: 0;
-            width: 80vw;
-            max-height: 0;
+            width: 70vw;
+            max-height: 100px;
+            min-height: 100px;
             background: var(--black);
-            border: 3px solid var(--blood-red);
-            padding: 0 3rem;
-            position: relative;
-            z-index: 10;
+            border: 2px solid var(--blood-red);
+            padding: 2rem;
             overflow: hidden;
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            opacity: 0.3;
+            transition: max-height 0.6s ease, padding 0.6s ease, opacity 0.6s ease;
+            opacity: 0.4;
         }
 
         .timeline-item.expanded {
-            max-height: 80vh;
+            max-height: 70vh;
             padding: 3rem;
             opacity: 1;
-            box-shadow: 0 20px 60px rgba(139, 0, 0, 0.5);
+            border-width: 3px;
+            box-shadow: 0 20px 50px rgba(139, 0, 0, 0.5);
         }
 
         .timeline-year {
@@ -1640,66 +1622,55 @@
             });
         }, observerOptions);
 
-        // Horizontal Timeline with Expanding Cards
+        // CLEAN TIMELINE - Horizontal pan + expand cards
         function initializeTimeline() {
-            const chronicleSection = document.getElementById('chronicle');
-            const timelineTrack = document.querySelector('.timeline-track');
-            const timelineItems = document.querySelectorAll('.timeline-item');
+            const section = document.getElementById('chronicle');
+            const track = document.querySelector('.timeline-track');
+            const items = document.querySelectorAll('.timeline-item');
 
-            if (!chronicleSection || !timelineTrack || timelineItems.length === 0) return;
+            if (!section || !track || !items.length) return;
 
-            window.addEventListener('scroll', () => {
-                const sectionRect = chronicleSection.getBoundingClientRect();
-                const sectionTop = sectionRect.top;
-                const sectionHeight = chronicleSection.offsetHeight;
-                const windowHeight = window.innerHeight;
+            function updateTimeline() {
+                const rect = section.getBoundingClientRect();
+                const sectionTop = rect.top;
+                const sectionHeight = section.offsetHeight;
+                const viewportHeight = window.innerHeight;
 
-                // Keep timeline at start if section hasn't reached top
-                if (sectionTop > 0) {
-                    timelineTrack.style.transform = 'translateX(0px)';
-                    timelineItems.forEach(item => item.classList.remove('expanded'));
+                // Not reached yet
+                if (sectionTop > 200) {
+                    track.style.transform = 'translateX(0)';
+                    items.forEach(item => item.classList.remove('expanded'));
                     return;
                 }
 
-                // Section has scrolled past
-                if (sectionTop + sectionHeight < 0) return;
+                // Calculate scroll progress (0 to 1)
+                const progress = Math.max(0, Math.min(1, -sectionTop / (sectionHeight - viewportHeight)));
 
-                // Calculate scroll progress
-                const scrollStart = Math.max(0, -sectionTop);
-                const scrollRange = sectionHeight - windowHeight;
-                let scrollProgress = scrollRange > 0 ? scrollStart / scrollRange : 0;
-                scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+                // Calculate total track width
+                const trackWidth = track.scrollWidth;
+                const viewportWidth = window.innerWidth;
 
-                // Calculate timeline width
-                const itemWidth = timelineItems[0].offsetWidth;
-                const markerElements = document.querySelectorAll('.timeline-marker');
-                const totalMarkerWidth = Array.from(markerElements).reduce((sum, marker) => {
-                    const style = getComputedStyle(marker);
-                    return sum + marker.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-                }, 0);
-                const totalWidth = (itemWidth * timelineItems.length) + totalMarkerWidth;
+                // Pan horizontally
+                const pan = -progress * (trackWidth - viewportWidth);
+                track.style.transform = `translateX(${pan}px)`;
 
-                // Pan timeline horizontally
-                const maxPan = -(totalWidth - window.innerWidth);
-                const panOffset = scrollProgress * maxPan;
-                timelineTrack.style.transform = `translateX(${panOffset}px)`;
+                // Expand centered card
+                const centerX = viewportWidth / 2;
+                items.forEach(item => {
+                    const box = item.getBoundingClientRect();
+                    const itemCenter = box.left + box.width / 2;
+                    const distance = Math.abs(itemCenter - centerX);
 
-                // Determine which card is centered and expand it
-                const centerX = window.innerWidth / 2;
-
-                timelineItems.forEach((item, index) => {
-                    const itemRect = item.getBoundingClientRect();
-                    const itemCenterX = itemRect.left + (itemRect.width / 2);
-                    const distanceFromCenter = Math.abs(itemCenterX - centerX);
-
-                    // Expand card if it's near center (within 40% of screen width)
-                    if (distanceFromCenter < window.innerWidth * 0.4) {
+                    if (distance < viewportWidth * 0.3) {
                         item.classList.add('expanded');
                     } else {
                         item.classList.remove('expanded');
                     }
                 });
-            });
+            }
+
+            window.addEventListener('scroll', updateTimeline);
+            updateTimeline();
         }
 
         // Apply fade-in animation to other elements
