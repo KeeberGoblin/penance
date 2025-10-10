@@ -195,7 +195,7 @@ penance/
 ├── docs/
 │   ├── index.html                     # Main website (timeline, factions, lore)
 │   │
-│   ├── rules/                         # 📖 Core game mechanics
+│   ├── rules/                         # Core game mechanics
 │   │   ├── index.md                   # Rules hub
 │   │   ├── turn-structure.md          # 4-phase SP system
 │   │   ├── combat-system.md           # Deck-as-HP, component damage
@@ -204,7 +204,7 @@ penance/
 │   │   ├── terrain.md                 # Elevation, cover, environment
 │   │   └── quick-reference.md         # Printable 1-page sheet
 │   │
-│   ├── factions/                      # ⚔️ Playable factions
+│   ├── factions/                      # Playable factions
 │   │   ├── index.md                   # Faction hub
 │   │   ├── relationships.md           # Faction relationship matrix
 │   │   ├── casket-types.md            # 36 unique Caskets
@@ -213,35 +213,35 @@ penance/
 │   │   └── dwarves/
 │   │       └── deck-complete.md       # Dwarves 32-card deck
 │   │
-│   ├── cards/                         # 🃏 Card database
+│   ├── cards/                         # Card database
 │   │   ├── index.html                 # Interactive card browser
 │   │   ├── index.md                   # Card documentation hub
 │   │   ├── universal.md               # 10 Universal Core cards
 │   │   ├── masterlist.md              # Complete card list
 │   │   └── anatomy.md                 # How to read cards
 │   │
-│   ├── scenarios/                     # 🎯 Playtest scenarios
+│   ├── scenarios/                     # Playtest scenarios
 │   │   ├── index.md                   # Scenario hub
 │   │   ├── 01-proving-grounds.md      # Deathmatch (beginner)
 │   │   ├── 02-reliquary-ruins.md      # Objective Control (intermediate)
 │   │   ├── example-of-play.md         # 5-turn walkthrough
 │   │   └── boss-iron-saint.md         # Boss encounter
 │   │
-│   ├── lore/                          # 📜 World & story
+│   ├── lore/                          # World & story
 │   │   ├── index.md                   # Lore hub
 │   │   ├── world-overview.md          # The Sundering, Remnants
 │   │   ├── chronicle.md               # 437-year timeline
 │   │   ├── iconic-npcs.md             # 5 legendary pilots
 │   │   └── resonance-engine.md        # The artifact that ended the world
 │   │
-│   ├── campaigns/                     # 🏰 Long-term progression
+│   ├── campaigns/                     # Long-term progression
 │   │   ├── index.md                   # Campaign hub
 │   │   ├── settlements.md             # Base building
 │   │   ├── pilot-progression.md       # Scars, traits, death
 │   │   ├── leg-skimming.md            # Sacrifice for power
 │   │   └── loot-tables.md             # Post-mission rewards
 │   │
-│   ├── reference/                     # 🔧 Design docs & tools
+│   ├── reference/                     # Design docs & tools
 │   │   ├── index.md                   # Reference hub
 │   │   ├── core-design.md             # Design philosophy
 │   │   ├── playtest-assessment.md     # Development progress
@@ -249,11 +249,11 @@ penance/
 │   │   ├── tabletop-simulator-guide.md
 │   │   └── PLAYTEST-READY.md          # Detailed playtest package
 │   │
-│   └── wiki/                          # 🗂️ Interactive wiki
+│   └── wiki/                          # Interactive wiki
 │       ├── index.html                 # Wiki homepage
 │       └── faction-church.html        # Church faction page
 │
-└── tools/                             # 🛠️ Development utilities
+└── tools/                             # Development utilities
     ├── card-generator/                # Card template generator
     └── generate-tts-deck.py           # TTS integration script
 ```
