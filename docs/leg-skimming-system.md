@@ -10,7 +10,7 @@
 
 **"To make room for the machine, we remove what we no longer need."**
 
-Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or "Taking the Compact") — surgical amputation of the legs below the knee. This allows:
+Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or "Taking the Compact") — surgical amputation of the legs at the upper thigh, just below the hip socket. This allows:
 - **Smaller capsule volume** (shorter pilot = less fluid needed)
 - **More space for augmentation ports** (direct neural interfaces beyond just fingers)
 - **Reduced metabolic needs** (less body mass = less oxygen, slower exhaustion)
@@ -25,31 +25,34 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 ### Surgical Details
 
 **Amputation Specifications**:
-- **Location**: Below the knee (tibial amputation, both legs)
+- **Location**: Upper thigh, just below hip socket (femoral amputation, both legs)
 - **Anesthesia**: General (unlike First Sync, pilot is unconscious—mercy, not necessity)
-- **Duration**: 4-6 hours for both legs
-- **Recovery**: 3-4 weeks before re-entering capsule (nerve healing)
-- **Prosthetics**: Simple peg-legs for mobility outside Casket (no fancy prosthetics—pilots barely walk anyway)
+- **Duration**: 6-8 hours for both legs (major surgery, multiple arteries to seal)
+- **Recovery**: 4-6 weeks before re-entering capsule (extensive nerve healing)
+- **Prosthetics**: None practical for walking—pilots use wheelchairs outside Casket
 
 **What's Removed**:
-- Lower legs (shin, ankle, foot)
-- Approximately 15-20% of body mass
-- 6-8 inches of height
-- 20-30% of body's oxygen demand
+- Entire legs from upper thigh down (femur, knee, shin, ankle, foot)
+- Approximately 30-35% of body mass
+- 18-24 inches of height (pilot becomes dramatically shorter)
+- 40-50% of body's oxygen demand
 
 **What's Added**:
-- **Augmentation Ports** in the stumps (secondary neural interfaces, 2-4 ports per stump)
-- **Stabilizer mounts** for better capsule suspension (no more ankle sway)
-- **Cooling nodes** embedded in stump tissue (dissipate Soulstone heat)
-- **Backup control clusters** (if hand threads fail, stumps can take over basic movement)
+- **Augmentation Ports** in the hip stumps (secondary neural interfaces, 4-6 ports per stump)
+- **Stabilizer mounts** for capsule suspension (hip stumps lock directly into capsule frame)
+- **Cooling nodes** embedded in stump tissue (large surface area for heat dissipation)
+- **Backup control clusters** (if hand threads fail, hip stumps can take over leg movement)
 
 **Post-Surgery Capsule Modifications**:
-- Capsule interior shortened by 8-10 inches (freed vertical space)
+- Capsule interior shortened by 18-24 inches (massive freed vertical space)
+- Pilot now occupies only upper 3-4 feet of capsule (dramatic reduction)
 - Freed space used for:
-  - **Enhanced Soulstone housing** (larger stone OR multiple stones)
-  - **Backup oxygen reserves** (longer deployment time before suffocation risk)
-  - **Secondary control nodes** (stumps connect to leg servos + auxiliary systems)
-  - **Emergency fluid reserves** (if capsule breaches, backup fluid auto-fills)
+  - **Enhanced Soulstone housing** (can fit 2-3 stones instead of 1)
+  - **Massive oxygen reserves** (effectively doubles deployment duration)
+  - **Secondary control nodes** (hip stumps connect directly to leg servos + auxiliary systems)
+  - **Emergency fluid reserves** (if capsule breaches, backup fluid auto-fills from lower chamber)
+  - **Additional armor plating** (lower capsule becomes pure armor, no body to protect)
+  - **Cooling system expansion** (hip stumps have massive surface area for thermal management)
 
 ---
 
@@ -84,24 +87,34 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 ### Mechanical Disadvantages (permanent vulnerabilities)
 
 **Outside Casket Mobility**:
-- **Movement Speed Halved** (peg-legs are crude)
-- **Cannot Sprint/Run** (fall risk too high)
-- **Disadvantage on all Athletics/Acrobatics checks** (balance ruined)
-- **Must be carried** to/from capsule during emergencies
+- **Wheelchair-bound** (no prosthetics can replace upper thigh amputation)
+- **Cannot walk at all** without being carried
+- **Cannot stand** (no legs to support body weight)
+- **Automatic failure** on all Athletics/Acrobatics checks requiring legs
+- **Must be carried** to/from capsule by attendants (cannot self-evacuate)
+- **Cannot flee** from danger (completely dependent on others for movement)
 
 **Social Stigma** (faction-dependent):
 - Some factions honor it (Church), others pity it (Elves), some mock it (Fae)
-- NPCs react differently based on faction culture
+- NPCs react differently—some see sacrifice, others see mutilation
+- Children may be frightened by Skimmed pilots
 
-**Dependency**:
-- **Require assistance** for many daily tasks (carrying supplies, climbing, fleeing danger)
-- **Settlement infrastructure matters** (inaccessible bunks = morale penalty)
-- **Increased post-mission care time** (+30 minutes stump maintenance)
+**Total Dependency**:
+- **Require assistance** for ALL daily tasks:
+  - Dressing (can't reach lower body)
+  - Bathing (fall risk, can't stand in shower)
+  - Eating (must be brought food, can't carry it)
+  - Toileting (need accessible facilities + assistance)
+  - Moving between rooms (wheelchair or carried)
+- **Settlement infrastructure critical** (no ramps/lifts = trapped in one room)
+- **Increased post-mission care time** (+45 minutes hip stump maintenance)
+- **Cannot participate in settlement defense** if attacked on foot
 
 **Irreversible**:
-- Once Skimmed, **cannot be undone**
-- Prosthetics don't restore function (peg-legs are mobility aids, not legs)
-- If you later regret it, too bad
+- Once Skimmed, **cannot be undone EVER**
+- No prosthetics exist that restore function (hip socket gone)
+- Outside Casket, you are permanently disabled
+- If you later regret it, you live with it for the rest of your life
 
 ---
 
@@ -473,12 +486,13 @@ Some pilots go beyond Skimming. They remove:
 
 | Service | Cost |
 |---------|------|
-| **Skimming Surgery** | 50 Credits, 1 Medical Supply, 3 weeks downtime |
-| **Stump Maintenance (monthly)** | 5 Credits, 1 Medical Supply |
-| **Basic Prosthetics (peg-legs)** | 10 Credits, 1 Scrap |
-| **Dwarven Prosthetics** | 50 Credits, 3 Scrap, 1 Rare Material |
+| **Skimming Surgery** | 80 Credits, 2 Medical Supplies, 4-6 weeks downtime |
+| **Hip Stump Maintenance (monthly)** | 8 Credits, 1 Medical Supply |
+| **Basic Wheelchair** | 15 Credits, 2 Scrap |
+| **Dwarven Wheelchair (reinforced, all-terrain)** | 60 Credits, 4 Scrap, 1 Rare Material |
 | **Torso Conversion** | 200 Credits, 5 Medical Supplies, 8 weeks downtime, Cannot Undo |
-| **Dedicated Attendant (monthly salary)** | 20 Credits (required for Torso pilots) |
+| **Dedicated Attendant (monthly salary)** | 25 Credits (required for Skimmed pilots without accessible settlement) |
+| **Dedicated Attendant for Torso** | 40 Credits (required, full-time care) |
 
 ---
 
@@ -532,7 +546,7 @@ Some pilots go beyond Skimming. They remove:
 >
 > Honestly? Both.
 >
-> The Skimming doesn't just take your legs, kid. It takes the *idea* that you were ever whole. You'll never walk right again. You'll never run. You'll never dance, never climb, never feel sand between your toes.
+> The Skimming doesn't just take your legs, kid. It takes the *idea* that you were ever whole. You'll never walk again. Period. You'll never stand on your own. You'll never run. You'll never dance, never climb, never feel sand between your toes. You'll roll everywhere in a chair, or someone will carry you like cargo.
 >
 > But you'll pilot better than you ever dreamed.
 >
