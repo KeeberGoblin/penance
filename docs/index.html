@@ -1596,13 +1596,18 @@
 
             window.addEventListener('scroll', () => {
                 const sectionRect = chronicleSection.getBoundingClientRect();
+                const sectionTop = sectionRect.top;
                 const sectionHeight = chronicleSection.offsetHeight;
                 const windowHeight = window.innerHeight;
 
-                // Calculate scroll progress through the section (0 to 1)
-                const scrollStart = -sectionRect.top;
-                const scrollRange = sectionHeight - windowHeight;
-                let scrollProgress = Math.max(0, Math.min(1, scrollStart / scrollRange));
+                // Only start scrolling when the section header has passed
+                // This gives a grace period before the timeline starts moving
+                const startOffset = windowHeight * 0.3; // Start when section is 30% into view
+                const scrollStart = Math.max(0, -sectionTop - startOffset);
+                const scrollRange = sectionHeight - windowHeight - startOffset;
+
+                let scrollProgress = scrollRange > 0 ? scrollStart / scrollRange : 0;
+                scrollProgress = Math.max(0, Math.min(1, scrollProgress));
 
                 // Calculate actual timeline width (each item is 600px + 128px gap)
                 const itemWidth = 600;
