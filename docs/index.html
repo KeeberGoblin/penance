@@ -249,11 +249,6 @@
             transform: translateY(-5px);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
         .feature-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
@@ -281,141 +276,42 @@
             background: var(--dark-gray);
         }
 
-        /* ===== SIMPLE HORIZONTAL TIMELINE ===== */
-
-        /* Chronicle section */
-        #chronicle {
-            min-height: 350vh;
-            padding: 0;
-            background: var(--dark-gray);
+        /* ===== CHRONICLE SECTION ===== */
+        .chronicle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
-        #chronicle .section-content {
-            max-width: 100%;
-            padding: 0;
+        .chronicle-event {
+            border: 3px solid var(--medium-gray);
+            padding: 2rem;
+            transition: border-color 0.3s, transform 0.3s;
         }
 
-        /* Sticky header */
-        #chronicle .section-header {
-            position: sticky;
-            top: 60px;
-            background: var(--dark-gray);
-            z-index: 100;
-            padding: 2rem 4rem 1rem;
-            margin: 0;
-            border-bottom: 3px solid var(--white);
-            font-size: clamp(2rem, 5vw, 4rem);
+        .chronicle-event:hover {
+            border-color: var(--blood-red);
+            transform: translateY(-5px);
         }
 
-        #chronicle .section-intro {
-            padding: 2rem 4rem 4rem;
-            margin: 0;
-            background: var(--dark-gray);
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            color: var(--light-gray);
-        }
-
-        /* Timeline container */
-        .timeline-container {
-            position: sticky;
-            top: 180px;
-            width: 100%;
-            height: 70vh;
-            overflow: hidden;
-            background: var(--dark-gray);
-            display: flex;
-            align-items: center;
-        }
-
-        /* Timeline track */
-        .timeline-track {
-            display: flex;
-            gap: 8rem;
-            padding: 0 2rem;
-            transform: translateX(0);
-            transition: transform 0.2s ease-out;
-        }
-
-        /* Hide rail and markers */
-        .timeline-rail {
-            display: none;
-        }
-
-        .timeline-marker {
-            display: none;
-        }
-
-        /* Simple cards */
-        .timeline-item {
-            flex-shrink: 0;
-            width: 75vw;
-            max-height: 120px;
-            background: var(--black);
-            border: 2px solid var(--blood-red);
-            padding: 1.5rem 2rem;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            opacity: 0.5;
-        }
-
-        .timeline-item.expanded {
-            max-height: 65vh;
-            padding: 2.5rem;
-            opacity: 1;
-            border-width: 3px;
-            box-shadow: 0 15px 40px rgba(139, 0, 0, 0.6);
-        }
-
-        .timeline-year {
-            font-size: 3rem;
+        .event-year {
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--blood-red);
             margin-bottom: 1rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
         }
 
-        .timeline-content {
-            overflow-y: auto;
-            max-height: 100%;
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
         }
 
-        /* YEAR 0 Background Image */
-        .timeline-item[data-year="0"] {
-            background-image: url('year0.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .timeline-item[data-year="0"]::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 0;
-        }
-
-        .timeline-item[data-year="0"] .timeline-year,
-        .timeline-item[data-year="0"] .timeline-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-            border-bottom: 2px solid var(--blood-red);
-            padding-bottom: 0.5rem;
-        }
-
-        .timeline-content p {
+        .event-desc {
             color: var(--light-gray);
-            line-height: 1.8;
-            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         .section-content {
@@ -1029,25 +925,21 @@
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚔️</div>
                     <h3 class="feature-title">BRUTAL TACTICAL COMBAT</h3>
                     <p class="feature-desc">Deck-as-HP system. Component destruction. Death spirals. Kingdom Death: Monster-style brutality meets GKR: Heavy Hitters elegance.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">⚙️</div>
                     <h3 class="feature-title">ASYMMETRIC FACTIONS</h3>
                     <p class="feature-desc">Church martyrs who self-harm for power. Dwarven engineers with rune counters. Undead necromancers. 9 unique playstyles.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🦴</div>
                     <h3 class="feature-title">BODY HORROR MECHS</h3>
                     <p class="feature-desc">Pilot your own corpse in a Casket war machine. Sacrifice limbs for power. Permanent consequences. The Puppeteer Interface connects your threads to dead flesh.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📜</div>
                     <h3 class="feature-title">437 YEARS OF LORE</h3>
                     <p class="feature-desc">Post-apocalyptic world built on the ruins of a failed immortality experiment. Deep narrative campaign with settlements, pilot scars, and faction politics.</p>
                 </div>
@@ -1056,245 +948,53 @@
     </section>
 
     <!-- Chronicle Section -->
-    <section class="section section-dark" id="chronicle">
-        <div class="section-content">
-            <h2 class="section-header">CHRONICLE</h2>
-            <p class="section-intro">The recorded history of a world that ended. What remains are fragments, transmissions, and the testimony of those who survived.</p>
+    <section class="section" id="chronicle">
+        <div class="section-content-wide">
+            <h2 class="section-header-center">437 YEARS OF HISTORY</h2>
+            <p style="text-align: center; color: var(--light-gray); max-width: 800px; margin: 0 auto 4rem; font-size: 1.1rem;">
+                The recorded history of a world that ended. What remains are fragments, transmissions, and the testimony of those who survived.
+            </p>
 
-            <div class="timeline-container">
-                <div class="timeline-rail"></div>
-                <div class="timeline-track">
-                    <div class="timeline-item" data-year="0">
-                        <div class="timeline-year">YEAR 0</div>
-                        <div class="timeline-content">
-                            <h3>The Final Transmission</h3>
-                            <p>"This is Dr. Nikolas Theslar, Head of Resonance Studies at the Sibarian Institute. If you're hearing this, the test has failed. The Engine was supposed to eliminate scarcity. Unlimited energy. Post-death consciousness transfer. Immortality for all. Instead, it's... singing. God help us. It's singing, and I can't stop listening."</p>
-                            <p>The last words from the Sibarian Institute before the Sundering. The Resonance Engine activated at 14:22 GMT. By 14:23, the world had ended.</p>
-                        </div>
-                    </div>
+            <div class="chronicle-grid">
+                <div class="chronicle-event">
+                    <div class="event-year">YEAR 0</div>
+                    <h3 class="event-title">The Sundering</h3>
+                    <p class="event-desc">The Resonance Engine activates. The world ends in 437 seconds. Dr. Nikolas Theslar's final transmission: "It's singing. God help us."</p>
+                </div>
 
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
+                <div class="chronicle-event">
+                    <div class="event-year">YEAR 3</div>
+                    <h3 class="event-title">First Casket</h3>
+                    <p class="event-desc">The first Remnant builds herself a body from scrap and corpses. Post-mortem consciousness persistence becomes "The Curse."</p>
+                </div>
 
-                    <div class="timeline-item" data-year="3">
-                        <div class="timeline-year">YEAR 3</div>
-                        <div class="timeline-content">
-                            <h3>The First Casket</h3>
-                            <p>Recorded testimony from Survivor Camp 7, Northern Wastes:</p>
-                            <p>"We found Marissa three days after she died. Frost took her in the night. But when we went to bury her, she was gone. We heard something walking in the snow. Heavy. Mechanical. It was her, but not her. She'd built herself a body out of scrap metal and frozen corpses. She didn't speak. Just pointed north and started walking."</p>
-                            <p>The first documented case of post-mortem consciousness persistence. The phenomenon was named "Remnant Animation." Later, it would simply be called "The Curse."</p>
-                        </div>
-                    </div>
+                <div class="chronicle-event">
+                    <div class="event-year">YEAR 47</div>
+                    <h3 class="event-title">Church Founded</h3>
+                    <p class="event-desc">The Church of Absolution declares redemption through violence. "We will earn our rest, or walk this world forever."</p>
+                </div>
 
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
+                <div class="chronicle-event">
+                    <div class="event-year">YEAR 134</div>
+                    <h3 class="event-title">The Great Schism</h3>
+                    <p class="event-desc">The Church splits over who deserves salvation. The Covenant of Broken Chains forms. Civil war lasts 80 years.</p>
+                </div>
 
-                    <div class="timeline-item" data-year="47">
-                        <div class="timeline-year">YEAR 47</div>
-                        <div class="timeline-content">
-                            <h3>The Church Manifesto</h3>
-                            <p>From the Church of Absolution's founding document:</p>
-                            <p>"We did not die because we were unworthy. We died because the world demanded sacrifice. Now, bound to these iron shells, we are given a second chance. Not to live, but to atone. Every enemy felled is a sin purged. Every mission completed is a step toward salvation. We will earn our rest through violence, or we will walk this broken world forever."</p>
-                            <p>The Church's ideology spread rapidly among the Remnants. Within a generation, they controlled three major city-states and declared Absolution their divine mandate.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-<div class="timeline-item">
-                        <div class="timeline-year">YEAR 89</div>
-                        <div class="timeline-content">
-                            <h3>The Taint Plague</h3>
-                            <p>Medical log from Dr. Helena Vask, Fortuna Settlement:</p>
-                            <p>"Exposure to Abominations is changing the Remnants. It starts with discoloration around the wound sites. Then the hallucinations. They report hearing the Engine's song, even hundreds of miles from Sibaria. Stage 3 Taint victims exhibit reality distortion fields. Stage 5... they become something else. We have no cure. We can only quarantine and pray they choose to self-terminate before transformation."</p>
-                        </div>
-                    </div>
+                <div class="chronicle-event">
+                    <div class="event-year">YEAR 223</div>
+                    <h3 class="event-title">Betrayal at Roothold</h3>
+                    <p class="event-desc">The Church burns half the elven forests. The Church-Elf war begins. 214 years later, it has not ended.</p>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-year">YEAR 134</div>
-                        <div class="timeline-content">
-                            <h3>The Great Schism</h3>
-                            <p>From the archives of Bonelord Thresh:</p>
-                            <p>"The Church split today. Not over theology, but methodology. Cardinal Vross proclaimed that only human Remnants deserve salvation. Archbishop Kael argued that all who suffer can be redeemed. The vote was close. Vross won. By morning, half the Church had seceded, forming the Covenant of Broken Chains. They welcomed the elves, the mutants, the forgotten. The Church Militant declared them heretics. The civil war lasted 80 years."</p>
-                        </div>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-<div class="timeline-item">
-                        <div class="timeline-year">YEAR 197</div>
-                        <div class="timeline-content">
-                            <h3>The Forge-Titan Awakens</h3>
-                            <p>From the Dwarven Assembly records:</p>
-                            <p>"We found it in the Deep Quarry, 900 meters down. A construct from before the Sundering. Pre-Casket war machine, massive beyond comprehension. 40 meters tall, fusion core still active after two centuries. Forgemaster Durr insisted we could control it. He was wrong. It activated, killed 60 miners, then went dormant again. Durr claimed it spoke to him. Said it was 'waiting for the right war.' We sealed the quarry. Durr still goes down there. Alone. He's been going for 240 years."</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">YEAR 223</div>
-                        <div class="timeline-content">
-                            <h3>The Betrayal at Roothold</h3>
-                            <p>From the testimony of Warden Kess at the Greenfire Council:</p>
-                            <p>"The Church came with promises. Protection from the Rot-Screamers. Medicine for the blight. All they asked was passage through Thornveil. We refused. Three days later, they burned half the forest. The trees screamed. I watched them die and felt nothing. That's when I knew: I am as cursed as they are. We all are."</p>
-                            <p>The Church-Elf war began that winter. 214 years later, it has not ended.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-<div class="timeline-item">
-                        <div class="timeline-year">YEAR 271</div>
-                        <div class="timeline-content">
-                            <h3>The Merchant Ascendancy</h3>
-                            <p>Trade manifest from Guild-Master Vex Sarros:</p>
-                            <p>"The other factions fight over ideology. We fight for profit. Today, the Seven Guilds signed the Concordat of Steel. We will sell to all sides. We will enrich all conflicts. We will ensure the wars never end, because peace is unprofitable. Let them call us vultures. Vultures survive."</p>
-                            <p>Within 50 years, the Merchant Guilds controlled 60% of Soulstone trade and every major forge-city.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">YEAR 298</div>
-                        <div class="timeline-content">
-                            <h3>The Screaming Choir</h3>
-                            <p>Audio log recovered from the Sibarian Wastes Expedition:</p>
-                            <p>"We're within visual range of the Engine now. It's... singing. There are people inside it. Hundreds of them. Embedded in the walls. Still alive. Oh God. I recognize that voice. That's Nikolas Theslar. He's still in there. He's been in there for THREE HUNDRED YEARS. He's conducting them. He's conducting all of them."</p>
-                            <p>No one from the expedition returned. Their Caskets were found three weeks later, wandering in circles, empty. One had carved a message into its own chassis: "HE REMEMBERS OUR NAMES."</p>
-                        </div>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-<div class="timeline-item">
-                        <div class="timeline-year">YEAR 314</div>
-                        <div class="timeline-content">
-                            <h3>The Silent Massacre</h3>
-                            <p>From the The Ossuarium archives:</p>
-                            <p>"The Fae do not negotiate. They do not declare war. They simply appear, and settlements die. Greymoor lost 300 Remnants in one night. No bodies. No scrap. Just empty Caskets arranged in a perfect circle. In the center, a single flower, still blooming. Bonelord Thresh investigated personally. He found no evidence of Fae involvement. The flower, however, whispered his true name."</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">YEAR 352</div>
-                        <div class="timeline-content">
-                            <h3>The Blighted Exodus</h3>
-                            <p>Testimony from Alpha Korran, Pack-Leader:</p>
-                            <p>"We didn't ask to be born this way. Chimeric. Cursed. Half-human, half-beast. The Church hunts us. The Elves exile us. The Dwarves dissect us. So we left. All of us. Ten thousand Blighted, walking into the Wastes. Half died in the first month. The survivors adapted. Mutated further. Became something new. We are not human anymore. We are not Abominations. We are the Packs. And we will no longer beg for acceptance."</p>
-                        </div>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-<div class="timeline-item">
-                        <div class="timeline-year">YEAR 381</div>
-                        <div class="timeline-content">
-                            <h3>The Sibarian Metamorphosis</h3>
-                            <p>Final transmission from Research Station Sigma-7:</p>
-                            <p>"The researchers at ground zero... they didn't die. They changed. Fused with the arthropod specimens in the bio-labs. We thought they were Abominations. We were wrong. They're organized. Intelligent. Hive-minded. They call themselves the Chitinous Ascendancy. They say they've achieved perfect evolution. They say we should join them. The signal is so loud now. So loud. I can hear them inside my head. They're singing. Just like the Engine. I... I think I want to join them."</p>
-                            <p>Sigma-7 went dark. Three months later, the first Ascendancy war-forms emerged from the Wastes.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">YEAR 407</div>
-                        <div class="timeline-content">
-                            <h3>The Fracture Storms Begin</h3>
-                            <p>Scientific observation from Nomad outpost Zeta-9:</p>
-                            <p>"The Engine's instability is increasing. Reality fractures now occur daily. Last storm brought creatures we have no names for. Some were humans who died centuries before the Sundering. Others were things that should not exist. The barriers between what is, what was, and what could have been are collapsing. Recommend immediate evacuation of all settlements within 500km of Sibaria."</p>
-                            <p>The recommendation was ignored. There is nowhere left to evacuate to.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-marker small"></div>
-                    <div class="timeline-marker small"></div>
-<div class="timeline-item">
-                        <div class="timeline-year">YEAR 437</div>
-                        <div class="timeline-content">
-                            <h3>Present Day</h3>
-                            <p>Four centuries after the Sundering, the Resonance Engine still sings. The dead still walk. Nine factions war across a shattered world, each convinced they alone hold the path to salvation. Generations of Remnants have lived and died in these iron shells, and still no absolution has come.</p>
-                            <p>The Church promises redemption through violence. The Elves tend their dying forests. The Dwarves build ever more complex solutions to unsolvable problems. The Undead simply wait. The Fae laugh at mortal suffering. The Nomads survive. The Merchants profit. The Blighted Packs hunt. The Chitinous Ascendancy evolves.</p>
-                            <p>None remember what peace felt like. None remember what it meant to be truly alive. There is only the weight of centuries, the grinding of iron against iron, and the faint hope that maybe, just maybe, the next kill will be the one that finally brings rest.</p>
-                            <p>It won't be. It never is.</p>
-                            <p>Welcome to Penance.</p>
-                        </div>
-                    </div>
+                <div class="chronicle-event">
+                    <div class="event-year">YEAR 437</div>
+                    <h3 class="event-title">Present Day</h3>
+                    <p class="event-desc">Nine factions war across a shattered world. The dead still walk. The Engine still sings. No absolution has come.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="section" id="pilots">
-        <div class="section-content">
-            <h2 class="section-header">ICONIC PILOTS</h2>
-            <p class="section-intro">Five Remnants who have transcended death to become legends. Each is broken. Each is dangerous. None are heroes.</p>
-
-            <div class="npc-grid">
-                <div class="npc-card">
-                    <div class="npc-name">SISTER VEX</div>
-                    <div class="npc-title">The Hollow Penitent</div>
-                    <div class="npc-faction">Church of Absolution</div>
-                    <p class="npc-description">Taint Level 7. Believes suffering purifies. Each wound she takes brings her closer to salvation. Each ally she sacrifices is a prayer answered. The Church calls her a saint. Everyone else calls her a fanatic. She calls herself damned.</p>
-                    <p class="npc-description">Pilots "The Confessional" - a 1,600lb heavy Casket covered in scripture and scars.</p>
-                </div>
-
-                <div class="npc-card">
-                    <div class="npc-name">ROOTWARDEN KESS</div>
-                    <div class="npc-title">The Last Gardener</div>
-                    <div class="npc-faction">Elven Remnants</div>
-                    <p class="npc-description">Died protecting a grove that burned anyway. Now tends a garden of corpse-trees that whisper secrets. Can grow thorned barriers from the dead. Hasn't spoken to another living being in 30 years. Doesn't consider that a loss.</p>
-                    <p class="npc-description">Pilots "The Arbor Mortis" - a medium Casket woven from petrified wood and bone.</p>
-                </div>
-
-                <div class="npc-card">
-                    <div class="npc-name">FORGEMASTER DURR</div>
-                    <div class="npc-title">The Machine Prophet</div>
-                    <div class="npc-faction">Dwarven Clans</div>
-                    <p class="npc-description">Talks to the Forge-Titan. It talks back. Builds Caskets that shouldn't work but do. His own Casket regenerates damage by consuming scrap metal. The Clans tolerate him because his weapons win wars. He tolerates them because the Titan isn't ready yet.</p>
-                    <p class="npc-description">Pilots "The Crucible" - a heavy Casket that burns at 800 degrees internally. Durr doesn't notice.</p>
-                </div>
-
-                <div class="npc-card">
-                    <div class="npc-name">BONELORD THRESH</div>
-                    <div class="npc-title">The Collector</div>
-                    <div class="npc-faction">The Ossuarium</div>
-                    <p class="npc-description">Death is a science. Thresh has been studying for 80 years. Collects the skulls of worthy opponents. Speaks to them. They answer. Commands an army of reanimated Caskets piloted by consciousnesses he's rebound to service. Polite, methodical, utterly merciless.</p>
-                    <p class="npc-description">Pilots "The Ossuary" - a medium Casket built entirely from the bones of other Remnants.</p>
-                </div>
-
-                <div class="npc-card">
-                    <div class="npc-name">MOCKINGBIRD</div>
-                    <div class="npc-title">The Laughing Shade</div>
-                    <div class="npc-faction">The Wyrd Conclave</div>
-                    <p class="npc-description">Died as a human. Woke as something else. The Fae claimed her because she amused them. Now she's the joke and the punchline. Steals faces, voices, memories. You'll never see her coming. You'll always know when she's been there. The laughter echoes for days.</p>
-                    <p class="npc-description">Pilots "The Mummer's Waltz" - a light Casket that changes appearance. What it looked like yesterday is gone.</p>
-                </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="wiki/index.html" class="cta-secondary">READ FULL CHRONICLE</a>
             </div>
         </div>
     </section>
@@ -1830,67 +1530,8 @@
             });
         }, observerOptions);
 
-        // CLEAN TIMELINE - Horizontal pan + expand cards
-        function initializeTimeline() {
-            const section = document.getElementById('chronicle');
-            const track = document.querySelector('.timeline-track');
-            const items = document.querySelectorAll('.timeline-item');
-
-            if (!section || !track || !items.length) return;
-
-            function updateTimeline() {
-                const rect = section.getBoundingClientRect();
-                const sectionTop = rect.top;
-                const sectionHeight = section.offsetHeight;
-                const viewportHeight = window.innerHeight;
-
-                // Section not at top yet - stay at start
-                if (sectionTop > 60) {
-                    track.style.transform = 'translateX(0)';
-                    items.forEach(item => item.classList.remove('expanded'));
-                    return;
-                }
-
-                // Section scrolled past
-                if (sectionTop + sectionHeight < 0) return;
-
-                // Calculate scroll progress (0 to 1)
-                // Start from when header hits top (60px)
-                const scrolled = Math.max(0, 60 - sectionTop);
-                const totalScroll = sectionHeight - viewportHeight - 60;
-                const progress = Math.max(0, Math.min(1, scrolled / totalScroll));
-
-                // Calculate total track width
-                const trackWidth = track.scrollWidth;
-                const viewportWidth = window.innerWidth;
-
-                // Pan horizontally
-                const pan = -progress * (trackWidth - viewportWidth);
-                track.style.transform = `translateX(${pan}px)`;
-
-                // Expand centered card
-                const centerX = viewportWidth / 2;
-                items.forEach(item => {
-                    const box = item.getBoundingClientRect();
-                    const itemCenter = box.left + box.width / 2;
-                    const distance = Math.abs(itemCenter - centerX);
-
-                    if (distance < viewportWidth * 0.35) {
-                        item.classList.add('expanded');
-                    } else {
-                        item.classList.remove('expanded');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', updateTimeline);
-            updateTimeline();
-        }
-
-        // Apply fade-in animation to other elements
+        // Apply fade-in animation to elements
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize timeline
-            initializeTimeline();
 
             // NPC cards
             const npcCards = document.querySelectorAll('.npc-card');
