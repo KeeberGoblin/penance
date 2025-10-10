@@ -29,10 +29,28 @@ Use this as your foundation for ALL Casket prompts:
 [CASKET TYPE] war machine, baroque-romanticist brutalist design, heavy industrial Gothic aesthetic, [FACTION-SPECIFIC DETAILS], chiaroscuro lighting, dramatic shadows, ornate religious iconography mixed with raw geometric forms, riveted steel plates, exposed machinery, gilded accents on brutal metal, standing in [ENVIRONMENT], oil painting style mixed with technical blueprint, dark atmospheric, sublime and terrifying, 8k, highly detailed
 ```
 
+**Optional Capsule Visibility** (for cutaway/technical views):
+```
+Add: transparent chassis section revealing pilot capsule interior, pilot suspended in glowing amber neural fluid, arms bound across chest in death pose, silver neural threads extending from fingertips to casket control nodes, coffin-sized chamber, bioluminescent glow, body horror aesthetic
+```
+
 **Negative prompt** (what to avoid):
 ```
-anime, cartoon, clean, polished, sci-fi, neon, glowing, smooth surfaces, rounded edges, minimalist, white background, cheerful, bright colors, futuristic, sleek
+anime, cartoon, clean, polished, sci-fi, neon, glowing, smooth surfaces, rounded edges, minimalist, white background, cheerful, bright colors, futuristic, sleek, cockpit, seated pilot, mecha, gundam
 ```
+
+---
+
+## Example: Capsule Cutaway View
+
+For technical/concept art showing the internal capsule system:
+
+**Prompt**:
+```
+War machine technical cutaway, baroque-romanticist brutalist design, armored Casket with transparent cross-section revealing pilot capsule, pilot suspended in glowing amber neural fluid with arms bound across chest in mummy death pose, ten silver neural threads extending from fingertips like puppet strings to internal control nodes, coffin-sized chamber embedded in chassis core, bioluminescent amber glow, body horror aesthetic, chiaroscuro lighting, oil painting meets technical blueprint, dark industrial cathedral background, sublime terror, 8k detailed
+```
+
+This creates a "ghost view" showing both exterior armor and interior horror simultaneously.
 
 ---
 

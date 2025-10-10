@@ -8,14 +8,15 @@
 
 ## Table of Contents
 1. [Concept Overview](#concept-overview)
-2. [Casket Weight Classes](#casket-weight-classes)
-3. [Racial Casket Variants](#racial-casket-variants)
-4. [Soul-Point Action Economy](#soul-point-action-economy)
-5. [Soulstone Power System](#soulstone-power-system)
-6. [Game Modes](#game-modes)
-7. [Mission Deck System](#mission-deck-system)
-8. [Monster AI System](#monster-ai-system)
-9. [Combat & Positioning](#combat--positioning)
+2. [Casket Control System](#casket-control-system)
+3. [Casket Weight Classes](#casket-weight-classes)
+4. [Racial Casket Variants](#racial-casket-variants)
+5. [Soul-Point Action Economy](#soul-point-action-economy)
+6. [Soulstone Power System](#soulstone-power-system)
+7. [Game Modes](#game-modes)
+8. [Mission Deck System](#mission-deck-system)
+9. [Monster AI System](#monster-ai-system)
+10. [Combat & Positioning](#combat--positioning)
 
 ---
 
@@ -36,6 +37,31 @@ A tactical hex-based card game where players pilot massive armored suits called 
 - **MechWarrior/BattleTech** - Weight classes, component damage
 - **Deck-builders** - Your Casket is constructed from cards
 - **Escaflowne** - Mystical power cores in mechanical armor
+
+---
+
+## Casket Control System
+
+### The Puppeteer Interface
+
+**Caskets are not worn like suits. They are piloted like puppets from inside.**
+
+Each Casket contains a **Control Capsule**—a coffin-sized chamber filled with Neural Fluid where the pilot floats in total darkness, arms bound across their chest in a death pose. From each fingertip extends a **Neural Thread** (bio-mechanical "puppet string") that connects to the Casket's motor control nodes.
+
+**Key Features**:
+- **10 Neural Threads** (one per finger) control all Casket movement
+- **Mummy binding pose** prevents pilot movement (protects threads)
+- **Viscous Neural Fluid** provides sensory deprivation and thread medium
+- **Total immersion** - pilot sees through Casket sensors, not human eyes
+- **Pain feedback** - Casket damage translates to finger/nerve pain
+
+**Why This System?**
+- Remnants are dead—degraded nervous systems can't operate traditional controls
+- Neural Threads bypass body, connecting consciousness directly to machine
+- Horrifying by design: piloting is suffering, not empowerment
+- Reinforces themes of imprisonment, sacrifice, and body horror
+
+For complete technical specifications, see **[casket-control-system.md](casket-control-system.md)**.
 
 ---
 
