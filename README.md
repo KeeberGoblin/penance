@@ -31,15 +31,15 @@ A tactical hex-based card game of grimdark medieval fantasy mech combat where re
 
 ## Overview
 
-**Penance: Absolution Through Steel** combines the tactical positioning of **GKR: Heavy Hitters** with the brutal progression of **Kingdom Death: Monster**, wrapped in a deck-as-HP framework. Pilot massive armored suits called **Caskets** powered by corrupting **Soulstones** as you fight for redemption in a dark medieval fantasy world.
+**Penance: Absolution Through Steel** combines the tactical positioning of **GKR: Heavy Hitters** with the brutal progression of **Kingdom Death: Monster**. Pilot massive armored suits called **Caskets** as you fight for redemption in a dark medieval fantasy world 437 years after the apocalypse.
 
 ### Core Pillars
 - **Deck-as-HP System**: Your 30-card deck IS your HP - discard cards when damaged
 - **Tactical Hex Combat**: Positioning, facing modifiers, elevation, and terrain matter
-- **Component Destruction**: Kingdom Death-style permanent damage (3 hits = destroyed)
-- **SP Action Economy**: Play multiple cards per turn, manage Heat vs Strain
-- **Faction Asymmetry**: Church (self-harm martyrdom) vs Dwarves (armor-piercing defense)
-- **Death Spiral**: Reshuffle adds Damage cards - inevitability of decline
+- **Component Destruction**: Kingdom Death-style permanent damage (3 Component Damage = destroyed)
+- **SP Action Economy**: Play multiple cards per turn, manage Safe Zone vs Danger Zone
+- **Faction Asymmetry**: Each faction plays completely differently
+- **Death Spiral**: Deck reshuffle adds blank Damage cards - inevitability of decline
 
 ---
 
@@ -58,33 +58,30 @@ When you discard **Primary Weapon cards** from damage:
 - **3 Component Damage = Component Destroyed**
 - **Destroyed Right Arm** → Lose all Primary Weapon cards from hand (permanent)
 
-### SP Economy (GKR-Inspired)
-- **Refresh Phase**: Restore SP to maximum (5 for Medium frames)
-- **Action Phase**: Play cards (costs SP), move (1 SP per hex), attack
-- **Safe Zone**: Spend up to max SP without penalty
-- **Danger Zone**: Spend beyond max for +2 SP, but roll Strain check (5+ Heat)
-- **Strain failures**: Lose SP, take damage, component malfunctions
+### SP Economy
+Each turn you refresh your Soul Points (SP) to maximum:
+- **Safe Zone**: Spend up to max SP without risk
+- **Danger Zone**: Push beyond max for +2 SP, but risk Strain damage
+- Use SP to play cards, move, and attack
 
-### Facing Modifiers
-- **Rear Arc**: +2 damage (attacker), -2 Defense (defender)
-- **Side Arc**: +1 damage, -1 Defense
-- **Front Arc**: +0 damage, full Defense
-- Positioning matters - flank for advantage
+### Facing & Positioning
+- **Rear Arc**: +2 damage to attacker
+- **Side Arc**: +1 damage to attacker
+- **Front Arc**: Full Defense
+- High ground, cover, and flanking all matter
 
 ### Faction Asymmetry
 
 **Church of Absolution** (Aggressive Martyr):
-- **Blood Offering**: Discard 2 cards → +3 damage + ignore 1 Armor (0 SP!)
-- **Righteous Fury**: +1 damage per component destroyed (scales)
-- **Crusader's Vow**: Attacks cost -1 SP while ≥20 HP
-- **Playstyle**: Burst damage, self-harm for power, aggressive positioning
+- Discard your own cards for burst damage
+- Scales with component destruction (gets stronger as wounded)
+- High-risk, high-reward martyrdom playstyle
 
 **Dwarven Clans** (Fortress Defender):
-- **Rune Counters**: Stack to 3 → reduce all damage by 3
-- **Crushing Blow**: Armor-piercing (ignore all defense buffs)
-- **Stone Endurance**: 32 HP instead of 30 (2 extra cards)
-- **Unbreakable Spirit**: Resurrect once per mission
-- **Playstyle**: Attrition warfare, durability, armor-piercing counters
+- Rune Counters stack for massive damage reduction
+- Armor-piercing attacks ignore defense buffs
+- 32 HP deck (Stone Endurance racial ability)
+- Attrition warfare and durability
 
 ---
 
@@ -148,28 +145,18 @@ When you discard **Primary Weapon cards** from damage:
 
 ## Project Status
 
-**PLAYTEST READY** - Complete game systems ready for table play
+**PLAYTEST READY** - Complete v1.0 game ready for table play (see top of README for Quick Start)
 
-### Playtest Package (v1.0)
-- [x] Complete turn structure (4 phases)
-- [x] Combat resolution system (deck-as-HP)
-- [x] Component destruction rules
-- [x] 2 complete faction decks (Church, Dwarves)
-- [x] 2 playtest scenarios (Deathmatch, Objective Control)
-- [x] Example of Play walkthrough
-- [x] Quick reference sheet
-- [x] Range/LOS rules with diagrams
-- [x] 64 pages of playtest-ready content
-
-### World & Systems Design
-- [x] 437-year timeline (Sundering to Present)
-- [x] 9 factions with unique identities
+### Completed
+- [x] Complete playtest package (64 pages, 2 factions, 2 scenarios)
+- [x] GKR + KDM hybrid combat system
+- [x] 437-year world timeline with 9 factions
 - [x] 36 asymmetric Casket types (4 per faction)
-- [x] Puppeteer capsule control system
-- [x] Leg-skimming progression system
-- [x] Campaign mechanics (settlements, pilot scars, loot)
-- [x] Boss encounter system (HP deck)
-- [x] 80+ pilot scars (permanent traits)
+- [x] Puppeteer capsule control system (body horror)
+- [x] Leg-skimming progression (permanent sacrifice)
+- [x] Campaign systems (settlements, pilot scars, loot)
+- [x] Boss encounter HP deck system
+- [x] 80+ unique pilot scars
 
 ### In Progress
 - [ ] Additional faction decks (Elves, Undead, Fae, etc.)
@@ -272,16 +259,12 @@ penance/
 
 ## Interactive Website
 
-Visit the brutalist-styled website: [View Site](https://keebergoblin.github.io/penance/)
-
-**Features**:
-- 437-year interactive timeline
-- 9 faction profiles with unique identities
-- Key NPCs and iconic pilots
-- Combat card examples
-- SCP-style wiki (experimental lore)
-- Card database (Garland Tools-style)
-- **NEW**: Complete playtest section with downloads
+**[View Site →](https://keebergoblin.github.io/penance/)** - Brutalist-styled website with:
+- Complete playtest section with downloadable rules
+- Interactive 437-year timeline
+- 9 faction profiles with lore and relationships
+- SCP-style wiki with experimental lore
+- Card database (56 cards, searchable)
 
 ---
 
@@ -325,28 +308,22 @@ You are free to share and adapt this material for non-commercial purposes with a
 ## Changelog
 
 ### v1.0 Playtest (2025-10-10)
-- ✅ Complete playtest package (64 pages)
-- ✅ 2 complete faction decks (Church 30 cards, Dwarves 32 cards)
-- ✅ 2 playtest scenarios (Proving Grounds, Reliquary Ruins)
-- ✅ Example of Play (5-turn walkthrough)
-- ✅ GKR + KDM hybrid combat system
-- ✅ Component destruction mechanics
-- ✅ Death spiral (Damage cards on reshuffle)
-- ✅ Quick reference sheet
-- ✅ Website with playtest section
+**PLAYTEST READY** - Complete game systems ready for table play
+- 64-page playtest package with 2 factions, 2 scenarios
+- GKR + KDM hybrid combat (deck-as-HP, component destruction, death spiral)
+- Church vs Dwarves asymmetric faction decks
+- Example of Play walkthrough
+- Interactive website with playtest downloads
 
 ### v0.5 Design Phase (2025-10-09)
-- 437-year timeline expansion
+- 437-year world timeline with 9 factions
 - 36 asymmetric Casket types
-- Puppeteer capsule control system
-- Leg-skimming progression system
-- Boss encounter HP deck system
-- Campaign mechanics (settlements, scars, loot)
+- Puppeteer capsule + leg-skimming progression systems
+- Campaign mechanics and boss encounter system
 
 ### v0.1 Concept (2025-10-08)
-- Initial world-building
-- 9 faction design
-- Core mechanics ideation
+- Initial world-building and faction design
+- Core deck-as-HP mechanics ideation
 
 ---
 
