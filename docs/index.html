@@ -180,9 +180,15 @@
 
         /* Chronicle section: tall for scroll distance */
         #chronicle {
-            min-height: 500vh;
+            min-height: 300vh;
             padding: 0;
             position: relative;
+            background: var(--dark-gray);
+        }
+
+        #chronicle .section-content {
+            max-width: 100%;
+            padding: 0;
         }
 
         /* Sticky header */
@@ -194,20 +200,23 @@
             padding: 2rem 4rem 1rem;
             margin: 0;
             border-bottom: 3px solid var(--white);
+            font-size: clamp(2rem, 5vw, 4rem);
         }
 
         #chronicle .section-intro {
             padding: 2rem 4rem 4rem;
             margin: 0;
             background: var(--dark-gray);
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--light-gray);
         }
 
         /* Timeline container: sticky, holds everything */
         .timeline-container {
             position: sticky;
-            top: 150px;
+            top: 180px;
             width: 100%;
-            height: 80vh;
+            height: 75vh;
             overflow: hidden;
             background: var(--dark-gray);
         }
@@ -1636,15 +1645,21 @@
                 const sectionHeight = section.offsetHeight;
                 const viewportHeight = window.innerHeight;
 
-                // Not reached yet
-                if (sectionTop > 200) {
+                // Section not at top yet - stay at start
+                if (sectionTop > 60) {
                     track.style.transform = 'translateX(0)';
                     items.forEach(item => item.classList.remove('expanded'));
                     return;
                 }
 
+                // Section scrolled past
+                if (sectionTop + sectionHeight < 0) return;
+
                 // Calculate scroll progress (0 to 1)
-                const progress = Math.max(0, Math.min(1, -sectionTop / (sectionHeight - viewportHeight)));
+                // Start from when header hits top (60px)
+                const scrolled = Math.max(0, 60 - sectionTop);
+                const totalScroll = sectionHeight - viewportHeight - 60;
+                const progress = Math.max(0, Math.min(1, scrolled / totalScroll));
 
                 // Calculate total track width
                 const trackWidth = track.scrollWidth;
@@ -1661,7 +1676,7 @@
                     const itemCenter = box.left + box.width / 2;
                     const distance = Math.abs(itemCenter - centerX);
 
-                    if (distance < viewportWidth * 0.3) {
+                    if (distance < viewportWidth * 0.35) {
                         item.classList.add('expanded');
                     } else {
                         item.classList.remove('expanded');
