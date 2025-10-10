@@ -104,62 +104,167 @@
             }
         }
 
-        /* Hero Section */
+        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 1px solid var(--medium-gray);
-            position: relative;
+            border-bottom: 3px solid var(--white);
+            background: var(--black);
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             padding: 2rem;
+            text-align: center;
         }
 
-        .hero h1 {
-            font-size: clamp(3rem, 10vw, 8rem);
+        .hero-title {
+            font-size: clamp(4rem, 12vw, 10rem);
             line-height: 0.9;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--blood-red);
+            font-weight: 700;
+            letter-spacing: 0.15em;
             margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--light-gray);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 1.25rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border: 3px solid var(--white);
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .cta-primary {
+            background: var(--blood-red);
             color: var(--white);
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            color: var(--light-gray);
-            font-weight: 400;
-            margin-bottom: 3rem;
-            border-left: 4px solid var(--blood-red);
-            padding-left: 2rem;
+        .cta-primary:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--white);
+        }
+
+        .cta-secondary:hover {
+            background: var(--white);
+            color: var(--black);
         }
 
         .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            display: flex;
             gap: 2rem;
-            margin-top: 4rem;
+            justify-content: center;
+            align-items: center;
+            border-top: 2px solid var(--medium-gray);
+            padding-top: 2rem;
+            flex-wrap: wrap;
         }
 
-        .stat {
-            border-top: 2px solid var(--accent);
-            padding-top: 1rem;
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--accent);
-            line-height: 1;
         }
 
         .stat-label {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             color: var(--light-gray);
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin-top: 0.5rem;
+        }
+
+        .stat-divider {
+            color: var(--medium-gray);
+            font-size: 2rem;
+        }
+
+        /* ===== WHY PLAY SECTION ===== */
+        .section-content-wide {
+            max-width: 1400px;
+            width: 100%;
+            padding: 4rem 2rem;
+        }
+
+        .section-header-center {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: 4rem;
+            border-bottom: 3px solid var(--white);
+            padding-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-card {
+            border: 3px solid var(--medium-gray);
+            padding: 2.5rem;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--blood-red);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+        }
+
+        .feature-desc {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--light-gray);
         }
 
         /* Section Layout */
@@ -794,6 +899,81 @@
         .section-header.visible::after {
             width: 100%;
         }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--black);
+            border-top: 3px solid var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-desc {
+            color: var(--blood-red);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-tagline {
+            color: var(--light-gray);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .footer-heading {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .footer-link:hover {
+            color: var(--white);
+            border-bottom-color: var(--blood-red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--medium-gray);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: var(--light-gray);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
     </style>
 </head>
 <body>
@@ -811,28 +991,65 @@
     </nav>
 
     <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>PENANCE</h1>
-            <p class="hero-subtitle">Absolution Through Steel. Redemption Through Violence.</p>
-            <p class="hero-subtitle">A tactical skirmish game where the dead pilot war machines called Caskets across a shattered world, seeking forgiveness they will never find.</p>
+            <h1 class="hero-title">PENANCE</h1>
+            <p class="hero-tagline">ABSOLUTION THROUGH STEEL</p>
+            <p class="hero-description">Four centuries after the end, the dead still walk. Bound to iron shells. Seeking redemption through violence.</p>
+
+            <div class="hero-cta">
+                <a href="reference/PLAYTEST-READY.md" class="cta-primary">DOWNLOAD PLAYTEST PACKAGE</a>
+                <a href="#chronicle" class="cta-secondary">EXPLORE THE CHRONICLE</a>
+            </div>
 
             <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number" style="color: var(--blood-red);">READY</div>
-                    <div class="stat-label">Playtest Status</div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Complete Factions</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">Complete Factions</div>
+                <div class="stat-divider">|</div>
+                <div class="stat-item">
+                    <span class="stat-number">64</span>
+                    <span class="stat-label">Page Rulebook</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">437</div>
-                    <div class="stat-label">Years Since Sundering</div>
+                <div class="stat-divider">|</div>
+                <div class="stat-item">
+                    <span class="stat-number">437</span>
+                    <span class="stat-label">Years of Lore</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">Playtest Scenarios</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY PLAY SECTION -->
+    <section class="section section-dark" id="why-play">
+        <div class="section-content-wide">
+            <h2 class="section-header-center">WHY PLAY PENANCE?</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3 class="feature-title">BRUTAL TACTICAL COMBAT</h3>
+                    <p class="feature-desc">Deck-as-HP system. Component destruction. Death spirals. Kingdom Death: Monster-style brutality meets GKR: Heavy Hitters elegance.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">ASYMMETRIC FACTIONS</h3>
+                    <p class="feature-desc">Church martyrs who self-harm for power. Dwarven engineers with rune counters. Undead necromancers. 9 unique playstyles.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🦴</div>
+                    <h3 class="feature-title">BODY HORROR MECHS</h3>
+                    <p class="feature-desc">Pilot your own corpse in a Casket war machine. Sacrifice limbs for power. Permanent consequences. The Puppeteer Interface connects your threads to dead flesh.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3 class="feature-title">437 YEARS OF LORE</h3>
+                    <p class="feature-desc">Post-apocalyptic world built on the ruins of a failed immortality experiment. Deep narrative campaign with settlements, pilot scars, and faction politics.</p>
                 </div>
             </div>
         </div>
@@ -973,7 +1190,7 @@
                         <div class="timeline-year">YEAR 314</div>
                         <div class="timeline-content">
                             <h3>The Silent Massacre</h3>
-                            <p>From the Undead Court archives:</p>
+                            <p>From the The Ossuarium archives:</p>
                             <p>"The Fae do not negotiate. They do not declare war. They simply appear, and settlements die. Greymoor lost 300 Remnants in one night. No bodies. No scrap. Just empty Caskets arranged in a perfect circle. In the center, a single flower, still blooming. Bonelord Thresh investigated personally. He found no evidence of Fae involvement. The flower, however, whispered his true name."</p>
                         </div>
                     </div>
@@ -1066,7 +1283,7 @@
                 <div class="npc-card">
                     <div class="npc-name">BONELORD THRESH</div>
                     <div class="npc-title">The Collector</div>
-                    <div class="npc-faction">Undead Court</div>
+                    <div class="npc-faction">The Ossuarium</div>
                     <p class="npc-description">Death is a science. Thresh has been studying for 80 years. Collects the skulls of worthy opponents. Speaks to them. They answer. Commands an army of reanimated Caskets piloted by consciousnesses he's rebound to service. Polite, methodical, utterly merciless.</p>
                     <p class="npc-description">Pilots "The Ossuary" - a medium Casket built entirely from the bones of other Remnants.</p>
                 </div>
@@ -1074,7 +1291,7 @@
                 <div class="npc-card">
                     <div class="npc-name">MOCKINGBIRD</div>
                     <div class="npc-title">The Laughing Shade</div>
-                    <div class="npc-faction">Fae Courts</div>
+                    <div class="npc-faction">The Wyrd Conclave</div>
                     <p class="npc-description">Died as a human. Woke as something else. The Fae claimed her because she amused them. Now she's the joke and the punchline. Steals faces, voices, memories. You'll never see her coming. You'll always know when she's been there. The laughter echoes for days.</p>
                     <p class="npc-description">Pilots "The Mummer's Waltz" - a light Casket that changes appearance. What it looked like yesterday is gone.</p>
                 </div>
@@ -1106,11 +1323,11 @@
                                 <span class="relationship-status cold">COLD</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-name">The Ossuarium</span>
                                 <span class="relationship-status hostile">HOSTILE</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-name">The Wyrd Conclave</span>
                                 <span class="relationship-status war">WAR</span>
                             </div>
                             <div class="relationship">
@@ -1142,11 +1359,11 @@
                                 <span class="relationship-status neutral">NEUTRAL</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-name">The Ossuarium</span>
                                 <span class="relationship-status cold">COLD</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-name">The Wyrd Conclave</span>
                                 <span class="relationship-status hostile">HOSTILE</span>
                             </div>
                             <div class="relationship">
@@ -1178,11 +1395,11 @@
                                 <span class="relationship-status neutral">NEUTRAL</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-name">The Ossuarium</span>
                                 <span class="relationship-status cordial">CORDIAL</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-name">The Wyrd Conclave</span>
                                 <span class="relationship-status hostile">HOSTILE</span>
                             </div>
                             <div class="relationship">
@@ -1218,7 +1435,7 @@
                                 <span class="relationship-status cordial">CORDIAL</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-name">The Wyrd Conclave</span>
                                 <span class="relationship-status war">WAR</span>
                             </div>
                             <div class="relationship">
@@ -1254,7 +1471,7 @@
                                 <span class="relationship-status hostile">HOSTILE</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-name">The Ossuarium</span>
                                 <span class="relationship-status war">WAR</span>
                             </div>
                             <div class="relationship">
@@ -1290,11 +1507,11 @@
                                 <span class="relationship-status friendly">FRIENDLY</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-name">The Ossuarium</span>
                                 <span class="relationship-status neutral">NEUTRAL</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-name">The Wyrd Conclave</span>
                                 <span class="relationship-status neutral">NEUTRAL</span>
                             </div>
                             <div class="relationship">
@@ -1326,11 +1543,11 @@
                                 <span class="relationship-status allied">ALLIED</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-name">The Ossuarium</span>
                                 <span class="relationship-status cold">COLD</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-name">The Wyrd Conclave</span>
                                 <span class="relationship-status cordial">CORDIAL</span>
                             </div>
                             <div class="relationship">
@@ -1370,11 +1587,11 @@
                                 <span class="relationship-status cold">COLD</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-name">The Ossuarium</span>
                                 <span class="relationship-status neutral">NEUTRAL</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-name">The Wyrd Conclave</span>
                                 <span class="relationship-status cordial">CORDIAL</span>
                             </div>
                             <div class="relationship">
@@ -1414,11 +1631,11 @@
                                 <span class="relationship-status hostile">HOSTILE</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-name">The Ossuarium</span>
                                 <span class="relationship-status cordial">CORDIAL</span>
                             </div>
                             <div class="relationship">
-                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-name">The Wyrd Conclave</span>
                                 <span class="relationship-status neutral">NEUTRAL</span>
                             </div>
                             <div class="relationship">
@@ -1740,5 +1957,47 @@
             });
         });
     </script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">PENANCE</h3>
+                <p class="footer-desc">Absolution Through Steel</p>
+                <p class="footer-tagline">A tactical card-driven mech combat game where the dead seek redemption in iron shells.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">RESOURCES</h4>
+                <ul class="footer-links">
+                    <li><a href="reference/PLAYTEST-READY.md" class="footer-link">Playtest Package</a></li>
+                    <li><a href="wiki/index.html" class="footer-link">Wiki</a></li>
+                    <li><a href="cards/index.html" class="footer-link">Card Database</a></li>
+                    <li><a href="reference/design-roadmap.md" class="footer-link">Roadmap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">COMMUNITY</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/KeeberGoblin/penance" class="footer-link" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://github.com/KeeberGoblin/penance/issues" class="footer-link" target="_blank">Report Issues</a></li>
+                    <li><a href="https://github.com/KeeberGoblin/penance/discussions" class="footer-link" target="_blank">Discussions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">LEGAL</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/KeeberGoblin/penance/blob/main/LICENSE" class="footer-link" target="_blank">MIT License</a></li>
+                    <li><a href="https://github.com/KeeberGoblin" class="footer-link" target="_blank">Created by KeeberGoblin</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>PENANCE © 2025 | Open Source Tabletop Game | Built with brutalist conviction</p>
+        </div>
+    </footer>
 </body>
 </html>
