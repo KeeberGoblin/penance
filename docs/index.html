@@ -176,9 +176,163 @@
             background: var(--dark-gray);
         }
 
-        /* Chronicle Section - Extra tall for horizontal scrolling */
+        /* Chronicle Section - Like Factions with sticky header */
         #chronicle {
-            min-height: 300vh;
+            min-height: 100vh;
+            display: block;
+            padding: 0;
+        }
+
+        #chronicle .section-content {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+        }
+
+        #chronicle .section-header {
+            position: sticky;
+            top: 60px;
+            background: var(--dark-gray);
+            z-index: 100;
+            font-size: clamp(2rem, 5vw, 4rem);
+            padding: 2rem 4rem 1rem 4rem;
+            margin: 0;
+            border-bottom: 3px solid var(--white);
+        }
+
+        #chronicle .section-intro {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--light-gray);
+            padding: 2rem 4rem 4rem 4rem;
+            margin: 0;
+            max-width: 100%;
+            background: var(--dark-gray);
+        }
+
+        /* Horizontal Scrolling Timeline */
+        .timeline-container {
+            position: relative;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 6rem 0;
+            background: var(--dark-gray);
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .timeline-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .timeline-container::-webkit-scrollbar-track {
+            background: var(--medium-gray);
+        }
+
+        .timeline-container::-webkit-scrollbar-thumb {
+            background: var(--blood-red);
+            border-radius: 4px;
+        }
+
+        .timeline-track {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 0 4rem;
+            position: relative;
+            width: max-content;
+        }
+
+        /* Timeline Rail - continuous line with markers */
+        .timeline-rail {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--medium-gray);
+            transform: translateY(-50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Small decade markers (|) */
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 2px;
+            height: 40px;
+            background: var(--light-gray);
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-marker.small {
+            height: 20px;
+            opacity: 0.5;
+        }
+
+        /* Year milestone cards - expand when in view */
+        .timeline-item {
+            flex-shrink: 0;
+            width: 700px;
+            background: var(--black);
+            border: 2px solid var(--blood-red);
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(139, 0, 0, 0.3);
+        }
+
+        .timeline-year {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--blood-red);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* YEAR 0 Background Image */
+        .timeline-item[data-year="0"] {
+            background-image: url('year0.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .timeline-item[data-year="0"]::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+
+        .timeline-item[data-year="0"] .timeline-year,
+        .timeline-item[data-year="0"] .timeline-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            border-bottom: 2px solid var(--blood-red);
+            padding-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
         .section-content {
@@ -198,154 +352,6 @@
             color: var(--light-gray);
             margin-bottom: 4rem;
             max-width: 800px;
-        }
-
-        /* Horizontal Scrolling Timeline */
-        .timeline-container {
-            position: sticky;
-            top: 100px;
-            width: 100%;
-            overflow: hidden;
-            padding: 4rem 0;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .timeline-track {
-            display: flex;
-            align-items: center;
-            gap: 8rem;
-            transition: transform 0.1s ease-out;
-            will-change: transform;
-            padding: 0 2rem;
-            position: relative;
-        }
-
-        .timeline-rail {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--medium-gray);
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-
-        .timeline-marker {
-            position: absolute;
-            top: 50%;
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-marker.active {
-            width: 20px;
-            height: 20px;
-            background: var(--blood-red);
-            box-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
-        }
-
-        .timeline-item {
-            min-width: 600px;
-            max-width: 600px;
-            flex-shrink: 0;
-            background: var(--dark-gray);
-            border: 2px solid var(--medium-gray);
-            padding: 2rem;
-            opacity: 0.3;
-            transition: all 0.5s ease;
-            position: relative;
-        }
-
-        .timeline-item.active {
-            opacity: 1;
-            border-color: var(--accent);
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .timeline-item.past {
-            opacity: 0.15;
-        }
-
-        .timeline-year {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .timeline-item.active .timeline-year {
-            color: var(--blood-red);
-        }
-
-        /* YEAR 0 Background Image */
-        .timeline-item:first-child {
-            background-image: url('year0.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-
-        .timeline-item:first-child::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 0;
-        }
-
-        .timeline-item:first-child .timeline-year,
-        .timeline-item:first-child .timeline-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-            border-bottom: 2px solid var(--medium-gray);
-            padding-bottom: 0.5rem;
-        }
-
-        .timeline-content p {
-            color: var(--light-gray);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        /* Decade Markers (|) */
-        .decade-marker {
-            position: absolute;
-            top: 50%;
-            width: 2px;
-            height: 30px;
-            background: var(--light-gray);
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
-        .decade-marker::after {
-            content: attr(data-year);
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.75rem;
-            color: var(--light-gray);
-            white-space: nowrap;
         }
 
         /* NPCs Grid */
@@ -863,7 +869,7 @@
             <div class="timeline-container">
                 <div class="timeline-rail"></div>
                 <div class="timeline-track">
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-year="0">
                         <div class="timeline-year">YEAR 0</div>
                         <div class="timeline-content">
                             <h3>The Final Transmission</h3>
@@ -872,7 +878,11 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+
+                    <div class="timeline-item" data-year="3">
                         <div class="timeline-year">YEAR 3</div>
                         <div class="timeline-content">
                             <h3>The First Casket</h3>
@@ -882,7 +892,19 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+
+                    <div class="timeline-item" data-year="47">
                         <div class="timeline-year">YEAR 47</div>
                         <div class="timeline-content">
                             <h3>The Church Manifesto</h3>
@@ -891,8 +913,13 @@
                             <p>The Church's ideology spread rapidly among the Remnants. Within a generation, they controlled three major city-states and declared Absolution their divine mandate.</p>
                         </div>
                     </div>
-
-                    <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+<div class="timeline-item">
                         <div class="timeline-year">YEAR 89</div>
                         <div class="timeline-content">
                             <h3>The Taint Plague</h3>
@@ -909,8 +936,13 @@
                             <p>"The Church split today. Not over theology, but methodology. Cardinal Vross proclaimed that only human Remnants deserve salvation. Archbishop Kael argued that all who suffer can be redeemed. The vote was close. Vross won. By morning, half the Church had seceded, forming the Covenant of Broken Chains. They welcomed the elves, the mutants, the forgotten. The Church Militant declared them heretics. The civil war lasted 80 years."</p>
                         </div>
                     </div>
-
-                    <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+<div class="timeline-item">
                         <div class="timeline-year">YEAR 197</div>
                         <div class="timeline-content">
                             <h3>The Forge-Titan Awakens</h3>
@@ -928,8 +960,13 @@
                             <p>The Church-Elf war began that winter. 214 years later, it has not ended.</p>
                         </div>
                     </div>
-
-                    <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+<div class="timeline-item">
                         <div class="timeline-year">YEAR 271</div>
                         <div class="timeline-content">
                             <h3>The Merchant Ascendancy</h3>
@@ -948,8 +985,13 @@
                             <p>No one from the expedition returned. Their Caskets were found three weeks later, wandering in circles, empty. One had carved a message into its own chassis: "HE REMEMBERS OUR NAMES."</p>
                         </div>
                     </div>
-
-                    <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+<div class="timeline-item">
                         <div class="timeline-year">YEAR 314</div>
                         <div class="timeline-content">
                             <h3>The Silent Massacre</h3>
@@ -966,8 +1008,13 @@
                             <p>"We didn't ask to be born this way. Chimeric. Cursed. Half-human, half-beast. The Church hunts us. The Elves exile us. The Dwarves dissect us. So we left. All of us. Ten thousand Blighted, walking into the Wastes. Half died in the first month. The survivors adapted. Mutated further. Became something new. We are not human anymore. We are not Abominations. We are the Packs. And we will no longer beg for acceptance."</p>
                         </div>
                     </div>
-
-                    <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+<div class="timeline-item">
                         <div class="timeline-year">YEAR 381</div>
                         <div class="timeline-content">
                             <h3>The Sibarian Metamorphosis</h3>
@@ -986,8 +1033,13 @@
                             <p>The recommendation was ignored. There is nowhere left to evacuate to.</p>
                         </div>
                     </div>
-
-                    <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker small"></div>
+                    <div class="timeline-marker small"></div>
+<div class="timeline-item">
                         <div class="timeline-year">YEAR 437</div>
                         <div class="timeline-content">
                             <h3>Present Day</h3>
@@ -1583,63 +1635,10 @@
             });
         }, observerOptions);
 
-        // Horizontal Scrolling Timeline
-        function initializeTimeline() {
-            const chronicleSection = document.getElementById('chronicle');
-            const timelineTrack = document.querySelector('.timeline-track');
-            const timelineItems = document.querySelectorAll('.timeline-item');
-
-            if (!chronicleSection || !timelineTrack || timelineItems.length === 0) return;
-
-            // Set initial state
-            timelineItems[0].classList.add('active');
-
-            window.addEventListener('scroll', () => {
-                const sectionRect = chronicleSection.getBoundingClientRect();
-                const sectionTop = sectionRect.top;
-                const sectionHeight = chronicleSection.offsetHeight;
-                const windowHeight = window.innerHeight;
-
-                // Only start scrolling when the section header has passed
-                // This gives a grace period before the timeline starts moving
-                const startOffset = windowHeight * 0.3; // Start when section is 30% into view
-                const scrollStart = Math.max(0, -sectionTop - startOffset);
-                const scrollRange = sectionHeight - windowHeight - startOffset;
-
-                let scrollProgress = scrollRange > 0 ? scrollStart / scrollRange : 0;
-                scrollProgress = Math.max(0, Math.min(1, scrollProgress));
-
-                // Calculate actual timeline width (each item is 600px + 128px gap)
-                const itemWidth = 600;
-                const gapWidth = 128; // 8rem = 128px
-                const totalTrackWidth = (timelineItems.length * itemWidth) + ((timelineItems.length - 1) * gapWidth);
-
-                // Pan timeline horizontally based on scroll progress
-                const maxPan = -(totalTrackWidth - window.innerWidth + 200);
-                const panOffset = scrollProgress * maxPan;
-                timelineTrack.style.transform = `translateX(${panOffset}px)`;
-
-                // Activate timeline items based on scroll progress
-                const itemsPerSegment = 1 / timelineItems.length;
-                timelineItems.forEach((item, index) => {
-                    const itemStart = index * itemsPerSegment;
-                    const itemEnd = (index + 1) * itemsPerSegment;
-
-                    item.classList.remove('active', 'past');
-
-                    if (scrollProgress >= itemStart && scrollProgress < itemEnd) {
-                        item.classList.add('active');
-                    } else if (scrollProgress >= itemEnd) {
-                        item.classList.add('past');
-                    }
-                });
-            });
-        }
+        // Timeline now uses native horizontal scroll - no JavaScript needed!
 
         // Apply fade-in animation to other elements
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize horizontal timeline
-            initializeTimeline();
 
             // NPC cards
             const npcCards = document.querySelectorAll('.npc-card');
