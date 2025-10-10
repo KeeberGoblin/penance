@@ -176,12 +176,13 @@
             background: var(--dark-gray);
         }
 
-        /* Chronicle Section - Like Factions with sticky header */
+        /* Chronicle Section - Tall section for scroll-based panning */
         #chronicle {
-            min-height: auto;
+            min-height: 400vh;
             display: block;
             padding: 0;
             align-items: flex-start;
+            position: relative;
         }
 
         #chronicle .section-content {
@@ -210,30 +211,17 @@
             background: var(--dark-gray);
         }
 
-        /* Horizontal Scrolling Timeline - Full Screen Cards */
+        /* Horizontal Scrolling Timeline - Sticky Container */
         .timeline-container {
-            position: relative;
+            position: sticky;
+            top: 60px;
             width: 100%;
             height: 90vh;
-            overflow-x: auto;
-            overflow-y: hidden;
+            overflow: hidden;
             background: var(--dark-gray);
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x mandatory;
-        }
-
-        .timeline-container::-webkit-scrollbar {
-            height: 12px;
-        }
-
-        .timeline-container::-webkit-scrollbar-track {
-            background: var(--medium-gray);
-        }
-
-        .timeline-container::-webkit-scrollbar-thumb {
-            background: var(--blood-red);
-            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .timeline-track {
@@ -243,8 +231,9 @@
             gap: 0;
             height: 100%;
             width: max-content;
-            padding: 0 5vw;
             position: relative;
+            transition: transform 0.1s ease-out;
+            will-change: transform;
         }
 
         /* Timeline Rail - horizontal continuous line */
@@ -280,7 +269,7 @@
         /* Year milestone cards - near full screen */
         .timeline-item {
             flex-shrink: 0;
-            width: 85vw;
+            width: 90vw;
             height: 80vh;
             background: var(--black);
             border: 3px solid var(--blood-red);
@@ -290,8 +279,14 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            scroll-snap-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            opacity: 0.3;
+        }
+
+        .timeline-item.active {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 20px 60px rgba(139, 0, 0, 0.5);
         }
 
         .timeline-item:hover {
@@ -1651,10 +1646,76 @@
             });
         }, observerOptions);
 
-        // Horizontal timeline uses native scroll-snap - no JavaScript needed!
+        // Horizontal Timeline - Page scroll controls horizontal panning
+        function initializeTimeline() {
+            const chronicleSection = document.getElementById('chronicle');
+            const timelineTrack = document.querySelector('.timeline-track');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            if (!chronicleSection || !timelineTrack || timelineItems.length === 0) return;
+
+            window.addEventListener('scroll', () => {
+                const sectionRect = chronicleSection.getBoundingClientRect();
+                const sectionTop = sectionRect.top;
+                const sectionHeight = chronicleSection.offsetHeight;
+                const windowHeight = window.innerHeight;
+
+                // Only pan when chronicle section is in view
+                if (sectionTop > windowHeight || sectionTop + sectionHeight < 0) return;
+
+                // Calculate scroll progress through the section (0 to 1)
+                const scrollStart = Math.max(0, -sectionTop);
+                const scrollRange = sectionHeight - windowHeight;
+                let scrollProgress = scrollRange > 0 ? scrollStart / scrollRange : 0;
+                scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+
+                // Calculate total width of timeline
+                const itemWidth = timelineItems[0].offsetWidth;
+                const markerElements = document.querySelectorAll('.timeline-marker');
+                const totalMarkerWidth = Array.from(markerElements).reduce((sum, marker) => {
+                    return sum + marker.offsetWidth + parseFloat(getComputedStyle(marker).marginLeft) + parseFloat(getComputedStyle(marker).marginRight);
+                }, 0);
+
+                const totalWidth = (itemWidth * timelineItems.length) + totalMarkerWidth;
+
+                // Pan timeline horizontally
+                const maxPan = -(totalWidth - window.innerWidth);
+                const panOffset = scrollProgress * maxPan;
+                timelineTrack.style.transform = `translateX(${panOffset}px)`;
+
+                // Highlight active card (the one most centered)
+                const centerPosition = -panOffset + (window.innerWidth / 2);
+                let currentPosition = 0;
+
+                timelineItems.forEach((item, index) => {
+                    const itemStart = currentPosition;
+                    const itemEnd = currentPosition + itemWidth;
+                    const itemCenter = (itemStart + itemEnd) / 2;
+
+                    // Check if this item is closest to center
+                    if (Math.abs(itemCenter - centerPosition) < itemWidth / 2) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+
+                    currentPosition = itemEnd;
+                    // Add marker widths
+                    if (index < timelineItems.length - 1) {
+                        currentPosition += 200; // Approximate marker spacing
+                    }
+                });
+            });
+
+            // Initial state
+            timelineItems[0]?.classList.add('active');
+        }
 
         // Apply fade-in animation to other elements
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize timeline
+            initializeTimeline();
+
             // NPC cards
             const npcCards = document.querySelectorAll('.npc-card');
             npcCards.forEach(card => {
