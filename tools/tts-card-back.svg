@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="750" height="1050" viewBox="0 0 750 1050" xmlns="http://www.w3.org/2000/svg">
+  <!-- PENANCE: Card Back Design -->
+
+  <defs>
+    <style>
+      .card-bg { fill: #000000; }
+      .border-outer { fill: none; stroke: #8b0000; stroke-width: 6; }
+      .border-inner { fill: none; stroke: #d4af37; stroke-width: 3; }
+      .text-title { fill: #ffffff; font-family: 'Courier New', monospace; font-size: 56px; font-weight: bold; text-transform: uppercase; letter-spacing: 4px; }
+      .text-subtitle { fill: #8b0000; font-family: 'Courier New', monospace; font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+      .pattern-line { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+    </style>
+
+    <!-- Geometric Pattern -->
+    <pattern id="brutalistPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="#000000"/>
+      <line x1="0" y1="0" x2="80" y2="80" class="pattern-line"/>
+      <line x1="80" y1="0" x2="0" y2="80" class="pattern-line"/>
+      <line x1="40" y1="0" x2="40" y2="80" class="pattern-line"/>
+      <line x1="0" y1="40" x2="80" y2="40" class="pattern-line"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect class="card-bg" width="750" height="1050"/>
+
+  <!-- Geometric Pattern Background -->
+  <rect x="0" y="0" width="750" height="1050" fill="url(#brutalistPattern)" opacity="0.3"/>
+
+  <!-- Outer Border -->
+  <rect class="border-outer" x="15" y="15" width="720" height="1020"/>
+
+  <!-- Inner Border -->
+  <rect class="border-inner" x="40" y="40" width="670" height="970"/>
+
+  <!-- Central Emblem Area -->
+  <rect x="200" y="300" width="350" height="450" fill="#1a1a1a" stroke="#8b0000" stroke-width="4"/>
+
+  <!-- Title -->
+  <text class="text-title" x="375" y="400" text-anchor="middle">PENANCE</text>
+
+  <!-- Divider Line -->
+  <line x1="220" y1="430" x2="530" y2="430" stroke="#d4af37" stroke-width="3"/>
+
+  <!-- Subtitle -->
+  <text class="text-subtitle" x="375" y="490" text-anchor="middle">ABSOLUTION</text>
+  <text class="text-subtitle" x="375" y="530" text-anchor="middle">THROUGH</text>
+  <text class="text-subtitle" x="375" y="570" text-anchor="middle">STEEL</text>
+
+  <!-- Decorative Corner Elements -->
+  <!-- Top Left -->
+  <line x1="40" y1="80" x2="120" y2="80" stroke="#d4af37" stroke-width="4"/>
+  <line x1="80" y1="40" x2="80" y2="120" stroke="#d4af37" stroke-width="4"/>
+
+  <!-- Top Right -->
+  <line x1="630" y1="80" x2="710" y2="80" stroke="#d4af37" stroke-width="4"/>
+  <line x1="670" y1="40" x2="670" y2="120" stroke="#d4af37" stroke-width="4"/>
+
+  <!-- Bottom Left -->
+  <line x1="40" y1="970" x2="120" y2="970" stroke="#d4af37" stroke-width="4"/>
+  <line x1="80" y1="930" x2="80" y2="1010" stroke="#d4af37" stroke-width="4"/>
+
+  <!-- Bottom Right -->
+  <line x1="630" y1="970" x2="710" y2="970" stroke="#d4af37" stroke-width="4"/>
+  <line x1="670" y1="930" x2="670" y2="1010" stroke="#d4af37" stroke-width="4"/>
+
+  <!-- Quote at Bottom -->
+  <text x="375" y="850" text-anchor="middle" style="fill: #666666; font-family: 'Courier New', monospace; font-size: 20px; font-style: italic;">"The deck is your life."</text>
+  <text x="375" y="880" text-anchor="middle" style="fill: #666666; font-family: 'Courier New', monospace; font-size: 20px; font-style: italic;">"When it's empty, so are you."</text>
+</svg>
