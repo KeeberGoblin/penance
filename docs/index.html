@@ -176,9 +176,9 @@
             background: var(--dark-gray);
         }
 
-        /* Chronicle Section - Natural height */
+        /* Chronicle Section - Tall for scroll-based panning */
         #chronicle {
-            min-height: auto;
+            min-height: 400vh;
             display: block;
             padding: 0;
             align-items: flex-start;
@@ -211,76 +211,81 @@
             background: var(--dark-gray);
         }
 
-        /* Vertical Scrolling Timeline */
+        /* Horizontal Timeline - Sticky with Expanding Cards */
         .timeline-container {
-            position: relative;
+            position: sticky;
+            top: 60px;
             width: 100%;
-            padding: 4rem 0;
+            height: 85vh;
+            overflow: hidden;
             background: var(--dark-gray);
             display: flex;
+            align-items: center;
             justify-content: center;
         }
 
         .timeline-track {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             gap: 0;
-            width: 100%;
-            max-width: 1000px;
+            height: 100%;
+            width: max-content;
             position: relative;
+            transition: transform 0.1s ease-out;
+            will-change: transform;
         }
 
-        /* Timeline Rail - vertical continuous line down center */
+        /* Timeline Rail - horizontal line */
         .timeline-rail {
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
             background: var(--medium-gray);
-            transform: translateX(-50%);
+            transform: translateY(-50%);
             pointer-events: none;
             z-index: 1;
         }
 
-        /* Decade markers (|) - horizontal lines on vertical rail */
+        /* Decade markers (|) - vertical bars on horizontal rail */
         .timeline-marker {
-            width: 60px;
-            height: 4px;
+            flex-shrink: 0;
+            width: 4px;
+            height: 50px;
             background: var(--light-gray);
             position: relative;
             z-index: 2;
-            margin: 3rem 0;
+            margin: 0 4rem;
         }
 
         .timeline-marker.small {
-            width: 30px;
+            height: 25px;
             opacity: 0.5;
-            margin: 1.5rem 0;
+            margin: 0 2rem;
         }
 
-        /* Year milestone cards - expand when scrolled into view */
+        /* Year cards - expand vertically when centered */
         .timeline-item {
-            width: 100%;
-            max-width: 900px;
+            flex-shrink: 0;
+            width: 80vw;
+            max-height: 0;
             background: var(--black);
             border: 3px solid var(--blood-red);
-            padding: 0;
+            padding: 0 3rem;
             position: relative;
             z-index: 10;
-            margin: 2rem 0;
-            max-height: 0;
-            opacity: 0;
             overflow: hidden;
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0.3;
         }
 
         .timeline-item.expanded {
-            max-height: 2000px;
-            opacity: 1;
+            max-height: 80vh;
             padding: 3rem;
-            box-shadow: 0 20px 60px rgba(139, 0, 0, 0.4);
+            opacity: 1;
+            box-shadow: 0 20px 60px rgba(139, 0, 0, 0.5);
         }
 
         .timeline-year {
@@ -1635,37 +1640,65 @@
             });
         }, observerOptions);
 
-        // Vertical Timeline - Expand cards when scrolled into view
+        // Horizontal Timeline with Expanding Cards
         function initializeTimeline() {
+            const chronicleSection = document.getElementById('chronicle');
+            const timelineTrack = document.querySelector('.timeline-track');
             const timelineItems = document.querySelectorAll('.timeline-item');
 
-            if (timelineItems.length === 0) return;
+            if (!chronicleSection || !timelineTrack || timelineItems.length === 0) return;
 
-            // Intersection Observer to detect when cards enter viewport
-            const observerOptions = {
-                root: null,
-                rootMargin: '-30% 0px -30% 0px', // Trigger when in middle 40% of viewport
-                threshold: [0, 0.3, 0.7, 1]
-            };
+            window.addEventListener('scroll', () => {
+                const sectionRect = chronicleSection.getBoundingClientRect();
+                const sectionTop = sectionRect.top;
+                const sectionHeight = chronicleSection.offsetHeight;
+                const windowHeight = window.innerHeight;
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
-                        // Card is in center of viewport - expand it
-                        entry.target.classList.add('expanded');
-                    } else if (entry.boundingClientRect.top < 0) {
-                        // Card has scrolled past top - collapse it
-                        entry.target.classList.remove('expanded');
+                // Keep timeline at start if section hasn't reached top
+                if (sectionTop > 0) {
+                    timelineTrack.style.transform = 'translateX(0px)';
+                    timelineItems.forEach(item => item.classList.remove('expanded'));
+                    return;
+                }
+
+                // Section has scrolled past
+                if (sectionTop + sectionHeight < 0) return;
+
+                // Calculate scroll progress
+                const scrollStart = Math.max(0, -sectionTop);
+                const scrollRange = sectionHeight - windowHeight;
+                let scrollProgress = scrollRange > 0 ? scrollStart / scrollRange : 0;
+                scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+
+                // Calculate timeline width
+                const itemWidth = timelineItems[0].offsetWidth;
+                const markerElements = document.querySelectorAll('.timeline-marker');
+                const totalMarkerWidth = Array.from(markerElements).reduce((sum, marker) => {
+                    const style = getComputedStyle(marker);
+                    return sum + marker.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+                }, 0);
+                const totalWidth = (itemWidth * timelineItems.length) + totalMarkerWidth;
+
+                // Pan timeline horizontally
+                const maxPan = -(totalWidth - window.innerWidth);
+                const panOffset = scrollProgress * maxPan;
+                timelineTrack.style.transform = `translateX(${panOffset}px)`;
+
+                // Determine which card is centered and expand it
+                const centerX = window.innerWidth / 2;
+
+                timelineItems.forEach((item, index) => {
+                    const itemRect = item.getBoundingClientRect();
+                    const itemCenterX = itemRect.left + (itemRect.width / 2);
+                    const distanceFromCenter = Math.abs(itemCenterX - centerX);
+
+                    // Expand card if it's near center (within 40% of screen width)
+                    if (distanceFromCenter < window.innerWidth * 0.4) {
+                        item.classList.add('expanded');
                     } else {
-                        // Card is below viewport - keep collapsed
-                        entry.target.classList.remove('expanded');
+                        item.classList.remove('expanded');
                     }
                 });
-            }, observerOptions);
-
-            // Observe all timeline items
-            timelineItems.forEach(item => {
-                observer.observe(item);
             });
         }
 
