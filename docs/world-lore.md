@@ -367,11 +367,11 @@ Near dragon lairs? They incorporate fossilized dragon essence.
 
 ## Next Steps for World-Building
 
-- [ ] Design 3-5 iconic NPC pilots (one per faction)
-- [ ] Create settlement mechanics (campaign base-building)
-- [ ] Detail the Resonance Engine's mechanics (can it be interacted with?)
-- [ ] Design faction relationship tracker (who hates who, why)
-- [ ] Write 10 historical "Chronicle" entries (world flavor)
+- [x] Design 3-5 iconic NPC pilots (one per faction) — **See [iconic-npcs.md](iconic-npcs.md)**
+- [x] Create settlement mechanics (campaign base-building) — **See [settlement-mechanics.md](settlement-mechanics.md)**
+- [x] Detail the Resonance Engine's mechanics (can it be interacted with?) — **See [resonance-engine-mechanics.md](resonance-engine-mechanics.md)**
+- [x] Design faction relationship tracker (who hates who, why) — **See [faction-relationships.md](faction-relationships.md)**
+- [x] Write 10 historical "Chronicle" entries (world flavor) — **See [chronicle-entries.md](chronicle-entries.md)**
 
 ---
 
