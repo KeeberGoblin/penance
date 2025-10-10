@@ -41,7 +41,13 @@ A tactical hex-based card game where players pilot massive armored suits called 
 
 ## Casket Weight Classes
 
-### Scout (500-800 lbs)
+**IMPORTANT**: The generic weight classes below are deprecated as of v1.0. See [faction-casket-types.md](faction-casket-types.md) for the new asymmetric faction-specific Casket system.
+
+The following sections are kept for reference during transition and playtesting.
+
+---
+
+### Scout (500-800 lbs) [DEPRECATED - See Faction Caskets]
 **Soul-Points**: 5 SP (Safe Zone)  
 **Movement Focus**: Speed & Evasion  
 **Deck Size**: 20-25 cards
