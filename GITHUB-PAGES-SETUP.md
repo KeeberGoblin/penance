@@ -3,44 +3,37 @@
 
 ---
 
-## Quick Setup (5 minutes)
+## ✅ SETUP COMPLETE!
 
-### Option 1: Use GitHub Pages (Recommended)
+Your interactive HTML compendium has been set up for GitHub Pages!
 
-**Step 1: Choose which HTML to use**
+**What was done:**
+- ✅ Created `/docs` folder
+- ✅ Copied your fancy interactive HTML as `docs/index.html`
+- ✅ Committed to git
 
-You have two versions:
-- `tools/card-generator/index.html` - Original version (functional)
-- `tools/card-generator/index-v2.html` - New fancy version (timeline, tiles, animations)
+---
 
-**To make the new version the default**, either:
-- **Option A**: Rename `index-v2.html` to `index.html` (overwrites old)
-- **Option B**: Keep both and link to `index-v2.html` specifically
+## Final Step: Enable GitHub Pages (2 minutes)
 
-**Step 2: Enable GitHub Pages**
+**Go to GitHub and enable Pages:**
 
-1. Go to your GitHub repository: `https://github.com/KeeberGoblin/penance`
+1. Visit: `https://github.com/KeeberGoblin/penance`
 2. Click **Settings** (top menu)
-3. Scroll down to **Pages** (left sidebar, under "Code and automation")
+3. Click **Pages** (left sidebar, under "Code and automation")
 4. Under "Build and deployment":
    - **Source**: Select "Deploy from a branch"
-   - **Branch**: Select `main` and `/ (root)` folder
+   - **Branch**: Select `main` and `/docs` folder ⚠️ **(Important: choose /docs, not root!)**
    - Click **Save**
 
 5. Wait 1-2 minutes for GitHub to build your site
 
-**Step 3: Access Your Live Site**
-
-Your site will be live at:
+**Your site will be live at:**
 ```
 https://keebrgoblin.github.io/penance/
 ```
 
-**To view the interactive HTML specifically**:
-```
-https://keebrgoblin.github.io/penance/tools/card-generator/index.html (old)
-https://keebrgoblin.github.io/penance/tools/card-generator/index-v2.html (new)
-```
+That's it! Your interactive compendium with timeline animations, card tiles, and faction visualizations will be live.
 
 ---
 
