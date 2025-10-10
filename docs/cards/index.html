@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENANCE: Card Database</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #333333;
+            --light-gray: #666666;
+            --blood-red: #8b0000;
+            --accent: #d4af37;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.4;
+        }
+
+        /* Header */
+        .header {
+            background: var(--black);
+            border-bottom: 2px solid var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .header-nav a {
+            color: var(--white);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+        }
+
+        .header-nav a:hover {
+            border-bottom-color: var(--blood-red);
+        }
+
+        /* Main Layout */
+        .container {
+            display: grid;
+            grid-template-columns: 300px 1fr 400px;
+            height: calc(100vh - 80px);
+        }
+
+        /* Filters Sidebar */
+        .filters {
+            background: var(--gray);
+            border-right: 2px solid var(--white);
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .filter-section {
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .filter-search {
+            width: 100%;
+            background: var(--black);
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 0.5rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+        }
+
+        .filter-checkbox {
+            display: block;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .filter-checkbox input {
+            margin-right: 0.5rem;
+        }
+
+        .filter-reset {
+            width: 100%;
+            background: var(--blood-red);
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 0.5rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .filter-reset:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* Card Grid */
+        .card-list {
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .card-count {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            color: var(--light-gray);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .card-item {
+            background: var(--gray);
+            border: 2px solid var(--light-gray);
+            padding: 1rem;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .card-item:hover {
+            border-color: var(--white);
+        }
+
+        .card-item.selected {
+            border-color: var(--accent);
+            background: #222;
+        }
+
+        .card-name {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-type {
+            font-size: 0.75rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-cost {
+            font-size: 0.875rem;
+            color: var(--accent);
+        }
+
+        /* Card Detail Panel */
+        .card-detail {
+            background: var(--gray);
+            border-left: 2px solid var(--white);
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .card-detail.empty {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-gray);
+            text-align: center;
+        }
+
+        .detail-header {
+            border-bottom: 2px solid var(--white);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-type {
+            font-size: 0.875rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .detail-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value {
+            font-size: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            background: var(--black);
+            border: 2px solid var(--light-gray);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+        }
+
+        .card-text {
+            background: var(--black);
+            border: 2px solid var(--light-gray);
+            padding: 1rem;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .card-quote {
+            font-style: italic;
+            color: var(--light-gray);
+            border-left: 3px solid var(--blood-red);
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--black);
+            border: 1px solid var(--light-gray);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 250px 1fr;
+            }
+
+            .card-detail {
+                position: fixed;
+                top: 80px;
+                right: -400px;
+                width: 400px;
+                height: calc(100vh - 80px);
+                transition: right 0.3s;
+                z-index: 99;
+            }
+
+            .card-detail.active {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                position: fixed;
+                left: -300px;
+                width: 300px;
+                height: calc(100vh - 80px);
+                transition: left 0.3s;
+                z-index: 99;
+            }
+
+            .filters.active {
+                left: 0;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-title">PENANCE: CARD DATABASE</div>
+        <div class="header-nav">
+            <a href="../index-v2.html">BACK TO SITE</a>
+            <a href="../wiki/">WIKI</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Filters Sidebar -->
+        <div class="filters">
+            <div class="filter-section">
+                <div class="filter-title">SEARCH</div>
+                <input type="text" class="filter-search" id="searchInput" placeholder="Search cards...">
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">TYPE</div>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="attack" class="type-filter"> ATTACK
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="defense" class="type-filter"> DEFENSE
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="movement" class="type-filter"> MOVEMENT
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="support" class="type-filter"> SUPPORT
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="utility" class="type-filter"> UTILITY
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">FACTION</div>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="universal" class="faction-filter"> UNIVERSAL
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="church" class="faction-filter"> CHURCH
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="elves" class="faction-filter"> ELVES
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="dwarves" class="faction-filter"> DWARVES
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="undead" class="faction-filter"> UNDEAD
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="fae" class="faction-filter"> FAE
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="nomads" class="faction-filter"> NOMADS
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="merchants" class="faction-filter"> MERCHANTS
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="blighted" class="faction-filter"> BLIGHTED
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="chitinous" class="faction-filter"> CHITINOUS
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">COST</div>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="0" class="cost-filter"> 0 SP
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="1" class="cost-filter"> 1 SP
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="2" class="cost-filter"> 2 SP
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="3" class="cost-filter"> 3 SP
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="4" class="cost-filter"> 4+ SP
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <button class="filter-reset" id="resetFilters">RESET FILTERS</button>
+            </div>
+        </div>
+
+        <!-- Card Grid -->
+        <div class="card-list">
+            <div class="card-count" id="cardCount">Loading cards...</div>
+            <div class="card-grid" id="cardGrid"></div>
+        </div>
+
+        <!-- Card Detail Panel -->
+        <div class="card-detail empty" id="cardDetail">
+            <p>SELECT A CARD TO VIEW DETAILS</p>
+        </div>
+    </div>
+
+    <script>
+        // Card Database
+        const cardDatabase = [
+            // Universal Movement Cards
+            {
+                id: 'desperate-lunge',
+                name: 'Desperate Lunge',
+                type: 'movement',
+                faction: 'universal',
+                cost: 1,
+                range: 'Self',
+                effect: 'Move up to 2 hexes in any direction. You may rotate once during movement.',
+                heat: '+1',
+                initiative: '[1]',
+                keywords: ['movement', 'basic'],
+                quote: 'Speed is survival.'
+            },
+            {
+                id: 'wardens-pivot',
+                name: "Warden's Pivot",
+                type: 'movement',
+                faction: 'universal',
+                cost: 0,
+                range: 'Self',
+                effect: 'Rotate to any facing (free action). This does not generate Heat.',
+                heat: '0',
+                initiative: '[2]',
+                keywords: ['movement', 'rotation', 'free'],
+                quote: 'Face your enemies.'
+            },
+            {
+                id: 'ironstriders-rush',
+                name: "Ironstrider's Rush",
+                type: 'movement',
+                faction: 'universal',
+                cost: 2,
+                range: 'Self',
+                effect: 'Move up to 3 hexes in a straight line. Ignore difficult terrain.',
+                heat: '+2',
+                initiative: '[1]',
+                keywords: ['movement', 'terrain'],
+                quote: 'Nothing stops iron.'
+            },
+            // Universal Defense Cards
+            {
+                id: 'unyielding-bulwark',
+                name: 'Unyielding Bulwark',
+                type: 'defense',
+                faction: 'universal',
+                cost: 0,
+                range: 'Self',
+                effect: 'Play when targeted by attack. Reduce damage by 2 (minimum 1). Discard after use.',
+                heat: '0',
+                initiative: '[—] Reactive',
+                keywords: ['defense', 'reactive', 'discard'],
+                quote: 'Stand firm.'
+            },
+            {
+                id: 'second-skin',
+                name: 'Second Skin',
+                type: 'defense',
+                faction: 'universal',
+                cost: 0,
+                range: 'Self',
+                effect: 'Play when targeted by attack. Reduce damage by 1. Discard after use.',
+                heat: '0',
+                initiative: '[—] Reactive',
+                keywords: ['defense', 'reactive', 'discard'],
+                quote: 'Armor saves lives.'
+            },
+            {
+                id: 'guardians-defiance',
+                name: "Guardian's Defiance",
+                type: 'defense',
+                faction: 'universal',
+                cost: 1,
+                range: 'Self',
+                effect: 'Gain +2 Defense until your next turn. You may use this with Reactive cards.',
+                heat: '0',
+                initiative: '[5]',
+                keywords: ['defense', 'buff'],
+                quote: 'I will not fall.'
+            },
+            // Universal Utility Cards
+            {
+                id: 'breathe-the-core',
+                name: 'Breathe the Core',
+                type: 'utility',
+                faction: 'universal',
+                cost: 2,
+                range: 'Self',
+                effect: 'Roll 1d3. Remove that much Heat from your Casket.',
+                heat: '-1d3',
+                initiative: '[3]',
+                keywords: ['utility', 'cooling'],
+                quote: 'Cool your engines.'
+            },
+            {
+                id: 'field-suture',
+                name: 'Field Suture',
+                type: 'utility',
+                faction: 'universal',
+                cost: 2,
+                range: 'Self',
+                effect: 'Remove 1 Damage card from your discard pile permanently.',
+                heat: '0',
+                initiative: '[4]',
+                keywords: ['utility', 'healing'],
+                quote: 'Patch and pray.'
+            },
+            {
+                id: 'souls-recall',
+                name: "Soul's Recall",
+                type: 'utility',
+                faction: 'universal',
+                cost: 1,
+                range: 'Self',
+                effect: 'Draw 2 cards from your deck.',
+                heat: '0',
+                initiative: '[2]',
+                keywords: ['utility', 'draw'],
+                quote: 'Remember what you can do.'
+            },
+            {
+                id: 'tattered-hope',
+                name: 'Tattered Hope',
+                type: 'utility',
+                faction: 'universal',
+                cost: 0,
+                range: 'Self',
+                effect: 'Discard your entire hand, then draw 3 cards.',
+                heat: '0',
+                initiative: '[—] Reactive',
+                keywords: ['utility', 'draw', 'discard'],
+                quote: 'Start over.'
+            },
+            // Attack Cards (Sample)
+            {
+                id: 'faithful-thrust',
+                name: 'Faithful Thrust',
+                type: 'attack',
+                faction: 'church',
+                cost: 2,
+                range: 'Melee',
+                damage: '4',
+                effect: 'Deal 4 damage to adjacent enemy. If attacking from rear: +2 damage.',
+                heat: '0',
+                initiative: '[3]',
+                keywords: ['attack', 'melee', 'longsword'],
+                quote: 'Through steel, salvation.'
+            },
+            {
+                id: 'righteous-cleave',
+                name: 'Righteous Cleave',
+                type: 'attack',
+                faction: 'church',
+                cost: 3,
+                range: 'Melee',
+                damage: '5',
+                effect: 'Deal 5 damage to adjacent enemy. May hit second adjacent target for 2 damage.',
+                heat: '+1',
+                initiative: '[4]',
+                keywords: ['attack', 'melee', 'cleave', 'longsword'],
+                quote: 'Let the guilty fall.'
+            }
+        ];
+
+        // State
+        let filteredCards = [...cardDatabase];
+        let selectedCard = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCards();
+            setupFilters();
+        });
+
+        // Render cards
+        function renderCards() {
+            const grid = document.getElementById('cardGrid');
+            const count = document.getElementById('cardCount');
+
+            grid.innerHTML = '';
+            count.textContent = `SHOWING ${filteredCards.length} OF ${cardDatabase.length} CARDS`;
+
+            filteredCards.forEach(card => {
+                const cardEl = document.createElement('div');
+                cardEl.className = 'card-item';
+                if (selectedCard && selectedCard.id === card.id) {
+                    cardEl.classList.add('selected');
+                }
+
+                cardEl.innerHTML = `
+                    <div class="card-name">${card.name}</div>
+                    <div class="card-type">${card.type.toUpperCase()}</div>
+                    <div class="card-cost">COST: ${card.cost} SP</div>
+                `;
+
+                cardEl.addEventListener('click', () => selectCard(card));
+                grid.appendChild(cardEl);
+            });
+        }
+
+        // Select card
+        function selectCard(card) {
+            selectedCard = card;
+            renderCards();
+            renderDetail(card);
+        }
+
+        // Render detail panel
+        function renderDetail(card) {
+            const detail = document.getElementById('cardDetail');
+            detail.classList.remove('empty');
+
+            let statsHTML = '';
+            if (card.damage) {
+                statsHTML += `
+                    <div class="stat-item">
+                        <div class="stat-value">${card.damage}</div>
+                        <div class="stat-label">DAMAGE</div>
+                    </div>
+                `;
+            }
+            if (card.range) {
+                statsHTML += `
+                    <div class="stat-item">
+                        <div class="stat-value">${card.range}</div>
+                        <div class="stat-label">RANGE</div>
+                    </div>
+                `;
+            }
+            if (card.cost !== undefined) {
+                statsHTML += `
+                    <div class="stat-item">
+                        <div class="stat-value">${card.cost}</div>
+                        <div class="stat-label">COST (SP)</div>
+                    </div>
+                `;
+            }
+            if (card.heat) {
+                statsHTML += `
+                    <div class="stat-item">
+                        <div class="stat-value">${card.heat}</div>
+                        <div class="stat-label">HEAT</div>
+                    </div>
+                `;
+            }
+
+            detail.innerHTML = `
+                <div class="detail-header">
+                    <div class="detail-title">${card.name}</div>
+                    <div class="detail-type">${card.type} • ${card.faction}</div>
+                </div>
+
+                ${statsHTML ? `<div class="stats-grid">${statsHTML}</div>` : ''}
+
+                <div class="detail-section">
+                    <div class="detail-label">INITIATIVE</div>
+                    <div class="detail-value">${card.initiative}</div>
+                </div>
+
+                <div class="card-text">${card.effect}</div>
+
+                ${card.quote ? `<div class="card-quote">"${card.quote}"</div>` : ''}
+
+                <div class="detail-section">
+                    <div class="detail-label">KEYWORDS</div>
+                    <div class="tag-list">
+                        ${card.keywords.map(k => `<span class="tag">${k}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Setup filters
+        function setupFilters() {
+            const searchInput = document.getElementById('searchInput');
+            const typeFilters = document.querySelectorAll('.type-filter');
+            const factionFilters = document.querySelectorAll('.faction-filter');
+            const costFilters = document.querySelectorAll('.cost-filter');
+            const resetBtn = document.getElementById('resetFilters');
+
+            searchInput.addEventListener('input', applyFilters);
+            typeFilters.forEach(f => f.addEventListener('change', applyFilters));
+            factionFilters.forEach(f => f.addEventListener('change', applyFilters));
+            costFilters.forEach(f => f.addEventListener('change', applyFilters));
+            resetBtn.addEventListener('click', resetFilters);
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedTypes = Array.from(document.querySelectorAll('.type-filter:checked')).map(f => f.value);
+            const selectedFactions = Array.from(document.querySelectorAll('.faction-filter:checked')).map(f => f.value);
+            const selectedCosts = Array.from(document.querySelectorAll('.cost-filter:checked')).map(f => f.value);
+
+            filteredCards = cardDatabase.filter(card => {
+                // Search filter
+                if (searchTerm && !card.name.toLowerCase().includes(searchTerm) &&
+                    !card.effect.toLowerCase().includes(searchTerm)) {
+                    return false;
+                }
+
+                // Type filter
+                if (selectedTypes.length > 0 && !selectedTypes.includes(card.type)) {
+                    return false;
+                }
+
+                // Faction filter
+                if (selectedFactions.length > 0 && !selectedFactions.includes(card.faction)) {
+                    return false;
+                }
+
+                // Cost filter
+                if (selectedCosts.length > 0) {
+                    const costStr = card.cost >= 4 ? '4' : card.cost.toString();
+                    if (!selectedCosts.includes(costStr)) {
+                        return false;
+                    }
+                }
+
+                return true;
+            });
+
+            renderCards();
+        }
+
+        // Reset filters
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.querySelectorAll('.type-filter, .faction-filter, .cost-filter').forEach(f => {
+                f.checked = false;
+            });
+            applyFilters();
+        }
+    </script>
+</body>
+</html>

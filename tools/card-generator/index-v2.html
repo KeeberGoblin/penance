@@ -27,12 +27,81 @@
             color: var(--white);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            padding-top: 60px;
         }
 
         /* Typography */
         h1, h2, h3 {
             font-weight: 700;
             letter-spacing: -0.02em;
+        }
+
+        /* Fixed Navigation Header */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--black);
+            border-bottom: 2px solid var(--white);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .nav-link:hover {
+            border-bottom-color: var(--blood-red);
+        }
+
+        .nav-link.active {
+            border-bottom-color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .nav-header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-link {
+                font-size: 0.75rem;
+            }
+
+            body {
+                padding-top: 100px;
+            }
         }
 
         /* Hero Section */
@@ -441,8 +510,21 @@
     </style>
 </head>
 <body>
+    <!-- Fixed Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-title">PENANCE</div>
+        <div class="nav-links">
+            <a href="#chronicle" class="nav-link">CHRONICLE</a>
+            <a href="#pilots" class="nav-link">PILOTS</a>
+            <a href="#factions" class="nav-link">FACTIONS</a>
+            <a href="#cards" class="nav-link">CARDS</a>
+            <a href="wiki/" class="nav-link">WIKI</a>
+            <a href="cards/" class="nav-link">DATABASE</a>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <h1>PENANCE</h1>
             <p class="hero-subtitle">Absolution Through Steel. Redemption Through Violence.</p>
@@ -470,7 +552,7 @@
     </section>
 
     <!-- Chronicle Section -->
-    <section class="section section-dark">
+    <section class="section section-dark" id="chronicle">
         <div class="section-content">
             <h2 class="section-header">CHRONICLE</h2>
             <p class="section-intro">The recorded history of a world that ended. What remains are fragments, transmissions, and the testimony of those who survived.</p>
@@ -575,7 +657,7 @@
     </section>
 
     <!-- NPCs Section -->
-    <section class="section">
+    <section class="section" id="pilots">
         <div class="section-content">
             <h2 class="section-header">ICONIC PILOTS</h2>
             <p class="section-intro">Five Remnants who have transcended death to become legends. Each is broken. Each is dangerous. None are heroes.</p>
@@ -625,7 +707,7 @@
     </section>
 
     <!-- Factions Section -->
-    <section class="section section-dark">
+    <section class="section section-dark" id="factions">
         <div class="section-content">
             <h2 class="section-header">FACTIONS</h2>
             <p class="section-intro">Nine powers struggle for control of a dying world. Alliances shift. Wars never end. Trust is a luxury no one can afford.</p>
@@ -983,7 +1065,7 @@
     </section>
 
     <!-- Cards Section -->
-    <section class="section">
+    <section class="section" id="cards">
         <div class="section-content">
             <h2 class="section-header">COMBAT CARDS</h2>
             <p class="section-intro">Tactical abilities, brutal maneuvers, and desperate gambles. Every card is a choice. Every choice has consequences.</p>
