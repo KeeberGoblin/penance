@@ -195,43 +195,121 @@
             max-width: 800px;
         }
 
-        /* Timeline */
-        .timeline {
+        /* Horizontal Scrolling Timeline */
+        .timeline-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 4rem 0;
+        }
+
+        .timeline-track {
             display: flex;
-            flex-direction: column;
-            gap: 4rem;
+            align-items: flex-start;
+            gap: 8rem;
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+            padding: 0 2rem;
+        }
+
+        .timeline-rail {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--medium-gray);
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-marker.active {
+            width: 20px;
+            height: 20px;
+            background: var(--blood-red);
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
         }
 
         .timeline-item {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 3rem;
-            padding-bottom: 4rem;
-            border-bottom: 1px solid var(--medium-gray);
+            min-width: 600px;
+            max-width: 600px;
+            flex-shrink: 0;
+            background: var(--dark-gray);
+            border: 2px solid var(--medium-gray);
+            padding: 2rem;
+            opacity: 0.3;
+            transition: all 0.5s ease;
+            position: relative;
         }
 
-        .timeline-item:last-child {
-            border-bottom: none;
+        .timeline-item.active {
+            opacity: 1;
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .timeline-item.past {
+            opacity: 0.15;
         }
 
         .timeline-year {
             font-size: 3rem;
             font-weight: 700;
             color: var(--accent);
-            position: sticky;
-            top: 2rem;
-            height: fit-content;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-item.active .timeline-year {
+            color: var(--blood-red);
         }
 
         .timeline-content h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--white);
+            border-bottom: 2px solid var(--medium-gray);
+            padding-bottom: 0.5rem;
         }
 
         .timeline-content p {
             color: var(--light-gray);
             line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Decade Markers (|) */
+        .decade-marker {
+            position: absolute;
+            top: 50%;
+            width: 2px;
+            height: 30px;
+            background: var(--light-gray);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .decade-marker::after {
+            content: attr(data-year);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: var(--light-gray);
+            white-space: nowrap;
         }
 
         /* NPCs Grid */
@@ -746,7 +824,9 @@
             <h2 class="section-header">CHRONICLE</h2>
             <p class="section-intro">The recorded history of a world that ended. What remains are fragments, transmissions, and the testimony of those who survived.</p>
 
-            <div class="timeline">
+            <div class="timeline-container">
+                <div class="timeline-rail"></div>
+                <div class="timeline-track">
                 <div class="timeline-item">
                     <div class="timeline-year">YEAR 0</div>
                     <div class="timeline-content">
@@ -882,7 +962,10 @@
                         <p>Welcome to Penance.</p>
                     </div>
                 </div>
+                </div>
             </div>
+        </div>
+    </section>
 
     <section class="section" id="pilots">
         <div class="section-content">
@@ -1464,14 +1547,61 @@
             });
         }, observerOptions);
 
-        // Apply fade-in animation to timeline items
-        document.addEventListener('DOMContentLoaded', () => {
-            // Timeline items
+        // Horizontal Scrolling Timeline
+        function initializeTimeline() {
+            const chronicleSection = document.getElementById('chronicle');
+            const timelineTrack = document.querySelector('.timeline-track');
             const timelineItems = document.querySelectorAll('.timeline-item');
-            timelineItems.forEach(item => {
-                item.classList.add('fade-in');
-                observer.observe(item);
+
+            if (!chronicleSection || !timelineTrack || timelineItems.length === 0) return;
+
+            // Timeline years for markers
+            const timelineYears = [0, 3, 47, 89, 134, 197, 223, 271, 298, 314, 352, 381, 407, 437];
+            const maxYear = 437;
+
+            // Calculate total timeline width based on years
+            const pixelsPerYear = 3; // Adjust this for spacing
+            const totalWidth = maxYear * pixelsPerYear;
+
+            // Set initial state
+            timelineItems[0].classList.add('active');
+
+            window.addEventListener('scroll', () => {
+                const sectionRect = chronicleSection.getBoundingClientRect();
+                const sectionHeight = chronicleSection.offsetHeight;
+                const windowHeight = window.innerHeight;
+
+                // Calculate scroll progress through the section (0 to 1)
+                const scrollStart = -sectionRect.top;
+                const scrollRange = sectionHeight - windowHeight;
+                let scrollProgress = Math.max(0, Math.min(1, scrollStart / scrollRange));
+
+                // Pan timeline horizontally based on scroll progress
+                const maxPan = -(totalWidth - window.innerWidth + 400);
+                const panOffset = scrollProgress * maxPan;
+                timelineTrack.style.transform = `translateX(${panOffset}px)`;
+
+                // Activate timeline items based on scroll progress
+                const itemsPerSegment = 1 / timelineItems.length;
+                timelineItems.forEach((item, index) => {
+                    const itemStart = index * itemsPerSegment;
+                    const itemEnd = (index + 1) * itemsPerSegment;
+
+                    item.classList.remove('active', 'past');
+
+                    if (scrollProgress >= itemStart && scrollProgress < itemEnd) {
+                        item.classList.add('active');
+                    } else if (scrollProgress >= itemEnd) {
+                        item.classList.add('past');
+                    }
+                });
             });
+        }
+
+        // Apply fade-in animation to other elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize horizontal timeline
+            initializeTimeline();
 
             // NPC cards
             const npcCards = document.querySelectorAll('.npc-card');
