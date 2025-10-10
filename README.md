@@ -8,7 +8,7 @@ A tactical hex-based card game of grimdark medieval fantasy mech combat where re
 
 ---
 
-## 🎮 PLAYTEST READY
+## PLAYTEST READY
 
 **Penance is now ready for table play!** We have 2 complete faction decks, 2 playtest scenarios, and 64 pages of comprehensive rules.
 
@@ -289,7 +289,7 @@ penance/
 
 ## Interactive Website
 
-**[View Site →](https://keebergoblin.github.io/penance/)** - Brutalist-styled website with:
+**[View Site →](https://keebergoblin.github.io/penance/)**:
 - Complete playtest section with downloadable rules
 - Interactive 437-year timeline
 - 9 faction profiles with lore and relationships
