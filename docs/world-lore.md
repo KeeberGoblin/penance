@@ -50,18 +50,40 @@ When Theslar activated the **Resonance Engine**, it didn't just tap the magnetic
 - Early attempts to weaponize them fail catastrophically
 - The Church of Absolution forms, declaring the Cataclysm divine punishment
 
-**Year 50-100: The Casket Era**
+**Year 50-150: The Casket Era Dawn**
 - First primitive Caskets built—armored suits powered by Soulstones
 - Knights and warriors can now channel magic through mechanical intermediaries
 - Caskets become the ultimate weapon: mobile, powerful, terrifying
 - New arms race begins between surviving factions
 
-**Year 100 (Present Day)**:
-- World has stabilized into fragmented realms
-- Casket technology is mature but dangerous
-- Void rifts still appear, spawning monsters
-- The original Resonance Engine in Sibaria still pulses, still tears reality
-- Some seek to destroy it; others want to control it
+**Year 150-250: The Factional Wars**
+- Major power blocs emerge and consolidate
+- Church of Absolution splits in the Great Schism (Year 134)
+- Merchant Guilds rise to dominance through war profiteering
+- Dwarven forge-cities become industrial powerhouses
+- Undead Court establishes permanent necropolis territories
+
+**Year 250-350: The Mutation Age**
+- Blighted Packs emerge as distinct faction after Exodus (Year 352)
+- Chitinous Ascendancy appears from Sibarian ground zero (Year 381)
+- Reality fractures increase in frequency and severity
+- Fae incursions become more frequent and unpredictable
+- Nomad Collective masters survival in the most hostile regions
+
+**Year 350-437: The Long War**
+- No faction can achieve decisive victory
+- Casket technology reaches plateau of sophistication
+- Asymmetric warfare becomes standard (each faction uses unique Casket designs)
+- Generations of Remnants have known nothing but war
+- Hope for peace or restoration becomes distant memory
+
+**Year 437 (Present Day)**:
+- World has been fractured for over four centuries
+- Nine major factions locked in endless cycles of conflict
+- Casket technology is mature, sophisticated, and deadly
+- Void rifts still appear daily, spawning monsters
+- The original Resonance Engine in Sibaria still pulses after 437 years, still tears reality
+- Some seek to destroy it; others want to control it; most just try to survive it
 
 ---
 
@@ -349,7 +371,7 @@ Near dragon lairs? They incorporate fossilized dragon essence.
 
 ---
 
-## Current Era: The Casket Wars (Year 100+)
+## Current Era: The Casket Wars (Year 437)
 
 ### The Political Situation
 
