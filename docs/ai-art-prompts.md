@@ -220,6 +220,236 @@ Colossal mobile crypt war machine, baroque-romanticist brutalist design, 2,100 l
 
 ---
 
+## Fae Courts Caskets
+
+### THE TRICKSTER (Light)
+
+**Prompt**:
+```
+Ethereal war machine, baroque-romanticist brutalist design, 650 lbs frame of crystalline mirrors and sharp geometric angles, surface constantly reflecting distorted reality, impossible geometry joints that bend wrong, carries twin curved blades of polished silver, face is blank mirror mask with no features, body phases between solid and translucent, fragments of broken mirrors embedded in frame, dark silver with rainbow oil-slick shimmer, twilight lighting creating multiple phantom reflections, standing in ruined ballroom surrounded by mirror shards, oil painting style, beautiful wrongness, uncanny elegance, 8k detailed
+```
+
+**Key Elements**: Mirror surfaces, impossible geometry, phase-shifting, uncanny beauty
+
+---
+
+### THE MIRRORBLADE (Medium)
+
+**Prompt**:
+```
+Medium fae war machine, baroque-romanticist brutalist design, 1,050 lbs frame constructed of interlocking mirror panels, each panel reflecting different timeline or location, arms end in blade-edged mirrors, creates mirror duplicates that move independently, ornate baroque frame with brutalist geometry, flowers growing from cracks (beautiful but poisonous), face half-porcelain mask half-broken glass, polished silver with iridescent accents, dramatic side lighting creating kaleidoscope shadows, standing in fairy circle with mirror network, oil painting style, deceptive grace, 8k detailed
+```
+
+**Key Elements**: Mirror network, duplicates, timeline reflections, baroque ornate + brutal geometry
+
+---
+
+### THE DREAMWEAVER (Heavy)
+
+**Prompt**:
+```
+Massive fae war machine, baroque-romanticist brutalist design, 1,550 lbs frame wrapped in gossamer veils that shift between solid metal and flowing silk, body covered in sleeping faces (victims of mind control), arms end in long needle-like fingers dripping soporific mist, helmet shaped like crown of thorns made from silver brambles, base surrounded by sleeping flowers and trapped butterflies, dark platinum with soft purple dream-glow, diffused ethereal lighting through mist, standing in nightmare landscape where geometry breaks down, oil painting style, sublime horror of lost autonomy, 8k detailed
+```
+
+**Key Elements**: Mind control motifs, gossamer veils, sleeping faces, nightmare aesthetics
+
+---
+
+### THE WILD HUNT (Assault)
+
+**Prompt**:
+```
+Colossal fae war machine, baroque-romanticist brutalist design, 2,100 lbs frame resembling mounted knight fused with impossible stag, massive antlers of silver and steel spreading like crown, body part-armor part-living hunt beast, face is horned skull mask with glowing eyes, trailing pack of phantom hounds made of mist and mirrors, hooves leave burning tracks, entire frame covered in hunt trophies (skulls, antlers, enemy pilot tags), dark iron with moonlit silver, dramatic hunt lighting with motion blur, standing in forest leading spectral chase, oil painting reminiscent of medieval hunt tapestries, relentless pursuit, 8k detailed
+```
+
+**Key Elements**: Stag/knight fusion, hunt imagery, phantom pack, relentless momentum
+
+---
+
+## Nomad Collective Caskets
+
+### THE PATHFINDER (Light)
+
+**Prompt**:
+```
+Nimble salvaged war machine, baroque-romanticist brutalist design, 700 lbs frame built from mismatched scrap, every panel different origin and color, covered in dust and travel wear, carries weathered maps etched into armor, navigation instruments and compasses jury-rigged onto frame, backpack loaded with survival gear, face is goggled mask with breathing filter, prayer flags and good luck charms hanging from joints, sun-bleached metal with desert patina, harsh desert sunlight casting sharp shadows, standing in windswept dunes with distant caravan, oil painting meets documentary realism, survivor's pragmatism, 8k detailed
+```
+
+**Key Elements**: Mismatched scrap, navigation tools, travel wear, survival pragmatism
+
+---
+
+### THE SCAVENGER (Medium)
+
+**Prompt**:
+```
+Medium nomad war machine, baroque-romanticist brutalist design, 1,100 lbs frame constructed from battlefield salvage, each piece tells story of previous owner, arms end in welding tools and cutting torches, back mounted with salvage crane and storage compartments, covered in repair patches and improvised fixes, helmet with targeting visor scavenged from destroyed enemy, body decorated with found objects (watches, medals, photos), weathered steel with rust and oil stains, harsh midday lighting showing every scratch, standing in wreckage field harvesting parts, oil painting style, resourceful resilience, 8k detailed
+```
+
+**Key Elements**: Battlefield salvage, repair culture, found object decoration, resourceful engineering
+
+---
+
+### THE OUTRIDER (Heavy)
+
+**Prompt**:
+```
+Massive nomad war machine, baroque-romanticist brutalist design, 1,650 lbs frame converted from old-world military vehicle, heavy armor plates bolted over civilian chassis, carries massive shield made from road signs and sheet metal, defensive spikes welded to every surface, back loaded with supply crates and fuel drums, covered in clan symbols painted in different colors showing alliance history, helmet shaped like armored truck cab, dark military green with desert tan patches, dramatic dust cloud lighting, standing at defensive perimeter protecting caravan, oil painting style, mobile fortress, 8k detailed
+```
+
+**Key Elements**: Vehicle conversion, defensive focus, supply hauling, clan alliance markers
+
+---
+
+### THE CONVOY (Assault)
+
+**Prompt**:
+```
+Colossal mobile supply depot war machine, baroque-romanticist brutalist design, 2,300 lbs frame resembling walking supply truck, entire body is storage compartments and weapon racks, arms end in loading cranes and forklift mechanisms, back mounted with mobile workshop and field kitchen, surrounded by automated cargo drones, covered in inventory labels and route maps, face is armored driver's cabin with multiple viewports, weathered industrial steel with trade route markings, harsh overhead sun creating cargo shadow, standing at trade hub distributing supplies, oil painting meets logistics documentation, caravan lifeline, 8k detailed
+```
+
+**Key Elements**: Mobile depot, cargo focus, trade infrastructure, logistics machinery
+
+---
+
+## Merchant Guilds Caskets
+
+### THE BROKER (Light)
+
+**Prompt**:
+```
+Sleek corporate war machine, baroque-romanticist brutalist design, 750 lbs frame of polished steel and brass accents, every surface branded with guild logos and trade marks, carries precision weapons with price tags visible, body integrated with ledger screens showing credit balance, arms end in data-jacks and contract signing tools, helmet shaped like banker's visor with targeting HUD, immaculately maintained with no battle damage, dark steel with gold trim and corporate colors, professional studio lighting, standing in mercenary exchange floor, oil painting meets corporate photography, war as business, 8k detailed
+```
+
+**Key Elements**: Corporate branding, immaculate maintenance, financial displays, professional mercenary
+
+---
+
+### THE ENFORCER (Medium)
+
+**Prompt**:
+```
+Medium mercenary war machine, baroque-romanticist brutalist design, 1,150 lbs frame of reinforced armor with guild insignia, covered in repossession notices and debt collection marks, arms equipped with non-lethal restraint tools and lethal backup weapons, body shows professional wear (maintained damage, tactical scratches), helmet with debt-scanner visor, carries electro-maul for asset recovery, dark gunmetal with yellow hazard stripes, harsh interrogation lighting, standing over debtor's broken Casket, oil painting style, debt enforcement, 8k detailed
+```
+
+**Key Elements**: Debt collection aesthetic, professional brutality, guild insignia, restraint tools
+
+---
+
+### THE VAULT-GUARD (Heavy)
+
+**Prompt**:
+```
+Massive security war machine, baroque-romanticist brutalist design, 1,700 lbs frame built like walking vault, armor plates thick with combination lock mechanisms, entire body covered in security cameras and alarm systems, carries tower shield embossed with guild seal, arms end in crowd control weapons, helmet shaped like vault door with eye-slit, back mounted with asset protection cage, polished black steel with gold guild heraldry, dramatic spotlight security lighting, standing at trade caravan protecting high-value cargo, oil painting style, mobile fortress, 8k detailed
+```
+
+**Key Elements**: Vault architecture, security systems, asset protection, guild heraldry
+
+---
+
+### THE WAR-PROFITEER (Assault)
+
+**Prompt**:
+```
+Colossal mobile arms dealer war machine, baroque-romanticist brutalist design, 2,400 lbs frame as walking weapons shop, entire body is weapon racks and ammunition storage, arms end in demonstration weapons of excessive firepower, back mounted with mobile arsenal and forge, covered in advertising banners and sale prices, face is armored shopkeeper booth with transaction window, surrounded by automated sales drones, body shows luxury and lethality combined, dark steel with ostentatious gold plating, dramatic showcase lighting, standing in battlefield selling to both sides, oil painting meets war economy, profit from conflict, 8k detailed
+```
+
+**Key Elements**: Mobile arsenal, advertising aesthetic, dual-customer approach, war economy
+
+---
+
+## Blighted Packs Caskets
+
+### THE STALKER (Light)
+
+**Prompt**:
+```
+Feral predator war machine, baroque-romanticist brutalist design, 650 lbs frame of twisted metal and mutated flesh, half-machine half-beast with visible muscle tissue, covered in matted fur and chitinous plates, arms end in clawed appendages (both metal and organic), face is wolf-like muzzle with mechanical jaw, spine visible with exposed vertebrae fused to hydraulic cables, hunched predatory stance, dark gray metal with biological red muscle, cold hunt lighting with predator vision glow, standing in corrupted forest stalking prey, oil painting style, beautiful horror of forced evolution, 8k detailed
+```
+
+**Key Elements**: Flesh/metal fusion, predatory anatomy, mutation scars, bestial hunting stance
+
+---
+
+### THE CHIMERA (Medium)
+
+**Prompt**:
+```
+Medium mutant war machine, baroque-romanticist brutalist design, 1,050 lbs frame of constantly shifting biology and mechanics, body shows multiple animal features (scales, fur, feathers, chitin) competing for dominance, asymmetric limbs of different creatures, face morphs between predator types, armor plates grow and shed like skin, covered in Void corruption marks, tumorous growths with mechanical cores, dark organic colors with iridescent mutation shimmer, unstable flickering lighting, standing in Blighted zone mid-transformation, oil painting style, chaos of adaptation, 8k detailed
+```
+
+**Key Elements**: Unstable mutation, multiple species traits, asymmetry, Void corruption visible
+
+---
+
+### THE ALPHA (Heavy)
+
+**Prompt**:
+```
+Massive pack leader war machine, baroque-romanticist brutalist design, 1,600 lbs frame of dominant predator fused with steel, body is apex hunter covered in scars and trophies, face is massive bear-wolf hybrid skull with mechanical reinforcement, arms end in devastating claws capable of rending armor, back shows alpha mane of metal spines, covered in pack symbols painted in blood, surrounded by smaller pack members, dark scarred steel with biological brown fur, dramatic pack hierarchy lighting, standing on high ground commanding Blighted swarm, oil painting reminiscent of nature documentary, alpha dominance, 8k detailed
+```
+
+**Key Elements**: Pack leader presence, trophy collection, apex predator anatomy, command posture
+
+---
+
+### THE PROGENITOR (Assault)
+
+**Prompt**:
+```
+Colossal spawning horror war machine, baroque-romanticist brutalist design, 2,200 lbs frame as living factory, body is bloated with gestating spawn visible through translucent armor, multiple birth-canal ports releasing small mutant creatures, arms end in protective appendages guarding young, face obscured by breeding mask and sensory tendrils, entire frame covered in egg sacs and larval chambers, constantly dripping biological fluids mixed with oil, dark flesh-tone metal with pulsing veins, nauseating organic lighting, standing in nest surrounded by newborn swarm, oil painting meets biological horror, life twisted to war, 8k detailed
+```
+
+**Key Elements**: Spawning factory, grotesque fertility, protective parent, biological horror
+
+---
+
+## Chitinous Ascendancy Caskets
+
+### THE SKIRMISHER (Light)
+
+**Prompt**:
+```
+Insectoid scout war machine, baroque-romanticist brutalist design, 600 lbs frame of articulated chitin and antenna, body structure is mantis-like with multiple sensory organs, compound eyes as primary viewport, arms are blade-like raptorial limbs, exoskeleton shows segmented plates in black chitin, covered in hive pheromone markers, six legs for rapid movement, mandibles frame communications array, dark iridescent chitin with green-purple shimmer, cold alien lighting, standing in hive outpost linked to collective mind, oil painting meets entomological study, post-human efficiency, 8k detailed
+```
+
+**Key Elements**: Mantis anatomy, compound eyes, hive markers, insectoid efficiency
+
+---
+
+### THE SOLDIER (Medium)
+
+**Prompt**:
+```
+Medium arthropod war machine, baroque-romanticist brutalist design, 1,000 lbs frame of reinforced chitin plates, body structure resembles armored beetle with thick carapace, multiple limbs for tool manipulation and combat, head is ant-like with massive mandibles as weapons, armor shows hive caste markings and task assignments, covered in pheromone glands for coordination, exoskeleton has geometric hive patterns, dark matte black chitin with amber caste markers, harsh hive-chamber lighting, standing in defensive formation with identical units, oil painting style, collective purpose, 8k detailed
+```
+
+**Key Elements**: Beetle/ant armor, caste markings, identical units, hive coordination
+
+---
+
+### THE BRUTE (Heavy)
+
+**Prompt**:
+```
+Massive arthropod war machine, baroque-romanticist brutalist design, 1,650 lbs frame of tank-like chitin construction, body resembles rhino beetle with horn weapons, armor plates thick and layered like geological strata, multiple legs provide stable firing platform, face is armored head-plate with ramming horn, entire surface covered in impact craters and regenerating chitin, shows evidence of previous molts, dark obsidian chitin with worn edges, dramatic impact lighting, standing immobile as living fortress, oil painting style, impenetrable defense, 8k detailed
+```
+
+**Key Elements**: Beetle tank armor, ramming horn, molting evidence, geological layering
+
+---
+
+### THE OVERMIND (Assault)
+
+**Prompt**:
+```
+Colossal hive nexus war machine, baroque-romanticist brutalist design, 2,500 lbs frame as mobile hive node, body is mass of neural connections and psionic amplifiers, multiple brain-case chambers visible through translucent chitin, surrounded by psychic field distortion, arms are psychic broadcasting arrays, covered in smaller drones physically connected via neural cables, face is massive compound eye cluster with psionic corona, entire frame pulses with shared consciousness, dark purple-black chitin with bioluminescent neural pathways, eerie psychic glow lighting, standing at center of coordinated swarm assault, oil painting meets neurological diagram, many minds one purpose, 8k detailed
+```
+
+**Key Elements**: Hive mind hub, neural connections, psychic field visible, swarm coordination
+
+---
+
 ## Unified Style Notes
 
 **Lighting**:
