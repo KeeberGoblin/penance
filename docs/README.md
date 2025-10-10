@@ -4,9 +4,9 @@ Welcome to the complete documentation for **Penance: Absolution Through Steel**.
 
 ---
 
-## 🎮 Quick Start
+## Quick Start
 
-**[→ PLAYTEST-READY Package](../PLAYTEST-READY.md)** - Everything you need for your first game
+**[PLAYTEST-READY Package](../PLAYTEST-READY.md)** - Everything you need for your first game
 
 **New to Penance?** Start here:
 1. Read the [Playtest Package](../PLAYTEST-READY.md)
@@ -16,9 +16,9 @@ Welcome to the complete documentation for **Penance: Absolution Through Steel**.
 
 ---
 
-## 📚 Documentation Sections
+## Documentation Sections
 
-### [📖 Rules](rules/)
+### [Rules](rules/)
 Core game mechanics - turn structure, combat, deck building, terrain
 - [Turn Structure](rules/turn-structure.md)
 - [Combat System](rules/combat-system.md) (Deck-as-HP + Component Damage)
@@ -27,42 +27,42 @@ Core game mechanics - turn structure, combat, deck building, terrain
 - [Terrain Rules](rules/terrain.md)
 - [Quick Reference](rules/quick-reference.md)
 
-### [⚔️ Factions](factions/)
+### [Factions](factions/)
 Playable factions with complete deck lists and lore
 - [Church of Absolution](factions/church/deck-complete.md) - 30 cards (aggressive martyrdom)
 - [Dwarven Clans](factions/dwarves/deck-complete.md) - 32 cards (defensive fortress)
 - [Faction Relationships](factions/relationships.md)
 - [Casket Types](factions/casket-types.md) - 36 unique designs
 
-### [🃏 Cards](cards/)
+### [Cards](cards/)
 Complete card database and references
 - [Interactive Card Browser](cards/index.html) - Color-coded, filterable
 - [Universal Core Cards](cards/universal.md) - 10 cards everyone has
 - [Master Card List](cards/masterlist.md)
 - [Card Anatomy](cards/anatomy.md)
 
-### [🎯 Scenarios](scenarios/)
+### [Scenarios](scenarios/)
 Playtest scenarios and example games
 - [01: The Proving Grounds](scenarios/01-proving-grounds.md) - Deathmatch (beginner)
 - [02: Reliquary Ruins](scenarios/02-reliquary-ruins.md) - Objective Control (intermediate)
 - [Example of Play](scenarios/example-of-play.md) - 5-turn walkthrough
 - [Boss: The Iron Saint](scenarios/boss-iron-saint.md) - Co-op boss fight
 
-### [📜 Lore](lore/)
+### [Lore](lore/)
 World-building, history, and narrative
 - [World Overview](lore/world-overview.md) - The Sundering and the Remnants
 - [Chronicle](lore/chronicle.md) - 437-year timeline
 - [Iconic NPCs](lore/iconic-npcs.md) - 5 legendary pilots
 - [Resonance Engine](lore/resonance-engine.md) - The artifact that ended the world
 
-### [🏰 Campaigns](campaigns/)
+### [Campaigns](campaigns/)
 Long-term progression systems
 - [Settlements](campaigns/settlements.md) - Base building between missions
 - [Pilot Progression](campaigns/pilot-progression.md) - Scars, traits, death
 - [Leg Skimming](campaigns/leg-skimming.md) - Sacrifice HP for power
 - [Loot Tables](campaigns/loot-tables.md) - Post-mission rewards
 
-### [🔧 Reference](reference/)
+### [Reference](reference/)
 Design documents and creator tools
 - [PLAYTEST-READY.md](reference/PLAYTEST-READY.md) - Detailed playtest guide
 - [Core Design](reference/core-design.md) - Game philosophy
@@ -73,7 +73,7 @@ Design documents and creator tools
 
 ---
 
-## 🌐 Interactive Sites
+## Interactive Sites
 
 - **[Main Website](index.html)** - Timeline, faction overview, playtest section
 - **[Card Database](cards/index.html)** - Interactive, filterable, color-coded cards
@@ -81,7 +81,7 @@ Design documents and creator tools
 
 ---
 
-## 🎲 Game At A Glance
+## Game At A Glance
 
 **Penance** is a tactical hex-based card game combining:
 - **GKR: Heavy Hitters** - Deck-as-HP, SP economy

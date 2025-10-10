@@ -189,11 +189,11 @@ Each turn you refresh your Soul Points (SP) to maximum:
 ```
 penance/
 ├── README.md                          # You are here
-├── PLAYTEST-READY.md                  # 🎮 Complete playtest package overview
+├── PLAYTEST-READY.md                  # Complete playtest package overview
 ├── QUICKSTART.md                      # Fast setup guide
 │
 ├── docs/
-│   ├── index.html                     # 🌐 Main website (timeline, factions, lore)
+│   ├── index.html                     # Main website (timeline, factions, lore)
 │   │
 │   ├── rules/                         # 📖 Core game mechanics
 │   │   ├── index.md                   # Rules hub
