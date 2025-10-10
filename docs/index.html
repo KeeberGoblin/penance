@@ -176,6 +176,11 @@
             background: var(--dark-gray);
         }
 
+        /* Chronicle Section - Extra tall for horizontal scrolling */
+        #chronicle {
+            min-height: 300vh;
+        }
+
         .section-content {
             max-width: 1200px;
             width: 100%;
@@ -197,19 +202,24 @@
 
         /* Horizontal Scrolling Timeline */
         .timeline-container {
-            position: relative;
+            position: sticky;
+            top: 100px;
             width: 100%;
             overflow: hidden;
             padding: 4rem 0;
+            height: 80vh;
+            display: flex;
+            align-items: center;
         }
 
         .timeline-track {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 8rem;
             transition: transform 0.1s ease-out;
             will-change: transform;
             padding: 0 2rem;
+            position: relative;
         }
 
         .timeline-rail {
@@ -1581,14 +1591,6 @@
 
             if (!chronicleSection || !timelineTrack || timelineItems.length === 0) return;
 
-            // Timeline years for markers
-            const timelineYears = [0, 3, 47, 89, 134, 197, 223, 271, 298, 314, 352, 381, 407, 437];
-            const maxYear = 437;
-
-            // Calculate total timeline width based on years
-            const pixelsPerYear = 3; // Adjust this for spacing
-            const totalWidth = maxYear * pixelsPerYear;
-
             // Set initial state
             timelineItems[0].classList.add('active');
 
@@ -1602,8 +1604,13 @@
                 const scrollRange = sectionHeight - windowHeight;
                 let scrollProgress = Math.max(0, Math.min(1, scrollStart / scrollRange));
 
+                // Calculate actual timeline width (each item is 600px + 128px gap)
+                const itemWidth = 600;
+                const gapWidth = 128; // 8rem = 128px
+                const totalTrackWidth = (timelineItems.length * itemWidth) + ((timelineItems.length - 1) * gapWidth);
+
                 // Pan timeline horizontally based on scroll progress
-                const maxPan = -(totalWidth - window.innerWidth + 400);
+                const maxPan = -(totalTrackWidth - window.innerWidth + 200);
                 const panOffset = scrollProgress * maxPan;
                 timelineTrack.style.transform = `translateX(${panOffset}px)`;
 
