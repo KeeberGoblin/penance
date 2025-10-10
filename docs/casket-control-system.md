@@ -39,9 +39,11 @@ From each fingertip extends a **Neural Thread** (also called "puppet strings" or
 **Binding Pose**:
 - Arms crossed over chest (left over right, or right over left depending on preference)
 - Wrists bound with leather straps to prevent flailing
-- Legs secured straight, ankles locked
+- Legs secured straight, ankles locked (or stumps secured, for veteran pilots who have undergone Leg Skimming)
 - Head restrained with a collar brace (prevents whiplash during impacts)
 - Body suspended by harness, floating in fluid
+
+**Note**: Veteran pilots often undergo **Leg Skimming** (amputation below the knee) to optimize capsule performance. See **[leg-skimming-system.md](leg-skimming-system.md)** for complete details on this optional but common procedure.
 
 **Why This Position?**
 - **Immobilization prevents thread damage**: Any sudden movement risks tearing the Neural Threads from fingertips
