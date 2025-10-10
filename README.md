@@ -14,7 +14,7 @@ A tactical hex-based card game of grimdark medieval fantasy mech combat where re
 
 ### Quick Start: Your First Game in 60 Minutes
 
-1. **Download**: [PLAYTEST-READY.md](docs/PLAYTEST-READY.md) - Complete playtest package guide
+1. **Download**: [PLAYTEST-READY.md](PLAYTEST-READY.md) - Complete playtest package guide
 2. **Print**: Quick reference sheet + scenario map
 3. **Build Decks**: Church (30 cards) or Dwarves (32 cards)
 4. **Play**: 45-60 minute tactical combat
@@ -95,7 +95,7 @@ Each turn you refresh your Soul Points (SP) to maximum:
 - **Difficulty**: Beginner-friendly
 - **Teaches**: SP economy, Heat management, component damage, facing modifiers
 
-[View Scenario →](docs/arena-scenario-01-proving-grounds.md)
+[View Scenario →](docs/scenarios/01-proving-grounds.md)
 
 ### Scenario #2: Reliquary Ruins
 - **Type**: 1v1 Objective Control
@@ -105,7 +105,7 @@ Each turn you refresh your Soul Points (SP) to maximum:
 - **Difficulty**: Intermediate
 - **Teaches**: Map control, objective prioritization, high-ground advantage
 
-[View Scenario →](docs/arena-scenario-02-reliquary-ruins.md)
+[View Scenario →](docs/scenarios/02-reliquary-ruins.md)
 
 ### Example of Play
 - **5-turn walkthrough** showing Church vs Dwarves
@@ -113,33 +113,33 @@ Each turn you refresh your Soul Points (SP) to maximum:
 - Shows Blood Offering combo, component destruction, armor-piercing
 - Post-game analysis with balance observations
 
-[View Example →](docs/example-of-play.md)
+[View Example →](docs/scenarios/example-of-play.md)
 
 ---
 
 ## Complete Rules Documentation
 
 ### Core Systems
-- [Turn Structure](docs/turn-structure-final.md) - 4-phase SP-based turn system
-- [Combat Damage System](docs/combat-damage-system-gkr-style.md) - GKR + KDM hybrid
-- [Range and LOS](docs/range-and-los-final.md) - Hex movement, facing, cover
-- [Quick Reference Sheet](docs/quick-reference-sheet.md) - 1-page printable
+- [Turn Structure](docs/rules/turn-structure.md) - 4-phase SP-based turn system
+- [Combat System](docs/rules/combat-system.md) - GKR + KDM hybrid with deck-as-HP
+- [Range and LOS](docs/rules/range-and-los.md) - Hex movement, facing, cover
+- [Quick Reference Sheet](docs/rules/quick-reference.md) - 1-page printable
 
 ### Complete Faction Decks
-- [Church of Absolution](docs/faction-deck-church-complete.md) - 30 cards, 4 equipment options, 5 tactics
-- [Dwarven Clans](docs/faction-deck-dwarves-complete.md) - 32 cards, 4 equipment options, 5 tactics
+- [Church of Absolution](docs/factions/church/deck-complete.md) - 30 cards, 4 equipment options, 5 tactics
+- [Dwarven Clans](docs/factions/dwarves/deck-complete.md) - 32 cards, 4 equipment options, 5 tactics
 
 ### World & Lore
-- [World Lore](docs/world-lore.md) - 437-year timeline, 9 factions, historical eras
-- [Puppeteer Capsule System](docs/casket-control-system.md) - Neural thread control interface
-- [Leg-Skimming System](docs/leg-skimming-system.md) - Permanent sacrifice for power
-- [Faction Casket Types](docs/faction-casket-types.md) - 36 unique asymmetric Caskets
-- [AI Art Prompts](docs/ai-art-prompts.md) - Baroque-romanticist-brutalist aesthetic
+- [World Overview](docs/lore/world-overview.md) - 437-year timeline, 9 factions, historical eras
+- [Puppeteer Capsule System](docs/reference/casket-control-system.md) - Neural thread control interface
+- [Leg-Skimming System](docs/campaigns/leg-skimming.md) - Permanent sacrifice for power
+- [Faction Casket Types](docs/factions/casket-types.md) - 36 unique asymmetric Caskets
+- [AI Art Prompts](docs/reference/ai-art-prompts.md) - Baroque-romanticist-brutalist aesthetic
 
 ### Design Documents
-- [Playtest Readiness Assessment](docs/playtest-readiness-assessment.md) - 70% → 100% ready
-- [Design Roadmap](docs/design-roadmap-to-playtest.md) - Path from concept to playtest
-- [Boss Encounter System](docs/boss-encounter-hp-deck-system.md) - HP deck AI system
+- [Playtest Assessment](docs/reference/playtest-assessment.md) - Development progress and readiness
+- [Design Roadmap](docs/reference/design-roadmap.md) - Path from concept to playtest
+- [Core Design Philosophy](docs/reference/core-design.md) - Game pillars and influences
 
 ---
 
@@ -189,43 +189,73 @@ Each turn you refresh your Soul Points (SP) to maximum:
 ```
 penance/
 ├── README.md                          # You are here
-├── docs/
-│   ├── PLAYTEST-READY.md              # 🎮 START HERE - Complete playtest guide
-│   │
-│   ├── Core Rules/
-│   │   ├── turn-structure-final.md             # 4-phase turn system
-│   │   ├── combat-damage-system-gkr-style.md   # GKR + KDM hybrid damage
-│   │   ├── range-and-los-final.md              # Hex movement, facing, cover
-│   │   └── quick-reference-sheet.md            # 1-page printable
-│   │
-│   ├── Complete Faction Decks/
-│   │   ├── faction-deck-church-complete.md     # Church 30 cards
-│   │   └── faction-deck-dwarves-complete.md    # Dwarves 32 cards
-│   │
-│   ├── Playtest Scenarios/
-│   │   ├── arena-scenario-01-proving-grounds.md     # Deathmatch
-│   │   ├── arena-scenario-02-reliquary-ruins.md     # Objective Control
-│   │   └── example-of-play.md                       # 5-turn walkthrough
-│   │
-│   ├── World & Lore/
-│   │   ├── world-lore.md                   # 437-year timeline, 9 factions
-│   │   ├── casket-control-system.md        # Puppeteer capsule interface
-│   │   ├── leg-skimming-system.md          # Permanent sacrifice system
-│   │   ├── faction-casket-types.md         # 36 asymmetric Caskets
-│   │   └── ai-art-prompts.md               # Visual generation guide
-│   │
-│   ├── Design Documents/
-│   │   ├── playtest-readiness-assessment.md    # Development progress
-│   │   ├── design-roadmap-to-playtest.md       # Roadmap execution
-│   │   ├── boss-encounter-hp-deck-system.md    # HP deck AI
-│   │   └── deck-building-v2.md                 # 5-choose-3 tactics
-│   │
-│   └── Website/
-│       ├── index.html                  # Main website (interactive)
-│       ├── wiki/                       # SCP-style wiki
-│       └── cards/                      # Card database
+├── PLAYTEST-READY.md                  # 🎮 Complete playtest package overview
+├── QUICKSTART.md                      # Fast setup guide
 │
-└── tools/                              # Development tools (future)
+├── docs/
+│   ├── index.html                     # 🌐 Main website (timeline, factions, lore)
+│   │
+│   ├── rules/                         # 📖 Core game mechanics
+│   │   ├── index.md                   # Rules hub
+│   │   ├── turn-structure.md          # 4-phase SP system
+│   │   ├── combat-system.md           # Deck-as-HP, component damage
+│   │   ├── deck-construction.md       # How to build 30-card decks
+│   │   ├── range-and-los.md           # Hex movement, facing, targeting
+│   │   ├── terrain.md                 # Elevation, cover, environment
+│   │   └── quick-reference.md         # Printable 1-page sheet
+│   │
+│   ├── factions/                      # ⚔️ Playable factions
+│   │   ├── index.md                   # Faction hub
+│   │   ├── relationships.md           # Faction relationship matrix
+│   │   ├── casket-types.md            # 36 unique Caskets
+│   │   ├── church/
+│   │   │   └── deck-complete.md       # Church 30-card deck
+│   │   └── dwarves/
+│   │       └── deck-complete.md       # Dwarves 32-card deck
+│   │
+│   ├── cards/                         # 🃏 Card database
+│   │   ├── index.html                 # Interactive card browser
+│   │   ├── index.md                   # Card documentation hub
+│   │   ├── universal.md               # 10 Universal Core cards
+│   │   ├── masterlist.md              # Complete card list
+│   │   └── anatomy.md                 # How to read cards
+│   │
+│   ├── scenarios/                     # 🎯 Playtest scenarios
+│   │   ├── index.md                   # Scenario hub
+│   │   ├── 01-proving-grounds.md      # Deathmatch (beginner)
+│   │   ├── 02-reliquary-ruins.md      # Objective Control (intermediate)
+│   │   ├── example-of-play.md         # 5-turn walkthrough
+│   │   └── boss-iron-saint.md         # Boss encounter
+│   │
+│   ├── lore/                          # 📜 World & story
+│   │   ├── index.md                   # Lore hub
+│   │   ├── world-overview.md          # The Sundering, Remnants
+│   │   ├── chronicle.md               # 437-year timeline
+│   │   ├── iconic-npcs.md             # 5 legendary pilots
+│   │   └── resonance-engine.md        # The artifact that ended the world
+│   │
+│   ├── campaigns/                     # 🏰 Long-term progression
+│   │   ├── index.md                   # Campaign hub
+│   │   ├── settlements.md             # Base building
+│   │   ├── pilot-progression.md       # Scars, traits, death
+│   │   ├── leg-skimming.md            # Sacrifice for power
+│   │   └── loot-tables.md             # Post-mission rewards
+│   │
+│   ├── reference/                     # 🔧 Design docs & tools
+│   │   ├── index.md                   # Reference hub
+│   │   ├── core-design.md             # Design philosophy
+│   │   ├── playtest-assessment.md     # Development progress
+│   │   ├── ai-art-prompts.md          # Art generation guide
+│   │   ├── tabletop-simulator-guide.md
+│   │   └── PLAYTEST-READY.md          # Detailed playtest package
+│   │
+│   └── wiki/                          # 🗂️ Interactive wiki
+│       ├── index.html                 # Wiki homepage
+│       └── faction-church.html        # Church faction page
+│
+└── tools/                             # 🛠️ Development utilities
+    ├── card-generator/                # Card template generator
+    └── generate-tts-deck.py           # TTS integration script
 ```
 
 ---
@@ -234,26 +264,26 @@ penance/
 
 ### For Playtesters
 
-1. **Read**: [PLAYTEST-READY.md](docs/PLAYTEST-READY.md) - Setup guide
-2. **Choose Faction**: [Church](docs/faction-deck-church-complete.md) or [Dwarves](docs/faction-deck-dwarves-complete.md)
-3. **Pick Scenario**: [Proving Grounds](docs/arena-scenario-01-proving-grounds.md) (beginner) or [Reliquary Ruins](docs/arena-scenario-02-reliquary-ruins.md) (intermediate)
-4. **Print**: [Quick Reference Sheet](docs/quick-reference-sheet.md)
+1. **Read**: [PLAYTEST-READY.md](PLAYTEST-READY.md) - Setup guide
+2. **Choose Faction**: [Church](docs/factions/church/deck-complete.md) or [Dwarves](docs/factions/dwarves/deck-complete.md)
+3. **Pick Scenario**: [Proving Grounds](docs/scenarios/01-proving-grounds.md) (beginner) or [Reliquary Ruins](docs/scenarios/02-reliquary-ruins.md) (intermediate)
+4. **Print**: [Quick Reference Sheet](docs/rules/quick-reference.md)
 5. **Play**: 45-60 minutes
 6. **Feedback**: Open GitHub issue with observations
 
 ### For Designers
 
-1. **Core Systems**: Read [turn-structure-final.md](docs/turn-structure-final.md) + [combat-damage-system-gkr-style.md](docs/combat-damage-system-gkr-style.md)
-2. **Faction Design**: Study [faction-deck-church-complete.md](docs/faction-deck-church-complete.md) vs [faction-deck-dwarves-complete.md](docs/faction-deck-dwarves-complete.md) asymmetry
-3. **World Building**: Explore [world-lore.md](docs/world-lore.md) + [faction-casket-types.md](docs/faction-casket-types.md)
-4. **Campaign**: Review [settlement-mechanics.md](docs/settlement-mechanics.md) + [leg-skimming-system.md](docs/leg-skimming-system.md)
+1. **Core Systems**: Read [Turn Structure](docs/rules/turn-structure.md) + [Combat System](docs/rules/combat-system.md)
+2. **Faction Design**: Study [Church](docs/factions/church/deck-complete.md) vs [Dwarves](docs/factions/dwarves/deck-complete.md) asymmetry
+3. **World Building**: Explore [World Overview](docs/lore/world-overview.md) + [Casket Types](docs/factions/casket-types.md)
+4. **Campaign**: Review [Settlements](docs/campaigns/settlements.md) + [Leg Skimming](docs/campaigns/leg-skimming.md)
 
 ### For Visual Artists
 
-1. **Aesthetic**: [AI Art Prompts](docs/ai-art-prompts.md) - Baroque-romanticist-brutalist fusion
-2. **Caskets**: [Faction Casket Types](docs/faction-casket-types.md) - 36 unique designs
-3. **Control Interface**: [Puppeteer Capsule System](docs/casket-control-system.md) - Body horror mechanics
-4. **World**: [World Lore](docs/world-lore.md) - 437-year history, 9 factions
+1. **Aesthetic**: [AI Art Prompts](docs/reference/ai-art-prompts.md) - Baroque-romanticist-brutalist fusion
+2. **Caskets**: [Faction Casket Types](docs/factions/casket-types.md) - 36 unique designs
+3. **Control Interface**: [Puppeteer Capsule System](docs/reference/casket-control-system.md) - Body horror mechanics
+4. **World**: [World Lore](docs/lore/world-overview.md) - 437-year history, 9 factions
 
 ---
 
