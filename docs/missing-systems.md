@@ -213,42 +213,49 @@ SCOUT DECK CONSTRUCTION:
 
 ---
 
-### 6. **Campaign Progression System** ⚠️ MEDIUM PRIORITY
+### 6. **Campaign Progression System** ✅ COMPLETE (with gaps)
 
-**Status**: Mentioned in CoreDesign.md but not detailed
+**Status**: Core systems complete — see [settlement-mechanics.md](settlement-mechanics.md)
 **Needed for**: Campaign mode
 
-**What's Missing**:
-- [ ] **Workshop/Upgrade System**
-  - Credits earn rate (100 for primary objective, 50 for secondary)
-  - What can you buy?
-    - New equipment? (costs?)
-    - Repairs? (50/150/500 Credits stated in damage-system.md)
-    - Pilot upgrades?
-    - Settlement improvements?
-  - Starting credits for new campaign?
-- [ ] **Pilot Experience/Leveling**
-  - Do pilots gain XP? Level up?
-  - Skill trees? Perks? Traits?
-  - Or is progression purely equipment-based?
-- [ ] **Injury/Scarring System**
-  - Permanent injuries mentioned (damage-system.md:248-250)
-  - What are the mechanical effects?
-  - Example: "Shattered Leg" = permanent -1 movement?
-- [ ] **Settlement/Base Building**
-  - "Settlement building (forge/workshop)" mentioned in CoreDesign.md:545
-  - What can you build?
-  - Do buildings provide bonuses? (faster repairs, cheaper equipment, better loot?)
-- [ ] **Campaign Map/Mission Selection**
-  - Linear missions 1→15?
-  - Branching paths?
-  - Open map (choose which missions to tackle)?
-- [ ] **Story Beats/Narrative Structure**
-  - Scripted events at Taint thresholds?
-  - Faction reputation system?
-  - Ending variations based on choices?
+**What's Complete**:
+- [x] **Workshop/Upgrade System** — See settlement-mechanics.md:44-69
+  - Credits earn rate (100 for primary objective, 50 for secondary) ✅
+  - Building costs, equipment prices, repair costs defined ✅
+  - 14 buildings across 3 tiers + 6 faction-specific buildings ✅
+  - Starting credits: Implied as 100-150 (1-2 missions worth)
+- [x] **Settlement/Base Building** — See settlement-mechanics.md:70-275
+  - Full building system with progression tiers ✅
+  - Buildings provide passive bonuses, special actions, and unlocks ✅
+  - Resource management (Credits, Scrap, Population, Morale) ✅
+- [x] **Story Beats/Narrative Structure** — Partial
+  - Settlement Event table (d20 random events) ✅
+  - Faction reputation system — See [faction-relationships.md](faction-relationships.md) ✅
+  - Resonance Engine doomsday clock — See [resonance-engine-mechanics.md](resonance-engine-mechanics.md) ✅
+  - Multiple ending variations based on faction/Engine choices ✅
 
-**Needs Entire Document**: "Campaign Progression & Workshop System"
+**What's Still Missing**:
+- [x] **Pilot Experience/Leveling** — ✅ COMPLETE — **See [pilot-scars-traits.md](pilot-scars-traits.md)**
+  - 80+ Scar entries across 4 categories (Physical, Corruption, Trauma, Combat) ✅
+  - Acquisition rules defined (1 per 3 missions + traumatic events) ✅
+  - Trauma/disorder system implemented (Kingdom Death-style) ✅
+  - Faction-specific Scar tables included ✅
+- [x] **Injury/Scarring Tables** — ✅ COMPLETE — **See [pilot-scars-traits.md](pilot-scars-traits.md)**
+  - Full Physical Scars table with mechanical effects ✅
+  - Example: "Shattered Leg" = permanent -1 movement ✅
+  - Mixed with temporary injuries from damage-system.md ✅
+- [x] **Loot System** — ✅ COMPLETE — **See [loot-tables.md](loot-tables.md)**
+  - 4 rarity tiers with full item lists ✅
+  - Specialized tables (Abominations, NPCs, Sibarian Wastes) ✅
+  - Faction trade goods and crafting recipes ✅
+- [ ] **Campaign Map/Mission Selection** — Not designed
+  - Linear missions 1→15? Branching paths? Open map?
+  - Mission unlock conditions?
+  - Story gating vs player choice?
+
+**Recommended Next Steps**:
+1. Create "Pilot Scar & Injury Tables" document (HIGH PRIORITY)
+2. Design campaign mission structure (MEDIUM PRIORITY)
 
 ---
 

@@ -534,20 +534,27 @@ Heat represents your Casket's thermal load, system stress, and pilot exhaustion.
 ---
 
 ### Campaign (Co-op PvE)
-**Setup**: Persistent pilot and Casket across 10-15 missions  
-**Duration**: 2-3 hours per session  
-**Board**: Variable based on mission  
-**Objective**: Story-driven goals, unlock new equipment  
+**Setup**: Persistent pilot and Casket across 10-15 missions
+**Duration**: 2-3 hours per session
+**Board**: Variable based on mission
+**Objective**: Story-driven goals, unlock new equipment
 **Progression**: Workshop upgrades, pilot experience, permanent consequences
 
 **Features**:
-- Persistent injuries
-- Settlement building (forge/workshop)
-- Resource management
-- Branching narrative based on corruption levels
+- Persistent injuries (see [damage-system.md](damage-system.md))
+- Settlement building — **See [settlement-mechanics.md](settlement-mechanics.md)** for full system
+- Resource management (Credits, Scrap, Population, Morale)
+- Branching narrative based on corruption levels and faction relationships
 - Permadeath or severe setbacks
+- **World Threat**: The Resonance Engine's Instability Track acts as a doomsday clock — **See [resonance-engine-mechanics.md](resonance-engine-mechanics.md)**
+- **Political Web**: Faction relationships shift based on player actions — **See [faction-relationships.md](faction-relationships.md)**
 
 **Ideal for**: Long-term play groups, narrative experience
+
+**Campaign Resources**: For world lore, NPCs, and historical context, see:
+- [world-lore.md](world-lore.md) — Setting, factions, and Cataclysm history
+- [iconic-npcs.md](iconic-npcs.md) — 5 major NPC pilots (potential allies, rivals, or bosses)
+- [chronicle-entries.md](chronicle-entries.md) — Historical flavor and storytelling hooks
 
 ---
 
@@ -642,6 +649,8 @@ Each player draws one secretly:
 
 ## Monster AI System
 
+**Note**: This AI system applies to **both** Abominations (Void-spawn monsters) and intelligent NPC enemies (rival pilots). For detailed NPC pilot designs with full mechanics, see **[iconic-npcs.md](iconic-npcs.md)**.
+
 ### Behavior Deck Structure
 
 Each monster type has 15-20 card AI deck:
@@ -649,6 +658,8 @@ Each monster type has 15-20 card AI deck:
 - **Special Moves** (30%): Unique abilities
 - **Mood Shifts** (15%): Changes behavior pattern mid-fight
 - **Trap Cards** (5%): Triggered by player actions
+
+**NPC Pilots**: Instead of random AI cards, NPCs have strategic decks with signature abilities (e.g., Sister Vex's "Penitent's Burden," Thresh's "Predatory Pact"). They follow similar activation patterns but make "intelligent" tactical decisions.
 
 ### AI Turn Sequence
 

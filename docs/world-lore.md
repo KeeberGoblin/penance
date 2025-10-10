@@ -365,13 +365,44 @@ Near dragon lairs? They incorporate fossilized dragon essence.
 
 ---
 
-## Next Steps for World-Building
+## World-Building Complete! ✅
 
-- [x] Design 3-5 iconic NPC pilots (one per faction) — **See [iconic-npcs.md](iconic-npcs.md)**
-- [x] Create settlement mechanics (campaign base-building) — **See [settlement-mechanics.md](settlement-mechanics.md)**
-- [x] Detail the Resonance Engine's mechanics (can it be interacted with?) — **See [resonance-engine-mechanics.md](resonance-engine-mechanics.md)**
-- [x] Design faction relationship tracker (who hates who, why) — **See [faction-relationships.md](faction-relationships.md)**
-- [x] Write 10 historical "Chronicle" entries (world flavor) — **See [chronicle-entries.md](chronicle-entries.md)**
+All major world-building systems have been designed:
+
+- [x] **Iconic NPC Pilots** (one per faction) — **[iconic-npcs.md](iconic-npcs.md)**
+  - 5 deeply flawed, memorable characters with unique mechanics
+  - Sister Vex (Church), Kess (Elves), Durr (Dwarves), Thresh (Undead), Mockingbird (Fae)
+
+- [x] **Settlement Mechanics** (campaign base-building) — **[settlement-mechanics.md](settlement-mechanics.md)**
+  - 14 buildings across 3 tiers + 6 faction-specific buildings
+  - Resource management (Credits, Scrap, Population, Morale)
+  - Settlement events, disasters, and growth paths
+
+- [x] **Resonance Engine Mechanics** (interactive world threat) — **[resonance-engine-mechanics.md](resonance-engine-mechanics.md)**
+  - Instability Track (doomsday clock from 0-20)
+  - 5 different endgames (Destroy, Stabilize, Control, Redirect, Exploit)
+  - Environmental hazards and timed Resonance Pulses
+
+- [x] **Faction Relationship Tracker** (political web) — **[faction-relationships.md](faction-relationships.md)**
+  - 7-tier relationship scale (-3 War to +3 Allied)
+  - Detailed relationship matrix with historical grudges
+  - Player influence system and faction victory conditions
+
+- [x] **Historical Chronicle Entries** (world flavor) — **[chronicle-entries.md](chronicle-entries.md)**
+  - 10 non-generic historical fragments
+  - Reveals consequences, raises questions, establishes tone
+
+## Additional Campaign Systems
+
+- [x] **Pilot Scars & Traits** (permanent character development) — **[pilot-scars-traits.md](pilot-scars-traits.md)**
+  - 80+ unique Scars across 4 categories (Physical, Corruption, Trauma, Combat)
+  - Kingdom Death-inspired permanent character progression
+  - Faction-specific Scar tables
+
+- [x] **Loot Tables** (rewards & scavenging) — **[loot-tables.md](loot-tables.md)**
+  - 4 rarity tiers (Common, Uncommon, Rare, Legendary)
+  - Specialized tables (Abominations, NPC Pilots, Sibarian Wastes)
+  - Faction trade goods and crafting system
 
 ---
 

@@ -91,18 +91,21 @@ Kingdom Death-inspired AI system - monsters have behavior decks that create unpr
 
 ### In Progress
 - [ ] Full equipment card catalog
-- [ ] Combat resolution mechanics (detailed)
-- [ ] Workshop/campaign progression
 - [ ] 3D printable Casket models
 
 ### Planned
-- [ ] AI behavior decks
+- [ ] AI behavior decks (NPC pilots designed, behavior decks in progress)
 - [ ] Mission deck system
-- [ ] Monster bestiary
-- [ ] Terrain & environmental rules
+- [ ] Monster bestiary (bestiary expansion needed)
 - [ ] Playtest protocol & feedback system
 - [ ] Art direction & final card designs
 - [ ] Kickstarter campaign materials
+
+### Recently Completed
+- [x] Combat resolution mechanics (detailed) — [combat-resolution.md](docs/combat-resolution.md)
+- [x] Workshop/campaign progression — [settlement-mechanics.md](docs/settlement-mechanics.md)
+- [x] Terrain & environmental rules — [terrain-rules.md](docs/terrain-rules.md)
+- [x] World-building systems (NPCs, factions, lore) — See World-Building section below
 
 ---
 
@@ -124,10 +127,37 @@ penance/
 ├── QUICKSTART.md                  # Start here!
 ├── docs/                          # Complete design documents
 │   ├── CoreDesign.md              # Main rulebook
-│   ├── card-anatomy.md            # Card design reference
-│   ├── damage-system.md           # Injury & component damage
-│   ├── universal-cards.md         # 10 base cards
-│   └── 3d-printable-system.md     # Modular Casket system
+│   ├── world-lore.md              # Setting, factions, history
+│   │
+│   ├── Core Mechanics/
+│   │   ├── card-anatomy.md        # Card design reference
+│   │   ├── combat-resolution.md   # Combat & attack rules
+│   │   ├── damage-system.md       # Injury & component damage
+│   │   ├── deck-construction.md   # How to build legal decks
+│   │   ├── turn-structure.md      # Turn-by-turn gameplay
+│   │   ├── terrain-rules.md       # Environmental mechanics
+│   │   └── universal-cards.md     # 10 base cards
+│   │
+│   ├── Campaign Systems/
+│   │   ├── settlement-mechanics.md        # Base-building & progression
+│   │   ├── resonance-engine-mechanics.md  # World threat system
+│   │   └── faction-relationships.md       # Political web tracker
+│   │
+│   ├── World-Building/
+│   │   ├── iconic-npcs.md         # 5 faction NPC pilots
+│   │   ├── chronicle-entries.md   # 10 historical flavor texts
+│   │   └── (more lore docs)
+│   │
+│   ├── Equipment & Cards/
+│   │   ├── equipment-catalog.md   # Weapons & gear stats
+│   │   ├── card-masterlist.md     # Complete card database
+│   │   └── arena-scenarios.md     # PvP match setups
+│   │
+│   └── Reference/
+│       ├── quick-reference.md     # One-page rules summary
+│       ├── example-of-play.md     # Full turn walkthrough
+│       └── missing-systems.md     # Development roadmap
+│
 ├── tools/
 │   └── card-generator/
 │       ├── index.html             #  Interactive reference
@@ -138,6 +168,14 @@ penance/
 ├── playtesting/                   # Playtest reports (future)
 └── examples/                      # Sample decks & scenarios (future)
 ```
+
+### Documentation Guide
+
+**New Players**: Start with [QUICKSTART.md](QUICKSTART.md) → [CoreDesign.md](docs/CoreDesign.md) → [quick-reference.md](docs/quick-reference.md)
+
+**Game Masters**: Read [world-lore.md](docs/world-lore.md) → [iconic-npcs.md](docs/iconic-npcs.md) → [settlement-mechanics.md](docs/settlement-mechanics.md)
+
+**Campaign Players**: Focus on [settlement-mechanics.md](docs/settlement-mechanics.md) → [faction-relationships.md](docs/faction-relationships.md) → [resonance-engine-mechanics.md](docs/resonance-engine-mechanics.md)
 
 ---
 
