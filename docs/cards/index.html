@@ -282,6 +282,175 @@
             text-transform: uppercase;
         }
 
+        /* Card Type Color Coding */
+        .tag.attack {
+            background: #8b0000;
+            border-color: #ff0000;
+            color: var(--white);
+        }
+        .tag.defense {
+            background: #003366;
+            border-color: #4169e1;
+            color: var(--white);
+        }
+        .tag.movement {
+            background: #1a5c1a;
+            border-color: #32cd32;
+            color: var(--white);
+        }
+        .tag.support {
+            background: #663399;
+            border-color: #9370db;
+            color: var(--white);
+        }
+        .tag.utility {
+            background: #8b6914;
+            border-color: #daa520;
+            color: var(--white);
+        }
+        .tag.passive {
+            background: #4b0082;
+            border-color: #9932cc;
+            color: var(--white);
+        }
+
+        /* Faction-based Card Gradients */
+        .card-item[data-faction="universal"] {
+            background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+            border-color: #666666;
+        }
+
+        .card-item[data-faction="church"] {
+            background: linear-gradient(135deg, #4a0000 0%, #1a1a1a 100%);
+            border-color: #8b0000;
+        }
+
+        .card-item[data-faction="church"]:hover {
+            border-color: #ff0000;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+        }
+
+        .card-item[data-faction="dwarves"] {
+            background: linear-gradient(135deg, #4a3200 0%, #1a1a1a 100%);
+            border-color: #8b6914;
+        }
+
+        .card-item[data-faction="dwarves"]:hover {
+            border-color: #daa520;
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+        }
+
+        .card-item[data-faction="elves"] {
+            background: linear-gradient(135deg, #1a3a1a 0%, #1a1a1a 100%);
+            border-color: #2d5a2d;
+        }
+
+        .card-item[data-faction="elves"]:hover {
+            border-color: #32cd32;
+            box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
+        }
+
+        .card-item[data-faction="undead"] {
+            background: linear-gradient(135deg, #2d1a3a 0%, #1a1a1a 100%);
+            border-color: #4b2d5a;
+        }
+
+        .card-item[data-faction="undead"]:hover {
+            border-color: #8b5fbd;
+            box-shadow: 0 0 15px rgba(139, 95, 189, 0.5);
+        }
+
+        .card-item[data-faction="fae"] {
+            background: linear-gradient(135deg, #3a1a3a 0%, #1a1a1a 100%);
+            border-color: #9932cc;
+        }
+
+        .card-item[data-faction="fae"]:hover {
+            border-color: #ff00ff;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+        }
+
+        .card-item[data-faction="nomads"] {
+            background: linear-gradient(135deg, #3a3a1a 0%, #1a1a1a 100%);
+            border-color: #8b8b2d;
+        }
+
+        .card-item[data-faction="nomads"]:hover {
+            border-color: #ffff00;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+        }
+
+        .card-item[data-faction="merchants"] {
+            background: linear-gradient(135deg, #1a3a3a 0%, #1a1a1a 100%);
+            border-color: #2d5a5a;
+        }
+
+        .card-item[data-faction="merchants"]:hover {
+            border-color: #00ced1;
+            box-shadow: 0 0 15px rgba(0, 206, 209, 0.5);
+        }
+
+        .card-item[data-faction="blighted"] {
+            background: linear-gradient(135deg, #3a2a1a 0%, #1a1a1a 100%);
+            border-color: #8b5a2d;
+        }
+
+        .card-item[data-faction="blighted"]:hover {
+            border-color: #d2691e;
+            box-shadow: 0 0 15px rgba(210, 105, 30, 0.5);
+        }
+
+        .card-item[data-faction="chitinous"] {
+            background: linear-gradient(135deg, #1a2a1a 0%, #1a1a1a 100%);
+            border-color: #3a5a3a;
+        }
+
+        .card-item[data-faction="chitinous"]:hover {
+            border-color: #9acd32;
+            box-shadow: 0 0 15px rgba(154, 205, 50, 0.5);
+        }
+
+        /* Card Type Badge in Card Grid */
+        .card-type-badge {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-type-badge.attack {
+            background: #8b0000;
+            color: var(--white);
+        }
+
+        .card-type-badge.defense {
+            background: #003366;
+            color: var(--white);
+        }
+
+        .card-type-badge.movement {
+            background: #1a5c1a;
+            color: var(--white);
+        }
+
+        .card-type-badge.support {
+            background: #663399;
+            color: var(--white);
+        }
+
+        .card-type-badge.utility {
+            background: #8b6914;
+            color: var(--white);
+        }
+
+        .card-type-badge.passive {
+            background: #4b0082;
+            color: var(--white);
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .container {
@@ -332,7 +501,7 @@
     <div class="header">
         <div class="header-title">PENANCE: CARD DATABASE</div>
         <div class="header-nav">
-            <a href="../index-v2.html">BACK TO SITE</a>
+            <a href="../index.html">BACK TO SITE</a>
             <a href="../wiki/">WIKI</a>
         </div>
     </div>
@@ -1158,13 +1327,14 @@
             filteredCards.forEach(card => {
                 const cardEl = document.createElement('div');
                 cardEl.className = 'card-item';
+                cardEl.setAttribute('data-faction', card.faction);
                 if (selectedCard && selectedCard.id === card.id) {
                     cardEl.classList.add('selected');
                 }
 
                 cardEl.innerHTML = `
+                    <div class="card-type-badge ${card.type}">${card.type.toUpperCase()}</div>
                     <div class="card-name">${card.name}</div>
-                    <div class="card-type">${card.type.toUpperCase()}</div>
                     <div class="card-cost">COST: ${card.cost} SP</div>
                 `;
 
@@ -1239,7 +1409,17 @@
                 <div class="detail-section">
                     <div class="detail-label">KEYWORDS</div>
                     <div class="tag-list">
-                        ${card.keywords.map(k => `<span class="tag">${k}</span>`).join('')}
+                        ${card.keywords.map(k => {
+                            // Color-code tags based on type
+                            let tagClass = 'tag';
+                            if (k === 'attack' || k === 'melee' || k === 'ranged') tagClass += ' attack';
+                            else if (k === 'defense' || k === 'armor' || k === 'shield') tagClass += ' defense';
+                            else if (k === 'movement') tagClass += ' movement';
+                            else if (k === 'support' || k === 'ally' || k === 'healing') tagClass += ' support';
+                            else if (k === 'utility' || k === 'heat' || k === 'draw') tagClass += ' utility';
+                            else if (k === 'passive' || k === 'permanent') tagClass += ' passive';
+                            return `<span class="${tagClass}">${k}</span>`;
+                        }).join('')}
                     </div>
                 </div>
             `;
