@@ -178,7 +178,7 @@
 
         /* Chronicle Section - Tall section for scroll-based panning */
         #chronicle {
-            min-height: 400vh;
+            min-height: 300vh;
             display: block;
             padding: 0;
             align-items: flex-start;
@@ -1660,12 +1660,23 @@
                 const sectionHeight = chronicleSection.offsetHeight;
                 const windowHeight = window.innerHeight;
 
-                // Only pan when chronicle section is in view
-                if (sectionTop > windowHeight || sectionTop + sectionHeight < 0) return;
+                // Start when section header passes top of viewport
+                // Only calculate when section is actively scrolling through viewport
+                if (sectionTop > 0 || sectionTop + sectionHeight < 0) {
+                    // Section hasn't reached top yet or has scrolled completely past
+                    if (sectionTop > 0) {
+                        // Not started yet - keep at beginning
+                        timelineTrack.style.transform = 'translateX(0px)';
+                        return;
+                    }
+                    return;
+                }
 
                 // Calculate scroll progress through the section (0 to 1)
-                const scrollStart = Math.max(0, -sectionTop);
-                const scrollRange = sectionHeight - windowHeight;
+                // Start counting from when sticky header locks in place
+                const stickyOffset = 60; // Header height
+                const scrollStart = Math.max(0, -(sectionTop - stickyOffset));
+                const scrollRange = sectionHeight - windowHeight - stickyOffset;
                 let scrollProgress = scrollRange > 0 ? scrollStart / scrollRange : 0;
                 scrollProgress = Math.max(0, Math.min(1, scrollProgress));
 
