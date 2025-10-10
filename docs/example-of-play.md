@@ -1,711 +1,781 @@
-# Example of Play - Full Combat Walkthrough
-## Penance: Absolution Through Steel
+# EXAMPLE OF PLAY
 
-**Version**: 1.0
-**Last Updated**: October 9, 2025
-**Scenario**: First Blood (Arena 1v1)
+**Scenario**: Arena Scenario #1 - The Proving Grounds
+**Factions**: Church of Absolution vs Dwarven Clans
+**Players**: Alice (Church) vs Bob (Dwarves)
 
----
-
-## Setup
-
-### Players
-
-**Player 1 - "Kara" (Scout)**
-- **Casket**: Human Scout "Swift Redemption"
-- **Pilot**: Kara the Penitent
-- **Racial Ability**: Vow of Wrath (must attack if able, +1 damage)
-
-**Player 2 - "Grom" (Heavy)**
-- **Casket**: Dwarven Heavy "Ironheart Bastion"
-- **Pilot**: Grom Forgebreaker
-- **Racial Ability**: Runic Overcharge (1/mission, trigger powerful rune effect)
+This walkthrough demonstrates 5 complete turns of gameplay, showing:
+- SP economy and decision-making
+- Combat resolution with facing modifiers
+- Component damage tracking
+- Heat management and Strain checks
+- Reactive card usage
+- Death spiral mechanics
 
 ---
 
-### Decks
+## INITIAL SETUP
 
-**Kara's Scout Deck (22 cards)**:
-- **Universal**: 10 cards (standard)
-- **Right Arm - Swiftstrike Dagger**: 3 cards (Quick Stab, Flurry of Cuts, Evasive Strike)
-- **Left Arm - Swiftstrike Dagger**: 3 cards (duplicates!)
-- **Relic - Drake's Wing Jump Jets**: 3 cards (Aerial Leap, Sky Drop, Evasive Boost)
-- **Relic - Void-Core Emergency Vents**: 3 cards (Rapid Cooling, Heat Sink, Thermal Purge)
+### Alice (Church of Absolution)
+- **Casket**: Church Medium Frame
+- **SP Maximum**: 5
+- **Heat Capacity**: 6 (Strain check at 5+)
+- **Starting HP**: 30 cards
+- **Deck**: "Martyr's Fury" (Holy Pistol + Righteous Fury + Crusader's Vow)
+- **Deployment**: Forest hex (2,2) - top-left corner
+- **Facing**: Southeast (toward center)
 
-**Starting Stats**:
-- Safe Zone SP: 5
-- Hand Size: 6
-- Heat: 0
-- Taint: 0 (Vow of Wrath doesn't start Taint)
-
----
-
-**Grom's Heavy Deck (28 cards)**:
-- **Universal**: 10 cards (standard)
-- **Right Arm - Anvilfall Warhammer**: 4 cards (Crushing Descent, Earthshaker Smash, Hammerfall, Defensive Swing)
-- **Left Arm - Stalwart Tower Shield**: 3 cards (Fortress Stance, Protective Advance, Shield Wall)
-- **Relic 1 - Soulstone Ablative Plating**: 3 cards (Reactive Armor, Reinforced Hull, Emergency Plating)
-- **Relic 2 - Void-Core Emergency Vents**: 3 cards (same as Kara)
-- **Relic 3 - Forge-Blessed Repair Kit**: 3 cards (Emergency Patch, Reinforcing Struts, Full Diagnostic)
-- **Racial - Dwarven Rune Card**: 2 cards (Rune of Stone, Rune of Flame)
-
-**Starting Stats**:
-- Safe Zone SP: 3
-- Hand Size: 6
-- Heat: 0
-- Taint: 0
-
----
-
-### Board
-
-**7x7 Hex Grid** (Scenario: First Blood)
-
-```
-   A  B  C  D  E  F  G
- ┌──┬──┬──┬──┬──┬──┬──┐
-1│K │  │  │  │  │  │  │  K = Kara deploys A1
- ├──┼──┼──┼──┼──┼──┼──┤  G = Grom deploys G7
-2│  │  │  │  │  │  │  │  ░░ = Difficult (Rubble)
- ├──┼──┼──┼──┼──┼──┼──┤  △△ = Elevated (+1)
-3│  │  │░░│  │░░│  │  │
- ├──┼──┼──┼──┼──┼──┼──┤
-4│  │  │  │△△│  │  │  │  Center hex D4 (Elevated)
- ├──┼──┼──┼──┼──┼──┼──┤
-5│  │  │░░│  │░░│  │  │
- ├──┼──┼──┼──┼──┼──┼──┤
-6│  │  │  │  │  │  │  │
- ├──┼──┼──┼──┼──┼──┼──┤
-7│  │  │  │  │  │  │G │
- └──┴──┴──┴──┴──┴──┴──┘
-```
-
-**Deployment**:
-- Kara starts at A1, facing East (toward Grom)
-- Grom starts at G7, facing West (toward Kara)
-
----
-
-## Round 1
-
-### Initiative Phase
-
-**Kara rolls**: 1d6 = 4 (Scout +1 initiative bonus) = **5**
-**Grom rolls**: 1d6 = 3 (Heavy -1 initiative penalty) = **2**
-
-**Turn Order**: Kara goes first, Grom second
-
----
-
-### Kara's Turn (Round 1)
+**Opening Hand** (6 cards, drawn after shuffle):
+1. Desperate Lunge (Movement, 1 SP)
+2. Quick Shot (Attack, 1 SP, Range 3)
+3. Faithful Thrust (Attack, 2 SP, Melee)
+4. Blood Offering (Buff, 0 SP, discard 2 cards)
+5. Brace for Impact (Reactive, 0 SP, reduce dmg by 2)
+6. Emergency Vent (Heat, 2 SP, remove 3 Heat)
 
 **Current State**:
-- Position: A1, facing East
-- Hand (6 cards drawn): Desperate Lunge, Quick Stab, Aerial Leap, Warden's Pivot, Unyielding Bulwark, Soul's Recall
-- SP Available: 5 (Safe Zone)
+- HP: 30/30 (full deck)
+- SP: 5/5
 - Heat: 0
+- Hand: 6 cards
+- Righteous Fury counter: 0 kills
 
 ---
 
-**Kara's Plan**: Rush toward center, claim elevated hex
+### Bob (Dwarven Clans)
+- **Casket**: Dwarven Forge Walker
+- **SP Maximum**: 5
+- **Heat Capacity**: 6
+- **Starting HP**: 32 cards (Stone Endurance passive)
+- **Deck**: "Immovable Wall" (Siege Shield + Stone Endurance + Runic Overcharge)
+- **Deployment**: Rubble hex (11,11) - bottom-right corner
+- **Facing**: Northwest (toward center)
 
----
-
-**Action 1**: Play **Aerial Leap** (Jump Jets)
-- **SP Cost**: 2 SP
-- **Effect**: Move up to 3 hexes, ignore terrain, generate 2 Heat
-- **Choice**: Move A1 → B2 → C3 → D4 (center elevated hex)
-- **SP Spent**: 2/5
-- **Heat**: 0 + 2 = **2 Heat**
-- **Draw 1 card**: Draws Evasive Strike
-
-**Current Hand**: Quick Stab, Warden's Pivot, Unyielding Bulwark, Soul's Recall, Evasive Strike (5 cards)
-
----
-
-**Action 2**: Play **Warden's Pivot** (Universal, free rotation)
-- **SP Cost**: 0 SP (free action)
-- **Effect**: Rotate to any facing
-- **Choice**: Rotate to face South-East (toward Grom at G7)
-- **SP Spent**: 2/5 (no change)
-- **Heat**: 2
-- **Draw 1 card**: Draws Ironstrider's Rush
-
-**Current Hand**: Quick Stab, Unyielding Bulwark, Soul's Recall, Evasive Strike, Ironstrider's Rush (5 cards)
-
----
-
-**Kara considers**: "I'm on elevated hex now (+1 Defense). I have 3 SP left. Grom is 6 hexes away (medium range). Daggers are melee only, can't attack yet. I'll save SP."
-
-**Kara passes turn**.
-
----
-
-**End of Turn**:
-- SP Spent: 2/5 (stayed in Safe Zone, no Strain roll)
-- Heat: 2 (Warm, Strain +1 if entering Danger Zone next turn)
-- **Draw back to hand size** (6 cards): Draws Second Skin
-
-**Final Position**: D4 (center, elevated), facing SE, Heat 2
-
----
-
-### Grom's Turn (Round 1)
+**Opening Hand** (6 cards, drawn after shuffle):
+1. Rune of Protection (Buff, 2 SP, gain 1 Rune Counter)
+2. Crushing Blow (Attack, 2 SP, Melee, 4 dmg armor-piercing)
+3. Shield Wall (Defense, 2 SP, +3 Defense)
+4. Advance (Movement, 2 SP, move 2 + gain +2 Defense)
+5. Breathe the Core (Heat, 0 SP, remove 1 Heat)
+6. Survey the Field (Utility, 1 SP, draw 1 discard 1)
 
 **Current State**:
-- Position: G7, facing West
-- Hand (6 cards): Crushing Descent, Shield Wall, Reinforced Hull, Ironstrider's Rush, Breathe the Core, Guardian's Defiance
-- SP Available: 3 (Safe Zone)
+- HP: 32/32 (full deck)
+- SP: 5/5
 - Heat: 0
+- Hand: 6 cards
+- Rune Counters: 0
 
 ---
 
-**Grom's Plan**: Advance toward center, brace defensively
+## TURN 1: ALICE (CHURCH)
+
+### PHASE 1: REFRESH
+- Restore SP: 5/5 (already full, first turn)
+- Heat check: 0 Heat (no Strain check needed)
+
+### PHASE 2: ACTION PHASE
+
+**Alice's Thoughts**: *"I need to close distance quickly. The map center has elevation advantage. I'll rush toward Elevation 1 using Desperate Lunge, then position for ranged harassment."*
+
+**Action 1: Play Desperate Lunge** (1 SP)
+- Cost: 1 SP
+- Effect: Move up to 2 hexes in straight line
+- Movement: (2,2) → (3,3) → (4,4) [Clear ground]
+- SP Remaining: 4/5
+
+**Action 2: Move** (1 SP)
+- Cost: 1 SP per hex (clear ground)
+- Movement: (4,4) → (5,5) [Clear ground]
+- SP Remaining: 3/5
+
+**Action 3: Move** (1 SP)
+- Cost: 1 SP
+- Movement: (5,5) → (6,5) [Clear ground]
+- SP Remaining: 2/5
+
+**Alice considers attacking**: *"Bob is at (11,11), that's 8 hexes away (LONG RANGE). Quick Shot has Range 3 (CLOSE). Out of range. I'll pass."*
+
+- Pass turn
+- SP Remaining: 2/5 (unspent)
+
+### PHASE 3: DRAW PHASE
+- Current hand: 4 cards (played 2: Desperate Lunge, Emergency Vent still held)
+- Draw: 2 cards from deck
+- New hand size: 6 cards
+
+**New cards drawn**:
+7. Overextend (Movement, 2 SP, move 3 gain 2 Heat)
+8. Righteous Cleave (Attack, 3 SP, Melee, 5 dmg + 2 splash)
+
+### PHASE 4: END TURN
+- Remove temporary effects: None
+- Bob's turn begins
+
+**Alice's End State**:
+- Position: (6,5) - Clear ground
+- HP: 30/30
+- SP: 2/5 (unspent)
+- Heat: 0
+- Hand: 6 cards
 
 ---
 
-**Action 1**: Play **Ironstrider's Rush** (Universal)
-- **SP Cost**: 2 SP
-- **Effect**: Move up to 3 hexes in straight line, ignore difficult terrain, +2 Heat
-- **Choice**: Move G7 → F6 → E5 → D4... **WAIT, D4 is occupied by Kara!**
-- **Can't end in occupied hex**, so stop at E5
-- **SP Spent**: 2/3
-- **Heat**: 0 + 2 = **2 Heat**
-- **Draw 1 card**: Draws Fortress Stance (passive shield card)
+## TURN 1: BOB (DWARVES)
 
-**Current Hand**: Crushing Descent, Shield Wall, Reinforced Hull, Breathe the Core, Guardian's Defiance, Fortress Stance (6 cards)
+### PHASE 1: REFRESH
+- Restore SP: 5/5
+- Heat check: 0 Heat (no check)
+
+### PHASE 2: ACTION PHASE
+
+**Bob's Thoughts**: *"Alice is rushing the center. I need to set up defensive buffs early. I'll play Rune of Protection for damage reduction, then advance toward the central elevation slowly."*
+
+**Action 1: Play Rune of Protection** (2 SP)
+- Cost: 2 SP
+- Effect: Gain 1 Rune Counter, +1 Heat
+- SP Remaining: 3/5
+- Heat: 0 → 1
+- **Rune Counters: 0 → 1** (reduce all damage by 1)
+
+**Action 2: Move** (2 SP)
+- Cost: 2 SP (Rubble is difficult terrain)
+- Movement: (11,11) → (10,10) [Rubble]
+- SP Remaining: 1/5
+
+**Action 3: Play Survey the Field** (1 SP)
+- Cost: 1 SP
+- Effect: Draw 1 card, discard 1 card
+- Draw: Runic Overcharge (Tactic, 3 SP, gain 2 Rune Counters + 2 Heat)
+- Discard: Breathe the Core (don't need Heat management yet)
+- SP Remaining: 0/5
+
+**Bob's Thoughts**: *"Perfect draw. Next turn I'll use Runic Overcharge to stack Rune Counters to 3, then activate Shield Wall. Alice won't break through."*
+
+### PHASE 3: DRAW PHASE
+- Current hand: 5 cards (played 2, drew 1, discarded 1)
+- Draw: 1 card from deck
+- New hand size: 6 cards
+
+**New card drawn**:
+7. Earthshaker (Attack, 4 SP, Melee, 5 dmg + 2 splash + push)
+
+### PHASE 4: END TURN
+- Remove temporary effects: None
+- Alice's turn begins
+
+**Bob's End State**:
+- Position: (10,10) - Rubble (+1 Defense from terrain)
+- HP: 32/32
+- SP: 0/5
+- Heat: 1
+- Hand: 6 cards
+- **Rune Counters: 1** (damage reduction -1)
 
 ---
 
-**Action 2**: Play **Guardian's Defiance** (Universal)
-- **SP Cost**: 1 SP
-- **Effect**: +2 Defense until next turn
-- **SP Spent**: 3/3 (all SP used, stayed in Safe Zone)
-- **Heat**: 2
-- **Draw 1 card**: Draws Emergency Patch
+## TURN 2: ALICE (CHURCH)
 
-**Current Hand**: Crushing Descent, Shield Wall, Reinforced Hull, Breathe the Core, Fortress Stance, Emergency Patch (6 cards)
+### PHASE 1: REFRESH
+- Restore SP: 5/5
+- Heat check: 0 Heat (no check)
 
----
+### PHASE 2: ACTION PHASE
 
-**Grom passes turn** (out of SP).
+**Alice's Thoughts**: *"Bob is stacking defensive buffs. I need to close to Melee range and attack from his rear arc for +2 damage before he becomes unkillable. I'll use Overextend to rush in."*
 
-**End of Turn**:
-- SP Spent: 3/3 (stayed in Safe Zone, no Strain roll)
+**Action 1: Play Overextend** (2 SP)
+- Cost: 2 SP
+- Effect: Move up to 3 hexes, gain 2 Heat
+- Movement: (6,5) → (7,6) → (8,7) → (9,8) [approaching center]
+- SP Remaining: 3/5
+- Heat: 0 → 2
+
+**Action 2: Play Quick Shot** (1 SP)
+- Cost: 1 SP
+- Target: Bob at (10,10)
+- Range: 3 hexes (CLOSE RANGE, within Quick Shot's range 3) ✓
+- **ATTACK DECLARED**
+
+**COMBAT RESOLUTION**:
+
+1. **LOS Check**: Clear line of sight ✓
+2. **Range Check**: 3 hexes = CLOSE RANGE ✓
+3. **Calculate Damage**:
+   - Base damage: 2 (Quick Shot)
+   - Facing: Alice is in Bob's FRONT arc (+0 dmg)
+   - **Total damage: 2**
+4. **Defense Modifiers**:
+   - Bob's Rune Counters: -1 damage
+   - Bob's terrain (Rubble): +1 Defense (reduces damage by 1)
+   - **Total reduction: -2 damage**
+5. **Final Damage: 2 - 2 = 0 damage** (minimum 1)
+
+**Minimum Damage Rule**: All attacks deal at least 1 damage
+
+**Bob takes 1 damage**: Discard top 1 card from deck
+
+**Bob's Discarded Card**: Breathe the Core (Universal, not Primary Weapon)
+- **Component Damage Check**: 0 Primary Weapon cards discarded → No Component Damage
+
+- SP Remaining: 2/5
+
+**Alice's Thoughts**: *"Barely scratched him. Those Rune Counters are brutal. Next turn I need to use Blood Offering for +3 damage to punch through his armor."*
+
+### PHASE 3: DRAW PHASE
+- Current hand: 4 cards
+- Draw: 2 cards
+- New hand size: 6 cards
+
+**New cards drawn**:
+9. Divine Judgment (Attack, 4 SP, 6-8 dmg execute)
+10. Martyrdom Protocol (Reactive, 0 SP, redirect ally damage)
+
+### PHASE 4: END TURN
+
+**Alice's End State**:
+- Position: (9,8)
+- HP: 30/30
+- SP: 2/5
 - Heat: 2
-- Defense bonuses active: +2 from Guardian's Defiance, +2 from Fortress Stance (passive Tower Shield)
-- **Total Defense: +4** until Grom's next turn
-
-**Final Position**: E5, facing West, Heat 2, Defense +4
+- Hand: 6 cards
 
 ---
 
-### End Phase (Round 1)
+## TURN 2: BOB (DWARVES)
 
-- Temporary effects: Grom's Guardian's Defiance (+2 Defense) expires at start of his next turn
-- No environmental hazards
-- **Victory check**: Both Caskets alive, continue
+### PHASE 1: REFRESH
+- Restore SP: 5/5
+- Heat check: 1 Heat (below 5, no check)
 
----
+### PHASE 2: ACTION PHASE
 
-## Round 2
+**Bob's Thoughts**: *"Alice hit me for only 1 damage thanks to Rune Counters. Now I'll stack to 3 Rune Counters using Runic Overcharge, activate Shield Wall, and become nearly invincible."*
 
-### Initiative Phase
+**Action 1: Play Runic Overcharge** (3 SP)
+- Cost: 3 SP
+- Effect: Gain 2 Rune Counters, +2 Heat
+- SP Remaining: 2/5
+- Heat: 1 → 3
+- **Rune Counters: 1 → 3** (reduce all damage by 3)
 
-**Kara rolls**: 1d6 = 2 (+1 Scout) = **3**
-**Grom rolls**: 1d6 = 5 (-1 Heavy) = **4**
+**Action 2: Play Shield Wall** (2 SP)
+- Cost: 2 SP
+- Effect: +3 Defense until next turn, cannot attack while active
+- SP Remaining: 0/5
+- **Defense: +3 (Shield Wall) + 1 (Rubble) + 3 (Rune Counters) = +7 total damage reduction**
 
-**Turn Order**: Grom goes first! (Higher initiative)
+**Bob's Thoughts**: *"I'm a fortress. Alice's attacks will barely touch me. Next turn I'll counter-attack."*
 
----
+### PHASE 3: DRAW PHASE
+- Current hand: 4 cards (played 2)
+- Draw: 2 cards
+- New hand size: 6 cards
 
-### Grom's Turn (Round 2)
+**New cards drawn**:
+8. Iron Bulwark (Reactive, 0 SP, reduce dmg by 3 gain 1 Heat)
+9. Unbreakable (Reactive, 0 SP, prevent 1 Component Damage gain 1 Heat)
 
-**Current State**:
-- Position: E5, facing West
-- Hand: Crushing Descent, Shield Wall, Reinforced Hull, Breathe the Core, Fortress Stance, Emergency Patch
-- SP: 3
-- Heat: 2 (Strain +1 if Danger Zone)
-- Defense: +2 (Fortress Stance passive, Guardian's Defiance expired)
+### PHASE 4: END TURN
 
----
-
-**Grom's Plan**: "Kara is 1 hex away (D4, elevated). I'm adjacent diagonally. Daggers are melee, she might attack me. I'll close distance and attack first!"
-
----
-
-**Action 1**: Move to D4? **NO, occupied by Kara.**
-
-**Revised Plan**: "I'll attack from E5. Wait, my warhammer is melee. I need to be adjacent. D4 is adjacent to E5! I can attack!"
-
----
-
-**Action 1**: Play **Crushing Descent** (Warhammer)
-- **SP Cost**: 2 SP
-- **Effect**: Deal 5 damage, ignore 1 Defense
-- **Range**: Melee (E5 is adjacent to D4 ✓)
-- **Target**: Kara at D4
-- **Facing Check**: Grom is at E5, Kara is at D4. From Kara's perspective, E5 is to her South-East. That's facing [3] (Back-Right side attack).
-
-**Kara's Perspective Facings**:
-```
-Kara at D4, facing SE:
-      [1] Front (SE direction)
-  [6]  ▲  [2]
-       █
-  [5]     [3]  <- Grom is here (E5)
-      [4]
-```
-
-**Side Attack** (not front, not rear, Side = facing 3)
-
----
-
-**Kara's Defense Response**:
-- **Shield?** No shield equipped (dual daggers)
-- **Base Defense**: 0
-- **Elevated hex**: +1 Defense (Kara is on higher ground)
-- **Side attack**: Standard Defense (no penalty, no shield)
-- **Play reactive card?** Kara has Unyielding Bulwark in hand!
-
-**Kara declares**: "I play **Unyielding Bulwark** (reactive defense)!"
-- **Effect**: Reduce damage by 3, then discard 1 random card from hand
-
-**Hit Roll**:
-- Melee = Auto-hit (no roll needed)
-
-**Damage Calculation**:
-- Base damage: 5
-- Ignore 1 Defense (Crushing Descent effect): Kara's Defense is 0 + 1 (elevation) = 1, ignored
-- Unyielding Bulwark: -3 damage
-- **Final damage**: 5 - 3 = **2 damage**
-
-**Kara's Damage Resolution**:
-- Discard 2 cards (Kara chooses): Discards Soul's Recall and Evasive Strike from hand
-- Unyielding Bulwark effect: Discard 1 additional random card. **Roll 1d4** (4 cards left in hand): Rolls 3 = Discards Ironstrider's Rush
-
-**Total cards discarded**: 3 (2 from damage, 1 from Bulwark cost)
-
-**Kara's Hand Now**: Quick Stab, Second Skin (2 cards)
-
----
-
-**Grom continues**:
-- **SP Spent**: 2/3
-- **Heat**: 2
-- **Draw 1 card**: Draws Hammerfall
-
----
-
-**Action 2**: Play **Reinforced Hull** (Ablative Plating relic)
-- **SP Cost**: 1 SP
-- **Effect**: +2 Defense until end of round
-- **SP Spent**: 3/3 (all SP used)
-- **Heat**: 2
-- **Draw 1 card**: Draws Protective Advance
-
-**Grom's Defense now**: +2 (Fortress Stance) + 2 (Reinforced Hull) = **+4 Defense** until end of round
-
----
-
-**Grom passes turn** (out of SP).
-
-**End of Turn**:
-- Stayed in Safe Zone (3/3 SP), no Strain roll
-- Draw back to 6 cards: Draws 4 more cards (now has 6-card hand)
-
-**Final Position**: E5, facing West, Heat 2, Defense +4
-
----
-
-### Kara's Turn (Round 2)
-
-**Current State**:
-- Position: D4 (elevated), facing SE
-- Hand: Quick Stab, Second Skin (2 cards only!)
-- Deck: 22 - 6 (starting hand) - 3 (discarded) - 2 (in hand) = **11 cards left in deck**
-- SP: 5
-- Heat: 2 (Strain +1 if Danger Zone)
-
----
-
-**Kara's Plan**: "I took 2 damage (discarded 3 cards with Bulwark cost). Grom is adjacent, I can attack! Vow of Wrath forces me to attack if able. I have Quick Stab (1 SP, 2 damage). But Grom has +4 Defense... my 2 damage won't get through. I need more damage!"
-
-**Draw back to hand size first**: Draws 4 cards: Aerial Leap, Flurry of Cuts, Desperate Lunge, Heat Sink
-
-**Current Hand**: Quick Stab, Second Skin, Aerial Leap, Flurry of Cuts, Desperate Lunge, Heat Sink (6 cards)
-
----
-
-**Action 1**: Play **Quick Stab** (Dagger, Right Arm)
-- **SP Cost**: 1 SP
-- **Effect**: Deal 2 damage, melee
-- **Target**: Grom at E5 (adjacent ✓)
-- **Facing**: Kara is at D4, Grom is at E5. From Grom's perspective (facing West), Kara is to his Front-Left (facing [6]).
-
-**Grom's Facings** (facing West):
-```
-      [1] Front (West)
-  [6]  ▲  [2]
-       █      <- Grom
-  [5]     [3]
-      [4]
-
-Kara is at D4 (North-West of Grom) = Facing [6] Front-Left
-```
-
-**Front Attack** (Grom's shield covers front arc!)
-
----
-
-**Grom's Defense**:
-- Base Defense: 0
-- Fortress Stance (passive): +2 (front arc active!)
-- Reinforced Hull: +2
-- **Total Defense: +4**
-
-**Hit Roll**:
-- Melee = Auto-hit
-
-**Damage Calculation**:
-- Base damage: 2
-- Vow of Wrath: +1 damage (Kara's racial bonus)
-- **Total damage before Defense**: 3
-- Grom's Defense: 4
-- **Final damage**: 3 - 4 = -1 → **Minimum 1 damage** (always deal at least 1)
-
-**Grom discards 1 card** (from hand or deck, Grom chooses): Discards Breathe the Core from hand.
-
----
-
-**Kara continues**:
-- **SP Spent**: 1/5
-- **Heat**: 2
-- **Draw 1 card**: Draws Unyielding Bulwark
-
----
-
-**Action 2**: Play **Flurry of Cuts** (Dagger, Left Arm)
-- **SP Cost**: 2 SP
-- **Effect**: Deal 1 damage 3 times (resolved separately)
-- **Target**: Grom at E5
-
-**Damage Calculation** (per hit):
-- Base damage: 1
-- Vow of Wrath: +1
-- **Total**: 2 damage per hit
-- Grom's Defense: 4
-- **Final per hit**: 2 - 4 = -2 → **Minimum 1 damage each**
-
-**Total damage**: 1 × 3 = **3 damage**
-
-**Grom discards 3 cards** (chooses to mill from deck to keep hand):
-- Mills 3 cards from deck
-
----
-
-**Kara continues**:
-- **SP Spent**: 3/5
-- **Heat**: 2
-- **Draw 1 card**: Draws Warden's Pivot
-
----
-
-**Kara considers**: "I've dealt 4 damage total (1 + 3). I have 2 SP left. Grom still has high Defense. I could push into Danger Zone (+2 SP = 7 SP total), but I'd risk Strain roll with 2 Heat (+1 penalty). Should I?"
-
-**Decision**: "I'll play it safe. Grom's Defense expires at end of round. I'll wait."
-
-**Kara passes turn**.
-
-**End of Turn**:
-- Stayed in Safe Zone (3/5 SP used), no Strain roll
-- Draw back to 6 cards: Draws 3 more cards
-
-**Final Position**: D4 (elevated), facing SE, Heat 2
-
----
-
-### End Phase (Round 2)
-
-- Grom's Reinforced Hull (+2 Defense) expires
-- Grom's Defense now: +2 (Fortress Stance passive only)
-- Victory check: Both alive, continue
-
-**Damage Totals**:
-- Kara: Discarded 3 cards (2 from damage, 1 from Bulwark cost) = **19 cards left** (11 deck + 6 hand + 2 discard)
-- Grom: Discarded 4 cards (1 + 3) = **24 cards left** (28 - 4)
-
----
-
-## Round 3
-
-### Initiative Phase
-
-**Kara rolls**: 1d6 = 6 (+1) = **7**
-**Grom rolls**: 1d6 = 1 (-1) = **0**
-
-**Kara goes first!**
-
----
-
-### Kara's Turn (Round 3)
-
-**Current State**:
-- Position: D4, facing SE
-- Hand: Quick Stab, Warden's Pivot, Desperate Lunge, Aerial Leap, Second Skin, Guardian's Defiance
-- SP: 5
-- Heat: 2
-
----
-
-**Kara's Plan**: "Grom's Defense is only +2 now (Reinforced Hull expired). I can deal real damage! I'll go into Danger Zone for +2 SP and unleash everything!"
-
----
-
-**Action 1**: Play **Desperate Lunge** (Universal)
-- **SP Cost**: 1 SP
-- **Effect**: Move 2 hexes, rotate once, +1 Heat
-- **Choice**: Move to E4 (adjacent to Grom from different angle)
-- **New facing**: Check, Grom is now at E5, Kara at E4. From Grom's perspective (facing West), E4 is directly West = Facing [1] Front.
-
-**Wait, Kara wants REAR attack** (+2 damage bonus!)
-
-**Revised Action**: Move D4 → E5? **NO, occupied!**
-
-**Better plan**: Move around via D5 → E6 to get behind Grom!
-
-**Revised Move**: D4 → D5 → E6 (now behind Grom!)
-
-**From Grom's perspective** (facing West), E6 is East = Facing [4] **REAR!**
-
-- **SP Spent**: 1/5
-- **Heat**: 2 + 1 = **3 Heat**
-- **Draw**: Guardian's Defiance (duplicate)
-
----
-
-**Action 2**: Play **Quick Stab** (Dagger)
-- **SP Cost**: 1 SP
-- **Rear attack!** (+2 damage)
-- **Target**: Grom at E5
-
-**Grom's Defense**:
-- Rear attack: -2 Defense
-- Fortress Stance: +2 (but shields don't protect rear!)
-- **Total Defense**: 0 + 2 - 2 = **0 Defense** (shield negated by rear attack!)
-
-**Damage**:
-- Base: 2
-- Vow of Wrath: +1
-- Rear attack: +2
-- **Total**: 5 damage
-- Defense: 0
-- **Final: 5 damage!**
-
-**Grom discards 5 cards!** (Mills from deck)
-
----
-
-**Kara continues**:
-- **SP Spent**: 2/5
-- **Heat**: 3 (Strain +1)
-- **Draw**: Flurry of Cuts
-
----
-
-**Action 3**: Play **Flurry of Cuts** (Dagger)
-- **SP Cost**: 2 SP
-- **Rear attack!** (+2 damage per hit)
-
-**Damage per hit**:
-- Base: 1
-- Vow of Wrath: +1
-- Rear: +2
-- **Total**: 4 damage × 3 hits = **12 damage!**
-- Defense: 0
-- **Final: 12 damage!**
-
-**Grom discards 12 cards!**
-
----
-
-**Kara continues**:
-- **SP Spent**: 4/5
-- **Heat**: 3
-- **Draw**: Breathe the Core
-
----
-
-**Kara calculates**: "I've dealt 17 damage this turn! Grom started with 28 cards, took 4 damage last round = 24 cards. Now -17 = **7 cards left!** I'm at 4/5 SP. Should I push Danger Zone for +2 SP?"
-
-**Decision**: "YES! One more attack might finish him!"
-
-**Entering Danger Zone**: +2 SP (total 7 SP max)
-
-**Action 4**: Play **Quick Stab** again? **WAIT, already played it!** Each card can only be played once per turn!
-
-**Available attacks in hand**: None! (Flurry and Quick Stab already played)
-
-**Kara frustrated**: "I can't attack again! I'll pass."
-
----
-
-**Kara passes turn**.
-
-**End of Turn**:
-- **Entered Danger Zone** (4/5 Safe, pushed to 4 SP total—wait, that's IN Safe Zone!)
-- Actually, Kara spent 4 SP, which is within Safe Zone for Scout (5 SP)! **NO Strain roll needed!**
-
-**Correction**: Kara did NOT enter Danger Zone! (Danger Zone is 6-7 SP for Scout)
-
----
-
-### Grom's Turn (Round 3)
-
-**Current State**:
-- Position: E5, facing West
-- Cards remaining: 28 - 4 (Round 2) - 5 - 12 (Round 3) = **7 cards total**
-- Hand: 5 cards (had 6, discarded 1 earlier)
-- Deck: 2 cards (7 total - 5 in hand)
-- SP: 3
-- Heat: 2
-
----
-
-**Grom's Plan**: "I'm at 7 cards left (5 hand + 2 deck). Kara dealt massive damage. I need to fight back or flee. But Kara's behind me! I'll rotate and attack!"
-
----
-
-**Action 1**: Play **Warden's Pivot** (if in hand... checking)
-- **Not in hand!** Grom's hand: Crushing Descent (already played), Shield Wall, Protective Advance, Hammerfall, Defensive Swing, Full Diagnostic
-
-**Available**: Hammerfall (3 SP, 6 damage, can't move next turn)
-
-**Action 1**: Play **Hammerfall** (Warhammer)
-- **SP Cost**: 3 SP (ALL SP!)
-- **Effect**: Deal 6 damage, cannot move next turn
-- **Target**: Kara at E6
-
-**Facing Check**: Grom at E5 facing West, Kara at E6 (East of Grom) = Rear of Grom.
-
-**Wait, can Grom attack behind him?**
-
-**Melee range = adjacent**, Kara is adjacent. But Grom is facing West, Kara is East (behind).
-
-**Rules question**: Can you melee attack from any facing, or only front arc?
-
-**Ruling**: **Melee attacks can target any adjacent hex** (you swing around). Facing only matters for DEFENSE, not offense!
-
-**Grom attacks Kara**!
-
-**Kara's Defense**:
-- Grom is attacking from E5, Kara is at E6 facing SE
-- From Kara's perspective, E5 is West = Facing [6] (Front-Left, side attack)
-- **Front-ish attack** (no rear bonus for Grom)
-
-**Kara's Defense**:
-- Base: 0
-- Elevated: Kara left elevated hex (moved to E6, not elevated)
-- **Total: 0 Defense**
-
-**Kara's Reactive**:
-- Has Second Skin (-1 damage) in hand!
-
-**Kara plays Second Skin**!
-
-**Damage**:
-- Base: 6
-- Second Skin: -1
-- **Final: 5 damage**
-
-**Kara discards 5 cards** (from hand: 5, or split hand/deck)
-
----
-
-**Grom passes** (out of SP).
-
-**End of Turn**:
-- Grom: 7 cards → **2 cards left** (5 in hand - played 1 - draw 1 = 5, deck has 2)
-
-**Wait, hand calculation**:
-- Started turn with 5 in hand
-- Played Hammerfall
-- Drew 1 card after playing
-- **Hand: 5 cards**, Deck: 2 cards, **Total: 7 cards left**
-
----
-
-## Round 4 (Climax)
-
-### Initiative
-
-**Kara rolls**: 4 (+1) = **5**
-**Grom rolls**: 6 (-1) = **5**
-
-**TIE!** Re-roll!
-
-**Kara**: 3 (+1) = **4**
-**Grom**: 2 (-1) = **1**
-
-**Kara goes first!**
-
----
-
-### Kara's Turn (Round 4)
-
-**Current State**:
-- Cards: 19 - 5 (damage taken) = **14 cards** (deck + hand)
-- SP: 5
+**Bob's End State**:
+- Position: (10,10) - Rubble
+- HP: 31/32 (took 1 damage)
+- SP: 0/5
 - Heat: 3
-- Hand: Likely has attacks remaining
+- Hand: 6 cards
+- **Rune Counters: 3**
+- **Shield Wall active**: +3 Defense, cannot attack
 
-**Kara attacks**: "Grom has 7 cards left. I can finish this!"
-
-**Plays attack cards, deals 7+ damage**
-
-**Grom reduced to 0 cards** → **Casket Disabled!**
+**Total Damage Reduction**: 3 (Rune) + 3 (Shield Wall) + 1 (Rubble) = **-7 damage**
 
 ---
 
-## Victory!
+## TURN 3: ALICE (CHURCH) - THE COMBO
 
-**Kara wins!** Grom's Ironheart Bastion is disabled.
+### PHASE 1: REFRESH
+- Restore SP: 5/5
+- Heat check: 2 Heat (below 5, no check)
+
+### PHASE 2: ACTION PHASE
+
+**Alice's Thoughts**: *"Bob has SEVEN damage reduction. My strongest attack won't scratch him. I need Blood Offering (+3 dmg, ignore 1 Armor) + rear arc (+2 dmg) to break through."*
+
+**Action 1: Play Blood Offering** (0 SP)
+- Cost: 0 SP
+- Effect: Discard 2 cards from hand, next attack +3 dmg and ignore 1 Armor
+- Discard: Martyrdom Protocol, Emergency Vent
+- SP Remaining: 5/5
+- **Buff Active**: Next attack +3 damage, ignore 1 Armor
+- Hand: 6 → 4 cards
+- **HP: 30 → 28 cards** (self-harm mechanic)
+
+**Action 2: Move to Rear Arc** (2 SP)
+- Cost: 2 SP (Water difficult terrain)
+- Movement: (9,8) → (10,9) [Water, Bob's side]
+- SP Remaining: 3/5
+
+**Action 3: Move** (2 SP)
+- Cost: 2 SP (Water)
+- Movement: (10,9) → (11,10) [Bob's rear hex]
+- SP Remaining: 1/5
+
+**Alice is now in Bob's REAR ARC**
+
+**Action 4: Play Faithful Thrust** (2 SP, -1 from Crusader's Vow = 1 SP)
+- **Crusader's Vow**: While ≥20 HP, attacks cost -1 SP (Alice at 28/30 HP ✓)
+- Cost: 1 SP
+- Target: Bob at (10,10)
+- Range: Melee (1 hex) ✓
+- **ATTACK DECLARED**
+
+**COMBAT RESOLUTION**:
+
+1. **Calculate Damage**:
+   - Base damage: 4 (Faithful Thrust)
+   - Blood Offering buff: +3 damage
+   - Facing: Alice attacking from REAR arc (+2 dmg)
+   - **Total damage: 4 + 3 + 2 = 9 damage**
+2. **Defense Modifiers**:
+   - Bob's Rune Counters: -3 damage
+   - Bob's Shield Wall: +3 Defense
+   - Bob's terrain (Rubble): +1 Defense
+   - **Total: -7 damage reduction**
+   - **Blood Offering effect**: Ignore 1 Armor → ignore 1 point of reduction → -6 instead of -7
+3. **Final Damage: 9 - 6 = 3 damage**
+
+**Bob takes 3 damage**: Discard top 3 cards from deck
+
+**Bob's Discarded Cards**:
+1. Advance (Secondary - Siege Shield)
+2. Crushing Blow (Primary Weapon - Runic Warhammer) ← COMPONENT DAMAGE
+3. Emergency Vent (Universal)
+
+**Component Damage Check**: 1 Primary Weapon card discarded
+- **Component Damage: +1** (Right Arm)
+- Bob's Right Arm Component Damage: 0 → 1
+- **(Needs 3 for destruction)**
+
+**Bob's Thoughts**: *"That Blood Offering combo is dangerous. If she lands two more hits like that, my Right Arm is destroyed."*
+
+- Blood Offering buff consumed (used on this attack)
+- SP Remaining: 0/5
+
+### PHASE 3: DRAW PHASE
+- Current hand: 4 cards
+- Draw: 2 cards
+- New hand size: 6 cards
+
+**New cards drawn**:
+11. Desperate Lunge
+12. Sensor Sweep
+
+### PHASE 4: END TURN
+
+**Alice's End State**:
+- Position: (11,10) - Bob's rear
+- HP: 28/30 (discarded 2 for Blood Offering)
+- SP: 0/5
+- Heat: 2
+- Hand: 6 cards
+- Right Arm Component Damage dealt: 1/3
 
 ---
 
-## Post-Game Analysis
+## TURN 3: BOB (DWARVES)
 
-### Key Moments
+### PHASE 1: REFRESH
+- Restore SP: 5/5
+- Heat check: 3 Heat (below 5, no check)
 
-1. **Round 1**: Kara claimed elevated hex early (good positioning)
-2. **Round 2**: Grom's high Defense (+4) negated most of Kara's attacks
-3. **Round 3**: Kara flanked for rear attacks (+2 damage) = devastating!
-4. **Facing matters**: Rear attacks dealt 17 damage vs 4 damage from front attacks
+### PHASE 2: ACTION PHASE
 
-### Lessons Learned
+**Bob's Current State**:
+- HP: 28/32 (1 Turn 2 + 3 Turn 3 damage)
+- Right Arm Component Damage: 1/3
+- Shield Wall expires at end of turn
+- Alice is in rear hex
 
-**For Kara (Scout)**:
-- ✓ Mobility won the match (Jump Jets → flank → rear attack)
-- ✓ Vow of Wrath (+1 damage) added up over multiple attacks
-- ✗ Should have vented Heat earlier (didn't use Emergency Vents)
-- ✗ Drew some cards but didn't use all tools
+**Bob's Thoughts**: *"Alice is behind me. I need to turn and counter-attack with Crushing Blow (armor-piercing). Or I could activate Advance to gain +2 Defense and reposition."*
 
-**For Grom (Heavy)**:
-- ✓ High Defense (Guardian's Defiance, Reinforced Hull) delayed defeat
-- ✗ Didn't rotate to protect rear (vulnerable to flanking)
-- ✗ Didn't use Repair Kit (could have removed Kara's damage cards... wait, can't target enemy!)
-- ✗ Should have claimed elevated hex first (slow movement was weakness)
+**Action 1: Play Advance** (2 SP)
+- Cost: 2 SP
+- Effect: Move 2 hexes toward nearest enemy, gain +2 Defense this turn
+- Movement: (10,10) → (10,9) → (10,8) [moving away from Alice, but toward center]
+- SP Remaining: 3/5
+- **Defense buff: +2 this turn**
+
+**Action 2: Rotate** (0 SP)
+- Free action: Face South (toward Alice's likely next position)
+
+**Action 3: Play Crushing Blow** (2 SP)
+- Cost: 2 SP
+- Target: Alice at (11,10)
+- Range: 4 hexes... **OUT OF RANGE** (Crushing Blow is Melee only!)
+- **Cannot attack**
+
+**Bob's Thoughts**: *"Damn, I moved too far away. Can't attack this turn. I'll pass."*
+
+- SP Remaining: 1/5
+- Bob passes turn
+
+### PHASE 3: DRAW PHASE
+- Draw to hand size 6
+
+### PHASE 4: END TURN
+- Remove temporary effects:
+  - Shield Wall expires (+3 Defense removed)
+  - Advance defense buff expires (+2 Defense removed)
+
+**Bob's End State**:
+- Position: (10,8)
+- HP: 28/32
+- SP: 1/5
+- Heat: 3
+- Hand: 6 cards
+- **Rune Counters: 3** (still active)
+- Right Arm Component Damage: 1/3
 
 ---
 
-## Takeaways for New Players
+## TURN 4: ALICE (CHURCH) - EXECUTION ATTEMPT
 
-1. **Facing is critical** - Rear attacks are +2 damage AND -2 Defense (huge swing!)
-2. **Terrain matters** - Elevated hex gave Kara +1 Defense early
-3. **Mobility wins** - Scout's Jump Jets allowed flanking
-4. **Defense delays death** - Grom survived 2 rounds due to high Defense
-5. **SP management** - Kara stayed in Safe Zone (no Strain rolls = no risk)
+### PHASE 1: REFRESH
+- Restore SP: 5/5
+- Heat check: 2 Heat (no check)
+
+### PHASE 2: ACTION PHASE
+
+**Alice's Thoughts**: *"Bob moved away. I need to close distance again. I have Desperate Lunge to close 2 hexes, then attack."*
+
+**Action 1: Play Desperate Lunge** (1 SP)
+- Cost: 1 SP
+- Movement: (11,10) → (11,9) → (10,9) [closing distance]
+- SP Remaining: 4/5
+
+**Action 2: Move** (1 SP)
+- Cost: 1 SP
+- Movement: (10,9) → (10,8) [same hex as Bob]
+- **ERROR**: Cannot occupy same hex
+- Movement: (10,9) → (9,8) [adjacent to Bob]
+- SP Remaining: 3/5
+
+**Action 3: Play Righteous Cleave** (3 SP)
+- Cost: 3 SP
+- Target: Bob at (10,8)
+- Range: Melee ✓
+- Effect: Deal 5 to primary + 2 to adjacent
+- **ATTACK DECLARED**
+
+**COMBAT RESOLUTION**:
+
+1. **Calculate Damage**:
+   - Base damage: 5
+   - Facing: Front arc (+0)
+   - **Total: 5 damage**
+2. **Defense Modifiers**:
+   - Bob's Rune Counters: -3
+   - **Total reduction: -3**
+3. **Final Damage: 5 - 3 = 2 damage**
+
+**Bob takes 2 damage**: Discard top 2 cards
+
+**Bob's Discarded Cards**:
+1. Survey the Field (Universal)
+2. Rune of Protection (Primary Weapon) ← COMPONENT DAMAGE
+
+**Component Damage Check**: 1 Primary Weapon card discarded
+- **Component Damage: +1** (Right Arm)
+- Bob's Right Arm: 1 → 2 Component Damage
+- **(Needs 3 for destruction)**
+
+- SP Remaining: 0/5
+
+### PHASE 3: DRAW PHASE
+- Draw to hand size 6
+
+### PHASE 4: END TURN
+
+**Alice's End State**:
+- Position: (9,8)
+- HP: 28/30
+- Heat: 2
+- Right Arm Component Damage dealt to Bob: 2/3
 
 ---
 
-*"And thus, Kara earned redemption in iron and blood. Grom fell, but will rise again in the Workshop."*
+## TURN 4: BOB (DWARVES)
+
+### PHASE 1: REFRESH
+- Restore SP: 5/5
+- Heat check: 3 Heat (no check)
+
+### PHASE 2: ACTION PHASE
+
+**Bob's Current State**:
+- HP: 26/32 (took 2 more damage)
+- Right Arm Component Damage: 2/3 (ONE MORE HIT = DESTROYED)
+- Alice adjacent at (9,8)
+
+**Bob's Thoughts**: *"My Right Arm is at 2/3 Component Damage. If Alice lands one more solid hit with Primary Weapon cards in the discard, I lose all my attacks. I need to destroy HER Right Arm first! Crushing Blow deals 4 damage (armor-piercing). If I can force her to discard 2+ Primary Weapon cards, I can cripple her offense."*
+
+**Action 1: Play Crushing Blow** (2 SP)
+- Cost: 2 SP
+- Target: Alice at (9,8)
+- Range: Melee ✓
+- **ATTACK DECLARED**
+
+**COMBAT RESOLUTION**:
+
+1. **Calculate Damage**:
+   - Base damage: 4
+   - **ARMOR PIERCING**: Ignore all defense buffs
+   - Facing: Side arc (+1 dmg)
+   - **Total: 5 damage**
+2. **Defense Modifiers**:
+   - **ARMOR PIERCING** ignores all defenses
+   - **Final: 5 damage**
+
+**Alice takes 5 damage**: Discard top 5 cards from deck
+
+**Alice's Discarded Cards**:
+1. Retreat (Universal)
+2. Faithful Thrust (Primary Weapon) ← COMPONENT DAMAGE
+3. Quick Shot (Secondary)
+4. Righteous Cleave (Primary Weapon) ← COMPONENT DAMAGE
+5. Overextend (Universal)
+
+**Component Damage Check**: 2 Primary Weapon cards discarded
+- **Component Damage: +2** (Right Arm)
+- Alice's Right Arm: 0 → 2 Component Damage
+- **(Needs 3 for destruction)**
+
+**Alice's Thoughts**: *"2/3 Component Damage to my Right Arm! Bob's playing the same game. Next big hit could destroy my Primary Weapon."*
+
+- SP Remaining: 3/5
+
+**Action 2: Play Earthshaker** (4 SP)
+- Cost: 4 SP
+- **ERROR**: Only 3 SP remaining
+- **Cannot play**
+
+**Bob passes turn**
+
+- SP Remaining: 3/5
+
+### PHASE 3: DRAW PHASE
+- Draw to hand size 6
+
+### PHASE 4: END TURN
+
+**Bob's End State**:
+- Position: (10,8)
+- HP: 26/32
+- SP: 3/5
+- Heat: 3
+- Rune Counters: 3
+- Right Arm Component Damage: 2/3
+
+---
+
+## TURN 5: ALICE (CHURCH) - CLIMAX
+
+### PHASE 1: REFRESH
+- Restore SP: 5/5
+- Heat check: 2 Heat (no check)
+
+### PHASE 2: ACTION PHASE
+
+**Alice's Current State**:
+- HP: 23/30 (28 - 5 damage = 23 cards)
+- Right Arm Component Damage: 2/3
+- Bob's Right Arm Component Damage: 2/3
+
+**Alice's Thoughts**: *"Both of us are at 2/3 Component Damage. Whoever lands the next big hit wins. I have Divine Judgment (6-8 dmg execute). If I can force Bob to discard 3+ cards with at least 1 Primary Weapon, his Right Arm is destroyed and he can't fight back."*
+
+**Action 1: Play Divine Judgment** (4 SP)
+- Cost: 4 SP
+- Target: Bob at (10,8)
+- Range: Melee (1 hex) ✓
+- Effect: Deal 6 damage (or 8 if target ≤10 HP)
+- Bob's HP: 26/32 (>10 HP) → 6 damage
+- **ATTACK DECLARED**
+
+**COMBAT RESOLUTION**:
+
+1. **Calculate Damage**:
+   - Base damage: 6
+   - Facing: Front arc (+0)
+   - **Total: 6 damage**
+2. **Defense Modifiers**:
+   - Bob's Rune Counters: -3
+   - **Total reduction: -3**
+3. **Final Damage: 6 - 3 = 3 damage**
+
+**Bob takes 3 damage**: Discard top 3 cards
+
+**Bob's Discarded Cards**:
+1. Earthshaker (Primary Weapon) ← COMPONENT DAMAGE
+2. Shield Wall (Secondary)
+3. Desperate Lunge (Universal)
+
+**Component Damage Check**: 1 Primary Weapon card discarded
+- **Component Damage: +1** (Right Arm)
+- Bob's Right Arm: 2 → **3 Component Damage**
+- **3 COMPONENT DAMAGE = RIGHT ARM DESTROYED**
+
+**RIGHT ARM DESTRUCTION EFFECT**:
+- Bob must **discard all Primary Weapon cards from hand immediately**
+- Bob's hand contains:
+  - Crushing Blow (Primary) → DISCARD
+  - Forge Fury (Primary) → DISCARD
+  - Hammerfall (Primary) → DISCARD
+  - Iron Bulwark (Secondary - keep)
+  - Unbreakable (Primary) → DISCARD
+  - Advance (Secondary - keep)
+
+**Bob discards 4 Primary Weapon cards from hand**
+
+**Bob's Thoughts**: *"My Right Arm is destroyed. I can't use any Runic Warhammer attacks. I'm defenseless. This is over."*
+
+- SP Remaining: 1/5
+
+**Alice's Thoughts**: *"YES! Bob can't attack anymore. I just need to chip away the remaining 23 HP over the next few turns."*
+
+**Action 2: Play Brace for Impact** (0 SP, Reactive)
+- Hold for Bob's turn (if he can attack)
+- SP Remaining: 1/5
+
+**Alice passes turn**
+
+### PHASE 3: DRAW PHASE
+- Draw to hand size 6
+
+### PHASE 4: END TURN
+
+**Alice's End State**:
+- Position: (9,8)
+- HP: 23/30
+- Right Arm Component Damage: 2/3
+
+---
+
+## OUTCOME PROJECTION
+
+**Current State**:
+- **Alice**: 23/30 HP, 2/3 Right Arm Component Damage, full offense
+- **Bob**: 23/32 HP, **Right Arm Destroyed** (no Primary Weapons), pure defense
+
+**Next 5-8 Turns**:
+1. Bob can only play Universal cards (movement, Heat management) and Secondary Equipment (Siege Shield)
+2. Bob will turtle with Shield Wall, but cannot deal damage back
+3. Alice will chain attacks (Quick Shot, Faithful Thrust if she draws more)
+4. Bob's deck will reshuffle first, adding 1 Damage card
+5. Alice systematically reduces Bob to 0 HP
+
+**Victor**: **Alice (Church of Absolution)**
+**Victory Method**: Component destruction (Right Arm) → inability to counter-attack → slow attrition death
+
+**Estimated Turns to Victory**: Turn 10-12
+
+---
+
+## KEY LESSONS FROM THIS GAME
+
+### 1. Component Destruction is Devastating
+- Losing Primary Weapon = losing your faction identity
+- Bob became defenseless after Right Arm destruction
+- **Takeaway**: Protect components with Reactive cards (Unbreakable)
+
+### 2. Blood Offering (Self-Harm Mechanic) is Powerful
+- Alice discarded 2 cards for +3 damage + ignore 1 Armor
+- This burst damage broke through Bob's 7-point damage reduction
+- **Takeaway**: Self-harm for power is Church's core identity
+
+### 3. Facing Modifiers Matter
+- Rear arc attacks deal +2 damage
+- Alice's Turn 3 rear attack dealt 9 damage (before mitigation)
+- **Takeaway**: Positioning for rear arc is worth spending SP
+
+### 4. Rune Counters Delay but Don't Prevent Death
+- Bob's 3 Rune Counters reduced every attack by 3
+- However, Blood Offering "ignore 1 Armor" countered this partially
+- **Takeaway**: Damage reduction is strong but not invincible
+
+### 5. SP Economy: Safe Zone vs Danger Zone
+- Neither player entered Danger Zone (Heat Strain checks)
+- Conservative SP spending avoided risk
+- **Takeaway**: Danger Zone is high-risk, high-reward
+
+### 6. Armor-Piercing Counters Defensive Builds
+- Bob's Crushing Blow ignored Alice's defenses
+- Dealt full 5 damage, causing 2 Component Damage
+- **Takeaway**: Armor-piercing shuts down defense-stacking
+
+### 7. Death Spiral Didn't Trigger (Yet)
+- Neither player reshuffled by Turn 5
+- Game would have continued 5-8 more turns
+- **Takeaway**: Damage cards from reshuffles cripple deck consistency
+
+---
+
+## WHAT COULD BOB HAVE DONE DIFFERENTLY?
+
+### Mistake 1: Didn't Use Unbreakable
+- Bob had **Unbreakable** (Reactive, prevent 1 Component Damage) in hand
+- Should have played it on Turn 5 when taking 3 damage
+- Would have reduced Component Damage from 3 to 2, saving Right Arm
+
+### Mistake 2: Moved Away Turn 3
+- Turn 3: Bob played Advance and moved 2 hexes away
+- Left Alice time to reposition and attack again
+- Should have stayed adjacent and counter-attacked immediately
+
+### Mistake 3: Didn't Stack Armor Early
+- Bob had defensive cards (Shield Wall, Reinforced Hull) but used them Turn 2
+- Should have saved Shield Wall for Turn 5 (when Divine Judgment hit)
+- Would have reduced damage from 6 to 3 (before Rune Counters)
+
+---
+
+## BALANCE OBSERVATIONS
+
+### Church Strengths Confirmed
+- Blood Offering (0 SP, discard 2 cards, +3 dmg + ignore 1 Armor) is devastating
+- Crusader's Vow (-1 SP while healthy) enabled extra actions
+- Righteous Fury didn't trigger (no component destruction = no "kills")
+
+### Dwarven Weaknesses Exposed
+- Component destruction = complete loss of offense
+- 32 HP (Stone Endurance) didn't matter (game ended at 23 HP)
+- Defensive build requires surviving to late game
+
+### Potential Balance Changes
+1. **Component Destruction**: May be too punishing
+   - Consider: Destroyed components reduce effectiveness (not eliminate)
+   - Example: Right Arm Destroyed = Primary Weapon cards cost +1 SP (not discarded)
+
+2. **Blood Offering**: May be too efficient
+   - 0 SP cost, discard 2 cards, +3 dmg + ignore 1 Armor
+   - Consider: Increase to 1 SP cost OR reduce buff to +2 dmg
+
+3. **Unbreakable**: Bob had counter-play available but didn't use it
+   - This is player error, not balance issue
+   - Reward good reactive card timing
+
+---
+
+## NEXT STEPS
+
+1. **Playtest this scenario 3-5 times** with different players
+2. **Swap Tactics** (try different Church/Dwarven builds)
+3. **Add Pilot Wound Decks** for full brutality (capsule breach, neural feedback)
+4. **Test death spiral** mechanics (force games to 15+ turns, multiple reshuffles)
+5. **Create Scenario #2** with different terrain/factions
+
+---
+
+**STATUS**: EXAMPLE COMPLETE
+**PLAYTEST STATUS**: READY FOR TABLE PLAY
+**ESTIMATED LEARNING TIME**: 2-3 games to master core mechanics
+**ESTIMATED GAME LENGTH**: 45-60 minutes (first game), 30-45 minutes (experienced)
