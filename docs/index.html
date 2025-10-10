@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penance: Absolution Through Steel - Interactive Compendium</title>
+    <title>PENANCE: Absolution Through Steel</title>
     <style>
         * {
             margin: 0;
@@ -12,250 +12,307 @@
         }
 
         :root {
-            --dark-bg: #0a0a0a;
-            --medium-bg: #1a1a1a;
-            --light-bg: #2a2a2a;
-            --accent-gold: #d4af37;
-            --accent-red: #8b0000;
-            --accent-crimson: #dc143c;
-            --text-light: #e0e0e0;
-            --text-dim: #999;
-            --border-color: #444;
-            --glow: rgba(212, 175, 55, 0.3);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 5px var(--glow); }
-            50% { box-shadow: 0 0 20px var(--glow), 0 0 30px var(--glow); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #333333;
+            --light-gray: #666666;
+            --white: #ffffff;
+            --blood-red: #8b0000;
+            --accent: #d4af37;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Fancy background effect */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(ellipse at top, rgba(139, 0, 0, 0.1), transparent),
-                radial-gradient(ellipse at bottom, rgba(212, 175, 55, 0.05), transparent);
-            pointer-events: none;
-            z-index: 0;
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
-        header {
-            position: relative;
-            background: linear-gradient(135deg, var(--accent-red) 0%, var(--dark-bg) 100%);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-bottom: 3px solid var(--accent-gold);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            overflow: hidden;
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: var(--accent-gold);
-            text-shadow:
-                2px 2px 4px rgba(0,0,0,0.8),
-                0 0 20px rgba(212, 175, 55, 0.5);
-            margin-bottom: 0.5rem;
-            animation: fadeInUp 1s ease-out;
-            letter-spacing: 2px;
-        }
-
-        .tagline {
-            font-style: italic;
-            color: var(--text-light);
-            font-size: 1.2rem;
-            animation: fadeInUp 1s ease-out 0.2s both;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        nav ul {
-            list-style: none;
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        nav button {
-            background: var(--light-bg);
-            color: var(--text-light);
-            border: 2px solid var(--border-color);
-            padding: 0.75rem 1.5rem;
-            cursor: pointer;
-            font-size: 0.95rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 6px;
+            border-bottom: 1px solid var(--medium-gray);
             position: relative;
-            overflow: hidden;
         }
 
-        nav button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
-            transition: left 0.5s;
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
         }
 
-        nav button:hover::before {
-            left: 100%;
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            color: var(--white);
         }
 
-        nav button:hover, nav button.active {
-            background: var(--accent-gold);
-            color: var(--dark-bg);
-            border-color: var(--accent-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--light-gray);
+            font-weight: 400;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--blood-red);
+            padding-left: 2rem;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section {
-            display: none;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        /* Card Tile Grid - NEW */
-        .card-tile-grid {
+        .hero-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat {
+            border-top: 2px solid var(--accent);
+            padding-top: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Layout */
+        .section {
+            min-height: 100vh;
+            padding: 8rem 2rem;
+            border-bottom: 1px solid var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-dark {
+            background: var(--dark-gray);
+        }
+
+        .section-content {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .section-header {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 3rem;
+            border-bottom: 3px solid var(--white);
+            padding-bottom: 1rem;
+        }
+
+        .section-intro {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--light-gray);
+            margin-bottom: 4rem;
+            max-width: 800px;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-year {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .timeline-content p {
+            color: var(--light-gray);
+            line-height: 1.8;
+        }
+
+        /* NPCs Grid */
+        .npc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .npc-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            padding: 2rem;
+            transition: border-color 0.2s;
+        }
+
+        .npc-card:hover {
+            border-color: var(--accent);
+        }
+
+        .npc-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .npc-title {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .npc-faction {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .npc-description {
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        /* Cards Section */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin: 2rem 0;
         }
 
         .card-tile {
-            background: linear-gradient(135deg, var(--medium-bg) 0%, var(--light-bg) 100%);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
+            background: var(--medium-gray);
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--medium-gray);
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-tile::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-red));
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .card-tile:hover::before {
-            transform: scaleX(1);
+            transition: all 0.2s;
         }
 
         .card-tile:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.4), 0 0 20px var(--glow);
-            border-color: var(--accent-gold);
+            background: var(--dark-gray);
+            border-color: var(--white);
+            transform: translateY(-2px);
         }
 
-        .card-tile-icon {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-        }
-
-        .card-tile-name {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--accent-gold);
-            text-align: center;
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .card-tile-type {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            text-align: center;
+        .card-type {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--light-gray);
+            letter-spacing: 0.1em;
         }
 
-        /* Modal Popup - NEW */
+        /* Factions Section */
+        .factions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .faction-item {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .faction-item:last-child {
+            border-bottom: none;
+        }
+
+        .faction-name {
+            font-size: 2rem;
+            font-weight: 700;
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        .faction-details h4 {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .faction-details p {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .relationship-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .relationship {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .relationship-name {
+            color: var(--white);
+        }
+
+        .relationship-status {
+            font-weight: 600;
+        }
+
+        .relationship-status.war { color: #ff0000; }
+        .relationship-status.hostile { color: #ff6666; }
+        .relationship-status.cold { color: #999999; }
+        .relationship-status.neutral { color: #cccccc; }
+        .relationship-status.cordial { color: #66cc66; }
+        .relationship-status.friendly { color: #00cc00; }
+        .relationship-status.allied { color: #00ff00; }
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -263,1429 +320,861 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            animation: fadeIn 0.3s ease-out;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
             overflow-y: auto;
-            padding: 2rem;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .modal.active {
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
         .modal-content {
-            background: var(--medium-bg);
-            border: 3px solid var(--accent-gold);
-            border-radius: 16px;
-            max-width: 600px;
+            background: var(--dark-gray);
+            border: 2px solid var(--white);
+            max-width: 800px;
             width: 100%;
+            padding: 3rem;
             position: relative;
-            animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8) translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, var(--accent-red), var(--dark-bg));
-            padding: 1.5rem;
-            border-bottom: 2px solid var(--accent-gold);
-            border-radius: 13px 13px 0 0;
-        }
-
-        .modal-header h3 {
-            color: var(--accent-gold);
-            font-size: 1.8rem;
-            margin: 0;
-        }
-
-        .modal-body {
-            padding: 2rem;
-            max-height: 60vh;
-            overflow-y: auto;
         }
 
         .modal-close {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: var(--accent-red);
+            background: none;
             border: none;
-            color: white;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
             width: 40px;
             height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .modal-close:hover {
-            background: var(--accent-crimson);
-            transform: rotate(90deg) scale(1.1);
+            color: var(--accent);
         }
 
-        /* Timeline - NEW */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--accent-gold), var(--accent-red));
-            box-shadow: 0 0 10px var(--glow);
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: flex-start;
-            padding: 2rem 0;
-            position: relative;
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.6s ease-out;
-        }
-
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-            transform: translateX(50px);
-        }
-
-        .timeline-item.visible:nth-child(even) {
-            transform: translateX(0);
-        }
-
-        .timeline-marker {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--accent-gold);
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--glow);
-            z-index: 1;
-        }
-
-        .timeline-marker::before {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: rgba(212, 175, 55, 0.3);
-            border-radius: 50%;
-            top: -5px;
-            left: -5px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        .timeline-content {
-            background: var(--medium-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            width: 45%;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-            transition: all 0.3s;
-        }
-
-        .timeline-content:hover {
-            border-color: var(--accent-gold);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 20px var(--glow);
-            transform: scale(1.02);
-        }
-
-        .timeline-date {
-            color: var(--accent-gold);
-            font-weight: bold;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .timeline-title {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-text {
-            color: var(--text-dim);
-            line-height: 1.8;
-        }
-
-        /* Faction Network Graph - NEW */
-        .faction-network {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            background: var(--medium-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            margin: 2rem 0;
-        }
-
-        .faction-node {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, var(--light-bg), var(--medium-bg));
-            border: 3px solid var(--accent-gold);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-            z-index: 10;
-        }
-
-        .faction-node:hover {
-            transform: scale(1.15);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 30px var(--glow);
-            border-width: 4px;
-            z-index: 100;
-        }
-
-        .faction-icon {
+        .modal h2 {
             font-size: 2rem;
-            margin-bottom: 0.25rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1rem;
         }
 
-        .faction-name {
+        .card-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--black);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .card-stat {
+            text-align: center;
+        }
+
+        .card-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .card-stat-label {
             font-size: 0.75rem;
-            text-align: center;
-            font-weight: bold;
-            color: var(--accent-gold);
-        }
-
-        .connection-line {
-            position: absolute;
-            height: 2px;
-            background: var(--border-color);
-            transform-origin: left center;
-            transition: all 0.3s;
-            z-index: 1;
-        }
-
-        .connection-line.hostile {
-            background: var(--accent-red);
-            height: 3px;
-        }
-
-        .connection-line.friendly {
-            background: #2d8659;
-            height: 3px;
-        }
-
-        .connection-line.neutral {
-            background: var(--text-dim);
-            height: 1px;
-        }
-
-        /* Info Cards */
-        .info-card {
-            background: linear-gradient(135deg, var(--medium-bg) 0%, var(--light-bg) 100%);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-red));
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .info-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.4), 0 0 20px var(--glow);
-            border-color: var(--accent-gold);
-        }
-
-        .info-card h3 {
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        /* NPC Cards - NEW */
-        .npc-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .npc-card {
-            background: var(--medium-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .npc-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .npc-card:hover::after {
-            opacity: 1;
-        }
-
-        .npc-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px var(--glow);
-            border-color: var(--accent-gold);
-        }
-
-        .npc-header {
-            background: linear-gradient(135deg, var(--accent-red), #5a0000);
-            padding: 1.5rem;
-            border-bottom: 3px solid var(--accent-gold);
-            position: relative;
-        }
-
-        .npc-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent-gold);
-            margin-bottom: 0.25rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-
-        .npc-title {
-            font-style: italic;
-            color: var(--text-dim);
-            font-size: 0.95rem;
-        }
-
-        .npc-body {
-            padding: 1.5rem;
-        }
-
-        .npc-faction {
-            color: var(--accent-gold);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .npc-description {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .npc-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .npc-stat {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-        }
-
-        .npc-stat-label {
-            color: var(--text-dim);
-        }
-
-        .npc-stat-value {
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
-
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: var(--medium-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border: 1px solid var(--border-color);
-        }
-
-        th {
-            background: var(--light-bg);
-            color: var(--accent-gold);
-            font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            color: var(--light-gray);
+            letter-spacing: 0.1em;
         }
 
-        tr {
-            transition: all 0.2s;
+        .card-text {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        tr:hover {
-            background: var(--light-bg);
-            transform: scale(1.01);
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
         }
 
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-gold);
-            border-radius: 6px;
-            border: 2px solid var(--dark-bg);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #e5c158;
-        }
-
-        footer {
-            background: var(--medium-bg);
-            text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid var(--border-color);
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        .tag {
+            background: var(--medium-gray);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 1px solid var(--light-gray);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .card-grid { grid-template-columns: 1fr; }
-            nav ul { flex-direction: column; }
-            .timeline-content { width: 80%; }
-            .timeline::before { left: 20px; }
-            .timeline-item { padding-left: 60px; }
-            .timeline-marker { left: 20px; }
-            .card-tile-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+            .timeline-item,
+            .faction-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .timeline-year,
+            .faction-name {
+                position: static;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>⚔ PENANCE: ABSOLUTION THROUGH STEEL ⚔</h1>
-        <p class="tagline">"In iron we seek forgiveness. Through blood, absolution."</p>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PENANCE</h1>
+            <p class="hero-subtitle">Absolution Through Steel. Redemption Through Violence.</p>
+            <p class="hero-subtitle">A tactical skirmish game where the dead pilot war machines called Caskets across a shattered world, seeking forgiveness they will never find.</p>
 
-    <nav>
-        <ul>
-            <li><button onclick="showSection('overview')" class="active">Overview</button></li>
-            <li><button onclick="showSection('classes')">Weight Classes</button></li>
-            <li><button onclick="showSection('cards')">Card Library</button></li>
-            <li><button onclick="showSection('npcs')">Iconic NPCs</button></li>
-            <li><button onclick="showSection('factions')">Faction Web</button></li>
-            <li><button onclick="showSection('chronicles')">Chronicles</button></li>
-            <li><button onclick="showSection('settlement')">Settlement</button></li>
-            <li><button onclick="showSection('lore')">World Lore</button></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <!-- OVERVIEW SECTION -->
-        <section id="overview" class="section active">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 2rem;">Welcome to the Compendium</h2>
-            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-dim);">Explore the world of Penance - a tactical hex-based card game where you pilot massive armored Caskets powered by corrupting Soulstones. Choose your path: redemption through combat, or transformation into darkness.</p>
-
-            <div class="card-grid">
-                <div class="info-card">
-                    <h3>🎮 Core Mechanics</h3>
-                    <ul style="line-height: 2;">
-                        <li><strong>Deck-as-Health</strong>: Your deck IS your Casket</li>
-                        <li><strong>Soul-Points</strong>: Risk vs reward action economy</li>
-                        <li><strong>Corruption</strong>: Power at a terrible price</li>
-                        <li><strong>Hex Combat</strong>: Positioning determines victory</li>
-                        <li><strong>Permanent Scars</strong>: Every battle leaves its mark</li>
-                    </ul>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Factions</div>
                 </div>
-
-                <div class="info-card">
-                    <h3>🗺 Game Modes</h3>
-                    <ul style="line-height: 2;">
-                        <li><strong>Arena</strong>: PvP duels (30-45 min)</li>
-                        <li><strong>Campaign</strong>: Co-op story (15-20 sessions)</li>
-                        <li><strong>Raid</strong>: Boss fights (60-90 min)</li>
-                        <li><strong>Skirmish</strong>: Objective warfare (60 min)</li>
-                    </ul>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Years Since Sundering</div>
                 </div>
-
-                <div class="info-card">
-                    <h3>⚙️ Campaign Systems</h3>
-                    <ul style="line-height: 2;">
-                        <li><strong>Settlement Building</strong>: 14 unique structures</li>
-                        <li><strong>Pilot Scars</strong>: 80+ permanent traits</li>
-                        <li><strong>Faction Politics</strong>: 7 warring nations</li>
-                        <li><strong>Loot & Crafting</strong>: 100+ items</li>
-                        <li><strong>World Threat</strong>: Resonance Engine countdown</li>
-                    </ul>
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Iconic Pilots</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">80+</div>
+                    <div class="stat-label">Pilot Scars</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div style="text-align: center; margin: 3rem 0;">
-                <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Quick Stats</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <div style="background: var(--medium-bg); padding: 1.5rem; border-radius: 12px; border: 2px solid var(--border-color);">
-                        <div style="font-size: 2.5rem; color: var(--accent-gold); font-weight: bold;">5</div>
-                        <div style="color: var(--text-dim);">Weight Classes</div>
-                    </div>
-                    <div style="background: var(--medium-bg); padding: 1.5rem; border-radius: 12px; border: 2px solid var(--border-color);">
-                        <div style="font-size: 2.5rem; color: var(--accent-gold); font-weight: bold;">7</div>
-                        <div style="color: var(--text-dim);">Playable Races</div>
-                    </div>
-                    <div style="background: var(--medium-bg); padding: 1.5rem; border-radius: 12px; border: 2px solid var(--border-color);">
-                        <div style="font-size: 2.5rem; color: var(--accent-gold); font-weight: bold;">100+</div>
-                        <div style="color: var(--text-dim);">Unique Cards</div>
-                    </div>
-                    <div style="background: var(--medium-bg); padding: 1.5rem; border-radius: 12px; border: 2px solid var(--border-color);">
-                        <div style="font-size: 2.5rem; color: var(--accent-gold); font-weight: bold;">80+</div>
-                        <div style="color: var(--text-dim);">Pilot Scars</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WEIGHT CLASSES SECTION -->
-        <section id="classes" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 2rem;">Casket Weight Classes</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-dim);">Choose your combat style. Each weight class offers unique tactical options and trade-offs.</p>
-
-            <div class="card-grid">
-                <div class="info-card" onclick="showClassModal('scout')">
-                    <div style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">⚡</div>
-                    <h3 style="text-align: center;">Scout</h3>
-                    <p style="text-align: center; color: var(--text-dim); margin-bottom: 1rem;">500-800 lbs | 5 SP</p>
-                    <p style="line-height: 1.8;">Speed & evasion specialists. Scouts survive by not getting hit. Highest movement range and superior sensor capabilities.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--accent-gold); cursor: pointer;">
-                        Click for details →
-                    </div>
-                </div>
-
-                <div class="info-card" onclick="showClassModal('support')">
-                    <div style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">🛡</div>
-                    <h3 style="text-align: center;">Support</h3>
-                    <p style="text-align: center; color: var(--text-dim); margin-bottom: 1rem;">900-1,200 lbs | 4 SP</p>
-                    <p style="line-height: 1.8;">Force multipliers. Weaker alone, devastating with allies. Buff teammates and provide crucial field repairs.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--accent-gold); cursor: pointer;">
-                        Click for details →
-                    </div>
-                </div>
-
-                <div class="info-card" onclick="showClassModal('heavy')">
-                    <div style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">🏰</div>
-                    <h3 style="text-align: center;">Heavy</h3>
-                    <p style="text-align: center; color: var(--text-dim); margin-bottom: 1rem;">1,300-1,800 lbs | 3 SP</p>
-                    <p style="line-height: 1.8;">Frontline anchors. Built to last with thick armor plating. Control space through sheer intimidating presence.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--accent-gold); cursor: pointer;">
-                        Click for details →
-                    </div>
-                </div>
-
-                <div class="info-card" onclick="showClassModal('assault')">
-                    <div style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">💀</div>
-                    <h3 style="text-align: center;">Assault</h3>
-                    <p style="text-align: center; color: var(--text-dim); margin-bottom: 1rem;">1,900-2,500 lbs | 2 SP</p>
-                    <p style="line-height: 1.8;">Walking apocalypse. When an Assault Casket arrives, the entire battlefield changes. Devastating firepower.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--accent-gold); cursor: pointer;">
-                        Click for details →
-                    </div>
-                </div>
-
-                <div class="info-card" onclick="showClassModal('aberrant')">
-                    <div style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">🌀</div>
-                    <h3 style="text-align: center;">Aberrant</h3>
-                    <p style="text-align: center; color: var(--text-dim); margin-bottom: 1rem;">600-1,500 lbs | 3 SP</p>
-                    <p style="line-height: 1.8;">Reality is negotiable. Breaks normal game rules with unpredictable abilities. High corruption cost.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--accent-gold); cursor: pointer;">
-                        Click for details →
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CARD LIBRARY SECTION - Tile Grid -->
-        <section id="cards" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 2rem;">📚 Card Library</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-dim);">Browse the complete card collection. Click any card to view full details.</p>
-
-            <div style="background: var(--medium-bg); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border: 2px solid var(--border-color);">
-                <input type="text" id="cardSearch" placeholder="🔍 Search cards by name..."
-                       style="width: 100%; padding: 1rem; background: var(--dark-bg); color: var(--text-light); border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem;"
-                       oninput="searchCards(this.value)">
-            </div>
-
-            <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Universal Cards (10)</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Every deck contains these 10 cards:</p>
-
-            <div class="card-tile-grid" id="cardGrid">
-                <!-- Universal Cards -->
-                <div class="card-tile" onclick="showCardModal('desperate-lunge')" data-card-name="Desperate Lunge">
-                    <div class="card-tile-icon">⚡</div>
-                    <div class="card-tile-name">Desperate Lunge</div>
-                    <div class="card-tile-type">Universal | Init [1]</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('unyielding-bulwark')" data-card-name="Unyielding Bulwark">
-                    <div class="card-tile-icon">🛡</div>
-                    <div class="card-tile-name">Unyielding Bulwark</div>
-                    <div class="card-tile-type">Universal | Reactive</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('wardens-pivot')" data-card-name="Warden's Pivot">
-                    <div class="card-tile-icon">🔄</div>
-                    <div class="card-tile-name">Warden's Pivot</div>
-                    <div class="card-tile-type">Universal | Init [2]</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('ironstriders-rush')" data-card-name="Ironstrider's Rush">
-                    <div class="card-tile-icon">🏃</div>
-                    <div class="card-tile-name">Ironstrider's Rush</div>
-                    <div class="card-tile-type">Universal | Init [1]</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('second-skin')" data-card-name="Second Skin">
-                    <div class="card-tile-icon">🛡</div>
-                    <div class="card-tile-name">Second Skin</div>
-                    <div class="card-tile-type">Universal | Reactive</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('guardians-defiance')" data-card-name="Guardian's Defiance">
-                    <div class="card-tile-icon">🛡</div>
-                    <div class="card-tile-name">Guardian's Defiance</div>
-                    <div class="card-tile-type">Universal | Init [5]</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('breathe-core')" data-card-name="Breathe the Core">
-                    <div class="card-tile-icon">🔥</div>
-                    <div class="card-tile-name">Breathe the Core</div>
-                    <div class="card-tile-type">Universal | Init [3]</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('field-suture')" data-card-name="Field Suture">
-                    <div class="card-tile-icon">🔧</div>
-                    <div class="card-tile-name">Field Suture</div>
-                    <div class="card-tile-type">Universal | Init [4]</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('souls-recall')" data-card-name="Soul's Recall">
-                    <div class="card-tile-icon">📖</div>
-                    <div class="card-tile-name">Soul's Recall</div>
-                    <div class="card-tile-type">Universal | Init [2]</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('tattered-hope')" data-card-name="Tattered Hope">
-                    <div class="card-tile-icon">📖</div>
-                    <div class="card-tile-name">Tattered Hope</div>
-                    <div class="card-tile-type">Universal | Reactive</div>
-                </div>
-            </div>
-
-            <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">Weapon Cards (Examples)</h3>
-
-            <div class="card-tile-grid">
-                <div class="card-tile" onclick="showCardModal('faithful-thrust')" data-card-name="Faithful Thrust">
-                    <div class="card-tile-icon">⚔</div>
-                    <div class="card-tile-name">Faithful Thrust</div>
-                    <div class="card-tile-type">Weapon | Init [3]</div>
-                </div>
-
-                <div class="card-tile" onclick="showCardModal('cracked-soulveins')" data-card-name="Cracked Soulveins">
-                    <div class="card-tile-icon">💔</div>
-                    <div class="card-tile-name">Cracked Soulveins</div>
-                    <div class="card-tile-type">Damage | Critical</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ICONIC NPCs SECTION - NEW -->
-        <section id="npcs" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 2rem;">⚔️ Iconic NPC Pilots</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-dim);">Meet the legendary (and deeply flawed) pilots who shape the world. Click for full backstory and abilities.</p>
-
-            <div class="npc-showcase">
-                <div class="npc-card" onclick="showNPCModal('vex')">
-                    <div class="npc-header">
-                        <div class="npc-name">Sister Vex</div>
-                        <div class="npc-title">"The Hollow Penitent"</div>
-                    </div>
-                    <div class="npc-body">
-                        <div class="npc-faction">⚔️ Church of Absolution | Heavy Casket</div>
-                        <div class="npc-description">
-                            Sister Vex no longer has a face. She burned it away in ritual purification, yet the Taint she sought to destroy has only grown stronger. Now a living martyr, she seeks death in battle—but death refuses to claim her.
-                        </div>
-                        <div class="npc-stats">
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Casket:</span>
-                                <span class="npc-stat-value">The Confessional</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Weight:</span>
-                                <span class="npc-stat-value">1,600 lbs</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Taint:</span>
-                                <span class="npc-stat-value" style="color: var(--accent-red);">7 (High)</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Unique:</span>
-                                <span class="npc-stat-value">Martyrdom Protocol</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="npc-card" onclick="showNPCModal('kess')">
-                    <div class="npc-header">
-                        <div class="npc-name">Rootwarden Kess</div>
-                        <div class="npc-title">"The Pruner"</div>
-                    </div>
-                    <div class="npc-body">
-                        <div class="npc-faction">🌿 Verdant Covenant | Scout Casket</div>
-                        <div class="npc-description">
-                            Kess fused with her Casket years ago—her lower body is now roots and vines. She views corruption as disease, and herself as the gardener. Everything blighted must be pruned. No exceptions.
-                        </div>
-                        <div class="npc-stats">
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Casket:</span>
-                                <span class="npc-stat-value">The Briar-Thorn</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Weight:</span>
-                                <span class="npc-stat-value">650 lbs</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Taint:</span>
-                                <span class="npc-stat-value" style="color: #2d8659;">0 (Immune)</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Unique:</span>
-                                <span class="npc-stat-value">Pruning Strike</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="npc-card" onclick="showNPCModal('durr')">
-                    <div class="npc-header">
-                        <div class="npc-name">Forgemaster Durr</div>
-                        <div class="npc-title">"The Calculator"</div>
-                    </div>
-                    <div class="npc-body">
-                        <div class="npc-faction">⚒️ Forge-Guilds | Support Casket</div>
-                        <div class="npc-description">
-                            60% clockwork prosthetics. 100% cold logic. Durr replaced emotion with calculation. He'll sacrifice allies if the math favors victory. Efficiency is everything.
-                        </div>
-                        <div class="npc-stats">
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Casket:</span>
-                                <span class="npc-stat-value">The Abacus</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Weight:</span>
-                                <span class="npc-stat-value">1,100 lbs</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Taint:</span>
-                                <span class="npc-stat-value">3 (Controlled)</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Unique:</span>
-                                <span class="npc-stat-value">Probability Matrix</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="npc-card" onclick="showNPCModal('thresh')">
-                    <div class="npc-header">
-                        <div class="npc-name">Bonelord Thresh</div>
-                        <div class="npc-title">"The Debt Collector"</div>
-                    </div>
-                    <div class="npc-body">
-                        <div class="npc-faction">💀 Bone-Courts | Assault Casket</div>
-                        <div class="npc-description">
-                            A skeletal lich wrapped in contracts. Thresh owns souls through predatory bargains—hundreds signed away their afterlives for momentary survival. All debts come due.
-                        </div>
-                        <div class="npc-stats">
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Casket:</span>
-                                <span class="npc-stat-value">The Creditor</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Weight:</span>
-                                <span class="npc-stat-value">2,200 lbs</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Taint:</span>
-                                <span class="npc-stat-value">N/A (Undead)</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Unique:</span>
-                                <span class="npc-stat-value">Predatory Pact</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="npc-card" onclick="showNPCModal('mockingbird')">
-                    <div class="npc-header">
-                        <div class="npc-name">Mockingbird</div>
-                        <div class="npc-title">"The Many-Masked"</div>
-                    </div>
-                    <div class="npc-body">
-                        <div class="npc-faction">✨ Twilight Courts | Aberrant Casket</div>
-                        <div class="npc-description">
-                            She has too many faces. Too many voices. Too many stolen identities. Mockingbird collects possibilities—alternate timelines where different choices were made. Reality is negotiable.
-                        </div>
-                        <div class="npc-stats">
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Casket:</span>
-                                <span class="npc-stat-value">The Mirror-Dance</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Weight:</span>
-                                <span class="npc-stat-value">800 lbs</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Taint:</span>
-                                <span class="npc-stat-value" style="color: #ba55d3;">??? (Unmeasurable)</span>
-                            </div>
-                            <div class="npc-stat">
-                                <span class="npc-stat-label">Unique:</span>
-                                <span class="npc-stat-value">Stolen Reflection</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FACTION WEB SECTION - NEW -->
-        <section id="factions" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 2rem;">🗺️ Faction Relationship Web</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-dim);">Explore the complex political landscape. Hover over factions to see their relationships. Lines show alliances (green), hostilities (red), and neutrality (gray).</p>
-
-            <div class="faction-network" id="factionNetwork">
-                <!-- Factions will be positioned via JavaScript -->
-            </div>
-
-            <div style="margin-top: 2rem; background: var(--medium-bg); padding: 2rem; border-radius: 12px; border: 2px solid var(--border-color);">
-                <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Relationship Key</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div style="width: 40px; height: 3px; background: #2d8659;"></div>
-                        <span>Allied / Friendly (+1 to +3)</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div style="width: 40px; height: 1px; background: var(--text-dim);"></div>
-                        <span>Neutral (0)</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div style="width: 40px; height: 3px; background: var(--accent-red);"></div>
-                        <span>Hostile / War (-1 to -3)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHRONICLES TIMELINE SECTION - NEW -->
-        <section id="chronicles" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 2rem;">📜 The Chronicles</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-dim);">Scroll through the dark history of the world—from the Sundering to the present day. Each entry reveals another piece of the shattered truth.</p>
+    <!-- Chronicle Section -->
+    <section class="section section-dark">
+        <div class="section-content">
+            <h2 class="section-header">CHRONICLE</h2>
+            <p class="section-intro">The recorded history of a world that ended. What remains are fragments, transmissions, and the testimony of those who survived.</p>
 
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">YEAR 0</div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Year 0, Hour 0</div>
-                        <div class="timeline-title">The Final Transmission</div>
-                        <div class="timeline-text">
-                            <p>"...final checks complete. Resonance Engine is stable at 97% efficiency. Nikolas, the board is green across all—wait. Wait, what is that reading?"</p>
-                            <p style="margin-top: 0.5rem; font-style: italic; color: var(--accent-red);">[Static. Then a voice, cold and distant]: "...we see you now. We have always seen you. Thank you for opening the door."</p>
-                        </div>
+                        <h3>The Final Transmission</h3>
+                        <p>"This is Dr. Nikolas Theslar, Head of Resonance Studies at the Sibarian Institute. If you're hearing this, the test has failed. The Engine was supposed to eliminate scarcity. Unlimited energy. Post-death consciousness transfer. Immortality for all. Instead, it's... singing. God help us. It's singing, and I can't stop listening."</p>
+                        <p>The last words from the Sibarian Institute before the Sundering. The Resonance Engine activated at 14:22 GMT. By 14:23, the world had ended.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">YEAR 1</div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Year 52</div>
-                        <div class="timeline-title">The First Casket</div>
-                        <div class="timeline-text">
-                            <p><strong>Engineer's Diary:</strong> "Gareth refuses to leave the Casket. Says he feels 'hollow' outside it. His wife visited—he didn't recognize her."</p>
-                            <p style="margin-top: 0.5rem; font-style: italic;">"Gareth is gone. Not dead. Just... merged. The Casket moves on its own now. We can't open it. Sometimes, at night, I hear it walking the halls."</p>
-                        </div>
+                        <h3>The First Casket</h3>
+                        <p>Recorded testimony from Survivor Camp 7, Northern Wastes:</p>
+                        <p>"We found Marissa three days after she died. Frost took her in the night. But when we went to bury her, she was gone. We heard something walking in the snow. Heavy. Mechanical. It was her, but not her. She'd built herself a body out of scrap metal and frozen corpses. She didn't speak. Just pointed north and started walking."</p>
+                        <p>The first documented case of post-mortem consciousness persistence. The phenomenon was named "Remnant Animation." Later, it would simply be called "The Curse."</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">YEAR 12</div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Year 78</div>
-                        <div class="timeline-title">The Ledger of Souls</div>
-                        <div class="timeline-text">
-                            <p><strong>Soul Debt Contract #4,127:</strong> Alina Korr traded her afterlife to resurrect her son. The contract was... comprehensive.</p>
-                            <p style="margin-top: 0.5rem;">Collection Notice (Year 94): Debtor deceased. Soul collected. Her son Marik has now signed Contract #6,891 to resurrect his mother.</p>
-                            <p style="margin-top: 0.5rem; font-style: italic; color: var(--accent-gold);">"Compound interest is the eighth wonder of the world." - Bonelord Thresh</p>
-                        </div>
+                        <h3>The Church Manifesto</h3>
+                        <p>From the Church of Absolution's founding document:</p>
+                        <p>"We did not die because we were unworthy. We died because the world demanded sacrifice. Now, bound to these iron shells, we are given a second chance. Not to live, but to atone. Every enemy felled is a sin purged. Every mission completed is a step toward salvation. We will earn our rest through violence, or we will walk this broken world forever."</p>
+                        <p>The Church's ideology spread rapidly among the Remnants. Within five years, they controlled the southern territories.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">YEAR 34</div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Year 83</div>
-                        <div class="timeline-title">The Screaming Choir</div>
-                        <div class="timeline-text">
-                            <p><strong>Scout Audio Log:</strong> "We're within visual of the Engine. It's... singing. There are people inside it. Hundreds. Embedded in the walls. Still alive."</p>
-                            <p style="margin-top: 0.5rem; font-style: italic; color: var(--accent-red);">"Oh God. I recognize that voice. That's Nikolas Theslar. He's still in there. He's been in there for a hundred years. He's conducting them."</p>
-                            <p style="margin-top: 0.5rem;">[Resonance Pulse. Transmission ends.]</p>
-                        </div>
+                        <h3>The Taint Plague</h3>
+                        <p>Medical log from Dr. Helena Vask, Fortuna Settlement:</p>
+                        <p>"Exposure to Abominations is changing the Remnants. It starts with discoloration around the wound sites. Then the hallucinations. They report hearing the Engine's song, even hundreds of miles from Sibaria. Stage 3 Taint victims exhibit reality distortion fields. Stage 5... they become something else. We have no cure. We can only quarantine and pray they choose to self-terminate before transformation."</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">YEAR 67</div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Year 89</div>
-                        <div class="timeline-title">The Pruning of Ashveil</div>
-                        <div class="timeline-text">
-                            <p><strong>Refugee Testimony:</strong> "She walked through the village, calm as morning mist. Every few steps, she'd stop and... prune. One swing. Farmer Gorth—gone."</p>
-                            <p style="margin-top: 0.5rem;">"I asked her why. She said, 'You were diseased. I've cut away the infection.'"</p>
-                            <p style="margin-top: 0.5rem;">When we dug the graves, we found Taint-crystals growing beneath their homes. She was right. She still killed them.</p>
-                        </div>
+                        <h3>The Betrayal at Roothold</h3>
+                        <p>From the testimony of Warden Kess at the Greenfire Council:</p>
+                        <p>"The Church came with promises. Protection from the Rot-Screamers. Medicine for the blight. All they asked was passage through Thornveil. We refused. Three days later, they burned half the forest. The trees screamed. I watched them die and felt nothing. That's when I knew: I am as cursed as they are. We all are."</p>
+                        <p>The Church-Elf war began that winter and has not ended.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">YEAR 78</div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Year 94</div>
-                        <div class="timeline-title">The Mercy of Sister Vex</div>
-                        <div class="timeline-text">
-                            <p><strong>Inquisition Confession Log:</strong> A woman tested positive for Taint. Sentence: immolation. Sister Vex intervened.</p>
-                            <p style="margin-top: 0.5rem; font-style: italic;">"I will take this one. Add her sin to my ledger."</p>
-                            <p style="margin-top: 0.5rem;">The woman asked: "How long must I serve?"</p>
-                            <p style="margin-top: 0.5rem; font-style: italic;">"I do not die. Neither will you. That is my gift."</p>
-                        </div>
+                        <h3>The Forge-Titan Awakens</h3>
+                        <p>From the Dwarven Assembly records:</p>
+                        <p>"We found it in the Deep Quarry, 900 meters down. A construct from before the Sundering. Pre-Casket war machine, but massive. 40 meters tall, fusion core still active. Forgemaster Durr insisted we could control it. He was wrong. It activated, killed 60 miners, then went dormant again. Durr claimed it spoke to him. Said it was 'waiting for the right war.' We sealed the quarry. Durr still goes down there. Alone."</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">YEAR 83</div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Year 97</div>
-                        <div class="timeline-title">The Truth About Soulstones</div>
-                        <div class="timeline-text">
-                            <p><strong>Suppressed Research:</strong> "I've analyzed 247 Soulstone samples. Every faction's theory is correct—and wrong simultaneously."</p>
-                            <p style="margin-top: 0.5rem;">Soulstones aren't <em>formed</em> by the Void. They're <em>shaped</em> by sapient thought. We're creating our own prisons.</p>
-                            <p style="margin-top: 0.5rem; font-style: italic; color: var(--accent-red);">"I'm going into hiding. Don't tell them the truth. Let them keep believing. It's kinder."</p>
-                        </div>
+                        <h3>The Screaming Choir</h3>
+                        <p>Audio log recovered from the Sibarian Wastes Expedition:</p>
+                        <p>"We're within visual range of the Engine now. It's... singing. There are people inside it. Hundreds of them. Embedded in the walls. Still alive. Oh God. I recognize that voice. That's Nikolas Theslar. He's still in there. He's been in there for a hundred years. He's conducting them."</p>
+                        <p>No one from the expedition returned. Their Caskets were found three weeks later, wandering in circles, empty.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">YEAR 91</div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Year 100+</div>
-                        <div class="timeline-title">The Present Day</div>
-                        <div class="timeline-text">
-                            <p>The world has stabilized into fragmented realms. Casket technology is mature but dangerous. Void rifts still spawn monsters.</p>
-                            <p style="margin-top: 0.5rem;">And the Resonance Engine still pulses. Still tears reality. Still bleeds the Void into our world.</p>
-                            <p style="margin-top: 1rem; font-weight: bold; color: var(--accent-gold);">Some seek to destroy it. Others want to control it.</p>
-                            <p style="margin-top: 0.5rem; font-style: italic;">You must choose.</p>
+                        <h3>The Silent Massacre</h3>
+                        <p>From the Undead Court archives:</p>
+                        <p>"The Fae do not negotiate. They do not declare war. They simply appear, and settlements die. Greymoor lost 300 Remnants in one night. No bodies. No scrap. Just empty Caskets arranged in a perfect circle. In the center, a single flower, still blooming. Bonelord Thresh investigated personally. He found no evidence of Fae involvement. The flower, however, whispered his true name."</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">YEAR 97</div>
+                    <div class="timeline-content">
+                        <h3>The Fracture Storms Begin</h3>
+                        <p>Scientific observation from Nomad outpost Zeta-9:</p>
+                        <p>"The Engine's instability is increasing. Reality fractures now occur weekly. Last storm brought creatures we have no names for. Some were humans who died centuries before the Sundering. Others were things that should not exist. The barriers between what is, what was, and what could have been are collapsing. Recommend immediate evacuation of all settlements within 500km of Sibaria."</p>
+                        <p>The recommendation was ignored. There is nowhere left to evacuate to.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">YEAR 100</div>
+                    <div class="timeline-content">
+                        <h3>Present Day</h3>
+                        <p>The Resonance Engine continues to sing. The dead continue to walk. The factions continue to war. No one remembers what they're fighting for anymore, only that stopping would mean confronting the truth: there is no absolution. There is no rest. There is only the endless grinding of iron against iron, the weight of sins that can never be forgiven, and the cold comfort of violence.</p>
+                        <p>Welcome to Penance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NPCs Section -->
+    <section class="section">
+        <div class="section-content">
+            <h2 class="section-header">ICONIC PILOTS</h2>
+            <p class="section-intro">Five Remnants who have transcended death to become legends. Each is broken. Each is dangerous. None are heroes.</p>
+
+            <div class="npc-grid">
+                <div class="npc-card">
+                    <div class="npc-name">SISTER VEX</div>
+                    <div class="npc-title">The Hollow Penitent</div>
+                    <div class="npc-faction">Church of Absolution</div>
+                    <p class="npc-description">Taint Level 7. Believes suffering purifies. Each wound she takes brings her closer to salvation. Each ally she sacrifices is a prayer answered. The Church calls her a saint. Everyone else calls her a fanatic. She calls herself damned.</p>
+                    <p class="npc-description">Pilots "The Confessional" - a 1,600lb heavy Casket covered in scripture and scars.</p>
+                </div>
+
+                <div class="npc-card">
+                    <div class="npc-name">ROOTWARDEN KESS</div>
+                    <div class="npc-title">The Last Gardener</div>
+                    <div class="npc-faction">Elven Remnants</div>
+                    <p class="npc-description">Died protecting a grove that burned anyway. Now tends a garden of corpse-trees that whisper secrets. Can grow thorned barriers from the dead. Hasn't spoken to another living being in 30 years. Doesn't consider that a loss.</p>
+                    <p class="npc-description">Pilots "The Arbor Mortis" - a medium Casket woven from petrified wood and bone.</p>
+                </div>
+
+                <div class="npc-card">
+                    <div class="npc-name">FORGEMASTER DURR</div>
+                    <div class="npc-title">The Machine Prophet</div>
+                    <div class="npc-faction">Dwarven Clans</div>
+                    <p class="npc-description">Talks to the Forge-Titan. It talks back. Builds Caskets that shouldn't work but do. His own Casket regenerates damage by consuming scrap metal. The Clans tolerate him because his weapons win wars. He tolerates them because the Titan isn't ready yet.</p>
+                    <p class="npc-description">Pilots "The Crucible" - a heavy Casket that burns at 800 degrees internally. Durr doesn't notice.</p>
+                </div>
+
+                <div class="npc-card">
+                    <div class="npc-name">BONELORD THRESH</div>
+                    <div class="npc-title">The Collector</div>
+                    <div class="npc-faction">Undead Court</div>
+                    <p class="npc-description">Death is a science. Thresh has been studying for 80 years. Collects the skulls of worthy opponents. Speaks to them. They answer. Commands an army of reanimated Caskets piloted by consciousnesses he's rebound to service. Polite, methodical, utterly merciless.</p>
+                    <p class="npc-description">Pilots "The Ossuary" - a medium Casket built entirely from the bones of other Remnants.</p>
+                </div>
+
+                <div class="npc-card">
+                    <div class="npc-name">MOCKINGBIRD</div>
+                    <div class="npc-title">The Laughing Shade</div>
+                    <div class="npc-faction">Fae Courts</div>
+                    <p class="npc-description">Died as a human. Woke as something else. The Fae claimed her because she amused them. Now she's the joke and the punchline. Steals faces, voices, memories. You'll never see her coming. You'll always know when she's been there. The laughter echoes for days.</p>
+                    <p class="npc-description">Pilots "The Mummer's Waltz" - a light Casket that changes appearance. What it looked like yesterday is gone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Factions Section -->
+    <section class="section section-dark">
+        <div class="section-content">
+            <h2 class="section-header">FACTIONS</h2>
+            <p class="section-intro">Nine powers struggle for control of a dying world. Alliances shift. Wars never end. Trust is a luxury no one can afford.</p>
+
+            <div class="factions-list">
+                <div class="faction-item">
+                    <div class="faction-name">CHURCH OF ABSOLUTION</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>Death is not the end, but a trial. Remnants exist to atone through violence. Every kill is a prayer. Every victory brings salvation closer. Faith through brutality.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Elven Remnants</span>
+                                <span class="relationship-status war">WAR</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Dwarven Clans</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-status war">WAR</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Nomad Collective</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Merchant Guilds</span>
+                                <span class="relationship-status friendly">FRIENDLY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faction-item">
+                    <div class="faction-name">ELVEN REMNANTS</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>The forests died with them. What remains is worth protecting. Isolationist, vengeful, and increasingly desperate. They remember what the world was. That memory is a wound that won't heal.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Church of Absolution</span>
+                                <span class="relationship-status war">WAR</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Dwarven Clans</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Nomad Collective</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Merchant Guilds</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faction-item">
+                    <div class="faction-name">DWARVEN CLANS</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>Engineering will save them. Or destroy them. Either way, they'll go down building. Masters of Casket construction, weapons development, and stubborn refusal to accept extinction.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Church of Absolution</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Elven Remnants</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Nomad Collective</span>
+                                <span class="relationship-status friendly">FRIENDLY</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Merchant Guilds</span>
+                                <span class="relationship-status allied">ALLIED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faction-item">
+                    <div class="faction-name">UNDEAD COURT</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>They were dead before the Sundering. Now they're just more efficient. Necromantic research, reanimation techniques, and the cold logic of those who have nothing left to lose.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Church of Absolution</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Elven Remnants</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Dwarven Clans</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-status war">WAR</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Nomad Collective</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Merchant Guilds</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faction-item">
+                    <div class="faction-name">FAE COURTS</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>The Sundering woke them. Or created them. No one is sure. They operate on logic that makes sense only to them. Deals with the Fae always cost more than you expect. Always.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Church of Absolution</span>
+                                <span class="relationship-status war">WAR</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Elven Remnants</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Dwarven Clans</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-status war">WAR</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Nomad Collective</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Merchant Guilds</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faction-item">
+                    <div class="faction-name">NOMAD COLLECTIVE</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>Survival through mobility. Never settle. Never trust the ground beneath you. The Collective knows secrets others don't: where the reality fractures will appear, which ruins are safe, how to navigate the Wastes. That knowledge is their currency.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Church of Absolution</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Elven Remnants</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Dwarven Clans</span>
+                                <span class="relationship-status friendly">FRIENDLY</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Merchant Guilds</span>
+                                <span class="relationship-status allied">ALLIED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faction-item">
+                    <div class="faction-name">MERCHANT GUILDS</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>War is profitable. Scarcity is profitable. Suffering is profitable. The Guilds don't care who wins. They care who pays. They'll sell you the weapon that kills you if the price is right.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Church of Absolution</span>
+                                <span class="relationship-status friendly">FRIENDLY</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Elven Remnants</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Dwarven Clans</span>
+                                <span class="relationship-status allied">ALLIED</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Nomad Collective</span>
+                                <span class="relationship-status allied">ALLIED</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Blighted Packs</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Chitinous Ascendancy</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faction-item">
+                    <div class="faction-name">BLIGHTED PACKS</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>Forced mutation by Void exposure created human-animal hybrids. Nomadic outcasts hunted by pure factions. Soulstones are the only thing preventing further degradation into Abominations. They weaponize their mutations to survive in a world that wants them dead.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Church of Absolution</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Elven Remnants</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Dwarven Clans</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Nomad Collective</span>
+                                <span class="relationship-status friendly">FRIENDLY</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Merchant Guilds</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Chitinous Ascendancy</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faction-item">
+                    <div class="faction-name">CHITINOUS ASCENDANCY</div>
+                    <div class="faction-details">
+                        <h4>Ideology</h4>
+                        <p>Former human researchers transformed into arthropod-human hybrids at ground zero. Hive-minded, multi-limbed, post-human collective. View transformation as successful evolution. Deeply unsettling to other factions. Individual sacrifice for hive efficiency is absolute doctrine.</p>
+
+                        <h4>Relations</h4>
+                        <div class="relationship-grid">
+                            <div class="relationship">
+                                <span class="relationship-name">Church of Absolution</span>
+                                <span class="relationship-status war">WAR</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Elven Remnants</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Dwarven Clans</span>
+                                <span class="relationship-status hostile">HOSTILE</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Undead Court</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Fae Courts</span>
+                                <span class="relationship-status neutral">NEUTRAL</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Nomad Collective</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Merchant Guilds</span>
+                                <span class="relationship-status cold">COLD</span>
+                            </div>
+                            <div class="relationship">
+                                <span class="relationship-name">Blighted Packs</span>
+                                <span class="relationship-status cordial">CORDIAL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- SETTLEMENT SECTION - NEW -->
-        <section id="settlement" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 2rem;">🏗️ Settlement Building</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-dim);">Build and manage your home base between missions. Every building choice matters—resources are scarce, and disasters are common.</p>
+    <!-- Cards Section -->
+    <section class="section">
+        <div class="section-content">
+            <h2 class="section-header">COMBAT CARDS</h2>
+            <p class="section-intro">Tactical abilities, brutal maneuvers, and desperate gambles. Every card is a choice. Every choice has consequences.</p>
 
-            <div class="card-grid">
-                <div class="info-card">
-                    <h3>Core Resources</h3>
-                    <ul style="line-height: 2;">
-                        <li><strong>Credits</strong>: 100 per mission (primary)</li>
-                        <li><strong>Scrap</strong>: 1d3 per enemy killed</li>
-                        <li><strong>Population</strong>: Grows with success</li>
-                        <li><strong>Morale</strong>: 0 (Despair) to 10 (Hope)</li>
-                    </ul>
+            <div class="cards-grid">
+                <div class="card-tile" onclick="showCardModal('desperate-lunge')">
+                    <div class="card-title">Desperate Lunge</div>
+                    <div class="card-type">ATTACK / MELEE</div>
                 </div>
-
-                <div class="info-card">
-                    <h3>Building Tiers</h3>
-                    <ul style="line-height: 2;">
-                        <li><strong>Tier 1</strong>: The Forge, Barracks, Shrine</li>
-                        <li><strong>Tier 2</strong>: Arsenal, Workshop, Refinery</li>
-                        <li><strong>Tier 3</strong>: Reliquary, Foundry, Sanctuary</li>
-                        <li><strong>Faction</strong>: 6 unique buildings</li>
-                    </ul>
+                <div class="card-tile" onclick="showCardModal('brace-for-impact')">
+                    <div class="card-title">Brace for Impact</div>
+                    <div class="card-type">DEFENSE</div>
                 </div>
-
-                <div class="info-card">
-                    <h3>Settlement Events (d20)</h3>
-                    <ul style="line-height: 2;">
-                        <li><strong>1-2</strong>: Void Rift attack (lose population)</li>
-                        <li><strong>10-12</strong>: Uneventful (rare peace)</li>
-                        <li><strong>19-20</strong>: Morale surge (+50 Credits)</li>
-                    </ul>
+                <div class="card-tile" onclick="showCardModal('flank-route')">
+                    <div class="card-title">Flank Route</div>
+                    <div class="card-type">MOVEMENT</div>
                 </div>
-            </div>
-
-            <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">Example Buildings</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Building</th>
-                        <th>Cost</th>
-                        <th>Effect</th>
-                        <th>Special Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>The Forge</td>
-                        <td>100 Credits, 3 Scrap</td>
-                        <td>Unlocks crafting, -25% repair costs</td>
-                        <td>Convert equipment → Scrap</td>
-                    </tr>
-                    <tr>
-                        <td>The Arsenal</td>
-                        <td>200 Credits, 5 Scrap</td>
-                        <td>Tier 2 weapons, +1 Relic slot</td>
-                        <td>Weapon Enchantment</td>
-                    </tr>
-                    <tr>
-                        <td>The Soulstone Refinery</td>
-                        <td>250 Credits, 6 Scrap</td>
-                        <td>Generates 1 Fragment/phase</td>
-                        <td>DANGER: 1/6 Void Leak chance</td>
-                    </tr>
-                    <tr>
-                        <td>The Sanctuary</td>
-                        <td>300 Credits, 7 Scrap</td>
-                        <td>+2 Morale, heal 1 injury per arc</td>
-                        <td>Miracle Cure (once/campaign)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- LORE SECTION -->
-        <section id="lore" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 2rem;">🌍 World Lore</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-dim);">The dark history of how the world ended... and began anew in iron and blood.</p>
-
-            <div class="info-card" style="margin-bottom: 2rem; border-left: 4px solid var(--accent-red);">
-                <h3>The Cataclysm: The Sundering</h3>
-                <p style="line-height: 1.8;">In the height of the Old World's Golden Age, the great artificer-mage <strong style="color: var(--accent-gold);">Nikolas Theslar</strong> believed he had discovered infinite energy. His experiment at the Sibarian Wastes didn't fail—it succeeded catastrophically. The <strong style="color: var(--accent-red);">Resonance Engine</strong> ripped open reality itself.</p>
-                <div style="background: var(--dark-bg); padding: 1rem; margin-top: 1rem; border-left: 3px solid var(--accent-gold); font-style: italic;">
-                    "The world died screaming. We built tombs of iron to survive it. Now we pilot those tombs into battle, seeking absolution one kill at a time."
+                <div class="card-tile" onclick="showCardModal('suppressing-fire')">
+                    <div class="card-title">Suppressing Fire</div>
+                    <div class="card-type">ATTACK / RANGED</div>
+                </div>
+                <div class="card-tile" onclick="showCardModal('heavy-ordinance')">
+                    <div class="card-title">Heavy Ordinance</div>
+                    <div class="card-type">ATTACK / AOE</div>
+                </div>
+                <div class="card-tile" onclick="showCardModal('emergency-repairs')">
+                    <div class="card-title">Emergency Repairs</div>
+                    <div class="card-type">SUPPORT</div>
+                </div>
+                <div class="card-tile" onclick="showCardModal('overcharge')">
+                    <div class="card-title">Overcharge</div>
+                    <div class="card-type">BOOST / RISKY</div>
+                </div>
+                <div class="card-tile" onclick="showCardModal('tactical-retreat')">
+                    <div class="card-title">Tactical Retreat</div>
+                    <div class="card-type">MOVEMENT / DEFENSE</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="card-grid">
-                <div class="info-card">
-                    <h3>⚡ The Pulse (Hour 0-6)</h3>
-                    <ul>
-                        <li>Electromagnetic shockwave at lightspeed</li>
-                        <li>All technology instantly fails</li>
-                        <li>Skyships plummet, engines explode</li>
-                        <li>Millions die in six hours</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>🌀 The Scream (Day 1-30)</h3>
-                    <ul>
-                        <li>Magical radiation floods the world</li>
-                        <li>Reality "soft spots" appear</li>
-                        <li>Void creatures manifest</li>
-                        <li>Taint enters existence</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>💀 The Collapse (Year 0-10)</h3>
-                    <ul>
-                        <li>Civilization crumbles</li>
-                        <li>Kingdoms fragment</li>
-                        <li>Knowledge burns</li>
-                        <li>The New Dark Age begins</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>💎 Soulstones (Year 10-50)</h3>
-                    <ul>
-                        <li>Crystals near Void rifts</li>
-                        <li>Store Tainted magic safely</li>
-                        <li>Enable Casket technology</li>
-                        <li>Church forms</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>⚔ Casket Era (Year 50-100)</h3>
-                    <ul>
-                        <li>First primitive Caskets built</li>
-                        <li>Knights channel magic via machines</li>
-                        <li>New arms race begins</li>
-                        <li>World fragments into realms</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>🔥 Present (Year 100+)</h3>
-                    <ul>
-                        <li>Fragmented factions</li>
-                        <li>Mature Casket tech</li>
-                        <li>Void rifts persist</li>
-                        <li><strong>Engine still pulses...</strong></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p style="font-size: 1.1rem; font-weight: bold;">&copy; 2025 Penance: Absolution Through Steel</p>
-        <p style="margin-top: 0.5rem;">Licensed under CC BY-NC-SA 4.0</p>
-        <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-gold);">"In iron we seek forgiveness. Through blood, absolution."</p>
-    </footer>
-
-    <!-- Modal Template -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <div class="modal-header">
-                <h3 id="modalTitle">Card Title</h3>
-            </div>
-            <div class="modal-body" id="modalBody">
-                Content goes here
-            </div>
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modalBody"></div>
         </div>
     </div>
 
     <script>
-        // Section Navigation
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-            event.target.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Modal Functions
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-        }
+        const cardData = {
+            'desperate-lunge': {
+                title: 'DESPERATE LUNGE',
+                type: 'ATTACK / MELEE',
+                stats: [
+                    { label: 'Range', value: '1' },
+                    { label: 'Damage', value: '2d6+2' },
+                    { label: 'Accuracy', value: '+2' }
+                ],
+                text: 'Move up to 2 spaces toward target enemy, then make a melee attack with +2 Accuracy and +2 damage.',
+                effect: 'RISKY: If attack misses, you grant the target a free counter-attack.',
+                tags: ['MELEE', 'MOVEMENT', 'RISKY']
+            },
+            'brace-for-impact': {
+                title: 'BRACE FOR IMPACT',
+                type: 'DEFENSE',
+                stats: [
+                    { label: 'Defense', value: '+4' },
+                    { label: 'Duration', value: '1 Round' }
+                ],
+                text: 'Lock your Casket in place. Gain +4 Defense until start of your next turn.',
+                effect: 'PENALTY: Cannot move or make attacks while braced. Bracing can be cancelled as a free action.',
+                tags: ['DEFENSE', 'STANCE']
+            },
+            'flank-route': {
+                title: 'FLANK ROUTE',
+                type: 'MOVEMENT',
+                stats: [
+                    { label: 'Move', value: '+2' }
+                ],
+                text: 'Move up to your Movement +2. If you end adjacent to an enemy already engaged with an ally, next attack against that enemy gains +3 Accuracy.',
+                effect: 'Flanking bonus applies only to your next attack this turn.',
+                tags: ['MOVEMENT', 'TACTICAL']
+            },
+            'suppressing-fire': {
+                title: 'SUPPRESSING FIRE',
+                type: 'ATTACK / RANGED',
+                stats: [
+                    { label: 'Range', value: '6' },
+                    { label: 'Damage', value: '1d6' },
+                    { label: 'Accuracy', value: '-1' }
+                ],
+                text: 'Make a ranged attack at -1 Accuracy. Hit or miss, target must make a Morale check or become Suppressed.',
+                effect: 'SUPPRESSED: -2 to all actions. Lasts until end of target\'s next turn.',
+                tags: ['RANGED', 'DEBUFF', 'MORALE']
+            },
+            'heavy-ordinance': {
+                title: 'HEAVY ORDINANCE',
+                type: 'ATTACK / AOE',
+                stats: [
+                    { label: 'Range', value: '8' },
+                    { label: 'Damage', value: '3d6' },
+                    { label: 'AOE', value: '2 spaces' }
+                ],
+                text: 'Fire explosive payload at target location. All units within 2 spaces take 3d6 damage. Allies can be hit.',
+                effect: 'RELOAD: This card is discarded after use. Cannot be played again until you Resupply.',
+                tags: ['RANGED', 'AOE', 'RELOAD', 'DANGEROUS']
+            },
+            'emergency-repairs': {
+                title: 'EMERGENCY REPAIRS',
+                type: 'SUPPORT',
+                stats: [
+                    { label: 'Healing', value: '2d6+3' },
+                    { label: 'Range', value: 'Self or Adjacent' }
+                ],
+                text: 'Restore 2d6+3 HP to yourself or adjacent ally. Cannot be used on same target twice in one battle.',
+                effect: 'Repairs are temporary. Casket still needs workshop maintenance after mission.',
+                tags: ['HEALING', 'SUPPORT']
+            },
+            'overcharge': {
+                title: 'OVERCHARGE',
+                type: 'BOOST / RISKY',
+                stats: [
+                    { label: 'Duration', value: '2 Rounds' }
+                ],
+                text: 'Push your Casket beyond safe limits. Gain +2 to all stats (Movement, Accuracy, Defense) for 2 rounds.',
+                effect: 'BURNOUT: At end of duration, take 2d6 damage and become Exhausted (-2 to all actions).',
+                tags: ['BOOST', 'RISKY', 'TEMPORARY']
+            },
+            'tactical-retreat': {
+                title: 'TACTICAL RETREAT',
+                type: 'MOVEMENT / DEFENSE',
+                stats: [
+                    { label: 'Move', value: 'Full' },
+                    { label: 'Defense', value: '+2' }
+                ],
+                text: 'Move up to your full Movement. This movement does not provoke opportunity attacks. Gain +2 Defense until end of turn.',
+                effect: 'You cannot make attacks this turn after using Tactical Retreat.',
+                tags: ['MOVEMENT', 'DEFENSE', 'SAFE']
+            }
+        };
 
         function showCardModal(cardId) {
             const modal = document.getElementById('modal');
-            const title = document.getElementById('modalTitle');
-            const body = document.getElementById('modalBody');
+            const modalBody = document.getElementById('modalBody');
+            const card = cardData[cardId];
 
-            const cards = {
-                'desperate-lunge': {
-                    title: '⚡ Desperate Lunge',
-                    content: `
-                        <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
-                                <div><strong>Type:</strong> Universal (Action)</div>
-                                <div><strong>Initiative:</strong> [1]</div>
-                                <div><strong>SP Cost:</strong> 1</div>
-                                <div><strong>Range:</strong> Self</div>
-                            </div>
+            let statsHTML = '';
+            if (card.stats && card.stats.length > 0) {
+                statsHTML = '<div class="card-stats">';
+                card.stats.forEach(stat => {
+                    statsHTML += `
+                        <div class="card-stat">
+                            <div class="card-stat-value">${stat.value}</div>
+                            <div class="card-stat-label">${stat.label}</div>
                         </div>
-                        <h4 style="color: var(--accent-gold); margin: 1rem 0;">Effect:</h4>
-                        <p style="line-height: 1.8;">Move up to 2 hexes in any direction. You may rotate once during movement.</p>
-                        <p style="margin-top: 1rem; color: var(--accent-red);">Generate 1 Heat.</p>
-                        <div style="margin-top: 1.5rem; padding: 1rem; background: var(--dark-bg); border-left: 3px solid var(--accent-gold); font-style: italic;">
-                            "Desperation grants wings."
-                        </div>
-                    `
-                },
-                'unyielding-bulwark': {
-                    title: '🛡 Unyielding Bulwark',
-                    content: `
-                        <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
-                                <div><strong>Type:</strong> Universal (Reaction)</div>
-                                <div><strong>Initiative:</strong> [—]</div>
-                                <div><strong>SP Cost:</strong> 0</div>
-                                <div><strong>Range:</strong> Self</div>
-                            </div>
-                        </div>
-                        <h4 style="color: var(--accent-gold); margin: 1rem 0;">Effect:</h4>
-                        <p style="line-height: 1.8;">Play when targeted by attack.</p>
-                        <p style="margin-top: 1rem;">Reduce damage by 2 (minimum 1).</p>
-                        <p style="margin-top: 0.5rem; color: var(--text-dim);">Discard this card after use.</p>
-                        <div style="margin-top: 1.5rem; padding: 1rem; background: var(--dark-bg); border-left: 3px solid var(--accent-gold); font-style: italic;">
-                            "Stand firm. Endure."
-                        </div>
-                    `
-                },
-                'faithful-thrust': {
-                    title: '⚔ Faithful Thrust',
-                    content: `
-                        <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
-                                <div><strong>Type:</strong> Weapon (Right Arm)</div>
-                                <div><strong>Initiative:</strong> [3]</div>
-                                <div><strong>SP Cost:</strong> 2</div>
-                                <div><strong>Range:</strong> Melee</div>
-                            </div>
-                        </div>
-                        <h4 style="color: var(--accent-gold); margin: 1rem 0;">Effect:</h4>
-                        <p style="line-height: 1.8;">Deal 4 damage to adjacent enemy.</p>
-                        <p style="margin-top: 1rem; color: var(--accent-gold);">If attacking from rear: +2 damage.</p>
-                        <div style="margin-top: 1.5rem; padding: 1rem; background: var(--dark-bg); border-left: 3px solid var(--accent-gold); font-style: italic;">
-                            "Steel guided by conviction."
-                        </div>
-                        <div style="margin-top: 1rem; padding: 1rem; background: var(--light-bg); border-radius: 8px;">
-                            <strong>Keywords:</strong> Blade, Holy<br>
-                            <strong>Heat:</strong> 0
-                        </div>
-                    `
-                }
-            };
+                    `;
+                });
+                statsHTML += '</div>';
+            }
 
-            const cardData = cards[cardId] || cards['desperate-lunge'];
-            title.textContent = cardData.title;
-            body.innerHTML = cardData.content;
+            let tagsHTML = '';
+            if (card.tags && card.tags.length > 0) {
+                tagsHTML = '<div class="card-tags">';
+                card.tags.forEach(tag => {
+                    tagsHTML += `<span class="tag">${tag}</span>`;
+                });
+                tagsHTML += '</div>';
+            }
+
+            modalBody.innerHTML = `
+                <h2>${card.title}</h2>
+                <p style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem;">${card.type}</p>
+                ${statsHTML}
+                <div class="card-text">${card.text}</div>
+                ${card.effect ? `<div class="card-text" style="color: var(--accent); font-weight: 600;">${card.effect}</div>` : ''}
+                ${tagsHTML}
+            `;
+
             modal.classList.add('active');
         }
 
-        function showClassModal(classType) {
-            const modal = document.getElementById('modal');
-            const title = document.getElementById('modalTitle');
-            const body = document.getElementById('modalBody');
-
-            const classes = {
-                'scout': {
-                    title: '⚡ Scout Class',
-                    content: `
-                        <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
-                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-                                <div><strong>Weight:</strong> 500-800 lbs</div>
-                                <div><strong>SP Safe Zone:</strong> 5</div>
-                                <div><strong>Deck Size:</strong> 20-25 cards</div>
-                                <div><strong>Relic Slots:</strong> 1</div>
-                            </div>
-                        </div>
-                        <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Philosophy</h4>
-                        <p style="line-height: 1.8; margin-bottom: 1.5rem;">Minimize armor, maximize agility. Scouts survive by not getting hit. Speed is life.</p>
-                        <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Strengths</h4>
-                        <ul style="line-height: 2;">
-                            <li>Highest movement range (fastest on battlefield)</li>
-                            <li>Superior evasion abilities</li>
-                            <li>Sensor/reconnaissance capabilities</li>
-                            <li>Can disengage from combat easily</li>
-                        </ul>
-                        <h4 style="color: var(--accent-gold); margin: 1.5rem 0 1rem;">Weaknesses</h4>
-                        <ul style="line-height: 2;">
-                            <li>Fragile - few hits disable systems</li>
-                            <li>Low firepower</li>
-                            <li>Only 1 Relic slot (focused builds)</li>
-                        </ul>
-                        <div style="margin-top: 1.5rem; padding: 1.5rem; background: var(--dark-bg); border-left: 4px solid var(--accent-gold);">
-                            <strong style="color: var(--accent-gold);">Unique Mechanic: Sensor Sweep</strong><br>
-                            <span style="color: var(--text-dim);">Reveal enemy cards or AI behavior</span>
-                        </div>
-                    `
-                }
-            };
-
-            const classData = classes[classType] || classes['scout'];
-            title.textContent = classData.title;
-            body.innerHTML = classData.content;
-            modal.classList.add('active');
+        function closeModal(event) {
+            if (!event || event.target.classList.contains('modal') || event.target.classList.contains('modal-close')) {
+                document.getElementById('modal').classList.remove('active');
+            }
         }
 
-        function showNPCModal(npcId) {
-            // NPC modal implementation (placeholder)
-            alert(`Full NPC profile for ${npcId} would appear here!`);
-        }
-
-        function searchCards(term) {
-            const cards = document.querySelectorAll('.card-tile');
-            const lowerTerm = term.toLowerCase();
-            cards.forEach(card => {
-                const name = card.getAttribute('data-card-name')?.toLowerCase() || '';
-                card.style.display = name.includes(lowerTerm) ? 'block' : 'none';
-            });
-        }
-
-        // Timeline Scroll Animation
-        function checkTimelineVisibility() {
-            const items = document.querySelectorAll('.timeline-item');
-            items.forEach(item => {
-                const rect = item.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight * 0.8;
-                if (isVisible) {
-                    item.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', checkTimelineVisibility);
-        window.addEventListener('load', checkTimelineVisibility);
-
-        // Faction Network Initialization
-        function initFactionNetwork() {
-            const network = document.getElementById('factionNetwork');
-            const factions = [
-                { id: 'church', name: 'Church', icon: '⚔️', x: 50, y: 20 },
-                { id: 'covenant', name: 'Covenant', icon: '🌿', x: 20, y: 50 },
-                { id: 'forge', name: 'Forge', icon: '⚒️', x: 50, y: 80 },
-                { id: 'scrap', name: 'Scrap', icon: '💀', x: 80, y: 50 },
-                { id: 'bone', name: 'Bone', icon: '💀', x: 80, y: 80 },
-                { id: 'fae', name: 'Fae', icon: '✨', x: 20, y: 80 },
-                { id: 'draconid', name: 'Dragon', icon: '🐉', x: 50, y: 50 }
-            ];
-
-            factions.forEach(f => {
-                const node = document.createElement('div');
-                node.className = 'faction-node';
-                node.style.left = `${f.x}%`;
-                node.style.top = `${f.y}%`;
-                node.innerHTML = `
-                    <div class="faction-icon">${f.icon}</div>
-                    <div class="faction-name">${f.name}</div>
-                `;
-                network.appendChild(node);
-            });
-
-            // Draw connection lines (simplified)
-            const connections = [
-                { from: 0, to: 6, type: 'neutral' },
-                { from: 1, to: 6, type: 'friendly' },
-                { from: 2, to: 3, type: 'friendly' },
-                { from: 0, to: 4, type: 'hostile' }
-            ];
-
-            connections.forEach(conn => {
-                const line = document.createElement('div');
-                line.className = `connection-line ${conn.type}`;
-                // Simplified positioning (would need proper calculation)
-                network.appendChild(line);
-            });
-        }
-
-        window.addEventListener('load', initFactionNetwork);
-
-        // Close modal on background click
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
+        // Escape key closes modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
                 closeModal();
             }
         });

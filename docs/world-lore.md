@@ -179,6 +179,42 @@ Different factions have different interpretations of the Cataclysm:
 
 ---
 
+### The Blighted Packs (Chimeric Survivors)
+**"We Didn't Choose This. The Void Did"**
+
+- The Sundering didn't just kill humans—it **mutated** them
+- Early exposure to Void radiation caused **genetic corruption**: human-animal hybrids
+- Not shapeshifters or voluntary transformations—this is **forced evolution**
+- **Soulstones are stabilizers**, the only thing preventing further mutation
+- Without Soulstones, Blighted continue degenerating until they become Abominations
+- They didn't ask to become monsters, but they've learned to weaponize what they've become
+
+**Cultural Impact**: Blighted Packs are nomadic, hunted by every "pure" faction. Their Caskets are **adaptive bio-mechanical hybrids**—part machine, part living tissue that shifts and mutates. They're survivors in the truest sense: rejected by their former species, feared by others, forced to become predators to stay alive.
+
+**Traits**: Enhanced senses, animal instincts, physical mutations (claws, enhanced strength, night vision), constant risk of further degradation. Every generation births fewer stable offspring. They know they're dying out.
+
+**Goal**: Find a cure for the Blight, gain recognition as people (not monsters), survive long enough to stabilize their genome.
+
+---
+
+### The Chitinous Ascendancy (Arthropod Collective)
+**"Evolution Demanded Sacrifice. We Answered"**
+
+- Pre-Sundering, they were **human researchers** at Sibaria, exposed to the Engine at ground zero
+- Void energy fused them with **arthropod genetic templates** stored in bio-labs
+- Not mutation—**metamorphosis**. They are post-human, multi-limbed, chitinous, hive-minded
+- **Soulstones are neural bridges**, allowing individual consciousness within the collective
+- They remember being human, but those memories feel distant, irrelevant
+- Abominations are failures; the Ascendancy are **successes**—they adapted perfectly
+
+**Cultural Impact**: Ascendancy view their transformation as **inevitable evolution**. Their Caskets are insectoid walkers—multi-legged, armored in carapace plating, bristling with sensory antennae. They communicate through pheromone signals and clicking mandibles. Other factions find them deeply unsettling—too organized, too alien, too willing to sacrifice individuals for hive efficiency.
+
+**Traits**: Hive communication, regenerative chitin, compound vision, limb redundancy, complete lack of individual self-preservation instinct. A single Ascendant will sacrifice itself without hesitation if it benefits the hive.
+
+**Goal**: Perfect the transformation, expand the hive, prove that post-human evolution is the only path to survival in a Void-tainted world.
+
+---
+
 ## Geography: The Shattered Realms
 
 ### The Sibarian Wastes (The Wound)
