@@ -243,6 +243,8 @@
             gap: 0;
             height: 100%;
             width: max-content;
+            padding: 0 5vw;
+            position: relative;
         }
 
         /* Timeline Rail - horizontal continuous line */
@@ -250,12 +252,12 @@
             position: absolute;
             top: 50%;
             left: 0;
-            right: 0;
+            width: 100%;
             height: 3px;
             background: var(--medium-gray);
             transform: translateY(-50%);
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
         }
 
         /* Small decade markers (|) - vertical lines on horizontal rail */
@@ -284,13 +286,12 @@
             border: 3px solid var(--blood-red);
             padding: 3rem;
             position: relative;
-            z-index: 2;
+            z-index: 10;
             display: flex;
             flex-direction: column;
             justify-content: center;
             scroll-snap-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin: 0 5vw;
         }
 
         .timeline-item:hover {
@@ -304,6 +305,11 @@
             color: var(--blood-red);
             margin-bottom: 1rem;
             letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            overflow-y: auto;
+            max-height: 100%;
         }
 
         /* YEAR 0 Background Image */
