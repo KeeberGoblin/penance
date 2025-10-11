@@ -98,96 +98,134 @@
 
 ### CHURCH DECK: "MARTYR'S FURY"
 
+**Casket Class**: Assault (Medium Frame - 5 SP)
+
 **Build**:
-- Primary: Penitent Blades (12 cards)
-- Secondary: Holy Pistol (6 cards)
-- Tactics: Righteous Fury + Crusader's Vow
+- 10 Universal Core (mandatory)
+- 6 Church Faction Core (mandatory)
+- Equipment: Longsword (6 cards) + Buckler Shield (2 cards) + Martyr's Brand Sigil (3 cards) = 11 cards
+- 2 Tactics: Righteous Fury + Blood Pact
 
-**Total**: 30 cards (10 Universal + 12 Primary + 6 Secondary + 2 Tactics)
+**Total**: 29 cards (10 Universal + 6 Faction + 11 Equipment + 2 Tactics)
 
-**Deck List** (sorted by card name):
-1. Blood Offering ×2
-2. Brace for Impact ×1 (Universal)
-3. Breathe the Core ×1 (Universal)
-4. Consecrated Ground ×1
-5. Crusader's Vow ×1 (Tactic)
-6. Desperate Lunge ×1 (Universal)
-7. Divine Judgment ×2
-8. Dual Wield ×2 (Holy Pistol)
-9. Emergency Vent ×1 (Universal)
-10. Faithful Thrust ×3
-11. Feint ×1 (Universal)
-12. Martyrdom Protocol ×2
-13. Overextend ×1 (Universal)
-14. Quick Shot ×3 (Holy Pistol)
-15. Rally Cry ×1 (Universal)
-16. Retreat ×1 (Universal)
-17. Righteous Cleave ×2
-18. Righteous Fury ×1 (Tactic)
-19. Sensor Sweep ×1 (Universal)
-20. Suppressing Fire ×1 (Holy Pistol)
-21. Survey the Field ×1 (Universal)
+**Deck Composition**:
+
+**Universal Core (10 cards)**:
+1. Move ×3 (1 SP, Move 2 hexes)
+2. Sprint ×2 (2 SP, Move 4 hexes, +1 Heat)
+3. Brace ×2 (1 SP, +2 Defense until next turn)
+4. Disengage ×1 (1 SP, Move 2 hexes, ignore attacks of opportunity)
+5. Focus ×1 (0 SP, Draw 1 card)
+6. Emergency Repair ×1 (3 SP, Recover 3 cards from discard)
+
+**Church Faction Core (6 cards)**:
+7. Blood Offering ×1 (0 SP, Discard 2 cards, next attack +3 damage)
+8. Martyrdom Protocol ×1 (2 SP, Redirect damage from ally to yourself)
+9. Righteous Fury ×1 (Passive, +1 damage per enemy killed - permanent)
+10. Divine Judgment ×1 (4 SP, Deal 8 damage, ignore Defense)
+11. Consecrated Ground ×1 (3 SP, Create 3-hex zone, allies heal 1 card/turn)
+12. Last Rites ×1 (0 SP, When reduced to 0 HP, deal 10 damage to killer)
+
+**Equipment - Longsword (6 cards)**:
+13. Slash ×2 (2 SP, Melee, Deal 4 damage)
+14. Thrust ×1 (2 SP, Melee, Deal 3 damage, +2 if attacking front arc)
+15. Parry ×1 (0 SP, Reactive, Reduce damage by 2, next attack +1 damage)
+16. Riposte ×1 (1 SP, Reactive, When attacked in melee, deal 3 damage to attacker)
+17. Guard Stance ×1 (2 SP, Defense, +2 Defense until next turn)
+
+**Equipment - Buckler Shield (2 cards)**:
+18. Deflect ×1 (1 SP, Reactive, Reduce damage by 2)
+19. Shield Bash ×1 (2 SP, Melee, Deal 2 damage, push 1 hex)
+
+**Equipment - Martyr's Brand Sigil (3 cards - Church-Exclusive)**:
+20. Martyr's Blessing ×1 (Passive, When you discard cards via Blood Offering, gain +1 Defense until next turn)
+21. Sacred Wound ×1 (2 SP, Self-harm: discard 1 card, all allies gain +1 damage this turn)
+22. Zealot's Fervor ×1 (Passive, When below 15 HP, all attacks deal +1 damage)
+
+**Tactics (2 cards)**:
+23. Righteous Fury Tactic ×1 (0 SP, Once per game: Next attack deals double damage)
+24. Blood Pact ×1 (0 SP, Discard 3 cards, recover 3 ally cards)
 
 **Opening Hand** (6 cards, drawn randomly):
 - Shuffle deck, draw top 6 cards
 
 **Playstyle**:
-- Aggressive close-range fighter
-- Use Quick Shot to harass at range
-- Close distance with Desperate Lunge
-- Trigger Righteous Fury (+1 dmg per kill)
-- Use Blood Offering for burst damage
-- Crusader's Vow makes attacks cheaper while healthy
+- Aggressive martyr striker
+- Use Blood Offering for burst damage (+3 dmg at cost of 2 HP)
+- Longsword provides versatile melee options
+- Buckler Shield gives reactive defense without slowing movement
+- Martyr's Brand Sigil rewards self-harm with defensive buffs
+- Scales with component destruction (Righteous Fury passive)
 
-**Win Condition**: Burst opponent down before they stabilize
+**Win Condition**: Burst opponent down with Blood Offering combos before death spiral begins
 
 ---
 
 ### DWARVEN DECK: "IMMOVABLE WALL"
 
+**Casket Class**: Heavy (Heavy Frame - 4 SP)
+
 **Build**:
-- Primary: Runic Warhammer (12 cards)
-- Secondary: Siege Shield (6 cards)
-- Tactics: Stone Endurance + Runic Overcharge
+- 10 Universal Core (mandatory)
+- 6 Dwarven Faction Core (mandatory)
+- Equipment: Warhammer (6 cards) + Tower Shield (4 cards) + Forge-Rune Sigil (3 cards) = 13 cards
+- 2 Tactics: Stone Endurance + Runic Overcharge
+- **Stone Endurance Bonus**: +2 Universal Core cards (32 total HP)
 
-**Total**: 32 cards (12 Universal + 12 Primary + 6 Secondary + 2 Tactics)
-*Note: Stone Endurance adds 2 extra Universal cards*
+**Total**: 33 cards (12 Universal + 6 Faction + 13 Equipment + 2 Tactics)
 
-**Deck List** (sorted by card name):
-1. Advance ×2 (Siege Shield)
-2. Brace for Impact ×1 (Universal)
-3. Breathe the Core ×3 (Universal - 2 extra from Stone Endurance)
-4. Crushing Blow ×3
-5. Desperate Lunge ×1 (Universal)
-6. Earthshaker ×2
-7. Emergency Vent ×1 (Universal)
-8. Feint ×1 (Universal)
-9. Forge Fury ×2
-10. Hammerfall ×1
-11. Iron Bulwark ×2 (Siege Shield)
-12. Overextend ×1 (Universal)
-13. Rally Cry ×1 (Universal)
-14. Retreat ×1 (Universal)
-15. Rune of Protection ×2
-16. Runic Overcharge ×1 (Tactic)
-17. Sensor Sweep ×1 (Universal)
-18. Shield Wall ×2 (Siege Shield)
-19. Stone Endurance ×1 (Tactic - passive, not drawn)
-20. Survey the Field ×1 (Universal)
-21. Unbreakable ×2
+**Deck Composition**:
+
+**Universal Core (12 cards - includes Stone Endurance bonus)**:
+1. Move ×4 (1 SP, Move 2 hexes) - +1 extra from Stone Endurance
+2. Sprint ×3 (2 SP, Move 4 hexes, +1 Heat) - +1 extra from Stone Endurance
+3. Brace ×2 (1 SP, +2 Defense until next turn)
+4. Disengage ×1 (1 SP, Move 2 hexes, ignore attacks of opportunity)
+5. Focus ×1 (0 SP, Draw 1 card)
+6. Emergency Repair ×1 (3 SP, Recover 3 cards from discard)
+
+**Dwarven Faction Core (6 cards)**:
+7. Crushing Blow ×1 (2 SP, Melee, Deal 4 damage, ARMOR PIERCING - ignore all Defense)
+8. Forge Fury ×1 (2 SP, Convert all Heat to damage, deal X damage where X = current Heat)
+9. Rune of Protection ×1 (2 SP, Gain 1 Rune Counter, reduce damage by 1 per counter - max 3, lasts until end of mission)
+10. Unbreakable ×1 (1 SP, Reactive, Reduce damage by 3)
+11. Earthshaker ×1 (3 SP, Melee AOE, Deal 3 damage to all adjacent enemies, push 1 hex)
+12. Clan Vengeance ×1 (Passive, +2 damage per Component Damage taken - permanent)
+
+**Equipment - Warhammer (6 cards)**:
+13. Hammer Strike ×2 (2 SP, Melee, Deal 5 damage)
+14. Overhead Smash ×1 (3 SP, Melee, Deal 7 damage, +1 Heat)
+15. Hammer Block ×1 (1 SP, Reactive, Reduce damage by 2, next attack +2 damage)
+16. Pommel Bash ×1 (1 SP, Melee, Deal 3 damage, target loses 1 SP next turn)
+17. Crushing Sweep ×1 (2 SP, Melee, Deal 4 damage to target + 2 damage to 1 adjacent enemy)
+
+**Equipment - Tower Shield (4 cards)**:
+18. Shield Wall ×1 (2 SP, +4 Defense until next turn, cannot move)
+19. Tower Defense ×1 (1 SP, Reactive, Reduce damage by 3)
+20. Shield Advance ×1 (2 SP, Move 2 hexes, gain +2 Defense this turn)
+21. Bulwark Stance ×1 (1 SP, +2 Defense until next turn)
+
+**Equipment - Forge-Rune Sigil (3 cards - Dwarven-Exclusive)**:
+22. Runic Regeneration ×1 (Passive, When you gain a Rune Counter, recover 1 card from discard)
+23. Forge Heat ×1 (1 SP, Gain 2 Heat, +1 damage to next attack)
+24. Rune of Endurance ×1 (Passive, Max Rune Counters increased from 3 to 4)
+
+**Tactics (2 cards)**:
+25. Stone Endurance ×1 (Passive, +2 Universal Core cards, deck starts at 33 cards instead of 31)
+26. Runic Overcharge ×1 (2 SP, Once per game: Gain 3 Rune Counters immediately)
 
 **Opening Hand** (6 cards, drawn randomly):
 - Shuffle deck, draw top 6 cards
 
 **Playstyle**:
-- Defensive anchor
-- Stack Rune Counters (Rune of Protection + Runic Overcharge)
-- Use Shield Wall when threatened
-- Crushing Blow ignores Church's defense buffs
+- Defensive fortress tank
+- Stack Rune Counters (Rune of Protection + Runic Overcharge = 4 counters with Rune of Endurance)
+- Use Tower Shield + Rune Counters for massive damage reduction (-7 total)
+- Crushing Blow ignores all Defense (counters Church's defensive buffs)
+- 33 HP deck (Stone Endurance) = superior durability
 - Outlast opponent through attrition
-- 32 HP deck (2 extra cards)
 
-**Win Condition**: Survive long enough for opponent to death spiral
+**Win Condition**: Survive until opponent's death spiral (4+ Damage cards) collapses their deck
 
 ---
 

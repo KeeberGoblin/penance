@@ -156,96 +156,137 @@
 
 ### CHURCH DECK: "ZEALOT'S MARCH"
 
+**Casket Class**: Scout (Light Frame - 6 SP)
+
 **Build**:
-- Primary: Penitent Blades (12 cards)
-- Secondary: Buckler Shield (6 cards)
-- Tactics: Righteous Fury + Last Rites
+- 10 Universal Core (mandatory)
+- 6 Church Faction Core (mandatory)
+- Equipment: Spear (5 cards) + Buckler Shield (2 cards) + Martyr's Brand Sigil (3 cards) = 10 cards
+- 2 Tactics: Righteous Fury + Last Rites
 
-**Total**: 30 cards (10 Universal + 12 Primary + 6 Secondary + 2 Tactics)
+**Total**: 28 cards (10 Universal + 6 Faction + 10 Equipment + 2 Tactics)
 
-**Deck List**:
-1. Blood Offering ×2
-2. Brace for Impact ×1 (Universal)
-3. Breathe the Core ×1 (Universal)
-4. Consecrated Ground ×1
-5. Deflect ×2 (Buckler Shield)
-6. Desperate Lunge ×1 (Universal)
-7. Divine Judgment ×2
-8. Emergency Vent ×1 (Universal)
-9. Faithful Thrust ×3
-10. Feint ×1 (Universal)
-11. Hunker Down ×2 (Buckler Shield)
-12. Last Rites ×1 (Tactic)
-13. Martyrdom Protocol ×2
-14. Overextend ×1 (Universal)
-15. Rally Cry ×1 (Universal)
-16. Retreat ×1 (Universal)
-17. Righteous Cleave ×2
-18. Righteous Fury ×1 (Tactic)
-19. Sensor Sweep ×1 (Universal)
-20. Shield Bash ×2 (Buckler Shield)
-21. Survey the Field ×1 (Universal)
+**Deck Composition**:
+
+**Universal Core (10 cards)**:
+1. Move ×3 (1 SP, Move 2 hexes)
+2. Sprint ×2 (2 SP, Move 4 hexes, +1 Heat)
+3. Brace ×2 (1 SP, +2 Defense until next turn)
+4. Disengage ×1 (1 SP, Move 2 hexes, ignore attacks of opportunity)
+5. Focus ×1 (0 SP, Draw 1 card)
+6. Emergency Repair ×1 (3 SP, Recover 3 cards from discard)
+
+**Church Faction Core (6 cards)**:
+7. Blood Offering ×1 (0 SP, Discard 2 cards, next attack +3 damage)
+8. Martyrdom Protocol ×1 (2 SP, Redirect damage from ally to yourself)
+9. Righteous Fury ×1 (Passive, +1 damage per enemy killed - permanent)
+10. Divine Judgment ×1 (4 SP, Deal 8 damage, ignore Defense)
+11. Consecrated Ground ×1 (3 SP, Create 3-hex zone, allies heal 1 card/turn)
+12. Last Rites ×1 (0 SP, When reduced to 0 HP, deal 10 damage to killer)
+
+**Equipment - Spear (5 cards)**:
+13. Spear Thrust ×2 (2 SP, Melee, Deal 4 damage, +1 Range)
+14. Defensive Stance ×1 (1 SP, +2 Defense, next attack from Front Arc deals +2 damage)
+15. Piercing Strike ×1 (2 SP, Melee, Deal 3 damage, ignores 1 Defense)
+16. Lunging Attack ×1 (3 SP, Move 1 hex + attack for 5 damage)
+
+**Equipment - Buckler Shield (2 cards)**:
+17. Deflect ×1 (1 SP, Reactive, Reduce damage by 2)
+18. Shield Bash ×1 (2 SP, Melee, Deal 2 damage, push 1 hex)
+
+**Equipment - Martyr's Brand Sigil (3 cards - Church-Exclusive)**:
+19. Martyr's Blessing ×1 (Passive, When you discard cards via Blood Offering, gain +1 Defense until next turn)
+20. Sacred Wound ×1 (2 SP, Self-harm: discard 1 card, all allies gain +1 damage this turn)
+21. Zealot's Fervor ×1 (Passive, When below 15 HP, all attacks deal +1 damage)
+
+**Tactics (2 cards)**:
+22. Righteous Fury Tactic ×1 (0 SP, Once per game: Next attack deals double damage)
+23. Last Rites Tactic ×1 (Passive, When reduced to 0 HP, recover to 5 HP once per mission)
 
 **Opening Hand**: Shuffle deck, draw top 6 cards
 
 **Playstyle**:
-- Mobile objective grabber
-- Use Desperate Lunge to reach Reliquaries quickly
-- Buckler Shield provides mobility + defense
-- Righteous Fury scales (+1 dmg per component destroyed)
-- Last Rites recovers HP when allies defeated (no allies, but thematic)
+- Fast objective runner (6 SP Scout = highest mobility)
+- Spear provides +1 Range for flexibility
+- Light deck (28 cards) = faster cycling
+- Use Sprint + Lunging Attack to cover ground quickly
+- Grab multiple Reliquaries early (R1 + R2)
+- Buckler Shield provides emergency defense without slowing movement
 
-**Win Condition**: Rush North Shrines (R1) + East/West Shrines (R2) early, hold 4+ points
+**Win Condition**: Rush North Shrines (R1) + East/West Shrines (R2) early, hold 4+ points before Dwarves climb Cathedral
 
 ---
 
 ### DWARVEN DECK: "FORTRESS KEEPER"
 
+**Casket Class**: Fortress (Ultra-Heavy Frame - 3 SP)
+
 **Build**:
-- Primary: Runic Warhammer (12 cards)
-- Secondary: Repair Servitors (6 cards)
-- Tactics: Stone Endurance + Unbreakable Spirit
+- 10 Universal Core (mandatory)
+- 6 Dwarven Faction Core (mandatory)
+- Equipment: Greatsword (8 cards, 2-handed) + Reinforced Plating (3 cards) + Repair Kit (3 cards) + Forge-Rune Sigil (3 cards) = 17 cards
+- 2 Tactics: Stone Endurance + Runic Overcharge
+- **Stone Endurance Bonus**: +2 Universal Core cards
 
-**Total**: 32 cards (12 Universal + 12 Primary + 6 Secondary + 2 Tactics)
+**Total**: 35 cards (12 Universal + 6 Faction + 17 Equipment + 2 Tactics) - Slowest but most durable
 
-**Deck List**:
-1. Advance ×2 (wait, Advance is Siege Shield... need Repair Servitors)
+**Deck Composition**:
 
-Let me correct this:
+**Universal Core (12 cards - includes Stone Endurance bonus)**:
+1. Move ×4 (1 SP, Move 2 hexes) - +1 extra from Stone Endurance
+2. Sprint ×3 (2 SP, Move 4 hexes, +1 Heat) - +1 extra from Stone Endurance
+3. Brace ×2 (1 SP, +2 Defense until next turn)
+4. Disengage ×1 (1 SP, Move 2 hexes, ignore attacks of opportunity)
+5. Focus ×1 (0 SP, Draw 1 card)
+6. Emergency Repair ×1 (3 SP, Recover 3 cards from discard)
 
-1. Brace for Impact ×1 (Universal)
-2. Breathe the Core ×3 (Universal - 2 extra from Stone Endurance)
-3. Crushing Blow ×3
-4. Desperate Lunge ×1 (Universal)
-5. Earthshaker ×2
-6. Emergency Repair ×2 (Repair Servitors)
-7. Emergency Vent ×1 (Universal)
-8. Feint ×1 (Universal)
-9. Forge Fury ×2
-10. Hammerfall ×1
-11. Jury-Rig ×2 (Repair Servitors)
-12. Overextend ×1 (Universal)
-13. Rally Cry ×1 (Universal)
-14. Retreat ×1 (Universal)
-15. Rune of Protection ×2
-16. Scrap Armor ×2 (Repair Servitors)
-17. Sensor Sweep ×1 (Universal)
-18. Stone Endurance ×1 (Tactic - passive)
-19. Survey the Field ×1 (Universal)
-20. Unbreakable ×2
-21. Unbreakable Spirit ×1 (Tactic)
+**Dwarven Faction Core (6 cards)**:
+7. Crushing Blow ×1 (2 SP, Melee, Deal 4 damage, ARMOR PIERCING - ignore all Defense)
+8. Forge Fury ×1 (2 SP, Convert all Heat to damage, deal X damage where X = current Heat)
+9. Rune of Protection ×1 (2 SP, Gain 1 Rune Counter, reduce damage by 1 per counter - max 3, lasts until end of mission)
+10. Unbreakable ×1 (1 SP, Reactive, Reduce damage by 3)
+11. Earthshaker ×1 (3 SP, Melee AOE, Deal 3 damage to all adjacent enemies, push 1 hex)
+12. Clan Vengeance ×1 (Passive, +2 damage per Component Damage taken - permanent)
+
+**Equipment - Greatsword (8 cards, 2-handed - no Shield slot)**:
+13. Cleaving Strike ×2 (2 SP, Melee, Deal 6 damage)
+14. Overhead Slash ×2 (3 SP, Melee, Deal 8 damage, +1 Heat)
+15. Defensive Sweep ×1 (1 SP, Melee, Deal 3 damage, +1 Defense until next turn)
+16. Executioner's Blow ×1 (4 SP, Melee, Deal 10 damage, must be below 50% HP)
+17. Whirlwind ×1 (3 SP, Melee AOE, Deal 4 damage to all adjacent enemies)
+18. Guard Break ×1 (2 SP, Melee, Deal 4 damage, target loses all Defense buffs)
+
+**Equipment - Reinforced Plating (3 cards)**:
+19. Ablative Armor ×1 (Passive, First hit each turn deals -2 damage)
+20. Heavy Plating ×1 (Passive, +1 Defense against all attacks)
+21. Impact Resistance ×1 (1 SP, Reactive, Reduce damage by 3, lose 1 Heat)
+
+**Equipment - Repair Kit (3 cards)**:
+22. Field Repair ×1 (2 SP, Recover 2 cards from discard)
+23. Emergency Patch ×1 (1 SP, Reactive, When taking 5+ damage, reduce by 2)
+24. Jury-Rig ×1 (3 SP, Prevent adding Damage card on next reshuffle)
+
+**Equipment - Forge-Rune Sigil (3 cards - Dwarven-Exclusive)**:
+25. Runic Regeneration ×1 (Passive, When you gain a Rune Counter, recover 1 card from discard)
+26. Forge Heat ×1 (1 SP, Gain 2 Heat, +1 damage to next attack)
+27. Rune of Endurance ×1 (Passive, Max Rune Counters increased from 3 to 4)
+
+**Tactics (2 cards)**:
+28. Stone Endurance ×1 (Passive, +2 Universal Core cards, deck starts at 35 cards instead of 33)
+29. Runic Overcharge ×1 (2 SP, Once per game: Gain 3 Rune Counters immediately)
 
 **Opening Hand**: Shuffle deck, draw top 6 cards
 
 **Playstyle**:
-- Defensive objective holder
-- Grab Central Cathedral (R3) early, fortify
-- Use Repair Servitors to sustain through attrition
-- Emergency Repair recovers HP from discard
-- Jury-Rig prevents Damage cards on reshuffle
-- 32 HP (Stone Endurance) + Unbreakable Spirit (1 resurrection) = extreme durability
+- Ultimate fortress tank (35 HP, slowest movement)
+- Only 3 SP per turn (Fortress class) - must choose actions carefully
+- Grab Central Cathedral (R3) early, fortify with Rune Counters
+- Greatsword deals massive damage (6-10 per hit)
+- Reinforced Plating + Rune Counters = extreme damage reduction (-6 total)
+- Repair Kit sustains through long games (recover HP, prevent Damage cards)
+- Sacrifice speed for durability
 
-**Win Condition**: Control Central Cathedral (R3, worth 2 points) + South Shrines (R4, worth 2 points) = 4 points total
+**Win Condition**: Control Central Cathedral (R3, 2 points) + South Shrines (R4, 2 points) = 4 points, hold position until Church exhausts
 
 ---
 
