@@ -9,7 +9,16 @@
       "Bash(git commit:*)",
       "Bash(node:*)",
       "Bash(python3:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git push:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(done)",
+      "Bash(do echo \"=== faction-$faction.html ===\")",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(then echo \"✓ $file\")",
+      "Bash(else echo \"✗ MISSING: $file\")",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []

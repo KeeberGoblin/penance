@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENANCE: Printable Deck Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #333333;
+            --light-gray: #666666;
+            --blood-red: #8b0000;
+            --accent: #d4af37;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.4;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .header {
+                background: var(--black);
+                border-bottom: 2px solid var(--white);
+                padding: 1rem 2rem;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .header-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .header-actions {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .btn {
+                background: var(--blood-red);
+                border: 2px solid var(--white);
+                color: var(--white);
+                padding: 0.5rem 1rem;
+                font-family: inherit;
+                font-size: 0.875rem;
+                cursor: pointer;
+                text-transform: uppercase;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn:hover {
+                background: var(--white);
+                color: var(--black);
+            }
+
+            .btn-secondary {
+                background: var(--gray);
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 350px;
+                height: calc(100vh - 80px);
+            }
+
+            .card-list {
+                overflow-y: auto;
+                padding: 1.5rem;
+            }
+
+            .card-count {
+                font-size: 0.875rem;
+                margin-bottom: 1rem;
+                color: var(--light-gray);
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 1rem;
+            }
+
+            .card-item {
+                background: var(--gray);
+                border: 2px solid var(--light-gray);
+                padding: 1rem;
+                cursor: pointer;
+                transition: all 0.2s;
+                position: relative;
+            }
+
+            .card-item:hover {
+                border-color: var(--accent);
+                transform: scale(1.05);
+            }
+
+            .card-item.in-deck {
+                border-color: var(--blood-red);
+                box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+            }
+
+            .card-name {
+                font-size: 0.9rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+
+            .card-stats {
+                font-size: 0.75rem;
+                color: var(--accent);
+                margin-bottom: 0.25rem;
+            }
+
+            .card-type {
+                font-size: 0.7rem;
+                color: var(--light-gray);
+                text-transform: uppercase;
+            }
+
+            .card-counter {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background: var(--blood-red);
+                color: var(--white);
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.75rem;
+                font-weight: 700;
+            }
+
+            .deck-panel {
+                background: var(--gray);
+                border-left: 2px solid var(--white);
+                padding: 1.5rem;
+                overflow-y: auto;
+            }
+
+            .deck-title {
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                border-bottom: 2px solid var(--white);
+                padding-bottom: 0.5rem;
+            }
+
+            .deck-stats {
+                background: var(--black);
+                border: 2px solid var(--blood-red);
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .deck-stat {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .deck-stat-label {
+                color: var(--light-gray);
+            }
+
+            .deck-stat-value {
+                color: var(--accent);
+                font-weight: 700;
+            }
+
+            .deck-list {
+                list-style: none;
+            }
+
+            .deck-item {
+                background: var(--black);
+                border: 1px solid var(--light-gray);
+                padding: 0.75rem;
+                margin-bottom: 0.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.75rem;
+            }
+
+            .deck-item-name {
+                font-weight: 700;
+            }
+
+            .deck-item-count {
+                color: var(--blood-red);
+                font-weight: 700;
+                margin-left: 0.5rem;
+            }
+
+            .deck-item-remove {
+                background: var(--blood-red);
+                border: none;
+                color: var(--white);
+                padding: 0.25rem 0.5rem;
+                cursor: pointer;
+                font-size: 0.7rem;
+            }
+
+            .deck-item-remove:hover {
+                background: var(--white);
+                color: var(--black);
+            }
+
+            .no-cards {
+                text-align: center;
+                color: var(--light-gray);
+                padding: 2rem;
+                font-style: italic;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            .header, .deck-panel {
+                display: none !important;
+            }
+
+            .container {
+                display: block;
+            }
+
+            .card-list {
+                padding: 0;
+            }
+
+            .card-grid {
+                display: none;
+            }
+
+            /* A4 paper is 210mm x 297mm
+               Card size: 2.5" x 3.5" = 63.5mm x 88.9mm
+               3x3 grid with minimal margins */
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            .print-cards {
+                display: grid;
+                grid-template-columns: repeat(3, 63.5mm);
+                grid-template-rows: repeat(3, 88.9mm);
+                gap: 2mm;
+                page-break-after: always;
+            }
+
+            .print-card {
+                width: 63.5mm;
+                height: 88.9mm;
+                border: 1px solid #000;
+                padding: 3mm;
+                background: white;
+                color: black;
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                display: flex;
+                flex-direction: column;
+                page-break-inside: avoid;
+                box-sizing: border-box;
+            }
+
+            .print-card-header {
+                border-bottom: 2px solid #000;
+                padding-bottom: 2mm;
+                margin-bottom: 2mm;
+            }
+
+            .print-card-name {
+                font-size: 10pt;
+                font-weight: bold;
+                margin-bottom: 1mm;
+            }
+
+            .print-card-stats {
+                display: flex;
+                justify-content: space-between;
+                font-size: 7pt;
+                color: #333;
+            }
+
+            .print-card-body {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .print-card-effect {
+                font-size: 7.5pt;
+                line-height: 1.3;
+                margin-bottom: 2mm;
+                flex: 1;
+            }
+
+            .print-card-keywords {
+                font-size: 6pt;
+                color: #666;
+                text-transform: uppercase;
+                border-top: 1px solid #ccc;
+                padding-top: 2mm;
+            }
+
+            .print-card-faction {
+                font-size: 6pt;
+                color: #999;
+                text-align: center;
+                margin-top: 1mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">PENANCE: DECK BUILDER</div>
+        <div class="header-actions">
+            <button class="btn" onclick="printDeck()" id="printBtn" disabled>PRINT DECK (0 cards)</button>
+            <button class="btn btn-secondary" onclick="clearDeck()">CLEAR</button>
+            <a href="index.html" class="btn btn-secondary">CARD DATABASE</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card-list">
+            <div class="card-count">Click cards to add to your deck. Click again to add more copies.</div>
+            <div class="card-grid" id="cardGrid"></div>
+        </div>
+
+        <div class="deck-panel">
+            <div class="deck-title">YOUR DECK</div>
+            <div class="deck-stats">
+                <div class="deck-stat">
+                    <span class="deck-stat-label">Total Cards:</span>
+                    <span class="deck-stat-value" id="deckTotal">0</span>
+                </div>
+                <div class="deck-stat">
+                    <span class="deck-stat-label">Universal:</span>
+                    <span class="deck-stat-value" id="deckUniversal">0</span>
+                </div>
+                <div class="deck-stat">
+                    <span class="deck-stat-label">Church:</span>
+                    <span class="deck-stat-value" id="deckChurch">0</span>
+                </div>
+                <div class="deck-stat">
+                    <span class="deck-stat-label">Dwarves:</span>
+                    <span class="deck-stat-value" id="deckDwarves">0</span>
+                </div>
+            </div>
+            <ul class="deck-list" id="deckList">
+                <li class="no-cards">Click cards to start building...</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Print Area (hidden on screen) -->
+    <div id="printArea" style="display: none;"></div>
+
+    <script>
+        // Card Database (subset for demo - add full database here)
+        const cardDatabase = [
+            {
+                id: 'desperate-lunge',
+                name: 'Desperate Lunge',
+                type: 'Movement',
+                faction: 'Universal',
+                cost: 1,
+                range: 'Self',
+                effect: 'Move up to 2 hexes in any direction. You may rotate once during this movement.',
+                initiative: '[1]',
+                keywords: ['movement', 'basic']
+            },
+            {
+                id: 'brace-for-impact',
+                name: 'Brace for Impact',
+                type: 'Defense',
+                faction: 'Universal',
+                cost: 0,
+                range: 'Self',
+                effect: 'Reduce the next instance of damage you take this turn by 2.',
+                initiative: '[—]',
+                keywords: ['reactive', 'defense']
+            },
+            {
+                id: 'emergency-vent',
+                name: 'Emergency Vent',
+                type: 'Utility',
+                faction: 'Universal',
+                cost: 2,
+                range: 'Self',
+                effect: 'Remove 3 Heat. Draw 1 card.',
+                initiative: '[2]',
+                keywords: ['heat', 'utility']
+            },
+            {
+                id: 'penitent-strike',
+                name: 'Penitent Strike',
+                type: 'Attack',
+                faction: 'Church',
+                cost: 2,
+                range: 'Melee',
+                damage: '3d6',
+                effect: 'Deal 3d6 damage. You may discard 1 card from your hand: If you do, +2 damage.',
+                initiative: '[3]',
+                keywords: ['attack', 'melee', 'self-harm']
+            },
+            {
+                id: 'crushing-blow',
+                name: 'Crushing Blow',
+                type: 'Attack',
+                faction: 'Dwarves',
+                cost: 2,
+                range: 'Melee',
+                damage: '4',
+                effect: 'Deal 4 damage. ARMOR PIERCING (ignore all armor/defense buffs).',
+                initiative: '[2]',
+                keywords: ['attack', 'melee', 'armor-piercing']
+            }
+        ];
+
+        // Deck state
+        let deck = {};
+
+        // Initialize
+        function init() {
+            renderCards();
+            updateDeckDisplay();
+        }
+
+        // Render card grid
+        function renderCards() {
+            const grid = document.getElementById('cardGrid');
+            grid.innerHTML = cardDatabase.map(card => `
+                <div class="card-item ${deck[card.id] ? 'in-deck' : ''}" onclick="addCardToDeck('${card.id}')">
+                    ${deck[card.id] ? `<div class="card-counter">${deck[card.id]}</div>` : ''}
+                    <div class="card-name">${card.name}</div>
+                    <div class="card-stats">Cost: ${card.cost} SP | ${card.range}</div>
+                    <div class="card-type">${card.type} • ${card.faction}</div>
+                </div>
+            `).join('');
+        }
+
+        // Add card to deck
+        function addCardToDeck(cardId) {
+            if (!deck[cardId]) {
+                deck[cardId] = 0;
+            }
+            deck[cardId]++;
+            renderCards();
+            updateDeckDisplay();
+        }
+
+        // Remove card from deck
+        function removeCardFromDeck(cardId) {
+            if (deck[cardId] > 1) {
+                deck[cardId]--;
+            } else {
+                delete deck[cardId];
+            }
+            renderCards();
+            updateDeckDisplay();
+        }
+
+        // Update deck panel
+        function updateDeckDisplay() {
+            const deckList = document.getElementById('deckList');
+            const deckCards = Object.keys(deck);
+
+            if (deckCards.length === 0) {
+                deckList.innerHTML = '<li class="no-cards">Click cards to start building...</li>';
+                document.getElementById('printBtn').disabled = true;
+                document.getElementById('printBtn').textContent = 'PRINT DECK (0 cards)';
+                updateStats(0, 0, 0, 0);
+                return;
+            }
+
+            let totalCards = 0;
+            let universal = 0;
+            let church = 0;
+            let dwarves = 0;
+
+            deckList.innerHTML = deckCards.map(id => {
+                const card = cardDatabase.find(c => c.id === id);
+                const count = deck[id];
+                totalCards += count;
+
+                if (card.faction === 'Universal') universal += count;
+                if (card.faction === 'Church') church += count;
+                if (card.faction === 'Dwarves') dwarves += count;
+
+                return `
+                    <li class="deck-item">
+                        <div>
+                            <span class="deck-item-name">${card.name}</span>
+                            <span class="deck-item-count">x${count}</span>
+                        </div>
+                        <button class="deck-item-remove" onclick="removeCardFromDeck('${id}')">−</button>
+                    </li>
+                `;
+            }).join('');
+
+            updateStats(totalCards, universal, church, dwarves);
+
+            document.getElementById('printBtn').disabled = totalCards === 0;
+            document.getElementById('printBtn').textContent = `PRINT DECK (${totalCards} cards)`;
+        }
+
+        // Update stats
+        function updateStats(total, universal, church, dwarves) {
+            document.getElementById('deckTotal').textContent = total;
+            document.getElementById('deckUniversal').textContent = universal;
+            document.getElementById('deckChurch').textContent = church;
+            document.getElementById('deckDwarves').textContent = dwarves;
+        }
+
+        // Clear deck
+        function clearDeck() {
+            if (confirm('Clear entire deck?')) {
+                deck = {};
+                renderCards();
+                updateDeckDisplay();
+            }
+        }
+
+        // Print deck
+        function printDeck() {
+            const printArea = document.getElementById('printArea');
+            let printHTML = '';
+            let cardCount = 0;
+            let pageCards = [];
+
+            // Generate print cards
+            Object.keys(deck).forEach(id => {
+                const card = cardDatabase.find(c => c.id === id);
+                const count = deck[id];
+
+                for (let i = 0; i < count; i++) {
+                    pageCards.push(generatePrintCard(card));
+                    cardCount++;
+
+                    // Create new page every 9 cards (3x3)
+                    if (pageCards.length === 9) {
+                        printHTML += `<div class="print-cards">${pageCards.join('')}</div>`;
+                        pageCards = [];
+                    }
+                }
+            });
+
+            // Add remaining cards
+            if (pageCards.length > 0) {
+                printHTML += `<div class="print-cards">${pageCards.join('')}</div>`;
+            }
+
+            printArea.innerHTML = printHTML;
+            printArea.style.display = 'block';
+
+            window.print();
+
+            printArea.style.display = 'none';
+        }
+
+        // Generate print card HTML
+        function generatePrintCard(card) {
+            return `
+                <div class="print-card">
+                    <div class="print-card-header">
+                        <div class="print-card-name">${card.name}</div>
+                        <div class="print-card-stats">
+                            <span>Cost: ${card.cost} SP</span>
+                            <span>${card.range}</span>
+                            <span>${card.initiative}</span>
+                        </div>
+                    </div>
+                    <div class="print-card-body">
+                        <div class="print-card-effect">${card.effect}</div>
+                        <div class="print-card-keywords">${card.keywords.join(' • ')}</div>
+                    </div>
+                    <div class="print-card-faction">${card.faction.toUpperCase()} • ${card.type.toUpperCase()}</div>
+                </div>
+            `;
+        }
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>
