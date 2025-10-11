@@ -30,6 +30,12 @@
             padding-top: 60px;
         }
 
+        /* Smooth Scrolling with offset for fixed header */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Fixed: Add padding to account for sticky header */
+        }
+
         /* Typography */
         h1, h2, h3 {
             font-weight: 700;
@@ -102,9 +108,13 @@
             body {
                 padding-top: 100px;
             }
+
+            html {
+                scroll-padding-top: 120px; /* More padding for mobile */
+            }
         }
 
-        /* ===== HERO SECTION ===== */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -112,12 +122,39 @@
             justify-content: center;
             border-bottom: 3px solid var(--white);
             background: var(--black);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(45deg, var(--black) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--black) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--black) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--black) 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+            opacity: 0.03;
+            z-index: 0;
+            animation: subtleShift 60s linear infinite;
+        }
+
+        @keyframes subtleShift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(40px, 40px); }
         }
 
         .hero-content {
             max-width: 1000px;
             padding: 2rem;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-title {
@@ -217,11 +254,36 @@
             font-size: 2rem;
         }
 
-        /* ===== WHY PLAY SECTION ===== */
+        /* Section Layout */
+        .section {
+            min-height: 100vh;
+            padding: 8rem 2rem;
+            border-bottom: 1px solid var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-dark {
+            background: var(--dark-gray);
+        }
+
+        .section-content {
+            max-width: 1200px;
+            width: 100%;
+        }
+
         .section-content-wide {
             max-width: 1400px;
             width: 100%;
             padding: 4rem 2rem;
+        }
+
+        .section-header {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 3rem;
+            border-bottom: 3px solid var(--white);
+            padding-bottom: 1rem;
         }
 
         .section-header-center {
@@ -232,6 +294,14 @@
             padding-bottom: 1rem;
         }
 
+        .section-intro {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--light-gray);
+            margin-bottom: 4rem;
+            max-width: 800px;
+        }
+
+        /* Feature Cards */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -262,21 +332,7 @@
             color: var(--light-gray);
         }
 
-        /* Section Layout */
-        .section {
-            min-height: 100vh;
-            padding: 8rem 2rem;
-            border-bottom: 1px solid var(--medium-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .section-dark {
-            background: var(--dark-gray);
-        }
-
-        /* ===== CHRONICLE SECTION ===== */
+        /* Chronicle Cards */
         .chronicle-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -314,103 +370,7 @@
             font-size: 0.95rem;
         }
 
-        .section-content {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .section-header {
-            font-size: clamp(2rem, 5vw, 4rem);
-            margin-bottom: 3rem;
-            border-bottom: 3px solid var(--white);
-            padding-bottom: 1rem;
-        }
-
-        .section-intro {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            color: var(--light-gray);
-            margin-bottom: 4rem;
-            max-width: 800px;
-        }
-
-        /* NPCs Grid */
-        .npc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .npc-card {
-            background: var(--dark-gray);
-            border: 1px solid var(--medium-gray);
-            padding: 2rem;
-            transition: border-color 0.2s;
-        }
-
-        .npc-card:hover {
-            border-color: var(--accent);
-        }
-
-        .npc-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .npc-title {
-            color: var(--accent);
-            text-transform: uppercase;
-            font-size: 0.875rem;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .npc-faction {
-            color: var(--light-gray);
-            margin-bottom: 1.5rem;
-            font-size: 0.875rem;
-        }
-
-        .npc-description {
-            color: var(--light-gray);
-            line-height: 1.6;
-        }
-
-        /* Cards Section */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card-tile {
-            background: var(--medium-gray);
-            padding: 2rem 1.5rem;
-            border: 1px solid var(--medium-gray);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .card-tile:hover {
-            background: var(--dark-gray);
-            border-color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        .card-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-type {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--light-gray);
-            letter-spacing: 0.1em;
-        }
-
-        /* Factions Section */
+        /* Factions */
         .factions-list {
             display: flex;
             flex-direction: column;
@@ -433,7 +393,7 @@
             font-size: 2rem;
             font-weight: 700;
             position: sticky;
-            top: 2rem;
+            top: 100px; /* Fixed: Added offset for sticky header */
             height: fit-content;
         }
 
@@ -480,323 +440,44 @@
         .relationship-status.friendly { color: #00cc00; }
         .relationship-status.allied { color: #00ff00; }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .modal-content {
-            background: var(--dark-gray);
-            border: 2px solid var(--white);
-            max-width: 800px;
-            width: 100%;
-            padding: 3rem;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-close:hover {
-            color: var(--accent);
-        }
-
-        .modal h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 1rem;
-        }
-
-        .card-stats {
+        /* NPC Cards */
+        .npc-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: var(--black);
-            border: 1px solid var(--medium-gray);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .card-stat {
-            text-align: center;
-        }
-
-        .card-stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .card-stat-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--light-gray);
-            letter-spacing: 0.1em;
-        }
-
-        .card-text {
-            color: var(--light-gray);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            background: var(--medium-gray);
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border: 1px solid var(--light-gray);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .timeline-item,
-            .faction-item {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .timeline-year,
-            .faction-name {
-                position: static;
-            }
-
-            .modal-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .section {
-                padding: 4rem 1rem;
-            }
-        }
-
-        /* ===== APPLE-INSPIRED ENHANCEMENTS ===== */
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Hero Parallax Background */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                linear-gradient(45deg, var(--black) 25%, transparent 25%),
-                linear-gradient(-45deg, var(--black) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, var(--black) 75%),
-                linear-gradient(-45deg, transparent 75%, var(--black) 75%);
-            background-size: 40px 40px;
-            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
-            opacity: 0.03;
-            z-index: 0;
-            animation: subtleShift 60s linear infinite;
-        }
-
-        @keyframes subtleShift {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(40px, 40px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Enhanced Timeline Animations */
-        .timeline-item {
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-        }
-
-        /* Enhanced Card Hover Effects */
         .npc-card {
-            transition:
-                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            padding: 2rem;
+            transition: border-color 0.2s;
         }
 
         .npc-card:hover {
-            border-color: var(--blood-red);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.2);
-        }
-
-        .faction-card {
-            transition:
-                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .faction-card:hover {
             border-color: var(--accent);
-            transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
         }
 
-        /* Cinematic Playtest CTA */
-        .playtest-cta {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
-            border: 3px solid var(--blood-red);
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .playtest-cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 30%,
-                rgba(139, 0, 0, 0.05) 50%,
-                transparent 70%
-            );
-            animation: shimmer 8s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .playtest-cta > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--blood-red);
-            color: var(--white);
-            padding: 1.5rem 3rem;
-            font-size: 1.25rem;
+        .npc-name {
+            font-size: 1.5rem;
             font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .npc-title {
+            color: var(--accent);
             text-transform: uppercase;
+            font-size: 0.875rem;
             letter-spacing: 0.1em;
-            border: none;
-            text-decoration: none;
-            margin-top: 2rem;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 1rem;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
+        .npc-description {
+            color: var(--light-gray);
+            line-height: 1.6;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 40px rgba(139, 0, 0, 0.4);
-        }
-
-        /* Stat Number Animation on Scroll */
-        .stat-number {
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .hero-stats:hover .stat-number {
-            transform: scale(1.05);
-        }
-
-        /* Section Header Enhancement */
-        .section-header {
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--blood-red);
-            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .section-header.visible::after {
-            width: 100%;
-        }
-
-        /* ===== FOOTER ===== */
+        /* Footer */
         .footer {
             background: var(--black);
             border-top: 3px solid var(--white);
@@ -870,6 +551,22 @@
             font-size: 0.875rem;
             letter-spacing: 0.05em;
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .faction-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .faction-name {
+                position: static;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -878,16 +575,13 @@
         <div class="nav-title">PENANCE</div>
         <div class="nav-links">
             <a href="#chronicle" class="nav-link">CHRONICLE</a>
-            <a href="#pilots" class="nav-link">PILOTS</a>
             <a href="#factions" class="nav-link">FACTIONS</a>
             <a href="#playtest" class="nav-link" style="color: var(--blood-red);">PLAYTEST</a>
             <a href="wiki/" class="nav-link">WIKI</a>
-            <a href="cards/" class="nav-link">DATABASE</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="hero-title">PENANCE</h1>
@@ -901,13 +595,13 @@
 
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number">2</span>
+                    <span class="stat-number">4</span>
                     <span class="stat-label">Complete Factions</span>
                 </div>
                 <div class="stat-divider">|</div>
                 <div class="stat-item">
-                    <span class="stat-number">64</span>
-                    <span class="stat-label">Page Rulebook</span>
+                    <span class="stat-number">60+</span>
+                    <span class="stat-label">Equipment Items</span>
                 </div>
                 <div class="stat-divider">|</div>
                 <div class="stat-item">
@@ -918,7 +612,7 @@
         </div>
     </section>
 
-    <!-- WHY PLAY SECTION -->
+    <!-- Why Play Section -->
     <section class="section section-dark" id="why-play">
         <div class="section-content-wide">
             <h2 class="section-header-center">WHY PLAY PENANCE?</h2>
@@ -930,18 +624,18 @@
                 </div>
 
                 <div class="feature-card">
+                    <h3 class="feature-title">MODULAR EQUIPMENT SYSTEM</h3>
+                    <p class="feature-desc">60+ weapons, shields, plating, and sigils. Variable deck sizes (26-50 cards). Craft, loot, and smelt. Every loadout tells a story.</p>
+                </div>
+
+                <div class="feature-card">
                     <h3 class="feature-title">ASYMMETRIC FACTIONS</h3>
-                    <p class="feature-desc">Church martyrs who self-harm for power. Dwarven engineers with rune counters. Undead necromancers. 9 unique playstyles.</p>
+                    <p class="feature-desc">Church martyrs self-harm for power. Dwarves stack armor. Undead steal life. Elves bleed enemies. 4 unique playstyles, more coming.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3 class="feature-title">BODY HORROR MECHS</h3>
-                    <p class="feature-desc">Pilot your own corpse in a Casket war machine. Sacrifice limbs for power. Permanent consequences. The Puppeteer Interface connects your threads to dead flesh.</p>
-                </div>
-
-                <div class="feature-card">
-                    <h3 class="feature-title">437 YEARS OF LORE</h3>
-                    <p class="feature-desc">Post-apocalyptic world built on the ruins of a failed immortality experiment. Deep narrative campaign with settlements, pilot scars, and faction politics.</p>
+                    <h3 class="feature-title">CAMPAIGN PROGRESSION</h3>
+                    <p class="feature-desc">KDM-style event tables (132 events). Permanent pilot scars. Settlement building. Anomalous artifacts. NPC encounters. Every campaign is unique.</p>
                 </div>
             </div>
         </div>
@@ -959,31 +653,31 @@
                 <div class="chronicle-event">
                     <div class="event-year">YEAR 0</div>
                     <h3 class="event-title">The Sundering</h3>
-                    <p class="event-desc">The Resonance Engine activates. The world ends in 437 seconds. Dr. Nikolas Theslar's final transmission: "It's singing. God help us."</p>
+                    <p class="event-desc">The Resonance Engine activates. Reality tears. Dr. Nikolas Theslar's final transmission: "It's singing. God help us, it's singing."</p>
                 </div>
 
                 <div class="chronicle-event">
-                    <div class="event-year">YEAR 3</div>
+                    <div class="event-year">YEAR 52</div>
                     <h3 class="event-title">First Casket</h3>
-                    <p class="event-desc">The first Remnant builds herself a body from scrap and corpses. Post-mortem consciousness persistence becomes "The Curse."</p>
+                    <p class="event-desc">Engineer Gareth volunteers for the prototype. Six minutes of screaming. When they open the Casket, he won't leave. "I feel hollow without it."</p>
                 </div>
 
                 <div class="chronicle-event">
-                    <div class="event-year">YEAR 47</div>
-                    <h3 class="event-title">Church Founded</h3>
-                    <p class="event-desc">The Church of Absolution declares redemption through violence. "We will earn our rest, or walk this world forever."</p>
+                    <div class="event-year">YEAR 78</div>
+                    <h3 class="event-title">The Ledger Opens</h3>
+                    <p class="event-desc">Bonelord Thresh signs his first soul contract. "Resurrection for your son. Your soul when you die. Read the fine print." She signs.</p>
                 </div>
 
                 <div class="chronicle-event">
                     <div class="event-year">YEAR 134</div>
                     <h3 class="event-title">The Great Schism</h3>
-                    <p class="event-desc">The Church splits over who deserves salvation. The Covenant of Broken Chains forms. Civil war lasts 80 years.</p>
+                    <p class="event-desc">The Church splits over who deserves salvation. The Covenant of Broken Chains forms. Civil war lasts 80 years. No one wins.</p>
                 </div>
 
                 <div class="chronicle-event">
                     <div class="event-year">YEAR 223</div>
                     <h3 class="event-title">Betrayal at Roothold</h3>
-                    <p class="event-desc">The Church burns half the elven forests. The Church-Elf war begins. 214 years later, it has not ended.</p>
+                    <p class="event-desc">The Church burns half the elven forests. "They sheltered the Tainted." The Church-Elf war begins. 214 years later, it has not ended.</p>
                 </div>
 
                 <div class="chronicle-event">
@@ -1003,565 +697,193 @@
     <section class="section section-dark" id="factions">
         <div class="section-content">
             <h2 class="section-header">FACTIONS</h2>
-            <p class="section-intro">Nine powers struggle for control of a dying world. Alliances shift. Wars never end. Trust is a luxury no one can afford.</p>
+            <p class="section-intro">Four playable factions, each with unique mechanics and asymmetric gameplay. Nine factions exist in the lore, warring for control of a dying world.</p>
 
             <div class="factions-list">
                 <div class="faction-item">
                     <div class="faction-name">CHURCH OF ABSOLUTION</div>
                     <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>Death is not the end, but a trial. Remnants exist to atone through violence. Every kill is a prayer. Every victory brings salvation closer. Faith through brutality.</p>
+                        <h4>Playstyle</h4>
+                        <p>Aggressive martyrdom. Self-harm for burst damage. Ally protection through sacrifice. Scales with kills.</p>
 
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Elven Remnants</span>
-                                <span class="relationship-status war">WAR</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Dwarven Clans</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Ossuarium</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Wyrd Conclave</span>
-                                <span class="relationship-status war">WAR</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Nomad Collective</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Merchant Guilds</span>
-                                <span class="relationship-status friendly">FRIENDLY</span>
-                            </div>
-                        </div>
+                        <h4>Signature Mechanic</h4>
+                        <p><strong>Blood Offering:</strong> Discard 2 cards (self-harm) for +3 damage. <strong>Martyrdom Protocol:</strong> Redirect damage from allies to yourself. <strong>Righteous Fury:</strong> +1 damage per enemy killed (permanent).</p>
+
+                        <h4>Status</h4>
+                        <p style="color: var(--accent);">✅ PLAYABLE - Complete deck with 4 sample builds</p>
                     </div>
                 </div>
 
                 <div class="faction-item">
-                    <div class="faction-name">ELVEN REMNANTS</div>
+                    <div class="faction-name">DWARVEN FORGE-GUILDS</div>
                     <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>The forests died with them. What remains is worth protecting. Isolationist, vengeful, and increasingly desperate. They remember what the world was. That memory is a wound that won't heal.</p>
+                        <h4>Playstyle</h4>
+                        <p>Defensive attrition tank. Stack rune counters for damage reduction. All attacks armor-piercing. Convert Heat to damage.</p>
 
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Church of Absolution</span>
-                                <span class="relationship-status war">WAR</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Dwarven Clans</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Ossuarium</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Wyrd Conclave</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Nomad Collective</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Merchant Guilds</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                        </div>
+                        <h4>Signature Mechanic</h4>
+                        <p><strong>Rune of Protection:</strong> Stack up to 3 Rune Counters (-3 damage per hit). <strong>Stone Endurance:</strong> 32 HP instead of 30. <strong>Clan Vengeance:</strong> +2 damage per Component Damage taken.</p>
+
+                        <h4>Status</h4>
+                        <p style="color: var(--accent);">✅ PLAYABLE - Complete deck with 4 sample builds</p>
                     </div>
                 </div>
 
                 <div class="faction-item">
-                    <div class="faction-name">DWARVEN CLANS</div>
+                    <div class="faction-name">THE OSSUARIUM</div>
                     <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>Engineering will save them. Or destroy them. Either way, they'll go down building. Masters of Casket construction, weapons development, and stubborn refusal to accept extinction.</p>
+                        <h4>Playstyle</h4>
+                        <p>Lifesteal vampire. Drain HP from enemies to recover cards. Triple resurrection mechanics. Summon undead minions.</p>
 
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Church of Absolution</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Elven Remnants</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Ossuarium</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Wyrd Conclave</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Nomad Collective</span>
-                                <span class="relationship-status friendly">FRIENDLY</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Merchant Guilds</span>
-                                <span class="relationship-status allied">ALLIED</span>
-                            </div>
-                        </div>
+                        <h4>Signature Mechanic</h4>
+                        <p><strong>Soul Harvest:</strong> Deal 4 damage, recover 4 cards. <strong>Corpse Fuel:</strong> Recover 5 cards when enemy dies. <strong>Phylactery:</strong> Automatically resurrect at 5 HP (once per mission). Decay cards instead of Damage cards on reshuffle.</p>
+
+                        <h4>Status</h4>
+                        <p style="color: var(--accent);">✅ PLAYABLE - Complete deck with 4 sample builds</p>
                     </div>
                 </div>
 
                 <div class="faction-item">
-                    <div class="faction-name">UNDEAD COURT</div>
+                    <div class="faction-name">ELVEN VERDANT COVENANT</div>
                     <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>They were dead before the Sundering. Now they're just more efficient. Necromantic research, reanimation techniques, and the cold logic of those who have nothing left to lose.</p>
+                        <h4>Playstyle</h4>
+                        <p>Hit-and-run assassin. Stack Bleed damage-over-time (infinite stacking). High mobility with teleports. Passive regeneration (3 cards per round).</p>
 
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Church of Absolution</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Elven Remnants</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Dwarven Clans</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Wyrd Conclave</span>
-                                <span class="relationship-status war">WAR</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Nomad Collective</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Merchant Guilds</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                        </div>
+                        <h4>Signature Mechanic</h4>
+                        <p><strong>Bleed Stacking:</strong> Enemies take damage at start of their turn (stacks infinitely). <strong>Leaf Dance:</strong> Move 3 hexes + attack + continue moving. <strong>Photosynthesis + Verdant Regeneration:</strong> Recover 2 cards per round (passive).</p>
+
+                        <h4>Status</h4>
+                        <p style="color: var(--accent);">✅ PLAYABLE - Complete deck with 4 sample builds</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="faction-item">
-                    <div class="faction-name">FAE COURTS</div>
-                    <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>The Sundering woke them. Or created them. No one is sure. They operate on logic that makes sense only to them. Deals with the Fae always cost more than you expect. Always.</p>
-
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Church of Absolution</span>
-                                <span class="relationship-status war">WAR</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Elven Remnants</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Dwarven Clans</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Ossuarium</span>
-                                <span class="relationship-status war">WAR</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Nomad Collective</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Merchant Guilds</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faction-item">
-                    <div class="faction-name">NOMAD COLLECTIVE</div>
-                    <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>Survival through mobility. Never settle. Never trust the ground beneath you. The Collective knows secrets others don't: where the reality fractures will appear, which ruins are safe, how to navigate the Wastes. That knowledge is their currency.</p>
-
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Church of Absolution</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Elven Remnants</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Dwarven Clans</span>
-                                <span class="relationship-status friendly">FRIENDLY</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Ossuarium</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Wyrd Conclave</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Merchant Guilds</span>
-                                <span class="relationship-status allied">ALLIED</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faction-item">
-                    <div class="faction-name">MERCHANT GUILDS</div>
-                    <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>War is profitable. Scarcity is profitable. Suffering is profitable. The Guilds don't care who wins. They care who pays. They'll sell you the weapon that kills you if the price is right.</p>
-
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Church of Absolution</span>
-                                <span class="relationship-status friendly">FRIENDLY</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Elven Remnants</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Dwarven Clans</span>
-                                <span class="relationship-status allied">ALLIED</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Ossuarium</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Wyrd Conclave</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Nomad Collective</span>
-                                <span class="relationship-status allied">ALLIED</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Blighted Packs</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Chitinous Ascendancy</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faction-item">
-                    <div class="faction-name">BLIGHTED PACKS</div>
-                    <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>Forced mutation by Void exposure created human-animal hybrids. Nomadic outcasts hunted by pure factions. Soulstones are the only thing preventing further degradation into Abominations. They weaponize their mutations to survive in a world that wants them dead.</p>
-
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Church of Absolution</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Elven Remnants</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Dwarven Clans</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Ossuarium</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Wyrd Conclave</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Nomad Collective</span>
-                                <span class="relationship-status friendly">FRIENDLY</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Merchant Guilds</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Chitinous Ascendancy</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faction-item">
-                    <div class="faction-name">CHITINOUS ASCENDANCY</div>
-                    <div class="faction-details">
-                        <h4>Ideology</h4>
-                        <p>Former human researchers transformed into arthropod-human hybrids at ground zero. Hive-minded, multi-limbed, post-human collective. View transformation as successful evolution. Deeply unsettling to other factions. Individual sacrifice for hive efficiency is absolute doctrine.</p>
-
-                        <h4>Relations</h4>
-                        <div class="relationship-grid">
-                            <div class="relationship">
-                                <span class="relationship-name">Church of Absolution</span>
-                                <span class="relationship-status war">WAR</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Elven Remnants</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Dwarven Clans</span>
-                                <span class="relationship-status hostile">HOSTILE</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Ossuarium</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">The Wyrd Conclave</span>
-                                <span class="relationship-status neutral">NEUTRAL</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Nomad Collective</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Merchant Guilds</span>
-                                <span class="relationship-status cold">COLD</span>
-                            </div>
-                            <div class="relationship">
-                                <span class="relationship-name">Blighted Packs</span>
-                                <span class="relationship-status cordial">CORDIAL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div style="margin-top: 4rem; text-align: center; padding: 3rem; border: 2px solid var(--medium-gray);">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--light-gray);">COMING FACTIONS</h3>
+                <p style="color: var(--light-gray); line-height: 1.8;">
+                    <strong style="color: var(--accent);">The Wyrd Conclave</strong> (Fae reality-benders) •
+                    <strong style="color: var(--accent);">Nomadic Scrap-Takers</strong> (Improvised salvagers) •
+                    <strong style="color: var(--accent);">Merchant Guilds</strong> (Economic warfare) •
+                    <strong style="color: var(--accent);">Blighted Packs</strong> (Mutation weaponization) •
+                    <strong style="color: var(--accent);">Chitinous Horde</strong> (Hive-mind arthropods)
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Playtest Section -->
-    <section class="section section-dark" id="playtest">
+    <section class="section" id="playtest">
         <div class="section-content">
             <h2 class="section-header" style="color: var(--blood-red);">PLAYTEST READY</h2>
-            <p class="section-intro">The game is ready for table play. Print, build decks, and test the brutal tactical combat of Penance.</p>
+            <p class="section-intro">The game is ready for table play. Four complete factions. Modular equipment system. Campaign event tables. Print, build, and battle.</p>
 
             <div style="background: var(--black); border: 2px solid var(--blood-red); padding: 3rem; margin-bottom: 4rem;">
-                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--blood-red);">QUICK START</h3>
-                <p style="color: var(--light-gray); margin-bottom: 2rem; font-size: 1.1rem;">
-                    Everything you need to play your first game in 60 minutes.
-                </p>
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--blood-red);">WHAT'S INCLUDED</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
                     <div>
-                        <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">15 min</div>
-                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Setup Time</div>
+                        <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">4</div>
+                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Complete Factions</div>
                     </div>
                     <div>
-                        <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">45-60 min</div>
-                        <div style="color: var(--light-gray); margin-top: 0.5rem;">First Game</div>
+                        <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">60+</div>
+                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Equipment Items</div>
                     </div>
                     <div>
-                        <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">64 pages</div>
-                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Complete Rules</div>
+                        <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">132</div>
+                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Event Tables</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">100</div>
+                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Anomalous Artifacts</div>
                     </div>
                 </div>
             </div>
 
             <div class="npc-grid" style="margin-bottom: 4rem;">
-                <div class="npc-card playtest-card">
-                    <div class="npc-name" style="color: var(--blood-red);">Core Rules</div>
-                    <div class="npc-title">Foundation Systems</div>
-                    <div class="npc-description" style="margin-bottom: 1rem;">
-                        <strong>Turn Structure:</strong> 4-phase SP-based action economy<br>
-                        <strong>Combat System:</strong> GKR + KDM hybrid damage system<br>
-                        <strong>Range/LOS:</strong> Hex-based movement and facing<br>
-                        <strong>Quick Reference:</strong> 1-page printable sheet
+                <div class="npc-card">
+                    <div class="npc-name" style="color: var(--blood-red);">Equipment System</div>
+                    <div class="npc-title">Modular Loadouts</div>
+                    <div class="npc-description">
+                        60+ weapons, shields, plating, and sigils. Variable deck sizes (26-50 cards). Craft equipment from salvage. Smelt obsolete gear for Scrap. Loot cross-faction equipment from defeated enemies.
                     </div>
-                    <a href="turn-structure-final.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Rules →</a>
                 </div>
 
-                <div class="npc-card playtest-card">
-                    <div class="npc-name" style="color: var(--blood-red);">Church of Absolution</div>
-                    <div class="npc-title">Complete Faction Deck</div>
-                    <div class="npc-description" style="margin-bottom: 1rem;">
-                        <strong>30 cards</strong> with exact rules text<br>
-                        <strong>Playstyle:</strong> Aggressive self-harm martyrdom<br>
-                        <strong>Primary:</strong> Penitent Blades (12 cards)<br>
-                        <strong>Secondary:</strong> 4 equipment options<br>
-                        <strong>Tactics:</strong> Choose 2 from 5
+                <div class="npc-card">
+                    <div class="npc-name" style="color: var(--blood-red);">Event Tables</div>
+                    <div class="npc-title">KDM-Style Campaign</div>
+                    <div class="npc-description">
+                        132 Departure & Arrival events (2d6 rolls). Double rolls (11, 22, 33, 44, 55, 66) trigger catastrophic/legendary events. Settlement building, pilot scars, faction relationships.
                     </div>
-                    <a href="faction-deck-church-complete.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Deck →</a>
                 </div>
 
-                <div class="npc-card playtest-card">
-                    <div class="npc-name" style="color: var(--blood-red);">Dwarven Clans</div>
-                    <div class="npc-title">Complete Faction Deck</div>
-                    <div class="npc-description" style="margin-bottom: 1rem;">
-                        <strong>32 cards</strong> (Stone Endurance bonus)<br>
-                        <strong>Playstyle:</strong> Defensive attrition, armor-piercing<br>
-                        <strong>Primary:</strong> Runic Warhammer (12 cards)<br>
-                        <strong>Secondary:</strong> 4 equipment options<br>
-                        <strong>Tactics:</strong> Choose 2 from 5
-                    </div>
-                    <a href="faction-deck-dwarves-complete.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Deck →</a>
-                </div>
-            </div>
-
-            <h3 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--white); padding-bottom: 1rem;">PLAYTEST SCENARIOS</h3>
-
-            <div class="npc-grid" style="margin-bottom: 4rem;">
-                <div class="npc-card scenario-card" style="border-color: var(--blood-red);">
-                    <div class="npc-name">Scenario #1: The Proving Grounds</div>
-                    <div class="npc-title" style="color: var(--blood-red);">Pure Deathmatch</div>
-                    <div class="npc-description" style="margin-bottom: 1rem;">
-                        <strong>Type:</strong> 1v1 Combat<br>
-                        <strong>Map:</strong> 12×12 hexes with elevation<br>
-                        <strong>Victory:</strong> Reduce opponent to 0 HP<br>
-                        <strong>Time:</strong> 45-60 minutes<br>
-                        <strong>Difficulty:</strong> Beginner-friendly<br><br>
-                        Teaches: SP economy, Heat management, component damage, facing modifiers, death spiral mechanics
-                    </div>
-                    <a href="arena-scenario-01-proving-grounds.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Scenario →</a>
-                </div>
-
-                <div class="npc-card scenario-card" style="border-color: var(--blood-red);">
-                    <div class="npc-name">Scenario #2: Reliquary Ruins</div>
-                    <div class="npc-title" style="color: var(--blood-red);">Objective Control</div>
-                    <div class="npc-description" style="margin-bottom: 1rem;">
-                        <strong>Type:</strong> 1v1 Objective Control<br>
-                        <strong>Map:</strong> 14×12 hexes with 5 Reliquaries<br>
-                        <strong>Victory:</strong> Control 6+ points OR 0 HP<br>
-                        <strong>Time:</strong> 60-75 minutes<br>
-                        <strong>Difficulty:</strong> Intermediate<br><br>
-                        Teaches: Map control, objective prioritization, high-ground advantage, contesting mechanics
-                    </div>
-                    <a href="arena-scenario-02-reliquary-ruins.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Scenario →</a>
-                </div>
-
-                <div class="npc-card scenario-card">
-                    <div class="npc-name">Example of Play</div>
-                    <div class="npc-title">5-Turn Walkthrough</div>
-                    <div class="npc-description" style="margin-bottom: 1rem;">
-                        <strong>Demonstrates:</strong> Complete combat flow<br>
-                        <strong>Factions:</strong> Church vs Dwarves<br>
-                        <strong>Key Mechanics:</strong> Blood Offering combo, component destruction, armor-piercing<br><br>
-                        Turn-by-turn breakdown with decision-making commentary, post-game analysis, and balance observations
-                    </div>
-                    <a href="example-of-play.md" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">View Example →</a>
-                </div>
-            </div>
-
-            <div style="background: var(--dark-gray); border-left: 4px solid var(--blood-red); padding: 2rem; margin-bottom: 2rem;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">KEY MECHANICS</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; color: var(--light-gray);">
-                    <div>
-                        <strong style="color: var(--white);">Deck-as-HP</strong><br>
-                        30 cards = 30 HP. Discard cards when damaged. Reshuffle adds Damage cards (death spiral).
-                    </div>
-                    <div>
-                        <strong style="color: var(--white);">Component Destruction</strong><br>
-                        3 Component Damage = Destroyed. Lose entire card type. Kingdom Death-style brutality.
-                    </div>
-                    <div>
-                        <strong style="color: var(--white);">SP Economy</strong><br>
-                        Play multiple cards per turn. Safe Zone vs Danger Zone. Heat Strain checks at 5+ Heat.
-                    </div>
-                    <div>
-                        <strong style="color: var(--white);">Faction Asymmetry</strong><br>
-                        Church: Self-harm for burst damage. Dwarves: Armor-piercing + Rune Counters. Completely different playstyles.
-                    </div>
-                    <div>
-                        <strong style="color: var(--white);">Facing Modifiers</strong><br>
-                        Rear arc +2 damage. Positioning matters. Flank for advantage.
-                    </div>
-                    <div>
-                        <strong style="color: var(--white);">Reactive Cards</strong><br>
-                        0 SP interrupts. Play during opponent's turn. Brace for Impact, Unbreakable.
+                <div class="npc-card">
+                    <div class="npc-name" style="color: var(--blood-red);">Anomalous Content</div>
+                    <div class="npc-title">SCP-Style Horror</div>
+                    <div class="npc-description">
+                        100 artifacts on 1d100 table. Containment breach events. Reality-bending phenomena. The Weeping Casket. The Mimic. The Nobody. Experimental Soulstone technology gone wrong.
                     </div>
                 </div>
             </div>
 
-            <div class="playtest-cta">
+            <div style="text-align: center; padding: 4rem; background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%); border: 3px solid var(--blood-red);">
                 <h3 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--white);">START PLAYING NOW</h3>
                 <p style="color: var(--light-gray); margin-bottom: 2rem; font-size: 1.1rem;">
-                    Everything you need for brutal tactical mech combat. Print, build, and battle.
+                    Everything you need for brutal tactical mech combat.
                 </p>
-                <a href="PLAYTEST-READY.md" class="cta-button">
+                <a href="reference/PLAYTEST-READY.md" style="display: inline-block; background: var(--blood-red); color: var(--white); padding: 1.5rem 3rem; font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: all 0.3s;">
                     DOWNLOAD COMPLETE PLAYTEST PACKAGE
                 </a>
                 <p style="color: var(--light-gray); margin-top: 1.5rem; font-size: 0.875rem;">
-                    64 pages • 2 complete factions • 2 scenarios • Ready for table play
+                    4 factions • 60+ equipment • 132 events • Campaign-ready
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Apple-Inspired Scroll Animation Script -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">PENANCE</h3>
+                <p class="footer-desc">Absolution Through Steel</p>
+                <p class="footer-tagline">A tactical card-driven mech combat game where the dead seek redemption in iron shells.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">RESOURCES</h4>
+                <ul class="footer-links">
+                    <li><a href="reference/PLAYTEST-READY.md" class="footer-link">Playtest Package</a></li>
+                    <li><a href="reference/equipment-pool-complete.md" class="footer-link">Equipment Pool</a></li>
+                    <li><a href="campaigns/event-tables-kdm-style.md" class="footer-link">Event Tables</a></li>
+                    <li><a href="wiki/index.html" class="footer-link">Wiki</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">COMMUNITY</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/KeeberGoblin/penance" class="footer-link" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://github.com/KeeberGoblin/penance/issues" class="footer-link" target="_blank">Report Issues</a></li>
+                    <li><a href="https://github.com/KeeberGoblin/penance/discussions" class="footer-link" target="_blank">Discussions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">LEGAL</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/KeeberGoblin/penance/blob/main/LICENSE" class="footer-link" target="_blank">MIT License</a></li>
+                    <li><a href="https://github.com/KeeberGoblin" class="footer-link" target="_blank">Created by KeeberGoblin</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>PENANCE © 2025 | Open Source Tabletop Game | Built with brutalist conviction</p>
+        </div>
+    </footer>
+
+    <!-- Scroll Script -->
     <script>
-        // Intersection Observer for Scroll Animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Apply fade-in animation to elements
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // NPC cards
-            const npcCards = document.querySelectorAll('.npc-card');
-            npcCards.forEach(card => {
-                card.classList.add('fade-in');
-                observer.observe(card);
-            });
-
-            // Faction cards
-            const factionCards = document.querySelectorAll('.faction-card');
-            factionCards.forEach(card => {
-                card.classList.add('fade-in');
-                observer.observe(card);
-            });
-
-            // Section headers
-            const sectionHeaders = document.querySelectorAll('.section-header');
-            sectionHeaders.forEach(header => {
-                observer.observe(header);
-            });
-
-            // Playtest cards
-            const playtestCards = document.querySelectorAll('.playtest-card, .scenario-card');
-            playtestCards.forEach(card => {
-                card.classList.add('fade-in');
-                observer.observe(card);
-            });
-        });
-
-        // Smooth scroll for navigation links (only anchor links)
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1598,47 +920,5 @@
             });
         });
     </script>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 class="footer-title">PENANCE</h3>
-                <p class="footer-desc">Absolution Through Steel</p>
-                <p class="footer-tagline">A tactical card-driven mech combat game where the dead seek redemption in iron shells.</p>
-            </div>
-
-            <div class="footer-section">
-                <h4 class="footer-heading">RESOURCES</h4>
-                <ul class="footer-links">
-                    <li><a href="reference/PLAYTEST-READY.md" class="footer-link">Playtest Package</a></li>
-                    <li><a href="wiki/index.html" class="footer-link">Wiki</a></li>
-                    <li><a href="cards/index.html" class="footer-link">Card Database</a></li>
-                    <li><a href="reference/design-roadmap.md" class="footer-link">Roadmap</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4 class="footer-heading">COMMUNITY</h4>
-                <ul class="footer-links">
-                    <li><a href="https://github.com/KeeberGoblin/penance" class="footer-link" target="_blank">GitHub Repository</a></li>
-                    <li><a href="https://github.com/KeeberGoblin/penance/issues" class="footer-link" target="_blank">Report Issues</a></li>
-                    <li><a href="https://github.com/KeeberGoblin/penance/discussions" class="footer-link" target="_blank">Discussions</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4 class="footer-heading">LEGAL</h4>
-                <ul class="footer-links">
-                    <li><a href="https://github.com/KeeberGoblin/penance/blob/main/LICENSE" class="footer-link" target="_blank">MIT License</a></li>
-                    <li><a href="https://github.com/KeeberGoblin" class="footer-link" target="_blank">Created by KeeberGoblin</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>PENANCE © 2025 | Open Source Tabletop Game | Built with brutalist conviction</p>
-        </div>
-    </footer>
 </body>
 </html>
