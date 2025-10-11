@@ -284,11 +284,11 @@ If players align strongly with a faction, they may unlock unique buildings:
 **Cost**: 3 Scrap, 100 Credits
 **Effect**: Generates 2 Scrap per settlement phase. Allows building makeshift Caskets from pure salvage (unreliable but free)
 
-### **Bone-Courts: The Ossuarium**
+### **The Ossuarium: The Ossuarium**
 **Cost**: 7 Scrap, 350 Credits
 **Effect**: Dead pilots may be raised as Undead (lose all personality, but can still fight - stats reduced by 50%)
 
-### **Twilight Courts: The Feywild Gate**
+### **The Wyrd Conclave: The Feywild Gate**
 **Cost**: 10 Scrap, 500 Credits
 **Effect**: Once per settlement phase, make a **Bargain with the Fae** - gain a massive boon, but suffer a hidden curse (GM's choice)
 

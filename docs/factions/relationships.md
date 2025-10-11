@@ -40,8 +40,8 @@ Faction relationships are rated on a **7-tier scale**:
 | **Verdant Covenant** | -1 | — | -1 | 0 | -2 | +1 | +2 |
 | **Forge-Guilds** | 0 | -1 | — | +1 | 0 | -1 | +1 |
 | **Scrap-Clans** | -2 | 0 | +1 | — | 0 | 0 | -1 |
-| **Bone-Courts** | -3 | -2 | 0 | 0 | — | +1 | 0 |
-| **Twilight Courts** | -2 | +1 | -1 | 0 | +1 | — | +2 |
+| **The Ossuarium** | -3 | -2 | 0 | 0 | — | +1 | 0 |
+| **The Wyrd Conclave** | -2 | +1 | -1 | 0 | +1 | — | +2 |
 | **Draconid Remembrance** | +1 | +2 | +1 | -1 | 0 | +2 | — |
 
 ---
@@ -72,13 +72,13 @@ Faction relationships are rated on a **7-tier scale**:
 - **Historical Grudge**: Orcish warlord "Graul the Unrepentant" burned the Cathedral of Chains (Year 93)
 - **Ongoing Conflict**: Border skirmishes, bounty hunters, retaliatory raids
 
-**vs. Bone-Courts (-3 War)**
+**vs. The Ossuarium (-3 War)**
 - **Why**: Undead are abominations in Church doctrine. Necromancy is ultimate sin.
 - **Friction Points**: EVERYTHING. Theological incompatibility.
 - **Historical Grudge**: The Undead view the Church as "wasteful" (all those corpses, unused!)
 - **Active Conflict**: Church sends Crusades into Bone-Marches regularly. Undead retaliate with plague-corpse catapults.
 
-**vs. Twilight Courts (-2 Hostile)**
+**vs. The Wyrd Conclave (-2 Hostile)**
 - **Why**: Fae make deals that corrupt souls. Church sees them as devils.
 - **Friction Points**: Fae trick desperate believers into bargains, undermining Church authority
 - **Historical Grudge**: Fae replaced an entire town's population with doppelgangers (Year 78). Church noticed too late.
@@ -114,12 +114,12 @@ Faction relationships are rated on a **7-tier scale**:
 - **Friction Points**: Occasional border disputes, but no sustained conflict
 - **Odd Respect**: Orcs don't pretend to be civilized. Elves appreciate the honesty.
 
-**vs. Bone-Courts (-2 Hostile)**
+**vs. The Ossuarium (-2 Hostile)**
 - **Why**: Undead twist the natural cycle of life and death
 - **Friction Points**: Necromancy is ecological violation (corpses should decompose and feed the soil)
 - **Historical Grudge**: Undead raised an entire Elven burial grove as skeletons (Year 89). Unforgivable.
 
-**vs. Twilight Courts (+1 Cordial)**
+**vs. The Wyrd Conclave (+1 Cordial)**
 - **Why**: Fae respect nature (in their own twisted way). Shared interest in dimensional ecology.
 - **Friction Points**: Fae are unpredictable, dangerous
 - **Alliance**: Elves and Fae occasionally cooperate against industrial factions
@@ -156,12 +156,12 @@ Faction relationships are rated on a **7-tier scale**:
 - **Trade**: One-sided. Orcs raid, Dwarves pursue, eventually Orcs pay compensation (in salvage)
 - **Odd Respect**: Dwarves admire Orcish scrap-tech. "Crude, but functional."
 
-**vs. Bone-Courts (0 Neutral)**
+**vs. The Ossuarium (0 Neutral)**
 - **Why**: Undead buy equipment, don't haggle, pay on time. Model customers.
 - **Friction Points**: Dwarves find Undead creepy but profitable
 - **Trade**: Steady. Undead pay premium prices for weapons (they have patience, don't need discounts)
 
-**vs. Twilight Courts (-1 Suspicious)**
+**vs. The Wyrd Conclave (-1 Suspicious)**
 - **Why**: Fae bargains are bad business (hidden clauses, reality-altering prices)
 - **Friction Points**: Dwarves value contracts. Fae value *loopholes*.
 - **Tension**: Dwarves refuse Fae deals (learned the hard way)
@@ -196,12 +196,12 @@ Faction relationships are rated on a **7-tier scale**:
 - **Trade**: Barter system - Orcs trade salvage for weapons
 - **Respect**: Dwarves are tough. Orcs like tough.
 
-**vs. Bone-Courts (0 Neutral)**
+**vs. The Ossuarium (0 Neutral)**
 - **Why**: Undead don't raid Orcish territories (nothing worth taking)
 - **Friction Points**: None. Mutual indifference.
 - **Odd Dynamic**: Orcs find Undead boring (they don't bleed, don't fear, no glory in fighting them)
 
-**vs. Twilight Courts (0 Neutral)**
+**vs. The Wyrd Conclave (0 Neutral)**
 - **Why**: Orcs avoid Fae territories (too weird, not enough loot)
 - **Friction Points**: Fae occasionally trick Orcs into bargains for amusement
 - **Tension**: Orcs who've been tricked want revenge, but can't find Fae afterward
@@ -213,7 +213,7 @@ Faction relationships are rated on a **7-tier scale**:
 
 ---
 
-### Bone-Courts (Undead)
+### The Ossuarium (Undead)
 
 **Philosophy**: "Death is no longer the end. We are proof. We are patient."
 
@@ -241,7 +241,7 @@ Faction relationships are rated on a **7-tier scale**:
 - **Friction Points**: None
 - **Dynamic**: Orcs find Undead boring. Undead find Orcs... ephemeral.
 
-**vs. Twilight Courts (+1 Cordial)**
+**vs. The Wyrd Conclave (+1 Cordial)**
 - **Why**: Both factions exist "between" states (Undead between life/death, Fae between worlds)
 - **Friction Points**: Fae are chaotic, Undead are orderly
 - **Alliance**: Occasional cooperation against "living" factions
@@ -254,7 +254,7 @@ Faction relationships are rated on a **7-tier scale**:
 
 ---
 
-### Twilight Courts (Fae)
+### The Wyrd Conclave (Fae)
 
 **Philosophy**: "Reality is negotiable. Everything has a price."
 
@@ -279,7 +279,7 @@ Faction relationships are rated on a **7-tier scale**:
 - **Why**: Orcs are boring (too straightforward for good bargains)
 - **Friction Points**: Fae trick Orcs occasionally, just for fun
 
-**vs. Bone-Courts (+1 Cordial)**
+**vs. The Ossuarium (+1 Cordial)**
 - **Why**: Shared "outsider" status
 - **Friction Points**: Philosophical differences (Fae are chaotic, Undead are methodical)
 - **Alliance**: Mutual benefit against living factions
@@ -314,11 +314,11 @@ Faction relationships are rated on a **7-tier scale**:
 - **Why**: Orcs want to raid Draconid hoards
 - **Friction Points**: Orcs are too short-sighted for Draconid patience
 
-**vs. Bone-Courts (0 Neutral)**
+**vs. The Ossuarium (0 Neutral)**
 - **Why**: Draconids view Undead as "a phase"
 - **Friction Points**: Undead are offended by dismissiveness
 
-**vs. Twilight Courts (+2 Friendly)**
+**vs. The Wyrd Conclave (+2 Friendly)**
 - **Why**: Mutual respect for ancient power
 - **Friction Points**: None. Both are immortal and patient.
 
@@ -384,7 +384,7 @@ If 2 factions reach **-3 (War)** with each other, the campaign enters a **Factio
 - Winning side grants massive rewards
 - Losing side is destroyed (removed from campaign)
 
-**Example: Church vs. Bone-Courts War**
+**Example: Church vs. The Ossuarium War**
 - Mission: Defend the Iron Cathedral from Undead siege
 - Stakes: If Church loses, Undead raise the entire population as skeletons
 - Reward: If Church wins, players gain +3 relationship and Penitent Knight reinforcements

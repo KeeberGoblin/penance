@@ -138,7 +138,7 @@ Players can undertake **Sibarian Wastes Expeditions** - high-risk missions into 
 ---
 
 ### 5. **Redirect The Tear** (Fae Endgame)
-**Action**: Bargain with the Twilight Courts to move the Void rift elsewhere
+**Action**: Bargain with The Wyrd Conclave to move the Void rift elsewhere
 **Cost**: A price determined by Mockingbird (see Iconic NPCs) - usually a soul, a memory, or a loved one
 **Effect**:
 - Instability drops to 5
@@ -243,12 +243,12 @@ At the Core is a **Runic Interface** - the original controls Theslar used.
 **Method**: Smash and grab
 **Offer to Players**: Fuck-all. They're competing with you for resources.
 
-### Bone-Courts
+### The Ossuarium
 **Goal**: Let it run forever (Void energy makes necromancy easier)
 **Method**: Sabotage attempts to shut it down
 **Offer to Players**: Undead reinforcements, forbidden knowledge
 
-### Twilight Courts
+### The Wyrd Conclave
 **Goal**: Keep the dimensional overlap active (benefits them)
 **Method**: Bargains, deals, ensuring players make short-sighted choices
 **Offer to Players**: Anything you want... for a price.

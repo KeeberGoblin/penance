@@ -215,10 +215,10 @@ He now treats everything - emotions, combat, morality - as engineering problems 
 
 ---
 
-## 4. Bonelord Thresh (Bone-Courts)
+## 4. Bonelord Thresh (The Ossuarium)
 ### "The Debt Collector"
 
-**Faction**: Bone-Courts (Undead)
+**Faction**: The Ossuarium (Undead)
 **Casket Type**: Assault - "The Creditor" (2,200 lbs)
 **Taint Level**: N/A (Undead - immune to corruption via technicality)
 
@@ -288,10 +288,10 @@ He pilots The Creditor into battle not for glory, but for **acquisition** - ever
 
 ---
 
-## 5. Mockingbird (Twilight Courts - Fae)
+## 5. Mockingbird (The Wyrd Conclave - Fae)
 ### "The Many-Masked Bargainer"
 
-**Faction**: Twilight Courts (Fae)
+**Faction**: The Wyrd Conclave (Fae)
 **Casket Type**: Aberrant - "The Mirror-Dance" (800 lbs - variable)
 **Taint Level**: ??? (Unmeasurable - Fae physiology is weird)
 

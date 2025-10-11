@@ -171,7 +171,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 ---
 
 ## Chronicle V: The Ledger of Souls
-### Year 78 - Bone-Courts Territory
+### Year 78 - The Ossuarium Territory
 
 **Source**: Recovered contract, Thresh's personal archives
 **Credibility**: Original document (horrifyingly authentic)

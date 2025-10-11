@@ -192,7 +192,7 @@ Colossal mobile foundry war machine, baroque-romanticist brutalist design, 2,400
 
 ---
 
-## Undead Court Caskets
+## The Ossuarium Caskets
 
 ### THE REVENANT (Light)
 
@@ -238,7 +238,7 @@ Colossal mobile crypt war machine, baroque-romanticist brutalist design, 2,100 l
 
 ---
 
-## Fae Courts Caskets
+## The Wyrd Conclave Caskets
 
 ### THE TRICKSTER (Light)
 

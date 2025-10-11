@@ -173,7 +173,7 @@ Each finger controls specific Casket functions:
 
 ---
 
-### Undead Court: The Bonecage Communion
+### The Ossuarium: The Bonecage Communion
 
 - Threads are **necrotic black** (dead tissue, but still conductive)
 - Fluid is **embalming solution** (keeps pilot's body from decaying further)
@@ -184,7 +184,7 @@ Each finger controls specific Casket functions:
 
 ---
 
-### Fae Courts: The Dreamwire Trance
+### The Wyrd Conclave: The Dreamwire Trance
 
 - Threads are **iridescent** (shift colors, semi-transparent)
 - Fluid is **memory liquid** (contains dissolved psychoactive flowers)

@@ -154,7 +154,7 @@ Different factions have different interpretations of the Cataclysm:
 
 ---
 
-### The Bone-Courts (Undead Perspective)
+### The Ossuarium (Undead Perspective)
 **"Death is No Longer the End—We Are Proof"**
 
 - The Cataclysm **shattered the boundary between life and death**
@@ -169,7 +169,7 @@ Different factions have different interpretations of the Cataclysm:
 
 ---
 
-### The Twilight Courts (Fae Interpretation)
+### The Wyrd Conclave (Fae Interpretation)
 **"The Sundering Opened the Door, and We Walked Through"**
 
 - Fae existed in the **Feywild**, a parallel realm of dream-logic and bargains
@@ -314,7 +314,7 @@ Different factions have different interpretations of the Cataclysm:
 **Status**: Necropolis Territories
 
 - Mist-shrouded borderlands, graveyards the size of cities
-- Necromancers rule Bone-Courts with undead enforcers
+- Necromancers of the Ossuarium rule with undead enforcers
 - Living visitors are... tolerated (barely)
 - Caskets are crewed by skeletal or ghostly pilots
 - **Capital**: The Ossuary Throne (castle built from bones)
@@ -330,7 +330,7 @@ Different factions have different interpretations of the Cataclysm:
 - Geography shifts; time flows inconsistently
 - Beautiful and dangerous—flowers that sing, forests that hunt
 - Fae treat mortals as curiosities or bargaining chips
-- **Capital**: The Court of Endless Dusk (exists in multiple places at once)
+- **Capital**: The Wyrd Conclave's Endless Dusk (exists in multiple places at once)
 
 **Culture**: Deals and bargains, nothing is free, everything has a price. Beautiful, capricious, utterly inhuman.
 

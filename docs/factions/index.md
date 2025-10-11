@@ -36,8 +36,8 @@ How faction-specific Tactics cards work. Choose 2 from 5 per faction.
 ## Coming Factions
 
 - **Elven Remnants**: Thorn barriers, corpse-tree gardens, isolationist vengeance
-- **Undead Court**: Necromantic research, reanimation, cold calculation
-- **Fae Courts**: Reality distortion, stolen faces, incomprehensible logic
+- **The Ossuarium**: Necromantic research, reanimation, cold calculation
+- **The Wyrd Conclave**: Reality distortion, stolen faces, incomprehensible logic
 - **Nomad Collective**: Survival through mobility, reality fracture prediction
 - **Merchant Guilds**: War profiteering, economic control, selling to all sides
 - **Blighted Packs**: Chimeric mutations, pack tactics, weaponized transformation
