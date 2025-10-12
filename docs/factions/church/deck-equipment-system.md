@@ -27,12 +27,14 @@ Where X depends on Casket class and equipment loadout.
 
 These 6 cards define Church identity and cannot be removed or smelted.
 
-### 1. BLOOD OFFERING
+### 1. BLOOD OFFERING (REVISED for Dice System)
 **Type**: Gambit (Self-Harm)
 **SP Cost**: 0
-**Effect**: Discard 2 cards from top of your deck (self-harm). Your next attack this turn: +3 damage and ignores 1 Defense.
-**Keywords**: Gambit, Self-Harm, Buff
-**Flavor**: *"Pain purifies. Blood absolves."*
+**Effect**: Discard 2 cards from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and **-1 to target number** (easier to hit).
+**Keywords**: Gambit, Self-Harm, Buff, Accuracy
+**Flavor**: *"Pain purifies. Blood absolves. Sacrifice ensures the strike."*
+
+**DESIGN NOTE**: Added -1 to target number so that self-harm guarantees better aim. Original version could miss after sacrificing 2 cards, which felt terrible.
 
 ---
 
@@ -79,6 +81,84 @@ These 6 cards define Church identity and cannot be removed or smelted.
 **Effect**: When an allied Casket within 3 hexes is destroyed (deck reaches 0), immediately recover 5 cards from your discard pile and draw 2 cards.
 **Keywords**: Reactive, Ally, Healing, Death Trigger
 **Flavor**: *"Their souls empower mine."*
+
+---
+
+## CHURCH FACTION CORE - NEW CARDS (Dice System Optimization)
+
+**NOTE**: These 7 new cards can be added to Equipment slots (treated as Sigils/Accessories) to optimize for the dice system. They are OPTIONAL additions to enhance accuracy and auto-hit capabilities.
+
+### 7. DIVINE GUIDANCE (Sigil)
+**Type**: Accuracy Buff
+**SP Cost**: 1
+**Range**: Self
+**Effect**: Your next attack this turn: **-2 to target number** (easier to hit). If it hits, apply "Blessed" status to target (all allies' attacks against this target: -1 to target number until end of round).
+**Keywords**: Accuracy, Buff, Targeting
+**Flavor**: *"The Resonance guides my hand."*
+
+---
+
+### 8. MARTYRDOM'S CERTAINTY (Sigil)
+**Type**: Accuracy Buff (Self-Harm)
+**SP Cost**: 0
+**Range**: Self
+**Effect**: Discard 1 card from deck. Your next attack **cannot miss** (auto-hit) but deals -2 damage.
+**Keywords**: Gambit, Self-Harm, Auto-Hit
+**Flavor**: *"I give my blood so that justice strikes true."*
+
+---
+
+### 9. ZEALOT'S FOCUS (Sigil)
+**Type**: Attack Enhancement
+**SP Cost**: 0
+**Range**: Self
+**Effect**: **Reroll 1 Attack Die** on your next attack this turn.
+**Card Count**: ×2 (2 copies)
+**Keywords**: Reroll, Accuracy
+**Flavor**: *"Failure is not an option when faith burns bright."*
+
+---
+
+### 10. RIGHTEOUS WRATH (Weapon Attack)
+**Type**: Attack (Auto-Hit)
+**SP Cost**: 3
+**Range**: Melee (1 hex)
+**Effect**: Deal 5 damage. **This attack cannot miss.** If target has killed an ally this mission, deal 7 damage instead.
+**Keywords**: Attack, Auto-Hit, Vengeance
+**Flavor**: *"You killed my brother. Now face holy retribution."*
+
+---
+
+### 11. CONFESSION UNDER DURESS (Utility)
+**Type**: Debuff
+**SP Cost**: 2
+**Range**: 2 hexes
+**Effect**: Target enemy's next attack: **+2 to target number** (harder for them to hit). Draw 1 card.
+**Keywords**: Debuff, Utility, Control
+**Flavor**: *"Speak your sins, and your aim will falter."*
+
+---
+
+### 12. POINT-BLANK EXECUTION (Weapon Attack)
+**Type**: Attack (Auto-Hit)
+**SP Cost**: 3
+**Range**: 1 hex (adjacent only)
+**Effect**: Deal 6 damage. **This attack cannot miss.** If attacking from rear arc (hex 4), deal 8 damage instead.
+**Keywords**: Attack, Auto-Hit, Execute
+**Flavor**: *"Muzzle pressed to steel. The Resonance demands payment."*
+
+---
+
+### 13. DIVINE JUDGMENT (REVISED)
+**Type**: Attack (High-Cost, Miss Compensation)
+**SP Cost**: 4
+**Range**: Melee (1 hex)
+**Effect**: Deal 8 damage, ignore 1 Defense.
+**On Miss**: Recover 2 SP and gain "Judgment Delayed" status (+3 damage to next attack).
+**Keywords**: Attack, Execute, Miss Compensation
+**Flavor**: *"Judgment delayed is judgment magnified."*
+
+**DESIGN NOTE**: This REPLACES the original Divine Judgment (#4 above). Original dealt 6-8 damage conditionally. New version deals 8 flat with miss compensation.
 
 ---
 
