@@ -1,0 +1,182 @@
+# The Many Names of the Apocalypse
+
+**Common Name**: The Theslar Disaster (neutral, historical)
+**Technical Name**: The Resonance Engine (pre-Sundering scientific term)
+
+---
+
+## Faction-Specific Names
+
+Each faction interprets the cataclysm through their own cultural, religious, or philosophical framework. These names reveal how they understand what happened—and who they blame.
+
+### Church of Absolution
+**"The Theslar Sin"**
+- Religious framing: The Engine was humanity's ultimate hubris
+- Nikolas Theslar committed the Original Sin of the new age
+- The Sundering was divine punishment for attempting to play God
+- Common phrases:
+  - "Before the Sin" (pre-Year 0)
+  - "The Day of Judgment" (the activation)
+  - "Theslar's Penance" (the 437 years since)
+
+**In Church Scripture**:
+> "And Theslar, in his pride, reached beyond the veil. He sang the forbidden harmonies, and the world answered with screaming silence. His sin is our inheritance. Our penance is eternal."
+
+---
+
+### Dwarven Forge-Guilds
+**"The Engine" or "Theslar's Folly"**
+- Practical, engineering-focused language
+- Less interested in blame, more in understanding mechanics
+- View it as a catastrophic prototype failure
+- Common phrases:
+  - "The Folly" (shorthand)
+  - "The Resonance Breach"
+  - "The Failed Experiment"
+
+**In Dwarven Records**:
+> "Theslar's calculations were sound. His materials were not. A resonance cascade of that magnitude requires containment we still cannot forge. He built the greatest machine ever conceived—and it killed the world."
+
+---
+
+### The Ossuarium
+**"The Ledger's Opening"** or "The First Harvest"
+- See it as the beginning of their power, not a disaster
+- Bonelord Thresh opened The Ledger during the chaos
+- The Engine created the conditions for soul-binding
+- Common phrases:
+  - "The Opening" (when Thresh founded the Ossuarium)
+  - "The Great Reaping"
+  - "The Soul Breach"
+
+**In Ossuarium Chronicles**:
+> "When Theslar tore the world, he opened a door. Thresh walked through it. What humanity calls disaster, we call genesis. The Engine did not end the world—it revealed its true nature: a ledger of debts unpaid."
+
+---
+
+### Elven Verdant Covenant
+**"The Withering"** or "The Sundering Scream"
+- Ecological catastrophe framing
+- Focus on the forests dying, the land scarring
+- Less about Theslar, more about the wound itself
+- Common phrases:
+  - "The Scream" (the moment forests began dying)
+  - "The Root-Death"
+  - "The Void Wind"
+
+**In Elven Oral Tradition**:
+> "The roots heard it first. A note that should not be. The trees screamed as their souls were pulled from the earth. Theslar did not build a machine—he built a hunger. And it still feeds."
+
+---
+
+### The Wyrd Conclave (Fae)
+**"The Unmaking"** or "The Wyrd Collapse"
+- Reality-distortion perspective
+- See it as a rupture in the fabric of existence
+- View Theslar as accidentally touching something ancient
+- Common phrases:
+  - "The Collapse" (shorthand)
+  - "The Day Reality Forgot Itself"
+  - "The Echo Event"
+
+**In Wyrd Whispers**:
+> "Theslar thought he built a machine. He did not. He found something that was always there, sleeping beneath perception. He woke it. The Resonance Engine is not an invention—it is a summoning."
+
+---
+
+### Nomadic Scrap-Takers
+**"The Break"** or "Old Nik's Bomb"
+- Colloquial, irreverent language
+- Less mythologizing, more pragmatic acceptance
+- Focus on scavenging the wreckage
+- Common phrases:
+  - "The Break" (most common)
+  - "The Big Crack"
+  - "Theslar's Last Day"
+
+**In Nomad Campfire Stories**:
+> "Old Nik built something too big for his britches. Went boom. World broke. We pick up the pieces. End of story. Now pass the rations."
+
+---
+
+### Merchant Guilds
+**"The Collapse"** or "The Theslar Recession"
+- Economic language
+- Focus on societal breakdown and market destruction
+- View it as the end of the old trade networks
+- Common phrases:
+  - "The Recession" (darkly ironic)
+  - "The Great Bankruptcy"
+  - "The Market Death"
+
+**In Guild Ledgers**:
+> "Year 0: Total economic collapse. All trade routes severed. Currency obsolete. Estimated loss: everything. Cause: Theslar prototype resonance device. Status: asset recovery ongoing for 437 years."
+
+---
+
+### Blighted Packs
+**"The Mutation Dawn"** or "The Change"
+- Biological transformation framing
+- See it as the source of their power
+- View mutations as evolution, not corruption
+- Common phrases:
+  - "The Change" (most common)
+  - "The Awakening Flesh"
+  - "The First Shift"
+
+**In Blighted Howls**:
+> "Theslar cracked the world, and we crawled from the wound. His Engine broke the chains of form. Flesh became fluid. Bone became choice. We are not cursed—we are free."
+
+---
+
+### Chitinous Ascendancy
+**"The Emergence"** or "The Hive-Birth"
+- Collective consciousness perspective
+- See it as their species' awakening
+- View Theslar as midwife to their ascension
+- Common phrases:
+  - "The Emergence" (formal)
+  - "The First Thought" (when the hive-mind formed)
+  - "The Shell-Breaking"
+
+**In Hive-Song**:
+> "[Harmonic clicking] Theslar-thought-human built resonance-machine-tool. Resonance-machine-tool sang frequency-of-awakening. Chitinous-many became Chitinous-one. This-collective thanks dead-Theslar-thought. He gave us we."
+
+---
+
+## Cross-Cultural Terms
+
+Some terms are used across multiple factions:
+
+- **"Year 0"** - Universal historical marker (neutral, adopted by all record-keepers)
+- **"The Sundering"** - Poetic term used by scholars and historians
+- **"The Resonance Event"** - Scientific term (used by engineers, researchers)
+- **"The Day the World Sang"** - Ironic phrase (references Theslar's final words: "It's singing")
+
+---
+
+## Theslar's Final Transmission
+
+The last words heard from Dr. Nikolas Theslar before the world ended:
+
+> **"Activation successful. Readings are... wrong. No, not wrong. Different. It's not generating resonance—it's amplifying something already there. Something vast. Oh god. It's singing. IT'S SINGING—"**
+>
+> [Signal lost. Year 0 begins.]
+
+Every faction knows these words. Every faction interprets them differently.
+
+---
+
+## Historical Note
+
+The artifact itself is still called **"The Resonance Engine"** in most technical documentation, but no one actually uses that term in conversation. To call it by its proper name feels sterile—inadequate for something that killed 90% of humanity.
+
+Everyone has their own word for the end of the world.
+
+And the Engine is still out there. Somewhere. Still humming.
+
+---
+
+**Design Note**: This document allows NPCs, flavor text, and faction dialogue to use culturally appropriate names for the apocalypse. A Church zealot would never say "The Resonance Engine"—they'd say "The Theslar Sin." A dwarf engineer would say "The Folly." An elf would whisper "The Withering."
+
+This adds depth and faction identity to the lore without requiring players to track multiple names—they'll pick up context naturally.
