@@ -19,7 +19,8 @@
       "Bash(then echo \"✓ $file\")",
       "Bash(else echo \"✗ MISSING: $file\")",
       "Bash(fi)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
