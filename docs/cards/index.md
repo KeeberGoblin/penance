@@ -41,11 +41,13 @@ How to read a card: Cost, Type, Range, Effect, Initiative, Keywords, and Flavor.
 
 Every deck has:
 - **10 Universal Core** (everyone has these)
-- **12 Primary Weapon** (faction-specific, fixed)
-- **6 Secondary Equipment** (player choice)
+- **6 Faction Core** (faction-specific abilities)
+- **Variable Equipment** (weapons, shields, accessories - player choice)
 - **2 Faction Tactics** (choose 2 from 5)
 
-**Total**: 30 cards = 30 HP (Dwarves: 32 with Stone Endurance)
+**Total**: 26-50 cards depending on equipment choices
+
+See [Equipment Pool](../reference/equipment-pool-complete.md) for all available equipment
 
 ---
 
