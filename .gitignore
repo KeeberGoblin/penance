@@ -38,8 +38,8 @@ personal-notes/
 scratchpad/
 
 # Large Binary Files (consider using Git LFS)
-*.pdf
-# Uncomment above if PDFs get too large
+# *.pdf - Commented out to allow docs/pdfs/ to be tracked
+# If PDFs get too large, use Git LFS instead
 
 # Documentation Builds
 docs/_build/
