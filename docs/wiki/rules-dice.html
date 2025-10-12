@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Reference - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Dice Reference (Custom Dice System)</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            Version 1.0 • 3 Custom Dice Types: Attack (2d6) • Defense (Xd6) • Suffering (1d6)
+        </p>
+
+        <div class="manuscript-quote">
+            "The dice are the will of the Resonance. You cannot control fate—only face it. Every roll is a prayer. Every result, divine judgment."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Overview</h2>
+
+        <p>Penance uses <strong>3 types of custom d6 dice</strong> to add brutal randomness to combat:</p>
+
+        <ol>
+            <li><strong>Attack Dice</strong> (2d6) - Roll to-hit, determines if attack lands</li>
+            <li><strong>Defense Dice</strong> (Xd6) - Roll per damage point, chance to block/mitigate</li>
+            <li><strong>Suffering Dice</strong> (1d6) - Church faction & event self-harm mechanics</li>
+        </ol>
+
+        <h3>Design Philosophy:</h3>
+        <ul>
+            <li>GKR-style to-hit rolls (2d6 target numbers)</li>
+            <li>BattleTech modifier stacking (range, movement, terrain)</li>
+            <li>Kingdom Death save dice (block damage, critical effects)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>1. Attack Dice (2d6)</h2>
+
+        <h3>Die Face Symbols</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Face</th>
+                    <th>Symbol</th>
+                    <th>Value</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>🛡️</td>
+                    <td>1</td>
+                    <td>GLANCE</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>🩸</td>
+                    <td>2</td>
+                    <td>BLOOD</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>⚔️</td>
+                    <td>3</td>
+                    <td>STRIKE</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>⚔️⚔️</td>
+                    <td>4</td>
+                    <td>DOUBLE STRIKE</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>💀</td>
+                    <td>5</td>
+                    <td>DEATH BLOW</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>⚙️</td>
+                    <td>0</td>
+                    <td>JAM (critical fail)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Note</strong>: Face 6 (⚙️ JAM) = 0 value for tactical unpredictability</p>
+
+        <h3>How to Roll Attack Dice</h3>
+
+        <ol>
+            <li><strong>Calculate To-Hit Target Number</strong></li>
+            <li><strong>Roll 2 Attack Dice</strong></li>
+            <li><strong>Add both values together</strong></li>
+            <li><strong>Compare total to target number</strong></li>
+        </ol>
+
+        <h3>Hit Result Table</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Total</th>
+                    <th>Result</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>2</strong> (double ⚙️)</td>
+                    <td><strong>CATASTROPHIC FAILURE</strong></td>
+                    <td>Weapon jams: discard all Primary Weapon cards from hand, +2 Heat, next attack -2 damage</td>
+                </tr>
+                <tr>
+                    <td><strong>3-4</strong></td>
+                    <td><strong>Miss</strong></td>
+                    <td>No damage, attack wasted (if target 5+)</td>
+                </tr>
+                <tr>
+                    <td><strong>5-6</strong></td>
+                    <td><strong>Hit</strong></td>
+                    <td>Standard damage from attack card</td>
+                </tr>
+                <tr>
+                    <td><strong>7-8</strong></td>
+                    <td><strong>Strong Hit</strong></td>
+                    <td>Standard damage <strong>+1</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>9</strong></td>
+                    <td><strong>Critical Hit</strong></td>
+                    <td>Standard damage <strong>+2</strong>, bypass 1 Defense</td>
+                </tr>
+                <tr>
+                    <td><strong>10</strong> (double 💀)</td>
+                    <td><strong>EXECUTION</strong></td>
+                    <td>Auto-destroy 1 Component, bypass ALL Defense</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Special Roll Outcomes</h3>
+
+        <h4>EXECUTION (Double 💀, total 10):</h4>
+        <ul>
+            <li>Automatically destroy 1 targeted component (even if &lt;3 Component Damage)</li>
+            <li>Bypass ALL Defense (shields, armor, reactive cards don't work)</li>
+            <li>Still deal standard damage from attack card</li>
+            <li>Defender cannot choose to discard from hand (must discard from deck)</li>
+            <li><strong>Brutality</strong>: Even a 1-damage attack with EXECUTION destroys a component</li>
+        </ul>
+
+        <h4>CATASTROPHIC FAILURE (Double ⚙️, total 2):</h4>
+        <ul>
+            <li>Your weapon critically malfunctions</li>
+            <li>Discard all Primary Weapon cards from hand immediately</li>
+            <li>Gain +2 Heat (weapon overheats from malfunction)</li>
+            <li>Next attack this turn or next turn: -2 damage</li>
+            <li><strong>Does NOT end your turn</strong> (can still move, use Universal cards)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>2. Defense Dice (Variable, 1d6 per damage)</h2>
+
+        <h3>Die Face Symbols</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Face</th>
+                    <th>Symbol</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>🛡️</td>
+                    <td><strong>SHIELD</strong> - Block 1 damage</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>⚙️</td>
+                    <td><strong>ABSORB</strong> - Block 1 damage</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>🩸</td>
+                    <td><strong>FLESH WOUND</strong> - Take damage (discard 1 card)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>💀</td>
+                    <td><strong>CRITICAL</strong> - Take damage + 1 Component Damage</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>⚔️</td>
+                    <td><strong>PIERCE</strong> - Take damage, cannot use reactive cards</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>🔥</td>
+                    <td><strong>HEAT</strong> - Take damage + 1 Heat</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How to Roll Defense Dice</h3>
+
+        <ol>
+            <li><strong>Attacker's attack hits</strong> → Determine damage amount</li>
+            <li><strong>Defender rolls 1 Defense Die per damage point</strong>
+                <ul><li>Example: 6 damage = roll 6 Defense Dice</li></ul>
+            </li>
+            <li><strong>Count 🛡️ SHIELD and ⚙️ ABSORB symbols</strong>
+                <ul><li>Each blocks 1 damage</li></ul>
+            </li>
+            <li><strong>Apply special effects</strong> from other symbols</li>
+            <li><strong>Final damage = Original damage - Total blocks</strong></li>
+        </ol>
+
+        <p><strong>Block Probability</strong>: 2/6 faces block (🛡️, ⚙️) = <strong>33% chance per die</strong></p>
+
+        <h3>Defense Dice Example</h3>
+
+        <p><strong>Setup</strong>: Dwarven Heavy takes <strong>8 damage</strong> from Church attack</p>
+
+        <h4>Step 1: Roll 8 Defense Dice</h4>
+        <p>Result: 🛡️ 🛡️ 🛡️ 🩸 💀 💀 🔥 ⚔️</p>
+
+        <h4>Step 2: Count Blocks</h4>
+        <ul>
+            <li><strong>3 Shield symbols (🛡️🛡️🛡️)</strong> = Block 3 damage</li>
+            <li>Reduced from 8 → <strong>5 damage</strong></li>
+        </ul>
+
+        <h4>Step 3: Apply Special Effects</h4>
+        <ul>
+            <li><strong>2 Critical symbols (💀💀)</strong> = +2 Component Damage to targeted component</li>
+            <li><strong>1 Heat symbol (🔥)</strong> = +1 Heat</li>
+            <li><strong>1 Pierce symbol (⚔️)</strong> = Cannot use reactive defense cards</li>
+        </ul>
+
+        <h4>Step 4: Defender Chooses Discard</h4>
+        <ul>
+            <li>Must discard 5 cards (chooses 3 from hand, 2 from deck)</li>
+            <li>If any Primary Weapon cards discarded → Add to Component Damage</li>
+        </ul>
+
+        <h4>Step 5: Final Component Damage</h4>
+        <ul>
+            <li>2 (from 💀💀) + 1 (from 1 Primary Weapon card discarded) = <strong>3 Component Damage</strong></li>
+            <li><strong>Component DESTROYED</strong> (reached threshold)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>3. To-Hit Modifier System</h2>
+
+        <h3>Base To-Hit Number</h3>
+
+        <p><strong>Default</strong>: <strong>5+</strong> (roll 2d6 Attack Dice, total must equal or exceed 5)</p>
+
+        <h3>Complete Modifier Table</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Situation</th>
+                    <th>Modifier</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" style="background: var(--dark-red); color: var(--bone-white); text-align: center;"><strong>RANGE</strong></td>
+                </tr>
+                <tr>
+                    <td>Short range (0-3 hexes)</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>Medium range (4-6 hexes)</td>
+                    <td>+1</td>
+                </tr>
+                <tr>
+                    <td>Long range (7-10 hexes)</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>Extreme range (11+ hexes)</td>
+                    <td>+3</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background: var(--dark-red); color: var(--bone-white); text-align: center;"><strong>ATTACKER MOVEMENT</strong></td>
+                </tr>
+                <tr>
+                    <td>Stationary (0 hexes)</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>Moved 1-3 hexes</td>
+                    <td>+1</td>
+                </tr>
+                <tr>
+                    <td>Moved 4-6 hexes</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>Sprinted (7+ hexes)</td>
+                    <td>+3</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background: var(--dark-red); color: var(--bone-white); text-align: center;"><strong>DEFENDER MOVEMENT</strong></td>
+                </tr>
+                <tr>
+                    <td>Stationary (0 hexes)</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>Moved 1-3 hexes</td>
+                    <td>+1</td>
+                </tr>
+                <tr>
+                    <td>Moved 4-6 hexes</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>Sprinted (7+ hexes)</td>
+                    <td>+3</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background: var(--dark-red); color: var(--bone-white); text-align: center;"><strong>FACING</strong></td>
+                </tr>
+                <tr>
+                    <td>Front arc (hex 1)</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>Weapon-side (hex 2)</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>Flanks (hex 3, 5)</td>
+                    <td>-1 (easier)</td>
+                </tr>
+                <tr>
+                    <td>Rear (hex 4)</td>
+                    <td>-2 (easier)</td>
+                </tr>
+                <tr>
+                    <td>Shield-side (hex 6)</td>
+                    <td>+1 (harder)</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background: var(--dark-red); color: var(--bone-white); text-align: center;"><strong>TERRAIN</strong></td>
+                </tr>
+                <tr>
+                    <td>Open ground</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>Light cover</td>
+                    <td>+1</td>
+                </tr>
+                <tr>
+                    <td>Heavy cover</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>Obscured</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>Elevated (attacker higher)</td>
+                    <td>-1 (easier)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Complete To-Hit Calculation Example</h3>
+
+        <p><strong>Scenario</strong>:</p>
+        <ul>
+            <li>Church Scout (attacker) shoots Dwarven Heavy (defender) with pistol</li>
+            <li>Range: 5 hexes (Medium)</li>
+            <li>Scout moved 4 hexes this turn (aggressive advance)</li>
+            <li>Dwarf moved 2 hexes last turn (repositioning)</li>
+            <li>Attacking Dwarf's <strong>shield-side (hex 6)</strong></li>
+            <li>Dwarf is behind light cover (rubble)</li>
+        </ul>
+
+        <h4>Calculation:</h4>
+        <ol>
+            <li>Base: 5+</li>
+            <li>Range (Medium, 5 hexes): +1 → <strong>6+</strong></li>
+            <li>Attacker moved 4 hexes: +1 → <strong>7+</strong></li>
+            <li>Defender moved 2 hexes: +1 → <strong>8+</strong></li>
+            <li>Shield-side facing: +1 → <strong>9+</strong></li>
+            <li>Light cover: +1 → <strong>10+</strong></li>
+        </ol>
+
+        <p><strong>Final To-Hit</strong>: <strong>10+</strong> (only possible with double 💀 EXECUTION roll)</p>
+
+        <p><strong>Attack Roll</strong>: 💀 (5) + ⚔️ (3) = <strong>8 total</strong><br>
+        <strong>Result</strong>: <strong>MISS</strong> (needed 10+, got 8)</p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>4. Suffering Dice (1d6, Church & Events)</h2>
+
+        <p><strong>Used for</strong>: Church of Absolution self-harm mechanics and campaign events</p>
+
+        <h3>Die Face Symbols</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Face</th>
+                    <th>Symbol</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>🛡️</td>
+                    <td><strong>DIVINE MERCY</strong> - No self-harm</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>🩸</td>
+                    <td><strong>BLOOD PRICE</strong> - Discard 2 cards (self-harm)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>⚔️</td>
+                    <td><strong>ZEALOT'S FURY</strong> - Discard 1 card, +1 damage to all attacks this turn</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>🔥</td>
+                    <td><strong>PENANCE</strong> - Discard 1 card, +1 Heat, +2 damage next attack</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>💀</td>
+                    <td><strong>MARTYRDOM</strong> - Discard 3 cards, +3 damage to next attack</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>⚙️</td>
+                    <td><strong>ABSOLUTION</strong> - Discard 1 card, recover 1 card from discard</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>When to Roll Suffering Dice</h3>
+
+        <h4>Church Faction Cards:</h4>
+        <ul>
+            <li><strong>BLOOD OFFERING</strong>: Roll 1 Suffering Die instead of auto-discarding 2 cards</li>
+            <li><strong>Flagellant's Zeal</strong>: Roll 2 Suffering Dice, apply both effects</li>
+            <li><strong>Martyrdom Protocol</strong>: When redirecting damage, roll 1 Suffering Die per 3 damage redirected</li>
+        </ul>
+
+        <h4>Campaign Events:</h4>
+        <ul>
+            <li><strong>Penance Rituals</strong> (settlement event)</li>
+            <li><strong>Taint Purging</strong> (when Taint reaches 8+)</li>
+            <li><strong>Soul Bargains</strong> (desperate deals with Bonelord Thresh)</li>
+            <li><strong>Leg-Skimming</strong> (voluntary soul sacrifice)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>5. Dice Probability Tables</h2>
+
+        <h3>Attack Dice (2d6) Probability</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Total</th>
+                    <th>Probability</th>
+                    <th>Cumulative</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2 (⚙️⚙️)</td>
+                    <td>2.78%</td>
+                    <td>2.78%</td>
+                    <td>Catastrophic Failure</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>5.56%</td>
+                    <td>8.33%</td>
+                    <td>Likely miss</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>8.33%</td>
+                    <td>16.67%</td>
+                    <td>Likely miss</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>11.11%</td>
+                    <td>27.78%</td>
+                    <td>Hit (if target 5+)</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>13.89%</td>
+                    <td>41.67%</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>16.67%</td>
+                    <td>58.33%</td>
+                    <td>Strong Hit</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>13.89%</td>
+                    <td>72.22%</td>
+                    <td>Strong Hit</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>11.11%</td>
+                    <td>83.33%</td>
+                    <td>Critical Hit</td>
+                </tr>
+                <tr>
+                    <td>10 (💀💀)</td>
+                    <td>2.78%</td>
+                    <td>86.11%</td>
+                    <td>EXECUTION</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Hit Chances by Target Number:</h3>
+        <ul>
+            <li><strong>5+</strong>: 72.22% (accounting for JAM face)</li>
+            <li><strong>6+</strong>: 58.33%</li>
+            <li><strong>7+</strong>: 41.67%</li>
+            <li><strong>8+</strong>: 27.78%</li>
+            <li><strong>9+</strong>: 13.89%</li>
+            <li><strong>10+</strong>: 2.78% (EXECUTION only)</li>
+        </ul>
+
+        <h3>Defense Dice Block Probability</h3>
+
+        <p><strong>Single Die</strong>:</p>
+        <ul>
+            <li>Block: 33.3% (🛡️ or ⚙️)</li>
+            <li>Standard damage: 16.7% (🩸)</li>
+            <li>Critical: 16.7% (💀)</li>
+            <li>Pierce: 16.7% (⚔️)</li>
+            <li>Heat: 16.7% (🔥)</li>
+        </ul>
+
+        <h3>Expected Blocks:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Damage</th>
+                    <th>Expected Blocks</th>
+                    <th>Expected Damage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>8</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Quick Reference: What Dice to Roll When</h2>
+
+        <h3>During Attack</h3>
+        <ol>
+            <li><strong>Declare attack</strong> → Calculate To-Hit target number</li>
+            <li><strong>Roll 2 Attack Dice</strong> → Add values, compare to target</li>
+            <li><strong>If hit</strong> → Defender rolls Defense Dice (1 per damage)</li>
+            <li><strong>Apply damage</strong> → Defender discards cards</li>
+        </ol>
+
+        <h3>During Defense</h3>
+        <ol>
+            <li><strong>Attack hits</strong> → Determine damage amount</li>
+            <li><strong>Roll X Defense Dice</strong> (X = damage)</li>
+            <li><strong>Count blocks</strong> (🛡️ and ⚙️)</li>
+            <li><strong>Apply special effects</strong> (💀 ⚔️ 🔥)</li>
+            <li><strong>Discard final damage</strong> (original - blocks)</li>
+        </ol>
+
+        <h3>Church Self-Harm</h3>
+        <ol>
+            <li><strong>Play BLOOD OFFERING</strong> card</li>
+            <li><strong>Roll 1 Suffering Die</strong></li>
+            <li><strong>Apply effect</strong> (discard cards, gain damage bonus)</li>
+            <li><strong>Make next attack</strong> (with bonus if applicable)</li>
+        </ol>
+
+        <div style="background: var(--shadow-black); border: 3px double var(--dark-red); padding: 2rem; margin: 3rem 0; font-style: italic;">
+            <p style="text-align: center; margin: 0;">
+                "The dice are the will of the Resonance. You cannot control fate—only face it. Every roll is a prayer. Every result, divine judgment."
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="javascript:parent.loadContent('rules-range-los.html');">Previous: Range & LOS</a> | <a href="javascript:parent.loadContent('content-home.html');">Return to Wiki Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

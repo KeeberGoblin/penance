@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat System - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Combat & Damage System</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            GKR + Kingdom Death Hybrid • Version 2.0 • Dual-Layer Damage: Casket HP (30 cards) + Pilot Wounds (10 cards)
+        </p>
+
+        <div class="manuscript-quote">
+            "Your deck is your life. Every card you lose brings you closer to death. When your Primary Weapon cards are gone, you're just a broken puppet swinging fists in the dark."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Core Concept: Dual-Layer Damage</h2>
+
+        <p>Inspired by <strong>GKR: Heavy Hitters</strong> (deck-as-HP) + <strong>Kingdom Death: Monster</strong> (brutal consequences)</p>
+
+        <h3>Two Separate Systems:</h3>
+        <ol>
+            <li><strong>Casket HP Deck</strong> (30 cards) - Your mech's structural integrity</li>
+            <li><strong>Pilot Wound Deck</strong> (10 cards) - Your pilot's physical/mental state</li>
+        </ol>
+
+        <p>When <strong>Casket HP Deck runs out</strong> → Casket is destroyed (pilot may survive)<br>
+        When <strong>Pilot Wound Deck runs out</strong> → Pilot dies (Casket becomes inert)</p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>1. Casket HP Deck (30 Cards)</h2>
+
+        <h3>Deck Composition (GKR-Style)</h3>
+
+        <p>Your 30-card deck represents your Casket's HP. Every card you discard = damage taken.</p>
+
+        <h4>Breakdown:</h4>
+        <ul>
+            <li><strong>10 Universal Cards</strong> (mandatory, everyone has these)</li>
+            <li><strong>12 Primary Weapon Cards</strong> (faction-specific, your main identity)</li>
+            <li><strong>6 Secondary Weapon/Equipment Cards</strong> (customizable gear)</li>
+            <li><strong>2 Faction Tactic Cards</strong> (chosen from 5 available, pick 2 before battle)</li>
+        </ul>
+
+        <p><strong>Total: 30 cards</strong></p>
+
+        <h3>Universal Core (10 Cards)</h3>
+
+        <p>Everyone has these 10 cards (basic movement, defense, utility):</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Name</th>
+                    <th>Type</th>
+                    <th>SP Cost</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Desperate Lunge</strong></td>
+                    <td>Movement</td>
+                    <td>1</td>
+                    <td>Move up to 2 hexes</td>
+                </tr>
+                <tr>
+                    <td><strong>Brace for Impact</strong></td>
+                    <td>Defense (Reactive)</td>
+                    <td>0</td>
+                    <td>Reduce next damage by 2</td>
+                </tr>
+                <tr>
+                    <td><strong>Emergency Vent</strong></td>
+                    <td>Heat Management</td>
+                    <td>2</td>
+                    <td>Remove 3 Heat</td>
+                </tr>
+                <tr>
+                    <td><strong>Sensor Sweep</strong></td>
+                    <td>Utility</td>
+                    <td>1</td>
+                    <td>Reveal 1 enemy card in hand</td>
+                </tr>
+                <tr>
+                    <td><strong>Overextend</strong></td>
+                    <td>Movement</td>
+                    <td>1</td>
+                    <td>Move 3 hexes, gain 1 Heat</td>
+                </tr>
+                <tr>
+                    <td><strong>Rally Cry</strong></td>
+                    <td>Support</td>
+                    <td>2</td>
+                    <td>Ally within 3 hexes draws 1 card</td>
+                </tr>
+                <tr>
+                    <td><strong>Survey the Field</strong></td>
+                    <td>Utility</td>
+                    <td>1</td>
+                    <td>Draw 1 card</td>
+                </tr>
+                <tr>
+                    <td><strong>Feint</strong></td>
+                    <td>Combat</td>
+                    <td>1</td>
+                    <td>Next attack this turn: +1 damage</td>
+                </tr>
+                <tr>
+                    <td><strong>Retreat</strong></td>
+                    <td>Movement</td>
+                    <td>2</td>
+                    <td>Move 4 hexes, cannot attack this turn</td>
+                </tr>
+                <tr>
+                    <td><strong>Breathe the Core</strong></td>
+                    <td>Heat Management</td>
+                    <td>1</td>
+                    <td>Remove 1 Heat, draw 1 card</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>2. Attack Resolution (To-Hit System)</h2>
+
+        <h3>Step 1: Declare Attack</h3>
+
+        <p>Attacker declares:</p>
+        <ol>
+            <li>Target enemy</li>
+            <li>Which attack card to play (sets base damage)</li>
+            <li>Which component to target (Right Arm, Left Arm, Legs, Head, Chassis, or Random)</li>
+            <li>Range and facing</li>
+        </ol>
+
+        <h3>Step 2: Calculate To-Hit Number</h3>
+
+        <p><strong>Base To-Hit</strong>: <strong>5+</strong> (roll 2d6 Attack Dice, need 5+ total)</p>
+
+        <h4>Apply ALL applicable modifiers:</h4>
+
+        <h5>Range Modifiers</h5>
+        <ul>
+            <li><strong>Short Range (0-3 hexes)</strong>: +0</li>
+            <li><strong>Medium Range (4-6 hexes)</strong>: +1 to target number (need 6+)</li>
+            <li><strong>Long Range (7-10 hexes)</strong>: +2 to target number (need 7+)</li>
+            <li><strong>Extreme Range (11+ hexes)</strong>: +3 to target number (need 8+)</li>
+        </ul>
+
+        <h5>Attacker Movement (This Turn)</h5>
+        <ul>
+            <li><strong>Stationary (0 hexes moved)</strong>: +0</li>
+            <li><strong>Moved 1-3 hexes</strong>: +1</li>
+            <li><strong>Moved 4-6 hexes</strong>: +2</li>
+            <li><strong>Sprinted (7+ hexes)</strong>: +3</li>
+        </ul>
+
+        <h5>Defender Movement (Last Turn)</h5>
+        <ul>
+            <li><strong>Stationary</strong>: +0</li>
+            <li><strong>Moved 1-3 hexes</strong>: +1</li>
+            <li><strong>Moved 4-6 hexes</strong>: +2</li>
+            <li><strong>Sprinted (7+ hexes)</strong>: +3</li>
+        </ul>
+
+        <h5>Hex-Side Facing</h5>
+        <ul>
+            <li><strong>Front Arc (Hex 1)</strong>: +0</li>
+            <li><strong>Weapon-Side (Hex 2)</strong>: +0 (but +1 damage if hit)</li>
+            <li><strong>Flanks (Hex 3, 5)</strong>: -1 (easier, need 4+)</li>
+            <li><strong>Rear (Hex 4)</strong>: -2 (easier, need 3+)</li>
+            <li><strong>Shield-Side (Hex 6)</strong>: +1 (harder, need 6+)</li>
+        </ul>
+
+        <h5>Terrain Modifiers</h5>
+        <ul>
+            <li><strong>Light Cover</strong> (rubble, low walls): +1</li>
+            <li><strong>Heavy Cover</strong> (fortress walls, forest): +2</li>
+            <li><strong>Obscured</strong> (smoke, darkness): +2</li>
+            <li><strong>Elevated</strong> (attacker on high ground): -1 (easier)</li>
+        </ul>
+
+        <h4>Example:</h4>
+        <ul>
+            <li>Base: 5+</li>
+            <li>Medium range: +1 (need 6+)</li>
+            <li>Attacker moved 4 hexes: +1 (need 7+)</li>
+            <li>Defender moved 2 hexes: +1 (need 8+)</li>
+            <li>Shield-side facing: +1 (need <strong>9+</strong>)</li>
+        </ul>
+
+        <h3>Step 3: Roll Attack Dice</h3>
+
+        <p><strong>Roll 2d6 Attack Dice</strong> (custom dice with symbols):</p>
+
+        <h4>Attack Die Faces</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Value</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>⚔️</td>
+                    <td>3</td>
+                    <td>STRIKE</td>
+                </tr>
+                <tr>
+                    <td>⚔️⚔️</td>
+                    <td>4</td>
+                    <td>DOUBLE STRIKE</td>
+                </tr>
+                <tr>
+                    <td>💀</td>
+                    <td>5</td>
+                    <td>DEATH BLOW</td>
+                </tr>
+                <tr>
+                    <td>🛡️</td>
+                    <td>1</td>
+                    <td>GLANCE</td>
+                </tr>
+                <tr>
+                    <td>⚙️</td>
+                    <td>0</td>
+                    <td>JAM</td>
+                </tr>
+                <tr>
+                    <td>🩸</td>
+                    <td>2</td>
+                    <td>BLOOD</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Add both dice results, compare to target number:</strong></p>
+
+        <h4>Hit Results</h4>
+        <ul>
+            <li><strong>5-6 total</strong> = <strong>Hit</strong> (standard damage)</li>
+            <li><strong>7-8 total</strong> = <strong>Strong Hit</strong> (standard damage +1)</li>
+            <li><strong>9-10 total</strong> = <strong>Critical Hit</strong> (standard damage +2, bypass 1 Defense)</li>
+            <li><strong>10 (double 💀)</strong> = <strong>EXECUTION</strong> (auto-destroy 1 Component, bypass ALL Defense)</li>
+        </ul>
+
+        <h4>Miss Results</h4>
+        <ul>
+            <li><strong>Below target number</strong> = <strong>MISS</strong> (no damage, attack wasted)</li>
+            <li><strong>2 (double ⚙️)</strong> = <strong>CATASTROPHIC FAILURE</strong>:
+                <ul>
+                    <li>Weapon jams (discard all Primary Weapon cards from hand)</li>
+                    <li>+2 Heat (weapon overload)</li>
+                    <li>Next attack -2 damage (weapon damaged)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h3>Step 4: Roll Defense Dice (If Hit)</h3>
+
+        <p><strong>If attack hits, Defender rolls Defense Dice:</strong></p>
+
+        <p><strong>Roll 1d6 Defense Die per damage point</strong></p>
+
+        <h4>Defense Die Faces</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🛡️ <strong>SHIELD</strong></td>
+                    <td>Block 1 damage</td>
+                </tr>
+                <tr>
+                    <td>⚙️ <strong>ABSORB</strong></td>
+                    <td>Block 1 damage</td>
+                </tr>
+                <tr>
+                    <td>🩸 <strong>FLESH WOUND</strong></td>
+                    <td>Take damage (discard 1 card)</td>
+                </tr>
+                <tr>
+                    <td>💀 <strong>CRITICAL</strong></td>
+                    <td>Take damage + 1 Component Damage</td>
+                </tr>
+                <tr>
+                    <td>⚔️ <strong>PIERCE</strong></td>
+                    <td>Take damage, cannot use reactive cards</td>
+                </tr>
+                <tr>
+                    <td>🔥 <strong>HEAT</strong></td>
+                    <td>Take damage + 1 Heat</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Count results:</h4>
+        <ol>
+            <li>Count <strong>SHIELD</strong> (🛡️) and <strong>ABSORB</strong> (⚙️) symbols → Reduce damage by this amount</li>
+            <li>Apply special effects from <strong>CRITICAL</strong> (💀), <strong>PIERCE</strong> (⚔️), <strong>HEAT</strong> (🔥)</li>
+            <li>Final damage = Original damage - Blocks</li>
+        </ol>
+
+        <h4>Example:</h4>
+        <p>Take 6 damage → Roll 6 Defense Dice</p>
+        <ul>
+            <li>Result: 🛡️ 🛡️ 🩸 💀 🔥 ⚔️</li>
+            <li><strong>2 blocks</strong> = Reduce to 4 damage</li>
+            <li><strong>1 Critical</strong> (💀) = +1 Component Damage</li>
+            <li><strong>1 Heat</strong> (🔥) = +1 Heat</li>
+            <li><strong>1 Pierce</strong> (⚔️) = Cannot use reactive defense cards</li>
+            <li><strong>Final</strong>: Discard 4 cards + 1 Component Damage + 1 Heat</li>
+        </ul>
+
+        <h3>Step 5: Apply Damage (GKR-Style Choice)</h3>
+
+        <p><strong>Defender chooses how to discard cards:</strong></p>
+
+        <ul>
+            <li><strong>From Hand</strong>: Lose tactical options but control what's lost</li>
+            <li><strong>From Deck</strong>: Keep hand intact but risk losing key cards randomly</li>
+            <li><strong>Mixed</strong>: Discard some from hand, some from deck</li>
+        </ul>
+
+        <p><strong>Example</strong>: Take 5 damage → Discard 3 from hand + 2 from deck top</p>
+
+        <p><strong>Strategic Depth</strong>: Do you burn your hand to avoid Component Damage? Or keep cards and risk it?</p>
+
+        <h3>Step 6: Check for Component Damage</h3>
+
+        <p><strong>If you discarded any Primary Weapon cards:</strong></p>
+        <ul>
+            <li>Mark 1 Component Damage per Primary Weapon card to targeted component</li>
+            <li>Track separately: Right Arm, Left Arm, Legs, Head, Chassis</li>
+            <li><strong>3 Component Damage = Component DESTROYED</strong></li>
+        </ul>
+
+        <p><strong>If Defense Dice showed CRITICAL symbols (💀):</strong></p>
+        <ul>
+            <li>Add +1 Component Damage per 💀 symbol to targeted component</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>3. Component Damage (KDM-Style Brutality)</h2>
+
+        <h3>Tracking Component Damage</h3>
+
+        <h4>5 Component Locations:</h4>
+        <ul>
+            <li><strong>Right Arm</strong> (Primary Weapon)</li>
+            <li><strong>Left Arm</strong> (Secondary Equipment)</li>
+            <li><strong>Legs</strong> (Movement)</li>
+            <li><strong>Head</strong> (Sensors)</li>
+            <li><strong>Chassis</strong> (Core)</li>
+        </ul>
+
+        <h4>How it accumulates:</h4>
+        <ol>
+            <li>Attacker declares which component to target (or roll 1d6 if random)</li>
+            <li>When Primary Weapon cards are discarded from damage → 1 Component Damage per card</li>
+            <li>When Defense Dice show 💀 CRITICAL → +1 Component Damage</li>
+            <li><strong>3 Component Damage to same location = Component DESTROYED</strong></li>
+        </ol>
+
+        <h3>Component Destroyed Effects</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Effect When Destroyed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Right Arm</strong></td>
+                    <td>Discard all Primary Weapon cards from hand immediately. Cannot play Primary Weapon cards for rest of battle. Must rely on Universal Core + Secondary Equipment only.</td>
+                </tr>
+                <tr>
+                    <td><strong>Left Arm</strong></td>
+                    <td>Discard all Secondary Equipment cards from hand. Cannot use shield reactive cards or offhand weapons.</td>
+                </tr>
+                <tr>
+                    <td><strong>Legs</strong></td>
+                    <td>Movement costs <strong>+1 SP per hex</strong>. Cannot Sprint (max 3 hexes/turn even with Sprint cards).</td>
+                </tr>
+                <tr>
+                    <td><strong>Head</strong></td>
+                    <td>Cannot use Sensor Sweep or targeting cards. <strong>-1 to all ranged attacks</strong> (penalties stack with to-hit modifiers).</td>
+                </tr>
+                <tr>
+                    <td><strong>Chassis</strong></td>
+                    <td><strong>Permanent -1 SP maximum</strong> (Light 6 → 5, Heavy 4 → 3, etc.). -1 Defense against all attacks.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>4. Deck Depletion (Running Out of HP)</h2>
+
+        <h3>When your deck runs out mid-turn:</h3>
+        <ul>
+            <li>Continue taking damage by discarding from <strong>discard pile</strong></li>
+            <li>If discard pile is empty, you're <strong>Defeated</strong></li>
+        </ul>
+
+        <h3>When you would draw a card but deck is empty:</h3>
+        <ul>
+            <li><strong>Reshuffle Trigger</strong> (like GKR, but with KDM twist)</li>
+            <li>Shuffle discard pile into new deck</li>
+            <li><strong>Add 1 "Damage" card</strong> to the deck (permanent degradation)</li>
+            <li>Draw normally</li>
+        </ul>
+
+        <h3>Damage Cards (KDM-Style):</h3>
+        <ul>
+            <li>Dead draws (do nothing when played)</li>
+            <li>Dilute your deck over time</li>
+            <li>Make it harder to draw useful cards</li>
+            <li>After 3-4 reshuffles, deck is 30% Damage cards → death spiral</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>5. Pilot Wound Deck (10 Cards)</h2>
+
+        <h3>Separate from Casket HP</h3>
+
+        <p>The Pilot has their own 10-card Wound Deck. This represents pilot physical/mental state inside the capsule.</p>
+
+        <h4>Starting Wound Deck (10 cards, all face-down):</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Card</th>
+                    <th>Quantity</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Minor Injury</strong></td>
+                    <td>5</td>
+                    <td>Recoverable</td>
+                </tr>
+                <tr>
+                    <td><strong>Severe Injury</strong></td>
+                    <td>3</td>
+                    <td>Permanent effect</td>
+                </tr>
+                <tr>
+                    <td><strong>Trauma</strong></td>
+                    <td>2</td>
+                    <td>Mental breakdown</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>When Pilot Takes Damage</h3>
+
+        <p>Pilots take damage separately from Casket in these situations:</p>
+        <ol>
+            <li><strong>Capsule Breach</strong> (enemy specifically targets capsule, rare)</li>
+            <li><strong>Neural Feedback</strong> (when 5+ Component Damage accumulated)</li>
+            <li><strong>Thread Snap</strong> (when Hand Threads break from damage)</li>
+            <li><strong>Taint Overload</strong> (when Taint reaches 10)</li>
+            <li><strong>Casket Destruction</strong> (when Casket HP deck runs out, pilot must save)</li>
+        </ol>
+
+        <p><strong>When Pilot takes damage:</strong></p>
+        <ul>
+            <li>Flip 1 Wound Card face-up per damage</li>
+            <li>Read effect immediately</li>
+            <li>Card remains face-up (permanent)</li>
+        </ul>
+
+        <h3>Wound Card Effects</h3>
+
+        <h4>Minor Injury (5 cards):</h4>
+        <ol>
+            <li><strong>Concussion</strong>: -1 to all SP until end of mission</li>
+            <li><strong>Broken Finger</strong>: Cannot use 1 specific card type (roll d10 for which finger/thread)</li>
+            <li><strong>Internal Bleeding</strong>: At start of each round, discard 1 card from Casket deck</li>
+            <li><strong>Dislocated Shoulder</strong>: -2 damage to all attacks until end of mission</li>
+            <li><strong>Cracked Rib</strong>: Each time you gain Heat, gain +1 additional Heat</li>
+        </ol>
+
+        <h4>Severe Injury (3 cards):</h4>
+        <ol>
+            <li><strong>Shattered Hand</strong>: Permanently lose 2 Neural Threads. -2 SP maximum (PERMANENT, even after mission)</li>
+            <li><strong>Spinal Trauma</strong>: Movement costs +1 SP per hex (PERMANENT)</li>
+            <li><strong>Ruptured Organ</strong>: Start each mission at -5 Casket HP (discard 5 cards at deployment)</li>
+        </ol>
+
+        <h4>Trauma (2 cards):</h4>
+        <ol>
+            <li><strong>PTSD</strong>: Cannot attack enemies from behind (triggers panic)</li>
+            <li><strong>Dissociation</strong>: At start of each turn, roll 1d6. On 1-2, lose 1 SP this turn (pilot zones out)</li>
+        </ol>
+
+        <h3>Pilot Death</h3>
+
+        <p><strong>If all 10 Wound Cards are face-up → Pilot Dies</strong></p>
+
+        <ul>
+            <li>Casket becomes inert (stops moving)</li>
+            <li>Pilot must be extracted (if allies present)</li>
+            <li>Campaign: Pilot is dead, roll new character</li>
+            <li>Arena: Match loss</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>6. Example Combat Sequence (With Dice)</h2>
+
+        <h3>Setup:</h3>
+        <ul>
+            <li><strong>Player A</strong>: Church Confessor (30 HP, 6 SP, 6 cards in hand)</li>
+            <li><strong>Player B</strong>: Dwarven Ironclad (30 HP, 4 SP, 6 cards in hand)</li>
+        </ul>
+
+        <h3>Round 1</h3>
+
+        <h4>Player A Turn (Confessor):</h4>
+        <ol>
+            <li>Refresh to 6 SP</li>
+            <li>Play <strong>Desperate Lunge</strong> (1 SP) → Move 2 hexes toward enemy (total moved: 2 hexes)</li>
+            <li>Play <strong>Faithful Thrust</strong> (2 SP) → Declare attack for 4 damage, Range: Melee
+                <ul>
+                    <li><strong>To-Hit Calculation</strong>: Base 5+ | Moved 2 hexes +1 | Front arc +0 = <strong>Need 6+</strong></li>
+                    <li><strong>Attack Roll</strong>: ⚔️ (3) + ⚔️⚔️ (4) = <strong>7 total</strong> → <strong>STRONG HIT</strong> (+1 damage)</li>
+                    <li>Final damage: 4 base + 1 (Strong Hit) = <strong>5 damage</strong></li>
+                </ul>
+            </li>
+            <li>Player B rolls <strong>5 Defense Dice</strong>: 🛡️ 🩸 🩸 💀 🔥
+                <ul>
+                    <li><strong>1 Shield block</strong> → Reduce to 4 damage</li>
+                    <li><strong>1 Critical (💀)</strong> → +1 Component Damage to Right Arm</li>
+                    <li><strong>1 Heat (🔥)</strong> → +1 Heat</li>
+                </ul>
+            </li>
+            <li>Player B discards 4 cards (chooses: 2 from hand, 2 from deck)
+                <ul>
+                    <li>Discarded from hand: 1× Primary Weapon card → +1 Component Damage</li>
+                    <li><strong>Total Component Damage to Right Arm: 2</strong> (1 from 💀, 1 from Primary card)</li>
+                </ul>
+            </li>
+            <li>Player A has 3 SP remaining → Passes</li>
+            <li>Draw Phase: Draw 2 cards (hand back to 6)</li>
+        </ol>
+
+        <h4>Player B Turn (Ironclad):</h4>
+        <ol>
+            <li>Refresh to 4 SP, currently at 1 Heat (safe)</li>
+            <li>Play <strong>Advance</strong> (2 SP) → Move 2 hexes toward enemy</li>
+            <li>Play <strong>Hammer Strike</strong> (3 SP) → Declare attack for 6 damage, ignore 1 Armor
+                <ul>
+                    <li><strong>To-Hit Calculation</strong>: Base 5+ | Moved 2 hexes +1 | Attacking front +0 = <strong>Need 6+</strong></li>
+                    <li><strong>Attack Roll</strong>: 💀 (5) + ⚔️ (3) = <strong>8 total</strong> → <strong>STRONG HIT</strong> (+1 damage)</li>
+                    <li>Final damage: 6 base + 1 (Strong Hit) = <strong>7 damage</strong></li>
+                </ul>
+            </li>
+            <li>Player A rolls <strong>7 Defense Dice</strong>: 🛡️ 🩸 🩸 💀 💀 🔥 ⚔️
+                <ul>
+                    <li><strong>1 Shield block</strong> → Reduce to 6 damage</li>
+                    <li><strong>2 Critical (💀💀)</strong> → +2 Component Damage to Right Arm</li>
+                    <li><strong>1 Heat (🔥)</strong> → +1 Heat</li>
+                    <li><strong>1 Pierce (⚔️)</strong> → Cannot use reactive defense cards</li>
+                </ul>
+            </li>
+            <li>Player A discards 6 cards (chooses: 3 from hand, 3 from deck)
+                <ul>
+                    <li>Discarded from hand: 2× Primary Weapon (Penitent Blades) → +2 Component Damage</li>
+                    <li><strong>Total Component Damage to Right Arm</strong>: 2 (from 💀💀) + 2 (from Primary cards) = <strong>4 Component Damage</strong></li>
+                    <li>Right Arm has <strong>EXCEEDED 3</strong> → <strong>RIGHT ARM DESTROYED!</strong></li>
+                    <li>Player A discards all remaining Penitent Blade cards from hand (cannot use Primary Weapon)</li>
+                </ul>
+            </li>
+            <li>Player B has 0 SP → Turn ends</li>
+            <li>Draw Phase: Draw 3 cards</li>
+        </ol>
+
+        <h3>Round 2</h3>
+
+        <p><strong>Player A Turn</strong>:</p>
+        <ul>
+            <li>Now has NO Primary Weapon cards in hand (all discarded)</li>
+            <li>Must rely on Universal cards + Secondary Equipment (Buckler)</li>
+            <li>Desperate situation → Might use <strong>Blood Offering</strong> (discard 2 cards for +3 damage boost)</li>
+        </ul>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-top: 2rem;">
+            This creates <strong>brutal, desperate combat</strong> where Component Damage matters and losing your Primary Weapon mid-fight is catastrophic.
+        </p>
+
+        <div style="background: var(--shadow-black); border: 3px double var(--dark-red); padding: 2rem; margin: 3rem 0; font-style: italic;">
+            <p style="text-align: center; margin: 0;">
+                "Your deck is your life. Every card you lose brings you closer to death. When your Primary Weapon cards are gone, you're just a broken puppet swinging fists in the dark."
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="javascript:parent.loadContent('rules-turn-structure.html');">Previous: Turn Structure</a> | <a href="javascript:parent.loadContent('content-home.html');">Return to Wiki Home</a></p>
+        </div>
+    </div>
+</body>
+</html>
