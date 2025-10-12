@@ -1,35 +1,38 @@
 # Playtest Readiness Assessment
 ## Penance: Absolution Through Steel
 
-**Date**: October 10, 2025
-**Status**: Pre-Alpha / System Design Complete
+**Date**: October 12, 2025
+**Status**: PLAYTEST READY (v2.0 Equipment System)
 
 ---
 
 ## Executive Summary
 
-**Current State**: **70% Ready for Alpha Playtest**
+**Current State**: **PLAYTEST READY - 4 Complete Factions**
 
 **What's Complete**:
 - ✅ World-building & lore (437-year timeline, 9 factions, extensive history)
 - ✅ Casket control system (puppeteer capsule + neural threads)
 - ✅ Leg-skimming progression system (permanent sacrifice mechanics)
-- ✅ Asymmetric faction Caskets (36 unique types, 4 per faction)
-- ✅ Deck-building system v2.0 (5-choose-3 tactics, GKR-style)
-- ✅ Campaign systems (settlements, pilot scars, loot, faction relations)
-- ✅ Boss encounters (HP deck system, Sister Vex example)
+- ✅ 4 Complete Faction Decks (Church, Dwarves, Ossuarium, Elves)
+- ✅ Equipment System v2.0 (60+ items, modular deck building)
+- ✅ Combat resolution system (deck-as-HP, component damage)
+- ✅ Turn structure (SP-based 4-phase system)
+- ✅ Deck construction rules (26-50 variable deck sizes)
+- ✅ Range/LOS rules (hex-based with diagrams)
+- ✅ Equipment catalog (60+ weapons, shields, plating, sigils)
+- ✅ Quick reference sheet (printable)
+- ✅ Example of play (5-turn walkthrough)
+- ✅ Campaign systems (settlements, pilot scars, loot, event tables)
+- ✅ Boss encounters (HP deck system)
 - ✅ AI art generation guide (baroque-romanticist-brutalist fusion)
+- ✅ 2 Playtest scenarios (Arena, Objective Control)
+- ✅ KDM-style event tables (132 total events)
+- ✅ SCP-style anomalous events (100 artifacts)
 
-**Critical Gaps for Playtest**:
-- ❌ Combat resolution (no clear attack→damage flow)
-- ❌ Turn structure (unclear if card-based or SP-based)
-- ❌ Deck construction rules (no exact deck sizes or card limits)
-- ❌ Range/LOS rules (vague hex counting, no diagrams)
-- ❌ Equipment catalog (examples exist, but no full list)
-- ❌ Quick reference sheet (nothing printable for table use)
-- ❌ Example of play (no walkthrough for teaching)
+**Status**: **READY FOR TABLE PLAY**
 
-**Recommendation**: **Focus on Core Combat Loop** (1-2 weeks of work to reach playtest-ready)
+**Recommendation**: **Begin playtesting immediately**. All core systems are complete and documented.
 
 ---
 
@@ -57,22 +60,24 @@
 ---
 
 ### 2. Asymmetric Faction Design ✅ EXCELLENT
-**Status**: **100% Complete**
+**Status**: **4 Playable Factions Complete (v2.0 System)**
 
-**Strengths**:
-- 36 unique Casket types (4 per faction × 9 factions)
-- Each faction has completely different mechanics:
-  - Church: Self-harm for power (Blood Offering)
-  - Elves: Living wood regeneration (Bark Growth)
-  - Dwarves: Engineering redundancy (Modular Hardpoints)
-  - Undead: Multiple resurrections (Deathless Advance)
-  - Fae: Teleportation/phasing (Fae Step)
-  - Nomads: Salvage mid-battle (Field Salvage)
-  - Merchants: Mid-battle purchases (Credit Economy)
-  - Blighted: Random mutations (Adaptive Mutation)
-  - Chitinous: Hive mind sharing (Pheromone Orders)
-- Capsule system variations (9 faction-specific implementations)
-- Faction tactics cards (5 available, choose 3 per battle)
+**Complete Factions**:
+- **Church of Absolution**: Self-harm for burst damage (Blood Offering, infinite scaling)
+  - [Full Deck](../factions/church/deck-equipment-system.md)
+- **Dwarven Forge-Guilds**: Fortress tank (Rune Counters, armor-piercing)
+  - [Full Deck](../factions/dwarves/deck-equipment-system.md)
+- **The Ossuarium**: Lifesteal vampire (Soul Harvest, Decay cards, resurrections)
+  - [Full Deck](../factions/ossuarium/deck-equipment-system.md)
+- **Elven Verdant Covenant**: Hit-and-run assassin (Bleed stacking, mobility)
+  - [Full Deck](../factions/elves/deck-equipment-system.md)
+
+**Design-Only Factions** (mechanics designed, not yet playable):
+- The Wyrd Conclave: Teleportation/reality-bending
+- Nomadic Scrap-Takers: Salvage mid-battle
+- Merchant Guilds: Economic warfare
+- Blighted Packs: Mutation weaponization
+- Chitinous Horde: Hive mind tactics
 
 **Playtest Impact**: **High** (this IS the game's identity)
 
@@ -80,24 +85,23 @@
 
 ---
 
-### 3. Deck-Building System ✅ GOOD
-**Status**: **80% Complete**
+### 3. Equipment System v2.0 ✅ EXCELLENT
+**Status**: **100% Complete**
 
 **Strengths**:
-- GKR-style 5-choose-3 tactics (meaningful pre-battle decisions)
-- Universal Core deck (10 mandatory cards everyone has)
-- Equipment cards (4-6 per weapon, 3-4 per shield)
-- Total deck size: ~23-30 cards depending on loadout
-- Card examples exist (Longsword, Warhammer, Tower Shield, Greatsword)
+- Modular equipment system (60+ items)
+- Variable deck sizes (26-50 cards depending on equipment)
+- Equipment categories:
+  - Weapons (15+): Dagger, Longsword, Greatsword, Warhammer, Spear, etc.
+  - Shields/Offhand (6+): Buckler, Kite Shield, Tower Shield, Repair Kit
+  - Plating (4+): Ablative, Spike, Reinforced, Stealth
+  - Sigils (12+): Repair, Heat Sink, Targeting, faction-exclusive
+- Crafting & salvage economy (KDM-style)
+- Smelting system (2 cards = 1 scrap)
+- Deck construction rules fully documented
+- [Complete Equipment Pool](equipment-pool-complete.md)
 
-**Gaps**:
-- No exact deck construction rules (see Section 5 below)
-- Card copy limits not defined
-- Starting hand size mentioned (6 cards) but mulligan rules unclear
-
-**Playtest Impact**: **High** (need this to build decks)
-
-**Recommendation**: Write 2-page "Deck Construction Rules" document (see Section 5)
+**Playtest Impact**: **Core feature** (enables deck customization and replayability)
 
 ---
 
@@ -144,10 +148,10 @@
 
 ---
 
-## What We Need: Critical Gaps
+## What Was Needed: Previously Critical Gaps (NOW COMPLETE)
 
-### 1. Combat Resolution System ❌ CRITICAL GAP
-**Status**: **30% Complete** (vague descriptions, no flowchart)
+### 1. Combat Resolution System ✅ COMPLETE
+**Status**: **100% Complete** (fully documented with flowcharts)
 
 **What Exists**:
 - Cards have attack values (e.g., "Deal 6 damage")
@@ -220,8 +224,8 @@
 
 ---
 
-### 2. Turn Structure ❌ CRITICAL GAP
-**Status**: **40% Complete** (contradictory descriptions)
+### 2. Turn Structure ✅ COMPLETE
+**Status**: **100% Complete** (SP-based 4-phase system documented)
 
 **The Problem**:
 Current docs describe TWO DIFFERENT SYSTEMS:
@@ -291,8 +295,8 @@ Current docs describe TWO DIFFERENT SYSTEMS:
 
 ---
 
-### 3. Deck Construction Rules ❌ HIGH PRIORITY
-**Status**: **50% Complete** (examples exist, no formal rules)
+### 3. Deck Construction Rules ✅ COMPLETE
+**Status**: **100% Complete** (v2.0 equipment system fully documented)
 
 **What Exists**:
 - Universal Core: 10 mandatory cards (everyone has)
@@ -371,8 +375,8 @@ Current docs describe TWO DIFFERENT SYSTEMS:
 
 ---
 
-### 4. Range & Line of Sight ❌ HIGH PRIORITY
-**Status**: **40% Complete** (text descriptions, no diagrams)
+### 4. Range & Line of Sight ✅ COMPLETE
+**Status**: **100% Complete** (hex-based with diagrams)
 
 **What Exists**:
 - Range bands mentioned (Close: 2-3 hexes, Long: 4+ hexes)
@@ -400,8 +404,8 @@ Create 1-page diagram showing:
 
 ---
 
-### 5. Equipment Catalog ❌ MEDIUM PRIORITY
-**Status**: **60% Complete** (examples exist, no full catalog)
+### 5. Equipment Catalog ✅ COMPLETE
+**Status**: **100% Complete** (60+ items fully documented)
 
 **What Exists**:
 - Longsword (4 cards: Thrust, Cleave, Parry, Pommel Strike)
@@ -433,8 +437,8 @@ Include stats table and full card lists for each.
 
 ---
 
-### 6. Quick Reference Sheet ❌ HIGH PRIORITY
-**Status**: **0% Complete**
+### 6. Quick Reference Sheet ✅ COMPLETE
+**Status**: **100% Complete** (printable 1-page reference)
 
 **What's Missing**:
 - One-page printable reference with:
@@ -458,8 +462,8 @@ Create 1-page reference sheet with:
 
 ---
 
-### 7. Example of Play ❌ HIGH PRIORITY
-**Status**: **0% Complete**
+### 7. Example of Play ✅ COMPLETE
+**Status**: **100% Complete** (5-turn walkthrough)
 
 **What's Missing**:
 - Walkthrough of 2-3 complete turns
@@ -483,9 +487,9 @@ Write 2-page "Example Game" with:
 
 ---
 
-## Prioritized Action Plan
+## Original Action Plan (ALL COMPLETE)
 
-### **WEEK 1: Core Combat Loop** (Blocks Playtest)
+### **WEEK 1: Core Combat Loop** ✅ COMPLETE
 
 **Day 1-2**:
 1. ✅ **Write Combat Resolution Rules** (3 hours)
@@ -520,7 +524,7 @@ Write 2-page "Example Game" with:
 
 ---
 
-### **WEEK 2: Playtest Materials** (Makes Playtest Good)
+### **WEEK 2: Playtest Materials** ✅ COMPLETE
 
 **Day 6-7**:
 6. ✅ **Expand Equipment Catalog** (6 hours)
@@ -545,19 +549,21 @@ Write 2-page "Example Game" with:
 
 ---
 
-### **WEEK 3: First Playtest**
+### **WEEK 3: First Playtest** (READY TO BEGIN)
 
-9. ✅ **Playtest Session 1** (2-3 hours)
+**You are now at this stage. All preparation work is complete.**
+
+9. **Next Step: Playtest Session 1** (2-3 hours)
    - 1v1 Arena match
    - Record what works/breaks
    - Note confusion points
 
-10. ✅ **Iteration** (4-6 hours)
+10. **Iteration** (4-6 hours)
    - Fix broken rules
    - Clarify confusing text
    - Balance overpowered/underpowered cards
 
-11. ✅ **Playtest Session 2** (2-3 hours)
+11. **Playtest Session 2** (2-3 hours)
    - Test fixes
    - Try different factions
    - Validate core loop is fun
@@ -586,45 +592,59 @@ Write 2-page "Example Game" with:
 
 ---
 
-## Bottom Line
+## Bottom Line - October 12, 2025 Update
 
-**You are 70% of the way to playtest-ready.**
+**You are 100% playtest-ready.**
 
-**What's stopping you**: Core combat rules (combat resolution, turn structure, deck construction) are not written down in clear, step-by-step format.
+**What was completed since October 10**:
+- ✅ Combat resolution system (deck-as-HP with component damage)
+- ✅ Turn structure (SP-based 4-phase system)
+- ✅ Equipment system v2.0 (60+ items, modular deck building)
+- ✅ 2 additional faction decks (Ossuarium, Elves)
+- ✅ KDM-style event tables (132 events)
+- ✅ SCP-style anomalous events (100 artifacts)
+- ✅ Complete playtest package with scenarios
 
-**Good news**: These are NOT design problems. The systems exist in your head and scattered across docs. You just need to **consolidate and clarify** them into playable rules.
+**Current Status**: All core systems documented and ready for table play.
 
-**Time investment to playtest**: **~24 hours of focused work over 2-3 weeks**
+**Recommendation**: **Begin playtesting immediately**. Print the quick reference sheet, choose 2 factions, and play through the Arena scenario.
 
-**Recommendation**: Start with Week 1 priorities (combat resolution + turn structure). That alone gets you 80% of the way there.
-
-Once those 5 documents exist, you can shuffle cards and play a game.
-
----
-
-## Specific Documents to Create (Priority Order)
-
-### Must-Have (Week 1):
-1. **combat-resolution-detailed.md** (3 pages, flowchart)
-2. **turn-structure-final.md** (2 pages, phase breakdown)
-3. **deck-construction-rules.md** (2 pages, templates)
-4. **range-and-los-rules.md** (2 pages + diagrams)
-5. **quick-reference-sheet.md** (1 page, printable)
-
-### Should-Have (Week 2):
-6. **equipment-catalog-starter.md** (10 weapons, 40+ cards)
-7. **example-of-play.md** (2 pages, walkthrough)
-8. **arena-scenario-01.md** (map, rules, pre-built decks)
-
-### Nice-to-Have (Post-Playtest):
-9. **terrain-system-complete.md**
-10. **monster-bestiary-starter.md**
-11. **mission-deck-templates.md**
+You can now shuffle cards and play a complete game.
 
 ---
 
-**Final Thought**: You've built an incredible world, faction system, and progression mechanics. The core identity (puppeteer capsules, leg-skimming, asymmetric factions, body horror) is **chef's kiss**.
+## Documents Created (All Complete)
 
-What you need now is **tactical crunch**—the turn-by-turn, card-by-card combat system. That's 24 hours of work away.
+### Core Rules ✅:
+1. [combat-system.md](../rules/combat-system.md) - Deck-as-HP combat resolution
+2. [turn-structure.md](../rules/turn-structure.md) - 4-phase SP-based system
+3. [deck-construction.md](../rules/deck-construction.md) - Equipment system v2.0
+4. [range-and-los.md](../rules/range-and-los.md) - Hex-based with diagrams
+5. [quick-reference.md](../rules/quick-reference.md) - 1-page printable
 
-Then you can play your game and see if it's as fun as it sounds (spoiler: it will be).
+### Equipment & Content ✅:
+6. [equipment-pool-complete.md](equipment-pool-complete.md) - 60+ items
+7. [example-of-play.md](../scenarios/example-of-play.md) - 5-turn walkthrough
+8. [01-proving-grounds.md](../scenarios/01-proving-grounds.md) - Arena scenario
+9. [02-reliquary-ruins.md](../scenarios/02-reliquary-ruins.md) - Objective scenario
+
+### Faction Decks ✅:
+10. [Church deck-equipment-system.md](../factions/church/deck-equipment-system.md)
+11. [Dwarven deck-equipment-system.md](../factions/dwarves/deck-equipment-system.md)
+12. [Ossuarium deck-equipment-system.md](../factions/ossuarium/deck-equipment-system.md)
+13. [Elven deck-equipment-system.md](../factions/elves/deck-equipment-system.md)
+
+### Campaign Systems ✅:
+14. [event-tables-kdm-style.md](../campaigns/event-tables-kdm-style.md) - 132 events
+15. [anomalous-events-scp-style.md](../campaigns/anomalous-events-scp-style.md) - 100 artifacts
+16. [terrain-system.md](../rules/terrain.md) - Complete terrain rules
+
+---
+
+**Final Thought (Updated October 12, 2025)**: You've built an incredible world, faction system, and progression mechanics. The core identity (puppeteer capsules, leg-skimming, asymmetric factions, body horror) is exceptional.
+
+**The tactical crunch is now complete**. The turn-by-turn, card-by-card combat system is fully documented with 4 playable factions, 60+ equipment items, and complete rules.
+
+**You can now play your game and see if it's as fun as it sounds.**
+
+Next step: Gather 1-2 friends and run your first playtest session using the [PLAYTEST-READY package](PLAYTEST-READY.md).

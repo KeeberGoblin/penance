@@ -1,14 +1,14 @@
 # Design Roadmap: From Here to Playtest
 ## Penance: Absolution Through Steel
 
-**Current Status**: 85% Ready for Alpha Playtest
-**Date**: October 10, 2025
+**Current Status**: PLAYTEST READY (v2.0 Equipment System)
+**Date**: October 12, 2025
 
 ---
 
-## Philosophy: Build Minimum Viable Playtest First
+## Philosophy: Build Minimum Viable Playtest First ✅ COMPLETE
 
-**Goal**: Get to **first playable match** in 3-5 days of focused work.
+**Goal**: Get to **first playable match** in 3-5 days of focused work. **ACHIEVED**
 
 **Why this matters**:
 - Theory vs Practice: Systems that sound good may not play well
@@ -16,19 +16,26 @@
 - Motivation: Playing your own game is incredibly motivating
 - Scope control: Don't design content you'll throw away after testing
 
-**The Plan**: Build **ONE complete game mode** (Arena 1v1) with **TWO complete factions**, then expand.
+**Original Plan**: Build ONE complete game mode (Arena 1v1) with TWO complete factions, then expand.
+
+**What Was Actually Built** (exceeded original plan):
+- 2 complete game modes (Arena Deathmatch + Objective Control)
+- 4 complete factions (Church, Dwarves, Ossuarium, Elves)
+- 60+ equipment items (modular deck building)
+- Complete campaign systems (event tables, progression, scars)
 
 ---
 
-## Phase 1: Minimum Viable Playtest (3-5 Days)
+## Phase 1: Minimum Viable Playtest ✅ COMPLETE
 
-**Goal**: First playable Arena match (Church vs Dwarves, 1v1)
+**Original Goal**: First playable Arena match (Church vs Dwarves, 1v1)
+**Achieved**: 4 factions, 2 scenarios, complete equipment system
 
-### Day 1: Combat Foundations (4-5 hours)
+### Day 1: Combat Foundations ✅ COMPLETE (4-5 hours)
 
-#### 1.1 Turn Structure Document ✅ CRITICAL
+#### 1.1 Turn Structure Document ✅ COMPLETE
 **Time**: 1.5 hours
-**File**: `turn-structure-final.md`
+**File**: [turn-structure.md](../rules/turn-structure.md)
 
 **Content**:
 ```markdown
@@ -68,9 +75,9 @@ PHASE 4: End Turn
 
 ---
 
-#### 1.2 Range & Line of Sight ✅ CRITICAL
+#### 1.2 Range & Line of Sight ✅ COMPLETE
 **Time**: 2 hours
-**File**: `range-and-los-final.md`
+**File**: [range-and-los.md](../rules/range-and-los.md)
 
 **Content**:
 - Hex range counting (visual diagram: Range 1-6 from center)
@@ -95,9 +102,9 @@ PHASE 4: End Turn
 
 ---
 
-#### 1.3 Quick Reference Sheet ✅ HIGH PRIORITY
+#### 1.3 Quick Reference Sheet ✅ COMPLETE
 **Time**: 1 hour
-**File**: `quick-reference-sheet.md`
+**File**: [quick-reference.md](../rules/quick-reference.md)
 
 **Content** (1-page printable):
 
@@ -141,11 +148,11 @@ COMPONENT DAMAGE
 
 ---
 
-### Day 2: First Faction Complete (4-5 hours)
+### Day 2: First Faction Complete ✅ COMPLETE (4-5 hours)
 
-#### 2.1 Church of Absolution - Complete Deck ✅
+#### 2.1 Church of Absolution - Complete Deck ✅ COMPLETE
 **Time**: 3 hours
-**File**: `faction-deck-church-complete.md`
+**File**: [deck-equipment-system.md](../factions/church/deck-equipment-system.md)
 
 **Build out the full 30-card deck with EXACT card text**:
 
@@ -183,9 +190,9 @@ COMPONENT DAMAGE
 
 ---
 
-#### 2.2 Dwarven Clans - Complete Deck ✅
+#### 2.2 Dwarven Forge-Guilds - Complete Deck ✅ COMPLETE
 **Time**: 2 hours
-**File**: `faction-deck-dwarves-complete.md`
+**File**: [deck-equipment-system.md](../factions/dwarves/deck-equipment-system.md)
 
 **Same structure as Church, but different playstyle**:
 
@@ -216,11 +223,11 @@ COMPONENT DAMAGE
 
 ---
 
-### Day 3: Arena Scenario + Example of Play (4-5 hours)
+### Day 3: Arena Scenario + Example of Play ✅ COMPLETE (4-5 hours)
 
-#### 3.1 Arena Scenario #1: "The Proving Grounds" ✅
+#### 3.1 Arena Scenario #1: "The Proving Grounds" ✅ COMPLETE
 **Time**: 2 hours
-**File**: `scenario-arena-01-proving-grounds.md`
+**File**: [01-proving-grounds.md](../scenarios/01-proving-grounds.md)
 
 **Content**:
 ```markdown
@@ -263,9 +270,9 @@ COMPONENT DAMAGE
 
 ---
 
-#### 3.2 Example of Play Walkthrough ✅
+#### 3.2 Example of Play Walkthrough ✅ COMPLETE
 **Time**: 2-3 hours
-**File**: `example-of-play-arena-match.md`
+**File**: [example-of-play.md](../scenarios/example-of-play.md)
 
 **Content**: Full 4-5 turn walkthrough showing:
 
@@ -333,9 +340,9 @@ COMPONENT DAMAGE
 
 ---
 
-### Day 4: Playtesting & Iteration (3-4 hours)
+### Day 4: Playtesting & Iteration (READY TO BEGIN)
 
-#### 4.1 First Solo Playtest ✅
+#### 4.1 First Solo Playtest (Next Step)
 **Time**: 2 hours
 **Process**:
 1. Print quick reference sheet
@@ -381,16 +388,19 @@ If it feels good → **You're ready for external playtest** (friend, online comm
 
 ---
 
-## Phase 2: Expand Content (Week 2)
+## Phase 2: Expand Content ✅ COMPLETE (Exceeded Plan)
 
-**Goal**: Add variety without breaking what works.
+**Original Goal**: Add variety without breaking what works.
 
-### Priority 1: More Factions (Choose 2-3)
+### Priority 1: More Factions ✅ COMPLETE
 
-**Recommended next factions**:
-1. **The Ossuarium** (unique resurrection mechanic)
-2. **Elven Verdant Covenant** (regeneration/nature theme)
-3. **The Wyrd Conclave** (teleportation/trickery)
+**Planned**: Choose 2-3 additional factions
+**Achieved**: 2 additional factions complete (exceeded minimum viable):
+1. **The Ossuarium** ✅ [Complete deck](../factions/ossuarium/deck-equipment-system.md)
+2. **Elven Verdant Covenant** ✅ [Complete deck](../factions/elves/deck-equipment-system.md)
+
+**Remaining Design-Only Factions**:
+3. **The Wyrd Conclave** (teleportation/reality-bending) - Lore complete, deck not built yet
 
 **Time per faction**: 3-4 hours each
 
@@ -408,52 +418,54 @@ If it feels good → **You're ready for external playtest** (friend, online comm
 
 ---
 
-### Priority 2: Equipment Expansion
+### Priority 2: Equipment Expansion ✅ COMPLETE
 
-**Goal**: 15 total Secondary Equipment options (currently have ~8)
+**Original Goal**: 15 total Secondary Equipment options (had ~8)
+**Achieved**: 60+ equipment items across 4 categories
 
-**Add**:
-- Melee: Spear (reach), Dual Daggers (fast attacks)
-- Ranged: Crossbow (armor-piercing), Rifle (long range)
-- Shields: Riot Shield (reactive defense)
-- Relics: Grappling Hook (mobility), Flare Gun (utility), Smoke Grenades (concealment)
+**Equipment Added**:
+- Weapons (15+): Dagger, Longsword, Greatsword, Warhammer, Spear, Halberd, Chain Whip, Flail, Pistol, Crossbow, Rifle, etc.
+- Shields/Offhand (6+): Buckler, Kite Shield, Tower Shield, Dueling Dagger, Repair Kit
+- Plating (4+): Ablative, Spike, Reinforced, Stealth
+- Sigils (12+): Repair, Heat Sink, Targeting, faction-exclusive sigils
 
-**Time**: 4-5 hours for 7 new equipment sets (6 cards each = 42 cards total)
+**File**: [equipment-pool-complete.md](equipment-pool-complete.md)
 
 ---
 
-### Priority 3: Terrain System
+### Priority 3: Terrain System ✅ COMPLETE
 
 **Goal**: 6-8 terrain types with clear rules
+**Achieved**: Complete terrain system with 8+ types
 
-**Terrain Types**:
+**Terrain Types Documented**:
 1. **Clear** (baseline, no effect)
-2. **Difficult** (costs +1 SP per hex, slows movement)
-3. **Water** (remove 2 Heat per turn standing here)
-4. **Forest** (provides cover +1 Defense, blocks LOS)
-5. **Rubble** (provides cover +1 Defense, difficult terrain)
+2. **Difficult** (costs +1 SP per hex)
+3. **Water** (remove 2 Heat per turn)
+4. **Forest** (provides cover +1 Defense)
+5. **Rubble** (cover + difficult terrain)
 6. **Wall** (blocks LOS, cannot cross)
 7. **Elevated** (+1 damage when attacking from here)
-8. **Hazard** (lava, acid - take 1 damage per turn)
+8. **Hazard** (lava, acid - take damage per turn)
 
-**File**: `terrain-system-complete.md`
-
-**Time**: 2 hours
+**File**: [terrain.md](../rules/terrain.md)
 
 ---
 
-### Priority 4: More Scenarios
+### Priority 4: More Scenarios ✅ PARTIALLY COMPLETE
 
 **Goal**: 5 Arena scenarios with different maps/objectives
+**Achieved**: 2 complete scenarios (40% of goal)
 
-**Scenario Ideas**:
-1. Proving Grounds (already done)
-2. King of the Hill (control center hex for 3 turns)
-3. Assassination (kill enemy pilot, not Casket)
-4. Gauntlet (waves of weak enemies)
-5. Tag Team (2v2 battle)
+**Scenarios Complete**:
+1. ✅ [Proving Grounds](../scenarios/01-proving-grounds.md) - Arena deathmatch
+2. ✅ [Reliquary Ruins](../scenarios/02-reliquary-ruins.md) - Objective control
 
-**Time**: 1-2 hours per scenario (design map, write special rules)
+**Scenarios Remaining** (design-only, not yet built):
+3. King of the Hill (control center hex for 3 turns)
+4. Assassination (kill enemy pilot, not Casket)
+5. Gauntlet (waves of weak enemies)
+6. Tag Team (2v2 battle)
 
 ---
 
@@ -566,28 +578,28 @@ Mission 1: Tutorial (vs easy AI)
 
 ---
 
-## Critical Path Summary
+## Critical Path Summary (ALL COMPLETE)
 
-### To First Playtest (3-5 Days):
-1. ✅ Turn structure doc (1.5 hrs)
-2. ✅ Range/LOS doc (2 hrs)
-3. ✅ Quick reference (1 hr)
-4. ✅ Church deck complete (3 hrs)
-5. ✅ Dwarves deck complete (2 hrs)
-6. ✅ Arena scenario (2 hrs)
-7. ✅ Example of play (3 hrs)
-8. ✅ First playtest (2 hrs)
+### To First Playtest ✅ COMPLETE:
+1. ✅ Turn structure doc (1.5 hrs) - [turn-structure.md](../rules/turn-structure.md)
+2. ✅ Range/LOS doc (2 hrs) - [range-and-los.md](../rules/range-and-los.md)
+3. ✅ Quick reference (1 hr) - [quick-reference.md](../rules/quick-reference.md)
+4. ✅ Church deck complete (3 hrs) - [church/deck-equipment-system.md](../factions/church/deck-equipment-system.md)
+5. ✅ Dwarves deck complete (2 hrs) - [dwarves/deck-equipment-system.md](../factions/dwarves/deck-equipment-system.md)
+6. ✅ Arena scenario (2 hrs) - [01-proving-grounds.md](../scenarios/01-proving-grounds.md)
+7. ✅ Example of play (3 hrs) - [example-of-play.md](../scenarios/example-of-play.md)
+8. **Next Step: First playtest (2 hrs)** - READY TO BEGIN
 
-**Total: ~16-20 hours** (doable in 1 week)
+**Total Completed: ~16 hours over 2 days (October 10-12, 2025)**
 
 ---
 
-### To Full Game (4-6 Weeks):
-**Week 1**: MVP playtest (above)
-**Week 2**: Add 3 factions, equipment, terrain
-**Week 3**: Campaign mode (5 missions)
-**Week 4**: AI opponents, polish, second playtest
-**Weeks 5-6**: Iteration, art, TTS mod
+### To Full Game (4-6 Weeks): **AHEAD OF SCHEDULE**
+**Week 1** ✅: MVP playtest (complete) + Equipment system v2.0 (60+ items)
+**Week 2** ✅: Added 2 factions (Ossuarium, Elves), terrain system, event tables
+**Week 3** ⏳: Campaign mode (systems complete, need 5-mission chain)
+**Week 4** ⏳: AI opponents, polish, second playtest (READY TO BEGIN)
+**Weeks 5-6** ⏸️: Iteration, art, TTS mod (pending playtest feedback)
 
 ---
 
@@ -680,8 +692,15 @@ If I were you, here's my exact next steps:
 
 ---
 
-**Final Thought**: You have an incredible foundation (GKR combat + KDM brutality + puppeteer horror). The hard creative work is done. What remains is **execution** — writing the specific cards, testing, iterating.
+**Final Thought (Updated October 12, 2025)**: You have an incredible foundation (GKR combat + KDM brutality + puppeteer horror). The hard creative work is done. The **execution phase is complete** — cards are written, rules are documented, 4 factions are playable.
 
-**You're 1 week away from playing your own game.**
+**You're ready to play your own game right now.**
 
-Do it. You've earned this.
+**Next immediate steps**:
+1. Print the [quick reference sheet](../rules/quick-reference.md)
+2. Choose 2 factions from: [Church](../factions/church/deck-equipment-system.md), [Dwarves](../factions/dwarves/deck-equipment-system.md), [Ossuarium](../factions/ossuarium/deck-equipment-system.md), or [Elves](../factions/elves/deck-equipment-system.md)
+3. Play the [Proving Grounds scenario](../scenarios/01-proving-grounds.md)
+4. Take notes on what works and what breaks
+5. Iterate based on playtest feedback
+
+You've earned this. Go play.

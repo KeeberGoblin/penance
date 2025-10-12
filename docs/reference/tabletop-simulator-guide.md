@@ -1,8 +1,8 @@
 # Tabletop Simulator Playtest Guide
 ## Penance: Absolution Through Steel
 
-**Version**: 0.1
-**Last Updated**: October 9, 2025
+**Version**: 2.0 (Equipment System Update)
+**Last Updated**: October 12, 2025
 
 ---
 
@@ -121,17 +121,24 @@ TEXTBOX="[effect]",0.5,3,5.8,3,LEFT,#000000,#F5F5F5
 
 ### What You'll Need to Create
 
-#### 1. **Universal Card Deck** (10 cards)
-- 1 sheet with all 10 Universal cards
+#### 1. **Universal Core Deck** (10 cards)
+- 1 sheet with all 10 Universal Core cards (everyone has these)
 - Card back: "Penance Universal" design
 
-#### 2. **Equipment Cards** (Start with 5 weapons)
-- Longsword (4 cards)
-- Greatsword (5 cards)
-- Bow (4 cards)
-- Shield (3 cards)
-- Hammer (4 cards)
-- Total: 20 cards = 2 sheets
+#### 2. **Faction Core Cards** (6 cards per faction × 4 factions = 24 cards)
+- Church Faction Core (6 cards)
+- Dwarven Faction Core (6 cards)
+- Ossuarium Faction Core (6 cards)
+- Elven Faction Core (6 cards)
+- Total: 24 cards = 3 sheets
+
+#### 3. **Equipment Cards** (Start with 10 weapons)
+- Dagger (3 cards), Longsword (6 cards), Greatsword (8 cards)
+- Warhammer (6 cards), Spear (5 cards)
+- Pistol (3 cards), Crossbow (5 cards)
+- Buckler Shield (2 cards), Tower Shield (4 cards)
+- Repair Kit (3 cards)
+- Total: 45 cards = 5 sheets
 
 #### 3. **Damage Cards** (10 types)
 - Cracked Soulveins
@@ -355,23 +362,29 @@ Export this as PNG, upload, use as custom table in TTS.
 
 ---
 
-## Recommended First Playtest Setup
+## Recommended First Playtest Setup (v2.0 Equipment System)
 
 ### Minimal TTS Mod Contents:
-1. **2 Decks**: Universal cards (10 each player)
-2. **2 Equipment sets**: Longsword + Shield (Scout), Greatsword (Heavy)
-3. **1 Hex board**: 7x7 grid
-4. **2 Player mats**: Status trackers
-5. **Tokens**: Heat (red cubes), Taint (purple cubes)
-6. **1 Rule card**: Quick reference (SP costs, combat resolution)
+1. **Universal Core**: 10 cards (both players share same Universal Core)
+2. **2 Faction Core sets**: Church (6 cards) + Dwarves (6 cards)
+3. **Equipment Pool** (start with these):
+   - Longsword (6 cards), Warhammer (6 cards)
+   - Buckler Shield (2 cards), Tower Shield (4 cards)
+   - Repair Kit (3 cards)
+4. **1 Hex board**: 7x7 grid for Arena scenario
+5. **2 Player mats**: Status trackers with component damage zones
+6. **Tokens**: Heat (red cubes), Component Damage markers
+7. **1 Rule card**: Quick reference (SP costs, combat resolution)
 
-**Total Assets Needed**:
-- 3-4 card sheets (40 cards total)
+**Total Assets Needed (v2.0)**:
+- 5-6 card sheets (~50 cards total)
 - 1 hex board image
 - 2 player mat images
 - Built-in TTS tokens (no custom needed)
 
 **Time to Create**: 2-3 hours if you've never used TTS before, 30-60 min once you know the workflow.
+
+**Note**: Variable deck sizes (26-50 cards) mean players construct decks before importing to TTS, not during gameplay.
 
 ---
 
