@@ -3,164 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wyrd Conclave - PENANCE WIKI</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --gray: #1a1a1a;
-            --light-gray: #666666;
-            --blood-red: #8b0000;
-        }
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-        }
-        .header {
-            background: var(--black);
-            border-bottom: 2px solid var(--white);
-            padding: 1.5rem 2rem;
-        }
-        .header-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .header-subtitle { color: var(--light-gray); font-size: 0.875rem; }
-        .container { display: grid; grid-template-columns: 250px 1fr; min-height: calc(100vh - 100px); }
-        .sidebar {
-            background: var(--gray);
-            border-right: 2px solid var(--white);
-            padding: 2rem 1.5rem;
-        }
-        .nav-section { margin-bottom: 2rem; }
-        .nav-title {
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.1em;
-        }
-        .nav-link {
-            display: block;
-            color: var(--white);
-            text-decoration: none;
-            padding: 0.5rem 0;
-            font-size: 0.875rem;
-            border-left: 3px solid transparent;
-            padding-left: 0.75rem;
-            margin-bottom: 0.25rem;
-        }
-        .nav-link:hover { border-left-color: var(--blood-red); }
-        .nav-link.active { border-left-color: var(--white); font-weight: 700; }
-        .content { padding: 3rem; max-width: 1000px; }
-        .breadcrumb {
-            font-size: 0.875rem;
-            color: var(--light-gray);
-            margin-bottom: 1.5rem;
-        }
-        .breadcrumb a { color: var(--white); text-decoration: none; }
-        .content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid var(--white);
-            padding-bottom: 0.5rem;
-        }
-        .content h2 {
-            font-size: 1.75rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .content h3 {
-            font-size: 1.25rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        .content p { margin-bottom: 1rem; color: var(--light-gray); }
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--blood-red);
-            font-style: italic;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-left: 4px solid var(--blood-red);
-        }
-        .status-box {
-            background: var(--gray);
-            border: 2px solid var(--blood-red);
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .status-box h3 {
-            color: var(--blood-red);
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>The Wyrd Conclave - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="header-title">PENANCE WIKI</div>
-        <div class="header-subtitle">SCP-STYLE DOCUMENTATION DATABASE</div>
-    </div>
-
-    <div class="container">
-        <div class="sidebar">
-            <div class="nav-section">
-                <div class="nav-title">WIKI</div>
-                <a href="index.html" class="nav-link">Home</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-title">FACTIONS</div>
-                <a href="faction-church.html" class="nav-link">Church of Absolution</a>
-                <a href="faction-elves.html" class="nav-link">Elven Verdant Covenant</a>
-                <a href="faction-dwarves.html" class="nav-link">Dwarven Clans</a>
-                <a href="faction-undead.html" class="nav-link">The Ossuarium</a>
-                <a href="faction-fae.html" class="nav-link">The Wyrd Conclave</a>
-                <a href="faction-nomads.html" class="nav-link">Nomad Collective</a>
-                <a href="faction-merchants.html" class="nav-link">Merchant Guilds</a>
-                <a href="faction-blighted.html" class="nav-link">Blighted Packs</a>
-                <a href="faction-chitinous.html" class="nav-link">Chitinous Ascendancy</a>
-            </div>
+    <div class="manuscript-page">
+        <div class="illuminated-header">
+            <span class="drop-cap">T</span>
+            <h1 class="title">he Wyrd Conclave</h1>
+            <p class="subtitle">"Reality is negotiable. Contracts are eternal."</p>
         </div>
 
-        <div class="content">
-            <div class="breadcrumb">
-                <a href="index.html">WIKI</a> / <a href="index.html#factions">FACTIONS</a> / The Wyrd Conclave
-            </div>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h1>The Wyrd Conclave</h1>
+        <div style="background: var(--blood-red); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2.5rem 0;">
+            <h2 style="margin-top: 0;">Design-Only Faction</h2>
+            <p class="manuscript-text" style="margin-bottom: 0;">
+                This faction page is currently under development. Detailed mechanics, lore, and deck information coming soon. For completed faction content, see: <a href="faction-church.html" style="color: var(--bone-white); text-decoration: underline;">Church of Absolution</a>, <a href="faction-dwarves.html" style="color: var(--bone-white); text-decoration: underline;">Dwarven Forge-Guilds</a>, <a href="faction-undead.html" style="color: var(--bone-white); text-decoration: underline;">The Ossuarium</a>, or <a href="faction-elves.html" style="color: var(--bone-white); text-decoration: underline;">Elven Verdant Covenant</a>.
+            </p>
+        </div>
 
-            <div class="tagline">"Reality is negotiable. Contracts are eternal."</div>
+        <h2>Faction Overview</h2>
 
-            <div class="status-box">
-                <h3>⚠ CONTENT STATUS</h3>
-                <p>This faction page is currently under development. Detailed mechanics, lore, and deck information coming soon.</p>
-                <p>For completed faction content, see: <a href="faction-church.html" style="color: var(--blood-red);">Church of Absolution</a></p>
-            </div>
+        <p class="manuscript-text">
+            The fae do not declare war. They simply appear, and settlements die. Tricksters, oath-keepers, and reality-benders who find the post-apocalypse endlessly amusing.
+        </p>
 
-            <h2>Overview</h2>
-            <p>The fae do not declare war. They simply appear, and settlements die. Tricksters, oath-keepers, and reality-benders who find the post-apocalypse endlessly amusing.</p>
+        <div class="manuscript-quote">
+            "The world ended? How delightful. Now we can truly play."
+            <span class="quote-attribution">—Fae Philosophy</span>
+        </div>
 
-            <h2>Philosophy</h2>
-            <p style="font-style: italic; border-left: 4px solid var(--blood-red); padding-left: 1rem;">"The world ended? How delightful. Now we can truly play."</p>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h2>Playstyle</h2>
-            <p><em>Detailed mechanics and deck composition coming soon...</em></p>
+        <h2>Core Mechanic: Wyrd Tokens</h2>
 
-            <h2>Key Casket Types</h2>
-            <p><em>Faction-specific Casket information coming soon...</em></p>
+        <p class="manuscript-text">
+            The Wyrd Conclave manipulates reality through Wyrd Tokens—reality distortions that bend space, steal faces, and make the impossible merely improbable.
+        </p>
 
-            <h2>Notable Figures</h2>
-            <p><em>Iconic NPCs and faction leaders coming soon...</em></p>
+        <ul class="manuscript-list">
+            <li><strong>Reality Distortion:</strong> Teleport across the battlefield, phase through obstacles, rewrite combat outcomes</li>
+            <li><strong>Stolen Faces:</strong> Impersonate enemies, sow confusion, turn allies against each other</li>
+            <li><strong>Oath-Binding:</strong> Force enemies into supernatural contracts with devastating penalties</li>
+            <li><strong>Trickery:</strong> Every action has hidden costs, every deal has fine print written in blood</li>
+        </ul>
 
-            <h2>Lore</h2>
-            <p><em>Extended faction history and major events coming soon...</em></p>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <div style="margin-top: 3rem; padding: 1.5rem; background: var(--gray); border-top: 2px solid var(--white);">
-                <p style="font-size: 0.875rem;">
-                    <strong>Want to contribute?</strong> Visit the <a href="https://github.com/KeeberGoblin/penance" style="color: var(--blood-red);">GitHub repository</a> to help expand faction documentation.
-                </p>
-            </div>
+        <h2>Playstyle (Conceptual)</h2>
+
+        <p class="manuscript-text">
+            <em>Reality-bending control. Teleportation. Illusions. Oath-bound contracts. Every mechanic is a trick, every victory feels unfair. High skill ceiling, deeply punishing to master.</em>
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Key Casket Types (Placeholder)</h2>
+
+        <ul class="manuscript-list">
+            <li><strong>Trickster Frame:</strong> Light, mobile, focused on illusions and teleportation</li>
+            <li><strong>Changeling Frame:</strong> Medium, impersonation specialist, steals enemy abilities</li>
+            <li><strong>Contract Keeper:</strong> Heavy, binds enemies in supernatural oaths with horrific penalties</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Notable Figures (Placeholder)</h2>
+
+        <p class="manuscript-text">
+            <em>Iconic NPCs and faction leaders coming soon...</em>
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Lore (Placeholder)</h2>
+
+        <p class="manuscript-text">
+            <em>Extended faction history and major events coming soon...</em>
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="manuscript-footer">
+            <p>
+                <strong>Want to contribute?</strong> Visit the <a href="https://github.com/KeeberGoblin/penance" target="_blank">GitHub repository</a> to help expand faction documentation.
+            </p>
+            <p><a href="index.html">Return to Wiki Home</a> | <a href="../index.html">Main Site</a> | <a href="../cards/">Card Database</a></p>
         </div>
     </div>
 </body>

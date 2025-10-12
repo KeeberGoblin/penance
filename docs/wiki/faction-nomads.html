@@ -3,164 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomad Collective - PENANCE WIKI</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --gray: #1a1a1a;
-            --light-gray: #666666;
-            --blood-red: #8b0000;
-        }
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-        }
-        .header {
-            background: var(--black);
-            border-bottom: 2px solid var(--white);
-            padding: 1.5rem 2rem;
-        }
-        .header-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .header-subtitle { color: var(--light-gray); font-size: 0.875rem; }
-        .container { display: grid; grid-template-columns: 250px 1fr; min-height: calc(100vh - 100px); }
-        .sidebar {
-            background: var(--gray);
-            border-right: 2px solid var(--white);
-            padding: 2rem 1.5rem;
-        }
-        .nav-section { margin-bottom: 2rem; }
-        .nav-title {
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.1em;
-        }
-        .nav-link {
-            display: block;
-            color: var(--white);
-            text-decoration: none;
-            padding: 0.5rem 0;
-            font-size: 0.875rem;
-            border-left: 3px solid transparent;
-            padding-left: 0.75rem;
-            margin-bottom: 0.25rem;
-        }
-        .nav-link:hover { border-left-color: var(--blood-red); }
-        .nav-link.active { border-left-color: var(--white); font-weight: 700; }
-        .content { padding: 3rem; max-width: 1000px; }
-        .breadcrumb {
-            font-size: 0.875rem;
-            color: var(--light-gray);
-            margin-bottom: 1.5rem;
-        }
-        .breadcrumb a { color: var(--white); text-decoration: none; }
-        .content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid var(--white);
-            padding-bottom: 0.5rem;
-        }
-        .content h2 {
-            font-size: 1.75rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .content h3 {
-            font-size: 1.25rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        .content p { margin-bottom: 1rem; color: var(--light-gray); }
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--blood-red);
-            font-style: italic;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-left: 4px solid var(--blood-red);
-        }
-        .status-box {
-            background: var(--gray);
-            border: 2px solid var(--blood-red);
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .status-box h3 {
-            color: var(--blood-red);
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>Nomad Collective - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="header-title">PENANCE WIKI</div>
-        <div class="header-subtitle">SCP-STYLE DOCUMENTATION DATABASE</div>
-    </div>
-
-    <div class="container">
-        <div class="sidebar">
-            <div class="nav-section">
-                <div class="nav-title">WIKI</div>
-                <a href="index.html" class="nav-link">Home</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-title">FACTIONS</div>
-                <a href="faction-church.html" class="nav-link">Church of Absolution</a>
-                <a href="faction-elves.html" class="nav-link">Elven Verdant Covenant</a>
-                <a href="faction-dwarves.html" class="nav-link">Dwarven Clans</a>
-                <a href="faction-undead.html" class="nav-link">The Ossuarium</a>
-                <a href="faction-fae.html" class="nav-link">The Wyrd Conclave</a>
-                <a href="faction-nomads.html" class="nav-link">Nomad Collective</a>
-                <a href="faction-merchants.html" class="nav-link">Merchant Guilds</a>
-                <a href="faction-blighted.html" class="nav-link">Blighted Packs</a>
-                <a href="faction-chitinous.html" class="nav-link">Chitinous Ascendancy</a>
-            </div>
+    <div class="manuscript-page">
+        <div class="illuminated-header">
+            <span class="drop-cap">N</span>
+            <h1 class="title">omad Collective</h1>
+            <p class="subtitle">"Survival through movement. Adaptation through necessity."</p>
         </div>
 
-        <div class="content">
-            <div class="breadcrumb">
-                <a href="index.html">WIKI</a> / <a href="index.html#factions">FACTIONS</a> / Nomad Collective
-            </div>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h1>Nomad Collective</h1>
-            
-            <div class="tagline">"Survival through movement. Adaptation through necessity."</div>
+        <div style="background: var(--blood-red); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2.5rem 0;">
+            <h2 style="margin-top: 0;">Design-Only Faction</h2>
+            <p class="manuscript-text" style="margin-bottom: 0;">
+                This faction page is currently under development. Detailed mechanics, lore, and deck information coming soon. For completed faction content, see: <a href="faction-church.html" style="color: var(--bone-white); text-decoration: underline;">Church of Absolution</a>, <a href="faction-dwarves.html" style="color: var(--bone-white); text-decoration: underline;">Dwarven Forge-Guilds</a>, <a href="faction-undead.html" style="color: var(--bone-white); text-decoration: underline;">The Ossuarium</a>, or <a href="faction-elves.html" style="color: var(--bone-white); text-decoration: underline;">Elven Verdant Covenant</a>.
+            </p>
+        </div>
 
-            <div class="status-box">
-                <h3>⚠ CONTENT STATUS</h3>
-                <p>This faction page is currently under development. Detailed mechanics, lore, and deck information coming soon.</p>
-                <p>For completed faction content, see: <a href="faction-church.html" style="color: var(--blood-red);">Church of Absolution</a></p>
-            </div>
+        <h2>Faction Overview</h2>
 
-            <h2>Overview</h2>
-            <p>No settlements, no territories, no fixed allegiances. The Nomads wander the wastes, taking what they need, trading when advantageous, and vanishing when threatened.</p>
+        <p class="manuscript-text">
+            No settlements, no territories, no fixed allegiances. The Nomads wander the wastes, taking what they need, trading when advantageous, and vanishing when threatened.
+        </p>
 
-            <h2>Philosophy</h2>
-            <p style="font-style: italic; border-left: 4px solid var(--blood-red); padding-left: 1rem;">"Attachment is death. Movement is life. We endure."</p>
+        <div class="manuscript-quote">
+            "Attachment is death. Movement is life. We endure."
+            <span class="quote-attribution">—Nomad Philosophy</span>
+        </div>
 
-            <h2>Playstyle</h2>
-            <p><em>Detailed mechanics and deck composition coming soon...</em></p>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h2>Key Casket Types</h2>
-            <p><em>Faction-specific Casket information coming soon...</em></p>
+        <h2>Core Mechanic: Improvisation</h2>
 
-            <h2>Notable Figures</h2>
-            <p><em>Iconic NPCs and faction leaders coming soon...</em></p>
+        <p class="manuscript-text">
+            The Nomad Collective thrives on improvisation—salvaging equipment mid-battle, adapting tactics on the fly, and turning scrap into weapons.
+        </p>
 
-            <h2>Lore</h2>
-            <p><em>Extended faction history and major events coming soon...</em></p>
+        <ul class="manuscript-list">
+            <li><strong>Salvage Economy:</strong> Loot equipment from destroyed enemies mid-combat for immediate use</li>
+            <li><strong>Movement Mastery:</strong> Extra mobility, terrain advantages, hit-and-run tactics</li>
+            <li><strong>Improvised Weapons:</strong> Random powerful effects, unpredictable but devastating</li>
+            <li><strong>Scout Networks:</strong> Superior vision, surprise attacks, guerrilla warfare</li>
+        </ul>
 
-            <div style="margin-top: 3rem; padding: 1.5rem; background: var(--gray); border-top: 2px solid var(--white);">
-                <p style="font-size: 0.875rem;">
-                    <strong>Want to contribute?</strong> Visit the <a href="https://github.com/KeeberGoblin/penance" style="color: var(--blood-red);">GitHub repository</a> to help expand faction documentation.
-                </p>
-            </div>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Playstyle (Conceptual)</h2>
+
+        <p class="manuscript-text">
+            <em>Mobile survivor gameplay. Constant movement. Mid-battle salvage. Unpredictable improvised tactics. High skill ceiling, rewards creativity and adaptability.</em>
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Key Casket Types (Placeholder)</h2>
+
+        <ul class="manuscript-list">
+            <li><strong>Scout Frame:</strong> Fastest Casket in game, superior mobility and vision</li>
+            <li><strong>Scavenger Frame:</strong> Medium, salvage specialist, mid-battle equipment swaps</li>
+            <li><strong>Raider Frame:</strong> Heavy improvised weapons platform, hit-and-run specialist</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Notable Figures (Placeholder)</h2>
+
+        <p class="manuscript-text">
+            <em>Iconic NPCs and faction leaders coming soon...</em>
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Lore (Placeholder)</h2>
+
+        <p class="manuscript-text">
+            <em>Extended faction history and major events coming soon...</em>
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="manuscript-footer">
+            <p>
+                <strong>Want to contribute?</strong> Visit the <a href="https://github.com/KeeberGoblin/penance" target="_blank">GitHub repository</a> to help expand faction documentation.
+            </p>
+            <p><a href="index.html">Return to Wiki Home</a> | <a href="../index.html">Main Site</a> | <a href="../cards/">Card Database</a></p>
         </div>
     </div>
 </body>
