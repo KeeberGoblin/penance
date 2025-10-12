@@ -41,24 +41,31 @@ X = Your Casket
 
 ---
 
-## Range Bands
+## Range Bands (For To-Hit Modifiers)
 
-**Cards specify range as:**
+**Cards specify maximum range, but to-hit modifiers apply based on distance:**
 
-| Range | Distance | Notes |
-|-------|----------|-------|
-| **Melee** | Range 1 only | Must be adjacent (touching) |
-| **Close** | Range 2-3 | Short-ranged weapons, pistols |
-| **Medium** | Range 4-6 | Rifles, bows |
-| **Long** | Range 7+ | Sniper weapons, artillery |
-| **Self** | Range 0 | Affects only you |
-| **Aura X** | X hexes radius | Affects all units within X hexes |
+| Range Band | Distance | To-Hit Modifier | Weapon Examples |
+|------------|----------|-----------------|-----------------|
+| **Short** | 0-3 hexes | +0 (no penalty) | Melee, pistols, shotguns |
+| **Medium** | 4-6 hexes | +1 to target number | Rifles, bows, crossbows |
+| **Long** | 7-10 hexes | +2 to target number | Sniper rifles, long bows |
+| **Extreme** | 11+ hexes | +3 to target number | Artillery, siege weapons |
 
-**Examples**:
-- **Faithful Thrust**: "Range: Melee" (must be adjacent)
-- **Quick Shot** (Pistol): "Range 3" (up to 3 hexes away)
-- **Sniper Shot**: "Range 8" (long-distance)
-- **Consecrated Ground**: "Aura 3" (affects 3-hex radius around you)
+**How It Works**:
+- **Base To-Hit**: 5+ (roll 2d6 Attack Dice)
+- **Apply range modifier** to target number
+- Example: Medium range (5 hexes) = need **6+** instead of 5+
+
+**Card Range Examples**:
+- **Faithful Thrust**: "Range: Melee" (1 hex only, Short range modifier +0)
+- **Quick Shot** (Pistol): "Range 3" (up to 3 hexes, Short range modifier +0)
+- **Rifle Shot**: "Range 8" (up to 8 hexes, Long range modifier +2 if shooting 7-8 hexes)
+- **Sniper Shot**: "Range 12" (up to 12 hexes, Extreme range modifier +3 if shooting 11-12 hexes)
+
+**Special Range Types**:
+- **Self**: Range 0 (affects only you)
+- **Aura X**: X hexes radius (affects all units within X hexes, ignores LOS)
 
 ---
 
@@ -115,7 +122,7 @@ CLEAR LOS (Can shoot past other Caskets):
 
 ---
 
-## Cover System
+## Cover System (For To-Hit Modifiers)
 
 **Cover provides defensive bonuses without blocking LOS.**
 
@@ -124,15 +131,20 @@ CLEAR LOS (Can shoot past other Caskets):
 **If target is:**
 - In or adjacent to cover terrain (forests, rubble)
 - AND attacker's LOS passes through/near that terrain
-- **Target gains +1 Defense** against that attack
+- **Attacker gets +1 to target number** (harder to hit)
 
 **Cover Terrain Types**:
-- **Forest hexes**: +1 Defense when standing in them
-- **Rubble hexes**: +1 Defense when standing in them
-- **Other Caskets**: +1 Defense if enemy Casket is between you and attacker
+- **Light Cover** (forest, rubble): +1 to target number
+- **Heavy Cover** (fortress walls, dense forest): +2 to target number
+- **Other Caskets**: +1 to target number if enemy Casket is between you and attacker
 
 **Cover does NOT stack**:
-- Maximum +1 Defense from cover (even if multiple cover sources)
+- Use highest cover modifier only (even if multiple cover sources)
+- Example: Target in forest (+1) AND behind fortress wall (+2) = **+2 total** (highest)
+
+**To-Hit Example**:
+- Base 5+, target in light cover (rubble) = need **6+** to hit
+- Base 5+, target in heavy cover (fortress wall) = need **7+** to hit
 
 ---
 
@@ -160,94 +172,188 @@ NO COVER (Behind rubble, but not in it):
 
 ---
 
-## Facing & Firing Arcs
+## Facing & Firing Arcs (6-Hex-Side System)
 
-**Caskets have a facing (which direction they're pointed).**
+**Caskets have a facing (which direction they're pointed) AND a shield-side/weapon-side.**
 
-### Hex Facing
+### Hex Facing (6 Directional Sides)
 
-**Each Casket occupies 1 hex and faces ONE of the 6 hex edges.**
+**Each Casket occupies 1 hex and faces ONE of the 6 hex sides.**
 
 ```
-Hex Facings (6 possible directions):
-       [N]
-    [NW] [NE]
-    [SW] [SE]
-       [S]
+Hex Sides (6 possible directions):
+         1
+      6     2
+      5     3
+         4
+
+1 = Front (primary facing)
+2 = Front-Right
+3 = Rear-Right
+4 = Rear (directly behind)
+5 = Rear-Left
+6 = Front-Left
 ```
 
 ---
 
-### Firing Arc (Front 180°)
+### 6-Hex-Side Arc System
 
-**You can only attack targets in your FRONT ARC (3 front-facing hexes).**
+**Attacks from each hex side have different modifiers based on shield/weapon positioning:**
 
 ```
-Front Arc Diagram (Facing North):
-         [F][F][F]   F = Front arc (can attack)
-        [S][X][S]    X = Your Casket
-         [R][R][R]   R = Rear arc (cannot attack)
-                     S = Side hexes (can attack)
-
-If enemy is in F or S hexes, you can attack.
-If enemy is in R hexes, you must ROTATE first.
+         [1]          1 = FRONT (0° - 60°)
+      [6] [X] [2]     2 = FRONT-RIGHT (60° - 120°)
+      [5]   [3]       3 = REAR-RIGHT (120° - 180°)
+         [4]          4 = REAR (180° - 240°)
+                      5 = REAR-LEFT (240° - 300°)
+X = Your Casket       6 = FRONT-LEFT (300° - 360°)
 ```
 
-**Rotating**:
+**Rotation**:
 - **Free action** (once per turn)
-- Changes which hexes are in your front arc
-- Does not cost SP
+- Rotate 1 hex-side clockwise or counter-clockwise
+- Can rotate multiple times by spending 1 SP per additional rotation
+- Example: Rotate 3 hex-sides = 1 free + 2 SP
 
 ---
 
-### Facing Modifiers (Attack Bonuses)
+### Shield Side & Weapon Side (BattleTech-Inspired)
 
-**Attacking from different facings grants bonuses:**
+**When building your Casket, declare which side has your shield:**
 
-| Facing | Attacker Bonus | Defender Penalty |
-|--------|----------------|------------------|
-| **Front** (facing you) | +0 damage | Full Defense |
-| **Side** (flank) | +1 damage | -1 Defense |
-| **Rear** (behind) | +2 damage | -2 Defense |
+**Shield-Side Options**:
+- **Left-Shield (default)**: Shield on hex-sides 5, 6, 1 (left + front)
+- **Right-Shield**: Shield on hex-sides 1, 2, 3 (right + front)
+- **No Shield**: No shield bonuses (if using 2-handed weapon or dual weapons)
+
+**Example - Left-Shield Casket**:
+```
+    [6-Shield][X][2-Weapon]     Shield protects Left + Front
+    [5-Shield]   [3-Weapon]     Weapons on Right side
+       [4-Rear]
+```
+
+---
+
+### Facing Modifiers (Detailed 6-Hex System + To-Hit)
+
+**Attacking from different hex-sides has specific effects:**
+
+| Hex Side | Arc Name | To-Hit Modifier | Damage Bonus | Defender Defense | Shield Blocks? |
+|----------|----------|-----------------|--------------|------------------|----------------|
+| **1** (Front) | Front | +0 | +0 | Full Defense | Yes (if shield) |
+| **2** (Front-Right) | Weapon Side | +0 | +1 | -1 Defense | No (weapon side exposed) |
+| **3** (Rear-Right) | Flank (Weapon) | -1 (easier) | +2 | -2 Defense | No |
+| **4** (Rear) | Rear | -2 (easier) | +3 | -3 Defense | No (blind spot) |
+| **5** (Rear-Left) | Flank (Shield) | -1 (easier) | +2 | -2 Defense | No |
+| **6** (Front-Left) | Shield Side | +1 (harder) | +0 | Full Defense +1 | Yes (shield covered) |
+
+**To-Hit Modifier Explanation**:
+- **Easier to hit** (flanks, rear): -1 or -2 to target number (need lower roll)
+  - Example: Base 5+, attacking rear (hex 4) = need **3+** instead
+- **Harder to hit** (shield-side): +1 to target number (need higher roll)
+  - Example: Base 5+, attacking shield-side (hex 6) = need **6+** instead
+- **Front/weapon-side**: +0 to target number (standard difficulty)
+
+**Shield Side Advantage**:
+- Attacks from **shield-side hexes (6, 1)** can be blocked with shield
+- **Hex-side 6 (Front-Left with left-shield)** grants +1 Defense bonus
+- Shield-side reactive cards (Deflect, Shield Wall) work on these hexes
+
+**Weapon Side Vulnerability**:
+- Attacks from **weapon-side hexes (2, 3)** cannot be blocked by shields
+- **Hex-side 2 (Front-Right with left-shield)** gives attacker +1 damage
+- You cannot use shield reactive cards against these attacks
+
+**Rear Arc (Hex-sides 3, 4, 5)**:
+- All rear attacks gain +2 or +3 damage
+- Cannot use reactive defense cards from rear attacks
+- Must rotate to defend properly
+
+---
+
+### Tactical Shield Positioning
+
+**"Shield-Wall" Tactic** (BattleTech-inspired):
+- Present your shield-side to the most dangerous enemy
+- Rotate to keep weapon-side away from threats
+- Force enemies to either:
+  - Attack your defended side (lower damage)
+  - Move to flank (costs them movement SP)
 
 **Example**:
-- Attack deals 5 damage
-- Attacking from REAR: 5 + 2 = **7 damage**
-- Defender has 2 Defense, but Rear = -2 Defense → **0 Defense**
-- Defender takes full 7 damage
+```
+Enemy A is dangerous, Enemy B is weak
 
-**Facing matters!** Flanking is powerful.
+    [A]                Keep shield facing Enemy A
+    [6][X][2]          Enemy A attacks hex-side 6 (shield protected)
+        [B]            Enemy B on weapon-side (hex-side 2)
+                       But Enemy B is weak, acceptable risk
+```
+
+**"Damage Soaking" Tactic**:
+- If one side is already damaged (Right Arm destroyed)
+- Present that side to enemies (absorb damage on already-broken side)
+- Protect your functional side
+
+**Example**:
+```
+Right Arm destroyed, Left Arm has weapon
+
+    [E]                Present damaged right side
+    [2-DMG][X][6-OK]   Enemy attacks hex-side 2 (already broken)
+                       Hex-side 6 still functional, protected
+```
 
 ---
 
-## Facing Diagram
+## Facing Diagrams (6-Hex System)
 
 ```
-REAR ATTACK (Most vulnerable):
-    [ ][A][ ]   A = Attacker
-    [ ][T][ ]   T = Target (facing away)
-    [ ][↑][ ]   ↑ = Target's facing direction
+DIRECT REAR ATTACK (Hex-side 4 - Most Vulnerable):
+       [ ]
+    [ ][T][  ]   T = Target (facing DOWN ↓)
+    [A][ ][  ]   A = Attacker (hex-side 4)
+       ↓
 
-    Attacker is BEHIND target.
-    +2 damage, target's Defense -2
+    Attacker at hex-side 4 (rear)
+    +3 damage, target's Defense -3
+    Target CANNOT use reactive defense cards
 ```
 
 ```
-SIDE ATTACK (Flank):
-    [A][ ][ ]
-    [ ][T→][ ]   T = Target (facing right)
+FLANK ATTACK - WEAPON SIDE (Hex-side 2 or 3):
+       [ ]
+    [ ][T←][A]   T = Target (left-shield, facing LEFT ←)
+       [ ]       A = Attacker (hex-side 2, weapon side)
 
-    Attacker is to the SIDE.
+    Attacker at hex-side 2 (front-right, weapon side)
     +1 damage, target's Defense -1
+    Target CANNOT block with shield
 ```
 
 ```
-FRONT ATTACK (Expected):
-    [ ][↓][ ]   Target facing attacker
-    [ ][T][ ]
-    [ ][A][ ]
+SHIELD SIDE ATTACK (Hex-side 6 - Best Defense):
+       [ ]
+    [A][T→][ ]   T = Target (left-shield, facing RIGHT →)
+       [ ]       A = Attacker (hex-side 6, shield side)
 
-    No bonuses. Full Defense applies.
+    Attacker at hex-side 6 (front-left, shield side)
+    +0 damage, target's Defense FULL +1
+    Target CAN use shield reactive cards
+```
+
+```
+FRONT ATTACK (Hex-side 1 - Expected):
+       [A]
+    [ ][T][ ]   T = Target (facing UP ↑)
+       [ ]      A = Attacker (hex-side 1)
+       ↑
+
+    Attacker at hex-side 1 (front)
+    +0 damage, target's Defense FULL
+    Target can defend normally
 ```
 
 ---
@@ -256,16 +362,18 @@ FRONT ATTACK (Expected):
 
 **Some hexes are elevated (hills, platforms, buildings).**
 
-### Elevation Rules
+### Elevation Rules (For To-Hit & Damage)
 
 **Higher Ground Advantage**:
 - If you are **1+ levels higher** than target:
-  - **+1 damage** to attacks
+  - **-1 to target number** (easier to hit)
+  - **+1 damage** to attacks (if hit)
   - Ignore cover (shoot over it)
 
 **Shooting Uphill Penalty**:
 - If you are **1+ levels lower** than target:
-  - **-1 damage** to attacks
+  - **+1 to target number** (harder to hit)
+  - **-1 damage** to attacks (if hit)
 
 **Levels**:
 - Level 0: Ground level (most of map)
@@ -275,6 +383,11 @@ FRONT ATTACK (Expected):
 **Climbing**:
 - Moving UP 1 level: Costs +1 SP (2 SP total)
 - Moving DOWN 1 level: Normal cost (1 SP)
+
+**To-Hit Example**:
+- Attacker on Level 2, target on Level 0 (2 levels higher)
+- Base 5+ → -1 modifier (higher ground) = need **4+** to hit
+- If hit, +1 damage bonus
 
 ---
 
@@ -327,16 +440,39 @@ AURA 2 EXAMPLE:
 
 ---
 
-## Quick Reference: Range/LOS Checklist
+## Quick Reference: Range/LOS/Facing Checklist (With To-Hit)
 
 **Before attacking, check:**
 
 1. ✅ **In range?** (Count hexes from you to target)
 2. ✅ **In firing arc?** (Target in front 180° of your facing?)
 3. ✅ **Have LOS?** (No walls blocking straight line?)
-4. ✅ **Cover?** (Target in/near forest or rubble? +1 Defense)
-5. ✅ **Facing modifier?** (Rear +2 dmg, Side +1, Front +0)
-6. ✅ **Elevation?** (Higher ground +1 dmg, lower ground -1 dmg)
+4. ✅ **Calculate To-Hit Number:**
+   - Base: 5+
+   - Range modifier: Short +0, Medium +1, Long +2, Extreme +3
+   - Attacker movement: 0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3
+   - Defender movement: 0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3
+   - Hex-side facing: Front +0, Weapon +0, Flank -1, Rear -2, Shield +1
+   - Cover: Light +1, Heavy +2
+   - Elevation: Higher -1, Lower +1
+5. ✅ **Roll 2 Attack Dice** (add values, compare to target number)
+6. ✅ **If hit, apply damage modifiers:**
+   - Strong Hit (7-8): +1 damage
+   - Critical Hit (9): +2 damage, bypass 1 Defense
+   - EXECUTION (10): Auto-destroy component, bypass all Defense
+   - Hex-side bonus: Weapon +1, Flank +2, Rear +3
+   - Elevation: Higher +1, Lower -1
+
+### Hex-Side Quick Reference Table (With To-Hit)
+
+| Hex-Side | Name | To-Hit Mod | Damage Bonus | Defense Penalty | Shield Blocks? | Reactive Cards? |
+|----------|------|------------|--------------|-----------------|----------------|-----------------|
+| 1 | Front | +0 | +0 | 0 | Yes | Yes |
+| 2 | Front-Right (Weapon) | +0 | +1 | -1 | No | Yes |
+| 3 | Rear-Right (Flank) | -1 | +2 | -2 | No | No |
+| 4 | Rear (Blind) | -2 | +3 | -3 | No | No |
+| 5 | Rear-Left (Flank) | -1 | +2 | -2 | No | No |
+| 6 | Front-Left (Shield) | +1 | +0 | 0 (+1 if shield) | Yes | Yes |
 
 ---
 
@@ -365,6 +501,34 @@ AURA 2 EXAMPLE:
 
 ### "Can I shoot over allies from higher ground?"
 **Yes.** Higher ground ignores cover, including allied Caskets.
+
+### "I have a shield on my left arm. Which hex-sides does it protect?"
+**Left-Shield protects hex-sides 5, 6, and 1** (rear-left, front-left, and front).
+Hex-sides 2, 3, 4 are vulnerable (weapon side + rear).
+
+### "My opponent has a right-shield. Which side should I attack?"
+**Attack their LEFT side (your right when facing them)** - hex-sides 5, 6.
+Their shield is on hex-sides 1, 2, 3 (their right), so attacking from their left bypasses the shield.
+
+### "Can I block an attack from my weapon-side with my shield?"
+**No.** Shield reactive cards (Deflect, Shield Wall, etc.) only work if the attack comes from your shield-side hexes.
+
+### "I'm being attacked from hex-side 4 (direct rear). Can I use Brace for Impact?"
+**No.** Rear attacks (hex-sides 3, 4, 5) cannot be defended with reactive cards. You must rotate to defend.
+
+### "How do I know which hex-side an attack is coming from?"
+**Determine which of the 6 hexes adjacent to the defender contains the attacker.**
+```
+         [1]
+      [6] [D] [2]    D = Defender
+      [5]   [3]
+         [4]
+```
+If attacker is in hex 2, it's a Front-Right (weapon-side) attack.
+
+### "Can I rotate to change my facing mid-combat?"
+**Yes.** Rotate once per turn for free, or spend 1 SP per additional rotation.
+**Example**: Rotate 180° (3 hex-sides) = 1 free + 2 SP = costs 2 SP total.
 
 ---
 

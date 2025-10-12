@@ -61,7 +61,7 @@ When Theslar activated the **Resonance Engine**, it didn't just tap the magnetic
 - Church of Absolution splits in the Great Schism (Year 134)
 - Merchant Guilds rise to dominance through war profiteering
 - Dwarven forge-cities become industrial powerhouses
-- Undead Court establishes permanent necropolis territories
+- The Ossuarium establishes permanent necropolis territories
 
 **Year 250-350: The Mutation Age**
 - Blighted Packs emerge as distinct faction after Exodus (Year 352)

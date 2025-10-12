@@ -262,30 +262,63 @@
 
 ---
 
-## COMBAT RESOLUTION
+## COMBAT RESOLUTION (WITH DICE)
 
 ### Attack Steps
-1. **Declare attack**: Play attack card, spend SP
-2. **Check range**: Is target in range?
-   - Melee: 1 hex
-   - Close: 2-3 hexes
-   - Medium: 4-6 hexes
-   - Long: 7+ hexes
-3. **Check LOS**: Can you see target? (forest blocks LOS)
-4. **Calculate damage**:
-   - Base damage (from card)
-   - + Facing modifier (Rear +2, Side +1, Front +0)
-   - + Elevation modifier (E1 +1, E2 +2)
-   - - Defense modifiers (cover, buffs)
-5. **Apply damage**: Defender discards X cards from top of deck
+1. **Declare attack**: Play attack card, spend SP, declare target component
+2. **Calculate To-Hit Number**:
+   - Base: **5+** (roll 2d6 Attack Dice)
+   - + Range (Short 0-3 hexes +0, Medium 4-6 +1, Long 7-10 +2)
+   - + Attacker movement this turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)
+   - + Defender movement last turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)
+   - + Hex-side facing (Front +0, Weapon +0, Flank -1, Rear -2, Shield +1)
+   - + Cover (Light +1, Heavy +2)
+   - + Elevation (Higher -1, Lower +1)
+3. **Roll 2 Attack Dice**, add values:
+   - **5-6** = Hit (standard damage)
+   - **7-8** = Strong Hit (+1 damage)
+   - **9** = Critical Hit (+2 damage, bypass 1 Defense)
+   - **10** (double 💀) = **EXECUTION** (auto-destroy component)
+   - **<5** = Miss (attack wasted)
+   - **2** (double ⚙️) = Catastrophic Failure (weapon jams, discard all Primary Weapon cards from hand)
+4. **If hit**, defender plays reactive card (optional, 0 SP)
+5. **Defender rolls Defense Dice** (1d6 per damage point):
+   - Count blocks: 🛡️ SHIELD, ⚙️ ABSORB (each blocks 1 damage)
+   - Apply special effects: 💀 CRITICAL (+1 Component Damage), 🔥 HEAT (+1 Heat), ⚔️ PIERCE (no reactives)
+6. **Defender discards** final damage (original - blocks) from hand/deck
 
-### Damage Example
-Church plays **Faithful Thrust** (4 damage, Melee) against Dwarven Casket:
-- Church is attacking from **Rear arc**: +2 damage
-- Church is on **Elevation 1**: +1 damage
-- Dwarf has **1 Rune Counter**: -1 damage
-- Total: 4 + 2 + 1 - 1 = **6 damage**
-- Dwarf discards top 6 cards from deck
+### Damage Example (With Dice)
+Church plays **Slash** (4 damage, Melee) against Dwarven Casket:
+
+**To-Hit Calculation**:
+- Base: 5+
+- Range: Melee (Short range) = +0
+- Attacker moved 3 hexes this turn = +1 (need 6+)
+- Defender moved 2 hexes last turn = +1 (need 7+)
+- Attacking rear arc (hex-side 4) = -2 (need **5+**)
+- Church on Elevation 1 (higher ground) = -1 (need **4+**)
+
+**Attack Roll**: ⚔️ (3) + 💀 (5) = **8 total** → **STRONG HIT** (+1 damage)
+
+**Damage Calculation**:
+- Base: 4 damage
+- Strong Hit: +1 damage
+- Rear arc bonus: +3 damage
+- Elevation 1: +1 damage
+- **Total: 9 damage**
+
+**Defense Roll** (Dwarf rolls 9 Defense Dice):
+- Result: 🛡️ 🛡️ ⚙️ 🩸 🩸 💀 💀 🔥 ⚔️
+- **3 blocks** (🛡️🛡️⚙️) = Reduce to 6 damage
+- **2 Criticals** (💀💀) = +2 Component Damage to targeted component
+- **1 Heat** (🔥) = +1 Heat to Dwarf
+- **1 Pierce** (⚔️) = Cannot use reactive cards
+
+**Final Result**:
+- Dwarf discards 6 cards (chooses 4 from hand, 2 from deck)
+- +2 Component Damage to Right Arm (from 💀💀)
+- +1 Heat to Dwarf
+- If any Primary Weapon cards discarded → Add to Component Damage total
 
 ### Component Damage
 When you discard cards from damage:
@@ -505,9 +538,12 @@ After playing this scenario 2-3 times, players should understand all core mechan
 Before starting:
 - [ ] Print Quick Reference Sheet
 - [ ] Print or draw 12×12 hex map
-- [ ] Prepare Church deck (30 cards shuffled)
-- [ ] Prepare Dwarven deck (32 cards shuffled)
-- [ ] Prepare 2d6 for Strain checks
+- [ ] Prepare Church deck (29 cards shuffled)
+- [ ] Prepare Dwarven deck (33 cards shuffled)
+- [ ] **Prepare DICE**:
+  - **2 Attack Dice** (custom d6 with ⚔️💀🛡️🩸⚙️ symbols, or regular 2d6)
+  - **10+ Defense Dice** (custom d6 with 🛡️⚙️🩸💀⚔️🔥 symbols, or regular d6)
+  - **2d6 for Initiative** (regular dice)
 - [ ] Prepare tokens for:
   - Heat tracking (0-10+)
   - SP tracking (current SP)
@@ -518,6 +554,10 @@ Before starting:
   - Current HP (cards remaining in deck)
   - Damage cards in deck (reshuffle count)
   - Component Damage by location (optional)
+
+**NOTE**: If you don't have custom dice, use regular d6:
+- **Attack Dice**: Face 1=🛡️(1), 2=🩸(2), 3=⚔️(3), 4=⚔️⚔️(4), 5=💀(5), 6=⚙️(0)
+- **Defense Dice**: Face 1=🛡️, 2=⚙️, 3=🩸, 4=💀, 5=⚔️, 6=🔥
 
 ---
 

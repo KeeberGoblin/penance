@@ -48,14 +48,24 @@
 
 **1.1 Restore SP**
 - Set SP to your maximum (based on Casket type)
-  - Light Caskets: 6 SP
-  - Medium Caskets: 5 SP
+  - Scout Caskets: 6 SP
+  - Assault Caskets: 5 SP
   - Heavy Caskets: 4 SP
-  - Assault Caskets: 3 SP
+  - Fortress Caskets: 3 SP
 - Modified by:
   - Chassis destroyed: -1 SP max
   - Leg-Skimmed pilots: +1 SP max
   - Certain Scars/Wounds
+
+**1.1b Overspending SP (GKR-Style Push System)**
+- You can spend UP TO DOUBLE your SP maximum per turn
+- **Every SP beyond your maximum costs 1 card** (discard from hand or deck)
+- **Example**: Scout (6 SP) can spend up to 12 SP total
+  - First 6 SP: Free
+  - 7th-12th SP: Discard 1 card each
+- This is **voluntary self-harm** for tactical advantage
+- Discarded cards go to discard pile (can be recovered)
+- "Burn HP for power. Risk everything for the kill."
 
 **1.2 Heat Check**
 - If you have **5+ Heat** (Danger Zone):
@@ -180,11 +190,16 @@
 - Must be played BEFORE damage is calculated
 - If you have no reactive cards in hand, you cannot respond
 
-**Resolution**:
-1. Attacker plays attack card
-2. Defender plays reactive card (if they have one)
-3. Calculate damage
-4. Defender discards cards from deck
+**Resolution** (With Dice System):
+1. Attacker plays attack card, declares target component
+2. **Calculate To-Hit Number** (see Dice Reference)
+   - Base 5+, apply modifiers (range, movement, facing, cover, elevation)
+3. **Attacker rolls 2 Attack Dice**, adds values
+   - Hit (5-6), Strong Hit (7-8), Critical (9), EXECUTION (10), or Miss (<target)
+4. **If hit**, Defender plays reactive card (if they have one)
+5. **Defender rolls Defense Dice** (1 per damage point)
+   - Count blocks (🛡️ ⚙️), apply special effects (💀 ⚔️ 🔥)
+6. Defender discards final damage (original - blocks) from hand/deck
 
 ---
 
@@ -301,12 +316,22 @@ Pilots take damage in these situations:
 
 **PHASE 2: ACTION**
 1. **Rotate** (free action) → Now facing enemy
-2. **Move 2 hexes** (2 SP) → Advance toward enemy
+2. **Move 3 hexes** (3 SP) → Advance toward enemy
 3. **Play Blood Offering** (0 SP) → Discard 2 cards from deck (self-harm), gain "+3 damage, ignore 1 Armor" buff
-4. **Play Faithful Thrust** (2 SP) → Attack for 4 damage + buffs
-   - Enemy takes 4 + 3 (Blood Offering) = 7 damage
-   - Enemy discards top 7 cards
-5. **Remaining: 2 SP** → Pass (save for later)
+4. **Play Faithful Thrust** (2 SP) → Declare attack for 4 damage + buffs
+   - **To-Hit**: Base 5+ | Moved 3 hexes +1 | Medium range (5 hexes) +1 = **Need 7+**
+   - **Roll Attack Dice**: ⚔️ (3) + 💀 (5) = **8 total** → **Strong Hit** (+1 damage)
+   - Final damage: 4 base + 3 (Blood Offering) + 1 (Strong Hit) = **8 damage**
+   - **Enemy rolls 8 Defense Dice**: 🛡️ 🛡️ 🩸 🩸 🩸 💀 🔥 ⚔️
+   - **2 blocks** → Reduce to 6 damage
+   - **1 Critical** (💀) → +1 Component Damage
+   - **1 Heat** (🔥) → Enemy gains 1 Heat
+   - Enemy chooses to discard 6 cards (4 from hand, 2 from deck)
+5. **OVERSPEND**: Move 2 more hexes (2 SP) → Costs 7th and 8th SP
+   - 7th SP = Discard 1 card (overspending cost)
+   - 8th SP = Discard 1 card (overspending cost)
+   - Result: Moved total 5 hexes + attacked, but discarded 2 extra cards
+6. **Total spent: 8 SP (6 free + 2 paid with cards)**
 
 **PHASE 3: DRAW**
 - Hand has 4 cards (played Blood Offering, Faithful Thrust)

@@ -527,14 +527,14 @@
 
 **Key Card**: Earthshaker (pushes them away, creates space)
 
-### Playing Against Undead Court (Hypothetical)
-**Undead Strengths**: Resurrection, attrition, debuffs
+### Playing Against The Ossuarium (Hypothetical)
+**Ossuarium Strengths**: Resurrection, attrition, debuffs
 **Dwarven Counter**:
 - Stone Endurance (32 HP) outlasts them
 - Jury-Rig prevents death spiral
 - Unbreakable Spirit matches their resurrection
 
-**Key Card**: Jury-Rig (delays death spiral longer than Undead)
+**Key Card**: Jury-Rig (delays death spiral longer than Ossuarium)
 
 ---
 

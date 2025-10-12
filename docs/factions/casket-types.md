@@ -1,20 +1,32 @@
 # Asymmetric Casket Types by Faction
 ## Penance: Absolution Through Steel
 
-Version: 1.0
-Last Updated: October 10, 2025
+Version: 2.0 (Equipment System Overhaul)
+Last Updated: October 11, 2025
 
 ---
 
 ## Design Philosophy
 
-Each faction builds Caskets that reflect their ideology, culture, and relationship with death. There are no universal "weight classes" - a Church Confessor and an Undead Revenant might both be fast and light, but they achieve it through completely different means and play entirely differently.
+Each faction builds Caskets that reflect their ideology, culture, and relationship with death. There are no universal "weight classes" - a Church Confessor and an Ossuarium Revenant might both be fast and light, but they achieve it through completely different means and play entirely differently.
 
 **Mechanical Framework**:
-- Each faction has 4 Casket types (light/medium/heavy/assault equivalent)
+- Each faction has 4 Casket types (Scout/Assault/Heavy/Fortress)
 - Each type has unique mechanics tied to faction identity
 - Stats are balanced but asymmetric (same power level, different playstyle)
 - No two factions share the same mechanic
+
+**Equipment System v2.0**:
+- **Deck sizes are now variable** based on equipment loadout
+- Each Casket class has different equipment slots:
+  - **Scout (Light)**: 1 Weapon + 1 Shield/Offhand + 1 Accessory = 26-30 cards total
+  - **Assault (Medium)**: 1 Weapon + 1 Shield/Offhand + 2 Accessories = 28-35 cards total
+  - **Heavy**: 1 Weapon + 1 Shield/Offhand + 3 Accessories = 32-40 cards total
+  - **Fortress (Ultra-Heavy)**: 1 2-handed Weapon + 0-1 Shield/Offhand + 4 Accessories = 35-50 cards total
+- Equipment card counts vary (Light weapon=3-4 cards, Heavy weapon=6-9 cards)
+- Base deck: 10 Universal Core + 6 Faction Core + X Equipment + 2 Tactics
+- **Example**: Scout with Dagger (3) + Buckler (2) + Sigil (3) = 26 cards total
+- **Example**: Fortress with Greatsword (8) + 4 Accessories (12) = 38 cards total
 
 ---
 
@@ -22,23 +34,27 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 
 **Theme**: Suffering purifies. Pain is prayer. Redemption through violence.
 
-## 1. The Confessor (Light)
+## 1. The Confessor (Scout)
 
 **Weight**: 700 lbs
-**Soul Points**: 3 SP
+**Soul Points**: 6 SP (Scout class)
 **Movement**: 6 hexes
 **Armor**: 1
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, based on equipment)
 
 **Philosophy**: Fast, aggressive, self-destructive. Confessors are flagellants in iron, trading their own blood for holy fury.
 
 **Unique Mechanic: Blood Offering**
-- Once per turn, mill 2 cards from your deck (self-harm)
-- If you do: Next attack deals +2d6 damage and ignores 1 armor
+- Once per turn, discard 2 cards from your deck (self-harm)
+- If you do: Next attack deals +3 damage and ignores Defense
 - Can be used even when hand is empty (desperation move)
 - "My pain is my weapon. My blood, my prayer."
 
-**Equipment Slots**: Dual-wielded weapons (counts as both arms), 1 Relic slot
+**Equipment Slots (v2.0)**:
+- 1 Weapon (Light: Dagger/Hand Axe, 3-4 cards)
+- 1 Shield/Offhand (Buckler, 2 cards)
+- 1 Accessory (Martyr's Brand Sigil, 3 cards)
+- **Example Build**: Dagger (3) + Buckler (2) + Martyr's Brand (3) = 26 cards total
 
 **Faction Ability: Martyrdom**
 - When reduced to 5 or fewer cards in deck: +1 to all attack damage (permanent)
@@ -54,7 +70,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 4 hexes
 **Armor**: 2
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Defend the faithful. Absorb punishment meant for others. Suffer so they don't have to.
 
@@ -64,7 +80,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Spend 3 Suffering tokens: Remove 3 damage cards from your discard pile permanently (atonement achieved)
 - "I will bear your sins. All of them."
 
-**Equipment Slots**: Right Arm (weapon), Left Arm (shield mandatory), 2 Relic slots
+**Equipment Slots**: Right Arm (weapon), Left Arm (shield mandatory), 2 Accessory slots
 
 **Faction Ability: Shield of Faith**
 - While adjacent to 2+ allies: +2 Armor
@@ -80,7 +96,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 3 hexes
 **Armor**: 4
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Wrath made manifest. The Church's hammer. Crush the heretic, purge the unclean.
 
@@ -92,7 +108,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
   - 3 Wrath: Enter "Holy Fury" stance (auto-pass all Morale checks, +1 damage to all attacks, lasts until end of battle)
 - "Through violence, salvation. Through slaughter, grace."
 
-**Equipment Slots**: Two-handed weapon (both arms), 3 Relic slots
+**Equipment Slots**: Two-handed weapon (both arms), 3 Accessory slots
 
 **Faction Ability: Purge the Tainted**
 - Deal +2 damage to enemies with Taint tokens
@@ -108,7 +124,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 2 hexes
 **Armor**: 5
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: Mobile fortress. Walking church. When it arrives, the battlefield becomes hallowed ground.
 
@@ -120,7 +136,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Max 6 Hallowed tokens on field at once
 - "Where I stand, the Engine's corruption dies."
 
-**Equipment Slots**: Siege Weapon (both arms), 3 Relic slots
+**Equipment Slots**: Siege Weapon (both arms), 3 Accessory slots
 
 **Faction Ability: Sanctuary Protocol**
 - Allies within 3 hexes of you cannot be Tainted
@@ -140,7 +156,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 6 hexes
 **Armor**: 1
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, Scout equipment)
 
 **Philosophy**: Quiet watchers. Move through terrain like ghosts. Strike from shadows.
 
@@ -150,7 +166,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Hidden attacks: +2d6 damage, auto-crit on 6s
 - "The woods are alive. They hide their children."
 
-**Equipment Slots**: Bow (ranged, both arms) OR Dual blades, 1 Relic slot
+**Equipment Slots**: Bow (ranged, both arms) OR Dual blades, 1 Accessory slot
 
 **Faction Ability: Symbiotic Recovery**
 - At end of each round in forest terrain: Remove 1 damage card from discard pile (permanent removal)
@@ -166,7 +182,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 4 hexes
 **Armor**: 2
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Protectors of the sacred groves. Control space with living barriers.
 
@@ -178,7 +194,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Thornwalls last 3 rounds or until destroyed
 - "The forest fights back. It always has."
 
-**Equipment Slots**: Right Arm (weapon), Left Arm (shield or weapon), 2 Relic slots
+**Equipment Slots**: Right Arm (weapon), Left Arm (shield or weapon), 2 Accessory slots
 
 **Faction Ability: Verdant Anchor**
 - While adjacent to Thornwall: +2 Armor
@@ -194,7 +210,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 3 hexes
 **Armor**: 3
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Ancient and ponderous. Hits like a falling tree. Regenerates like one too.
 
@@ -204,7 +220,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Heavy damage accelerates growth (adaptation through trauma)
 - "Cut me down. I will grow back stronger."
 
-**Equipment Slots**: Living Weapon (both arms, grows from Casket), 3 Relic slots
+**Equipment Slots**: Living Weapon (both arms, grows from Casket), 3 Accessory slots
 
 **Faction Ability: Root System**
 - If you don't move on your turn: Gain "Rooted" status
@@ -221,7 +237,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 2 hexes
 **Armor**: 4
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: Walking ecosystem. Mobile forest. Where it steps, nature reclaims.
 
@@ -234,7 +250,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Overgrown hexes spread to adjacent hexes after 2 rounds (forest grows)
 - "I am not one tree. I am the forest entire."
 
-**Equipment Slots**: Integrated Weapon System (both arms), 3 Relic slots
+**Equipment Slots**: Integrated Weapon System (both arms), 3 Accessory slots
 
 **Faction Ability: Seed Protocol**
 - When reduced to 10 or fewer cards: Release spores
@@ -255,7 +271,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 6 hexes
 **Armor**: 2
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, Scout equipment)
 
 **Philosophy**: Fast recon units. Runic mobility systems. Hit and run with dwarven stubbornness.
 
@@ -268,7 +284,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Runes recharge between missions only
 - "Fast is relative. But explosions are absolute."
 
-**Equipment Slots**: Rifle/Crossbow (ranged, both arms), 1 Relic slot
+**Equipment Slots**: Rifle/Crossbow (ranged, both arms), 1 Accessory slot
 
 **Faction Ability: Grudge Marker**
 - Mark 1 enemy at mission start (declare grudge)
@@ -285,7 +301,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 4 hexes
 **Armor**: 3
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Balanced precision. Modular systems. The ideal dwarven combat platform.
 
@@ -295,7 +311,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Mid-combat: Spend 2 SP to hot-swap a Relic (pull from reserves if carrying spares)
 - "Adaptability through preparation. Preparation through paranoia."
 
-**Equipment Slots**: Right Arm, Left Arm, 2 Relic slots, 1 Modular Slot
+**Equipment Slots**: Right Arm, Left Arm, 2 Accessory slots, 1 Modular Slot
 
 **Faction Ability: Runescribed Plating**
 - Choose 1 Rune at mission start (inscribe on armor):
@@ -314,7 +330,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 3 hexes
 **Armor**: 4
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Walking siege engine. Built to crack fortifications and enemy armor.
 
@@ -323,7 +339,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - When enemy reaches 0 Armor: Next hit automatically destroys 1 component (Called Shot for free)
 - "I don't fight enemies. I dismantle them."
 
-**Equipment Slots**: Two-handed Hammer/Maul (both arms), 3 Relic slots
+**Equipment Slots**: Two-handed Hammer/Maul (both arms), 3 Accessory slots
 
 **Faction Ability: Seismic Strike**
 - Charged attack (takes 2 turns to prepare):
@@ -341,7 +357,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 2 hexes
 **Armor**: 5
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: Mobile foundry. The apex of dwarven engineering. Self-repairing apocalypse.
 
@@ -353,7 +369,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
   - 3 Scrap: Deploy 1 Automated Turret (3 HP, 2d6 ranged attack, acts after you)
 - "Nothing is wasted. Not even defeat."
 
-**Equipment Slots**: Integrated Weapon Platform (both arms), 3 Relic slots
+**Equipment Slots**: Integrated Weapon Platform (both arms), 3 Accessory slots
 
 **Faction Ability: Emergency Foundry**
 - Once per mission: Completely restore all damaged components (shuffle ALL damage cards out of deck)
@@ -374,7 +390,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 7 hexes
 **Armor**: 0
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, Scout equipment)
 
 **Philosophy**: Fast, fragile, relentless. Cannot feel pain. Cannot feel fear. Cannot stop.
 
@@ -385,7 +401,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Can rise maximum 2 times per mission
 - "Kill me. I'll wait."
 
-**Equipment Slots**: Bone Scythe (both arms), 1 Relic slot
+**Equipment Slots**: Bone Scythe (both arms), 1 Accessory slot
 
 **Faction Ability: Harvest Essence**
 - When you kill an enemy: Harvest their bones (gain 1 "Bone" token)
@@ -402,7 +418,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 4 hexes
 **Armor**: 2
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Skeletal precision. Ribcage chassis. Animated with stolen souls.
 
@@ -413,7 +429,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - If Phylactery destroyed: True death (cannot be revived)
 - "I keep spare lives. Just in case."
 
-**Equipment Slots**: Right Arm, Left Arm, 2 Relic slots
+**Equipment Slots**: Right Arm, Left Arm, 2 Accessory slots
 
 **Faction Ability: Necrotic Touch**
 - All melee attacks inflict "Decay" on hit
@@ -431,7 +447,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 3 hexes
 **Armor**: 4
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Walking tomb. Ossuary armor. Commands lesser undead.
 
@@ -442,7 +458,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - When Thrall dies: You gain 1 SP (death fuels you)
 - "My fallen are not gone. They serve still."
 
-**Equipment Slots**: Right Arm (weapon), Left Arm (Necromantic Focus mandatory), 3 Relic slots
+**Equipment Slots**: Right Arm (weapon), Left Arm (Necromantic Focus mandatory), 3 Accessory slots
 
 **Faction Ability: Crypt Lord**
 - While you have 2+ Thralls active: +2 Armor
@@ -458,7 +474,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 2 hexes
 **Armor**: 5
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: Mobile crypt. Contains hundreds of trapped souls. Death aura kills the living.
 
@@ -471,7 +487,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
   - 3 Souls: Summon "Soul Wraith" (8 HP, 2d6 attacks, lasts until destroyed)
 - "I am the grave. All roads end here."
 
-**Equipment Slots**: Integrated Necrotic Weapons (both arms), 3 Relic slots
+**Equipment Slots**: Integrated Necrotic Weapons (both arms), 3 Accessory slots
 
 **Faction Ability: Undying Legion**
 - When reduced to 10 or fewer cards: Release all Trapped Souls at once
@@ -482,7 +498,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 
 ---
 
-# FAE COURTS
+# THE WYRD CONCLAVE
 
 **Theme**: Reality is negotiable. Rules are suggestions. Beauty conceals horror.
 
@@ -492,7 +508,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 8 hexes
 **Armor**: 0
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, Scout equipment)
 
 **Philosophy**: Impossible movement. Teleportation. Never where you expect.
 
@@ -502,7 +518,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - When attacked: Spend 1 SP to "wasn't there" (negate attack entirely, reappear on adjacent hex)
 - "Catch me if you can. You can't."
 
-**Equipment Slots**: Glamoured Blades (both arms, change appearance), 1 Relic slot
+**Equipment Slots**: Glamoured Blades (both arms, change appearance), 1 Accessory slot
 
 **Faction Ability: Steal Face**
 - When you kill an enemy: You may take their appearance
@@ -520,7 +536,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 5 hexes
 **Armor**: 1
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Reflective surfaces. Impossible geometries. Attacks come from wrong angles.
 
@@ -531,7 +547,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Mirrors provide: Line of sight, attack origin, teleport destination
 - "I am here. I am there. I am everywhere you look."
 
-**Equipment Slots**: Right Arm, Left Arm, 2 Relic slots
+**Equipment Slots**: Right Arm, Left Arm, 2 Accessory slots
 
 **Faction Ability: Shatter and Reform**
 - When you take 5+ damage: Shatter (teleport to any Mirror, leave illusion behind)
@@ -548,7 +564,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 3 hexes
 **Armor**: 3
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Alters perception. Enemies see what you want them to see. Nightmare made real.
 
@@ -562,7 +578,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Max 2 Nightmares active
 - "Sleep. Dream. Suffer."
 
-**Equipment Slots**: Right Arm, Left Arm, 3 Relic slots
+**Equipment Slots**: Right Arm, Left Arm, 3 Accessory slots
 
 **Faction Ability: Shared Delusion**
 - When 2+ enemies are Nightmared: They attack each other (mind control)
@@ -578,7 +594,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 4 hexes (faster than other Assault frames)
 **Armor**: 3
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: The old hunt rides. Quarry cannot escape. The pack always catches prey.
 
@@ -589,7 +605,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - When all Quarry dead: Mission ends immediately (hunter's purpose fulfilled)
 - "Run. It only makes the hunt sweeter."
 
-**Equipment Slots**: Mounted Weapon System (both arms), 3 Relic slots
+**Equipment Slots**: Mounted Weapon System (both arms), 3 Accessory slots
 
 **Faction Ability: Summon the Pack**
 - Spend 3 SP: Summon 2 "Hounds of the Hunt" (6 HP each, 2d6 attacks, fast)
@@ -610,7 +626,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 7 hexes
 **Armor**: 1
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, Scout equipment)
 
 **Philosophy**: Scout the wastes. Find safe routes. Mark hazards. Lead the convoy.
 
@@ -623,7 +639,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Max 6 Waypoints
 - "Follow my trail. It's the only safe path."
 
-**Equipment Slots**: Scout Rifle (ranged, both arms), 1 Relic slot
+**Equipment Slots**: Scout Rifle (ranged, both arms), 1 Accessory slot
 
 **Faction Ability: Hazard Sense**
 - Detect all traps and environmental hazards within 6 hexes
@@ -639,7 +655,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 5 hexes
 **Armor**: 2
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Nothing wasted. Everything has value. Turn trash into treasure.
 
@@ -651,7 +667,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
   - 3 Salvage: Craft improvised weapon (2d6 damage, disposable)
 - "One man's junk is my arsenal."
 
-**Equipment Slots**: Right Arm, Left Arm, 2 Relic slots, 1 Salvage Kit (mandatory)
+**Equipment Slots**: Right Arm, Left Arm, 2 Accessory slots, 1 Salvage Kit (mandatory)
 
 **Faction Ability: Improvised Repairs**
 - Can heal allies using Salvage (not standard repair kits)
@@ -668,7 +684,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 4 hexes
 **Armor**: 3
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Convoy defender. Protect the caravan. Fight off raiders and Abominations.
 
@@ -678,7 +694,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - When enemy attacks Barricade: You may counter-attack immediately
 - "The convoy doesn't stop. Neither do I."
 
-**Equipment Slots**: Right Arm, Left Arm, 3 Relic slots
+**Equipment Slots**: Right Arm, Left Arm, 3 Accessory slots
 
 **Faction Ability: Mobile Fortress**
 - While adjacent to Barricade: +2 Armor
@@ -694,7 +710,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 3 hexes
 **Armor**: 4
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: Self-sufficient mobile base. Carries entire settlement on its back.
 
@@ -707,7 +723,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Convoy resupplies between missions (not mid-battle)
 - "I am the caravan. While I stand, we survive."
 
-**Equipment Slots**: Mounted Defense Weapons (both arms), 3 Relic slots
+**Equipment Slots**: Mounted Defense Weapons (both arms), 3 Accessory slots
 
 **Faction Ability: Last Stand Protocol**
 - When reduced to 10 or fewer cards: Convoy goes into lockdown
@@ -728,7 +744,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 6 hexes
 **Armor**: 1
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, Scout equipment)
 
 **Philosophy**: Fast negotiator. Information broker. Value extraction specialist.
 
@@ -743,7 +759,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
   - 20 Credits: Extract from mission (leave battle, keep Credits)
 - "Everything is for sale. Including your life."
 
-**Equipment Slots**: Light Weapons (both arms), 1 Relic slot
+**Equipment Slots**: Light Weapons (both arms), 1 Accessory slot
 
 **Faction Ability: Market Intelligence**
 - Can see enemy deck size and hand size at all times
@@ -759,7 +775,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 4 hexes
 **Armor**: 2
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Debt collector. Contract enforcer. Break those who don't pay.
 
@@ -770,7 +786,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Can re-mark once per mission
 - "You owe. I collect. Simple business."
 
-**Equipment Slots**: Right Arm, Left Arm, 2 Relic slots
+**Equipment Slots**: Right Arm, Left Arm, 2 Accessory slots
 
 **Faction Ability: Hired Muscle**
 - Once per mission: Call in backup (summon 2 Mercenary NPCs, 8 HP each, standard attacks)
@@ -786,7 +802,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 3 hexes
 **Armor**: 4
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Protect Guild assets. Guard the shipment. Nothing gets through.
 
@@ -797,7 +813,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - If Asset is destroyed: Lose all bonuses, gain "Dishonored" (permanent -1 to all actions)
 - "The cargo is everything. I am nothing."
 
-**Equipment Slots**: Right Arm, Left Arm (shield mandatory), 3 Relic slots
+**Equipment Slots**: Right Arm, Left Arm (shield mandatory), 3 Accessory slots
 
 **Faction Ability: Emergency Insurance**
 - Once per mission: When Asset would be destroyed, spend all Credits to save it (auto-heal to full)
@@ -813,7 +829,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 2 hexes
 **Armor**: 4
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: Mobile marketplace. Weaponized capitalism. Profit from both sides.
 
@@ -824,7 +840,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Cards auctioned: Weapons, Relics, Consumables (powerful items)
 - "I arm both sides. That's good business."
 
-**Equipment Slots**: Mounted Trading Platform (both arms), 3 Relic slots
+**Equipment Slots**: Mounted Trading Platform (both arms), 3 Accessory slots
 
 **Faction Ability: War Economy**
 - For each enemy killed this battle: +5 Credits (war is profitable)
@@ -844,7 +860,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 8 hexes
 **Armor**: 0
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, Scout equipment)
 
 **Philosophy**: Enhanced predator senses. Hunt from shadows. Animal instincts.
 
@@ -857,7 +873,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - If Prey escapes combat: You take 1 Taint (instincts frustrated)
 - "I smell fear. I follow blood."
 
-**Equipment Slots**: Natural Weapons (claws, both arms), 1 Relic slot
+**Equipment Slots**: Natural Weapons (claws, both arms), 1 Accessory slot
 
 **Faction Ability: Pack Tactics**
 - When adjacent to ally attacking same target: +1d6 damage (coordinated strike)
@@ -873,7 +889,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 5 hexes
 **Armor**: 2
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Multi-species hybrid. Wings, claws, fangs. Beautiful and horrifying.
 
@@ -886,7 +902,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Unpredictable but powerful
 - "I am many things. All of them dangerous."
 
-**Equipment Slots**: Right Arm (may be claw/tentacle/wing), Left Arm, 2 Relic slots
+**Equipment Slots**: Right Arm (may be claw/tentacle/wing), Left Arm, 2 Accessory slots
 
 **Faction Ability: Controlled Mutation**
 - Spend 2 SP: Choose mutation instead of rolling
@@ -902,7 +918,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 4 hexes
 **Armor**: 3
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Pack leader. Largest and strongest. Other Blighted follow or die.
 
@@ -914,7 +930,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - When you kill an enemy: All Blighted allies heal 1 card (pack feeds on success)
 - "I lead. You follow. We survive."
 
-**Equipment Slots**: Massive Natural Weapons (both arms), 3 Relic slots
+**Equipment Slots**: Massive Natural Weapons (both arms), 3 Accessory slots
 
 **Faction Ability: Challenge Roar**
 - Force 1 enemy to engage you (must move toward and attack you if able)
@@ -931,7 +947,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 3 hexes
 **Armor**: 4
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: Walking hive. Spawns lesser Blighted. Mobile mutation factory.
 
@@ -942,7 +958,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Spend 3 Biomass: Spawn 1 "Greater Blighted" (10 HP, 2d6 attacks, armored)
 - "I am the future of our species. Behold."
 
-**Equipment Slots**: Integrated Bio-Weapons (both arms), 3 Relic slots
+**Equipment Slots**: Integrated Bio-Weapons (both arms), 3 Accessory slots
 
 **Faction Ability: Rapid Evolution**
 - When you take 5+ damage: Spawn 1 Lesser Blighted immediately (emergency response)
@@ -962,7 +978,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 9 hexes
 **Armor**: 1
-**Deck Size**: 25 cards
+**Deck Size**: 26-30 cards (variable, Scout equipment)
 
 **Philosophy**: Fast multi-limbed scout. Expendable. Reports to hive mind.
 
@@ -972,7 +988,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Cannot be flanked (compound eyes see 360 degrees)
 - "I see. We see. The hive knows all."
 
-**Equipment Slots**: 4 Arms (can equip 4 light weapons simultaneously), 1 Relic slot
+**Equipment Slots**: 4 Arms (can equip 4 light weapons simultaneously), 1 Accessory slot
 
 **Faction Ability: Expendable**
 - You may sacrifice yourself (destroy own Casket) to:
@@ -990,7 +1006,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 4 SP
 **Movement**: 4 hexes
 **Armor**: 3 (chitin plating)
-**Deck Size**: 30 cards
+**Deck Size**: 28-35 cards (variable, Assault equipment)
 
 **Philosophy**: Standard combat unit. Disciplined. Follows hive directives perfectly.
 
@@ -1000,7 +1016,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - Hive acts as one organism (total SP coordination)
 - "We are legion. Our strength is shared."
 
-**Equipment Slots**: Right Arm, Left Arm, 2 Relic slots
+**Equipment Slots**: Right Arm, Left Arm, 2 Accessory slots
 
 **Faction Ability: Regenerating Carapace**
 - At end of round: If you took damage, regenerate 1 card from discard to deck (chitin regrows)
@@ -1016,7 +1032,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 3 SP
 **Movement**: 3 hexes
 **Armor**: 5 (armored beetle)
-**Deck Size**: 35 cards
+**Deck Size**: 32-40 cards (variable, Heavy equipment)
 
 **Philosophy**: Tank-beetle hybrid. Massive mandibles. Nearly invulnerable carapace.
 
@@ -1026,7 +1042,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - At 0 Armor: Become "Exposed" (vulnerable, but attacks deal +2d6 from rage)
 - "Break my shell. Regret it."
 
-**Equipment Slots**: Mandible Weapons (both arms, crushing/piercing), 3 Relic slots
+**Equipment Slots**: Mandible Weapons (both arms, crushing/piercing), 3 Accessory slots
 
 **Faction Ability: Anchor Position**
 - Spend 1 SP: Root in place (cannot be moved)
@@ -1042,7 +1058,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 **Soul Points**: 2 SP
 **Movement**: 2 hexes
 **Armor**: 4
-**Deck Size**: 40 cards
+**Deck Size**: 35-50 cards (variable, Fortress equipment)
 
 **Philosophy**: Hive nexus. Psychic coordinator. The voice that commands the swarm.
 
@@ -1054,7 +1070,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 - When any Ascendancy unit dies: You draw 1 card (hive absorbs experience)
 - "I am the mind. They are the body. We are one."
 
-**Equipment Slots**: Psionic Amplifiers (both arms, psychic weapons), 3 Relic slots
+**Equipment Slots**: Psionic Amplifiers (both arms, psychic weapons), 3 Accessory slots
 
 **Faction Ability: Spawning Protocol**
 - Spend 3 SP: Spawn 2 "Drone" units (6 HP each, 1d6 attacks)

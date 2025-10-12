@@ -132,61 +132,202 @@ Wait, this creates duplication issues. Let me revise:
 
 ---
 
-## 2. Damage Resolution (GKR-Style)
+## 2. Attack Resolution (To-Hit System)
 
-### When You Take Damage
+### Step 1: Declare Attack
 
-**Step 1: Calculate Final Damage**
-- Base damage from attack card
-- Apply modifiers (facing, buffs, debuffs)
-- Subtract Defense (if any)
-- Minimum 1 damage
-
-**Step 2: Discard Cards from HP Deck**
-- Discard X cards from **top of your deck** (not from hand)
-- X = final damage amount
-- Example: Take 5 damage → discard top 5 cards of deck
-
-**Step 3: Check for Critical Damage**
-- If you discarded any **Primary Weapon cards**, you suffer **Component Damage**
-- If you discarded **Universal Core cards**, no extra effect
-- If you discarded **Secondary Equipment cards**, that equipment may malfunction
+**Attacker declares**:
+1. Target enemy
+2. Which attack card to play (sets base damage)
+3. Which component to target (Right Arm, Left Arm, Legs, Head, Chassis, or Random)
+4. Range and facing
 
 ---
 
-### Component Damage (KDM-Style Brutality)
+### Step 2: Calculate To-Hit Number
 
-When you discard **Primary Weapon cards** due to damage:
+**Base To-Hit**: **5+** (roll 2d6 Attack Dice, need 5+ total)
 
-**Track Component Damage per Location**:
-- Right Arm (Primary Weapon)
-- Left Arm (Secondary Equipment)
-- Legs (Movement)
-- Head (Sensors)
-- Chassis (Core)
+**Apply ALL applicable modifiers**:
 
-**How it works**:
-1. Attacker declares which component they're targeting (or random if not specified)
-2. If damage causes you to discard cards from that component's type, mark Component Damage
-3. **3 Component Damage to same location = Component Destroyed**
+#### Range Modifiers
+- **Short Range (0-3 hexes)**: +0
+- **Medium Range (4-6 hexes)**: +1 to target number (need 6+)
+- **Long Range (7-10 hexes)**: +2 to target number (need 7+)
+- **Extreme Range (11+ hexes)**: +3 to target number (need 8+)
+
+#### Attacker Movement (This Turn)
+- **Stationary (0 hexes moved)**: +0
+- **Moved 1-3 hexes**: +1
+- **Moved 4-6 hexes**: +2
+- **Sprinted (7+ hexes)**: +3
+
+#### Defender Movement (Last Turn)
+- **Stationary**: +0
+- **Moved 1-3 hexes**: +1
+- **Moved 4-6 hexes**: +2
+- **Sprinted (7+ hexes)**: +3
+
+#### Hex-Side Facing
+- **Front Arc (Hex 1)**: +0
+- **Weapon-Side (Hex 2)**: +0 (but +1 damage if hit)
+- **Flanks (Hex 3, 5)**: -1 (easier, need 4+)
+- **Rear (Hex 4)**: -2 (easier, need 3+)
+- **Shield-Side (Hex 6)**: +1 (harder, need 6+)
+
+#### Terrain Modifiers
+- **Light Cover** (rubble, low walls): +1
+- **Heavy Cover** (fortress walls, forest): +2
+- **Obscured** (smoke, darkness): +2
+- **Elevated** (attacker on high ground): -1 (easier)
+
+**Example**:
+- Base: 5+
+- Medium range: +1 (need 6+)
+- Attacker moved 4 hexes: +1 (need 7+)
+- Defender moved 2 hexes: +1 (need 8+)
+- Shield-side facing: +1 (need **9+**)
+
+---
+
+### Step 3: Roll Attack Dice
+
+**Roll 2d6 Attack Dice** (custom dice with symbols):
+
+#### Attack Die Faces
+| Symbol | Value | Name |
+|--------|-------|------|
+| ⚔️ | 3 | STRIKE |
+| ⚔️⚔️ | 4 | DOUBLE STRIKE |
+| 💀 | 5 | DEATH BLOW |
+| 🛡️ | 1 | GLANCE |
+| ⚙️ | 0 | JAM |
+| 🩸 | 2 | BLOOD |
+
+**Add both dice results, compare to target number**:
+
+#### Hit Results
+- **5-6 total** = **Hit** (standard damage)
+- **7-8 total** = **Strong Hit** (standard damage +1)
+- **9-10 total** = **Critical Hit** (standard damage +2, bypass 1 Defense)
+- **10 (double 💀)** = **EXECUTION** (auto-destroy 1 Component, bypass ALL Defense)
+
+#### Miss Results
+- **Below target number** = **MISS** (no damage, attack wasted)
+- **2 (double ⚙️)** = **CATASTROPHIC FAILURE**:
+  - Weapon jams (discard all Primary Weapon cards from hand)
+  - +2 Heat (weapon overload)
+  - Next attack -2 damage (weapon damaged)
+
+---
+
+### Step 4: Roll Defense Dice (If Hit)
+
+**If attack hits, Defender rolls Defense Dice**:
+
+**Roll 1d6 Defense Die per damage point**
+
+#### Defense Die Faces
+| Symbol | Effect |
+|--------|--------|
+| 🛡️ **SHIELD** | Block 1 damage |
+| ⚙️ **ABSORB** | Block 1 damage |
+| 🩸 **FLESH WOUND** | Take damage (discard 1 card) |
+| 💀 **CRITICAL** | Take damage + 1 Component Damage |
+| ⚔️ **PIERCE** | Take damage, cannot use reactive cards |
+| 🔥 **HEAT** | Take damage + 1 Heat |
+
+**Count results**:
+1. Count **SHIELD** (🛡️) and **ABSORB** (⚙️) symbols → Reduce damage by this amount
+2. Apply special effects from **CRITICAL** (💀), **PIERCE** (⚔️), **HEAT** (🔥)
+3. Final damage = Original damage - Blocks
+
+**Example**: Take 6 damage → Roll 6 Defense Dice
+- Result: 🛡️ 🛡️ 🩸 💀 🔥 ⚔️
+- **2 blocks** = Reduce to 4 damage
+- **1 Critical** (💀) = +1 Component Damage
+- **1 Heat** (🔥) = +1 Heat
+- **1 Pierce** (⚔️) = Cannot use reactive defense cards
+- **Final**: Discard 4 cards + 1 Component Damage + 1 Heat
+
+---
+
+### Step 5: Apply Damage (GKR-Style Choice)
+
+**Defender chooses how to discard cards**:
+
+- **From Hand**: Lose tactical options but control what's lost
+- **From Deck**: Keep hand intact but risk losing key cards randomly
+- **Mixed**: Discard some from hand, some from deck
+
+**Example**: Take 5 damage → Discard 3 from hand + 2 from deck top
+
+**Strategic Depth**: Do you burn your hand to avoid Component Damage? Or keep cards and risk it?
+
+---
+
+### Step 6: Check for Component Damage
+
+**If you discarded any Primary Weapon cards**:
+- Mark 1 Component Damage per Primary Weapon card to targeted component
+- Track separately: Right Arm, Left Arm, Legs, Head, Chassis
+- **3 Component Damage = Component DESTROYED**
+
+**If Defense Dice showed CRITICAL symbols (💀)**:
+- Add +1 Component Damage per 💀 symbol to targeted component
+
+## 3. Component Damage (KDM-Style Brutality)
+
+### Tracking Component Damage
+
+**5 Component Locations**:
+- **Right Arm** (Primary Weapon)
+- **Left Arm** (Secondary Equipment)
+- **Legs** (Movement)
+- **Head** (Sensors)
+- **Chassis** (Core)
+
+**How it accumulates**:
+1. Attacker declares which component to target (or roll 1d6 if random)
+2. When Primary Weapon cards are discarded from damage → 1 Component Damage per card
+3. When Defense Dice show 💀 CRITICAL → +1 Component Damage
+4. **3 Component Damage to same location = Component DESTROYED**
 
 **Example**:
 - Enemy attacks your Right Arm for 6 damage
-- You discard top 6 cards from deck
-- 2 of those cards are Primary Weapon cards (your arm weapons)
-- Mark 2 Component Damage on Right Arm
-- Next hit that discards 1+ Primary Weapon card → Right Arm destroyed
-
-**Component Destroyed Effects**:
-- **Right Arm**: Discard all Primary Weapon cards from hand, cannot use them
-- **Left Arm**: Discard all Secondary Equipment cards from hand, cannot use them
-- **Legs**: Movement costs +1 SP per hex
-- **Head**: Cannot use Sensor Sweep, -1 to ranged attacks
-- **Chassis**: Permanent -1 SP maximum
+- Roll 6 Defense Dice: 🛡️ 🩸 🩸 💀 💀 🔥
+- **2 Shield blocks** = Reduce to 4 damage
+- **2 Critical symbols** = +2 Component Damage to Right Arm
+- You choose to discard 2 from hand (both Primary Weapon cards) + 2 from deck
+- **Total**: 2 Component Damage (from discarded Primary cards) + 2 (from 💀 symbols) = **4 Component Damage**
+- Right Arm has **EXCEEDED 3** → **Right Arm DESTROYED**
 
 ---
 
-### Deck Depletion (Running Out of HP)
+### Component Destroyed Effects
+
+**Right Arm Destroyed**:
+- Discard all Primary Weapon cards from hand immediately
+- Cannot play Primary Weapon cards for rest of battle
+- Must rely on Universal Core + Secondary Equipment only
+
+**Left Arm Destroyed**:
+- Discard all Secondary Equipment cards from hand
+- Cannot use shield reactive cards or offhand weapons
+
+**Legs Destroyed**:
+- Movement costs **+1 SP per hex**
+- Cannot Sprint (max 3 hexes/turn even with Sprint cards)
+
+**Head Destroyed**:
+- Cannot use Sensor Sweep or targeting cards
+- **-1 to all ranged attacks** (penalties stack with to-hit modifiers)
+
+**Chassis Destroyed**:
+- **Permanent -1 SP maximum** (Light 6 → 5, Heavy 4 → 3, etc.)
+- -1 Defense against all attacks
+
+## 4. Deck Depletion (Running Out of HP)
 
 **When your deck runs out mid-turn**:
 - Continue taking damage by discarding from **discard pile**
@@ -206,7 +347,7 @@ When you discard **Primary Weapon cards** due to damage:
 
 ---
 
-## 3. Pilot Wound Deck (10 Cards)
+## 5. Pilot Wound Deck (10 Cards)
 
 ### Separate from Casket HP
 
@@ -272,7 +413,36 @@ This represents pilot physical/mental state inside the capsule.
 
 ---
 
-## 4. SP Economy (Energy System)
+## 6. Suffering Dice (Church & Event System)
+
+**For Church of Absolution and brutal campaign events**, use **Suffering Dice (d6)** for self-harm mechanics:
+
+### Suffering Die Faces
+
+| Symbol | Effect |
+|--------|--------|
+| 🩸 **BLOOD PRICE** | Discard 2 cards (self-harm) |
+| 💀 **MARTYRDOM** | Discard 3 cards, +3 damage to next attack |
+| ⚔️ **ZEALOT'S FURY** | Discard 1 card, +1 damage to all attacks this turn |
+| 🛡️ **DIVINE MERCY** | No self-harm |
+| 🔥 **PENANCE** | Discard 1 card, +1 Heat, +2 damage next attack |
+| ⚙️ **ABSOLUTION** | Discard 1 card, recover 1 card from discard |
+
+### When to Roll Suffering Dice
+
+**Church Faction Abilities**:
+- **BLOOD OFFERING** card: Instead of auto-discarding 2 cards, roll 1 Suffering Die
+- **Flagellant's Zeal** Tactic: Roll 2 Suffering Dice, apply both effects
+- **Martyrdom Protocol**: When redirecting damage, roll 1 Suffering Die per 3 damage redirected
+
+**Campaign Events**:
+- **Penance Rituals** (settlement events)
+- **Taint Purging** (when Taint reaches 8+)
+- **Soul Bargains** (desperate deals with Bonelord Thresh)
+
+---
+
+## 7. SP Economy (Energy System)
 
 ### SP by Frame Type
 
@@ -328,7 +498,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 
 ---
 
-## 5. Card Draw & Hand Management
+## 8. Card Draw & Hand Management
 
 ### Starting Hand: 6 Cards
 
@@ -349,7 +519,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 
 ---
 
-## 6. Victory Conditions
+## 9. Victory Conditions
 
 ### Arena/Skirmish
 
@@ -378,7 +548,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 
 ---
 
-## 7. Deck Construction Summary
+## 10. Deck Construction Summary
 
 ### Template: Church Confessor (Light Casket)
 
@@ -409,7 +579,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 
 ---
 
-## 8. Differences from Standard Deck-Builders
+## 11. Differences from Standard Deck-Builders
 
 ### Like GKR:
 - ✅ Deck = HP (discard cards when damaged)
@@ -432,7 +602,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 
 ---
 
-## Example Combat Sequence
+## 12. Example Combat Sequence (With Dice)
 
 ### Setup:
 - **Player A**: Church Confessor (30 HP, 6 SP, 6 cards in hand)
@@ -444,27 +614,40 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 
 **Player A Turn** (Confessor):
 1. Refresh to 6 SP
-2. Play **Desperate Lunge** (1 SP) → Move 2 hexes toward enemy
-3. Play **Faithful Thrust** (2 SP) → Attack for 4 damage, Range: Melee
-   - Player B is in front arc → No facing bonus
-4. Player B takes 4 damage → Discards top 4 cards from deck
-   - Cards discarded: 2× Universal, 1× Primary, 1× Secondary
-   - 1 Primary card discarded → Mark 1 Component Damage on targeted component (Right Arm)
-5. Player A has 3 SP remaining → Passes
-6. Draw Phase: Draw 2 cards (hand back to 6)
+2. Play **Desperate Lunge** (1 SP) → Move 2 hexes toward enemy (total moved: 2 hexes)
+3. Play **Faithful Thrust** (2 SP) → Declare attack for 4 damage, Range: Melee
+   - **To-Hit Calculation**: Base 5+ | Moved 2 hexes +1 | Front arc +0 = **Need 6+**
+   - **Attack Roll**: ⚔️ (3) + ⚔️⚔️ (4) = **7 total** → **STRONG HIT** (+1 damage)
+   - Final damage: 4 base + 1 (Strong Hit) = **5 damage**
+4. Player B rolls **5 Defense Dice**: 🛡️ 🩸 🩸 💀 🔥
+   - **1 Shield block** → Reduce to 4 damage
+   - **1 Critical (💀)** → +1 Component Damage to Right Arm
+   - **1 Heat (🔥)** → +1 Heat
+5. Player B discards 4 cards (chooses: 2 from hand, 2 from deck)
+   - Discarded from hand: 1× Primary Weapon card → +1 Component Damage
+   - **Total Component Damage to Right Arm: 2** (1 from 💀, 1 from Primary card)
+6. Player A has 3 SP remaining → Passes
+7. Draw Phase: Draw 2 cards (hand back to 6)
 
 **Player B Turn** (Ironclad):
-1. Refresh to 4 SP
-2. Play **Advance** (2 SP) → Move 2 hexes, gain +1 Defense this turn
-3. Play **Hammer Strike** (3 SP) → Attack for 6 damage, ignore 1 Armor
-   - Player A has no armor, takes full 6 damage
-4. Player A discards top 6 cards
-   - Cards: 3× Primary (Penitent Blades), 2× Universal, 1× Tactic
-   - 3 Primary cards discarded → 3 Component Damage on Right Arm
-   - **Right Arm Destroyed!** (3 Component Damage threshold)
-   - Player A discards all Penitent Blade cards from hand (cannot use Primary Weapon)
-5. Player B has 0 SP → Turn ends
-6. Draw Phase: Draw 3 cards
+1. Refresh to 4 SP, currently at 1 Heat (safe)
+2. Play **Advance** (2 SP) → Move 2 hexes toward enemy
+3. Play **Hammer Strike** (3 SP) → Declare attack for 6 damage, ignore 1 Armor
+   - **To-Hit Calculation**: Base 5+ | Moved 2 hexes +1 | Attacking front +0 = **Need 6+**
+   - **Attack Roll**: 💀 (5) + ⚔️ (3) = **8 total** → **STRONG HIT** (+1 damage)
+   - Final damage: 6 base + 1 (Strong Hit) = **7 damage**
+4. Player A rolls **7 Defense Dice**: 🛡️ 🩸 🩸 💀 💀 🔥 ⚔️
+   - **1 Shield block** → Reduce to 6 damage
+   - **2 Critical (💀💀)** → +2 Component Damage to Right Arm
+   - **1 Heat (🔥)** → +1 Heat
+   - **1 Pierce (⚔️)** → Cannot use reactive defense cards
+5. Player A discards 6 cards (chooses: 3 from hand, 3 from deck)
+   - Discarded from hand: 2× Primary Weapon (Penitent Blades) → +2 Component Damage
+   - **Total Component Damage to Right Arm**: 2 (from 💀💀) + 2 (from Primary cards) = **4 Component Damage**
+   - Right Arm has **EXCEEDED 3** → **RIGHT ARM DESTROYED!**
+   - Player A discards all remaining Penitent Blade cards from hand (cannot use Primary Weapon)
+6. Player B has 0 SP → Turn ends
+7. Draw Phase: Draw 3 cards
 
 ---
 

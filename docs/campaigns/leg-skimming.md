@@ -176,24 +176,24 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 
 ---
 
-### Undead Court: **Already Dead Anyway**
+### The Ossuarium: **Already Dead Anyway**
 
 **Title**: **"Efficient Forms"**
 
 **Cultural View**:
 - Obvious choice (you don't need legs if you're already dead)
-- Some Undead pilots remove MORE (arms, torso, until only skull remains)
+- Some Ossuarium pilots remove MORE (arms, torso, until only skull remains)
 - No ceremony, no drama—it's filed as "Maintenance"
-- Skimmed Undead pilots often remove stumps entirely (just floating torso)
+- Skimmed Ossuarium pilots often remove stumps entirely (just floating torso)
 
 **Quote**:
 > *"Flesh is waste. Remove it. A skull piloting a Casket is perfection."*
 
-**Pressure**: Constant. Undead Court expects all pilots to Skim by Mission 3. Not doing so is seen as "clinging to life."
+**Pressure**: Constant. The Ossuarium expects all pilots to Skim by Mission 3. Not doing so is seen as "clinging to life."
 
 ---
 
-### Fae Courts: **Amusing Commitment**
+### The Wyrd Conclave: **Amusing Commitment**
 
 **Title**: **"Grounded Ones"** (mocking, but affectionate)
 

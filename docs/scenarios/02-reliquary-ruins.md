@@ -323,25 +323,76 @@ After both players complete their turns:
 
 ---
 
-## COMBAT RESOLUTION (SAME AS SCENARIO #1)
+## COMBAT RESOLUTION (WITH DICE)
 
 ### Attack Steps
-1. **Declare attack**: Play attack card, spend SP
-2. **Check range**: Is target in range?
+1. **Declare attack**: Play attack card, spend SP, declare target component
+2. **Calculate To-Hit Number**:
+   - Base: **5+** (roll 2d6 Attack Dice)
+   - + Range (Short 0-3 hexes +0, Medium 4-6 +1, Long 7-10 +2)
+   - + Attacker movement this turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)
+   - + Defender movement last turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)
+   - + Hex-side facing (Front +0, Weapon +0, Flank -1, Rear -2, Shield +1)
+   - + Cover (Light +1, Heavy +2, Pillar +2)
+   - + Elevation (Higher -1, Lower +1)
 3. **Check LOS**: Can you see target? (Pillars block LOS entirely)
-4. **Calculate damage**:
-   - Base damage (from card)
-   - + Facing modifier (Rear +2, Side +1, Front +0)
-   - + Elevation modifier (E2 +2)
-   - - Defense modifiers (cover, buffs, terrain)
-5. **Apply damage**: Defender discards X cards from top of deck
+4. **Roll 2 Attack Dice**, add values:
+   - **5-6** = Hit (standard damage)
+   - **7-8** = Strong Hit (+1 damage)
+   - **9** = Critical Hit (+2 damage, bypass 1 Defense)
+   - **10** (double 💀) = **EXECUTION** (auto-destroy component)
+   - **<5** = Miss (attack wasted)
+   - **2** (double ⚙️) = Catastrophic Failure (weapon jams)
+5. **If hit**, defender plays reactive card (optional, 0 SP)
+6. **Defender rolls Defense Dice** (1d6 per damage):
+   - Count blocks: 🛡️ SHIELD, ⚙️ ABSORB (each blocks 1 damage)
+   - Apply special effects: 💀 CRITICAL (+1 Component Damage), 🔥 HEAT (+1 Heat), ⚔️ PIERCE (no reactives)
+7. **Defender discards** final damage (original - blocks) from hand/deck
 
 ### Component Damage
-When you discard cards from damage:
-1. Count how many **Primary Weapon cards** were discarded
-2. Each Primary Weapon card = 1 **Component Damage**
+When you take damage:
+1. Count Primary Weapon cards discarded = +1 Component Damage each
+2. Count 💀 CRITICAL symbols on Defense Dice = +1 Component Damage each
 3. Track Component Damage by location (Arms, Legs, Head, Chassis)
 4. When **3 Component Damage** to same location = **Component Destroyed**
+
+### Cathedral Combat Example (With Dice)
+Church Scout attacks Dwarven Fortress on Central Cathedral (Elevation 2):
+
+**To-Hit Calculation**:
+- Base: 5+
+- Range: Melee (Short) = +0
+- Church moved 3 hexes this turn (climbing Cathedral) = +1 (need 6+)
+- Dwarf moved 0 hexes (holding Cathedral) = +0
+- Attacking front arc (hex 1) = +0
+- R3 terrain (holy ground): +2 Defense to Dwarf (no to-hit modifier)
+- Dwarf on Elevation 2 (same level) = +0
+- **Final To-Hit**: Need **6+**
+
+**Attack Roll**: ⚔️⚔️ (4) + 💀 (5) = **9 total** → **CRITICAL HIT** (+2 damage, bypass 1 Defense)
+
+**Damage Calculation**:
+- Spear Thrust: 4 base damage
+- Critical Hit: +2 damage
+- Elevation 2 advantage: +2 damage (attacking FROM E2)
+- Front arc: +0 damage
+- **Total: 8 damage**
+
+**Defense Roll** (Dwarf rolls 8 Defense Dice):
+- Result: 🛡️ 🛡️ ⚙️ 🩸 🩸 💀 🔥 ⚔️
+- **3 blocks** (🛡️🛡️⚙️) = Reduce to 5 damage
+- **1 Critical** (💀) = +1 Component Damage
+- **1 Heat** (🔥) = +1 Heat to Dwarf
+- Reduced damage: 5
+
+**Apply Modifiers**:
+- Rune Counters (3): -3 damage
+- Reinforced Plating (Heavy Plating passive): -1 Defense
+- R3 holy ground: -2 Defense
+- Critical Hit bypasses 1 Defense = ignore 1 of the -6 total = -5 instead
+- **Final: 5 - 5 = 0 damage** (all blocked!)
+
+**Result**: Dwarf tanks the entire hit thanks to Rune Counters + Reinforced Plating + Cathedral terrain. Church must deal with fortress defense!
 
 ---
 
@@ -619,9 +670,12 @@ After playing this scenario 2-3 times, players should understand:
 Before starting:
 - [ ] Print Quick Reference Sheet
 - [ ] Print or draw 14×12 hex map with Reliquaries marked
-- [ ] Prepare Church deck (30 cards shuffled)
-- [ ] Prepare Dwarven deck (32 cards shuffled)
-- [ ] Prepare 2d6 for Strain checks
+- [ ] Prepare Church deck (28 cards shuffled)
+- [ ] Prepare Dwarven deck (35 cards shuffled)
+- [ ] **Prepare DICE**:
+  - **2 Attack Dice** (custom d6 with ⚔️💀🛡️🩸⚙️ symbols, or regular 2d6)
+  - **10+ Defense Dice** (custom d6 with 🛡️⚙️🩸💀⚔️🔥 symbols, or regular d6)
+  - **2d6 for Initiative** (regular dice)
 - [ ] Prepare tokens for:
   - Heat tracking (0-10+)
   - SP tracking (current SP)
@@ -633,6 +687,10 @@ Before starting:
   - Current HP (cards remaining in deck)
   - Control points per Round (Church vs Dwarves)
   - Consecutive Cathedral control (for 3-Round victory)
+
+**NOTE**: If you don't have custom dice, use regular d6:
+- **Attack Dice**: Face 1=🛡️(1), 2=🩸(2), 3=⚔️(3), 4=⚔️⚔️(4), 5=💀(5), 6=⚙️(0)
+- **Defense Dice**: Face 1=🛡️, 2=⚙️, 3=🩸, 4=💀, 5=⚔️, 6=🔥
 
 ---
 

@@ -388,9 +388,9 @@ If it feels good → **You're ready for external playtest** (friend, online comm
 ### Priority 1: More Factions (Choose 2-3)
 
 **Recommended next factions**:
-1. **Undead Court** (unique resurrection mechanic)
+1. **The Ossuarium** (unique resurrection mechanic)
 2. **Elven Remnants** (regeneration/nature theme)
-3. **Fae Courts** (teleportation/trickery)
+3. **The Wyrd Conclave** (teleportation/trickery)
 
 **Time per faction**: 3-4 hours each
 
@@ -401,7 +401,7 @@ If it feels good → **You're ready for external playtest** (friend, online comm
 4. Create Pilot Wound Deck with faction flavor
 5. Write faction-specific Component Destruction effects
 
-**Example: Undead Court**
+**Example: The Ossuarium**
 - Primary: Necro-Scythe (drain life, reanimate)
 - Unique Mechanic: When defeated, roll 1d6. On 4+, return with 10 HP
 - Component Destruction: Undead don't care (missing arm? Fine, use other one)

@@ -1,16 +1,21 @@
-# EXAMPLE OF PLAY
+# EXAMPLE OF PLAY (WITH DICE SYSTEM)
 
 **Scenario**: Arena Scenario #1 - The Proving Grounds
 **Factions**: Church of Absolution vs Dwarven Clans
 **Players**: Alice (Church) vs Bob (Dwarves)
 
+**UPDATED**: October 11, 2025 - Now includes **dice mechanics** (Attack Dice, Defense Dice)
+
 This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - SP economy and decision-making
-- Combat resolution with facing modifiers
-- Component damage tracking
+- **To-hit rolls with Attack Dice (2d6 custom dice)**
+- **Defense rolls with Defense Dice (1d6 per damage)**
+- Component damage tracking (including 💀 CRITICAL symbols)
 - Heat management and Strain checks
 - Reactive card usage
 - Death spiral mechanics
+
+**NOTE**: Turn 3 features a detailed dice combat example showing how Attack Dice and Defense Dice interact with the existing card system.
 
 ---
 
@@ -329,32 +334,74 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - Range: Melee (1 hex) ✓
 - **ATTACK DECLARED**
 
-**COMBAT RESOLUTION**:
+**COMBAT RESOLUTION (WITH DICE)**:
 
-1. **Calculate Damage**:
-   - Base damage: 4 (Faithful Thrust)
-   - Blood Offering buff: +3 damage
-   - Facing: Alice attacking from REAR arc (+2 dmg)
-   - **Total damage: 4 + 3 + 2 = 9 damage**
-2. **Defense Modifiers**:
-   - Bob's Rune Counters: -3 damage
-   - Bob's Shield Wall: +3 Defense
-   - Bob's terrain (Rubble): +1 Defense
-   - **Total: -7 damage reduction**
-   - **Blood Offering effect**: Ignore 1 Armor → ignore 1 point of reduction → -6 instead of -7
-3. **Final Damage: 9 - 6 = 3 damage**
+**Step 1: Calculate To-Hit Number**
+- Base: 5+
+- Range: Melee (Short) = +0
+- Attacker moved 4 hexes this turn (2 Water + 2 Water) = +2 (need 7+)
+- Defender moved 0 hexes last turn = +0
+- Hex-side facing: Attacking rear (hex 4) = -2 (need **5+**)
+- Cover: Rubble = +1 (need **6+**)
+- **Final To-Hit**: Need **6+**
 
-**Bob takes 3 damage**: Discard top 3 cards from deck
+**Step 2: Roll Attack Dice** (Alice rolls 2d6 Attack Dice)
+- **Roll**: 💀 (5) + ⚔️⚔️ (4) = **9 total**
+- **Result**: **CRITICAL HIT** (+2 damage, bypass 1 Defense)
+
+**Step 3: Calculate Damage**:
+- Base damage: 4 (Faithful Thrust)
+- Blood Offering buff: +3 damage
+- Critical Hit: +2 damage
+- Facing: Rear arc = +3 damage
+- **Total damage: 4 + 3 + 2 + 3 = 12 damage**
+
+**Step 4: Roll Defense Dice** (Bob rolls 12 Defense Dice)
+- **Roll**: 🛡️ 🛡️ 🛡️ ⚙️ ⚙️ 🩸 🩸 🩸 💀 💀 🔥 ⚔️
+- **Blocks**: 5 (🛡️🛡️🛡️⚙️⚙️) = Reduce damage by 5
+- **Criticals**: 2 (💀💀) = +2 Component Damage
+- **Heat**: 1 (🔥) = +1 Heat to Bob
+- **Pierce**: 1 (⚔️) = Cannot use reactive cards
+- **Reduced damage**: 12 - 5 = **7 damage**
+
+**Step 5: Apply Defense Modifiers**:
+- Bob's Rune Counters: -3 damage
+- Bob's Shield Wall: -3 damage
+- Bob's terrain (Rubble): -1 damage (but Critical Hit bypasses 1 Defense)
+- **Total reduction**: -7 damage + 1 (Critical bypass) = **-6 damage**
+- **Blood Offering**: Ignore 1 additional Armor = -5 instead of -6
+
+**Final Damage: 7 - 5 = 2 damage**
+
+**Bob chooses to discard** (2 cards: chooses 1 from hand + 1 from deck):
+- From hand: Advance (Secondary - Siege Shield)
+- From deck: Crushing Blow (Primary Weapon)
 
 **Bob's Discarded Cards**:
 1. Advance (Secondary - Siege Shield)
 2. Crushing Blow (Primary Weapon - Runic Warhammer) ← COMPONENT DAMAGE
 3. Emergency Vent (Universal)
 
-**Component Damage Check**: 1 Primary Weapon card discarded
-- **Component Damage: +1** (Right Arm)
-- Bob's Right Arm Component Damage: 0 → 1
-- **(Needs 3 for destruction)**
+**Component Damage Check**:
+- 1 Primary Weapon card discarded = +1 Component Damage
+- 2 Defense Dice 💀 CRITICAL symbols = +2 Component Damage
+- **Total Component Damage: +3** (Right Arm)
+- Bob's Right Arm Component Damage: 0 → **3**
+- **3 COMPONENT DAMAGE = RIGHT ARM DESTROYED**
+
+**RIGHT ARM DESTRUCTION EFFECT** (Triggered Early!):
+- Bob must **discard all Primary Weapon cards from hand immediately**
+- Bob's current hand:
+  - Crushing Blow (Primary) → DISCARD
+  - Runic Overcharge (Tactic - keep)
+  - Shield Wall (Secondary - keep)
+  - Survey the Field (Universal - keep)
+  - Earthshaker (Primary) → DISCARD
+  - Iron Bulwark (Secondary - keep)
+
+**Bob discards 2 Primary Weapon cards from hand**
+
+**Bob's Reaction**: "My Right Arm is destroyed on Turn 3! I can't use Runic Warhammer attacks anymore. This is catastrophic."
 
 **Bob's Thoughts**: *"That Blood Offering combo is dangerous. If she lands two more hits like that, my Right Arm is destroyed."*
 
