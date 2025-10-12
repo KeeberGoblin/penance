@@ -51,11 +51,14 @@ CASKET DESIGN:
 - Exposed mechanical joints rendered as bronze reliquaries with saint bones visible inside
 
 PILOT:
-- Skeletal figure in tattered priest robes
-- Crown of thorns piercing skull
-- Golden neural threads extending from spine like divine light rays
-- Hands clasped in prayer position despite impalement
-- Ribs showing through torn vestments with bleeding stigmata wounds
+- Pale, corpse-like figure in tattered priest robes (flesh intact but deathly white)
+- Crown of thorns piercing head, drawing blood from scalp
+- Black neural threads (soaked in sanctified oil) extending from fingertips through nail beds
+- Arms bound across chest in mummy's death pose (left over right)
+- Bleeding stigmata wounds on palms, side ribcage, and feet (requires flesh)
+- Eyes closed, face gaunt but still recognizable as human (recent dead)
+- Cilice (spiked belt) visible beneath robes
+- Floating in amber Neural Fluid with faint glow
 
 BACKGROUND:
 - Ruined cathedral with rose window intact (backlit red)
@@ -92,11 +95,12 @@ function.
 
 ```
 Medieval illuminated manuscript: 12ft Church Casket with gothic cathedral armor, stained
-glass pauldrons, twin longswords crossed, thorny crown helmet, skeletal priest pilot with
-stigmata connected by golden threads. Ruined cathedral background with rose window.
-Hand-drawn ink + gold leaf + crimson red. Latin banner "ABSOLUTIO PER SANGUINEM".
-Marginalia: blood chalice, dice, martyred saints. Thorny vine border. 15th century Book
-of Hours style. Aged parchment. Sacred suffering aesthetic.
+glass pauldrons, twin longswords crossed, thorny crown helmet. PALE CORPSE PILOT (flesh
+intact, not skeleton) in tattered priest robes with bleeding stigmata wounds, crown of
+thorns piercing head, arms bound across chest, eyes closed, black threads from fingertips,
+floating in amber fluid. Ruined cathedral background with rose window. Hand-drawn ink +
+gold leaf + crimson red. Latin banner "ABSOLUTIO PER SANGUINEM". Marginalia: blood chalice,
+dice, martyred saints. Thorny vine border. 15th century Book of Hours style. Aged parchment.
 ```
 
 ---
@@ -122,9 +126,12 @@ CASKET DESIGN:
 PILOT:
 - Stocky dwarven skeleton with magnificent braided beard (ossified but intact)
 - Master smith's leather apron and thick gauntlets
-- Golden neural threads connecting spine like intricate clockwork gears
+- Golden neural threads (reinforced with copper wire) connecting to fingertips
 - Monocle lens still affixed to skull socket (magnification for rune-reading)
 - Hammer and chisel crossed on lap
+- Diagnostic readouts reflected in empty eye sockets
+- Floating in clear industrial coolant (practical efficiency)
+- NOTE: Dwarves ARE skeletal (flesh removed for longevity/maintenance efficiency)
 
 BACKGROUND:
 - Underground forge-hall with vaulted stone arches
@@ -166,12 +173,12 @@ patience rendered in iron and stone.
 
 ```
 Medieval illuminated manuscript: 10ft Dwarven fortress-Casket with layered stone plates,
-glowing orange runes, massive tower shield, anvil-sized warhammer. Dwarven skeleton pilot
-with beard, leather apron, monocle, connected by golden gear-threads. Underground forge
-background with anvil and vaulted arches. Hand-drawn ink + gold leaf + forge-orange.
-Latin banner "FERRUM ET PETRA AETERNA". Marginalia: rune diagrams, shield blueprints,
-technical drawings. Geometric knotwork border. Leonardo da Vinci meets medieval guild
-manual style. Aged parchment.
+glowing orange runes, massive tower shield, anvil-sized warhammer. DWARVEN SKELETON PILOT
+with magnificent braided beard (ossified), leather apron, monocle in skull socket, copper-
+reinforced threads from fingertips, floating in clear coolant. Underground forge background
+with anvil and vaulted arches. Hand-drawn ink + gold leaf + forge-orange. Latin banner
+"FERRUM ET PETRA AETERNA". Marginalia: rune diagrams, shield blueprints, technical drawings.
+Geometric knotwork border. Leonardo da Vinci meets medieval guild manual style. Aged parchment.
 ```
 
 ---
@@ -272,12 +279,16 @@ CASKET DESIGN:
 - Panels show tree rings (age markers) and seasonal growth patterns
 
 PILOT:
-- Elven skeleton with elongated graceful bones
-- Withered flower crown (seasonal blooms now dry)
-- Green tattered cloak made from woven leaves (preserved like pressed flowers)
-- Golden neural threads sprouting like plant shoots from spine
-- Fingers still elegant despite being bare bone
-- Pose: Drawing invisible bowstring (eternal hunt)
+- Semi-mummified elf with amber-preserved flesh (like tree resin encasement)
+- Skin has bark-like texture (partially wooden, plant-human hybrid)
+- Withered flower crown woven into hair (seasonal blooms preserved)
+- Green-white neural threads sprouting organically from fingertips, temples, and spine
+- Threads look like plant roots, not metal wires (living tissue, not surgical implants)
+- Tattered cloak made from woven leaves (pressed and preserved like herbarium specimen)
+- Eyes closed, face serene but alien (gradual transformation over decades)
+- Arms bound across chest, hands positioned as if holding invisible bow
+- Floating in thick amber sap-fluid (honey-colored, sticky)
+- Capsule interior shows living bark growing inward (pilot partially fused with walls)
 
 BACKGROUND:
 - Ancient forest with massive trees (trunks wider than houses)
@@ -322,12 +333,14 @@ Death as part of the cycle. Elegant savagery.
 ```
 Medieval illuminated manuscript: 11ft Elven Casket with living wood armor showing bark
 texture, thorny vine musculature, stag-skull helmet with antler crown, longbow drawn,
-roots anchoring to earth. Elven skeleton pilot in leaf-cloak with flower crown, connected
-by plant-shoot threads. Ancient forest background with light shafts through canopy, deer
-skeleton fleeing. Hand-drawn ink + gold leaf + forest green + bioluminescent blue. Latin
-banner "NATURA MORTIS VENATOR". Marginalia: Bleed counters, botanical studies, Hunter's
-Patience sketch. Ivy-and-thorn border with spider webs. Medieval hunting manuscript meets
-herbal codex style. Aged parchment.
+roots anchoring to earth. SEMI-MUMMIFIED ELF PILOT (amber-preserved flesh with bark-like
+skin texture, not skeleton) in leaf-cloak with flower crown, green-white root-threads
+sprouting from fingertips/temples/spine, eyes closed, floating in thick amber sap-fluid,
+partially fused with bark-lined capsule walls. Ancient forest background with light shafts
+through canopy, deer skeleton fleeing. Hand-drawn ink + gold leaf + forest green +
+bioluminescent blue. Latin banner "NATURA MORTIS VENATOR". Marginalia: Bleed counters,
+botanical studies, Hunter's Patience sketch. Ivy-and-thorn border with spider webs. Medieval
+hunting manuscript meets herbal codex style. Aged parchment.
 ```
 
 ---
