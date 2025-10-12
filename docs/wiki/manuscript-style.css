@@ -1,0 +1,547 @@
+/*
+ * PENANCE WIKI - 15TH CENTURY MANUSCRIPT STYLE
+ * Dark Gothic Aesthetic with Human Leather Texture
+ * Inspired by medieval illuminated manuscripts and grimoires
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Crimson+Pro:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Gothic Color Palette */
+    --parchment-dark: #1a1410;
+    --leather-brown: #2b1f17;
+    --blood-red: #4a0e0e;
+    --dark-red: #6b1a1a;
+    --blackish-red: #2d0a0a;
+    --bone-white: #d4c5b0;
+    --aged-gold: #8b7355;
+    --shadow-black: #0a0604;
+    --crimson-text: #8b0000;
+
+    /* Textures */
+    --leather-texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="400" height="400" filter="url(%23noise)" opacity="0.15"/></svg>');
+}
+
+body {
+    font-family: 'IM Fell English', 'Crimson Pro', Georgia, serif;
+    background-color: var(--parchment-dark);
+    background-image:
+        var(--leather-texture),
+        linear-gradient(to bottom, var(--leather-brown) 0%, var(--parchment-dark) 50%, var(--shadow-black) 100%);
+    background-attachment: fixed;
+    color: var(--bone-white);
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+}
+
+/* Decorative Page Border */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 20px solid transparent;
+    border-image: linear-gradient(
+        135deg,
+        var(--dark-red) 0%,
+        var(--blackish-red) 25%,
+        var(--blood-red) 50%,
+        var(--blackish-red) 75%,
+        var(--dark-red) 100%
+    ) 20;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Gothic Header */
+.header {
+    background: linear-gradient(to bottom, var(--blackish-red), var(--blood-red));
+    border-bottom: 4px double var(--dark-red);
+    padding: 2rem 3rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+.header::before {
+    content: '⸸';
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    color: var(--dark-red);
+    opacity: 0.5;
+}
+
+.header::after {
+    content: '⸸';
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+    font-size: 2.5rem;
+    color: var(--dark-red);
+    opacity: 0.5;
+}
+
+.header-title {
+    font-family: 'UnifrakturMaguntia', 'IM Fell English', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--bone-white);
+    text-shadow:
+        2px 2px 4px var(--shadow-black),
+        0 0 20px rgba(139, 0, 0, 0.5);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+.header-subtitle {
+    font-family: 'IM Fell English', serif;
+    color: var(--aged-gold);
+    font-size: 0.95rem;
+    font-style: italic;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+/* Container Layout */
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: calc(100vh - 160px);
+    margin: 0 20px 20px 20px;
+}
+
+/* Gothic Sidebar */
+.sidebar {
+    background: linear-gradient(to bottom,
+        rgba(43, 31, 23, 0.95),
+        rgba(26, 20, 16, 0.95)
+    );
+    border-right: 4px double var(--dark-red);
+    padding: 2rem 1.5rem;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--leather-texture);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.nav-section {
+    margin-bottom: 2.5rem;
+    position: relative;
+    border-bottom: 1px solid var(--blood-red);
+    padding-bottom: 1.5rem;
+}
+
+.nav-section:last-child {
+    border-bottom: none;
+}
+
+.nav-title {
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--dark-red);
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-shadow: 1px 1px 2px var(--shadow-black);
+    position: relative;
+}
+
+.nav-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--dark-red), transparent);
+    margin: 0.5rem auto 0;
+}
+
+.nav-link {
+    display: block;
+    color: var(--bone-white);
+    text-decoration: none;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.875rem;
+    border-left: 3px solid transparent;
+    padding-left: 1rem;
+    margin-bottom: 0.35rem;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'IM Fell English', serif;
+}
+
+.nav-link::before {
+    content: '❦';
+    position: absolute;
+    left: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--dark-red);
+}
+
+.nav-link:hover {
+    border-left-color: var(--dark-red);
+    color: var(--aged-gold);
+    padding-left: 1.25rem;
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+.nav-link.active {
+    border-left-color: var(--bone-white);
+    font-weight: 700;
+    background: rgba(75, 14, 14, 0.2);
+}
+
+/* Main Content Area */
+.content {
+    padding: 3rem 4rem;
+    max-width: 1100px;
+    background: linear-gradient(to bottom,
+        rgba(26, 20, 16, 0.85),
+        rgba(10, 6, 4, 0.9)
+    );
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--leather-texture);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.breadcrumb {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.85rem;
+    color: var(--aged-gold);
+    margin-bottom: 2rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb a {
+    color: var(--bone-white);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--aged-gold);
+}
+
+.breadcrumb a:hover {
+    color: var(--dark-red);
+    border-bottom-color: var(--dark-red);
+}
+
+/* Typography - Gothic Manuscript Style */
+.content h1 {
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--bone-white);
+    border-bottom: 3px double var(--dark-red);
+    padding-bottom: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px var(--shadow-black);
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 1;
+}
+
+.content h1::first-letter {
+    font-size: 4.5rem;
+    color: var(--dark-red);
+    float: left;
+    line-height: 0.8;
+    margin-right: 0.1em;
+    text-shadow: 3px 3px 6px var(--shadow-black);
+}
+
+.content h2 {
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    color: var(--dark-red);
+    text-shadow: 1px 1px 2px var(--shadow-black);
+    border-left: 6px solid var(--blood-red);
+    padding-left: 1.5rem;
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+}
+
+.content h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--aged-gold);
+    font-weight: 600;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.content p {
+    margin-bottom: 1.25rem;
+    color: var(--bone-white);
+    text-align: justify;
+    hyphens: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.content p:first-of-type::first-letter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-red);
+    float: left;
+    line-height: 1;
+    margin-right: 0.1em;
+    font-family: 'UnifrakturMaguntia', serif;
+}
+
+/* Lists with Gothic Style */
+.content ul,
+.content ol {
+    margin-left: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--bone-white);
+    position: relative;
+    z-index: 1;
+}
+
+.content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+}
+
+.content li::marker {
+    color: var(--dark-red);
+}
+
+/* Gothic Tables */
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2.5rem 0;
+    background: rgba(10, 6, 4, 0.8);
+    border: 2px solid var(--blood-red);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.content th,
+.content td {
+    border: 1px solid var(--dark-red);
+    padding: 1rem;
+    text-align: left;
+}
+
+.content th {
+    background: linear-gradient(to bottom, var(--blood-red), var(--blackish-red));
+    font-family: 'UnifrakturMaguntia', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--bone-white);
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px 2px var(--shadow-black);
+}
+
+.content tr:nth-child(even) {
+    background: rgba(43, 31, 23, 0.3);
+}
+
+.content tr:hover {
+    background: rgba(75, 14, 14, 0.2);
+}
+
+/* Links - Illuminated Style */
+.content a {
+    color: var(--aged-gold);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--aged-gold);
+    transition: all 0.3s ease;
+}
+
+.content a:hover {
+    color: var(--dark-red);
+    border-bottom: 1px solid var(--dark-red);
+    text-shadow: 0 0 8px rgba(139, 0, 0, 0.5);
+}
+
+/* Code Blocks - Grimoire Style */
+.content code {
+    background: rgba(10, 6, 4, 0.9);
+    border: 1px solid var(--blood-red);
+    padding: 0.25rem 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--aged-gold);
+}
+
+.content pre {
+    background: rgba(10, 6, 4, 0.95);
+    border: 2px solid var(--blood-red);
+    border-left: 6px solid var(--dark-red);
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Special Callout Boxes - Illuminated Manuscript Style */
+.content > div[style*="background"] {
+    background: linear-gradient(135deg,
+        rgba(75, 14, 14, 0.4),
+        rgba(45, 10, 10, 0.6)
+    ) !important;
+    border: 2px solid var(--blood-red) !important;
+    border-left: 8px solid var(--dark-red) !important;
+    padding: 2rem !important;
+    margin: 2.5rem 0 !important;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+.content > div[style*="background"]::before {
+    content: '❦';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: var(--dark-red);
+    opacity: 0.3;
+}
+
+/* Playtest Ready Box - Special Styling */
+.content > div[style*="border-left: 4px solid"] h2:first-child {
+    font-family: 'UnifrakturMaguntia', serif !important;
+    color: var(--dark-red) !important;
+    text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+    letter-spacing: 0.15em;
+}
+
+/* Quote Blocks - Medieval Manuscript Style */
+.content > div[style*="font-style: italic"] {
+    background: rgba(10, 6, 4, 0.9) !important;
+    border: 3px double var(--dark-red) !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    font-family: 'IM Fell English', serif !important;
+    font-size: 1.15rem !important;
+    color: var(--aged-gold) !important;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+}
+
+.content > div[style*="font-style: italic"]::before {
+    content: '"';
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    font-size: 6rem;
+    color: var(--blood-red);
+    opacity: 0.2;
+    font-family: 'UnifrakturMaguntia', serif;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 968px) {
+    body::before {
+        border-width: 10px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin: 0 10px 10px 10px;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 4px double var(--dark-red);
+    }
+
+    .content {
+        padding: 2rem 1.5rem;
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Scrollbar Styling - Gothic */
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--shadow-black);
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+    border: 1px solid var(--blood-red);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--blood-red), var(--blackish-red));
+    border: 1px solid var(--dark-red);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-red);
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--blood-red);
+    color: var(--bone-white);
+}
+
+::-moz-selection {
+    background: var(--blood-red);
+    color: var(--bone-white);
+}
