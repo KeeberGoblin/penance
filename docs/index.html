@@ -641,7 +641,7 @@
             <a href="#playtest" class="nav-link" style="color: var(--blood-red);">PLAYTEST</a>
             <a href="cards/" class="nav-link">DATABASE</a>
             <a href="wiki/" class="nav-link">WIKI</a>
-            <button class="theme-toggle" id="themeToggle">📜 Manuscript</button>
+            <button class="theme-toggle" id="themeToggle">[Manuscript]</button>
         </div>
     </nav>
 
@@ -1194,17 +1194,17 @@
         const currentTheme = localStorage.getItem('theme') || 'brutalist';
         if (currentTheme === 'manuscript') {
             body.classList.add('manuscript-theme');
-            themeToggle.textContent = '⚔️ Brutalist';
+            themeToggle.textContent = '[Brutalist]';
         }
 
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('manuscript-theme');
 
             if (body.classList.contains('manuscript-theme')) {
-                themeToggle.textContent = '⚔️ Brutalist';
+                themeToggle.textContent = '[Brutalist]';
                 localStorage.setItem('theme', 'manuscript');
             } else {
-                themeToggle.textContent = '📜 Manuscript';
+                themeToggle.textContent = '[Manuscript]';
                 localStorage.setItem('theme', 'brutalist');
             }
         });
