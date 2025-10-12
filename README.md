@@ -14,7 +14,7 @@ A tactical hex-based card game of grimdark medieval fantasy mech combat where re
 
 ### Quick Start: Your First Game in 60 Minutes
 
-1. **Download**: [PLAYTEST-READY.md](PLAYTEST-READY.md) - Complete playtest package guide
+1. **Download**: [PLAYTEST-READY.md](docs/reference/PLAYTEST-READY.md) - Complete playtest package guide
 2. **Print**: Quick reference sheet + scenario map
 3. **Build Decks**: Church (30 cards) or Dwarves (32 cards)
 4. **Play**: 45-60 minute tactical combat
@@ -126,8 +126,10 @@ Each turn you refresh your Soul Points (SP) to maximum:
 - [Quick Reference Sheet](docs/rules/quick-reference.md) - 1-page printable
 
 ### Complete Faction Decks
-- [Church of Absolution](docs/factions/church/deck-complete.md) - 30 cards, 4 equipment options, 5 tactics
-- [Dwarven Clans](docs/factions/dwarves/deck-complete.md) - 32 cards, 4 equipment options, 5 tactics
+- [Church of Absolution](docs/factions/church/deck-equipment-system.md) - Aggressive martyrdom, self-harm mechanics
+- [Dwarven Forge-Guilds](docs/factions/dwarves/deck-equipment-system.md) - Fortress defender, rune stacking
+- [The Ossuarium](docs/factions/ossuarium/deck-equipment-system.md) - Lifesteal vampire, resurrections
+- [Elven Verdant Covenant](docs/factions/elves/deck-equipment-system.md) - Hit-and-run, infinite bleed stacking
 
 ### World & Lore
 - [World Overview](docs/lore/world-overview.md) - 437-year timeline, 9 factions, historical eras
@@ -189,8 +191,8 @@ Each turn you refresh your Soul Points (SP) to maximum:
 ```
 penance/
 ├── README.md                          # You are here
-├── PLAYTEST-READY.md                  # Complete playtest package overview
 ├── QUICKSTART.md                      # Fast setup guide
+├── CLAUDE.md                          # AI assistant context document
 │
 ├── docs/
 │   ├── index.html                     # Main website (timeline, factions, lore)
@@ -209,9 +211,13 @@ penance/
 │   │   ├── relationships.md           # Faction relationship matrix
 │   │   ├── casket-types.md            # 36 unique Caskets
 │   │   ├── church/
-│   │   │   └── deck-complete.md       # Church 30-card deck
-│   │   └── dwarves/
-│   │       └── deck-complete.md       # Dwarves 32-card deck
+│   │   │   └── deck-equipment-system.md  # Church v2.0 equipment system
+│   │   ├── dwarves/
+│   │   │   └── deck-equipment-system.md  # Dwarves v2.0 equipment system
+│   │   ├── ossuarium/
+│   │   │   └── deck-equipment-system.md  # Ossuarium equipment system
+│   │   └── elves/
+│   │       └── deck-equipment-system.md  # Elves equipment system
 │   │
 │   ├── cards/                         # Card database
 │   │   ├── index.html                 # Interactive card browser
@@ -253,9 +259,14 @@ penance/
 │       ├── index.html                 # Wiki homepage
 │       └── faction-church.html        # Church faction page
 │
+├── archive/                           # Historical documents
+│   ├── README.md                      # Archive index
+│   └── [deprecated files]             # Old versions and tools
+│
 └── tools/                             # Development utilities
-    ├── card-generator/                # Card template generator
-    └── generate-tts-deck.py           # TTS integration script
+    ├── generate-pdfs.py               # Professional PDF generator
+    ├── generate-tts-deck.py           # TTS integration script
+    └── TTS-IMPORT-GUIDE.md            # TTS setup guide
 ```
 
 ---
@@ -264,8 +275,8 @@ penance/
 
 ### For Playtesters
 
-1. **Read**: [PLAYTEST-READY.md](PLAYTEST-READY.md) - Setup guide
-2. **Choose Faction**: [Church](docs/factions/church/deck-complete.md) or [Dwarves](docs/factions/dwarves/deck-complete.md)
+1. **Read**: [PLAYTEST-READY.md](docs/reference/PLAYTEST-READY.md) - Setup guide
+2. **Choose Faction**: [Church](docs/factions/church/deck-equipment-system.md), [Dwarves](docs/factions/dwarves/deck-equipment-system.md), [Ossuarium](docs/factions/ossuarium/deck-equipment-system.md), or [Elves](docs/factions/elves/deck-equipment-system.md)
 3. **Pick Scenario**: [Proving Grounds](docs/scenarios/01-proving-grounds.md) (beginner) or [Reliquary Ruins](docs/scenarios/02-reliquary-ruins.md) (intermediate)
 4. **Print**: [Quick Reference Sheet](docs/rules/quick-reference.md)
 5. **Play**: 45-60 minutes
@@ -274,7 +285,7 @@ penance/
 ### For Designers
 
 1. **Core Systems**: Read [Turn Structure](docs/rules/turn-structure.md) + [Combat System](docs/rules/combat-system.md)
-2. **Faction Design**: Study [Church](docs/factions/church/deck-complete.md) vs [Dwarves](docs/factions/dwarves/deck-complete.md) asymmetry
+2. **Faction Design**: Study [Church](docs/factions/church/deck-equipment-system.md) vs [Dwarves](docs/factions/dwarves/deck-equipment-system.md) asymmetry
 3. **World Building**: Explore [World Overview](docs/lore/world-overview.md) + [Casket Types](docs/factions/casket-types.md)
 4. **Campaign**: Review [Settlements](docs/campaigns/settlements.md) + [Leg Skimming](docs/campaigns/leg-skimming.md)
 
@@ -339,7 +350,7 @@ You are free to share and adapt this material for non-commercial purposes with a
 
 ### v1.0 Playtest (2025-10-10)
 **PLAYTEST READY** - Complete game systems ready for table play
-- 64-page playtest package with 2 factions, 2 scenarios
+- 64-page playtest package with 4 factions, 2 scenarios
 - GKR + KDM hybrid combat (deck-as-HP, component destruction, death spiral)
 - Church vs Dwarves asymmetric faction decks
 - Example of Play walkthrough

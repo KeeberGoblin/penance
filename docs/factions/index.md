@@ -4,19 +4,25 @@ Nine powers struggle for control of a dying world. Each is broken. None are hero
 
 ## Playable Factions (Complete)
 
-### [Church of Absolution](church/deck-complete.md)
+### [Church of Absolution](church/deck-equipment-system.md)
 **Playstyle**: Aggressive self-harm martyrdom
-**Primary Weapon**: Penitent Blades
-**Mechanic**: Discard cards for burst damage, Blood Offering combos
-**HP**: 30 cards
-**Status**: ✅ Complete with 30-card deck
+**Mechanic**: Discard cards for burst damage, Blood Offering combos, infinite scaling
+**Status**: ✅ Complete with v2.0 equipment system
 
-### [Dwarven Clans](dwarves/deck-complete.md)
+### [Dwarven Forge-Guilds](dwarves/deck-equipment-system.md)
 **Playstyle**: Defensive attrition fortress
-**Primary Weapon**: Runic Warhammer
-**Mechanic**: Rune Counters for damage reduction, armor-piercing
-**HP**: 32 cards (Stone Endurance)
-**Status**: ✅ Complete with 32-card deck
+**Mechanic**: Rune Counters for damage reduction, armor-piercing, Heat conversion
+**Status**: ✅ Complete with v2.0 equipment system
+
+### [The Ossuarium](ossuarium/deck-equipment-system.md)
+**Playstyle**: Lifesteal vampire with resurrections
+**Mechanic**: Soul Harvest triggers, Decay cards, death rewards, thrall summoning
+**Status**: ✅ Complete with v2.0 equipment system
+
+### [Elven Verdant Covenant](elves/deck-equipment-system.md)
+**Playstyle**: Hit-and-run assassin with infinite scaling
+**Mechanic**: Bleed stacking (infinite), mobility, regeneration, stealth
+**Status**: ✅ Complete with v2.0 equipment system
 
 ---
 
@@ -33,10 +39,8 @@ How faction-specific Tactics cards work. Choose 2 from 5 per faction.
 
 ---
 
-## Coming Factions
+## Design-Only Factions (Not Yet Playable)
 
-- **Elven Verdant Covenant**: Thorn barriers, corpse-tree gardens, isolationist vengeance
-- **The Ossuarium**: Necromantic research, reanimation, cold calculation
 - **The Wyrd Conclave**: Reality distortion, stolen faces, incomprehensible logic
 - **Nomad Collective**: Survival through mobility, reality fracture prediction
 - **Merchant Guilds**: War profiteering, economic control, selling to all sides

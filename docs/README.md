@@ -6,11 +6,11 @@ Welcome to the complete documentation for **Penance: Absolution Through Steel**.
 
 ## Quick Start
 
-**[PLAYTEST-READY Package](../PLAYTEST-READY.md)** - Everything you need for your first game
+**[PLAYTEST-READY Package](reference/PLAYTEST-READY.md)** - Everything you need for your first game
 
 **New to Penance?** Start here:
-1. Read the [Playtest Package](../PLAYTEST-READY.md)
-2. Choose [Church](factions/church/deck-complete.md) or [Dwarves](factions/dwarves/deck-complete.md)
+1. Read the [Playtest Package](reference/PLAYTEST-READY.md)
+2. Choose a faction: [Church](factions/church/deck-equipment-system.md), [Dwarves](factions/dwarves/deck-equipment-system.md), [Ossuarium](factions/ossuarium/deck-equipment-system.md), or [Elves](factions/elves/deck-equipment-system.md)
 3. Play [The Proving Grounds](scenarios/01-proving-grounds.md) scenario
 4. Reference the [Quick Sheet](rules/quick-reference.md) during play
 
@@ -29,8 +29,10 @@ Core game mechanics - turn structure, combat, deck building, terrain
 
 ### [Factions](factions/)
 Playable factions with complete deck lists and lore
-- [Church of Absolution](factions/church/deck-complete.md) - 30 cards (aggressive martyrdom)
-- [Dwarven Clans](factions/dwarves/deck-complete.md) - 32 cards (defensive fortress)
+- [Church of Absolution](factions/church/deck-equipment-system.md) - Aggressive martyrdom
+- [Dwarven Forge-Guilds](factions/dwarves/deck-equipment-system.md) - Fortress defender
+- [The Ossuarium](factions/ossuarium/deck-equipment-system.md) - Lifesteal vampire
+- [Elven Verdant Covenant](factions/elves/deck-equipment-system.md) - Hit-and-run assassin
 - [Faction Relationships](factions/relationships.md)
 - [Casket Types](factions/casket-types.md) - 36 unique designs
 
