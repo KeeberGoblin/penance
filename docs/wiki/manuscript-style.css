@@ -697,3 +697,192 @@ p.no-drop-cap::first-letter {
     background: var(--blood-red);
     color: var(--bone-white);
 }
+
+/* Manuscript Page Styles (for faction pages in iframe) */
+.manuscript-page {
+    padding: 3rem 4rem 3rem 140px; /* 100px offset from left + 40px padding */
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom,
+        rgba(26, 20, 16, 0.85),
+        rgba(10, 6, 4, 0.9)
+    );
+    min-height: 100vh;
+    position: relative;
+}
+
+.manuscript-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--leather-texture);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.illuminated-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.illuminated-header .drop-cap {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 6rem;
+    color: var(--dark-red);
+    text-shadow: 3px 3px 6px var(--shadow-black);
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1;
+    margin-right: -0.1em;
+}
+
+.illuminated-header .title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 3rem;
+    color: var(--bone-white);
+    text-shadow: 2px 2px 4px var(--shadow-black);
+    letter-spacing: 0.08em;
+    display: inline;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.illuminated-header .subtitle {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.1rem;
+    color: var(--aged-gold);
+    font-style: italic;
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.manuscript-text {
+    margin-bottom: 1.25rem;
+    color: var(--bone-white);
+    text-align: justify;
+    hyphens: auto;
+    position: relative;
+    z-index: 1;
+    line-height: 1.75;
+}
+
+.manuscript-list {
+    margin-left: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--bone-white);
+    position: relative;
+    z-index: 1;
+}
+
+.manuscript-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+}
+
+.manuscript-list li::marker {
+    color: var(--dark-red);
+}
+
+.manuscript-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2.5rem 0;
+    background: rgba(10, 6, 4, 0.8);
+    border: 2px solid var(--blood-red);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.manuscript-table th,
+.manuscript-table td {
+    border: 1px solid var(--dark-red);
+    padding: 1rem;
+    text-align: left;
+}
+
+.manuscript-table th {
+    background: linear-gradient(to bottom, var(--blood-red), var(--blackish-red));
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--bone-white);
+    letter-spacing: 0.08em;
+    text-shadow: 1px 1px 2px var(--shadow-black);
+}
+
+.manuscript-table thead th {
+    background: linear-gradient(to bottom, var(--blood-red), var(--blackish-red));
+}
+
+.manuscript-table tr:nth-child(even) {
+    background: rgba(43, 31, 23, 0.3);
+}
+
+.manuscript-table tr:hover {
+    background: rgba(75, 14, 14, 0.2);
+}
+
+.ornamental-break {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--dark-red);
+    margin: 2rem 0;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 1rem;
+}
+
+.manuscript-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 3px double var(--dark-red);
+    color: var(--aged-gold);
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+.manuscript-footer a {
+    color: var(--bone-white);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--aged-gold);
+}
+
+.manuscript-footer a:hover {
+    color: var(--dark-red);
+    border-bottom-color: var(--dark-red);
+}
+
+/* Mobile adjustments for manuscript pages */
+@media (max-width: 968px) {
+    .manuscript-page {
+        padding: 2rem 1.5rem 2rem 50px; /* Reduced offset on mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    .manuscript-page {
+        padding: 1.5rem 1rem 1.5rem 30px; /* Minimal offset on small screens */
+    }
+
+    .illuminated-header .drop-cap {
+        font-size: 4rem;
+    }
+
+    .illuminated-header .title {
+        font-size: 2rem;
+    }
+
+    .illuminated-header .subtitle {
+        font-size: 0.95rem;
+    }
+}
