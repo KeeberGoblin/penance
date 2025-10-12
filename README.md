@@ -138,6 +138,7 @@ Each turn you refresh your Soul Points (SP) to maximum:
   - [Elven Support Units](docs/factions/elves/support-units.md) - 6 units: Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant
 
 ### World & Lore
+- [Cosmology & Origins](docs/lore/cosmology-and-origins.md) - Why fantasy creatures exist, alternate-Earth setting explained
 - [World Overview](docs/lore/world-overview.md) - 437-year timeline, 9 factions, historical eras
 - [Puppeteer Capsule System](docs/reference/casket-control-system.md) - Neural thread control interface
 - [Leg-Skimming System](docs/campaigns/leg-skimming.md) - Permanent sacrifice for power

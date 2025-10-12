@@ -8,6 +8,16 @@
 
 ## The Cataclysm: The Sundering
 
+### Before You Read: Understanding the World
+
+For a complete explanation of **why fantasy creatures exist**, **how this relates to our reality**, and **the true nature of the three-layered cosmos (Material World, Feywild, and Void)**, see:
+
+**[Cosmology & Origins](cosmology-and-origins.md)** - The definitive guide to Penance's alternate-Earth setting.
+
+**Short version**: Penance takes place on an alternate Earth where magic and non-human species (elves, dwarves, fae) existed in hiding for millennia. Nikolas Theslar was a human scientist who unknowingly destroyed the world by tearing open the dimensional barriers between all three layers of reality.
+
+---
+
 ### What Happened (Historical Truth)
 
 **Year 0 - The Sundering Event**
