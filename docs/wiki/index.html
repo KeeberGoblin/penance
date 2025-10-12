@@ -6,7 +6,29 @@
     <title>Penance: Manuscript of Caskets and Bound Souls</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
-        /* Active link styling for faction pages only */
+        /* Iframe with full-height matching */
+        .content-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+        }
+
+        /* Make content container fill available height */
+        .content {
+            padding: 0;
+            max-width: none;
+            background: transparent;
+            box-shadow: none;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .content::before {
+            display: none;
+        }
+
+        /* Active link styling */
         .nav-link.active {
             border-left-color: var(--bone-white);
             font-weight: 700;
@@ -28,7 +50,7 @@
             <!-- 1. LORE & WORLD (Context First) -->
             <div class="nav-section">
                 <div class="nav-title">Lore & World</div>
-                <a href="cosmology.html" class="nav-link">Cosmology & Origins</a>
+                <a class="nav-link" onclick="loadContent('cosmology.html'); return false;">Cosmology & Origins</a>
                 <a href="https://github.com/KeeberGoblin/penance/blob/main/docs/lore/world-overview.md" class="nav-link" target="_blank">The Sundering</a>
                 <a href="https://github.com/KeeberGoblin/penance/blob/main/docs/lore/resonance-engine.md" class="nav-link" target="_blank">Resonance Engine</a>
                 <a href="https://github.com/KeeberGoblin/penance/blob/main/docs/lore/chronicle.md" class="nav-link" target="_blank">Chronicle (437 Years)</a>
@@ -48,10 +70,10 @@
             <!-- 3. PLAYABLE FACTIONS (Choose Your Army) -->
             <div class="nav-section">
                 <div class="nav-title">Playable Factions</div>
-                <a href="faction-church.html" class="nav-link">Church of Absolution</a>
-                <a href="faction-dwarves.html" class="nav-link">Dwarven Forge-Guilds</a>
-                <a href="faction-undead.html" class="nav-link">The Ossuarium</a>
-                <a href="faction-elves.html" class="nav-link">Elven Verdant Covenant</a>
+                <a class="nav-link" onclick="loadContent('faction-church.html'); return false;">Church of Absolution</a>
+                <a class="nav-link" onclick="loadContent('faction-dwarves.html'); return false;">Dwarven Forge-Guilds</a>
+                <a class="nav-link" onclick="loadContent('faction-undead.html'); return false;">The Ossuarium</a>
+                <a class="nav-link" onclick="loadContent('faction-elves.html'); return false;">Elven Verdant Covenant</a>
             </div>
 
             <!-- 4. EQUIPMENT & DECK BUILDING (Customize) -->
@@ -94,11 +116,11 @@
             <!-- 8. FACTIONS (Design Only) -->
             <div class="nav-section">
                 <div class="nav-title">Design Only</div>
-                <a href="faction-fae.html" class="nav-link">The Wyrd Conclave</a>
-                <a href="faction-nomads.html" class="nav-link">Nomad Collective</a>
-                <a href="faction-merchants.html" class="nav-link">Merchant Guilds</a>
-                <a href="faction-blighted.html" class="nav-link">Blighted Packs</a>
-                <a href="faction-chitinous.html" class="nav-link">Chitinous Ascendancy</a>
+                <a class="nav-link" onclick="loadContent('faction-fae.html'); return false;">The Wyrd Conclave</a>
+                <a class="nav-link" onclick="loadContent('faction-nomads.html'); return false;">Nomad Collective</a>
+                <a class="nav-link" onclick="loadContent('faction-merchants.html'); return false;">Merchant Guilds</a>
+                <a class="nav-link" onclick="loadContent('faction-blighted.html'); return false;">Blighted Packs</a>
+                <a class="nav-link" onclick="loadContent('faction-chitinous.html'); return false;">Chitinous Ascendancy</a>
             </div>
 
             <!-- 9. PLAYTEST RESOURCES (Downloads) -->
@@ -116,241 +138,31 @@
             </div>
         </nav>
 
-        <!-- Main Content -->
+        <!-- Content Frame -->
         <main class="content">
-            <h1>The Manuscript of Penance</h1>
-
-            <p>Welcome, seeker of the Bound. Herein lies the complete chronicle of Penance: a grimoire of iron, blood, and redemption. Study well these pages, for knowledge is the only armor against the darkness.</p>
-
-            <div style="background: var(--blood-red); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2.5rem 0;">
-                <h2>Playtest Ready: Version 2.0</h2>
-                <p>The great work is complete. Four factions stand ready for battle, their Caskets armed and their souls bound. Take up arms and seek absolution.</p>
-                <p><strong>Contents of this Grimoire:</strong></p>
-                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
-                    <li>Setup Time: 15 minutes of preparation</li>
-                    <li>Battle Duration: 45-60 minutes of bloodshed</li>
-                    <li>Four Complete Factions (Church, Dwarves, Ossuarium, Elves)</li>
-                    <li>24 Support Units with Behavior Decks</li>
-                    <li>Variable Deck Sizes (26-50 cards, as fate allows)</li>
-                    <li>60+ Equipment Items (weapons, shields, sigils)</li>
-                    <li>16 Weapon Move Sets (89 cards of martial technique)</li>
-                </ul>
-                <p><a href="../pdfs/reference-PLAYTEST-READY.pdf" download>→ Download the Complete Playtest Codex (PDF)</a></p>
-            </div>
-
-            <h2>For the Uninitiated</h2>
-
-            <p>If you are new to the ways of the Bound, begin your journey here:</p>
-
-            <ul>
-                <li><strong><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/rules/turn-structure.md" target="_blank">Turn Structure</a></strong> - Learn the four phases of combat</li>
-                <li><strong><a href="../pdfs/reference-PLAYTEST-READY.pdf" download>Playtest Codex (PDF)</a></strong> - Complete guide with pre-built decks</li>
-                <li><strong><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/scenarios/01-proving-grounds.md" target="_blank">First Blood</a></strong> - The Proving Grounds scenario (45-60 minutes)</li>
-                <li><strong><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/scenarios/example-of-play.md" target="_blank">Example of Play</a></strong> - A complete battle walkthrough</li>
-            </ul>
-
-            <h2>The Manuscript's Contents</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>CHAPTER</th>
-                        <th>CONTENTS</th>
-                        <th>STATUS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Playtest v2.0</strong></td>
-                        <td>Complete rules, 4 faction decks, 24 support units, 2 scenarios, dice system</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Factions (Playable)</strong></td>
-                        <td>Church, Dwarves, Ossuarium, Elves - modular equipment (26-50 cards)</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Support Units</strong></td>
-                        <td>24 AI companions with behavior decks (6 per faction, GKR-inspired)</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Equipment System</strong></td>
-                        <td>60+ weapons, shields, plating, sigils - craftable and lootable</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Weapon Move Sets</strong></td>
-                        <td>16 weapons with complete card sets (89 total cards)</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Scenarios</strong></td>
-                        <td>Proving Grounds (deathmatch), Reliquary Ruins (objective control)</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Dice System</strong></td>
-                        <td>3 custom dice types (Attack, Defense, Suffering) with symbols</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                    <tr style="opacity: 0.6;">
-                        <td>Factions (Design Only)</td>
-                        <td>Wyrd Conclave, Nomads, Merchants, Blighted, Chitinous</td>
-                        <td>⏳ Future Works</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Campaign</strong></td>
-                        <td>Event tables (132), anomalous events (100), settlements, loot</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Lore & Cosmology</strong></td>
-                        <td>437-year timeline, The Sundering, faction histories, species origins, three-layered cosmos</td>
-                        <td>✅ Complete</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Genesis of the Project</h2>
-
-            <p>The journey from concept to playable grimoire spanned two decades:</p>
-
-            <ul>
-                <li><strong>2005</strong> - Project Arena Mech conceptualized in a binder (mech combat, hex-based tactics)</li>
-                <li><strong>2016</strong> - Discovered Kingdom Death: Monster - Added brutal progression, event tables, permanent consequences</li>
-                <li><strong>2018</strong> - Backed GKR: Heavy Hitters on Kickstarter - Inspired by deck-as-HP and SP economy</li>
-                <li><strong>2018-2024</strong> - Hiatus due to constraints in cohesive boardgame mechanics knowledge</li>
-                <li><strong>October 2024</strong> - With Claude AI assistance, transformed vague vision into complete playable system</li>
-            </ul>
-
-            <h2>Recent Additions to the Codex</h2>
-
-            <p>Major milestones in the past month:</p>
-
-            <ul>
-                <li><strong>October 12, 2025</strong> - Cosmology & Origins complete (alternate-Earth lore, species origins explained)</li>
-                <li><strong>October 12, 2025</strong> - Support Units system (24 AI companions with GKR-inspired behavior decks)</li>
-                <li><strong>October 12, 2025</strong> - Weapon Move Sets (16 weapons, 89 complete card designs)</li>
-                <li><strong>October 11, 2025</strong> - v2.0 Equipment System overhaul (variable decks, 60+ equipment items)</li>
-                <li><strong>October 11, 2025</strong> - Event Tables complete (132 KDM-style events, 100 SCP anomalies)</li>
-                <li><strong>October 10, 2025</strong> - GKR + KDM hybrid combat finalized (deck-as-HP, component destruction)</li>
-            </ul>
-
-            <h2>The Four Factions of the Bound</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>FACTION</th>
-                        <th>PLAYSTYLE</th>
-                        <th>CORE MECHANIC</th>
-                        <th>SUPPORT UNITS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="faction-church.html">Church of Absolution</a></td>
-                        <td>Aggressive Martyrdom</td>
-                        <td>Blood Offering (self-harm for burst damage, infinite scaling)</td>
-                        <td>6 units: Flagellants, Penitents, Relic Bearers, Aspirants, Choir, Absolution Engine</td>
-                    </tr>
-                    <tr>
-                        <td><a href="faction-dwarves.html">Dwarven Forge-Guilds</a></td>
-                        <td>Fortress Defender</td>
-                        <td>Rune Counters (stack for defense/damage, armor-piercing)</td>
-                        <td>6 units: Shield Wall, Artillery, Rune Sentinel, Siege Crawler, Ancestor Golem, Dreadnought</td>
-                    </tr>
-                    <tr>
-                        <td><a href="faction-undead.html">The Ossuarium</a></td>
-                        <td>Lifesteal Vampire</td>
-                        <td>Soul Harvest (lifesteal triggers, resurrections, Decay cards)</td>
-                        <td>6 units: Bone Thralls, Grave Knight, Fleshcrafter, Bone Colossus, Lich, Death's Herald</td>
-                    </tr>
-                    <tr>
-                        <td><a href="faction-elves.html">Elven Verdant Covenant</a></td>
-                        <td>Hit-and-Run Assassin</td>
-                        <td>Bleed Stacking (infinite scaling, mobility, regeneration)</td>
-                        <td>6 units: Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant</td>
-                    </tr>
-                    <tr style="opacity: 0.6;">
-                        <td><a href="faction-fae.html">The Wyrd Conclave</a></td>
-                        <td>Reality Bender</td>
-                        <td>Wyrd Tokens (reality distortion, stolen faces)</td>
-                        <td>Not yet inscribed</td>
-                    </tr>
-                    <tr style="opacity: 0.6;">
-                        <td><a href="faction-nomads.html">Nomad Collective</a></td>
-                        <td>Mobile Survivor</td>
-                        <td>Improvisation (salvaged equipment, movement)</td>
-                        <td>Not yet inscribed</td>
-                    </tr>
-                    <tr style="opacity: 0.6;">
-                        <td><a href="faction-merchants.html">Merchant Guilds</a></td>
-                        <td>Economic Warfare</td>
-                        <td>Bribery (resource control, hired mercenaries)</td>
-                        <td>Not yet inscribed</td>
-                    </tr>
-                    <tr style="opacity: 0.6;">
-                        <td><a href="faction-blighted.html">Blighted Packs</a></td>
-                        <td>Mutation Swarm</td>
-                        <td>Biomass (chimeric mutations, pack tactics)</td>
-                        <td>Not yet inscribed</td>
-                    </tr>
-                    <tr style="opacity: 0.6;">
-                        <td><a href="faction-chitinous.html">Chitinous Ascendancy</a></td>
-                        <td>Hive-Mind</td>
-                        <td>Swarm Intelligence (arthropod fusion, evolution)</td>
-                        <td>Not yet inscribed</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>External Resources</h2>
-
-            <p>Additional grimoires and reference materials:</p>
-
-            <ul>
-                <li><a href="../index.html" target="_blank">Main Website</a> - Presentation site with timeline and faction overview</li>
-                <li><a href="../cards/" target="_blank">Card Database</a> - Interactive filterable card reference with full statistics</li>
-                <li><a href="../pdfs/" target="_blank">PDF Downloads</a> - Professional codexes of all documentation</li>
-                <li><a href="https://github.com/KeeberGoblin/penance" target="_blank">GitHub Repository</a> - Source documents and development</li>
-            </ul>
-
-            <h2>Design Philosophy</h2>
-
-            <p>Penance follows the brutal principles of Kingdom Death: Monster:</p>
-
-            <ul>
-                <li><strong>Brutal progression</strong> - Permanent consequences matter (component destruction, pilot death, scars)</li>
-                <li><strong>Asymmetric factions</strong> - No two play the same (Church ≠ Dwarves ≠ Ossuarium ≠ Elves)</li>
-                <li><strong>Mystery over answers</strong> - The lore raises more questions (What is the Resonance Engine?)</li>
-                <li><strong>Meaningful scarcity</strong> - Resources are precious (Scrap economy, equipment slots)</li>
-                <li><strong>No pure heroes</strong> - Every faction is morally complex (Church burns heretics, Ossuarium harvests souls)</li>
-                <li><strong>Death spiral</strong> - Inevitable decline (Damage cards accumulate, component destruction is permanent)</li>
-                <li><strong>Support Units</strong> - GKR-inspired AI companions with behavior decks (unpredictable allies)</li>
-            </ul>
-
-            <h2>Contact the Chronicler</h2>
-
-            <p>Questions, feedback, or reports of heresy:</p>
-
-            <ul>
-                <li>GitHub Issues: <a href="https://github.com/KeeberGoblin/penance/issues" target="_blank">Report here</a></li>
-                <li>GitHub Discussions: <a href="https://github.com/KeeberGoblin/penance/discussions" target="_blank">Community forum</a></li>
-            </ul>
-
-            <div style="background: var(--shadow-black); border: 3px double var(--dark-red); padding: 2rem; margin: 3rem 0; font-style: italic;">
-                <p style="text-align: center; margin: 0;">
-                    "In iron we seek forgiveness. Through blood, absolution."
-                </p>
-                <p style="text-align: center; margin-top: 0.5rem; margin-bottom: 0; opacity: 0.7;">
-                    — The Creed of the Bound
-                </p>
-            </div>
+            <iframe id="contentFrame" class="content-frame" src="content-home.html"></iframe>
         </main>
     </div>
 
+    <script>
+        function loadContent(url) {
+            const frame = document.getElementById('contentFrame');
+            const allLinks = document.querySelectorAll('.nav-link[onclick]');
+
+            // Remove active class from all clickable links
+            allLinks.forEach(link => link.classList.remove('active'));
+
+            // Add active class to clicked link
+            event.target.classList.add('active');
+
+            // Load content in iframe
+            frame.src = url;
+        }
+
+        // Set home page as active on load
+        window.addEventListener('DOMContentLoaded', function() {
+            // No active state on load - home content is shown by default
+        });
+    </script>
 </body>
 </html>
