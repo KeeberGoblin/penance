@@ -1,6 +1,7 @@
 # PLAYTEST PACKAGE: READY FOR TABLE PLAY
 
-**Date**: 2025-10-10
+**Date**: 2025-10-12
+**Version**: 2.0 (Equipment System Update)
 **Status**: ✅ COMPLETE
 **Estimated Setup Time**: 15 minutes
 **Estimated Play Time**: 45-60 minutes (first game)
@@ -12,93 +13,161 @@
 This package contains everything needed for your first playtest of **Penance: Absolution Through Steel**.
 
 ### Core Rules Documents
-1. **[turn-structure-final.md](turn-structure-final.md)** - Complete SP-based turn system (4 phases)
-2. **[range-and-los-final.md](range-and-los-final.md)** - Hex-based range bands, facing, cover rules
-3. **[quick-reference-sheet.md](quick-reference-sheet.md)** - 1-page printable reference
-4. **[combat-damage-system-gkr-style.md](combat-damage-system-gkr-style.md)** - GKR + KDM hybrid damage system
+1. **[Turn Structure](../rules/turn-structure.md)** - Complete SP-based turn system (4 phases)
+2. **[Combat System](../rules/combat-system.md)** - GKR + KDM hybrid damage system (deck-as-HP)
+3. **[Deck Construction](../rules/deck-construction.md)** - How to build variable decks (26-50 cards)
+4. **[Range & Line of Sight](../rules/range-and-los.md)** - Hex movement, facing, cover rules
+5. **[Dice Reference](../rules/dice-reference.md)** - Custom dice system (Attack, Defense, Suffering)
+6. **[Quick Reference Sheet](../rules/quick-reference.md)** - 1-page printable reference
 
-### Complete Faction Decks
-1. **[faction-deck-church-complete.md](faction-deck-church-complete.md)** - Church of Absolution (30 cards)
+### Complete Faction Decks (v2.0 Equipment System)
+**4 Playable Factions** - Each with modular equipment system:
+
+1. **[Church of Absolution](../factions/church/deck-equipment-system.md)**
    - Playstyle: Aggressive self-harm martyrdom
-   - Primary: Penitent Blades (12 cards)
-   - Secondary: 4 equipment options (Holy Pistol, Buckler Shield, Tower Shield, Repair Kit)
-   - Tactics: 5 available (choose 2)
+   - Core Mechanic: Blood Offering (discard cards for +damage)
+   - Scaling: Infinite (+1 damage per enemy killed)
+   - Deck Size: 26-50 cards (variable equipment)
 
-2. **[faction-deck-dwarves-complete.md](faction-deck-dwarves-complete.md)** - Dwarven Clans (32 cards)
-   - Playstyle: Defensive attrition, armor-piercing
-   - Primary: Runic Warhammer (12 cards)
-   - Secondary: 4 equipment options (Siege Shield, Runic Axe, Repair Servitors, Siege Cannon)
-   - Tactics: 5 available (choose 2)
+2. **[Dwarven Forge-Guilds](../factions/dwarves/deck-equipment-system.md)**
+   - Playstyle: Fortress defender, attrition tank
+   - Core Mechanic: Rune Counters (stack for defense/damage)
+   - Scaling: Stone Endurance (+2 cards to deck)
+   - Deck Size: 28-52 cards (variable equipment)
 
-### Playtest Scenario
-1. **[arena-scenario-01-proving-grounds.md](arena-scenario-01-proving-grounds.md)** - Complete 1v1 scenario
-   - 12×12 hex map with ASCII layout
-   - 5 terrain types (Forest, Rubble, Water, Elevation 1, Elevation 2)
-   - Pre-built decks for both factions
-   - Deployment rules, victory conditions
-   - Map strategy guide
+3. **[The Ossuarium](../factions/ossuarium/deck-equipment-system.md)**
+   - Playstyle: Lifesteal vampire, resurrections
+   - Core Mechanic: Soul Harvest (lifesteal triggers)
+   - Scaling: Decay cards instead of Damage cards
+   - Deck Size: 26-50 cards (variable equipment)
+
+4. **[Elven Verdant Covenant](../factions/elves/deck-equipment-system.md)**
+   - Playstyle: Hit-and-run assassin
+   - Core Mechanic: Bleed stacking (infinite scaling)
+   - Scaling: +1 damage per Bleed counter (no cap)
+   - Deck Size: 26-50 cards (variable equipment)
+
+### Equipment System
+**[Equipment Pool](equipment-pool-complete.md)** - 60+ craftable/lootable items:
+- **Weapons** (15+): Dagger, Longsword, Greatsword, Warhammer, Rifle, etc.
+- **Shields/Offhand** (6+): Buckler, Tower Shield, Dueling Dagger, Repair Kit
+- **Plating** (4+): Ablative, Spike, Reinforced, Stealth
+- **Sigils** (12+): Repair Sigil, Heat Sink, Targeting Matrix
+
+### Playtest Scenarios
+1. **[The Proving Grounds](../scenarios/01-proving-grounds.md)** - 1v1 Deathmatch (beginner)
+   - 12×12 hex map with elevation
+   - Victory: Reduce opponent to 0 HP
+   - Time: 45-60 minutes
+   - Teaches: SP economy, Heat management, facing modifiers
+
+2. **[Reliquary Ruins](../scenarios/02-reliquary-ruins.md)** - 1v1 Objective Control (intermediate)
+   - 14×14 hex map with reliquary zones
+   - Victory: Control 2 of 3 reliquaries for 2 turns
+   - Time: 60-75 minutes
+   - Teaches: Objective play, map control, positioning
 
 ### Example of Play
-1. **[example-of-play.md](example-of-play.md)** - 5-turn walkthrough
-   - Turn-by-turn combat demonstration
-   - Shows component destruction, Blood Offering combo, armor-piercing
-   - Post-game analysis and lessons learned
+**[Example of Play](../scenarios/example-of-play.md)** - 5-turn walkthrough
+- Turn-by-turn combat demonstration
+- Shows component destruction, Blood Offering combo, Rune stacking
+- Post-game analysis and lessons learned
+
+### Campaign Systems (Optional)
+- **[Event Tables](../campaigns/event-tables-kdm-style.md)** - 132 KDM-style 2d6 events
+- **[Anomalous Events](../campaigns/anomalous-events-scp-style.md)** - 100 SCP-style artifacts
+- **[Leg-Skimming](../campaigns/leg-skimming.md)** - Permanent sacrifice for power
+- **[Settlements](../campaigns/settlements.md)** - Base building between missions
+- **[Pilot Progression](../campaigns/pilot-progression.md)** - Scars, traits, death
 
 ---
 
 ## QUICK START: FIRST PLAYTEST
 
-### Step 1: Print Documents (15 minutes)
-- [ ] Print [quick-reference-sheet.md](quick-reference-sheet.md) (2 copies, one per player)
-- [ ] Print [arena-scenario-01-proving-grounds.md](arena-scenario-01-proving-grounds.md) (map section)
-- [ ] Print [faction-deck-church-complete.md](faction-deck-church-complete.md) (deck list)
-- [ ] Print [faction-deck-dwarves-complete.md](faction-deck-dwarves-complete.md) (deck list)
+### Step 1: Choose Factions (5 minutes)
+Each player picks one of the 4 factions:
+- **Church** (easiest) - Straightforward aggression
+- **Dwarves** (easy) - Forgiving tank
+- **Ossuarium** (medium) - Resource management
+- **Elves** (hard) - Precise positioning required
 
-### Step 2: Prepare Decks (10 minutes)
-Use index cards or print-and-cut cards:
+**Recommended First Game**: Church vs Dwarves (offense vs defense)
 
-**Church "Martyr's Fury" Deck (30 cards)**:
-- 10 Universal Core cards
-- 12 Penitent Blades (Primary Weapon)
-- 6 Holy Pistol cards (Secondary Equipment)
-- 2 Tactics: Righteous Fury + Crusader's Vow
+### Step 2: Build Decks (10 minutes)
+Each faction deck consists of:
+- **10 Universal Core** (everyone has these)
+- **6 Faction Core** (faction-specific abilities)
+- **Variable Equipment** (choose from equipment pool)
+- **2 Tactics** (choose 2 from 5 available)
 
-**Dwarven "Immovable Wall" Deck (32 cards)**:
-- 10 Universal Core cards (+ 2 extra Breathe the Core from Stone Endurance)
-- 12 Runic Warhammer (Primary Weapon)
-- 6 Siege Shield cards (Secondary Equipment)
-- 2 Tactics: Stone Endurance + Runic Overcharge
+**Pre-Built Deck Example - Church "Martyr's Fury" (30 cards)**:
+- 10 Universal Core
+- 6 Church Core (Blood Offering, Divine Judgment, etc.)
+- 12 Equipment: Longsword (6) + Buckler (2) + Repair Sigil (2) + Heat Sink (2)
+- 2 Tactics: Flagellant's Zeal + Crusader's Vow
+
+**Pre-Built Deck Example - Dwarven "Immovable Wall" (32 cards)**:
+- 10 Universal Core
+- 6 Dwarven Core (Rune of Protection, Stone Endurance, etc.)
+- 14 Equipment: Warhammer (6) + Tower Shield (4) + Reinforced Plating (2) + Repair Sigil (2)
+- 2 Tactics: Forge Mastery + Unbreakable Spirit
 
 ### Step 3: Gather Materials
-- [ ] 2d6 dice (for Strain checks)
+- [ ] 2d6 Attack Dice (custom symbols OR standard d6 with conversion chart)
+- [ ] 1d6 Defense Die per damage point (custom OR standard)
+- [ ] 1d6 Suffering Die (Church-specific, custom OR standard)
 - [ ] Tokens for Heat tracking (0-10+)
-- [ ] Tokens for SP tracking (current SP)
-- [ ] Tokens for Rune Counters (Dwarves only)
-- [ ] Component Damage markers (track Right Arm, Left Arm, Legs, Head, Chassis)
+- [ ] Tokens for SP tracking (3-6 SP per turn)
+- [ ] Tokens for Rune Counters (Dwarves only, 0-5+)
+- [ ] Tokens for Bleed Counters (Elves only, stacks infinitely)
+- [ ] Component Damage markers (Right Arm, Left Arm, Legs, Head, Chassis)
 - [ ] Facing indicators (arrow tokens or dice)
 - [ ] Paper for tracking HP (cards remaining in deck)
 
-### Step 4: Setup Map
-Draw or print 12×12 hex grid with terrain:
-- **Forest** (8 hexes): +1 Defense when standing in them
-- **Rubble** (8 hexes): +1 Defense, difficult terrain (2 SP per hex)
-- **Water/Mud** (20 hexes): Difficult terrain, remove 1 Heat if end turn in Water
-- **Elevation 1** (4 hexes): +1 damage from this hex, ignore cover
-- **Elevation 2** (4 hexes): +2 damage, ignore cover, +1 Range
+### Step 4: Print Documents
+- [ ] Print [Quick Reference Sheet](../rules/quick-reference.md) (2 copies)
+- [ ] Print [Proving Grounds Scenario](../scenarios/01-proving-grounds.md) (map section)
+- [ ] Print [Dice Reference](../rules/dice-reference.md) (if using standard d6)
+- [ ] Print faction deck lists (write card names on index cards OR use card database)
 
-### Step 5: Deploy
+### Step 5: Setup Map
+Use **The Proving Grounds** scenario:
+- **12×12 hex grid**
+- **Terrain**:
+  - Forest (8 hexes): Light Cover (+1 Defense)
+  - Rubble (8 hexes): Light Cover, difficult terrain (2 SP/hex)
+  - Water/Mud (20 hexes): Difficult terrain, remove 1 Heat at turn end
+  - Elevation 1 (4 hexes): +1 damage from here, ignore cover
+  - Elevation 2 (4 hexes): +2 damage, ignore cover, +1 Range
+
+### Step 6: Deploy
 - **Church**: Top-left quadrant (rows 1-3, columns 1-3)
 - **Dwarves**: Bottom-right quadrant (rows 10-12, columns 10-12)
 - Roll 1d6 for deployment order (higher roll chooses who deploys first)
 
-### Step 6: Play!
-Follow the turn structure:
-1. **Refresh Phase**: Restore SP, check Heat Strain (if 5+ Heat)
-2. **Action Phase**: Play cards, move, attack (spend SP)
-3. **Draw Phase**: Draw to hand size 6, reshuffle if deck empty
-4. **End Turn Phase**: Remove temporary effects
+### Step 7: Play!
+Follow the **4-phase turn structure**:
 
-**Victory**: Reduce opponent to 0 HP OR force 4+ reshuffles
+1. **Refresh Phase**:
+   - Restore SP to maximum (Light: 6, Medium: 5, Heavy: 4, Fortress: 3)
+   - If Heat ≥ 5: Roll Strain check (2d6, 7+ = pass)
+   - Clear temporary effects
+
+2. **Action Phase**:
+   - Play cards (spend SP)
+   - Move (1 SP per hex, 2 SP for difficult terrain)
+   - Attack (roll dice, apply damage)
+   - Reactive cards (0 SP, interrupt attacker)
+
+3. **Draw Phase**:
+   - Draw to hand size 6
+   - If deck empty: Reshuffle discard + add 1 Damage card (death spiral)
+
+4. **End Turn Phase**:
+   - Remove "until end of turn" effects
+   - Check victory conditions
+
+**Victory**: Reduce opponent to 0 HP (deck + discard pile empty)
 
 ---
 
@@ -106,44 +175,47 @@ Follow the turn structure:
 
 ### Turns 1-3: Positioning (15 minutes)
 - Both players navigate terrain toward center
-- Church moves faster (Desperate Lunge, Overextend)
-- Dwarves set up defensive buffs (Rune of Protection, Shield Wall)
+- Church moves faster (6 SP, lighter Caskets)
+- Dwarves set up defensive buffs (Rune of Protection)
 - Minimal damage, mostly setup
 
 ### Turns 4-6: First Engagement (10 minutes)
 - Church closes to Melee range
-- First attacks land (2-6 damage each)
-- Heat begins building (especially Dwarves)
+- First attacks land (3-6 damage each)
+- Heat begins building (especially from heavy attacks)
 - First Component Damage tracked
 
 ### Turns 7-10: Brutal Exchange (15 minutes)
 - Both sides trading heavy blows
-- Church using Blood Offering for burst damage
-- Dwarves stacking Rune Counters
-- First reshuffle likely (add 1 Damage card)
+- Church using Blood Offering for burst damage (+3 dmg)
+- Dwarves stacking Rune Counters (reduce damage by 3)
+- First reshuffle likely (add 1 Damage card to deck)
 - Heat Strain checks begin (5+ Heat)
 
 ### Turns 11-15: Death Spiral (10 minutes)
-- Decks contain Damage cards (dead draws)
-- Component destruction occurs (3+ Component Damage)
+- Decks contain Damage cards (dead draws, reduce hand size)
+- Component destruction occurs (3+ Component Damage = destroyed)
 - Players desperate, using ultimate cards
-- One side collapses
+- One side collapses (0 HP)
 
-**Expected Winner**: 51/49 Church favor (slightly more aggressive)
+**Expected Winner**: 50/50 balanced matchup (Church offense vs Dwarven defense)
 
 ---
 
 ## LEARNING OBJECTIVES
 
 After playing this scenario 2-3 times, players should understand:
-1. **SP economy**: When to spend, when to save, when to enter Danger Zone
-2. **Heat management**: Risk/reward of high-Heat cards, Strain checks
-3. **Deck cycling**: When to reshuffle, when to delay, Damage card accumulation
-4. **Component damage**: Tracking, destruction effects, using Reactive cards
-5. **Facing modifiers**: Importance of rear arc positioning (+2 dmg)
-6. **Terrain usage**: Cover, elevation, difficult terrain costs
-7. **Reactive cards**: 0 SP interrupts (Brace for Impact, Unbreakable)
-8. **Death spiral**: How Damage cards cripple deck consistency
+
+1. **SP Economy**: When to spend, when to save, when to enter Danger Zone (+2 SP, risk Strain)
+2. **Heat Management**: Risk/reward of high-Heat cards, Strain checks at 5+ Heat
+3. **Deck Cycling**: When to reshuffle, when to delay, Damage card accumulation
+4. **Component Damage**: Tracking by location, destruction effects (lose entire card type)
+5. **Facing Modifiers**: Rear arc +2 damage, side arc +1 damage, shield side +1 Defense
+6. **Terrain Usage**: Cover (+1/+2 Defense), elevation (+1/+2 damage), difficult terrain (2 SP/hex)
+7. **Reactive Cards**: 0 SP interrupts (Brace, Parry, Unbreakable)
+8. **Death Spiral**: How Damage cards cripple deck consistency (25% dead draws after 3 reshuffles)
+9. **Dice System**: Attack Dice (to-hit + damage), Defense Dice (block or escalate), modifiers
+10. **Faction Mechanics**: Blood Offering vs Rune Counters (asymmetric gameplay)
 
 ---
 
@@ -156,6 +228,7 @@ After your first playtest, answer these questions:
 - [ ] Did you feel engaged throughout, or were there slow/boring moments?
 - [ ] Did the game feel "brutal" (Kingdom Death-style) or too forgiving?
 - [ ] Did both players have meaningful choices each turn?
+- [ ] Did the dice add exciting variance or frustrating randomness?
 
 ### Mechanics Clarity
 - [ ] Were any rules confusing or ambiguous?
@@ -163,19 +236,26 @@ After your first playtest, answer these questions:
 - [ ] Were component destruction rules clear?
 - [ ] Did Heat Strain checks occur? (5+ Heat)
 - [ ] Did anyone reshuffle their deck? (Did Damage cards matter?)
+- [ ] Were the custom dice symbols intuitive? (Or did you use standard d6?)
 
 ### Balance Observations
-- [ ] Did armor-piercing (Dwarven Crushing Blow) feel oppressive?
+- [ ] Did the equipment system feel flexible or restrictive?
 - [ ] Did Church's burst damage (Blood Offering) feel fair?
-- [ ] Did 32 HP (Dwarven Stone Endurance) make them too tanky?
+- [ ] Did Dwarven Rune Counters feel too strong or weak?
 - [ ] Did Reactive cards (0 SP) disrupt gameplay positively or negatively?
-- [ ] Which faction felt stronger? (Church or Dwarves?)
+- [ ] Which faction felt stronger?
 
 ### Most/Least Useful Cards
 - [ ] Which cards did you play most frequently?
 - [ ] Which cards felt weak or situational?
 - [ ] Did any cards feel mandatory (auto-include)?
 - [ ] Did any cards feel useless (never played)?
+
+### Equipment System Feedback
+- [ ] Did the variable deck size (26-50 cards) feel interesting?
+- [ ] Was deck building intuitive or confusing?
+- [ ] Did equipment choices matter during gameplay?
+- [ ] Would you want more equipment options?
 
 ### Suggested Changes
 - [ ] What would you change about the rules?
@@ -188,81 +268,101 @@ After your first playtest, answer these questions:
 ## NEXT STEPS AFTER PLAYTEST
 
 ### Immediate Iteration (Same Session)
-1. **Swap Tactics**: Try different Tactic combinations
-2. **Swap Secondary Equipment**: Church uses Tower Shield, Dwarves use Siege Cannon
-3. **Add Pilot Wounds**: Include Pilot Wound Decks for full brutality
-4. **Component Tracking**: Track Component Damage by specific location (not pooled)
+1. **Swap Tactics**: Try different Tactic combinations (5 available, choose 2)
+2. **Swap Equipment**: Try different weapons/shields (60+ options)
+3. **Swap Factions**: Try Ossuarium (lifesteal) or Elves (bleed stacking)
+4. **Add Pilot Wounds**: Include Pilot Wound Decks for full brutality (optional)
 
 ### Future Playtests (New Sessions)
-1. **Scenario #2**: Different map, different terrain, different victory conditions
-2. **Third Faction**: Add Elven Verdant Covenant or The Ossuarium
-3. **Campaign Mode**: Link scenarios together with pilot progression
-4. **Boss Encounter**: Test Sister Vex, The Iron Saint (HP deck boss)
+1. **Scenario #2**: Reliquary Ruins (objective control, different map)
+2. **Different Factions**: All 4 factions available (Church, Dwarves, Ossuarium, Elves)
+3. **Campaign Mode**: Link scenarios with event tables, loot, settlements
+4. **Boss Encounter**: Test HP deck boss system (Sister Vex, Iron Saint)
 
 ---
 
 ## FILES SUMMARY
 
-| File | Purpose | Page Count | Status |
-|------|---------|------------|--------|
-| turn-structure-final.md | 4-phase turn system | 3 | ✅ Complete |
-| range-and-los-final.md | Hex movement, facing, LOS | 4 | ✅ Complete |
-| quick-reference-sheet.md | 1-page printable reference | 1 | ✅ Complete |
-| combat-damage-system-gkr-style.md | Damage resolution, component destruction | 5 | ✅ Complete |
-| faction-deck-church-complete.md | Church faction deck (30 cards) | 12 | ✅ Complete |
-| faction-deck-dwarves-complete.md | Dwarven faction deck (32 cards) | 14 | ✅ Complete |
-| arena-scenario-01-proving-grounds.md | 1v1 scenario with map | 10 | ✅ Complete |
-| example-of-play.md | 5-turn walkthrough | 15 | ✅ Complete |
+| File | Purpose | Status |
+|------|---------|--------|
+| [turn-structure.md](../rules/turn-structure.md) | 4-phase turn system | ✅ Complete |
+| [combat-system.md](../rules/combat-system.md) | Damage resolution, component destruction | ✅ Complete |
+| [deck-construction.md](../rules/deck-construction.md) | How to build decks with equipment | ✅ Complete |
+| [range-and-los.md](../rules/range-and-los.md) | Hex movement, facing, LOS | ✅ Complete |
+| [dice-reference.md](../rules/dice-reference.md) | Custom dice system | ✅ Complete |
+| [quick-reference.md](../rules/quick-reference.md) | 1-page printable reference | ✅ Complete |
+| [church/deck-equipment-system.md](../factions/church/deck-equipment-system.md) | Church faction deck (v2.0) | ✅ Complete |
+| [dwarves/deck-equipment-system.md](../factions/dwarves/deck-equipment-system.md) | Dwarven faction deck (v2.0) | ✅ Complete |
+| [ossuarium/deck-equipment-system.md](../factions/ossuarium/deck-equipment-system.md) | Ossuarium faction deck (v2.0) | ✅ Complete |
+| [elves/deck-equipment-system.md](../factions/elves/deck-equipment-system.md) | Elven faction deck (v2.0) | ✅ Complete |
+| [equipment-pool-complete.md](equipment-pool-complete.md) | 60+ equipment items | ✅ Complete |
+| [01-proving-grounds.md](../scenarios/01-proving-grounds.md) | 1v1 scenario with map | ✅ Complete |
+| [02-reliquary-ruins.md](../scenarios/02-reliquary-ruins.md) | 1v1 objective control | ✅ Complete |
+| [example-of-play.md](../scenarios/example-of-play.md) | 5-turn walkthrough | ✅ Complete |
 
-**Total**: 64 pages of playtest-ready content
+**Total**: 14 core documents + 60+ equipment cards
 
 ---
 
 ## DESIGN GOALS ACHIEVED
 
 ### Core Mechanics ✅
-- [x] SP-based action economy (GKR-style)
-- [x] Deck-as-HP (discard cards when damaged)
-- [x] Component destruction (KDM-style brutality)
-- [x] Heat/Strain system (risk/reward)
-- [x] Facing modifiers (rear arc +2 dmg)
+- [x] SP-based action economy (GKR-style, 3-6 SP per turn)
+- [x] Deck-as-HP (discard cards when damaged, variable deck size 26-50)
+- [x] Component destruction (KDM-style brutality, permanent consequences)
+- [x] Heat/Strain system (risk/reward, 5+ Heat = Danger Zone)
+- [x] Facing modifiers (rear arc +2 dmg, shield side +1 Defense)
 - [x] Reactive cards (0 SP interrupts)
-- [x] Death spiral (Damage cards on reshuffle)
+- [x] Death spiral (Damage cards on reshuffle, inevitable decline)
+- [x] Custom dice system (Attack, Defense, Suffering dice with symbols)
+
+### Equipment System v2.0 ✅
+- [x] Modular equipment (60+ items, mix-and-match)
+- [x] Variable deck sizes (26-50 cards depending on choices)
+- [x] Crafting & salvage economy (2-6 Scrap per item)
+- [x] Smelting system (remove equipment for Scrap)
+- [x] Loot tables (roll 1d20 after defeating enemy)
+- [x] Deck customization (4 slots: Weapon + Shield/Offhand + 1-4 Accessories)
 
 ### Faction Asymmetry ✅
-- [x] Church: Aggressive self-harm for burst damage
-- [x] Dwarves: Defensive attrition with armor-piercing
-- [x] Contrasting playstyles (offense vs defense)
-- [x] Unique faction mechanics (Blood Offering vs Rune Counters)
+- [x] Church: Aggressive self-harm for burst damage (infinite scaling)
+- [x] Dwarves: Defensive attrition with armor-piercing (rune stacking)
+- [x] Ossuarium: Lifesteal vampire with resurrections (Soul Harvest)
+- [x] Elves: Hit-and-run assassin with infinite bleed stacking
+- [x] Contrasting playstyles (offense/defense/lifesteal/DoT)
+- [x] Unique faction mechanics (Blood Offering / Runes / Soul Harvest / Bleed)
 
 ### Playtest Readiness ✅
 - [x] Complete rules (no "TBD" sections)
-- [x] Pre-built decks (no deck construction required)
-- [x] Scenario with map (ready to print)
+- [x] 4 complete faction decks (variable equipment)
+- [x] 2 scenarios with maps (ready to print)
 - [x] Example of play (shows how rules work)
 - [x] Quick reference sheet (table lookup)
+- [x] Custom dice system (symbols + conversion chart)
+- [x] Campaign systems (optional, event tables + loot)
 
 ---
 
 ## KNOWN ISSUES / FUTURE WORK
 
 ### Potential Balance Problems
-1. **Blood Offering** may be too efficient (0 SP, +3 dmg, ignore 1 Armor)
+1. **Infinite Scaling** (Church/Elves) may make games snowball
 2. **Component Destruction** may be too punishing (lose entire card type)
-3. **Stone Endurance** (32 HP) may make Dwarves too tanky
-4. **Armor-Piercing** may invalidate defensive builds
+3. **Dice Variance** may create feel-bad moments (miss at 72% chance)
+4. **Equipment Bloat** (60+ items) may overwhelm new players
 
 ### Missing Systems (Not Critical for Playtest)
-1. Pilot Wound Decks (optional, adds complexity)
-2. Campaign progression (pilot scars, loot, settlements)
-3. Boss encounters (HP deck system)
-4. Additional factions (Elves, Undead, Fae, etc.)
+1. Visual card templates (currently index cards only)
+2. Physical dice manufacturing (using conversion charts for now)
+3. Character sheets (tracking HP on paper)
+4. Full campaign rulebook (10-mission arc)
+5. 3D printable Casket models (STL files)
 
 ### Documentation Gaps
-1. No visual diagrams (all ASCII)
-2. No printable card templates (index cards only)
-3. No character sheets (track HP on paper)
-4. No campaign rulebook
+1. No visual diagrams (all ASCII/text)
+2. No printable hex maps (draw by hand for now)
+3. No official artwork (AI prompts provided only)
+4. No quick-start video tutorial
 
 ---
 
@@ -270,8 +370,8 @@ After your first playtest, answer these questions:
 
 Please provide feedback via:
 - **GitHub Issues**: https://github.com/KeeberGoblin/penance/issues
-- **This Document**: Add comments to playtest markdown files
 - **Playtester Notes**: Fill out post-game debrief questions above
+- **Contact**: Leave comments in GitHub discussions
 
 ---
 
@@ -279,16 +379,16 @@ Please provide feedback via:
 
 **Design**: AI-assisted design (Claude Code)
 **Inspiration**:
-- Kingdom Death: Monster (component destruction, brutality)
+- Kingdom Death: Monster (component destruction, event tables, brutality)
 - GKR: Heavy Hitters (deck-as-HP, SP economy)
-- MechWarrior (component targeting)
-- Into the Breach (positioning, facing)
+- BattleTech (heat management, component targeting)
+- Gloomhaven (hex combat, facing modifiers)
 
-**Playtest Package Created**: 2025-10-10
-**Version**: 1.0
+**Playtest Package Created**: 2025-10-12
+**Version**: 2.0 (Equipment System Update)
 
 ---
 
 **STATUS**: ✅ READY FOR TABLE PLAY
 **NEXT MILESTONE**: First playtest feedback
-**TARGET**: 3-5 playtests, iterate based on feedback, publish rules v1.1
+**TARGET**: 3-5 playtests, iterate based on feedback, publish rules v2.1
