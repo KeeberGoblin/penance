@@ -328,7 +328,7 @@ A: Debatable. The Void can be sealed, but magic, non-humans, and Soulstones won'
 
 **Hidden Lore** (revealed only if players complete the Draconid questline):
 
-The Cataclysm has happened **three times before**:
+The Cataclysm has happened **three times total** (including the current one):
 1. **First Ending (50,000 BCE)**: Flood. Cause unknown. Survivors: primitive humans, nascent elves.
 2. **Second Ending (10,000 BCE)**: Fire. Volcanic superchains + ley line destabilization. Survivors: rebuilt civilizations.
 3. **Third Ending (Year 0)**: Void. Theslar's Engine. Current state.

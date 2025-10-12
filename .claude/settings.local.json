@@ -21,7 +21,8 @@
       "Bash(fi)",
       "Bash(git mv:*)",
       "Bash(git pull:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(do)"
     ],
     "deny": [],
     "ask": []
