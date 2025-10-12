@@ -24,15 +24,20 @@ Core game mechanics - turn structure, combat, deck building, terrain
 - [Combat System](rules/combat-system.md) (Deck-as-HP + Component Damage)
 - [Deck Construction](rules/deck-construction.md)
 - [Range & Line of Sight](rules/range-and-los.md)
+- [Support Units](rules/support-units.md) (GKR-inspired AI companions)
 - [Terrain Rules](rules/terrain.md)
 - [Quick Reference](rules/quick-reference.md)
 
 ### [Factions](factions/)
 Playable factions with complete deck lists and lore
 - [Church of Absolution](factions/church/deck-equipment-system.md) - Aggressive martyrdom
+  - [Church Support Units](factions/church/support-units.md) - 6 units with behavior decks
 - [Dwarven Forge-Guilds](factions/dwarves/deck-equipment-system.md) - Fortress defender
+  - [Dwarven Support Units](factions/dwarves/support-units.md) - 6 units with behavior decks
 - [The Ossuarium](factions/ossuarium/deck-equipment-system.md) - Lifesteal vampire
+  - [Ossuarium Support Units](factions/ossuarium/support-units.md) - 6 units with behavior decks
 - [Elven Verdant Covenant](factions/elves/deck-equipment-system.md) - Hit-and-run assassin
+  - [Elven Support Units](factions/elves/support-units.md) - 6 units with behavior decks
 - [Faction Relationships](factions/relationships.md)
 - [Casket Types](factions/casket-types.md) - 36 unique designs
 

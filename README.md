@@ -22,7 +22,8 @@ A tactical hex-based card game of grimdark medieval fantasy mech combat where re
 **What's Included**:
 - ✅ Complete turn structure (4-phase SP system)
 - ✅ Combat resolution (GKR + KDM hybrid)
-- ✅ 2 complete faction decks (Church, Dwarves)
+- ✅ 4 complete faction decks (Church, Dwarves, Ossuarium, Elves)
+- ✅ Support Units system (GKR-inspired AI companions, 24 unique units)
 - ✅ 2 playtest scenarios (Deathmatch, Objective Control)
 - ✅ Example of Play (5-turn walkthrough)
 - ✅ Quick reference sheet (printable)
@@ -123,13 +124,18 @@ Each turn you refresh your Soul Points (SP) to maximum:
 - [Turn Structure](docs/rules/turn-structure.md) - 4-phase SP-based turn system
 - [Combat System](docs/rules/combat-system.md) - GKR + KDM hybrid with deck-as-HP
 - [Range and LOS](docs/rules/range-and-los.md) - Hex movement, facing, cover
+- [Support Units](docs/rules/support-units.md) - GKR-inspired AI companions with behavior decks
 - [Quick Reference Sheet](docs/rules/quick-reference.md) - 1-page printable
 
-### Complete Faction Decks
+### Complete Faction Decks & Support Units
 - [Church of Absolution](docs/factions/church/deck-equipment-system.md) - Aggressive martyrdom, self-harm mechanics
+  - [Church Support Units](docs/factions/church/support-units.md) - 6 units: Flagellants, Penitents, Relic Bearers, Aspirants, Choir, Absolution Engine
 - [Dwarven Forge-Guilds](docs/factions/dwarves/deck-equipment-system.md) - Fortress defender, rune stacking
+  - [Dwarven Support Units](docs/factions/dwarves/support-units.md) - 6 units: Shield Wall, Artillery, Rune Sentinel, Siege Crawler, Ancestor Golem, Dreadnought
 - [The Ossuarium](docs/factions/ossuarium/deck-equipment-system.md) - Lifesteal vampire, resurrections
+  - [Ossuarium Support Units](docs/factions/ossuarium/support-units.md) - 6 units: Bone Thralls, Grave Knight, Fleshcrafter, Bone Colossus, Lich, Death's Herald
 - [Elven Verdant Covenant](docs/factions/elves/deck-equipment-system.md) - Hit-and-run, infinite bleed stacking
+  - [Elven Support Units](docs/factions/elves/support-units.md) - 6 units: Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant
 
 ### World & Lore
 - [World Overview](docs/lore/world-overview.md) - 437-year timeline, 9 factions, historical eras

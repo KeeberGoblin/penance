@@ -8,21 +8,25 @@ Nine powers struggle for control of a dying world. Each is broken. None are hero
 **Playstyle**: Aggressive self-harm martyrdom
 **Mechanic**: Discard cards for burst damage, Blood Offering combos, infinite scaling
 **Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](church/support-units.md) - Flagellants, Penitents, Relic Bearers, Aspirants, Choir, Absolution Engine
 
 ### [Dwarven Forge-Guilds](dwarves/deck-equipment-system.md)
 **Playstyle**: Defensive attrition fortress
 **Mechanic**: Rune Counters for damage reduction, armor-piercing, Heat conversion
 **Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](dwarves/support-units.md) - Shield Wall, Artillery, Rune Sentinel, Siege Crawler, Ancestor Golem, Dreadnought
 
 ### [The Ossuarium](ossuarium/deck-equipment-system.md)
 **Playstyle**: Lifesteal vampire with resurrections
 **Mechanic**: Soul Harvest triggers, Decay cards, death rewards, thrall summoning
 **Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](ossuarium/support-units.md) - Bone Thralls, Grave Knight, Fleshcrafter, Bone Colossus, Lich, Death's Herald
 
 ### [Elven Verdant Covenant](elves/deck-equipment-system.md)
 **Playstyle**: Hit-and-run assassin with infinite scaling
 **Mechanic**: Bleed stacking (infinite), mobility, regeneration, stealth
 **Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](elves/support-units.md) - Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant
 
 ---
 
