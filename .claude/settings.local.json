@@ -20,7 +20,8 @@
       "Bash(else echo \"✗ MISSING: $file\")",
       "Bash(fi)",
       "Bash(git mv:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
