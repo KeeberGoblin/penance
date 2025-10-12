@@ -329,8 +329,9 @@ body::before {
     font-weight: bold;
     color: var(--dark-red);
     float: left;
-    line-height: 1;
-    margin-right: 0.1em;
+    line-height: 0.85;
+    margin-right: 0.05em;
+    margin-top: 0.1em;
     font-family: 'Cinzel Decorative', serif;
 }
 
@@ -482,6 +483,52 @@ body::before {
     color: var(--blood-red);
     opacity: 0.2;
     font-family: 'Cinzel Decorative', serif;
+}
+
+/* Manuscript Quote - No drop cap for quotes */
+.manuscript-quote {
+    background: rgba(10, 6, 4, 0.9) !important;
+    border: 3px double var(--dark-red) !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    font-family: 'Libre Baskerville', serif !important;
+    font-size: 1.1rem !important;
+    color: var(--aged-gold) !important;
+    letter-spacing: 0.03em;
+    margin: 2.5rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.manuscript-quote::before {
+    content: '"';
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    font-size: 6rem;
+    color: var(--blood-red);
+    opacity: 0.2;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+/* Prevent drop-cap on quotes */
+.manuscript-quote::first-letter,
+.manuscript-quote p::first-letter {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    float: none !important;
+    line-height: inherit !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+}
+
+.quote-attribution {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--bone-white);
+    font-style: italic;
 }
 
 /* Mobile Responsiveness */
