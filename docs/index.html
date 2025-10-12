@@ -635,7 +635,6 @@
     <nav class="nav-header">
         <div class="nav-title">PENANCE</div>
         <div class="nav-links">
-            <a href="#dice-system" class="nav-link" style="color: var(--accent);">DICE SYSTEM</a>
             <a href="#chronicle" class="nav-link">CHRONICLE</a>
             <a href="#factions" class="nav-link">FACTIONS</a>
             <a href="#playtest" class="nav-link" style="color: var(--blood-red);">PLAYTEST</a>
@@ -711,221 +710,6 @@
                     <h3 class="feature-title">CAMPAIGN PROGRESSION</h3>
                     <p class="feature-desc">KDM-style event tables (132 events). Permanent pilot scars. Settlement building. Anomalous artifacts. NPC encounters. Every campaign is unique.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dice System Section (NEW) -->
-    <section class="section" id="dice-system">
-        <div class="section-content-wide">
-            <h2 class="section-header-center" style="color: var(--accent);">CUSTOM DICE SYSTEM</h2>
-            <p style="text-align: center; color: var(--light-gray); max-width: 900px; margin: 0 auto 4rem; font-size: 1.2rem;">
-                Brutal for both attacker and defender. GKR-style to-hit rolls meet BattleTech tactical modifiers. Defense Dice create unpredictable outcomes. Miss chance punishes everyone equally.
-            </p>
-
-            <!-- Announcement Banner -->
-            <div style="background: linear-gradient(135deg, var(--blood-red) 0%, var(--black) 100%); border: 3px solid var(--accent); padding: 2.5rem; margin-bottom: 4rem; text-align: center;">
-                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--white);">NEW SYSTEM: RANDOMNESS & CONSEQUENCE</h3>
-                <p style="color: var(--light-gray); font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto;">
-                    3 custom dice types. 39 cards designed for dice optimization. To-hit system with 7+ modifiers. Defense Dice that can save you or doom you. Every attack is a gamble.
-                </p>
-            </div>
-
-            <!-- Dice Type Grid -->
-            <div class="features-grid" style="margin-bottom: 4rem;">
-                <div class="feature-card" style="border-color: var(--blood-red);">
-                    <h3 class="feature-title" style="color: var(--blood-red);">ATTACK DICE (2d6)</h3>
-                    <p class="feature-desc" style="margin-bottom: 1.5rem;">Roll to-hit. Base 5+ with stacking modifiers (range, movement, facing, cover, elevation).</p>
-                    <div style="font-family: monospace; font-size: 0.85rem; line-height: 1.8; color: var(--light-gray);">
-                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0.5rem;">
-                            <div>[STRIKE]</div><div>(3 value)</div>
-                            <div>[DOUBLE STRIKE]</div><div>(4 value)</div>
-                            <div>[DEATH BLOW]</div><div>(5 value)</div>
-                            <div>[GLANCE]</div><div>(1 value)</div>
-                            <div>[BLOOD]</div><div>(2 value)</div>
-                            <div>[JAM]</div><div>(0 value)</div>
-                        </div>
-                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--medium-gray); color: var(--accent);">
-                            5-6 = Hit | 7-8 = +1 dmg<br>
-                            9 = +2 dmg, bypass Defense<br>
-                            10 ([DEATH BLOW]+[DEATH BLOW]) = Component destroyed<br>
-                            2 ([JAM]+[JAM]) = Weapon jams
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-card" style="border-color: var(--accent);">
-                    <h3 class="feature-title" style="color: var(--accent);">DEFENSE DICE (1d6 per damage)</h3>
-                    <p class="feature-desc" style="margin-bottom: 1.5rem;">Roll 1 die per damage point. Each symbol has consequences.</p>
-                    <div style="font-family: monospace; font-size: 0.85rem; line-height: 1.8; color: var(--light-gray);">
-                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0.5rem;">
-                            <div>[SHIELD]</div><div>Block 1 damage</div>
-                            <div>[ABSORB]</div><div>Block 1 damage</div>
-                            <div>[FLESH WOUND]</div><div>Take damage</div>
-                            <div>[CRITICAL]</div><div>+1 Component Dmg</div>
-                            <div>[PIERCE]</div><div>No reactives</div>
-                            <div>[HEAT]</div><div>+1 Heat</div>
-                        </div>
-                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--medium-gray); color: var(--blood-red);">
-                            33% block rate per die<br>
-                            17% critical escalation<br>
-                            Unpredictable outcomes
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-card" style="border-color: var(--white);">
-                    <h3 class="feature-title" style="color: var(--white);">SUFFERING DICE (1d6)</h3>
-                    <p class="feature-desc" style="margin-bottom: 1.5rem;">Church-specific and event tables. Risk vs reward.</p>
-                    <div style="font-family: monospace; font-size: 0.85rem; line-height: 1.8; color: var(--light-gray);">
-                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0.5rem;">
-                            <div>[DIVINE MERCY]</div><div>+2 Defense</div>
-                            <div>[BLOOD PRICE]</div><div>Discard 1 card</div>
-                            <div>[ZEALOT'S FURY]</div><div>+2 damage</div>
-                            <div>[PENANCE]</div><div>+1 Heat</div>
-                            <div>[MARTYRDOM]</div><div>+3 dmg, discard 2</div>
-                            <div>[ABSOLUTION]</div><div>Recover 2 cards</div>
-                        </div>
-                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--medium-gray); color: var(--accent);">
-                            Church thematic mechanics<br>
-                            Self-harm for power<br>
-                            Double-edged results
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- To-Hit Modifier Table -->
-            <div style="background: var(--dark-gray); border: 2px solid var(--medium-gray); padding: 3rem; margin-bottom: 4rem;">
-                <h3 style="font-size: 1.75rem; margin-bottom: 2rem; color: var(--accent); text-align: center;">TO-HIT MODIFIERS (BASE 5+)</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    <div>
-                        <h4 style="color: var(--white); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">Range</h4>
-                        <div style="font-family: monospace; font-size: 0.9rem; line-height: 1.8; color: var(--light-gray);">
-                            Short (0-3 hexes): +0<br>
-                            Medium (4-6): +1<br>
-                            Long (7-10): +2<br>
-                            Extreme (11+): +3
-                        </div>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--white); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">Movement</h4>
-                        <div style="font-family: monospace; font-size: 0.9rem; line-height: 1.8; color: var(--light-gray);">
-                            Attacker stationary: +0<br>
-                            Attacker 1-3 hexes: +1<br>
-                            Attacker 4-6 hexes: +2<br>
-                            Defender moved 4+: +1
-                        </div>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--white); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">Facing</h4>
-                        <div style="font-family: monospace; font-size: 0.9rem; line-height: 1.8; color: var(--light-gray);">
-                            Front arc: +0<br>
-                            Weapon side: +0<br>
-                            Flank: -1 (easier)<br>
-                            Rear: -2 (easier)<br>
-                            Shield side: +1
-                        </div>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--white); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">Environment</h4>
-                        <div style="font-family: monospace; font-size: 0.9rem; line-height: 1.8; color: var(--light-gray);">
-                            Light Cover: +1<br>
-                            Heavy Cover: +2<br>
-                            Higher elevation: -1<br>
-                            Lower elevation: +1
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--medium-gray); text-align: center; color: var(--light-gray); font-size: 1rem;">
-                    Modifiers stack. A long-range shot (+2) while moving fast (+2) at a target in cover (+1) = need <span style="color: var(--blood-red); font-weight: 700;">10+</span> to hit.
-                </div>
-            </div>
-
-            <!-- Expected Hit Rates -->
-            <div style="background: var(--black); border: 2px solid var(--blood-red); padding: 3rem; margin-bottom: 4rem;">
-                <h3 style="font-size: 1.75rem; margin-bottom: 2rem; color: var(--blood-red); text-align: center;">EXPECTED HIT RATES</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center;">
-                    <div style="padding: 1.5rem; border: 1px solid var(--medium-gray);">
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">97%</div>
-                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Need 2+ (Rear + higher ground)</div>
-                    </div>
-                    <div style="padding: 1.5rem; border: 1px solid var(--medium-gray);">
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">72%</div>
-                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Need 4+ (Close range, stationary)</div>
-                    </div>
-                    <div style="padding: 1.5rem; border: 1px solid var(--medium-gray);">
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">42%</div>
-                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Need 7+ (Medium range + movement)</div>
-                    </div>
-                    <div style="padding: 1.5rem; border: 1px solid var(--medium-gray);">
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">28%</div>
-                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Need 8+ (Long range + cover)</div>
-                    </div>
-                    <div style="padding: 1.5rem; border: 1px solid var(--medium-gray);">
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">8%</div>
-                        <div style="color: var(--light-gray); margin-top: 0.5rem;">Need 10+ (Extreme range + modifiers)</div>
-                    </div>
-                </div>
-                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--medium-gray); text-align: center; color: var(--light-gray); font-size: 1rem;">
-                    Positioning matters. Movement matters. Every decision affects your hit chance.
-                </div>
-            </div>
-
-            <!-- Card Optimization -->
-            <div style="margin-bottom: 4rem;">
-                <h3 style="font-size: 1.75rem; margin-bottom: 2rem; color: var(--white); text-align: center;">DICE-OPTIMIZED CARDS</h3>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3 class="feature-title">ACCURACY BUFFS</h3>
-                        <p class="feature-desc">Precision Strike (-2 to target number). Hunter's Patience (-3 if stationary). Forge-Tempered Precision (auto-hit at 3 runes). Make attacks reliable.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature-title">REROLL MECHANICS</h3>
-                        <p class="feature-desc">Second Chance (reroll Attack Dice). Stone Certainty (convert Defense Dice Criticals to Shields). Control the randomness.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature-title">AUTO-HITS</h3>
-                        <p class="feature-desc">Martyrdom's Certainty (Church, discard 1). Soul Harvest (Ossuarium, triggers on [DEATH BLOW] even if miss). Guaranteed damage when you need it.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature-title">MISS COMPENSATION</h3>
-                        <p class="feature-desc">Divine Judgment (recover 2 SP on miss). Runic Wrath (next attack +3 dmg on miss). High-cost attacks have safety nets.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Design Philosophy -->
-            <div style="background: var(--dark-gray); border-left: 5px solid var(--accent); padding: 2.5rem; margin-bottom: 3rem;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent);">DESIGN PHILOSOPHY</h3>
-                <div style="color: var(--light-gray); line-height: 1.9; font-size: 1rem;">
-                    <p style="margin-bottom: 1rem;">
-                        <strong style="color: var(--white);">Brutal for Everyone:</strong> Both attacker and defender face randomness. Miss chance punishes attackers. Defense Dice can escalate damage with Criticals.
-                    </p>
-                    <p style="margin-bottom: 1rem;">
-                        <strong style="color: var(--white);">Tactical Depth:</strong> BattleTech-style modifier stacking rewards positioning, movement control, and terrain usage.
-                    </p>
-                    <p style="margin-bottom: 1rem;">
-                        <strong style="color: var(--white);">Player Agency:</strong> 39 cards designed to manipulate dice (rerolls, accuracy buffs, auto-hits, miss compensation). Players can mitigate randomness.
-                    </p>
-                    <p>
-                        <strong style="color: var(--white);">Faction Identity Preserved:</strong> Church self-harms for accuracy. Dwarves convert Criticals to Shields. Ossuarium triggers on symbols. Elves gain accuracy when patient.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%); border: 3px solid var(--accent);">
-                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--white);">COMPLETE DICE REFERENCE</h3>
-                <p style="color: var(--light-gray); margin-bottom: 2rem; font-size: 1.1rem;">
-                    17,000+ word specification. Attack resolution flowcharts. Probability tables. Card integration guide.
-                </p>
-                <a href="rules/dice-reference.md" download style="display: inline-block; background: var(--accent); color: var(--black); padding: 1.25rem 2.5rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: all 0.3s; border: 3px solid var(--accent);">
-                    READ FULL DICE SYSTEM DOCUMENTATION
-                </a>
-                <p style="color: var(--light-gray); margin-top: 1.5rem; font-size: 0.875rem;">
-                    3 dice types • 39 cards • 7+ modifiers • Complete probability analysis
-                </p>
             </div>
         </div>
     </section>
@@ -1153,11 +937,11 @@
                 <h4 class="footer-heading">RESOURCES</h4>
                 <ul class="footer-links">
                     <li><a href="reference/PLAYTEST-READY.md" class="footer-link" download>Playtest Package</a></li>
-                    <li><a href="rules/dice-reference.md" class="footer-link" download>Dice System Reference</a></li>
-                    <li><a href="reference/equipment-pool-complete.md" class="footer-link" download>Equipment Pool</a></li>
-                    <li><a href="campaigns/event-tables-kdm-style.md" class="footer-link" download>Event Tables</a></li>
-                    <li><a href="cards/index.html" class="footer-link">Card Database</a></li>
                     <li><a href="wiki/index.html" class="footer-link">Wiki</a></li>
+                    <li><a href="cards/index.html" class="footer-link">Card Database</a></li>
+                    <li><a href="wiki/index.html" class="footer-link">Dice System</a></li>
+                    <li><a href="wiki/index.html" class="footer-link">Equipment Pool</a></li>
+                    <li><a href="wiki/index.html" class="footer-link">Event Tables</a></li>
                 </ul>
             </div>
 
