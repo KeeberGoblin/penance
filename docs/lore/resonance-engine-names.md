@@ -1,13 +1,16 @@
 # The Many Names of the Apocalypse
 
-**Common Name**: The Theslar Disaster (neutral, historical)
-**Technical Name**: The Resonance Engine (pre-Sundering scientific term)
+**Player-Facing Name**: **The Engine** (universal, simple - use this in rules and gameplay)
+**Full Name**: The Theslar Engine (T.E.) - for technical documentation
+**Historical Term**: The Resonance Engine (pre-Sundering scientific jargon)
+
+**Note for Players**: Throughout this game, when you see "The Engine," we're talking about the machine that ended the world in Year 0. Keep it simple—no need to track different names unless you're reading faction lore for immersion.
 
 ---
 
-## Faction-Specific Names
+## Faction-Specific Names (For Flavor & Immersion)
 
-Each faction interprets the cataclysm through their own cultural, religious, or philosophical framework. These names reveal how they understand what happened—and who they blame.
+Each faction interprets the cataclysm through their own cultural, religious, or philosophical framework. These names reveal how they understand what happened—and who they blame. **NPCs and flavor text use these names**, but players can just say "The Engine" and everyone knows what you mean.
 
 ### Church of Absolution
 **"The Theslar Sin"**
@@ -169,14 +172,16 @@ Every faction knows these words. Every faction interprets them differently.
 
 ## Historical Note
 
-The artifact itself is still called **"The Resonance Engine"** in most technical documentation, but no one actually uses that term in conversation. To call it by its proper name feels sterile—inadequate for something that killed 90% of humanity.
+**For Players**: Just call it **"The Engine."** Simple, universal, no confusion.
+
+**For Lore Nerds**: The artifact's full technical name is "The Theslar Engine" (T.E.), but no one in-world actually uses that sterile term. To call it by its proper name feels inadequate for something that killed 90% of humanity.
 
 Everyone has their own word for the end of the world.
 
-And the Engine is still out there. Somewhere. Still humming.
+And The Engine is still out there. Somewhere. Still humming.
 
 ---
 
-**Design Note**: This document allows NPCs, flavor text, and faction dialogue to use culturally appropriate names for the apocalypse. A Church zealot would never say "The Resonance Engine"—they'd say "The Theslar Sin." A dwarf engineer would say "The Folly." An elf would whisper "The Withering."
+**Design Note**: This document allows NPCs, flavor text, and faction dialogue to use culturally appropriate names for the apocalypse. A Church zealot would never say "The Engine"—they'd say "The Theslar Sin." A dwarf engineer would say "The Folly." An elf would whisper "The Withering."
 
-This adds depth and faction identity to the lore without requiring players to track multiple names—they'll pick up context naturally.
+**Players don't need to memorize these.** Just say "The Engine" during gameplay and you're good. The faction names are for immersion when reading lore or hearing NPC dialogue.
