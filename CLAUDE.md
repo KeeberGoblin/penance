@@ -347,18 +347,34 @@ penance/
 │   │
 │   └── wiki/                          # Interactive wiki (HTML)
 │       ├── index.html                 # Wiki homepage (iframe navigation)
-│       ├── content-home.html          # Wiki main content page (NEW)
-│       ├── manuscript-style.css       # Gothic manuscript stylesheet (NEW)
-│       ├── cosmology.html             # Cosmology wiki page (NEW)
+│       ├── content-home.html          # Wiki main content page
+│       ├── manuscript-style.css       # Gothic manuscript stylesheet
+│       │
+│       ├── cosmology.html             # Cosmology wiki page
+│       ├── lore-sundering.html        # The Sundering lore page
+│       ├── lore-engine.html           # Resonance Engine page
+│       ├── lore-chronicle.html        # 437-year chronicle page
+│       ├── lore-npcs.html             # Iconic pilots page
+│       │
+│       ├── rules-turn-structure.html  # Turn structure rules page
+│       ├── rules-combat.html          # Combat & damage system page
+│       ├── rules-range-los.html       # Range & line of sight page
+│       ├── rules-dice.html            # Dice reference page
+│       ├── rules-quick-ref.html       # Quick reference sheet page
+│       │
 │       ├── faction-church.html        # Church faction page (manuscript-styled)
 │       ├── faction-dwarves.html       # Dwarves faction page (manuscript-styled)
 │       ├── faction-undead.html        # Ossuarium faction page (manuscript-styled)
 │       ├── faction-elves.html         # Elves faction page (manuscript-styled)
-│       ├── faction-fae.html           # Wyrd Conclave page (manuscript-styled, NEW)
-│       ├── faction-nomads.html        # Nomads page (manuscript-styled, NEW)
-│       ├── faction-merchants.html     # Merchants page (manuscript-styled, NEW)
-│       ├── faction-blighted.html      # Blighted page (manuscript-styled, NEW)
-│       └── faction-chitinous.html     # Chitinous page (manuscript-styled, NEW)
+│       ├── faction-fae.html           # Wyrd Conclave page (manuscript-styled)
+│       ├── faction-nomads.html        # Nomads page (manuscript-styled)
+│       ├── faction-merchants.html     # Merchants page (manuscript-styled)
+│       ├── faction-blighted.html      # Blighted page (manuscript-styled)
+│       ├── faction-chitinous.html     # Chitinous page (manuscript-styled)
+│       │
+│       ├── equipment-decks.html       # Equipment & deck building page (NEW - Oct 12)
+│       ├── support-units.html         # Support units system page (NEW - Oct 12)
+│       └── scenarios.html             # Playtest scenarios page (NEW - Oct 12)
 │
 └── tools/                             # Development utilities
     ├── card-generator/                # Card template generator
@@ -722,6 +738,13 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 ---
 
 ## Changelog for This Document
+
+**October 12, 2025** - Equipment, Support Units, and Scenarios wiki pages
+- **Equipment & Decks Wiki Page**: Complete equipment pool (60+ items), crafting costs, smelting/salvage system
+- **Support Units Wiki Page**: 6 support unit types (Penitent Squad, Ironclad Sentinel, Bone Thralls, Verdant Stalker, Forge Golem, Scrap Hauler)
+- **Scenarios Wiki Page**: Complete walkthroughs of Proving Grounds and Reliquary Ruins scenarios, dice combat examples
+- **Navigation Updated**: All Equipment, Support Units, and Scenarios links now use iframe loading instead of GitHub external links
+- **Manuscript Styling**: All new pages use consistent gothic parchment aesthetic with centered content
 
 **October 12, 2025** - Wiki completion, cosmology integration, Engine naming
 - **Wiki System Complete**: All 9 faction pages converted to manuscript styling (gothic parchment aesthetic)
