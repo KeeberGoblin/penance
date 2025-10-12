@@ -1,8 +1,8 @@
 # CLAUDE.md
 ## AI Assistant Context Document for Penance: Absolution Through Steel
 
-**Last Updated**: October 11, 2025
-**Project Status**: PLAYTEST READY (v2.0 Equipment System)
+**Last Updated**: October 12, 2025
+**Project Status**: PLAYTEST READY (v2.0 Equipment System + Wiki Complete)
 **Purpose**: This document provides complete context for AI assistants working on Penance
 
 ---
@@ -197,12 +197,52 @@ Crafting: Costs 2-6 Scrap per item depending on complexity
 
 ### Timeline: 437 Years Since The Sundering
 
-**Year 0**: The Resonance Engine activates. Dr. Nikolas Theslar's final transmission: "It's singing."
+**Year 0**: The Theslar Engine activates. Dr. Nikolas Theslar's final transmission: "It's singing."
 **Year 52**: First Casket prototype. Engineer Gareth volunteers: "I feel hollow without it."
 **Year 78**: Bonelord Thresh opens The Ledger (soul contracts).
 **Year 134**: The Great Schism (Church civil war, 80 years).
 **Year 223**: Betrayal at Roothold (Church burns elven forests).
 **Year 437**: **Present Day** - 9 factions war across a shattered world.
+
+### The Engine (Official Naming)
+**File**: `docs/lore/resonance-engine-names.md`
+
+**Player-Facing Name**: **The Engine** (universal, simple - use in all rules/gameplay)
+**Full Technical Name**: The Theslar Engine (T.E.)
+**Historical Term**: The Resonance Engine (pre-Sundering scientific jargon)
+
+**Faction-Specific Names** (for flavor text and NPC dialogue):
+- Church: "The Theslar Sin" (divine punishment)
+- Dwarves: "Theslar's Folly" (engineering failure)
+- Ossuarium: "The Ledger's Opening" (their genesis moment)
+- Elves: "The Withering" (ecological catastrophe)
+- Wyrd Conclave: "The Unmaking" (reality rupture)
+- Nomads: "The Break" / "Old Nik's Bomb" (irreverent)
+- Merchants: "The Theslar Recession" (economic collapse)
+- Blighted: "The Mutation Dawn" (evolutionary awakening)
+- Chitinous: "The Emergence" (hive-mind birth)
+
+**Players don't need to memorize faction names** - just say "The Engine" during gameplay.
+
+### Cosmology & Species Origins
+**File**: `docs/lore/cosmology-and-origins.md`
+
+**Three-Layered Cosmos**:
+1. **The Material Realm** - Physical world where the game takes place
+2. **The Veil** - Space between worlds, source of magic/ley lines
+3. **The Deep** - Unknowable void, origin of eldritch entities
+
+**The Cataclysm Cycle**: Has happened **three times total** (including the current one):
+- 1st Ending (50,000 BCE): Flood - Survivors: primitive humans, nascent elves
+- 2nd Ending (10,000 BCE): Fire - Volcanic superchains, ley line destabilization
+- 3rd Ending (Year 0): Void - The Theslar Engine activation (current state)
+
+**Species Origins**:
+- **Humans**: Natural evolution (identical to real Earth), magic-blind (1 in 10,000 sensitive)
+- **Elves**: Ley line incarnations from The Veil, immortal but sterile (cannot reproduce)
+- **Dwarves**: Stone given consciousness by The Deep, earth-based hivemind
+- **Fae**: Reality-benders from The Veil, ageless tricksters with no true form
+- **Draconids** (extinct): Ancient species that predicted the Cataclysm cycle, vanished
 
 ### 9 Factions (5 Unplayable, Design-Only)
 
@@ -284,7 +324,9 @@ penance/
 │   │   ├── world-overview.md          # The Sundering, 9 factions
 │   │   ├── chronicle.md               # 437-year timeline
 │   │   ├── iconic-npcs.md             # 5 legendary pilots
-│   │   └── resonance-engine.md        # The artifact that ended the world
+│   │   ├── resonance-engine.md        # The artifact that ended the world
+│   │   ├── resonance-engine-names.md  # Faction-specific Engine names (NEW)
+│   │   └── cosmology-and-origins.md   # Three-layered cosmos, species origins (NEW)
 │   │
 │   ├── campaigns/                     # Long-term progression
 │   │   ├── settlements.md             # Base building
@@ -304,8 +346,19 @@ penance/
 │   │   └── PLAYTEST-READY.md          # Detailed playtest package
 │   │
 │   └── wiki/                          # Interactive wiki (HTML)
-│       ├── index.html                 # Wiki homepage
-│       └── faction-*.html             # Faction pages
+│       ├── index.html                 # Wiki homepage (iframe navigation)
+│       ├── content-home.html          # Wiki main content page (NEW)
+│       ├── manuscript-style.css       # Gothic manuscript stylesheet (NEW)
+│       ├── cosmology.html             # Cosmology wiki page (NEW)
+│       ├── faction-church.html        # Church faction page (manuscript-styled)
+│       ├── faction-dwarves.html       # Dwarves faction page (manuscript-styled)
+│       ├── faction-undead.html        # Ossuarium faction page (manuscript-styled)
+│       ├── faction-elves.html         # Elves faction page (manuscript-styled)
+│       ├── faction-fae.html           # Wyrd Conclave page (manuscript-styled, NEW)
+│       ├── faction-nomads.html        # Nomads page (manuscript-styled, NEW)
+│       ├── faction-merchants.html     # Merchants page (manuscript-styled, NEW)
+│       ├── faction-blighted.html      # Blighted page (manuscript-styled, NEW)
+│       └── faction-chitinous.html     # Chitinous page (manuscript-styled, NEW)
 │
 └── tools/                             # Development utilities
     ├── card-generator/                # Card template generator
@@ -669,6 +722,16 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 ---
 
 ## Changelog for This Document
+
+**October 12, 2025** - Wiki completion, cosmology integration, Engine naming
+- **Wiki System Complete**: All 9 faction pages converted to manuscript styling (gothic parchment aesthetic)
+- **Iframe Navigation Fixed**: Full-height matching eliminates scrolling issues
+- **Cosmology & Origins Created**: Three-layered cosmos (Material/Veil/Deep), species origins, Cataclysm cycle
+- **Engine Naming System**: "The Engine" for gameplay, faction-specific names for flavor (9 variations)
+- **Drop-cap Fix**: Centered quote text no longer misaligned
+- **Cross-Platform Responsive**: Wiki pages now work on mobile/tablet (3 breakpoints added)
+- **Design-Only Factions Styled**: Wyrd Conclave, Nomads, Merchants, Blighted, Chitinous now have manuscript pages
+- **Project Genesis Timeline**: Added 2005-2024 development history to wiki home page
 
 **October 12, 2025** - Contradiction fixes and repository cleanup
 - Fixed "Elven Remnants" → "Elven Verdant Covenant" in 7 files
