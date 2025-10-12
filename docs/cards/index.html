@@ -664,13 +664,13 @@
                 keywords: ['heat', 'utility']
             },
             {
-                id: 'sensor-sweep',
-                name: 'Sensor Sweep',
+                id: 'read-the-threads',
+                name: 'Read the Threads',
                 type: 'utility',
                 faction: 'universal',
                 cost: 1,
                 range: 'Target Enemy',
-                effect: 'Reveal 1 random card in target enemy\'s hand (your choice of enemy). If that card is a Primary Weapon card, you may rotate them 1 hex facing.',
+                effect: 'Reveal 1 random card in target enemy\'s hand (your choice of enemy). If that card is an attack card, you may rotate them 1 hex facing.',
                 initiative: '[3]',
                 keywords: ['utility', 'information']
             },
@@ -742,7 +742,7 @@
                 keywords: ['heat', 'utility']
             },
 
-            // ===== CHURCH OF ABSOLUTION - PRIMARY WEAPON: PENITENT BLADES (12 Cards) =====
+            // ===== CHURCH OF ABSOLUTION - FACTION CORE (6 Cards) =====
             {
                 id: 'blood-offering',
                 name: 'Blood Offering',
@@ -752,34 +752,8 @@
                 range: 'Self',
                 effect: 'Discard 2 cards from the top of your deck (self-harm). Your next attack this turn: +3 damage and ignore 1 Defense.',
                 initiative: '[1]',
-                keywords: ['gambit', 'self-harm', 'buff', 'primary-weapon'],
+                keywords: ['gambit', 'self-harm', 'buff', 'core'],
                 quote: 'Pain purifies. Blood absolves.'
-            },
-            {
-                id: 'faithful-thrust',
-                name: 'Faithful Thrust',
-                type: 'attack',
-                faction: 'church',
-                cost: 2,
-                range: 'Melee (Range 1)',
-                damage: '4',
-                effect: 'Deal 4 damage. If attacking from rear arc: +2 damage.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'positioning', 'primary-weapon'],
-                quote: 'Strike true. Strike hard. Strike until forgiven.'
-            },
-            {
-                id: 'righteous-cleave',
-                name: 'Righteous Cleave',
-                type: 'attack',
-                faction: 'church',
-                cost: 3,
-                range: 'Melee (Range 1)',
-                damage: '5',
-                effect: 'Deal 5 damage to primary target. If there is an enemy adjacent to the primary target, deal 2 damage to that enemy as well.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'cleave', 'primary-weapon'],
-                quote: 'One swing. Two sinners absolved.'
             },
             {
                 id: 'martyrdom-protocol',
@@ -791,8 +765,20 @@
                 effect: 'When an ally within 2 hexes would take damage, redirect that damage to yourself instead. Gain 1 Heat.',
                 heat: '+1',
                 initiative: '[—]',
-                keywords: ['reactive', 'ally', 'sacrifice', 'primary-weapon'],
+                keywords: ['reactive', 'ally', 'sacrifice', 'core'],
                 quote: 'I will bear your sins.'
+            },
+            {
+                id: 'righteous-fury-core',
+                name: 'Righteous Fury',
+                type: 'passive',
+                faction: 'church',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - Each time an enemy Casket is destroyed this mission, gain +1 damage to all attacks permanently (stacks).',
+                initiative: 'N/A',
+                keywords: ['passive', 'permanent', 'scaling', 'core'],
+                quote: 'Wrath is holy when directed at the guilty.'
             },
             {
                 id: 'divine-judgment',
@@ -804,7 +790,7 @@
                 damage: '6',
                 effect: 'Deal 6 damage. If target has 10 or fewer cards remaining in their deck, deal 8 damage instead.',
                 initiative: '[3]',
-                keywords: ['attack', 'melee', 'execute', 'primary-weapon'],
+                keywords: ['attack', 'melee', 'execute', 'core'],
                 quote: 'The guilty know their sentence.'
             },
             {
@@ -816,168 +802,23 @@
                 range: '3-hex radius',
                 effect: 'Create a 3-hex radius healing zone centered on you until end of round. Allied Caskets in this zone recover 2 cards from their discard pile at the start of their turn.',
                 initiative: '[4]',
-                keywords: ['utility', 'ally', 'healing', 'zone', 'primary-weapon'],
+                keywords: ['utility', 'ally', 'healing', 'zone', 'core'],
                 quote: 'Stand in the light. Be redeemed.'
             },
-
-            // ===== CHURCH - SECONDARY OPTION A: BUCKLER SHIELD (6 Cards) =====
             {
-                id: 'deflect',
-                name: 'Deflect',
+                id: 'last-rites-core',
+                name: 'Last Rites',
                 type: 'defense',
                 faction: 'church',
                 cost: 0,
-                range: 'Self',
-                effect: 'Reduce the next damage you take this turn by 1.',
+                range: 'Ally within 3 hexes',
+                effect: 'When an allied Casket within 3 hexes is defeated (deck reaches 0), immediately recover 5 cards from your discard pile. Draw 2 cards.',
                 initiative: '[—]',
-                keywords: ['reactive', 'defense', 'shield']
-            },
-            {
-                id: 'shield-bash',
-                name: 'Shield Bash',
-                type: 'attack',
-                faction: 'church',
-                cost: 1,
-                range: 'Melee (Range 1)',
-                damage: '2',
-                effect: 'Deal 2 damage. Push target 1 hex directly away from you.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'shield', 'push']
-            },
-            {
-                id: 'hunker-down',
-                name: 'Hunker Down',
-                type: 'defense',
-                faction: 'church',
-                cost: 2,
-                range: 'Self',
-                effect: 'Gain +2 Defense until end of round. You cannot attack until end of round.',
-                initiative: '[3]',
-                keywords: ['defense', 'shield']
-            },
-
-            // ===== CHURCH - SECONDARY OPTION B: TOWER SHIELD (6 Cards) =====
-            {
-                id: 'wall-of-iron',
-                name: 'Wall of Iron',
-                type: 'defense',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'Reduce the next damage you take this turn by 3. Gain 1 Heat.',
-                heat: '+1',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense', 'shield', 'heat']
-            },
-            {
-                id: 'shield-wall',
-                name: 'Shield Wall',
-                type: 'defense',
-                faction: 'church',
-                cost: 3,
-                range: 'Allies within 2 hexes',
-                effect: 'Until end of round, all allies within 2 hexes behind you gain +2 Defense.',
-                initiative: '[4]',
-                keywords: ['defense', 'ally', 'shield']
-            },
-            {
-                id: 'advance',
-                name: 'Advance',
-                type: 'movement',
-                faction: 'church',
-                cost: 2,
-                range: 'Self',
-                effect: 'Move up to 2 hexes. Gain +1 Defense until end of your turn.',
-                initiative: '[2]',
-                keywords: ['movement', 'defense', 'shield']
-            },
-
-            // ===== CHURCH - SECONDARY OPTION C: HOLY RELIC - REPAIR KIT (6 Cards) =====
-            {
-                id: 'emergency-repair',
-                name: 'Emergency Repair',
-                type: 'utility',
-                faction: 'church',
-                cost: 2,
-                range: 'Self',
-                effect: 'Recover 3 cards from your discard pile and shuffle them into your deck.',
-                initiative: '[3]',
-                keywords: ['utility', 'healing', 'relic']
-            },
-            {
-                id: 'scrap-armor',
-                name: 'Scrap Armor',
-                type: 'defense',
-                faction: 'church',
-                cost: 1,
-                range: 'Self',
-                effect: 'Gain 1 Armor (ignore the first 1 damage from next attack). Armor is removed when you take damage.',
-                initiative: '[2]',
-                keywords: ['defense', 'armor', 'relic']
-            },
-            {
-                id: 'jury-rig',
-                name: 'Jury-Rig',
-                type: 'utility',
-                faction: 'church',
-                cost: 3,
-                range: 'Self',
-                effect: 'Shuffle your discard pile into your deck. Do NOT add a Damage card when doing this (special exception to reshuffle rule).',
-                initiative: '[4]',
-                keywords: ['utility', 'deck', 'relic']
-            },
-
-            // ===== CHURCH - SECONDARY OPTION D: HOLY PISTOL (6 Cards) =====
-            {
-                id: 'quick-shot',
-                name: 'Quick Shot',
-                type: 'attack',
-                faction: 'church',
-                cost: 1,
-                range: 'Close (Range 3)',
-                damage: '2',
-                effect: 'Deal 2 damage.',
-                initiative: '[2]',
-                keywords: ['attack', 'ranged', 'pistol']
-            },
-            {
-                id: 'dual-wield',
-                name: 'Dual Wield',
-                type: 'attack',
-                faction: 'church',
-                cost: 2,
-                range: 'Melee (Range 1)',
-                damage: '3',
-                effect: 'Deal 3 damage to primary target. Then discard 1 card from your hand (recoil).',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'pistol']
-            },
-            {
-                id: 'suppressing-fire',
-                name: 'Suppressing Fire',
-                type: 'attack',
-                faction: 'church',
-                cost: 3,
-                range: 'Close (Range 3)',
-                damage: '2',
-                effect: 'Deal 2 damage to up to 3 different targets within range.',
-                initiative: '[3]',
-                keywords: ['attack', 'ranged', 'pistol', 'aoe']
+                keywords: ['reactive', 'ally', 'healing', 'death-trigger', 'core'],
+                quote: 'Their sacrifice will not be wasted.'
             },
 
             // ===== CHURCH - FACTION TACTICS (5 Options, Choose 2) =====
-            {
-                id: 'righteous-fury',
-                name: 'Righteous Fury',
-                type: 'passive',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'Each time an enemy Casket is destroyed this mission, gain +1 damage to all attacks permanently for the rest of the mission (stacks).',
-                initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'scaling', 'tactic'],
-                quote: 'Wrath is holy when directed at the guilty.'
-            },
             {
                 id: 'flagellants-zeal',
                 name: 'Flagellant\'s Zeal',
@@ -989,18 +830,6 @@
                 initiative: '[Special]',
                 keywords: ['gambit', 'self-harm', 'sp-burst', 'tactic'],
                 quote: 'Suffer now. Triumph later.'
-            },
-            {
-                id: 'last-rites',
-                name: 'Last Rites',
-                type: 'defense',
-                faction: 'church',
-                cost: 0,
-                range: 'Ally within 3 hexes',
-                effect: 'When an allied Casket within 3 hexes is defeated (deck reaches 0), immediately recover 5 cards from your discard pile and shuffle them into your deck. Draw 2 cards.',
-                initiative: '[—]',
-                keywords: ['reactive', 'ally', 'healing', 'death-trigger', 'tactic'],
-                quote: 'Their sacrifice will not be wasted.'
             },
             {
                 id: 'absolution',
@@ -1026,8 +855,33 @@
                 keywords: ['passive', 'conditional', 'sp-efficiency', 'tactic'],
                 quote: 'The strong need no hesitation.'
             },
+            {
+                id: 'penitent-strike',
+                name: 'Penitent Strike',
+                type: 'attack',
+                faction: 'church',
+                cost: 3,
+                range: 'Melee (Range 1)',
+                damage: '5',
+                effect: 'Deal 5 damage. If you have 15 or fewer cards in your deck, deal +2 damage.',
+                initiative: '[2]',
+                keywords: ['attack', 'melee', 'desperation', 'tactic'],
+                quote: 'The dying strike hardest.'
+            },
+            {
+                id: 'sanctified-armor',
+                name: 'Sanctified Armor',
+                type: 'passive',
+                faction: 'church',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - Reduce all Heat gained by 1 (minimum 0 Heat from any source).',
+                initiative: 'N/A',
+                keywords: ['passive', 'heat-reduction', 'tactic'],
+                quote: 'Faith tempers the furnace.'
+            },
 
-            // ===== DWARVEN CLANS - PRIMARY WEAPON: RUNIC WARHAMMER (12 Cards) =====
+            // ===== DWARVEN FORGE-GUILDS - FACTION CORE (6 Cards) =====
             {
                 id: 'crushing-blow',
                 name: 'Crushing Blow',
@@ -1039,8 +893,32 @@
                 effect: 'Deal 4 damage. ARMOR PIERCING (ignore all armor/defense buffs).',
                 heat: '+1',
                 initiative: '[2]',
-                keywords: ['attack', 'melee', 'armor-piercing', 'primary-weapon'],
+                keywords: ['attack', 'melee', 'armor-piercing', 'core'],
                 quote: 'Runes flare blue-white as the hammerhead strikes true.'
+            },
+            {
+                id: 'rune-of-protection',
+                name: 'Rune of Protection',
+                type: 'utility',
+                faction: 'dwarves',
+                cost: 2,
+                range: 'Self',
+                effect: 'Gain 1 Rune Counter. While you have Rune Counters, reduce all damage by 1 per counter (max 3 counters). Lasts until end of mission or destroyed.',
+                initiative: '[2]',
+                keywords: ['buff', 'defense', 'rune', 'core'],
+                quote: 'Ancient words carved in living metal.'
+            },
+            {
+                id: 'stone-endurance-core',
+                name: 'Stone Endurance',
+                type: 'passive',
+                faction: 'dwarves',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - Your maximum HP is 32 instead of 30 (add 2 extra Universal Core cards to deck at start).',
+                initiative: 'N/A',
+                keywords: ['passive', 'permanent', 'hp-boost', 'core'],
+                quote: 'Stone does not break.'
             },
             {
                 id: 'forge-fury',
@@ -1052,34 +930,8 @@
                 damage: '3+',
                 effect: 'Deal 3 damage + 1 damage per Heat you currently have (max +6). Remove all Heat after attack.',
                 initiative: '[2]',
-                keywords: ['attack', 'melee', 'heat-conversion', 'primary-weapon'],
+                keywords: ['attack', 'melee', 'heat-conversion', 'core'],
                 quote: 'The furnace roars. Steel becomes vengeance.'
-            },
-            {
-                id: 'earthshaker',
-                name: 'Earthshaker',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 4,
-                range: 'Melee (1 hex)',
-                damage: '5',
-                effect: 'Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['attack', 'melee', 'aoe', 'crowd-control', 'primary-weapon'],
-                quote: 'The ground cracks. The weak scatter.'
-            },
-            {
-                id: 'rune-of-protection',
-                name: 'Rune of Protection',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self',
-                effect: 'Gain 1 Rune Counter. While you have Rune Counters, reduce all damage by 1 per counter (max 3 counters). Lasts until end of mission or destroyed.',
-                initiative: '[2]',
-                keywords: ['buff', 'defense', 'rune', 'primary-weapon'],
-                quote: 'Ancient words carved in living metal.'
             },
             {
                 id: 'unbreakable',
@@ -1091,192 +943,23 @@
                 effect: 'When you would take Component Damage, prevent 1 Component Damage.',
                 heat: '+1',
                 initiative: '[—]',
-                keywords: ['reactive', 'defense', 'component-protection', 'primary-weapon'],
+                keywords: ['reactive', 'defense', 'component-protection', 'core'],
                 quote: 'Dwarven steel bends. It does not break.'
             },
             {
-                id: 'hammerfall',
-                name: 'Hammerfall',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 5,
-                range: 'Melee (1 hex)',
-                damage: '8',
-                effect: 'Deal 8 damage. ARMOR PIERCING. If target has 10 HP or less after damage, destroy 1 component of your choice.',
-                heat: '+3',
-                initiative: '[4]',
-                keywords: ['attack', 'melee', 'armor-piercing', 'ultimate', 'primary-weapon'],
-                quote: 'The hammer falls. The world remembers.'
-            },
-
-            // ===== DWARVEN - SECONDARY OPTION A: SIEGE SHIELD (6 Cards) =====
-            {
-                id: 'dwarven-shield-wall',
-                name: 'Shield Wall',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self + Allies',
-                effect: '+3 Defense until your next turn. All allies behind you (in rear arc) gain +1 Defense. Cannot attack while Shield Wall active.',
-                initiative: '[3]',
-                keywords: ['defense', 'stance', 'shield', 'ally']
-            },
-            {
-                id: 'iron-bulwark',
-                name: 'Iron Bulwark',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'Reduce damage by 3. Gain 1 Heat.',
-                heat: '+1',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense', 'shield']
-            },
-            {
-                id: 'dwarven-advance',
-                name: 'Advance',
-                type: 'movement',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self',
-                effect: 'Move up to 2 hexes toward nearest enemy. Gain +2 Defense this turn.',
-                initiative: '[2]',
-                keywords: ['movement', 'defense', 'shield']
-            },
-
-            // ===== DWARVEN - SECONDARY OPTION B: RUNIC AXE (6 Cards) =====
-            {
-                id: 'rending-strike',
-                name: 'Rending Strike',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 1,
-                range: 'Melee (1 hex)',
-                damage: '3',
-                effect: 'Deal 3 damage. ARMOR PIERCING.',
-                heat: '+1',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'armor-piercing', 'axe']
-            },
-            {
-                id: 'whirlwind',
-                name: 'Whirlwind',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 3,
-                range: 'Self',
-                damage: '3',
-                effect: 'Deal 3 damage to ALL adjacent enemies (including allies if friendly fire enabled).',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['attack', 'melee', 'aoe', 'axe']
-            },
-            {
-                id: 'brutal-efficiency',
-                name: 'Brutal Efficiency',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Melee (1 hex)',
-                damage: '4',
-                effect: 'Deal 4 damage. Draw 1 card.',
-                heat: '+1',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'draw', 'axe']
-            },
-
-            // ===== DWARVEN - SECONDARY OPTION C: REPAIR SERVITORS (6 Cards) =====
-            {
-                id: 'dwarven-emergency-repair',
-                name: 'Emergency Repair',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 3,
-                range: 'Self',
-                effect: 'Recover 3 cards from your discard pile, shuffle them into your deck.',
-                heat: '+1',
-                initiative: '[3]',
-                keywords: ['utility', 'healing', 'servitor']
-            },
-            {
-                id: 'dwarven-scrap-armor',
-                name: 'Scrap Armor',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self',
-                effect: 'Gain 1 Armor Counter (ignore next 1 damage). Armor is removed when you take damage. Stacks with Rune Counters.',
-                initiative: '[2]',
-                keywords: ['defense', 'armor', 'servitor']
-            },
-            {
-                id: 'dwarven-jury-rig',
-                name: 'Jury-Rig',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 4,
-                range: 'Self',
-                effect: 'When you reshuffle your deck, do NOT add a Damage card this time.',
-                heat: '+2',
-                initiative: '[4]',
-                keywords: ['utility', 'deck', 'servitor']
-            },
-
-            // ===== DWARVEN - SECONDARY OPTION D: SIEGE CANNON (6 Cards) =====
-            {
-                id: 'siege-shot',
-                name: 'Siege Shot',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 2,
-                range: '4-7 hexes (Long range)',
-                damage: '4',
-                effect: 'Deal 4 damage. ARMOR PIERCING. Cannot fire at Melee range (1 hex).',
-                heat: '+2',
-                initiative: '[2]',
-                keywords: ['attack', 'ranged', 'armor-piercing', 'cannon']
-            },
-            {
-                id: 'explosive-shell',
-                name: 'Explosive Shell',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 4,
-                range: '4-7 hexes',
-                damage: '3',
-                effect: 'Deal 3 damage to target + 2 damage to all adjacent hexes.',
-                heat: '+3',
-                initiative: '[3]',
-                keywords: ['attack', 'ranged', 'aoe', 'cannon']
-            },
-            {
-                id: 'suppressing-fire-dwarven',
-                name: 'Suppressing Fire',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 3,
-                range: '4-7 hexes',
-                damage: '2',
-                effect: 'Deal 2 damage. Target loses 2 SP on their next turn.',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['attack', 'ranged', 'debuff', 'cannon']
-            },
-
-            // ===== DWARVEN - FACTION TACTICS (5 Options, Choose 2) =====
-            {
-                id: 'stone-endurance',
-                name: 'Stone Endurance',
+                id: 'clan-vengeance-core',
+                name: 'Clan Vengeance',
                 type: 'passive',
                 faction: 'dwarves',
                 cost: 0,
                 range: 'Self',
-                effect: 'PERMANENT PASSIVE - Your maximum HP is 32 instead of 30 (add 2 extra Universal Core cards to deck at start). The 2 extra cards are "Breathe the Core" duplicates.',
+                effect: 'PERMANENT PASSIVE - Each time you take Component Damage, your next attack deals +2 damage. Stacks.',
                 initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'hp-boost', 'tactic'],
-                quote: 'Stone does not break.'
+                keywords: ['passive', 'permanent', 'damage-boost', 'core'],
+                quote: 'They will pay for every broken piece.'
             },
+
+            // ===== DWARVEN - FACTION TACTICS (5 Options, Choose 2) =====
             {
                 id: 'forge-mastery',
                 name: 'Forge Mastery',
@@ -1299,19 +982,8 @@
                 effect: 'Gain 2 Rune Counters immediately. Gain 2 Heat.',
                 heat: '+2',
                 initiative: '[3]',
-                keywords: ['utility', 'buff', 'rune', 'tactic']
-            },
-            {
-                id: 'clan-vengeance',
-                name: 'Clan Vengeance',
-                type: 'passive',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Each time you take Component Damage, your next attack deals +2 damage. Stacks (3 Component Damage = +6 damage next attack).',
-                initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'damage-boost', 'tactic'],
-                quote: 'They will pay for every broken piece.'
+                keywords: ['utility', 'buff', 'rune', 'tactic'],
+                quote: 'Power flows through ancient stone.'
             },
             {
                 id: 'unbreakable-spirit',
@@ -1325,6 +997,32 @@
                 initiative: '[—]',
                 keywords: ['reactive', 'resurrection', 'one-use', 'tactic'],
                 quote: 'We do not yield.'
+            },
+            {
+                id: 'earthshaker',
+                name: 'Earthshaker',
+                type: 'attack',
+                faction: 'dwarves',
+                cost: 4,
+                range: 'Melee (1 hex)',
+                damage: '5',
+                effect: 'Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.',
+                heat: '+2',
+                initiative: '[3]',
+                keywords: ['attack', 'melee', 'aoe', 'crowd-control', 'tactic'],
+                quote: 'The ground cracks. The weak scatter.'
+            },
+            {
+                id: 'iron-resolve',
+                name: 'Iron Resolve',
+                type: 'passive',
+                faction: 'dwarves',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - When you have 3 or more Heat, gain +1 Defense.',
+                initiative: 'N/A',
+                keywords: ['passive', 'defense', 'heat-synergy', 'tactic'],
+                quote: 'The forge tempers us all.'
             },
 
             // ===== THE OSSUARIUM - FACTION CORE (6 Cards) =====
@@ -1404,6 +1102,68 @@
                 quote: 'Death feeds on death, growing ever stronger.'
             },
 
+            // ===== OSSUARIUM - FACTION TACTICS (5 Options, Choose 2) =====
+            {
+                id: 'eternal-hunger',
+                name: 'Eternal Hunger',
+                type: 'passive',
+                faction: 'undead',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - Whenever you recover cards from discard pile, recover double the amount (rounds up). Does NOT stack with Necrotic Surge.',
+                initiative: 'N/A',
+                keywords: ['passive', 'lifesteal', 'synergy', 'tactic'],
+                quote: 'Hunger without end.'
+            },
+            {
+                id: 'grave-robber',
+                name: 'Grave Robber',
+                type: 'utility',
+                faction: 'undead',
+                cost: 1,
+                range: 'Self',
+                effect: 'When enemy Casket is destroyed within 3 hexes, roll 1d6. On 4+, gain 1 random equipment card from their deck (add to your deck permanently this mission).',
+                initiative: '[—]',
+                keywords: ['utility', 'loot', 'death-trigger', 'tactic'],
+                quote: 'The dead have no use for such things.'
+            },
+            {
+                id: 'undying-resilience',
+                name: 'Undying Resilience',
+                type: 'passive',
+                faction: 'undead',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - The SECOND time each mission you would be reduced to 0 HP, instead set HP to 10 (recover 10 cards from discard). Stacks with Phylactery.',
+                initiative: 'N/A',
+                keywords: ['passive', 'resurrection', 'survival', 'tactic'],
+                quote: 'I have died twice. I will die again.'
+            },
+            {
+                id: 'raise-dead',
+                name: 'Raise Dead',
+                type: 'utility',
+                faction: 'undead',
+                cost: 3,
+                range: 'Adjacent',
+                effect: 'Summon 1 Thrall minion adjacent to you. Thrall has 1 HP, deals 2 damage (melee), acts on your turn (costs 1 SP to command). Lasts 3 rounds or until destroyed. Max 3 Thralls at once.',
+                initiative: '[3]',
+                keywords: ['active', 'summon', 'minion', 'tactic'],
+                quote: 'Rise. Serve. Fall again.'
+            },
+            {
+                id: 'bone-armor',
+                name: 'Bone Armor',
+                type: 'passive',
+                faction: 'undead',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - For each enemy destroyed this mission, gain +1 permanent Defense (max +5). Defense persists entire mission.',
+                initiative: 'N/A',
+                keywords: ['passive', 'defense', 'scaling', 'tactic'],
+                quote: 'Their bones become my armor.'
+            },
+
             // ===== ELVEN VERDANT COVENANT - FACTION CORE (6 Cards) =====
             {
                 id: 'thorn-strike',
@@ -1478,6 +1238,68 @@
                 initiative: 'N/A',
                 keywords: ['passive', 'regeneration', 'healing', 'nature', 'core'],
                 quote: 'Life finds a way.'
+            },
+
+            // ===== ELVEN - FACTION TACTICS (5 Options, Choose 2) =====
+            {
+                id: 'apex-predator',
+                name: 'Apex Predator',
+                type: 'passive',
+                faction: 'elves',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - Your attacks deal +2 damage to enemies that have Bleed counters on them.',
+                initiative: 'N/A',
+                keywords: ['passive', 'synergy', 'damage', 'tactic'],
+                quote: 'The wounded do not escape.'
+            },
+            {
+                id: 'shadow-step',
+                name: 'Shadow Step',
+                type: 'utility',
+                faction: 'elves',
+                cost: 2,
+                range: 'Self',
+                effect: 'Teleport up to 3 hexes. You may use this after attacking (vanish after strike). Once per turn.',
+                initiative: '[2]',
+                keywords: ['active', 'movement', 'teleport', 'tactic'],
+                quote: 'Here, then gone.'
+            },
+            {
+                id: 'toxin-mastery',
+                name: 'Toxin Mastery',
+                type: 'passive',
+                faction: 'elves',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - All Bleed effects you apply deal double damage. Bleed 1 becomes Bleed 2, Bleed 2 becomes Bleed 4, etc.',
+                initiative: 'N/A',
+                keywords: ['passive', 'synergy', 'bleed', 'tactic'],
+                quote: 'Our poisons are perfected over centuries.'
+            },
+            {
+                id: 'verdant-growth',
+                name: 'Verdant Growth',
+                type: 'utility',
+                faction: 'elves',
+                cost: 3,
+                range: '3-hex area',
+                effect: 'Summon 1 Vine Wall (3 hexes long, blocks movement, grants +1 Defense to allies behind it, lasts 3 rounds). Max 2 Vine Walls at once.',
+                initiative: '[3]',
+                keywords: ['active', 'summon', 'defense', 'nature', 'tactic'],
+                quote: 'The forest rises at our command.'
+            },
+            {
+                id: 'ironbark-skin',
+                name: 'Ironbark Skin',
+                type: 'passive',
+                faction: 'elves',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - At start of each round, gain 1 Armor counter (blocks 1 damage, then removed). Max 3 Armor counters.',
+                initiative: 'N/A',
+                keywords: ['passive', 'armor', 'defense', 'tactic'],
+                quote: 'Our bark is thicker than iron.'
             }
         ];
 
