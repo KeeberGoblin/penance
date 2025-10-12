@@ -195,7 +195,8 @@ body::before {
 }
 
 .nav-link::before {
-    content: '❦';
+    content: 'ü';
+    font-family: 'Wingdings', 'Webdings', sans-serif;
     position: absolute;
     left: 0.25rem;
     opacity: 0;
@@ -440,7 +441,8 @@ body::before {
 }
 
 .content > div[style*="background"]::before {
-    content: '❦';
+    content: 'ü';
+    font-family: 'Wingdings', 'Webdings', sans-serif;
     position: absolute;
     top: 1rem;
     right: 1rem;
