@@ -511,9 +511,11 @@ body::before {
     font-family: 'Cinzel Decorative', serif;
 }
 
-/* Prevent drop-cap on quotes */
+/* Prevent drop-cap on quotes and centered text */
 .manuscript-quote::first-letter,
-.manuscript-quote p::first-letter {
+.manuscript-quote p::first-letter,
+.no-drop-cap::first-letter,
+p.no-drop-cap::first-letter {
     font-size: inherit !important;
     font-weight: inherit !important;
     color: inherit !important;
