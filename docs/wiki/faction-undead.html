@@ -3,164 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ossuarium - PENANCE WIKI</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --gray: #1a1a1a;
-            --light-gray: #666666;
-            --blood-red: #8b0000;
-        }
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-        }
-        .header {
-            background: var(--black);
-            border-bottom: 2px solid var(--white);
-            padding: 1.5rem 2rem;
-        }
-        .header-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .header-subtitle { color: var(--light-gray); font-size: 0.875rem; }
-        .container { display: grid; grid-template-columns: 250px 1fr; min-height: calc(100vh - 100px); }
-        .sidebar {
-            background: var(--gray);
-            border-right: 2px solid var(--white);
-            padding: 2rem 1.5rem;
-        }
-        .nav-section { margin-bottom: 2rem; }
-        .nav-title {
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.1em;
-        }
-        .nav-link {
-            display: block;
-            color: var(--white);
-            text-decoration: none;
-            padding: 0.5rem 0;
-            font-size: 0.875rem;
-            border-left: 3px solid transparent;
-            padding-left: 0.75rem;
-            margin-bottom: 0.25rem;
-        }
-        .nav-link:hover { border-left-color: var(--blood-red); }
-        .nav-link.active { border-left-color: var(--white); font-weight: 700; }
-        .content { padding: 3rem; max-width: 1000px; }
-        .breadcrumb {
-            font-size: 0.875rem;
-            color: var(--light-gray);
-            margin-bottom: 1.5rem;
-        }
-        .breadcrumb a { color: var(--white); text-decoration: none; }
-        .content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid var(--white);
-            padding-bottom: 0.5rem;
-        }
-        .content h2 {
-            font-size: 1.75rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .content h3 {
-            font-size: 1.25rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        .content p { margin-bottom: 1rem; color: var(--light-gray); }
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--blood-red);
-            font-style: italic;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-left: 4px solid var(--blood-red);
-        }
-        .status-box {
-            background: var(--gray);
-            border: 2px solid var(--blood-red);
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .status-box h3 {
-            color: var(--blood-red);
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>The Ossuarium - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="header-title">PENANCE WIKI</div>
-        <div class="header-subtitle">SCP-STYLE DOCUMENTATION DATABASE</div>
-    </div>
-
-    <div class="container">
-        <div class="sidebar">
-            <div class="nav-section">
-                <div class="nav-title">WIKI</div>
-                <a href="index.html" class="nav-link">Home</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-title">FACTIONS</div>
-                <a href="faction-church.html" class="nav-link">Church of Absolution</a>
-                <a href="faction-elves.html" class="nav-link">Elven Verdant Covenant</a>
-                <a href="faction-dwarves.html" class="nav-link">Dwarven Forge-Guilds</a>
-                <a href="faction-undead.html" class="nav-link">The Ossuarium</a>
-                <a href="faction-fae.html" class="nav-link">The Wyrd Conclave</a>
-                <a href="faction-nomads.html" class="nav-link">Nomad Collective</a>
-                <a href="faction-merchants.html" class="nav-link">Merchant Guilds</a>
-                <a href="faction-blighted.html" class="nav-link">Blighted Packs</a>
-                <a href="faction-chitinous.html" class="nav-link">Chitinous Ascendancy</a>
-            </div>
+    <div class="manuscript-page">
+        <div class="illuminated-header">
+            <span class="drop-cap">T</span>
+            <h1 class="title">he Ossuarium</h1>
+            <p class="subtitle">"Death is not the end. It is merely a change in employment."</p>
         </div>
 
-        <div class="content">
-            <div class="breadcrumb">
-                <a href="index.html">WIKI</a> / <a href="index.html#factions">FACTIONS</a> / The Ossuarium
-            </div>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h1>The Ossuarium</h1>
+        <h2>Faction Overview</h2>
 
-            <div class="tagline">"Necromantic research. Patient eternity. Already dead."</div>
+        <table class="manuscript-table">
+            <tr>
+                <th>Ideology</th>
+                <td>Necromantic vampirism through corpse exploitation</td>
+            </tr>
+            <tr>
+                <th>Capital</th>
+                <td>The Ossuarium, the Bone Citadel beneath Mount Thresh</td>
+            </tr>
+            <tr>
+                <th>Population</th>
+                <td>~15,000 (but expanding through resurrection)</td>
+            </tr>
+            <tr>
+                <th>Doctrine</th>
+                <td>We do not die. We merely pause. And then we rise again.</td>
+            </tr>
+            <tr>
+                <th>Playstyle</th>
+                <td>Lifesteal, corpse exploitation, resurrection mechanics, inevitable grinding</td>
+            </tr>
+            <tr>
+                <th>Complete Deck</th>
+                <td><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/factions/ossuarium/deck-equipment-system.md">View Full Ossuarium Deck (v2.0 Equipment System)</a></td>
+            </tr>
+        </table>
 
-            <div class="status-box">
-                <h3>⚠ CONTENT STATUS</h3>
-                <p>This faction page is currently under development. Detailed mechanics, lore, and deck information coming soon.</p>
-                <p>For completed faction content, see: <a href="faction-church.html" style="color: var(--blood-red);">Church of Absolution</a></p>
-            </div>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h2>Overview</h2>
-            <p>Bonelord Thresh and his council of liches study the nature of consciousness itself. They have all the time in the world. They will understand the Curse, dissect it, master it.</p>
+        <h2>Lore</h2>
 
-            <h2>Philosophy</h2>
-            <p style="font-style: italic; border-left: 4px solid var(--blood-red); padding-left: 1rem;">"We are not monsters. We are scholars with infinite tenure."</p>
+        <p class="manuscript-text">
+            Bonelord Thresh and his council of liches study the nature of consciousness itself. Founded 78 years after the Sundering when Thresh discovered The Ledger—an ancient tome that records every soul contract ever made. The Ossuarium views death not as an end but as a resource to be exploited.
+        </p>
 
-            <h2>Playstyle</h2>
-            <p><em>Detailed mechanics and deck composition coming soon...</em></p>
+        <p class="manuscript-text">
+            Ossuarium Caskets are grotesque constructions of bone and necrotic energy. Ribcages form armor plating. Skulls serve as sensors. Everything that was once alive is repurposed for war. Their pilots are already dead—true corpses reanimated by necromantic threads. They have nothing left to lose.
+        </p>
 
-            <h2>Key Casket Types</h2>
-            <p><em>Faction-specific Casket information coming soon...</em></p>
+        <div class="manuscript-quote">
+            "We are not monsters. We are scholars with infinite tenure studying the most fascinating subject: ourselves."
+            <span class="quote-attribution">—Bonelord Thresh, The Ledger, Entry 1</span>
+        </div>
 
-            <h2>Notable Figures</h2>
-            <p><em>Iconic NPCs and faction leaders coming soon...</em></p>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h2>Lore</h2>
-            <p><em>Extended faction history and major events coming soon...</em></p>
+        <h2>Core Mechanic: Soul Harvest & Decay</h2>
 
-            <div style="margin-top: 3rem; padding: 1.5rem; background: var(--gray); border-top: 2px solid var(--white);">
-                <p style="font-size: 0.875rem;">
-                    <strong>Want to contribute?</strong> Visit the <a href="https://github.com/KeeberGoblin/penance" style="color: var(--blood-red);">GitHub repository</a> to help expand faction documentation.
-                </p>
-            </div>
+        <p class="manuscript-text">
+            The Ossuarium excels at <strong>lifesteal</strong> and <strong>corpse exploitation</strong>. Every attack drains life. Every death feeds power.
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Soul Harvest:</strong> Deal 4 damage. Recover cards equal to damage dealt from discard pile (max 4 cards).</li>
+            <li><strong>Corpse Fuel:</strong> When enemy destroyed within 3 hexes, immediately recover 5 cards from discard pile.</li>
+            <li><strong>Phylactery (Passive):</strong> First time each mission you would be reduced to 0 HP, instead set HP to 5 (automatic resurrection).</li>
+            <li><strong>Decay Cards (Special):</strong> The Ossuarium does NOT add "Damage" cards on reshuffle. Instead, they add "Decay" cards (0 SP cost, discard to lose 1 SP this turn and gain 1 Heat). Slower penalty, but still a death spiral.</li>
+        </ul>
+
+        <p class="manuscript-text">
+            Ossuarium Caskets sustain themselves through violence. The more enemies die, the more HP they recover. They excel in long, grinding battles where corpses accumulate.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Faction Core Cards (6 Mandatory)</h2>
+
+        <h3>1. Soul Harvest</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Attack (Lifesteal) | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 4 cards).
+        </p>
+        <p class="manuscript-text"><em>"Their life becomes yours. This is the calculus of necromancy."</em></p>
+
+        <h3>2. Corpse Fuel</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Utility (Death Trigger) | <strong>SP Cost:</strong> 2
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> When an enemy Casket is destroyed within 3 hexes, immediately recover 5 cards from your discard pile and shuffle into deck.
+        </p>
+        <p class="manuscript-text"><em>"Waste nothing. The dead still serve."</em></p>
+
+        <h3>3. Phylactery (Passive)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> The first time each mission you would be reduced to 0 HP, instead set HP to 5 (recover 5 cards from discard pile). This is automatic and costs nothing.
+        </p>
+        <p class="manuscript-text"><em>"I have prepared for death. Many times."</em></p>
+
+        <h3>4. Bone Scythe Reap</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Attack (AoE Drain) | <strong>SP Cost:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 4 cards).
+        </p>
+        <p class="manuscript-text"><em>"The scythe thirsts."</em></p>
+
+        <h3>5. Deathless Advance</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Movement + Buff | <strong>SP Cost:</strong> 2
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Move up to 3 hexes. Until end of your turn, you cannot take more than 5 damage from any single attack (damage cap).
+        </p>
+        <p class="manuscript-text"><em>"The dead do not fear pain."</em></p>
+
+        <h3>6. Necrotic Surge (Passive)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Whenever you recover cards from discard pile (via any effect), recover +1 additional card.
+        </p>
+        <p class="manuscript-text"><em>"Death feeds on itself, growing stronger."</em></p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Support Units (6 Total)</h2>
+
+        <h3>Starter Units</h3>
+
+        <h4>1. Bone Thrall Swarm (2 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 12 (3 HP per thrall, 4 thralls) | <strong>Movement:</strong> 4 | <strong>Defense:</strong> 0
+        </p>
+        <p class="manuscript-text">
+            Four humanoid skeletons that can resurrect from corpse markers. Swarm enemies to surround and overwhelm. Each thrall deals 2 damage. If 3+ attack same target, deal +2 bonus damage (6 total). Leave corpse markers when killed—can be consumed to resurrect thralls or heal. Expendable and infinitely respawning.
+        </p>
+
+        <h4>2. Grave Knight (3 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 14 | <strong>Movement:</strong> 3 | <strong>Defense:</strong> 3
+        </p>
+        <p class="manuscript-text">
+            Elite undead champion in blackened plate armor wielding greatsword. Collects Soul Counters from kills. Attacks deal 7 damage with lifesteal (heal for damage dealt). Can spend 3 Soul Counters to activate Dark Harvest (multiple effects: heal 3 HP, deal 4 damage, or grant +2 Defense). Can resurrect once if has 3+ Soul Counters.
+        </p>
+
+        <h4>3. Fleshcrafter (2 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 8 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 1
+        </p>
+        <p class="manuscript-text">
+            Grotesque necromancer in blood-stained surgical robes. Heals allies for 5 HP (suture wounds). Releases Plague Cloud (2 damage per turn to all enemies within 3 hexes, -1 Defense). Harvests corpses for Essence tokens. Spends 5 Essence to create Flesh Abomination minion (6 HP, 4 damage, lasts until destroyed).
+        </p>
+
+        <h3>Unlockable Units</h3>
+
+        <h4>4. Bone Colossus (4 slots) - Unlock: Complete 3 missions</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 22 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 4
+        </p>
+        <p class="manuscript-text">
+            Massive skeletal giant 18 feet tall constructed from hundreds of bones. Four massive arms deal 8 damage and grapple (target cannot move until they spend 3 SP or deal 8 damage). Bone Storm deals 5 damage to all enemies within 3 hexes (applies 2 Bleed). Regenerates 8 HP by absorbing corpses. Has Bone Layer system (layered armor, each layer provides +1 Defense).
+        </p>
+
+        <h4>5. Lich Phylactery (3 slots) - Unlock: Build Ossuary in settlement</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 10 | <strong>Movement:</strong> 0 (immobile) | <strong>Defense:</strong> 3
+        </p>
+        <p class="manuscript-text">
+            Floating obsidian obelisk containing ancient lich's soul. Immobile resurrection node. Passive 4-hex aura grants allies +1 Defense and 1 HP per turn; enemies gain 1 Decay counter per turn. Death Pulse deals 3 damage to all enemies within 4 hexes, applies 2 Decay counters, heals allies for 2 HP. Mass Resurrection can revive up to 2 destroyed allied units at 50% HP (once per battle). Any allied unit tethered to Phylactery cannot be permanently destroyed—resurrects at Phylactery's location with 5 HP.
+        </p>
+
+        <h4>6. Death's Herald (4 slots) - Unlock: Defeat Bonelord Thresh</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 18 | <strong>Movement:</strong> 4 | <strong>Defense:</strong> 2
+        </p>
+        <p class="manuscript-text">
+            Towering skeletal reaper with enormous scythe and spectral wings. Reap attack deals 9 damage (ignore all Defense) with instant death (no death saves, no resurrections). Harvests 2 Soul Tokens per kill. Wings of Despair allows flying 5 hexes (ignores terrain), dealing 3 damage to all enemies in flight path. Final Harvest (once per battle, when HP < 8): Deal 8 unblockable damage to ALL enemies, apply 5 Decay counters, discard 2 cards from each enemy's hand, fully heal all allies, grant +3 damage to allies until end of battle.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Faction Relations</h2>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Church of Absolution</td>
+                    <td>WAR</td>
+                    <td>Theological opposition. Necromancy is heresy to the Church.</td>
+                </tr>
+                <tr>
+                    <td>Elven Verdant Covenant</td>
+                    <td>HOSTILE</td>
+                    <td>Elves view undeath as perversion of natural order.</td>
+                </tr>
+                <tr>
+                    <td>Dwarven Forge-Guilds</td>
+                    <td>HOSTILE</td>
+                    <td>Necromancy offends dwarven craftsmanship ethics.</td>
+                </tr>
+                <tr>
+                    <td>The Wyrd Conclave</td>
+                    <td>NEUTRAL</td>
+                    <td>Fae find death amusing. Occasional trade for rare components.</td>
+                </tr>
+                <tr>
+                    <td>Nomad Collective</td>
+                    <td>COLD</td>
+                    <td>Nomads avoid Ossuarium territory. Corpse theft incidents.</td>
+                </tr>
+                <tr>
+                    <td>Merchant Guilds</td>
+                    <td>COLD</td>
+                    <td>Will trade, but only at arm's length. Very long arms.</td>
+                </tr>
+                <tr>
+                    <td>Blighted Packs</td>
+                    <td>ALLIED</td>
+                    <td>Both factions embrace mutation and transformation.</td>
+                </tr>
+                <tr>
+                    <td>Chitinous Ascendancy</td>
+                    <td>WAR</td>
+                    <td>Hive-mind cannot be resurrected. Theological crisis for Thresh.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Recommended Builds</h2>
+
+        <h3>Vampiric Striker (Revenant - Scout, 6 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> Bone Scythe (6 cards), Buckler Shield (2 cards), Death Mark Sigil (3 cards)</li>
+            <li><strong>Tactics:</strong> Eternal Hunger (double lifesteal), Grave Robber (loot enemy gear)</li>
+            <li><strong>Total Deck:</strong> 29 cards (fast cycle, aggressive drain)</li>
+            <li><strong>Strategy:</strong> Soul Harvest every turn (4 damage + recover 4 cards). Bone Scythe provides multiple lifesteal attacks. Death Mark Sigil adds passive lifesteal (recover 1 card per turn when damaging). Fast, aggressive, self-sustaining vampire.</li>
+        </ul>
+
+        <h3>Corpse Grinder (Phylarch - Assault, 5 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> Flail (5 cards), Kite Shield (3 cards), Death Mark Sigil (3 cards), Repair Sigil (2 cards)</li>
+            <li><strong>Tactics:</strong> Undying Resilience (second resurrection)</li>
+            <li><strong>Total Deck:</strong> 31 cards (balanced sustain)</li>
+            <li><strong>Strategy:</strong> Kill enemies to trigger Corpse Fuel (recover 5 cards per kill). Necrotic Surge adds +1 card to all recovery effects. Flail provides ignore-Defense attacks. Grind enemies down through attrition.</li>
+        </ul>
+
+        <h3>Immortal Fortress (Bonelord - Heavy, 4 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> Mace (5 cards), Tower Shield (4 cards), Death Mark Sigil (3 cards), Reinforced Plating (3 cards), Phylactery Relic (3 cards)</li>
+            <li><strong>Tactics:</strong> Undying Resilience, Bone Armor</li>
+            <li><strong>Total Deck:</strong> 36 cards (maximum survivability)</li>
+            <li><strong>Strategy:</strong> THREE resurrection mechanics: Phylactery (resurrect at 5 HP), Phylactery Relic (store 5 cards, resurrect once), Undying Resilience (resurrect at 10 HP). Tower Shield + Reinforced Plating + Bone Armor = massive defense. Literally cannot die.</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Strategy Notes</h2>
+
+        <p class="manuscript-text">
+            <strong>Strengths:</strong> Best lifesteal in game (multiple cards recover HP), resurrection mechanics (Phylactery + Undying Resilience = 2 lives), corpse exploitation (gain resources from enemy deaths), inevitable grinding (outlast through constant healing), minion summoning (action economy advantage with Thralls and Abominations).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Weaknesses:</strong> Reliant on dealing damage to heal (if prevented from attacking, cannot sustain), weak to burst damage (must kill enemies to recover, can't prevent initial hits), Decay cards slow late-game (multiple reshuffles = multiple Decay cards), minions are fragile (Thralls die easily, 1 HP each), requires kills to function optimally (Corpse Fuel, Bone Armor trigger on deaths).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Early Game (Turns 1-3):</strong> Soul Harvest every turn (consistent lifesteal). Position aggressively—need to hit enemies to heal. Don't waste Phylactery resurrection early (save for late-game).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Mid Game (Turns 4-6):</strong> Kill weakened enemies to trigger Corpse Fuel (5 cards per kill). Summon Thralls if using Raise Dead (meatshields buy time). Stack Bone Armor if taken (each kill = +1 permanent Defense).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Late Game (Turns 7+):</strong> Phylactery triggers automatically (first death = resurrect at 5 HP). Undying Resilience triggers next (second death = resurrect at 10 HP). Decay cards accumulate (2-3 reshuffles = 2-3 Decay cards in deck). Eternal Hunger doubles lifesteal (recover massive HP per hit).
+        </p>
+
+        <div class="manuscript-quote">
+            "You think death is your ally? You merely adopted the grave. I was born in it. Molded by it. I am death's favorite student."
+            <span class="quote-attribution">—Bonelord Thresh, during the Siege of Absolon</span>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="manuscript-footer">
+            <p><a href="index.html">Return to Wiki Home</a> | <a href="../index.html">Main Site</a> | <a href="../cards/">Card Database</a></p>
         </div>
     </div>
 </body>

@@ -3,165 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dwarven Forge-Guilds - PENANCE WIKI</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --gray: #1a1a1a;
-            --light-gray: #666666;
-            --blood-red: #8b0000;
-        }
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-        }
-        .header {
-            background: var(--black);
-            border-bottom: 2px solid var(--white);
-            padding: 1.5rem 2rem;
-        }
-        .header-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .header-subtitle { color: var(--light-gray); font-size: 0.875rem; }
-        .container { display: grid; grid-template-columns: 250px 1fr; min-height: calc(100vh - 100px); }
-        .sidebar {
-            background: var(--gray);
-            border-right: 2px solid var(--white);
-            padding: 2rem 1.5rem;
-        }
-        .nav-section { margin-bottom: 2rem; }
-        .nav-title {
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.1em;
-        }
-        .nav-link {
-            display: block;
-            color: var(--white);
-            text-decoration: none;
-            padding: 0.5rem 0;
-            font-size: 0.875rem;
-            border-left: 3px solid transparent;
-            padding-left: 0.75rem;
-            margin-bottom: 0.25rem;
-        }
-        .nav-link:hover { border-left-color: var(--blood-red); }
-        .nav-link.active { border-left-color: var(--white); font-weight: 700; }
-        .content { padding: 3rem; max-width: 1000px; }
-        .breadcrumb {
-            font-size: 0.875rem;
-            color: var(--light-gray);
-            margin-bottom: 1.5rem;
-        }
-        .breadcrumb a { color: var(--white); text-decoration: none; }
-        .content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid var(--white);
-            padding-bottom: 0.5rem;
-        }
-        .content h2 {
-            font-size: 1.75rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .content h3 {
-            font-size: 1.25rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        .content p { margin-bottom: 1rem; color: var(--light-gray); }
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--blood-red);
-            font-style: italic;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-left: 4px solid var(--blood-red);
-        }
-        .status-box {
-            background: var(--gray);
-            border: 2px solid var(--blood-red);
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .status-box h3 {
-            color: var(--blood-red);
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>Dwarven Forge-Guilds - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="header-title">PENANCE WIKI</div>
-        <div class="header-subtitle">SCP-STYLE DOCUMENTATION DATABASE</div>
-    </div>
-
-    <div class="container">
-        <div class="sidebar">
-            <div class="nav-section">
-                <div class="nav-title">WIKI</div>
-                <a href="index.html" class="nav-link">Home</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-title">FACTIONS</div>
-                <a href="faction-church.html" class="nav-link">Church of Absolution</a>
-                <a href="faction-elves.html" class="nav-link">Elven Verdant Covenant</a>
-                <a href="faction-dwarves.html" class="nav-link">Dwarven Forge-Guilds</a>
-                <a href="faction-undead.html" class="nav-link">The Ossuarium</a>
-                <a href="faction-fae.html" class="nav-link">The Wyrd Conclave</a>
-                <a href="faction-nomads.html" class="nav-link">Nomad Collective</a>
-                <a href="faction-merchants.html" class="nav-link">Merchant Guilds</a>
-                <a href="faction-blighted.html" class="nav-link">Blighted Packs</a>
-                <a href="faction-chitinous.html" class="nav-link">Chitinous Ascendancy</a>
-            </div>
+    <div class="manuscript-page">
+        <div class="illuminated-header">
+            <span class="drop-cap">D</span>
+            <h1 class="title">warven Forge-Guilds</h1>
+            <p class="subtitle">"Steel bends. It does not break. We are steel. We do not break."</p>
         </div>
 
-        <div class="content">
-            <div class="breadcrumb">
-                <a href="index.html">WIKI</a> / <a href="index.html#factions">FACTIONS</a> / Dwarven Forge-Guilds
-            </div>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h1>Dwarven Forge-Guilds</h1>
-            
-            <div class="tagline">"Engineering perfection. Runic mastery."</div>
+        <h2>Faction Overview</h2>
 
-            <div class="status-box">
-                <h3>⚠ CONTENT STATUS</h3>
-                <p>This faction page is currently under development. Detailed mechanics and lore coming soon.</p>
-                <p><strong>✓ Complete Deck Available:</strong> <a href="https://github.com/KeeberGoblin/penance/blob/main/docs/factions/dwarves/deck-equipment-system.md" style="color: var(--blood-red); font-weight: 700;">View Full Dwarven Deck (v2.0 Equipment System)</a></p>
-                <p>For completed faction content, see: <a href="faction-church.html" style="color: var(--blood-red);">Church of Absolution</a></p>
-            </div>
+        <table class="manuscript-table">
+            <tr>
+                <th>Ideology</th>
+                <td>Defensive attrition through superior engineering</td>
+            </tr>
+            <tr>
+                <th>Capital</th>
+                <td>Forge-Hold, the Ironclad Citadel beneath the Ironpeak Mountains</td>
+            </tr>
+            <tr>
+                <th>Population</th>
+                <td>~35,000 Remnants (scattered across mountain strongholds)</td>
+            </tr>
+            <tr>
+                <th>Doctrine</th>
+                <td>The fortress outlasts the siege. Stone endures. Runes protect.</td>
+            </tr>
+            <tr>
+                <th>Playstyle</th>
+                <td>Tank, armor-piercing sustained damage, rune stacking, attrition warfare</td>
+            </tr>
+            <tr>
+                <th>Complete Deck</th>
+                <td><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/factions/dwarves/deck-equipment-system.md">View Full Dwarven Deck (v2.0 Equipment System)</a></td>
+            </tr>
+        </table>
 
-            <h2>Overview</h2>
-            <p>Deep in mountain forges, dwarven engineers craft the most sophisticated Caskets. Every mechanism optimized. Every rune calculated. They will solve death itself through superior engineering.</p>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <h2>Philosophy</h2>
-            <p style="font-style: italic; border-left: 4px solid var(--blood-red); padding-left: 1rem;">"Problems exist to be solved. Death is merely the most complex problem we've encountered."</p>
+        <h2>Lore</h2>
 
-            <h2>Playstyle</h2>
-            <p><em>Detailed mechanics and deck composition coming soon...</em></p>
+        <p class="manuscript-text">
+            The Dwarven Forge-Guilds retreated underground when the Resonance Engine sundered the world. Their mountain kingdoms became fortresses of survival, where master engineers and runecrafters worked in harmony to create the most durable Caskets in existence.
+        </p>
 
-            <h2>Key Casket Types</h2>
-            <p><em>Faction-specific Casket information coming soon...</em></p>
+        <p class="manuscript-text">
+            Dwarven Caskets are walking fortresses—layered stone armor, interlocking plates, and ancient runes carved into every surface. Where other factions use speed or cunning, Dwarves simply outlast. Their philosophy is simple: endure long enough, and your enemy will exhaust themselves against your walls.
+        </p>
 
-            <h2>Notable Figures</h2>
-            <p><em>Iconic NPCs and faction leaders coming soon...</em></p>
+        <div class="manuscript-quote">
+            "We do not rush. We do not flee. We stand. And when our enemies are spent, we advance."
+            <span class="quote-attribution">—Runemaster Thorin Ironvein</span>
+        </div>
 
-            <h2>Lore</h2>
-            <p><em>Extended faction history and major events coming soon...</em></p>
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
-            <div style="margin-top: 3rem; padding: 1.5rem; background: var(--gray); border-top: 2px solid var(--white);">
-                <p style="font-size: 0.875rem;">
-                    <strong>Want to contribute?</strong> Visit the <a href="https://github.com/KeeberGoblin/penance" style="color: var(--blood-red);">GitHub repository</a> to help expand faction documentation.
-                </p>
-            </div>
+        <h2>Core Mechanic: Rune Counters</h2>
+
+        <p class="manuscript-text">
+            Dwarven Caskets generate <strong>Rune Counters</strong> through combat, which provide stacking damage reduction.
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Rune of Protection:</strong> Spend 2 SP to gain 1 Rune Counter. Each counter reduces all damage by 1 (max 3 counters).</li>
+            <li><strong>Runic Overcharge (Tactic):</strong> Spend 3 SP to gain 2 Rune Counters immediately. Gain 2 Heat.</li>
+            <li><strong>Stone Endurance (Tactic):</strong> Your maximum HP is 32 instead of 30 (add 2 extra cards to deck).</li>
+            <li><strong>Armor-Piercing Attacks:</strong> All Dwarven weapons ignore Defense buffs and armor (faction bonus).</li>
+        </ul>
+
+        <p class="manuscript-text">
+            The Dwarven playstyle revolves around stacking defensive layers (Rune Counters, shields, plating) while grinding down opponents with armor-piercing attacks. Heat management is critical—many Dwarven weapons generate significant Heat.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Faction Core Cards (6 Mandatory)</h2>
+
+        <h3>1. Crushing Blow</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Attack (Melee) | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Melee (1 hex)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Deal 4 damage. Armor-Piercing (ignore all Defense buffs and armor).
+        </p>
+        <p class="manuscript-text"><em>"Runes flare blue-white as the hammerhead strikes true."</em></p>
+
+        <h3>2. Forge Fury</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Attack (Heat Conversion) | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Deal 3 damage + 1 per Heat you currently have (max +6). Remove all Heat after attack resolves.
+        </p>
+        <p class="manuscript-text"><em>"The furnace roars. Steel becomes vengeance."</em></p>
+
+        <h3>3. Rune of Protection</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Buff (Defensive) | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Self
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Gain 1 Rune Counter. Reduce all damage by 1 per counter (max 3). Lasts until end of mission or destroyed.
+        </p>
+        <p class="manuscript-text"><em>"Ancient words carved in living metal."</em></p>
+
+        <h3>4. Unbreakable</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Reactive Defense | <strong>SP Cost:</strong> 0
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> When you would take Component Damage, prevent 1 Component Damage. Gain 1 Heat.
+        </p>
+        <p class="manuscript-text"><em>"Dwarven steel bends. It does not break."</em></p>
+
+        <h3>5. Earthshaker</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Attack (AoE + Crowd Control) | <strong>SP Cost:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.
+        </p>
+        <p class="manuscript-text"><em>"The ground cracks. The weak scatter."</em></p>
+
+        <h3>6. Clan Vengeance (Passive)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Each time you take Component Damage, your next attack deals +2 damage. This bonus stacks (3 Component Damage = +6 damage on next attack).
+        </p>
+        <p class="manuscript-text"><em>"Every wound sharpens our fury."</em></p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Support Units (6 Total)</h2>
+
+        <h3>Starter Units</h3>
+
+        <h4>1. Shield Wall Guard (2 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 12 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 4
+        </p>
+        <p class="manuscript-text">
+            Five stocky dwarven warriors with interlocking tower shields engraved with runic circuits. They form impenetrable defensive lines, creating cover and blocking line of sight. Can recover HP through runic reinforcement. Immovable defenders with +3 Defense when in Shield Wall formation.
+        </p>
+
+        <h4>2. Bombard Battery (3 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 8 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 2
+        </p>
+        <p class="manuscript-text">
+            Mobile artillery platform with massive cannon crewed by three dwarven engineers. Deals 8 damage at range 8, ignores 3 Defense, with 3 splash damage to adjacent hexes. Generates significant Heat. Vulnerable at close range but devastating at distance.
+        </p>
+
+        <h4>3. Rune Sentinel (3 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 15 | <strong>Movement:</strong> 3 | <strong>Defense:</strong> 3
+        </p>
+        <p class="manuscript-text">
+            Ancient stone golem standing 12 feet tall, animated by glowing blue-white runes. Generates Rune Counters through combat, which can enhance defensive auras, fuel Rune Pulse (AoE damage), or be spent to ignore Control effects. Regenerates HP from battlefield corpses.
+        </p>
+
+        <h3>Unlockable Units</h3>
+
+        <h4>4. Siege Crawler (4 slots) - Unlock: Complete 3 missions</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 18 | <strong>Movement:</strong> 1 | <strong>Defense:</strong> 4
+        </p>
+        <p class="manuscript-text">
+            Mechanical spider-tank bristling with cannons and ballistae. Can attack up to 3 different enemies per turn. Enters Siege Mode for +4 damage and +2 Defense. Extremely slow but devastating firepower. Generates 2-4 Heat per turn.
+        </p>
+
+        <h4>5. Ancestor Golem (4 slots) - Unlock: Build Forge-Shrine in settlement</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 20 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 5
+        </p>
+        <p class="manuscript-text">
+            Masterwork construct of black iron and mithril containing the soul of a legendary dwarf hero. Generates Glory Counters through heroic deeds. Can grant allies massive buffs (+2 damage, +2 Defense, heal 2 HP), taunt enemies, and unleash "Legacy of Stone" (fully heal all allies, deal 12 damage to all enemies within 3 hexes).
+        </p>
+
+        <h4>6. Dreadnought Titan (5 slots) - Unlock: Defeat Ironlord Thrain</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 25 | <strong>Movement:</strong> 1 | <strong>Defense:</strong> 6
+        </p>
+        <p class="manuscript-text">
+            Colossal walking fortress three stories tall. Massive 4-hex passive aura grants allies +2 Defense, +1 SP regeneration, and 1 HP per turn. Enemies within 3 hexes take 2 damage per turn. Can attack ALL enemies within 8 hexes simultaneously for 6 damage each (ignore 2 Defense). Defines the entire battlefield. Explodes on death for 10 damage to everything within 5 hexes.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Faction Relations</h2>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Church of Absolution</td>
+                    <td>COLD</td>
+                    <td>Trade partners but mutual distrust. Forge-Guilds supply weapons.</td>
+                </tr>
+                <tr>
+                    <td>Elven Verdant Covenant</td>
+                    <td>NEUTRAL</td>
+                    <td>Ancient grudges over territory, but no active conflict.</td>
+                </tr>
+                <tr>
+                    <td>The Ossuarium</td>
+                    <td>HOSTILE</td>
+                    <td>Necromancy offends dwarven craftsmanship ethics.</td>
+                </tr>
+                <tr>
+                    <td>The Wyrd Conclave</td>
+                    <td>WAR</td>
+                    <td>Fae trickery has cost many dwarven lives. Blood debt unpaid.</td>
+                </tr>
+                <tr>
+                    <td>Nomad Collective</td>
+                    <td>FRIENDLY</td>
+                    <td>Trade routes. Nomads guide caravans through badlands.</td>
+                </tr>
+                <tr>
+                    <td>Merchant Guilds</td>
+                    <td>ALLIED</td>
+                    <td>Primary trading partner. Economic interdependence.</td>
+                </tr>
+                <tr>
+                    <td>Blighted Packs</td>
+                    <td>HOSTILE</td>
+                    <td>Mutation threatens stability. Must be contained.</td>
+                </tr>
+                <tr>
+                    <td>Chitinous Ascendancy</td>
+                    <td>WAR</td>
+                    <td>Hive-mind abominations. Existential threat.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Recommended Builds</h2>
+
+        <h3>Immovable Wall (Forge Walker - Heavy, 4 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> Warhammer (6 cards), Tower Shield (4 cards), Forge-Rune Sigil (3), Reinforced Plating (3), Heat Sink Sigil (2)</li>
+            <li><strong>Tactics:</strong> Stone Endurance (+2 HP = 32 total), Runic Overcharge</li>
+            <li><strong>Total Deck:</strong> 38 cards (maximum tankiness)</li>
+            <li><strong>Strategy:</strong> Stack 3 Rune Counters early (Rune of Protection + Runic Overcharge). Tower Shield + Reinforced Plating = massive damage reduction. 32 HP with -3 damage per hit = nearly unkillable. Win through attrition warfare.</li>
+        </ul>
+
+        <h3>Armor-Piercing Assault (Ironclad - Assault, 5 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> War Pick (6 cards), Kite Shield (3 cards), Forge-Rune Sigil (3), Targeting Sigil (3)</li>
+            <li><strong>Tactics:</strong> Forge Mastery (Heat to card draw), Unbreakable Spirit (resurrection)</li>
+            <li><strong>Total Deck:</strong> 33 cards (balanced aggression)</li>
+            <li><strong>Strategy:</strong> All attacks ignore armor (Crushing Blow, War Pick, faction bonus). Clan Vengeance converts damage taken into offense (+2 per Component Damage). Fast, consistent armor-piercing damage every turn.</li>
+        </ul>
+
+        <h3>Artillery Platform (Siege Engine - Fortress, 3 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> Siege Cannon (7 cards, 2-handed), Forge-Rune Sigil (3), Heat Sink Sigil (2), Stealth Plating (3), Repair Sigil (2)</li>
+            <li><strong>Tactics:</strong> Forge Mastery, Unbreakable Spirit</li>
+            <li><strong>Total Deck:</strong> 35 cards (artillery support)</li>
+            <li><strong>Strategy:</strong> Stay at range 4-7. Siege Shot deals 4 damage, armor-piercing. Explosive Shell hits multiple targets. Stealth Plating reduces ranged counterattack accuracy. Ultra-safe bombardment platform.</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Strategy Notes</h2>
+
+        <p class="manuscript-text">
+            <strong>Strengths:</strong> Highest survivability in game (32 HP with Stone Endurance), all weapons gain armor-piercing, component protection (Unbreakable delays destruction), Heat conversion mechanics (Forge Fury turns Heat into damage, Forge Mastery into card draw), attrition warfare mastery.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Weaknesses:</strong> Low mobility (Heavy/Fortress Caskets move 1-2 hexes), high Heat generation (constant management required), SP-starved (Heavy and Fortress have only 3-4 SP per turn), vulnerable to ranged kiting (slow movement + melee focus), expensive equipment (Dwarven gear costs 5-6 Scrap to craft).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Early Game (Turns 1-3):</strong> Stack Rune Counters immediately (Rune of Protection + Runic Overcharge = 3 counters). Position defensively—let enemies come to you. Manage Heat carefully with Heat Sink Sigils and venting.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Mid Game (Turns 4-6):</strong> Use Forge Fury when Heat is high (convert 5-6 Heat into 8-9 damage burst). Armor-piercing shuts down defensive opponents completely. Unbreakable prevents Component Damage (save for critical hits).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Late Game (Turns 7+):</strong> Clan Vengeance should have +4-6 damage by now (devastating). Forge Mastery for burst card draw if needed. Unbreakable Spirit is your safety net (resurrect once at 5 HP). Attrition advantage: you have more HP and damage reduction than any faction.
+        </p>
+
+        <div class="manuscript-quote">
+            "The enemy grows tired. The enemy grows desperate. We grow stronger. This is the dwarven way."
+            <span class="quote-attribution">—Ironlord Thrain, before the final siege</span>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="manuscript-footer">
+            <p><a href="index.html">Return to Wiki Home</a> | <a href="../index.html">Main Site</a> | <a href="../cards/">Card Database</a></p>
         </div>
     </div>
 </body>
