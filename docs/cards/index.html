@@ -571,7 +571,7 @@
                     <input type="checkbox" value="dwarves" class="faction-filter"> DWARVES
                 </label>
                 <label class="filter-checkbox">
-                    <input type="checkbox" value="undead" class="faction-filter"> UNDEAD
+                    <input type="checkbox" value="undead" class="faction-filter"> OSSUARIUM
                 </label>
                 <label class="filter-checkbox">
                     <input type="checkbox" value="fae" class="faction-filter"> FAE
@@ -1325,6 +1325,159 @@
                 initiative: '[—]',
                 keywords: ['reactive', 'resurrection', 'one-use', 'tactic'],
                 quote: 'We do not yield.'
+            },
+
+            // ===== THE OSSUARIUM - FACTION CORE (6 Cards) =====
+            {
+                id: 'soul-harvest',
+                name: 'Soul Harvest',
+                type: 'attack',
+                faction: 'undead',
+                cost: 3,
+                range: 'Melee (Range 1)',
+                damage: '4',
+                effect: 'Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 4 cards).',
+                initiative: '[3]',
+                keywords: ['attack', 'lifesteal', 'vampiric', 'melee', 'core'],
+                quote: 'Their life becomes yours. This is the calculus of necromancy.'
+            },
+            {
+                id: 'corpse-fuel',
+                name: 'Corpse Fuel',
+                type: 'utility',
+                faction: 'undead',
+                cost: 2,
+                range: 'Self',
+                effect: 'When an enemy Casket is destroyed within 3 hexes, immediately recover 5 cards from your discard pile and shuffle them into your deck.',
+                initiative: '[—]',
+                keywords: ['reactive', 'death-trigger', 'healing', 'core'],
+                quote: 'The dead serve even in death.'
+            },
+            {
+                id: 'phylactery',
+                name: 'Phylactery',
+                type: 'passive',
+                faction: 'undead',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - The first time you would be reduced to 0 HP this mission, instead: Recover 5 cards from discard pile, gain 3 Heat. Once per mission.',
+                initiative: 'N/A',
+                keywords: ['passive', 'resurrection', 'immortality', 'core'],
+                quote: 'Death is merely an inconvenience.'
+            },
+            {
+                id: 'bone-scythe-reap',
+                name: 'Bone Scythe: Reap',
+                type: 'attack',
+                faction: 'undead',
+                cost: 4,
+                range: 'Arc (3 hexes in front arc)',
+                damage: '3',
+                effect: 'Deal 3 damage to ALL enemies in your front arc within 3 hexes. Recover 1 card per enemy hit.',
+                heat: '+2',
+                initiative: '[3]',
+                keywords: ['attack', 'aoe', 'lifesteal', 'scythe', 'core'],
+                quote: 'The harvest is bountiful.'
+            },
+            {
+                id: 'deathless-advance',
+                name: 'Deathless Advance',
+                type: 'movement',
+                faction: 'undead',
+                cost: 2,
+                range: 'Self',
+                effect: 'Move up to 3 hexes. Until end of turn, cap all damage you take at 5 (any damage exceeding 5 is ignored).',
+                initiative: '[2]',
+                keywords: ['movement', 'damage-cap', 'defensive', 'core'],
+                quote: 'You cannot kill what refuses to die.'
+            },
+            {
+                id: 'necrotic-surge',
+                name: 'Necrotic Surge',
+                type: 'passive',
+                faction: 'undead',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - Whenever you recover cards (from any source), recover +1 additional card.',
+                initiative: 'N/A',
+                keywords: ['passive', 'healing-boost', 'vampiric', 'core'],
+                quote: 'Death feeds on death, growing ever stronger.'
+            },
+
+            // ===== ELVEN VERDANT COVENANT - FACTION CORE (6 Cards) =====
+            {
+                id: 'thorn-strike',
+                name: 'Thorn Strike',
+                type: 'attack',
+                faction: 'elves',
+                cost: 2,
+                range: 'Melee (Range 1)',
+                damage: '3',
+                effect: 'Deal 3 damage. Apply Bleed 2 (target takes 2 damage at start of their next turn).',
+                initiative: '[2]',
+                keywords: ['attack', 'bleed', 'precision', 'melee', 'core'],
+                quote: 'The wound deepens. The poison spreads.'
+            },
+            {
+                id: 'pruning-cut',
+                name: 'Pruning Cut',
+                type: 'attack',
+                faction: 'elves',
+                cost: 3,
+                range: 'Melee (Range 1)',
+                damage: '4',
+                effect: 'Deal 4 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). If target discards cards from that component type, deal +2 Component Damage.',
+                initiative: '[3]',
+                keywords: ['attack', 'component-targeting', 'surgical', 'melee', 'core'],
+                quote: 'Cut away the rot.'
+            },
+            {
+                id: 'root-bind',
+                name: 'Root Bind',
+                type: 'utility',
+                faction: 'elves',
+                cost: 2,
+                range: 'Ranged (1-3 hexes)',
+                effect: 'Target enemy cannot move until end of their next turn. If they attempt to move, take 3 damage and Bleed 1.',
+                initiative: '[2]',
+                keywords: ['utility', 'control', 'root', 'nature', 'core'],
+                quote: 'The roots hold. Struggle is futile.'
+            },
+            {
+                id: 'photosynthesis',
+                name: 'Photosynthesis',
+                type: 'passive',
+                faction: 'elves',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - At end of your turn, if you did NOT attack this turn, recover 1 card from discard pile and remove 1 Heat.',
+                initiative: 'N/A',
+                keywords: ['passive', 'healing', 'patience', 'nature', 'core'],
+                quote: 'We draw strength from stillness.'
+            },
+            {
+                id: 'leaf-dance',
+                name: 'Leaf Dance',
+                type: 'movement',
+                faction: 'elves',
+                cost: 3,
+                range: 'Self',
+                effect: 'Move up to 3 hexes. You may make 1 attack during this movement (at any point). After attacking, you may continue moving.',
+                initiative: '[3]',
+                keywords: ['movement', 'attack', 'mobility', 'hit-and-run', 'core'],
+                quote: 'Strike where they are weak. Vanish before they retaliate.'
+            },
+            {
+                id: 'verdant-regeneration',
+                name: 'Verdant Regeneration',
+                type: 'passive',
+                faction: 'elves',
+                cost: 0,
+                range: 'Self',
+                effect: 'PERMANENT PASSIVE - At the start of each round, recover 1 card from discard pile. If you have Living Seal equipped, recover 2 cards instead.',
+                initiative: 'N/A',
+                keywords: ['passive', 'regeneration', 'healing', 'nature', 'core'],
+                quote: 'Life finds a way.'
             }
         ];
 
