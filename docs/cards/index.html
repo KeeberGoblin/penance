@@ -47,6 +47,7 @@
             display: flex;
             gap: 2rem;
             font-size: 0.875rem;
+            align-items: center;
         }
 
         .header-nav a {
@@ -57,6 +58,26 @@
 
         .header-nav a:hover {
             border-bottom-color: var(--blood-red);
+        }
+
+        .deck-builder-btn {
+            background: var(--blood-red);
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .deck-builder-btn:hover {
+            background: var(--white);
+            color: var(--black);
         }
 
         /* Main Layout */
@@ -503,6 +524,7 @@
         <div class="header-nav">
             <a href="../index.html">BACK TO SITE</a>
             <a href="../wiki/">WIKI</a>
+            <a href="deck-builder.html" class="deck-builder-btn">[Deck Builder]</a>
         </div>
     </div>
 
