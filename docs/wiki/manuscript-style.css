@@ -4,7 +4,7 @@
  * Inspired by medieval illuminated manuscripts and grimoires
  */
 
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Crimson+Pro:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&family=Libre+Baskerville:ital@0;1&display=swap');
 
 * {
     margin: 0;
@@ -29,7 +29,7 @@
 }
 
 body {
-    font-family: 'IM Fell English', 'Crimson Pro', Georgia, serif;
+    font-family: 'Libre Baskerville', 'Crimson Pro', Georgia, serif;
     background-color: var(--parchment-dark);
     background-image:
         var(--leather-texture),
@@ -95,7 +95,7 @@ body::before {
 }
 
 .header-title {
-    font-family: 'UnifrakturMaguntia', 'IM Fell English', serif;
+    font-family: 'Cinzel Decorative', serif;
     font-size: 3rem;
     font-weight: 700;
     color: var(--bone-white);
@@ -107,7 +107,7 @@ body::before {
 }
 
 .header-subtitle {
-    font-family: 'IM Fell English', serif;
+    font-family: 'Libre Baskerville', serif;
     color: var(--aged-gold);
     font-size: 0.95rem;
     font-style: italic;
@@ -159,7 +159,7 @@ body::before {
 }
 
 .nav-title {
-    font-family: 'UnifrakturMaguntia', serif;
+    font-family: 'Cinzel Decorative', serif;
     font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -191,7 +191,7 @@ body::before {
     margin-bottom: 0.35rem;
     transition: all 0.3s ease;
     position: relative;
-    font-family: 'IM Fell English', serif;
+    font-family: 'Crimson Pro', serif;
 }
 
 .nav-link::before {
@@ -244,7 +244,7 @@ body::before {
 }
 
 .breadcrumb {
-    font-family: 'IM Fell English', serif;
+    font-family: 'Crimson Pro', serif;
     font-size: 0.85rem;
     color: var(--aged-gold);
     margin-bottom: 2rem;
@@ -266,30 +266,30 @@ body::before {
 
 /* Typography - Gothic Manuscript Style */
 .content h1 {
-    font-family: 'UnifrakturMaguntia', serif;
-    font-size: 3rem;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.75rem;
     margin-bottom: 1.5rem;
     color: var(--bone-white);
     border-bottom: 3px double var(--dark-red);
     padding-bottom: 1rem;
     text-align: center;
     text-shadow: 2px 2px 4px var(--shadow-black);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     position: relative;
     z-index: 1;
 }
 
 .content h1::first-letter {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     color: var(--dark-red);
-    float: left;
-    line-height: 0.8;
-    margin-right: 0.1em;
+    float: none;
+    line-height: normal;
+    margin-right: 0;
     text-shadow: 3px 3px 6px var(--shadow-black);
 }
 
 .content h2 {
-    font-family: 'UnifrakturMaguntia', serif;
+    font-family: 'Cinzel Decorative', serif;
     font-size: 2rem;
     margin-top: 3rem;
     margin-bottom: 1.25rem;
@@ -330,7 +330,7 @@ body::before {
     float: left;
     line-height: 1;
     margin-right: 0.1em;
-    font-family: 'UnifrakturMaguntia', serif;
+    font-family: 'Cinzel Decorative', serif;
 }
 
 /* Lists with Gothic Style */
@@ -373,12 +373,12 @@ body::before {
 
 .content th {
     background: linear-gradient(to bottom, var(--blood-red), var(--blackish-red));
-    font-family: 'UnifrakturMaguntia', serif;
+    font-family: 'Cinzel Decorative', serif;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--bone-white);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-shadow: 1px 1px 2px var(--shadow-black);
 }
 
@@ -451,10 +451,10 @@ body::before {
 
 /* Playtest Ready Box - Special Styling */
 .content > div[style*="border-left: 4px solid"] h2:first-child {
-    font-family: 'UnifrakturMaguntia', serif !important;
+    font-family: 'Cinzel Decorative', serif !important;
     color: var(--dark-red) !important;
     text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.08em;
 }
 
 /* Quote Blocks - Medieval Manuscript Style */
@@ -463,10 +463,10 @@ body::before {
     border: 3px double var(--dark-red) !important;
     padding: 2rem !important;
     text-align: center !important;
-    font-family: 'IM Fell English', serif !important;
-    font-size: 1.15rem !important;
+    font-family: 'Libre Baskerville', serif !important;
+    font-size: 1.1rem !important;
     color: var(--aged-gold) !important;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
     position: relative;
     z-index: 1;
 }
@@ -479,7 +479,7 @@ body::before {
     font-size: 6rem;
     color: var(--blood-red);
     opacity: 0.2;
-    font-family: 'UnifrakturMaguntia', serif;
+    font-family: 'Cinzel Decorative', serif;
 }
 
 /* Mobile Responsiveness */
