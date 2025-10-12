@@ -149,7 +149,7 @@ Each finger controls specific Casket functions:
 
 ---
 
-### Elven Remnants: The Root Interface
+### Elven Verdant Covenant: The Root Interface
 
 - Threads are **green-white** (organically grown, not surgically implanted)
 - Fluid is **sap-based** (amber, sticky, preservative)

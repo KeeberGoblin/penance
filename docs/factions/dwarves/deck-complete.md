@@ -1,8 +1,18 @@
-# DWARVEN CLANS - COMPLETE FACTION DECK
+# ⚠️ DEPRECATED - DWARVEN CLANS - COMPLETE FACTION DECK
+
+> **⚠️ WARNING: This file uses the OLD fixed-deck system (deprecated October 11, 2025)**
+>
+> **CURRENT SYSTEM**: See [deck-equipment-system.md](dwarves/deck-equipment-system.md) for the NEW variable equipment system
+>
+> This file is kept for historical reference only. The current game uses modular equipment with variable deck sizes (26-50 cards) instead of fixed 30-card decks.
+
+---
+
+## Legacy Fixed-Deck System (Deprecated)
 
 **Faction Identity**: Defensive engineering masters with armor-piercing weapons and redundant systems
 **Playstyle**: Durable attrition warfare, component protection, Heat-to-damage conversion
-**Deck Size**: 30 cards total
+**Deck Size**: 30 cards total (FIXED - NO LONGER USED)
 **SP Maximum**: 5 (Medium Frame - "Forge Walkers")
 **Heat Capacity**: 6 (built-in cooling)
 
@@ -518,7 +528,7 @@
 
 **Key Card**: Crushing Blow (armor-piercing shuts down their shields)
 
-### Playing Against Elven Remnants (Hypothetical)
+### Playing Against Elven Verdant Covenant (Hypothetical)
 **Elven Strengths**: Speed, evasion, hit-and-run
 **Dwarven Counter**:
 - Siege Cannon catches them at range

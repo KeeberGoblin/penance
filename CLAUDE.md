@@ -670,6 +670,13 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 
 ## Changelog for This Document
 
+**October 12, 2025** - Contradiction fixes and repository cleanup
+- Fixed "Elven Remnants" → "Elven Verdant Covenant" in 7 files
+- Added deprecation notices to `deck-complete.md` files (legacy fixed-deck system)
+- Corrected pilot physical states in manuscript prompts (Church/Elves NOT skeletons)
+- Created comprehensive contradiction report (CONTRADICTION-REPORT.md)
+- Note: `deck-complete.md` files are kept for historical reference but marked deprecated
+
 **October 11, 2025** - Initial creation
 - Comprehensive context document for AI assistants
 - Covers equipment system v2.0, event tables, faction decks

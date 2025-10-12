@@ -100,7 +100,7 @@ Colossal Gothic war machine, baroque-romanticist brutalist design, 2,200 lbs fra
 
 ---
 
-## Elven Remnants Caskets
+## Elven Verdant Covenant Caskets
 
 ### THE SENTINEL (Light)
 

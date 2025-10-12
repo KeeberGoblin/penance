@@ -140,7 +140,7 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 
 ---
 
-### Elven Remnants: **Tragic Necessity**
+### Elven Verdant Covenant: **Tragic Necessity**
 
 **Title**: **"The Pruned"**
 

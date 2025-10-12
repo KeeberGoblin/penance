@@ -195,7 +195,7 @@ After your first playtest, answer these questions:
 
 ### Future Playtests (New Sessions)
 1. **Scenario #2**: Different map, different terrain, different victory conditions
-2. **Third Faction**: Add Elven Remnants or The Ossuarium
+2. **Third Faction**: Add Elven Verdant Covenant or The Ossuarium
 3. **Campaign Mode**: Link scenarios together with pilot progression
 4. **Boss Encounter**: Test Sister Vex, The Iron Saint (HP deck boss)
 

@@ -389,7 +389,7 @@ If it feels good → **You're ready for external playtest** (friend, online comm
 
 **Recommended next factions**:
 1. **The Ossuarium** (unique resurrection mechanic)
-2. **Elven Remnants** (regeneration/nature theme)
+2. **Elven Verdant Covenant** (regeneration/nature theme)
 3. **The Wyrd Conclave** (teleportation/trickery)
 
 **Time per faction**: 3-4 hours each

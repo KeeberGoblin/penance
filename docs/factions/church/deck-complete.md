@@ -1,5 +1,14 @@
-# Church of Absolution - Complete Faction Deck
-## Penance: Absolution Through Steel
+# ⚠️ DEPRECATED - Church of Absolution - Complete Faction Deck
+
+> **⚠️ WARNING: This file uses the OLD fixed-deck system (deprecated October 11, 2025)**
+>
+> **CURRENT SYSTEM**: See [deck-equipment-system.md](church/deck-equipment-system.md) for the NEW variable equipment system
+>
+> This file is kept for historical reference only. The current game uses modular equipment with variable deck sizes (26-50 cards) instead of fixed 30-card decks.
+
+---
+
+## Legacy Fixed-Deck System (Deprecated)
 
 **Faction**: Church of Absolution
 **Ideology**: "We did not die because we were unworthy. We died because the world demanded sacrifice."
@@ -9,7 +18,7 @@
 
 ## Deck Overview
 
-**Total Deck Size**: 30 cards
+**Total Deck Size**: 30 cards (FIXED - NO LONGER USED)
 - 10 Universal Core (mandatory)
 - 12 Primary Weapon: Penitent Blades
 - 6 Secondary Equipment (choose 1 option)
