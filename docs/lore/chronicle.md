@@ -28,7 +28,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 
 > **[Static. Hissing. A voice, breathless with excitement]**
 >
-> "...final checks complete. Resonance Engine is stable at 97% efficiency. Nikolas, the board is green across all—wait. Wait, what is that reading?"
+> "...final checks complete. The Theslar Engine is stable at 97% efficiency. Nikolas, the board is green across all—wait. Wait, what is that reading?"
 >
 > **[Pause. Papers rustling]**
 >
@@ -48,7 +48,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 
 ---
 
-**GM Note**: This is the only direct account of the Sundering's first moments. The "voice" at the end is never explained. Players who research the Resonance Engine may hear this recording. It raises more questions than it answers.
+**GM Note**: This is the only direct account of the Sundering's first moments. The "voice" at the end is never explained. Players who research The Engine may hear this recording. It raises more questions than it answers.
 
 ---
 
@@ -294,7 +294,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 
 ---
 
-**GM Note**: The Draconids have seen the Cataclysm *three times*. This isn't the first Resonance Engine. This isn't the first Sundering. History repeats. Players who discover this will realize: they're part of a cycle they cannot stop.
+**GM Note**: The Draconids have seen the Cataclysm *three times*. This isn't the first Engine. This isn't the first Sundering. History repeats. Players who discover this will realize: they're part of a cycle they cannot stop.
 
 ---
 
@@ -354,7 +354,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 
 > **[Static. Wind howling. Footsteps crunching on crystalline ground]**
 >
-> "Scout report, Day 9. We're within visual range of the Engine now. It's... God's below, it's massive. The Resonance Pulses are every six hours. We've timed our approach between them.
+> "Scout report, Day 9. We're within visual range of The Engine now. It's... God's below, it's massive. The Pulses are every six hours. We've timed our approach between them.
 >
 > **[Pause]**
 >
@@ -364,7 +364,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 >
 > "It's... singing. The Engine is *singing*.
 >
-> No. No, not the Engine. There are people inside it. I can see them through the gaps in the structure. Hundreds of them. Maybe thousands.
+> No. No, not The Engine. There are people inside it. I can see them through the gaps in the structure. Hundreds of them. Maybe thousands.
 >
 > They're... they're embedded in the walls. Fused with the metal and crystal. Still alive.
 >
@@ -386,7 +386,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 
 ---
 
-**GM Note**: Theslar didn't die in the Cataclysm. He's still in the Engine, merged with it, *aware*. The "Screaming Choir" is everyone who tried to shut it down and failed. Players who reach the Engine's Core will meet them.
+**GM Note**: Theslar didn't die in the Cataclysm. He's still in The Engine, merged with it, *aware*. The "Screaming Choir" is everyone who tried to shut it down and failed. Players who reach The Engine's Core will meet them.
 
 ---
 
