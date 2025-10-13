@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PENANCE: Deck Builder</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ===========================
+           GLOBAL RESET & VARIABLES
+           =========================== */
         * {
             margin: 0;
             padding: 0;
@@ -26,22 +27,28 @@
             --shadow-black: #0a0604;
             --crimson-text: #8b0000;
 
-            /* Texture */
-            --leather-texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="400" height="400" filter="url(%23noise)" opacity="0.15"/></svg>');
+            /* Card colors by faction */
+            --universal-gradient: linear-gradient(135deg, #4a5568, #2d3748);
+            --church-gradient: linear-gradient(135deg, #6b1a1a, #4a0e0e);
+            --dwarves-gradient: linear-gradient(135deg, #8b7355, #4a3f2f);
+            --ossuarium-gradient: linear-gradient(135deg, #1a3d1a, #0d1f0d);
+            --elves-gradient: linear-gradient(135deg, #2d5a2d, #1a3d1a);
+            --equipment-gradient: linear-gradient(135deg, #5a4a3a, #3a2a1a);
         }
 
         body {
             font-family: 'Crimson Pro', Georgia, serif;
             background-color: var(--parchment-dark);
-            background-image:
-                var(--leather-texture),
-                linear-gradient(to bottom, var(--leather-brown) 0%, var(--parchment-dark) 50%, var(--shadow-black) 100%);
+            background-image: linear-gradient(to bottom, var(--leather-brown) 0%, var(--parchment-dark) 50%, var(--shadow-black) 100%);
             background-attachment: fixed;
             color: var(--bone-white);
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        /* Decorative Page Border */
+        /* ===========================
+           DECORATIVE PAGE BORDER
+           =========================== */
         body::before {
             content: '';
             position: fixed;
@@ -50,29 +57,26 @@
             right: 0;
             bottom: 0;
             border: 15px solid transparent;
-            border-image: linear-gradient(
-                135deg,
-                var(--dark-red) 0%,
-                var(--blackish-red) 25%,
-                var(--blood-red) 50%,
-                var(--blackish-red) 75%,
-                var(--dark-red) 100%
-            ) 15;
+            border-image: linear-gradient(135deg, var(--dark-red), var(--blackish-red), var(--blood-red), var(--blackish-red), var(--dark-red)) 15;
             pointer-events: none;
             z-index: 9999;
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
         }
 
-        /* ===== SCREEN STYLES ===== */
+        /* ===========================
+           HEADER
+           =========================== */
         .header {
             background: linear-gradient(to bottom, var(--blackish-red), var(--blood-red));
-            border-bottom: 4px double var(--dark-red);
+            border-bottom: 3px double var(--dark-red);
             padding: 1.5rem 2rem;
             position: sticky;
-            top: 15px;
+            top: 0;
             z-index: 100;
-            margin: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+        }
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -83,36 +87,35 @@
             font-size: 2rem;
             font-weight: 700;
             color: var(--bone-white);
-            text-shadow: 2px 2px 4px var(--shadow-black), 0 0 20px rgba(139, 0, 0, 0.5);
-            letter-spacing: 0.15em;
+            text-shadow: 2px 2px 4px var(--shadow-black);
+            letter-spacing: 0.1em;
         }
 
         .header-actions {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             align-items: center;
         }
 
         .btn {
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--blackish-red) 100%);
+            background: linear-gradient(135deg, var(--blood-red), var(--blackish-red));
             border: 2px solid var(--aged-gold);
             color: var(--bone-white);
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             font-family: 'Cinzel Decorative', serif;
             font-size: 0.75rem;
             cursor: pointer;
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         .btn:hover {
-            background: linear-gradient(135deg, var(--aged-gold) 0%, #8b7355 100%);
+            background: linear-gradient(135deg, var(--aged-gold), #8b7355);
             color: var(--parchment-dark);
-            border-color: var(--bone-white);
             box-shadow: 0 4px 12px rgba(184, 149, 106, 0.4);
         }
 
@@ -122,201 +125,364 @@
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, var(--leather-brown) 0%, var(--parchment-dark) 100%);
+            background: linear-gradient(135deg, var(--leather-brown), var(--parchment-dark));
             border-color: var(--dark-red);
         }
 
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, var(--aged-gold) 0%, #8b7355 100%);
-            color: var(--parchment-dark);
-        }
-
-        .container {
+        /* ===========================
+           TWO-PANEL LAYOUT
+           =========================== */
+        .main-container {
             display: grid;
-            grid-template-columns: 1fr 380px;
-            min-height: calc(100vh - 140px);
-            margin: 0 15px 15px 15px;
+            grid-template-columns: 1fr 450px;
+            gap: 0;
+            min-height: calc(100vh - 88px);
+            margin: 0;
         }
 
-        .card-list {
+        /* ===========================
+           LEFT PANEL: CARD POOL
+           =========================== */
+        .card-pool-panel {
+            background: linear-gradient(to bottom, rgba(26, 20, 16, 0.85), rgba(10, 6, 4, 0.9));
+            border-right: 4px double var(--dark-red);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Tabs */
+        .tabs {
+            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            border-bottom: 2px solid var(--blood-red);
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .tab {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.75rem;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            color: var(--aged-gold);
+            letter-spacing: 0.05em;
+        }
+
+        .tab:hover {
+            background: rgba(75, 14, 14, 0.2);
+            color: var(--bone-white);
+        }
+
+        .tab.active {
+            background: rgba(75, 14, 14, 0.4);
+            border-bottom-color: var(--blood-red);
+            color: var(--bone-white);
+            font-weight: 700;
+        }
+
+        .tab-count {
+            background: var(--blood-red);
+            color: var(--bone-white);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-left: 0.4rem;
+        }
+
+        /* Card Pool Content */
+        .card-pool-content {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Sidebar Filters */
+        .sidebar {
+            background: rgba(43, 31, 23, 0.5);
+            border-right: 2px solid var(--blood-red);
+            padding: 1.5rem;
             overflow-y: auto;
-            padding: 2rem;
-            background: linear-gradient(to bottom,
-                rgba(26, 20, 16, 0.85),
-                rgba(10, 6, 4, 0.9)
-            );
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
-            position: relative;
         }
 
-        .card-list::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--leather-texture);
-            opacity: 0.2;
-            pointer-events: none;
+        .filter-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--blood-red);
         }
 
-        .card-count {
+        .filter-section:last-child {
+            border-bottom: none;
+        }
+
+        .filter-title {
             font-family: 'Cinzel Decorative', serif;
             font-size: 0.85rem;
-            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-red);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 0.6rem;
+            background: var(--shadow-black);
+            border: 2px solid var(--blood-red);
+            border-radius: 4px;
+            color: var(--bone-white);
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.85rem;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--aged-gold);
+            box-shadow: 0 0 10px rgba(184, 149, 106, 0.3);
+        }
+
+        .filter-checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: color 0.2s ease;
+        }
+
+        .filter-checkbox:hover {
             color: var(--aged-gold);
-            text-align: center;
-            letter-spacing: 0.1em;
-            position: relative;
-            z-index: 1;
+        }
+
+        .filter-checkbox input[type="checkbox"] {
+            margin-right: 0.5rem;
+            cursor: pointer;
+            accent-color: var(--blood-red);
+        }
+
+        /* Card Grid */
+        .card-grid-area {
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .controls-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(43, 31, 23, 0.5);
+            border: 1px solid var(--blood-red);
+            border-radius: 4px;
+        }
+
+        .results-counter {
+            font-size: 0.85rem;
+            color: var(--aged-gold);
         }
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.25rem;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
         }
 
-        .card-item {
-            background: linear-gradient(135deg,
-                rgba(43, 31, 23, 0.8) 0%,
-                rgba(26, 20, 16, 0.9) 100%
-            );
+        .card-tile {
+            background: var(--shadow-black);
             border: 2px solid var(--blood-red);
-            padding: 1.25rem;
+            border-radius: 6px;
+            padding: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
             position: relative;
+            overflow: hidden;
         }
 
-        .card-item::before {
+        .card-tile::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background-image: var(--leather-texture);
-            opacity: 0.3;
-            pointer-events: none;
+            height: 4px;
+            background: var(--universal-gradient);
         }
 
-        .card-item:hover {
+        .card-tile.church::before { background: var(--church-gradient); }
+        .card-tile.dwarves::before { background: var(--dwarves-gradient); }
+        .card-tile.ossuarium::before { background: var(--ossuarium-gradient); }
+        .card-tile.elves::before { background: var(--elves-gradient); }
+        .card-tile.equipment::before { background: var(--equipment-gradient); }
+
+        .card-tile:hover {
             border-color: var(--aged-gold);
-            box-shadow: 0 4px 16px rgba(184, 149, 106, 0.3);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(184, 149, 106, 0.3);
         }
 
-        .card-item.in-deck {
+        .card-tile.in-deck {
             border-color: var(--aged-gold);
-            background: linear-gradient(135deg,
-                rgba(75, 14, 14, 0.6) 0%,
-                rgba(45, 10, 10, 0.8) 100%
-            );
-            box-shadow: 0 0 20px rgba(184, 149, 106, 0.4);
+            background: rgba(184, 149, 106, 0.1);
         }
 
-        .card-name {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--bone-white);
-            position: relative;
-        }
-
-        .card-stats {
-            font-size: 0.7rem;
-            color: var(--aged-gold);
-            margin-bottom: 0.25rem;
-            position: relative;
-        }
-
-        .card-type {
-            font-size: 0.7rem;
-            color: var(--aged-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: relative;
-        }
-
-        .card-counter {
+        .card-tile.in-deck::after {
+            content: '✓';
             position: absolute;
             top: 8px;
             right: 8px;
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--blackish-red) 100%);
-            border: 2px solid var(--aged-gold);
-            color: var(--bone-white);
+            background: var(--aged-gold);
+            color: var(--shadow-black);
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            width: 32px;
-            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .card-tile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-tile-name {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.95rem;
+            color: var(--bone-white);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            flex: 1;
+            margin-right: 0.5rem;
+        }
+
+        .card-tile-cost {
+            background: var(--blood-red);
+            color: var(--bone-white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 50%;
+            font-family: 'Cinzel Decorative', serif;
             font-size: 0.85rem;
             font-weight: 700;
+            min-width: 28px;
+            text-align: center;
+        }
+
+        .card-tile-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .badge {
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.65rem;
             font-family: 'Cinzel Decorative', serif;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
 
-        .deck-panel {
-            background: linear-gradient(to bottom,
-                rgba(43, 31, 23, 0.95),
-                rgba(26, 20, 16, 0.95)
-            );
-            border-left: 4px double var(--dark-red);
-            padding: 2rem;
-            overflow-y: auto;
-            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.8);
-            position: relative;
+        .badge-type {
+            background: var(--dark-red);
+            color: var(--bone-white);
         }
 
-        .deck-panel::before {
-            content: '';
+        .card-tile-effect {
+            color: var(--aged-gold);
+            font-size: 0.8rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-count-badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--leather-texture);
-            opacity: 0.3;
-            pointer-events: none;
+            top: 8px;
+            right: 8px;
+            background: var(--blood-red);
+            color: var(--bone-white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
         }
 
-        .deck-title {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        /* ===========================
+           RIGHT PANEL: DECK
+           =========================== */
+        .deck-panel {
+            background: linear-gradient(to bottom, rgba(43, 31, 23, 0.95), rgba(26, 20, 16, 0.95));
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .deck-header {
             border-bottom: 3px double var(--dark-red);
             padding-bottom: 1rem;
-            color: var(--bone-white);
-            text-shadow: 2px 2px 4px var(--shadow-black);
-            letter-spacing: 0.1em;
-            text-align: center;
-            position: relative;
+            margin-bottom: 1.5rem;
         }
 
+        .deck-name-input {
+            width: 100%;
+            background: rgba(10, 6, 4, 0.9);
+            border: 2px solid var(--blood-red);
+            border-radius: 4px;
+            padding: 0.75rem;
+            color: var(--bone-white);
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .deck-name-input:focus {
+            outline: none;
+            border-color: var(--aged-gold);
+        }
+
+        .deck-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Deck Stats */
         .deck-stats {
             background: rgba(10, 6, 4, 0.9);
             border: 2px solid var(--blood-red);
-            padding: 1.25rem;
+            padding: 1rem;
             margin-bottom: 1.5rem;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
-            position: relative;
+            border-radius: 4px;
         }
 
         .deck-stat {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.75rem;
-            font-size: 0.875rem;
-            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
         }
 
         .deck-stat:last-child {
@@ -324,28 +490,71 @@
         }
 
         .deck-stat-label {
-            font-family: 'Crimson Pro', serif;
             color: var(--aged-gold);
         }
 
         .deck-stat-value {
-            font-family: 'Cinzel Decorative', serif;
             color: var(--bone-white);
             font-weight: 700;
-            text-shadow: 1px 1px 2px var(--shadow-black);
+            font-family: 'Cinzel Decorative', serif;
         }
 
-        .deck-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+        .deck-stat-value.valid {
+            color: #4ade80;
+        }
+
+        .deck-stat-value.invalid {
+            color: #f87171;
+        }
+
+        /* Validation Warnings */
+        .validation-warnings {
+            background: rgba(107, 26, 26, 0.3);
+            border: 2px solid var(--crimson-text);
+            border-left: 4px solid var(--crimson-text);
+            padding: 1rem;
             margin-bottom: 1.5rem;
-            position: relative;
+            border-radius: 4px;
+        }
+
+        .validation-warnings.hidden {
+            display: none;
+        }
+
+        .validation-warning {
+            color: #fca5a5;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .validation-warning::before {
+            content: '⚠';
+            color: var(--crimson-text);
+        }
+
+        .validation-warning:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Deck List */
+        .deck-section-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--dark-red);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid var(--blood-red);
+            padding-bottom: 0.5rem;
         }
 
         .deck-list {
             list-style: none;
-            position: relative;
+            margin-bottom: 1.5rem;
         }
 
         .deck-item {
@@ -353,48 +562,57 @@
             border: 2px solid var(--blood-red);
             border-left: 4px solid var(--dark-red);
             padding: 0.75rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
             transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            border-radius: 4px;
         }
 
         .deck-item:hover {
             border-color: var(--aged-gold);
             border-left-color: var(--aged-gold);
-            box-shadow: 0 4px 12px rgba(184, 149, 106, 0.3);
+        }
+
+        .deck-item-info {
+            flex: 1;
         }
 
         .deck-item-name {
             font-family: 'Crimson Pro', serif;
             font-weight: 700;
             color: var(--bone-white);
+            font-size: 0.85rem;
+        }
+
+        .deck-item-details {
+            color: var(--aged-gold);
+            font-size: 0.7rem;
+            margin-top: 0.25rem;
         }
 
         .deck-item-count {
-            font-family: 'Cinzel Decorative', serif;
             color: var(--aged-gold);
+            font-family: 'Cinzel Decorative', serif;
             font-weight: 700;
-            margin-left: 0.5rem;
+            margin-right: 0.75rem;
         }
 
         .deck-item-remove {
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--blackish-red) 100%);
+            background: var(--blood-red);
             border: 1px solid var(--aged-gold);
             color: var(--bone-white);
-            padding: 0.25rem 0.5rem;
+            padding: 0.25rem 0.6rem;
             cursor: pointer;
             font-size: 0.7rem;
             font-family: 'Cinzel Decorative', serif;
             transition: all 0.3s ease;
+            border-radius: 3px;
         }
 
         .deck-item-remove:hover {
-            background: linear-gradient(135deg, var(--aged-gold) 0%, #8b7355 100%);
+            background: var(--aged-gold);
             color: var(--parchment-dark);
         }
 
@@ -403,19 +621,20 @@
             color: var(--aged-gold);
             padding: 2rem;
             font-family: 'Cinzel Decorative', serif;
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            position: relative;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
         }
 
-        /* Gothic Scrollbar */
+        /* ===========================
+           SCROLLBAR STYLING
+           =========================== */
         ::-webkit-scrollbar {
-            width: 12px;
-            background: var(--shadow-black);
+            width: 10px;
+            height: 10px;
         }
 
         ::-webkit-scrollbar-track {
-            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            background: var(--shadow-black);
             border: 1px solid var(--blood-red);
         }
 
@@ -428,18 +647,9 @@
             background: var(--dark-red);
         }
 
-        /* Selection Styling */
-        ::selection {
-            background: var(--blood-red);
-            color: var(--bone-white);
-        }
-
-        ::-moz-selection {
-            background: var(--blood-red);
-            color: var(--bone-white);
-        }
-
-        /* ===== PRINT STYLES ===== */
+        /* ===========================
+           PRINT STYLES
+           =========================== */
         @media print {
             body {
                 background: #f4ede3;
@@ -447,35 +657,25 @@
                 padding: 0;
             }
 
-            body::before {
-                display: none;
-            }
-
-            /* Hide all screen elements */
+            body::before,
             .header,
-            .deck-panel,
-            .card-count,
-            .card-grid {
+            .card-pool-panel,
+            .tabs,
+            .sidebar,
+            .controls-bar,
+            .deck-actions {
                 display: none !important;
             }
 
-            .container {
+            .main-container {
                 display: block;
             }
 
-            .card-list {
-                padding: 0;
-                overflow: visible;
+            .deck-panel {
                 background: transparent;
+                padding: 0;
             }
 
-            .card-list::before {
-                display: none;
-            }
-
-            /* A4 paper: 210mm x 297mm
-               Card size: 2.5" x 3.5" = 63.5mm x 88.9mm
-               3x3 grid = 9 cards per page */
             @page {
                 size: A4;
                 margin: 8mm;
@@ -487,7 +687,6 @@
                 grid-template-rows: repeat(3, 88.9mm);
                 gap: 3mm 2mm;
                 page-break-after: always;
-                width: 100%;
             }
 
             .print-page:last-child {
@@ -499,52 +698,41 @@
                 height: 88.9mm;
                 border: 2pt solid #4a0e0e;
                 padding: 3mm;
-                background: linear-gradient(135deg, #f4ede3 0%, #e8dcc8 100%);
+                background: linear-gradient(135deg, #f4ede3, #e8dcc8);
                 color: #1a1410;
                 font-family: 'Crimson Pro', Georgia, serif;
                 display: flex;
                 flex-direction: column;
                 page-break-inside: avoid;
                 box-sizing: border-box;
-                position: relative;
-                box-shadow: inset 0 0 3mm rgba(74, 14, 14, 0.1);
+                border-radius: 3mm;
             }
 
             .print-card-header {
                 border-bottom: 2pt double #6b1a1a;
                 padding-bottom: 2mm;
-                margin-bottom: 2.5mm;
+                margin-bottom: 2mm;
             }
 
             .print-card-name {
                 font-family: 'Cinzel Decorative', serif;
-                font-size: 9.5pt;
+                font-size: 8.5pt;
                 font-weight: bold;
                 margin-bottom: 1mm;
                 line-height: 1.1;
                 color: #2d0a0a;
             }
 
-            .print-card-top-stats {
+            .print-card-stats {
                 display: flex;
                 justify-content: space-between;
                 font-size: 7pt;
                 margin-bottom: 0.5mm;
-                font-family: 'Crimson Pro', serif;
             }
 
             .print-card-cost {
                 font-weight: bold;
                 color: #4a0e0e;
-            }
-
-            .print-card-range {
-                color: #6b1a1a;
-            }
-
-            .print-card-initiative {
-                color: #8b0000;
-                font-size: 6.5pt;
             }
 
             .print-card-body {
@@ -553,20 +741,10 @@
                 flex-direction: column;
             }
 
-            .print-card-damage {
-                font-size: 8pt;
-                font-weight: bold;
-                margin-bottom: 1.5mm;
-                color: #8b0000;
-                font-family: 'Cinzel Decorative', serif;
-            }
-
             .print-card-effect {
                 font-size: 7pt;
-                line-height: 1.25;
+                line-height: 1.3;
                 margin-bottom: auto;
-                overflow: hidden;
-                font-family: 'Crimson Pro', serif;
             }
 
             .print-card-keywords {
@@ -577,7 +755,6 @@
                 padding-top: 1.5mm;
                 margin-top: 1.5mm;
                 line-height: 1.3;
-                font-family: 'Crimson Pro', serif;
             }
 
             .print-card-footer {
@@ -587,893 +764,575 @@
                 margin-top: 1mm;
                 text-transform: uppercase;
                 font-family: 'Cinzel Decorative', serif;
-                letter-spacing: 0.05em;
             }
+        }
+
+        /* ===========================
+           MOBILE RESPONSIVENESS
+           =========================== */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .deck-panel {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                z-index: 200;
+                transition: right 0.3s ease;
+            }
+
+            .deck-panel.open {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card-pool-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="header-title">PENANCE: DECK BUILDER</div>
-        <div class="header-actions">
-            <button class="btn" onclick="printDeck()" id="printBtn" disabled>PRINT DECK (0)</button>
-            <button class="btn btn-secondary" onclick="saveDeck()">SAVE</button>
-            <button class="btn btn-secondary" onclick="loadDeck()">LOAD</button>
-            <button class="btn btn-secondary" onclick="clearDeck()">CLEAR</button>
-            <a href="index.html" class="btn btn-secondary">DATABASE</a>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">PENANCE: DECK BUILDER</h1>
+            <div class="header-actions">
+                <button class="btn" onclick="printDeck()" id="printBtn" disabled>PRINT (0)</button>
+                <button class="btn btn-secondary" onclick="saveDeck()">SAVE</button>
+                <button class="btn btn-secondary" onclick="loadDeck()">LOAD</button>
+                <button class="btn btn-secondary" onclick="clearDeck()">CLEAR</button>
+                <a href="index.html" class="btn btn-secondary">DATABASE</a>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <div class="container">
-        <div class="card-list">
-            <div class="card-count">Click cards to add to deck • Click again for more copies • Right-click to remove</div>
-            <div class="card-grid" id="cardGrid"></div>
+    <!-- MAIN CONTAINER -->
+    <div class="main-container">
+        <!-- LEFT PANEL: CARD POOL -->
+        <div class="card-pool-panel">
+            <!-- Tabs -->
+            <nav class="tabs">
+                <div class="tab active" data-tab="all">
+                    ALL <span class="tab-count" id="count-all">0</span>
+                </div>
+                <div class="tab" data-tab="universal">
+                    UNIVERSAL <span class="tab-count" id="count-universal">0</span>
+                </div>
+                <div class="tab" data-tab="church">
+                    CHURCH <span class="tab-count" id="count-church">0</span>
+                </div>
+                <div class="tab" data-tab="dwarves">
+                    DWARVES <span class="tab-count" id="count-dwarves">0</span>
+                </div>
+                <div class="tab" data-tab="ossuarium">
+                    OSSUARIUM <span class="tab-count" id="count-ossuarium">0</span>
+                </div>
+                <div class="tab" data-tab="elves">
+                    ELVES <span class="tab-count" id="count-elves">0</span>
+                </div>
+                <div class="tab" data-tab="equipment">
+                    EQUIPMENT <span class="tab-count" id="count-equipment">0</span>
+                </div>
+            </nav>
 
-            <!-- Print area (hidden on screen, shown on print) -->
-            <div id="printArea"></div>
+            <!-- Card Pool Content -->
+            <div class="card-pool-content">
+                <!-- Sidebar Filters -->
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <div class="filter-title">Search</div>
+                        <input type="text" id="search-input" class="search-box" placeholder="Card name, effect...">
+                    </div>
+
+                    <div class="filter-section">
+                        <div class="filter-title">Card Type</div>
+                        <div class="filter-checkbox-group">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="movement" data-filter="type"> Movement
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="attack" data-filter="type"> Attack
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="defense" data-filter="type"> Defense
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="utility" data-filter="type"> Utility
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="passive" data-filter="type"> Passive
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <div class="filter-title">Cost</div>
+                        <div class="filter-checkbox-group">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="0" data-filter="cost"> 0 SP
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="1" data-filter="cost"> 1 SP
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="2" data-filter="cost"> 2 SP
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="3" data-filter="cost"> 3 SP
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="4+" data-filter="cost"> 4+ SP
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section hidden" id="equipment-slot-section">
+                        <div class="filter-title">Equipment Slot</div>
+                        <div class="filter-checkbox-group">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="weapon" data-filter="slot"> Weapon
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="shield" data-filter="slot"> Shield
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="offhand" data-filter="slot"> Offhand
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="accessory" data-filter="slot"> Accessory
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Card Grid -->
+                <main class="card-grid-area">
+                    <div class="controls-bar">
+                        <div class="results-counter">
+                            Showing <strong id="shown-count">0</strong> cards • Click to add to deck • Right-click to remove
+                        </div>
+                    </div>
+                    <div id="card-container" class="card-grid">
+                        <div class="no-cards">Loading cards...</div>
+                    </div>
+                </main>
+            </div>
         </div>
 
-        <div class="deck-panel">
-            <div class="deck-title">YOUR DECK</div>
+        <!-- RIGHT PANEL: DECK -->
+        <aside class="deck-panel">
+            <div class="deck-header">
+                <input type="text" id="deck-name" class="deck-name-input" placeholder="MY DECK" value="MY DECK">
+                <div class="deck-actions">
+                    <button class="btn" onclick="saveDeck()">SAVE</button>
+                    <button class="btn" onclick="loadDeck()">LOAD</button>
+                    <button class="btn btn-secondary" onclick="clearDeck()">CLEAR</button>
+                    <button class="btn" onclick="printDeck()" id="printBtn2" disabled>PRINT</button>
+                </div>
+            </div>
+
+            <!-- Deck Stats -->
             <div class="deck-stats">
                 <div class="deck-stat">
                     <span class="deck-stat-label">Total Cards:</span>
                     <span class="deck-stat-value" id="deckTotal">0</span>
                 </div>
                 <div class="deck-stat">
-                    <span class="deck-stat-label">Universal:</span>
-                    <span class="deck-stat-value" id="deckUniversal">0</span>
+                    <span class="deck-stat-label">Universal Core:</span>
+                    <span class="deck-stat-value" id="deckUniversal">0/10</span>
                 </div>
                 <div class="deck-stat">
-                    <span class="deck-stat-label">Church:</span>
-                    <span class="deck-stat-value" id="deckChurch">0</span>
+                    <span class="deck-stat-label">Faction Core:</span>
+                    <span class="deck-stat-value" id="deckFaction">0/6</span>
                 </div>
                 <div class="deck-stat">
-                    <span class="deck-stat-label">Dwarves:</span>
-                    <span class="deck-stat-value" id="deckDwarves">0</span>
+                    <span class="deck-stat-label">Equipment:</span>
+                    <span class="deck-stat-value" id="deckEquipment">0</span>
+                </div>
+                <div class="deck-stat">
+                    <span class="deck-stat-label">Average Cost:</span>
+                    <span class="deck-stat-value" id="deckAvgCost">0</span>
                 </div>
             </div>
-            <div class="deck-actions">
-                <button class="btn" onclick="printDeck()" disabled id="printBtn2">PRINT DECK</button>
+
+            <!-- Validation Warnings -->
+            <div class="validation-warnings hidden" id="validationWarnings"></div>
+
+            <!-- Deck List -->
+            <div id="deckListContainer">
+                <div class="no-cards">Click cards to start building...</div>
             </div>
-            <ul class="deck-list" id="deckList">
-                <li class="no-cards">Click cards to start building...</li>
-            </ul>
-        </div>
+
+            <!-- Print Area (hidden) -->
+            <div id="printArea" class="hidden"></div>
+        </aside>
     </div>
 
     <script>
-        // Full Card Database - paste from index.html
-        const cardDatabase = [
-            // ===== UNIVERSAL CORE (10 Cards) =====
-            {
-                id: 'desperate-lunge',
-                name: 'Desperate Lunge',
-                type: 'movement',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Move up to 2 hexes in any direction. You may rotate once during this movement.',
-                initiative: '[1]',
-                keywords: ['movement', 'basic']
-            },
-            {
-                id: 'brace-for-impact',
-                name: 'Brace for Impact',
-                type: 'defense',
-                faction: 'universal',
-                cost: 0,
-                range: 'Self',
-                effect: 'Reduce the next instance of damage you take this turn by 2.',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense']
-            },
-            {
-                id: 'emergency-vent',
-                name: 'Emergency Vent',
-                type: 'utility',
-                faction: 'universal',
-                cost: 2,
-                range: 'Self',
-                effect: 'Remove 3 Heat. Draw 1 card.',
-                initiative: '[2]',
-                keywords: ['heat', 'utility']
-            },
-            {
-                id: 'sensor-sweep',
-                name: 'Sensor Sweep',
-                type: 'utility',
-                faction: 'universal',
-                cost: 1,
-                range: 'Target Enemy',
-                effect: 'Reveal 1 random card in target enemy\'s hand (your choice of enemy). If that card is a Primary Weapon card, you may rotate them 1 hex facing.',
-                initiative: '[3]',
-                keywords: ['utility', 'information']
-            },
-            {
-                id: 'overextend',
-                name: 'Overextend',
-                type: 'movement',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Move up to 3 hexes. Gain 1 Heat.',
-                heat: '+1',
-                initiative: '[1]',
-                keywords: ['movement', 'risk']
-            },
-            {
-                id: 'rally-cry',
-                name: 'Rally Cry',
-                type: 'support',
-                faction: 'universal',
-                cost: 2,
-                range: 'Allies within 3 hexes',
-                effect: 'Choose 1 ally within 3 hexes. They draw 1 card. You draw 1 card.',
-                initiative: '[4]',
-                keywords: ['support', 'ally']
-            },
-            {
-                id: 'survey-the-field',
-                name: 'Survey the Field',
-                type: 'utility',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Draw 1 card. You may rotate up to 2 hex facings.',
-                initiative: '[2]',
-                keywords: ['utility', 'movement']
-            },
-            {
-                id: 'feint',
-                name: 'Feint',
-                type: 'utility',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Your next attack this turn: +1 damage.',
-                initiative: '[2]',
-                keywords: ['gambit', 'attack']
-            },
-            {
-                id: 'retreat',
-                name: 'Retreat',
-                type: 'movement',
-                faction: 'universal',
-                cost: 2,
-                range: 'Self',
-                effect: 'Move up to 4 hexes. You cannot attack this turn.',
-                initiative: '[1]',
-                keywords: ['movement', 'defensive']
-            },
-            {
-                id: 'breathe-the-core',
-                name: 'Breathe the Core',
-                type: 'utility',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Remove 1 Heat. Draw 1 card.',
-                initiative: '[3]',
-                keywords: ['heat', 'utility']
-            },
+        // ===========================
+        // DATA & STATE
+        // ===========================
+        let allCards = [];
+        let filteredCards = [];
+        let deck = {}; // { cardId: count }
+        let currentTab = 'all';
+        let deckName = 'MY DECK';
 
-            // ===== CHURCH OF ABSOLUTION - PRIMARY WEAPON: PENITENT BLADES (12 Cards) =====
-            {
-                id: 'blood-offering',
-                name: 'Blood Offering',
-                type: 'utility',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'Discard 2 cards from the top of your deck (self-harm). Your next attack this turn: +3 damage and ignore 1 Defense.',
-                initiative: '[1]',
-                keywords: ['gambit', 'self-harm', 'buff', 'primary-weapon'],
-                quote: 'Pain purifies. Blood absolves.'
-            },
-            {
-                id: 'faithful-thrust',
-                name: 'Faithful Thrust',
-                type: 'attack',
-                faction: 'church',
-                cost: 2,
-                range: 'Melee (Range 1)',
-                damage: '4',
-                effect: 'Deal 4 damage. If attacking from rear arc: +2 damage.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'positioning', 'primary-weapon'],
-                quote: 'Strike true. Strike hard. Strike until forgiven.'
-            },
-            {
-                id: 'righteous-cleave',
-                name: 'Righteous Cleave',
-                type: 'attack',
-                faction: 'church',
-                cost: 3,
-                range: 'Melee (Range 1)',
-                damage: '5',
-                effect: 'Deal 5 damage to primary target. If there is an enemy adjacent to the primary target, deal 2 damage to that enemy as well.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'cleave', 'primary-weapon'],
-                quote: 'One swing. Two sinners absolved.'
-            },
-            {
-                id: 'martyrdom-protocol',
-                name: 'Martyrdom Protocol',
-                type: 'defense',
-                faction: 'church',
-                cost: 0,
-                range: 'Ally within 2 hexes',
-                effect: 'When an ally within 2 hexes would take damage, redirect that damage to yourself instead. Gain 1 Heat.',
-                heat: '+1',
-                initiative: '[—]',
-                keywords: ['reactive', 'ally', 'sacrifice', 'primary-weapon'],
-                quote: 'I will bear your sins.'
-            },
-            {
-                id: 'divine-judgment',
-                name: 'Divine Judgment',
-                type: 'attack',
-                faction: 'church',
-                cost: 4,
-                range: 'Melee (Range 1)',
-                damage: '6',
-                effect: 'Deal 6 damage. If target has 10 or fewer cards remaining in their deck, deal 8 damage instead.',
-                initiative: '[3]',
-                keywords: ['attack', 'melee', 'execute', 'primary-weapon'],
-                quote: 'The guilty know their sentence.'
-            },
-            {
-                id: 'consecrated-ground',
-                name: 'Consecrated Ground',
-                type: 'utility',
-                faction: 'church',
-                cost: 3,
-                range: '3-hex radius',
-                effect: 'Create a 3-hex radius healing zone centered on you until end of round. Allied Caskets in this zone recover 2 cards from their discard pile at the start of their turn.',
-                initiative: '[4]',
-                keywords: ['utility', 'ally', 'healing', 'zone', 'primary-weapon'],
-                quote: 'Stand in the light. Be redeemed.'
-            },
+        // ===========================
+        // LOAD CARD DATA
+        // ===========================
+        async function loadCardData() {
+            try {
+                const response = await fetch('complete-card-data.json');
+                const data = await response.json();
 
-            // ===== CHURCH - SECONDARY OPTION A: BUCKLER SHIELD (6 Cards) =====
-            {
-                id: 'deflect',
-                name: 'Deflect',
-                type: 'defense',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'Reduce the next damage you take this turn by 1.',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense', 'shield']
-            },
-            {
-                id: 'shield-bash',
-                name: 'Shield Bash',
-                type: 'attack',
-                faction: 'church',
-                cost: 1,
-                range: 'Melee (Range 1)',
-                damage: '2',
-                effect: 'Deal 2 damage. Push target 1 hex directly away from you.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'shield', 'push']
-            },
-            {
-                id: 'hunker-down',
-                name: 'Hunker Down',
-                type: 'defense',
-                faction: 'church',
-                cost: 2,
-                range: 'Self',
-                effect: 'Gain +2 Defense until end of round. You cannot attack until end of round.',
-                initiative: '[3]',
-                keywords: ['defense', 'shield']
-            },
+                allCards = [];
 
-            // ===== CHURCH - SECONDARY OPTION B: TOWER SHIELD (6 Cards) =====
-            {
-                id: 'wall-of-iron',
-                name: 'Wall of Iron',
-                type: 'defense',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'Reduce the next damage you take this turn by 3. Gain 1 Heat.',
-                heat: '+1',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense', 'shield', 'heat']
-            },
-            {
-                id: 'shield-wall',
-                name: 'Shield Wall',
-                type: 'defense',
-                faction: 'church',
-                cost: 3,
-                range: 'Allies within 2 hexes',
-                effect: 'Until end of round, all allies within 2 hexes behind you gain +2 Defense.',
-                initiative: '[4]',
-                keywords: ['defense', 'ally', 'shield']
-            },
-            {
-                id: 'advance',
-                name: 'Advance',
-                type: 'movement',
-                faction: 'church',
-                cost: 2,
-                range: 'Self',
-                effect: 'Move up to 2 hexes. Gain +1 Defense until end of your turn.',
-                initiative: '[2]',
-                keywords: ['movement', 'defense', 'shield']
-            },
+                // Universal cards
+                data.universal.forEach(card => {
+                    allCards.push({ ...card, faction: 'universal' });
+                });
 
-            // ===== CHURCH - SECONDARY OPTION C: HOLY RELIC - REPAIR KIT (6 Cards) =====
-            {
-                id: 'emergency-repair',
-                name: 'Emergency Repair',
-                type: 'utility',
-                faction: 'church',
-                cost: 2,
-                range: 'Self',
-                effect: 'Recover 3 cards from your discard pile and shuffle them into your deck.',
-                initiative: '[3]',
-                keywords: ['utility', 'healing', 'relic']
-            },
-            {
-                id: 'scrap-armor',
-                name: 'Scrap Armor',
-                type: 'defense',
-                faction: 'church',
-                cost: 1,
-                range: 'Self',
-                effect: 'Gain 1 Armor (ignore the first 1 damage from next attack). Armor is removed when you take damage.',
-                initiative: '[2]',
-                keywords: ['defense', 'armor', 'relic']
-            },
-            {
-                id: 'jury-rig',
-                name: 'Jury-Rig',
-                type: 'utility',
-                faction: 'church',
-                cost: 3,
-                range: 'Self',
-                effect: 'Shuffle your discard pile into your deck. Do NOT add a Damage card when doing this (special exception to reshuffle rule).',
-                initiative: '[4]',
-                keywords: ['utility', 'deck', 'relic']
-            },
+                // Faction cards
+                ['church', 'dwarves', 'ossuarium', 'elves'].forEach(faction => {
+                    if (data[faction]) {
+                        data[faction].forEach(card => {
+                            allCards.push({ ...card, faction: faction });
+                        });
+                    }
+                });
 
-            // ===== CHURCH - SECONDARY OPTION D: HOLY PISTOL (6 Cards) =====
-            {
-                id: 'quick-shot',
-                name: 'Quick Shot',
-                type: 'attack',
-                faction: 'church',
-                cost: 1,
-                range: 'Close (Range 3)',
-                damage: '2',
-                effect: 'Deal 2 damage.',
-                initiative: '[2]',
-                keywords: ['attack', 'ranged', 'pistol']
-            },
-            {
-                id: 'dual-wield',
-                name: 'Dual Wield',
-                type: 'attack',
-                faction: 'church',
-                cost: 2,
-                range: 'Melee (Range 1)',
-                damage: '3',
-                effect: 'Deal 3 damage to primary target. Then discard 1 card from your hand (recoil).',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'pistol']
-            },
-            {
-                id: 'suppressing-fire',
-                name: 'Suppressing Fire',
-                type: 'attack',
-                faction: 'church',
-                cost: 3,
-                range: 'Close (Range 3)',
-                damage: '2',
-                effect: 'Deal 2 damage to up to 3 different targets within range.',
-                initiative: '[3]',
-                keywords: ['attack', 'ranged', 'pistol', 'aoe']
-            },
+                // Equipment cards (flatten structure)
+                if (data.equipment) {
+                    Object.keys(data.equipment).forEach(category => {
+                        data.equipment[category].forEach(equipItem => {
+                            if (equipItem.cards) {
+                                equipItem.cards.forEach((card, index) => {
+                                    allCards.push({
+                                        id: `${equipItem.id}-${index}`,
+                                        name: `${equipItem.name}: ${card.name}`,
+                                        type: card.type || 'attack',
+                                        cost: card.cost,
+                                        range: card.range,
+                                        effect: card.effect,
+                                        damage: card.damage,
+                                        heat: card.heat,
+                                        keywords: card.keywords || [],
+                                        faction: 'equipment',
+                                        slot: equipItem.slot,
+                                        weight: equipItem.weight,
+                                        equipmentName: equipItem.name
+                                    });
+                                });
+                            }
+                        });
+                    });
+                }
 
-            // ===== CHURCH - FACTION TACTICS (5 Options, Choose 2) =====
-            {
-                id: 'righteous-fury',
-                name: 'Righteous Fury',
-                type: 'passive',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'Each time an enemy Casket is destroyed this mission, gain +1 damage to all attacks permanently for the rest of the mission (stacks).',
-                initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'scaling', 'tactic'],
-                quote: 'Wrath is holy when directed at the guilty.'
-            },
-            {
-                id: 'flagellants-zeal',
-                name: 'Flagellant\'s Zeal',
-                type: 'utility',
-                faction: 'church',
-                cost: 4,
-                range: 'Self',
-                effect: 'Discard 5 cards from the top of your deck (self-harm). Gain 5 SP immediately (in addition to your normal SP). Once per mission.',
-                initiative: '[Special]',
-                keywords: ['gambit', 'self-harm', 'sp-burst', 'tactic'],
-                quote: 'Suffer now. Triumph later.'
-            },
-            {
-                id: 'last-rites',
-                name: 'Last Rites',
-                type: 'defense',
-                faction: 'church',
-                cost: 0,
-                range: 'Ally within 3 hexes',
-                effect: 'When an allied Casket within 3 hexes is defeated (deck reaches 0), immediately recover 5 cards from your discard pile and shuffle them into your deck. Draw 2 cards.',
-                initiative: '[—]',
-                keywords: ['reactive', 'ally', 'healing', 'death-trigger', 'tactic'],
-                quote: 'Their sacrifice will not be wasted.'
-            },
-            {
-                id: 'absolution',
-                name: 'Absolution',
-                type: 'utility',
-                faction: 'church',
-                cost: 5,
-                range: 'Self',
-                effect: 'Remove all Heat. Recover 3 cards from your discard pile. Gain 1 Taint.',
-                initiative: '[Special]',
-                keywords: ['utility', 'heat', 'healing', 'corruption', 'tactic'],
-                quote: 'Forgiveness has a price.'
-            },
-            {
-                id: 'crusaders-vow',
-                name: 'Crusader\'s Vow',
-                type: 'passive',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'While you have 20 or more cards remaining in your deck, all attack cards cost -1 SP (minimum 0).',
-                initiative: 'N/A',
-                keywords: ['passive', 'conditional', 'sp-efficiency', 'tactic'],
-                quote: 'The strong need no hesitation.'
-            },
+                updateTabCounts();
+                applyFilters();
+                loadDeckFromStorage();
 
-            // ===== DWARVEN CLANS - PRIMARY WEAPON: RUNIC WARHAMMER (12 Cards) =====
-            {
-                id: 'crushing-blow',
-                name: 'Crushing Blow',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Melee (1 hex)',
-                damage: '4',
-                effect: 'Deal 4 damage. ARMOR PIERCING (ignore all armor/defense buffs).',
-                heat: '+1',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'armor-piercing', 'primary-weapon'],
-                quote: 'Runes flare blue-white as the hammerhead strikes true.'
-            },
-            {
-                id: 'forge-fury',
-                name: 'Forge Fury',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 3,
-                range: 'Melee (1 hex)',
-                damage: '3+',
-                effect: 'Deal 3 damage + 1 damage per Heat you currently have (max +6). Remove all Heat after attack.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'heat-conversion', 'primary-weapon'],
-                quote: 'The furnace roars. Steel becomes vengeance.'
-            },
-            {
-                id: 'earthshaker',
-                name: 'Earthshaker',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 4,
-                range: 'Melee (1 hex)',
-                damage: '5',
-                effect: 'Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['attack', 'melee', 'aoe', 'crowd-control', 'primary-weapon'],
-                quote: 'The ground cracks. The weak scatter.'
-            },
-            {
-                id: 'rune-of-protection',
-                name: 'Rune of Protection',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self',
-                effect: 'Gain 1 Rune Counter. While you have Rune Counters, reduce all damage by 1 per counter (max 3 counters). Lasts until end of mission or destroyed.',
-                initiative: '[2]',
-                keywords: ['buff', 'defense', 'rune', 'primary-weapon'],
-                quote: 'Ancient words carved in living metal.'
-            },
-            {
-                id: 'unbreakable',
-                name: 'Unbreakable',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'When you would take Component Damage, prevent 1 Component Damage.',
-                heat: '+1',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense', 'component-protection', 'primary-weapon'],
-                quote: 'Dwarven steel bends. It does not break.'
-            },
-            {
-                id: 'hammerfall',
-                name: 'Hammerfall',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 5,
-                range: 'Melee (1 hex)',
-                damage: '8',
-                effect: 'Deal 8 damage. ARMOR PIERCING. If target has 10 HP or less after damage, destroy 1 component of your choice.',
-                heat: '+3',
-                initiative: '[4]',
-                keywords: ['attack', 'melee', 'armor-piercing', 'ultimate', 'primary-weapon'],
-                quote: 'The hammer falls. The world remembers.'
-            },
-
-            // ===== DWARVEN - SECONDARY OPTION A: SIEGE SHIELD (6 Cards) =====
-            {
-                id: 'dwarven-shield-wall',
-                name: 'Shield Wall',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self + Allies',
-                effect: '+3 Defense until your next turn. All allies behind you (in rear arc) gain +1 Defense. Cannot attack while Shield Wall active.',
-                initiative: '[3]',
-                keywords: ['defense', 'stance', 'shield', 'ally']
-            },
-            {
-                id: 'iron-bulwark',
-                name: 'Iron Bulwark',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'Reduce damage by 3. Gain 1 Heat.',
-                heat: '+1',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense', 'shield']
-            },
-            {
-                id: 'dwarven-advance',
-                name: 'Advance',
-                type: 'movement',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self',
-                effect: 'Move up to 2 hexes toward nearest enemy. Gain +2 Defense this turn.',
-                initiative: '[2]',
-                keywords: ['movement', 'defense', 'shield']
-            },
-
-            // ===== DWARVEN - SECONDARY OPTION B: RUNIC AXE (6 Cards) =====
-            {
-                id: 'rending-strike',
-                name: 'Rending Strike',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 1,
-                range: 'Melee (1 hex)',
-                damage: '3',
-                effect: 'Deal 3 damage. ARMOR PIERCING.',
-                heat: '+1',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'armor-piercing', 'axe']
-            },
-            {
-                id: 'whirlwind',
-                name: 'Whirlwind',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 3,
-                range: 'Self',
-                damage: '3',
-                effect: 'Deal 3 damage to ALL adjacent enemies (including allies if friendly fire enabled).',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['attack', 'melee', 'aoe', 'axe']
-            },
-            {
-                id: 'brutal-efficiency',
-                name: 'Brutal Efficiency',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Melee (1 hex)',
-                damage: '4',
-                effect: 'Deal 4 damage. Draw 1 card.',
-                heat: '+1',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'draw', 'axe']
-            },
-
-            // ===== DWARVEN - SECONDARY OPTION C: REPAIR SERVITORS (6 Cards) =====
-            {
-                id: 'dwarven-emergency-repair',
-                name: 'Emergency Repair',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 3,
-                range: 'Self',
-                effect: 'Recover 3 cards from your discard pile, shuffle them into your deck.',
-                heat: '+1',
-                initiative: '[3]',
-                keywords: ['utility', 'healing', 'servitor']
-            },
-            {
-                id: 'dwarven-scrap-armor',
-                name: 'Scrap Armor',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self',
-                effect: 'Gain 1 Armor Counter (ignore next 1 damage). Armor is removed when you take damage. Stacks with Rune Counters.',
-                initiative: '[2]',
-                keywords: ['defense', 'armor', 'servitor']
-            },
-            {
-                id: 'dwarven-jury-rig',
-                name: 'Jury-Rig',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 4,
-                range: 'Self',
-                effect: 'When you reshuffle your deck, do NOT add a Damage card this time.',
-                heat: '+2',
-                initiative: '[4]',
-                keywords: ['utility', 'deck', 'servitor']
-            },
-
-            // ===== DWARVEN - SECONDARY OPTION D: SIEGE CANNON (6 Cards) =====
-            {
-                id: 'siege-shot',
-                name: 'Siege Shot',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 2,
-                range: '4-7 hexes (Long range)',
-                damage: '4',
-                effect: 'Deal 4 damage. ARMOR PIERCING. Cannot fire at Melee range (1 hex).',
-                heat: '+2',
-                initiative: '[2]',
-                keywords: ['attack', 'ranged', 'armor-piercing', 'cannon']
-            },
-            {
-                id: 'explosive-shell',
-                name: 'Explosive Shell',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 4,
-                range: '4-7 hexes',
-                damage: '3',
-                effect: 'Deal 3 damage to target + 2 damage to all adjacent hexes.',
-                heat: '+3',
-                initiative: '[3]',
-                keywords: ['attack', 'ranged', 'aoe', 'cannon']
-            },
-            {
-                id: 'suppressing-fire-dwarven',
-                name: 'Suppressing Fire',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 3,
-                range: '4-7 hexes',
-                damage: '2',
-                effect: 'Deal 2 damage. Target loses 2 SP on their next turn.',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['attack', 'ranged', 'debuff', 'cannon']
-            },
-
-            // ===== DWARVEN - FACTION TACTICS (5 Options, Choose 2) =====
-            {
-                id: 'stone-endurance',
-                name: 'Stone Endurance',
-                type: 'passive',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Your maximum HP is 32 instead of 30 (add 2 extra Universal Core cards to deck at start). The 2 extra cards are "Breathe the Core" duplicates.',
-                initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'hp-boost', 'tactic'],
-                quote: 'Stone does not break.'
-            },
-            {
-                id: 'forge-mastery',
-                name: 'Forge Mastery',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 4,
-                range: 'Self',
-                effect: 'Remove all Heat. For each Heat removed this way, draw 1 card. Once per mission.',
-                initiative: '[Special]',
-                keywords: ['utility', 'heat', 'draw', 'one-use', 'tactic'],
-                quote: 'Master the flame.'
-            },
-            {
-                id: 'runic-overcharge',
-                name: 'Runic Overcharge',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 3,
-                range: 'Self',
-                effect: 'Gain 2 Rune Counters immediately. Gain 2 Heat.',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['utility', 'buff', 'rune', 'tactic']
-            },
-            {
-                id: 'clan-vengeance',
-                name: 'Clan Vengeance',
-                type: 'passive',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Each time you take Component Damage, your next attack deals +2 damage. Stacks (3 Component Damage = +6 damage next attack).',
-                initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'damage-boost', 'tactic'],
-                quote: 'They will pay for every broken piece.'
-            },
-            {
-                id: 'unbreakable-spirit',
-                name: 'Unbreakable Spirit',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'When you would be reduced to 0 HP (deck empty after reshuffle), instead recover 5 cards from discard pile and shuffle them into deck. Gain 5 Heat. Once per mission.',
-                heat: '+5',
-                initiative: '[—]',
-                keywords: ['reactive', 'resurrection', 'one-use', 'tactic'],
-                quote: 'We do not yield.'
+            } catch (error) {
+                console.error('Error loading card data:', error);
+                document.getElementById('card-container').innerHTML = '<div class="no-cards">Error loading cards</div>';
             }
-        ];
-
-        // Deck state
-        let deck = {};
-
-        // Initialize
-        function init() {
-            renderCards();
-            updateDeckDisplay();
-            loadDeckFromStorage();
         }
 
-        // Render card grid
+        // ===========================
+        // TAB COUNTS
+        // ===========================
+        function updateTabCounts() {
+            const counts = {
+                all: allCards.length,
+                universal: allCards.filter(c => c.faction === 'universal').length,
+                church: allCards.filter(c => c.faction === 'church').length,
+                dwarves: allCards.filter(c => c.faction === 'dwarves').length,
+                ossuarium: allCards.filter(c => c.faction === 'ossuarium').length,
+                elves: allCards.filter(c => c.faction === 'elves').length,
+                equipment: allCards.filter(c => c.faction === 'equipment').length
+            };
+
+            Object.keys(counts).forEach(tab => {
+                const el = document.getElementById(`count-${tab}`);
+                if (el) el.textContent = counts[tab];
+            });
+        }
+
+        // ===========================
+        // FILTERING
+        // ===========================
+        function applyFilters() {
+            let cards = [...allCards];
+
+            // Filter by tab
+            if (currentTab !== 'all') {
+                cards = cards.filter(card => card.faction === currentTab);
+            }
+
+            // Filter by search
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            if (searchTerm) {
+                cards = cards.filter(card =>
+                    card.name.toLowerCase().includes(searchTerm) ||
+                    (card.effect && card.effect.toLowerCase().includes(searchTerm))
+                );
+            }
+
+            // Filter by type
+            const typeFilters = Array.from(document.querySelectorAll('[data-filter="type"]:checked'))
+                .map(cb => cb.value);
+            if (typeFilters.length > 0) {
+                cards = cards.filter(card =>
+                    typeFilters.some(type => card.type.toLowerCase().includes(type))
+                );
+            }
+
+            // Filter by cost
+            const costFilters = Array.from(document.querySelectorAll('[data-filter="cost"]:checked'))
+                .map(cb => cb.value);
+            if (costFilters.length > 0) {
+                cards = cards.filter(card => {
+                    const cost = card.cost;
+                    return costFilters.some(filter => {
+                        if (filter === '4+') return cost >= 4;
+                        return cost === parseInt(filter);
+                    });
+                });
+            }
+
+            // Filter by equipment slot
+            if (currentTab === 'equipment') {
+                const slotFilters = Array.from(document.querySelectorAll('[data-filter="slot"]:checked'))
+                    .map(cb => cb.value);
+                if (slotFilters.length > 0) {
+                    cards = cards.filter(card => slotFilters.includes(card.slot));
+                }
+            }
+
+            filteredCards = cards;
+            renderCards();
+        }
+
+        // ===========================
+        // RENDER CARDS
+        // ===========================
         function renderCards() {
-            const grid = document.getElementById('cardGrid');
-            grid.innerHTML = cardDatabase.map(card => {
+            const container = document.getElementById('card-container');
+            document.getElementById('shown-count').textContent = filteredCards.length;
+
+            if (filteredCards.length === 0) {
+                container.innerHTML = '<div class="no-cards">No cards found</div>';
+                return;
+            }
+
+            container.innerHTML = filteredCards.map(card => {
                 const count = deck[card.id] || 0;
+                const inDeck = count > 0;
                 return `
-                    <div class="card-item ${count > 0 ? 'in-deck' : ''}" 
+                    <div class="card-tile ${card.faction} ${inDeck ? 'in-deck' : ''}"
                          onclick="addCardToDeck('${card.id}')"
                          oncontextmenu="removeCardFromDeck('${card.id}'); return false;">
-                        ${count > 0 ? `<div class="card-counter">${count}</div>` : ''}
-                        <div class="card-name">${card.name}</div>
-                        <div class="card-stats">Cost: ${card.cost} SP${card.range ? ' | ' + card.range : ''}</div>
-                        <div class="card-type">${card.type} • ${card.faction}</div>
+                        ${count > 0 ? `<div class="card-count-badge">×${count}</div>` : ''}
+                        <div class="card-tile-header">
+                            <div class="card-tile-name">${card.name}</div>
+                            <div class="card-tile-cost">${card.cost}</div>
+                        </div>
+                        <div class="card-tile-badges">
+                            <span class="badge badge-type">${card.type}</span>
+                        </div>
+                        <div class="card-tile-effect">${card.effect || 'No effect text'}</div>
                     </div>
                 `;
             }).join('');
         }
 
-        // Add card to deck
+        // ===========================
+        // DECK MANAGEMENT
+        // ===========================
         function addCardToDeck(cardId) {
-            if (!deck[cardId]) {
-                deck[cardId] = 0;
-            }
+            if (!deck[cardId]) deck[cardId] = 0;
             deck[cardId]++;
-            renderCards();
             updateDeckDisplay();
+            renderCards();
             saveDeckToStorage();
         }
 
-        // Remove card from deck
         function removeCardFromDeck(cardId) {
-            if (deck[cardId] > 1) {
-                deck[cardId]--;
-            } else {
-                delete deck[cardId];
-            }
-            renderCards();
+            if (!deck[cardId]) return;
+            deck[cardId]--;
+            if (deck[cardId] <= 0) delete deck[cardId];
             updateDeckDisplay();
+            renderCards();
             saveDeckToStorage();
         }
 
-        // Update deck panel
         function updateDeckDisplay() {
-            const deckList = document.getElementById('deckList');
             const deckCards = Object.keys(deck).filter(id => deck[id] > 0);
+            const container = document.getElementById('deckListContainer');
 
             if (deckCards.length === 0) {
-                deckList.innerHTML = '<li class="no-cards">Click cards to start building...</li>';
+                container.innerHTML = '<div class="no-cards">Click cards to start building...</div>';
                 document.getElementById('printBtn').disabled = true;
                 document.getElementById('printBtn2').disabled = true;
-                document.getElementById('printBtn').textContent = 'PRINT DECK (0)';
-                document.getElementById('printBtn2').textContent = 'PRINT DECK';
-                updateStats(0, 0, 0, 0);
+                updateStats(0, 0, 0, 0, 0);
                 return;
             }
 
+            // Calculate stats
             let totalCards = 0;
-            let universal = 0;
-            let church = 0;
-            let dwarves = 0;
+            let universalCount = 0;
+            let factionCount = 0;
+            let equipmentCount = 0;
+            let totalCost = 0;
 
-            deckList.innerHTML = deckCards.map(id => {
-                const card = cardDatabase.find(c => c.id === id);
+            const universalCards = [];
+            const factionCards = [];
+            const equipmentCards = [];
+
+            deckCards.forEach(id => {
+                const card = allCards.find(c => c.id === id);
                 const count = deck[id];
                 totalCards += count;
+                totalCost += card.cost * count;
 
-                if (card.faction === 'universal') universal += count;
-                if (card.faction === 'church') church += count;
-                if (card.faction === 'dwarves') dwarves += count;
+                if (card.faction === 'universal') {
+                    universalCount += count;
+                    universalCards.push({ card, count });
+                } else if (card.faction === 'equipment') {
+                    equipmentCount += count;
+                    equipmentCards.push({ card, count });
+                } else {
+                    factionCount += count;
+                    factionCards.push({ card, count });
+                }
+            });
 
-                return `
-                    <li class="deck-item">
-                        <div>
-                            <span class="deck-item-name">${card.name}</span>
-                            <span class="deck-item-count">x${count}</span>
-                        </div>
-                        <button class="deck-item-remove" onclick="removeCardFromDeck('${id}')">−</button>
-                    </li>
-                `;
-            }).join('');
+            const avgCost = totalCards > 0 ? (totalCost / totalCards).toFixed(1) : 0;
 
-            updateStats(totalCards, universal, church, dwarves);
+            // Update stats display
+            updateStats(totalCards, universalCount, factionCount, equipmentCount, avgCost);
 
+            // Validate deck
+            validateDeck(totalCards, universalCount, factionCount);
+
+            // Render deck list
+            let html = '';
+
+            if (universalCards.length > 0) {
+                html += '<div class="deck-section-title">Universal Core</div><ul class="deck-list">';
+                universalCards.forEach(({ card, count }) => {
+                    html += renderDeckItem(card, count);
+                });
+                html += '</ul>';
+            }
+
+            if (factionCards.length > 0) {
+                html += '<div class="deck-section-title">Faction Cards</div><ul class="deck-list">';
+                factionCards.forEach(({ card, count }) => {
+                    html += renderDeckItem(card, count);
+                });
+                html += '</ul>';
+            }
+
+            if (equipmentCards.length > 0) {
+                html += '<div class="deck-section-title">Equipment</div><ul class="deck-list">';
+                equipmentCards.forEach(({ card, count }) => {
+                    html += renderDeckItem(card, count);
+                });
+                html += '</ul>';
+            }
+
+            container.innerHTML = html;
+
+            // Enable print buttons
             document.getElementById('printBtn').disabled = false;
             document.getElementById('printBtn2').disabled = false;
-            document.getElementById('printBtn').textContent = `PRINT DECK (${totalCards})`;
-            document.getElementById('printBtn2').textContent = `PRINT DECK`;
+            document.getElementById('printBtn').textContent = `PRINT (${totalCards})`;
         }
 
-        // Update stats
-        function updateStats(total, universal, church, dwarves) {
+        function renderDeckItem(card, count) {
+            return `
+                <li class="deck-item">
+                    <div class="deck-item-info">
+                        <div class="deck-item-name">${card.name}</div>
+                        <div class="deck-item-details">${card.type} • ${card.cost} SP</div>
+                    </div>
+                    <span class="deck-item-count">×${count}</span>
+                    <button class="deck-item-remove" onclick="removeCardFromDeck('${card.id}')">−</button>
+                </li>
+            `;
+        }
+
+        function updateStats(total, universal, faction, equipment, avgCost) {
             document.getElementById('deckTotal').textContent = total;
-            document.getElementById('deckUniversal').textContent = universal;
-            document.getElementById('deckChurch').textContent = church;
-            document.getElementById('deckDwarves').textContent = dwarves;
+
+            const universalEl = document.getElementById('deckUniversal');
+            universalEl.textContent = `${universal}/10`;
+            universalEl.className = 'deck-stat-value ' + (universal === 10 ? 'valid' : 'invalid');
+
+            const factionEl = document.getElementById('deckFaction');
+            factionEl.textContent = `${faction}/6`;
+            factionEl.className = 'deck-stat-value ' + (faction === 6 ? 'valid' : 'invalid');
+
+            document.getElementById('deckEquipment').textContent = equipment;
+            document.getElementById('deckAvgCost').textContent = avgCost;
         }
 
-        // Clear deck
-        function clearDeck() {
-            if (confirm('Clear entire deck?')) {
-                deck = {};
-                renderCards();
-                updateDeckDisplay();
-                saveDeckToStorage();
+        function validateDeck(total, universal, faction) {
+            const warnings = [];
+
+            if (universal < 10) warnings.push(`Missing ${10 - universal} Universal Core cards`);
+            if (universal > 10) warnings.push(`Too many Universal Core cards (+${universal - 10})`);
+            if (faction < 6) warnings.push(`Missing ${6 - faction} Faction Core cards`);
+            if (faction > 6) warnings.push(`Too many Faction Core cards (+${faction - 6})`);
+            if (total < 26) warnings.push(`Deck too small (minimum 26 cards)`);
+            if (total > 50) warnings.push(`Deck too large (maximum 50 cards)`);
+
+            const warningsEl = document.getElementById('validationWarnings');
+            if (warnings.length > 0) {
+                warningsEl.classList.remove('hidden');
+                warningsEl.innerHTML = warnings.map(w => `<div class="validation-warning">${w}</div>`).join('');
+            } else {
+                warningsEl.classList.add('hidden');
             }
         }
 
-        // Save deck
+        // ===========================
+        // SAVE/LOAD/CLEAR
+        // ===========================
         function saveDeck() {
-            const deckData = JSON.stringify(deck);
-            const blob = new Blob([deckData], { type: 'application/json' });
+            const deckData = {
+                name: document.getElementById('deck-name').value,
+                deck: deck
+            };
+            const blob = new Blob([JSON.stringify(deckData, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `penance-deck-${Date.now()}.json`;
+            a.download = `${deckData.name.replace(/\s+/g, '-').toLowerCase()}-${Date.now()}.json`;
             a.click();
             URL.revokeObjectURL(url);
         }
 
-        // Load deck
         function loadDeck() {
             const input = document.createElement('input');
             input.type = 'file';
@@ -1483,9 +1342,11 @@
                 const reader = new FileReader();
                 reader.onload = event => {
                     try {
-                        deck = JSON.parse(event.target.result);
-                        renderCards();
+                        const data = JSON.parse(event.target.result);
+                        deck = data.deck || {};
+                        document.getElementById('deck-name').value = data.name || 'MY DECK';
                         updateDeckDisplay();
+                        renderCards();
                         saveDeckToStorage();
                         alert('Deck loaded successfully!');
                     } catch (err) {
@@ -1497,80 +1358,126 @@
             input.click();
         }
 
-        // Save to localStorage
-        function saveDeckToStorage() {
-            localStorage.setItem('penanceDeck', JSON.stringify(deck));
+        function clearDeck() {
+            if (confirm('Clear entire deck?')) {
+                deck = {};
+                updateDeckDisplay();
+                renderCards();
+                saveDeckToStorage();
+            }
         }
 
-        // Load from localStorage
+        function saveDeckToStorage() {
+            localStorage.setItem('penance-deck-builder-autosave', JSON.stringify({
+                name: document.getElementById('deck-name').value,
+                deck: deck
+            }));
+        }
+
         function loadDeckFromStorage() {
-            const saved = localStorage.getItem('penanceDeck');
+            const saved = localStorage.getItem('penance-deck-builder-autosave');
             if (saved) {
                 try {
-                    deck = JSON.parse(saved);
-                    renderCards();
+                    const data = JSON.parse(saved);
+                    deck = data.deck || {};
+                    document.getElementById('deck-name').value = data.name || 'MY DECK';
                     updateDeckDisplay();
+                    renderCards();
                 } catch (err) {
                     console.error('Error loading saved deck');
                 }
             }
         }
 
-        // Print deck
+        // ===========================
+        // PRINT FUNCTIONALITY
+        // ===========================
         function printDeck() {
             const printArea = document.getElementById('printArea');
             let allCards = [];
 
-            // Generate card copies
             Object.keys(deck).forEach(id => {
-                const card = cardDatabase.find(c => c.id === id);
+                const card = window.allCards.find(c => c.id === id);
                 const count = deck[id];
                 for (let i = 0; i < count; i++) {
                     allCards.push(card);
                 }
             });
 
-            // Create pages (9 cards per page)
             let pagesHTML = '';
             for (let i = 0; i < allCards.length; i += 9) {
                 const pageCards = allCards.slice(i, i + 9);
                 pagesHTML += '<div class="print-page">';
                 pageCards.forEach(card => {
-                    pagesHTML += generatePrintCard(card);
+                    pagesHTML += `
+                        <div class="print-card">
+                            <div class="print-card-header">
+                                <div class="print-card-name">${card.name}</div>
+                                <div class="print-card-stats">
+                                    <span class="print-card-cost">Cost: ${card.cost} SP</span>
+                                    <span>${card.range || ''}</span>
+                                </div>
+                            </div>
+                            <div class="print-card-body">
+                                <div class="print-card-effect">${card.effect || ''}</div>
+                                ${card.keywords && card.keywords.length > 0 ?
+                                    `<div class="print-card-keywords">${card.keywords.join(' • ')}</div>` : ''}
+                            </div>
+                            <div class="print-card-footer">${card.faction} • ${card.type}</div>
+                        </div>
+                    `;
                 });
                 pagesHTML += '</div>';
             }
 
             printArea.innerHTML = pagesHTML;
-            
-            // Trigger print
-            window.print();
+            printArea.classList.remove('hidden');
+
+            setTimeout(() => {
+                window.print();
+                printArea.classList.add('hidden');
+            }, 100);
         }
 
-        // Generate print card HTML
-        function generatePrintCard(card) {
-            return `
-                <div class="print-card">
-                    <div class="print-card-header">
-                        <div class="print-card-name">${card.name}</div>
-                        <div class="print-card-top-stats">
-                            <span class="print-card-cost">Cost: ${card.cost} SP</span>
-                            <span class="print-card-range">${card.range || ''}</span>
-                            <span class="print-card-initiative">${card.initiative}</span>
-                        </div>
-                    </div>
-                    <div class="print-card-body">
-                        ${card.damage ? `<div class="print-card-damage">Damage: ${card.damage}</div>` : ''}
-                        <div class="print-card-effect">${card.effect}</div>
-                        <div class="print-card-keywords">${card.keywords.join(' • ')}</div>
-                    </div>
-                    <div class="print-card-footer">${card.faction} • ${card.type}</div>
-                </div>
-            `;
-        }
+        // ===========================
+        // EVENT LISTENERS
+        // ===========================
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCardData();
 
-        // Initialize on load
-        window.addEventListener('DOMContentLoaded', init);
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    currentTab = tab.dataset.tab;
+
+                    // Show/hide equipment slot filter
+                    if (currentTab === 'equipment') {
+                        document.getElementById('equipment-slot-section').classList.remove('hidden');
+                    } else {
+                        document.getElementById('equipment-slot-section').classList.add('hidden');
+                    }
+
+                    applyFilters();
+                });
+            });
+
+            // Search (debounced)
+            let searchTimeout;
+            document.getElementById('search-input').addEventListener('input', () => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => applyFilters(), 300);
+            });
+
+            // Filter checkboxes
+            document.querySelectorAll('[data-filter]').forEach(checkbox => {
+                checkbox.addEventListener('change', applyFilters);
+            });
+
+            // Deck name auto-save
+            document.getElementById('deck-name').addEventListener('input', saveDeckToStorage);
+        });
     </script>
 </body>
 </html>

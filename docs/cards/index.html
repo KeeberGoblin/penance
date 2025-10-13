@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PENANCE: Card Database</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ===========================
+           GLOBAL RESET & VARIABLES
+           =========================== */
         * {
             margin: 0;
             padding: 0;
@@ -26,22 +27,28 @@
             --shadow-black: #0a0604;
             --crimson-text: #8b0000;
 
-            /* Texture */
-            --leather-texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="400" height="400" filter="url(%23noise)" opacity="0.15"/></svg>');
+            /* Card colors by faction */
+            --universal-gradient: linear-gradient(135deg, #4a5568, #2d3748);
+            --church-gradient: linear-gradient(135deg, #6b1a1a, #4a0e0e);
+            --dwarves-gradient: linear-gradient(135deg, #8b7355, #4a3f2f);
+            --ossuarium-gradient: linear-gradient(135deg, #1a3d1a, #0d1f0d);
+            --elves-gradient: linear-gradient(135deg, #2d5a2d, #1a3d1a);
+            --equipment-gradient: linear-gradient(135deg, #5a4a3a, #3a2a1a);
         }
 
         body {
             font-family: 'Crimson Pro', Georgia, serif;
             background-color: var(--parchment-dark);
-            background-image:
-                var(--leather-texture),
-                linear-gradient(to bottom, var(--leather-brown) 0%, var(--parchment-dark) 50%, var(--shadow-black) 100%);
+            background-image: linear-gradient(to bottom, var(--leather-brown) 0%, var(--parchment-dark) 50%, var(--shadow-black) 100%);
             background-attachment: fixed;
             color: var(--bone-white);
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        /* Decorative Page Border */
+        /* ===========================
+           DECORATIVE PAGE BORDER
+           =========================== */
         body::before {
             content: '';
             position: fixed;
@@ -50,147 +57,158 @@
             right: 0;
             bottom: 0;
             border: 15px solid transparent;
-            border-image: linear-gradient(
-                135deg,
-                var(--dark-red) 0%,
-                var(--blackish-red) 25%,
-                var(--blood-red) 50%,
-                var(--blackish-red) 75%,
-                var(--dark-red) 100%
-            ) 15;
+            border-image: linear-gradient(135deg, var(--dark-red), var(--blackish-red), var(--blood-red), var(--blackish-red), var(--dark-red)) 15;
             pointer-events: none;
             z-index: 9999;
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
         }
 
-        /* Header */
+        /* ===========================
+           HEADER
+           =========================== */
         .header {
             background: linear-gradient(to bottom, var(--blackish-red), var(--blood-red));
-            border-bottom: 4px double var(--dark-red);
-            padding: 1.5rem 2rem;
+            border-bottom: 3px double var(--dark-red);
+            padding: 2rem 3rem;
             position: sticky;
-            top: 15px;
+            top: 0;
             z-index: 100;
-            margin: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-            position: relative;
         }
 
-        .header::before {
-            content: '⸸';
-            position: absolute;
-            left: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            color: var(--dark-red);
-            opacity: 0.5;
-        }
-
-        .header::after {
-            content: '⸸';
-            position: absolute;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%) scaleX(-1);
-            font-size: 2rem;
-            color: var(--dark-red);
-            opacity: 0.5;
+        .header-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .header-title {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
             color: var(--bone-white);
-            text-shadow: 2px 2px 4px var(--shadow-black), 0 0 20px rgba(139, 0, 0, 0.5);
-            letter-spacing: 0.15em;
-            text-align: center;
+            text-shadow: 2px 2px 4px var(--shadow-black);
+            letter-spacing: 0.1em;
         }
 
-        .header-nav {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.875rem;
-            align-items: center;
-            justify-content: center;
+        .header-stats {
             font-family: 'Crimson Pro', serif;
-        }
-
-        .header-nav a {
-            color: var(--bone-white);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--aged-gold);
-            transition: all 0.3s ease;
-        }
-
-        .header-nav a:hover {
             color: var(--aged-gold);
-            border-bottom-color: var(--dark-red);
+            font-size: 0.9rem;
+            text-align: right;
+            line-height: 1.8;
         }
 
-        .deck-builder-btn {
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--blackish-red) 100%);
+        .header-stats strong {
+            color: var(--bone-white);
+        }
+
+        .btn-deck-builder {
+            background: linear-gradient(135deg, var(--blood-red), var(--blackish-red));
             border: 2px solid var(--aged-gold);
             color: var(--bone-white);
-            padding: 0.5rem 1.25rem;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
             font-family: 'Cinzel Decorative', serif;
+            font-size: 0.9rem;
+            cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
-        .deck-builder-btn:hover {
-            background: linear-gradient(135deg, var(--aged-gold) 0%, #8b7355 100%);
-            color: var(--parchment-dark);
-            border-color: var(--bone-white);
-            box-shadow: 0 4px 12px rgba(184, 149, 106, 0.4);
+        .btn-deck-builder:hover {
+            background: linear-gradient(135deg, var(--dark-red), var(--blood-red));
+            box-shadow: 0 0 15px rgba(184, 149, 106, 0.5);
+            transform: translateY(-2px);
         }
 
-        /* Main Layout */
-        .container {
+        /* ===========================
+           TABS NAVIGATION
+           =========================== */
+        .tabs {
+            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            border-bottom: 2px solid var(--blood-red);
+            position: sticky;
+            top: 112px;
+            z-index: 99;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .tabs-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .tab {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.85rem;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            color: var(--aged-gold);
+            letter-spacing: 0.05em;
+        }
+
+        .tab:hover {
+            background: rgba(75, 14, 14, 0.2);
+            color: var(--bone-white);
+        }
+
+        .tab.active {
+            background: rgba(75, 14, 14, 0.4);
+            border-bottom-color: var(--blood-red);
+            color: var(--bone-white);
+            font-weight: 700;
+        }
+
+        .tab-count {
+            background: var(--blood-red);
+            color: var(--bone-white);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+
+        /* ===========================
+           MAIN LAYOUT
+           =========================== */
+        .main-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 2rem;
             display: grid;
-            grid-template-columns: 280px 1fr 380px;
-            min-height: calc(100vh - 140px);
-            margin: 0 15px 15px 15px;
-        }
-
-        /* Filters Sidebar */
-        .filters {
-            background: linear-gradient(to bottom,
-                rgba(43, 31, 23, 0.95),
-                rgba(26, 20, 16, 0.95)
-            );
-            border-right: 4px double var(--dark-red);
-            padding: 1.5rem;
-            overflow-y: auto;
-            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8);
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
             position: relative;
         }
 
-        .filters::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--leather-texture);
-            opacity: 0.3;
-            pointer-events: none;
+        /* ===========================
+           SIDEBAR FILTERS
+           =========================== */
+        .sidebar {
+            background: linear-gradient(to bottom, rgba(43, 31, 23, 0.95), rgba(26, 20, 16, 0.95));
+            border: 2px solid var(--blood-red);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 180px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         .filter-section {
             margin-bottom: 2rem;
-            position: relative;
-            border-bottom: 1px solid var(--blood-red);
             padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--blood-red);
         }
 
         .filter-section:last-child {
@@ -199,566 +217,598 @@
 
         .filter-title {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
             color: var(--dark-red);
-            text-align: center;
-            text-shadow: 1px 1px 2px var(--shadow-black);
-            position: relative;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
-        .filter-title::after {
-            content: '';
-            display: block;
-            width: 60%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--dark-red), transparent);
-            margin: 0.5rem auto 0;
-        }
-
-        .filter-search {
+        .search-box {
             width: 100%;
-            background: rgba(10, 6, 4, 0.9);
+            padding: 0.75rem;
+            background: var(--shadow-black);
             border: 2px solid var(--blood-red);
+            border-radius: 4px;
             color: var(--bone-white);
-            padding: 0.6rem;
             font-family: 'Crimson Pro', serif;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
-        .filter-search:focus {
+        .search-box:focus {
             outline: none;
             border-color: var(--aged-gold);
-            box-shadow: 0 0 8px rgba(184, 149, 106, 0.3);
+            box-shadow: 0 0 10px rgba(184, 149, 106, 0.3);
         }
 
-        .filter-search::placeholder {
-            color: var(--aged-gold);
-            opacity: 0.5;
+        .filter-checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .filter-checkbox {
-            display: block;
-            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
             cursor: pointer;
-            color: var(--bone-white);
             font-size: 0.85rem;
-            padding: 0.25rem 0.5rem;
-            border-left: 2px solid transparent;
-            transition: all 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .filter-checkbox:hover {
-            border-left-color: var(--dark-red);
-            padding-left: 0.75rem;
+            color: var(--aged-gold);
         }
 
-        .filter-checkbox input {
+        .filter-checkbox input[type="checkbox"] {
             margin-right: 0.5rem;
             cursor: pointer;
+            accent-color: var(--blood-red);
         }
 
-        .filter-reset {
+        .btn-clear-filters {
             width: 100%;
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--blackish-red) 100%);
-            border: 2px solid var(--aged-gold);
+            padding: 0.75rem;
+            background: var(--blood-red);
+            border: 2px solid var(--dark-red);
             color: var(--bone-white);
-            padding: 0.6rem;
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 0.8rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-        }
-
-        .filter-reset:hover {
-            background: linear-gradient(135deg, var(--aged-gold) 0%, #8b7355 100%);
-            color: var(--parchment-dark);
-            border-color: var(--bone-white);
-            box-shadow: 0 4px 12px rgba(184, 149, 106, 0.4);
-        }
-
-        /* Card Grid */
-        .card-list {
-            overflow-y: auto;
-            padding: 2rem;
-            background: linear-gradient(to bottom,
-                rgba(26, 20, 16, 0.85),
-                rgba(10, 6, 4, 0.9)
-            );
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-
-        .card-list::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--leather-texture);
-            opacity: 0.2;
-            pointer-events: none;
-        }
-
-        .card-count {
             font-family: 'Cinzel Decorative', serif;
             font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-            color: var(--aged-gold);
-            text-align: center;
-            letter-spacing: 0.1em;
-            position: relative;
-            z-index: 1;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
         }
 
+        .btn-clear-filters:hover {
+            background: var(--dark-red);
+            box-shadow: 0 0 10px rgba(184, 149, 106, 0.3);
+        }
+
+        .collapsible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .collapsible-header::after {
+            content: '▼';
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .collapsible-header.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            max-height: 500px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .collapsible-content.collapsed {
+            max-height: 0;
+        }
+
+        /* ===========================
+           CARD GRID AREA
+           =========================== */
+        .card-grid-area {
+            min-height: 600px;
+        }
+
+        .controls-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(43, 31, 23, 0.5);
+            border: 1px solid var(--blood-red);
+            border-radius: 4px;
+        }
+
+        .results-counter {
+            font-family: 'Crimson Pro', serif;
+            color: var(--aged-gold);
+            font-size: 0.9rem;
+        }
+
+        .view-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-view {
+            padding: 0.5rem 1rem;
+            background: var(--shadow-black);
+            border: 2px solid var(--blood-red);
+            color: var(--aged-gold);
+            cursor: pointer;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view.active {
+            background: var(--blood-red);
+            color: var(--bone-white);
+        }
+
+        .sort-select {
+            padding: 0.5rem 1rem;
+            background: var(--shadow-black);
+            border: 2px solid var(--blood-red);
+            border-radius: 4px;
+            color: var(--bone-white);
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* ===========================
+           CARD GRID VIEW
+           =========================== */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.25rem;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        .card-item {
-            background: linear-gradient(135deg,
-                rgba(43, 31, 23, 0.8) 0%,
-                rgba(26, 20, 16, 0.9) 100%
-            );
+        .card-tile {
+            background: var(--shadow-black);
             border: 2px solid var(--blood-red);
-            padding: 1.25rem;
+            border-radius: 8px;
+            padding: 1.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
             position: relative;
+            overflow: hidden;
         }
 
-        .card-item::before {
+        .card-tile::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background-image: var(--leather-texture);
-            opacity: 0.3;
-            pointer-events: none;
+            height: 6px;
+            background: var(--universal-gradient);
         }
 
-        .card-item:hover {
+        .card-tile.church::before { background: var(--church-gradient); }
+        .card-tile.dwarves::before { background: var(--dwarves-gradient); }
+        .card-tile.ossuarium::before { background: var(--ossuarium-gradient); }
+        .card-tile.elves::before { background: var(--elves-gradient); }
+        .card-tile.equipment::before { background: var(--equipment-gradient); }
+
+        .card-tile:hover {
             border-color: var(--aged-gold);
-            box-shadow: 0 4px 16px rgba(184, 149, 106, 0.3);
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(184, 149, 106, 0.3);
         }
 
-        .card-item.selected {
-            border-color: var(--aged-gold);
-            background: linear-gradient(135deg,
-                rgba(75, 14, 14, 0.6) 0%,
-                rgba(45, 10, 10, 0.8) 100%
-            );
-            box-shadow: 0 0 20px rgba(184, 149, 106, 0.4);
+        .card-tile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
         }
 
-        .card-name {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--bone-white);
-            position: relative;
-        }
-
-        .card-type {
-            font-size: 0.7rem;
-            color: var(--aged-gold);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.05em;
-            position: relative;
-        }
-
-        .card-cost {
+        .card-tile-name {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 0.85rem;
+            font-size: 1.1rem;
+            color: var(--bone-white);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .card-tile-cost {
+            background: var(--blood-red);
+            color: var(--bone-white);
+            padding: 0.3rem 0.6rem;
+            border-radius: 50%;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            min-width: 32px;
+            text-align: center;
+        }
+
+        .card-tile-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-family: 'Cinzel Decorative', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-type {
+            background: var(--dark-red);
+            color: var(--bone-white);
+        }
+
+        .badge-damage {
+            background: var(--crimson-text);
+            color: var(--bone-white);
+        }
+
+        .badge-range {
+            background: var(--aged-gold);
+            color: var(--shadow-black);
+        }
+
+        .card-tile-effect {
             color: var(--aged-gold);
-            position: relative;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
-        /* Card Detail Panel */
-        .card-detail {
-            background: linear-gradient(to bottom,
-                rgba(43, 31, 23, 0.95),
-                rgba(26, 20, 16, 0.95)
-            );
-            border-left: 4px double var(--dark-red);
-            padding: 2rem;
-            overflow-y: auto;
-            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.8);
-            position: relative;
+        /* ===========================
+           CARD LIST VIEW
+           =========================== */
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .card-detail::before {
-            content: '';
-            position: absolute;
+        .card-list-item {
+            background: var(--shadow-black);
+            border: 2px solid var(--blood-red);
+            border-left: 6px solid var(--blood-red);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: grid;
+            grid-template-columns: 40px 2fr 1fr 1fr 1fr 1fr 3fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .card-list-item:hover {
+            border-left-color: var(--aged-gold);
+            background: rgba(75, 14, 14, 0.2);
+        }
+
+        .card-list-item.church { border-left-color: #6b1a1a; }
+        .card-list-item.dwarves { border-left-color: #8b7355; }
+        .card-list-item.ossuarium { border-left-color: #1a3d1a; }
+        .card-list-item.elves { border-left-color: #2d5a2d; }
+        .card-list-item.equipment { border-left-color: #5a4a3a; }
+
+        .list-item-cost {
+            background: var(--blood-red);
+            color: var(--bone-white);
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .list-item-name {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1rem;
+            color: var(--bone-white);
+            font-weight: 700;
+        }
+
+        .list-item-text {
+            color: var(--aged-gold);
+            font-size: 0.85rem;
+        }
+
+        .list-item-effect {
+            color: var(--aged-gold);
+            font-size: 0.85rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* ===========================
+           CARD DETAIL PANEL
+           =========================== */
+        .detail-panel {
+            position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--leather-texture);
-            opacity: 0.3;
-            pointer-events: none;
+            right: -600px;
+            width: 600px;
+            height: 100vh;
+            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            border-left: 4px solid var(--blood-red);
+            box-shadow: -4px 0 30px rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+            padding: 2rem;
         }
 
-        .card-detail.empty {
+        .detail-panel.open {
+            right: 0;
+        }
+
+        .detail-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px double var(--dark-red);
+        }
+
+        .detail-close {
+            background: var(--blood-red);
+            border: 2px solid var(--dark-red);
+            color: var(--bone-white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--aged-gold);
-            text-align: center;
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-        }
-
-        .detail-header {
-            border-bottom: 3px double var(--dark-red);
-            padding-bottom: 1rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            text-align: center;
-        }
-
-        .detail-title {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--bone-white);
-            text-shadow: 2px 2px 4px var(--shadow-black);
-            letter-spacing: 0.08em;
-            position: relative;
-        }
-
-        .detail-type {
-            font-family: 'Crimson Pro', serif;
-            font-size: 0.85rem;
-            color: var(--aged-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            position: relative;
-        }
-
-        .detail-section {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .detail-label {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 0.7rem;
-            color: var(--dark-red);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.1em;
-            position: relative;
-        }
-
-        .detail-value {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1rem;
-            color: var(--bone-white);
-            position: relative;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            background: rgba(10, 6, 4, 0.9);
-            border: 2px solid var(--blood-red);
-            padding: 1.25rem;
-            margin: 1.5rem 0;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
-            position: relative;
-        }
-
-        .stat-item {
-            text-align: center;
-            position: relative;
-        }
-
-        .stat-value {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--aged-gold);
-            text-shadow: 1px 1px 2px var(--shadow-black);
-        }
-
-        .stat-label {
-            font-family: 'Crimson Pro', serif;
-            font-size: 0.7rem;
-            color: var(--bone-white);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 0.25rem;
-        }
-
-        .card-text {
-            background: rgba(10, 6, 4, 0.9);
-            border: 2px solid var(--blood-red);
-            border-left: 6px solid var(--dark-red);
-            padding: 1.25rem;
-            margin: 1.5rem 0;
-            line-height: 1.8;
-            color: var(--bone-white);
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
-            position: relative;
-        }
-
-        .card-quote {
-            font-family: 'Libre Baskerville', serif;
-            font-style: italic;
-            color: var(--aged-gold);
-            border-left: 4px solid var(--blood-red);
-            padding-left: 1.25rem;
-            margin: 1.5rem 0;
-            line-height: 1.8;
-            position: relative;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            position: relative;
-        }
-
-        .tag {
-            background: rgba(10, 6, 4, 0.9);
-            border: 1px solid var(--blood-red);
-            padding: 0.35rem 0.7rem;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-family: 'Crimson Pro', serif;
             transition: all 0.3s ease;
         }
 
-        /* Card Type Color Coding */
-        .tag.attack {
-            background: rgba(139, 0, 0, 0.8);
-            border-color: #8b0000;
-            color: var(--bone-white);
-        }
-        .tag.defense {
-            background: rgba(0, 51, 102, 0.8);
-            border-color: #4169e1;
-            color: var(--bone-white);
-        }
-        .tag.movement {
-            background: rgba(26, 92, 26, 0.8);
-            border-color: #32cd32;
-            color: var(--bone-white);
-        }
-        .tag.support {
-            background: rgba(102, 51, 153, 0.8);
-            border-color: #9370db;
-            color: var(--bone-white);
-        }
-        .tag.utility {
-            background: rgba(139, 105, 20, 0.8);
-            border-color: #daa520;
-            color: var(--bone-white);
-        }
-        .tag.passive {
-            background: rgba(75, 0, 130, 0.8);
-            border-color: #9932cc;
-            color: var(--bone-white);
+        .detail-close:hover {
+            background: var(--dark-red);
+            transform: rotate(90deg);
         }
 
-        /* Faction-based Card Gradients */
-        .card-item[data-faction="universal"] {
-            background: linear-gradient(135deg,
-                rgba(43, 31, 23, 0.8) 0%,
-                rgba(26, 20, 16, 0.9) 100%);
-            border-color: var(--aged-gold);
-        }
-
-        .card-item[data-faction="church"] {
-            background: linear-gradient(135deg,
-                rgba(75, 14, 14, 0.6) 0%,
-                rgba(45, 10, 10, 0.8) 100%);
-            border-color: #8b0000;
-        }
-
-        .card-item[data-faction="church"]:hover {
-            border-color: #ff0000;
-            box-shadow: 0 4px 20px rgba(139, 0, 0, 0.5);
-        }
-
-        .card-item[data-faction="dwarves"] {
-            background: linear-gradient(135deg,
-                rgba(74, 50, 0, 0.6) 0%,
-                rgba(43, 31, 23, 0.8) 100%);
-            border-color: #8b6914;
-        }
-
-        .card-item[data-faction="dwarves"]:hover {
-            border-color: #daa520;
-            box-shadow: 0 4px 20px rgba(218, 165, 32, 0.5);
-        }
-
-        .card-item[data-faction="elves"] {
-            background: linear-gradient(135deg,
-                rgba(26, 58, 26, 0.6) 0%,
-                rgba(26, 20, 16, 0.8) 100%);
-            border-color: #2d5a2d;
-        }
-
-        .card-item[data-faction="elves"]:hover {
-            border-color: #32cd32;
-            box-shadow: 0 4px 20px rgba(50, 205, 50, 0.5);
-        }
-
-        .card-item[data-faction="undead"] {
-            background: linear-gradient(135deg,
-                rgba(45, 26, 58, 0.6) 0%,
-                rgba(26, 20, 16, 0.8) 100%);
-            border-color: #4b2d5a;
-        }
-
-        .card-item[data-faction="undead"]:hover {
-            border-color: #8b5fbd;
-            box-shadow: 0 4px 20px rgba(139, 95, 189, 0.5);
-        }
-
-        .card-item[data-faction="fae"] {
-            background: linear-gradient(135deg,
-                rgba(58, 26, 58, 0.6) 0%,
-                rgba(26, 20, 16, 0.8) 100%);
-            border-color: #9932cc;
-        }
-
-        .card-item[data-faction="fae"]:hover {
-            border-color: #ff00ff;
-            box-shadow: 0 4px 20px rgba(255, 0, 255, 0.5);
-        }
-
-        .card-item[data-faction="nomads"] {
-            background: linear-gradient(135deg,
-                rgba(58, 58, 26, 0.6) 0%,
-                rgba(26, 20, 16, 0.8) 100%);
-            border-color: #8b8b2d;
-        }
-
-        .card-item[data-faction="nomads"]:hover {
-            border-color: #ffff00;
-            box-shadow: 0 4px 20px rgba(255, 255, 0, 0.5);
-        }
-
-        .card-item[data-faction="merchants"] {
-            background: linear-gradient(135deg,
-                rgba(26, 58, 58, 0.6) 0%,
-                rgba(26, 20, 16, 0.8) 100%);
-            border-color: #2d5a5a;
-        }
-
-        .card-item[data-faction="merchants"]:hover {
-            border-color: #00ced1;
-            box-shadow: 0 4px 20px rgba(0, 206, 209, 0.5);
-        }
-
-        .card-item[data-faction="blighted"] {
-            background: linear-gradient(135deg,
-                rgba(58, 42, 26, 0.6) 0%,
-                rgba(26, 20, 16, 0.8) 100%);
-            border-color: #8b5a2d;
-        }
-
-        .card-item[data-faction="blighted"]:hover {
-            border-color: #d2691e;
-            box-shadow: 0 4px 20px rgba(210, 105, 30, 0.5);
-        }
-
-        .card-item[data-faction="chitinous"] {
-            background: linear-gradient(135deg,
-                rgba(26, 42, 26, 0.6) 0%,
-                rgba(26, 20, 16, 0.8) 100%);
-            border-color: #3a5a3a;
-        }
-
-        .card-item[data-faction="chitinous"]:hover {
-            border-color: #9acd32;
-            box-shadow: 0 4px 20px rgba(154, 205, 50, 0.5);
-        }
-
-        /* Card Type Badge in Card Grid */
-        .card-type-badge {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
+        .detail-card-name {
             font-family: 'Cinzel Decorative', serif;
+            font-size: 2rem;
+            color: var(--bone-white);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-shadow: 2px 2px 4px var(--shadow-black);
+            flex: 1;
+        }
+
+        .detail-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-stat {
+            background: rgba(10, 6, 4, 0.9);
+            border: 2px solid var(--blood-red);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .detail-stat-label {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--dark-red);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.08em;
+        }
+
+        .detail-stat-value {
+            font-size: 1.5rem;
+            color: var(--bone-white);
+            font-weight: 700;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.2rem;
+            color: var(--dark-red);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .detail-effect-text {
+            background: rgba(10, 6, 4, 0.9);
+            border: 2px solid var(--blood-red);
+            border-left: 6px solid var(--dark-red);
+            padding: 1.5rem;
+            border-radius: 4px;
+            color: var(--bone-white);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .detail-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .keyword-tag {
+            background: var(--blood-red);
+            color: var(--bone-white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: 'Cinzel Decorative', serif;
+            text-transform: uppercase;
             letter-spacing: 0.05em;
-            border: 1px solid;
-            position: relative;
         }
 
-        .card-type-badge.attack {
-            background: rgba(139, 0, 0, 0.8);
-            border-color: #8b0000;
+        .detail-equipment-info {
+            background: rgba(43, 31, 23, 0.5);
+            border: 2px solid var(--aged-gold);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .equipment-info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .equipment-info-label {
+            color: var(--aged-gold);
+        }
+
+        .equipment-info-value {
             color: var(--bone-white);
+            font-weight: 700;
         }
 
-        .card-type-badge.defense {
-            background: rgba(0, 51, 102, 0.8);
-            border-color: #4169e1;
-            color: var(--bone-white);
+        /* ===========================
+           SPECIAL BUTTONS
+           =========================== */
+        .btn-random {
+            background: linear-gradient(135deg, var(--aged-gold), #6b5a45);
+            border: 2px solid var(--bone-white);
+            color: var(--shadow-black);
+            padding: 0.5rem 1.5rem;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 700;
         }
 
-        .card-type-badge.movement {
-            background: rgba(26, 92, 26, 0.8);
-            border-color: #32cd32;
-            color: var(--bone-white);
+        .btn-random:hover {
+            box-shadow: 0 0 15px rgba(184, 149, 106, 0.5);
+            transform: scale(1.05);
         }
 
-        .card-type-badge.support {
-            background: rgba(102, 51, 153, 0.8);
-            border-color: #9370db;
-            color: var(--bone-white);
+        /* ===========================
+           LOADING & EMPTY STATES
+           =========================== */
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            font-size: 1.2rem;
+            color: var(--aged-gold);
+            font-family: 'Cinzel Decorative', serif;
         }
 
-        .card-type-badge.utility {
-            background: rgba(139, 105, 20, 0.8);
-            border-color: #daa520;
-            color: var(--bone-white);
+        .no-results {
+            text-align: center;
+            padding: 4rem;
+            color: var(--aged-gold);
         }
 
-        .card-type-badge.passive {
-            background: rgba(75, 0, 130, 0.8);
-            border-color: #9932cc;
-            color: var(--bone-white);
+        .no-results h3 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-red);
         }
 
-        /* Gothic Scrollbar */
+        /* ===========================
+           MOBILE RESPONSIVENESS
+           =========================== */
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-title {
+                font-size: 1.75rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-list-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .detail-panel {
+                width: 100%;
+                right: -100%;
+            }
+
+            .tabs-container {
+                overflow-x: scroll;
+            }
+
+            .tab {
+                font-size: 0.75rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* ===========================
+           SCROLLBAR STYLING
+           =========================== */
         ::-webkit-scrollbar {
             width: 12px;
-            background: var(--shadow-black);
+            height: 12px;
         }
 
         ::-webkit-scrollbar-track {
-            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            background: var(--shadow-black);
             border: 1px solid var(--blood-red);
         }
 
@@ -771,1120 +821,642 @@
             background: var(--dark-red);
         }
 
-        /* Selection Styling */
-        ::selection {
-            background: var(--blood-red);
-            color: var(--bone-white);
-        }
-
-        ::-moz-selection {
-            background: var(--blood-red);
-            color: var(--bone-white);
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            body::before {
-                border-width: 10px;
-            }
-
-            .header {
-                margin: 10px;
-            }
-
-            .container {
-                grid-template-columns: 250px 1fr;
-                margin: 0 10px 10px 10px;
-            }
-
-            .card-detail {
-                position: fixed;
-                top: 100px;
-                right: -400px;
-                width: 400px;
-                height: calc(100vh - 100px);
-                transition: right 0.3s ease;
-                z-index: 99;
-            }
-
-            .card-detail.active {
-                right: 15px;
-            }
-        }
-
-        @media (max-width: 968px) {
-            body::before {
-                border-width: 10px;
-            }
-
-            .header {
-                margin: 10px;
-                padding: 1.25rem 1.5rem;
-            }
-
-            .header-title {
-                font-size: 1.5rem;
-            }
-
-            .container {
-                grid-template-columns: 1fr;
-                margin: 0 10px 10px 10px;
-            }
-
-            .filters {
-                position: fixed;
-                left: -300px;
-                width: 280px;
-                height: calc(100vh - 100px);
-                transition: left 0.3s ease;
-                z-index: 99;
-                top: 100px;
-            }
-
-            .filters.active {
-                left: 10px;
-            }
-
-            .card-grid {
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            }
-
-            .card-detail {
-                right: -380px;
-                width: 380px;
-            }
-
-            .card-detail.active {
-                right: 10px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body::before {
-                border-width: 5px;
-            }
-
-            .header {
-                margin: 5px;
-                padding: 1rem 1rem;
-            }
-
-            .header::before,
-            .header::after {
-                font-size: 1.5rem;
-                left: 0.5rem;
-                right: 0.5rem;
-            }
-
-            .header-title {
-                font-size: 1.25rem;
-                letter-spacing: 0.1em;
-            }
-
-            .header-nav {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
-            .container {
-                margin: 0 5px 5px 5px;
-            }
-
-            .card-list {
-                padding: 1.25rem;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .filters {
-                width: calc(100vw - 40px);
-                left: -100vw;
-            }
-
-            .filters.active {
-                left: 5px;
-            }
-
-            .card-detail {
-                width: calc(100vw - 40px);
-                right: -100vw;
-            }
-
-            .card-detail.active {
-                right: 5px;
-            }
+        /* Hide elements */
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <div class="header-title">PENANCE: CARD DATABASE</div>
-        <div class="header-nav">
-            <a href="../index.html">BACK TO SITE</a>
-            <a href="../wiki/">WIKI</a>
-            <a href="deck-builder.html" class="deck-builder-btn">[Deck Builder]</a>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">PENANCE: CARD DATABASE</h1>
+                <div class="header-stats">
+                    <strong id="total-cards-count">250+</strong> Cards |
+                    <strong>4</strong> Factions |
+                    <strong>60+</strong> Equipment Items
+                </div>
+            </div>
+            <a href="#" class="btn-deck-builder">Deck Builder</a>
+        </div>
+    </header>
+
+    <!-- TABS NAVIGATION -->
+    <nav class="tabs">
+        <div class="tabs-container">
+            <div class="tab active" data-tab="all">
+                ALL <span class="tab-count" id="count-all">0</span>
+            </div>
+            <div class="tab" data-tab="universal">
+                UNIVERSAL <span class="tab-count" id="count-universal">0</span>
+            </div>
+            <div class="tab" data-tab="church">
+                CHURCH <span class="tab-count" id="count-church">0</span>
+            </div>
+            <div class="tab" data-tab="dwarves">
+                DWARVES <span class="tab-count" id="count-dwarves">0</span>
+            </div>
+            <div class="tab" data-tab="ossuarium">
+                OSSUARIUM <span class="tab-count" id="count-ossuarium">0</span>
+            </div>
+            <div class="tab" data-tab="elves">
+                ELVES <span class="tab-count" id="count-elves">0</span>
+            </div>
+            <div class="tab" data-tab="equipment">
+                EQUIPMENT <span class="tab-count" id="count-equipment">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <div class="main-container">
+        <!-- SIDEBAR FILTERS -->
+        <aside class="sidebar">
+            <!-- Search -->
+            <div class="filter-section">
+                <div class="filter-title">Search</div>
+                <input type="text" id="search-input" class="search-box" placeholder="Card name, effect, keywords...">
+            </div>
+
+            <!-- Card Type Filter -->
+            <div class="filter-section">
+                <div class="collapsible-header filter-title" data-target="type-filters">
+                    Card Type
+                </div>
+                <div id="type-filters" class="collapsible-content filter-checkbox-group">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="movement" data-filter="type"> Movement
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="attack" data-filter="type"> Attack
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="defense" data-filter="type"> Defense
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="utility" data-filter="type"> Utility
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="support" data-filter="type"> Support
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="passive" data-filter="type"> Passive
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="reactive" data-filter="type"> Reactive
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="gambit" data-filter="type"> Gambit
+                    </label>
+                </div>
+            </div>
+
+            <!-- Cost Filter -->
+            <div class="filter-section">
+                <div class="collapsible-header filter-title" data-target="cost-filters">
+                    Cost
+                </div>
+                <div id="cost-filters" class="collapsible-content filter-checkbox-group">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="0" data-filter="cost"> 0 SP
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="1" data-filter="cost"> 1 SP
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="2" data-filter="cost"> 2 SP
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="3" data-filter="cost"> 3 SP
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="4" data-filter="cost"> 4 SP
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="5+" data-filter="cost"> 5+ SP
+                    </label>
+                </div>
+            </div>
+
+            <!-- Equipment Slot Filter (only visible in Equipment tab) -->
+            <div class="filter-section hidden" id="equipment-slot-section">
+                <div class="collapsible-header filter-title" data-target="slot-filters">
+                    Equipment Slot
+                </div>
+                <div id="slot-filters" class="collapsible-content filter-checkbox-group">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="weapon" data-filter="slot"> Weapon
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="shield" data-filter="slot"> Shield
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="offhand" data-filter="slot"> Offhand
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" value="accessory" data-filter="slot"> Accessory
+                    </label>
+                </div>
+            </div>
+
+            <!-- Clear Filters -->
+            <button class="btn-clear-filters" id="btn-clear-filters">Clear All Filters</button>
+        </aside>
+
+        <!-- CARD GRID AREA -->
+        <main class="card-grid-area">
+            <!-- Controls Bar -->
+            <div class="controls-bar">
+                <div class="results-counter" id="results-counter">
+                    Showing <strong id="shown-count">0</strong> of <strong id="filtered-count">0</strong> cards
+                </div>
+                <div class="view-controls">
+                    <button class="btn-random" id="btn-random">Random Card</button>
+                    <div class="view-toggle">
+                        <button class="btn-view active" data-view="grid">Grid</button>
+                        <button class="btn-view" data-view="list">List</button>
+                    </div>
+                    <select class="sort-select" id="sort-select">
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="cost-asc">Cost (Low-High)</option>
+                        <option value="cost-desc">Cost (High-Low)</option>
+                        <option value="type">Type</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Card Grid -->
+            <div id="card-container" class="card-grid">
+                <div class="loading">Loading cards...</div>
+            </div>
+
+            <!-- Load More (for pagination) -->
+            <div style="text-align: center; margin-top: 2rem; display: none;" id="load-more-container">
+                <button class="btn-deck-builder" id="btn-load-more">Load More Cards</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- CARD DETAIL PANEL -->
+    <div class="detail-panel" id="detail-panel">
+        <div class="detail-panel-header">
+            <h2 class="detail-card-name" id="detail-name">Card Name</h2>
+            <button class="detail-close" id="detail-close">&times;</button>
+        </div>
+
+        <div class="detail-stats-grid" id="detail-stats">
+            <!-- Stats will be populated by JavaScript -->
+        </div>
+
+        <div class="detail-section">
+            <h3 class="detail-section-title">Effect</h3>
+            <div class="detail-effect-text" id="detail-effect"></div>
+        </div>
+
+        <div class="detail-section" id="detail-keywords-section">
+            <h3 class="detail-section-title">Keywords</h3>
+            <div class="detail-keywords" id="detail-keywords"></div>
+        </div>
+
+        <div class="detail-section hidden" id="detail-equipment-section">
+            <h3 class="detail-section-title">Equipment Info</h3>
+            <div class="detail-equipment-info" id="detail-equipment-info"></div>
         </div>
     </div>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Filters Sidebar -->
-        <div class="filters">
-            <div class="filter-section">
-                <div class="filter-title">SEARCH</div>
-                <input type="text" class="filter-search" id="searchInput" placeholder="Search cards...">
-            </div>
-
-            <div class="filter-section">
-                <div class="filter-title">TYPE</div>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="attack" class="type-filter"> ATTACK
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="defense" class="type-filter"> DEFENSE
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="movement" class="type-filter"> MOVEMENT
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="support" class="type-filter"> SUPPORT
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="utility" class="type-filter"> UTILITY
-                </label>
-            </div>
-
-            <div class="filter-section">
-                <div class="filter-title">FACTION</div>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="universal" class="faction-filter"> UNIVERSAL
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="church" class="faction-filter"> CHURCH
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="elves" class="faction-filter"> ELVES
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="dwarves" class="faction-filter"> DWARVES
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="undead" class="faction-filter"> OSSUARIUM
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="fae" class="faction-filter"> FAE
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="nomads" class="faction-filter"> NOMADS
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="merchants" class="faction-filter"> MERCHANTS
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="blighted" class="faction-filter"> BLIGHTED
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="chitinous" class="faction-filter"> CHITINOUS
-                </label>
-            </div>
-
-            <div class="filter-section">
-                <div class="filter-title">COST</div>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="0" class="cost-filter"> 0 SP
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="1" class="cost-filter"> 1 SP
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="2" class="cost-filter"> 2 SP
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="3" class="cost-filter"> 3 SP
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" value="4" class="cost-filter"> 4+ SP
-                </label>
-            </div>
-
-            <div class="filter-section">
-                <button class="filter-reset" id="resetFilters">RESET FILTERS</button>
-            </div>
-        </div>
-
-        <!-- Card Grid -->
-        <div class="card-list">
-            <div class="card-count" id="cardCount">Loading cards...</div>
-            <div class="card-grid" id="cardGrid"></div>
-        </div>
-
-        <!-- Card Detail Panel -->
-        <div class="card-detail empty" id="cardDetail">
-            <p>SELECT A CARD TO VIEW DETAILS</p>
-        </div>
-    </div>
-
+    <!-- JAVASCRIPT -->
     <script>
-        // Card Database
-        const cardDatabase = [
-            // ===== UNIVERSAL CORE (10 Cards) =====
-            {
-                id: 'desperate-lunge',
-                name: 'Desperate Lunge',
-                type: 'movement',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Move up to 2 hexes in any direction. You may rotate once during this movement.',
-                initiative: '[1]',
-                keywords: ['movement', 'basic']
-            },
-            {
-                id: 'brace-for-impact',
-                name: 'Brace for Impact',
-                type: 'defense',
-                faction: 'universal',
-                cost: 0,
-                range: 'Self',
-                effect: 'Reduce the next instance of damage you take this turn by 2.',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense']
-            },
-            {
-                id: 'emergency-vent',
-                name: 'Emergency Vent',
-                type: 'utility',
-                faction: 'universal',
-                cost: 2,
-                range: 'Self',
-                effect: 'Remove 3 Heat. Draw 1 card.',
-                initiative: '[2]',
-                keywords: ['heat', 'utility']
-            },
-            {
-                id: 'read-the-threads',
-                name: 'Read the Threads',
-                type: 'utility',
-                faction: 'universal',
-                cost: 1,
-                range: 'Target Enemy',
-                effect: 'Reveal 1 random card in target enemy\'s hand (your choice of enemy). If that card is an attack card, you may rotate them 1 hex facing.',
-                initiative: '[3]',
-                keywords: ['utility', 'information']
-            },
-            {
-                id: 'overextend',
-                name: 'Overextend',
-                type: 'movement',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Move up to 3 hexes. Gain 1 Heat.',
-                heat: '+1',
-                initiative: '[1]',
-                keywords: ['movement', 'risk']
-            },
-            {
-                id: 'rally-cry',
-                name: 'Rally Cry',
-                type: 'support',
-                faction: 'universal',
-                cost: 2,
-                range: 'Allies within 3 hexes',
-                effect: 'Choose 1 ally within 3 hexes. They draw 1 card. You draw 1 card.',
-                initiative: '[4]',
-                keywords: ['support', 'ally']
-            },
-            {
-                id: 'survey-the-field',
-                name: 'Survey the Field',
-                type: 'utility',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Draw 1 card. You may rotate up to 2 hex facings.',
-                initiative: '[2]',
-                keywords: ['utility', 'movement']
-            },
-            {
-                id: 'feint',
-                name: 'Feint',
-                type: 'utility',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Your next attack this turn: +1 damage.',
-                initiative: '[2]',
-                keywords: ['gambit', 'attack']
-            },
-            {
-                id: 'retreat',
-                name: 'Retreat',
-                type: 'movement',
-                faction: 'universal',
-                cost: 2,
-                range: 'Self',
-                effect: 'Move up to 4 hexes. You cannot attack this turn.',
-                initiative: '[1]',
-                keywords: ['movement', 'defensive']
-            },
-            {
-                id: 'breathe-the-core',
-                name: 'Breathe the Core',
-                type: 'utility',
-                faction: 'universal',
-                cost: 1,
-                range: 'Self',
-                effect: 'Remove 1 Heat. Draw 1 card.',
-                initiative: '[3]',
-                keywords: ['heat', 'utility']
-            },
+        // ===========================
+        // DATA LOADING
+        // ===========================
+        let allCards = [];
+        let filteredCards = [];
+        let currentTab = 'all';
+        let currentView = 'grid';
+        let currentPage = 1;
+        const cardsPerPage = 50;
 
-            // ===== CHURCH OF ABSOLUTION - FACTION CORE (6 Cards) =====
-            {
-                id: 'blood-offering',
-                name: 'Blood Offering',
-                type: 'utility',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'Discard 2 cards from the top of your deck (self-harm). Your next attack this turn: +3 damage and ignore 1 Defense.',
-                initiative: '[1]',
-                keywords: ['gambit', 'self-harm', 'buff', 'core'],
-                quote: 'Pain purifies. Blood absolves.'
-            },
-            {
-                id: 'martyrdom-protocol',
-                name: 'Martyrdom Protocol',
-                type: 'defense',
-                faction: 'church',
-                cost: 0,
-                range: 'Ally within 2 hexes',
-                effect: 'When an ally within 2 hexes would take damage, redirect that damage to yourself instead. Gain 1 Heat.',
-                heat: '+1',
-                initiative: '[—]',
-                keywords: ['reactive', 'ally', 'sacrifice', 'core'],
-                quote: 'I will bear your sins.'
-            },
-            {
-                id: 'righteous-fury-core',
-                name: 'Righteous Fury',
-                type: 'passive',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Each time an enemy Casket is destroyed this mission, gain +1 damage to all attacks permanently (stacks).',
-                initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'scaling', 'core'],
-                quote: 'Wrath is holy when directed at the guilty.'
-            },
-            {
-                id: 'divine-judgment',
-                name: 'Divine Judgment',
-                type: 'attack',
-                faction: 'church',
-                cost: 4,
-                range: 'Melee (Range 1)',
-                damage: '6',
-                effect: 'Deal 6 damage. If target has 10 or fewer cards remaining in their deck, deal 8 damage instead.',
-                initiative: '[3]',
-                keywords: ['attack', 'melee', 'execute', 'core'],
-                quote: 'The guilty know their sentence.'
-            },
-            {
-                id: 'consecrated-ground',
-                name: 'Consecrated Ground',
-                type: 'utility',
-                faction: 'church',
-                cost: 3,
-                range: '3-hex radius',
-                effect: 'Create a 3-hex radius healing zone centered on you until end of round. Allied Caskets in this zone recover 2 cards from their discard pile at the start of their turn.',
-                initiative: '[4]',
-                keywords: ['utility', 'ally', 'healing', 'zone', 'core'],
-                quote: 'Stand in the light. Be redeemed.'
-            },
-            {
-                id: 'last-rites-core',
-                name: 'Last Rites',
-                type: 'defense',
-                faction: 'church',
-                cost: 0,
-                range: 'Ally within 3 hexes',
-                effect: 'When an allied Casket within 3 hexes is defeated (deck reaches 0), immediately recover 5 cards from your discard pile. Draw 2 cards.',
-                initiative: '[—]',
-                keywords: ['reactive', 'ally', 'healing', 'death-trigger', 'core'],
-                quote: 'Their sacrifice will not be wasted.'
-            },
+        // Load card data
+        async function loadCardData() {
+            try {
+                const response = await fetch('complete-card-data.json');
+                const data = await response.json();
 
-            // ===== CHURCH - FACTION TACTICS (5 Options, Choose 2) =====
-            {
-                id: 'flagellants-zeal',
-                name: 'Flagellant\'s Zeal',
-                type: 'utility',
-                faction: 'church',
-                cost: 4,
-                range: 'Self',
-                effect: 'Discard 5 cards from the top of your deck (self-harm). Gain 5 SP immediately (in addition to your normal SP). Once per mission.',
-                initiative: '[Special]',
-                keywords: ['gambit', 'self-harm', 'sp-burst', 'tactic'],
-                quote: 'Suffer now. Triumph later.'
-            },
-            {
-                id: 'absolution',
-                name: 'Absolution',
-                type: 'utility',
-                faction: 'church',
-                cost: 5,
-                range: 'Self',
-                effect: 'Remove all Heat. Recover 3 cards from your discard pile. Gain 1 Taint.',
-                initiative: '[Special]',
-                keywords: ['utility', 'heat', 'healing', 'corruption', 'tactic'],
-                quote: 'Forgiveness has a price.'
-            },
-            {
-                id: 'crusaders-vow',
-                name: 'Crusader\'s Vow',
-                type: 'passive',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'While you have 20 or more cards remaining in your deck, all attack cards cost -1 SP (minimum 0).',
-                initiative: 'N/A',
-                keywords: ['passive', 'conditional', 'sp-efficiency', 'tactic'],
-                quote: 'The strong need no hesitation.'
-            },
-            {
-                id: 'penitent-strike',
-                name: 'Penitent Strike',
-                type: 'attack',
-                faction: 'church',
-                cost: 3,
-                range: 'Melee (Range 1)',
-                damage: '5',
-                effect: 'Deal 5 damage. If you have 15 or fewer cards in your deck, deal +2 damage.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'desperation', 'tactic'],
-                quote: 'The dying strike hardest.'
-            },
-            {
-                id: 'sanctified-armor',
-                name: 'Sanctified Armor',
-                type: 'passive',
-                faction: 'church',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Reduce all Heat gained by 1 (minimum 0 Heat from any source).',
-                initiative: 'N/A',
-                keywords: ['passive', 'heat-reduction', 'tactic'],
-                quote: 'Faith tempers the furnace.'
-            },
+                // Flatten card data into single array
+                allCards = [];
 
-            // ===== DWARVEN FORGE-GUILDS - FACTION CORE (6 Cards) =====
-            {
-                id: 'crushing-blow',
-                name: 'Crushing Blow',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Melee (1 hex)',
-                damage: '4',
-                effect: 'Deal 4 damage. ARMOR PIERCING (ignore all armor/defense buffs).',
-                heat: '+1',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'armor-piercing', 'core'],
-                quote: 'Runes flare blue-white as the hammerhead strikes true.'
-            },
-            {
-                id: 'rune-of-protection',
-                name: 'Rune of Protection',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 2,
-                range: 'Self',
-                effect: 'Gain 1 Rune Counter. While you have Rune Counters, reduce all damage by 1 per counter (max 3 counters). Lasts until end of mission or destroyed.',
-                initiative: '[2]',
-                keywords: ['buff', 'defense', 'rune', 'core'],
-                quote: 'Ancient words carved in living metal.'
-            },
-            {
-                id: 'stone-endurance-core',
-                name: 'Stone Endurance',
-                type: 'passive',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Your maximum HP is 32 instead of 30 (add 2 extra Universal Core cards to deck at start).',
-                initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'hp-boost', 'core'],
-                quote: 'Stone does not break.'
-            },
-            {
-                id: 'forge-fury',
-                name: 'Forge Fury',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 3,
-                range: 'Melee (1 hex)',
-                damage: '3+',
-                effect: 'Deal 3 damage + 1 damage per Heat you currently have (max +6). Remove all Heat after attack.',
-                initiative: '[2]',
-                keywords: ['attack', 'melee', 'heat-conversion', 'core'],
-                quote: 'The furnace roars. Steel becomes vengeance.'
-            },
-            {
-                id: 'unbreakable',
-                name: 'Unbreakable',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'When you would take Component Damage, prevent 1 Component Damage.',
-                heat: '+1',
-                initiative: '[—]',
-                keywords: ['reactive', 'defense', 'component-protection', 'core'],
-                quote: 'Dwarven steel bends. It does not break.'
-            },
-            {
-                id: 'clan-vengeance-core',
-                name: 'Clan Vengeance',
-                type: 'passive',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Each time you take Component Damage, your next attack deals +2 damage. Stacks.',
-                initiative: 'N/A',
-                keywords: ['passive', 'permanent', 'damage-boost', 'core'],
-                quote: 'They will pay for every broken piece.'
-            },
+                // Universal cards
+                data.universal.forEach(card => {
+                    allCards.push({ ...card, faction: 'universal', source: 'core' });
+                });
 
-            // ===== DWARVEN - FACTION TACTICS (5 Options, Choose 2) =====
-            {
-                id: 'forge-mastery',
-                name: 'Forge Mastery',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 4,
-                range: 'Self',
-                effect: 'Remove all Heat. For each Heat removed this way, draw 1 card. Once per mission.',
-                initiative: '[Special]',
-                keywords: ['utility', 'heat', 'draw', 'one-use', 'tactic'],
-                quote: 'Master the flame.'
-            },
-            {
-                id: 'runic-overcharge',
-                name: 'Runic Overcharge',
-                type: 'utility',
-                faction: 'dwarves',
-                cost: 3,
-                range: 'Self',
-                effect: 'Gain 2 Rune Counters immediately. Gain 2 Heat.',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['utility', 'buff', 'rune', 'tactic'],
-                quote: 'Power flows through ancient stone.'
-            },
-            {
-                id: 'unbreakable-spirit',
-                name: 'Unbreakable Spirit',
-                type: 'defense',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'When you would be reduced to 0 HP (deck empty after reshuffle), instead recover 5 cards from discard pile and shuffle them into deck. Gain 5 Heat. Once per mission.',
-                heat: '+5',
-                initiative: '[—]',
-                keywords: ['reactive', 'resurrection', 'one-use', 'tactic'],
-                quote: 'We do not yield.'
-            },
-            {
-                id: 'earthshaker',
-                name: 'Earthshaker',
-                type: 'attack',
-                faction: 'dwarves',
-                cost: 4,
-                range: 'Melee (1 hex)',
-                damage: '5',
-                effect: 'Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['attack', 'melee', 'aoe', 'crowd-control', 'tactic'],
-                quote: 'The ground cracks. The weak scatter.'
-            },
-            {
-                id: 'iron-resolve',
-                name: 'Iron Resolve',
-                type: 'passive',
-                faction: 'dwarves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - When you have 3 or more Heat, gain +1 Defense.',
-                initiative: 'N/A',
-                keywords: ['passive', 'defense', 'heat-synergy', 'tactic'],
-                quote: 'The forge tempers us all.'
-            },
+                // Faction cards
+                ['church', 'dwarves', 'ossuarium', 'elves'].forEach(faction => {
+                    data[faction].forEach(card => {
+                        allCards.push({ ...card, faction: faction, source: 'faction' });
+                    });
+                });
 
-            // ===== THE OSSUARIUM - FACTION CORE (6 Cards) =====
-            {
-                id: 'soul-harvest',
-                name: 'Soul Harvest',
-                type: 'attack',
-                faction: 'undead',
-                cost: 3,
-                range: 'Melee (Range 1)',
-                damage: '4',
-                effect: 'Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 4 cards).',
-                initiative: '[3]',
-                keywords: ['attack', 'lifesteal', 'vampiric', 'melee', 'core'],
-                quote: 'Their life becomes yours. This is the calculus of necromancy.'
-            },
-            {
-                id: 'corpse-fuel',
-                name: 'Corpse Fuel',
-                type: 'utility',
-                faction: 'undead',
-                cost: 2,
-                range: 'Self',
-                effect: 'When an enemy Casket is destroyed within 3 hexes, immediately recover 5 cards from your discard pile and shuffle them into your deck.',
-                initiative: '[—]',
-                keywords: ['reactive', 'death-trigger', 'healing', 'core'],
-                quote: 'The dead serve even in death.'
-            },
-            {
-                id: 'phylactery',
-                name: 'Phylactery',
-                type: 'passive',
-                faction: 'undead',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - The first time you would be reduced to 0 HP this mission, instead: Recover 5 cards from discard pile, gain 3 Heat. Once per mission.',
-                initiative: 'N/A',
-                keywords: ['passive', 'resurrection', 'immortality', 'core'],
-                quote: 'Death is merely an inconvenience.'
-            },
-            {
-                id: 'bone-scythe-reap',
-                name: 'Bone Scythe: Reap',
-                type: 'attack',
-                faction: 'undead',
-                cost: 4,
-                range: 'Arc (3 hexes in front arc)',
-                damage: '3',
-                effect: 'Deal 3 damage to ALL enemies in your front arc within 3 hexes. Recover 1 card per enemy hit.',
-                heat: '+2',
-                initiative: '[3]',
-                keywords: ['attack', 'aoe', 'lifesteal', 'scythe', 'core'],
-                quote: 'The harvest is bountiful.'
-            },
-            {
-                id: 'deathless-advance',
-                name: 'Deathless Advance',
-                type: 'movement',
-                faction: 'undead',
-                cost: 2,
-                range: 'Self',
-                effect: 'Move up to 3 hexes. Until end of turn, cap all damage you take at 5 (any damage exceeding 5 is ignored).',
-                initiative: '[2]',
-                keywords: ['movement', 'damage-cap', 'defensive', 'core'],
-                quote: 'You cannot kill what refuses to die.'
-            },
-            {
-                id: 'necrotic-surge',
-                name: 'Necrotic Surge',
-                type: 'passive',
-                faction: 'undead',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Whenever you recover cards (from any source), recover +1 additional card.',
-                initiative: 'N/A',
-                keywords: ['passive', 'healing-boost', 'vampiric', 'core'],
-                quote: 'Death feeds on death, growing ever stronger.'
-            },
+                // Equipment cards (flatten equipment structure)
+                Object.keys(data.equipment).forEach(category => {
+                    data.equipment[category].forEach(equipItem => {
+                        // Add equipment parent card
+                        if (equipItem.cards) {
+                            equipItem.cards.forEach((card, index) => {
+                                allCards.push({
+                                    id: `${equipItem.id}-${index}`,
+                                    name: `${equipItem.name}: ${card.name}`,
+                                    type: card.type || 'attack',
+                                    cost: card.cost,
+                                    range: card.range,
+                                    effect: card.effect,
+                                    damage: card.damage,
+                                    heat: card.heat,
+                                    keywords: card.keywords || [],
+                                    faction: 'equipment',
+                                    source: 'equipment',
+                                    slot: equipItem.slot,
+                                    weight: equipItem.weight,
+                                    craftingCost: equipItem.craftingCost,
+                                    equipmentName: equipItem.name,
+                                    cardCount: equipItem.cardCount
+                                });
+                            });
+                        }
+                    });
+                });
 
-            // ===== OSSUARIUM - FACTION TACTICS (5 Options, Choose 2) =====
-            {
-                id: 'eternal-hunger',
-                name: 'Eternal Hunger',
-                type: 'passive',
-                faction: 'undead',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Whenever you recover cards from discard pile, recover double the amount (rounds up). Does NOT stack with Necrotic Surge.',
-                initiative: 'N/A',
-                keywords: ['passive', 'lifesteal', 'synergy', 'tactic'],
-                quote: 'Hunger without end.'
-            },
-            {
-                id: 'grave-robber',
-                name: 'Grave Robber',
-                type: 'utility',
-                faction: 'undead',
-                cost: 1,
-                range: 'Self',
-                effect: 'When enemy Casket is destroyed within 3 hexes, roll 1d6. On 4+, gain 1 random equipment card from their deck (add to your deck permanently this mission).',
-                initiative: '[—]',
-                keywords: ['utility', 'loot', 'death-trigger', 'tactic'],
-                quote: 'The dead have no use for such things.'
-            },
-            {
-                id: 'undying-resilience',
-                name: 'Undying Resilience',
-                type: 'passive',
-                faction: 'undead',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - The SECOND time each mission you would be reduced to 0 HP, instead set HP to 10 (recover 10 cards from discard). Stacks with Phylactery.',
-                initiative: 'N/A',
-                keywords: ['passive', 'resurrection', 'survival', 'tactic'],
-                quote: 'I have died twice. I will die again.'
-            },
-            {
-                id: 'raise-dead',
-                name: 'Raise Dead',
-                type: 'utility',
-                faction: 'undead',
-                cost: 3,
-                range: 'Adjacent',
-                effect: 'Summon 1 Thrall minion adjacent to you. Thrall has 1 HP, deals 2 damage (melee), acts on your turn (costs 1 SP to command). Lasts 3 rounds or until destroyed. Max 3 Thralls at once.',
-                initiative: '[3]',
-                keywords: ['active', 'summon', 'minion', 'tactic'],
-                quote: 'Rise. Serve. Fall again.'
-            },
-            {
-                id: 'bone-armor',
-                name: 'Bone Armor',
-                type: 'passive',
-                faction: 'undead',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - For each enemy destroyed this mission, gain +1 permanent Defense (max +5). Defense persists entire mission.',
-                initiative: 'N/A',
-                keywords: ['passive', 'defense', 'scaling', 'tactic'],
-                quote: 'Their bones become my armor.'
-            },
+                // Update tab counts
+                updateTabCounts();
 
-            // ===== ELVEN VERDANT COVENANT - FACTION CORE (6 Cards) =====
-            {
-                id: 'thorn-strike',
-                name: 'Thorn Strike',
-                type: 'attack',
-                faction: 'elves',
-                cost: 2,
-                range: 'Melee (Range 1)',
-                damage: '3',
-                effect: 'Deal 3 damage. Apply Bleed 2 (target takes 2 damage at start of their next turn).',
-                initiative: '[2]',
-                keywords: ['attack', 'bleed', 'precision', 'melee', 'core'],
-                quote: 'The wound deepens. The poison spreads.'
-            },
-            {
-                id: 'pruning-cut',
-                name: 'Pruning Cut',
-                type: 'attack',
-                faction: 'elves',
-                cost: 3,
-                range: 'Melee (Range 1)',
-                damage: '4',
-                effect: 'Deal 4 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). If target discards cards from that component type, deal +2 Component Damage.',
-                initiative: '[3]',
-                keywords: ['attack', 'component-targeting', 'surgical', 'melee', 'core'],
-                quote: 'Cut away the rot.'
-            },
-            {
-                id: 'root-bind',
-                name: 'Root Bind',
-                type: 'utility',
-                faction: 'elves',
-                cost: 2,
-                range: 'Ranged (1-3 hexes)',
-                effect: 'Target enemy cannot move until end of their next turn. If they attempt to move, take 3 damage and Bleed 1.',
-                initiative: '[2]',
-                keywords: ['utility', 'control', 'root', 'nature', 'core'],
-                quote: 'The roots hold. Struggle is futile.'
-            },
-            {
-                id: 'photosynthesis',
-                name: 'Photosynthesis',
-                type: 'passive',
-                faction: 'elves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - At end of your turn, if you did NOT attack this turn, recover 1 card from discard pile and remove 1 Heat.',
-                initiative: 'N/A',
-                keywords: ['passive', 'healing', 'patience', 'nature', 'core'],
-                quote: 'We draw strength from stillness.'
-            },
-            {
-                id: 'leaf-dance',
-                name: 'Leaf Dance',
-                type: 'movement',
-                faction: 'elves',
-                cost: 3,
-                range: 'Self',
-                effect: 'Move up to 3 hexes. You may make 1 attack during this movement (at any point). After attacking, you may continue moving.',
-                initiative: '[3]',
-                keywords: ['movement', 'attack', 'mobility', 'hit-and-run', 'core'],
-                quote: 'Strike where they are weak. Vanish before they retaliate.'
-            },
-            {
-                id: 'verdant-regeneration',
-                name: 'Verdant Regeneration',
-                type: 'passive',
-                faction: 'elves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - At the start of each round, recover 1 card from discard pile. If you have Living Seal equipped, recover 2 cards instead.',
-                initiative: 'N/A',
-                keywords: ['passive', 'regeneration', 'healing', 'nature', 'core'],
-                quote: 'Life finds a way.'
-            },
+                // Initial render
+                applyFilters();
 
-            // ===== ELVEN - FACTION TACTICS (5 Options, Choose 2) =====
-            {
-                id: 'apex-predator',
-                name: 'Apex Predator',
-                type: 'passive',
-                faction: 'elves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - Your attacks deal +2 damage to enemies that have Bleed counters on them.',
-                initiative: 'N/A',
-                keywords: ['passive', 'synergy', 'damage', 'tactic'],
-                quote: 'The wounded do not escape.'
-            },
-            {
-                id: 'shadow-step',
-                name: 'Shadow Step',
-                type: 'utility',
-                faction: 'elves',
-                cost: 2,
-                range: 'Self',
-                effect: 'Teleport up to 3 hexes. You may use this after attacking (vanish after strike). Once per turn.',
-                initiative: '[2]',
-                keywords: ['active', 'movement', 'teleport', 'tactic'],
-                quote: 'Here, then gone.'
-            },
-            {
-                id: 'toxin-mastery',
-                name: 'Toxin Mastery',
-                type: 'passive',
-                faction: 'elves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - All Bleed effects you apply deal double damage. Bleed 1 becomes Bleed 2, Bleed 2 becomes Bleed 4, etc.',
-                initiative: 'N/A',
-                keywords: ['passive', 'synergy', 'bleed', 'tactic'],
-                quote: 'Our poisons are perfected over centuries.'
-            },
-            {
-                id: 'verdant-growth',
-                name: 'Verdant Growth',
-                type: 'utility',
-                faction: 'elves',
-                cost: 3,
-                range: '3-hex area',
-                effect: 'Summon 1 Vine Wall (3 hexes long, blocks movement, grants +1 Defense to allies behind it, lasts 3 rounds). Max 2 Vine Walls at once.',
-                initiative: '[3]',
-                keywords: ['active', 'summon', 'defense', 'nature', 'tactic'],
-                quote: 'The forest rises at our command.'
-            },
-            {
-                id: 'ironbark-skin',
-                name: 'Ironbark Skin',
-                type: 'passive',
-                faction: 'elves',
-                cost: 0,
-                range: 'Self',
-                effect: 'PERMANENT PASSIVE - At start of each round, gain 1 Armor counter (blocks 1 damage, then removed). Max 3 Armor counters.',
-                initiative: 'N/A',
-                keywords: ['passive', 'armor', 'defense', 'tactic'],
-                quote: 'Our bark is thicker than iron.'
+            } catch (error) {
+                console.error('Error loading card data:', error);
+                document.getElementById('card-container').innerHTML = '<div class="no-results"><h3>Error loading cards</h3></div>';
             }
-        ];
+        }
 
-        // State
-        let filteredCards = [...cardDatabase];
-        let selectedCard = null;
+        // ===========================
+        // TAB COUNTS
+        // ===========================
+        function updateTabCounts() {
+            const counts = {
+                all: allCards.length,
+                universal: allCards.filter(c => c.faction === 'universal').length,
+                church: allCards.filter(c => c.faction === 'church').length,
+                dwarves: allCards.filter(c => c.faction === 'dwarves').length,
+                ossuarium: allCards.filter(c => c.faction === 'ossuarium').length,
+                elves: allCards.filter(c => c.faction === 'elves').length,
+                equipment: allCards.filter(c => c.faction === 'equipment').length
+            };
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            renderCards();
-            setupFilters();
-        });
-
-        // Render cards
-        function renderCards() {
-            const grid = document.getElementById('cardGrid');
-            const count = document.getElementById('cardCount');
-
-            grid.innerHTML = '';
-            count.textContent = `SHOWING ${filteredCards.length} OF ${cardDatabase.length} CARDS`;
-
-            filteredCards.forEach(card => {
-                const cardEl = document.createElement('div');
-                cardEl.className = 'card-item';
-                cardEl.setAttribute('data-faction', card.faction);
-                if (selectedCard && selectedCard.id === card.id) {
-                    cardEl.classList.add('selected');
-                }
-
-                cardEl.innerHTML = `
-                    <div class="card-type-badge ${card.type}">${card.type.toUpperCase()}</div>
-                    <div class="card-name">${card.name}</div>
-                    <div class="card-cost">COST: ${card.cost} SP</div>
-                `;
-
-                cardEl.addEventListener('click', () => selectCard(card));
-                grid.appendChild(cardEl);
+            Object.keys(counts).forEach(tab => {
+                const el = document.getElementById(`count-${tab}`);
+                if (el) el.textContent = counts[tab];
             });
+
+            document.getElementById('total-cards-count').textContent = counts.all;
         }
 
-        // Select card
-        function selectCard(card) {
-            selectedCard = card;
-            renderCards();
-            renderDetail(card);
-        }
-
-        // Render detail panel
-        function renderDetail(card) {
-            const detail = document.getElementById('cardDetail');
-            detail.classList.remove('empty');
-
-            let statsHTML = '';
-            if (card.damage) {
-                statsHTML += `
-                    <div class="stat-item">
-                        <div class="stat-value">${card.damage}</div>
-                        <div class="stat-label">DAMAGE</div>
-                    </div>
-                `;
-            }
-            if (card.range) {
-                statsHTML += `
-                    <div class="stat-item">
-                        <div class="stat-value">${card.range}</div>
-                        <div class="stat-label">RANGE</div>
-                    </div>
-                `;
-            }
-            if (card.cost !== undefined) {
-                statsHTML += `
-                    <div class="stat-item">
-                        <div class="stat-value">${card.cost}</div>
-                        <div class="stat-label">COST (SP)</div>
-                    </div>
-                `;
-            }
-            if (card.heat) {
-                statsHTML += `
-                    <div class="stat-item">
-                        <div class="stat-value">${card.heat}</div>
-                        <div class="stat-label">HEAT</div>
-                    </div>
-                `;
-            }
-
-            detail.innerHTML = `
-                <div class="detail-header">
-                    <div class="detail-title">${card.name}</div>
-                    <div class="detail-type">${card.type} • ${card.faction}</div>
-                </div>
-
-                ${statsHTML ? `<div class="stats-grid">${statsHTML}</div>` : ''}
-
-                <div class="detail-section">
-                    <div class="detail-label">INITIATIVE</div>
-                    <div class="detail-value">${card.initiative}</div>
-                </div>
-
-                <div class="card-text">${card.effect}</div>
-
-                ${card.quote ? `<div class="card-quote">"${card.quote}"</div>` : ''}
-
-                <div class="detail-section">
-                    <div class="detail-label">KEYWORDS</div>
-                    <div class="tag-list">
-                        ${card.keywords.map(k => {
-                            // Color-code tags based on type
-                            let tagClass = 'tag';
-                            if (k === 'attack' || k === 'melee' || k === 'ranged') tagClass += ' attack';
-                            else if (k === 'defense' || k === 'armor' || k === 'shield') tagClass += ' defense';
-                            else if (k === 'movement') tagClass += ' movement';
-                            else if (k === 'support' || k === 'ally' || k === 'healing') tagClass += ' support';
-                            else if (k === 'utility' || k === 'heat' || k === 'draw') tagClass += ' utility';
-                            else if (k === 'passive' || k === 'permanent') tagClass += ' passive';
-                            return `<span class="${tagClass}">${k}</span>`;
-                        }).join('')}
-                    </div>
-                </div>
-            `;
-        }
-
-        // Setup filters
-        function setupFilters() {
-            const searchInput = document.getElementById('searchInput');
-            const typeFilters = document.querySelectorAll('.type-filter');
-            const factionFilters = document.querySelectorAll('.faction-filter');
-            const costFilters = document.querySelectorAll('.cost-filter');
-            const resetBtn = document.getElementById('resetFilters');
-
-            searchInput.addEventListener('input', applyFilters);
-            typeFilters.forEach(f => f.addEventListener('change', applyFilters));
-            factionFilters.forEach(f => f.addEventListener('change', applyFilters));
-            costFilters.forEach(f => f.addEventListener('change', applyFilters));
-            resetBtn.addEventListener('click', resetFilters);
-        }
-
-        // Apply filters
+        // ===========================
+        // FILTERING
+        // ===========================
         function applyFilters() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const selectedTypes = Array.from(document.querySelectorAll('.type-filter:checked')).map(f => f.value);
-            const selectedFactions = Array.from(document.querySelectorAll('.faction-filter:checked')).map(f => f.value);
-            const selectedCosts = Array.from(document.querySelectorAll('.cost-filter:checked')).map(f => f.value);
+            let cards = [...allCards];
 
-            filteredCards = cardDatabase.filter(card => {
-                // Search filter
-                if (searchTerm && !card.name.toLowerCase().includes(searchTerm) &&
-                    !card.effect.toLowerCase().includes(searchTerm)) {
-                    return false;
+            // Filter by tab
+            if (currentTab !== 'all') {
+                cards = cards.filter(card => card.faction === currentTab);
+            }
+
+            // Filter by search
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            if (searchTerm) {
+                cards = cards.filter(card =>
+                    card.name.toLowerCase().includes(searchTerm) ||
+                    (card.effect && card.effect.toLowerCase().includes(searchTerm)) ||
+                    (card.keywords && card.keywords.some(k => k.toLowerCase().includes(searchTerm)))
+                );
+            }
+
+            // Filter by type
+            const typeFilters = Array.from(document.querySelectorAll('[data-filter="type"]:checked'))
+                .map(cb => cb.value);
+            if (typeFilters.length > 0) {
+                cards = cards.filter(card =>
+                    typeFilters.some(type =>
+                        card.type.toLowerCase().includes(type) ||
+                        (card.keywords && card.keywords.some(k => k.toLowerCase().includes(type)))
+                    )
+                );
+            }
+
+            // Filter by cost
+            const costFilters = Array.from(document.querySelectorAll('[data-filter="cost"]:checked'))
+                .map(cb => cb.value);
+            if (costFilters.length > 0) {
+                cards = cards.filter(card => {
+                    const cost = card.cost;
+                    return costFilters.some(filter => {
+                        if (filter === '5+') return cost >= 5;
+                        return cost === parseInt(filter);
+                    });
+                });
+            }
+
+            // Filter by equipment slot (only in equipment tab)
+            if (currentTab === 'equipment') {
+                const slotFilters = Array.from(document.querySelectorAll('[data-filter="slot"]:checked'))
+                    .map(cb => cb.value);
+                if (slotFilters.length > 0) {
+                    cards = cards.filter(card => slotFilters.includes(card.slot));
                 }
+            }
 
-                // Type filter
-                if (selectedTypes.length > 0 && !selectedTypes.includes(card.type)) {
-                    return false;
-                }
+            // Sort
+            const sortBy = document.getElementById('sort-select').value;
+            cards = sortCards(cards, sortBy);
 
-                // Faction filter
-                if (selectedFactions.length > 0 && !selectedFactions.includes(card.faction)) {
-                    return false;
-                }
-
-                // Cost filter
-                if (selectedCosts.length > 0) {
-                    const costStr = card.cost >= 4 ? '4' : card.cost.toString();
-                    if (!selectedCosts.includes(costStr)) {
-                        return false;
-                    }
-                }
-
-                return true;
-            });
-
+            filteredCards = cards;
+            currentPage = 1;
             renderCards();
         }
 
-        // Reset filters
-        function resetFilters() {
-            document.getElementById('searchInput').value = '';
-            document.querySelectorAll('.type-filter, .faction-filter, .cost-filter').forEach(f => {
-                f.checked = false;
-            });
-            applyFilters();
+        // ===========================
+        // SORTING
+        // ===========================
+        function sortCards(cards, sortBy) {
+            const sorted = [...cards];
+
+            switch(sortBy) {
+                case 'name-asc':
+                    return sorted.sort((a, b) => a.name.localeCompare(b.name));
+                case 'name-desc':
+                    return sorted.sort((a, b) => b.name.localeCompare(a.name));
+                case 'cost-asc':
+                    return sorted.sort((a, b) => a.cost - b.cost);
+                case 'cost-desc':
+                    return sorted.sort((a, b) => b.cost - a.cost);
+                case 'type':
+                    return sorted.sort((a, b) => a.type.localeCompare(b.type));
+                default:
+                    return sorted;
+            }
         }
+
+        // ===========================
+        // RENDERING
+        // ===========================
+        function renderCards() {
+            const container = document.getElementById('card-container');
+            const displayCards = filteredCards.slice(0, currentPage * cardsPerPage);
+
+            // Update counters
+            document.getElementById('shown-count').textContent = displayCards.length;
+            document.getElementById('filtered-count').textContent = filteredCards.length;
+
+            // Show/hide load more button
+            const loadMoreContainer = document.getElementById('load-more-container');
+            if (filteredCards.length > displayCards.length) {
+                loadMoreContainer.style.display = 'block';
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+
+            // Render based on view mode
+            if (currentView === 'grid') {
+                renderGridView(container, displayCards);
+            } else {
+                renderListView(container, displayCards);
+            }
+
+            // Show no results message
+            if (filteredCards.length === 0) {
+                container.innerHTML = '<div class="no-results"><h3>No cards found</h3><p>Try adjusting your filters</p></div>';
+            }
+        }
+
+        function renderGridView(container, cards) {
+            container.className = 'card-grid';
+            container.innerHTML = cards.map(card => `
+                <div class="card-tile ${card.faction}" data-card-id="${card.id}" onclick="showCardDetail('${card.id}')">
+                    <div class="card-tile-header">
+                        <div class="card-tile-name">${card.name}</div>
+                        <div class="card-tile-cost">${card.cost}</div>
+                    </div>
+                    <div class="card-tile-badges">
+                        <span class="badge badge-type">${card.type}</span>
+                        ${card.damage ? `<span class="badge badge-damage">${card.damage} DMG</span>` : ''}
+                        ${card.range ? `<span class="badge badge-range">${card.range}</span>` : ''}
+                    </div>
+                    <div class="card-tile-effect">${card.effect || 'No effect text'}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderListView(container, cards) {
+            container.className = 'card-list';
+            container.innerHTML = cards.map(card => `
+                <div class="card-list-item ${card.faction}" data-card-id="${card.id}" onclick="showCardDetail('${card.id}')">
+                    <div class="list-item-cost">${card.cost}</div>
+                    <div class="list-item-name">${card.name}</div>
+                    <div class="list-item-text">${card.type}</div>
+                    <div class="list-item-text">${card.range || 'N/A'}</div>
+                    <div class="list-item-text">${card.damage || 'N/A'}</div>
+                    <div class="list-item-text">${card.heat || '0'}</div>
+                    <div class="list-item-effect">${card.effect || 'No effect'}</div>
+                </div>
+            `).join('');
+        }
+
+        // ===========================
+        // CARD DETAIL PANEL
+        // ===========================
+        function showCardDetail(cardId) {
+            const card = allCards.find(c => c.id === cardId);
+            if (!card) return;
+
+            // Populate detail panel
+            document.getElementById('detail-name').textContent = card.name;
+
+            // Stats grid
+            const statsGrid = document.getElementById('detail-stats');
+            statsGrid.innerHTML = `
+                <div class="detail-stat">
+                    <div class="detail-stat-label">Cost</div>
+                    <div class="detail-stat-value">${card.cost} SP</div>
+                </div>
+                <div class="detail-stat">
+                    <div class="detail-stat-label">Type</div>
+                    <div class="detail-stat-value">${card.type}</div>
+                </div>
+                <div class="detail-stat">
+                    <div class="detail-stat-label">Range</div>
+                    <div class="detail-stat-value">${card.range || 'N/A'}</div>
+                </div>
+                <div class="detail-stat">
+                    <div class="detail-stat-label">Damage</div>
+                    <div class="detail-stat-value">${card.damage || 'N/A'}</div>
+                </div>
+                ${card.heat ? `
+                <div class="detail-stat">
+                    <div class="detail-stat-label">Heat</div>
+                    <div class="detail-stat-value">${card.heat}</div>
+                </div>
+                ` : ''}
+            `;
+
+            // Effect
+            document.getElementById('detail-effect').textContent = card.effect || 'No effect text';
+
+            // Keywords
+            const keywordsSection = document.getElementById('detail-keywords-section');
+            const keywordsContainer = document.getElementById('detail-keywords');
+            if (card.keywords && card.keywords.length > 0) {
+                keywordsSection.classList.remove('hidden');
+                keywordsContainer.innerHTML = card.keywords.map(k =>
+                    `<span class="keyword-tag">${k}</span>`
+                ).join('');
+            } else {
+                keywordsSection.classList.add('hidden');
+            }
+
+            // Equipment info
+            const equipmentSection = document.getElementById('detail-equipment-section');
+            const equipmentInfo = document.getElementById('detail-equipment-info');
+            if (card.faction === 'equipment') {
+                equipmentSection.classList.remove('hidden');
+                equipmentInfo.innerHTML = `
+                    <div class="equipment-info-row">
+                        <span class="equipment-info-label">Equipment:</span>
+                        <span class="equipment-info-value">${card.equipmentName || 'N/A'}</span>
+                    </div>
+                    <div class="equipment-info-row">
+                        <span class="equipment-info-label">Slot:</span>
+                        <span class="equipment-info-value">${card.slot || 'N/A'}</span>
+                    </div>
+                    <div class="equipment-info-row">
+                        <span class="equipment-info-label">Weight:</span>
+                        <span class="equipment-info-value">${card.weight || 'N/A'}</span>
+                    </div>
+                    <div class="equipment-info-row">
+                        <span class="equipment-info-label">Crafting Cost:</span>
+                        <span class="equipment-info-value">${card.craftingCost || 'N/A'} Scrap</span>
+                    </div>
+                    <div class="equipment-info-row">
+                        <span class="equipment-info-label">Card Count:</span>
+                        <span class="equipment-info-value">${card.cardCount || 'N/A'} cards</span>
+                    </div>
+                `;
+            } else {
+                equipmentSection.classList.add('hidden');
+            }
+
+            // Open panel
+            document.getElementById('detail-panel').classList.add('open');
+        }
+
+        function closeCardDetail() {
+            document.getElementById('detail-panel').classList.remove('open');
+        }
+
+        // ===========================
+        // EVENT LISTENERS
+        // ===========================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load data
+            loadCardData();
+
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    currentTab = tab.dataset.tab;
+
+                    // Show/hide equipment slot filter
+                    if (currentTab === 'equipment') {
+                        document.getElementById('equipment-slot-section').classList.remove('hidden');
+                    } else {
+                        document.getElementById('equipment-slot-section').classList.add('hidden');
+                    }
+
+                    applyFilters();
+                });
+            });
+
+            // Search input (debounced)
+            let searchTimeout;
+            document.getElementById('search-input').addEventListener('input', () => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => applyFilters(), 300);
+            });
+
+            // Filter checkboxes
+            document.querySelectorAll('[data-filter]').forEach(checkbox => {
+                checkbox.addEventListener('change', applyFilters);
+            });
+
+            // Clear filters
+            document.getElementById('btn-clear-filters').addEventListener('click', () => {
+                document.getElementById('search-input').value = '';
+                document.querySelectorAll('[data-filter]').forEach(cb => cb.checked = false);
+                applyFilters();
+            });
+
+            // View toggle
+            document.querySelectorAll('.btn-view').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.btn-view').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentView = btn.dataset.view;
+                    renderCards();
+                });
+            });
+
+            // Sort select
+            document.getElementById('sort-select').addEventListener('change', applyFilters);
+
+            // Random card
+            document.getElementById('btn-random').addEventListener('click', () => {
+                const randomCard = filteredCards[Math.floor(Math.random() * filteredCards.length)];
+                if (randomCard) showCardDetail(randomCard.id);
+            });
+
+            // Load more
+            document.getElementById('btn-load-more').addEventListener('click', () => {
+                currentPage++;
+                renderCards();
+            });
+
+            // Close detail panel
+            document.getElementById('detail-close').addEventListener('click', closeCardDetail);
+
+            // Collapsible sections
+            document.querySelectorAll('.collapsible-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const targetId = header.dataset.target;
+                    const target = document.getElementById(targetId);
+                    header.classList.toggle('collapsed');
+                    target.classList.toggle('collapsed');
+                });
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeCardDetail();
+                } else if (e.key === '/' && document.activeElement !== document.getElementById('search-input')) {
+                    e.preventDefault();
+                    document.getElementById('search-input').focus();
+                }
+            });
+        });
     </script>
 </body>
 </html>
