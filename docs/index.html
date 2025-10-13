@@ -82,7 +82,7 @@
             pointer-events: none;
         }
 
-        /* Dripping Oil/Ink Effect from Top */
+        /* Animated Dripping Oil/Ink Effect from Top */
         body::after {
             content: '';
             position: fixed;
@@ -142,6 +142,19 @@
                 inset 0 15px 40px rgba(0, 0, 0, 0.5),
                 0 0 20px rgba(184, 149, 106, 0.2);
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+            animation: slowDrip 20s ease-in-out infinite;
+        }
+
+        /* Slow dripping animation */
+        @keyframes slowDrip {
+            0%, 100% {
+                transform: translateY(0) scaleY(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(8px) scaleY(1.05);
+                opacity: 0.85;
+            }
         }
 
         body {
