@@ -145,15 +145,19 @@
             animation: slowDrip 20s ease-in-out infinite;
         }
 
-        /* Slow dripping animation */
+        /* Slow dripping animation - enhanced for visibility */
         @keyframes slowDrip {
-            0%, 100% {
+            0% {
                 transform: translateY(0) scaleY(1);
                 opacity: 1;
             }
             50% {
-                transform: translateY(20px) scaleY(1.15);
-                opacity: 0.75;
+                transform: translateY(30px) scaleY(1.25);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(0) scaleY(1);
+                opacity: 1;
             }
         }
 
