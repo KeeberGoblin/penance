@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PENANCE: Absolution Through Steel</title>
+    <!-- Google Fonts for Manuscript Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -21,28 +26,34 @@
             --accent: #d4af37;
         }
 
-        /* Manuscript Theme Variables */
+        /* Manuscript Theme Variables - Enhanced Gothic Palette */
         body.manuscript-theme {
-            --black: #2c1810;
-            --dark-gray: #3d2517;
-            --medium-gray: #5c3d2e;
+            --black: #1a1410;
+            --dark-gray: #2b1f17;
+            --medium-gray: #4a3829;
             --light-gray: #8b7355;
-            --white: #f4e8d0;
-            --blood-red: #8b0000;
-            --accent: #d4af37;
-            --parchment: #f4e8d0;
-            --aged-brown: #4a3425;
-            --ink-brown: #2c1810;
+            --white: #d4c5b0;
+            --blood-red: #4a0e0e;
+            --accent: #b8956a;
+            --parchment: #d4c5b0;
+            --aged-brown: #3d2517;
+            --ink-brown: #1a1410;
+            --border-ornate: #b8956a;
+            --shadow-deep: rgba(26, 20, 16, 0.9);
         }
 
         body.manuscript-theme {
-            background-image: url('lore/PenanceBG.png');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-image:
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%231a1410" width="100" height="100"/><circle fill="%232b1f17" cx="50" cy="50" r="40" opacity="0.1"/></svg>'),
+                url('lore/PenanceBG.png');
+            background-size: 150px 150px, cover;
+            background-attachment: fixed, fixed;
+            background-position: center, center;
+            background-repeat: repeat, no-repeat;
+            background-blend-mode: overlay, normal;
         }
 
+        /* Enhanced leather texture overlay */
         body.manuscript-theme::before {
             content: '';
             position: fixed;
@@ -50,9 +61,41 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(44, 24, 16, 0.85);
+            background:
+                radial-gradient(ellipse at top, rgba(59, 37, 23, 0.4), transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(26, 20, 16, 0.6), transparent 50%),
+                linear-gradient(135deg,
+                    rgba(26, 20, 16, 0.9) 0%,
+                    rgba(43, 31, 23, 0.85) 25%,
+                    rgba(61, 37, 23, 0.8) 50%,
+                    rgba(43, 31, 23, 0.85) 75%,
+                    rgba(26, 20, 16, 0.9) 100%
+                );
             z-index: -1;
             pointer-events: none;
+        }
+
+        /* Decorative Gothic Border */
+        body.manuscript-theme::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 15px solid var(--border-ornate);
+            border-image: repeating-linear-gradient(
+                45deg,
+                var(--border-ornate),
+                var(--border-ornate) 10px,
+                var(--aged-brown) 10px,
+                var(--aged-brown) 20px
+            ) 15;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow:
+                inset 0 0 30px rgba(0, 0, 0, 0.6),
+                0 0 15px rgba(184, 149, 106, 0.3);
         }
 
         body {
@@ -65,9 +108,51 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Manuscript theme font */
+        /* Manuscript theme fonts - Gothic typography */
         body.manuscript-theme {
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+            font-family: 'Crimson Pro', 'Libre Baskerville', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+        }
+
+        /* Gothic headings in manuscript theme */
+        body.manuscript-theme h1,
+        body.manuscript-theme h2,
+        body.manuscript-theme h3,
+        body.manuscript-theme .hero-title,
+        body.manuscript-theme .section-header,
+        body.manuscript-theme .section-header-center,
+        body.manuscript-theme .feature-title,
+        body.manuscript-theme .faction-name {
+            font-family: 'Cinzel Decorative', 'Libre Baskerville', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 0.08em;
+        }
+
+        /* Enhanced manuscript navigation */
+        body.manuscript-theme .nav-header {
+            background: linear-gradient(to bottom, var(--aged-brown), var(--ink-brown));
+            border-bottom: 3px solid var(--border-ornate);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        body.manuscript-theme .nav-title {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--parchment);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        body.manuscript-theme .nav-link {
+            color: var(--parchment);
+            font-family: 'Crimson Pro', serif;
+            border-bottom-color: transparent;
+        }
+
+        body.manuscript-theme .nav-link:hover {
+            border-bottom-color: var(--blood-red);
+            text-shadow: 0 0 8px rgba(74, 14, 14, 0.8);
+        }
+
+        body.manuscript-theme .nav-link.active {
+            border-bottom-color: var(--border-ornate);
         }
 
         /* Smooth Scrolling with offset for fixed header */
@@ -624,6 +709,141 @@
             color: var(--light-gray);
             font-size: 0.875rem;
             letter-spacing: 0.05em;
+        }
+
+        /* Manuscript Theme - Enhanced Buttons */
+        body.manuscript-theme .cta-primary {
+            background: linear-gradient(135deg, var(--blood-red) 0%, var(--aged-brown) 100%);
+            border: 3px solid var(--border-ornate);
+            color: var(--parchment);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            font-family: 'Cinzel Decorative', serif;
+        }
+
+        body.manuscript-theme .cta-primary:hover {
+            background: linear-gradient(135deg, var(--border-ornate) 0%, var(--parchment) 100%);
+            color: var(--ink-brown);
+            box-shadow: 0 6px 20px rgba(184, 149, 106, 0.4);
+        }
+
+        body.manuscript-theme .cta-secondary {
+            background: transparent;
+            border: 3px solid var(--border-ornate);
+            color: var(--parchment);
+            font-family: 'Crimson Pro', serif;
+        }
+
+        body.manuscript-theme .cta-secondary:hover {
+            background: var(--aged-brown);
+            color: var(--parchment);
+            box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
+        }
+
+        /* Manuscript Theme - Enhanced Cards */
+        body.manuscript-theme .feature-card {
+            border: 3px solid var(--border-ornate);
+            background: linear-gradient(to bottom, var(--aged-brown), var(--ink-brown));
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        body.manuscript-theme .feature-card:hover {
+            border-color: var(--parchment);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(184, 149, 106, 0.4);
+        }
+
+        body.manuscript-theme .chronicle-event {
+            border: 3px solid var(--border-ornate);
+            background: linear-gradient(to bottom right, var(--aged-brown), var(--ink-brown));
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        body.manuscript-theme .chronicle-event:hover {
+            border-color: var(--parchment);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(184, 149, 106, 0.4);
+        }
+
+        body.manuscript-theme .npc-card {
+            background: linear-gradient(to bottom, var(--aged-brown), var(--ink-brown));
+            border: 2px solid var(--border-ornate);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        body.manuscript-theme .npc-card:hover {
+            border-color: var(--parchment);
+            box-shadow: 0 6px 20px rgba(184, 149, 106, 0.4);
+        }
+
+        /* Manuscript Theme - Section Headers with Ornaments */
+        body.manuscript-theme .section-header,
+        body.manuscript-theme .section-header-center {
+            border-bottom: 3px solid var(--border-ornate);
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        body.manuscript-theme .section-header::after,
+        body.manuscript-theme .section-header-center::after {
+            content: '❖ ❖ ❖';
+            display: block;
+            text-align: center;
+            color: var(--border-ornate);
+            font-size: 1rem;
+            margin-top: 1rem;
+            letter-spacing: 1rem;
+        }
+
+        /* Manuscript Theme - Hero Section */
+        body.manuscript-theme .hero {
+            border-bottom: 5px solid var(--border-ornate);
+        }
+
+        body.manuscript-theme .hero-tagline {
+            color: var(--blood-red);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        body.manuscript-theme .stat-number {
+            color: var(--border-ornate);
+            font-family: 'Cinzel Decorative', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        body.manuscript-theme .hero-stats {
+            border-top: 3px solid var(--border-ornate);
+        }
+
+        /* Manuscript Theme - Section Dividers */
+        body.manuscript-theme .section {
+            border-bottom: 3px solid var(--border-ornate);
+        }
+
+        body.manuscript-theme .section-dark {
+            background: linear-gradient(to bottom,
+                rgba(43, 31, 23, 0.6),
+                rgba(26, 20, 16, 0.8)
+            );
+        }
+
+        /* Manuscript Theme - Footer */
+        body.manuscript-theme .footer {
+            background: linear-gradient(to bottom, var(--ink-brown), var(--black));
+            border-top: 5px solid var(--border-ornate);
+        }
+
+        body.manuscript-theme .footer-title {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--parchment);
+        }
+
+        body.manuscript-theme .footer-desc {
+            color: var(--blood-red);
+        }
+
+        body.manuscript-theme .footer-heading {
+            font-family: 'Crimson Pro', serif;
+            color: var(--border-ornate);
         }
 
         /* Responsive */
