@@ -1270,40 +1270,52 @@
         });
     </script>
     <style>
-        /* Animated drip class */
+        /* Animated godray class - volumetric light beams */
         .animated-drip {
             position: fixed;
-            top: 15px;
-            width: 4px;
+            top: 0;
+            width: 80px;
             height: 0;
             background: linear-gradient(to bottom,
-                #b8956a 0%,
-                rgba(184, 149, 106, 0.8) 30%,
-                rgba(184, 149, 106, 0.4) 70%,
+                rgba(184, 149, 106, 0.6) 0%,
+                rgba(184, 149, 106, 0.4) 15%,
+                rgba(184, 149, 106, 0.25) 30%,
+                rgba(184, 149, 106, 0.15) 50%,
+                rgba(184, 149, 106, 0.08) 70%,
+                rgba(184, 149, 106, 0.03) 85%,
                 transparent 100%);
             pointer-events: none;
             z-index: 999;
             transform-origin: top center;
-            animation: dripGrow 10s ease-in-out infinite;
-            box-shadow: 0 0 3px rgba(184, 149, 106, 0.5);
+            animation: godrayPulse 12s ease-in-out infinite;
+            box-shadow:
+                0 0 20px rgba(184, 149, 106, 0.3),
+                0 0 40px rgba(184, 149, 106, 0.2),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            filter: blur(8px);
+            mix-blend-mode: screen;
         }
 
-        @keyframes dripGrow {
+        @keyframes godrayPulse {
             0%, 100% {
-                height: 0;
-                opacity: 0;
+                height: 300px;
+                opacity: 0.3;
+                transform: scaleX(1);
             }
-            15% {
-                height: 30px;
-                opacity: 1;
+            25% {
+                height: 450px;
+                opacity: 0.6;
+                transform: scaleX(1.1);
             }
             50% {
-                height: 100px;
-                opacity: 0.8;
+                height: 600px;
+                opacity: 0.5;
+                transform: scaleX(0.95);
             }
-            85% {
-                height: 120px;
-                opacity: 0.4;
+            75% {
+                height: 500px;
+                opacity: 0.55;
+                transform: scaleX(1.05);
             }
         }
     </style>
