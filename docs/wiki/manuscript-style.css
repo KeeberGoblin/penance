@@ -230,6 +230,7 @@ body::before {
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
     position: relative;
     min-height: 100vh;
+    min-width: 1000px;
 }
 
 .content::before {
@@ -551,6 +552,7 @@ p.no-drop-cap::first-letter {
 
     .content {
         padding: 2rem 1.5rem;
+        min-width: unset;
     }
 
     .header-title {
@@ -585,6 +587,7 @@ p.no-drop-cap::first-letter {
 
     .content {
         padding: 2.5rem 3rem;
+        min-width: unset;
     }
 }
 
@@ -701,8 +704,7 @@ p.no-drop-cap::first-letter {
 /* Manuscript Page Styles (for faction pages in iframe) */
 .manuscript-page {
     padding: 3rem 3rem 3rem 50px; /* 30px offset from border + 20px padding */
-    max-width: 1100px;
-    margin: 0 auto;
+    min-width: 1000px;
     background: linear-gradient(to bottom,
         rgba(26, 20, 16, 0.85),
         rgba(10, 6, 4, 0.9)
@@ -866,12 +868,14 @@ p.no-drop-cap::first-letter {
 @media (max-width: 968px) {
     .manuscript-page {
         padding: 2rem 1.5rem 2rem 50px; /* Reduced offset on mobile */
+        min-width: unset;
     }
 }
 
 @media (max-width: 600px) {
     .manuscript-page {
         padding: 1.5rem 1rem 1.5rem 30px; /* Minimal offset on small screens */
+        min-width: unset;
     }
 
     .illuminated-header .drop-cap {
