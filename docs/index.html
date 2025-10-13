@@ -1298,42 +1298,48 @@
 
         dripPositions.forEach((drip, index) => {
             const dripEl = document.createElement('div');
-            dripEl.style.cssText = `
-                position: fixed;
-                top: 15px;
-                left: ${drip.left};
-                width: 2px;
-                height: 0;
-                background: linear-gradient(to bottom,
-                    var(--border-ornate) 0%,
-                    rgba(184, 149, 106, 0.6) 50%,
-                    transparent 100%);
-                pointer-events: none;
-                z-index: 998;
-                transform-origin: top center;
-                animation: dripGrow ${8 + Math.random() * 6}s ease-in-out ${drip.delay}s infinite;
-                opacity: 0;
-            `;
+            dripEl.className = 'animated-drip';
+            dripEl.style.left = drip.left;
+            dripEl.style.animationDuration = `${8 + Math.random() * 6}s`;
+            dripEl.style.animationDelay = `${drip.delay}s`;
             document.body.appendChild(dripEl);
         });
     </script>
     <style>
+        /* Animated drip class */
+        .animated-drip {
+            position: fixed;
+            top: 15px;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(to bottom,
+                #b8956a 0%,
+                rgba(184, 149, 106, 0.8) 30%,
+                rgba(184, 149, 106, 0.4) 70%,
+                transparent 100%);
+            pointer-events: none;
+            z-index: 1000;
+            transform-origin: top center;
+            animation: dripGrow 10s ease-in-out infinite;
+            box-shadow: 0 0 3px rgba(184, 149, 106, 0.5);
+        }
+
         @keyframes dripGrow {
             0%, 100% {
                 height: 0;
                 opacity: 0;
             }
-            10% {
-                height: 20px;
-                opacity: 0.8;
+            15% {
+                height: 30px;
+                opacity: 1;
             }
             50% {
-                height: 80px;
-                opacity: 0.6;
-            }
-            90% {
                 height: 100px;
-                opacity: 0.3;
+                opacity: 0.8;
+            }
+            85% {
+                height: 120px;
+                opacity: 0.4;
             }
         }
     </style>
