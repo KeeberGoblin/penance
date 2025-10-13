@@ -82,7 +82,7 @@
             pointer-events: none;
         }
 
-        /* Animated Dripping Oil/Ink Effect from Top */
+        /* Top border edge only (static drips removed - now animated via JavaScript) */
         body::after {
             content: '';
             position: fixed;
@@ -93,42 +93,6 @@
             pointer-events: none;
             z-index: 999;
             background:
-                /* Drip 1 - Far Left */
-                radial-gradient(ellipse 8px 120px at 5% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.6) 40%, transparent 100%),
-                radial-gradient(ellipse 6px 80px at 5% 120px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.4) 50%, transparent 100%),
-                /* Drip 2 */
-                radial-gradient(ellipse 10px 200px at 12% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.5) 30%, transparent 100%),
-                radial-gradient(ellipse 7px 60px at 12% 200px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.3) 50%, transparent 100%),
-                /* Drip 3 - Short */
-                radial-gradient(ellipse 6px 90px at 19% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.6) 40%, transparent 100%),
-                /* Drip 4 - Long */
-                radial-gradient(ellipse 12px 280px at 27% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.5) 25%, transparent 100%),
-                radial-gradient(ellipse 8px 100px at 27% 280px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.4) 50%, transparent 100%),
-                /* Drip 5 */
-                radial-gradient(ellipse 9px 150px at 35% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.6) 35%, transparent 100%),
-                radial-gradient(ellipse 6px 70px at 35% 150px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.3) 50%, transparent 100%),
-                /* Drip 6 - Center */
-                radial-gradient(ellipse 11px 240px at 43% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.5) 30%, transparent 100%),
-                radial-gradient(ellipse 7px 90px at 43% 240px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.4) 50%, transparent 100%),
-                /* Drip 7 - Short */
-                radial-gradient(ellipse 7px 110px at 52% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.6) 40%, transparent 100%),
-                /* Drip 8 */
-                radial-gradient(ellipse 10px 180px at 60% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.5) 35%, transparent 100%),
-                radial-gradient(ellipse 6px 80px at 60% 180px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.3) 50%, transparent 100%),
-                /* Drip 9 - Long */
-                radial-gradient(ellipse 13px 300px at 68% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.5) 25%, transparent 100%),
-                radial-gradient(ellipse 8px 110px at 68% 300px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.4) 50%, transparent 100%),
-                /* Drip 10 */
-                radial-gradient(ellipse 9px 160px at 76% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.6) 35%, transparent 100%),
-                radial-gradient(ellipse 6px 75px at 76% 160px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.3) 50%, transparent 100%),
-                /* Drip 11 - Short */
-                radial-gradient(ellipse 7px 100px at 84% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.6) 40%, transparent 100%),
-                /* Drip 12 */
-                radial-gradient(ellipse 11px 220px at 91% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.5) 30%, transparent 100%),
-                radial-gradient(ellipse 7px 85px at 91% 220px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.4) 50%, transparent 100%),
-                /* Drip 13 - Far Right */
-                radial-gradient(ellipse 8px 130px at 97% 0%, var(--border-ornate) 0%, rgba(184, 149, 106, 0.6) 40%, transparent 100%),
-                radial-gradient(ellipse 6px 70px at 97% 130px, var(--aged-brown) 0%, rgba(184, 149, 106, 0.3) 50%, transparent 100%),
                 /* Top torn edge base */
                 linear-gradient(180deg,
                     var(--border-ornate) 0%,
@@ -1318,7 +1282,7 @@
                 rgba(184, 149, 106, 0.4) 70%,
                 transparent 100%);
             pointer-events: none;
-            z-index: 1000;
+            z-index: 999;
             transform-origin: top center;
             animation: dripGrow 10s ease-in-out infinite;
             box-shadow: 0 0 3px rgba(184, 149, 106, 0.5);
