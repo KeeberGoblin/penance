@@ -199,7 +199,12 @@ Each turn you refresh your Soul Points (SP) to maximum:
 penance/
 ├── README.md                          # You are here
 ├── QUICKSTART.md                      # Fast setup guide
-├── CLAUDE.md                          # AI assistant context document
+│
+├── utilities/                         # AI context, audits, diagnostics
+│   ├── CLAUDE.md                      # AI assistant context document
+│   ├── CHANGELOG.md                   # Project change history
+│   ├── CONTRADICTION-AUDIT-2025-10-13.md  # Latest audit report
+│   └── [other audit reports]
 │
 ├── docs/
 │   ├── index.html                     # Main website (timeline, factions, lore)

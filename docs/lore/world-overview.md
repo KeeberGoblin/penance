@@ -28,7 +28,7 @@ His grand experiment was conducted at the **Sibarian Wastes Research Station**, 
 
 **But the world itself was not empty.**
 
-When Theslar activated the **Resonance Engine**, it didn't just tap the magnetic field—it **ripped open the boundary between the material world and the Void**, the dimension where raw magic festers like cosmic radiation. The Engine became a tear in reality itself.
+When Theslar activated **The Engine** (then called the "Resonance Engine" by scientists), it didn't just tap the magnetic field—it **ripped open the boundary between the material world and the Void**, the dimension where raw magic festers like cosmic radiation. The Engine became a tear in reality itself.
 
 ### The Immediate Effects
 
@@ -92,7 +92,7 @@ When Theslar activated the **Resonance Engine**, it didn't just tap the magnetic
 - Nine major factions locked in endless cycles of conflict
 - Casket technology is mature, sophisticated, and deadly
 - Void rifts still appear daily, spawning monsters
-- The original Resonance Engine in Sibaria still pulses after 437 years, still tears reality
+- The Engine in Sibaria still pulses after 437 years, still tears reality
 - Some seek to destroy it; others want to control it; most just try to survive it
 
 ---
@@ -136,7 +136,7 @@ Different factions have different interpretations of the Cataclysm:
 **"The Sundering was an Engineering Failure"**
 
 - Theslar was a **brilliant idiot**—right theory, catastrophic execution
-- The Resonance Engine is still running, still bleeding energy
+- The Engine is still running, still bleeding energy
 - **Soulstones are solidified exotic radiation**, byproduct of dimensional bleed
 - The Void is real but not mystical—it's a **parallel dimension of pure energy**
 - Abominations are just exotic lifeforms adapted to high-energy environments
@@ -144,7 +144,7 @@ Different factions have different interpretations of the Cataclysm:
 
 **Cultural Impact**: Dwarves treat the Cataclysm as the worst industrial accident in history. Their Caskets are overengineered, covered in fail-safes, redundancies, and safety runes. They're here to **fix what Theslar broke**, even if it takes a thousand years.
 
-**Goal**: Reverse-engineer the Resonance Engine, stabilize or shut it down properly, master Soulstone physics
+**Goal**: Reverse-engineer The Engine, stabilize or shut it down properly, master Soulstone physics
 
 ---
 
@@ -253,7 +253,7 @@ Different factions have different interpretations of the Cataclysm:
 **Status**: Uninhabitable Exclusion Zone
 
 - Ground zero of the Cataclysm
-- The **Resonance Engine** still stands, a miles-high tower pulsing with reality-distorting energy
+- **The Engine** still stands, a miles-high tower pulsing with reality-distorting energy
 - Void rifts appear constantly; Abominations spawn by the thousands
 - Reality is "soft"—physics don't work consistently
 - Expeditions into the Wastes rarely return
@@ -391,7 +391,7 @@ Near dragon lairs? They incorporate fossilized dragon essence.
 - **Arena Combat** becomes proxy warfare—disputes settled by champion duels
 - **Monster Raids** from the Sibarian Wastes unite factions temporarily
 - **Soulstone scarcity** drives conflict—everyone needs them, supply is limited
-- The **Resonance Engine** still pulses; some want it destroyed, others want it controlled
+- **The Engine** still pulses; some want it destroyed, others want it controlled
 
 ### The Three Great Questions
 
@@ -399,7 +399,7 @@ Near dragon lairs? They incorporate fossilized dragon essence.
 
 2. **Should Soulstones be used at all?** (Necessary evil? Corrupting poison? Sacred tools? Just rocks?)
 
-3. **What happens if the Resonance Engine is destroyed vs. controlled?** (End the Taint? Collapse all magic? Kill the world? Unlock godhood?)
+3. **What happens if The Engine is destroyed vs. controlled?** (End the Taint? Collapse all magic? Kill the world? Unlock godhood?)
 
 **Your campaign can explore any or all of these.**
 
@@ -409,7 +409,7 @@ Near dragon lairs? They incorporate fossilized dragon essence.
 
 ### Campaign Arc 1: "The Scavenger's Crusade"
 - Players are scavengers raiding the Sibarian Wastes for Soulstones
-- Each mission pushes deeper toward the Resonance Engine
+- Each mission pushes deeper toward The Engine
 - Corruption increases; moral choices about using forbidden power
 - Climax: Reach the Engine, decide its fate
 

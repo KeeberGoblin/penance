@@ -51,7 +51,7 @@
 - Most humans never encountered the Fae; those who did chalked it up to madness or folklore
 
 **The Fae's Perspective**:
-The Fae existed in the Feywild for eons, aware of the Material World but largely indifferent to it. When Theslar activated the Resonance Engine, it didn't just tear open the Void - it **shattered the dimensional barriers between all three layers of reality**.
+The Fae existed in the Feywild for eons, aware of the Material World but largely indifferent to it. When Theslar activated The Engine (the "Resonance Engine" in pre-Sundering terminology), it didn't just tear open the Void - it **shattered the dimensional barriers between all three layers of reality**.
 
 Suddenly, the Feywild was bleeding into the Material World. The Fae saw this as **opportunity** - a chance to expand their domain and influence. They adapted instantly because they've always lived between states of existence.
 
@@ -74,7 +74,7 @@ Suddenly, the Feywild was bleeding into the Material World. The Fae saw this as 
 - Each Abomination is unique because chaos cannot repeat itself
 
 **The Void's "Intent"** (if it can be said to have one):
-The Void doesn't want to consume reality - it wants to **merge** with it. It's entropy made sentient, seeking equilibrium. When the Material World and Void merge completely, reality collapses into formless potential. The Resonance Engine is the wound that's slowly bleeding both worlds into each other.
+The Void doesn't want to consume reality - it wants to **merge** with it. It's entropy made sentient, seeking equilibrium. When the Material World and Void merge completely, reality collapses into formless potential. The Engine is the wound that's slowly bleeding both worlds into each other.
 
 ---
 
@@ -247,7 +247,7 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 ### The Sundering (Year 0)
 
 **What Happened**:
-1. Resonance Engine activated at full power
+1. The Engine activated at full power
 2. Ley lines began channeling energy as designed
 3. The dimensional membrane **couldn't handle the strain** - it tore
 4. Void energy flooded through the tear, mixing with ley line energy
@@ -335,7 +335,7 @@ The Cataclysm has happened **three times total** (including the current one):
 
 **The Pattern**: Every 20,000-40,000 years, a civilization reaches a technological/magical peak, discovers something it shouldn't, and triggers a cataclysm.
 
-**The Fourth Ending**: If players fix the Resonance Engine and stabilize the world, civilization will rebuild. In 20,000 years, their descendants will make the same mistake.
+**The Fourth Ending**: If players fix The Engine and stabilize the world, civilization will rebuild. In 20,000 years, their descendants will make the same mistake.
 
 **The Draconids' Role**: Record-keepers. They've seen this cycle three times. They're waiting to see if *this* cycle's survivors break the pattern or repeat it.
 

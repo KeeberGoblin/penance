@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PENANCE: Printable Deck Builder</title>
+    <title>PENANCE: Deck Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,60 +15,105 @@
         }
 
         :root {
-            --black: #000000;
-            --white: #ffffff;
-            --gray: #333333;
-            --light-gray: #666666;
-            --blood-red: #8b0000;
-            --accent: #d4af37;
+            /* Gothic Color Palette */
+            --parchment-dark: #1a1410;
+            --leather-brown: #2b1f17;
+            --blood-red: #4a0e0e;
+            --dark-red: #6b1a1a;
+            --blackish-red: #2d0a0a;
+            --bone-white: #d4c5b0;
+            --aged-gold: #b8956a;
+            --shadow-black: #0a0604;
+            --crimson-text: #8b0000;
+
+            /* Texture */
+            --leather-texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="400" height="400" filter="url(%23noise)" opacity="0.15"/></svg>');
         }
 
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background: var(--black);
-            color: var(--white);
-            line-height: 1.4;
+            font-family: 'Crimson Pro', Georgia, serif;
+            background-color: var(--parchment-dark);
+            background-image:
+                var(--leather-texture),
+                linear-gradient(to bottom, var(--leather-brown) 0%, var(--parchment-dark) 50%, var(--shadow-black) 100%);
+            background-attachment: fixed;
+            color: var(--bone-white);
+            line-height: 1.6;
+        }
+
+        /* Decorative Page Border */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 15px solid transparent;
+            border-image: linear-gradient(
+                135deg,
+                var(--dark-red) 0%,
+                var(--blackish-red) 25%,
+                var(--blood-red) 50%,
+                var(--blackish-red) 75%,
+                var(--dark-red) 100%
+            ) 15;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
         }
 
         /* ===== SCREEN STYLES ===== */
         .header {
-            background: var(--black);
-            border-bottom: 2px solid var(--white);
-            padding: 1rem 2rem;
+            background: linear-gradient(to bottom, var(--blackish-red), var(--blood-red));
+            border-bottom: 4px double var(--dark-red);
+            padding: 1.5rem 2rem;
             position: sticky;
-            top: 0;
+            top: 15px;
             z-index: 100;
+            margin: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .header-title {
-            font-size: 1.5rem;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2rem;
             font-weight: 700;
+            color: var(--bone-white);
+            text-shadow: 2px 2px 4px var(--shadow-black), 0 0 20px rgba(139, 0, 0, 0.5);
+            letter-spacing: 0.15em;
         }
 
         .header-actions {
             display: flex;
             gap: 1rem;
+            align-items: center;
         }
 
         .btn {
-            background: var(--blood-red);
-            border: 2px solid var(--white);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--blood-red) 0%, var(--blackish-red) 100%);
+            border: 2px solid var(--aged-gold);
+            color: var(--bone-white);
             padding: 0.5rem 1rem;
-            font-family: inherit;
-            font-size: 0.875rem;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.75rem;
             cursor: pointer;
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         .btn:hover {
-            background: var(--white);
-            color: var(--black);
+            background: linear-gradient(135deg, var(--aged-gold) 0%, #8b7355 100%);
+            color: var(--parchment-dark);
+            border-color: var(--bone-white);
+            box-shadow: 0 4px 12px rgba(184, 149, 106, 0.4);
         }
 
         .btn:disabled {
@@ -74,182 +122,333 @@
         }
 
         .btn-secondary {
-            background: var(--gray);
+            background: linear-gradient(135deg, var(--leather-brown) 0%, var(--parchment-dark) 100%);
+            border-color: var(--dark-red);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, var(--aged-gold) 0%, #8b7355 100%);
+            color: var(--parchment-dark);
         }
 
         .container {
             display: grid;
-            grid-template-columns: 1fr 350px;
-            height: calc(100vh - 80px);
+            grid-template-columns: 1fr 380px;
+            min-height: calc(100vh - 140px);
+            margin: 0 15px 15px 15px;
         }
 
         .card-list {
             overflow-y: auto;
-            padding: 1.5rem;
+            padding: 2rem;
+            background: linear-gradient(to bottom,
+                rgba(26, 20, 16, 0.85),
+                rgba(10, 6, 4, 0.9)
+            );
+            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .card-list::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--leather-texture);
+            opacity: 0.2;
+            pointer-events: none;
         }
 
         .card-count {
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-            color: var(--light-gray);
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            color: var(--aged-gold);
+            text-align: center;
+            letter-spacing: 0.1em;
+            position: relative;
+            z-index: 1;
         }
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.25rem;
+            position: relative;
+            z-index: 1;
         }
 
         .card-item {
-            background: var(--gray);
-            border: 2px solid var(--light-gray);
-            padding: 1rem;
+            background: linear-gradient(135deg,
+                rgba(43, 31, 23, 0.8) 0%,
+                rgba(26, 20, 16, 0.9) 100%
+            );
+            border: 2px solid var(--blood-red);
+            padding: 1.25rem;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
             position: relative;
         }
 
+        .card-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--leather-texture);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
         .card-item:hover {
-            border-color: var(--accent);
-            transform: scale(1.05);
+            border-color: var(--aged-gold);
+            box-shadow: 0 4px 16px rgba(184, 149, 106, 0.3);
+            transform: translateY(-2px);
         }
 
         .card-item.in-deck {
-            border-color: var(--blood-red);
-            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+            border-color: var(--aged-gold);
+            background: linear-gradient(135deg,
+                rgba(75, 14, 14, 0.6) 0%,
+                rgba(45, 10, 10, 0.8) 100%
+            );
+            box-shadow: 0 0 20px rgba(184, 149, 106, 0.4);
         }
 
         .card-name {
-            font-size: 0.9rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+            color: var(--bone-white);
+            position: relative;
         }
 
         .card-stats {
-            font-size: 0.75rem;
-            color: var(--accent);
+            font-size: 0.7rem;
+            color: var(--aged-gold);
             margin-bottom: 0.25rem;
+            position: relative;
         }
 
         .card-type {
             font-size: 0.7rem;
-            color: var(--light-gray);
+            color: var(--aged-gold);
             text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
         }
 
         .card-counter {
             position: absolute;
-            top: 5px;
-            right: 5px;
-            background: var(--blood-red);
-            color: var(--white);
+            top: 8px;
+            right: 8px;
+            background: linear-gradient(135deg, var(--blood-red) 0%, var(--blackish-red) 100%);
+            border: 2px solid var(--aged-gold);
+            color: var(--bone-white);
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 700;
+            font-family: 'Cinzel Decorative', serif;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+            z-index: 1;
         }
 
         .deck-panel {
-            background: var(--gray);
-            border-left: 2px solid var(--white);
-            padding: 1.5rem;
+            background: linear-gradient(to bottom,
+                rgba(43, 31, 23, 0.95),
+                rgba(26, 20, 16, 0.95)
+            );
+            border-left: 4px double var(--dark-red);
+            padding: 2rem;
             overflow-y: auto;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .deck-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--leather-texture);
+            opacity: 0.3;
+            pointer-events: none;
         }
 
         .deck-title {
-            font-size: 1.25rem;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--white);
-            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px double var(--dark-red);
+            padding-bottom: 1rem;
+            color: var(--bone-white);
+            text-shadow: 2px 2px 4px var(--shadow-black);
+            letter-spacing: 0.1em;
+            text-align: center;
+            position: relative;
         }
 
         .deck-stats {
-            background: var(--black);
+            background: rgba(10, 6, 4, 0.9);
             border: 2px solid var(--blood-red);
-            padding: 1rem;
-            margin-bottom: 1rem;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+            position: relative;
         }
 
         .deck-stat {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-size: 0.875rem;
+            position: relative;
+        }
+
+        .deck-stat:last-child {
+            margin-bottom: 0;
         }
 
         .deck-stat-label {
-            color: var(--light-gray);
+            font-family: 'Crimson Pro', serif;
+            color: var(--aged-gold);
         }
 
         .deck-stat-value {
-            color: var(--accent);
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--bone-white);
             font-weight: 700;
+            text-shadow: 1px 1px 2px var(--shadow-black);
         }
 
         .deck-actions {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            position: relative;
         }
 
         .deck-list {
             list-style: none;
+            position: relative;
         }
 
         .deck-item {
-            background: var(--black);
-            border: 1px solid var(--light-gray);
+            background: rgba(10, 6, 4, 0.9);
+            border: 2px solid var(--blood-red);
+            border-left: 4px solid var(--dark-red);
             padding: 0.75rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .deck-item:hover {
+            border-color: var(--aged-gold);
+            border-left-color: var(--aged-gold);
+            box-shadow: 0 4px 12px rgba(184, 149, 106, 0.3);
         }
 
         .deck-item-name {
+            font-family: 'Crimson Pro', serif;
             font-weight: 700;
+            color: var(--bone-white);
         }
 
         .deck-item-count {
-            color: var(--blood-red);
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--aged-gold);
             font-weight: 700;
             margin-left: 0.5rem;
         }
 
         .deck-item-remove {
-            background: var(--blood-red);
-            border: none;
-            color: var(--white);
+            background: linear-gradient(135deg, var(--blood-red) 0%, var(--blackish-red) 100%);
+            border: 1px solid var(--aged-gold);
+            color: var(--bone-white);
             padding: 0.25rem 0.5rem;
             cursor: pointer;
             font-size: 0.7rem;
+            font-family: 'Cinzel Decorative', serif;
+            transition: all 0.3s ease;
         }
 
         .deck-item-remove:hover {
-            background: var(--white);
-            color: var(--black);
+            background: linear-gradient(135deg, var(--aged-gold) 0%, #8b7355 100%);
+            color: var(--parchment-dark);
         }
 
         .no-cards {
             text-align: center;
-            color: var(--light-gray);
+            color: var(--aged-gold);
             padding: 2rem;
-            font-style: italic;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            position: relative;
+        }
+
+        /* Gothic Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+            background: var(--shadow-black);
+        }
+
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            border: 1px solid var(--blood-red);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--blood-red), var(--blackish-red));
+            border: 1px solid var(--dark-red);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-red);
+        }
+
+        /* Selection Styling */
+        ::selection {
+            background: var(--blood-red);
+            color: var(--bone-white);
+        }
+
+        ::-moz-selection {
+            background: var(--blood-red);
+            color: var(--bone-white);
         }
 
         /* ===== PRINT STYLES ===== */
         @media print {
             body {
-                background: white;
+                background: #f4ede3;
                 margin: 0;
                 padding: 0;
+            }
+
+            body::before {
+                display: none;
             }
 
             /* Hide all screen elements */
@@ -267,6 +466,11 @@
             .card-list {
                 padding: 0;
                 overflow: visible;
+                background: transparent;
+            }
+
+            .card-list::before {
+                display: none;
             }
 
             /* A4 paper: 210mm x 297mm
@@ -293,29 +497,32 @@
             .print-card {
                 width: 63.5mm;
                 height: 88.9mm;
-                border: 1.5pt solid #000;
+                border: 2pt solid #4a0e0e;
                 padding: 3mm;
-                background: white;
-                color: black;
-                font-family: 'Courier New', monospace;
+                background: linear-gradient(135deg, #f4ede3 0%, #e8dcc8 100%);
+                color: #1a1410;
+                font-family: 'Crimson Pro', Georgia, serif;
                 display: flex;
                 flex-direction: column;
                 page-break-inside: avoid;
                 box-sizing: border-box;
                 position: relative;
+                box-shadow: inset 0 0 3mm rgba(74, 14, 14, 0.1);
             }
 
             .print-card-header {
-                border-bottom: 1.5pt solid #000;
+                border-bottom: 2pt double #6b1a1a;
                 padding-bottom: 2mm;
                 margin-bottom: 2.5mm;
             }
 
             .print-card-name {
+                font-family: 'Cinzel Decorative', serif;
                 font-size: 9.5pt;
                 font-weight: bold;
                 margin-bottom: 1mm;
                 line-height: 1.1;
+                color: #2d0a0a;
             }
 
             .print-card-top-stats {
@@ -323,18 +530,20 @@
                 justify-content: space-between;
                 font-size: 7pt;
                 margin-bottom: 0.5mm;
+                font-family: 'Crimson Pro', serif;
             }
 
             .print-card-cost {
                 font-weight: bold;
+                color: #4a0e0e;
             }
 
             .print-card-range {
-                color: #333;
+                color: #6b1a1a;
             }
 
             .print-card-initiative {
-                color: #666;
+                color: #8b0000;
                 font-size: 6.5pt;
             }
 
@@ -349,6 +558,7 @@
                 font-weight: bold;
                 margin-bottom: 1.5mm;
                 color: #8b0000;
+                font-family: 'Cinzel Decorative', serif;
             }
 
             .print-card-effect {
@@ -356,24 +566,28 @@
                 line-height: 1.25;
                 margin-bottom: auto;
                 overflow: hidden;
+                font-family: 'Crimson Pro', serif;
             }
 
             .print-card-keywords {
                 font-size: 5.5pt;
-                color: #666;
+                color: #6b1a1a;
                 text-transform: uppercase;
-                border-top: 0.5pt solid #ccc;
+                border-top: 1pt solid #b8956a;
                 padding-top: 1.5mm;
                 margin-top: 1.5mm;
                 line-height: 1.3;
+                font-family: 'Crimson Pro', serif;
             }
 
             .print-card-footer {
                 font-size: 6pt;
-                color: #999;
+                color: #b8956a;
                 text-align: center;
                 margin-top: 1mm;
                 text-transform: uppercase;
+                font-family: 'Cinzel Decorative', serif;
+                letter-spacing: 0.05em;
             }
         }
     </style>

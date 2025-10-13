@@ -459,7 +459,7 @@ Each time pilot disconnects, mark **Capsule Addiction**.
 
 > "We don't know who invented the Control Capsule. The first documented Casket—Marissa's walking corpse-machine—had one. She was dead when she built it. How did she know to bind her arms? To pierce her fingers? To float in the fluid?"
 >
-> "Some say the knowledge came from the Resonance Engine itself. A gift. Or a curse."
+> "Some say the knowledge came from The Engine itself. A gift. Or a curse."
 
 ### The Capsule Refusal
 

@@ -301,7 +301,7 @@ Roll when exploring Sibarian Wastes, looting high-Taint enemies, or finding hidd
 
 ### 96-100: THAUMIEL ARTIFACTS (Reality-Altering, Double-Edged)
 
-#### Artifact: "The Resonance Engine Control Rod"
+#### Artifact: "The Engine Control Rod"
 **Effect**: Can **stabilize** one Void rift permanently (close it forever)
 **Side Effect**: Stabilizing one rift **destabilizes another** elsewhere (new rift opens randomly)
 **Danger Level**: Variable

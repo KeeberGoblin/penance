@@ -154,7 +154,7 @@ Drawing from Kingdom Death's settlement reward system, loot is:
 | 10 | **Legendary Relic** | Their signature item (e.g., Vex's chains, Thresh's ledger) | Legendary |
 
 ### Sibarian Wastes Loot (1d12)
-*Roll this table when scavenging the Resonance Engine exclusion zone.*
+*Roll this table when scavenging The Engine exclusion zone.*
 
 | Roll | Item | Effect | Rarity |
 |------|------|--------|--------|

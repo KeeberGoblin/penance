@@ -129,7 +129,7 @@ Final Deck Size: 20 + 9 = 29 cards
 ### What You Now Have (Added in world-lore.md)
 
 **The Cataclysm Event**:
-- Nikolas Theslar's Resonance Engine (Tesla-inspired experiment)
+- Nikolas Theslar's Engine (Tesla-inspired experiment)
 - Attempted wireless energy broadcast
 - Accidentally tore open Void rift
 - EMP-like pulse destroyed all technology

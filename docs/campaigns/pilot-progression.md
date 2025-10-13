@@ -46,7 +46,7 @@ These events grant immediate Scars, bypassing the "every 3 missions" rule:
 | **Destroy a settlement building** (even accidentally) | Roll on Trauma Scars |
 | **Fail to save a civilian** during escort mission | Roll on Trauma Scars |
 | **Make a bargain with a Fae** (Mockingbird) | GM assigns appropriate Scar |
-| **Reach the Resonance Engine's Core** | Roll on Corruption Scars |
+| **Reach The Engine's Core** | Roll on Corruption Scars |
 
 ---
 

@@ -162,7 +162,7 @@ He's covered in self-inflicted scars from "measurement experiments" - testing pa
 Most disturbing: he's installed a pressure gauge in his own chest, visible through a glass window in his sternum, which tracks his blood pressure in real-time. He obsessively checks it, adjusting his breathing to keep it at exactly 120/80.
 
 #### Backstory
-Durr was the lead engineer on Project Resonance Echo - a Dwarven attempt to replicate Theslar's original Resonance Engine on a smaller, controlled scale. The experiment failed catastrophically, killing his entire research team and leaving Durr buried under rubble for three days.
+Durr was the lead engineer on Project Resonance Echo - a Dwarven attempt to replicate Theslar's original Engine on a smaller, controlled scale. The experiment failed catastrophically, killing his entire research team and leaving Durr buried under rubble for three days.
 
 When they dug him out, he'd calculated the exact engineering failure that caused the collapse - a rounding error in the 47th decimal place of a load-bearing formula. The realization broke something in him: if a single rounding error could kill 200 dwarves, then the entire universe was a poorly designed machine running on faulty math.
 
@@ -209,7 +209,7 @@ He now treats everything - emotions, combat, morality - as engineering problems 
 - **Ignores emotional appeals** - cannot be intimidated, cannot be bargained with
 
 #### Story Hooks
-- Durr has calculated that destroying the Resonance Engine has a 73% chance of global extinction - he'll kill anyone trying to shut it down
+- Durr has calculated that destroying The Engine has a 73% chance of global extinction - he'll kill anyone trying to shut it down
 - He's been secretly replacing his organic brain with mechanical components - how much of "Durr" is left?
 - A rival Forge-Guild wants his Probability Matrix tech - players might be hired to extract his brain (literally)
 
@@ -362,7 +362,7 @@ She steals these alternate outcomes and wears them like masks, becoming a walkin
 #### Story Hooks
 - Mockingbird claims she can undo any event - even death - for the right price
 - She's been collecting "masks" of the players - alternate versions where they made different choices
-- She knows where the original Resonance Engine blueprints are hidden - but wants a "story worth telling" in trade
+- She knows where the original Engine blueprints are hidden - but wants a "story worth telling" in trade
 
 ---
 
