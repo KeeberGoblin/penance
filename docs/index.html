@@ -32,18 +32,35 @@
         }
 
         body {
-            background-image:
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%231a1410" width="100" height="100"/><circle fill="%232b1f17" cx="50" cy="50" r="40" opacity="0.1"/></svg>'),
-                url('lore/PenanceBG.png');
-            background-size: 150px 150px, cover;
-            background-attachment: fixed, fixed;
-            background-position: center, center;
-            background-repeat: repeat, no-repeat;
-            background-blend-mode: overlay, normal;
+            background-color: var(--black);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%231a1410" width="100" height="100"/><circle fill="%232b1f17" cx="50" cy="50" r="40" opacity="0.1"/></svg>');
+            background-size: 150px 150px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: repeat;
+            position: relative;
         }
 
-        /* Enhanced leather texture overlay */
+        /* PenanceBG.png with 15% opacity */
         body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('lore/PenanceBG.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Enhanced leather texture overlay (on top of PenanceBG) */
+        html::before {
             content: '';
             position: fixed;
             top: 0;
