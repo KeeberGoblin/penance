@@ -345,36 +345,48 @@ penance/
 │   │   ├── ai-art-prompts.md          # Baroque-romanticist-brutalist aesthetic
 │   │   └── PLAYTEST-READY.md          # Detailed playtest package
 │   │
-│   └── wiki/                          # Interactive wiki (HTML)
-│       ├── index.html                 # Wiki homepage (iframe navigation)
-│       ├── content-home.html          # Wiki main content page
+│   └── wiki/                          # THE CODEX - Interactive reference (HTML)
+│       ├── index.html                 # Codex homepage (iframe navigation)
+│       ├── content-home.html          # Codex main content page
 │       ├── manuscript-style.css       # Gothic manuscript stylesheet
 │       │
-│       ├── cosmology.html             # Cosmology wiki page
-│       ├── lore-sundering.html        # The Sundering lore page
-│       ├── lore-engine.html           # Resonance Engine page
-│       ├── lore-chronicle.html        # 437-year chronicle page
-│       ├── lore-npcs.html             # Iconic pilots page
+│       ├── cosmology.html             # Cosmology page
+│       ├── lore-sundering.html        # The Sundering lore
+│       ├── lore-engine.html           # Resonance Engine
+│       ├── lore-chronicle.html        # 437-year chronicle
+│       ├── lore-npcs.html             # Iconic pilots
 │       │
-│       ├── rules-turn-structure.html  # Turn structure rules page
-│       ├── rules-combat.html          # Combat & damage system page
-│       ├── rules-range-los.html       # Range & line of sight page
-│       ├── rules-dice.html            # Dice reference page
-│       ├── rules-quick-ref.html       # Quick reference sheet page
+│       ├── rules-turn-structure.html  # Turn structure
+│       ├── rules-combat.html          # Combat & damage system
+│       ├── rules-range-los.html       # Range & line of sight
+│       ├── rules-dice.html            # Dice reference
+│       ├── rules-quick-ref.html       # Quick reference
 │       │
-│       ├── faction-church.html        # Church faction page (manuscript-styled)
-│       ├── faction-dwarves.html       # Dwarves faction page (manuscript-styled)
-│       ├── faction-undead.html        # Ossuarium faction page (manuscript-styled)
-│       ├── faction-elves.html         # Elves faction page (manuscript-styled)
-│       ├── faction-fae.html           # Wyrd Conclave page (manuscript-styled)
-│       ├── faction-nomads.html        # Nomads page (manuscript-styled)
-│       ├── faction-merchants.html     # Merchants page (manuscript-styled)
-│       ├── faction-blighted.html      # Blighted page (manuscript-styled)
-│       ├── faction-chitinous.html     # Chitinous page (manuscript-styled)
+│       ├── faction-church.html        # Church of Absolution
+│       ├── faction-dwarves.html       # Dwarven Forge-Guilds
+│       ├── faction-undead.html        # The Ossuarium
+│       ├── faction-elves.html         # Elven Verdant Covenant
+│       ├── faction-fae.html           # The Wyrd Conclave (unplayable)
+│       ├── faction-nomads.html        # Nomad Collective (unplayable)
+│       ├── faction-merchants.html     # Merchant Guilds (unplayable)
+│       ├── faction-blighted.html      # Blighted Packs (unplayable)
+│       ├── faction-chitinous.html     # Chitinous Ascendancy (unplayable)
 │       │
-│       ├── equipment-decks.html       # Equipment & deck building page (NEW - Oct 12)
-│       ├── support-units.html         # Support units system page (NEW - Oct 12)
-│       └── scenarios.html             # Playtest scenarios page (NEW - Oct 12)
+│       ├── equipment-decks.html       # Equipment & deck building
+│       ├── support-units.html         # Support units system
+│       │
+│       ├── scenarios.html             # Scenario overview
+│       ├── scenario-proving-grounds.html      # 1v1 deathmatch scenario (NEW - Oct 13)
+│       ├── scenario-reliquary-ruins.html      # Objective control scenario (NEW - Oct 13)
+│       ├── scenario-boss-iron-saint.html      # Boss encounter (NEW - Oct 13)
+│       ├── scenario-example-of-play.html      # 5-turn walkthrough (NEW - Oct 13)
+│       │
+│       ├── campaign-settlements.html          # Settlement building (NEW - Oct 13)
+│       ├── campaign-pilot-progression.html    # Pilot scars & traits (NEW - Oct 13)
+│       ├── campaign-leg-skimming.html         # Permanent sacrifice (NEW - Oct 13)
+│       ├── campaign-event-tables.html         # 132 KDM-style events (NEW - Oct 13)
+│       ├── campaign-anomalous-events.html     # 100 SCP-style artifacts (NEW - Oct 13)
+│       └── campaign-loot-tables.html          # Complete loot system (NEW - Oct 13)
 │
 └── tools/                             # Development utilities
     ├── card-generator/                # Card template generator
@@ -738,6 +750,34 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 ---
 
 ## Changelog for This Document
+
+**October 13, 2025** - The Codex (Wiki Renamed), Campaign & Scenario Pages, Navigation Reorganization
+- **Wiki Renamed to "The Codex"**: More thematic name, updated throughout site (main nav, footer)
+- **Campaign Pages Created (6 files)**: All comprehensive HTML iframe pages with manuscript theme
+  - campaign-settlements.html (Settlement building system, 14 buildings across 3 tiers)
+  - campaign-pilot-progression.html (Pilot scars, 4 categories + faction-specific)
+  - campaign-leg-skimming.html (Permanent sacrifice mechanics)
+  - campaign-event-tables.html (132 KDM-style events, 2d6 system)
+  - campaign-anomalous-events.html (100 SCP-style artifacts, 1d20 + 1d100 tables)
+  - campaign-loot-tables.html (Complete loot system, rarity tiers, crafting)
+- **Scenario Pages Created (4 files)**: All internal iframe pages (no more GitHub links)
+  - scenario-proving-grounds.html (1v1 deathmatch)
+  - scenario-reliquary-ruins.html (Objective control)
+  - scenario-boss-iron-saint.html (Boss encounter with HP deck system)
+  - scenario-example-of-play.html (Complete 5-turn walkthrough)
+- **Emoticon Removal (95+ instances)**: All emoticons replaced with text labels
+  - Buildings: [FORGE], [MILITARY], [MEDICAL], [ECONOMIC], [SHRINE], [ARSENAL], [WORKSHOP], [REFINERY], [ARCHIVE], [WATCH], [RELIC], [FOUNDRY], [SANCTUARY], [COUNCIL]
+  - Dice: [SHIELD], [BLOOD], [CRITICAL], [PIERCE], [HEAT], [STRIKE], [DOUBLE STRIKE], [GLANCE], [JAM], [ABSORB], [DEATH BLOW]
+- **Theme Consistency Fixed**: All campaign pages now use manuscript-style.css (was incorrectly using manuscript-content.css)
+- **Navigation Reorganized (10 → 8 sections)**:
+  - OLD: 1.Lore 2.Rules 3.Playable Factions 4.Equipment 5.Support Units 6.Scenarios 7.Campaign 8.Design Only 9.Playtest 10.External
+  - NEW: 1.Lore 2.Rules 3.Playable Factions 4.Equipment & Building 5.Scenarios 6.Campaign 7.Unplayable Factions 8.Resources
+  - Support Units merged into Equipment & Building (better organization)
+  - Scenarios now all internal iframe pages (no external GitHub links)
+  - "Design Only" renamed to "Unplayable Factions" (clearer naming)
+  - Playtest + External consolidated into "Resources"
+- **Godray Effect Archived**: Performance issues, removed from main page, archived to utilities/archived-effects/
+- **Current Codex Status**: 30+ comprehensive HTML pages, all internal, consistent manuscript theme
 
 **October 13, 2025** - Main index manuscript theme overhaul and UI enhancements
 - **Manuscript Theme Made Default**: Removed brutalist theme entirely, gothic manuscript is now the only theme
