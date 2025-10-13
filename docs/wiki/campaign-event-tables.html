@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Tables (Kingdom Death Style)</title>
+    <link rel="stylesheet" href="manuscript-content.css">
+</head>
+<body>
+    <div class="manuscript-page">
+        <h1 class="page-title">Event Tables (Kingdom Death Style)</h1>
+        <p class="subtitle">Penance: Absolution Through Steel</p>
+
+        <div class="metadata">
+            <span><strong>Version:</strong> 2.0</span>
+            <span><strong>Last Updated:</strong> October 11, 2025</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Event System Overview</h2>
+
+        <h3>Kingdom Death Inspiration</h3>
+        <p>Like Kingdom Death: Monster, Penance uses <strong>departure</strong> and <strong>arrival</strong> event tables rolled with <strong>2d6 dice</strong>.</p>
+        <p><strong>Double rolls</strong> (11, 22, 33, 44, 55, 66) trigger <strong>catastrophic or legendary events</strong>.</p>
+
+        <h3>When to Roll</h3>
+
+        <div class="info-box">
+            <h4>DEPARTURE EVENTS (Before Mission)</h4>
+            <ul>
+                <li>Roll 2d6 before leaving settlement</li>
+                <li>Read result as two separate digits (roll of 3 and 4 = "34" not "7")</li>
+                <li>Resolve event before deploying to mission</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>ARRIVAL EVENTS (After Mission)</h4>
+            <ul>
+                <li>Roll 2d6 after returning from mission</li>
+                <li>Only roll if mission was completed (survivors returned)</li>
+                <li>Resolve event during Settlement Phase</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>DEPARTURE EVENT TABLE (2d6)</h2>
+        <p>Roll 2d6. Read the dice individually (3+4 = 34, not 7). Doubles are catastrophic.</p>
+
+        <div class="building-card">
+            <h3>11 - THE OFFERING</h3>
+            <p><strong>Type:</strong> Sacrifice</p>
+            <p>One pilot must make a <strong>Blood Offering</strong> before deployment:</p>
+            <ul>
+                <li><strong>Option A:</strong> Discard top 5 cards from HP deck before mission starts (start at 25 HP)</li>
+                <li><strong>Option B:</strong> Roll on Minor Injury table, suffer 1 Wound immediately</li>
+                <li><strong>Effect:</strong> If sacrifice is made, all pilots gain +1 SP maximum this mission</li>
+            </ul>
+            <p class="narrative">The Church demands penance. The settlement shrine glows with Soulstone light, hungry for sacrifice.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>12 - OMEN OF RUIN</h3>
+            <p><strong>Type:</strong> Curse</p>
+            <p>All pilots suffer <strong>Bad Luck</strong> this mission:</p>
+            <ul>
+                <li>Reroll any natural 6 rolled on attacks (keep second result, even if worse)</li>
+                <li>Terrain hazards deal +1 damage</li>
+                <li>Heat generation +1 per action</li>
+            </ul>
+            <p class="narrative">Black crows circle the settlement. The Soulstones pulse erratically. Something is wrong.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>13 - EQUIPMENT MALFUNCTION</h3>
+            <p><strong>Type:</strong> Gear Failure</p>
+            <p>Roll 1d6 per pilot:</p>
+            <ul>
+                <li><strong>1-2:</strong> Primary Weapon jams (costs +1 SP to use all mission)</li>
+                <li><strong>3-4:</strong> Shield/Offhand damaged (reduce all Defense by 1 this mission)</li>
+                <li><strong>5-6:</strong> Plating/Sigil offline (remove 1 random Accessory card from deck this mission)</li>
+            </ul>
+            <p class="narrative">Pre-mission checks reveal structural flaws. No time to repair—deploy anyway.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>14 - SUPPLIES SHORTAGE</h3>
+            <p><strong>Type:</strong> Resource Drain</p>
+            <p>Settlement loses <strong>2 Scrap</strong> OR <strong>1d6 Credits</strong>:</p>
+            <ul>
+                <li>If cannot pay, pilots deploy without healing (do not recover cards between missions)</li>
+            </ul>
+            <p class="narrative">The workshop reports inventory theft. Merchants demand payment. The quartermaster looks nervous.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>15 - LAST MINUTE BRIEFING</h3>
+            <p><strong>Type:</strong> Information</p>
+            <p>Gain <strong>Intelligence</strong> about the mission:</p>
+            <ul>
+                <li>Reveal 1 random enemy card type (Abomination, NPC, etc.)</li>
+                <li>Know terrain hazards in advance</li>
+                <li>+1 Initiative this mission</li>
+            </ul>
+            <p class="narrative">A scout returns wounded but with valuable intel. You know what you're walking into.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>16 - NOTHING SPECIAL</h3>
+            <p><strong>Type:</strong> Neutral</p>
+            <p>No event. Proceed to mission normally.</p>
+            <p class="narrative">The morning is quiet. The Caskets stand ready. Just another day in hell.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>21 - RALLY CRY</h3>
+            <p><strong>Type:</strong> Morale Boost</p>
+            <p>All pilots start mission with <strong>+1 SP maximum</strong>:</p>
+            <ul>
+                <li>Scout (6 → 7 SP)</li>
+                <li>Assault (5 → 6 SP)</li>
+                <li>Heavy (4 → 5 SP)</li>
+                <li>Fortress (3 → 4 SP)</li>
+            </ul>
+            <p class="narrative">A rousing speech. A shared prayer. A moment of hope. It won't last, but it's something.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>22 - THE BETRAYAL</h3>
+            <p><strong>Type:</strong> CATASTROPHIC</p>
+            <p><strong>One pilot is a traitor:</strong></p>
+            <ul>
+                <li>Randomly select 1 pilot (roll die or draw cards)</li>
+                <li>They have been <strong>corrupted by Void exposure</strong> (10 Taint gained immediately)</li>
+                <li><strong>Choice:</strong>
+                    <ul>
+                        <li><strong>Execute them:</strong> Lose pilot permanently, settlement gains +2 Morale (threat eliminated)</li>
+                        <li><strong>Exile them:</strong> Pilot survives but cannot return to settlement, lose 1 Morale (guilt)</li>
+                        <li><strong>Forgive them:</strong> Pilot stays, settlement loses 2 Morale (trust shattered), random Void event next mission</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="narrative">One of your own has been whispering to the dark. Their eyes glow faintly. They smile too much. The others don't trust them.</p>
+            <p><strong>Brutal Consequence:</strong> If forgiven, the traitor may sabotage future missions (GM rolls secretly each mission - on 1-2, traitor causes critical failure at worst moment).</p>
+        </div>
+
+        <div class="building-card">
+            <h3>23 - FORGE BLESSING</h3>
+            <p><strong>Type:</strong> Crafting Bonus</p>
+            <p><strong>Free Craft:</strong></p>
+            <ul>
+                <li>Gain 1 random piece of equipment (roll on Common Loot Table)</li>
+                <li>OR reduce next crafting cost by 50% (round down)</li>
+            </ul>
+            <p class="narrative">The Forge-Priest blesses the workshop. Sparks fly in holy patterns. The Soulstones sing.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>24 - SCRAP WINDFALL</h3>
+            <p><strong>Type:</strong> Resource Gain</p>
+            <p>Settlement gains <strong>3 Scrap</strong> immediately:</p>
+            <ul>
+                <li>Can be used to craft before deployment</li>
+                <li>Or saved for later</li>
+            </ul>
+            <p class="narrative">Salvage teams return early with unexpected haul. The workshop is well-stocked.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>25 - TAINT SPIKE</h3>
+            <p><strong>Type:</strong> Corruption Event</p>
+            <p>All pilots with <strong>5+ Taint</strong> roll 1d6:</p>
+            <ul>
+                <li><strong>1-2:</strong> Gain 1 additional Taint</li>
+                <li><strong>3-4:</strong> No effect</li>
+                <li><strong>5-6:</strong> Resist corruption, remove 1 Taint</li>
+            </ul>
+            <p class="narrative">The Void pulses. Those already touched feel it most.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>26 - REINFORCEMENTS ARRIVE</h3>
+            <p><strong>Type:</strong> Ally NPC</p>
+            <p>A <strong>wandering NPC pilot</strong> offers to join the mission:</p>
+            <ul>
+                <li>Roll on Faction NPC table (random)</li>
+                <li>NPC accompanies team this mission (controlled by GM)</li>
+                <li>If NPC survives, they may offer to teach Signature Card</li>
+            </ul>
+            <p class="narrative">A stranger approaches. Their Casket bears the scars of a hundred battles. They owe you nothing, but they'll fight alongside you—once.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>31 - DIVINE VISION</h3>
+            <p><strong>Type:</strong> Omen</p>
+            <p>One pilot has a <strong>prophetic dream:</strong></p>
+            <ul>
+                <li>Gain knowledge of 1 future event (GM provides cryptic hint)</li>
+                <li>Example: "You will face something with too many legs."</li>
+                <li>Example: "One of you will not return."</li>
+            </ul>
+            <p class="narrative">The pilot wakes screaming. They saw something—a fracture in time, a glimpse of what's to come. But dreams are never clear.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>32 - VOID RIFT WARNING</h3>
+            <p><strong>Type:</strong> Environmental Hazard</p>
+            <p>Mission will have <strong>increased Void activity:</strong></p>
+            <ul>
+                <li>+2 Abominations spawn</li>
+                <li>All Taint generation doubled</li>
+                <li>Void Rifts appear randomly (roll each round)</li>
+            </ul>
+            <p class="narrative">Scouts report reality distortions near the mission site. The air tastes like metal and fear.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>33 - THE FRACTURE</h3>
+            <p><strong>Type:</strong> CATASTROPHIC REALITY BREAK</p>
+            <p><strong>Settlement is hit by Void Rift:</strong></p>
+            <p>Roll 1d6:</p>
+            <ul>
+                <li><strong>1-2:</strong> Workshop destroyed, lose all stored Scrap</li>
+                <li><strong>3-4:</strong> Infirmary destroyed, all wounded pilots gain +1 Wound</li>
+                <li><strong>5-6:</strong> Armory destroyed, lose 1 random equipment from each pilot's deck</li>
+            </ul>
+            <p><strong>Immediate Response:</strong></p>
+            <ul>
+                <li><strong>Abort Mission:</strong> Stay and defend settlement (roll on Settlement Defense table)</li>
+                <li><strong>Deploy Anyway:</strong> Settlement defends itself (roll 2d6, on 5 or less, settlement takes critical damage)</li>
+            </ul>
+            <p class="narrative">The sky tears open. The Void screams. Reality bleeds. Your home is under attack.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>34 - MERCHANT VISIT</h3>
+            <p><strong>Type:</strong> Trade Opportunity</p>
+            <p>A <strong>Merchant Guild caravan</strong> arrives:</p>
+            <ul>
+                <li>Can purchase equipment at <strong>standard price</strong> (no markup)</li>
+                <li>Can sell Scrap for <strong>2 Credits per Scrap</strong></li>
+                <li>Limited stock: 3 random items (roll on Universal Equipment table)</li>
+            </ul>
+            <p class="narrative">Wagons arrive flying guild banners. They have goods. You have need. Commerce in the apocalypse.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>35 - TRAINING MONTAGE</h3>
+            <p><strong>Type:</strong> Skill Improvement</p>
+            <p>All pilots gain <strong>temporary expertise:</strong></p>
+            <ul>
+                <li>Choose 1 card type (Attack, Defense, Utility)</li>
+                <li>All cards of that type cost -1 SP this mission (minimum 1)</li>
+            </ul>
+            <p class="narrative">The night before deployment, you drill. You practice. You prepare. Tomorrow, it pays off.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>36 - LAST STAND ORDERS</h3>
+            <p><strong>Type:</strong> Desperate Mission</p>
+            <p><strong>Mission difficulty increases</strong> (GM adds +1 enemy or hazard):</p>
+            <ul>
+                <li><strong>Reward:</strong> Mission rewards doubled (2x Scrap, 2x Credits)</li>
+                <li><strong>Risk:</strong> Failure means settlement loses 2 Morale</li>
+            </ul>
+            <p class="narrative">Command sends urgent orders. This mission matters. Failure is not acceptable.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>41 - CASKET MALFUNCTION</h3>
+            <p><strong>Type:</strong> Technical Failure</p>
+            <p>One pilot's Casket suffers <strong>critical fault:</strong></p>
+            <ul>
+                <li><strong>Option A:</strong> Deploy anyway, start mission with 5 Heat</li>
+                <li><strong>Option B:</strong> Stay behind (miss mission), Casket is repaired</li>
+            </ul>
+            <p class="narrative">Warning lights flash red. Hydraulics leak. The Soulstone core flickers. This machine is dying.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>42 - VOID EXPOSURE</h3>
+            <p><strong>Type:</strong> Corruption</p>
+            <p>All pilots gain <strong>1 Taint:</strong></p>
+            <ul>
+                <li>Sleeping near Soulstone storage has consequences</li>
+                <li>Roll on Taint Mutation table if any pilot reaches 10 Taint</li>
+            </ul>
+            <p class="narrative">You wake with black veins crawling up your arms. The air tastes wrong. You're changing.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>43 - SETTLEMENT FESTIVAL</h3>
+            <p><strong>Type:</strong> Morale Event</p>
+            <p>Settlement holds celebration:</p>
+            <ul>
+                <li>All pilots remove <strong>1 Wound</strong> (if any)</li>
+                <li>Settlement gains <strong>+1 Morale</strong></li>
+                <li>Gain <strong>1d6 Credits</strong> from festivities</li>
+            </ul>
+            <p class="narrative">Music. Dancing. For one night, the world isn't ending. Tomorrow can wait.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>44 - THE RECKONING</h3>
+            <p><strong>Type:</strong> CATASTROPHIC DEBT</p>
+            <p><strong>The past comes calling:</strong></p>
+            <ul>
+                <li>If settlement has <strong>any negative relationship with a faction</strong>, that faction sends <strong>enforcers</strong></li>
+                <li><strong>Choice:</strong>
+                    <ul>
+                        <li><strong>Pay Tribute:</strong> Lose 5 Scrap + 10 Credits</li>
+                        <li><strong>Fight:</strong> Immediate battle (2 enemy Caskets, no preparation)</li>
+                        <li><strong>Negotiate:</strong> Roll Charisma check (1d6, need 5+ to succeed), failure = both above consequences</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="narrative">They've come to collect. Old debts. Old grudges. They don't care about your excuses.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>45 - FORGE-PRIEST BLESSING</h3>
+            <p><strong>Type:</strong> Crafting Miracle</p>
+            <p><strong>One piece of equipment is enhanced:</strong></p>
+            <ul>
+                <li>Choose 1 equipment in any pilot's deck</li>
+                <li>That equipment gains +1 card permanently (add duplicate of existing card)</li>
+                <li>Example: Longsword (6 cards) → Longsword (7 cards, gains 2nd "Slash")</li>
+            </ul>
+            <p class="narrative">The Forge-Priest inscribes holy runes. The weapon hums with power. It is more than it was.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>46 - DESPERATE RECRUITMENT</h3>
+            <p><strong>Type:</strong> New Pilot</p>
+            <p>Settlement recruits <strong>1 new pilot:</strong></p>
+            <ul>
+                <li>Starts at Level 0 (no Scars, no experience)</li>
+                <li>Equipped with basic gear (player chooses: Longsword + Buckler OR Spear + Kite Shield)</li>
+                <li>Cannot deploy this mission (needs training)</li>
+            </ul>
+            <p class="narrative">A volunteer steps forward. Young. Untested. Desperate. They want to pilot. You remember when you were like them.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>51 - ABOMINATION SIGHTING</h3>
+            <p><strong>Type:</strong> Early Warning</p>
+            <p>Scouts report <strong>Abomination migration:</strong></p>
+            <ul>
+                <li>Mission will have +1 Abomination encounter</li>
+                <li>Gain <strong>+1 Scrap</strong> if mission succeeds (bonus salvage)</li>
+            </ul>
+            <p class="narrative">Tracks. Slime trails. Claw marks. Something big passed through recently.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>52 - SUPPLY DROP</h3>
+            <p><strong>Type:</strong> Logistics</p>
+            <p>Settlement receives <strong>supply cache:</strong></p>
+            <ul>
+                <li>Gain 2 Scrap + 1d6 Credits</li>
+                <li>OR 1 random Common equipment</li>
+            </ul>
+            <p class="narrative">A Church convoy passes through. They share supplies. Charity in the wasteland.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>53 - PILOT RIVALRY</h3>
+            <p><strong>Type:</strong> Social Event</p>
+            <p>Two pilots <strong>argue before deployment:</strong></p>
+            <p>Roll 1d6:</p>
+            <ul>
+                <li><strong>1-2:</strong> Fistfight, both start mission with -1 HP (discard 1 card)</li>
+                <li><strong>3-4:</strong> Bitter words, both have -1 to Initiative this mission</li>
+                <li><strong>5-6:</strong> Resolved peacefully, both gain +1 Morale</li>
+            </ul>
+            <p class="narrative">Tempers flare. Old grudges surface. The pressure is getting to everyone.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>54 - ELVEN OMEN</h3>
+            <p><strong>Type:</strong> Nature Warning</p>
+            <p>An elf scout delivers <strong>cryptic warning:</strong></p>
+            <ul>
+                <li>"The roots are bleeding."</li>
+                <li>"Something has awakened in the deep places."</li>
+                <li>"Do not trust the reflections."</li>
+            </ul>
+            <p><strong>Effect:</strong> GM secretly notes 1 dangerous encounter this mission</p>
+            <p class="narrative">The elf speaks, then vanishes into mist. Their words linger like a curse.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>55 - THE ASCENSION</h3>
+            <p><strong>Type:</strong> LEGENDARY EVENT</p>
+            <p><strong>One pilot achieves transcendence:</strong></p>
+            <ul>
+                <li>Choose 1 pilot with <strong>5+ Scars</strong></li>
+                <li>That pilot may <strong>retire</strong> and become a settlement NPC (gain +1 permanent settlement bonus)
+                    <br>OR continue piloting with <strong>Veteran Status</strong>: +1 SP maximum permanently, immune to Fear</li>
+            </ul>
+            <p class="narrative">Something changes. They've seen too much death, survived too many battles. They're no longer just a pilot—they're a legend.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>56 - RESONANCE PULSE</h3>
+            <p><strong>Type:</strong> Environmental Event</p>
+            <p><strong>Sibarian Wastes pulse:</strong></p>
+            <ul>
+                <li>All Soulstones in settlement glow brighter</li>
+                <li>All pilots start mission with <strong>+2 Heat</strong> (Soulstone overcharge)</li>
+                <li>All attacks this mission deal +1 damage (Soulstone empowerment)</li>
+            </ul>
+            <p class="narrative">The Engine pulses. Power floods the world. Your weapons hum with terrible energy.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>61 - NIGHTMARES</h3>
+            <p><strong>Type:</strong> Psychological</p>
+            <p>All pilots suffer <strong>disturbing dreams:</strong></p>
+            <ul>
+                <li>Start mission with -1 Morale</li>
+                <li>First attack each pilot makes this mission has -1 damage</li>
+            </ul>
+            <p class="narrative">You didn't sleep. When you did, you saw things—eyes in the dark, voices in the static. The Void whispers.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>62 - WORKSHOP FIRE</h3>
+            <p><strong>Type:</strong> Disaster</p>
+            <p><strong>Fire breaks out in workshop:</strong></p>
+            <ul>
+                <li>Lose 2 Scrap</li>
+                <li>One random pilot loses 1 random equipment card (destroyed in fire)</li>
+            </ul>
+            <p class="narrative">Sparks. Screaming. The smell of burning metal and flesh. You save what you can.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>63 - DWARVEN TRADERS</h3>
+            <p><strong>Type:</strong> Trade</p>
+            <p><strong>Dwarven caravan</strong> offers deals:</p>
+            <ul>
+                <li>Can buy equipment at <strong>+50% markup</strong> (expensive, but quality)</li>
+                <li>Can commission custom gear (pay 2x Scrap, choose exactly what you want)</li>
+            </ul>
+            <p class="narrative">Dwarves never give discounts. But their work never fails.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>64 - TAINT PURGE</h3>
+            <p><strong>Type:</strong> Healing</p>
+            <p>Settlement <strong>Inquisitor performs cleansing:</strong></p>
+            <ul>
+                <li>All pilots may remove up to 2 Taint</li>
+                <li><strong>Cost:</strong> 1 Wound per 2 Taint removed (painful procedure)</li>
+            </ul>
+            <p class="narrative">The Inquisitor's methods are brutal but effective. The corruption burns away. So does part of you.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>65 - SETTLEMENT EXPANSION</h3>
+            <p><strong>Type:</strong> Growth</p>
+            <p>Settlement can <strong>build 1 new structure:</strong></p>
+            <ul>
+                <li>At 50% cost (half Scrap/Credits required)</li>
+                <li>Must decide now (offer expires after this mission)</li>
+            </ul>
+            <p class="narrative">Materials are available. Labor is willing. The settlement can grow—if you invest.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>66 - THE END TIMES</h3>
+            <p><strong>Type:</strong> ULTIMATE CATASTROPHE</p>
+            <p><strong>Reality is collapsing</strong></p>
+
+            <p>Roll 1d6 to determine catastrophe type:</p>
+
+            <h4>1 - Void Invasion</h4>
+            <ul>
+                <li>Settlement is <strong>under siege</strong> by Abominations</li>
+                <li>Must deploy to defend (cannot go on original mission)</li>
+                <li>If settlement HP reaches 0, settlement is destroyed (campaign ends)</li>
+            </ul>
+
+            <h4>2 - Pilot Death</h4>
+            <ul>
+                <li>One random pilot <strong>dies before deployment</strong></li>
+                <li>Not in battle. Not gloriously. Just... gone.</li>
+                <li>Roll on Cause of Death table (Void exposure, heart failure, suicide)</li>
+            </ul>
+
+            <h4>3 - Resonance Engine Overload</h4>
+            <ul>
+                <li>All Soulstones in settlement <strong>explode</strong></li>
+                <li>All pilots take 5 damage immediately</li>
+                <li>All stored equipment with Soulstones destroyed</li>
+            </ul>
+
+            <h4>4 - Mass Corruption</h4>
+            <ul>
+                <li><strong>All pilots gain 5 Taint</strong> immediately</li>
+                <li>Roll on Mutation table for anyone reaching 10 Taint</li>
+                <li>Settlement loses 3 Morale (fear spreads)</li>
+            </ul>
+
+            <h4>5 - Faction War</h4>
+            <ul>
+                <li>A hostile faction <strong>declares war</strong> on your settlement</li>
+                <li>Must fight 3 consecutive missions against them (no rest between)</li>
+                <li>Lose 2 of 3 = settlement is conquered (campaign ends)</li>
+            </ul>
+
+            <h4>6 - The Calling</h4>
+            <ul>
+                <li>All pilots hear <strong>the Voice from the Void</strong> calling them to Sibaria</li>
+                <li><strong>Choice:</strong>
+                    <ul>
+                        <li><strong>Resist:</strong> Roll Willpower (1d6, need 4+), failure = gain 3 Taint</li>
+                        <li><strong>Answer:</strong> Must immediately travel to Sibarian Wastes (legendary mission, extremely dangerous)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p class="narrative">The sky cracks. The world screams. This is the moment you've feared. The end has come.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>ARRIVAL EVENT TABLE (2d6)</h2>
+        <p>Roll 2d6 after returning from successful mission. Read dice individually.</p>
+
+        <div class="building-card">
+            <h3>11 - HERO'S WELCOME</h3>
+            <p><strong>Type:</strong> LEGENDARY CELEBRATION</p>
+            <p><strong>Settlement erupts in celebration:</strong></p>
+            <ul>
+                <li>All pilots remove <strong>ALL Wounds</strong></li>
+                <li>Settlement gains <strong>+3 Morale</strong></li>
+                <li>Gain <strong>1d6 x 2 Credits</strong> from grateful citizens</li>
+                <li><strong>One pilot gains Veteran Status</strong> (choose who)</li>
+            </ul>
+            <p class="narrative">They sing your names. They carve your deeds into stone. Today, you are legends.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>12 - SPOILS OF WAR</h3>
+            <p><strong>Type:</strong> Bonus Loot</p>
+            <p>Roll <strong>twice</strong> on Loot Table:</p>
+            <ul>
+                <li>Keep both results</li>
+                <li>If doubles, gain Rare loot instead</li>
+            </ul>
+            <p class="narrative">The battlefield was rich with salvage. You return laden with treasure.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>13 - FORGE-GUILD GIFT</h3>
+            <p><strong>Type:</strong> Equipment Reward</p>
+            <p><strong>Forge-Guild sends gift:</strong></p>
+            <ul>
+                <li>1 random Medium weapon (free)</li>
+                <li>OR 3 Scrap</li>
+            </ul>
+            <p class="narrative">A dwarf emissary arrives. "Your victory honors the Forge. Accept this token."</p>
+        </div>
+
+        <div class="building-card">
+            <h3>14 - NOTHING SPECIAL</h3>
+            <p><strong>Type:</strong> Neutral</p>
+            <p>Standard return. Proceed to Settlement Phase normally.</p>
+            <p class="narrative">You survived. That's enough.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>15 - MEDICAL TREATMENT</h3>
+            <p><strong>Type:</strong> Healing</p>
+            <p>Settlement Infirmary provides <strong>free healing:</strong></p>
+            <ul>
+                <li>All pilots remove 1 Wound</li>
+                <li>All pilots recover to full HP (reset deck to 30 cards)</li>
+            </ul>
+            <p class="narrative">The doctors work through the night. You wake feeling almost whole.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>16 - SETTLEMENT GROWTH</h3>
+            <p><strong>Type:</strong> Progress</p>
+            <p>Settlement gains <strong>+1 Morale</strong> and <strong>1d6 Credits:</strong></p>
+            <ul>
+                <li>People are hopeful</li>
+                <li>Commerce improves</li>
+            </ul>
+            <p class="narrative">Merchants set up stalls. Children play in the streets. Life continues.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>21 - SCAVENGER'S LUCK</h3>
+            <p><strong>Type:</strong> Bonus Salvage</p>
+            <p>Gain <strong>2 Scrap</strong> from battlefield salvage.</p>
+            <p class="narrative">You stripped the wrecks clean. Every bolt. Every wire. Waste nothing.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>22 - THE PLAGUE</h3>
+            <p><strong>Type:</strong> CATASTROPHIC DISEASE</p>
+            <p><strong>Disease spreads through settlement:</strong></p>
+            <p>All pilots roll 1d6:</p>
+            <ul>
+                <li><strong>1-2:</strong> Contract plague, gain 1 Wound, cannot deploy next mission</li>
+                <li><strong>3-4:</strong> Mild symptoms, start next mission at -5 HP</li>
+                <li><strong>5-6:</strong> Immune (for now)</li>
+            </ul>
+            <ul>
+                <li>Settlement loses <strong>2 Morale</strong></li>
+            </ul>
+            <p class="narrative">It starts with coughing. Then fever. Then screaming. The plague doesn't care about your victories.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>23 - MERCHANT DEMAND</h3>
+            <p><strong>Type:</strong> Trade Pressure</p>
+            <p>Merchant Guild demands <strong>payment:</strong></p>
+            <ul>
+                <li>Pay 5 Credits OR 3 Scrap</li>
+                <li>If cannot pay, lose access to Merchant trades for 2 missions</li>
+            </ul>
+            <p class="narrative">"You bought on credit. Now pay up, or we walk."</p>
+        </div>
+
+        <div class="building-card">
+            <h3>24 - TAINT SPREAD</h3>
+            <p><strong>Type:</strong> Corruption</p>
+            <p>All pilots gain <strong>1 Taint:</strong></p>
+            <ul>
+                <li>Battlefield exposure catches up</li>
+                <li>Roll on Mutation table if any pilot reaches 10 Taint</li>
+            </ul>
+            <p class="narrative">The black veins crawl further up your arms. You try not to look.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>25 - SETTLEMENT RAID</h3>
+            <p><strong>Type:</strong> Enemy Attack</p>
+            <p>Settlement was <strong>raided while you were gone:</strong></p>
+            <ul>
+                <li>Lose 1d6 Scrap</li>
+                <li>Lose 1 Morale</li>
+                <li>Roll 1d6: On 1, one civilian killed (settlement gains Fear)</li>
+            </ul>
+            <p class="narrative">You return to burning homes. They came while you were away.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>26 - PILOT PROMOTION</h3>
+            <p><strong>Type:</strong> Experience Gain</p>
+            <p>One pilot gains <strong>bonus experience:</strong></p>
+            <ul>
+                <li>Choose 1 Scar from Combat Scars table (positive effect)</li>
+                <li>OR gain +1 SP maximum permanently</li>
+            </ul>
+            <p class="narrative">Something clicked out there. You're better now. Sharper. Deadlier.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>31 - RIVAL FACTION CONTACT</h3>
+            <p><strong>Type:</strong> Political Event</p>
+            <p>A <strong>rival faction</strong> sends emissary:</p>
+            <ul>
+                <li>Offers alliance (gain +1 Faction Relationship)</li>
+                <li>OR demands tribute (pay 3 Scrap or gain -1 Faction Relationship)</li>
+            </ul>
+            <p class="narrative">Politics. Even in the apocalypse, there are games to play.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>32 - VOID RIFT NEARBY</h3>
+            <p><strong>Type:</strong> Environmental Hazard</p>
+            <p>A <strong>Void Rift opens near settlement:</strong></p>
+            <ul>
+                <li>Settlement takes 1d6 damage per mission until rift is sealed</li>
+                <li>Can deploy mission to seal rift (dangerous, high reward)</li>
+            </ul>
+            <p class="narrative">The sky tears open a mile away. The Void bleeds through. You have days, maybe less.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>33 - THE REVELATION</h3>
+            <p><strong>Type:</strong> CATASTROPHIC SECRET</p>
+            <p><strong>A terrible truth is revealed</strong></p>
+
+            <p>Roll 1d6:</p>
+            <ul>
+                <li><strong>1:</strong> One pilot was secretly Taint-corrupted (10 Taint, immediate roll on Mutation table)</li>
+                <li><strong>2:</strong> Settlement's Soulstone supply is contaminated (all Soulstones cause +1 Taint per mission)</li>
+                <li><strong>3:</strong> A trusted NPC is revealed as spy (lose 2 Morale, NPC flees)</li>
+                <li><strong>4:</strong> The mission you just completed was <strong>a trap</strong> (enemy faction now knows your location)</li>
+                <li><strong>5:</strong> One pilot's family was killed while you were away (pilot gains Trauma Wound)</li>
+                <li><strong>6:</strong> Settlement is built on <strong>mass grave</strong> (hauntings begin, lose 1 Morale per mission)</li>
+            </ul>
+
+            <p class="narrative">The truth comes out. You wish it hadn't.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>34 - FORGE BLESSING</h3>
+            <p><strong>Type:</strong> Crafting Bonus</p>
+            <p>Next crafting action costs <strong>50% less Scrap</strong>.</p>
+            <p class="narrative">The Forge-Priest smiles. "The ancestors favor you."</p>
+        </div>
+
+        <div class="building-card">
+            <h3>35 - TRAINING OPPORTUNITY</h3>
+            <p><strong>Type:</strong> Skill Development</p>
+            <p>All pilots may <strong>learn 1 new Tactic Card:</strong></p>
+            <ul>
+                <li>Choose from any faction's Tactics pool</li>
+                <li>Replaces existing Tactic</li>
+            </ul>
+            <p class="narrative">A veteran offers to teach new techniques. You practice late into the night.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>36 - SETTLEMENT FESTIVAL</h3>
+            <p><strong>Type:</strong> Morale Event</p>
+            <p>Settlement celebrates your return:</p>
+            <ul>
+                <li>All pilots remove 1 Wound</li>
+                <li>Settlement gains +2 Morale</li>
+                <li>Gain 1d6 Credits</li>
+            </ul>
+            <p class="narrative">Feasting. Music. Gratitude. For tonight, the war is forgotten.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>41 - NPC ENCOUNTER</h3>
+            <p><strong>Type:</strong> Iconic NPC</p>
+            <p>An <strong>Iconic NPC</strong> arrives at settlement:</p>
+            <ul>
+                <li>Roll on NPC table (or GM chooses)</li>
+                <li>NPC offers side mission (Signature Card reward if completed)</li>
+            </ul>
+            <p class="narrative">A legend walks through your gates. They have a proposition.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>42 - EQUIPMENT UPGRADE</h3>
+            <p><strong>Type:</strong> Crafting Opportunity</p>
+            <p>Workshop can <strong>enhance 1 equipment:</strong></p>
+            <ul>
+                <li>Add +1 card to any equipment (duplicate existing card)</li>
+                <li>Costs 2 Scrap</li>
+            </ul>
+            <p class="narrative">"I can make this better. Give me time and materials."</p>
+        </div>
+
+        <div class="building-card">
+            <h3>43 - SCRAP SHORTAGE</h3>
+            <p><strong>Type:</strong> Resource Drain</p>
+            <p>Settlement loses <strong>2 Scrap:</strong></p>
+            <ul>
+                <li>Maintenance costs, repairs, theft</li>
+            </ul>
+            <p class="narrative">The quartermaster reports losses. Someone has to pay.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>44 - THE RECKONING (Arrival Version)</h3>
+            <p><strong>Type:</strong> CATASTROPHIC CONSEQUENCES</p>
+            <p><strong>The mission had hidden costs</strong></p>
+
+            <p>Roll 1d6:</p>
+            <ul>
+                <li><strong>1:</strong> Enemy survivors followed you home (settlement under siege next mission)</li>
+                <li><strong>2:</strong> You brought back <strong>Void contamination</strong> (all buildings take 1d6 damage)</li>
+                <li><strong>3:</strong> A pilot is <strong>secretly replaced</strong> by doppelganger (GM chooses, reveals later)</li>
+                <li><strong>4:</strong> Settlement's children are <strong>abducted</strong> (must deploy rescue mission immediately)</li>
+                <li><strong>5:</strong> <strong>Mass desertion</strong> (lose 1d6 civilians, lose 2 Morale)</li>
+                <li><strong>6:</strong> <strong>Friendly fire incident</strong> revealed (one pilot accidentally killed civilian, lose 3 Morale)</li>
+            </ul>
+
+            <p class="narrative">Victory has a price. You're only now realizing how much.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>45 - LEGENDARY LOOT</h3>
+            <p><strong>Type:</strong> Rare Reward</p>
+            <p>Roll on <strong>Rare Loot Table</strong> (or Legendary if mission was vs Boss)</p>
+            <p class="narrative">Amid the wreckage, you find something extraordinary.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>46 - SETTLEMENT SABOTAGE</h3>
+            <p><strong>Type:</strong> Betrayal</p>
+            <p>Someone <strong>sabotaged the workshop:</strong></p>
+            <ul>
+                <li>1 random building takes damage (roll 1d6 damage)</li>
+                <li>Investigation possible (costs 1 mission to track down culprit)</li>
+            </ul>
+            <p class="narrative">Explosions in the night. Someone wanted this place to burn.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>51 - CALM BEFORE STORM</h3>
+            <p><strong>Type:</strong> Ominous Peace</p>
+            <p><strong>Everything is too quiet:</strong></p>
+            <ul>
+                <li>All pilots recover fully (remove all Wounds, restore HP)</li>
+                <li>Settlement gains +1 Morale</li>
+                <li><strong>Hidden Effect:</strong> Next Departure Event is rerolled twice, take worse result</li>
+            </ul>
+            <p class="narrative">The world holds its breath. Something is coming.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>52 - FORGE-GUILD CONTRACT</h3>
+            <p><strong>Type:</strong> Economic Opportunity</p>
+            <p>Dwarves offer <strong>contract:</strong></p>
+            <ul>
+                <li>Deploy 3 missions for them (specific objectives)</li>
+                <li>Reward: 10 Scrap + 1 Legendary equipment</li>
+            </ul>
+            <p class="narrative">"We have work. You need resources. Mutual benefit."</p>
+        </div>
+
+        <div class="building-card">
+            <h3>53 - PILOT BREAKDOWN</h3>
+            <p><strong>Type:</strong> Psychological Trauma</p>
+            <p>One random pilot suffers <strong>mental break:</strong></p>
+            <ul>
+                <li>Roll on Trauma table, gain 1 Trauma Wound</li>
+                <li>Cannot deploy next mission (needs recovery)</li>
+            </ul>
+            <p class="narrative">They haven't spoken since you returned. They sit in the dark, staring at nothing.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>54 - SETTLEMENT EXPANSION OFFER</h3>
+            <p><strong>Type:</strong> Growth Opportunity</p>
+            <p>Can build <strong>1 new building</strong> at standard cost.</p>
+            <p class="narrative">Materials are available. The settlement can grow.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>55 - THE AWAKENING</h3>
+            <p><strong>Type:</strong> LEGENDARY TRANSFORMATION</p>
+            <p><strong>One pilot transcends limits</strong></p>
+
+            <p>Choose 1 pilot with 5+ Scars:</p>
+            <ul>
+                <li><strong>Option A:</strong> Retire as Legendary NPC (settlement gains permanent +1 SP to all pilots)</li>
+                <li><strong>Option B:</strong> Continue piloting with <strong>Transcendent Status:</strong>
+                    <ul>
+                        <li>+2 SP maximum</li>
+                        <li>Immune to Fear and Trauma</li>
+                        <li>All attacks deal +1 damage permanently</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p class="narrative">They've seen the abyss. They've survived the impossible. They are no longer human—they are legend incarnate.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>56 - VOID EXPOSURE AFTERMATH</h3>
+            <p><strong>Type:</strong> Corruption Fallout</p>
+            <p>All pilots who gained Taint this mission roll 1d6:</p>
+            <ul>
+                <li><strong>1-2:</strong> Gain +1 additional Taint</li>
+                <li><strong>3-4:</strong> No change</li>
+                <li><strong>5-6:</strong> Body fights back, remove 1 Taint</li>
+            </ul>
+            <p class="narrative">The corruption festers. Some resist. Others don't.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>61 - INFIRMARY OVERFLOW</h3>
+            <p><strong>Type:</strong> Medical Crisis</p>
+            <p><strong>Too many wounded:</strong></p>
+            <ul>
+                <li>Can only heal 1 pilot this Settlement Phase (choose who)</li>
+                <li>Others must wait (keep Wounds)</li>
+            </ul>
+            <p class="narrative">Not enough doctors. Not enough supplies. Triage is a cruel mathematics.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>62 - SETTLEMENT MORALE DROP</h3>
+            <p><strong>Type:</strong> Social Decline</p>
+            <p>Settlement loses <strong>2 Morale:</strong></p>
+            <ul>
+                <li>War weariness sets in</li>
+                <li>People are losing hope</li>
+            </ul>
+            <p class="narrative">The civilians avoid your eyes. They've stopped believing you can save them.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>63 - MERCHANT BOON</h3>
+            <p><strong>Type:</strong> Economic Windfall</p>
+            <p>Merchant Guild rewards your success:</p>
+            <ul>
+                <li>Gain 1d6 x 2 Credits</li>
+                <li>Gain 1 random Common equipment</li>
+            </ul>
+            <p class="narrative">"Your victory improves trade routes. Here's your share."</p>
+        </div>
+
+        <div class="building-card">
+            <h3>64 - TAINT PURIFICATION</h3>
+            <p><strong>Type:</strong> Healing Miracle</p>
+            <p>Church Inquisitor offers <strong>free Taint removal:</strong></p>
+            <ul>
+                <li>All pilots may remove up to 3 Taint (no cost)</li>
+                <li><strong>Catch:</strong> Must swear loyalty to Church (affects faction relationships)</li>
+            </ul>
+            <p class="narrative">"The Church cleanses. But loyalty is expected."</p>
+        </div>
+
+        <div class="building-card">
+            <h3>65 - SETTLEMENT ATTACK WARNING</h3>
+            <p><strong>Type:</strong> Intel</p>
+            <p>Scouts report <strong>enemy force approaching:</strong></p>
+            <ul>
+                <li>Next mission will be <strong>Settlement Defense</strong> (mandatory)</li>
+                <li>Can prepare defenses (spend Scrap to improve Settlement HP)</li>
+            </ul>
+            <p class="narrative">They're coming. You have time to prepare, but not much.</p>
+        </div>
+
+        <div class="building-card">
+            <h3>66 - THE MIRACLE</h3>
+            <p><strong>Type:</strong> ULTIMATE BLESSING</p>
+            <p><strong>Divine intervention (or luck beyond measure)</strong></p>
+
+            <p>Choose 1:</p>
+            <ul>
+                <li><strong>Full Revival:</strong> All pilots restored to perfect condition (remove ALL Wounds, ALL Taint, restore all HP)</li>
+                <li><strong>Settlement Prosperity:</strong> Gain 10 Scrap + 20 Credits + 1 Legendary equipment</li>
+                <li><strong>NPC Ally:</strong> One Iconic NPC <strong>permanently joins settlement</strong> (becomes controllable pilot)</li>
+                <li><strong>Void Seal:</strong> Nearby Void Rift <strong>permanently closes</strong> (stops all Taint generation for 5 missions)</li>
+                <li><strong>Legendary Discovery:</strong> Find <strong>Artifact-tier equipment</strong> (one-of-a-kind, game-changing power)</li>
+            </ul>
+
+            <p class="narrative">You don't know why. You don't know how. But today, the universe smiled. Don't question it. Just accept.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>SPECIAL EVENT: DOUBLE SIXES (66)</h2>
+
+        <p>When you roll <strong>double sixes</strong> (reading as "66"), this is the <strong>most extreme outcome</strong>—either ultimate catastrophe or ultimate miracle.</p>
+
+        <div class="quote-box">
+            <p><strong>The dice have spoken. Fate has intervened.</strong></p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="quote-box">
+            <p><em>"The dice are your destiny. The rolls determine survival. In the end, we are all at the mercy of chance."</em></p>
+        </div>
+    </div>
+</body>
+</html>
