@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Fight: The Iron Saint - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="manuscript-page">
+        <h1 class="page-title">Boss Fight: The Iron Saint</h1>
+        <p class="subtitle">Sister Vex, The Hollow Penitent</p>
+
+        <div class="metadata">
+            <p><strong>Version:</strong> 1.0 | <strong>Last Updated:</strong> October 10, 2025</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Overview</h2>
+
+        <div class="info-box">
+            <p>The Iron Saint is a playable boss encounter designed for 2-4 players. Like Kingdom Death: Monster, this fight uses an HP deck system where the boss gets more dangerous as it takes damage, adding new ability cards at specific thresholds.</p>
+            <p><strong>Recommended Player Level:</strong> Pilots with 3+ missions completed</p>
+            <p><strong>Estimated Duration:</strong> 60-90 minutes</p>
+            <p><strong>Difficulty:</strong> BRUTAL</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Lore</h2>
+
+        <div class="quote-box">
+            <p>Sister Vex was once a devout believer. Now she is the Church's most terrifying instrument. Taint Level 7. Pilots "The Confessional" - a 1,600lb heavy Casket dripping with scripture and scars. She believes suffering purifies. Every wound brings salvation closer. She will show you the path to redemption. You will beg for damnation instead.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Boss Stats</h2>
+
+        <h3>Base Statistics</h3>
+
+        <table class="stat-table">
+            <tr>
+                <th>Weight Class</th>
+                <td>Super-Heavy (2,000 lbs)</td>
+            </tr>
+            <tr>
+                <th>Movement</th>
+                <td>3 hexes</td>
+            </tr>
+            <tr>
+                <th>Armor</th>
+                <td>4</td>
+            </tr>
+            <tr>
+                <th>Taint Resistance</th>
+                <td>Immune (already fully corrupted)</td>
+            </tr>
+            <tr>
+                <th>Morale</th>
+                <td>Unbreakable (never flees)</td>
+            </tr>
+        </table>
+
+        <h3>HP Deck System</h3>
+
+        <p>Sister Vex uses a 40-card HP deck instead of a traditional health pool.</p>
+
+        <p><strong>Starting Deck:</strong> 40 AI Behavior cards</p>
+        <ul>
+            <li>10x Basic Attacks</li>
+            <li>10x Movement/Positioning</li>
+            <li>10x Defensive Reactions</li>
+            <li>5x Special Abilities</li>
+            <li>5x Taint Aura cards</li>
+        </ul>
+
+        <p>As players damage the boss, they remove cards from this deck. When the boss reshuffles, new cards are added based on damage thresholds.</p>
+
+        <div class="divider"></div>
+
+        <h2>Setup</h2>
+
+        <h3>Boss Starting Position</h3>
+        <p>Place Sister Vex in the center of the battlefield.</p>
+
+        <h3>Boss Deck Construction</h3>
+        <p>Shuffle the following 40 cards:</p>
+
+        <p><strong>Phase 1 Cards (40 total):</strong></p>
+        <ul>
+            <li>10x "Zealous Strike" (Basic Attack)</li>
+            <li>6x "Advance and Condemn" (Move + Attack)</li>
+            <li>4x "Defensive Scripture" (Defense)</li>
+            <li>5x "Martyrdom Protocol" (Regeneration)</li>
+            <li>5x "Taint Pulse" (AOE Corruption)</li>
+            <li>5x "Righteous Advance" (Move toward nearest enemy)</li>
+            <li>5x "Shield of Faith" (Block + Counter)</li>
+        </ul>
+
+        <h3>Player Setup</h3>
+        <ul>
+            <li>2-4 Casket pilots</li>
+            <li>Standard 30-card decks</li>
+            <li>Place players 6-8 hexes from boss</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Boss Activation</h2>
+
+        <h3>Turn Structure</h3>
+        <p>Sister Vex activates after ALL players have taken their turns.</p>
+
+        <p><strong>Boss Turn:</strong></p>
+        <ol>
+            <li>Draw 3 cards from HP deck</li>
+            <li>Play all 3 cards in order drawn</li>
+            <li>Resolve effects</li>
+            <li>Discard cards</li>
+        </ol>
+
+        <p>If the boss deck is empty, she reshuffles immediately and adds Phase cards based on current damage level.</p>
+
+        <div class="divider"></div>
+
+        <h2>Boss AI Cards</h2>
+
+        <h3>Phase 1: The Penitent (40-25 cards remaining)</h3>
+
+        <h4>Zealous Strike</h4>
+        <ul>
+            <li><strong>Type:</strong> Attack</li>
+            <li><strong>Target:</strong> Nearest enemy</li>
+            <li><strong>Effect:</strong> Move up to 2 hexes toward target, then attack for 3d6 damage</li>
+            <li><em>"Your sins are many. Let me count them in broken bones."</em></li>
+        </ul>
+
+        <h4>Advance and Condemn</h4>
+        <ul>
+            <li><strong>Type:</strong> Movement + Attack</li>
+            <li><strong>Effect:</strong> Move 3 hexes toward nearest enemy. If adjacent after move, attack for 2d6 damage</li>
+            <li><em>"Run, if you can. Redemption is patient."</em></li>
+        </ul>
+
+        <h4>Defensive Scripture</h4>
+        <ul>
+            <li><strong>Type:</strong> Defense</li>
+            <li><strong>Trigger:</strong> When attacked</li>
+            <li><strong>Effect:</strong> +3 Armor this round. Attacker gains 1 Taint token</li>
+            <li><em>"Each strike against me writes your name in the Book of Suffering."</em></li>
+        </ul>
+
+        <h4>Martyrdom Protocol</h4>
+        <ul>
+            <li><strong>Type:</strong> Regeneration</li>
+            <li><strong>Effect:</strong> Remove 3 cards from discard pile, shuffle them back into deck. Gain 1 Taint Aura token</li>
+            <li><em>"Pain is prayer. I am blessed beyond measure."</em></li>
+        </ul>
+
+        <h4>Taint Pulse</h4>
+        <ul>
+            <li><strong>Type:</strong> AOE Corruption</li>
+            <li><strong>Effect:</strong> All enemies within 3 hexes make Taint save (DC 6) or gain 2 Taint tokens</li>
+            <li><em>"Feel the Engine's song. Let it remake you."</em></li>
+        </ul>
+
+        <h4>Righteous Advance</h4>
+        <ul>
+            <li><strong>Type:</strong> Movement</li>
+            <li><strong>Effect:</strong> Move up to 4 hexes toward nearest enemy</li>
+            <li><em>"There is no escape from salvation."</em></li>
+        </ul>
+
+        <h4>Shield of Faith</h4>
+        <ul>
+            <li><strong>Type:</strong> Defense + Counter</li>
+            <li><strong>Trigger:</strong> When attacked</li>
+            <li><strong>Effect:</strong> Block 4 damage. If attack blocked completely, counter-attack for 2d6</li>
+            <li><em>"Your blade is weak. Your faith, weaker still."</em></li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3>Phase 2: The Flagellant (24-15 cards remaining)</h3>
+
+        <p>When Sister Vex reshuffles with 24 or fewer cards remaining, add these 5 cards to her deck:</p>
+
+        <h4>Blood for Absolution</h4>
+        <ul>
+            <li><strong>Type:</strong> Attack + Self-Harm</li>
+            <li><strong>Target:</strong> Nearest enemy</li>
+            <li><strong>Effect:</strong> Sister Vex mills 2 cards from her deck (self-damage). Attack target for 5d6 damage, ignoring 2 armor</li>
+            <li><em>"Only through shared suffering can we ascend."</em></li>
+            <li><strong>Difficulty Spike:</strong> Boss hurts herself to hit harder. Players must now race the self-destruct.</li>
+        </ul>
+
+        <h4>Chains of Penance</h4>
+        <ul>
+            <li><strong>Type:</strong> Control</li>
+            <li><strong>Target:</strong> Enemy with highest Taint</li>
+            <li><strong>Effect:</strong> Target cannot move next turn. Take 3d6 damage at start of their next turn unless they discard 3 cards</li>
+            <li><em>"Your corruption binds you. Struggle, and tighten the noose."</em></li>
+            <li><strong>Difficulty Spike:</strong> Punishes Tainted players, forces hand discards.</li>
+        </ul>
+
+        <h4>Scripture Storm</h4>
+        <ul>
+            <li><strong>Type:</strong> AOE Attack</li>
+            <li><strong>Effect:</strong> All enemies take 2d6 damage. Sister Vex gains Shield of Faith until end of round</li>
+            <li><em>"Let the holy words scour you clean."</em></li>
+            <li><strong>Difficulty Spike:</strong> Multi-target + defense buff.</li>
+        </ul>
+
+        <h4>Divine Wrath</h4>
+        <ul>
+            <li><strong>Type:</strong> Damage Burst</li>
+            <li><strong>Trigger:</strong> When Sister Vex takes 5+ damage in one hit</li>
+            <li><strong>Effect:</strong> Immediately attack the source for 4d6 damage. This does not cost an action</li>
+            <li><em>"Strike me down? I rise. Every. Time."</em></li>
+            <li><strong>Difficulty Spike:</strong> Counterattacks punish big hits. Players must spread damage.</li>
+        </ul>
+
+        <h4>Invoke the Engine</h4>
+        <ul>
+            <li><strong>Type:</strong> Summon</li>
+            <li><strong>Effect:</strong> Summon 1 "Corrupted Penitent" minion (see Minion stats below). Minion activates immediately after Sister Vex</li>
+            <li><em>"The faithful answer my call, even in death."</em></li>
+            <li><strong>Difficulty Spike:</strong> Now fighting multiple enemies.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3>Phase 3: The Martyr (14-8 cards remaining)</h3>
+
+        <p>When Sister Vex reshuffles with 14 or fewer cards remaining, add these 5 cards:</p>
+
+        <h4>Final Sacrament</h4>
+        <ul>
+            <li><strong>Type:</strong> Execute</li>
+            <li><strong>Target:</strong> Enemy with 10 or fewer cards in deck</li>
+            <li><strong>Effect:</strong> Target must discard 5 cards immediately or take 6d6 damage</li>
+            <li><em>"Your end is a blessing. Accept it."</em></li>
+            <li><strong>Difficulty Spike:</strong> Punishes low-health players. Forces tough choices.</li>
+        </ul>
+
+        <h4>Taint Nova</h4>
+        <ul>
+            <li><strong>Type:</strong> AOE Corruption Burst</li>
+            <li><strong>Effect:</strong> All enemies gain 3 Taint tokens. Sister Vex heals (shuffle 5 cards from discard back into deck)</li>
+            <li><em>"Breathe deep. The corruption is mercy."</em></li>
+            <li><strong>Difficulty Spike:</strong> Mass corruption + healing. Players risk becoming Tainted themselves.</li>
+        </ul>
+
+        <h4>Unyielding Faith</h4>
+        <ul>
+            <li><strong>Type:</strong> Defensive Stance</li>
+            <li><strong>Effect:</strong> Sister Vex cannot be moved or knocked down. Reduce all damage by 3 this round. Lasts 1 full round</li>
+            <li><em>"I am the mountain. You are the wind."</em></li>
+            <li><strong>Difficulty Spike:</strong> Damage reduction makes her nearly invincible for a turn.</li>
+        </ul>
+
+        <h4>Martyrdom Ascension</h4>
+        <ul>
+            <li><strong>Type:</strong> Buff + Self-Harm</li>
+            <li><strong>Effect:</strong> Mill 3 cards from deck. All Sister Vex attacks deal +2 damage for rest of battle. Stacks</li>
+            <li><em>"Each wound is a step toward godhood."</em></li>
+            <li><strong>Difficulty Spike:</strong> Permanent damage buff. Boss accelerates her own death but becomes lethal.</li>
+        </ul>
+
+        <h4>Judgement</h4>
+        <ul>
+            <li><strong>Type:</strong> Mass Attack</li>
+            <li><strong>Target:</strong> All enemies</li>
+            <li><strong>Effect:</strong> All enemies take 3d6 damage. Enemies with 3+ Taint tokens take an additional 2d6</li>
+            <li><em>"The guilty are revealed. Sentence: annihilation."</em></li>
+            <li><strong>Difficulty Spike:</strong> Massive AOE that punishes Tainted players harder.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3>Phase 4: The Hollow (7-0 cards remaining)</h3>
+
+        <p>When Sister Vex reshuffles with 7 or fewer cards remaining, add these 3 cards:</p>
+
+        <h4>The Final Confession</h4>
+        <ul>
+            <li><strong>Type:</strong> Ultimate Attack</li>
+            <li><strong>Target:</strong> All enemies within 5 hexes</li>
+            <li><strong>Effect:</strong> All targets take 5d6 damage. Sister Vex mills 5 cards from deck</li>
+            <li><em>"I confess: I am damnation incarnate."</em></li>
+            <li><strong>Difficulty Spike:</strong> Desperation move. Massive AOE but accelerates her defeat.</li>
+        </ul>
+
+        <h4>Void Embrace</h4>
+        <ul>
+            <li><strong>Type:</strong> Taint Overload</li>
+            <li><strong>Effect:</strong> All enemies gain 5 Taint tokens. Enemies at 10+ Taint immediately become Corrupted (controlled by boss for 1 turn)</li>
+            <li><em>"The Engine whispers. You will answer."</em></li>
+            <li><strong>Difficulty Spike:</strong> Mind control mechanic. Players must manage Taint or lose control.</li>
+        </ul>
+
+        <h4>Absolution Denied</h4>
+        <ul>
+            <li><strong>Type:</strong> Resurrection</li>
+            <li><strong>Trigger:</strong> When Sister Vex would be defeated</li>
+            <li><strong>Effect:</strong> Once per battle, shuffle all cards from discard pile back into deck. Sister Vex returns with 15 cards. All Phase 4 cards remain in deck</li>
+            <li><em>"Death is not my end. It is yours."</em></li>
+            <li><strong>Difficulty Spike:</strong> False defeat. Fight continues but boss is weaker. Players must finish her quickly.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Corrupted Penitent Minion</h2>
+
+        <p>When "Invoke the Engine" is played, summon this minion:</p>
+
+        <div class="stat-table">
+            <p><strong>Stats:</strong></p>
+            <ul>
+                <li>HP: 10 cards (small deck)</li>
+                <li>Movement: 4</li>
+                <li>Armor: 1</li>
+                <li>Attacks: 2d6 melee</li>
+            </ul>
+
+            <p><strong>Deck:</strong></p>
+            <ul>
+                <li>6x "Shambling Advance" (Move toward nearest enemy)</li>
+                <li>4x "Corrupted Strike" (Attack for 2d6, gain 1 Taint on hit)</li>
+            </ul>
+
+            <p><strong>AI:</strong> Draw 1 card per turn, play immediately.</p>
+
+            <p><strong>Death:</strong> When defeated, all players within 2 hexes gain 1 Taint token (death explosion).</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Victory Conditions</h2>
+
+        <h3>Players Win</h3>
+        <p>Sister Vex is defeated when her deck AND hand are empty, and she cannot reshuffle.</p>
+
+        <h3>Players Lose</h3>
+        <ul>
+            <li>All players are defeated</li>
+            <li>Any player reaches 10+ Taint and becomes Corrupted (fails save)</li>
+            <li>Players retreat</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Difficulty Modifiers</h2>
+
+        <h3>Easy Mode (First-Time Players)</h3>
+        <ul>
+            <li>Start Sister Vex with 30 cards instead of 40</li>
+            <li>Remove Phase 4 cards</li>
+            <li>Minions have 6 HP instead of 10</li>
+        </ul>
+
+        <h3>Hard Mode (Experienced Players)</h3>
+        <ul>
+            <li>Start Sister Vex with 50 cards</li>
+            <li>Add +1 card to each Phase expansion</li>
+            <li>Sister Vex draws 4 cards per turn instead of 3</li>
+            <li>Minions have 15 HP</li>
+        </ul>
+
+        <h3>Nightmare Mode (Veterans)</h3>
+        <ul>
+            <li>Start Sister Vex with 60 cards</li>
+            <li>Phase 2 triggers at 40 cards, Phase 3 at 25, Phase 4 at 12</li>
+            <li>Sister Vex draws 5 cards per turn</li>
+            <li>All damage from Sister Vex ignores 1 armor</li>
+            <li>Corrupted Penitents have 20 HP and attack twice per turn</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Rewards</h2>
+
+        <h3>Upon Defeating Sister Vex</h3>
+
+        <p><strong>Guaranteed Loot:</strong></p>
+        <ul>
+            <li>1x "The Confessional's Scripture" (Rare Relic) - Once per mission, when you would take lethal damage, survive at 1 card remaining. Gain 3 Taint</li>
+            <li>500 Credits</li>
+            <li>2d6 Scrap</li>
+        </ul>
+
+        <p><strong>Roll on Legendary Loot Table</strong> (1d20):</p>
+        <table class="stat-table">
+            <thead>
+                <tr>
+                    <th>Roll</th>
+                    <th>Item</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1-5</td>
+                    <td>"Martyr's Burden" (Heavy Armor)</td>
+                    <td>+2 Armor, but take +1 damage from all sources</td>
+                </tr>
+                <tr>
+                    <td>6-10</td>
+                    <td>"Faithkeeper's Edge" (Sword)</td>
+                    <td>3d6 damage, gain 1 Taint per hit</td>
+                </tr>
+                <tr>
+                    <td>11-15</td>
+                    <td>"Chains of Absolution" (Relic)</td>
+                    <td>Target enemy cannot move for 1 turn (once per mission)</td>
+                </tr>
+                <tr>
+                    <td>16-19</td>
+                    <td>"Tainted Soulstone" (Consumable x3)</td>
+                    <td>Remove all Taint, but take 3d6 damage</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>"Sister Vex's Casket Fragment" (Unique Relic)</td>
+                    <td>Start each mission with "Shield of Faith" card in hand</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Campaign Unlock:</strong></p>
+        <p>Sister Vex can now be recruited as an NPC ally (but costs 200 Credits per mission and has 50% chance to betray you if you act "unholy")</p>
+
+        <div class="divider"></div>
+
+        <h2>Design Notes (For Game Master)</h2>
+
+        <h3>Why This Works Like Kingdom Death</h3>
+        <ol>
+            <li><strong>HP Deck = Dynamic Fight:</strong> Boss doesn't just lose health, she changes strategy</li>
+            <li><strong>Phase Escalation:</strong> Each phase adds difficulty cards, increasing pressure</li>
+            <li><strong>Risk/Reward:</strong> Players must balance speed (kill before Phase 4) vs safety (avoid Taint)</li>
+            <li><strong>False Defeat:</strong> "Absolution Denied" creates dramatic final stand moment</li>
+            <li><strong>Minion Summons:</strong> Forces target prioritization like KDM</li>
+            <li><strong>Corruption Mechanic:</strong> Taint acts like KDM's insanity/disorders - long-term consequence</li>
+        </ol>
+
+        <h3>Playtesting Notes</h3>
+        <ul>
+            <li>First playtest: Adjust card counts based on player damage output</li>
+            <li>If fight ends before Phase 3: Add +5 cards to starting deck</li>
+            <li>If fight drags past 90 minutes: Reduce starting deck by 5 cards</li>
+            <li>Taint accumulation should threaten 1-2 players by Phase 3, not all of them</li>
+            <li>Minions should be dangerous but not overwhelming - max 2 on field at once</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Variant: The Twins (4-6 Players)</h2>
+
+        <p>For larger groups, fight both Sister Vex AND Bonelord Thresh simultaneously.</p>
+
+        <ul>
+            <li>Each boss has 30-card deck</li>
+            <li>They share a turn (both activate after all players)</li>
+            <li>When one dies, the other gains +2 to all damage</li>
+            <li>New Phase 4 card for survivor: "Avenge the Fallen" - Attack all enemies for 6d6</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Quick Reference Card</h2>
+
+        <table class="stat-table">
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Cards Remaining</th>
+                    <th>New Cards Added</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>40-25</td>
+                    <td>Base deck only</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>24-15</td>
+                    <td>+5 difficulty cards</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>14-8</td>
+                    <td>+5 difficulty cards</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>7-0</td>
+                    <td>+3 ultimate cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Boss Turn:</strong> Draw 3, Play All, Discard</p>
+        <p><strong>Win Condition:</strong> Boss deck + hand empty</p>
+        <p><strong>Taint Threshold:</strong> 10+ = Corruption (player loss)</p>
+
+        <div class="divider"></div>
+
+        <h2>Printable Card List</h2>
+
+        <p>See [APPENDIX: Boss Cards] for printable card templates.</p>
+
+        <p>Each card should include:</p>
+        <ul>
+            <li>Card name</li>
+            <li>Type (Attack/Defense/Movement/Special)</li>
+            <li>Effect text</li>
+            <li>Flavor quote</li>
+            <li>Phase indicator (I, II, III, IV)</li>
+        </ul>
+
+        <p><strong>Printing Recommendations:</strong></p>
+        <ul>
+            <li>Standard poker card size (63mm x 88mm)</li>
+            <li>Cardstock 300gsm</li>
+            <li>Sleeve with opaque backs to prevent deck reading</li>
+            <li>Different colored borders for each Phase</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="quote-box">
+            <p><strong>Status:</strong> Playtest Ready</p>
+            <p><strong>Difficulty:</strong> Brutal</p>
+            <p><strong>Players:</strong> 2-4 recommended</p>
+        </div>
+
+    </div>
+</body>
+</html>

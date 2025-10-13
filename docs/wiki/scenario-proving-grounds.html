@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Scenario #1: The Proving Grounds - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="manuscript-page">
+        <h1 class="page-title">Arena Scenario #1: The Proving Grounds</h1>
+        <p class="subtitle">Church of Absolution vs Dwarven Clans - 1v1 Deathmatch</p>
+
+        <div class="metadata">
+            <p><strong>Version:</strong> 1.0 | <strong>Last Updated:</strong> October 2025</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="info-box">
+            <p><strong>Type:</strong> 1v1 Deathmatch</p>
+            <p><strong>Factions:</strong> Church of Absolution vs Dwarven Clans</p>
+            <p><strong>Estimated Playtime:</strong> 45-60 minutes</p>
+            <p><strong>Difficulty:</strong> Beginner-friendly (tests core mechanics)</p>
+            <p><strong>Victory Condition:</strong> Reduce opponent to 0 HP OR force 4+ reshuffles</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Scenario Setup</h2>
+
+        <h3>Map: The Proving Grounds (12×12 Hexes)</h3>
+
+        <pre class="info-box">
+     [F ][F ][  ][  ][  ][  ][  ][  ][  ][  ][F ][F ]
+    [F ][F ][R ][  ][  ][  ][  ][  ][  ][R ][F ][F ]
+   [  ][R ][R ][  ][  ][W ][W ][  ][  ][R ][R ][  ]
+  [  ][  ][  ][  ][W ][W ][W ][W ][  ][  ][  ][  ]
+ [  ][  ][  ][W ][W ][E1][E1][W ][W ][  ][  ][  ]
+[  ][  ][W ][W ][E1][  ][  ][E1][W ][W ][  ][  ]
+[  ][  ][W ][W ][E2][  ][  ][E2][W ][W ][  ][  ]
+ [  ][  ][  ][W ][W ][E2][E2][W ][W ][  ][  ][  ]
+  [  ][  ][  ][  ][W ][W ][W ][W ][  ][  ][  ][  ]
+   [  ][R ][R ][  ][  ][W ][W ][  ][  ][R ][R ][  ]
+    [F ][F ][R ][  ][  ][  ][  ][  ][  ][R ][F ][F ]
+     [F ][F ][  ][  ][  ][  ][  ][  ][  ][  ][F ][F ]
+        </pre>
+
+        <h3>Terrain Legend</h3>
+
+        <ul>
+            <li><strong>[F] - Forest</strong> (8 hexes): +1 Defense when standing in this hex. Normal movement (1 SP per hex). Blocks LOS through multiple forest hexes.</li>
+            <li><strong>[R] - Rubble</strong> (8 hexes): +1 Defense when standing in this hex. Difficult Terrain (2 SP per hex). Does not block LOS.</li>
+            <li><strong>[W] - Water/Mud</strong> (20 hexes): No defensive bonus. Difficult Terrain (2 SP per hex). If you end turn in Water, remove 1 Heat.</li>
+            <li><strong>[E1] - Elevation 1</strong> (4 hexes): +1 damage to attacks FROM this hex. Ignore cover when attacking FROM this hex. Costs 2 SP to enter from lower elevation.</li>
+            <li><strong>[E2] - Elevation 2</strong> (4 hexes): +2 damage to attacks FROM this hex. Ignore cover when attacking FROM this hex. Costs 3 SP to enter from Elevation 1, 5 SP from ground. Attacks FROM Elevation 2 gain +1 Range.</li>
+            <li><strong>[  ] - Clear Ground</strong>: No modifiers. Normal movement (1 SP per hex).</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Deployment</h2>
+
+        <h3>Church of Absolution Deployment Zone</h3>
+        <p><strong>Hexes:</strong> Top-left quadrant (rows 1-3, columns 1-3)</p>
+        <pre class="info-box">
+  [F ][F ][  ]
+ [F ][F ][R ]
+[  ][R ][R ]
+        </pre>
+        <p><strong>Starting Position:</strong> Player chooses any hex in this zone</p>
+        <p><strong>Facing:</strong> Player chooses initial facing</p>
+
+        <h3>Dwarven Clans Deployment Zone</h3>
+        <p><strong>Hexes:</strong> Bottom-right quadrant (rows 10-12, columns 10-12)</p>
+        <pre class="info-box">
+       [R ][R ][  ]
+        [R ][F ][F ]
+         [  ][F ][F ]
+        </pre>
+        <p><strong>Starting Position:</strong> Player chooses any hex in this zone</p>
+        <p><strong>Facing:</strong> Player chooses initial facing</p>
+
+        <h3>Deployment Order</h3>
+        <ol>
+            <li><strong>Roll 1d6:</strong> Higher roll chooses who deploys first</li>
+            <li><strong>First player:</strong> Places Casket in their deployment zone</li>
+            <li><strong>Second player:</strong> Places Casket in their deployment zone</li>
+            <li><strong>First player begins</strong> Turn 1</li>
+        </ol>
+
+        <div class="divider"></div>
+
+        <h2>Pre-Built Decks</h2>
+
+        <h3>Church Deck: "Martyr's Fury"</h3>
+
+        <div class="stat-table">
+            <p><strong>Casket Class:</strong> Assault (Medium Frame - 5 SP)</p>
+            <p><strong>Total Deck:</strong> 29 cards (10 Universal + 6 Faction + 11 Equipment + 2 Tactics)</p>
+        </div>
+
+        <h4>Build:</h4>
+        <ul>
+            <li>10 Universal Core (mandatory)</li>
+            <li>6 Church Faction Core (mandatory)</li>
+            <li>Equipment: Longsword (6 cards) + Buckler Shield (2 cards) + Martyr's Brand Sigil (3 cards) = 11 cards</li>
+            <li>2 Tactics: Righteous Fury + Blood Pact</li>
+        </ul>
+
+        <h4>Deck Composition:</h4>
+
+        <p><strong>Universal Core (10 cards)</strong>:</p>
+        <ol>
+            <li>Move ×3 (1 SP, Move 2 hexes)</li>
+            <li>Sprint ×2 (2 SP, Move 4 hexes, +1 Heat)</li>
+            <li>Brace ×2 (1 SP, +2 Defense until next turn)</li>
+            <li>Disengage ×1 (1 SP, Move 2 hexes, ignore attacks of opportunity)</li>
+            <li>Focus ×1 (0 SP, Draw 1 card)</li>
+            <li>Emergency Repair ×1 (3 SP, Recover 3 cards from discard)</li>
+        </ol>
+
+        <p><strong>Church Faction Core (6 cards)</strong>:</p>
+        <ol start="7">
+            <li>Blood Offering ×1 (0 SP, Discard 2 cards, next attack +3 damage)</li>
+            <li>Martyrdom Protocol ×1 (2 SP, Redirect damage from ally to yourself)</li>
+            <li>Righteous Fury ×1 (Passive, +1 damage per enemy killed - permanent)</li>
+            <li>Divine Judgment ×1 (4 SP, Deal 8 damage, ignore Defense)</li>
+            <li>Consecrated Ground ×1 (3 SP, Create 3-hex zone, allies heal 1 card/turn)</li>
+            <li>Last Rites ×1 (0 SP, When reduced to 0 HP, deal 10 damage to killer)</li>
+        </ol>
+
+        <p><strong>Equipment - Longsword (6 cards)</strong>:</p>
+        <ol start="13">
+            <li>Slash ×2 (2 SP, Melee, Deal 4 damage)</li>
+            <li>Thrust ×1 (2 SP, Melee, Deal 3 damage, +2 if attacking front arc)</li>
+            <li>Parry ×1 (0 SP, Reactive, Reduce damage by 2, next attack +1 damage)</li>
+            <li>Riposte ×1 (1 SP, Reactive, When attacked in melee, deal 3 damage to attacker)</li>
+            <li>Guard Stance ×1 (2 SP, Defense, +2 Defense until next turn)</li>
+        </ol>
+
+        <p><strong>Equipment - Buckler Shield (2 cards)</strong>:</p>
+        <ol start="18">
+            <li>Deflect ×1 (1 SP, Reactive, Reduce damage by 2)</li>
+            <li>Shield Bash ×1 (2 SP, Melee, Deal 2 damage, push 1 hex)</li>
+        </ol>
+
+        <p><strong>Equipment - Martyr's Brand Sigil (3 cards - Church-Exclusive)</strong>:</p>
+        <ol start="20">
+            <li>Martyr's Blessing ×1 (Passive, When you discard cards via Blood Offering, gain +1 Defense until next turn)</li>
+            <li>Sacred Wound ×1 (2 SP, Self-harm: discard 1 card, all allies gain +1 damage this turn)</li>
+            <li>Zealot's Fervor ×1 (Passive, When below 15 HP, all attacks deal +1 damage)</li>
+        </ol>
+
+        <p><strong>Tactics (2 cards)</strong>:</p>
+        <ol start="23">
+            <li>Righteous Fury Tactic ×1 (0 SP, Once per game: Next attack deals double damage)</li>
+            <li>Blood Pact ×1 (0 SP, Discard 3 cards, recover 3 ally cards)</li>
+        </ol>
+
+        <p><strong>Opening Hand:</strong> Shuffle deck, draw top 6 cards</p>
+
+        <div class="quote-box">
+            <p><strong>Playstyle:</strong> Aggressive martyr striker. Use Blood Offering for burst damage (+3 dmg at cost of 2 HP). Longsword provides versatile melee options. Buckler Shield gives reactive defense without slowing movement. Martyr's Brand Sigil rewards self-harm with defensive buffs. Scales with component destruction (Righteous Fury passive).</p>
+            <p><strong>Win Condition:</strong> Burst opponent down with Blood Offering combos before death spiral begins</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>Dwarven Deck: "Immovable Wall"</h3>
+
+        <div class="stat-table">
+            <p><strong>Casket Class:</strong> Heavy (Heavy Frame - 4 SP)</p>
+            <p><strong>Total Deck:</strong> 33 cards (12 Universal + 6 Faction + 13 Equipment + 2 Tactics)</p>
+        </div>
+
+        <h4>Build:</h4>
+        <ul>
+            <li>10 Universal Core (mandatory)</li>
+            <li>6 Dwarven Faction Core (mandatory)</li>
+            <li>Equipment: Warhammer (6 cards) + Tower Shield (4 cards) + Forge-Rune Sigil (3 cards) = 13 cards</li>
+            <li>2 Tactics: Stone Endurance + Runic Overcharge</li>
+            <li><strong>Stone Endurance Bonus:</strong> +2 Universal Core cards (32 total HP)</li>
+        </ul>
+
+        <h4>Deck Composition:</h4>
+
+        <p><strong>Universal Core (12 cards - includes Stone Endurance bonus)</strong>:</p>
+        <ol>
+            <li>Move ×4 (1 SP, Move 2 hexes) - +1 extra from Stone Endurance</li>
+            <li>Sprint ×3 (2 SP, Move 4 hexes, +1 Heat) - +1 extra from Stone Endurance</li>
+            <li>Brace ×2 (1 SP, +2 Defense until next turn)</li>
+            <li>Disengage ×1 (1 SP, Move 2 hexes, ignore attacks of opportunity)</li>
+            <li>Focus ×1 (0 SP, Draw 1 card)</li>
+            <li>Emergency Repair ×1 (3 SP, Recover 3 cards from discard)</li>
+        </ol>
+
+        <p><strong>Dwarven Faction Core (6 cards)</strong>:</p>
+        <ol start="7">
+            <li>Crushing Blow ×1 (2 SP, Melee, Deal 4 damage, ARMOR PIERCING - ignore all Defense)</li>
+            <li>Forge Fury ×1 (2 SP, Convert all Heat to damage, deal X damage where X = current Heat)</li>
+            <li>Rune of Protection ×1 (2 SP, Gain 1 Rune Counter, reduce damage by 1 per counter - max 3, lasts until end of mission)</li>
+            <li>Unbreakable ×1 (1 SP, Reactive, Reduce damage by 3)</li>
+            <li>Earthshaker ×1 (3 SP, Melee AOE, Deal 3 damage to all adjacent enemies, push 1 hex)</li>
+            <li>Clan Vengeance ×1 (Passive, +2 damage per Component Damage taken - permanent)</li>
+        </ol>
+
+        <p><strong>Equipment - Warhammer (6 cards)</strong>:</p>
+        <ol start="13">
+            <li>Hammer Strike ×2 (2 SP, Melee, Deal 5 damage)</li>
+            <li>Overhead Smash ×1 (3 SP, Melee, Deal 7 damage, +1 Heat)</li>
+            <li>Hammer Block ×1 (1 SP, Reactive, Reduce damage by 2, next attack +2 damage)</li>
+            <li>Pommel Bash ×1 (1 SP, Melee, Deal 3 damage, target loses 1 SP next turn)</li>
+            <li>Crushing Sweep ×1 (2 SP, Melee, Deal 4 damage to target + 2 damage to 1 adjacent enemy)</li>
+        </ol>
+
+        <p><strong>Equipment - Tower Shield (4 cards)</strong>:</p>
+        <ol start="18">
+            <li>Shield Wall ×1 (2 SP, +4 Defense until next turn, cannot move)</li>
+            <li>Tower Defense ×1 (1 SP, Reactive, Reduce damage by 3)</li>
+            <li>Shield Advance ×1 (2 SP, Move 2 hexes, gain +2 Defense this turn)</li>
+            <li>Bulwark Stance ×1 (1 SP, +2 Defense until next turn)</li>
+        </ol>
+
+        <p><strong>Equipment - Forge-Rune Sigil (3 cards - Dwarven-Exclusive)</strong>:</p>
+        <ol start="22">
+            <li>Runic Regeneration ×1 (Passive, When you gain a Rune Counter, recover 1 card from discard)</li>
+            <li>Forge Heat ×1 (1 SP, Gain 2 Heat, +1 damage to next attack)</li>
+            <li>Rune of Endurance ×1 (Passive, Max Rune Counters increased from 3 to 4)</li>
+        </ol>
+
+        <p><strong>Tactics (2 cards)</strong>:</p>
+        <ol start="25">
+            <li>Stone Endurance ×1 (Passive, +2 Universal Core cards, deck starts at 33 cards instead of 31)</li>
+            <li>Runic Overcharge ×1 (2 SP, Once per game: Gain 3 Rune Counters immediately)</li>
+        </ol>
+
+        <p><strong>Opening Hand:</strong> Shuffle deck, draw top 6 cards</p>
+
+        <div class="quote-box">
+            <p><strong>Playstyle:</strong> Defensive fortress tank. Stack Rune Counters (Rune of Protection + Runic Overcharge = 4 counters with Rune of Endurance). Use Tower Shield + Rune Counters for massive damage reduction (-7 total). Crushing Blow ignores all Defense (counters Church's defensive buffs). 33 HP deck (Stone Endurance) = superior durability. Outlast opponent through attrition.</p>
+            <p><strong>Win Condition:</strong> Survive until opponent's death spiral (4+ Damage cards) collapses their deck</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Turn Structure Reminder</h2>
+
+        <h3>4 Phases Per Turn</h3>
+
+        <h4>Phase 1: Refresh</h4>
+        <ol>
+            <li>Restore SP to maximum (Church: 5 SP, Dwarves: 5 SP)</li>
+            <li>If Heat 5+: Roll Strain (1d6 + current Heat)
+                <ul>
+                    <li>1-5: +1 Heat</li>
+                    <li>6-8: -1 SP this turn</li>
+                    <li>9-11: Take 2 damage</li>
+                    <li>12+: Component malfunction (lose 1 random card type for turn)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h4>Phase 2: Action Phase</h4>
+        <ul>
+            <li>Play cards from hand (costs SP)</li>
+            <li>Move (1 SP per hex, 2 SP for difficult terrain)</li>
+            <li>Continue until out of SP or pass turn</li>
+        </ul>
+
+        <h4>Phase 3: Draw Phase</h4>
+        <ol>
+            <li>Draw cards until hand size = 6</li>
+            <li>If deck is empty:
+                <ul>
+                    <li>Shuffle discard pile</li>
+                    <li>Add 1 "Damage" card (blank, dead draw)</li>
+                    <li>This is your new deck</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h4>Phase 4: End Turn</h4>
+        <ul>
+            <li>Resolve end-of-turn effects</li>
+            <li>Remove temporary buffs (e.g., Shield Wall)</li>
+            <li>Opponent begins their turn</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Combat Resolution (With Dice)</h2>
+
+        <h3>Attack Steps</h3>
+        <ol>
+            <li><strong>Declare attack:</strong> Play attack card, spend SP, declare target component</li>
+            <li><strong>Calculate To-Hit Number:</strong>
+                <ul>
+                    <li>Base: <strong>5+</strong> (roll 2d6 Attack Dice)</li>
+                    <li>+ Range (Short 0-3 hexes +0, Medium 4-6 +1, Long 7-10 +2)</li>
+                    <li>+ Attacker movement this turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)</li>
+                    <li>+ Defender movement last turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)</li>
+                    <li>+ Hex-side facing (Front +0, Weapon +0, Flank -1, Rear -2, Shield +1)</li>
+                    <li>+ Cover (Light +1, Heavy +2)</li>
+                    <li>+ Elevation (Higher -1, Lower +1)</li>
+                </ul>
+            </li>
+            <li><strong>Roll 2 Attack Dice</strong>, add values:
+                <ul>
+                    <li><strong>5-6</strong> = Hit (standard damage)</li>
+                    <li><strong>7-8</strong> = Strong Hit (+1 damage)</li>
+                    <li><strong>9</strong> = Critical Hit (+2 damage, bypass 1 Defense)</li>
+                    <li><strong>10</strong> (double skull) = <strong>EXECUTION</strong> (auto-destroy component)</li>
+                    <li><strong>&lt;5</strong> = Miss (attack wasted)</li>
+                    <li><strong>2</strong> (double gear) = Catastrophic Failure (weapon jams, discard all Primary Weapon cards from hand)</li>
+                </ul>
+            </li>
+            <li><strong>If hit</strong>, defender plays reactive card (optional, 0 SP)</li>
+            <li><strong>Defender rolls Defense Dice</strong> (1d6 per damage point):
+                <ul>
+                    <li>Count blocks: Shield, Absorb (each blocks 1 damage)</li>
+                    <li>Apply special effects: Critical (+1 Component Damage), Heat (+1 Heat), Pierce (no reactives)</li>
+                </ul>
+            </li>
+            <li><strong>Defender discards</strong> final damage (original - blocks) from hand/deck</li>
+        </ol>
+
+        <h3>Component Damage</h3>
+        <p>When you discard cards from damage:</p>
+        <ol>
+            <li>Count how many <strong>Primary Weapon cards</strong> were discarded</li>
+            <li>Each Primary Weapon card = 1 <strong>Component Damage</strong></li>
+            <li>Track Component Damage by location: Arms (weapon systems), Legs (movement systems), Head (sensors), Chassis (core systems)</li>
+            <li>When <strong>3 Component Damage</strong> to same location = <strong>Component Destroyed</strong></li>
+        </ol>
+
+        <h4>Component Destruction Effects</h4>
+        <ul>
+            <li><strong>Right Arm Destroyed:</strong> Lose all Primary Weapon cards from hand (discard them)</li>
+            <li><strong>Left Arm Destroyed:</strong> Lose all Secondary Equipment cards from hand</li>
+            <li><strong>Legs Destroyed:</strong> Movement costs +1 SP per hex</li>
+            <li><strong>Head Destroyed:</strong> -1 damage to ranged attacks, no sensor abilities</li>
+            <li><strong>Chassis Destroyed:</strong> -1 SP maximum permanently</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Victory Conditions</h2>
+
+        <h3>Primary Victory: Reduce Opponent to 0 HP</h3>
+        <p>When opponent's deck is empty AND they cannot reshuffle (discard pile also empty), they are defeated.</p>
+
+        <h3>Secondary Victory: Death Spiral (4+ Reshuffles)</h3>
+        <p>After 4 reshuffles, opponent's deck contains 26 real cards and 4 Damage cards (13% of deck is dead draws). At this point, most players concede.</p>
+
+        <h3>Tertiary Victory: Concession</h3>
+        <p>Either player may concede at any time.</p>
+
+        <div class="divider"></div>
+
+        <h2>Expected Game Flow</h2>
+
+        <h3>Turns 1-3: Positioning</h3>
+        <ul>
+            <li>Both players navigate terrain toward center</li>
+            <li>Church moves faster (Desperate Lunge, Overextend)</li>
+            <li>Dwarves set up defensive buffs (Rune of Protection)</li>
+            <li>Minimal damage, mostly movement and setup</li>
+        </ul>
+
+        <h3>Turns 4-6: First Engagement</h3>
+        <ul>
+            <li>Church closes to Melee range</li>
+            <li>Dwarves activate Shield Wall</li>
+            <li>First attacks land (4-6 damage each)</li>
+            <li>Heat begins building (especially Dwarves)</li>
+            <li>First Component Damage tracked</li>
+        </ul>
+
+        <h3>Turns 7-10: Brutal Exchange</h3>
+        <ul>
+            <li>Both sides trading heavy blows</li>
+            <li>Church using Blood Offering for burst (discard 2 cards for +3 dmg)</li>
+            <li>Dwarves stacking Rune Counters (reducing damage)</li>
+            <li>First reshuffle likely (add 1 Damage card)</li>
+            <li>Heat Strain checks begin (5+ Heat)</li>
+        </ul>
+
+        <h3>Turns 11-15: Death Spiral</h3>
+        <ul>
+            <li>Decks contain Damage cards (dead draws)</li>
+            <li>Component destruction occurs (3+ Component Damage)</li>
+            <li>Players desperate, using ultimate cards (Hammerfall, Divine Judgment)</li>
+            <li>One side collapses</li>
+        </ul>
+
+        <p><strong>Expected Winner:</strong> 51/49 Church favor - slightly more aggressive, can burst down Dwarves before attrition matters. However, if Dwarves survive to Turn 12+, attrition favors them (32 HP vs 30 HP).</p>
+
+        <div class="divider"></div>
+
+        <h2>Learning Objectives</h2>
+
+        <p>This scenario teaches:</p>
+        <ol>
+            <li><strong>SP economy:</strong> When to spend, when to save</li>
+            <li><strong>Heat management:</strong> Risk/reward of high-Heat cards</li>
+            <li><strong>Deck cycling:</strong> When to reshuffle, when to delay</li>
+            <li><strong>Component damage:</strong> Tracking and destruction effects</li>
+            <li><strong>Facing modifiers:</strong> Importance of positioning (rear arc +2 dmg)</li>
+            <li><strong>Terrain usage:</strong> Cover, elevation, difficult terrain</li>
+            <li><strong>Reactive cards:</strong> 0 SP interrupts (Brace for Impact, Unbreakable)</li>
+            <li><strong>Death spiral:</strong> How Damage cards accumulate</li>
+        </ol>
+
+        <p>After playing this scenario 2-3 times, players should understand all core mechanics.</p>
+
+        <div class="divider"></div>
+
+        <h2>Quick Reference</h2>
+
+        <h3>Movement Costs</h3>
+        <ul>
+            <li>Clear Ground: 1 SP per hex</li>
+            <li>Difficult Terrain (Water/Rubble): 2 SP per hex</li>
+            <li>Entering Elevation 1: 2 SP</li>
+            <li>Entering Elevation 2: 3 SP (from E1), 5 SP (from ground)</li>
+        </ul>
+
+        <h3>Damage Modifiers</h3>
+        <ul>
+            <li>Rear Arc: +2 dmg (attacker), -2 Defense (defender)</li>
+            <li>Side Arc: +1 dmg (attacker), -1 Defense (defender)</li>
+            <li>Front Arc: +0 dmg (attacker), Full Defense (defender)</li>
+            <li>Elevation 1: +1 dmg from this hex</li>
+            <li>Elevation 2: +2 dmg from this hex</li>
+            <li>Cover (Forest/Rubble): +1 Defense when standing in hex</li>
+        </ul>
+
+        <h3>Heat Strain Table (Roll at 5+ Heat)</h3>
+        <table class="stat-table">
+            <thead>
+                <tr>
+                    <th>1d6 + Heat</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1-5</td><td>+1 Heat</td></tr>
+                <tr><td>6-8</td><td>-1 SP this turn</td></tr>
+                <tr><td>9-11</td><td>Take 2 damage</td></tr>
+                <tr><td>12+</td><td>Component malfunction</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Component Destruction Effects</h3>
+        <table class="stat-table">
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Right Arm</td><td>Lose Primary Weapon cards from hand</td></tr>
+                <tr><td>Left Arm</td><td>Lose Secondary Equipment cards from hand</td></tr>
+                <tr><td>Legs</td><td>Movement +1 SP per hex</td></tr>
+                <tr><td>Head</td><td>-1 dmg to ranged attacks</td></tr>
+                <tr><td>Chassis</td><td>-1 SP maximum</td></tr>
+            </tbody>
+        </table>
+
+        <div class="divider"></div>
+
+        <h2>Setup Checklist</h2>
+
+        <p>Before starting:</p>
+        <ul>
+            <li>Print Quick Reference Sheet</li>
+            <li>Print or draw 12×12 hex map</li>
+            <li>Prepare Church deck (29 cards shuffled)</li>
+            <li>Prepare Dwarven deck (33 cards shuffled)</li>
+            <li><strong>Prepare DICE:</strong>
+                <ul>
+                    <li>2 Attack Dice (custom d6 with symbols, or regular 2d6)</li>
+                    <li>10+ Defense Dice (custom d6 with symbols, or regular d6)</li>
+                    <li>2d6 for Initiative (regular dice)</li>
+                </ul>
+            </li>
+            <li>Prepare tokens for: Heat tracking, SP tracking, Rune Counters, Component Damage markers, Facing indicator</li>
+            <li>Prepare paper for tracking: Current HP, Damage cards in deck, Component Damage by location</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <p><strong>Status:</strong> Playtest Ready</p>
+        <p><strong>Estimated Time:</strong> 45-60 minutes first game, 30-45 minutes experienced players</p>
+
+    </div>
+</body>
+</html>
