@@ -739,6 +739,18 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 
 ## Changelog for This Document
 
+**October 13, 2025** - Main index manuscript theme overhaul and UI enhancements
+- **Manuscript Theme Made Default**: Removed brutalist theme entirely, gothic manuscript is now the only theme
+- **Theme Toggle Removed**: Simplified UI by removing theme switching button and JavaScript
+- **Dripping Oil/Ink Border**: Replaced geometric border with organic dripping effect from top edge (13 drips)
+- **PenanceBG.png Opacity**: Set to 15% for subtle background texture without overwhelming content
+- **Scroll-to-Top Button**: Added fixed bottom-right button (appears after 500px scroll)
+- **Gothic Typography**: Cinzel Decorative for headings, Crimson Pro for body text (now default)
+- **Enhanced Buttons & Cards**: Aged gold borders, gradient backgrounds, manuscript styling throughout
+- **Color Palette Unified**: All elements use parchment (#d4c5b0), aged gold (#b8956a), blood-red (#4a0e0e)
+- **Footer Updated**: Changed from "brutalist conviction" to "forged in gothic manuscript tradition"
+- **Repository Structure Updated**: Wiki pages now include equipment-decks.html, support-units.html, scenarios.html
+
 **October 12, 2025** - Equipment, Support Units, and Scenarios wiki pages
 - **Equipment & Decks Wiki Page**: Complete equipment pool (60+ items), crafting costs, smelting/salvage system
 - **Support Units Wiki Page**: 6 support unit types (Penitent Squad, Ironclad Sentinel, Bone Thralls, Verdant Stalker, Forge Golem, Scrap Hauler)
