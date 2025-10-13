@@ -759,6 +759,51 @@
             color: var(--border-ornate);
         }
 
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--blood-red), var(--aged-brown));
+            border: 3px solid var(--border-ornate);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.3s;
+            z-index: 9998;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(184, 149, 106, 0.6);
+            background: linear-gradient(135deg, var(--border-ornate), var(--parchment));
+        }
+
+        .scroll-to-top::before {
+            content: '↑';
+            font-size: 2rem;
+            color: var(--parchment);
+            font-weight: 700;
+            font-family: 'Cinzel Decorative', serif;
+            transition: color 0.3s;
+        }
+
+        .scroll-to-top:hover::before {
+            color: var(--ink-brown);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .faction-item {
@@ -772,6 +817,17 @@
 
             .section {
                 padding: 4rem 1rem;
+            }
+
+            .scroll-to-top {
+                width: 50px;
+                height: 50px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .scroll-to-top::before {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -1137,6 +1193,9 @@
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"></button>
+
     <!-- Scroll Script -->
     <script>
         // Smooth scroll for navigation links
@@ -1173,6 +1232,26 @@
                 if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
                 }
+            });
+        });
+
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
