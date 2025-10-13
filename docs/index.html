@@ -64,7 +64,7 @@
             pointer-events: none;
         }
 
-        /* Decorative Gothic Border */
+        /* Torn Parchment Border */
         body::after {
             content: '';
             position: fixed;
@@ -72,19 +72,99 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border: 15px solid var(--border-ornate);
-            border-image: repeating-linear-gradient(
-                45deg,
-                var(--border-ornate),
-                var(--border-ornate) 10px,
-                var(--aged-brown) 10px,
-                var(--aged-brown) 20px
-            ) 15;
             pointer-events: none;
             z-index: 9999;
+            /* Torn edge effect using SVG filter */
+            border: 15px solid transparent;
+            background:
+                /* Top torn edge */
+                linear-gradient(90deg,
+                    transparent 0%, transparent 2%, var(--border-ornate) 2%, var(--border-ornate) 3%,
+                    transparent 3%, transparent 5%, var(--border-ornate) 5%, var(--border-ornate) 7%,
+                    transparent 7%, transparent 8%, var(--border-ornate) 8%, var(--border-ornate) 11%,
+                    transparent 11%, transparent 13%, var(--border-ornate) 13%, var(--border-ornate) 15%,
+                    transparent 15%, transparent 17%, var(--border-ornate) 17%, var(--border-ornate) 19%,
+                    transparent 19%, transparent 22%, var(--border-ornate) 22%, var(--border-ornate) 24%,
+                    transparent 24%, transparent 26%, var(--border-ornate) 26%, var(--border-ornate) 29%,
+                    transparent 29%, transparent 31%, var(--border-ornate) 31%, var(--border-ornate) 33%,
+                    transparent 33%, transparent 36%, var(--border-ornate) 36%, var(--border-ornate) 38%,
+                    transparent 38%, transparent 41%, var(--border-ornate) 41%, var(--border-ornate) 43%,
+                    transparent 43%, transparent 46%, var(--border-ornate) 46%, var(--border-ornate) 48%,
+                    transparent 48%, transparent 51%, var(--border-ornate) 51%, var(--border-ornate) 53%,
+                    transparent 53%, transparent 56%, var(--border-ornate) 56%, var(--border-ornate) 59%,
+                    transparent 59%, transparent 62%, var(--border-ornate) 62%, var(--border-ornate) 64%,
+                    transparent 64%, transparent 67%, var(--border-ornate) 67%, var(--border-ornate) 70%,
+                    transparent 70%, transparent 73%, var(--border-ornate) 73%, var(--border-ornate) 75%,
+                    transparent 75%, transparent 78%, var(--border-ornate) 78%, var(--border-ornate) 81%,
+                    transparent 81%, transparent 84%, var(--border-ornate) 84%, var(--border-ornate) 87%,
+                    transparent 87%, transparent 89%, var(--border-ornate) 89%, var(--border-ornate) 92%,
+                    transparent 92%, transparent 95%, var(--border-ornate) 95%, var(--border-ornate) 97%,
+                    transparent 97%, transparent 100%
+                ) top / 100% 15px no-repeat,
+                /* Bottom torn edge */
+                linear-gradient(90deg,
+                    transparent 0%, transparent 1%, var(--border-ornate) 1%, var(--border-ornate) 4%,
+                    transparent 4%, transparent 7%, var(--border-ornate) 7%, var(--border-ornate) 9%,
+                    transparent 9%, transparent 12%, var(--border-ornate) 12%, var(--border-ornate) 14%,
+                    transparent 14%, transparent 18%, var(--border-ornate) 18%, var(--border-ornate) 20%,
+                    transparent 20%, transparent 23%, var(--border-ornate) 23%, var(--border-ornate) 26%,
+                    transparent 26%, transparent 29%, var(--border-ornate) 29%, var(--border-ornate) 32%,
+                    transparent 32%, transparent 35%, var(--border-ornate) 35%, var(--border-ornate) 38%,
+                    transparent 38%, transparent 42%, var(--border-ornate) 42%, var(--border-ornate) 44%,
+                    transparent 44%, transparent 48%, var(--border-ornate) 48%, var(--border-ornate) 50%,
+                    transparent 50%, transparent 54%, var(--border-ornate) 54%, var(--border-ornate) 57%,
+                    transparent 57%, transparent 60%, var(--border-ornate) 60%, var(--border-ornate) 63%,
+                    transparent 63%, transparent 66%, var(--border-ornate) 66%, var(--border-ornate) 69%,
+                    transparent 69%, transparent 72%, var(--border-ornate) 72%, var(--border-ornate) 76%,
+                    transparent 76%, transparent 79%, var(--border-ornate) 79%, var(--border-ornate) 82%,
+                    transparent 82%, transparent 85%, var(--border-ornate) 85%, var(--border-ornate) 88%,
+                    transparent 88%, transparent 91%, var(--border-ornate) 91%, var(--border-ornate) 94%,
+                    transparent 94%, transparent 97%, var(--border-ornate) 97%, var(--border-ornate) 99%,
+                    transparent 99%, transparent 100%
+                ) bottom / 100% 15px no-repeat,
+                /* Left torn edge */
+                linear-gradient(0deg,
+                    transparent 0%, transparent 3%, var(--border-ornate) 3%, var(--border-ornate) 5%,
+                    transparent 5%, transparent 8%, var(--border-ornate) 8%, var(--border-ornate) 11%,
+                    transparent 11%, transparent 14%, var(--border-ornate) 14%, var(--border-ornate) 17%,
+                    transparent 17%, transparent 20%, var(--border-ornate) 20%, var(--border-ornate) 23%,
+                    transparent 23%, transparent 27%, var(--border-ornate) 27%, var(--border-ornate) 30%,
+                    transparent 30%, transparent 33%, var(--border-ornate) 33%, var(--border-ornate) 37%,
+                    transparent 37%, transparent 40%, var(--border-ornate) 40%, var(--border-ornate) 44%,
+                    transparent 44%, transparent 47%, var(--border-ornate) 47%, var(--border-ornate) 51%,
+                    transparent 51%, transparent 54%, var(--border-ornate) 54%, var(--border-ornate) 58%,
+                    transparent 58%, transparent 62%, var(--border-ornate) 62%, var(--border-ornate) 65%,
+                    transparent 65%, transparent 69%, var(--border-ornate) 69%, var(--border-ornate) 72%,
+                    transparent 72%, transparent 76%, var(--border-ornate) 76%, var(--border-ornate) 79%,
+                    transparent 79%, transparent 83%, var(--border-ornate) 83%, var(--border-ornate) 86%,
+                    transparent 86%, transparent 90%, var(--border-ornate) 90%, var(--border-ornate) 93%,
+                    transparent 93%, transparent 97%, var(--border-ornate) 97%, var(--border-ornate) 99%,
+                    transparent 99%, transparent 100%
+                ) left / 15px 100% no-repeat,
+                /* Right torn edge */
+                linear-gradient(0deg,
+                    transparent 0%, transparent 2%, var(--border-ornate) 2%, var(--border-ornate) 6%,
+                    transparent 6%, transparent 9%, var(--border-ornate) 9%, var(--border-ornate) 13%,
+                    transparent 13%, transparent 16%, var(--border-ornate) 16%, var(--border-ornate) 19%,
+                    transparent 19%, transparent 22%, var(--border-ornate) 22%, var(--border-ornate) 26%,
+                    transparent 26%, transparent 29%, var(--border-ornate) 29%, var(--border-ornate) 33%,
+                    transparent 33%, transparent 37%, var(--border-ornate) 37%, var(--border-ornate) 41%,
+                    transparent 41%, transparent 45%, var(--border-ornate) 45%, var(--border-ornate) 48%,
+                    transparent 48%, transparent 52%, var(--border-ornate) 52%, var(--border-ornate) 56%,
+                    transparent 56%, transparent 59%, var(--border-ornate) 59%, var(--border-ornate) 63%,
+                    transparent 63%, transparent 66%, var(--border-ornate) 66%, var(--border-ornate) 70%,
+                    transparent 70%, transparent 74%, var(--border-ornate) 74%, var(--border-ornate) 77%,
+                    transparent 77%, transparent 81%, var(--border-ornate) 81%, var(--border-ornate) 85%,
+                    transparent 85%, transparent 88%, var(--border-ornate) 88%, var(--border-ornate) 92%,
+                    transparent 92%, transparent 95%, var(--border-ornate) 95%, var(--border-ornate) 98%,
+                    transparent 98%, transparent 100%
+                ) right / 15px 100% no-repeat;
             box-shadow:
                 inset 0 0 30px rgba(0, 0, 0, 0.6),
-                0 0 15px rgba(184, 149, 106, 0.3);
+                inset 15px 15px 40px rgba(0, 0, 0, 0.3),
+                inset -15px -15px 40px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(184, 149, 106, 0.2);
+            filter: drop-shadow(0 0 8px rgba(184, 149, 106, 0.4));
         }
 
         body {
