@@ -22,7 +22,8 @@
             --medium-gray: #4a3829;
             --light-gray: #8b7355;
             --white: #d4c5b0;
-            --blood-red: #4a0e0e;
+            --blood-red: #8b1a1a;
+            --blood-red-dark: #6b1414;
             --accent: #b8956a;
             --parchment: #d4c5b0;
             --aged-brown: #3d2517;
@@ -258,9 +259,42 @@
             border-bottom: 3px solid var(--white);
             background: var(--black);
             position: relative;
+            overflow: hidden;
         }
 
+        /* Breathing blood-red background effect */
         .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 120%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(
+                ellipse at center,
+                var(--blood-red) 0%,
+                var(--blood-red-dark) 30%,
+                transparent 70%
+            );
+            opacity: 0.15;
+            z-index: 0;
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.25;
+            }
+        }
+
+        /* Subtle pattern overlay */
+        .hero::after {
             content: '';
             position: absolute;
             top: 0;
@@ -275,7 +309,7 @@
             background-size: 40px 40px;
             background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
             opacity: 0.03;
-            z-index: 0;
+            z-index: 1;
             animation: subtleShift 60s linear infinite;
         }
 
@@ -289,7 +323,7 @@
             padding: 2rem;
             text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .hero-title {
