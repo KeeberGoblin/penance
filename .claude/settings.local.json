@@ -22,7 +22,10 @@
       "Bash(git mv:*)",
       "Bash(git pull:*)",
       "Bash(cat:*)",
-      "Bash(do)"
+      "Bash(do)",
+      "Bash(if [ ! -f \"$file\" ])",
+      "Bash(then)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []

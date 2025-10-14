@@ -3,691 +3,484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soul Sacrifice: The Veteran's Choice</title>
+    <title>Soul Sacrifice - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Blood Red/Crimson Campaign Aesthetic */
+        .sacrifice-accent {
+            color: #8B0000;
+        }
+        .sacrifice-border {
+            border-color: #660000 !important;
+        }
+        h2 {
+            color: #8B0000 !important;
+        }
+        .content table th {
+            background: linear-gradient(to bottom, #660000, #440000) !important;
+        }
+    </style>
 </head>
 <body>
-    <div class="manuscript-page">
-        <h1 class="page-title">Soul Sacrifice: The Veteran's Choice</h1>
-        <p class="subtitle">Penance: Campaign Progression System</p>
-
-        <div class="metadata">
-            <span><strong>Version:</strong> 3.0 Legacy Reference</span>
-            <span><strong>Last Updated:</strong> October 14, 2025</span>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="javascript:parent.loadContent('content-home.html');">CODEX</a> /
+            <a href="#campaign">CAMPAIGN</a> /
+            Soul Sacrifice
         </div>
 
-        <div class="info-box" style="background: rgba(128, 0, 0, 0.2); border-left: 4px solid #800; margin: 1rem 0;">
-            <h3 style="margin-top: 0;">⚠️ Updated System Available</h3>
-            <p class="manuscript-text"><strong>This page describes the generic "Leg Skimming" system from v1.0.</strong></p>
-            <p class="manuscript-text"><strong>Version 3.0 introduces faction-specific Soul Sacrifice variants</strong> with unique mechanics for Church, Dwarves, Ossuarium, and Elves. Each faction has its own sacrifice method that reflects their culture and playstyle.</p>
-            <p class="manuscript-text">This page is kept for reference, but the updated faction-specific systems are more flavorful and mechanically diverse.</p>
-            <p class="manuscript-text"><em>See: docs/campaigns/soul-sacrifice-variants.md for v3.0 mechanics</em></p>
+        <div style="background: rgba(139, 0, 0, 0.2); border: 3px solid #660000; padding: 1rem; text-align: center; margin-bottom: 2rem; font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: #8B0000; letter-spacing: 0.15em;">
+            FACTION-SPECIFIC VARIANTS • VERSION 3.0
         </div>
 
-        <div class="divider"></div>
+        <h1>Soul Sacrifice</h1>
 
-        <h2>Overview (Generic v1.0 System)</h2>
+        <p style="font-style: italic; color: #8B0000; margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
+            Faction-Specific Permanent Modifications • Version 3.0 • Campaign Progression
+        </p>
 
-        <div class="quote-box">
-            <p class="manuscript-text">"To make room for the machine, we remove what we no longer need."</p>
+        <div class="manuscript-quote">
+            "To make room for the machine, we give up what we cannot bear to lose."
         </div>
 
-        <p class="manuscript-text">Veteran pilots undergo <strong>Leg Skimming</strong> (also called "Shortening," "The Cut," or "Taking the Compact") — surgical amputation of the legs at the upper thigh, just below the hip socket. This allows:</p>
-        <ul class="manuscript-list">
-            <li><strong>Smaller capsule volume</strong> (shorter pilot = less fluid needed)</li>
-            <li><strong>More space for augmentation ports</strong> (direct neural interfaces beyond just fingers)</li>
-            <li><strong>Reduced metabolic needs</strong> (less body mass = less oxygen, slower exhaustion)</li>
-            <li><strong>Symbolic commitment</strong> (permanent proof of dedication)</li>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Overview</h2>
+
+        <p>
+            <span style="font-size: 2.5rem; font-weight: bold; color: #8B0000; float: left; line-height: 0.85; margin-right: 0.05em; margin-top: 0.1em; font-family: 'Cinzel Decorative', serif;">E</span>ach faction has its own method of <strong>Soul Sacrifice</strong> — permanent bodily modification to enhance capsule connection. The Church removes legs. The Dwarves shed flesh for metal. The Ossuarium discards rotting meat. The Elves graft with nature. Each sacrifice is unique, reflecting cultural values and physiology.
+        </p>
+
+        <h3>Universal Benefits (All Variants)</h3>
+        <ul>
+            <li>+1 SP Maximum</li>
+            <li>+2 Heat Capacity</li>
+            <li>+1 Deployment Duration</li>
+            <li>+1 Grit (permanent willpower bonus from trauma survived)</li>
         </ul>
 
-        <p class="manuscript-text"><strong>This is optional but common.</strong> After 5-10 missions, most pilots choose it willingly. The benefits are significant. The cost is permanent.</p>
-
-        <div class="divider"></div>
-
-        <h2>The Procedure</h2>
-
-        <h3>Surgical Details</h3>
-
-        <div class="info-box">
-            <h4>Amputation Specifications</h4>
-            <ul class="manuscript-list">
-                <li><strong>Location:</strong> Upper thigh, just below hip socket (femoral amputation, both legs)</li>
-                <li><strong>Anesthesia:</strong> General (unlike First Sync, pilot is unconscious—mercy, not necessity)</li>
-                <li><strong>Duration:</strong> 6-8 hours for both legs (major surgery, multiple arteries to seal)</li>
-                <li><strong>Recovery:</strong> 4-6 weeks before re-entering capsule (extensive nerve healing)</li>
-                <li><strong>Prosthetics:</strong> None practical for walking—pilots use wheelchairs outside Casket</li>
-            </ul>
-        </div>
-
-        <h3>What's Removed</h3>
-        <ul class="manuscript-list">
-            <li>Entire legs from upper thigh down (femur, knee, shin, ankle, foot)</li>
-            <li>Approximately 30-35% of body mass</li>
-            <li>18-24 inches of height (pilot becomes dramatically shorter)</li>
-            <li>40-50% of body's oxygen demand</li>
+        <h3>Universal Costs (All Variants)</h3>
+        <ul>
+            <li>Permanent physical disability outside Casket</li>
+            <li>Irreversible (cannot be undone)</li>
+            <li>Social stigma (faction-dependent)</li>
+            <li>4-8 weeks recovery downtime</li>
         </ul>
 
-        <h3>What's Added</h3>
-        <ul class="manuscript-list">
-            <li><strong>Augmentation Ports</strong> in the hip stumps (secondary neural interfaces, 4-6 ports per stump)</li>
-            <li><strong>Stabilizer mounts</strong> for capsule suspension (hip stumps lock directly into capsule frame)</li>
-            <li><strong>Cooling nodes</strong> embedded in stump tissue (large surface area for heat dissipation)</li>
-            <li><strong>Backup control clusters</strong> (if hand threads fail, hip stumps can take over leg movement)</li>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Church of Absolution: THE SHORTENING</h2>
+
+        <p><strong>What's Sacrificed:</strong> Both legs (upper thigh amputation, femoral level)</p>
+
+        <h3>Procedure</h3>
+        <ul>
+            <li><strong>Amputation:</strong> Legs removed at hip socket</li>
+            <li><strong>Augmentation:</strong> Hip stumps receive 4-6 neural ports</li>
+            <li><strong>Recovery:</strong> 6-8 weeks</li>
+            <li><strong>Result:</strong> Pilot is 18-24 inches shorter, wheelchair-bound outside Casket</li>
         </ul>
 
-        <h3>Post-Surgery Capsule Modifications</h3>
-        <ul class="manuscript-list">
-            <li>Capsule interior shortened by 18-24 inches (massive freed vertical space)</li>
-            <li>Pilot now occupies only upper 3-4 feet of capsule (dramatic reduction)</li>
-            <li>Freed space used for:
-                <ul class="manuscript-list">
-                    <li><strong>Enhanced Soulstone housing</strong> (can fit 2-3 stones instead of 1)</li>
-                    <li><strong>Massive oxygen reserves</strong> (effectively doubles deployment duration)</li>
-                    <li><strong>Secondary control nodes</strong> (hip stumps connect directly to leg servos + auxiliary systems)</li>
-                    <li><strong>Emergency fluid reserves</strong> (if capsule breaches, backup fluid auto-fills from lower chamber)</li>
-                    <li><strong>Additional armor plating</strong> (lower capsule becomes pure armor, no body to protect)</li>
-                    <li><strong>Cooling system expansion</strong> (hip stumps have massive surface area for thermal management)</li>
-                </ul>
-            </li>
+        <h3>Church-Specific Benefits</h3>
+        <ul>
+            <li><strong>Martyrdom Aura</strong> (Passive): Allies within 2 hexes gain +1 to all attacks (inspired by your sacrifice)</li>
+            <li><strong>Stump Override:</strong> Once per mission, ignore one Thread Snap (stumps provide backup motor control)</li>
+            <li><strong>Righteous Fury Boost:</strong> When Shortened Church pilot is reduced to 10 HP or less, gain +2 damage to all attacks (desperation power)</li>
+            <li><strong>Sacred Burden:</strong> Can redirect 1 damage per turn from allies to self (costs 0 SP, automatic)</li>
         </ul>
 
-        <div class="divider"></div>
-
-        <h2>Gameplay Benefits</h2>
-
-        <h3>Mechanical Advantages (if pilot undergoes Skimming)</h3>
-
-        <div class="info-box">
-            <h4>+1 Soul Point Maximum</h4>
-            <ul class="manuscript-list">
-                <li>Light Caskets: 5 → 6 SP</li>
-                <li>Medium Caskets: 4 → 5 SP</li>
-                <li>Heavy Caskets: 3 → 4 SP</li>
-                <li>Assault Caskets: 2 → 3 SP</li>
-            </ul>
-            <p class="manuscript-text"><em>Explanation: More efficient neural load distribution across augmented stumps</em></p>
-        </div>
-
-        <div class="info-box">
-            <h4>+2 Heat Capacity</h4>
-            <ul class="manuscript-list">
-                <li>Can push 2 additional actions into Danger Zone before Strain Roll</li>
-            </ul>
-            <p class="manuscript-text"><em>Explanation: Stump cooling nodes dissipate heat more effectively</em></p>
-        </div>
-
-        <div class="info-box">
-            <h4>+1 Deployment Duration</h4>
-            <ul class="manuscript-list">
-                <li>Can stay in capsule 1 hour longer before mandatory disconnect</li>
-            </ul>
-            <p class="manuscript-text"><em>Explanation: Reduced body mass = reduced oxygen consumption</em></p>
-        </div>
-
-        <div class="info-box">
-            <h4>New Ability: Stump Override</h4>
-            <ul class="manuscript-list">
-                <li><strong>Once per mission:</strong> Ignore one Thread Snap result (stumps take over control temporarily)</li>
-                <li><em>Explanation: Secondary neural ports provide backup motor control</em></li>
-                <li><em>Drawback: -2 to all actions for rest of mission (crude control)</em></li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Improved Thread Recovery</h4>
-            <ul class="manuscript-list">
-                <li>After Thread Snap, regain control 1 round faster</li>
-            </ul>
-            <p class="manuscript-text"><em>Explanation: Backup pathways route around damaged thread</em></p>
-        </div>
-
-        <h3>Mechanical Disadvantages (permanent vulnerabilities)</h3>
-
-        <div class="info-box">
-            <h4>Outside Casket Mobility</h4>
-            <ul class="manuscript-list">
-                <li><strong>Wheelchair-bound</strong> (no prosthetics can replace upper thigh amputation)</li>
-                <li><strong>Cannot walk at all</strong> without being carried</li>
-                <li><strong>Cannot stand</strong> (no legs to support body weight)</li>
-                <li><strong>Automatic failure</strong> on all Athletics/Acrobatics checks requiring legs</li>
-                <li><strong>Must be carried</strong> to/from capsule by attendants (cannot self-evacuate)</li>
-                <li><strong>Cannot flee</strong> from danger (completely dependent on others for movement)</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Social Stigma</h4>
-            <p class="manuscript-text">Faction-dependent: Some factions honor it (Church), others pity it (Elves), some mock it (Fae)</p>
-            <ul class="manuscript-list">
-                <li>NPCs react differently—some see sacrifice, others see mutilation</li>
-                <li>Children may be frightened by Skimmed pilots</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Total Dependency</h4>
-            <p class="manuscript-text"><strong>Require assistance</strong> for ALL daily tasks:</p>
-            <ul class="manuscript-list">
-                <li>Dressing (can't reach lower body)</li>
-                <li>Bathing (fall risk, can't stand in shower)</li>
-                <li>Eating (must be brought food, can't carry it)</li>
-                <li>Toileting (need accessible facilities + assistance)</li>
-                <li>Moving between rooms (wheelchair or carried)</li>
-            </ul>
-            <p class="manuscript-text"><strong>Additional consequences:</strong></p>
-            <ul class="manuscript-list">
-                <li><strong>Settlement infrastructure critical</strong> (no ramps/lifts = trapped in one room)</li>
-                <li><strong>Increased post-mission care time</strong> (+45 minutes hip stump maintenance)</li>
-                <li><strong>Cannot participate in settlement defense</strong> if attacked on foot</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Irreversible</h4>
-            <ul class="manuscript-list">
-                <li>Once Skimmed, <strong>cannot be undone EVER</strong></li>
-                <li>No prosthetics exist that restore function (hip socket gone)</li>
-                <li>Outside Casket, you are permanently disabled</li>
-                <li>If you later regret it, you live with it for the rest of your life</li>
-            </ul>
-        </div>
-
-        <div class="divider"></div>
-
-        <h2>Cultural Responses by Faction</h2>
-
-        <div class="building-card">
-            <h3>Church of Absolution: Honored Sacrifice</h3>
-            <p class="manuscript-text"><strong>Title:</strong> "The Shortened" (reverent)</p>
-
-            <h4>Cultural View</h4>
-            <ul class="manuscript-list">
-                <li>Seen as ultimate penance—giving flesh to earn salvation</li>
-                <li>Ceremony held after surgery (public, Church bells ring)</li>
-                <li>Shortened pilots receive:
-                    <ul class="manuscript-list">
-                        <li>Better rations (extra meat, fresh water)</li>
-                        <li>Softer beds (feather mattresses)</li>
-                        <li>Priority healing (priests attend them first)</li>
-                        <li>Social respect (even Cardinals bow to Shortened)</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <div class="quote-box">
-                <p class="manuscript-text">"They walked on sinful legs. Now they float in grace. Their sacrifice brings us all closer to Absolution."</p>
-            </div>
-
-            <p class="manuscript-text"><strong>Pressure:</strong> Church subtly pressures pilots to Skim (not forced, but heavily encouraged after 5 missions)</p>
-        </div>
-
-        <div class="building-card">
-            <h3>Elven Verdant Covenant: Tragic Necessity</h3>
-            <p class="manuscript-text"><strong>Title:</strong> "The Pruned"</p>
-
-            <h4>Cultural View</h4>
-            <ul class="manuscript-list">
-                <li>Viewed with sorrow, not honor</li>
-                <li>Elves mourn what was lost (legs = connection to earth)</li>
-                <li>Understand why it's done (survival demands sacrifice)</li>
-                <li>Stumps are carved with memorial runes (names of forests that burned)</li>
-            </ul>
-
-            <div class="quote-box">
-                <p class="manuscript-text">"We cut away the dead wood so the tree may live. But each cut reminds us of what the Sundering took from us."</p>
-            </div>
-
-            <p class="manuscript-text"><strong>Pressure:</strong> None. Elves never suggest Skimming. If pilot chooses it, they're supported, but it's treated as funeral.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>Dwarven Clans: Practical Upgrade</h3>
-            <p class="manuscript-text"><strong>Title:</strong> "Compact Pilots" (technical term)</p>
-
-            <h4>Cultural View</h4>
-            <ul class="manuscript-list">
-                <li>Seen as engineering optimization (remove inefficiency)</li>
-                <li>Dwarves build the BEST prosthetics (hydraulic peg-legs, shock-absorbing stumps)</li>
-                <li>Skimmed pilots get:
-                    <ul class="manuscript-list">
-                        <li>Priority forge access (build your own prosthetics)</li>
-                        <li>Engineering respect (you optimized yourself)</li>
-                        <li>Better contract pay (+10% salary, you're more efficient)</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <div class="quote-box">
-                <p class="manuscript-text">"Less meat, more metal. That's progress. Why carry weight that doesn't help you fight?"</p>
-            </div>
-
-            <p class="manuscript-text"><strong>Pressure:</strong> Moderate. Dwarven pilots are offered the option at Mission 5 with detailed cost/benefit analysis.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The Ossuarium: Already Dead Anyway</h3>
-            <p class="manuscript-text"><strong>Title:</strong> "Efficient Forms"</p>
-
-            <h4>Cultural View</h4>
-            <ul class="manuscript-list">
-                <li>Obvious choice (you don't need legs if you're already dead)</li>
-                <li>Some Ossuarium pilots remove MORE (arms, torso, until only skull remains)</li>
-                <li>No ceremony, no drama—it's filed as "Maintenance"</li>
-                <li>Skimmed Ossuarium pilots often remove stumps entirely (just floating torso)</li>
-            </ul>
-
-            <div class="quote-box">
-                <p class="manuscript-text">"Flesh is waste. Remove it. A skull piloting a Casket is perfection."</p>
-            </div>
-
-            <p class="manuscript-text"><strong>Pressure:</strong> Constant. The Ossuarium expects all pilots to Skim by Mission 3. Not doing so is seen as "clinging to life."</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The Wyrd Conclave: Amusing Commitment</h3>
-            <p class="manuscript-text"><strong>Title:</strong> "Grounded Ones" (mocking, but affectionate)</p>
-
-            <h4>Cultural View</h4>
-            <ul class="manuscript-list">
-                <li>Fae find it both horrifying and fascinating (mortals mutilate themselves for <em>power</em>?)</li>
-                <li>Fae pilots rarely Skim (prefer to keep bodies intact for aesthetic/social reasons)</li>
-                <li>But they respect the <em>audacity</em> of it</li>
-                <li>Skimmed non-Fae pilots are treated as curiosities (exotic, interesting)</li>
-            </ul>
-
-            <div class="quote-box">
-                <p class="manuscript-text">"They cut off their legs to walk better. How delightfully broken. How wonderfully desperate."</p>
-            </div>
-
-            <p class="manuscript-text"><strong>Pressure:</strong> None. Fae never suggest it. If you choose it, they'll throw you a party (because it's absurd theater).</p>
-        </div>
-
-        <div class="building-card">
-            <h3>Additional Faction Responses</h3>
-
-            <h4>Nomad Collective: Survival Calculus</h4>
-            <p class="manuscript-text"><strong>Title:</strong> "Short-Haulers"</p>
-            <div class="quote-box">
-                <p class="manuscript-text">"Can't run from sandstorms if you got no legs. But can't run anyway if you're dead. Your call, pilot."</p>
-            </div>
-            <p class="manuscript-text"><strong>Pressure:</strong> None. Purely individual choice.</p>
-
-            <h4>Merchant Guilds: Premium Service Upgrade</h4>
-            <p class="manuscript-text"><strong>Title:</strong> "Executive Pilots"</p>
-            <div class="quote-box">
-                <p class="manuscript-text">"You cut off your legs for efficiency? We'll compensate you for that efficiency. Welcome to Executive tier, pilot."</p>
-            </div>
-            <p class="manuscript-text"><strong>Pressure:</strong> High. Guilds WANT you to Skim. They'll pay for surgery if you agree to 5-year contract.</p>
-
-            <h4>Blighted Packs: Evolutionary Adaptation</h4>
-            <p class="manuscript-text"><strong>Title:</strong> "Shedders"</p>
-            <div class="quote-box">
-                <p class="manuscript-text">"We didn't need those legs anyway. The Void will give us better ones. Or it won't. Either way, we adapt."</p>
-            </div>
-
-            <h4>Chitinous Ascendancy: Metamorphosis Stage</h4>
-            <p class="manuscript-text"><strong>Title:</strong> "Pupae"</p>
-            <div class="quote-box">
-                <p class="manuscript-text">"Legs are for crawling. We have transcended crawling. Shed the flesh. Join the hive fully."</p>
-            </div>
-            <p class="manuscript-text"><strong>Pressure:</strong> Extreme. Ascendancy expects ALL pilots to Skim by Mission 5.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <h2>Timing and Player Choice</h2>
-
-        <h3>When Do Pilots Choose Skimming?</h3>
-
-        <div class="info-box">
-            <h4>Rookie Pilots (0-5 missions)</h4>
-            <ul class="manuscript-list">
-                <li>Almost never voluntarily</li>
-                <li>Still adjusting to capsule trauma, not ready for more</li>
-                <li>Need to prove they'll survive before committing</li>
-                <li>Exception: Undead and Chitinous factions may Skim immediately (cultural pressure)</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Experienced Pilots (5-15 missions)</h4>
-            <ul class="manuscript-list">
-                <li>Most common window for Skimming</li>
-                <li>Pilot has survived long enough to see the value</li>
-                <li>Body is already scarred/damaged (why not optimize?)</li>
-                <li>Peer pressure from veteran pilots ("Join us")</li>
-                <li>Benefits become obvious (watching Skimmed pilots deploy longer/harder)</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Veteran Pilots (15+ missions)</h4>
-            <ul class="manuscript-list">
-                <li>If they haven't Skimmed yet, they probably won't</li>
-                <li>Either philosophically opposed OR their build doesn't benefit from it</li>
-                <li>Or they're too addicted to capsule to care about optimization</li>
-                <li>Or they've seen Skimmed pilots die and don't want to risk it</li>
-            </ul>
-        </div>
-
-        <h3>Campaign Event: The Offer</h3>
-
-        <p class="manuscript-text"><strong>After Mission 5</strong> (or when player reaches 5 total missions):</p>
-
-        <div class="quote-box">
-            <p class="manuscript-text"><strong>Surgeon NPC approaches pilot in settlement:</strong></p>
-            <p class="manuscript-text">"You've survived five drops. That's more than most. You're good at this.</p>
-            <p class="manuscript-text">I can make you better.</p>
-            <p class="manuscript-text">Leg Skimming. I've done it 200 times. Three-week recovery, then you're back in the capsule with +1 SP, longer deployments, better heat management.</p>
-            <p class="manuscript-text">Cost: 50 Credits, 1 Medical Supply. And your legs, obviously.</p>
-            <p class="manuscript-text">Think about it. Other pilots will tell you it's worth it. Some will tell you it ruined them.</p>
-            <p class="manuscript-text">Your choice. No pressure. Well, maybe a little pressure. [Faction-specific pressure applies here]</p>
-            <p class="manuscript-text">What do you say?"</p>
-        </div>
-
-        <p class="manuscript-text"><strong>Player chooses:</strong></p>
-        <ul class="manuscript-list">
-            <li><strong>Accept:</strong> Surgery happens (cutscene/narrative moment), gain benefits + vulnerabilities, 3-week downtime</li>
-            <li><strong>Decline:</strong> Keep legs, offer appears again at Mission 10, 15, 20 (can always change mind later)</li>
+        <h3>Outside Casket</h3>
+        <ul>
+            <li><strong>Wheelchair-bound</strong> (cannot walk, stand, or climb)</li>
+            <li><strong>Honored by Church</strong> (reverent title "The Shortened", priority healing, better rations)</li>
+            <li><strong>Ceremony:</strong> Public ritual after surgery (Church bells ring, 3-day celebration)</li>
         </ul>
 
-        <p class="manuscript-text"><strong>Once chosen, cannot be reversed.</strong></p>
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+            <p style="margin: 0; color: #8B0000;">"They walked on sinful legs. Now they float in grace. Their sacrifice brings us all closer to Absolution."</p>
+        </div>
 
-        <div class="divider"></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
-        <h2>Downtime: Caring for Skimmed Pilots</h2>
+        <h2>Dwarven Forge-Guilds: COMPACT FORM (Runic Grafting)</h2>
 
-        <h3>Post-Mission Care Requirements</h3>
+        <p><strong>What's Sacrificed:</strong> Arms and legs (all four limbs removed, replaced with runic sockets)</p>
 
-        <p class="manuscript-text"><strong>Stump Maintenance</strong> (30 minutes after each deployment):</p>
-        <ol>
-            <li><strong>Remove augmentation port covers</strong> (twist-lock seals)</li>
-            <li><strong>Flush ports with saline solution</strong> (prevent infection)</li>
-            <li><strong>Inspect for neural feedback burns</strong> (thread overload damage)</li>
-            <li><strong>Apply anti-inflammatory salve</strong> (reduce swelling)</li>
-            <li><strong>Replace cooling gel packs</strong> (embedded in stump tissue)</li>
-            <li><strong>Massage stumps</strong> (prevent nerve calcification)</li>
-            <li><strong>Re-seal ports</strong> (surgical-grade silicone caps)</li>
-        </ol>
-
-        <p class="manuscript-text"><strong>If maintenance skipped:</strong> Roll 1d6</p>
-        <ul class="manuscript-list">
-            <li>1-2: Infection (pilot takes 1d6 damage, cannot deploy next mission)</li>
-            <li>3-4: Port fouling (-1 to all Casket actions next mission)</li>
-            <li>5-6: No immediate consequence (but long-term risk increases)</li>
+        <h3>Procedure</h3>
+        <ul>
+            <li><strong>Amputation:</strong> All four limbs removed at elbow/knee</li>
+            <li><strong>Augmentation:</strong> Stumps engraved with runic circuits (Forge-Runes channel soulstone energy directly)</li>
+            <li><strong>Recovery:</strong> 8-12 weeks (extensive rune-carving)</li>
+            <li><strong>Result:</strong> Pilot is limbless torso with glowing runic stumps, uses hydraulic prosthetics outside Casket</li>
         </ul>
 
-        <h3>Enhanced Recovery Needs</h3>
-
-        <p class="manuscript-text"><strong>Daily Life as Skimmed Pilot:</strong></p>
-        <ul class="manuscript-list">
-            <li><strong>Require assistance getting in/out of capsule</strong> (can't climb ladder with peg-legs)</li>
-            <li><strong>Need wheelchair or crutches</strong> between capsule bay and living quarters</li>
-            <li><strong>Can't carry own food</strong> (eat at communal tables, rely on others)</li>
-            <li><strong>Sleep in specially modified bunks</strong> (stump elevation to prevent swelling)</li>
-            <li><strong>Bathing requires assistance</strong> (fall risk in showers)</li>
-            <li><strong>Cannot flee emergencies</strong> (if settlement attacked, must be evacuated by others)</li>
+        <h3>Dwarf-Specific Benefits</h3>
+        <ul>
+            <li><strong>Forge-Rune Amplification</strong> (Passive): +1 to all attack rolls (runic circuits enhance Casket response time)</li>
+            <li><strong>Overcharge Protocol:</strong> Spend 2 SP, next attack deals +3 damage and ignores 2 Defense (costs 1 Heat)</li>
+            <li><strong>Runic Stability:</strong> Cannot be knocked down, pulled, or grappled by enemies (Casket roots via rune-connection)</li>
+            <li><strong>Emergency Venting:</strong> When you would take Strain damage from Heat, instead remove 3 Heat and take no damage (once per battle)</li>
         </ul>
 
-        <p class="manuscript-text"><strong>Social Dynamics:</strong></p>
-        <ul class="manuscript-list">
-            <li>Skimmed pilots become <strong>dependent on settlement infrastructure</strong></li>
-            <li>Form tight bonds with other Skimmed (shared trauma, mutual assistance)</li>
-            <li>Non-Skimmed pilots may resent special treatment ("We don't get feather beds")</li>
-            <li>Romantic relationships complicated (body image issues, physical dependency)</li>
-            <li>Veterans who refuse Skimming are sometimes ostracized by Skimmed pilots ("Why won't you join us?")</li>
+        <h3>Outside Casket</h3>
+        <ul>
+            <li><strong>Hydraulic Prosthetics</strong> (functional but slow: movement speed halved)</li>
+            <li><strong>Respected as Engineers</strong> (technical title "Compact Pilot", +10% salary, priority forge access)</li>
+            <li><strong>Can Build Own Prosthetics</strong> (Craft proficiency, dwarven hydraulics are best in class)</li>
         </ul>
 
-        <h3>Campaign Mechanic: Pilot Morale</h3>
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+            <p style="margin: 0; color: #8B0000;">"Less meat, more metal. That's progress. Why carry weight that doesn't help you fight?"</p>
+        </div>
 
-        <p class="manuscript-text"><strong>Morale Modifiers for Skimmed Pilots:</strong></p>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
-        <table class="stat-table">
+        <h2>The Ossuarium: EFFICIENT FORM (Flesh Reduction)</h2>
+
+        <p><strong>What's Sacrificed:</strong> ALL unnecessary flesh (arms, legs, organs, skin - only skull, spine, and minimal torso remain)</p>
+
+        <h3>Procedure</h3>
+        <ul>
+            <li><strong>Reduction:</strong> Limbs removed, organs replaced with preservative fluid, skin flayed</li>
+            <li><strong>Augmentation:</strong> Spinal column directly wired to capsule, cranial ports added</li>
+            <li><strong>Recovery:</strong> 4 weeks (undead heal faster, no blood loss)</li>
+            <li><strong>Result:</strong> Pilot is floating skull + spine + minimal torso, permanently fused to capsule</li>
+        </ul>
+
+        <h3>Ossuarium-Specific Benefits</h3>
+        <ul>
+            <li><strong>Already Dead</strong> (Passive): Immune to Pilot Wound cards (when you take Pilot Damage, add 1 Decay card to HP deck instead of flipping Wound)</li>
+            <li><strong>Soul Harvest Protocol:</strong> Once per turn, spend 2 enemy Taint Markers, recover 3 cards from discard (weaponize corruption)</li>
+            <li><strong>Phylactery Connection:</strong> When your Casket is destroyed, if you have 5+ HP remaining, automatically resurrect at 5 HP (once per battle)</li>
+            <li><strong>Decay Aura Amplified:</strong> Enemies within 3 hexes gain +2 Taint per turn instead of +1 (double corruption radiation)</li>
+        </ul>
+
+        <h3>Outside Casket</h3>
+        <ul>
+            <li><strong>Cannot Leave Capsule</strong> (life support dependency, must remain in fluid or die within 1 hour)</li>
+            <li><strong>Total Dependency</strong> (dedicated attendant required 24/7, cost: 40 Credits/month)</li>
+            <li><strong>Efficient Form Respected</strong> (Ossuarium views this as peak evolution, no stigma)</li>
+        </ul>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+            <p style="margin: 0; color: #8B0000;">"Flesh is waste. Remove it. A skull piloting a Casket is perfection."</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Elven Verdant Covenant: ROOT-GRAFTING (Nature Fusion)</h2>
+
+        <p><strong>What's Sacrificed:</strong> Legs (replaced with living root-limbs grafted to stumps)</p>
+
+        <h3>Procedure</h3>
+        <ul>
+            <li><strong>Amputation:</strong> Legs removed at mid-thigh</li>
+            <li><strong>Augmentation:</strong> Living tree roots grafted to stumps, roots grow INTO bone marrow</li>
+            <li><strong>Recovery:</strong> 6-8 weeks (roots must bond with body, painful process)</li>
+            <li><strong>Result:</strong> Pilot has root-limbs instead of legs (functional but slow, creeping vine movement)</li>
+        </ul>
+
+        <h3>Elven-Specific Benefits</h3>
+        <ul>
+            <li><strong>Photosynthesis Integration:</strong> Standing in Forest terrain hexes for 1 full turn, recover 2 HP and remove 1 Taint (once per turn)</li>
+            <li><strong>Root Network Sensing:</strong> Can sense enemy positions within 3 hexes if standing on natural ground (ignore Disadvantage from obscured targets)</li>
+            <li><strong>Thornwhip Strike:</strong> Once per battle, roots lash out dealing 4 damage to all enemies within 2 hexes (ignores Defense, costs 2 SP)</li>
+            <li><strong>Nature's Resilience:</strong> When you would be reduced to 0 HP, if you're in Forest terrain, remain at 1 HP instead (once per battle)</li>
+        </ul>
+
+        <h3>Outside Casket</h3>
+        <ul>
+            <li><strong>Root-Limbs Functional</strong> (can walk at half speed, creeping vine gait, silent movement)</li>
+            <li><strong>Cannot Run or Climb</strong> (roots are strong but slow, Athletics checks at Disadvantage)</li>
+            <li><strong>Mourned by Elves</strong> (sorrowful title "The Pruned", stumps carved with memorial runes, treated like funeral)</li>
+        </ul>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+            <p style="margin: 0; color: #8B0000;">"We cut away the dead wood so the tree may live. But each cut reminds us of what the Sundering took from us."</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Special Cases: Extreme Variants</h2>
+
+        <p><strong>After Mission 20+, extreme sacrifice variants unlock for desperate veterans:</strong></p>
+
+        <h3>Church "Living Martyr" (Extreme Shortening)</h3>
+        <ul>
+            <li><strong>Sacrifice:</strong> Legs + Arms (only torso, head, spine remain)</li>
+            <li><strong>Additional Benefits:</strong> +2 SP Max (total +3), Martyrdom Aura radius increased to 4 hexes, can use "Final Absolution" (explode on death for 8 damage to all enemies within 3 hexes)</li>
+            <li><strong>Costs:</strong> Cannot leave capsule (life support dependency), Morale permanently locked at 0</li>
+            <li><strong>Frequency:</strong> Extremely rare (1 in 500 Church pilots)</li>
+        </ul>
+
+        <h3>Dwarven "Rune-Core Fusion" (Full Metal)</h3>
+        <ul>
+            <li><strong>Sacrifice:</strong> All limbs + torso flesh (only skeleton + runic circuits remain)</li>
+            <li><strong>Additional Benefits:</strong> +2 Defense (permanent metal plating), immune to Heat damage, can overcharge twice per battle</li>
+            <li><strong>Costs:</strong> Cannot leave capsule, requires dedicated engineer (60 Credits/month)</li>
+            <li><strong>Frequency:</strong> Rare (dwarven elites only, 1 in 200)</li>
+        </ul>
+
+        <h3>Ossuarium "Skull Pilot" (Total Reduction)</h3>
+        <ul>
+            <li><strong>Sacrifice:</strong> EVERYTHING except skull (brain sustained by soulstone directly)</li>
+            <li><strong>Additional Benefits:</strong> +3 SP Max (total +4), immune to ALL Pilot Damage, can Soul Harvest twice per turn</li>
+            <li><strong>Costs:</strong> Permanently fused to capsule, if Casket destroyed, pilot dies instantly</li>
+            <li><strong>Frequency:</strong> Very rare (final form, 1 in 300)</li>
+        </ul>
+
+        <h3>Elven "Dryad Form" (Full Tree Integration)</h3>
+        <ul>
+            <li><strong>Sacrifice:</strong> Legs + Arms replaced with tree limbs (entire body becomes semi-plant)</li>
+            <li><strong>Additional Benefits:</strong> Photosynthesis always active (recover 1 HP per turn in any natural terrain), Thornwhip Strike usable twice per battle, can Root Anchor (immobilize self, gain +3 Defense)</li>
+            <li><strong>Costs:</strong> Must spend 4 hours per day in sunlight (or take 1d6 damage), vulnerability to fire (+2 damage from all fire sources)</li>
+            <li><strong>Frequency:</strong> Rare (elven extremists only, 1 in 250)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Campaign Integration: The Offer</h2>
+
+        <p><strong>After Mission 5, 10, 15</strong>, faction specialists offer Soul Sacrifice procedures:</p>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0;">
+            <p style="margin: 0;"><strong>FIRST OFFER (Mission 5):</strong></p>
+            <p style="margin: 0.5rem 0;">
+                "You've survived five drops. That's more than most. You're good at this.<br><br>
+                I can make you better.<br><br>
+                [Faction-specific sacrifice name]. I've done it [number] times. [Recovery time] recovery, then you're back in the capsule stronger, faster, tougher.<br><br>
+                Cost: [Credits/Resources]. And [body part], obviously.<br><br>
+                Think about it. Other pilots will tell you it's worth it. Some will tell you it ruined them.<br><br>
+                Your choice. [Faction-specific pressure]."
+            </p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0;">
+            <p style="margin: 0;"><strong>SECOND OFFER (Mission 10, if declined):</strong></p>
+            <p style="margin: 0.5rem 0;">
+                "Still have those [body parts]? Most pilots don't by now. The offer stands."
+            </p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0;">
+            <p style="margin: 0;"><strong>THIRD OFFER (Mission 15, final offer):</strong></p>
+            <p style="margin: 0.5rem 0;">
+                "Last time I'll ask. If you haven't done it by now, you probably never will. But if you change your mind, I'll be here."
+            </p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0;">
+            <p style="margin: 0;"><strong>EXTREME VARIANTS UNLOCK (Mission 20+):</strong></p>
+            <p style="margin: 0.5rem 0;">
+                "You want to go further? I can do that. But there's no coming back from this one."
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Resource Costs</h2>
+
+        <h3>Standard Sacrifice (All Factions)</h3>
+
+        <table>
             <thead>
                 <tr>
-                    <th>Settlement Infrastructure</th>
-                    <th>Morale Modifier</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Barracks only (Tier 1)</td>
-                    <td>-2 (no accessibility, constant pain)</td>
-                </tr>
-                <tr>
-                    <td>Infirmary (Tier 2)</td>
-                    <td>+1 (medical care, accessible bunks)</td>
-                </tr>
-                <tr>
-                    <td>Augmentation Clinic (Tier 3)</td>
-                    <td>+2 (expert care, rehabilitation)</td>
-                </tr>
-                <tr>
-                    <td>Pilot Sanctuary (Tier 4)</td>
-                    <td>+3 (luxury, dedicated attendants)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="stat-table">
-            <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>Morale Modifier</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Stump maintenance skipped</td>
-                    <td>-3 (pain, risk of infection)</td>
-                </tr>
-                <tr>
-                    <td>Another pilot chooses Skimming</td>
-                    <td>+1 (peer validation)</td>
-                </tr>
-                <tr>
-                    <td>Skimmed pilot dies in mission</td>
-                    <td>-2 (doubt, fear)</td>
-                </tr>
-                <tr>
-                    <td>Non-Skimmed pilot mocks them</td>
-                    <td>-1 (humiliation)</td>
-                </tr>
-                <tr>
-                    <td>Romantic partner accepts them</td>
-                    <td>+2 (acceptance, love)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p class="manuscript-text"><strong>Morale Effects on Gameplay:</strong></p>
-        <ul class="manuscript-list">
-            <li><strong>High Morale (6+):</strong> +1 to all Casket actions (motivated, focused)</li>
-            <li><strong>Neutral Morale (3-5):</strong> No effect</li>
-            <li><strong>Low Morale (0-2):</strong> -1 to all Casket actions (distracted, depressed)</li>
-            <li><strong>Broken Morale (-1 or lower):</strong> Refuses to deploy (must spend downtime recovering)</li>
-        </ul>
-
-        <div class="divider"></div>
-
-        <h2>Extreme Cases: Full Reduction</h2>
-
-        <h3>"The Torso" (unofficial term for pilots who remove EVERYTHING)</h3>
-
-        <p class="manuscript-text">Some pilots go beyond Skimming. They remove:</p>
-        <ul class="manuscript-list">
-            <li><strong>Arms</strong> (don't need them in death pose anyway—threads connect directly to shoulder stumps)</li>
-            <li><strong>Legs</strong> (already gone from Skimming)</li>
-            <li>Only <strong>head, neck, spine, and torso</strong> remain</li>
-            <li>Threads connect directly to <strong>spinal column</strong> (no hands needed)</li>
-        </ul>
-
-        <p class="manuscript-text"><strong>Appearance:</strong></p>
-        <ul class="manuscript-list">
-            <li>Floating limbless torso in capsule</li>
-            <li>Threads emerge from vertebrae like cables</li>
-            <li>Head often partially shaved (cranial ports added)</li>
-            <li>Breathing tube is permanent (can't survive outside capsule without life support)</li>
-        </ul>
-
-        <h3>Benefits</h3>
-        <ul class="manuscript-list">
-            <li><strong>+3 SP Maximum</strong> (instead of +1 from Skimming)</li>
-            <li><strong>+4 Heat Capacity</strong> (instead of +2)</li>
-            <li><strong>+3 Deployment Duration</strong> (can stay in capsule for days)</li>
-            <li><strong>Immune to all limb-based Scars</strong> (no arms/legs to damage)</li>
-            <li><strong>Cannot be pulled from capsule</strong> (fully integrated—disconnection = death)</li>
-        </ul>
-
-        <h3>Costs</h3>
-        <ul class="manuscript-list">
-            <li><strong>Total dependency</strong> outside Casket (must be carried, fed, bathed by dedicated attendant)</li>
-            <li><strong>Cannot leave capsule for more than 1 hour</strong> (life support dependency)</li>
-            <li><strong>Extreme psychological trauma</strong> (body dysmorphia, suicidal ideation, dissociation)</li>
-            <li><strong>Social isolation</strong> (even other Skimmed pilots find it disturbing)</li>
-            <li><strong>Irreversible and Fatal</strong> (once done, pilot lives in capsule until death)</li>
-            <li><strong>Morale permanently locked at 0</strong> (broken, but functional)</li>
-        </ul>
-
-        <p class="manuscript-text"><strong>Frequency:</strong> Extremely rare (maybe 1 in 500 pilots reach this point)</p>
-
-        <p class="manuscript-text"><strong>Why Anyone Would Do This:</strong></p>
-        <ul class="manuscript-list">
-            <li>Desperation (only way to pilot after catastrophic injury)</li>
-            <li>Addiction (can't bear to leave capsule anymore)</li>
-            <li>Fanaticism (ultimate sacrifice for faction)</li>
-            <li>Pragmatism (war needs pilots, and this makes you the best pilot)</li>
-        </ul>
-
-        <p class="manuscript-text"><strong>Gameplay Note:</strong> The Torso is an <strong>endgame state</strong>, not a mid-campaign choice. Only offer it:</p>
-        <ul class="manuscript-list">
-            <li>After 20+ missions</li>
-            <li>If pilot has maxed-out Capsule Addiction</li>
-            <li>If pilot has lost multiple limbs to injuries and surgery is "rebuilding" them</li>
-        </ul>
-
-        <div class="divider"></div>
-
-        <h2>Campaign Integration</h2>
-
-        <h3>Settlement Building: Pilot Care Facilities</h3>
-
-        <table class="stat-table">
-            <thead>
-                <tr>
-                    <th>Building Tier</th>
-                    <th>Features</th>
-                    <th>Effect</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Tier 1: Barracks</strong></td>
-                    <td>Basic bunks, shared quarters, no accessibility features</td>
-                    <td>Skimmed pilots: -2 Morale</td>
-                </tr>
-                <tr>
-                    <td><strong>Tier 2: Infirmary</strong></td>
-                    <td>Medical staff for stump maintenance, accessible bunks, basic prosthetics workshop</td>
-                    <td>Skimmed pilots: +1 Morale, +1 to recovery rolls</td>
-                </tr>
-                <tr>
-                    <td><strong>Tier 3: Augmentation Clinic</strong></td>
-                    <td>Skimming procedures available, advanced prosthetics, rehabilitation therapy, neural port tuning</td>
-                    <td>Skimmed pilots: +2 Morale, can perform Skimming surgery</td>
-                </tr>
-                <tr>
-                    <td><strong>Tier 4: Pilot Sanctuary</strong></td>
-                    <td>Luxury quarters, dedicated attendants, neural therapy, relationship support</td>
-                    <td>All pilots +2 Morale, Skimmed +3, Torso pilots can function</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Resource Costs</h3>
-
-        <table class="stat-table">
-            <thead>
-                <tr>
-                    <th>Service</th>
+                    <th>Item</th>
                     <th>Cost</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Skimming Surgery</strong></td>
-                    <td>80 Credits, 2 Medical Supplies, 4-6 weeks downtime</td>
+                    <td>Surgery</td>
+                    <td>80 Credits, 2 Medical Supplies</td>
                 </tr>
                 <tr>
-                    <td><strong>Hip Stump Maintenance (monthly)</strong></td>
+                    <td>Recovery Downtime</td>
+                    <td>4-8 weeks (cannot deploy)</td>
+                </tr>
+                <tr>
+                    <td>Monthly Maintenance</td>
                     <td>8 Credits, 1 Medical Supply</td>
-                </tr>
-                <tr>
-                    <td><strong>Basic Wheelchair</strong></td>
-                    <td>15 Credits, 2 Scrap</td>
-                </tr>
-                <tr>
-                    <td><strong>Dwarven Wheelchair (reinforced, all-terrain)</strong></td>
-                    <td>60 Credits, 4 Scrap, 1 Rare Material</td>
-                </tr>
-                <tr>
-                    <td><strong>Torso Conversion</strong></td>
-                    <td>200 Credits, 5 Medical Supplies, 8 weeks downtime, Cannot Undo</td>
-                </tr>
-                <tr>
-                    <td><strong>Dedicated Attendant (monthly salary)</strong></td>
-                    <td>25 Credits (required for Skimmed without accessible settlement)</td>
-                </tr>
-                <tr>
-                    <td><strong>Dedicated Attendant for Torso</strong></td>
-                    <td>40 Credits (required, full-time care)</td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="divider"></div>
+        <h3>Advanced Variants (Extreme Forms)</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Extreme Sacrifice Surgery</td>
+                    <td>200 Credits, 5 Medical Supplies</td>
+                </tr>
+                <tr>
+                    <td>Recovery Downtime</td>
+                    <td>8-12 weeks</td>
+                </tr>
+                <tr>
+                    <td>Dedicated Attendant (monthly)</td>
+                    <td>40 Credits (required for life support)</td>
+                </tr>
+                <tr>
+                    <td>Monthly Maintenance</td>
+                    <td>15 Credits, 2 Medical Supplies</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Faction Pressure & Cultural Responses</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Pressure</th>
+                    <th>Cultural View</th>
+                    <th>% Who Choose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Church</strong></td>
+                    <td>High</td>
+                    <td>Honored martyrdom, celebrated publicly</td>
+                    <td>65% (by Mission 10)</td>
+                </tr>
+                <tr>
+                    <td><strong>Dwarves</strong></td>
+                    <td>Moderate</td>
+                    <td>Practical upgrade, engineering respect</td>
+                    <td>50% (by Mission 12)</td>
+                </tr>
+                <tr>
+                    <td><strong>Ossuarium</strong></td>
+                    <td>Extreme</td>
+                    <td>Obvious choice, expected by Mission 3</td>
+                    <td>85% (by Mission 5)</td>
+                </tr>
+                <tr>
+                    <td><strong>Elves</strong></td>
+                    <td>None</td>
+                    <td>Tragic necessity, mourned but supported</td>
+                    <td>25% (rarely chosen)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Morale Effects</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Morale Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Another pilot chooses same sacrifice</td>
+                    <td>+1 (peer validation)</td>
+                </tr>
+                <tr>
+                    <td>Sacrificed pilot dies in mission</td>
+                    <td>-2 (doubt, fear)</td>
+                </tr>
+                <tr>
+                    <td>Non-sacrificed pilot mocks them</td>
+                    <td>-1 (humiliation)</td>
+                </tr>
+                <tr>
+                    <td>Romantic partner accepts them</td>
+                    <td>+2 (love, acceptance)</td>
+                </tr>
+                <tr>
+                    <td>Settlement lacks accessibility</td>
+                    <td>-3 (constant pain, isolation)</td>
+                </tr>
+                <tr>
+                    <td>Settlement has Pilot Sanctuary (Tier 4)</td>
+                    <td>+3 (luxury care, dedicated attendants)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="font-style: italic; margin-top: 1rem;"><strong>Extreme Sacrifice Morale:</strong> Permanently locked at 0 (broken but functional). Can still deploy, but no joy remains.</p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
         <h2>Narrative Moments</h2>
 
-        <h3>After First Skimming</h3>
+        <h3>Church Shortening Ceremony</h3>
 
-        <div class="quote-box">
-            <p class="manuscript-text">You wake in the Infirmary. The drugs are wearing off. Your legs are gone.</p>
-            <p class="manuscript-text">No—not gone. You can still feel them. Your toes wiggle. Your calves itch. But when you look down, there are only bandaged stumps.</p>
-            <p class="manuscript-text">The surgeon stands over you, wiping blood off her instruments. "Clean cut. Augmentation ports installed. You'll deploy 20% more efficiently now."</p>
-            <p class="manuscript-text">She says it like it's nothing. Like legs are just parts you swap out.</p>
-            <p class="manuscript-text">You try to sit up. Pain shoots through your stumps—phantom pain from nerves that no longer connect to anything. You gasp.</p>
-            <p class="manuscript-text">"Normal," the surgeon says. "It'll hurt for a month. Then it'll hurt less. Then it'll just be numb."</p>
-            <p class="manuscript-text">She gestures to the ward. Three other pilots lie in beds, all Shortened. They watch you with hollow eyes. One nods slowly.</p>
-            <p class="manuscript-text">You're one of them now.</p>
-            <p class="manuscript-text">Someone brings you crutches. They're worn smooth by other hands. How many pilots used these before you? How many died still wearing them?</p>
-            <p class="manuscript-text">How many <em>forgot they ever had legs at all</em>?</p>
+        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+            <p style="margin: 0;">You wake in the Infirmary, legs gone. The drugs wear off. Phantom toes wiggle. Phantom calves itch.</p>
+            <p style="margin: 0.5rem 0;">Outside, Church bells ring. The Confessor enters, carrying your severed legs wrapped in white silk.</p>
+            <p style="margin: 0.5rem 0;">"You have given flesh to the cause. Your legs will be burned in the Pyre of Absolution. Their ashes will nourish the gardens. Your sacrifice feeds the faithful."</p>
+            <p style="margin: 0.5rem 0;">Three days of celebration follow. Strangers bring you gifts—food, wine, soft blankets. Veterans kneel before you, stumps gleaming with fresh oil.</p>
+            <p style="margin: 0.5rem 0;">You're one of The Shortened now. Honored. Pitied. Revered. Broken.</p>
         </div>
 
-        <h3>Veteran Pilot Advice (NPC Dialogue)</h3>
+        <h3>Dwarven Compact Form Ritual</h3>
 
-        <div class="quote-box">
-            <p class="manuscript-text"><strong>Conversation with Veteran Skimmed Pilot:</strong></p>
-            <p class="manuscript-text">"Kid, I'm gonna be straight with you. The Skimming hurts. Not the surgery—they knock you out for that—the <em>after</em> hurts.</p>
-            <p class="manuscript-text">You'll wake up and try to stand, and you'll fall. Every time. For weeks. You'll reach for legs that aren't there. You'll hate yourself.</p>
-            <p class="manuscript-text">You'll need help getting dressed. Help getting to the bathroom. Help getting into your rack at night. You'll feel useless.</p>
-            <p class="manuscript-text">But then you get back in the capsule.</p>
-            <p class="manuscript-text">And suddenly you're <em>better</em>. Faster. Stronger. You'll pilot for an extra hour before the exhaustion hits. You'll push into the Danger Zone and your Casket won't scream. You'll dance that 12-ton war machine like it's part of you.</p>
-            <p class="manuscript-text">You'll float in that fluid, stumps where your legs were, threads pulling at nothing, and you'll think:</p>
-            <p class="manuscript-text"><em>This is what I was always meant to be.</em></p>
-            <p class="manuscript-text">And that's when you'll know you made the right choice.</p>
-            <p class="manuscript-text">Or the worst mistake of your life.</p>
-            <p class="manuscript-text">Honestly? Both.</p>
-            <p class="manuscript-text">The Skimming doesn't just take your legs, kid. It takes the <em>idea</em> that you were ever whole. You'll never walk again. Period. You'll never stand on your own. You'll never run. You'll never dance, never climb, never feel sand between your toes. You'll roll everywhere in a chair, or someone will carry you like cargo.</p>
-            <p class="manuscript-text">But you'll pilot better than you ever dreamed.</p>
-            <p class="manuscript-text">So ask yourself: What matters more? The body you had, or the machine you'll become?"</p>
+        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+            <p style="margin: 0;">The Forge-Master carves runes into your stumps with a white-hot chisel. You scream. He does not stop.</p>
+            <p style="margin: 0.5rem 0;">"Pain makes the runes stronger," he says. "Scream louder. Let the metal hear your suffering."</p>
+            <p style="margin: 0.5rem 0;">When he's done, your stumps glow faintly blue—Forge-Runes etched bone-deep. You can FEEL the Casket now, even from across the room. The connection hums through your marrow.</p>
+            <p style="margin: 0.5rem 0;">The Forge-Master hands you hydraulic prosthetics—gold-trimmed, shock-absorbing, perfectly weighted.</p>
+            <p style="margin: 0.5rem 0;">"Welcome to Compact Form, pilot. You're 40% more efficient now. Congratulations on your upgrade."</p>
         </div>
 
-        <div class="divider"></div>
+        <h3>Ossuarium Flesh Reduction</h3>
 
-        <div class="quote-box">
-            <p class="manuscript-text"><em>"I gave my legs to the machine. The machine gave me power. Now I float in darkness, pulling strings I can barely feel, and I wonder: Did I make a trade? Or did I just lose?"</em></p>
-            <p class="manuscript-text">— Inscription found in Skimmed pilot's journal, recovered after pilot's death</p>
+        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+            <p style="margin: 0;">They peel your skin off in strips. You watch from above—detached, floating, already dead.</p>
+            <p style="margin: 0.5rem 0;">Your arms fall away. Your legs are discarded. Your organs are scooped out and replaced with preservative gel. Your skull is polished clean.</p>
+            <p style="margin: 0.5rem 0;">When they lower you back into the capsule, you realize: You cannot leave. Not ever. This is your coffin now.</p>
+            <p style="margin: 0.5rem 0;">But you don't care. You're already dead. This is just... tidier.</p>
+        </div>
+
+        <h3>Elven Root-Grafting</h3>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+            <p style="margin: 0;">The roots burrow into your stumps like worms into soil. You feel them threading through bone, wrapping around marrow, drinking your blood.</p>
+            <p style="margin: 0.5rem 0;">The Archdruid sings in Old Tongue. The roots respond—growing, twisting, fusing. By the third day, they've reached your spine.</p>
+            <p style="margin: 0.5rem 0;">By the seventh day, you can move them. Slowly. Like learning to walk again, but as a tree.</p>
+            <p style="margin: 0.5rem 0;">Other elves look at you with sorrow. They carve memorial runes into your root-limbs—names of forests that burned in the Sundering.</p>
+            <p style="margin: 0.5rem 0;">You are The Pruned. A living reminder of what was lost.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
+        <h2>Integration with Other v3.0 Systems</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 2rem 0;">
+            <h3 style="margin-top: 0; color: #8B0000;">Cross-References</h3>
+            <ul style="margin-bottom: 0;">
+                <li><strong><a href="javascript:parent.loadContent('campaign-pilot-grit.html');">Pilot Grit System</a>:</strong> Soul Sacrifice grants +1 Grit permanently</li>
+                <li><strong><a href="javascript:parent.loadContent('rules-taint-exploitation.html');">Taint Exploitation</a>:</strong> Some sacrifices grant Taint resistance</li>
+                <li><strong><a href="javascript:parent.loadContent('campaign-settlement-phase.html');">Settlement Phase</a>:</strong> Sacrifice offers trigger at missions 5/10/15</li>
+                <li><strong><a href="javascript:parent.loadContent('campaign-settlements.html');">Settlements</a>:</strong> Accessibility buildings affect sacrificed pilot morale</li>
+            </ul>
+        </div>
+
+        <div style="background: var(--shadow-black); border: 3px double #660000; padding: 2rem; margin: 3rem 0; font-style: italic;">
+            <p style="text-align: center; margin: 0; color: #8B0000;" class="no-drop-cap">
+                "We give up what we cannot bear to lose. And somehow, we survive."
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #660000; color: #8B0000; font-size: 0.9rem;">
+            <p><a href="javascript:parent.loadContent('campaign-pilot-grit.html');">Pilot Grit</a> | <a href="javascript:parent.loadContent('campaign-settlement-phase.html');">Settlement Phase</a> | <a href="javascript:parent.loadContent('content-home.html');">Return to Codex Home</a></p>
         </div>
     </div>
 </body>
