@@ -19,19 +19,21 @@ When **Pilot Wound Deck runs out** → Pilot dies (Casket becomes inert)
 
 ---
 
-## 1. Casket HP Deck (30 Cards)
+## 1. Casket HP Deck (Variable Size)
 
-### Deck Composition (GKR-Style)
+### Deck Composition (GKR-Style + v2.0 Modular Equipment)
 
-Your 30-card deck represents your Casket's HP. Every card you discard = damage taken.
+Your deck represents your Casket's HP. Every card you discard = damage taken.
 
-**Breakdown**:
+**v2.0 Variable Deck System** (26-50 cards depending on equipment):
 - **10 Universal Cards** (mandatory, everyone has these)
-- **12 Primary Weapon Cards** (faction-specific, your main identity)
-- **6 Secondary Weapon/Equipment Cards** (customizable gear)
+- **6 Faction Core Cards** (faction-specific foundation)
+- **Equipment Cards** (variable 3-30 cards: Weapon + Shield/Offhand + Accessories)
 - **2 Faction Tactic Cards** (chosen from 5 available, pick 2 before battle)
 
-**Total: 30 cards**
+**Total: 26-50 cards** (Light Caskets ~26-32, Heavy Caskets ~38-50)
+
+> **NOTE**: This section shows **simplified v1.0 example** for teaching. See [deck-equipment-system.md](../factions/church/deck-equipment-system.md) for full v2.0 modular equipment.
 
 ---
 
@@ -147,6 +149,8 @@ Wait, this creates duplication issues. Let me revise:
 ### Step 2: Calculate To-Hit Number
 
 **Base To-Hit**: **5+** (roll 2d6 Attack Dice, need 5+ total)
+
+> **v3.0 OPTIONAL**: Instead of static modifiers (+1/+2), use [Dice Pool Advantage](dice-pool-advantage.md) system. Roll 3d6 take 2 highest (Advantage) or 3d6 take 2 lowest (Disadvantage). See quick-reference.md for conversion table.
 
 **Apply ALL applicable modifiers**:
 
@@ -268,13 +272,15 @@ Wait, this creates duplication issues. Let me revise:
 
 ### Step 6: Check for Component Damage
 
-**If you discarded any Primary Weapon cards**:
+**If you discarded any Primary Weapon equipment cards**:
 - Mark 1 Component Damage per Primary Weapon card to targeted component
 - Track separately: Right Arm, Left Arm, Legs, Head, Chassis
 - **3 Component Damage = Component DESTROYED**
 
 **If Defense Dice showed CRITICAL symbols (💀)**:
 - Add +1 Component Damage per 💀 symbol to targeted component
+
+> **v2.0 NOTE**: "Primary Weapon cards" refers to your equipped weapon cards (e.g., Longsword, Greatsword, Pistol). These are the cards you discarded from your Primary Weapon slot equipment.
 
 ## 3. Component Damage (KDM-Style Brutality)
 
@@ -372,13 +378,17 @@ This represents pilot physical/mental state inside the capsule.
 1. **Capsule Breach** (enemy specifically targets capsule, rare)
 2. **Neural Feedback** (when 5+ Component Damage accumulated)
 3. **Thread Snap** (when Hand Threads break from damage)
-4. **Taint Overload** (when Taint reaches 10)
+4. **Taint Overload** (when Taint reaches 10+, roll Corruption Save)
 5. **Casket Destruction** (when Casket HP deck runs out, pilot must save)
+
+> **v3.0 OPTIONAL**: Use [Taint Exploitation](taint-exploitation.md) to spend Taint tactically (offensive debuffs, defensive power-ups). Taint becomes a resource, not just a threshold.
 
 **When Pilot takes damage**:
 - Flip 1 Wound Card face-up per damage
 - Read effect immediately
 - Card remains face-up (permanent)
+
+> **v3.0 OPTIONAL**: Roll 1d6 + [Pilot Grit](../campaigns/pilot-grit-system.md) to resist Wound. On 5+, ignore 1 Wound. Veterans (Grit 2-3) are mechanically tougher.
 
 ---
 
