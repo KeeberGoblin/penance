@@ -1,0 +1,250 @@
+<svg width="850" height="750" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .hex { stroke: #4a4a4a; stroke-width: 2; }
+      .hex-plain { fill: #d4c5b0; }
+      .hex-forest { fill: #3d5a3d; }
+      .hex-water { fill: #4a6b7c; }
+      .hex-pillar { fill: #5a4a3a; }
+      .hex-elev2 { fill: #7a6858; }
+      .hex-reliquary { fill: #8b6914; stroke: #ffd700; stroke-width: 3; }
+      .hex-cathedral { fill: #6b4814; stroke: #ffd700; stroke-width: 4; }
+      .hex-text { font-family: 'Courier New', monospace; font-size: 10px; fill: #ffffff; text-anchor: middle; font-weight: bold; }
+      .legend-text { font-family: Arial, sans-serif; font-size: 14px; fill: #2a2a2a; }
+      .legend-box { stroke: #2a2a2a; stroke-width: 1; }
+      .title { font-family: 'Cinzel Decorative', serif; font-size: 24px; fill: #4a0e0e; font-weight: bold; }
+    </style>
+    <polygon id="hexagon" points="28,0 56,16.19 56,48.58 28,64.77 0,48.58 0,16.19" />
+  </defs>
+
+  <!-- Title -->
+  <text x="425" y="30" class="title" text-anchor="middle">RELIQUARY RUINS</text>
+  <text x="425" y="50" class="legend-text" text-anchor="middle" style="font-size: 12px; font-style: italic;">14×12 Hex Battlefield - Objective Control</text>
+
+  <!-- Hex Grid (14x12, offset rows) -->
+  <!-- Row 1 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="75" />
+  <use href="#hexagon" class="hex hex-reliquary" x="106" y="75" />
+  <text x="134" y="115" class="hex-text">R1</text>
+  <use href="#hexagon" class="hex hex-reliquary" x="162" y="75" />
+  <text x="190" y="115" class="hex-text">R1</text>
+  <use href="#hexagon" class="hex hex-plain" x="218" y="75" />
+  <use href="#hexagon" class="hex hex-forest" x="274" y="75" />
+  <use href="#hexagon" class="hex hex-forest" x="330" y="75" />
+  <use href="#hexagon" class="hex hex-plain" x="386" y="75" />
+  <use href="#hexagon" class="hex hex-plain" x="442" y="75" />
+  <use href="#hexagon" class="hex hex-forest" x="498" y="75" />
+  <use href="#hexagon" class="hex hex-forest" x="554" y="75" />
+  <use href="#hexagon" class="hex hex-plain" x="610" y="75" />
+  <use href="#hexagon" class="hex hex-reliquary" x="666" y="75" />
+  <text x="694" y="115" class="hex-text">R2</text>
+  <use href="#hexagon" class="hex hex-reliquary" x="722" y="75" />
+  <text x="750" y="115" class="hex-text">R2</text>
+  <use href="#hexagon" class="hex hex-plain" x="778" y="75" />
+
+  <!-- Row 2 -->
+  <use href="#hexagon" class="hex hex-plain" x="78" y="107" />
+  <use href="#hexagon" class="hex hex-plain" x="134" y="107" />
+  <use href="#hexagon" class="hex hex-water" x="190" y="107" />
+  <use href="#hexagon" class="hex hex-water" x="246" y="107" />
+  <use href="#hexagon" class="hex hex-forest" x="302" y="107" />
+  <use href="#hexagon" class="hex hex-plain" x="358" y="107" />
+  <use href="#hexagon" class="hex hex-plain" x="414" y="107" />
+  <use href="#hexagon" class="hex hex-forest" x="470" y="107" />
+  <use href="#hexagon" class="hex hex-water" x="526" y="107" />
+  <use href="#hexagon" class="hex hex-water" x="582" y="107" />
+  <use href="#hexagon" class="hex hex-plain" x="638" y="107" />
+  <use href="#hexagon" class="hex hex-plain" x="694" y="107" />
+
+  <!-- Row 3 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="139" />
+  <use href="#hexagon" class="hex hex-plain" x="106" y="139" />
+  <use href="#hexagon" class="hex hex-water" x="162" y="139" />
+  <use href="#hexagon" class="hex hex-plain" x="218" y="139" />
+  <use href="#hexagon" class="hex hex-plain" x="274" y="139" />
+  <use href="#hexagon" class="hex hex-pillar" x="330" y="139" />
+  <text x="358" y="179" class="hex-text">P</text>
+  <use href="#hexagon" class="hex hex-plain" x="386" y="139" />
+  <use href="#hexagon" class="hex hex-plain" x="442" y="139" />
+  <use href="#hexagon" class="hex hex-pillar" x="498" y="139" />
+  <text x="526" y="179" class="hex-text">P</text>
+  <use href="#hexagon" class="hex hex-plain" x="554" y="139" />
+  <use href="#hexagon" class="hex hex-plain" x="610" y="139" />
+  <use href="#hexagon" class="hex hex-water" x="666" y="139" />
+  <use href="#hexagon" class="hex hex-plain" x="722" y="139" />
+  <use href="#hexagon" class="hex hex-plain" x="778" y="139" />
+
+  <!-- Row 4 -->
+  <use href="#hexagon" class="hex hex-plain" x="78" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="134" y="171" />
+  <use href="#hexagon" class="hex hex-water" x="190" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="246" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="302" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="358" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="414" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="470" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="526" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="582" y="171" />
+  <use href="#hexagon" class="hex hex-water" x="638" y="171" />
+  <use href="#hexagon" class="hex hex-plain" x="694" y="171" />
+
+  <!-- Row 5 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="203" />
+  <use href="#hexagon" class="hex hex-plain" x="106" y="203" />
+  <use href="#hexagon" class="hex hex-water" x="162" y="203" />
+  <use href="#hexagon" class="hex hex-plain" x="218" y="203" />
+  <use href="#hexagon" class="hex hex-plain" x="274" y="203" />
+  <use href="#hexagon" class="hex hex-plain" x="330" y="203" />
+  <use href="#hexagon" class="hex hex-pillar" x="386" y="203" />
+  <text x="414" y="243" class="hex-text">P</text>
+  <use href="#hexagon" class="hex hex-pillar" x="442" y="203" />
+  <text x="470" y="243" class="hex-text">P</text>
+  <use href="#hexagon" class="hex hex-plain" x="498" y="203" />
+  <use href="#hexagon" class="hex hex-plain" x="554" y="203" />
+  <use href="#hexagon" class="hex hex-plain" x="610" y="203" />
+  <use href="#hexagon" class="hex hex-water" x="666" y="203" />
+  <use href="#hexagon" class="hex hex-plain" x="722" y="203" />
+  <use href="#hexagon" class="hex hex-plain" x="778" y="203" />
+
+  <!-- Row 6 (Central Cathedral Row) -->
+  <use href="#hexagon" class="hex hex-plain" x="78" y="235" />
+  <use href="#hexagon" class="hex hex-plain" x="134" y="235" />
+  <use href="#hexagon" class="hex hex-water" x="190" y="235" />
+  <use href="#hexagon" class="hex hex-plain" x="246" y="235" />
+  <use href="#hexagon" class="hex hex-plain" x="302" y="235" />
+  <use href="#hexagon" class="hex hex-cathedral" x="358" y="235" />
+  <text x="386" y="275" class="hex-text">R3</text>
+  <use href="#hexagon" class="hex hex-cathedral" x="414" y="235" />
+  <text x="442" y="275" class="hex-text">R3</text>
+  <use href="#hexagon" class="hex hex-plain" x="470" y="235" />
+  <use href="#hexagon" class="hex hex-plain" x="526" y="235" />
+  <use href="#hexagon" class="hex hex-water" x="582" y="235" />
+  <use href="#hexagon" class="hex hex-plain" x="638" y="235" />
+  <use href="#hexagon" class="hex hex-plain" x="694" y="235" />
+
+  <!-- Row 7 (Central Cathedral Row continued) -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="267" />
+  <use href="#hexagon" class="hex hex-plain" x="106" y="267" />
+  <use href="#hexagon" class="hex hex-water" x="162" y="267" />
+  <use href="#hexagon" class="hex hex-plain" x="218" y="267" />
+  <use href="#hexagon" class="hex hex-plain" x="274" y="267" />
+  <use href="#hexagon" class="hex hex-cathedral" x="330" y="267" />
+  <text x="358" y="307" class="hex-text">R3</text>
+  <use href="#hexagon" class="hex hex-cathedral" x="386" y="267" />
+  <text x="414" y="307" class="hex-text">R3</text>
+  <use href="#hexagon" class="hex hex-plain" x="442" y="267" />
+  <use href="#hexagon" class="hex hex-plain" x="498" y="267" />
+  <use href="#hexagon" class="hex hex-plain" x="554" y="267" />
+  <use href="#hexagon" class="hex hex-water" x="610" y="267" />
+  <use href="#hexagon" class="hex hex-plain" x="666" y="267" />
+  <use href="#hexagon" class="hex hex-plain" x="722" y="267" />
+  <use href="#hexagon" class="hex hex-plain" x="778" y="267" />
+
+  <!-- Row 8 -->
+  <use href="#hexagon" class="hex hex-plain" x="78" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="134" y="299" />
+  <use href="#hexagon" class="hex hex-water" x="190" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="246" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="302" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="358" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="414" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="470" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="526" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="582" y="299" />
+  <use href="#hexagon" class="hex hex-water" x="638" y="299" />
+  <use href="#hexagon" class="hex hex-plain" x="694" y="299" />
+
+  <!-- Row 9 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="331" />
+  <use href="#hexagon" class="hex hex-forest" x="106" y="331" />
+  <use href="#hexagon" class="hex hex-water" x="162" y="331" />
+  <use href="#hexagon" class="hex hex-water" x="218" y="331" />
+  <use href="#hexagon" class="hex hex-plain" x="274" y="331" />
+  <use href="#hexagon" class="hex hex-plain" x="330" y="331" />
+  <use href="#hexagon" class="hex hex-plain" x="386" y="331" />
+  <use href="#hexagon" class="hex hex-plain" x="442" y="331" />
+  <use href="#hexagon" class="hex hex-plain" x="498" y="331" />
+  <use href="#hexagon" class="hex hex-plain" x="554" y="331" />
+  <use href="#hexagon" class="hex hex-water" x="610" y="331" />
+  <use href="#hexagon" class="hex hex-water" x="666" y="331" />
+  <use href="#hexagon" class="hex hex-forest" x="722" y="331" />
+  <use href="#hexagon" class="hex hex-plain" x="778" y="331" />
+
+  <!-- Row 10 -->
+  <use href="#hexagon" class="hex hex-plain" x="78" y="363" />
+  <use href="#hexagon" class="hex hex-forest" x="134" y="363" />
+  <use href="#hexagon" class="hex hex-forest" x="190" y="363" />
+  <use href="#hexagon" class="hex hex-plain" x="246" y="363" />
+  <use href="#hexagon" class="hex hex-reliquary" x="302" y="363" />
+  <text x="330" y="403" class="hex-text">R4</text>
+  <use href="#hexagon" class="hex hex-reliquary" x="358" y="363" />
+  <text x="386" y="403" class="hex-text">R4</text>
+  <use href="#hexagon" class="hex hex-plain" x="414" y="363" />
+  <use href="#hexagon" class="hex hex-plain" x="470" y="363" />
+  <use href="#hexagon" class="hex hex-reliquary" x="526" y="363" />
+  <text x="554" y="403" class="hex-text">R5</text>
+  <use href="#hexagon" class="hex hex-plain" x="582" y="363" />
+  <use href="#hexagon" class="hex hex-forest" x="638" y="363" />
+  <use href="#hexagon" class="hex hex-forest" x="694" y="363" />
+
+  <!-- Row 11 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="106" y="395" />
+  <use href="#hexagon" class="hex hex-forest" x="162" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="218" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="274" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="330" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="386" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="442" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="498" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="554" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="610" y="395" />
+  <use href="#hexagon" class="hex hex-forest" x="666" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="722" y="395" />
+  <use href="#hexagon" class="hex hex-plain" x="778" y="395" />
+
+  <!-- Row 12 -->
+  <use href="#hexagon" class="hex hex-plain" x="78" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="134" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="190" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="246" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="302" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="358" y="427" />
+  <use href="#hexagon" class="hex hex-reliquary" x="414" y="427" />
+  <text x="442" y="467" class="hex-text">R5</text>
+  <use href="#hexagon" class="hex hex-plain" x="470" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="526" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="582" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="638" y="427" />
+  <use href="#hexagon" class="hex hex-plain" x="694" y="427" />
+
+  <!-- Legend -->
+  <g transform="translate(50, 520)">
+    <text x="0" y="0" class="legend-text" style="font-weight: bold; font-size: 16px;">TERRAIN & OBJECTIVES LEGEND</text>
+
+    <rect x="0" y="15" width="30" height="20" class="hex-plain legend-box" />
+    <text x="40" y="30" class="legend-text">Plain Ground</text>
+
+    <rect x="180" y="15" width="30" height="20" class="hex-forest legend-box" />
+    <text x="220" y="30" class="legend-text">Forest (+1 Def)</text>
+
+    <rect x="350" y="15" width="30" height="20" class="hex-water legend-box" />
+    <text x="390" y="30" class="legend-text">Water (-2 Heat)</text>
+
+    <rect x="540" y="15" width="30" height="20" class="hex-pillar legend-box" />
+    <text x="580" y="30" class="legend-text">Pillar (+2 Def, blocks LOS)</text>
+
+    <rect x="0" y="50" width="30" height="20" class="hex-reliquary legend-box" />
+    <text x="40" y="65" class="legend-text">Reliquary R1/R2/R4/R5 (1 pt each)</text>
+
+    <rect x="300" y="50" width="30" height="20" class="hex-cathedral legend-box" />
+    <text x="340" y="65" class="legend-text">Central Cathedral R3 (2 pts, Elevation 2)</text>
+  </g>
+
+  <!-- Objective Summary -->
+  <g transform="translate(50, 630)">
+    <text x="0" y="0" class="legend-text" style="font-weight: bold; font-size: 16px;">VICTORY CONDITIONS</text>
+    <text x="0" y="25" class="legend-text">Control 6+ points at end of round  OR  Reduce opponent to 0 HP  OR  Hold R3 for 3 consecutive rounds</text>
+    <text x="0" y="50" class="legend-text" style="font-style: italic;">Total Points Available: 10 (R1=2, R2=2, R3=2, R4=2, R5=2)</text>
+  </g>
+</svg>

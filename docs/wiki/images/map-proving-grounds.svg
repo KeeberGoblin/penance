@@ -1,0 +1,222 @@
+<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .hex { stroke: #4a4a4a; stroke-width: 2; }
+      .hex-plain { fill: #d4c5b0; }
+      .hex-forest { fill: #3d5a3d; }
+      .hex-rubble { fill: #6b5d54; }
+      .hex-water { fill: #4a6b7c; }
+      .hex-elev1 { fill: #9d8b7a; }
+      .hex-elev2 { fill: #7a6858; }
+      .hex-text { font-family: 'Courier New', monospace; font-size: 10px; fill: #ffffff; text-anchor: middle; }
+      .legend-text { font-family: Arial, sans-serif; font-size: 14px; fill: #2a2a2a; }
+      .legend-box { stroke: #2a2a2a; stroke-width: 1; }
+      .title { font-family: 'Cinzel Decorative', serif; font-size: 24px; fill: #4a0e0e; font-weight: bold; }
+    </style>
+    <polygon id="hexagon" points="30,0 60,17.32 60,51.96 30,69.28 0,51.96 0,17.32" />
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="30" class="title" text-anchor="middle">THE PROVING GROUNDS</text>
+  <text x="400" y="50" class="legend-text" text-anchor="middle" style="font-size: 12px; font-style: italic;">12×12 Hex Battlefield</text>
+
+  <!-- Hex Grid (12x12) -->
+  <!-- Row 1 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="80" />
+  <use href="#hexagon" class="hex hex-plain" x="110" y="80" />
+  <use href="#hexagon" class="hex hex-forest" x="170" y="80" />
+  <use href="#hexagon" class="hex hex-forest" x="230" y="80" />
+  <use href="#hexagon" class="hex hex-plain" x="290" y="80" />
+  <use href="#hexagon" class="hex hex-plain" x="350" y="80" />
+  <use href="#hexagon" class="hex hex-plain" x="410" y="80" />
+  <use href="#hexagon" class="hex hex-plain" x="470" y="80" />
+  <use href="#hexagon" class="hex hex-forest" x="530" y="80" />
+  <use href="#hexagon" class="hex hex-forest" x="590" y="80" />
+  <use href="#hexagon" class="hex hex-plain" x="650" y="80" />
+  <use href="#hexagon" class="hex hex-plain" x="710" y="80" />
+
+  <!-- Row 2 -->
+  <use href="#hexagon" class="hex hex-plain" x="80" y="114.64" />
+  <use href="#hexagon" class="hex hex-water" x="140" y="114.64" />
+  <use href="#hexagon" class="hex hex-water" x="200" y="114.64" />
+  <use href="#hexagon" class="hex hex-water" x="260" y="114.64" />
+  <use href="#hexagon" class="hex hex-rubble" x="320" y="114.64" />
+  <use href="#hexagon" class="hex hex-rubble" x="380" y="114.64" />
+  <use href="#hexagon" class="hex hex-rubble" x="440" y="114.64" />
+  <use href="#hexagon" class="hex hex-rubble" x="500" y="114.64" />
+  <use href="#hexagon" class="hex hex-water" x="560" y="114.64" />
+  <use href="#hexagon" class="hex hex-water" x="620" y="114.64" />
+  <use href="#hexagon" class="hex hex-water" x="680" y="114.64" />
+  <use href="#hexagon" class="hex hex-plain" x="740" y="114.64" />
+
+  <!-- Row 3 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="149.28" />
+  <use href="#hexagon" class="hex hex-water" x="110" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="170" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="230" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="290" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="350" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="410" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="470" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="530" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="590" y="149.28" />
+  <use href="#hexagon" class="hex hex-water" x="650" y="149.28" />
+  <use href="#hexagon" class="hex hex-plain" x="710" y="149.28" />
+
+  <!-- Row 4 -->
+  <use href="#hexagon" class="hex hex-plain" x="80" y="183.92" />
+  <use href="#hexagon" class="hex hex-water" x="140" y="183.92" />
+  <use href="#hexagon" class="hex hex-elev1" x="200" y="183.92" />
+  <text x="230" y="225" class="hex-text">E1</text>
+  <use href="#hexagon" class="hex hex-elev1" x="260" y="183.92" />
+  <text x="290" y="225" class="hex-text">E1</text>
+  <use href="#hexagon" class="hex hex-plain" x="320" y="183.92" />
+  <use href="#hexagon" class="hex hex-forest" x="380" y="183.92" />
+  <use href="#hexagon" class="hex hex-forest" x="440" y="183.92" />
+  <use href="#hexagon" class="hex hex-plain" x="500" y="183.92" />
+  <use href="#hexagon" class="hex hex-elev1" x="560" y="183.92" />
+  <text x="590" y="225" class="hex-text">E1</text>
+  <use href="#hexagon" class="hex hex-elev1" x="620" y="183.92" />
+  <text x="650" y="225" class="hex-text">E1</text>
+  <use href="#hexagon" class="hex hex-water" x="680" y="183.92" />
+  <use href="#hexagon" class="hex hex-plain" x="740" y="183.92" />
+
+  <!-- Row 5 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="218.56" />
+  <use href="#hexagon" class="hex hex-water" x="110" y="218.56" />
+  <use href="#hexagon" class="hex hex-water" x="170" y="218.56" />
+  <use href="#hexagon" class="hex hex-water" x="230" y="218.56" />
+  <use href="#hexagon" class="hex hex-plain" x="290" y="218.56" />
+  <use href="#hexagon" class="hex hex-plain" x="350" y="218.56" />
+  <use href="#hexagon" class="hex hex-plain" x="410" y="218.56" />
+  <use href="#hexagon" class="hex hex-plain" x="470" y="218.56" />
+  <use href="#hexagon" class="hex hex-water" x="530" y="218.56" />
+  <use href="#hexagon" class="hex hex-water" x="590" y="218.56" />
+  <use href="#hexagon" class="hex hex-water" x="650" y="218.56" />
+  <use href="#hexagon" class="hex hex-plain" x="710" y="218.56" />
+
+  <!-- Row 6 -->
+  <use href="#hexagon" class="hex hex-plain" x="80" y="253.2" />
+  <use href="#hexagon" class="hex hex-plain" x="140" y="253.2" />
+  <use href="#hexagon" class="hex hex-plain" x="200" y="253.2" />
+  <use href="#hexagon" class="hex hex-plain" x="260" y="253.2" />
+  <use href="#hexagon" class="hex hex-rubble" x="320" y="253.2" />
+  <use href="#hexagon" class="hex hex-rubble" x="380" y="253.2" />
+  <use href="#hexagon" class="hex hex-rubble" x="440" y="253.2" />
+  <use href="#hexagon" class="hex hex-rubble" x="500" y="253.2" />
+  <use href="#hexagon" class="hex hex-plain" x="560" y="253.2" />
+  <use href="#hexagon" class="hex hex-plain" x="620" y="253.2" />
+  <use href="#hexagon" class="hex hex-plain" x="680" y="253.2" />
+  <use href="#hexagon" class="hex hex-plain" x="740" y="253.2" />
+
+  <!-- Row 7 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="287.84" />
+  <use href="#hexagon" class="hex hex-plain" x="110" y="287.84" />
+  <use href="#hexagon" class="hex hex-plain" x="170" y="287.84" />
+  <use href="#hexagon" class="hex hex-plain" x="230" y="287.84" />
+  <use href="#hexagon" class="hex hex-rubble" x="290" y="287.84" />
+  <use href="#hexagon" class="hex hex-elev2" x="350" y="287.84" />
+  <text x="380" y="329" class="hex-text">E2</text>
+  <use href="#hexagon" class="hex hex-elev2" x="410" y="287.84" />
+  <text x="440" y="329" class="hex-text">E2</text>
+  <use href="#hexagon" class="hex hex-rubble" x="470" y="287.84" />
+  <use href="#hexagon" class="hex hex-plain" x="530" y="287.84" />
+  <use href="#hexagon" class="hex hex-plain" x="590" y="287.84" />
+  <use href="#hexagon" class="hex hex-plain" x="650" y="287.84" />
+  <use href="#hexagon" class="hex hex-plain" x="710" y="287.84" />
+
+  <!-- Row 8 -->
+  <use href="#hexagon" class="hex hex-plain" x="80" y="322.48" />
+  <use href="#hexagon" class="hex hex-forest" x="140" y="322.48" />
+  <use href="#hexagon" class="hex hex-plain" x="200" y="322.48" />
+  <use href="#hexagon" class="hex hex-plain" x="260" y="322.48" />
+  <use href="#hexagon" class="hex hex-rubble" x="320" y="322.48" />
+  <use href="#hexagon" class="hex hex-elev2" x="380" y="322.48" />
+  <text x="410" y="364" class="hex-text">E2</text>
+  <use href="#hexagon" class="hex hex-elev2" x="440" y="322.48" />
+  <text x="470" y="364" class="hex-text">E2</text>
+  <use href="#hexagon" class="hex hex-rubble" x="500" y="322.48" />
+  <use href="#hexagon" class="hex hex-plain" x="560" y="322.48" />
+  <use href="#hexagon" class="hex hex-plain" x="620" y="322.48" />
+  <use href="#hexagon" class="hex hex-forest" x="680" y="322.48" />
+  <use href="#hexagon" class="hex hex-plain" x="740" y="322.48" />
+
+  <!-- Row 9 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="357.12" />
+  <use href="#hexagon" class="hex hex-forest" x="110" y="357.12" />
+  <use href="#hexagon" class="hex hex-forest" x="170" y="357.12" />
+  <use href="#hexagon" class="hex hex-plain" x="230" y="357.12" />
+  <use href="#hexagon" class="hex hex-plain" x="290" y="357.12" />
+  <use href="#hexagon" class="hex hex-plain" x="350" y="357.12" />
+  <use href="#hexagon" class="hex hex-plain" x="410" y="357.12" />
+  <use href="#hexagon" class="hex hex-plain" x="470" y="357.12" />
+  <use href="#hexagon" class="hex hex-plain" x="530" y="357.12" />
+  <use href="#hexagon" class="hex hex-forest" x="590" y="357.12" />
+  <use href="#hexagon" class="hex hex-forest" x="650" y="357.12" />
+  <use href="#hexagon" class="hex hex-plain" x="710" y="357.12" />
+
+  <!-- Row 10 -->
+  <use href="#hexagon" class="hex hex-plain" x="80" y="391.76" />
+  <use href="#hexagon" class="hex hex-plain" x="140" y="391.76" />
+  <use href="#hexagon" class="hex hex-water" x="200" y="391.76" />
+  <use href="#hexagon" class="hex hex-water" x="260" y="391.76" />
+  <use href="#hexagon" class="hex hex-water" x="320" y="391.76" />
+  <use href="#hexagon" class="hex hex-water" x="380" y="391.76" />
+  <use href="#hexagon" class="hex hex-water" x="440" y="391.76" />
+  <use href="#hexagon" class="hex hex-water" x="500" y="391.76" />
+  <use href="#hexagon" class="hex hex-water" x="560" y="391.76" />
+  <use href="#hexagon" class="hex hex-water" x="620" y="391.76" />
+  <use href="#hexagon" class="hex hex-plain" x="680" y="391.76" />
+  <use href="#hexagon" class="hex hex-plain" x="740" y="391.76" />
+
+  <!-- Row 11 -->
+  <use href="#hexagon" class="hex hex-plain" x="50" y="426.4" />
+  <use href="#hexagon" class="hex hex-plain" x="110" y="426.4" />
+  <use href="#hexagon" class="hex hex-plain" x="170" y="426.4" />
+  <use href="#hexagon" class="hex hex-water" x="230" y="426.4" />
+  <use href="#hexagon" class="hex hex-water" x="290" y="426.4" />
+  <use href="#hexagon" class="hex hex-plain" x="350" y="426.4" />
+  <use href="#hexagon" class="hex hex-plain" x="410" y="426.4" />
+  <use href="#hexagon" class="hex hex-water" x="470" y="426.4" />
+  <use href="#hexagon" class="hex hex-water" x="530" y="426.4" />
+  <use href="#hexagon" class="hex hex-plain" x="590" y="426.4" />
+  <use href="#hexagon" class="hex hex-plain" x="650" y="426.4" />
+  <use href="#hexagon" class="hex hex-plain" x="710" y="426.4" />
+
+  <!-- Row 12 -->
+  <use href="#hexagon" class="hex hex-plain" x="80" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="140" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="200" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="260" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="320" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="380" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="440" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="500" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="560" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="620" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="680" y="461.04" />
+  <use href="#hexagon" class="hex hex-plain" x="740" y="461.04" />
+
+  <!-- Legend -->
+  <g transform="translate(50, 540)">
+    <text x="0" y="0" class="legend-text" style="font-weight: bold; font-size: 16px;">TERRAIN LEGEND</text>
+
+    <rect x="0" y="15" width="30" height="20" class="hex-plain legend-box" />
+    <text x="40" y="30" class="legend-text">Plain Ground</text>
+
+    <rect x="200" y="15" width="30" height="20" class="hex-forest legend-box" />
+    <text x="240" y="30" class="legend-text">Forest (+1 Defense)</text>
+
+    <rect x="420" y="15" width="30" height="20" class="hex-rubble legend-box" />
+    <text x="460" y="30" class="legend-text">Rubble (+1 Defense, 2 SP)</text>
+
+    <rect x="0" y="50" width="30" height="20" class="hex-water legend-box" />
+    <text x="40" y="65" class="legend-text">Water/Mud (-1 Heat)</text>
+
+    <rect x="200" y="50" width="30" height="20" class="hex-elev1 legend-box" />
+    <text x="240" y="65" class="legend-text">Elevation 1 (+1 Dmg)</text>
+
+    <rect x="420" y="50" width="30" height="20" class="hex-elev2 legend-box" />
+    <text x="460" y="65" class="legend-text">Elevation 2 (+2 Dmg, +1 Range)</text>
+  </g>
+</svg>
