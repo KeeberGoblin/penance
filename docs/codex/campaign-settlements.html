@@ -3,369 +3,446 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settlement Mechanics</title>
+    <title>Settlement Mechanics - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Amber/Gold Settlement Theme */
+        .settlement-accent {
+            color: #d4af37;
+        }
+        h2 {
+            color: #d4af37 !important;
+        }
+        .content table th {
+            background: linear-gradient(to bottom, #8b6914, #6b5310) !important;
+        }
+
+        /* Building Card Grid System */
+        .building-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .building-card {
+            background: linear-gradient(to bottom, rgba(212, 175, 55, 0.05), rgba(139, 105, 20, 0.05));
+            border: 2px solid #8b6914;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .building-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .building-card h3 {
+            color: #d4af37 !important;
+            margin-top: 0;
+            border-bottom: 1px solid #8b6914;
+            padding-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .building-card .cost {
+            background: rgba(139, 105, 20, 0.2);
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #8b6914;
+        }
+
+        .building-card .narrative {
+            font-style: italic;
+            color: #999;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #333;
+        }
+
+        .faction-card {
+            background: linear-gradient(to bottom, rgba(139, 0, 0, 0.05), rgba(100, 0, 0, 0.05));
+            border: 2px solid #660000;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+        }
+
+        .faction-card h4 {
+            color: #8B0000;
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="manuscript-page">
-        <h1 class="page-title">Settlement Mechanics</h1>
-        <p class="subtitle">Campaign Base-Building System</p>
-
-        <div class="metadata">
-            <span><strong>Version:</strong> 0.1</span>
-            <span><strong>Last Updated:</strong> October 10, 2025</span>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="javascript:parent.loadContent('content-home.html');">CODEX</a> /
+            <a href="#campaign">CAMPAIGN</a> /
+            Settlement Mechanics
         </div>
 
-        <div class="divider"></div>
+        <div style="background: rgba(212, 175, 55, 0.2); border: 3px solid #8b6914; padding: 1rem; text-align: center; margin-bottom: 2rem; font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: #d4af37; letter-spacing: 0.15em;">
+            CAMPAIGN BASE-BUILDING SYSTEM • VERSION 3.0
+        </div>
+
+        <h1>Settlement Mechanics</h1>
+
+        <p style="font-style: italic; color: #d4af37; margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
+            Kingdom Death-Inspired Settlement Phase • Version 3.0 • Campaign Progression
+        </p>
+
+        <div class="manuscript-quote">
+            "Your settlement is a promise. Will you keep it, or watch it burn?"
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Design Philosophy</h2>
-        <p class="manuscript-text">Drawing from Kingdom Death's settlement phase, this system focuses on:</p>
-        <ul class="manuscript-list">
-            <li><strong>Meaningful scarcity</strong> - resources are always limited, forcing hard choices</li>
-            <li><strong>Interconnected upgrades</strong> - buildings unlock other buildings, creating strategic paths</li>
-            <li><strong>Narrative consequences</strong> - settlements tell stories through their architecture</li>
-            <li><strong>Asymmetric disasters</strong> - settlements can be destroyed, and recovery is brutal</li>
-            <li><strong>No pure optimization</strong> - every choice has a cost</li>
+
+        <p>
+            <span style="font-size: 2.5rem; font-weight: bold; color: #d4af37; float: left; line-height: 0.85; margin-right: 0.05em; margin-top: 0.1em; font-family: 'Cinzel Decorative', serif;">D</span>rawing from Kingdom Death's settlement phase, this system focuses on meaningful scarcity, interconnected upgrades, narrative consequences, asymmetric disasters, and impossible choices. Resources are always limited, forcing strategic priorities.
+        </p>
+
+        <ul>
+            <li><strong>Meaningful scarcity</strong> - Resources are always limited, forcing hard choices</li>
+            <li><strong>Interconnected upgrades</strong> - Buildings unlock other buildings, creating strategic paths</li>
+            <li><strong>Narrative consequences</strong> - Settlements tell stories through their architecture</li>
+            <li><strong>Asymmetric disasters</strong> - Settlements can be destroyed, and recovery is brutal</li>
+            <li><strong>No pure optimization</strong> - Every choice has a cost</li>
         </ul>
 
-        <div class="divider"></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
-        <h2>Core Mechanics</h2>
+        <h2>Core Resources</h2>
 
-        <h3>Settlement Phases</h3>
-        <p class="manuscript-text"><strong>Campaign Structure:</strong> Missions → Settlement Phase → Missions → Settlement Phase</p>
-
-        <p class="manuscript-text">After every <strong>2-3 missions</strong>, players return to their settlement for:</p>
-        <ol>
-            <li><strong>Triage</strong> - Repair damaged Caskets, treat wounded pilots</li>
-            <li><strong>Workshop</strong> - Spend Credits on upgrades and equipment</li>
-            <li><strong>Construction</strong> - Build or upgrade settlement buildings</li>
-            <li><strong>Events</strong> - Roll on the Settlement Event table (both good and bad)</li>
-            <li><strong>Preparation</strong> - Choose next mission, assign pilots</li>
-        </ol>
-
-        <div class="divider"></div>
-
-        <h2>The Settlement Sheet</h2>
-
-        <h3>Core Resources</h3>
-
-        <div class="info-box">
-            <h4>Credits (Primary Currency)</h4>
-            <ul class="manuscript-list">
-                <li>Earned from missions (100 for primary objective, 50 for secondary)</li>
-                <li>Spent on repairs, equipment, and construction</li>
-                <li><strong>Scarcity Rule:</strong> Credits don't accumulate infinitely - max bank is 500 (represents logistical limits)</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Scrap (Salvage Material)</h4>
-            <ul class="manuscript-list">
-                <li>Gained from destroyed enemy Caskets (1d3 Scrap per kill)</li>
-                <li>Used for building construction and emergency repairs</li>
-                <li>Can be traded to Forge-Guilds at 2 Scrap = 50 Credits (poor exchange rate)</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Population (Settlement Size)</h4>
-            <ul class="manuscript-list">
-                <li>Starts at 10 (small outpost)</li>
-                <li>Increases by +1 per successful mission (survivors flock to safety)</li>
-                <li>Decreases when settlement is attacked or suffers catastrophic events</li>
-                <li><strong>Maximum Population:</strong> 50 (depends on housing capacity)</li>
-                <li><strong>Population Benefits:</strong> Higher population = more building slots unlocked</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>Morale (Settlement Spirit)</h4>
-            <ul class="manuscript-list">
-                <li>Starts at 5 (Neutral)</li>
-                <li>Scale: 0 (Despair) → 10 (Hope)</li>
-                <li>Affects event table results (low morale = worse events)</li>
-                <li><strong>Morale Modifiers:</strong>
-                    <ul class="manuscript-list">
-                        <li>Mission success: +1 Morale</li>
-                        <li>Mission failure: -2 Morale</li>
-                        <li>Pilot death: -1 Morale</li>
-                        <li>Abomination raid survived: +2 Morale</li>
-                        <li>Certain buildings provide passive +1 Morale</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="divider"></div>
-
-        <h2>Settlement Buildings</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Resource</th>
+                    <th>Description</th>
+                    <th>How to Gain</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Credits</strong></td>
+                    <td>Primary currency (max bank: 500)</td>
+                    <td>100 per primary objective, 50 per secondary</td>
+                </tr>
+                <tr>
+                    <td><strong>Scrap</strong></td>
+                    <td>Salvage material for construction</td>
+                    <td>1d3 per enemy Casket destroyed</td>
+                </tr>
+                <tr>
+                    <td><strong>Population</strong></td>
+                    <td>Settlement size (unlocks building slots)</td>
+                    <td>+1 per successful mission, starts at 10</td>
+                </tr>
+                <tr>
+                    <td><strong>Morale</strong></td>
+                    <td>Settlement spirit (0-10 scale, affects events)</td>
+                    <td>+1 per mission success, -2 per failure</td>
+                </tr>
+            </tbody>
+        </table>
 
         <h3>Building Slots</h3>
-        <ul class="manuscript-list">
+        <ul>
             <li><strong>Tier 1:</strong> Start with 3 building slots</li>
             <li><strong>Tier 2:</strong> Unlocked at Population 20 (adds 2 slots)</li>
             <li><strong>Tier 3:</strong> Unlocked at Population 35 (adds 2 slots)</li>
             <li><strong>Maximum:</strong> 7 building slots total</li>
         </ul>
 
-        <h3>Building Categories</h3>
-        <p class="manuscript-text">Buildings are categorized by function:</p>
-        <ul class="manuscript-list">
-            <li><strong>Infrastructure</strong> (essential services)</li>
-            <li><strong>Military</strong> (combat support)</li>
-            <li><strong>Economic</strong> (resource generation)</li>
-            <li><strong>Special</strong> (unique, faction-specific)</li>
-        </ul>
-
-        <div class="divider"></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Tier 1 Buildings (Starting Options)</h2>
 
-        <div class="building-card">
-            <h3>The Forge [FORGE] (Infrastructure)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 3 Scrap, 100 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> Immediate</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Unlocks equipment crafting</li>
-                <li>Repair costs reduced by 25%</li>
-                <li><strong>Special Action:</strong> Scrap Salvage - Convert 1 destroyed equipment card into 1 Scrap (once per settlement phase)</li>
-            </ul>
-            <p class="narrative">A crude workshop with a bellows-forge and anvil. Sparks fly as blacksmiths hammer out repairs.</p>
+        <div class="building-grid">
+            <div class="building-card">
+                <h3>The Forge <span style="font-size: 0.8em; color: #999;">[Infrastructure]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 3 Scrap, 100 Credits<br>
+                    <strong>Build Time:</strong> Immediate
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Unlocks equipment crafting</li>
+                    <li>Repair costs reduced by 25%</li>
+                    <li><strong>Special:</strong> Scrap Salvage - Convert 1 destroyed equipment into 1 Scrap (once per phase)</li>
+                </ul>
+                <p class="narrative">A crude workshop with a bellows-forge and anvil. Sparks fly as blacksmiths hammer out repairs.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Barracks <span style="font-size: 0.8em; color: #999;">[Military]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 2 Scrap, 50 Credits<br>
+                    <strong>Build Time:</strong> Immediate
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Increases pilot roster capacity from 4 to 6</li>
+                    <li>Pilots heal 1 additional injury per phase</li>
+                    <li><strong>Special:</strong> Drill Training - Spend 50 Credits to grant 1 pilot +1 Initiative permanently (max +2)</li>
+                </ul>
+                <p class="narrative">Rows of cots and training dummies. The smell of sweat and oil.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Apothecary <span style="font-size: 0.8em; color: #999;">[Infrastructure]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 2 Scrap, 75 Credits<br>
+                    <strong>Build Time:</strong> Immediate
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Reduces injury recovery time by 1 phase</li>
+                    <li>Unlocks advanced medical treatments</li>
+                    <li><strong>Special:</strong> Emergency Stabilization - Prevent 1 pilot death per mission (declare immediately)</li>
+                </ul>
+                <p class="narrative">Shelves lined with bloodied bandages and herbal tinctures. The screams of the wounded echo.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Market <span style="font-size: 0.8em; color: #999;">[Economic]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 1 Scrap, 50 Credits<br>
+                    <strong>Build Time:</strong> Immediate
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Generates +25 Credits per settlement phase (passive income)</li>
+                    <li>Unlocks Trade Actions</li>
+                    <li><strong>Special:</strong> Black Market Contact - Purchase 1 equipment at 50% discount (random, once per phase)</li>
+                </ul>
+                <p class="narrative">A bustling bazaar where refugees trade scavenged goods. Prices are brutal.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Shrine <span style="font-size: 0.8em; color: #999;">[Infrastructure]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 2 Scrap, 50 Credits<br>
+                    <strong>Build Time:</strong> Immediate
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>+1 Morale (passive)</li>
+                    <li>Reduces Taint accumulation by 1 per phase (all pilots)</li>
+                    <li><strong>Special:</strong> Ritual of Cleansing - Spend 100 Credits to remove 2 Taint from 1 pilot</li>
+                </ul>
+                <p class="narrative">Incense burns before an altar draped in prayer chains. Penitents kneel in silent devotion.</p>
+            </div>
         </div>
 
-        <div class="building-card">
-            <h3>The Barracks [MILITARY] (Military)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 2 Scrap, 50 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> Immediate</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Increases pilot roster capacity from 4 to 6</li>
-                <li>Pilots heal 1 additional injury per settlement phase</li>
-                <li><strong>Special Action:</strong> Drill Training - Spend 50 Credits to grant 1 pilot +1 Initiative permanently (max +2, once per pilot)</li>
-            </ul>
-            <p class="narrative">Rows of cots and training dummies. The smell of sweat and oil.</p>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
+
+        <h2>Tier 2 Buildings (Population 20+)</h2>
+
+        <div class="building-grid">
+            <div class="building-card">
+                <h3>The Arsenal <span style="font-size: 0.8em; color: #999;">[Military]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 5 Scrap, 200 Credits<br>
+                    <strong>Build Time:</strong> 1 phase<br>
+                    <strong>Requires:</strong> The Forge
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Unlocks Tier 2 equipment crafting (Relic-grade weapons)</li>
+                    <li>+1 Relic slot for all Caskets</li>
+                    <li><strong>Special:</strong> Weapon Enchantment - Spend 150 Credits to upgrade 1 weapon permanently</li>
+                </ul>
+                <p class="narrative">A vault filled with Soulstone-powered weaponry. The air hums with latent energy.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Workshop <span style="font-size: 0.8em; color: #999;">[Infrastructure]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 4 Scrap, 150 Credits<br>
+                    <strong>Build Time:</strong> 1 phase<br>
+                    <strong>Requires:</strong> The Forge
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Unlocks Casket modifications (weight class changes, component swaps)</li>
+                    <li>Combine 2 broken equipment into 1 functional item</li>
+                    <li><strong>Special:</strong> Emergency Retrofit - Rebuild 1 destroyed Casket (200 Credits + 3 Scrap)</li>
+                </ul>
+                <p class="narrative">A cavernous hangar where Caskets hang on chains like carcasses in a butcher's shop.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>Soulstone Refinery <span style="font-size: 0.8em; color: #999;">[Economic]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 6 Scrap, 250 Credits<br>
+                    <strong>Build Time:</strong> 2 phases<br>
+                    <strong>Requires:</strong> The Forge
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Generates 1 Soulstone Fragment per phase (worth 75 Credits OR special crafting)</li>
+                    <li>Unlocks Soulstone-powered equipment</li>
+                    <li><strong>Danger:</strong> Roll 1d6 each phase. On 1, suffer Void Leak (see Disasters)</li>
+                </ul>
+                <p class="narrative">A pulsing crystal chamber surrounded by arcane wards. Workers wear lead-lined suits.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Archive <span style="font-size: 0.8em; color: #999;">[Special]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 3 Scrap, 100 Credits<br>
+                    <strong>Build Time:</strong> 1 phase
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Unlocks Research Actions</li>
+                    <li>Ask GM 1 lore question per phase (receive truthful answer)</li>
+                    <li><strong>Special:</strong> Ancient Schematic - Roll on Lost Technology table for forgotten equipment</li>
+                </ul>
+                <p class="narrative">A dusty library filled with water-damaged pre-Cataclysm tomes. Knowledge is hoarded here.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Watchtower <span style="font-size: 0.8em; color: #999;">[Military]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 4 Scrap, 100 Credits<br>
+                    <strong>Build Time:</strong> 1 phase
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Reduces surprise attack chance by 50%</li>
+                    <li>May scout next mission before committing (reveal objectives + 1 enemy type)</li>
+                    <li><strong>Special:</strong> Early Warning System - Avoid 1 settlement disaster entirely (once per campaign)</li>
+                </ul>
+                <p class="narrative">A crude tower built from scrap metal and salvaged wood. Sentries scan the horizon.</p>
+            </div>
         </div>
 
-        <div class="building-card">
-            <h3>The Apothecary [MEDICAL] (Infrastructure)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 2 Scrap, 75 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> Immediate</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Reduces injury recovery time by 1 phase</li>
-                <li>Unlocks advanced medical treatments (see Treatment Table)</li>
-                <li><strong>Special Action:</strong> Emergency Stabilization - Prevent 1 pilot death per mission (must be declared immediately when pilot would die)</li>
-            </ul>
-            <p class="narrative">Shelves lined with bloodied bandages and herbal tinctures. The screams of the wounded echo.</p>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
+
+        <h2>Tier 3 Buildings (Population 35+)</h2>
+
+        <div class="building-grid">
+            <div class="building-card">
+                <h3>The Reliquary <span style="font-size: 0.8em; color: #999;">[Special]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 10 Scrap, 400 Credits<br>
+                    <strong>Build Time:</strong> 3 phases<br>
+                    <strong>Requires:</strong> Shrine + Archive
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Unlocks Forbidden Technologies (Aberrant Caskets, Tainted weapons)</li>
+                    <li>Pilots may gain +1 permanent Taint to unlock unique Relic ability</li>
+                    <li><strong>Danger:</strong> Attracts Void attention - settlement attack chance +1 per phase</li>
+                </ul>
+                <p class="narrative">A sealed vault where heretical artifacts glow with unnatural light. Only the desperate enter.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Foundry <span style="font-size: 0.8em; color: #999;">[Military]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 8 Scrap, 500 Credits<br>
+                    <strong>Build Time:</strong> 3 phases<br>
+                    <strong>Requires:</strong> Workshop + Arsenal
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Construct 1 custom Casket per campaign (player-designed within balance limits)</li>
+                    <li>All equipment costs reduced by 30%</li>
+                    <li><strong>Special:</strong> Mass Production - Spend 300 Credits to equip all pilots with Tier 1 weapons</li>
+                </ul>
+                <p class="narrative">Smokestacks belch ash. The clangor of hammers on steel never ceases.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>The Sanctuary <span style="font-size: 0.8em; color: #999;">[Infrastructure]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 7 Scrap, 300 Credits<br>
+                    <strong>Build Time:</strong> 2 phases<br>
+                    <strong>Requires:</strong> Apothecary + Shrine
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>+2 Morale (passive, replaces Shrine's +1)</li>
+                    <li>All pilots remove 1 Permanent Injury every 5 missions</li>
+                    <li><strong>Special:</strong> Miracle Cure - Fully heal 1 pilot (once per campaign, but they owe a Debt)</li>
+                </ul>
+                <p class="narrative">A tranquil garden inside the settlement. Patients rest under makeshift pavilions.</p>
+            </div>
+
+            <div class="building-card">
+                <h3>War Council Hall <span style="font-size: 0.8em; color: #999;">[Military]</span></h3>
+                <div class="cost">
+                    <strong>Cost:</strong> 5 Scrap, 200 Credits<br>
+                    <strong>Build Time:</strong> 2 phases
+                </div>
+                <p><strong>Effect:</strong></p>
+                <ul>
+                    <li>Unlocks Strategic Missions (high-risk, high-reward)</li>
+                    <li>May re-attempt previously failed missions</li>
+                    <li><strong>Special:</strong> Faction Embassy - Improve relationship with 1 faction by 1 tier</li>
+                </ul>
+                <p class="narrative">A round table surrounded by maps and battle plans. Leaders argue late into the night.</p>
+            </div>
         </div>
 
-        <div class="building-card">
-            <h3>The Market [ECONOMIC] (Economic)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 1 Scrap, 50 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> Immediate</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Generates +25 Credits per settlement phase (passive income)</li>
-                <li>Unlocks <strong>Trade Actions</strong> (see Trade Table)</li>
-                <li><strong>Special Action:</strong> Black Market Contact - Once per settlement phase, purchase 1 piece of equipment at 50% discount (random selection, roll on loot table)</li>
-            </ul>
-            <p class="narrative">A bustling bazaar where refugees trade scavenged goods. Prices are brutal.</p>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
+
+        <h2>Faction-Specific Buildings</h2>
+
+        <p>If players align strongly with a faction, they may unlock unique buildings:</p>
+
+        <div class="building-grid">
+            <div class="faction-card">
+                <h4>Church of Absolution: The Martyrium</h4>
+                <p><strong>Cost:</strong> 6 Scrap, 300 Credits</p>
+                <p><strong>Effect:</strong> All pilots may take Penitent's Vow - gain +1 SP but take 1 damage at mission start (self-flagellation rituals)</p>
+            </div>
+
+            <div class="faction-card">
+                <h4>Verdant Covenant: The Living Grove</h4>
+                <p><strong>Cost:</strong> 5 Scrap, 250 Credits</p>
+                <p><strong>Effect:</strong> Caskets may be "planted" for 1 phase, growing organic upgrades (roll on Nature's Bounty table)</p>
+            </div>
+
+            <div class="faction-card">
+                <h4>Forge-Guilds: The Runeworks</h4>
+                <p><strong>Cost:</strong> 8 Scrap, 400 Credits</p>
+                <p><strong>Effect:</strong> All equipment gains +1 durability (harder to destroy). Unlocks Runic Inscriptions</p>
+            </div>
+
+            <div class="faction-card">
+                <h4>Scrap-Clans: The Scrapyard</h4>
+                <p><strong>Cost:</strong> 3 Scrap, 100 Credits</p>
+                <p><strong>Effect:</strong> Generates 2 Scrap per phase. Build makeshift Caskets from salvage (unreliable but free)</p>
+            </div>
+
+            <div class="faction-card">
+                <h4>The Ossuarium: The Ossuary</h4>
+                <p><strong>Cost:</strong> 7 Scrap, 350 Credits</p>
+                <p><strong>Effect:</strong> Dead pilots may be raised as Undead (lose personality, stats reduced 50%)</p>
+            </div>
+
+            <div class="faction-card">
+                <h4>The Wyrd Conclave: Feywild Gate</h4>
+                <p><strong>Cost:</strong> 10 Scrap, 500 Credits</p>
+                <p><strong>Effect:</strong> Bargain with Fae once per phase - gain massive boon, suffer hidden curse (GM's choice)</p>
+            </div>
         </div>
 
-        <div class="building-card">
-            <h3>The Shrine [SHRINE] (Infrastructure)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 2 Scrap, 50 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> Immediate</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>+1 Morale (passive)</li>
-                <li>Reduces Taint accumulation by 1 point per settlement phase (for all pilots)</li>
-                <li><strong>Special Action:</strong> Ritual of Cleansing - Spend 100 Credits to remove 2 Taint from 1 pilot (once per phase)</li>
-            </ul>
-            <p class="narrative">Incense burns before an altar draped in prayer chains. Penitents kneel in silent devotion.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <h2>Tier 2 Buildings (Unlocked at Population 20)</h2>
-
-        <div class="building-card">
-            <h3>The Arsenal [ARSENAL] (Military)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 5 Scrap, 200 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 1 settlement phase</p>
-            <p class="manuscript-text"><strong>Requires:</strong> The Forge</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Unlocks Tier 2 equipment crafting (Relic-grade weapons)</li>
-                <li>+1 Relic slot for all Caskets</li>
-                <li><strong>Special Action:</strong> Weapon Enchantment - Spend 150 Credits to upgrade 1 weapon with a permanent bonus (roll on Enchantment Table)</li>
-            </ul>
-            <p class="narrative">A vault filled with Soulstone-powered weaponry. The air hums with latent energy.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The Workshop [WORKSHOP] (Infrastructure)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 4 Scrap, 150 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 1 settlement phase</p>
-            <p class="manuscript-text"><strong>Requires:</strong> The Forge</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Unlocks Casket modifications (weight class changes, component swaps)</li>
-                <li>Allows combining 2 broken equipment pieces into 1 functional item</li>
-                <li><strong>Special Action:</strong> Emergency Retrofit - Completely rebuild 1 destroyed Casket (costs 200 Credits + 3 Scrap)</li>
-            </ul>
-            <p class="narrative">A cavernous hangar where Caskets hang on chains like carcasses in a butcher's shop.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The Soulstone Refinery [REFINERY] (Economic)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 6 Scrap, 250 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 2 settlement phases</p>
-            <p class="manuscript-text"><strong>Requires:</strong> The Forge</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Generates 1 Soulstone Fragment per settlement phase (can be spent as 75 Credits OR used for special crafting)</li>
-                <li>Unlocks Soulstone-powered equipment</li>
-                <li><strong>Danger:</strong> Every settlement phase, roll 1d6. On a 1, the refinery suffers a <strong>Void Leak</strong> (see Disasters)</li>
-            </ul>
-            <p class="narrative">A pulsing crystal chamber surrounded by arcane wards. Workers wear lead-lined suits.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The Archive [ARCHIVE] (Special)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 3 Scrap, 100 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 1 settlement phase</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Unlocks <strong>Research Actions</strong> (see Research Table)</li>
-                <li>Once per settlement phase, players may ask the GM 1 lore question and receive a truthful answer</li>
-                <li><strong>Special Action:</strong> Ancient Schematic - Roll on the Lost Technology table to discover forgotten equipment designs</li>
-            </ul>
-            <p class="narrative">A dusty library filled with water-damaged pre-Cataclysm tomes. Knowledge is hoarded here.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The Watchtower [WATCH] (Military)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 4 Scrap, 100 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 1 settlement phase</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Reduces chance of surprise attacks on settlement by 50%</li>
-                <li>Players may scout the next mission before committing (reveal mission objectives and 1 enemy type)</li>
-                <li><strong>Special Action:</strong> Early Warning System - Once per campaign, avoid 1 settlement disaster entirely</li>
-            </ul>
-            <p class="narrative">A crude tower built from scrap metal and salvaged wood. Sentries scan the horizon, watching for rifts.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <h2>Tier 3 Buildings (Unlocked at Population 35)</h2>
-
-        <div class="building-card">
-            <h3>The Reliquary [RELIC] (Special)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 10 Scrap, 400 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 3 settlement phases</p>
-            <p class="manuscript-text"><strong>Requires:</strong> The Shrine + The Archive</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Unlocks <strong>Forbidden Technologies</strong> (Aberrant-class Caskets, Tainted weapons)</li>
-                <li>Pilots may permanently gain +1 Taint to unlock a unique Relic ability</li>
-                <li><strong>Danger:</strong> Attracts Void attention - settlement attack chance increases by +1 per phase</li>
-            </ul>
-            <p class="narrative">A sealed vault where heretical artifacts glow with unnatural light. Only the desperate enter.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The Foundry [FOUNDRY] (Military)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 8 Scrap, 500 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 3 settlement phases</p>
-            <p class="manuscript-text"><strong>Requires:</strong> The Workshop + The Arsenal</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Allows construction of <strong>1 custom Casket</strong> per campaign (players design from scratch within balance limits)</li>
-                <li>Reduces all equipment costs by 30%</li>
-                <li><strong>Special Action:</strong> Mass Production - Spend 300 Credits to equip all pilots with standardized Tier 1 weapons</li>
-            </ul>
-            <p class="narrative">Smokestacks belch ash. The clangor of hammers on steel never ceases.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The Sanctuary [SANCTUARY] (Infrastructure)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 7 Scrap, 300 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 2 settlement phases</p>
-            <p class="manuscript-text"><strong>Requires:</strong> The Apothecary + The Shrine</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>+2 Morale (passive, replaces Shrine's +1)</li>
-                <li>All pilots automatically remove 1 Permanent Injury at the start of each campaign arc (every 5 missions)</li>
-                <li><strong>Special Action:</strong> Miracle Cure - Once per campaign, fully heal 1 pilot of all injuries and Taint (but they gain a <strong>Debt</strong> to the Sanctuary - must complete a side quest)</li>
-            </ul>
-            <p class="narrative">A tranquil garden inside the settlement. Patients rest under makeshift pavilions, tended by healers.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>The War Council Hall [COUNCIL] (Military)</h3>
-            <p class="manuscript-text"><strong>Cost:</strong> 5 Scrap, 200 Credits</p>
-            <p class="manuscript-text"><strong>Build Time:</strong> 2 settlement phases</p>
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Unlocks <strong>Strategic Missions</strong> (high-risk, high-reward)</li>
-                <li>Players may choose to repeat previously failed missions (re-attempt)</li>
-                <li><strong>Special Action:</strong> Faction Embassy - Negotiate with 1 faction to improve relationship by 1 tier (see Faction Relationship Tracker)</li>
-            </ul>
-            <p class="narrative">A round table surrounded by maps and battle plans. Leaders argue late into the night.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <h2>Special: Faction-Specific Buildings</h2>
-        <p class="manuscript-text">If players align strongly with a faction, they may unlock unique buildings:</p>
-
-        <div class="faction-building">
-            <h4>Church of Absolution: The Martyrium</h4>
-            <p class="manuscript-text"><strong>Cost:</strong> 6 Scrap, 300 Credits</p>
-            <p class="manuscript-text"><strong>Effect:</strong> All pilots may take the <strong>Penitent's Vow</strong> - gain +1 SP but take 1 damage at the start of each mission (representing self-flagellation rituals)</p>
-        </div>
-
-        <div class="faction-building">
-            <h4>Verdant Covenant: The Living Grove</h4>
-            <p class="manuscript-text"><strong>Cost:</strong> 5 Scrap, 250 Credits</p>
-            <p class="manuscript-text"><strong>Effect:</strong> Caskets may be "planted" for 1 settlement phase, growing organic upgrades (random, roll on Nature's Bounty table)</p>
-        </div>
-
-        <div class="faction-building">
-            <h4>Forge-Guilds: The Runeworks</h4>
-            <p class="manuscript-text"><strong>Cost:</strong> 8 Scrap, 400 Credits</p>
-            <p class="manuscript-text"><strong>Effect:</strong> All equipment gains +1 durability (harder to destroy). Unlocks Runic Inscriptions (minor stat bonuses)</p>
-        </div>
-
-        <div class="faction-building">
-            <h4>Scrap-Clans: The Scrapyard</h4>
-            <p class="manuscript-text"><strong>Cost:</strong> 3 Scrap, 100 Credits</p>
-            <p class="manuscript-text"><strong>Effect:</strong> Generates 2 Scrap per settlement phase. Allows building makeshift Caskets from pure salvage (unreliable but free)</p>
-        </div>
-
-        <div class="faction-building">
-            <h4>The Ossuarium: The Ossuarium</h4>
-            <p class="manuscript-text"><strong>Cost:</strong> 7 Scrap, 350 Credits</p>
-            <p class="manuscript-text"><strong>Effect:</strong> Dead pilots may be raised as Undead (lose all personality, but can still fight - stats reduced by 50%)</p>
-        </div>
-
-        <div class="faction-building">
-            <h4>The Wyrd Conclave: The Feywild Gate</h4>
-            <p class="manuscript-text"><strong>Cost:</strong> 10 Scrap, 500 Credits</p>
-            <p class="manuscript-text"><strong>Effect:</strong> Once per settlement phase, make a <strong>Bargain with the Fae</strong> - gain a massive boon, but suffer a hidden curse (GM's choice)</p>
-        </div>
-
-        <div class="divider"></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Settlement Events Table</h2>
-        <p class="manuscript-text">Roll 1d20 at the end of each Settlement Phase:</p>
-        <p class="manuscript-text"><strong>Morale Modifiers:</strong> +1 to roll per 2 Morale above 5, -1 per 2 Morale below 5</p>
 
-        <table class="stat-table">
+        <p>Roll 1d20 at the end of each Settlement Phase:</p>
+        <p><strong>Morale Modifiers:</strong> +1 to roll per 2 Morale above 5, -1 per 2 Morale below 5</p>
+
+        <table>
             <thead>
                 <tr>
                     <th>Roll</th>
@@ -375,7 +452,7 @@
             <tbody>
                 <tr>
                     <td>1-2</td>
-                    <td><strong>Void Rift Opens</strong> - Settlement is attacked by 1d3 Abominations. Defend or lose 1d6 Population and 1 random building.</td>
+                    <td><strong>Void Rift Opens</strong> - Settlement attacked by 1d3 Abominations. Defend or lose 1d6 Population + 1 random building.</td>
                 </tr>
                 <tr>
                     <td>3-4</td>
@@ -383,7 +460,7 @@
                 </tr>
                 <tr>
                     <td>5-6</td>
-                    <td><strong>Raider Attack</strong> - Bandits demand 100 Credits. Pay or fight (roll opposed d6 vs raiders, lose if you roll lower).</td>
+                    <td><strong>Raider Attack</strong> - Bandits demand 100 Credits. Pay or fight (roll opposed d6).</td>
                 </tr>
                 <tr>
                     <td>7-8</td>
@@ -391,7 +468,7 @@
                 </tr>
                 <tr>
                     <td>9-10</td>
-                    <td><strong>Refugee Caravan</strong> - Gain 1d3 Population. They bring rumors of distant Soulstone deposits.</td>
+                    <td><strong>Refugee Caravan</strong> - Gain 1d3 Population. They bring rumors of Soulstone deposits.</td>
                 </tr>
                 <tr>
                     <td>11-12</td>
@@ -403,119 +480,121 @@
                 </tr>
                 <tr>
                     <td>15-16</td>
-                    <td><strong>Talented Recruit</strong> - Gain 1 new pilot with a random positive trait (roll on Pilot Trait table).</td>
+                    <td><strong>Talented Recruit</strong> - Gain 1 new pilot with random positive trait.</td>
                 </tr>
                 <tr>
                     <td>17-18</td>
-                    <td><strong>Trade Windfall</strong> - Visiting merchants offer rare goods. Gain access to 1 random Tier 2 equipment (discounted by 100 Credits).</td>
+                    <td><strong>Trade Windfall</strong> - Merchants offer rare goods. Access to 1 random Tier 2 equipment (discounted 100 Credits).</td>
                 </tr>
                 <tr>
                     <td>19-20</td>
-                    <td><strong>Morale Surge</strong> - +2 Morale. The people believe in you. Gain 50 Credits from donations.</td>
+                    <td><strong>Morale Surge</strong> - +2 Morale. Gain 50 Credits from donations.</td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="divider"></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Settlement Disasters</h2>
-        <p class="manuscript-text">Some events or building failures trigger <strong>Disasters</strong> - catastrophic events that can cripple your settlement.</p>
 
-        <div class="disaster-box">
-            <h4>Void Leak (Soulstone Refinery failure)</h4>
-            <ul class="manuscript-list">
+        <p>Some events or building failures trigger catastrophic <strong>Disasters</strong>:</p>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid #660000; padding: 1rem; margin: 1rem 0;">
+            <h4 style="color: #8B0000; margin-top: 0;">Void Leak (Soulstone Refinery failure)</h4>
+            <ul>
                 <li>1d3 Population dies from Taint exposure</li>
                 <li>All pilots gain +1 Taint</li>
-                <li>Refinery is disabled until repaired (costs 100 Credits + 2 Scrap)</li>
+                <li>Refinery disabled until repaired (100 Credits + 2 Scrap)</li>
             </ul>
         </div>
 
-        <div class="disaster-box">
-            <h4>Fire (Random chance, increases with wooden buildings)</h4>
-            <ul class="manuscript-list">
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid #660000; padding: 1rem; margin: 1rem 0;">
+            <h4 style="color: #8B0000; margin-top: 0;">Fire (Random chance, increases with wooden buildings)</h4>
+            <ul>
                 <li>Roll 1d6: Lose that number of Scrap</li>
                 <li>1 random building takes 1 damage (3 damage = destroyed)</li>
             </ul>
         </div>
 
-        <div class="disaster-box">
-            <h4>Betrayal (Low Morale event, Morale <3)</h4>
-            <ul class="manuscript-list">
-                <li>1 pilot deserts, taking 1 piece of equipment with them</li>
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid #660000; padding: 1rem; margin: 1rem 0;">
+            <h4 style="color: #8B0000; margin-top: 0;">Betrayal (Low Morale event, Morale <3)</h4>
+            <ul>
+                <li>1 pilot deserts, taking 1 piece of equipment</li>
                 <li>Lose 1d6 Population</li>
                 <li>-2 Morale</li>
             </ul>
         </div>
 
-        <div class="disaster-box">
-            <h4>Inquisition Raid (High Taint event, any pilot has Taint 8+)</h4>
-            <ul class="manuscript-list">
-                <li>Church sends Penitent Knights to "cleanse" your settlement</li>
-                <li>Fight them off or surrender the corrupted pilot</li>
-                <li>If you fight and lose: Lose 2d6 Population and 1 building</li>
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid #660000; padding: 1rem; margin: 1rem 0;">
+            <h4 style="color: #8B0000; margin-top: 0;">Inquisition Raid (High Taint event, any pilot Taint 8+)</h4>
+            <ul>
+                <li>Church sends Penitent Knights to "cleanse" settlement</li>
+                <li>Fight them off or surrender corrupted pilot</li>
+                <li>If you fight and lose: Lose 2d6 Population + 1 building</li>
             </ul>
         </div>
 
-        <div class="divider"></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Settlement Growth Path (Example Campaign)</h2>
 
-        <div class="phase-box">
-            <h4>Phase 1 (Missions 1-5): Survival</h4>
-            <ul class="manuscript-list">
+        <div style="background: rgba(212, 175, 55, 0.1); border: 2px solid #8b6914; padding: 1.5rem; margin: 1rem 0;">
+            <h4 style="color: #d4af37; margin-top: 0;">Phase 1 (Missions 1-5): Survival</h4>
+            <ul>
                 <li><strong>Build:</strong> Forge, Barracks, Shrine</li>
                 <li><strong>Focus:</strong> Repair infrastructure, stockpile Credits</li>
                 <li><strong>Population:</strong> 10 → 18</li>
             </ul>
         </div>
 
-        <div class="phase-box">
-            <h4>Phase 2 (Missions 6-10): Expansion</h4>
-            <ul class="manuscript-list">
+        <div style="background: rgba(212, 175, 55, 0.1); border: 2px solid #8b6914; padding: 1.5rem; margin: 1rem 0;">
+            <h4 style="color: #d4af37; margin-top: 0;">Phase 2 (Missions 6-10): Expansion</h4>
+            <ul>
                 <li><strong>Build:</strong> Workshop, Market, Apothecary</li>
                 <li><strong>Focus:</strong> Unlock better equipment, stabilize Morale</li>
                 <li><strong>Population:</strong> 18 → 27</li>
             </ul>
         </div>
 
-        <div class="phase-box">
-            <h4>Phase 3 (Missions 11-15): Specialization</h4>
-            <ul class="manuscript-list">
+        <div style="background: rgba(212, 175, 55, 0.1); border: 2px solid #8b6914; padding: 1.5rem; margin: 1rem 0;">
+            <h4 style="color: #d4af37; margin-top: 0;">Phase 3 (Missions 11-15): Specialization</h4>
+            <ul>
                 <li><strong>Build:</strong> Arsenal OR Soulstone Refinery (choose your path)</li>
                 <li><strong>Focus:</strong> Push toward Tier 3 buildings or faction alignment</li>
                 <li><strong>Population:</strong> 27 → 40</li>
             </ul>
         </div>
 
-        <div class="phase-box">
-            <h4>Phase 4 (Endgame): Powerhouse or Ruin</h4>
-            <ul class="manuscript-list">
+        <div style="background: rgba(212, 175, 55, 0.1); border: 2px solid #8b6914; padding: 1.5rem; margin: 1rem 0;">
+            <h4 style="color: #d4af37; margin-top: 0;">Phase 4 (Endgame): Powerhouse or Ruin</h4>
+            <ul>
                 <li><strong>Build:</strong> Reliquary, Foundry, or faction-specific building</li>
                 <li><strong>Outcome:</strong> Either dominate the campaign or suffer spectacular collapse</li>
             </ul>
         </div>
 
-        <div class="divider"></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
-        <h2>Design Notes</h2>
+        <h2>Integration with Other v3.0 Systems</h2>
 
-        <h3>Why This System Works</h3>
-        <ol>
-            <li><strong>Scarcity Creates Tension</strong> - You can't build everything, forcing priorities</li>
-            <li><strong>Buildings Tell Stories</strong> - A settlement with a Reliquary and Ossuarium feels different from one with a Sanctuary and Archive</li>
-            <li><strong>Disasters Hurt</strong> - Kingdom Death's lesson: loss must be meaningful</li>
-            <li><strong>Asymmetric Paths</strong> - Church settlements play differently from Scrap-Clan ones</li>
-        </ol>
+        <div style="background: rgba(212, 175, 55, 0.2); border: 2px solid #8b6914; padding: 1.5rem; margin: 2rem 0;">
+            <h3 style="margin-top: 0; color: #d4af37;">Cross-References</h3>
+            <ul style="margin-bottom: 0;">
+                <li><strong><a href="javascript:parent.loadContent('campaign-settlement-phase.html');">Settlement Phase Procedure</a>:</strong> Turn-by-turn workflow</li>
+                <li><strong><a href="javascript:parent.loadContent('campaign-pilot-generation.html');">Pilot Generation</a>:</strong> Barracks unlocks more pilots</li>
+                <li><strong><a href="javascript:parent.loadContent('campaign-leg-skimming.html');">Soul Sacrifice</a>:</strong> Accessibility buildings affect morale</li>
+                <li><strong><a href="javascript:parent.loadContent('campaign-loot-tables.html');">Loot Tables</a>:</strong> Market and Arsenal affect equipment access</li>
+            </ul>
+        </div>
 
-        <h3>Balancing Act</h3>
-        <ul class="manuscript-list">
-            <li><strong>Income Rate:</strong> ~150-200 Credits per 2 missions (after repairs)</li>
-            <li><strong>Building Costs:</strong> Tier 1 (~100), Tier 2 (~200), Tier 3 (~400)</li>
-            <li><strong>Timeline:</strong> ~15 missions to build a fully upgraded settlement (if you're efficient and lucky)</li>
-        </ul>
+        <div style="background: var(--shadow-black); border: 3px double #8b6914; padding: 2rem; margin: 3rem 0; font-style: italic;">
+            <p style="text-align: center; margin: 0; color: #d4af37;" class="no-drop-cap">
+                "Scarcity creates tension. Buildings tell stories. Disasters hurt. Your settlement is who you are."
+            </p>
+        </div>
 
-        <div class="quote-box">
-            <p class="manuscript-text">"Your settlement is a promise. Will you keep it, or watch it burn?"</p>
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #8b6914; color: #d4af37; font-size: 0.9rem;">
+            <p><a href="javascript:parent.loadContent('campaign-settlement-phase.html');">Settlement Phase</a> | <a href="javascript:parent.loadContent('campaign-pilot-generation.html');">Pilot Generation</a> | <a href="javascript:parent.loadContent('content-home.html');">Return to Codex Home</a></p>
         </div>
     </div>
 </body>
