@@ -75,6 +75,192 @@
             gap: 1.5rem;
             margin: 2rem 0;
         }
+
+        /* Behavior Card Popup Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.85);
+            animation: fadeIn 0.2s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+            margin: 3% auto;
+            padding: 0;
+            border: 3px solid #8b0000;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 8px 32px rgba(139, 0, 0, 0.6);
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            background: linear-gradient(to bottom, #660000, #440000);
+            padding: 1.5rem;
+            border-radius: 9px 9px 0 0;
+            border-bottom: 2px solid #8b0000;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: #ffd700 !important;
+            font-size: 1.5rem;
+        }
+
+        .modal-header .enemy-type {
+            margin-top: 0.5rem;
+        }
+
+        .close {
+            color: #999;
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff4444;
+        }
+
+        .modal-body {
+            padding: 2rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .behavior-deck {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .behavior-card {
+            background: linear-gradient(to bottom, rgba(139, 0, 0, 0.2), rgba(100, 0, 0, 0.1));
+            border: 2px solid #660000;
+            border-radius: 8px;
+            padding: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .behavior-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
+            border-color: #8b0000;
+        }
+
+        .behavior-card-title {
+            color: #ff4444;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .behavior-card-count {
+            background: #4a0e0e;
+            color: #ffd700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .behavior-card-effect {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .click-hint {
+            display: inline-block;
+            margin-left: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            background: rgba(139, 0, 0, 0.3);
+            border: 1px solid #660000;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #ff4444;
+            cursor: help;
+        }
+
+        .enemy-card.clickable {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .enemy-card.clickable::after {
+            content: "Click for AI Behavior Deck";
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(139, 0, 0, 0.8);
+            color: #ffd700;
+            padding: 0.35rem 0.65rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+
+        .enemy-card.clickable:hover::after {
+            opacity: 1;
+        }
+
+        .deck-stats {
+            background: rgba(139, 0, 0, 0.2);
+            border-left: 3px solid #8b0000;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .deck-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .deck-stat-item {
+            text-align: center;
+        }
+
+        .deck-stat-label {
+            color: #b8956a;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .deck-stat-value {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
@@ -118,7 +304,7 @@
         <h2>Swarm Enemies (3-5 HP)</h2>
 
         <div class="enemy-grid">
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal('tainted-rat')">
             <h3>1. Tainted Rat Swarm</h3>
             <span class="enemy-type">Swarm</span>
             <div class="enemy-stats">
@@ -170,7 +356,7 @@
 
         <div class="enemy-grid">
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal('bandit-raider')">
             <h3>4. Bandit Raider</h3>
             <span class="enemy-type">Elite</span>
             <div class="enemy-stats">
@@ -252,7 +438,7 @@
 
         <div class="enemy-grid">
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal('tainted-leviathan')">
             <h3>9. Tainted Leviathan</h3>
             <span class="enemy-type">Boss (Monster)</span>
             <div class="enemy-stats">
@@ -435,5 +621,156 @@
             <p><a href="javascript:parent.loadContent('campaign-settlement-phase.html');">Settlement Phase</a> | <a href="javascript:parent.loadContent('campaign-loot-tables.html');">Loot Tables</a> | <a href="javascript:parent.loadContent('content-home.html');">Return to Codex Home</a></p>
         </div>
     </div>
+
+    <!-- Behavior Deck Modal -->
+    <div id="behaviorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="modalEnemyName"></h2>
+                <span id="modalEnemyType" class="enemy-type"></span>
+            </div>
+            <div class="modal-body">
+                <div class="deck-stats">
+                    <h3 style="margin-top: 0; color: #ff4444;">Deck Statistics</h3>
+                    <div class="deck-stats-grid" id="deckStatsGrid"></div>
+                </div>
+                <h3 style="color: #ff4444;">AI Behavior Deck</h3>
+                <div class="behavior-deck" id="behaviorDeck"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Enemy behavior card data
+        const enemyBehaviors = {
+            'bandit-raider': {
+                name: '4. Bandit Raider',
+                type: 'Elite',
+                deckSize: 15,
+                cards: [
+                    { name: 'Aggressive Strike', count: 5, effect: 'Move adjacent if not in melee, then attack 3d6. Priority: Always execute if in range.' },
+                    { name: 'Flank', count: 3, effect: 'If ally adjacent to target, move to opposite side and attack 4d6 (flanking bonus). Trigger: Enemy has ally nearby.' },
+                    { name: 'Defend', count: 2, effect: 'Defensive Stance. +2 Defense until next turn. Trigger: Below 8 HP or no clear attack.' },
+                    { name: 'Grenade Throw', count: 2, effect: 'Ranged attack (6 hex range). 2d6 AOE damage (1 hex radius). Trigger: 3+ enemies clustered.' },
+                    { name: 'Retreat', count: 2, effect: 'Sprint away 6 hexes. Trigger: Below 5 HP.' },
+                    { name: 'Rally Cry', count: 1, effect: 'All allies within 4 hexes gain +1 Attack this turn. Trigger: 2+ allies nearby.' }
+                ]
+            },
+            'tainted-leviathan': {
+                name: '9. Tainted Leviathan',
+                type: 'Boss (Monster)',
+                deckSize: 40,
+                phases: [
+                    { name: 'Phase 1', hp: '40-25 HP', description: 'Basic attacks, building momentum' },
+                    { name: 'Phase 2', hp: '24-10 HP', description: 'Enraged: +2 damage, +1 Move' },
+                    { name: 'Phase 3', hp: '9-0 HP', description: 'Berserk: AOE attacks, regeneration' }
+                ],
+                cards: [
+                    { name: 'Crushing Bite', count: 10, effect: '5d6 melee damage + knockback 2 hexes. Priority: Always use if adjacent to target.' },
+                    { name: 'Tail Sweep', count: 6, effect: 'AOE attack (3 hex cone behind). 4d6 + knockback. Trigger: 2+ enemies in rear arc.' },
+                    { name: 'Charge', count: 5, effect: 'Sprint up to 6 hexes in straight line. Trample all in path (3d6 each). Trigger: No enemies adjacent.' },
+                    { name: 'Regenerate', count: 4, effect: 'Recover 2 cards from discard. Trigger: Below 20 HP.' },
+                    { name: 'Roar', count: 3, effect: 'AOE fear (4 hex radius). All enemies lose 2 SP. Trigger: Start of Phase 2/3.' },
+                    { name: 'Focus Fire', count: 2, effect: 'Attack same target twice (5d6 each). Trigger: Target below 50% HP.' },
+                    { name: 'Enraged Frenzy', count: 2, effect: '[Phase 2+] Attack twice (7d6 each, +2 from Enraged). Costs 6 SP. Trigger: Phase 2+.' },
+                    { name: 'Taint Burst', count: 2, effect: '[Phase 2+] AOE (2 hex radius). 5d6 + 2 Taint to all hit. Trigger: 3+ enemies clustered.' },
+                    { name: 'Desperate Lunge', count: 1, effect: '[Phase 2+] 10d6 single-target attack. Take 3 self-damage. Trigger: Below 15 HP.' },
+                    { name: 'Death Throes', count: 2, effect: '[Phase 3 only] AOE 6d6 (3 hex radius) + heal 5 cards. Trigger: Below 10 HP.' },
+                    { name: 'Final Stand', count: 2, effect: '[Phase 3 only] 12d6 execute attack vs lowest HP target. Trigger: Below 5 HP.' },
+                    { name: 'Apocalyptic Roar', count: 1, effect: '[Phase 3 only] Mental attack. All enemies: 4d6 psychic + lose all SP. Once per battle. Trigger: Entering Phase 3.' }
+                ]
+            },
+            'tainted-rat': {
+                name: '1. Tainted Rat Swarm',
+                type: 'Swarm',
+                deckSize: 3,
+                cards: [
+                    { name: 'Swarm Tactics', count: 2, effect: 'If 2+ rat allies within 2 hexes, attack 1d6 + Diseased Bite. Else, move closer to ally rats.' },
+                    { name: 'Panic Scatter', count: 1, effect: 'If below 2 HP, sprint away 6 hexes (random direction). Cannot attack this turn.' }
+                ]
+            }
+        };
+
+        // Modal elements
+        const modal = document.getElementById('behaviorModal');
+        const modalName = document.getElementById('modalEnemyName');
+        const modalType = document.getElementById('modalEnemyType');
+        const deckStatsGrid = document.getElementById('deckStatsGrid');
+        const behaviorDeck = document.getElementById('behaviorDeck');
+        const closeBtn = document.querySelector('.close');
+
+        // Open modal function
+        function openBehaviorModal(enemyId) {
+            const enemy = enemyBehaviors[enemyId];
+            if (!enemy) return;
+
+            // Set header info
+            modalName.textContent = enemy.name;
+            modalType.textContent = enemy.type;
+
+            // Build deck stats
+            deckStatsGrid.innerHTML = `
+                <div class="deck-stat-item">
+                    <div class="deck-stat-label">Deck Size</div>
+                    <div class="deck-stat-value">${enemy.deckSize}</div>
+                </div>
+                <div class="deck-stat-item">
+                    <div class="deck-stat-label">Unique Cards</div>
+                    <div class="deck-stat-value">${enemy.cards.length}</div>
+                </div>
+                <div class="deck-stat-item">
+                    <div class="deck-stat-label">Complexity</div>
+                    <div class="deck-stat-value">${enemy.deckSize <= 5 ? 'Simple' : enemy.deckSize <= 20 ? 'Medium' : 'High'}</div>
+                </div>
+            `;
+
+            // Add phases if boss
+            if (enemy.phases) {
+                const phaseStats = enemy.phases.map((phase, i) => `
+                    <div class="deck-stat-item">
+                        <div class="deck-stat-label">${phase.name}</div>
+                        <div class="deck-stat-value" style="font-size: 0.8rem;">${phase.hp}</div>
+                    </div>
+                `).join('');
+                deckStatsGrid.innerHTML += phaseStats;
+            }
+
+            // Build behavior cards
+            behaviorDeck.innerHTML = enemy.cards.map(card => `
+                <div class="behavior-card">
+                    <div class="behavior-card-title">${card.name}</div>
+                    <div class="behavior-card-count">×${card.count} ${card.count === 1 ? 'card' : 'cards'}</div>
+                    <div class="behavior-card-effect">${card.effect}</div>
+                </div>
+            `).join('');
+
+            // Show modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Close modal
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.onclick = closeModal;
+
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Close with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
