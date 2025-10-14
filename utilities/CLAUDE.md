@@ -491,7 +491,7 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 - Updated main website with v3.0 announcement
 - Streamlined CLAUDE.md (removed redundant sections, consolidated deck composition)
 
-**October 14, 2025** - Campaign Systems Complete
+**October 14, 2025** - Campaign Systems (In Progress - need scenario chains)
 - Pilot Generation Tables (5 tables, 320M combinations, interactive tool)
 - Core Bestiary (15 enemies, KDM-style If-Then AI)
 - Settlement Phase Procedure (6 steps)
