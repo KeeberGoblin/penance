@@ -28,7 +28,9 @@
       "Bash(echo:*)",
       "Bash(do echo \"=== Checking $file ===\" grep -q 'class=\"\"\"\"breadcrumb\"\"\"\"' \"$file\")",
       "Bash(do echo \"===Processing faction-$faction.html===\")",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

@@ -22,6 +22,34 @@ Ready-to-play scenarios for testing Penance combat mechanics.
 
 ---
 
+## Advanced Scenarios
+
+### [Scenario #3: Escort Duty](03-escort-duty.md)
+**Type**: Asymmetric Objective
+**Map**: 16×10 hexes with road
+**Victory**: Escort caravan to exit (Defender) OR destroy caravan (Attacker)
+**Time**: 60-75 minutes
+**Difficulty**: ⭐⭐⭐ Advanced
+**Teaches**: Asymmetric objectives, protecting weak units, tempo control, blocking mechanics
+
+### [Scenario #4: King of the Hill](04-king-of-the-hill.md)
+**Type**: Control Point Battle (2-4 players)
+**Map**: 14×14 hexes with central Soulstone Spire
+**Victory**: Hold the Spire for 3 consecutive turns OR eliminate all opponents
+**Time**: 75-90 minutes
+**Difficulty**: ⭐⭐⭐ Advanced
+**Teaches**: Area control, risk/reward decisions, managing debuffs, multi-player tactics
+
+### [Scenario #5: Sabotage Mission](05-sabotage-mission.md)
+**Type**: Stealth & Destruction
+**Map**: 14×14 hexes reactor facility
+**Victory**: Destroy 3 Reactors and escape (Saboteur) OR stop Saboteur for 10 turns (Defender)
+**Time**: 45-60 minutes
+**Difficulty**: ⭐⭐⭐⭐ Expert
+**Teaches**: Hidden movement, stealth mechanics, asymmetric information, bluffing, area denial
+
+---
+
 ## Learning Resources
 
 ### [Example of Play](example-of-play.md)

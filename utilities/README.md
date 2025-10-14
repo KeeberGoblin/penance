@@ -18,16 +18,17 @@ This folder contains AI assistant context documents, audit reports, and diagnost
   - Organized by date and version
 
 ### Audit Reports
-- **[CONTRADICTION-AUDIT-2025-10-13.md](CONTRADICTION-AUDIT-2025-10-13.md)** - Latest contradiction audit
-  - Fixed "Resonance Engine" → "The Engine" naming inconsistency (43+ instances across 23 files)
-  - Verified faction naming consistency
-  - Verified equipment system consistency
+- **[COMPREHENSIVE-V3-AUDIT-2025-10-14.md](COMPREHENSIVE-V3-AUDIT-2025-10-14.md)** - Latest v3.0 integration audit
+  - Analyzes v3.0 mechanics integration across 103 files
+  - Identifies missing cross-references and integration gaps
+  - Provides priority fix list and action plans
 
-- **[REPOSITORY-AUDIT-2025-10-13.md](REPOSITORY-AUDIT-2025-10-13.md)** - Repository structure audit
-
-- **[COMPREHENSIVE-CONTRADICTION-AUDIT.md](COMPREHENSIVE-CONTRADICTION-AUDIT.md)** - Earlier comprehensive audit
-
-- **[AUDIT-REPORT.md](AUDIT-REPORT.md)** - General audit report
+**Archived Audits** (see `/archive/utilities-archive/`):
+- CONTRADICTION-AUDIT-2025-10-13.md - Engine naming fixes
+- REPOSITORY-AUDIT-2025-10-13.md - Structure audit
+- COMPREHENSIVE-CONTRADICTION-AUDIT.md - Earlier contradiction analysis
+- AUDIT-REPORT.md - v2.0 repository audit
+- VERSION-3.0-AUDIT.md - v3.0 planning (superseded by comprehensive)
 
 ---
 

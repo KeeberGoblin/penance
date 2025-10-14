@@ -147,8 +147,10 @@
             // Remove active class from all clickable links
             allLinks.forEach(link => link.classList.remove('active'));
 
-            // Add active class to clicked link
-            event.target.classList.add('active');
+            // Add active class to clicked link (if called from navigation, not from iframe link)
+            if (typeof event !== 'undefined' && event.target) {
+                event.target.classList.add('active');
+            }
 
             // Load content in iframe
             frame.src = url;
