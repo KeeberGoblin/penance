@@ -1,10 +1,12 @@
 # Support Units System
 ## Penance: Absolution Through Steel
 
-**Version**: 2.0 Equipment System
-**Date**: October 12, 2025
+**Version**: 3.0 (Pilot Grit Integration)
+**Date**: October 14, 2025
 
 Support units are AI-controlled allies that accompany your Casket into battle. Similar to GKR's pilot/robot dynamic, these units follow simple behavior cards and can be influenced by your Casket's command abilities.
+
+> **v3.0 OPTIONAL**: Support units gain +1 Morale when commanded by pilots with **Grit 2+**. Veterans inspire confidence. High-Grit pilots' Rally and Command actions are more effective (see [pilot-grit-system.md](../campaigns/pilot-grit-system.md) for details).
 
 ---
 

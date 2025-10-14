@@ -1,8 +1,31 @@
 # Pilot Scars & Traits
 ## Permanent Character Development
 
-**Version**: 0.1
-**Last Updated**: October 10, 2025
+**Version**: 3.0 (v3.0 Pilot Grit System Integrated)
+**Last Updated**: October 14, 2025
+
+---
+
+## v3.0 OPTIONAL: Pilot Grit System
+
+**Pilot Grit** is a stat (0-3) that represents a pilot's mental toughness and combat experience. It grows with missions survived and injuries endured. See [pilot-grit-system.md](pilot-grit-system.md) for full rules.
+
+**Quick Summary**:
+- **Starting Grit**: 0 (rookie) to 1 (veteran)
+- **Grit Progression**: +1 per 5 missions survived, or +1 when surviving Severe Injury
+- **Grit Benefits**: Roll 1d6 + Grit to resist Pilot Wounds. On 5+, ignore 1 Wound.
+- **Faction Modifiers**:
+  - Church: Start with Grit 1
+  - Dwarves: +1 Grit when resisting Severe Injuries
+  - Elves: -1 Grit (fragile, easily traumatized)
+  - Ossuarium: Immune to Grit (undead, no mental resilience needed)
+
+**Grit Track on Pilot Sheet**:
+```
+Grit: [ 0 ] [ 1 ] [ 2 ] [ 3 ] (circle current)
+```
+
+> **NOTE**: Grit is separate from Scars. Grit grows passively with survival. Scars are acquired through specific traumatic events.
 
 ---
 
@@ -73,7 +96,7 @@ These events grant immediate Scars, bypassing the "every 3 missions" rule:
 | 14 | **Prosthetic Limb** (Dwarven-made) | **Mixed**: Left Arm slot permanently replaced with Dwarven prosthetic. Cannot change equipment in that slot, but attacks from it deal +1 damage. |
 | 15 | **Old Wound** | Once per mission, reroll any 1 die roll. "I've felt worse." |
 | 16 | **Battle Scars** | **Positive**: +1 to intimidation checks. Enemies prioritize you (double-edged). |
-| 17 | **Survivor's Grit** | **Positive**: When reduced to 5 HP or less, gain +2 to all attack rolls. Desperation fuels you. |
+| 17 | **Survivor's Tenacity** | **Positive**: When reduced to 5 HP or less, gain +2 to all attack rolls. Desperation fuels you. |
 | 18 | **Dead Nerves** | **Mixed**: Immune to pain-based effects, but cannot sense when you're critically injured (GM doesn't tell you HP total). |
 | 19 | **Unbreakable** | **Positive**: Once per campaign, survive a killing blow at 1 HP instead. "Not yet." |
 | 20 | **Reroll** or **Choose** | You got lucky. Pick any Physical Scar (except Unbreakable). |
