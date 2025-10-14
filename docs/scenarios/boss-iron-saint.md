@@ -1,14 +1,16 @@
 # Boss Fight: The Iron Saint
 ## Sister Vex, The Hollow Penitent
 
+![Sister Vex, The Iron Saint](../lore/SisterVex2.png)
+
 Version: 1.0
-Last Updated: October 10, 2025
+Last Updated: October 14, 2025
 
 ---
 
 ## Overview
 
-The Iron Saint is a playable boss encounter designed for 2-4 players. Like Kingdom Death: Monster, this fight uses an HP deck system where the boss gets more dangerous as it takes damage, adding new ability cards at specific thresholds.
+The Iron Saint is a playable boss encounter designed for 2-4 players. This fight uses an HP deck system where the boss's behavior deck IS her health pool - as she takes damage and her deck shrinks, she becomes more dangerous by adding powerful new ability cards at specific thresholds.
 
 **Recommended Player Level**: Pilots with 3+ missions completed
 **Estimated Duration**: 60-90 minutes
@@ -311,14 +313,14 @@ Sister Vex is defeated when her deck AND hand are empty, and she cannot reshuffl
 
 ## Design Notes (For Game Master)
 
-### Why This Works Like Kingdom Death
+### Why This Works
 
 1. **HP Deck = Dynamic Fight**: Boss doesn't just lose health, she changes strategy
 2. **Phase Escalation**: Each phase adds difficulty cards, increasing pressure
 3. **Risk/Reward**: Players must balance speed (kill before Phase 4) vs safety (avoid Taint)
 4. **False Defeat**: "Absolution Denied" creates dramatic final stand moment
-5. **Minion Summons**: Forces target prioritization like KDM
-6. **Corruption Mechanic**: Taint acts like KDM's insanity/disorders - long-term consequence
+5. **Minion Summons**: Forces target prioritization decisions
+6. **Corruption Mechanic**: Taint creates long-term consequences and dramatic tension
 
 ### Playtesting Notes
 
