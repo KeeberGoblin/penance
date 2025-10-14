@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Scavenger's Crusade - 10-Mission Campaign</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .campaign-header {
+            background: linear-gradient(135deg, rgba(139,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+            border: 3px solid #8B0000;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .campaign-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-box {
+            background: rgba(0,0,0,0.3);
+            border: 2px solid #d4af37;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .mission-card {
+            background: linear-gradient(to bottom, rgba(20,20,20,0.9), rgba(10,10,10,0.95));
+            border: 2px solid #8b6914;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+            border-color: #d4af37;
+            box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .mission-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #8b6914;
+        }
+
+        .mission-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d4af37;
+            font-family: 'Cinzel Decorative', serif;
+        }
+
+        .mission-act {
+            font-size: 0.9rem;
+            color: #8b6914;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mission-title {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin: 0.5rem 0;
+        }
+
+        .mission-enemies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .enemy-badge {
+            background: rgba(139,0,0,0.3);
+            border: 1px solid #8B0000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #ff6666;
+        }
+
+        .choice-point {
+            background: linear-gradient(to right, rgba(139,0,139,0.2), rgba(75,0,130,0.2));
+            border-left: 4px solid #9932CC;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .choice-option {
+            background: rgba(0,0,0,0.4);
+            border: 2px solid #9932CC;
+            padding: 1rem;
+            margin: 0.8rem 0;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .choice-option:hover {
+            border-color: #d4af37;
+            background: rgba(212,175,55,0.1);
+        }
+
+        .choice-title {
+            font-weight: bold;
+            color: #9932CC;
+            margin-bottom: 0.5rem;
+        }
+
+        .ending-card {
+            background: linear-gradient(135deg, rgba(139,0,0,0.3), rgba(0,0,139,0.3));
+            border: 3px solid #d4af37;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+        }
+
+        .ending-title {
+            font-size: 1.5rem;
+            color: #d4af37;
+            font-family: 'Cinzel Decorative', serif;
+            margin-bottom: 1rem;
+        }
+
+        .ending-tone {
+            font-style: italic;
+            color: #8b6914;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #8b6914;
+        }
+
+        .branching-diagram {
+            background: rgba(0,0,0,0.3);
+            border: 2px solid #8b6914;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .reward-box {
+            background: linear-gradient(to right, rgba(0,100,0,0.2), rgba(0,50,0,0.3));
+            border-left: 4px solid #228B22;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .consequence-box {
+            background: linear-gradient(to right, rgba(139,0,0,0.2), rgba(100,0,0,0.3));
+            border-left: 4px solid #8B0000;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .boss-card {
+            background: linear-gradient(135deg, rgba(139,0,0,0.4), rgba(0,0,0,0.6));
+            border: 3px solid #FF0000;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255,0,0,0.3);
+        }
+
+        .tracker-checkbox {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        .tracker-checkbox input {
+            margin-right: 1rem;
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="javascript:parent.loadContent('content-home.html');">CODEX</a> /
+            <a href="#campaign">CAMPAIGN</a> /
+            The Scavenger's Crusade
+        </div>
+
+        <div class="campaign-header">
+            <h1 style="margin: 0; font-size: 2.5rem; color: #d4af37;">The Scavenger's Crusade</h1>
+            <p style="font-size: 1.2rem; font-style: italic; color: #8b6914; margin: 1rem 0;">
+                A 10-Mission Story Arc for Penance
+            </p>
+            <p style="color: #aaa; margin: 0.5rem 0;">
+                Forbidden Knowledge • Moral Compromise • Five Endings
+            </p>
+        </div>
+
+        <div class="campaign-stats">
+            <div class="stat-box">
+                <div class="stat-label">Players</div>
+                <div class="stat-value">2-4 Pilots</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Duration</div>
+                <div class="stat-value">15-20 Hours</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Difficulty</div>
+                <div class="stat-value">Moderate → Brutal</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Endings</div>
+                <div class="stat-value">5 Unique Paths</div>
+            </div>
+        </div>
+
+        <div class="manuscript-quote">
+            "Your settlement has survived 50 years on the edge of the Sibarian Wastes. But strange signals pulse from the ruins—patterns that match no known Abomination signature. The Council authorizes a deep expedition. Your mission: reach the source, claim the Soulstones, and return alive. Simple. Except nothing in the Wastes is ever simple."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+        </div>
+
+        <h2>Campaign Overview</h2>
+
+        <h3>The Hook</h3>
+        <p class="manuscript-text">
+            Recent expeditions report strange signals emanating from deep within the Sibarian Wastes—pulsing patterns that match no known Abomination signature. The Council has authorized a deep expedition to investigate.
+        </p>
+
+        <h3>The Truth (GM Knowledge)</h3>
+        <div class="info-box">
+            <p class="manuscript-text">The signals come from a <strong>backup research facility</strong> built by Dr. Theslar as insurance. It contains:</p>
+            <ul class="manuscript-list">
+                <li><strong>Experimental Soulstones</strong> - 3× more powerful, but 3× more corrupting</li>
+                <li><strong>Theslar's Research Notes</strong> - Could affect The Engine itself</li>
+                <li><strong>Automated Defenses</strong> - Still active after 437 years</li>
+                <li><strong>Subject Sigma</strong> - Something that shouldn't be awake...</li>
+            </ul>
+            <p class="manuscript-text">Three factions have detected the signals: Church (wants to destroy it), Dwarves (wants the research), and Fae (wants chaos).</p>
+        </div>
+
+        <h3>Victory & Defeat Conditions</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+            <div class="reward-box">
+                <h4 style="margin-top: 0; color: #228B22;">VICTORY</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Primary:</strong> Complete Mission 10 (any outcome)</li>
+                    <li><strong>Secondary:</strong> Keep settlement population above 50</li>
+                    <li><strong>Tertiary:</strong> Keep 2+ pilots alive with &lt;8 total scars</li>
+                </ul>
+            </div>
+            <div class="consequence-box">
+                <h4 style="margin-top: 0; color: #8B0000;">DEFEAT</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Settlement Destroyed:</strong> Population reaches 0</li>
+                    <li><strong>Total Party Kill:</strong> All pilots dead/corrupted (10+ Taint)</li>
+                    <li><strong>Engine Explodes:</strong> Campaign world ends</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+            <h2 style="color: #d4af37; margin: 1rem 0;">ACT 1: ESTABLISHMENT</h2>
+            <p style="font-style: italic; color: #8b6914;">Missions 1-3 • Introduce stakes and capabilities</p>
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+        </div>
+
+        <!-- MISSION 1 -->
+        <div class="mission-card">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 1</div>
+                    <div class="mission-act">Act 1 - Establishment</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"Strangers at the Gates"</h3>
+
+            <p class="manuscript-text"><strong>Map:</strong> Settlement Perimeter (12×12 hexes)</p>
+
+            <div class="mission-enemies">
+                <span class="enemy-badge">8× Corrupted Villagers (5 HP)</span>
+                <span class="enemy-badge">1× Bandit Raider (15 HP, Elite)</span>
+            </div>
+
+            <p class="manuscript-text"><strong>Objective:</strong> Defend gate for 6 turns OR eliminate all enemies</p>
+
+            <h4>Special Rules</h4>
+            <ul class="manuscript-list">
+                <li><strong>Civilian Casualties:</strong> If enemies reach gate hex, roll 1d6. On 1-3, lose 1d6 settlement population</li>
+                <li><strong>Capture Alive:</strong> If Bandit Raider reduced to 5 HP or below, attempt capture (Willpower Save, DC 4+). Success = prisoner for Mission 2</li>
+            </ul>
+
+            <div class="choice-point">
+                <div class="choice-title">⚠ CHOICE POINT: Capture the Raider?</div>
+                <p class="manuscript-text">Bandits shout: <em>"The signals! We need the stones! Let us through or we ALL die!"</em></p>
+                <p class="manuscript-text">Raider carries a crude map showing the same signal source you're tracking.</p>
+                <div class="choice-option">
+                    <strong>Capture Alive:</strong> Unlock Mission 2 (interrogation scene)
+                </div>
+                <div class="choice-option">
+                    <strong>Kill All:</strong> Skip to Mission 3
+                </div>
+            </div>
+
+            <div class="reward-box">
+                <h4 style="margin-top: 0;">Rewards</h4>
+                <ul class="manuscript-list">
+                    <li>100 Credits, 2d6 Scrap, +10 Morale</li>
+                    <li>Capture Raider: Unlock Mission 2 interrogation</li>
+                    <li>Zero Casualties: +20 Morale bonus</li>
+                </ul>
+            </div>
+
+            <div class="consequence-box">
+                <h4 style="margin-top: 0;">Consequences</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Failure:</strong> Lose 2d6 population, -20 Morale, gate damaged (50 Credits + 10 Scrap to repair)</li>
+                    <li><strong>High Casualties:</strong> "Mass Funeral" event triggers between missions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MISSION 2 -->
+        <div class="mission-card" style="border-color: #9932CC;">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 2</div>
+                    <div class="mission-act">Act 1 - Establishment (OPTIONAL)</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"The Prisoner's Tale"</h3>
+
+            <p class="manuscript-text" style="font-style: italic; color: #9932CC;"><strong>Only available if Bandit Raider was captured in Mission 1. If not, skip to Mission 3.</strong></p>
+
+            <p class="manuscript-text">The captured raider, <strong>Kess the Vulture</strong>, agrees to talk in exchange for medical treatment and release. She reveals:</p>
+            <ul class="manuscript-list">
+                <li>She works for <strong>The Branded</strong> (Nomad renegades)</li>
+                <li>Hired by anonymous client to secure "pre-Cataclysm research" from the Wastes</li>
+                <li>The signals aren't natural—something inside is <strong>calling for help</strong></li>
+                <li>Three factions know about it: Church, Dwarves, and "something that doesn't show on maps" (Fae)</li>
+            </ul>
+
+            <div class="choice-point">
+                <div class="choice-title">⚠ MAJOR CHOICE: What to do with Kess?</div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option A: Kill Her</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> +50 Credits (bounty), +5 Morale</li>
+                        <li><strong>Long-term:</strong> The Branded become permanent enemies (hostile encounters Mission 6+)</li>
+                        <li><strong>Mission 10 Impact:</strong> The Branded attack settlement during finale</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option B: Free Her (With Conditions)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> Kess provides detailed map (+1 free reroll per mission for navigation)</li>
+                        <li><strong>Long-term:</strong> The Branded remain neutral</li>
+                        <li><strong>Mission 10 Impact:</strong> Kess returns to warn you of incoming Church crusade (+1 turn prep time)</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option C: Recruit Her</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> Kess joins as NPC ally (Nomad Scout, 20 HP, 5 SP, fast movement)</li>
+                        <li><strong>Long-term:</strong> Settlement gains "Branded Sympathizer" trait (can trade with Nomad Collective)</li>
+                        <li><strong>Mission 10 Impact:</strong> Kess sacrifices herself to save a pilot (negates 1 pilot death)</li>
+                        <li><strong>Risk:</strong> If Kess dies in Mission 4-9, The Branded declare vendetta</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="manuscript-text" style="font-style: italic; margin-top: 1rem;">
+                Kess is scarred, cynical, but not evil—just trying to survive. She respects strength: <em>"You could have killed me. Why didn't you?"</em>
+            </p>
+        </div>
+
+        <!-- MISSION 3 -->
+        <div class="mission-card">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 3</div>
+                    <div class="mission-act">Act 1 - The Hook</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"Into the Grey"</h3>
+
+            <p class="manuscript-text"><strong>Map:</strong> Wasteland Ruins (16×16 hexes, difficult terrain)</p>
+
+            <div class="mission-enemies">
+                <span class="enemy-badge">3× Scrap Drones (4 HP)</span>
+                <span class="enemy-badge">6× Tainted Rat Swarm (3 HP)</span>
+                <span class="enemy-badge">1× Tainted Ogre (25 HP, Elite)</span>
+            </div>
+
+            <p class="manuscript-text"><strong>Objective:</strong> Reach facility entrance (far side of map) within 8 turns</p>
+
+            <h4>Special Rules - WASTELAND CORRUPTION</h4>
+            <ul class="manuscript-list">
+                <li><strong>Void Exposure:</strong> At start of each turn, all pilots gain +1 Taint (cannot be prevented). Mission cap: +8 Taint total</li>
+                <li><strong>Signal Interference:</strong> Pilots cannot communicate beyond 6 hexes (no coordinated actions)</li>
+                <li><strong>The Pulse:</strong> Every 3 turns, The Engine pulses. All pilots roll Strain (1d6, on 1-2 lose 1 SP)</li>
+            </ul>
+
+            <div class="choice-point">
+                <div class="choice-title">⚠ MAJOR BRANCH POINT: Experimental Soulstones</div>
+                <p class="manuscript-text">Halfway through mission, you find a <strong>Soulstone deposit</strong> (3× Experimental Soulstones, glowing sickly purple).</p>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option A: Take All Soulstones (Greedy)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> Gain 3× Experimental Soulstones (+3 damage, +3 Defense when equipped, but +1 Taint per turn)</li>
+                        <li><strong>Mission 5 Impact:</strong> Soulstones corrupt settlement (trigger "Taint Outbreak" event, lose 1d6 population)</li>
+                        <li><strong>Mission 10 Path:</strong> Unlocks "Exploit Engine" ending (power at any cost)</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option B: Leave Them (Cautious)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> No bonus</li>
+                        <li><strong>Mission 5 Impact:</strong> Settlement remains clean</li>
+                        <li><strong>Mission 10 Path:</strong> Unlocks "Destroy Engine" ending (redemption path)</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option C: Take One, Leave Two (Balanced)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> Gain 1× Experimental Soulstone (same corruption risk, only 1 pilot affected)</li>
+                        <li><strong>Mission 5 Impact:</strong> Mild settlement corruption (lose 1d3 population, manageable)</li>
+                        <li><strong>Mission 10 Path:</strong> Unlocks all endings (player choice preserved)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reward-box">
+                <h4 style="margin-top: 0;">Rewards</h4>
+                <ul class="manuscript-list">
+                    <li>200 Credits, 3d6 Scrap, access to Mission 4</li>
+                    <li>Optional: Experimental Soulstones (if taken)</li>
+                    <li>Speed Bonus: Complete in 6 turns or less = +50 Credits</li>
+                </ul>
+            </div>
+
+            <p class="manuscript-text" style="margin-top: 1rem; font-style: italic; color: #8b6914;">
+                <strong>Story Beat:</strong> Ruins show signs of recent occupation. Tainted Ogre has Church iconography on its armor—it was human once. As you reach the facility entrance, machinery hums inside—something is still powered.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+            <h2 style="color: #d4af37; margin: 1rem 0;">ACT 2: ESCALATION</h2>
+            <p style="font-style: italic; color: #8b6914;">Missions 4-7 • Everything gets worse</p>
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+        </div>
+
+        <!-- MISSION 4 -->
+        <div class="mission-card">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 4</div>
+                    <div class="mission-act">Act 2 - Escalation Begins</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"What Lies Beneath"</h3>
+
+            <p class="manuscript-text"><strong>Map:</strong> Research Facility Level 1 (12×14 hexes, indoor corridors)</p>
+
+            <div class="mission-enemies">
+                <span class="enemy-badge">4× Scrap Drones (4 HP)</span>
+                <span class="enemy-badge">2× Scrap Golems (20 HP, 4 Armor)</span>
+                <span class="enemy-badge">1× Automated Defense Grid (Environmental Boss)</span>
+            </div>
+
+            <p class="manuscript-text"><strong>Objective:</strong> Disable Defense Grid (center of map) OR survive 8 turns</p>
+
+            <p class="manuscript-text" style="color: #ff6666; font-weight: bold;">
+                A synthesized voice blares: <em>"Intruder alert. Lockdown Protocol Sigma activated. Lethal force authorized."</em>
+            </p>
+
+            <h4>Special Rules</h4>
+            <ul class="manuscript-list">
+                <li><strong>Turret Fire:</strong> At end of each turn, Defense Grid attacks all pilots in LOS for 3d6 damage (ignores cover)</li>
+                <li><strong>EMP Blast:</strong> Every 3 turns, Defense Grid pulses EMP (all pilots lose 2 SP, Constructs heal 1 card)</li>
+                <li><strong>Lockdown:</strong> Doors seal randomly (1d6 each turn, on 1-2 a door locks, on 5-6 a door unlocks)</li>
+            </ul>
+
+            <div class="choice-point">
+                <div class="choice-title">⚠ MID-MISSION TWIST: Church Arrival</div>
+                <p class="manuscript-text">After 4 turns (or Defense Grid at 50% HP), <strong>Inquisitor Marius</strong> breaches from opposite entrance with 3× Church Zealots (18 HP each).</p>
+                <p class="manuscript-text" style="font-style: italic;">Marius demands: <em>"Stand down, heretics! This facility is an abomination! We will purge it with fire!"</em></p>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option A: Ally with Church</div>
+                    <ul class="manuscript-list">
+                        <li>Church Zealots become temporary allies for rest of mission</li>
+                        <li><strong>After mission:</strong> Church offers alliance (trade access, -20% Equipment costs)</li>
+                        <li><strong>Mission 10 Impact:</strong> Church supports you in finale (reinforcements arrive)</li>
+                        <li><strong>Trade-off:</strong> Must promise to destroy all research (locks out "Exploit Engine" ending)</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option B: Fight the Church</div>
+                    <ul class="manuscript-list">
+                        <li>Church Zealots hostile (3v3 + Defense Grid = brutal)</li>
+                        <li><strong>After mission:</strong> Church declares you heretics (hostile encounters Mission 7+)</li>
+                        <li><strong>Mission 10 Impact:</strong> Church crusade attacks settlement during finale</li>
+                        <li><strong>Trade-off:</strong> Keep freedom to choose any ending, but harder path</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option C: Negotiate Truce</div>
+                    <ul class="manuscript-list">
+                        <li>Willpower Save (DC 5+) to convince Marius to work together temporarily</li>
+                        <li><strong>Success:</strong> Church helps disable Grid, leaves peacefully, remains neutral</li>
+                        <li><strong>Failure:</strong> Combat starts anyway (same as Option B)</li>
+                        <li><strong>Mission 10 Impact:</strong> Church stays out of finale (neutral)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reward-box">
+                <h4 style="margin-top: 0;">Rewards</h4>
+                <ul class="manuscript-list">
+                    <li>300 Credits, 4d6 Scrap, 1× Soulstone Fragment, access to Level 2 (Mission 5)</li>
+                    <li>Disable Grid Intact: Gain "Security Protocols" research (+1 Defense to settlement)</li>
+                    <li>Church Alliance: Unlock Church equipment shop</li>
+                </ul>
+            </div>
+
+            <p class="manuscript-text" style="margin-top: 1rem; font-style: italic; color: #ff6666;">
+                <strong>Story Beat:</strong> Computer terminals show research logs: <em>"Dr. Theslar was trying to UNDO the Cataclysm before he vanished."</em> Final terminal: <em>"Warning: Subject Sigma is awake. Recommend immediate evacuation."</em>
+            </p>
+        </div>
+
+        <!-- MISSION 5 -->
+        <div class="mission-card" style="border-color: #9932CC;">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 5</div>
+                    <div class="mission-act">Act 2 - Moral Choice Crystallizes</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"The Compromise"</h3>
+
+            <p class="manuscript-text"><strong>Map:</strong> Research Lab (10×12 hexes, tight corridors)</p>
+            <p class="manuscript-text"><strong>Enemies:</strong> None initially, but consequences trigger mid-mission based on earlier choices</p>
+
+            <p class="manuscript-text">You've reached Research Level 2—Theslar's personal laboratory. Intact Soulstone research, working computers, prototype equipment. And in the center: a <strong>containment chamber</strong> holding a pulsing, crystalline mass—<em>an artificial Soulstone the size of a Casket</em>, radiating immense power and Taint.</p>
+
+            <div class="info-box">
+                <h4>Computer Logs Reveal:</h4>
+                <ul class="manuscript-list">
+                    <li>Theslar created this prototype to <strong>stabilize The Engine</strong></li>
+                    <li>It works... but requires a "compatible catalyst" (living pilot's consciousness)</li>
+                    <li>Using it could shut down The Engine permanently</li>
+                    <li>Using it could also <strong>kill the pilot and corrupt everything within 10 miles</strong></li>
+                </ul>
+            </div>
+
+            <div class="choice-point">
+                <div class="choice-title">⚠ CRITICAL BRANCH POINT: The Prototype Soulstone</div>
+                <p class="manuscript-text" style="font-weight: bold; color: #ff6666;">THIS CHOICE DETERMINES YOUR MISSION 10 ENDING PATH</p>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option A: Destroy It (Redemption Path)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> Gain +50 Morale, +reputation with Church and Elves</li>
+                        <li><strong>Mission 10 Setup:</strong> "Destroy Engine" ending becomes default (manual sabotage)</li>
+                        <li><strong>Trade-off:</strong> Lose immense power source, harder finale</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option B: Take It (Power Path)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> Gain "Sigma Prototype" (can be used once in Mission 10 for +10 damage to Engine HP OR resurrect 1 dead pilot)</li>
+                        <li><strong>Settlement Impact:</strong> Trigger "Taint Outbreak" event (lose 2d6 population, -30 Morale)</li>
+                        <li><strong>Mission 10 Setup:</strong> "Control Engine" and "Exploit Engine" endings available</li>
+                        <li><strong>Trade-off:</strong> Settlement suffers, moral corruption deepens</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Option C: Study It (Knowledge Path)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Immediate:</strong> Gain "Theslar's Notes" (unlock advanced crafting, +1 SP to all pilots permanently)</li>
+                        <li><strong>Mission 8 Impact:</strong> Dwarven Forge-Guilds offer alliance (heard you value knowledge)</li>
+                        <li><strong>Mission 10 Setup:</strong> All endings available + unique "Stabilize Engine" option</li>
+                        <li><strong>Trade-off:</strong> Dwarves AND Church both want the research (pressure from both sides)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Complication: Rival Faction Arrival</h4>
+            <p class="manuscript-text">Based on Mission 4 choice, 1 faction attacks:</p>
+            <ul class="manuscript-list">
+                <li><strong>If Church Hostile:</strong> Inquisitor Marius + 4 Zealots assault lab</li>
+                <li><strong>If Church Allied:</strong> Dwarven Ironclad + 3 Runeforged warriors assault lab</li>
+                <li><strong>If Church Neutral:</strong> Fae Mockingbird + 2 Wyrdlings appear, offer "deal"</li>
+            </ul>
+
+            <div class="choice-point" style="background: linear-gradient(to right, rgba(139,0,139,0.3), rgba(75,0,130,0.3));">
+                <div class="choice-title">Fae Deal (If Mockingbird appears)</div>
+                <p class="manuscript-text" style="font-style: italic;">Mockingbird offers: <em>"Take the prototype. We'll protect your settlement. All we ask... is a future favor."</em></p>
+                <ul class="manuscript-list">
+                    <li><strong>Accept:</strong> Gain prototype + Fae protection (settlement immune to attacks Mission 6-9)</li>
+                    <li><strong>Cost:</strong> Mission 10, Fae call in favor (must give them access to Engine research, enables "Fae Corruption" ending)</li>
+                    <li><strong>Refuse:</strong> Mockingbird vanishes, Fae remain neutral</li>
+                </ul>
+            </div>
+
+            <p class="manuscript-text" style="margin-top: 1rem; font-style: italic; color: #ff6666;">
+                <strong>Story Beat:</strong> Theslar's final log: <em>"I understand now. The Engine doesn't just tear reality. It <strong>hungers</strong>. I tried to starve it. I failed. If anyone finds this... don't feed it."</em><br>
+                Regardless of choice: <em>"Containment Breach. Subject Sigma has escaped. Evacuate immediately."</em>
+            </p>
+        </div>
+
+        <!-- MISSION 6 -->
+        <div class="mission-card">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 6</div>
+                    <div class="mission-act">Act 2 - Everything Gets Worse</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"Consequences Cascade"</h3>
+
+            <p class="manuscript-text"><strong>Map:</strong> Settlement Defense (16×16 hexes, urban terrain)</p>
+
+            <p class="manuscript-text" style="font-weight: bold; color: #ff6666;">Subject Sigma followed you home.</p>
+
+            <div class="boss-card">
+                <h3 style="color: #FF0000; margin-top: 0;">BOSS: Subject Sigma</h3>
+                <p class="manuscript-text"><strong>Type:</strong> Unique Abomination</p>
+                <p class="manuscript-text"><strong>HP:</strong> 40 cards (Phase 1: 40-20 HP, Phase 2: 19-0 HP)</p>
+                <p class="manuscript-text"><strong>Armor:</strong> 5 (Reality Ward—reduces all damage by 5 before Defense)</p>
+                <p class="manuscript-text"><strong>Movement:</strong> 6 hexes (teleport, ignores terrain)</p>
+
+                <h4 style="color: #ff6666;">Phase 1 Abilities (40-20 HP):</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Void Strike</strong> (×10): Attack 5d6 + inflict 2 Taint</li>
+                    <li><strong>Blink</strong> (×8): Teleport 6 hexes, cannot be targeted until next turn</li>
+                    <li><strong>Harvest</strong> (×6): Drain target for 4d6, heal self 2 cards</li>
+                    <li><strong>Dimensional Anchor</strong> (×6): Target cannot move for 2 turns</li>
+                    <li><strong>Reality Fracture</strong> (×5): Create Void Rift hex (3d6 damage to enter)</li>
+                    <li><strong>The Engine's Gift</strong> (×5): Sigma heals 1 card per pilot with 5+ Taint nearby</li>
+                </ul>
+
+                <h4 style="color: #ff6666;">Phase 2 Abilities (19-0 HP):</h4>
+                <ul class="manuscript-list">
+                    <li>All attacks become 7d6 (powered by desperation)</li>
+                    <li><strong>Taint Nova</strong> (×5): AOE 4 hex radius, 5d6 + 3 Taint to all</li>
+                    <li><strong>Resurrection Protocol</strong> (×2): When reaching 0 HP first time, resurrect with 10 HP (once per battle)</li>
+                </ul>
+            </div>
+
+            <h4>Special Rules</h4>
+            <ul class="manuscript-list">
+                <li><strong>Civilian Evacuation:</strong> Every 2 turns, roll 1d6. On 1-3, lose 1d6 population (Sigma is killing citizens)</li>
+                <li><strong>Settlement Damage:</strong> If Sigma reaches Core hex, settlement buildings take damage (lose 1d3 buildings randomly)</li>
+                <li><strong>The Prototype:</strong> If players took Sigma Prototype (Mission 5), can use it to <strong>instantly kill Sigma</strong> (but pilot using it gains 5 permanent Taint and Corruption Scar)</li>
+            </ul>
+
+            <div class="reward-box">
+                <h4 style="margin-top: 0;">Rewards</h4>
+                <ul class="manuscript-list">
+                    <li>600 Credits, 8d6 Scrap, +2 Legendary Loot rolls, +50 Morale</li>
+                    <li>Protect Core: Keep all settlement buildings intact (+30 Morale)</li>
+                    <li>Zero Civilian Deaths: Unlock "Hero of the Settlement" campaign bonus (+1 free Grit to all pilots)</li>
+                </ul>
+            </div>
+
+            <p class="manuscript-text" style="margin-top: 1rem; font-style: italic; color: #8b6914;">
+                <strong>Story Beat:</strong> Sigma shrieks in Theslar's voice: <em>"I tried to save them! Why won't it stop?!"</em> When defeated: <em>"Thank you... I was so tired... 437 years... so tired..."</em> Sigma was a <strong>failed prototype pilot</strong>, trapped in containment for centuries, driven mad by isolation.
+            </p>
+        </div>
+
+        <!-- MISSION 7 -->
+        <div class="mission-card" style="border-color: #9932CC;">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 7</div>
+                    <div class="mission-act">Act 2 - The Commitment</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"Point of No Return"</h3>
+
+            <p class="manuscript-text" style="font-weight: bold; color: #ff6666;">Three factions converge with ultimatums. You must choose ONE faction to ally with. The others become hostile.</p>
+
+            <div class="choice-point">
+                <div class="choice-title">⚠ CRITICAL ALLIANCE CHOICE: THIS LOCKS YOUR MISSION 10 ENDING PATH</div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Ally with Church (Destruction Path)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Benefits:</strong> Church Zealots join Mission 8-10, -20% healing costs, access to Church Tactics</li>
+                        <li><strong>Costs:</strong> Must commit to destroying Engine (locks "Control" and "Exploit" endings)</li>
+                        <li><strong>Mission 10:</strong> Church provides crusader army, guaranteed victory if you choose "Destroy Engine"</li>
+                        <li><strong>Trial:</strong> "Purge the Heretics" - Fight 6× Corrupted Villagers + 2× Tainted Ogres (they were your former citizens)</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Ally with Dwarves (Stabilization Path)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Benefits:</strong> Dwarven Ironclads join Mission 8-10, -30% crafting costs, unlock Dwarven Runic equipment</li>
+                        <li><strong>Costs:</strong> Must give Dwarves the research (they will attempt to stabilize Engine)</li>
+                        <li><strong>Mission 10:</strong> Dwarves provide engineering support, unlock "Stabilize Engine" ending</li>
+                        <li><strong>Trial:</strong> "Recover the Artifact" - Fight 4× Scrap Golems + 1× Dwarven Ironclad (rival clan)</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Ally with Fae (Exploitation Path)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Benefits:</strong> Fae Wyrdlings join Mission 8-10, gain Fae Bargain (1 free resurrect), unlock Fae illusion abilities</li>
+                        <li><strong>Costs:</strong> Owe Fae "future favor" (corrupts settlement, -20 Morale, +Taint events)</li>
+                        <li><strong>Mission 10:</strong> Fae corrupt Engine to create permanent dimensional overlap (dark ending)</li>
+                        <li><strong>Trial:</strong> "The Hunt" - Fight 3× Elven Verdant Stalkers + 1× Ancient Treant (kill sacred forest guardian)</li>
+                    </ul>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">Refuse All Factions (Solo Path)</div>
+                    <ul class="manuscript-list">
+                        <li><strong>Benefits:</strong> Keep independence, all endings remain available</li>
+                        <li><strong>Costs:</strong> All factions become hostile, Mission 8-10 significantly harder, no reinforcements</li>
+                        <li><strong>Mission 10:</strong> Solo assault on Engine, highest difficulty but most freedom</li>
+                        <li><strong>Trial:</strong> "Survive the Onslaught" - Fight mixed enemies from ALL factions (2 from each), survive 8 turns</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reward-box">
+                <h4 style="margin-top: 0;">Rewards</h4>
+                <ul class="manuscript-list">
+                    <li>500 Credits, faction-specific equipment, access to Mission 8</li>
+                    <li>Church Path: +3 Holy Relics, +30 Morale</li>
+                    <li>Dwarven Path: +Runic Weapons, +5d6 Scrap</li>
+                    <li>Fae Path: +Fae Bargain Tokens, +strange artifacts</li>
+                    <li>Solo Path: +Independence, +100 Morale ("We stand alone")</li>
+                </ul>
+            </div>
+
+            <p class="manuscript-text" style="margin-top: 1rem; font-style: italic; color: #ff6666;">
+                <strong>Story Beat:</strong> End of mission: Distant explosion. The Engine's pulse frequency has changed. <em>Something is accelerating.</em>
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+            <h2 style="color: #d4af37; margin: 1rem 0;">ACT 3: RESOLUTION</h2>
+            <p style="font-style: italic; color: #8b6914;">Missions 8-10 • The end has come</p>
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+        </div>
+
+        <!-- MISSION 8 -->
+        <div class="mission-card">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 8</div>
+                    <div class="mission-act">Act 3 - The Gauntlet</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"The Gauntlet"</h3>
+
+            <p class="manuscript-text"><strong>Map:</strong> Wasteland Hellscape (18×18 hexes, extreme hazards)</p>
+
+            <div class="mission-enemies">
+                <span class="enemy-badge">6× Tainted Wolves (5 HP)</span>
+                <span class="enemy-badge">3× Engine Wraiths (12 HP, Elite)</span>
+                <span class="enemy-badge">2× Faction Enemies (depends on alliances)</span>
+                <span class="enemy-badge">1× Void Behemoth (50 HP, BOSS)</span>
+            </div>
+
+            <p class="manuscript-text"><strong>Objective:</strong> Reach Engine entrance (far side of map) within 10 turns</p>
+
+            <h4>Special Rules - EXTREME ENVIRONMENT</h4>
+            <ul class="manuscript-list">
+                <li><strong>Constant Taint:</strong> Gain +1 Taint every turn (no save, cannot prevent)</li>
+                <li><strong>Reality Fractures:</strong> Every 2 turns, 1d3 random hexes become Void Rifts (3d6 enter)</li>
+                <li><strong>The Engine's Pulse:</strong> Every 3 turns, roll Strain (1d6, on 1-3 lose 1 SP AND gain 1 Component Damage)</li>
+                <li><strong>Gravity Distortion:</strong> Movement costs vary (1d6 each hex: 1-2 = costs 0 SP, 3-4 = costs 1 SP, 5-6 = costs 2 SP)</li>
+                <li><strong>Time Dilation:</strong> Turns are unpredictable (GM rolls initiative for ALL units each turn)</li>
+            </ul>
+
+            <div class="boss-card">
+                <h3 style="color: #FF0000; margin-top: 0;">BOSS: Void Behemoth</h3>
+                <p class="manuscript-text"><strong>HP:</strong> 50 cards | <strong>Armor:</strong> 8 (nearly impenetrable) | <strong>Movement:</strong> 5 hexes (ignores terrain, phase through walls)</p>
+                <p class="manuscript-text"><strong>Special:</strong> Regenerates 2 cards per turn (must focus fire to kill)</p>
+                <h4 style="color: #ff6666;">AI Deck (50 cards):</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Annihilation Beam</strong> (×15): 6d6 ranged attack (10 hex range), ignores cover</li>
+                    <li><strong>Void Swarm</strong> (×10): Summon 3 Tainted Rats per turn</li>
+                    <li><strong>Reality Rend</strong> (×8): AOE 3 hex radius, 5d6 + destroy 1 terrain hex permanently</li>
+                    <li><strong>Harvest Souls</strong> (×7): Drain all pilots within 6 hexes for 3d6, heal equal to total damage dealt</li>
+                    <li><strong>Phase Out</strong> (×5): Behemoth becomes untargetable for 1 turn (invulnerability)</li>
+                    <li><strong>The Engine's Blessing</strong> (×5): All Abominations on field heal 3 cards</li>
+                </ul>
+            </div>
+
+            <h4>Allied Reinforcements</h4>
+            <p class="manuscript-text">If allied with faction, they provide support:</p>
+            <ul class="manuscript-list">
+                <li><strong>Church:</strong> 4× Zealots arrive Turn 4 (draw aggro from Behemoth)</li>
+                <li><strong>Dwarves:</strong> 2× Ironclads arrive Turn 4 (tank Behemoth, high defense)</li>
+                <li><strong>Fae:</strong> 2× Wyrdlings arrive Turn 4 (debuff Behemoth, -2 Armor)</li>
+                <li><strong>Solo:</strong> No reinforcements (but +1 Legendary Loot for completing alone)</li>
+            </ul>
+
+            <p class="manuscript-text" style="margin-top: 1rem; font-style: italic; color: #ff6666;">
+                <strong>Story Beat:</strong> The Engine looms ahead—<strong>miles high, pulsing with purple-black energy</strong>, reality warps around it. Behemoth death: It screams in Theslar's voice—<em>"I'm sorry... I'm so sorry..."</em> (reveals Engine is sustained by Theslar's trapped consciousness). Warning: <em>"Instability at 87%. Cascade failure imminent. Estimated time to containment breach: 72 hours."</em>
+            </p>
+        </div>
+
+        <!-- MISSION 9 -->
+        <div class="mission-card" style="border-color: #FF0000;">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 9</div>
+                    <div class="mission-act">Act 3 - The Twist</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"The Betrayal"</h3>
+
+            <p class="manuscript-text" style="font-weight: bold; color: #FF0000; font-size: 1.2rem;">YOUR ALLY BETRAYS YOU.</p>
+
+            <div class="choice-point" style="background: linear-gradient(to right, rgba(139,0,0,0.3), rgba(75,0,0,0.3)); border-color: #FF0000;">
+                <div class="choice-title">The Betrayal (Faction-Specific)</div>
+
+                <div class="choice-option">
+                    <div class="choice-title">If Allied with Church:</div>
+                    <p class="manuscript-text" style="font-style: italic;">Inquisitor Marius reveals: <em>"The Engine must be destroyed. And so must Theslar's research. And so must... you. You know too much. You've been corrupted. Forgive me."</em></p>
+                    <p class="manuscript-text">Church turns hostile (Marius + 6 Zealots attack)</p>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">If Allied with Dwarves:</div>
+                    <p class="manuscript-text" style="font-style: italic;">Runemaster Thorin reveals: <em>"We need the research. We need the Engine. We need... test subjects. Your exposure to the Wastes makes you perfect candidates."</em></p>
+                    <p class="manuscript-text">Dwarves attempt to capture (not kill) pilots for experimentation</p>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">If Allied with Fae:</div>
+                    <p class="manuscript-text" style="font-style: italic;">Mockingbird laughs: <em>"Oh, you sweet naive things. Did you think we'd let YOU control the Engine? No, no. You were pawns. But such entertaining pawns!"</em></p>
+                    <p class="manuscript-text">Fae transform allies into illusions (reveal reinforcements were fake)</p>
+                </div>
+
+                <div class="choice-option">
+                    <div class="choice-title">If Solo Path:</div>
+                    <p class="manuscript-text">No betrayal—but <strong>Subject Sigma returns</strong> (if not killed in Mission 6) as 60 HP upgraded boss, or <strong>Rival Faction Leader ambushes</strong></p>
+                </div>
+            </div>
+
+            <h4>Victory Conditions</h4>
+            <ul class="manuscript-list">
+                <li><strong>Survive 6 turns</strong> (reach Engine entrance)</li>
+                <li><strong>Defeat faction leader</strong> (kills them permanently, ally faction collapses)</li>
+                <li><strong>Negotiate</strong> (Willpower Save DC 7+, convince them to honor alliance)</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Negotiation Path (Optional)</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Church:</strong> Prove you'll destroy Engine (pass Willpower Save, promise destruction)</li>
+                    <li><strong>Dwarves:</strong> Offer research freely (give up Theslar's Notes, keep alliance)</li>
+                    <li><strong>Fae:</strong> Offer better bargain (sacrifice 1 pilot permanently to Fae service, rest go free)</li>
+                </ul>
+            </div>
+
+            <p class="manuscript-text" style="margin-top: 1rem; font-style: italic; color: #ff6666;">
+                <strong>Story Beat:</strong> Engine countdown: <em>"Critical failure in 24 hours. Containment breach will affect planetary radius. Evacuation... impossible."</em> Final line: <em>"Warning: Core access granted. Dr. Theslar awaits."</em>
+            </p>
+        </div>
+
+        <!-- MISSION 10 -->
+        <div class="mission-card" style="border: 4px solid #d4af37; background: linear-gradient(135deg, rgba(139,0,0,0.3), rgba(0,0,139,0.3), rgba(0,139,0,0.3));">
+            <div class="mission-header">
+                <div>
+                    <div class="mission-number">Mission 10</div>
+                    <div class="mission-act">Act 3 - THE FINALE</div>
+                </div>
+            </div>
+            <h3 class="mission-title">"The Choice"</h3>
+
+            <p class="manuscript-text" style="font-size: 1.1rem; text-align: center; margin: 1rem 0;">
+                You stand before <strong>The Engine's Core</strong>—a miles-high cathedral of twisted metal, crackling energy, and <strong>something alive</strong>.
+            </p>
+
+            <p class="manuscript-text" style="font-style: italic; text-align: center; margin: 1rem 0; color: #d4af37;">
+                In the center, suspended in crystalline Soulstone: <strong>Dr. Nikolas Theslar himself</strong>, perfectly preserved, eyes open, aware.
+            </p>
+
+            <div class="manuscript-quote" style="border-color: #9932CC; background: rgba(139,0,139,0.2);">
+                <em>"I've been awake for 437 years. Every second, I feel the world dying. I tried to save it. I failed. Now... you must choose. End my suffering. Or give me the chance to try again."</em>
+            </div>
+
+            <h2 style="text-align: center; color: #d4af37; margin: 2rem 0;">FIVE ENDINGS</h2>
+        </div>
+
+        <!-- ENDING 1 -->
+        <div class="ending-card">
+            <div class="ending-title">Ending 1: "Destroy the Engine" (Redemption)</div>
+
+            <p class="manuscript-text"><strong>Requirements:</strong> Reject Theslar's offer, destroy the Core</p>
+
+            <div class="boss-card">
+                <h4 style="margin-top: 0;">FINAL BOSS: Theslar's Casket ("The Thesis")</h4>
+                <p class="manuscript-text"><strong>HP:</strong> 60 cards (no phases, pure endurance fight) | <strong>Armor:</strong> 6 (Reality Ward)</p>
+                <p class="manuscript-text"><strong>AI Deck:</strong> 60 cards—mix of every enemy ability you've fought (Void Strikes, Harvests, Reality Fractures, Summons)</p>
+                <p class="manuscript-text"><strong>Special:</strong> Every 3 turns, Theslar begs you to stop—<em>"Please... I can fix this... just let me try..."</em> (Willpower Save DC 6+ or lose 2 SP from guilt)</p>
+            </div>
+
+            <h4>Campaign Ending:</h4>
+            <ul class="manuscript-list">
+                <li><strong>The Engine explodes.</strong> Reality stabilizes. Void rifts seal. Abominations cease spawning.</li>
+                <li><strong>Magic fades from the world.</strong> Caskets become inert. Soulstones crumble. The age of Caskets ends.</li>
+                <li><strong>Your settlement thrives.</strong> Population grows, people rebuild, new era begins.</li>
+                <li><strong>You retire.</strong> Pilots dismantle Caskets, become farmers, teachers, leaders. They never forget what they sacrificed.</li>
+                <li><strong>Epilogue:</strong> 50 years later, the world is healing. Cities rise. Veterans whisper: <em>"The Engine is gone. But scars remain."</em></li>
+            </ul>
+
+            <div class="ending-tone"><strong>Tone:</strong> Bittersweet victory. You saved the world, but lost the power that defined you.</div>
+        </div>
+
+        <!-- ENDING 2 -->
+        <div class="ending-card">
+            <div class="ending-title">Ending 2: "Control the Engine" (Power)</div>
+
+            <p class="manuscript-text"><strong>Requirements:</strong> Accept Theslar's offer, attempt to control the Engine</p>
+
+            <h4>Mission: Merge 1 pilot's consciousness with Theslar</h4>
+            <ul class="manuscript-list">
+                <li><strong>Choice:</strong> Which pilot volunteers? (Removed from campaign permanently, becomes part of Engine)</li>
+                <li>Remaining pilots must defend the merging process (8 turns)</li>
+                <li><strong>Enemies:</strong> 3× Church Crusaders, 3× Dwarven Saboteurs, 3× Fae Corruptors (ALL factions attack to stop you)</li>
+            </ul>
+
+            <h4>Campaign Ending:</h4>
+            <ul class="manuscript-list">
+                <li><strong>The Engine stabilizes under new management.</strong> You control Void rifts, Soulstone generation, reality distortions.</li>
+                <li><strong>You become immortal tyrant.</strong> Absolute power corrupts. Settlement becomes capital of new empire.</li>
+                <li><strong>Other factions submit or die.</strong> Church crusades fail. Dwarves bend the knee. Fae negotiate.</li>
+                <li><strong>Your sacrificed pilot whispers from the Engine:</strong> <em>"I control everything. I see everything. And I am so alone."</em></li>
+                <li><strong>Epilogue:</strong> 100 years later, you rule a unified world. But at what cost? The pilot has forgotten their name, forgotten they were ever human. They are the Engine now. Forever.</li>
+            </ul>
+
+            <div class="ending-tone"><strong>Tone:</strong> Dark victory. You won everything, but lost yourself in the process.</div>
+        </div>
+
+        <!-- ENDING 3 -->
+        <div class="ending-card">
+            <div class="ending-title">Ending 3: "Exploit the Engine" (Corruption)</div>
+
+            <p class="manuscript-text"><strong>Requirements:</strong> Use the Sigma Prototype (from Mission 5) to weaponize the Engine</p>
+
+            <p class="manuscript-text" style="font-weight: bold; color: #ff6666;">Theslar screams—<em>"No! That will tear the barriers completely! The Void will consume EVERYTHING!"</em></p>
+
+            <h4>Mission: Survive 10 turns while Engine overloads</h4>
+            <ul class="manuscript-list">
+                <li><strong>Enemies:</strong> 6× Void Abominations, FINAL BOSS: Reality Tear (Environmental Boss, infinite HP, must survive 10 turns)</li>
+                <li>Every turn: Gain +2 Taint (unavoidable), 1d6 random hexes become Void Rifts, spawn 2 Abominations</li>
+                <li>At Turn 10: Choice—<em>"Complete the ritual? Y/N"</em></li>
+            </ul>
+
+            <h4>Campaign Ending:</h4>
+            <ul class="manuscript-list">
+                <li><strong>The Engine ruptures reality permanently.</strong> Void and material world merge.</li>
+                <li><strong>You gain infinite power.</strong> Soulstones rain from sky. Caskets evolve into godlike war machines.</li>
+                <li><strong>Everything becomes corrupted.</strong> Civilians mutate. Settlements twist. Reality becomes nightmare.</li>
+                <li><strong>You become monsters.</strong> Pilots lose humanity, transform into Abomination-hybrid demigods.</li>
+                <li><strong>Epilogue:</strong> The world becomes Hell. You rule it as demon kings. The Void whispers: <em>"Welcome home."</em></li>
+            </ul>
+
+            <div class="ending-tone"><strong>Tone:</strong> Pyrrhic victory → Total damnation. You won power, but destroyed everything you fought for.</div>
+        </div>
+
+        <!-- ENDING 4 -->
+        <div class="ending-card">
+            <div class="ending-title">Ending 4: "Stabilize the Engine" (Engineering)</div>
+
+            <p class="manuscript-text"><strong>Requirements:</strong> Allied with Dwarves, have Theslar's Research (from Mission 5 Option C)</p>
+
+            <h4>Mission: Install failsafe runecraft to prevent Engine from ever exploding</h4>
+            <ul class="manuscript-list">
+                <li><strong>Objective:</strong> Protect Dwarven engineers for 8 turns while they work</li>
+                <li><strong>Enemies:</strong> 4× Automated Defenses (Scrap Golems), 2× Church Saboteurs (if Church hostile)</li>
+            </ul>
+
+            <h4>Campaign Ending:</h4>
+            <ul class="manuscript-list">
+                <li><strong>The Engine stabilizes permanently.</strong> No more explosions, no more instability.</li>
+                <li><strong>Magic remains, but controlled.</strong> Soulstones still exist but stop corrupting.</li>
+                <li><strong>Dwarves hailed as saviors.</strong> Forge-Guilds become dominant power.</li>
+                <li><strong>Your settlement prospers</strong> as Dwarven trade hub. Technology advances. New golden age begins.</li>
+                <li><strong>Epilogue:</strong> 200 years later, the world has rebuilt. Cities thrive. The Engine is a museum. Children learn: <em>"This is what we survived."</em> But deep in the Core, Theslar still screams, unable to die.</li>
+            </ul>
+
+            <div class="ending-tone"><strong>Tone:</strong> Hopeful victory. You saved magic, saved the world, but at the cost of leaving Theslar trapped forever.</div>
+        </div>
+
+        <!-- ENDING 5 -->
+        <div class="ending-card">
+            <div class="ending-title">Ending 5: "Walk Away" (Survival)</div>
+
+            <p class="manuscript-text"><strong>Requirements:</strong> Refuse all choices, abandon the Engine</p>
+
+            <h4>Mission: Escape the Engine facility before it explodes (countdown: 6 turns)</h4>
+            <ul class="manuscript-list">
+                <li><strong>Objective:</strong> Reach exit before turn 6 (simple escape mission)</li>
+                <li><strong>Enemies:</strong> 3× Engine Wraiths (pursuit), environmental hazards</li>
+            </ul>
+
+            <h4>Campaign Ending:</h4>
+            <ul class="manuscript-list">
+                <li><strong>You leave The Engine to its fate.</strong> Someone else's problem.</li>
+                <li><strong>The Engine continues pulsing.</strong> Nothing changes. World remains broken.</li>
+                <li><strong>Your settlement survives, but stagnates.</strong> No progress, no decline, just... existence.</li>
+                <li><strong>You retire as scavengers.</strong> No heroes, no legends. Just survivors.</li>
+                <li><strong>Epilogue:</strong> 50 years later, nothing has changed. The Engine still stands. Abominations still spawn. Wars still rage. You're alive, but... was it worth it?</li>
+            </ul>
+
+            <div class="ending-tone"><strong>Tone:</strong> Hollow non-ending. You survived, but solved nothing. The cycle continues.</div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+        </div>
+
+        <h2>Campaign Tracker</h2>
+
+        <h3>Mission Completion Checklist</h3>
+        <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 2px solid #8b6914;">
+            <div class="tracker-checkbox"><input type="checkbox" id="m1"><label for="m1">Mission 1: Strangers at the Gates</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m2"><label for="m2">Mission 2: The Prisoner's Tale (optional)</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m3"><label for="m3">Mission 3: Into the Grey</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m4"><label for="m4">Mission 4: What Lies Beneath</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m5"><label for="m5">Mission 5: The Compromise</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m6"><label for="m6">Mission 6: Consequences Cascade</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m7"><label for="m7">Mission 7: Point of No Return</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m8"><label for="m8">Mission 8: The Gauntlet</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m9"><label for="m9">Mission 9: The Betrayal</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="m10"><label for="m10">Mission 10: The Choice</label></div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Major Choices Tracker</h3>
+        <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 2px solid #8b6914;">
+            <div class="tracker-checkbox"><input type="checkbox" id="c1"><label for="c1">Mission 1: Captured Raider? (Y/N)</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="c2"><label for="c2">Mission 2: Kess's Fate (Kill/Free/Recruit)</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="c3"><label for="c3">Mission 3: Experimental Soulstones (Take All/Take One/Leave All)</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="c4"><label for="c4">Mission 4: Church Alliance (Ally/Fight/Truce)</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="c5"><label for="c5">Mission 5: Prototype Choice (Destroy/Take/Study)</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="c7"><label for="c7">Mission 7: Faction Ally (Church/Dwarves/Fae/Solo)</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="c9"><label for="c9">Mission 9: Betrayal Outcome (Defeated/Escaped/Negotiated)</label></div>
+            <div class="tracker-checkbox"><input type="checkbox" id="c10"><label for="c10">Mission 10: Final Choice (Destroy/Control/Exploit/Stabilize/Walk Away)</label></div>
+        </div>
+
+        <div class="branching-diagram" style="margin-top: 2rem;">
+            <strong>BRANCHING PATH VISUALIZATION:</strong><br><br>
+            Mission 3: Soulstones Choice<br>
+            ├─ Take All → "Exploit Engine" ending unlocked<br>
+            ├─ Leave All → "Destroy Engine" ending unlocked<br>
+            └─ Take One → All endings available<br>
+            <br>
+            Mission 5: Prototype Choice<br>
+            ├─ Destroy → "Destroy Engine" default<br>
+            ├─ Take → "Control/Exploit Engine" available<br>
+            └─ Study → All endings + "Stabilize Engine"<br>
+            <br>
+            Mission 7: Faction Alliance<br>
+            ├─ Church → "Destroy Engine" path<br>
+            ├─ Dwarves → "Stabilize Engine" path<br>
+            ├─ Fae → "Exploit Engine" path<br>
+            └─ Solo → All endings available, hardest path<br>
+            <br>
+            Mission 10: Five Endings<br>
+            ├─ Destroy (Redemption, bittersweet)<br>
+            ├─ Control (Power, dark victory)<br>
+            ├─ Exploit (Corruption, damnation)<br>
+            ├─ Stabilize (Engineering, hopeful)<br>
+            └─ Walk Away (Survival, hollow)
+        </div>
+
+        <div class="manuscript-quote" style="margin: 3rem 0;">
+            <em>"The road to redemption is paved with compromise. The road to power is paved with corpses. The road to survival? That one never ends."</em>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid #d4af37;">
+            <p style="font-style: italic; color: #8b6914;">
+                <a href="javascript:parent.loadContent('campaign-settlement-phase.html');" style="color: #d4af37; text-decoration: none;">← Settlement Phase</a>
+                •
+                <a href="javascript:parent.loadContent('campaign-event-tables.html');" style="color: #d4af37; text-decoration: none;">Event Tables →</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

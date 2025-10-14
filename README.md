@@ -413,14 +413,14 @@ You are free to share and adapt this material for non-commercial purposes with a
 ## Changelog
 
 ### v3.1 Campaign Systems (2025-10-14)
-**CAMPAIGN SYSTEMS (IN PROGRESS)** - Long-term play mechanics underway
+**CAMPAIGN COMPLETE** - Full long-term play mechanics ready
 - **Settlement Phase Procedure**: Turn-by-turn campaign workflow (Return→Settlement Actions→Events→Advancement)
 - **Pilot Generation Tables**: Random character creation (20 backgrounds, 20 simple + 20 complex traits, 100 quirks, hybrid trait system)
 - **Core Bestiary**: 15 enemies with AI behavior decks (Tainted creatures, Bandits, Constructs, Bosses)
+- **The Scavenger's Crusade**: 10-mission story arc with branching choices and 5 unique endings (Redemption, Power, Corruption, Engineering, Survival)
 - **Interactive HTML Codex**: Codex-style navigation for all rules, lore, and campaign systems
 - **Pilot Generator Tool**: Web-based random pilot creation with manual mode option
 - Full integration with existing v3.0 optional mechanics
-- **MISSING: Campaign scenario chains** (multi-mission story arcs) - Coming soon!
 
 ### v3.0 Playtest (2025-10-14)
 **ENHANCED PLAYTEST READY** - Three optional advanced mechanics systems
