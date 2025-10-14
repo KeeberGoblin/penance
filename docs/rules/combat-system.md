@@ -1,8 +1,8 @@
 # Combat & Damage System (GKR + KDM Hybrid)
 ## Penance: Absolution Through Steel
 
-**Version**: 2.0 (GKR-Style Redesign)
-**Last Updated**: October 10, 2025
+**Version**: 2.0 Base Rules (October 10, 2025)
+**v3.0 Enhancements**: Optional [Dice Pool Advantage](dice-pool-advantage.md) and [Taint Exploitation](taint-exploitation.md) available
 
 ---
 

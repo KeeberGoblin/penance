@@ -1,8 +1,8 @@
 # Turn Structure (Final)
 ## Penance: Absolution Through Steel
 
-**Version**: 2.0 (GKR-Style SP System)
-**Last Updated**: October 10, 2025
+**Version**: 2.0 Base Rules (October 10, 2025)
+**v3.0 Enhancements**: Optional [Taint Exploitation](taint-exploitation.md) available
 
 ---
 

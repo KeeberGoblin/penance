@@ -433,6 +433,58 @@ These 6 cards define Church identity and cannot be removed or smelted.
 
 ---
 
+---
+
+## VERSION 3.0 OPTIONAL RULES
+
+### Church Interactions with Taint Exploitation
+
+**Taint Philosophy**: Church pilots **embrace Taint as martyrdom fuel**. They willingly corrupt themselves for power.
+
+**Faction Bonuses**:
+- **Martyrdom Training**: Church pilots start with **Grit 1** (instead of Grit 0)
+- **Zealot Resistance**: Corruption Save is **3+ instead of 4+** (50% more resistant)
+- **Taint Fuel**: Church gains Taint normally but can spend it more efficiently
+
+**Church-Specific Taint Cards** (if using Taint Exploitation):
+- **Blood Offering**: Now also grants +1 Taint (in addition to self-harm)
+- **Absolution** card: Remove all Heat, recover 3 cards, gain 1 Taint
+- **Flagellant's Zeal**: Discard 5 cards, gain 5 SP, gain 2 Taint
+
+**Taint Martyr Build**:
+1. Use Blood Offering repeatedly (stack Taint to 5-7)
+2. Spend 2 Taint on "Tainted Fury" (+2 damage)
+3. Attack with +3 (Blood Offering) +2 (Tainted Fury) = +5 damage burst
+4. Risk Corruption at 10 Taint, but Corruption Save 3+ protects you
+5. If Corrupted, "Mutation" result grants Clawed Limb (+1 melee damage permanent)
+
+**Strategic Use**: Church can safely operate at 7-8 Taint (Danger Zone) due to +1 Corruption resistance. Use Taint as offensive resource (spend enemy Taint) and defensive burst (Tainted Fury).
+
+---
+
+### Church Pilot Grit System
+
+**Starting Grit**: **1** (Martyrdom Training)
+- All Church pilots start at Grit 1 (instead of Grit 0)
+- Represents zealot conditioning and pain tolerance training
+
+**Grit Progression**:
+- Mission 5: Grit 2 (instead of requiring 10 missions)
+- Mission 15: Grit 3 (instead of requiring 20 missions)
+- Fast-track: Survive 1 Severe Injury → immediate Grit 2
+
+**Grit Check Example** (Church Pilot, Grit 2):
+```
+Trigger: Neural Feedback (5 Component Damage)
+Roll: 1d6 + 2 Grit = 5
+Result: Tough It Out (Severe Injury becomes Minor)
+Outcome: Church pilot shrugs off permanent injury through willpower
+```
+
+**Thematic Fit**: Church pilots are trained to endure suffering. They start tougher and progress faster than other factions. Martyrdom philosophy grants mechanical resilience.
+
+---
+
 **END OF DOCUMENT**
 
-*"We bleed to absolve. We kill to repent. We die to be forgiven. This is the way of the Church."*
+*"We bleed to absolve. We kill to repent. We die to be forgiven. Taint and pain are our sacraments."*

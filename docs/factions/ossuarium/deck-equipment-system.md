@@ -442,3 +442,46 @@ Instead, they add **"Decay" cards**:
 **END OF DOCUMENT**
 
 *"We do not die. We merely pause. And then we rise again."*
+
+---
+
+## VERSION 3.0 OPTIONAL RULES
+
+### Ossuarium Interactions with Taint Exploitation
+
+**Taint Philosophy**: Ossuarium **thrives on Taint**. They are already dead - corruption is power.
+
+**Faction Bonuses**:
+- **Already Dead**: Gain Taint normally
+- **Soul Harvest Synergy**: "Soul Harvest" card now costs **2 Taint** to activate, recovers 3 cards
+- **Decay Aura**: Enemies within 3 hexes gain +1 Taint per turn (passive corruption field)
+- **Corruption Resistance**: Corruption Save is **5+ instead of 4+** (83% resistant)
+
+**Ossuarium-Specific Taint Uses**:
+- Spend 2 Taint → Soul Harvest (recover 3 cards from discard)
+- Spend 3 Taint → Bone Reconstruction (remove 1 Component Damage)
+- Spend 4 Taint → Raise Dead (summon 1 Bone Thrall support unit)
+
+**Strategic Use**: Ossuarium operates best at 5-7 Taint constantly. Use Decay Aura to corrupt enemies, then exploit their Taint offensively. Spend own Taint for Soul Harvest recursion. Very hard to corrupt (5+ save).
+
+---
+
+### Ossuarium Pilot Grit System
+
+**Starting Grit**: **IMMUNE** (does not use Grit system)
+**Alternative**: Ossuarium uses **Decay Card system** instead of Pilot Wounds
+
+**Why Immune**: Ossuarium pilots are already dead (reanimated corpses). They don't take Pilot Wounds or flip Wound cards. Instead, they use faction-specific Decay mechanic.
+
+**Decay System** (replaces Grit):
+- When Ossuarium would take Pilot Damage, add 1 Decay card to deck (instead of flipping Wound)
+- Decay cards have negative effects when drawn (similar to Damage cards but worse)
+- Max 10 Decay cards (pilot "dies" again when 10 Decay accumulated)
+
+**Thematic Fit**: You can't wound the dead. Ossuarium pilots decay over time instead of taking injuries.
+
+---
+
+**END OF DOCUMENT - v3.0 ENHANCED**
+
+*"We died once. The Engine brought us back. Taint is our lifeblood. We embrace the rot."*

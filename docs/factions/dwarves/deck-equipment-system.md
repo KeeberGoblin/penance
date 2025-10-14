@@ -413,3 +413,45 @@ These 6 cards define Dwarven identity and cannot be removed or smelted.
 **END OF DOCUMENT**
 
 *"Steel bends. It does not break. We are steel. We do not break."*
+
+---
+
+## VERSION 3.0 OPTIONAL RULES
+
+### Dwarven Interactions with Taint Exploitation
+
+**Taint Philosophy**: Dwarves **resist Taint through rune-warding**. Stone does not corrupt easily.
+
+**Faction Bonuses**:
+- **Rune-Warded**: Gain Taint at **half rate** (6 damage = 1 Taint instead of 2)
+- **Stone Endurance**: Cannot be offensively exploited until 8+ Taint (immune to enemy Taint spending below 8)
+- **Rune-Locked**: **CANNOT spend own Taint** for Desperate Power (locked out of corruption)
+
+**Strategic Use**: Dwarves are the most Taint-resistant faction. They accumulate Taint slowly and enemies can't exploit it easily. However, they cannot access Desperate Power options (Tainted Fury, Ignore Pain, etc.). Trade-off: Safe from corruption but no Taint burst.
+
+---
+
+### Dwarven Pilot Grit System
+
+**Starting Grit**: **0** (standard)
+**Grit Bonus**: **+1 to Grit Checks vs Severe Injuries only** (not Minor or Trauma)
+
+**Stoic Endurance**:
+- When rolling Grit Check for Severe Injury: Add +1 (in addition to base Grit)
+- Example: Grit 2 pilot vs Severe Injury = roll 1d6 + 2 + 1 = 1d6 + 3
+
+**Grit Check Example** (Dwarven Pilot, Grit 1, Severe Injury):
+```
+Trigger: Spinal Trauma (Severe Injury)
+Roll: 1d6 + 1 Grit + 1 Stoic = 1d6 + 2 = 5
+Result: Tough It Out (Severe becomes Minor)
+Outcome: Dwarven toughness prevents permanent spinal damage
+```
+
+**Thematic Fit**: Dwarves are carved from stone - they don't break easily. Bonus only applies to Severe Injuries (physical trauma), not Trauma (mental) or Minor Injuries.
+
+---
+
+**END OF DOCUMENT - v3.0 ENHANCED**
+
+*"Steel bends. Stone endures. We are stone wrapped in steel. We do not break."*

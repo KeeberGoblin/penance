@@ -1,8 +1,8 @@
 # Range & Line of Sight Rules
 ## Penance: Absolution Through Steel
 
-**Version**: 2.0 (Hex-Based Combat)
-**Last Updated**: October 10, 2025
+**Version**: 2.0 Base Rules (October 10, 2025)
+**v3.0 Enhancements**: Optional [Dice Pool Advantage](dice-pool-advantage.md) available
 
 ---
 
@@ -44,6 +44,8 @@ X = Your Casket
 ## Range Bands (For To-Hit Modifiers)
 
 **Cards specify maximum range, but to-hit modifiers apply based on distance:**
+
+> **v3.0 OPTIONAL**: Instead of static modifiers below, use [Dice Pool Advantage](dice-pool-advantage.md) - Long range = Disadvantage (3d6 take lowest 2), etc.
 
 | Range Band | Distance | To-Hit Modifier | Weapon Examples |
 |------------|----------|-----------------|-----------------|

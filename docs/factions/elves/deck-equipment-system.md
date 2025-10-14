@@ -478,3 +478,53 @@ Where X depends on Casket class and equipment loadout.
 **END OF DOCUMENT**
 
 *"We are the blade that prunes. We are the root that endures. We are nature's judgment."*
+
+---
+
+## VERSION 3.0 OPTIONAL RULES
+
+### Elven Interactions with Taint Exploitation
+
+**Taint Philosophy**: Elves are **vulnerable to Taint**. Nature recoils from corruption.
+
+**Faction Penalties**:
+- **Fragile Immortals**: Gain Taint at **double rate** (3 damage = 2 Taint instead of 1)
+- **Nature's Protection**: Corruption Save is **5+ if in Forest terrain**, otherwise **4+ standard**
+- **Regeneration Purge**: "Regeneration" cards now also remove 1 Taint when used
+
+**Elven-Specific Taint Management**:
+- Regeneration cards: Heal + remove 1 Taint
+- Forest terrain: Stand in Forest at end of turn → remove 1 Taint (passive purge)
+- Bleed stacking: Can spend 3 Taint to apply +2 Bleed counters to enemy (trade corruption for DoT)
+
+**Strategic Use**: Elves accumulate Taint FAST (double rate). Must manage it aggressively with Regeneration and Forest positioning. Vulnerable to Taint exploitation by enemies. High-risk glass cannon.
+
+---
+
+### Elven Pilot Grit System
+
+**Starting Grit**: **0** (standard)
+**Grit Penalty**: **-1 to all Grit Checks** (always)
+
+**Fragile Immortals**:
+- Elven pilots are ageless but emotionally brittle
+- All Grit Checks: Roll 1d6 + (Grit - 1)
+- Example: Grit 2 pilot = roll 1d6 + 2 - 1 = 1d6 + 1 effective
+
+**Grit Check Example** (Elven Pilot, Grit 2):
+```
+Trigger: Broken Ribs (Minor Injury)
+Roll: 1d6 + 2 - 1 = 1d6 + 1 = 3
+Result: Full Wound (flip normally)
+Outcome: Elf shatters under pain, cannot tough it out
+```
+
+**Max Effective Grit**: 2 (Grit 3 - 1 penalty = effective 2)
+
+**Thematic Fit**: Elves are immortal but unfamiliar with pain. They break psychologically under trauma. Mechanically weaker than other factions but compensated by hit-and-run mobility.
+
+---
+
+**END OF DOCUMENT - v3.0 ENHANCED**
+
+*"We remember the world before the Engine. We remember purity. Taint is anathema. We will not endure."*
