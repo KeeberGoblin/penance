@@ -346,8 +346,99 @@ Modified by destroyed Chassis (-1 SP) or Leg-Skimming (+1 SP)
 
 ---
 
+---
+
+## VERSION 3.0 OPTIONAL RULES
+
+**These are OPTIONAL enhancements. Base v2.0 rules work perfectly without them.**
+
+### Dice Pool Advantage (Instead of Static Modifiers)
+
+**ADVANTAGE** (flanking, higher ground, aiming):
+- Roll **3d6 Attack Dice**
+- **Discard lowest**, add 2 highest
+- +17% hit chance, +2.3% crit chance
+
+**CRITICAL ADVANTAGE** (2+ advantages):
+- Roll **4d6 Attack Dice**
+- **Discard 2 lowest**, add 2 highest
+- Triple EXECUTION chance!
+
+**DISADVANTAGE** (heavy cover, long range, high Heat):
+- Roll **3d6 Attack Dice**
+- **Discard highest**, add 2 lowest
+- -16% hit chance, harder crits
+
+**CRITICAL DISADVANTAGE** (2+ disadvantages):
+- Roll **4d6 Attack Dice**
+- **Discard 2 highest**, add 2 lowest
+- Very likely to miss/jam
+
+**Cancellation**: 1 Advantage + 1 Disadvantage = straight 2d6 roll
+
+---
+
+### Taint Exploitation (Tactical Resource)
+
+**GAINING TAINT**:
+- 1 Taint per 3 damage taken
+- Event cards (Taint Pulse, Void Embrace)
+- Church self-harm cards
+
+**SPEND ENEMY TAINT** (offensive):
+- **[1 Taint]** Exposed Weakness → Advantage on attack
+- **[2 Taint]** Force Reroll → Reroll up to 2 Defense blocks
+- **[1 Taint]** Heat Spike → Target gains +1 Heat
+- **[3 Taint]** Component Vulnerability → +1 Component Dmg
+- **[4 Taint]** Neural Disruption → No Reactive cards
+- **[5 Taint]** Taint Overload → Flip 1 Pilot Wound
+
+**SPEND YOUR TAINT** (defensive/desperate):
+- **[2 Taint]** Tainted Fury → +2 damage, gain 1 Heat
+- **[3 Taint]** Ignore Pain → Reduce damage by 3, gain 1 Heat
+- **[1 Taint]** Void Step → Move 2 hexes (0 SP), gain 1 Heat
+- **[4 Taint]** Thermal Purge → Remove all Heat, -1 SP max
+- **[5 Taint]** Resurrection → Reshuffle when defeated (once), flip 2 Wounds
+
+**CORRUPTION THRESHOLD**:
+- 10+ Taint: Roll 1d6, need 4+ or become Corrupted
+- Corrupted: Mind control, explosion, or mutation (1d6 table)
+
+---
+
+### Pilot Grit (Campaign Progression)
+
+**GRIT STAT** (0-3, grows with experience):
+- **Grit 0**: Untested (0-4 missions)
+- **Grit 1**: Seasoned (5 missions OR 1 Severe Injury survived)
+- **Grit 2**: Hardened (10 missions OR 3 Severe Injuries)
+- **Grit 3**: Iron Will (20 missions OR 5 Severe Injuries)
+
+**GRIT CHECK** (when Pilot takes damage):
+- Roll **1d6 + Grit**
+- Compare to table:
+
+| Roll | Effect |
+|------|--------|
+| **1-3** | Full Wound (flip normally) |
+| **4-5** | Tough It Out (Severe → Minor) |
+| **6-7** | Shrug It Off (no flip, +1 Heat) |
+| **8+** | Iron Will (no flip, no penalty) |
+
+**FACTION MODIFIERS**:
+- Church: +1 Starting Grit (zealot training)
+- Dwarves: +1 Grit vs Severe only (stoic endurance)
+- Ossuarium: Immune (already dead)
+- Elves: -1 Grit always (fragile immortals)
+
+**BONUSES**:
+- Leg-Skimmed: +1 Grit permanent
+- Trauma Wound: -1 Grit per Trauma
+
+---
+
 **PRINT THIS PAGE FOR TABLE REFERENCE**
 
 ---
 
-*"Refresh. Fight. Draw. Endure."*
+*"Refresh. Fight. Draw. Endure. Adapt."*

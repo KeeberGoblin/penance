@@ -4,13 +4,31 @@ A tactical hex-based card game of grimdark medieval fantasy mech combat where re
 
 ![Status](https://img.shields.io/badge/status-PLAYTEST%20READY-red)
 ![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)
-![Version](https://img.shields.io/badge/version-1.0%20Playtest-yellow)
+![Version](https://img.shields.io/badge/version-3.0%20Playtest-orange)
 
 ---
 
-## PLAYTEST READY
+## VERSION 3.0: ENHANCED PLAYTEST READY
 
-**Penance is now ready for table play!** We have 2 complete faction decks, 2 playtest scenarios, and 64 pages of comprehensive rules.
+**Penance is now ready for table play with optional advanced mechanics!** We have 4 complete faction decks, 2 playtest scenarios, and comprehensive rules with Trench Crusade-inspired enhancements.
+
+### New in v3.0 (October 14, 2025)
+
+Three optional advanced mechanics systems for enhanced tactical depth:
+
+1. **Dice Pool Advantage** - Replace static modifiers with roll-more-dice system
+   - Advantage: 3d6 take 2 highest (+17% hit, more dramatic crits)
+   - Critical Advantage: 4d6 take 2 highest (triple EXECUTION chance!)
+
+2. **Taint Exploitation** - Make Taint a tactical offensive/defensive resource
+   - Spend enemy Taint to debuff them (force rerolls, gain Advantage)
+   - Spend your own Taint for desperate power (+2 damage, reduce damage, resurrect)
+
+3. **Pilot Grit** - Campaign stat (0-3) that grows with survival
+   - Roll 1d6 + Grit to resist Pilot Wounds
+   - Veterans mechanically tougher (Grit 3 = 50% ignore wounds)
+
+**All v3.0 mechanics are OPTIONAL enhancements. Base v2.0 rules work perfectly without them.**
 
 ### Quick Start: Your First Game in 60 Minutes
 
@@ -360,9 +378,24 @@ You are free to share and adapt this material for non-commercial purposes with a
 
 ## Changelog
 
+### v3.0 Playtest (2025-10-14)
+**ENHANCED PLAYTEST READY** - Three optional advanced mechanics systems
+- **Dice Pool Advantage/Disadvantage**: Roll 3d6 or 4d6, take highest/lowest 2 (more dramatic swings)
+- **Taint Exploitation**: Offensive/defensive resource system (spend enemy Taint to debuff, spend own for power)
+- **Pilot Grit**: Campaign stat (0-3) that grows with survival (roll 1d6+Grit to resist Wounds)
+- Inspired by Trench Crusade's Blood Marker and resilience mechanics
+- All v3.0 mechanics are OPTIONAL (v2.0 rules still work perfectly)
+
+### v2.0 Equipment System (2025-10-11)
+**Equipment Overhaul** - From fixed decks to modular loadouts
+- Variable deck size (26-50 cards) based on equipment choices
+- 60+ craftable/lootable equipment items
+- Ossuarium and Elves factions added (now 4 playable factions total)
+- Support Units system (24 unique AI companions)
+
 ### v1.0 Playtest (2025-10-10)
 **PLAYTEST READY** - Complete game systems ready for table play
-- 64-page playtest package with 4 factions, 2 scenarios
+- 64-page playtest package with 2 factions, 2 scenarios
 - GKR + KDM hybrid combat (deck-as-HP, component destruction, death spiral)
 - Church vs Dwarves asymmetric faction decks
 - Example of Play walkthrough
