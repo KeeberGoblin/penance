@@ -6,15 +6,30 @@
     <title>Core Bestiary - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
+        /* Blood Red Enemy Theme */
+        h2 {
+            color: #8B0000 !important;
+        }
+        .content table th {
+            background: linear-gradient(to bottom, #660000, #440000) !important;
+        }
+
+        /* Enemy Card Styling */
         .enemy-card {
-            background: #1a0e0e;
+            background: linear-gradient(to bottom, rgba(139, 0, 0, 0.05), rgba(100, 0, 0, 0.05));
             border: 2px solid #8b0000;
-            padding: 1rem;
+            padding: 1.5rem;
             margin: 1rem 0;
-            border-radius: 5px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .enemy-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
         }
         .enemy-card h3 {
-            color: #ff4444;
+            color: #ff4444 !important;
+            margin-top: 0;
             margin-bottom: 0.5rem;
             border-bottom: 1px solid #8b0000;
             padding-bottom: 0.3rem;
@@ -27,63 +42,77 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.8rem;
-            margin-right: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         .enemy-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 0.5rem;
-            margin: 0.5rem 0;
+            margin: 1rem 0;
         }
         .stat {
-            background: #0a0514;
+            background: rgba(139, 0, 0, 0.2);
             padding: 0.5rem;
             text-align: center;
-            border: 1px solid #4a0e0e;
+            border: 1px solid #8b0000;
+            border-radius: 4px;
         }
         .stat-label {
             color: #b8956a;
             font-size: 0.75rem;
+            text-transform: uppercase;
         }
         .stat-value {
             color: #ffd700;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
         }
     </style>
 </head>
 <body>
-    <div class="manuscript-page">
-        <div class="illuminated-header">
-            <span class="drop-cap">B</span>
-            <h1 class="title">estiary: Core Enemies</h1>
-            <p class="subtitle">"Know your enemy. Study their patterns. Exploit their weaknesses. Or die trying."</p>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="javascript:parent.loadContent('content-home.html');">CODEX</a> /
+            <a href="#campaign">CAMPAIGN</a> /
+            Core Bestiary
         </div>
 
-        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+        <div style="background: rgba(139, 0, 0, 0.2); border: 3px solid #660000; padding: 1rem; text-align: center; margin-bottom: 2rem; font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: #8B0000; letter-spacing: 0.15em;">
+            15 ENEMIES • AI BEHAVIOR DECKS • VERSION 3.0
+        </div>
+
+        <h1>Core Bestiary</h1>
+
+        <p style="font-style: italic; color: #8B0000; margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
+            Kingdom Death-Inspired AI System • 15 Enemies (Swarm/Elite/Boss)
+        </p>
+
+        <div class="manuscript-quote">
+            "Know your enemy. Study their patterns. Exploit their weaknesses. Or die trying."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
         <h2>Overview</h2>
 
-        <p class="manuscript-text">
-            This bestiary contains <strong>15 core enemies</strong> for campaign missions, settlement defense events, and random encounters. Enemies use <strong>player-like mechanics</strong> (HP deck, SP economy) but with <strong>simplified AI behavior cards</strong> inspired by Kingdom Death: Monster.
+        <p>
+            <span style="font-size: 2.5rem; font-weight: bold; color: #8B0000; float: left; line-height: 0.85; margin-right: 0.05em; margin-top: 0.1em; font-family: 'Cinzel Decorative', serif;">T</span>his bestiary contains 15 core enemies for campaign missions, settlement defense events, and random encounters. Enemies use player-like mechanics (HP deck, SP economy) but with simplified AI behavior cards inspired by Kingdom Death: Monster.
         </p>
 
         <h3>Enemy Categories:</h3>
-        <ul class="manuscript-list">
+        <ul>
             <li><strong>Swarm (3-5 HP):</strong> Many weak enemies. Simple AI. Deploy 5-10 per mission.</li>
             <li><strong>Elite (15-25 HP):</strong> 1-2 per mission. Medium complexity AI. Mini-bosses.</li>
             <li><strong>Boss (30-60 HP):</strong> Mission capstone. Complex AI with phases.</li>
         </ul>
 
         <h3>AI System (KDM-Inspired):</h3>
-        <p class="manuscript-text">
-            Enemies draw from <strong>behavior decks</strong> each turn. Cards have "If-Then" logic:<br>
-            <em>Example: "If enemy within 2 hexes, attack. Else, move closer."</em>
-        </p>
+        <p>Enemies draw from <strong>behavior decks</strong> each turn. Cards have "If-Then" logic:</p>
+        <p style="font-style: italic; padding-left: 2rem;">Example: "If enemy within 2 hexes, attack. Else, move closer."</p>
 
-        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
-        <h2>SWARM ENEMIES (3-5 HP)</h2>
+        <h2>Swarm Enemies (3-5 HP)</h2>
 
         <div class="enemy-card">
             <h3>1. Tainted Rat Swarm</h3>
@@ -130,9 +159,9 @@
             <p><strong>Loot:</strong> 15 Credits, 1 Scrap (guaranteed).</p>
         </div>
 
-        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
-        <h2>ELITE ENEMIES (15-25 HP)</h2>
+        <h2>Elite Enemies (15-25 HP)</h2>
 
         <div class="enemy-card">
             <h3>4. Bandit Raider</h3>
@@ -209,9 +238,9 @@
             <p><strong>Loot:</strong> 100 Credits, 0 Scrap (ethereal), Loot roll, guaranteed 1 Soulstone Fragment.</p>
         </div>
 
-        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
-        <h2>BOSS ENEMIES (30-60 HP)</h2>
+        <h2>Boss Enemies (30-60 HP)</h2>
 
         <div class="enemy-card">
             <h3>9. Tainted Leviathan</h3>
@@ -263,12 +292,12 @@
             <p><strong>Loot:</strong> 600 Credits, 10d6 Scrap, roll 4× Equipment, guaranteed "The Ledger" (Legendary cursed relic).</p>
         </div>
 
-        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
         <h2>Mission Templates</h2>
 
         <h3>Swarm Mission (10-15 enemies):</h3>
-        <ul class="manuscript-list">
+        <ul>
             <li>8× Tainted Rats</li>
             <li>4× Corrupted Villagers</li>
             <li>2× Scrap Drones</li>
@@ -276,7 +305,7 @@
         <p><strong>Goal:</strong> Overwhelm players with numbers. Teach target prioritization.</p>
 
         <h3>Elite Mission (3-5 enemies):</h3>
-        <ul class="manuscript-list">
+        <ul>
             <li>2× Bandit Raiders</li>
             <li>1× Bandit Captain (leader)</li>
             <li>1× Scrap Golem (guardian)</li>
@@ -284,7 +313,7 @@
         <p><strong>Goal:</strong> Tactical combat. Coordinate to kill leader/tank.</p>
 
         <h3>Boss Mission (1 boss + minions):</h3>
-        <ul class="manuscript-list">
+        <ul>
             <li>1× Tainted Leviathan</li>
             <li>4× Tainted Rats (adds)</li>
             <li>Spawns 2× Corrupted Villagers each Phase</li>
@@ -292,7 +321,8 @@
         <p><strong>Goal:</strong> Epic encounter. Manage boss + adds simultaneously.</p>
 
         <h3>Settlement Defense (2d6 roll):</h3>
-        <table class="manuscript-table">
+
+        <table>
             <thead>
                 <tr><th>2d6</th><th>Attack Force</th></tr>
             </thead>
@@ -304,25 +334,41 @@
             </tbody>
         </table>
 
-        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
         <h2>Additional Enemies</h2>
 
-        <p class="manuscript-text">
-            <strong>4 additional enemies available in full bestiary:</strong>
-        </p>
+        <p><strong>4 additional enemies available in full bestiary:</strong></p>
 
-        <ul class="manuscript-list">
+        <ul>
             <li><strong>12. Tainted Wolf Pack</strong> (Swarm, 5 HP, pack tactics)</li>
             <li><strong>13. Church Zealot</strong> (Elite, 18 HP, martyrdom mechanics)</li>
             <li><strong>14. Dwarven Ironclad</strong> (Elite, 22 HP, Rune Counter system)</li>
             <li><strong>15. Elven Verdant Stalker</strong> (Elite, 16 HP, Bleed stacking)</li>
         </ul>
 
-        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
-        <div class="manuscript-footer">
-            <p><a href="index.html">Return to Codex Home</a> | <a href="../enemies/bestiary-core.md">Full Bestiary (Markdown)</a></p>
+        <h2>Integration with Other v3.0 Systems</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border: 2px solid #660000; padding: 1.5rem; margin: 2rem 0;">
+            <h3 style="margin-top: 0; color: #8B0000;">Cross-References</h3>
+            <ul style="margin-bottom: 0;">
+                <li><strong><a href="javascript:parent.loadContent('campaign-settlement-phase.html');">Settlement Phase</a>:</strong> Settlement Defense event uses bestiary</li>
+                <li><strong><a href="javascript:parent.loadContent('campaign-loot-tables.html');">Loot Tables</a>:</strong> Enemy loot drops reference equipment tables</li>
+                <li><strong><a href="javascript:parent.loadContent('rules-combat.html');">Combat Rules</a>:</strong> AI behavior cards use standard combat mechanics</li>
+                <li><strong><a href="javascript:parent.loadContent('rules-taint-exploitation.html');">Taint Exploitation</a>:</strong> Many enemies inflict Taint damage</li>
+            </ul>
+        </div>
+
+        <div style="background: var(--shadow-black); border: 3px double #660000; padding: 2rem; margin: 3rem 0; font-style: italic;">
+            <p style="text-align: center; margin: 0; color: #8B0000;" class="no-drop-cap">
+                "They are not monsters. They are symptoms. The world is sick, and we are its cure."
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #660000; color: #8B0000; font-size: 0.9rem;">
+            <p><a href="javascript:parent.loadContent('campaign-settlement-phase.html');">Settlement Phase</a> | <a href="javascript:parent.loadContent('campaign-loot-tables.html');">Loot Tables</a> | <a href="javascript:parent.loadContent('content-home.html');">Return to Codex Home</a></p>
         </div>
     </div>
 </body>
