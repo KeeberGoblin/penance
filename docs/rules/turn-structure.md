@@ -74,7 +74,10 @@
 - If you have **0-4 Heat** (Safe Zone):
   - No penalties, skip this step
 
-**1.3 Start-of-Turn Effects**
+**1.3 Taint Markers** (if using v3.0 Taint Exploitation)
+> **v3.0 OPTIONAL**: Track Taint accumulation here. Gain 1 Taint per 3 damage taken. At 10+ Taint, roll Corruption Save. See [taint-exploitation.md](taint-exploitation.md) for spending Taint offensively/defensively.
+
+**1.4 Start-of-Turn Effects**
 - Resolve any "at start of your turn" card effects
 - Example: Internal Bleeding Wound = discard 1 card
 

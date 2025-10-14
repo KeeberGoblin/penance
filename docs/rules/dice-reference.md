@@ -1,8 +1,8 @@
 # Dice Reference (Custom Dice System)
 ## Penance: Absolution Through Steel
 
-**Version**: 1.0 (Dice System Implementation)
-**Last Updated**: October 11, 2025
+**Version**: 3.0 (v3.0 Dice Pool Advantage Added)
+**Last Updated**: October 14, 2025
 
 ---
 
@@ -339,7 +339,41 @@ X = Your Casket
 
 ---
 
-## 4. Suffering Dice (1d6, Church & Events)
+## 4. VERSION 3.0 OPTIONAL: Dice Pool Advantage/Disadvantage
+
+> **v3.0 OPTIONAL MECHANIC**: Instead of static +1/+2 modifiers, use Dice Pool system. See [dice-pool-advantage.md](dice-pool-advantage.md) for full rules.
+
+**Quick Summary**:
+
+### Advantage (Roll 3d6, take 2 highest)
+- **Use when**: Target has favorable conditions (flanking, rear arc, high ground)
+- **Effect**: +17% hit chance, more dramatic critical hits
+- **Example**: Flanking attack (old: -1 modifier) → Roll 3d6, take 2 highest
+
+### Disadvantage (Roll 3d6, take 2 lowest)
+- **Use when**: Target has unfavorable conditions (long range, heavy cover, sprinting)
+- **Effect**: -17% hit chance, more dramatic failures
+- **Example**: Long range attack (old: +2 modifier) → Roll 3d6, take 2 lowest
+
+### Critical Advantage/Disadvantage (Roll 4d6, take 2 highest/lowest)
+- **Critical Advantage**: Triple EXECUTION chance (from 2.78% to ~8%)
+- **Critical Disadvantage**: Severe penalty situations (extreme range + cover + sprint)
+
+### Conversion Table
+
+| Old Modifier | v3.0 Dice Pool |
+|--------------|----------------|
+| -2 or better | **Critical Advantage** (4d6 take 2 highest) |
+| -1 | **Advantage** (3d6 take 2 highest) |
+| 0 | Standard roll (2d6) |
+| +1 | **Disadvantage** (3d6 take 2 lowest) |
+| +2 or worse | **Critical Disadvantage** (4d6 take 2 lowest) |
+
+**Design Philosophy**: Dice Pool system creates more dramatic swings (big crits, big failures) while maintaining same average hit chances. Inspired by Trench Crusade's Blood Marker system.
+
+---
+
+## 5. Suffering Dice (1d6, Church & Events)
 
 **Used for**: Church of Absolution self-harm mechanics and campaign events
 
