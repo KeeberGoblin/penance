@@ -137,15 +137,6 @@
             border-left: 3px solid #8b6914;
         }
 
-        .probability {
-            background: linear-gradient(135deg, #1a0a28 0%, #0a0514 100%);
-            border: 2px solid #6600cc;
-            padding: 1rem;
-            margin-top: 0.5rem;
-            color: #cc66ff;
-            text-align: center;
-            font-size: 0.9rem;
-        }
 
         .manual-selector {
             margin-bottom: 1.5rem;
@@ -242,38 +233,28 @@
 
             <div id="pilot-result" class="pilot-sheet" style="display: none;">
                 <div class="pilot-field">
-                    <label>PILOT NAME:</label>
-                    <div class="value" id="pilot-name">Brother Tomas "The Zealot"</div>
-                </div>
-
-                <div class="pilot-field">
                     <label>BACKGROUND:</label>
                     <div class="value" id="background"></div>
-                    <div class="probability" id="background-prob"></div>
                 </div>
 
                 <div class="pilot-field">
                     <label>STARTING TRAIT(S):</label>
                     <div class="value" id="traits"></div>
-                    <div class="probability" id="traits-prob"></div>
                 </div>
 
                 <div class="pilot-field">
                     <label>MOTIVATION:</label>
                     <div class="value" id="motivation"></div>
-                    <div class="probability" id="motivation-prob"></div>
                 </div>
 
                 <div class="pilot-field">
                     <label>QUIRK:</label>
                     <div class="value" id="quirk"></div>
-                    <div class="probability" id="quirk-prob"></div>
                 </div>
 
                 <div class="pilot-field">
                     <label>APPEARANCE:</label>
                     <div class="value" id="appearance"></div>
-                    <div class="probability" id="appearance-prob"></div>
                 </div>
 
                 <div class="pilot-field">
@@ -296,11 +277,6 @@
                             <div class="stat-value">None</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="pilot-field">
-                    <label>OVERALL PROBABILITY:</label>
-                    <div class="probability" id="total-prob" style="font-size: 1.2rem; font-weight: bold;"></div>
                 </div>
 
                 <button class="copy-btn" onclick="copyToClipboard()">📋 COPY TO CLIPBOARD</button>
@@ -351,8 +327,57 @@
                 </select>
             </div>
 
+            <button class="roll-btn" onclick="generateManualPilot()">⚄ GENERATE PILOT ⚄</button>
+
             <div id="manual-result" class="pilot-sheet" style="display: none;">
-                <!-- Same structure as random-mode result -->
+                <div class="pilot-field">
+                    <label>BACKGROUND:</label>
+                    <div class="value" id="manual-background-display"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>STARTING TRAIT(S):</label>
+                    <div class="value" id="manual-traits-display"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>MOTIVATION:</label>
+                    <div class="value" id="manual-motivation-display"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>QUIRK:</label>
+                    <div class="value" id="manual-quirk-display"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>APPEARANCE:</label>
+                    <div class="value" id="manual-appearance-display"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>STARTING STATS:</label>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">Grit</div>
+                            <div class="stat-value" id="manual-stat-grit">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Morale</div>
+                            <div class="stat-value" id="manual-stat-morale">1</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Taint</div>
+                            <div class="stat-value" id="manual-stat-taint">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Injuries</div>
+                            <div class="stat-value">None</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="copy-btn" onclick="copyManualToClipboard()">📋 COPY TO CLIPBOARD</button>
             </div>
         </div>
 
@@ -629,7 +654,6 @@
                 ${pilot.background.data.desc}<br>
                 <div class="trait-effect">"${pilot.background.data.hook}"</div>
             `;
-            document.getElementById('background-prob').textContent = `Probability: 1/20 (5%)`;
 
             // Traits
             document.getElementById('traits').innerHTML = `
@@ -639,24 +663,15 @@
                 <strong>2. ${pilot.traits[1].data.name}</strong> (Hybrid)<br>
                 <div class="trait-effect">${pilot.traits[1].data.effect}</div>
             `;
-            document.getElementById('traits-prob').textContent = `Probability: (1/20) × (1/20) = 1/400 (0.25%)`;
 
             // Motivation
             document.getElementById('motivation').innerHTML = `<strong>${pilot.motivation.data}</strong>`;
-            document.getElementById('motivation-prob').textContent = `Probability: 1/20 (5%)`;
 
             // Quirk
             document.getElementById('quirk').innerHTML = `<strong>${pilot.quirk.data}</strong>`;
-            document.getElementById('quirk-prob').textContent = `Probability: 1/100 (1%)`;
 
             // Appearance
             document.getElementById('appearance').innerHTML = `<strong>${pilot.appearance.data}</strong>`;
-            document.getElementById('appearance-prob').textContent = `Probability: 1/20 (5%)`;
-
-            // Calculate total probability
-            const totalProb = (1/20) * (1/400) * (1/20) * (1/100) * (1/20);
-            const percentage = (totalProb * 100).toExponential(2);
-            document.getElementById('total-prob').textContent = `Total Probability of Exact Combination: ${percentage}% (1 in ${Math.round(1/totalProb).toLocaleString()})`;
 
             // Stats
             let grit = 0;
@@ -680,12 +695,96 @@
         function toggleHybrid() {
             const enabled = document.getElementById('hybrid-enabled').checked;
             document.getElementById('manual-trait2').style.display = enabled ? 'block' : 'none';
-            updateManualPilot();
         }
 
         function updateManualPilot() {
-            // TODO: Implement manual pilot display with probability calculation
-            // This would show selected options and calculate probability based on selections
+            // No-op: Manual mode only shows result after Generate button is clicked
+        }
+
+        function generateManualPilot() {
+            // Read all selected values
+            const backgroundIdx = document.getElementById('manual-background').value;
+            const trait1Idx = document.getElementById('manual-trait1').value;
+            const trait2Idx = document.getElementById('manual-trait2').value;
+            const motivationIdx = document.getElementById('manual-motivation').value;
+            const quirkIdx = document.getElementById('manual-quirk').value;
+            const appearanceIdx = document.getElementById('manual-appearance').value;
+            const hybridEnabled = document.getElementById('hybrid-enabled').checked;
+
+            // Validate all fields are selected
+            if (!backgroundIdx || !trait1Idx || !motivationIdx || !quirkIdx || !appearanceIdx) {
+                alert('Please select all fields before generating pilot.');
+                return;
+            }
+
+            if (hybridEnabled && !trait2Idx) {
+                alert('Please select second trait or disable Hybrid option.');
+                return;
+            }
+
+            // Get data from indices
+            const background = pilotData.backgrounds[parseInt(backgroundIdx)];
+            const trait1 = pilotData.traits[parseInt(trait1Idx)];
+            const trait2 = hybridEnabled ? pilotData.traits[parseInt(trait2Idx)] : null;
+            const motivation = pilotData.motivations[parseInt(motivationIdx)];
+            const quirk = pilotData.quirks[parseInt(quirkIdx)];
+            const appearance = pilotData.appearances[parseInt(appearanceIdx)];
+
+            // Display background
+            document.getElementById('manual-background-display').innerHTML = `
+                <strong>${background.name}</strong><br>
+                ${background.desc}<br>
+                <div class="trait-effect">"${background.hook}"</div>
+            `;
+
+            // Display traits
+            let traitsHTML = `
+                <strong>1. ${trait1.name}</strong><br>
+                <div class="trait-effect">${trait1.effect}</div>
+            `;
+
+            if (hybridEnabled && trait2) {
+                traitsHTML += `
+                    <br>
+                    <strong>2. ${trait2.name}</strong> (Hybrid)<br>
+                    <div class="trait-effect">${trait2.effect}</div>
+                `;
+            }
+
+            document.getElementById('manual-traits-display').innerHTML = traitsHTML;
+
+            // Display motivation
+            document.getElementById('manual-motivation-display').innerHTML = `<strong>${motivation}</strong>`;
+
+            // Display quirk
+            document.getElementById('manual-quirk-display').innerHTML = `<strong>${quirk}</strong>`;
+
+            // Display appearance
+            document.getElementById('manual-appearance-display').innerHTML = `<strong>${appearance}</strong>`;
+
+            // Calculate stats
+            let grit = 0;
+            let morale = 1;
+            let taint = 0;
+
+            if (trait1.name === "Survivor") grit = 1;
+            if (trait1.name === "Battle Scars") grit = 1;
+            if (trait1.name === "Faithful") morale = 2;
+            if (trait1.name === "Tainted") taint = 2;
+
+            if (hybridEnabled && trait2) {
+                if (trait2.name === "Survivor") grit = 1;
+                if (trait2.name === "Battle Scars") grit = 1;
+                if (trait2.name === "Faithful") morale = 2;
+                if (trait2.name === "Tainted") taint = 2;
+            }
+
+            document.getElementById('manual-stat-grit').textContent = grit;
+            document.getElementById('manual-stat-morale').textContent = morale;
+            document.getElementById('manual-stat-taint').textContent = taint;
+
+            // Show result
+            document.getElementById('manual-result').style.display = 'block';
         }
 
         function copyToClipboard() {
@@ -698,6 +797,21 @@ Motivation: ${document.getElementById('motivation').textContent}
 Quirk: ${document.getElementById('quirk').textContent}
 Appearance: ${document.getElementById('appearance').textContent}
 Stats: Grit ${document.getElementById('stat-grit').textContent}, Morale ${document.getElementById('stat-morale').textContent}, Taint ${document.getElementById('stat-taint').textContent}
+            `;
+            navigator.clipboard.writeText(text);
+            alert('Pilot copied to clipboard!');
+        }
+
+        function copyManualToClipboard() {
+            const text = `
+PILOT GENERATED
+===============
+Background: ${document.getElementById('manual-background-display').textContent}
+Traits: ${document.getElementById('manual-traits-display').textContent}
+Motivation: ${document.getElementById('manual-motivation-display').textContent}
+Quirk: ${document.getElementById('manual-quirk-display').textContent}
+Appearance: ${document.getElementById('manual-appearance-display').textContent}
+Stats: Grit ${document.getElementById('manual-stat-grit').textContent}, Morale ${document.getElementById('manual-stat-morale').textContent}, Taint ${document.getElementById('manual-stat-taint').textContent}
             `;
             navigator.clipboard.writeText(text);
             alert('Pilot copied to clipboard!');
