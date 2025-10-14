@@ -198,7 +198,6 @@ Each turn you refresh your Soul Points (SP) to maximum:
 - [x] Interactive HTML Codex (codex-style navigation for all rules)
 
 ### In Progress
-- [ ] **Campaign scenario chains (multi-mission story arcs)** ← HIGH PRIORITY
 - [ ] Additional faction decks (Fae, Nomads, Merchants)
 - [ ] Expanded bestiary (faction-specific enemies)
 - [ ] Printable card templates (for physical play)

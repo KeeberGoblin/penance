@@ -25,7 +25,10 @@
       "Bash(do)",
       "Bash(if [ ! -f \"$file\" ])",
       "Bash(then)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(do echo \"=== Checking $file ===\" grep -q 'class=\"\"\"\"breadcrumb\"\"\"\"' \"$file\")",
+      "Bash(do echo \"===Processing faction-$faction.html===\")",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []
