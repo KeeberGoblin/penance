@@ -236,6 +236,109 @@ Crafting: Costs 2-6 Scrap per item depending on complexity
 
 ---
 
+## Version 3.0 Optional Mechanics (October 14, 2025)
+
+**IMPORTANT**: v3.0 mechanics are **OPTIONAL ENHANCEMENTS** to the v2.0 base rules. All v3.0 systems can be used independently or ignored entirely. The base game works perfectly without them.
+
+### Dice Pool Advantage (Trench Crusade-Inspired)
+**File**: `docs/rules/dice-pool-advantage.md`
+
+**Purpose**: Replace static +1/+2 modifiers with roll-more-dice system for more dramatic swing potential.
+
+**Mechanics**:
+- **Advantage**: Roll 3d6, take 2 highest (+17% hit chance, more dramatic crits)
+- **Critical Advantage**: Roll 4d6, take 2 highest (triple EXECUTION chance)
+- **Disadvantage**: Roll 3d6, take 2 lowest (-17% hit chance)
+- **Critical Disadvantage**: Roll 4d6, take 2 lowest (severe penalty)
+
+**When to Use**:
+- Replace long range penalties (+2) with Disadvantage
+- Replace flanking bonuses (-1) with Advantage
+- Works with existing Attack Dice symbols (STRIKE, DOUBLE STRIKE, EXECUTION)
+
+**Integration**:
+- `combat-system.md` mentions Dice Pool as optional in Step 2 (attack resolution)
+- `range-and-los.md` mentions Dice Pool for range modifiers
+- `quick-reference.md` has Dice Pool conversion table
+
+### Taint Exploitation (Tactical Resource System)
+**File**: `docs/rules/taint-exploitation.md`
+
+**Purpose**: Make Taint a tactical offensive/defensive resource instead of just a corruption threshold.
+
+**Mechanics**:
+- **Offensive Exploits** (spend enemy Taint to debuff them):
+  - 1 Taint: Force enemy to reroll 1 die
+  - 2 Taint: Give enemy Disadvantage on next roll
+  - 3 Taint: Cancel enemy card (costs 1 SP to play)
+  - 4 Taint: Stun enemy (lose 1 SP next turn)
+  - 5 Taint: Enemy skips next activation
+
+- **Desperate Power** (spend your own Taint for emergency boosts):
+  - 2 Taint: +2 damage to next attack
+  - 3 Taint: Reduce incoming damage by 4
+  - 4 Taint: Resurrect at 5 HP (once per mission)
+  - 5 Taint: Gain +3 SP this turn
+
+- **Corruption Threshold**: Still exists (10+ Taint = roll Corruption Save)
+- **Taint Accumulation**: Still gain Taint from damage (3 damage = 1 Taint)
+
+**Faction Interactions**:
+- **Church**: Embrace Taint for martyrdom, Corruption Save 3+ (zealotry protects)
+- **Dwarves**: Gain Taint at half rate (runic protection), cannot use Desperate Power
+- **Ossuarium**: Thrive on Taint, "Soul Harvest" spends 2 Taint to recover 3 cards, Corruption Save 5+
+- **Elves**: Gain Taint at double rate (fragile), Corruption Save 5+ only in Forest terrain
+
+**Integration**:
+- All 4 faction files have "VERSION 3.0 OPTIONAL: Taint Interactions" sections
+- `combat-system.md` mentions Taint Exploitation in Pilot Wound section
+- `turn-structure.md` should mention Taint Marker tracking in Refresh Phase
+
+### Pilot Grit (Campaign Stat 0-3)
+**File**: `docs/campaigns/pilot-grit-system.md`
+
+**Purpose**: Represent pilot mental toughness and experience growth through campaign play.
+
+**Mechanics**:
+- **Grit Stat**: 0 (rookie) to 3 (legendary veteran)
+- **Starting Grit**: 0 for new pilots, 1 for veterans
+- **Grit Progression**: +1 per 5 missions survived, OR +1 when surviving Severe Injury
+- **Grit Benefits**: Roll 1d6 + Grit to resist Pilot Wounds. On 5+, ignore 1 Wound.
+- **Veteran Resilience**: Grit 3 pilots have 50% chance to ignore Wounds (roll 4-6 = ignore)
+
+**Faction Modifiers**:
+- **Church**: Start with Grit 1 (hardened by faith), +1 to Wound saves
+- **Dwarves**: +1 Grit when resisting Severe Injuries (stoic endurance)
+- **Elves**: -1 Grit (fragile, easily traumatized), PTSD more common
+- **Ossuarium**: Immune to Grit (already undead, no mental resilience mechanic)
+
+**Campaign Integration**:
+- **Soul Sacrifice** (leg-skimming) grants +1 Grit permanently (trauma survived)
+- **Support Units** gain +1 Morale when commanded by Grit 2+ pilots (veterans inspire confidence)
+- **Pilot Progression**: Grit tracks on pilot sheet (checkboxes 0-1-2-3)
+
+**Integration**:
+- `pilot-progression.md` has v3.0 Grit System section at top, renamed "Survivor's Grit" scar to "Survivor's Tenacity"
+- `soul-sacrifice-variants.md` includes "+1 Grit" in Universal Benefits
+- `support-units.md` mentions Grit synergy (Morale bonus, effective commands)
+- `combat-system.md` mentions Grit for Wound saves
+
+### Design Philosophy: Why v3.0 Exists
+
+**Inspiration**: Trench Crusade's Blood Marker system and resilience mechanics
+
+**Goals**:
+1. **More Dramatic Swings** - Dice Pool Advantage creates exciting crits and fumbles
+2. **Tactical Depth** - Taint Exploitation adds resource management layer
+3. **Veteran Recognition** - Pilot Grit mechanically rewards survival
+
+**User Can Choose**:
+- Use all 3 systems together
+- Use only 1-2 systems (mix and match)
+- Ignore v3.0 entirely (v2.0 base rules work perfectly)
+
+---
+
 ## Complete Equipment Pool
 
 **File**: `docs/reference/equipment-pool-complete.md`
