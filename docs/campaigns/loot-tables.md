@@ -36,7 +36,7 @@ Drawing from Kingdom Death's settlement reward system, loot is:
 - Certain events on the Settlement Event table grant loot (see [settlement-mechanics.md](settlement-mechanics.md))
 
 ### 5. Sibarian Wastes Expeditions
-- Resonance Engine missions always yield loot, but at great risk (see [resonance-engine-mechanics.md](resonance-engine-mechanics.md))
+- Theslar Engine missions always yield loot, but at great risk (see [theslar-engine-mechanics.md](theslar-engine-mechanics.md))
 
 ---
 
@@ -107,7 +107,7 @@ Drawing from Kingdom Death's settlement reward system, loot is:
 | 7 | **Draconid Fossil** | Craft into weapon: Breath attack (cone, 4 damage, Range 3) | 380 Credits |
 | 8 | **Necrotech Implant** | Undead-style regeneration: Heal 1 HP per round, gain Undead weaknesses | 420 Credits |
 | 9 | **Living Wood Casket Part** | Elven bio-armor: Regenerates 1 Damage card per settlement phase | 400 Credits |
-| 10 | **Resonance Engine Fragment** | Unstable power source: +3 SP, +2 Taint per mission, 10% chance of explosion | 350 Credits |
+| 10 | **Theslar Engine Fragment** | Unstable power source: +3 SP, +2 Taint per mission, 10% chance of explosion | 350 Credits |
 | 11 | **Penitent's Chains** | Church relic: +2 Defense, take 1 damage at start of each mission | 300 Credits |
 | 12 | **Roll on Legendary Table** | Once-in-a-campaign find! | — |
 

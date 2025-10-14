@@ -376,7 +376,7 @@ X = Your Casket
 **🛡️ DIVINE MERCY (Face 1)**:
 - No self-harm
 - **Rare blessing** (16.7% chance)
-- Church pilot prays: "The Resonance spares me this time."
+- Church pilot prays: "The Harmony spares me this time."
 
 **🩸 BLOOD PRICE (Face 2)**:
 - Discard 2 cards (self-harm)
@@ -586,6 +586,6 @@ X = Your Casket
 
 ---
 
-*"The dice are the will of the Resonance. You cannot control fate—only face it."*
+*"The dice are the will of the Harmony. You cannot control fate—only face it."*
 
 *"Every roll is a prayer. Every result, divine judgment."*

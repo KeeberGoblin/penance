@@ -578,7 +578,7 @@ Heat represents your Casket's thermal load, system stress, and pilot exhaustion.
 - Resource management (Credits, Scrap, Population, Morale)
 - Branching narrative based on corruption levels and faction relationships
 - Permadeath or severe setbacks
-- **World Threat**: The Engine's Instability Track acts as a doomsday clock — **See [resonance-engine-mechanics.md](resonance-engine-mechanics.md)**
+- **World Threat**: The Engine's Instability Track acts as a doomsday clock — **See [theslar-engine-mechanics.md](theslar-engine-mechanics.md)**
 - **Political Web**: Faction relationships shift based on player actions — **See [faction-relationships.md](faction-relationships.md)**
 
 **Ideal for**: Long-term play groups, narrative experience

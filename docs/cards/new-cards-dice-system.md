@@ -92,7 +92,7 @@
 - Snowballs if you keep hitting the same target
 - Tactical: Focus fire on one enemy
 
-**Flavor**: *"The Resonance guides my hand."*
+**Flavor**: *"The Harmony guides my hand."*
 
 ---
 
@@ -174,7 +174,7 @@
 - Rewards flanking (Church aggressive identity)
 - Premium SP cost balanced by guaranteed damage
 
-**Flavor**: *"Muzzle pressed to steel. The Resonance demands payment."*
+**Flavor**: *"Muzzle pressed to steel. The Harmony demands payment."*
 
 ---
 

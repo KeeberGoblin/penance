@@ -94,7 +94,7 @@ These 6 cards define Church identity and cannot be removed or smelted.
 **Range**: Self
 **Effect**: Your next attack this turn: **-2 to target number** (easier to hit). If it hits, apply "Blessed" status to target (all allies' attacks against this target: -1 to target number until end of round).
 **Keywords**: Accuracy, Buff, Targeting
-**Flavor**: *"The Resonance guides my hand."*
+**Flavor**: *"The Harmony guides my hand."*
 
 ---
 
@@ -145,7 +145,7 @@ These 6 cards define Church identity and cannot be removed or smelted.
 **Range**: 1 hex (adjacent only)
 **Effect**: Deal 6 damage. **This attack cannot miss.** If attacking from rear arc (hex 4), deal 8 damage instead.
 **Keywords**: Attack, Auto-Hit, Execute
-**Flavor**: *"Muzzle pressed to steel. The Resonance demands payment."*
+**Flavor**: *"Muzzle pressed to steel. The Harmony demands payment."*
 
 ---
 

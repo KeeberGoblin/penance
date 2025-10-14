@@ -28,7 +28,7 @@ His grand experiment was conducted at the **Sibarian Wastes Research Station**, 
 
 **But the world itself was not empty.**
 
-When Theslar activated **The Engine** (then called the "Resonance Engine" by scientists), it didn't just tap the magnetic field—it **ripped open the boundary between the material world and the Void**, the dimension where raw magic festers like cosmic radiation. The Engine became a tear in reality itself.
+When Theslar activated **The Engine** (then called the "Theslar Engine" by scientists), it didn't just tap the magnetic field—it **ripped open the boundary between the material world and the Void**, the dimension where raw magic festers like cosmic radiation. The Engine became a tear in reality itself.
 
 ### The Immediate Effects
 
@@ -446,10 +446,10 @@ All major world-building systems have been designed:
   - Resource management (Credits, Scrap, Population, Morale)
   - Settlement events, disasters, and growth paths
 
-- [x] **Resonance Engine Mechanics** (interactive world threat) — **[resonance-engine-mechanics.md](resonance-engine-mechanics.md)**
+- [x] **Theslar Engine Mechanics** (interactive world threat) — **[theslar-engine-mechanics.md](theslar-engine-mechanics.md)**
   - Instability Track (doomsday clock from 0-20)
   - 5 different endgames (Destroy, Stabilize, Control, Redirect, Exploit)
-  - Environmental hazards and timed Resonance Pulses
+  - Environmental hazards and timed The Pulses
 
 - [x] **Faction Relationship Tracker** (political web) — **[faction-relationships.md](faction-relationships.md)**
   - 7-tier relationship scale (-3 War to +3 Allied)

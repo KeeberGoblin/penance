@@ -162,7 +162,7 @@ He's covered in self-inflicted scars from "measurement experiments" - testing pa
 Most disturbing: he's installed a pressure gauge in his own chest, visible through a glass window in his sternum, which tracks his blood pressure in real-time. He obsessively checks it, adjusting his breathing to keep it at exactly 120/80.
 
 #### Backstory
-Durr was the lead engineer on Project Resonance Echo - a Dwarven attempt to replicate Theslar's original Engine on a smaller, controlled scale. The experiment failed catastrophically, killing his entire research team and leaving Durr buried under rubble for three days.
+Durr was the lead engineer on Project Echo Project - a Dwarven attempt to replicate Theslar's original Engine on a smaller, controlled scale. The experiment failed catastrophically, killing his entire research team and leaving Durr buried under rubble for three days.
 
 When they dug him out, he'd calculated the exact engineering failure that caused the collapse - a rounding error in the 47th decimal place of a load-bearing formula. The realization broke something in him: if a single rounding error could kill 200 dwarves, then the entire universe was a poorly designed machine running on faulty math.
 

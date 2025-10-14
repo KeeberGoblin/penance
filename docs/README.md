@@ -60,7 +60,7 @@ World-building, history, and narrative
 - [World Overview](lore/world-overview.md) - The Sundering and the Remnants
 - [Chronicle](lore/chronicle.md) - 437-year timeline
 - [Iconic NPCs](lore/iconic-npcs.md) - 5 legendary pilots
-- [Resonance Engine](lore/resonance-engine.md) - The artifact that ended the world
+- [Theslar Engine](lore/theslar-engine-mechanics.md) - The artifact that ended the world
 
 ### [Campaigns](campaigns/)
 Long-term progression systems

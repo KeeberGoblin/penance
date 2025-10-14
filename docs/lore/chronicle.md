@@ -380,7 +380,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 >
 > "THEY'RE LOOKING AT ME! ALL OF THEM! THEY SEE—"
 >
-> **[Resonance Pulse. Audio cuts out. Silence.]**
+> **[The Pulse. Audio cuts out. Silence.]**
 >
 > **[Transmission ends]**
 

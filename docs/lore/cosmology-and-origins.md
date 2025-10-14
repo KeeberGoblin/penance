@@ -51,7 +51,7 @@
 - Most humans never encountered the Fae; those who did chalked it up to madness or folklore
 
 **The Fae's Perspective**:
-The Fae existed in the Feywild for eons, aware of the Material World but largely indifferent to it. When Theslar activated The Engine (the "Resonance Engine" in pre-Sundering terminology), it didn't just tear open the Void - it **shattered the dimensional barriers between all three layers of reality**.
+The Fae existed in the Feywild for eons, aware of the Material World but largely indifferent to it. When Theslar activated The Theslar Engine, it didn't just tear open the Void - it **shattered the dimensional barriers between all three layers of reality**.
 
 Suddenly, the Feywild was bleeding into the Material World. The Fae saw this as **opportunity** - a chance to expand their domain and influence. They adapted instantly because they've always lived between states of existence.
 
@@ -234,7 +234,7 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 - Obsessed with the idea of "wireless power transmission" (inspired by Nikola Tesla's real-world experiments)
 - Theorized that ley lines were planetary electromagnetic fields that could be harnessed
 
-**The Resonance Engine Project**:
+**The Theslar Engine Project**:
 - Funded by a coalition of governments (human-only; non-human species were unaware of the project)
 - Built in the Sibarian Wastes at the convergence of 7 major ley lines
 - Goal: Broadcast infinite clean energy wirelessly across the world
@@ -271,7 +271,7 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 >
 > Oh God. Oh God, I'm sorry. I'm so sorry. I didn't know. I didn't—
 >
-> [Static. Screaming. Resonance Pulse. Silence.]"
+> [Static. Screaming. The Pulse. Silence.]"
 
 ---
 

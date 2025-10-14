@@ -503,7 +503,7 @@ Roll 1d6 to determine catastrophe type:
 - Not in battle. Not gloriously. Just... gone.
 - Roll on Cause of Death table (Void exposure, heart failure, suicide)
 
-**3 - Resonance Engine Overload**:
+**3 - Theslar Engine Overload**:
 - All Soulstones in settlement **explode**
 - All pilots take 5 damage immediately
 - All stored equipment with Soulstones destroyed

@@ -9,7 +9,7 @@
 
 ## CONTAINMENT PROTOCOL OVERVIEW
 
-The Sibarian Resonance Engine has been active for 437 years. Its influence has created **anomalous phenomena**—artifacts, entities, and locations that defy natural law.
+The Sibarian Theslar Engine has been active for 437 years. Its influence has created **anomalous phenomena**—artifacts, entities, and locations that defy natural law.
 
 Various factions attempt **containment** of these anomalies. Most fail.
 
@@ -258,7 +258,7 @@ Roll when exploring Sibarian Wastes, looting high-Taint enemies, or finding hidd
 #### Artifact: "The Soulstone of Nikolas Theslar"
 **Equipment**: Legendary Soulstone (passive)
 **Effect**: Grants +10 SP maximum, remove all Heat limitations, infinite energy
-**Side Effect**: User is slowly absorbed into Resonance Engine (gain 1 Taint per turn, irreversible)
+**Side Effect**: User is slowly absorbed into Theslar Engine (gain 1 Taint per turn, irreversible)
 **Danger Level**: Extreme
 **Mortality Risk**: User has 30 turns to live after installation (becomes part of the Screaming Choir)
 
@@ -275,7 +275,7 @@ Roll when exploring Sibarian Wastes, looting high-Taint enemies, or finding hidd
 ### 81-95: APOLLYON ARTIFACTS (World-Ending Potential)
 
 #### Artifact: "The Key to the Engine"
-**Effect**: Can shut down Sibarian Resonance Engine permanently (end the apocalypse)
+**Effect**: Can shut down Sibarian Theslar Engine permanently (end the apocalypse)
 **Side Effect**: Shutting down Engine kills everyone with Taint (90% of world population)
 **Danger Level**: Extinction
 **Moral Dilemma**: Save the world or save the people?
@@ -364,7 +364,7 @@ Roll when exploring Sibarian Wastes, looting high-Taint enemies, or finding hidd
 ### SCP-PE-103: "The Choir of Sibaria"
 **Threat Level**: Apollyon
 
-**Description**: The pilots absorbed into Resonance Engine (see Chronicle IX). They sing. The song is infectious.
+**Description**: The pilots absorbed into Theslar Engine (see Chronicle IX). They sing. The song is infectious.
 
 **Encounter**:
 - When within 5 miles of Sibarian Wastes, pilots hear **singing**

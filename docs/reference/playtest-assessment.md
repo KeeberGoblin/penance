@@ -47,7 +47,7 @@
 - Puppeteer capsule system (deeply unsettling body horror)
 - Leg-skimming sacrifice system (meaningful permanent choices)
 - Extensive Chronicle entries, iconic NPCs, faction relationships
-- Resonance Engine doomsday clock mechanic
+- Theslar Engine doomsday clock mechanic
 
 **Minor Gaps**:
 - Campaign mission structure (linear vs branching? No map yet)
@@ -113,7 +113,7 @@
 - Pilot scars (80+ entries, Kingdom Death-style permanent traits)
 - Loot tables (4 rarity tiers, specialized tables)
 - Faction relationships (7-tier scale, player influence)
-- Resonance Engine instability track (doomsday clock)
+- Theslar Engine instability track (doomsday clock)
 - Leg-skimming progression (sacrifice for power)
 - Pilot care system (morale, accessibility, downtime)
 

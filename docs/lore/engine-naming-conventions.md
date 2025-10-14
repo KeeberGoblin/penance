@@ -2,7 +2,7 @@
 
 **Player-Facing Name**: **The Engine** (universal, simple - use this in rules and gameplay)
 **Full Name**: The Theslar Engine (T.E.) - for technical documentation
-**Historical Term**: The Resonance Engine (pre-Sundering scientific jargon)
+**Historical Term**: The Theslar Engine (pre-Sundering scientific jargon)
 
 **Note for Players**: Throughout this game, when you see "The Engine," we're talking about the machine that ended the world in Year 0. Keep it simple—no need to track different names unless you're reading faction lore for immersion.
 
@@ -34,11 +34,11 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
 - View it as a catastrophic prototype failure
 - Common phrases:
   - "The Folly" (shorthand)
-  - "The Resonance Breach"
+  - "The Cascade Breach"
   - "The Failed Experiment"
 
 **In Dwarven Records**:
-> "Theslar's calculations were sound. His materials were not. A resonance cascade of that magnitude requires containment we still cannot forge. He built the greatest machine ever conceived—and it killed the world."
+> "Theslar's calculations were sound. His materials were not. An energy cascade of that magnitude requires containment we still cannot forge. He built the greatest machine ever conceived—and it killed the world."
 
 ---
 
@@ -83,7 +83,7 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
   - "The Echo Event"
 
 **In Wyrd Whispers**:
-> "Theslar thought he built a machine. He did not. He found something that was always there, sleeping beneath perception. He woke it. The Resonance Engine is not an invention—it is a summoning."
+> "Theslar thought he built a machine. He did not. He found something that was always there, sleeping beneath perception. He woke it. The Theslar Engine is not an invention—it is a summoning."
 
 ---
 
@@ -143,7 +143,7 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
   - "The Shell-Breaking"
 
 **In Hive-Song**:
-> "[Harmonic clicking] Theslar-thought-human built resonance-machine-tool. Resonance-machine-tool sang frequency-of-awakening. Chitinous-many became Chitinous-one. This-collective thanks dead-Theslar-thought. He gave us we."
+> "[Harmonic clicking] Theslar-thought-human built frequency-machine-tool. Frequency-machine-tool sang song-of-awakening. Chitinous-many became Chitinous-one. This-collective thanks dead-Theslar-thought. He gave us we."
 
 ---
 
@@ -153,7 +153,7 @@ Some terms are used across multiple factions:
 
 - **"Year 0"** - Universal historical marker (neutral, adopted by all record-keepers)
 - **"The Sundering"** - Poetic term used by scholars and historians
-- **"The Resonance Event"** - Scientific term (used by engineers, researchers)
+- **"The Cascade Event"** - Scientific term (used by engineers, researchers)
 - **"The Day the World Sang"** - Ironic phrase (references Theslar's final words: "It's singing")
 
 ---
@@ -162,7 +162,7 @@ Some terms are used across multiple factions:
 
 The last words heard from Dr. Nikolas Theslar before the world ended:
 
-> **"Activation successful. Readings are... wrong. No, not wrong. Different. It's not generating resonance—it's amplifying something already there. Something vast. Oh god. It's singing. IT'S SINGING—"**
+> **"Activation successful. Readings are... wrong. No, not wrong. Different. It's not generating power—it's amplifying something already there. Something vast. Oh god. It's singing. IT'S SINGING—"**
 >
 > [Signal lost. Year 0 begins.]
 

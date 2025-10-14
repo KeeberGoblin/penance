@@ -1,4 +1,4 @@
-# The Resonance Engine
+# The Theslar Engine
 ## Interactive World-Threat Mechanics
 
 **Version**: 0.1
@@ -8,7 +8,7 @@
 
 ## Design Philosophy
 
-The Resonance Engine is **not a MacGuffin** - it's an interactive, dangerous location that players can attempt to influence, sabotage, or exploit. Inspired by Kingdom Death's sense of looming dread and asymmetric consequences, the Engine is:
+The Theslar Engine is **not a MacGuffin** - it's an interactive, dangerous location that players can attempt to influence, sabotage, or exploit. Inspired by Kingdom Death's sense of looming dread and asymmetric consequences, the Engine is:
 - **A ticking clock** - it grows more unstable over time
 - **A risk/reward zone** - entering the Sibarian Wastes is suicidal but lucrative
 - **Factionally divisive** - each faction wants a different outcome
@@ -16,11 +16,11 @@ The Resonance Engine is **not a MacGuffin** - it's an interactive, dangerous loc
 
 ---
 
-## What Is The Resonance Engine?
+## What Is The Theslar Engine?
 
 ### Physical Description
 
-The **Resonance Engine** is a miles-high tower of corroded brass and crystalline structures, standing in the exact center of the **Sibarian Wastes**. It pulses with a rhythmic thrum that can be felt for hundreds of miles - a heartbeat of reality-tearing energy.
+The **Theslar Engine** is a miles-high tower of corroded brass and crystalline structures, standing in the exact center of the **Sibarian Wastes**. It pulses with a rhythmic thrum that can be felt for hundreds of miles - a heartbeat of reality-tearing energy.
 
 **Appearance**:
 - **Lower Levels (The Roots)**: Buried in corrupted earth, overgrown with Soulstone formations like cancerous tumors. Abominations nest here.
@@ -29,7 +29,7 @@ The **Resonance Engine** is a miles-high tower of corroded brass and crystalline
 - **The Core**: At the heart of the Engine is **The Wound** - a tear in reality that bleeds Void energy into the world. It's beautiful. It's horrific. Looking at it too long causes madness.
 
 **The Pulse**:
-Every 6 hours, the Engine releases a **Resonance Pulse** - a wave of energy that:
+Every 6 hours, the Engine releases **The Pulse** - a wave of energy that:
 - Causes Soulstones within 100 miles to glow brightly
 - Triggers Strain rolls for any active Caskets in the Wastes
 - Spawns 1d6 Abominations near the Engine
@@ -41,7 +41,7 @@ Every 6 hours, the Engine releases a **Resonance Pulse** - a wave of energy that
 
 ### Instability Track
 
-The Resonance Engine has an **Instability Score**, ranging from 0 (dormant) to 20 (catastrophic).
+The Theslar Engine has an **Instability Score**, ranging from 0 (dormant) to 20 (catastrophic).
 
 **Current Instability**: Starts at **10** in Year 100 (game start)
 
@@ -53,7 +53,7 @@ Each campaign session, the Instability increases by +1 naturally (the Engine is 
 |-------|--------|
 | 0-5 | **Stable** - Engine is quiet. Abomination spawns are rare. Soulstones are scarce. |
 | 6-10 | **Active** - Current state. Void rifts appear regularly. Soulstone growth is steady. |
-| 11-15 | **Critical** - Resonance Pulses occur every 3 hours. Weather near the Engine becomes erratic (storms, gravity fluctuations). |
+| 11-15 | **Critical** - The Pulses occur every 3 hours. Weather near the Engine becomes erratic (storms, gravity fluctuations). |
 | 16-19 | **Cascading** - Reality begins breaking down beyond the Sibarian Wastes. Void rifts appear in civilized territories. Panic spreads. |
 | 20+ | **The Second Sundering** - Campaign failure. The Engine detonates, triggering a second Cataclysm. World ends. |
 
@@ -74,7 +74,7 @@ Players can undertake **Sibarian Wastes Expeditions** - high-risk missions into 
 **Expedition Structure**:
 1. **Approach Phase**: Travel through corrupted terrain (2-3 encounters with Abominations)
 2. **Engine Zone**: Reach the Engine itself, attempt objective
-3. **Escape Phase**: Flee before the next Resonance Pulse (timed pressure)
+3. **Escape Phase**: Flee before the next The Pulse (timed pressure)
 
 **Standard Objectives**:
 - **Soulstone Harvest**: Collect 1d6 Soulstone Fragments (300 Credits value each)
@@ -129,7 +129,7 @@ Players can undertake **Sibarian Wastes Expeditions** - high-risk missions into 
 **Cost**: 1 pilot's life (permanently lost)
 **Effect**:
 - Instability locks at 10 (stable but active)
-- Player gains control of **1 Resonance Pulse per mission** - can trigger Void rifts, spawn Abominations, or energize Soulstones at will
+- Player gains control of **1 The Pulse per mission** - can trigger Void rifts, spawn Abominations, or energize Soulstones at will
 - **Consequence**: Merged pilot becomes an NPC - **The New Theslar**, a godlike entity with alien motivations
 - **Faction Response**: Everyone fears you. You've become the villain.
 
@@ -170,7 +170,7 @@ If a pilot reaches Taint 8+ while near the Engine, roll 1d6:
 
 ---
 
-### Resonance Pulse (Timed Event)
+### The Pulse (Timed Event)
 
 Every 6 hours (in-game time), the Engine releases a Pulse.
 
@@ -214,7 +214,7 @@ At the Core is a **Runic Interface** - the original controls Theslar used.
    - Off = Void rift begins to close (Instability drops, but Soulstones die)
    - On = Current state
 3. **Emergency Overload** - Red lever, clearly labeled "DO NOT PULL"
-   - Triggers immediate Resonance Pulse
+   - Triggers immediate The Pulse
    - Instability +3
    - Everyone in the zone takes 5 damage
    - ??? (Players discover what happens if they pull it)
@@ -289,7 +289,7 @@ At the Core is a **Runic Interface** - the original controls Theslar used.
 - **Hex 1-5**: Corrupted terrain, Void exposure begins
 - **Hex 6-10**: 2 waves of Abominations (Carrion Swarm, Shrieking Colossus)
 - **Hex 11-15**: Engine interior - gravity fluctuations, time loops, environmental hazards
-- **Core Chamber**: Download data (requires 3 turns of interaction). Resonance Pulse triggers in 6 rounds.
+- **Core Chamber**: Download data (requires 3 turns of interaction). The Pulse triggers in 6 rounds.
 
 **Success**: 300 Credits, 1d3 Soulstone Fragments, research data (unlocks Stabilization project)
 
