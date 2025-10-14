@@ -20,6 +20,15 @@
 
 **Core Mechanic**: Your 30-card deck IS your HP. Take damage → discard cards. Deck empty → reshuffle + add blank "Damage" cards (death spiral).
 
+### Terminology Note: "Codex" = "wiki"
+
+**IMPORTANT**: When the user says "Codex", they mean the `docs/wiki/` directory (HTML reference pages). The directory is called `wiki` for pathing simplicity, but thematically it's referred to as "The Codex" in the UI and conversation.
+
+- **User says**: "Update the Codex navigation"
+- **You update**: `docs/wiki/index.html` navigation
+- **Directory path**: `docs/wiki/` (for technical file operations)
+- **Thematic name**: "The Codex" (for user-facing communication)
+
 ---
 
 ## Critical Context: System Overhaul v2.0
