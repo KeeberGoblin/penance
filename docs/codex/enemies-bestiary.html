@@ -67,6 +67,14 @@
             font-weight: bold;
             font-size: 1.3rem;
         }
+
+        /* Enemy Grid Layout (like settlements) */
+        .enemy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
     </style>
 </head>
 <body>
@@ -109,6 +117,7 @@
 
         <h2>Swarm Enemies (3-5 HP)</h2>
 
+        <div class="enemy-grid">
         <div class="enemy-card">
             <h3>1. Tainted Rat Swarm</h3>
             <span class="enemy-type">Swarm</span>
@@ -153,10 +162,13 @@
             <p><strong>Tactics:</strong> Deploy 4-6. Patrol, harass, kamikaze when low. Repair each other.</p>
             <p><strong>Loot:</strong> 15 Credits, 1 Scrap (guaranteed).</p>
         </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
         <h2>Elite Enemies (15-25 HP)</h2>
+
+        <div class="enemy-grid">
 
         <div class="enemy-card">
             <h3>4. Bandit Raider</h3>
@@ -232,10 +244,13 @@
             <p><strong>Tactics:</strong> Teleports constantly. Drains life, spreads Taint, leaves echoes. Kill fast before Taint accumulates.</p>
             <p><strong>Loot:</strong> 100 Credits, 0 Scrap (ethereal), Loot roll, guaranteed 1 Soulstone Fragment.</p>
         </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
         <h2>Boss Enemies (30-60 HP)</h2>
+
+        <div class="enemy-grid">
 
         <div class="enemy-card">
             <h3>9. Tainted Leviathan</h3>
@@ -286,6 +301,7 @@
             <p><strong>Special:</strong> Ossuarium (Decay cards), Necromantic Aura (auto-summon Thralls from corpses), The Ledger (+1 dmg per kill, stacks infinitely), Undying (50% resurrect once at 10 HP).</p>
             <p><strong>Loot:</strong> 600 Credits, 10d6 Scrap, roll 4× Equipment, guaranteed "The Ledger" (Legendary cursed relic).</p>
         </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
@@ -333,14 +349,67 @@
 
         <h2>Additional Enemies</h2>
 
-        <p><strong>4 additional enemies available in full bestiary:</strong></p>
+        <div class="enemy-grid">
+        <div class="enemy-card">
+            <h3>12. Tainted Wolf Pack</h3>
+            <span class="enemy-type">Swarm</span>
+            <div class="enemy-stats">
+                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">6</div></div>
+                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">0</div></div>
+                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">3</div></div>
+            </div>
+            <p><strong>AI:</strong> Pack Tactics (×3) - If 2+ wolves nearby, attack 2d6 + bleed. Flanking Strike (×2) - Bonus damage from rear. Howl (×1) - Call reinforcements (summon 1 wolf).</p>
+            <p><strong>Special:</strong> Pack Hunter (+1 dmg per adjacent wolf, max +3), Relentless (move +2 hexes when charging), Taint-Touched (inflict 1 Taint per 3 damage).</p>
+            <p><strong>Tactics:</strong> Deploy 4-6. Surround target, flank, howl for more. Fast and deadly in packs.</p>
+            <p><strong>Loot:</strong> 10 Credits per wolf, 1/8 chance "Tainted Wolf Pelt" (crafting material).</p>
+        </div>
 
-        <ul>
-            <li><strong>12. Tainted Wolf Pack</strong> (Swarm, 5 HP, pack tactics)</li>
-            <li><strong>13. Church Zealot</strong> (Elite, 18 HP, martyrdom mechanics)</li>
-            <li><strong>14. Dwarven Ironclad</strong> (Elite, 22 HP, Rune Counter system)</li>
-            <li><strong>15. Elven Verdant Stalker</strong> (Elite, 16 HP, Bleed stacking)</li>
-        </ul>
+        <div class="enemy-card">
+            <h3>13. Church Zealot</h3>
+            <span class="enemy-type">Elite</span>
+            <div class="enemy-stats">
+                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
+                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
+                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
+            </div>
+            <p><strong>AI (18 cards):</strong> Blood Offering + Strike (×5 - self-harm for +3 dmg), Martyrdom Protocol (×3 - protect allies), Divine Judgment (×2 - execute), Consecrated Ground (×2 - heal zone), Righteous Fury (×2 - damage buff), Desperate Attack (×2), Crusader's Charge (×2).</p>
+            <p><strong>Special:</strong> Martyr's Blessing (when below 10 HP, all attacks +2 dmg), Faith Shield (reduce first damage each turn by 2), Absolution (at death, heal all nearby Church allies 2 cards).</p>
+            <p><strong>Tactics:</strong> Aggressive self-harm for massive damage. Protects weaker allies. Becomes deadlier when wounded. Deploy with Church support units.</p>
+            <p><strong>Loot:</strong> 120 Credits, 2d3 Scrap, Equipment roll, 1/6 chance "Penitent Blade" (Church primary weapon).</p>
+        </div>
+
+        <div class="enemy-card">
+            <h3>14. Dwarven Ironclad</h3>
+            <span class="enemy-type">Elite</span>
+            <div class="enemy-stats">
+                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">22</div></div>
+                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">4</div></div>
+            </div>
+            <p><strong>AI (22 cards):</strong> Runic Strike (×6 - armor piercing), Forge-Ward (×4 - gain Rune), Earthshaker (×3 - AOE), Defensive Stance (×3), Rune Overcharge (×2 - spend Runes for burst), Grudge Strike (×2 - +2 vs marked), Mountain Stance (×2 - immobile +3 Defense).</p>
+            <p><strong>Special:</strong> Rune Counter System (reduce damage by 1 per Rune, max 5), Ironborn (ignore 1st Component Damage per round), Stone Endurance (+5 max HP), Grudge Bearer (mark attackers, +2 dmg vs marked).</p>
+            <p><strong>Tactics:</strong> Ultimate tank. Builds Runes, stands ground, punishes attackers. Slow but nearly unkillable. Requires sustained focus fire.</p>
+            <p><strong>Loot:</strong> 180 Credits, 4d3 Scrap, Equipment roll, 1/5 chance "Runic Warhammer" (Dwarven primary weapon).</p>
+        </div>
+
+        <div class="enemy-card">
+            <h3>15. Elven Verdant Stalker</h3>
+            <span class="enemy-type">Elite</span>
+            <div class="enemy-stats">
+                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">16</div></div>
+                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
+                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
+            </div>
+            <p><strong>AI (16 cards):</strong> Thorn Strike (×5 - 3d6 + Bleed 2), Piercing Arrow (×3 - ranged ignore Defense), Root Bind (×2 - immobilize), Leaf Dance (×2 - attack during movement), Sylvan Step (×1 - teleport), Verdant Regeneration (×2 - passive heal), Camouflage (×1 - stealth).</p>
+            <p><strong>Special:</strong> Bleed Master (Bleed damage stacks, max 6 per turn), Nature's Wrath (at 3+ Bleed stacks, attacks deal +2 dmg), Photosynthesis (recover 1 card per turn if not attacked), Forest Step (teleport once per turn).</p>
+            <p><strong>Tactics:</strong> Mobile hit-and-run. Stacks Bleed, kites, teleports. Becomes deadly if left unchecked (Bleed stacks infinitely). Catch early or suffer.</p>
+            <p><strong>Loot:</strong> 140 Credits, 2d3 Scrap, Equipment roll, 1/5 chance "Thornwood Bow" (Elven primary weapon).</p>
+        </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
