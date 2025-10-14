@@ -1,8 +1,8 @@
 # CLAUDE.md
 ## AI Assistant Context Document for Penance: Absolution Through Steel
 
-**Last Updated**: October 12, 2025
-**Project Status**: PLAYTEST READY (v2.0 Equipment System + Wiki Complete)
+**Last Updated**: October 14, 2025
+**Project Status**: PLAYTEST READY (Campaign Systems + Bestiary Complete)
 **Purpose**: This document provides complete context for AI assistants working on Penance
 
 ---
@@ -140,9 +140,9 @@ Crafting: Costs 2-6 Scrap per item depending on complexity
 
 ---
 
-## Event Tables (Campaign System)
+## Campaign Systems
 
-### KDM-Style Event Tables
+### Event Tables (KDM-Style)
 **File**: `docs/campaigns/event-tables-kdm-style.md`
 
 **Mechanics**:
@@ -153,7 +153,7 @@ Crafting: Costs 2-6 Scrap per item depending on complexity
   - **11**: "The Offering" (sacrifice) or "Hero's Welcome"
   - **66**: "The End Times" (catastrophe) or "The Miracle"
 
-### SCP-Style Anomalous Events
+### Anomalous Events (SCP-Style)
 **File**: `docs/campaigns/anomalous-events-scp-style.md`
 
 **Containment Breach Table (1d20)**:
@@ -170,6 +170,69 @@ Crafting: Costs 2-6 Scrap per item depending on complexity
   - "The Soulstone of Nikolas Theslar" (+10 SP, user absorbed into Engine)
   - "The Weeping Casket" (grows organic tissue, painful mutations)
   - "The Doppelganger Soulstone" (quantum superposition, user dies in alternate timelines)
+
+### Pilot Generation Tables
+**File**: `docs/campaigns/pilot-generation-tables.md`
+
+**5 Generation Tables**:
+- **Background (d20)**: 20 origins (Soldier, Criminal, Priest, Noble, etc.)
+- **Starting Traits (d20)**: 40 traits total (20 simple +1/-1, 20 complex unique abilities)
+- **Motivation (d20)**: 20 narrative hooks (Redemption, Revenge, Duty, Greed, etc.)
+- **Quirks (d100)**: 100 roleplay flavor traits (Prays before missions, Collects trinkets, etc.)
+- **Physical Appearance (d20)**: 20 descriptors (Scarred, Tattooed, Missing eye, etc.)
+
+**Hybrid Trait System (RimWorld-Inspired)**:
+- Roll twice on trait table for contradictory characters
+- Example: Reckless + Cautious = aggressive opener with defensive retreat
+- Creates depth and narrative hooks
+
+**Probability**: 1 in 320 million for exact combination (every pilot is statistically unique)
+
+**Interactive Tool**: `docs/tools/pilot-generator.html`
+- Random Roll mode (instant generation)
+- Manual Select mode (pick-and-choose with probability display)
+- Copy to clipboard functionality
+- Gothic red/gold aesthetic
+
+### Settlement Phase Procedure
+**File**: `docs/campaigns/settlement-phase-procedure.md`
+
+**6-Step Process**:
+1. **Return**: Casualties, salvage, loot distribution
+2. **Income**: Building income, upkeep costs, debt
+3. **Leg-Skimming**: Permanent sacrifices for power
+4. **Pilot Care**: Medical treatment, injuries
+5. **Settlement Events**: Roll on event tables
+6. **Preparation**: Build, craft, recruit, depart
+
+**Tracking**: Settlement sheet, pilot roster, treasury, building roster
+
+### Core Bestiary
+**File**: `docs/enemies/bestiary-core.md`
+
+**15 Enemies Total**:
+- **3 Swarm (3-5 HP)**: Tainted Rat Swarm, Corrupted Villager, Scrap Drone
+- **11 Elite/Boss (15-60 HP)**: Bandit Raider, Bandit Captain, Tainted Ogre, Scrap Golem, Engine Wraith, Tainted Leviathan, Rogue Casket, Bonelord Thresh, Church Zealot, Dwarven Ironclad, Elven Verdant Stalker
+- **1 Special**: Tainted Wolf Pack (pack tactics)
+
+**KDM-Style If-Then AI**:
+- "If X, do Y. Else, do Z" behavior cards
+- Example: "If within melee range, attack. Else, move closer."
+- Easy to execute, no GM interpretation needed
+
+**Player-like Mechanics**:
+- HP deck system (enemies use decks like players)
+- SP economy (3-6 SP depending on enemy type)
+- Component Damage (enemies can have limbs destroyed)
+- Death spiral (reshuffle adds Damage cards)
+
+**Mission Templates**:
+- Swarm Mission: 8-12 low-HP enemies
+- Elite Mission: 2-3 mid-HP enemies
+- Boss Mission: 1 high-HP enemy with phase-based AI
+- Settlement Defense: Waves of mixed enemies
+
+**Loot Tables**: Credits, Scrap, Equipment rolls per enemy defeated
 
 ---
 
@@ -334,16 +397,24 @@ penance/
 │   │   ├── chronicle.md               # 437-year timeline
 │   │   ├── iconic-npcs.md             # 5 legendary pilots
 │   │   ├── resonance-engine.md        # The artifact that ended the world
-│   │   ├── resonance-engine-names.md  # Faction-specific Engine names (NEW)
-│   │   └── cosmology-and-origins.md   # Three-layered cosmos, species origins (NEW)
+│   │   ├── resonance-engine-names.md  # Faction-specific Engine names
+│   │   └── cosmology-and-origins.md   # Three-layered cosmos, species origins
 │   │
 │   ├── campaigns/                     # Long-term progression
 │   │   ├── settlements.md             # Base building
+│   │   ├── settlement-phase-procedure.md  # 6-step settlement phase (NEW - Oct 14)
 │   │   ├── pilot-progression.md       # Scars, traits, death
+│   │   ├── pilot-generation-tables.md # 5 tables, hybrid traits (NEW - Oct 14)
 │   │   ├── leg-skimming.md            # Permanent sacrifice mechanics
 │   │   ├── loot-tables.md             # Post-mission rewards
-│   │   ├── event-tables-kdm-style.md  # 132 KDM-style events (NEW)
-│   │   └── anomalous-events-scp-style.md  # SCP-style anomalies (NEW)
+│   │   ├── event-tables-kdm-style.md  # 132 KDM-style events
+│   │   └── anomalous-events-scp-style.md  # SCP-style anomalies
+│   │
+│   ├── enemies/                       # Bestiary (NEW - Oct 14)
+│   │   └── bestiary-core.md           # 15 enemies, KDM-style If-Then AI
+│   │
+│   ├── tools/                         # Interactive tools (NEW - Oct 14)
+│   │   └── pilot-generator.html       # JavaScript character generator
 │   │
 │   ├── reference/                     # Design docs
 │   │   ├── core-design.md             # Design philosophy
@@ -390,12 +461,15 @@ penance/
 │       ├── scenario-boss-iron-saint.html      # Boss encounter (NEW - Oct 13)
 │       ├── scenario-example-of-play.html      # 5-turn walkthrough (NEW - Oct 13)
 │       │
+│       ├── campaign-settlement-phase.html     # 6-step settlement phase (NEW - Oct 14)
 │       ├── campaign-settlements.html          # Settlement building (NEW - Oct 13)
+│       ├── campaign-pilot-generation.html     # Pilot generation tables (NEW - Oct 14)
 │       ├── campaign-pilot-progression.html    # Pilot scars & traits (NEW - Oct 13)
 │       ├── campaign-leg-skimming.html         # Permanent sacrifice (NEW - Oct 13)
 │       ├── campaign-event-tables.html         # 132 KDM-style events (NEW - Oct 13)
 │       ├── campaign-anomalous-events.html     # 100 SCP-style artifacts (NEW - Oct 13)
-│       └── campaign-loot-tables.html          # Complete loot system (NEW - Oct 13)
+│       ├── campaign-loot-tables.html          # Complete loot system (NEW - Oct 13)
+│       └── enemies-bestiary.html              # Core bestiary overview (NEW - Oct 14)
 │
 └── tools/                             # Development utilities
     ├── card-generator/                # Card template generator
@@ -759,6 +833,46 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 ---
 
 ## Changelog for This Document
+
+**October 14, 2025** - Pilot Generation System, Core Bestiary, Interactive Tools
+- **Pilot Generation Tables Created**: Comprehensive 5-table system (Background, Traits, Motivation, Quirks, Appearance)
+  - docs/campaigns/pilot-generation-tables.md (15+ pages)
+  - 40 total traits (20 simple +1/-1, 20 complex unique abilities)
+  - Hybrid trait system: Roll twice for contradictory characters (RimWorld-inspired)
+  - Probability calculations: 1 in 320 million for exact combination
+  - Example pilot generation walkthrough (Brother Tomas "The Zealot")
+- **Interactive Pilot Generator Tool**: JavaScript-powered HTML tool
+  - docs/tools/pilot-generator.html
+  - Random Roll mode (instant pilot generation)
+  - Manual Select mode (pick-and-choose with probability calculator)
+  - Copy to clipboard functionality
+  - Gothic red/gold aesthetic matching Codex theme
+- **Core Bestiary System Created**: 15 enemies with KDM-style If-Then AI
+  - docs/enemies/bestiary-core.md (20+ pages)
+  - 3 Swarm enemies (3-5 HP): Tainted Rat Swarm, Corrupted Villager, Scrap Drone
+  - 11 Elite/Boss enemies (15-60 HP): Bandit Raider, Bandit Captain, Tainted Ogre, Scrap Golem, Engine Wraith, Tainted Leviathan, Rogue Casket, Bonelord Thresh, Church Zealot, Dwarven Ironclad, Elven Verdant Stalker
+  - 1 Special enemy: Tainted Wolf Pack (pack tactics)
+  - Player-like mechanics (HP deck, SP economy, Component Damage)
+  - Mission templates (Swarm, Elite, Boss, Settlement Defense)
+  - Loot tables per enemy type
+- **Settlement Phase Procedure**: 6-step settlement process between missions
+  - docs/campaigns/settlement-phase-procedure.md
+  - Return → Income → Leg-Skimming → Pilot Care → Events → Preparation
+  - Tracking sheets for settlement, pilots, treasury, buildings
+  - Example playthrough walkthrough
+- **Codex HTML Pages Created**: Manuscript-styled overview pages
+  - docs/wiki/campaign-settlement-phase.html (flowchart visualization)
+  - docs/wiki/campaign-pilot-generation.html (compact tables, probability display)
+  - docs/wiki/enemies-bestiary.html (enemy cards, mission templates)
+- **Codex Navigation Updated**: Added 3 new pages to Campaign section
+  - Settlement Phase Procedure (first item in Campaign section)
+  - Pilot Generation Tables (after Settlements)
+  - Core Bestiary (after Leg-Skimming)
+- **Hidden Boss Encounter Created**: Dr. Teslar boss battle (before this session)
+- **Terminology Clarification**: Added to utilities/CLAUDE.md
+  - "Codex" = "wiki" directory (thematic name vs technical path)
+  - Directory: docs/wiki/ (for file operations)
+  - UI name: "The Codex" (for user communication)
 
 **October 13, 2025** - The Codex (Wiki Renamed), Campaign & Scenario Pages, Navigation Reorganization
 - **Wiki Renamed to "The Codex"**: More thematic name, updated throughout site (main nav, footer)
