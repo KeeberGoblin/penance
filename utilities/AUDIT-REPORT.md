@@ -12,7 +12,7 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 ## Summary
 
 **Total Files Updated**: 12
-- ✅ **High Priority**: 5 wiki faction pages - COMPLETE
+- ✅ **High Priority**: 5 codex faction pages - COMPLETE
 - ✅ **Medium Priority**: 3 reference documentation files - COMPLETE
 - ✅ **Additional**: 4 core documentation files - COMPLETE
 - ⏸️ **Low Priority**: 4 card database files - DEFERRED (not critical for playtest)
@@ -21,9 +21,9 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 
 ## Completed Updates
 
-### ✅ HIGH PRIORITY - Wiki Faction Pages (ALL COMPLETE)
+### ✅ HIGH PRIORITY - Codex Faction Pages (ALL COMPLETE)
 
-#### 1. docs/wiki/index.html - **COMPLETE**
+#### 1. docs/codex/index.html - **COMPLETE**
 **Changes Made**:
 - Updated from "2 factions (30/32 cards)" → "4 factions (26-50 cards variable)"
 - Removed references to deck-complete.md
@@ -36,13 +36,13 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 - Added Faction Overview table with all 9 factions
 - Added PDF download link for PLAYTEST-READY.pdf
 
-#### 2. docs/wiki/faction-church.html - **COMPLETE**
+#### 2. docs/codex/faction-church.html - **COMPLETE**
 **Changes Made**:
 - Fixed deck link: deck-complete.md → deck-equipment-system.md
 - Updated link text: "30 cards" → "v2.0 Equipment System"
 - Fixed navigation sidebar faction names (Elven Verdant Covenant, Dwarven Forge-Guilds)
 
-#### 3. docs/wiki/faction-dwarves.html - **COMPLETE**
+#### 3. docs/codex/faction-dwarves.html - **COMPLETE**
 **Changes Made**:
 - Fixed page title: "Dwarven Clans" → "Dwarven Forge-Guilds"
 - Fixed h1 heading: "Dwarven Clans" → "Dwarven Forge-Guilds"
@@ -51,14 +51,14 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 - Fixed deck link: deck-complete.md → deck-equipment-system.md
 - Updated link text: "32 cards" → "v2.0 Equipment System"
 
-#### 4. docs/wiki/faction-elves.html - **COMPLETE**
+#### 4. docs/codex/faction-elves.html - **COMPLETE**
 **Changes Made**:
 - Fixed page title: "Elven Remnants" → "Elven Verdant Covenant"
 - Fixed h1 heading: "Elven Remnants" → "Elven Verdant Covenant"
 - Fixed breadcrumb navigation
 - Updated navigation sidebar with correct faction names
 
-#### 5. docs/wiki/faction-undead.html (The Ossuarium) - **COMPLETE**
+#### 5. docs/codex/faction-undead.html (The Ossuarium) - **COMPLETE**
 **Changes Made**:
 - Updated navigation sidebar with correct faction names (Elven Verdant Covenant, Dwarven Forge-Guilds)
 
@@ -177,16 +177,16 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 
 ## Git Commits Made
 
-1. ✅ **Update wiki index to v2.0 system** (commit: dcb6c52)
+1. ✅ **Update codex index to v2.0 system** (commit: dcb6c52)
 2. ✅ **Update PLAYTEST-READY to v2.0 equipment system** (commit: a89272f)
 3. ✅ **Fix broken links throughout documentation** (commit: edaf97e)
-4. ✅ **Update wiki faction pages: Church corrections** (commit: 67cec65)
+4. ✅ **Update codex faction pages: Church corrections** (commit: 67cec65)
 5. ✅ **Update reference docs to v2.0 system** (commit: 1e511dc)
    - playtest-assessment.md
    - design-roadmap.md
    - tabletop-simulator-guide.md
 6. ✅ **Regenerate PDFs with updated reference docs** (commit: a42b8eb)
-7. ✅ **Update remaining wiki faction pages** (commit: e235072)
+7. ✅ **Update remaining codex faction pages** (commit: e235072)
    - faction-dwarves.html
    - faction-elves.html
    - faction-undead.html
@@ -215,12 +215,12 @@ grep -r "2 factions\|two factions" docs/ --include="*.md"
 
 ## Files Modified (Complete List)
 
-### Wiki Pages (5 files)
-1. ✅ docs/wiki/index.html
-2. ✅ docs/wiki/faction-church.html
-3. ✅ docs/wiki/faction-dwarves.html
-4. ✅ docs/wiki/faction-elves.html
-5. ✅ docs/wiki/faction-undead.html
+### Codex Pages (5 files)
+1. ✅ docs/codex/index.html
+2. ✅ docs/codex/faction-church.html
+3. ✅ docs/codex/faction-dwarves.html
+4. ✅ docs/codex/faction-elves.html
+5. ✅ docs/codex/faction-undead.html
 
 ### Reference Documentation (4 files)
 6. ✅ docs/reference/PLAYTEST-READY.md
@@ -243,7 +243,7 @@ grep -r "2 factions\|two factions" docs/ --include="*.md"
 
 ## Verification Checklist
 
-- [x] All wiki faction pages use correct faction names
+- [x] All codex faction pages use correct faction names
 - [x] All deck-complete.md links changed to deck-equipment-system.md
 - [x] All "30 cards" / "32 cards" references updated to v2.0 system
 - [x] All "2 factions" references updated to "4 factions"
@@ -257,7 +257,7 @@ grep -r "2 factions\|two factions" docs/ --include="*.md"
 ## Results
 
 ### Before Cleanup
-- Inconsistent faction names across wiki
+- Inconsistent faction names across codex
 - Broken links to legacy deck-complete.md files
 - Outdated playtest status (70% ready, 2 factions)
 - Stale reference documentation showing old roadmap
@@ -275,7 +275,7 @@ grep -r "2 factions\|two factions" docs/ --include="*.md"
 
 ## Time Spent
 
-- **High Priority (Wiki Pages)**: ~45 minutes
+- **High Priority (Codex Pages)**: ~45 minutes
 - **Medium Priority (Reference Docs)**: ~30 minutes
 - **Additional Fixes**: ~20 minutes
 - **PDF Regeneration**: ~10 minutes

@@ -2,9 +2,9 @@
 
 A tactical hex-based card game of grimdark medieval fantasy mech combat where redemption is earned through brutal warfare.
 
-![Status](https://img.shields.io/badge/status-PLAYTEST%20READY-red)
+![Status](https://img.shields.io/badge/status-CAMPAIGN%20READY-red)
 ![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)
-![Version](https://img.shields.io/badge/version-3.0%20Playtest-orange)
+![Version](https://img.shields.io/badge/version-3.1%20Campaign-orange)
 
 ---
 
@@ -45,6 +45,8 @@ Three optional advanced mechanics systems for enhanced tactical depth:
 - ✅ 2 playtest scenarios (Deathmatch, Objective Control)
 - ✅ Example of Play (5-turn walkthrough)
 - ✅ Quick reference sheet (printable)
+- ✅ **NEW: Campaign mode** (Settlement Phase, Pilot Generation, 15-enemy Bestiary)
+- ✅ **NEW: Interactive HTML Codex** (codex-style rules browser)
 
 ---
 
@@ -155,6 +157,11 @@ Each turn you refresh your Soul Points (SP) to maximum:
 - [Elven Verdant Covenant](docs/factions/elves/deck-equipment-system.md) - Hit-and-run, infinite bleed stacking
   - [Elven Support Units](docs/factions/elves/support-units.md) - 6 units: Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant
 
+### Campaign Systems
+- [Settlement Phase Procedure](docs/campaigns/settlement-phase-procedure.md) - Turn-by-turn campaign workflow
+- [Pilot Generation Tables](docs/campaigns/pilot-generation-tables.md) - Random pilot creation (20+ backgrounds, 40+ traits, 100 quirks)
+- [Core Bestiary](docs/enemies/bestiary-core.md) - 15 enemies (Swarm, Elite, Boss) with AI behavior decks
+
 ### World & Lore
 - [Cosmology & Origins](docs/lore/cosmology-and-origins.md) - Why fantasy creatures exist, alternate-Earth setting explained
 - [World Overview](docs/lore/world-overview.md) - 437-year timeline, 9 factions, historical eras
@@ -175,21 +182,27 @@ Each turn you refresh your Soul Points (SP) to maximum:
 **PLAYTEST READY** - Complete v1.0 game ready for table play (see top of README for Quick Start)
 
 ### Completed
-- [x] Complete playtest package (64 pages, 2 factions, 2 scenarios)
+- [x] Complete playtest package (4 factions, 2 scenarios)
 - [x] GKR + KDM hybrid combat system
 - [x] 437-year world timeline with 9 factions
 - [x] 36 asymmetric Casket types (4 per faction)
 - [x] Puppeteer capsule control system (body horror)
-- [x] Leg-skimming progression (permanent sacrifice)
-- [x] Campaign systems (settlements, pilot scars, loot)
+- [x] Soul Sacrifice progression (permanent sacrifice for power)
+- [x] Campaign systems (settlements, pilot generation, bestiary)
+- [x] Settlement Phase Procedure (complete turn-by-turn workflow)
+- [x] Pilot Generation Tables (20 backgrounds, 40+ traits, 100 quirks, hybrid system)
+- [x] Core Bestiary (15 enemies: Swarm/Elite/Boss with AI behavior decks)
 - [x] Boss encounter HP deck system
 - [x] 80+ unique pilot scars
+- [x] Support Units system (24 unique AI companions)
+- [x] Interactive HTML Codex (codex-style navigation for all rules)
 
 ### In Progress
-- [ ] Additional faction decks (Elves, Undead, Fae, etc.)
-- [ ] Campaign scenario chain
-- [ ] Printable card templates
-- [ ] Visual diagrams (replace ASCII)
+- [ ] Additional faction decks (Fae, Nomads, Merchants)
+- [ ] Campaign scenario chain (multi-mission story arcs)
+- [ ] Expanded bestiary (faction-specific enemies)
+- [ ] Printable card templates (for physical play)
+- [ ] Visual diagrams (replace ASCII with illustrations)
 
 ### Planned (Post-Playtest)
 - [ ] Balance adjustments from playtester feedback
@@ -272,10 +285,15 @@ penance/
 │   │
 │   ├── campaigns/                     # Long-term progression
 │   │   ├── index.md                   # Campaign hub
+│   │   ├── settlement-phase-procedure.md  # Turn-by-turn workflow
 │   │   ├── settlements.md             # Base building
+│   │   ├── pilot-generation-tables.md # Random character creation
 │   │   ├── pilot-progression.md       # Scars, traits, death
 │   │   ├── leg-skimming.md            # Sacrifice for power
 │   │   └── loot-tables.md             # Post-mission rewards
+│   │
+│   ├── enemies/                       # Bestiary
+│   │   └── bestiary-core.md           # 15 enemies with AI decks
 │   │
 │   ├── reference/                     # Design docs & tools
 │   │   ├── index.md                   # Reference hub
@@ -285,8 +303,8 @@ penance/
 │   │   ├── tabletop-simulator-guide.md
 │   │   └── PLAYTEST-READY.md          # Detailed playtest package
 │   │
-│   └── wiki/                          # Interactive wiki
-│       ├── index.html                 # Wiki homepage
+│   └── codex/                          # Interactive codex
+│       ├── index.html                 # Codex homepage
 │       └── faction-church.html        # Church faction page
 │
 ├── archive/                           # Historical documents
@@ -312,12 +330,21 @@ penance/
 5. **Play**: 45-60 minutes
 6. **Feedback**: Open GitHub issue with observations
 
+### For Campaign Players
+
+1. **Start**: Read [Settlement Phase Procedure](docs/campaigns/settlement-phase-procedure.md) - Complete workflow
+2. **Generate Pilots**: Use [Pilot Generation Tables](docs/campaigns/pilot-generation-tables.md) - Create 3-5 starting pilots
+3. **Build Base**: Review [Settlements](docs/campaigns/settlements.md) - 20 buildings, resource management
+4. **Face Enemies**: Check [Core Bestiary](docs/enemies/bestiary-core.md) - 15 enemies with AI behavior
+5. **Progression**: Study [Pilot Progression](docs/campaigns/pilot-progression.md) + [Loot Tables](docs/campaigns/loot-tables.md)
+6. **Try Tool**: Use the [web-based Pilot Generator](docs/codex/index.html) for instant character creation
+
 ### For Designers
 
 1. **Core Systems**: Read [Turn Structure](docs/rules/turn-structure.md) + [Combat System](docs/rules/combat-system.md)
 2. **Faction Design**: Study [Church](docs/factions/church/deck-equipment-system.md) vs [Dwarves](docs/factions/dwarves/deck-equipment-system.md) asymmetry
 3. **World Building**: Explore [World Overview](docs/lore/world-overview.md) + [Casket Types](docs/factions/casket-types.md)
-4. **Campaign**: Review [Settlements](docs/campaigns/settlements.md) + [Leg Skimming](docs/campaigns/leg-skimming.md)
+4. **Campaign**: Review [Settlement Phase](docs/campaigns/settlement-phase-procedure.md) + [Pilot Generation](docs/campaigns/pilot-generation-tables.md)
 
 ### For Visual Artists
 
@@ -334,8 +361,15 @@ penance/
 - Complete playtest section with downloadable rules
 - Interactive 437-year timeline
 - 9 faction profiles with lore and relationships
-- SCP-style wiki with experimental lore
-- Card database (56 cards, searchable)
+- Card database (searchable)
+- Deck builder tool
+
+**[Interactive Codex →](https://keebergoblin.github.io/penance/codex/)**:
+- Codex-style navigation for all game rules
+- Campaign systems (Settlement Phase, Pilot Generation, Bestiary)
+- Optional v3.0 mechanics (Dice Pool, Taint Exploitation, Pilot Grit)
+- Lore & world-building (Cosmology, Chronicle, Iconic Pilots)
+- Faction pages with equipment and support units
 
 ---
 
@@ -377,6 +411,15 @@ You are free to share and adapt this material for non-commercial purposes with a
 ---
 
 ## Changelog
+
+### v3.1 Campaign Systems (2025-10-14)
+**CAMPAIGN-READY** - Complete long-term play systems
+- **Settlement Phase Procedure**: Turn-by-turn campaign workflow (Return→Settlement Actions→Events→Advancement)
+- **Pilot Generation Tables**: Random character creation (20 backgrounds, 20 simple + 20 complex traits, 100 quirks, hybrid trait system)
+- **Core Bestiary**: 15 enemies with AI behavior decks (Tainted creatures, Bandits, Constructs, Bosses)
+- **Interactive HTML Codex**: Codex-style navigation for all rules, lore, and campaign systems
+- **Pilot Generator Tool**: Web-based random pilot creation with manual mode option
+- Full integration with existing v3.0 optional mechanics
 
 ### v3.0 Playtest (2025-10-14)
 **ENHANCED PLAYTEST READY** - Three optional advanced mechanics systems

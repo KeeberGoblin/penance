@@ -23,7 +23,7 @@
 
 | File | Original Location | New Location | Reason |
 |------|------------------|--------------|--------|
-| `index-old.html` | `/docs/wiki/` | `/archive/wiki-index-old.html` | Superseded by current wiki index |
+| `index-old.html` | `/docs/codex/` | `/archive/codex-index-old.html` | Superseded by current codex index |
 
 ### 2. Deprecated Faction Names (✅ All Corrected)
 
@@ -45,7 +45,7 @@ Scanned all `.md` and `.html` files for deprecated faction names:
 - ✅ Ossuarium: `deck-equipment-system.md`, `support-units.md`
 - ✅ Elves: `deck-equipment-system.md`, `support-units.md`
 
-**`/docs/wiki/`** (26 HTML pages + 1 CSS)
+**`/docs/codex/`** (26 HTML pages + 1 CSS)
 - ✅ All 9 factions have manuscript-styled pages
 - ✅ Lore pages: cosmology, sundering, engine, chronicle, npcs
 - ✅ Rules pages: turn-structure, combat, range-los, dice, quick-ref
@@ -100,7 +100,7 @@ Scanned all `.md` and `.html` files for deprecated faction names:
 - ✅ Enhanced buttons, cards, navigation with manuscript styling
 - ✅ Footer updated ("forged in gothic manuscript tradition")
 
-### 5. Wiki System Assessment (docs/wiki/)
+### 5. Codex System Assessment (docs/codex/)
 
 **Status**: ✅ COMPLETE
 
@@ -172,7 +172,7 @@ Scanned all `.md` and `.html` files for deprecated faction names:
 
 **Verified**:
 - ✅ No references to deleted `deck-complete.md` files
-- ✅ No references to deleted wiki pages
+- ✅ No references to deleted codex pages
 - ✅ All faction file paths correct
 - ✅ All equipment system references use current v2.0 structure
 
@@ -180,7 +180,7 @@ Scanned all `.md` and `.html` files for deprecated faction names:
 
 **GitHub Pages Deployment**:
 - ✅ Main site: `https://keebergoblin.github.io/penance/`
-- ✅ Wiki: `https://keebergoblin.github.io/penance/wiki/`
+- ✅ Codex: `https://keebergoblin.github.io/penance/codex/`
 - ✅ Card database: `https://keebergoblin.github.io/penance/cards/`
 
 ---
@@ -199,13 +199,13 @@ Scanned all `.md` and `.html` files for deprecated faction names:
 - Root: 3 files (README, CLAUDE, SYSTEM-OVERHAUL-SUMMARY)
 
 ### HTML Files
-- Wiki pages: 26 files
+- Codex pages: 26 files
 - Main index: 1 file (`docs/index.html`)
 - Card browser: 1 file (`docs/cards/index.html`)
 - **Total**: 28 HTML files
 
 ### CSS Files
-- Unified wiki stylesheet: 1 file (`docs/wiki/manuscript-style.css`)
+- Unified codex stylesheet: 1 file (`docs/codex/manuscript-style.css`)
 
 ### Archive Files
 - Legacy documentation: 18 files (properly archived, not cluttering active repo)
@@ -219,13 +219,13 @@ Scanned all `.md` and `.html` files for deprecated faction names:
 **Assessment**: Repository is excellently organized
 **Action**: Continue current organization pattern for future content
 
-### 2. Wiki Expansion (Future)
+### 2. Codex Expansion (Future)
 
 When adding new factions (5 design-only factions):
 - ✅ Create faction-specific deck files in `/docs/factions/{faction}/`
-- ✅ Create manuscript-styled wiki pages in `/docs/wiki/`
+- ✅ Create manuscript-styled codex pages in `/docs/codex/`
 - ✅ Follow existing naming convention: `faction-{name}.html`
-- ✅ Update wiki index.html navigation sidebar
+- ✅ Update codex index.html navigation sidebar
 
 ### 3. Version Control for Major Changes
 
@@ -241,7 +241,7 @@ Before pushing major changes:
 - ✅ Verify all internal links work
 - ✅ Check for deprecated faction names
 - ✅ Test responsive design (mobile/tablet)
-- ✅ Validate iframe navigation in wiki
+- ✅ Validate iframe navigation in codex
 - ✅ Test scroll-to-top button functionality
 
 ---
@@ -256,7 +256,7 @@ Before pushing major changes:
 - ✅ Equipment system v2.0 (100%)
 - ✅ World lore & timeline (100%)
 - ✅ Campaign systems (100%)
-- ✅ Wiki pages (100%)
+- ✅ Codex pages (100%)
 - ✅ Main index redesign (100%)
 
 **In Progress**:
@@ -281,7 +281,7 @@ Before pushing major changes:
 
 **Excellent**:
 - ✅ Gothic manuscript theme consistent
-- ✅ Intuitive navigation (wiki sidebar, main index links)
+- ✅ Intuitive navigation (codex sidebar, main index links)
 - ✅ Fast page loads (iframe = no full refresh)
 - ✅ Scroll-to-top button (UX enhancement)
 - ✅ Mobile responsive
@@ -303,7 +303,7 @@ The Penance repository is in **excellent condition** with:
 - ✅ No redundant files (1 archived)
 - ✅ No deprecated naming
 - ✅ Complete documentation
-- ✅ Functional wiki system
+- ✅ Functional codex system
 - ✅ Polished main index
 - ✅ Consistent gothic manuscript aesthetic
 

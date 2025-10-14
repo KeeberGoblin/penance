@@ -54,7 +54,7 @@ Complete playtest package overview
 - [GitHub Repository](https://github.com/KeeberGoblin/penance)
 - [Main Website](../index.html)
 - [Card Database](../cards/index.html)
-- [Wiki](../wiki/index.html)
+- [Codex](../codex/index.html)
 
 ---
 

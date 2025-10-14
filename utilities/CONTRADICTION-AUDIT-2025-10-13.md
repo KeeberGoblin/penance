@@ -35,16 +35,16 @@ However, many files were using "Resonance Engine" in current-day gameplay contex
 - [x] `docs/lore/resonance-engine.md` - Kept as historical reference, updated context headers
 - [x] `docs/lore/index.md` - Left as-is (historical timeline reference)
 
-#### Wiki HTML Files (10 files)
-- [x] `docs/wiki/lore-engine.html` - Updated h2 heading and body text
-- [x] `docs/wiki/lore-sundering.html` - 8 instances corrected
-- [x] `docs/wiki/lore-npcs.html` - 3 instances corrected
-- [x] `docs/wiki/cosmology.html` - 2 instances corrected
-- [x] `docs/wiki/faction-church.html` - 1 instance corrected
-- [x] `docs/wiki/faction-dwarves.html` - 1 instance corrected
-- [x] `docs/wiki/faction-undead.html` - 1 instance corrected
-- [x] `docs/wiki/content-home.html` - 1 instance corrected
-- [x] `docs/wiki/index.html` - Navigation link updated
+#### Codex HTML Files (10 files)
+- [x] `docs/codex/lore-engine.html` - Updated h2 heading and body text
+- [x] `docs/codex/lore-sundering.html` - 8 instances corrected
+- [x] `docs/codex/lore-npcs.html` - 3 instances corrected
+- [x] `docs/codex/cosmology.html` - 2 instances corrected
+- [x] `docs/codex/faction-church.html` - 1 instance corrected
+- [x] `docs/codex/faction-dwarves.html` - 1 instance corrected
+- [x] `docs/codex/faction-undead.html` - 1 instance corrected
+- [x] `docs/codex/content-home.html` - 1 instance corrected
+- [x] `docs/codex/index.html` - Navigation link updated
 
 #### Reference Documents (4 files)
 - [x] `docs/reference/casket-control-system.md` - 1 instance corrected
@@ -173,18 +173,18 @@ grep -r "12 Primary Weapon cards\|fixed 30-card deck\|Secondary Equipment (choos
 ### Immediate Actions (Completed)
 - [x] Replace "Resonance Engine" with "The Engine" in gameplay contexts
 - [x] Add historical context notes where appropriate
-- [x] Update wiki navigation links
+- [x] Update codex navigation links
 
 ### Future Maintenance
 1. **Add linting rule** to CI/CD to catch "Resonance Engine" in new docs (except historical contexts)
 2. **Update contribution guidelines** to specify naming conventions:
    - Use "The Engine" for current-day references
    - Use "Resonance Engine" only for pre-Sundering historical context
-3. **Create glossary page** in wiki to document naming conventions
+3. **Create glossary page** in codex to document naming conventions
 
 ### Testing Checklist
 - [ ] Playtest with updated terminology (ensure clarity)
-- [ ] Check wiki navigation (all links work correctly)
+- [ ] Check codex navigation (all links work correctly)
 - [ ] Verify search functionality finds "The Engine" results
 
 ---
@@ -195,7 +195,7 @@ grep -r "12 Primary Weapon cards\|fixed 30-card deck\|Secondary Equipment (choos
 | File Type | Files Updated | Instances Fixed |
 |-----------|---------------|-----------------|
 | Markdown (lore) | 5 | 14 |
-| HTML (wiki) | 10 | 20+ |
+| HTML (codex) | 10 | 20+ |
 | Markdown (reference) | 4 | 5 |
 | Markdown (campaigns) | 4 | 4 |
 | **TOTAL** | **23** | **43+** |

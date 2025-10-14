@@ -3,7 +3,7 @@
 
 **Date**: October 12, 2025
 **Auditor**: Claude Code (Comprehensive Analysis)
-**Scope**: All documentation, lore files, mechanics, HTML wiki, and CLAUDE.md
+**Scope**: All documentation, lore files, mechanics, HTML codex, and CLAUDE.md
 **Primary Reference**: `/docs/lore/cosmology-and-origins.md` (Version 1.0, October 12, 2025)
 
 ---
@@ -34,20 +34,20 @@ Most contradictions identified in the previous `CONTRADICTION-REPORT.md` have be
 
 ## REMAINING CONTRADICTIONS (5 Total - All LOW Severity)
 
-### 1. Wiki HTML Navigation Links Still Use "Elven Remnants" ⚠️
+### 1. Codex HTML Navigation Links Still Use "Elven Remnants" ⚠️
 
 **Severity**: LOW (Cosmetic, non-blocking)
 
-**Issue**: Design-only faction HTML pages in `/docs/wiki/` still reference "Elven Remnants" in navigation sidebars.
+**Issue**: Design-only faction HTML pages in `/docs/codex/` still reference "Elven Remnants" in navigation sidebars.
 
 **Evidence**:
 ```html
 <!-- Found in 5 files: -->
-/workspaces/penance/docs/wiki/faction-blighted.html:115
-/workspaces/penance/docs/wiki/faction-chitinous.html:115
-/workspaces/penance/docs/wiki/faction-fae.html:115
-/workspaces/penance/docs/wiki/faction-merchants.html:115
-/workspaces/penance/docs/wiki/faction-nomads.html:115
+/workspaces/penance/docs/codex/faction-blighted.html:115
+/workspaces/penance/docs/codex/faction-chitinous.html:115
+/workspaces/penance/docs/codex/faction-fae.html:115
+/workspaces/penance/docs/codex/faction-merchants.html:115
+/workspaces/penance/docs/codex/faction-nomads.html:115
 
 <!-- Incorrect line: -->
 <a href="faction-elves.html" class="nav-link">Elven Remnants</a>
@@ -61,11 +61,11 @@ Most contradictions identified in the previous `CONTRADICTION-REPORT.md` have be
 **Recommendation**: Global find-and-replace in 5 files:
 ```bash
 # Replace in these files:
-docs/wiki/faction-blighted.html
-docs/wiki/faction-chitinous.html
-docs/wiki/faction-fae.html
-docs/wiki/faction-merchants.html
-docs/wiki/faction-nomads.html
+docs/codex/faction-blighted.html
+docs/codex/faction-chitinous.html
+docs/codex/faction-fae.html
+docs/codex/faction-merchants.html
+docs/codex/faction-nomads.html
 
 # Find: >Elven Remnants</a>
 # Replace: >Elven Verdant Covenant</a>
@@ -81,8 +81,8 @@ docs/wiki/faction-nomads.html
 
 **Evidence**:
 - **Cosmology (canonical)**: "~200,000 globally" (line 109)
-- **Wiki HTML**: "Only approximately 200,000 globally" (faction-elves.html:61)
-- **Wiki cosmology.html**: "~200,000 globally" (line 125)
+- **Codex HTML**: "Only approximately 200,000 globally" (faction-elves.html:61)
+- **Codex cosmology.html**: "~200,000 globally" (line 125)
 
 **Analysis**: This is NOT a contradiction - just stylistic variation. All sources agree on ~200,000.
 
@@ -90,15 +90,15 @@ docs/wiki/faction-nomads.html
 
 ---
 
-### 3. "Elven Remnants" in Elven Wiki Page Population Field ⚠️
+### 3. "Elven Remnants" in Elven Codex Page Population Field ⚠️
 
 **Severity**: LOW (Incorrect terminology, but clear context)
 
-**Issue**: The Elven faction wiki page uses "~12,000 Remnants" in population field.
+**Issue**: The Elven faction codex page uses "~12,000 Remnants" in population field.
 
 **Evidence**:
 ```html
-<!-- /workspaces/penance/docs/wiki/faction-elves.html:32 -->
+<!-- /workspaces/penance/docs/codex/faction-elves.html:32 -->
 <td>~12,000 Remnants (dwindling, forests dying)</td>
 ```
 
@@ -120,7 +120,7 @@ docs/wiki/faction-nomads.html
 - **Cosmology (canonical)**: "The Cataclysm has happened **three times before**" (line 331)
 - **Chronicle.md**: "This is the **third ending** we have witnessed" (line 275)
 - **Chronicle.md**: "The Draconids have seen the Cataclysm **three times**" (line 297)
-- **Wiki HTML**: "three times before" (cosmology.html:268)
+- **Codex HTML**: "three times before" (cosmology.html:268)
 
 **Analysis**:
 - **From Draconids' perspective**: "Three times before" = First (50k BCE), Second (10k BCE), Third (Year 0)
@@ -163,7 +163,7 @@ docs/wiki/faction-nomads.html
 ```
 
 **Missing from changelog**:
-- Wiki HTML updates (5 faction pages fixed)
+- Codex HTML updates (5 faction pages fixed)
 - Reference documentation updates (playtest-assessment.md, design-roadmap.md, tabletop-simulator-guide.md)
 - README.md link fixes
 - 18 PDFs regenerated
@@ -178,20 +178,20 @@ docs/wiki/faction-nomads.html
 
 | Element | Canonical Source | Verified Consistent In | Status |
 |---------|------------------|------------------------|--------|
-| **Elven Lifespan** | 300-400 years | cosmology.md, wiki HTML, index.html | ✅ Consistent |
-| **Dwarven Lifespan** | 150-200 years | cosmology.md, wiki HTML, index.html | ✅ Consistent |
-| **Elven Population (Pre-Sundering)** | ~200,000 | cosmology.md, wiki HTML | ✅ Consistent |
-| **Dwarven Population (Pre-Sundering)** | ~1.5 million | cosmology.md, wiki HTML | ✅ Consistent |
-| **Elven Divergence Date** | ~50,000 BCE | cosmology.md, wiki HTML, index.html | ✅ Consistent |
-| **Dwarven Descent Date** | ~40,000 BCE | cosmology.md, wiki HTML, index.html | ✅ Consistent |
-| **Veil Accords Date** | ~1,200 years ago | cosmology.md, wiki HTML, chronicle.md | ✅ Consistent |
-| **Theslar Birth Year** | Year -43 | cosmology.md, wiki HTML | ✅ Consistent |
-| **Timeline Divergence** | ~200,000 BCE | cosmology.md, wiki HTML | ✅ Consistent |
+| **Elven Lifespan** | 300-400 years | cosmology.md, codex HTML, index.html | ✅ Consistent |
+| **Dwarven Lifespan** | 150-200 years | cosmology.md, codex HTML, index.html | ✅ Consistent |
+| **Elven Population (Pre-Sundering)** | ~200,000 | cosmology.md, codex HTML | ✅ Consistent |
+| **Dwarven Population (Pre-Sundering)** | ~1.5 million | cosmology.md, codex HTML | ✅ Consistent |
+| **Elven Divergence Date** | ~50,000 BCE | cosmology.md, codex HTML, index.html | ✅ Consistent |
+| **Dwarven Descent Date** | ~40,000 BCE | cosmology.md, codex HTML, index.html | ✅ Consistent |
+| **Veil Accords Date** | ~1,200 years ago | cosmology.md, codex HTML, chronicle.md | ✅ Consistent |
+| **Theslar Birth Year** | Year -43 | cosmology.md, codex HTML | ✅ Consistent |
+| **Timeline Divergence** | ~200,000 BCE | cosmology.md, codex HTML | ✅ Consistent |
 | **Current Year** | Year 437 | cosmology.md, world-overview.md, CLAUDE.md | ✅ Consistent |
 | **Great Schism** | Year 134 | CLAUDE.md, world-overview.md | ✅ Consistent |
 | **First Casket** | Year 52 | CLAUDE.md, chronicle.md | ✅ Consistent |
 | **Bonelord Thresh** | Year 78 | CLAUDE.md, chronicle.md | ✅ Consistent |
-| **Betrayal at Roothold** | Year 223 | CLAUDE.md, wiki HTML | ✅ Consistent |
+| **Betrayal at Roothold** | Year 223 | CLAUDE.md, codex HTML | ✅ Consistent |
 
 ### Mechanics Consistency (All Verified)
 
@@ -216,7 +216,7 @@ docs/wiki/faction-nomads.html
 | 1. Church | Church of Absolution | ✅ Consistent | All files correct |
 | 2. Dwarves | Dwarven Forge-Guilds | ✅ Consistent | All files correct |
 | 3. Undead | The Ossuarium | ✅ Consistent | All files correct |
-| 4. Elves | Elven Verdant Covenant | ⚠️ 5 wiki HTML nav links | 95% consistent |
+| 4. Elves | Elven Verdant Covenant | ⚠️ 5 codex HTML nav links | 95% consistent |
 | 5. Fae | The Wyrd Conclave | ✅ Consistent | All files correct |
 | 6. Nomads | Nomad Collective | ✅ Consistent | All files correct |
 | 7. Merchants | Merchant Guilds | ✅ Consistent | All files correct |
@@ -286,7 +286,7 @@ docs/wiki/faction-nomads.html
 - Location: Conducts the "Screaming Choir" (voices of those who tried to shut down Engine)
 
 **Cross-reference check**:
-- ✅ Wiki HTML (cosmology.html) - MATCHES
+- ✅ Codex HTML (cosmology.html) - MATCHES
 - ✅ Chronicle.md (Chronicle IX) - MATCHES
 - ✅ CLAUDE.md - MATCHES
 - ✅ Spelling: "Theslar" (not "Teslar") - CORRECT in all files
@@ -357,7 +357,7 @@ docs/wiki/faction-nomads.html
 | Blighted Packs | HOSTILE | ✅ (Mutation threatens forest purity) |
 | Chitinous Ascendancy | WAR | ✅ (Hive devours forests, existential threat) |
 
-**Status**: ✅ **FULLY CONSISTENT** across wiki HTML, faction pages, and relationships.md
+**Status**: ✅ **FULLY CONSISTENT** across codex HTML, faction pages, and relationships.md
 
 ---
 
@@ -446,8 +446,8 @@ grep -r "300-400 years\|150-200 years" docs/
 # 7. Deck system references
 find docs/factions -name "*deck-complete.md" -type f  # (found 0)
 
-# 8. Wiki HTML faction names
-grep -n "Elven Remnants" docs/wiki/*.html
+# 8. Codex HTML faction names
+grep -n "Elven Remnants" docs/codex/*.html
 ```
 
 ---
@@ -464,11 +464,11 @@ All medium contradictions resolved.
 
 ### LOW PRIORITY (5 Files)
 
-1. **docs/wiki/faction-blighted.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
-2. **docs/wiki/faction-chitinous.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
-3. **docs/wiki/faction-fae.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
-4. **docs/wiki/faction-merchants.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
-5. **docs/wiki/faction-nomads.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
+1. **docs/codex/faction-blighted.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
+2. **docs/codex/faction-chitinous.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
+3. **docs/codex/faction-fae.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
+4. **docs/codex/faction-merchants.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
+5. **docs/codex/faction-nomads.html** - Line 115: "Elven Remnants" → "Elven Verdant Covenant"
 
 ### OPTIONAL (2 Files)
 
@@ -486,7 +486,7 @@ All medium contradictions resolved.
 | 1. Deck System Confusion | ✅ RESOLVED | Moved to /archive/, added deprecation notices |
 | 2. "Elven Remnants" in 7 files | ✅ RESOLVED | Fixed in all 7 markdown files |
 | 3. Pilot Physical States | ✅ RESOLVED | Fixed in commit 2b021ab |
-| 4. "Elven Remnants" in HTML wiki | ⚠️ 5 files remain | Only design-only faction nav links |
+| 4. "Elven Remnants" in HTML codex | ⚠️ 5 files remain | Only design-only faction nav links |
 
 ### New Issues Discovered in This Audit
 
@@ -512,7 +512,7 @@ All medium contradictions resolved.
 ### Documentation Consistency Score: 99.5% ✅
 
 - **Total files audited**: ~80 files (md + html)
-- **Files with errors**: 5 (wiki HTML nav links)
+- **Files with errors**: 5 (codex HTML nav links)
 - **Critical errors**: 0
 - **Medium errors**: 0
 - **Low errors**: 5
@@ -523,14 +523,14 @@ All medium contradictions resolved.
 
 ### Immediate Actions (Do This Session)
 
-1. **Fix 5 wiki HTML navigation links** (5 minutes)
+1. **Fix 5 codex HTML navigation links** (5 minutes)
    ```bash
    # In these files:
-   docs/wiki/faction-blighted.html
-   docs/wiki/faction-chitinous.html
-   docs/wiki/faction-fae.html
-   docs/wiki/faction-merchants.html
-   docs/wiki/faction-nomads.html
+   docs/codex/faction-blighted.html
+   docs/codex/faction-chitinous.html
+   docs/codex/faction-fae.html
+   docs/codex/faction-merchants.html
+   docs/codex/faction-nomads.html
 
    # Change line 115:
    # FROM: >Elven Remnants</a>
@@ -548,7 +548,7 @@ All medium contradictions resolved.
 
 3. **Update CLAUDE.md changelog** - Add October 12 entry summarizing AUDIT-REPORT.md work
 
-4. **Consider wiki consistency check** - Add pre-commit hook to validate faction names
+4. **Consider codex consistency check** - Add pre-commit hook to validate faction names
 
 ---
 
@@ -571,7 +571,7 @@ All medium contradictions resolved.
 The Penance repository demonstrates **exceptional consistency** across 80+ documentation files. The recent cosmology document provides a solid canonical foundation, and nearly all files reference it correctly.
 
 The 5 remaining issues are:
-- **Cosmetic only** (wiki HTML nav links)
+- **Cosmetic only** (codex HTML nav links)
 - **Non-blocking** (cataclysm count phrasing)
 - **Easy to fix** (10 minutes total)
 

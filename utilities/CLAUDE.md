@@ -20,13 +20,13 @@
 
 **Core Mechanic**: Your deck IS your HP (26-50 cards variable). Take damage → discard cards. Deck empty → reshuffle + add blank "Damage" cards (death spiral).
 
-### Terminology Note: "Codex" = "wiki"
+### Terminology Note: "Codex" = "codex"
 
-**IMPORTANT**: When the user says "Codex", they mean the `docs/wiki/` directory (HTML reference pages).
+**IMPORTANT**: When the user says "Codex", they mean the `docs/codex/` directory (HTML reference pages).
 
 - **User says**: "Update the Codex navigation"
-- **You update**: `docs/wiki/index.html` navigation
-- **Directory path**: `docs/wiki/` (for technical file operations)
+- **You update**: `docs/codex/index.html` navigation
+- **Directory path**: `docs/codex/` (for technical file operations)
 - **Thematic name**: "The Codex" (for user-facing communication)
 
 ---
@@ -295,7 +295,7 @@ penance/
 │   ├── tools/                         # Interactive tools
 │   │   └── pilot-generator.html (JavaScript character generator)
 │   │
-│   ├── wiki/                          # THE CODEX - Interactive reference (HTML)
+│   ├── codex/                          # THE CODEX - Interactive reference (HTML)
 │   │   ├── index.html (iframe navigation), manuscript-style.css
 │   │   ├── rules-dice-pool.html (v3.0), rules-taint-exploitation.html (v3.0)
 │   │   ├── campaign-pilot-grit.html (v3.0)
@@ -486,7 +486,7 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 **October 14, 2025** - v3.0 Integration Complete
 - Added Version 3.0 Optional Mechanics section (Dice Pool, Taint, Grit)
 - All 23 files from audit updated with v3.0 cross-references
-- Created 3 new HTML wiki pages for v3.0 (rules-dice-pool, rules-taint-exploitation, campaign-pilot-grit)
+- Created 3 new HTML codex pages for v3.0 (rules-dice-pool, rules-taint-exploitation, campaign-pilot-grit)
 - Updated all 4 faction HTML pages with v3.0 Taint/Grit modifiers
 - Updated main website with v3.0 announcement
 - Streamlined CLAUDE.md (removed redundant sections, consolidated deck composition)
@@ -500,17 +500,17 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 - Fixed deck formula contradictions (30-card fixed → 26-50 variable)
 
 **October 13, 2025** - The Codex Expansion
-- Wiki renamed to "The Codex" (thematic consistency)
+- Codex renamed to "The Codex" (thematic consistency)
 - Campaign pages created (6 files: settlements, pilot progression, leg-skimming, events, anomalous, loot)
 - Scenario pages created (4 files: all internal iframe pages)
 - Emoticon removal (95+ instances replaced with text labels)
 - Navigation reorganized (10 → 8 sections)
 
-**October 12, 2025** - Wiki System Complete
+**October 12, 2025** - Codex System Complete
 - All 9 faction pages manuscript-styled
 - Cosmology & Origins created (three-layered cosmos)
 - Engine naming system (universal "The Engine" + 9 faction-specific names)
-- Equipment, Support Units, Scenarios wiki pages
+- Equipment, Support Units, Scenarios codex pages
 - Cross-platform responsive design
 
 **October 11, 2025** - Initial Creation

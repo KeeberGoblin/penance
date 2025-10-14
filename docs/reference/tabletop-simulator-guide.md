@@ -464,7 +464,7 @@ Roll20 is free and browser-based (no Steam required).
 - **Inkscape**: https://inkscape.org
 
 ### TTS Guides:
-- Official TTS Wiki: https://kb.tabletopsimulator.com/custom-content/custom-deck/
+- Official TTS Codex: https://kb.tabletopsimulator.com/custom-content/custom-deck/
 - TTS Subreddit: r/tabletopsimulator
 - Boardgame Design Lab (TTS tutorials): https://www.youtube.com/@BoardGameDesignLab
 

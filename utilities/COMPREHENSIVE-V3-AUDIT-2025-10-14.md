@@ -167,28 +167,28 @@ Missing: "Support Units gain +1 Morale if commanded by Grit 2+ pilot"
 
 ---
 
-### 5. HTML/Wiki Pages (The Codex)
+### 5. HTML/Codex Pages (The Codex)
 
 **Current Status**: 34 HTML files, NONE reference v3.0 mechanics
 
 **Missing HTML Pages**:
-1. `docs/wiki/rules-dice-pool.html` - Dice Pool Advantage system
-2. `docs/wiki/rules-taint-exploitation.html` - Taint as tactical resource
-3. `docs/wiki/campaign-pilot-grit.html` - Grit stat progression
+1. `docs/codex/rules-dice-pool.html` - Dice Pool Advantage system
+2. `docs/codex/rules-taint-exploitation.html` - Taint as tactical resource
+3. `docs/codex/campaign-pilot-grit.html` - Grit stat progression
 
 **HTML Pages Needing Updates** (Faction Modifiers):
-1. `docs/wiki/faction-church.html` - Add Grit +1, Taint embrace
-2. `docs/wiki/faction-dwarves.html` - Add Grit +1 vs Severe, Taint resist
-3. `docs/wiki/faction-undead.html` - Add Grit immune, Taint thrive
-4. `docs/wiki/faction-elves.html` - Add Grit -1, Taint vulnerable
+1. `docs/codex/faction-church.html` - Add Grit +1, Taint embrace
+2. `docs/codex/faction-dwarves.html` - Add Grit +1 vs Severe, Taint resist
+3. `docs/codex/faction-undead.html` - Add Grit immune, Taint thrive
+4. `docs/codex/faction-elves.html` - Add Grit -1, Taint vulnerable
 
 **HTML Pages Needing Updates** (Rules References):
-5. `docs/wiki/rules-combat.html` - Add Dice Pool option note
-6. `docs/wiki/rules-turn-structure.html` - Add Taint Marker tracking
-7. `docs/wiki/rules-quick-ref.html` - Add v3.0 tables (or link to MD quick-ref)
+5. `docs/codex/rules-combat.html` - Add Dice Pool option note
+6. `docs/codex/rules-turn-structure.html` - Add Taint Marker tracking
+7. `docs/codex/rules-quick-ref.html` - Add v3.0 tables (or link to MD quick-ref)
 
 **Navigation Updates Needed**:
-- `docs/wiki/index.html` - Add "v3.0 Optional Rules" section to navigation
+- `docs/codex/index.html` - Add "v3.0 Optional Rules" section to navigation
 - Link to 3 new HTML pages from main Codex navigation
 
 **Recommendation**: Create 3 new HTML pages + update faction pages with modifiers
@@ -312,7 +312,7 @@ Missing: "Support Units gain +1 Morale if commanded by Grit 2+ pilot"
 
 ### MEDIUM (Enhances Experience)
 
-8. Create 3 new HTML wiki pages (dice-pool, taint, grit)
+8. Create 3 new HTML codex pages (dice-pool, taint, grit)
 9. Update 4 faction HTML pages with Taint/Grit modifiers
 10. Update docs/index.html with v3.0 announcement
 11. **dice-reference.md** - Add Advantage/Disadvantage section
@@ -321,7 +321,7 @@ Missing: "Support Units gain +1 Morale if commanded by Grit 2+ pilot"
 
 12. Update turn-structure.md with Taint Marker tracking
 13. Update combat-system.md version header
-14. Update navigation in wiki/index.html
+14. Update navigation in codex/index.html
 
 ---
 
@@ -365,12 +365,12 @@ Missing: "Support Units gain +1 Morale if commanded by Grit 2+ pilot"
 1. Update all core rules files with v3.0 cross-references
 2. Update all campaign files with Grit integration
 3. Update all faction files with Taint/Grit modifiers
-4. Create 3 new HTML wiki pages
+4. Create 3 new HTML codex pages
 5. Update faction HTML pages
 6. Update CLAUDE.md
 7. Update main website homepage
 
-**Result**: v3.0 fully integrated, all cross-references work, HTML/wiki complete
+**Result**: v3.0 fully integrated, all cross-references work, HTML/codex complete
 
 ---
 
@@ -385,7 +385,7 @@ Missing: "Support Units gain +1 Morale if commanded by Grit 2+ pilot"
 **Cons**:
 - Low discoverability (players must read index/quick-ref)
 - Faction modifiers not documented
-- HTML/wiki incomplete
+- HTML/codex incomplete
 
 **Result**: Acceptable for optional mechanics, but incomplete for full release
 
@@ -395,7 +395,7 @@ Missing: "Support Units gain +1 Morale if commanded by Grit 2+ pilot"
 
 **Current Status**: Version 3.0 mechanics are **playable and complete**, but **poorly integrated** with existing documentation.
 
-**Recommendation**: **Option A (Minimal Integration)** - 1 hour of work to make v3.0 discoverable and document faction modifiers. This gives the best ROI for playability without requiring extensive HTML/wiki work.
+**Recommendation**: **Option A (Minimal Integration)** - 1 hour of work to make v3.0 discoverable and document faction modifiers. This gives the best ROI for playability without requiring extensive HTML/codex work.
 
 **Long-Term**: Consider **Option B (Full Integration)** before v3.0 official release or Kickstarter campaign.
 
@@ -426,7 +426,7 @@ Missing: "Support Units gain +1 Morale if commanded by Grit 2+ pilot"
 **LOW (3 files)**:
 21. docs/rules/turn-structure.md
 22. docs/rules/dice-reference.md
-23. docs/wiki/index.html
+23. docs/codex/index.html
 
 **Total**: 23 files needing updates (out of 103 total files)
 

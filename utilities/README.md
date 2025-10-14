@@ -62,7 +62,7 @@ When creating new audit reports, check for:
 - [ ] System version consistency (equipment, deck construction)
 - [ ] Cross-references between documents
 - [ ] Deprecated terminology in active docs
-- [ ] Broken links in wiki/docs
+- [ ] Broken links in codex/docs
 - [ ] README accuracy
 
 ---

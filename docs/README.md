@@ -84,7 +84,7 @@ Design documents and creator tools
 
 - **[Main Website](index.html)** - Timeline, faction overview, playtest section
 - **[Card Database](cards/index.html)** - Interactive, filterable, color-coded cards
-- **[Wiki](wiki/index.html)** - Comprehensive game reference
+- **[Codex](codex/index.html)** - Comprehensive game reference
 
 ---
 

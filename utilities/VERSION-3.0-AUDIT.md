@@ -156,9 +156,9 @@ Files to update:
 
 ---
 
-## HTML/Wiki Files
+## HTML/Codex Files
 
-**Codex Pages** (docs/wiki/*.html):
+**Codex Pages** (docs/codex/*.html):
 - Files affected: 30+ HTML pages
 - Changes Needed:
   - Add navigation links to 3.0 mechanics (dice-pool, taint, grit)
@@ -167,18 +167,18 @@ Files to update:
 - Action: CREATE new pages + UPDATE navigation
 
 Priority HTML files:
-1. `/docs/wiki/rules-combat.html` - Add Dice Pool reference
-2. `/docs/wiki/rules-turn-structure.html` - Add Taint/Grit references
-3. `/docs/wiki/rules-quick-ref.html` - Add 3.0 optional rules table
-4. `/docs/wiki/faction-church.html` - Add Grit +1, Taint synergy
-5. `/docs/wiki/faction-dwarves.html` - Add Grit +1 vs Severe, Taint resist
-6. `/docs/wiki/faction-undead.html` - Add Grit immune, Taint thrive
-7. `/docs/wiki/faction-elves.html` - Add Grit -1, Taint vulnerable
+1. `/docs/codex/rules-combat.html` - Add Dice Pool reference
+2. `/docs/codex/rules-turn-structure.html` - Add Taint/Grit references
+3. `/docs/codex/rules-quick-ref.html` - Add 3.0 optional rules table
+4. `/docs/codex/faction-church.html` - Add Grit +1, Taint synergy
+5. `/docs/codex/faction-dwarves.html` - Add Grit +1 vs Severe, Taint resist
+6. `/docs/codex/faction-undead.html` - Add Grit immune, Taint thrive
+7. `/docs/codex/faction-elves.html` - Add Grit -1, Taint vulnerable
 
 New HTML pages needed:
-- `/docs/wiki/rules-dice-pool.html`
-- `/docs/wiki/rules-taint-exploitation.html`
-- `/docs/wiki/campaign-pilot-grit.html`
+- `/docs/codex/rules-dice-pool.html`
+- `/docs/codex/rules-taint-exploitation.html`
+- `/docs/codex/campaign-pilot-grit.html`
 
 ---
 
@@ -232,7 +232,7 @@ All Version 2.0 files remain valid. Version 3.0 mechanics are OPTIONAL enhanceme
 13. Update ossuarium/deck-equipment-system.md (Grit immune, Taint thrive)
 14. Update elves/deck-equipment-system.md (Grit -1, Taint vulnerable)
 
-### Phase 4: HTML/Wiki Updates (2 hours)
+### Phase 4: HTML/Codex Updates (2 hours)
 15. Create 3 new HTML pages for new mechanics
 16. Update faction HTML pages with Taint/Grit modifiers
 17. Update rules HTML pages with 3.0 references
@@ -256,7 +256,7 @@ All Version 2.0 files remain valid. Version 3.0 mechanics are OPTIONAL enhanceme
 3. **README** (announce v3.0) - HIGH
 4. **Faction Files** (Taint/Grit modifiers) - HIGH
 5. **Campaign Files** (Grit integration) - MEDIUM
-6. **HTML/Wiki** (new pages + updates) - MEDIUM
+6. **HTML/Codex** (new pages + updates) - MEDIUM
 7. **Main Website** (index.html announcement) - LOW
 
 ---

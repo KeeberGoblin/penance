@@ -11,7 +11,7 @@ The Penance card database and deck builder have been completely rebuilt from the
 - **Modern tabbed interface** inspired by Scryfall/Netrunnerdb
 - **Complete equipment pool integration** (60+ items)
 - **Professional deck builder** with validation and save/load
-- **Gothic manuscript aesthetic** matching the wiki
+- **Gothic manuscript aesthetic** matching the codex
 
 ---
 
@@ -153,7 +153,7 @@ Each item shows:
 
 ## Visual Design (Gothic Manuscript Theme)
 
-### Color Palette (matching wiki)
+### Color Palette (matching codex)
 ```css
 --parchment-dark: #1a1410
 --leather-brown: #2b1f17
@@ -288,7 +288,7 @@ value: { deckName, cards[] }
 
 ## Integration with Existing Systems
 
-### Wiki Integration
+### Codex Integration
 - Same gothic manuscript theme
 - Same color palette and fonts
 - Consistent visual language
@@ -429,7 +429,7 @@ value: { deckName, cards[] }
 - Card Data: `/docs/cards/complete-card-data.json`
 
 ### Related Systems
-- Wiki: `/docs/wiki/index.html`
+- Codex: `/docs/codex/index.html`
 - Rules: `/docs/rules/`
 - Scenarios: `/docs/scenarios/`
 
@@ -440,7 +440,7 @@ value: { deckName, cards[] }
 The Penance card system is now a **professional-grade, modern web application** with:
 - Complete card pool (250+ cards)
 - Modern UI inspired by industry leaders (Scryfall, Netrunnerdb)
-- Gothic manuscript aesthetic matching the wiki
+- Gothic manuscript aesthetic matching the codex
 - Full deck building functionality
 - Print-ready card sheets
 - Responsive design for all devices
