@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot Generator - Penance Tools</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a0e0e 0%, #2a1414 100%);
+            color: #d4c5b0;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #1a1410;
+            border: 3px solid #8b6914;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-family: 'Cinzel Decorative', serif;
+            color: #ffd700;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #b8956a;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .mode-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .mode-btn {
+            background: linear-gradient(135deg, #4a3707 0%, #8b6914 100%);
+            color: #ffd700;
+            border: 2px solid #d4af37;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cinzel', serif;
+        }
+
+        .mode-btn:hover {
+            background: linear-gradient(135deg, #8b6914 0%, #b8956a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .mode-btn.active {
+            background: #ffd700;
+            color: #1a0e0e;
+            border-color: #ffd700;
+        }
+
+        .generator-section {
+            display: none;
+        }
+
+        .generator-section.active {
+            display: block;
+        }
+
+        .roll-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #8b0000 0%, #4a0e0e 100%);
+            color: #ffd700;
+            border: 3px solid #d4af37;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            font-family: 'Cinzel Decorative', serif;
+            transition: all 0.3s;
+        }
+
+        .roll-btn:hover {
+            background: linear-gradient(135deg, #b80000 0%, #6a1414 100%);
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.5);
+        }
+
+        .pilot-sheet {
+            background: #2a1f1a;
+            border: 2px solid #8b6914;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .pilot-field {
+            margin-bottom: 1.5rem;
+        }
+
+        .pilot-field label {
+            display: block;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .pilot-field .value {
+            background: #1a1410;
+            border: 1px solid #8b6914;
+            padding: 1rem;
+            color: #d4c5b0;
+            min-height: 3rem;
+        }
+
+        .trait-effect {
+            color: #b8956a;
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #8b6914;
+        }
+
+        .probability {
+            background: linear-gradient(135deg, #1a0a28 0%, #0a0514 100%);
+            border: 2px solid #6600cc;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            color: #cc66ff;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .manual-selector {
+            margin-bottom: 1.5rem;
+        }
+
+        .manual-selector select {
+            width: 100%;
+            background: #1a1410;
+            border: 2px solid #8b6914;
+            color: #d4c5b0;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .hybrid-checkbox {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hybrid-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-box {
+            background: #1a0e0e;
+            border: 1px solid #8b6914;
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .stat-label {
+            color: #b8956a;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            color: #ffd700;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .copy-btn {
+            background: #4a3707;
+            color: #ffd700;
+            border: 2px solid #8b6914;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .copy-btn:hover {
+            background: #8b6914;
+        }
+
+        .ornamental-break {
+            text-align: center;
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            letter-spacing: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚔ PILOT GENERATOR ⚔</h1>
+        <p class="subtitle">"Roll the dice. Forge your legend. Die with glory."</p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="mode-selector">
+            <button class="mode-btn active" onclick="switchMode('random')">RANDOM ROLL</button>
+            <button class="mode-btn" onclick="switchMode('manual')">MANUAL SELECT</button>
+        </div>
+
+        <!-- RANDOM MODE -->
+        <div id="random-mode" class="generator-section active">
+            <button class="roll-btn" onclick="rollPilot()">⚄ ROLL PILOT ⚄</button>
+
+            <div id="pilot-result" class="pilot-sheet" style="display: none;">
+                <div class="pilot-field">
+                    <label>PILOT NAME:</label>
+                    <div class="value" id="pilot-name">Brother Tomas "The Zealot"</div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>BACKGROUND:</label>
+                    <div class="value" id="background"></div>
+                    <div class="probability" id="background-prob"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>STARTING TRAIT(S):</label>
+                    <div class="value" id="traits"></div>
+                    <div class="probability" id="traits-prob"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>MOTIVATION:</label>
+                    <div class="value" id="motivation"></div>
+                    <div class="probability" id="motivation-prob"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>QUIRK:</label>
+                    <div class="value" id="quirk"></div>
+                    <div class="probability" id="quirk-prob"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>APPEARANCE:</label>
+                    <div class="value" id="appearance"></div>
+                    <div class="probability" id="appearance-prob"></div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>STARTING STATS:</label>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">Grit</div>
+                            <div class="stat-value" id="stat-grit">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Morale</div>
+                            <div class="stat-value" id="stat-morale">1</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Taint</div>
+                            <div class="stat-value" id="stat-taint">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Injuries</div>
+                            <div class="stat-value">None</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pilot-field">
+                    <label>OVERALL PROBABILITY:</label>
+                    <div class="probability" id="total-prob" style="font-size: 1.2rem; font-weight: bold;"></div>
+                </div>
+
+                <button class="copy-btn" onclick="copyToClipboard()">📋 COPY TO CLIPBOARD</button>
+            </div>
+        </div>
+
+        <!-- MANUAL MODE -->
+        <div id="manual-mode" class="generator-section">
+            <div class="manual-selector">
+                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Background (d20):</label>
+                <select id="manual-background" onchange="updateManualPilot()">
+                    <option value="">-- Select Background --</option>
+                </select>
+            </div>
+
+            <div class="manual-selector">
+                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Starting Trait (d20):</label>
+                <select id="manual-trait1" onchange="updateManualPilot()">
+                    <option value="">-- Select Trait --</option>
+                </select>
+                <div class="hybrid-checkbox">
+                    <input type="checkbox" id="hybrid-enabled" onchange="toggleHybrid()">
+                    <label style="color: #b8956a;">Enable Hybrid (Roll second trait)</label>
+                </div>
+                <select id="manual-trait2" style="display: none; margin-top: 0.5rem;" onchange="updateManualPilot()">
+                    <option value="">-- Select Second Trait --</option>
+                </select>
+            </div>
+
+            <div class="manual-selector">
+                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Motivation (d20):</label>
+                <select id="manual-motivation" onchange="updateManualPilot()">
+                    <option value="">-- Select Motivation --</option>
+                </select>
+            </div>
+
+            <div class="manual-selector">
+                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Quirk (d100):</label>
+                <select id="manual-quirk" onchange="updateManualPilot()">
+                    <option value="">-- Select Quirk --</option>
+                </select>
+            </div>
+
+            <div class="manual-selector">
+                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Appearance (d20):</label>
+                <select id="manual-appearance" onchange="updateManualPilot()">
+                    <option value="">-- Select Appearance --</option>
+                </select>
+            </div>
+
+            <div id="manual-result" class="pilot-sheet" style="display: none;">
+                <!-- Same structure as random-mode result -->
+            </div>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+    </div>
+
+    <script>
+        // DATA: All pilot generation tables
+        const pilotData = {
+            backgrounds: [
+                {name: "Farm Hand", desc: "Rural laborer, simple life. Never saw a Casket until recruitment.", hook: "I just wanted to grow wheat. Now I pilot death."},
+                {name: "Refugee", desc: "Fled from war/disaster. Lost everything. Settlement is last hope.", hook: "I have nothing left to lose. That makes me dangerous."},
+                {name: "Orphan", desc: "Grew up on streets. Learned to survive alone. Casket = family.", hook: "The machine doesn't judge me. It just fights."},
+                {name: "Blacksmith", desc: "Skilled metalworker. Understands machinery instinctively.", hook: "I forged swords. Now I *am* the sword."},
+                {name: "Healer", desc: "Former medic/apothecary. Knows anatomy.", hook: "I saved lives. Now I take them. The Engine changes us all."},
+                {name: "Engineer", desc: "Technical expert. Built things before. Now pilots them.", hook: "I designed Caskets. I never thought I'd be inside one."},
+                {name: "Scout", desc: "Wilderness guide, tracker. Fast reflexes, quiet movement.", hook: "I know how to disappear. The Casket makes that harder."},
+                {name: "Soldier", desc: "Professional fighter. Disciplined. Seen combat before Caskets.", hook: "War never changes. Just the weapons."},
+                {name: "City Guard", desc: "Law enforcement. Protector mentality.", hook: "I used to arrest criminals. Now I fight monsters."},
+                {name: "Mercenary", desc: "Fought for coin. Loyalty is transactional.", hook: "Credits first. Redemption second. Survival always."},
+                {name: "Priest/Cleric", desc: "Church clergy. Faith-driven. Sees Casket as divine tool.", hook: "Through steel, salvation. Through blood, absolution."},
+                {name: "Noble", desc: "Born into privilege. Lost status in Sundering.", hook: "I was taught to rule, not to bleed."},
+                {name: "Scholar", desc: "Librarian, historian, researcher. Knows lore but not combat.", hook: "I studied the Engine. Now I fight because of it."},
+                {name: "Merchant", desc: "Trader, negotiator. Sees everything as transaction.", hook: "I sold goods. Now I sell my life, one mission at a time."},
+                {name: "Criminal", desc: "Thief, smuggler, or worse. Given choice: Casket or execution.", hook: "I stole to survive. Now I kill to live. Not much difference."},
+                {name: "Exile", desc: "Banished from homeland. Settlement took them in.", hook: "They cast me out. The Casket welcomed me. Ironic."},
+                {name: "Cultist", desc: "Worshipped the Engine. Believes piloting is religious duty.", hook: "The Engine sings. I am its voice. Its wrath."},
+                {name: "Nomad", desc: "Wanderer, no homeland. Drifted into settlement.", hook: "I've walked a thousand roads. This one leads to something."},
+                {name: "Child of War", desc: "Born after Sundering. Never knew peace.", hook: "I don't remember the old world. This is all I know."},
+                {name: "Mystery", desc: "No memory of past. Found wandering Tainted wastes.", hook: "I don't know who I was. The Casket is who I am now."}
+            ],
+            traits: [
+                {name: "Steady Hands", effect: "+1 to ranged attacks, -1 SP maximum"},
+                {name: "Quick Reflexes", effect: "+1 Initiative, -1 Defense"},
+                {name: "Iron Will", effect: "+2 to Willpower Saves, -1 Morale permanently"},
+                {name: "Battle Scars", effect: "Start with Minor Injury, +1 Grit immediately"},
+                {name: "Hot-Blooded", effect: "+1 SP, +1 Heat per turn"},
+                {name: "Cautious", effect: "+1 Defense, -1 Movement per turn"},
+                {name: "Marksman", effect: "Ranged attacks ignore 1 cover, melee -1 damage"},
+                {name: "Brawler", effect: "Melee +1 damage, ranged -1 to hit"},
+                {name: "Lucky", effect: "Reroll once per mission, -1 Grit"},
+                {name: "Survivor", effect: "Start with Grit 1, -1 Morale permanently"},
+                {name: "Tainted", effect: "Start with 2 Taint, immune to first Corruption Save"},
+                {name: "Paranoid", effect: "+1 Initiative, no benefit from allies within 2 hexes"},
+                {name: "Focused", effect: "+1 to single-target, -1 to AOE attacks"},
+                {name: "Reckless", effect: "+2 damage first attack, take +1 damage until next turn"},
+                {name: "Engineer", effect: "Repair costs -50%, crafting +1 action"},
+                {name: "Faithful", effect: "At 5 cards: +1 to all rolls. Start with 2 Morale"},
+                {name: "Cynical", effect: "Immune to Morale loss from ally death, can't gain from allies"},
+                {name: "Nimble", effect: "Movement -1 SP per hex, can't equip Heavy weapons"},
+                {name: "Bulky", effect: "+1 card draw per turn, movement +1 SP per hex"},
+                {name: "Chosen", effect: "Roll twice on trait table, combine both"}
+            ],
+            motivations: [
+                "Redemption - Seeking forgiveness for past sins",
+                "Revenge - Someone killed loved ones. Must be destroyed",
+                "Glory - Craves fame, recognition. Wants name remembered",
+                "Wealth - Fights for Credits. Will retire rich or die trying",
+                "Protection - Defends settlement/family. Selfless guardian",
+                "Duty - Sworn oath. Honor-bound. Cannot abandon post",
+                "Curiosity - Wants to understand the Engine. Seeks knowledge",
+                "Madness - Broken by war/Taint. Doesn't know why anymore",
+                "Faith - Believes piloting is divine will. Religious zealot",
+                "Escape - Running from past. Casket is anonymity",
+                "Addiction - Hooked on neural connection. Can't live without Casket",
+                "Love - Fighting to save/impress someone. Devotion",
+                "Hatred - Despises enemy faction. Personal vendetta",
+                "Curiosity (Morbid) - Fascinated by death. Academic interest",
+                "Belonging - Never had family. Settlement is first connection",
+                "Survival - No ideology. Just trying to live another day",
+                "Legacy - Wants to leave mark on world. Build something lasting",
+                "Nihilism - Believes world is ending. Nothing matters anyway",
+                "Hope - Genuinely believes can make world better. Idealist",
+                "Unknown - Doesn't know why. Compelled by something"
+            ],
+            quirks: [
+                "Refuses to remove helmet in public",
+                "Speaks only in questions",
+                "Compulsive liar about trivial things",
+                "Brutally honest. No filter. Offends everyone",
+                "Mute by choice. Gestures only",
+                "Laughs at inappropriate times. Nervous tic",
+                "Cannot make eye contact. Looks at ground",
+                "Overly formal. Addresses everyone by title",
+                "Whispers constantly",
+                "Touchy. Personal space invader",
+                "Paranoid. Checks doors constantly",
+                "Name-dropper. Claims to know famous people",
+                "Apologizes excessively",
+                "Brags relentlessly",
+                "Pessimist. Everything will fail",
+                "Optimist. Delusionally cheerful",
+                "Pedantic. Corrects grammar",
+                "Mumbles. Hard to understand",
+                "Uses outdated slang",
+                "Silent type. Only speaks when necessary",
+                "Hums hymns during combat",
+                "Carves notches for each kill",
+                "Names Casket. Talks to it",
+                "Prays before/after every mission",
+                "Keeps journal of every kill",
+                "Collects trophies from enemies",
+                "Polishes Casket obsessively",
+                "Sleeps in Casket capsule",
+                "Eats same meal before every mission",
+                "Reads poetry aloud",
+                "Chain-smoker",
+                "Drinks heavily. Functional alcoholic",
+                "Gambles compulsively",
+                "Exercises obsessively",
+                "Meditates daily",
+                "Writes letters to dead loved ones",
+                "Hoards scrap/junk",
+                "Fastidiously clean. Washes hands constantly",
+                "Never bathes. Smells terrible",
+                "Sings while working. Off-key",
+                "Believes Casket is sentient",
+                "Thinks they're cursed",
+                "Convinced they're blessed",
+                "Fears mirrors",
+                "Believes in ghosts everywhere",
+                "Superstitious about numbers",
+                "Thinks Engine whispers to them",
+                "Convinced they died years ago",
+                "Believes they're reincarnation of hero",
+                "Thinks world will end soon",
+                "Prays to wrong god. Confused theology",
+                "Believes pain is purifying",
+                "Thinks all enemies are victims",
+                "Convinced settlement is doomed",
+                "Believes they can see future",
+                "Thinks they're from alternate timeline",
+                "Convinced allies are imposters",
+                "Believes machine spirits must be appeased",
+                "Thinks Taint is gift, not curse",
+                "Convinced they're only one who's real",
+                "Cracks knuckles constantly",
+                "Twitches when stressed",
+                "Bites nails. Fingers bloody",
+                "Picks at scabs/scars",
+                "Sniffs everything",
+                "Counts things compulsively",
+                "Rocks back and forth",
+                "Grinds teeth audibly",
+                "Blinks rapidly when lying",
+                "Limps (no injury). Psychosomatic",
+                "Scratches same spot repeatedly",
+                "Chews on random objects",
+                "Spits frequently",
+                "Stretches excessively",
+                "Yawns at inappropriate times",
+                "Sneezes in threes. Every time",
+                "Breathes heavily even when calm",
+                "Squints even with good vision",
+                "Tilts head like confused dog",
+                "Smiles inappropriately",
+                "Was enemy faction. Defected",
+                "Illiterate. Hides inability to read",
+                "Noble-born. Pretends to be commoner",
+                "Secretly genius. Plays dumb",
+                "Has relative in enemy faction",
+                "Committed war crime. Haunted",
+                "Was cultist. Left but still believes",
+                "Addicted to Taint. Seeks corruption",
+                "Spy for another faction",
+                "Romantically involved with another pilot",
+                "Has prophetic dreams",
+                "Hears voices. Responds to them",
+                "Sabotaged previous settlement",
+                "Knows Engine's true purpose",
+                "Immortal (thinks). Died before, came back",
+                "Clone/construct. Existential crisis",
+                "Possessed by ghost/spirit",
+                "Time traveler (claims)",
+                "Has forbidden artifact hidden",
+                "The Chosen One (actually). GM's choice"
+            ],
+            appearances: [
+                "Burn Scars - Face/arms covered in old scars",
+                "Missing Eye - Wears eyepatch or crude prosthetic",
+                "Prematurely Gray - Hair white despite youth",
+                "Tattooed - Covered in faction symbols",
+                "Gaunt - Malnourished, skeletal",
+                "Scarred Hands - Twisted, burn marks",
+                "Milky Eyes - Partially blind",
+                "Unusually Tall - 6'5\"+, stands out",
+                "Unusually Short - 4'10\" or less",
+                "Facial Scar - Dramatic scar across face",
+                "Missing Fingers - 1-3 fingers gone",
+                "Albino - Pale skin, white hair, red eyes",
+                "Heterochromia - Different colored eyes",
+                "Limp - Old leg injury. Walks with cane",
+                "Handsome/Beautiful - Strikingly attractive",
+                "Brutish - Thick-featured, intimidating",
+                "Childlike Face - Baby-faced despite age",
+                "Weathered - Looks 20 years older",
+                "Taint Marks - Glowing veins, discolored skin",
+                "Unremarkable - Perfectly average. Forgettable"
+            ]
+        };
+
+        // Initialize dropdowns
+        function initializeManualMode() {
+            populateSelect('manual-background', pilotData.backgrounds.map(b => b.name));
+            populateSelect('manual-trait1', pilotData.traits.map(t => t.name));
+            populateSelect('manual-trait2', pilotData.traits.map(t => t.name));
+            populateSelect('manual-motivation', pilotData.motivations);
+            populateSelect('manual-quirk', pilotData.quirks);
+            populateSelect('manual-appearance', pilotData.appearances);
+        }
+
+        function populateSelect(id, options) {
+            const select = document.getElementById(id);
+            options.forEach((option, index) => {
+                const opt = document.createElement('option');
+                opt.value = index;
+                opt.textContent = option;
+                select.appendChild(opt);
+            });
+        }
+
+        // Switch between modes
+        function switchMode(mode) {
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.generator-section').forEach(section => section.classList.remove('active'));
+
+            if (mode === 'random') {
+                document.querySelector('.mode-btn:first-child').classList.add('active');
+                document.getElementById('random-mode').classList.add('active');
+            } else {
+                document.querySelector('.mode-btn:last-child').classList.add('active');
+                document.getElementById('manual-mode').classList.add('active');
+            }
+        }
+
+        // Roll random pilot
+        function rollPilot() {
+            const background = rollD20(pilotData.backgrounds);
+            const trait1 = rollD20(pilotData.traits);
+            const trait2 = rollD20(pilotData.traits);
+            const motivation = rollD20(pilotData.motivations);
+            const quirk = rollD100(pilotData.quirks);
+            const appearance = rollD20(pilotData.appearances);
+
+            displayPilot({
+                background,
+                traits: [trait1, trait2],
+                motivation,
+                quirk,
+                appearance
+            });
+
+            document.getElementById('pilot-result').style.display = 'block';
+        }
+
+        function rollD20(array) {
+            return {
+                index: Math.floor(Math.random() * 20),
+                data: array[Math.floor(Math.random() * 20)]
+            };
+        }
+
+        function rollD100(array) {
+            return {
+                index: Math.floor(Math.random() * 100),
+                data: array[Math.floor(Math.random() * 100)]
+            };
+        }
+
+        function displayPilot(pilot) {
+            // Background
+            document.getElementById('background').innerHTML = `
+                <strong>${pilot.background.data.name}</strong><br>
+                ${pilot.background.data.desc}<br>
+                <div class="trait-effect">"${pilot.background.data.hook}"</div>
+            `;
+            document.getElementById('background-prob').textContent = `Probability: 1/20 (5%)`;
+
+            // Traits
+            document.getElementById('traits').innerHTML = `
+                <strong>1. ${pilot.traits[0].data.name}</strong><br>
+                <div class="trait-effect">${pilot.traits[0].data.effect}</div>
+                <br>
+                <strong>2. ${pilot.traits[1].data.name}</strong> (Hybrid)<br>
+                <div class="trait-effect">${pilot.traits[1].data.effect}</div>
+            `;
+            document.getElementById('traits-prob').textContent = `Probability: (1/20) × (1/20) = 1/400 (0.25%)`;
+
+            // Motivation
+            document.getElementById('motivation').innerHTML = `<strong>${pilot.motivation.data}</strong>`;
+            document.getElementById('motivation-prob').textContent = `Probability: 1/20 (5%)`;
+
+            // Quirk
+            document.getElementById('quirk').innerHTML = `<strong>${pilot.quirk.data}</strong>`;
+            document.getElementById('quirk-prob').textContent = `Probability: 1/100 (1%)`;
+
+            // Appearance
+            document.getElementById('appearance').innerHTML = `<strong>${pilot.appearance.data}</strong>`;
+            document.getElementById('appearance-prob').textContent = `Probability: 1/20 (5%)`;
+
+            // Calculate total probability
+            const totalProb = (1/20) * (1/400) * (1/20) * (1/100) * (1/20);
+            const percentage = (totalProb * 100).toExponential(2);
+            document.getElementById('total-prob').textContent = `Total Probability of Exact Combination: ${percentage}% (1 in ${Math.round(1/totalProb).toLocaleString()})`;
+
+            // Stats
+            let grit = 0;
+            let morale = 1;
+            let taint = 0;
+
+            if (pilot.traits[0].data.name === "Survivor") grit = 1;
+            if (pilot.traits[1].data.name === "Survivor") grit = 1;
+            if (pilot.traits[0].data.name === "Battle Scars") grit = 1;
+            if (pilot.traits[1].data.name === "Battle Scars") grit = 1;
+            if (pilot.traits[0].data.name === "Faithful") morale = 2;
+            if (pilot.traits[1].data.name === "Faithful") morale = 2;
+            if (pilot.traits[0].data.name === "Tainted") taint = 2;
+            if (pilot.traits[1].data.name === "Tainted") taint = 2;
+
+            document.getElementById('stat-grit').textContent = grit;
+            document.getElementById('stat-morale').textContent = morale;
+            document.getElementById('stat-taint').textContent = taint;
+        }
+
+        function toggleHybrid() {
+            const enabled = document.getElementById('hybrid-enabled').checked;
+            document.getElementById('manual-trait2').style.display = enabled ? 'block' : 'none';
+            updateManualPilot();
+        }
+
+        function updateManualPilot() {
+            // TODO: Implement manual pilot display with probability calculation
+            // This would show selected options and calculate probability based on selections
+        }
+
+        function copyToClipboard() {
+            const text = `
+PILOT GENERATED
+===============
+Background: ${document.getElementById('background').textContent}
+Traits: ${document.getElementById('traits').textContent}
+Motivation: ${document.getElementById('motivation').textContent}
+Quirk: ${document.getElementById('quirk').textContent}
+Appearance: ${document.getElementById('appearance').textContent}
+Stats: Grit ${document.getElementById('stat-grit').textContent}, Morale ${document.getElementById('stat-morale').textContent}, Taint ${document.getElementById('stat-taint').textContent}
+            `;
+            navigator.clipboard.writeText(text);
+            alert('Pilot copied to clipboard!');
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            initializeManualMode();
+        };
+    </script>
+</body>
+</html>
