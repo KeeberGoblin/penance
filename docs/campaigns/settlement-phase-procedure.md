@@ -242,7 +242,7 @@ GM describes:
 ### 6.3 Pilot Assignment
 - Choose which pilots deploy (max depends on scenario, usually 1-4 pilots)
 - Assign equipment from settlement storage
-- Final deck construction (30 cards: 10 Universal + 12 Primary + 6 Secondary + 2 Tactics)
+- Final deck construction (26-50 cards: 10 Universal + 6 Faction Core + Equipment cards + 2 Tactics)
 
 ### 6.4 Embark
 - Narrative transition: "You board your Caskets. The capsules seal. Fluid floods your lungs. The Thread pierces your fingers. You are one with the machine."
