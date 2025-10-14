@@ -403,4 +403,221 @@ If you want additional NPCs for variety:
 
 ---
 
+## 6. "Three-Card" Morrow (Nomad Collective)
+### "The Drifter King"
+
+**Faction**: Nomad Collective
+**Casket Type**: Scout - "The Tumbledown" (720 lbs, heavily modified)
+**Taint Level**: 4 (Fluctuating - see below)
+
+#### Physical Description
+Morrow has the weathered look of someone who's spent decades in the Wastes. His skin is tanned leather, crisscrossed with radiation scars and frostbite damage. What makes him memorable is the **three playing cards** permanently embedded in his left eye socket - the Ace of Spades, Nine of Hearts, and Joker - fused there by a Soulstone explosion. He claims he can see the future through them. Sometimes he's right.
+
+His right arm is entirely prosthetic - not military-grade Church steel, but **scavenged junk** held together with wire and prayers. It's covered in trinkets: rabbit feet, dice, compass needles, all welded onto the forearm like armor. He says each one is a "good luck charm from someone who didn't need it anymore."
+
+The Tumbledown is a patchwork Casket - no two armor plates match, and half the systems are held together with duct tape and spite. It shouldn't work. But it does.
+
+#### Backstory
+Morrow used to run a convoy across the Wastes - twelve rigs, forty souls, enough supplies to start a settlement. On Day 6 of the crossing, they hit an unmarked Void rift. The entire convoy was swallowed except for Morrow's truck. He survived. Everyone else died screaming.
+
+The guilt broke something in him. He became a **drifter** - wandering the Wastes, gambling with death, taking insane risks as if daring fate to finally collect. He started carrying **three playing cards** as a reminder: "You're dealt three chances. I used mine. Everyone I meet is on borrowed time."
+
+The cards embedded in his eye when a Soulstone engine detonated two feet from his face. Should've killed him. Didn't. Now he "reads" fortunes from the embedded cards, and traders say if Morrow warns you to turn back, **you turn back**.
+
+#### Personality
+- **Fatalistic gambler** - treats every decision like a card game, always betting against himself
+- **Superstitious to a fault** - refuses to enter buildings with even numbers, won't fight on Tuesdays
+- **Darkly humorous** - jokes about his own death constantly ("I'm on borrowed luck. Interest is compounding.")
+- **Protects convoys obsessively** - will sacrifice himself to save traders, trying to "pay back" the forty he lost
+
+#### Unique Casket Abilities
+
+**The Tumbledown** is a scrapyard nightmare - asymmetrical, wheezing, held together by luck. It has **Improvised Systems**: every turn, roll 1d6 to see what's working today.
+
+**Special Mechanics**:
+1. **Lucky Draw** (1 SP, Reaction - once per turn)
+   - When you would take damage, flip a coin (or roll 1d6: 1-3 fail, 4-6 succeed)
+   - **Success**: Negate all damage (the shot missed by sheer luck)
+   - **Failure**: Take double damage (your luck ran out)
+   - *"Three-Card Morrow doesn't dodge. Fate does it for him."*
+
+2. **Scavenger's Gambit** (2 SP, Action)
+   - Search the battlefield for improvised weapons/tools
+   - Roll 1d6:
+     - **1-2**: Find nothing (wasted action)
+     - **3-4**: Find scrap (draw 1 card)
+     - **5**: Find equipment (draw 2 cards, add to deck)
+     - **6**: Find Soulstone shard (heal 3 HP, gain 1 Taint)
+   - *"One man's trash is another man's artillery."*
+
+3. **All-In** (4 SP, Attack - Range 1-6)
+   - Declare "All-In" and discard your entire hand
+   - Deal damage equal to **cards discarded × 2**
+   - After attack resolves, Morrow's Casket shuts down for 1 turn (cannot spend SP)
+   - *"You either win big or lose everything. That's the game."*
+
+#### Combat Behavior (AI Deck Pattern)
+- **Highly unpredictable** - AI rolls 1d6 each turn to determine behavior:
+  - 1-2: Defensive (retreats, uses Lucky Draw)
+  - 3-4: Standard attack (normal combat)
+  - 5-6: Reckless (uses All-In, charges into danger)
+- **Protects allies obsessively** - will block shots meant for NPCs/convoys
+- **Fights dirty** - uses terrain, improvised explosives, ambush tactics
+
+#### Story Hooks
+- Morrow knows the location of the **Dead Convoy** - twelve wrecked rigs with Soulstones still intact, but cursed
+- He's being hunted by the **Church Inquisition** for "blasphemous gambling" (his luck defies their doctrine)
+- Players can hire him as a guide through the Wastes, but his superstitions may clash with mission parameters
+- His embedded cards sometimes show visions of **other players' deaths** - do they believe him?
+
+---
+
+## 7. Proctor Ilyara Voss (Merchant Guilds)
+### "The Actuary of Ash"
+
+**Faction**: Merchant Guilds
+**Casket Type**: Heavy - "The Ledger" (1,400 lbs, reinforced vault-class)
+**Taint Level**: 2 (Controlled via quarterly "cleansing" fees paid to Church)
+
+#### Physical Description
+Ilyara Voss looks like she stepped out of a corporate boardroom and into Hell. She wears a **pristine business suit** under her pilot harness, complete with gold cufflinks and a silk tie. Her hair is pulled back into a severe bun, graying at the temples but still immaculately groomed.
+
+What betrays her humanity is the **mechanical jaw** - half her face was blown off in a "hostile acquisition," and the Guild replaced it with a hinged steel prosthetic. It clicks audibly when she speaks, giving her voice a metallic rasp. She never smiles. Physically cannot.
+
+Her left hand is covered in **contract scars** - ritual cuts where blood oaths were sealed. Each scar represents a deal worth over 100,000 Soulstone shards. She has 14.
+
+The Ledger is not a Casket built for war - it's a **mobile vault**. Reinforced plating, no offensive weapons, but equipped with a communication suite that can call in **Guild mercenaries, orbital artillery, and legal injunctions** from up to 50 miles away.
+
+#### Backstory
+Ilyara Voss was born into the Merchant Guilds as a **debt collector** - the kind sent to settlements that defaulted on loans. Her job was simple: extract payment or extract assets. She was very good at it.
+
+Her rise to Proctor (executive rank) came during the **Scorched Sky Auction** - a bidding war over the rights to an entire region's Soulstone deposits. Ilyara realized both bidders were fronts for the same faction and exposed the scheme, bankrupting both and claiming the deposits for the Guild. She was promoted. Her rivals were liquidated.
+
+She pilots The Ledger not for glory, but **to protect Guild interests**. Every mission is a business transaction. Every casualty is a line item. She's responsible for the **Ashen Credit System** - a wartime economy where settlements can borrow Soulstones at 40% interest. Can't pay? Your survivors become indentured labor.
+
+She's the most hated woman in three provinces. She's also the richest.
+
+#### Personality
+- **Cold and transactional** - views every interaction as a negotiation
+- **Obsessed with contracts** - will not break a deal, even if it costs her life (reputation is currency)
+- **Openly mercenary** - doesn't pretend to care about morality ("I sell you hope. You buy it. We both profit.")
+- **Surprisingly honorable** - if you fulfill your contract, she will too (even if it hurts the Guild)
+
+#### Unique Casket Abilities
+
+**The Ledger** is not built to fight - it's built to **survive and negotiate**. Its primary weapon is economics.
+
+**Special Mechanics**:
+1. **Hostile Buyout** (3 SP, Action - once per battle)
+   - Target an enemy Casket within Range 4
+   - Offer a contract: "Stand down for 3 turns, receive 1 Soulstone + 1 Equipment card"
+   - Enemy pilot rolls Willpower check (TN 5+ on 1d6):
+     - **Fail**: They accept the deal and cannot attack for 3 turns
+     - **Pass**: They refuse, and Voss gains +2 SP next turn (insulted by rejection)
+   - *"Everyone has a price. Even you."*
+
+2. **Call in Debt** (4 SP, Interrupt - Range 8)
+   - Voss contacts Guild HQ and calls in a favor
+   - Roll 1d6:
+     - **1-2**: Artillery strike on target hex (4 damage, ignores armor)
+     - **3-4**: Medical evac (heal 3 HP, draw 3 cards)
+     - **5-6**: Mercenary reinforcement (spawn 1 Support Unit ally)
+   - Can only be used **once per mission**
+   - *"I own people. Useful people."*
+
+3. **Foreclosure** (Passive)
+   - If an enemy Casket is reduced to **5 HP or less**, Voss may offer a **surrender contract**
+   - Terms: Pilot surrenders Casket and equipment, walks away alive
+   - If accepted, Voss gains +1 Equipment card permanently (salvaged from wreck)
+   - If refused, Voss's next attack deals +3 damage (breach of negotiation)
+   - *"Bankruptcy is just death by another name."*
+
+#### Combat Behavior (AI Deck Pattern)
+- **Avoids direct combat** - prefers to negotiate, bribe, or call in reinforcements
+- **Focuses on high-value targets** - attacks pilots with rare equipment or valuable Caskets
+- **Retreats at 50% HP** - survival is profit, death is loss (bad for quarterly reports)
+- **Offers surrender frequently** - views killing as "wasting potential assets"
+
+#### Story Hooks
+- Voss holds the debt contracts for **half the settlements in the region** - players may owe her money
+- She's being targeted by a Nomad assassin whose family was sold into Guild labor
+- Players can hire her mercenaries... but the interest rate is predatory
+- She knows the location of **The Vault of Ledgers** - a Guild archive with every contract ever signed (leverage on everyone)
+
+---
+
+## 8. "Woundwright" Tallis (Blighted Packs)
+### "The Stitcher"
+
+**Faction**: Blighted Packs
+**Casket Type**: Assault - "The Abattoir" (1,200 lbs, biomechanical horror)
+**Taint Level**: 12 (Permanent Mutation - no longer measures on standard scale)
+
+#### Physical Description
+Tallis is no longer entirely human. His body is a patchwork of **grafted animal parts** - fur, scales, chitin, feathers - all stitched together with surgical precision. His left arm is a wolf's forelimb, complete with claws. His right eye is that of an eagle, golden and unblinking. His legs are those of a deer - digitigrade, allowing him to run at inhuman speeds.
+
+Most disturbing is his torso: he's **sewn shut** with thick black thread, as if his entire body is a quilt of stolen flesh. When he moves, the stitches creak and sometimes tear, leaking black ichor.
+
+His face is still mostly human, but his mouth is too wide - split at the corners like a Glasgow smile, revealing too many teeth. He wears a **leather apron** covered in surgical tools, blood stains, and vials of mutagenic serum.
+
+The Abattoir is a biomechanical Casket - half machine, half living tissue. It **breathes**. Observers report it has a heartbeat.
+
+#### Backstory
+Tallis was a **field medic** for the Church, stationed in the Blighted Wastes when a Void rift tore open. The entire garrison was exposed to raw mutation energy. Most died. Some transformed. Tallis was one of the few who stayed *conscious* during the change.
+
+As his body mutated, he realized he could **control the process** - directing where fur grew, which limbs elongated, what organs shifted. He became the first **Woundwright** - a surgeon who grafts Blighted mutations onto others, creating hybrid soldiers.
+
+He left the Church and joined the Blighted Packs, offering his services to those desperate enough to trade humanity for power. He's created abominations. He's also saved lives by grafting resistant tissue onto radiation-scarred patients.
+
+His philosophy: **"The body is just meat. Meat can be rewritten."**
+
+#### Personality
+- **Clinically detached** - treats mutilation like art, shows no emotion during surgery
+- **Obsessed with "improvement"** - views baseline humanity as "unfinished" (needs more teeth, more eyes, more claws)
+- **Polite and soft-spoken** - despite his appearance, he's disarmingly courteous ("May I borrow your arm? I need the bones.")
+- **Fascinated by Caskets** - sees them as "metal bodies" that can also be "improved"
+
+#### Unique Casket Abilities
+
+**The Abattoir** is a living workshop - it can **graft mutations onto itself mid-battle**, adapting to threats.
+
+**Special Mechanics**:
+1. **Battlefield Surgery** (3 SP, Action)
+   - Target self or ally within Range 1
+   - **If self**: Graft a mutation (choose one):
+     - **Claws**: +1 damage on melee attacks (this mission only)
+     - **Scales**: +1 Defense (this mission only)
+     - **Extra Eyes**: Ignore facing penalties (this mission only)
+   - **If ally**: Heal 2 HP, but target gains 1 Taint (mutation side effect)
+   - *"Hold still. This won't hurt. Much."*
+
+2. **Harvest Tissue** (2 SP, Reaction - when enemy is destroyed)
+   - Salvage biomass from destroyed enemy Casket
+   - Gain 1 **Mutation Token** (max 3)
+   - Spend tokens to activate Battlefield Surgery for free (1 token per use)
+   - *"Waste not."*
+
+3. **The Stitcher's Gift** (5 SP, Ultimate - once per mission)
+   - Tallis ejects from The Abattoir and **physically grafts himself onto an ally's Casket**
+   - For the next 3 turns:
+     - Ally gains +2 SP per turn
+     - Ally's attacks deal +2 damage
+     - Ally gains 2 Taint per turn (Tallis's mutations are infectious)
+   - After 3 turns, Tallis detaches (Abattoir is remotely piloted back to him)
+   - *"Let me show you what you could become."*
+
+#### Combat Behavior (AI Deck Pattern)
+- **Focuses on wounded enemies** - prefers to harvest tissue from near-death targets
+- **Allies with other Blighted units** - uses Battlefield Surgery to buff allies
+- **Adapts mid-combat** - changes mutations based on enemy tactics (claws vs melee, scales vs ranged)
+- **Retreats at 25% HP** - only to graft emergency mutations, then re-engages
+
+#### Story Hooks
+- Players may need Tallis's surgery to remove a **cursed mutation** or graft resistant tissue
+- The Church wants him dead for "crimes against nature" - players could be hired as assassins OR bodyguards
+- Tallis is searching for **The First Blighted** - the original patient zero of the mutation plague, rumored to still be alive
+- He offers to "improve" player Caskets with bio-enhancements... but the side effects are permanent
+
+---
+
 *"Every pilot is a tragedy in motion. The only question is: how long until they break?"*
