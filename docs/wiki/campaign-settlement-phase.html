@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settlement Phase Procedure - Penance Wiki</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .step-header {
+            background: linear-gradient(90deg, #8b6914 0%, #4a3707 50%, #8b6914 100%);
+            color: #ffd700;
+            padding: 1rem;
+            margin: 2rem 0 1rem 0;
+            border-left: 5px solid #ffd700;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        .flowchart {
+            background: linear-gradient(135deg, #1a1410 0%, #2a1f1a 100%);
+            border: 3px solid #8b6914;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .flowchart-step {
+            background: #2a1f1a;
+            border: 2px solid #d4af37;
+            padding: 1rem;
+            margin: 0.5rem auto;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+        .flowchart-arrow {
+            color: #d4af37;
+            font-size: 2rem;
+            margin: 0.5rem 0;
+        }
+        .action-box {
+            background: #2a1f1a;
+            border: 2px solid #8b6914;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        .action-box h4 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #8b6914;
+            padding-bottom: 0.3rem;
+        }
+        .example-box {
+            background: linear-gradient(135deg, #1a0e0e 0%, #2a1414 100%);
+            border-left: 4px solid #8b0000;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .example-box h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+        .tracking-sheet {
+            background: #1a1410;
+            border: 3px solid #8b6914;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tracking-sheet h3 {
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="manuscript-page">
+        <div class="illuminated-header">
+            <span class="drop-cap">S</span>
+            <h1 class="title">ettlement Phase Procedure</h1>
+            <p class="subtitle">"Between battles, we heal. We build. We prepare for the next war."</p>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Overview</h2>
+
+        <p class="manuscript-text">
+            The Settlement Phase is the beating heart of the Penance campaign. After each mission, pilots return to their home settlement—battered, changed, carrying scars and loot. This phase bridges combat missions with long-term progression, settlement building, and narrative development.
+        </p>
+
+        <p class="manuscript-text">
+            Unlike pure skirmish games, Penance's campaign mode uses a <strong>Kingdom Death: Monster-inspired settlement system</strong> where your community grows, evolves, and faces consequences. Players manage resources, build infrastructure, tend to wounded pilots, and prepare for increasingly difficult missions. Every choice matters. Every loss lingers.
+        </p>
+
+        <div class="manuscript-quote">
+            "A settlement is not just buildings and credits. It is hope. It is memory. It is the fragile thing we defend when we step into our Caskets and face the Engine's nightmares."
+            <span class="quote-attribution">—Architect Mira Thane, Settlement Keeper's Journal</span>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>The Six Steps</h2>
+
+        <div class="flowchart">
+            <h3 style="color: #ffd700; margin-bottom: 2rem;">Settlement Phase Flow</h3>
+
+            <div class="flowchart-step">
+                <strong style="color: #ffd700; font-size: 1.2rem;">STEP 1: RETURN</strong><br>
+                <span style="color: #cccccc;">Casualties • Salvage • Loot Distribution</span>
+            </div>
+            <div class="flowchart-arrow">↓</div>
+
+            <div class="flowchart-step">
+                <strong style="color: #ffd700; font-size: 1.2rem;">STEP 2: INCOME</strong><br>
+                <span style="color: #cccccc;">Building Income • Upkeep Costs • Debt</span>
+            </div>
+            <div class="flowchart-arrow">↓</div>
+
+            <div class="flowchart-step">
+                <strong style="color: #ffd700; font-size: 1.2rem;">STEP 3: EVENT ROLL</strong><br>
+                <span style="color: #cccccc;">d100 Settlement Event Table</span>
+            </div>
+            <div class="flowchart-arrow">↓</div>
+
+            <div class="flowchart-step">
+                <strong style="color: #ffd700; font-size: 1.2rem;">STEP 4: SETTLEMENT ACTIONS</strong><br>
+                <span style="color: #cccccc;">Craft • Heal • Train • Build • Trade</span>
+            </div>
+            <div class="flowchart-arrow">↓</div>
+
+            <div class="flowchart-step">
+                <strong style="color: #ffd700; font-size: 1.2rem;">STEP 5: PILOT CARE</strong><br>
+                <span style="color: #cccccc;">Injury Recovery • Grit Progression • Soul Sacrifice</span>
+            </div>
+            <div class="flowchart-arrow">↓</div>
+
+            <div class="flowchart-step">
+                <strong style="color: #ffd700; font-size: 1.2rem;">STEP 6: MISSION SELECT</strong><br>
+                <span style="color: #cccccc;">Choose Mission • Assign Pilots • Embark</span>
+            </div>
+        </div>
+
+        <p class="manuscript-text" style="text-align: center; color: #d4af37; font-weight: bold; margin-top: 2rem;">
+            Each phase typically takes <strong>15-30 minutes</strong> depending on settlement complexity and roleplay depth.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="step-header">⚔ STEP 1: RETURN ⚔</div>
+
+        <p class="manuscript-text">
+            Pilots return from the mission. Some walk. Some are carried. Some do not return at all.
+        </p>
+
+        <h3>1a. Resolve Casualties</h3>
+
+        <p class="manuscript-text">
+            For each pilot who died during the mission:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Mark as KIA (Killed in Action):</strong> Pilot is permanently removed from roster. Cross out their name. Write date of death.</li>
+            <li><strong>Morale Check:</strong> All surviving pilots lose 1 Morale (settlement morale penalty).</li>
+            <li><strong>Death Consequence:</strong> Roll on Death Consequence Table (see below). Settlement suffers additional penalty.</li>
+            <li><strong>Memorial Option:</strong> Players may spend 50 Credits to hold a memorial service. If they do, regain 1 Morale for all pilots and settlement gains +1 Stability.</li>
+        </ul>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>1d6 Roll</th>
+                    <th>Death Consequence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1-2</td>
+                    <td><strong>Grief:</strong> Settlement loses 1 Population. Morale -1 for all pilots next mission.</td>
+                </tr>
+                <tr>
+                    <td>3-4</td>
+                    <td><strong>Equipment Lost:</strong> Dead pilot's equipment is destroyed (cannot be salvaged). Settlement loses 2d6×10 Credits in value.</td>
+                </tr>
+                <tr>
+                    <td>5-6</td>
+                    <td><strong>Inspiring Sacrifice:</strong> Dead pilot becomes a martyr. All pilots gain +1 to their next Grit Check. Settlement gains +1 Stability.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>1b. Salvage Roll</h3>
+
+        <p class="manuscript-text">
+            Roll <strong>1d6 + Settlement's Salvage Stat</strong> to determine what the expedition recovered from the battlefield:
+        </p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Result</th>
+                    <th>Salvage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1-3</td>
+                    <td>1 Scrap</td>
+                </tr>
+                <tr>
+                    <td>4-6</td>
+                    <td>2 Scrap + 1d6×10 Credits</td>
+                </tr>
+                <tr>
+                    <td>7-9</td>
+                    <td>3 Scrap + 2d6×10 Credits</td>
+                </tr>
+                <tr>
+                    <td>10+</td>
+                    <td>5 Scrap + 3d6×10 Credits + roll on Minor Loot Table</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>1c. Loot Distribution</h3>
+
+        <p class="manuscript-text">
+            Distribute loot earned during the mission:
+        </p>
+
+        <ol>
+            <li><strong>Mission Credits:</strong> Add to settlement treasury.</li>
+            <li><strong>Equipment Cards:</strong> Add to settlement equipment pool (can be assigned to pilots in Step 4).</li>
+            <li><strong>Relics/Unique Items:</strong> Add to settlement vault. Players discuss who should equip them.</li>
+            <li><strong>Soulstone Fragments:</strong> Add to settlement resource pool (consumable, removes Taint).</li>
+        </ol>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="step-header">⚔ STEP 2: INCOME ⚔</div>
+
+        <p class="manuscript-text">
+            Settlements generate income from buildings and trade, but also pay upkeep costs for infrastructure and personnel.
+        </p>
+
+        <h3>2a. Building Income</h3>
+
+        <p class="manuscript-text">
+            Each building generates income per settlement phase:
+        </p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Building</th>
+                    <th>Income Per Phase</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Market (Tier 1)</td>
+                    <td>20 Credits</td>
+                </tr>
+                <tr>
+                    <td>Market (Tier 2)</td>
+                    <td>50 Credits</td>
+                </tr>
+                <tr>
+                    <td>Market (Tier 3)</td>
+                    <td>100 Credits</td>
+                </tr>
+                <tr>
+                    <td>Workshop</td>
+                    <td>10 Credits + 1 Scrap</td>
+                </tr>
+                <tr>
+                    <td>Trading Post</td>
+                    <td>30 Credits (varies by faction territory)</td>
+                </tr>
+                <tr>
+                    <td>Mine</td>
+                    <td>2 Scrap</td>
+                </tr>
+                <tr>
+                    <td>Farm</td>
+                    <td>1 Food (reduces upkeep by 10 Credits)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2b. Upkeep Costs</h3>
+
+        <p class="manuscript-text">
+            Settlements pay upkeep costs based on population and infrastructure:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Base Upkeep:</strong> 10 Credits per Settlement Phase (lights, water, basic maintenance)</li>
+            <li><strong>Population Upkeep:</strong> 5 Credits per 10 population (food, housing, services)</li>
+            <li><strong>Pilot Upkeep:</strong> 10 Credits per active pilot (Casket maintenance, fuel, repairs)</li>
+            <li><strong>Building Upkeep:</strong> Some buildings have maintenance costs (e.g., Infirmary costs 5 Credits per phase)</li>
+        </ul>
+
+        <p class="manuscript-text">
+            <strong>Example:</strong> Settlement with 50 population, 4 active pilots, Infirmary, and basic buildings:
+        </p>
+
+        <ul class="manuscript-list">
+            <li>Base: 10 Credits</li>
+            <li>Population (50): 25 Credits</li>
+            <li>Pilots (4): 40 Credits</li>
+            <li>Infirmary: 5 Credits</li>
+            <li><strong>Total Upkeep: 80 Credits</strong></li>
+        </ul>
+
+        <h3>2c. Debt & Bankruptcy</h3>
+
+        <p class="manuscript-text">
+            If settlement cannot pay upkeep:
+        </p>
+
+        <ol>
+            <li><strong>Go Into Debt:</strong> Track negative Credits. Settlement gains +1 Instability per 50 Credits of debt.</li>
+            <li><strong>Bankruptcy:</strong> If debt exceeds 200 Credits, settlement must take a Desperate Measures action:
+                <ul class="manuscript-list">
+                    <li><strong>Sell Building:</strong> Destroy a building, gain 50% of construction cost.</li>
+                    <li><strong>Conscription:</strong> Send untrained civilians on mission (NPCs with 15 HP, no special abilities). High casualty risk.</li>
+                    <li><strong>Dark Bargain:</strong> Make a pact with unplayable faction (gain 200 Credits, but they demand future favors—GM decides consequences).</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="step-header">⚔ STEP 3: EVENT ROLL ⚔</div>
+
+        <p class="manuscript-text">
+            Every settlement phase, roll <strong>1d100</strong> on the Settlement Event Table. Events can be beneficial, neutral, or catastrophic.
+        </p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Roll</th>
+                    <th>Event</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1-5</td>
+                    <td><strong>Catastrophe</strong></td>
+                    <td>Settlement attacked. Lose 1 building (player's choice). All pilots must defend next mission or lose 2d6 population.</td>
+                </tr>
+                <tr>
+                    <td>6-15</td>
+                    <td><strong>Harsh Winter</strong></td>
+                    <td>Upkeep costs doubled this phase. Roll 1d6: on 1-2, lose 1d6 population to cold.</td>
+                </tr>
+                <tr>
+                    <td>16-25</td>
+                    <td><strong>Sickness</strong></td>
+                    <td>Disease spreads. Lose 1d6 population. One random pilot gains Minor Injury ("Plague Survivor").</td>
+                </tr>
+                <tr>
+                    <td>26-40</td>
+                    <td><strong>Quiet Days</strong></td>
+                    <td>No event. Settlement is peaceful.</td>
+                </tr>
+                <tr>
+                    <td>41-55</td>
+                    <td><strong>Traveling Merchant</strong></td>
+                    <td>Merchant arrives with rare goods. Can buy 1 equipment card at +20 Credits cost, OR sell Scrap at +10 Credits per unit.</td>
+                </tr>
+                <tr>
+                    <td>56-65</td>
+                    <td><strong>New Arrivals</strong></td>
+                    <td>Refugees arrive seeking shelter. Gain 1d6 population. Roll 1d6: on 6, one refugee is a skilled pilot (create new pilot at Grit 0).</td>
+                </tr>
+                <tr>
+                    <td>66-75</td>
+                    <td><strong>Festival</strong></td>
+                    <td>Settlement celebrates victory. All pilots gain +1 Morale. Settlement gains +1 Stability.</td>
+                </tr>
+                <tr>
+                    <td>76-85</td>
+                    <td><strong>Discovery</strong></td>
+                    <td>Scavengers find ancient tech. Gain 2 Scrap + 1d6×10 Credits. Roll 1d6: on 5-6, also find 1 Relic.</td>
+                </tr>
+                <tr>
+                    <td>86-92</td>
+                    <td><strong>Faction Envoy</strong></td>
+                    <td>Another faction sends an envoy. Can trade resources, forge alliances, or receive quests. GM determines details.</td>
+                </tr>
+                <tr>
+                    <td>93-97</td>
+                    <td><strong>Breakthrough</strong></td>
+                    <td>Settlement achieves technological advancement. Reduce one building's construction cost by 50% (one-time).</td>
+                </tr>
+                <tr>
+                    <td>98-99</td>
+                    <td><strong>Engine Pulse</strong></td>
+                    <td>Theslar Engine releases pulse of energy. All pilots within settlement must roll Willpower Save (1d6+Grit, need 4+) or gain 1 Taint. Settlement Instability +1.</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td><strong>Secret Revealed</strong></td>
+                    <td>Players discover hidden location, secret NPC, or unlock special campaign mission. GM determines details (e.g., Dr. Teslar's Engine Core entrance).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="manuscript-text" style="color: #d4af37; font-style: italic; margin-top: 1rem;">
+            <strong>Note:</strong> The full Settlement Event Table includes 100 unique events. This is an abbreviated sample showing event types. See <strong>campaign-event-tables.html</strong> for the complete table.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="step-header">⚔ STEP 4: SETTLEMENT ACTIONS ⚔</div>
+
+        <p class="manuscript-text">
+            Each player may perform <strong>2 settlement actions</strong> per phase. Actions represent time spent crafting, training, building, or tending to settlement needs.
+        </p>
+
+        <h3>Universal Actions (Always Available)</h3>
+
+        <div class="action-box">
+            <h4>Rest</h4>
+            <p><strong>Cost:</strong> Free</p>
+            <p><strong>Effect:</strong> Do nothing. Recover 1 Morale.</p>
+        </div>
+
+        <div class="action-box">
+            <h4>Train</h4>
+            <p><strong>Cost:</strong> 50 Credits</p>
+            <p><strong>Effect:</strong> Spend time training. Gain +1 to one skill (Attack, Defense, Willpower, or Piloting). Max +3 per skill.</p>
+        </div>
+
+        <div class="action-box">
+            <h4>Scavenge</h4>
+            <p><strong>Cost:</strong> Free</p>
+            <p><strong>Effect:</strong> Search ruins near settlement. Roll 1d6. On 4+, find 1 Scrap. On 6, also find 1d6×10 Credits.</p>
+        </div>
+
+        <div class="action-box">
+            <h4>Socialize</h4>
+            <p><strong>Cost:</strong> Free</p>
+            <p><strong>Effect:</strong> Spend time with other pilots or NPCs. Gain 1 Morale. Build relationships (GM may offer narrative benefits).</p>
+        </div>
+
+        <h3>Building-Dependent Actions</h3>
+
+        <h4>The Forge (Universal Building)</h4>
+        <ul class="manuscript-list">
+            <li><strong>Craft Equipment:</strong> Spend Credits + Scrap to build equipment cards. See crafting costs below.</li>
+            <li><strong>Repair Equipment:</strong> Restore destroyed equipment for 50% of crafting cost.</li>
+            <li><strong>Upgrade Equipment:</strong> Spend Credits + Scrap to improve existing equipment (+1 damage, +1 Defense, etc.). Cost: 100 Credits + 2 Scrap.</li>
+        </ul>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Equipment</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Buckler Shield (3 cards)</td>
+                    <td>30 Credits + 1 Scrap</td>
+                </tr>
+                <tr>
+                    <td>Tower Shield (4 cards)</td>
+                    <td>60 Credits + 2 Scrap</td>
+                </tr>
+                <tr>
+                    <td>Longsword (6 cards)</td>
+                    <td>50 Credits + 2 Scrap</td>
+                </tr>
+                <tr>
+                    <td>Greatsword (8 cards)</td>
+                    <td>100 Credits + 3 Scrap</td>
+                </tr>
+                <tr>
+                    <td>Pistol (4 cards, ranged)</td>
+                    <td>40 Credits + 1 Scrap</td>
+                </tr>
+                <tr>
+                    <td>Rifle (6 cards, ranged)</td>
+                    <td>80 Credits + 2 Scrap</td>
+                </tr>
+                <tr>
+                    <td>Repair Kit (3 cards, utility)</td>
+                    <td>50 Credits + 2 Scrap</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>The Infirmary</h4>
+        <ul class="manuscript-list">
+            <li><strong>Treat Injuries:</strong> Spend 30 Credits to heal 1 Minor Injury or reduce 1 Severe Injury to Minor.</li>
+            <li><strong>Surgery:</strong> Spend 100 Credits to attempt to heal 1 Severe Injury. Roll 1d6: 4+ success, 1-3 injury becomes permanent.</li>
+        </ul>
+
+        <h4>The Library</h4>
+        <ul class="manuscript-list">
+            <li><strong>Research:</strong> Spend 50 Credits to gain +1 to next mission's Intelligence check (scouting, trap detection, etc.).</li>
+            <li><strong>Study Lore:</strong> Learn about enemy factions, unlock faction-specific tactics.</li>
+        </ul>
+
+        <h4>The Market</h4>
+        <ul class="manuscript-list">
+            <li><strong>Buy Equipment:</strong> Purchase equipment cards at standard cost (no Scrap required, but +20 Credits markup).</li>
+            <li><strong>Sell Scrap:</strong> Sell Scrap at 20 Credits per unit (market rate).</li>
+        </ul>
+
+        <h4>The Chapel (Church settlements only)</h4>
+        <ul class="manuscript-list">
+            <li><strong>Prayer:</strong> Remove 2 Taint from one pilot. Gain 1 Morale.</li>
+            <li><strong>Soul Sacrifice:</strong> Perform leg-skimming ritual (permanent, see Pilot Care step).</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="step-header">⚔ STEP 5: PILOT CARE ⚔</div>
+
+        <p class="manuscript-text">
+            Pilots are not machines. They carry wounds, trauma, and Taint. This step addresses their long-term wellbeing.
+        </p>
+
+        <h3>5a. Injury Recovery</h3>
+
+        <p class="manuscript-text">
+            For each injured pilot:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Minor Injuries:</strong> Roll 1d6. On 4+, injury heals naturally (remove from pilot sheet). On 1-3, injury persists (roll again next phase).</li>
+            <li><strong>Severe Injuries:</strong> Do not heal naturally. Must use Infirmary's "Treat Injuries" or "Surgery" actions (see Step 4).</li>
+            <li><strong>Permanent Injuries:</strong> Cannot be healed. Pilot must adapt to disability (GM and player narrate how pilot compensates).</li>
+        </ul>
+
+        <h3>5b. Grit Progression</h3>
+
+        <p class="manuscript-text">
+            Pilots gain Grit (campaign stat, 0-3) by surviving harrowing experiences:
+        </p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Trigger</th>
+                    <th>Grit Check</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Survived mission with 5 or fewer cards remaining</td>
+                    <td>Roll 1d6. On 5+, gain +1 Grit.</td>
+                </tr>
+                <tr>
+                    <td>Witnessed ally die</td>
+                    <td>Roll 1d6. On 6, gain +1 Grit (hardened by loss).</td>
+                </tr>
+                <tr>
+                    <td>Defeated boss encounter</td>
+                    <td>Automatically gain +1 Grit.</td>
+                </tr>
+                <tr>
+                    <td>Reached 9 Taint (one away from Corruption)</td>
+                    <td>Roll 1d6. On 5+, gain +1 Grit (stared into Wound and resisted).</td>
+                </tr>
+                <tr>
+                    <td>Survived 10+ missions</td>
+                    <td>Automatically gain +1 Grit (veteran).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="manuscript-text">
+            <strong>Grit Benefits:</strong> +1 to Willpower Saves, better Wound deck outcomes, faction-specific bonuses (see faction pages).
+        </p>
+
+        <h3>5c. Soul Sacrifice (Optional)</h3>
+
+        <p class="manuscript-text">
+            Pilots may undergo <strong>leg-skimming</strong> (permanent body modification) to enhance Casket synchronization:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>The Shortening (Church):</strong> Both legs removed. Gain +1 SP per turn in Casket, but outside Casket require wheelchair/crutches.</li>
+            <li><strong>Compact Form (Dwarves):</strong> All limbs removed + runic grafting. Gain +2 SP in Casket, immune to limb Component Damage, but require full prosthetic rig outside Casket.</li>
+            <li><strong>Efficient Form (Ossuarium):</strong> All flesh removed (living skeleton). Gain +1 SP, immune to Taint, but terrifying to NPCs (Morale -2 penalty in settlements).</li>
+            <li><strong>Root-Grafting (Elves):</strong> Legs replaced with tree roots. Gain +1 SP, regenerate 1 card per turn while standing still, but movement costs +1 SP per hex (slow outside Casket).</li>
+        </ul>
+
+        <p class="manuscript-text">
+            <strong>Requirement:</strong> Pilot must have Grit 2+ and consent. Once performed, cannot be reversed. See <strong>soul-sacrifice-variants.md</strong> for full details.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="step-header">⚔ STEP 6: MISSION SELECT ⚔</div>
+
+        <p class="manuscript-text">
+            With the settlement tended, pilots prepare for the next mission.
+        </p>
+
+        <h3>6a. Choose Mission</h3>
+
+        <p class="manuscript-text">
+            GM presents 2-3 mission options. Missions vary by:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Type:</strong> Skirmish, Objective Control, Boss Fight, Escort, Defense, Exploration</li>
+            <li><strong>Difficulty:</strong> Easy (50 Credits reward) → Nightmare (500+ Credits + Legendary Loot)</li>
+            <li><strong>Faction:</strong> Which enemy faction controls the area</li>
+            <li><strong>Terrain:</strong> Ruins, Forest, Tainted Wastes, Engine Core, etc.</li>
+            <li><strong>Consequences:</strong> What happens if players ignore this mission (e.g., settlement loses trade route, faction grows stronger)</li>
+        </ul>
+
+        <p class="manuscript-text">
+            <strong>Example Mission Choices:</strong>
+        </p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Mission</th>
+                    <th>Difficulty</th>
+                    <th>Reward</th>
+                    <th>Consequence if Ignored</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Defend Trade Caravan</td>
+                    <td>Medium</td>
+                    <td>150 Credits + 2 Scrap</td>
+                    <td>Lose Trade Post income (-30 Credits/phase)</td>
+                </tr>
+                <tr>
+                    <td>Raid Bandit Camp</td>
+                    <td>Hard</td>
+                    <td>200 Credits + 3d6 Scrap + Loot Roll</td>
+                    <td>Bandits attack settlement (lose 2d6 population)</td>
+                </tr>
+                <tr>
+                    <td>Investigate Engine Anomaly</td>
+                    <td>Very Hard</td>
+                    <td>300 Credits + Relic + Lore Discovery</td>
+                    <td>Instability +2 (Engine pulse grows stronger)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>6b. Assign Pilots</h3>
+
+        <p class="manuscript-text">
+            Players choose which pilots will embark on the mission:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Required Pilots:</strong> Most missions require 2-4 pilots minimum.</li>
+            <li><strong>Injured Pilots:</strong> Can deploy with injuries, but suffer penalties (-1 SP for Severe Injuries, -1 to all rolls for permanent injuries).</li>
+            <li><strong>Rookies vs Veterans:</strong> Grit 0 pilots are inexperienced but grow faster. Grit 2-3 pilots are reliable but risk permanent loss.</li>
+            <li><strong>Load-Outs:</strong> Assign equipment from settlement vault. Each pilot builds their 30-card deck (10 Universal + 12 Primary + 6 Secondary + 2 Tactics).</li>
+        </ul>
+
+        <h3>6c. Embark</h3>
+
+        <p class="manuscript-text">
+            Pilots step into their Caskets. The settlement watches them depart. They may not all return.
+        </p>
+
+        <div class="manuscript-quote">
+            "Every departure feels like goodbye. Every return feels like a miracle."
+            <span class="quote-attribution">—Elara Voss, Settlement Elder</span>
+        </div>
+
+        <p class="manuscript-text">
+            <strong>Settlement Phase ends. Mission Phase begins.</strong>
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Example Playthrough: Church Settlement After Failed Mission</h2>
+
+        <div class="example-box">
+            <h3>Context</h3>
+            <p style="color: #cccccc;">
+                The settlement "Saint's Rest" (Church of Absolution) just returned from a mission to clear a Tainted ruin. Mission was a failure: one pilot (Brother Marcus) died, two pilots injured, no loot recovered. Settlement morale is low.
+            </p>
+
+            <h3>STEP 1: RETURN</h3>
+            <p style="color: #cccccc;">
+                <strong>1a. Casualties:</strong> Brother Marcus marked as KIA (Year 3, Day 14). All surviving pilots lose 1 Morale. Roll Death Consequence (1d6): Result = 4. Brother Marcus's equipment (Greatsword + Tower Shield) is destroyed, cannot be salvaged. Settlement loses 160 Credits in value (Greatsword 100 + Tower Shield 60).
+            </p>
+            <p style="color: #cccccc;">
+                Players vote to hold a memorial service (spend 50 Credits). All pilots regain 1 Morale, settlement gains +1 Stability.
+            </p>
+            <p style="color: #cccccc;">
+                <strong>1b. Salvage Roll:</strong> Roll 1d6 + Salvage Stat (2) = 5. Gain 2 Scrap + 1d6×10 Credits = 2 Scrap + 40 Credits.
+            </p>
+            <p style="color: #cccccc;">
+                <strong>1c. Loot:</strong> No loot (mission failed).
+            </p>
+
+            <h3>STEP 2: INCOME</h3>
+            <p style="color: #cccccc;">
+                <strong>2a. Building Income:</strong> Market (Tier 1) = 20 Credits. Workshop = 10 Credits + 1 Scrap. Total: <strong>30 Credits + 1 Scrap.</strong>
+            </p>
+            <p style="color: #cccccc;">
+                <strong>2b. Upkeep:</strong> Base (10) + Population 40 (20) + Pilots 3 (30) + Infirmary (5) = <strong>65 Credits.</strong>
+            </p>
+            <p style="color: #cccccc;">
+                <strong>Net:</strong> Gain 30 Credits, pay 65 Credits = <strong>-35 Credits.</strong> Settlement goes into debt. Treasury now at -35 Credits. Instability +1 (debt penalty).
+            </p>
+
+            <h3>STEP 3: EVENT ROLL</h3>
+            <p style="color: #cccccc;">
+                Roll 1d100 = <strong>42</strong>. Result: <strong>Traveling Merchant.</strong> Merchant offers to buy Scrap at +10 Credits per unit. Settlement has 3 Scrap (2 from salvage, 1 from Workshop). Sell all 3 Scrap for 90 Credits (30 Credits per unit instead of usual 20). Treasury now at +55 Credits (cleared debt!).
+            </p>
+
+            <h3>STEP 4: SETTLEMENT ACTIONS</h3>
+            <p style="color: #cccccc;">
+                <strong>Player 1 (Sister Elara):</strong> Action 1 = Socialize (gain 1 Morale). Action 2 = Train Willpower (spend 50 Credits, Willpower +1).
+            </p>
+            <p style="color: #cccccc;">
+                <strong>Player 2 (Brother Thane):</strong> Action 1 = Rest (gain 1 Morale). Action 2 = Craft Longsword at Forge (spend 50 Credits + 2 Scrap—but settlement has 0 Scrap! Cannot craft. Change action to Scavenge instead: roll 1d6 = 5. Find 1 Scrap).
+            </p>
+            <p style="color: #cccccc;">
+                <strong>Player 3 (Sister Kael, injured):</strong> Action 1 = Treat Injuries at Infirmary (spend 30 Credits, heal Minor Injury "Broken Rib"). Action 2 = Prayer at Chapel (remove 2 Taint, gain 1 Morale).
+            </p>
+            <p style="color: #cccccc;">
+                <strong>Treasury after actions:</strong> 55 - 50 - 30 = <strong>-25 Credits</strong> (back in debt). Instability +1.
+            </p>
+
+            <h3>STEP 5: PILOT CARE</h3>
+            <p style="color: #cccccc;">
+                <strong>5a. Injury Recovery:</strong> Sister Kael's Minor Injury was healed in Step 4. Brother Thane has Minor Injury "Sprained Wrist" (roll 1d6 = 3, does not heal naturally, persists to next phase).
+            </p>
+            <p style="color: #cccccc;">
+                <strong>5b. Grit Progression:</strong> Sister Elara survived mission with 4 cards remaining (near-death). Roll 1d6 = 6! Gain +1 Grit (now Grit 1).
+            </p>
+            <p style="color: #cccccc;">
+                <strong>5c. Soul Sacrifice:</strong> No pilots are Grit 2+ yet. No sacrifices performed.
+            </p>
+
+            <h3>STEP 6: MISSION SELECT</h3>
+            <p style="color: #cccccc;">
+                GM offers 3 mission options:
+            </p>
+            <ul style="color: #cccccc;">
+                <li><strong>Option 1:</strong> Easy Patrol (50 Credits, low risk)</li>
+                <li><strong>Option 2:</strong> Medium Escort Mission (150 Credits + 2 Scrap, moderate risk)</li>
+                <li><strong>Option 3:</strong> Hard Raid on Undead Necropolis (250 Credits + Loot Roll, high risk)</li>
+            </ul>
+            <p style="color: #cccccc;">
+                Players vote for <strong>Option 2</strong> (need Credits to get out of debt, but can't risk another death). Assign 3 pilots: Sister Elara (Grit 1, healthy), Brother Thane (injured but determined), Sister Kael (healed, ready).
+            </p>
+            <p style="color: #cccccc;">
+                <strong>Embark.</strong>
+            </p>
+
+            <h3>Settlement State Summary</h3>
+            <p style="color: #cccccc;">
+                <strong>Treasury:</strong> -25 Credits (debt)<br>
+                <strong>Population:</strong> 40<br>
+                <strong>Instability:</strong> 2 (was 0, +1 debt, +1 debt again)<br>
+                <strong>Morale:</strong> Pilots recovered from memorial + actions<br>
+                <strong>Injuries:</strong> Brother Thane (Minor Injury "Sprained Wrist")<br>
+                <strong>KIA:</strong> Brother Marcus (Year 3, Day 14)<br>
+                <strong>Next Mission:</strong> Medium Escort (150 Credits + 2 Scrap reward)
+            </p>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Settlement Tracking Sheets</h2>
+
+        <div class="tracking-sheet">
+            <h3>Settlement Resources</h3>
+            <table class="manuscript-table">
+                <tbody>
+                    <tr>
+                        <td><strong>Settlement Name:</strong></td>
+                        <td>_______________________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Faction:</strong></td>
+                        <td>_______________________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Population:</strong></td>
+                        <td>_______________________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Treasury (Credits):</strong></td>
+                        <td>_______________________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scrap:</strong></td>
+                        <td>_______________________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Food:</strong></td>
+                        <td>_______________________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instability Score:</strong></td>
+                        <td>_______________________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stability Bonus:</strong></td>
+                        <td>_______________________</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 style="color: #ffd700; margin-top: 2rem;">Buildings Constructed</h4>
+            <ul style="color: #cccccc; line-height: 2;">
+                <li>☐ Market (Tier 1) - Income: 20 Credits</li>
+                <li>☐ Market (Tier 2) - Income: 50 Credits</li>
+                <li>☐ Market (Tier 3) - Income: 100 Credits</li>
+                <li>☐ Workshop - Income: 10 Credits + 1 Scrap</li>
+                <li>☐ Forge - Crafting equipment</li>
+                <li>☐ Infirmary - Treat injuries (Upkeep: 5 Credits)</li>
+                <li>☐ Library - Research</li>
+                <li>☐ Chapel - Prayer, Soul Sacrifice</li>
+                <li>☐ Trading Post - Income: 30 Credits</li>
+                <li>☐ Mine - Income: 2 Scrap</li>
+                <li>☐ Farm - Income: 1 Food (reduces upkeep by 10 Credits)</li>
+            </ul>
+        </div>
+
+        <div class="tracking-sheet">
+            <h3>Pilot Roster</h3>
+            <table class="manuscript-table">
+                <thead>
+                    <tr>
+                        <th>Pilot Name</th>
+                        <th>Grit</th>
+                        <th>Injuries</th>
+                        <th>Taint</th>
+                        <th>Morale</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>___</td>
+                        <td>Active/KIA</td>
+                    </tr>
+                    <tr>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>___</td>
+                        <td>Active/KIA</td>
+                    </tr>
+                    <tr>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>___</td>
+                        <td>Active/KIA</td>
+                    </tr>
+                    <tr>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>___</td>
+                        <td>Active/KIA</td>
+                    </tr>
+                    <tr>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>_____________</td>
+                        <td>___</td>
+                        <td>___</td>
+                        <td>Active/KIA</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 style="color: #ffd700; margin-top: 2rem;">Memorial Wall (KIA Pilots)</h4>
+            <ul style="color: #999; line-height: 2; font-style: italic;">
+                <li>_________________________________________</li>
+                <li>_________________________________________</li>
+                <li>_________________________________________</li>
+                <li>_________________________________________</li>
+                <li>_________________________________________</li>
+            </ul>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Campaign Milestones</h2>
+
+        <p class="manuscript-text">
+            As campaigns progress, settlements reach milestones that unlock new mechanics and story beats:
+        </p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Milestone</th>
+                    <th>Requirement</th>
+                    <th>Unlock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Established Settlement</strong></td>
+                    <td>50 population, 3 buildings</td>
+                    <td>Unlock Trading Post construction</td>
+                </tr>
+                <tr>
+                    <td><strong>Veteran Squad</strong></td>
+                    <td>2+ pilots with Grit 2</td>
+                    <td>Unlock Boss Fight missions</td>
+                </tr>
+                <tr>
+                    <td><strong>Thriving Economy</strong></td>
+                    <td>200+ Credits treasury, no debt for 3 phases</td>
+                    <td>Unlock Market Tier 2 upgrade</td>
+                </tr>
+                <tr>
+                    <td><strong>Martyr's Rest</strong></td>
+                    <td>5+ KIA pilots memorialized</td>
+                    <td>All pilots gain +1 Morale permanently (inspiration from fallen)</td>
+                </tr>
+                <tr>
+                    <td><strong>Engine Researchers</strong></td>
+                    <td>Library constructed, 3+ Lore Discoveries</td>
+                    <td>Unlock "Engine Core Access" missions (endgame content)</td>
+                </tr>
+                <tr>
+                    <td><strong>Unbreakable</strong></td>
+                    <td>Survive 20 missions without settlement collapse</td>
+                    <td>Settlement gains "Veteran Status" (Instability -2 permanently)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Designer's Notes: Pacing & Tone</h2>
+
+        <p class="manuscript-text">
+            The Settlement Phase is designed to create <strong>emotional investment</strong> in your pilots and community. Unlike pure skirmish games, Penance's campaign mode forces players to grapple with consequences: dead pilots stay dead, injuries linger, debt accumulates, and every mission choice has opportunity costs.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Pacing Guidelines:</strong>
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Early Campaign (Missions 1-5):</strong> Focus on survival and building basic infrastructure. Players should feel scrappy and desperate. Low Credits, frequent injuries, no safety net.</li>
+            <li><strong>Mid Campaign (Missions 6-15):</strong> Settlement stabilizes. Players have 2-3 buildings, steady income, veteran pilots. This is the "golden age" before things get harder.</li>
+            <li><strong>Late Campaign (Missions 16+):</strong> Escalation. Boss fights, Engine Core missions, high-risk/high-reward choices. Players should feel confident but cautious—they have a lot to lose now.</li>
+            <li><strong>Endgame (Mission 20+):</strong> Climax. World-changing missions. Dr. Teslar, Engine Core collapse, faction wars. Players risk everything for glory or survival.</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            "The Settlement Phase is where stories happen. The missions are where legends are made. But it's the space between—the quiet moments, the hard choices, the slow recovery—that makes those legends matter."
+            <span class="quote-attribution">—Game Designer's Commentary</span>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="manuscript-footer">
+            <p><a href="index.html">Return to Wiki Home</a> | <a href="../index.html">Main Site</a> | <a href="scenarios.html">Scenarios</a></p>
+        </div>
+    </div>
+</body>
+</html>
