@@ -5,26 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilot Grit System - Penance Wiki</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Gold/Parchment Campaign Aesthetic */
+        .grit-accent {
+            color: #d4af37;
+        }
+        .grit-border {
+            border-color: #b8860b !important;
+        }
+        h2 {
+            color: #d4af37 !important;
+        }
+        .content table th {
+            background: linear-gradient(to bottom, #8b6914, #6b5310) !important;
+        }
+    </style>
 </head>
 <body>
     <div class="content">
+        <div class="breadcrumb">
+            <a href="javascript:parent.loadContent('content-home.html');">CODEX</a> /
+            <a href="#v3-optional">v3.0 OPTIONAL</a> /
+            Pilot Grit System
+        </div>
+
+        <div style="background: rgba(212, 175, 55, 0.2); border: 3px solid #b8860b; padding: 1rem; text-align: center; margin-bottom: 2rem; font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: #d4af37; letter-spacing: 0.15em;">
+            v3.0 OPTIONAL MECHANIC
+        </div>
+
         <h1>Pilot Grit System</h1>
 
-        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
-            Version 3.0 Campaign Rules • Trench Crusade Resilience-Inspired • Veterans Are Mechanically Tougher
+        <p style="font-style: italic; color: #d4af37; margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
+            Trench Crusade Resilience-Inspired • Version 3.0 • Campaign Progression Mechanic
         </p>
 
         <div class="manuscript-quote">
             "Grit is not given. It is earned. In blood. In pain. In refusing to break when the universe demands it."
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Overview</h2>
 
-        <p>Inspired by Trench Crusade's resilience mechanics, the <strong>Pilot Grit</strong> system represents a pilot's mental toughness, pain tolerance, and ability to shrug off injuries through sheer willpower. Veterans develop an iron resolve that lets them "tough it out" when lesser pilots would break.</p>
+        <p>
+            <span style="font-size: 2.5rem; font-weight: bold; color: #d4af37; float: left; line-height: 0.85; margin-right: 0.05em; margin-top: 0.1em; font-family: 'Cinzel Decorative', serif;">S</span>ystem inspired by Trench Crusade's resilience mechanics represents a pilot's mental toughness, pain tolerance, and ability to shrug off injuries through sheer willpower. Veterans develop an iron resolve that lets them "tough it out" when lesser pilots would break.
+        </p>
 
-        <h3>Core Concept:</h3>
+        <h3>Core Concept</h3>
         <ul>
             <li>Pilots have a <strong>Grit stat</strong> (0-3, increases with experience)</li>
             <li>When taking Pilot Damage, roll <strong>1d6 + Grit</strong> to resist Wound cards</li>
@@ -32,9 +59,11 @@
             <li>Creates campaign progression (veterans ARE mechanically tougher)</li>
         </ul>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Grit Stat</h2>
+
+        <h3>Grit Progression Table</h3>
 
         <table>
             <thead>
@@ -68,16 +97,18 @@
             </tbody>
         </table>
 
-        <p><strong>New pilots start with Grit 0</strong> (untested, fragile).<br>
-        <strong>Veteran pilots cap at Grit 3</strong> (battle-hardened, nearly unbreakable).</p>
+        <p style="font-style: italic; margin-top: 1rem;">
+            <strong>Starting Grit:</strong> 0 (new pilots are untested, fragile)<br>
+            <strong>Maximum Grit:</strong> 3 (veteran pilots cap at battle-hardened)
+        </p>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Grit Checks</h2>
 
         <h3>When Do You Roll Grit?</h3>
 
-        <p><strong>WHEN PILOT TAKES DAMAGE (before flipping Wound card):</strong></p>
+        <p><strong>WHEN PILOT TAKES DAMAGE</strong> (before flipping Wound card):</p>
         <ul>
             <li><strong>Capsule Breach</strong> (enemy targets capsule)</li>
             <li><strong>Neural Feedback</strong> (5+ Component Damage accumulated)</li>
@@ -86,22 +117,24 @@
             <li><strong>Casket Destruction</strong> (Casket HP reaches 0, pilot must save)</li>
         </ul>
 
-        <h3>Grit Check Procedure</h3>
+        <h3>Procedure</h3>
         <ol>
             <li>Trigger occurs (e.g., Neural Feedback from 5 Component Damage)</li>
             <li><strong>Roll 1d6 + Pilot's Grit stat</strong></li>
-            <li>Compare to Grit Check Table below</li>
+            <li>Compare to Grit Check Table (see below)</li>
             <li>Apply result (flip Wound card, reduce severity, or shrug it off)</li>
         </ol>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
-        <h2>Grit Check Results</h2>
+        <h2>Grit Check Results Table</h2>
+
+        <p><strong>Roll 1d6 + Grit, compare to this table:</strong></p>
 
         <table>
             <thead>
                 <tr>
-                    <th>Roll (1d6+Grit)</th>
+                    <th>Result</th>
                     <th>Effect</th>
                     <th>Description</th>
                 </tr>
@@ -130,46 +163,54 @@
             </tbody>
         </table>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Example Grit Checks</h2>
 
-        <div style="background: rgba(75, 14, 14, 0.3); border-left: 4px solid var(--dark-red); padding: 1rem; margin: 1rem 0;">
-            <h4 style="margin-top: 0;">Example 1: Rookie Pilot (Grit 0)</h4>
-            <p><strong>Situation</strong>: Neural Feedback triggered (5 Component Damage)<br>
-            <strong>Roll</strong>: 1d6 + 0 Grit = 3<br>
-            <strong>Result</strong>: Full Wound (flip Wound card normally)<br>
-            <strong>Wound Flipped</strong>: Severe Injury - Shattered Hand (-2 SP permanent)<br>
-            <strong>Outcome</strong>: Rookie suffers full permanent injury</p>
+        <div style="background: rgba(139, 105, 20, 0.3); border-left: 6px solid #b8860b; padding: 1.5rem; margin: 1.5rem 0;">
+            <p style="margin: 0;"><strong>EXAMPLE 1: Rookie Pilot (Grit 0)</strong></p>
+            <p style="margin: 0.5rem 0;">
+                SITUATION: Neural Feedback triggered (5 Component Damage)<br>
+                ROLL: 1d6 + 0 Grit = 3<br>
+                RESULT: Full Wound (flip Wound card normally)<br>
+                WOUND FLIPPED: Severe Injury - Shattered Hand (-2 SP permanent)<br>
+                OUTCOME: Rookie suffers full permanent injury
+            </p>
         </div>
 
-        <div style="background: rgba(75, 14, 14, 0.3); border-left: 4px solid var(--dark-red); padding: 1rem; margin: 1rem 0;">
-            <h4 style="margin-top: 0;">Example 2: Seasoned Pilot (Grit 1)</h4>
-            <p><strong>Situation</strong>: Capsule Breach (enemy targeted capsule directly)<br>
-            <strong>Roll</strong>: 1d6 + 1 Grit = 5<br>
-            <strong>Result</strong>: Tough It Out (flip Wound, but Severe → Minor)<br>
-            <strong>Wound Flipped</strong>: Severe Injury - Spinal Trauma<br>
-            <strong>Downgrade</strong>: Treated as Minor Injury - Dislocated Shoulder (-2 damage until end of mission)<br>
-            <strong>Outcome</strong>: Seasoned pilot avoids permanent injury, temporary debuff only</p>
+        <div style="background: rgba(139, 105, 20, 0.3); border-left: 6px solid #b8860b; padding: 1.5rem; margin: 1.5rem 0;">
+            <p style="margin: 0;"><strong>EXAMPLE 2: Seasoned Pilot (Grit 1)</strong></p>
+            <p style="margin: 0.5rem 0;">
+                SITUATION: Capsule Breach (enemy targeted capsule directly)<br>
+                ROLL: 1d6 + 1 Grit = 5<br>
+                RESULT: Tough It Out (flip Wound, but Severe → Minor)<br>
+                WOUND FLIPPED: Severe Injury - Spinal Trauma<br>
+                DOWNGRADE: Treated as Minor Injury - Dislocated Shoulder (-2 damage until end of mission)<br>
+                OUTCOME: Seasoned pilot avoids permanent injury, temporary debuff only
+            </p>
         </div>
 
-        <div style="background: rgba(75, 14, 14, 0.3); border-left: 4px solid var(--dark-red); padding: 1rem; margin: 1rem 0;">
-            <h4 style="margin-top: 0;">Example 3: Hardened Pilot (Grit 2)</h4>
-            <p><strong>Situation</strong>: Taint Overload (reached 10 Taint, failed Corruption Save)<br>
-            <strong>Roll</strong>: 1d6 + 2 Grit = 6<br>
-            <strong>Result</strong>: Shrug It Off (don't flip Wound, gain 1 Heat instead)<br>
-            <strong>Outcome</strong>: Hardened pilot grits teeth, ignores corruption damage, Casket overheats slightly</p>
+        <div style="background: rgba(139, 105, 20, 0.3); border-left: 6px solid #b8860b; padding: 1.5rem; margin: 1.5rem 0;">
+            <p style="margin: 0;"><strong>EXAMPLE 3: Hardened Pilot (Grit 2)</strong></p>
+            <p style="margin: 0.5rem 0;">
+                SITUATION: Taint Overload (reached 10 Taint, failed Corruption Save)<br>
+                ROLL: 1d6 + 2 Grit = 6<br>
+                RESULT: Shrug It Off (don't flip Wound, gain 1 Heat instead)<br>
+                OUTCOME: Hardened pilot grits teeth, ignores corruption damage, Casket overheats slightly
+            </p>
         </div>
 
-        <div style="background: rgba(75, 14, 14, 0.3); border-left: 4px solid var(--dark-red); padding: 1rem; margin: 1rem 0;">
-            <h4 style="margin-top: 0;">Example 4: Iron Will Pilot (Grit 3)</h4>
-            <p><strong>Situation</strong>: Casket Destruction (HP deck reached 0, pilot must save)<br>
-            <strong>Roll</strong>: 1d6 + 3 Grit = 9 (rolled a 6!)<br>
-            <strong>Result</strong>: Iron Will (no penalty, pure willpower)<br>
-            <strong>Outcome</strong>: Veteran pilot REFUSES to die. Casket is wrecked but pilot unblemished. Extracted safely.</p>
+        <div style="background: rgba(139, 105, 20, 0.3); border-left: 6px solid #b8860b; padding: 1.5rem; margin: 1.5rem 0;">
+            <p style="margin: 0;"><strong>EXAMPLE 4: Iron Will Pilot (Grit 3)</strong></p>
+            <p style="margin: 0.5rem 0;">
+                SITUATION: Casket Destruction (HP deck reached 0, pilot must save)<br>
+                ROLL: 1d6 + 3 Grit = 9 (rolled a 6!)<br>
+                RESULT: Iron Will (no penalty, pure willpower)<br>
+                OUTCOME: Veteran pilot REFUSES to die. Casket is wrecked but pilot unblemished. Extracted safely.
+            </p>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Gaining Grit</h2>
 
@@ -202,18 +243,20 @@
             </tbody>
         </table>
 
-        <p><strong>"Mission Survived" = Pilot extracted alive (even if Casket destroyed).</strong></p>
+        <p style="font-style: italic;">"Mission Survived" = Pilot extracted alive (even if Casket destroyed).</p>
 
         <h3>Injury-Based Progression (Fast-Track)</h3>
 
         <p><strong>Surviving trauma accelerates Grit growth. Gain +1 Grit immediately when:</strong></p>
         <ul>
-            <li>Survive <strong>1st Severe Injury</strong> → Gain Grit 1 (even if under 5 missions)</li>
-            <li>Survive <strong>3rd Severe Injury</strong> → Gain Grit 2 (even if under 10 missions)</li>
-            <li>Survive <strong>5th Severe Injury</strong> → Gain Grit 3 (veteran of pain)</li>
+            <li>Survive 1st Severe Injury → Gain Grit 1 (even if under 5 missions)</li>
+            <li>Survive 3rd Severe Injury → Gain Grit 2 (even if under 10 missions)</li>
+            <li>Survive 5th Severe Injury → Gain Grit 3 (veteran of pain)</li>
         </ul>
 
-        <p><strong>Why This Exists</strong>: Pilots who survive horrific injuries become tougher faster. A pilot with 2 missions but 1 Severe Injury is Grit 1 (trauma-hardened).</p>
+        <p style="font-style: italic;">
+            <strong>Why This Exists:</strong> Pilots who survive horrific injuries become tougher faster. A pilot with 2 missions but 1 Severe Injury is Grit 1 (trauma-hardened).
+        </p>
 
         <h3>Leg-Skimming Grit Bonus</h3>
 
@@ -233,68 +276,44 @@
             <li>Only applies to Grit Check rolls</li>
         </ul>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Faction Grit Modifiers</h2>
-
-        <h3>Church of Absolution</h3>
-        <p><strong>Martyrdom Training</strong>: Church pilots start with <strong>+1 Grit at character creation</strong> (zealot conditioning)</p>
-        <ul>
-            <li>Starting Grit: 1 (instead of 0)</li>
-            <li>Max Grit: Still 3 (but reach it faster)</li>
-            <li><em>"Pain is prayer. We are chosen to suffer."</em></li>
-        </ul>
-
-        <h3>Dwarven Forge-Guilds</h3>
-        <p><strong>Stoic Endurance</strong>: Dwarven pilots gain <strong>+1 to Grit Checks vs Severe Injuries</strong> (not Minor or Trauma)</p>
-        <ul>
-            <li>Still roll normal Grit, but +1 when resisting Severe only</li>
-            <li><em>"Stone does not break. Neither do we."</em></li>
-        </ul>
-
-        <h3>The Ossuarium</h3>
-        <p><strong>Already Dead</strong>: Ossuarium pilots are <strong>IMMUNE to Grit Checks</strong> (they don't flip Wound cards)</p>
-        <ul>
-            <li>Instead, they use "Decay Card" system (see Ossuarium faction rules)</li>
-            <li><em>"We died once. What's one more wound?"</em></li>
-        </ul>
-
-        <h3>Elven Verdant Covenant</h3>
-        <p><strong>Fragile Immortals</strong>: Elven pilots have <strong>-1 Grit at all times</strong> (emotionally brittle)</p>
-        <ul>
-            <li>Can still gain Grit through missions, but always -1 penalty</li>
-            <li>Max effective Grit: 2 (3 Grit - 1 penalty)</li>
-            <li><em>"We are ageless, not invincible. Pain is... unfamiliar."</em></li>
-        </ul>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Grit in Play: Rookie vs Veteran</h2>
 
         <table>
             <thead>
                 <tr>
-                    <th>Situation</th>
-                    <th>Rookie Pilot (Grit 0)</th>
-                    <th>Veteran Pilot (Grit 3)</th>
+                    <th>Faction</th>
+                    <th>Grit Modifier</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Neural Feedback Damage</strong></td>
-                    <td>Rolls 1d6+0 = 3 → <strong>Full Wound</strong><br>Flips Severe Injury: Ruptured Organ (permanent -5 HP)<br><strong>Crippled permanently, may retire</strong></td>
-                    <td>Rolls 1d6+3 = 8 → <strong>Iron Will</strong><br>No Wound flipped, no penalty<br><strong>Shakes it off, keeps fighting</strong></td>
+                    <td><strong>Church of Absolution</strong></td>
+                    <td><strong>Martyrdom Training:</strong> Start with +1 Grit at character creation (zealot conditioning). Starting Grit: 1 instead of 0. Max still 3.</td>
+                </tr>
+                <tr>
+                    <td><strong>Dwarven Forge-Guilds</strong></td>
+                    <td><strong>Stoic Endurance:</strong> +1 to Grit Checks vs Severe Injuries only (not Minor or Trauma). "Stone does not break. Neither do we."</td>
+                </tr>
+                <tr>
+                    <td><strong>The Ossuarium</strong></td>
+                    <td><strong>Already Dead:</strong> IMMUNE to Grit Checks (don't flip Wound cards). Use "Decay Card" system instead. "We died once. What's one more wound?"</td>
+                </tr>
+                <tr>
+                    <td><strong>Elven Verdant Covenant</strong></td>
+                    <td><strong>Fragile Immortals:</strong> -1 Grit at all times (emotionally brittle). Max effective Grit: 2 (3 Grit - 1 penalty). "We are ageless, not invincible."</td>
                 </tr>
             </tbody>
         </table>
 
-        <p style="font-style: italic; margin-top: 1rem;">This creates mechanical power creep for veterans (intentional Kingdom Death-style progression).</p>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Strategic Implications</h2>
 
         <h3>High-Grit Pilots Are More Valuable</h3>
+
+        <p>In campaign, protect your veterans:</p>
         <ul>
             <li>Grit 3 pilots are MUCH harder to permanently injure</li>
             <li>50% chance to ignore Pilot Damage (rolls 6+ on 1d6+3)</li>
@@ -302,6 +321,8 @@
         </ul>
 
         <h3>Rookies Are Expendable</h3>
+
+        <p>Low-Grit pilots are glass cannons:</p>
         <ul>
             <li>83% chance to take Full Wound (need 4+ on 1d6+0)</li>
             <li>High risk of permanent injury early</li>
@@ -309,39 +330,91 @@
         </ul>
 
         <h3>Leg-Skimming for Grit</h3>
+
+        <p>Trade soul for survivability:</p>
         <ul>
             <li>Leg-Skim early (gain +1 Grit immediately)</li>
             <li>Combine with mission progression for Grit 2 by mission 8 (instead of mission 10)</li>
-            <li><strong>Risk</strong>: Permanent soul damage, reduced max HP</li>
+            <li>Risk: Permanent soul damage, reduced max HP</li>
         </ul>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
-        <h2>Advanced Rule: Grit + Taint Exploitation</h2>
+        <h2>Campaign Grit Tracking</h2>
 
-        <p><strong>High Grit helps resist Taint Overload:</strong></p>
+        <h3>Pilot Sheet Example</h3>
+
+        <div style="background: rgba(139, 105, 20, 0.3); border: 2px solid #b8860b; padding: 1.5rem; margin: 1.5rem 0; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+            <p style="margin: 0;">PILOT: Gareth "Ironside" Kade</p>
+            <p style="margin: 0;">FACTION: Dwarven Forge-Guilds</p>
+            <p style="margin: 0;">MISSIONS SURVIVED: 12</p>
+            <p style="margin: 0;">SEVERE INJURIES SURVIVED: 2</p>
+            <p style="margin: 0;">LEG-SKIMMED: No</p>
+            <p style="margin: 0;">TRAUMA WOUNDS: 0</p>
+            <p style="margin: 1rem 0 0 0; padding-top: 1rem; border-top: 1px solid #b8860b;">GRIT CALCULATION:</p>
+            <p style="margin: 0.25rem 0;">Base Grit (12 missions): 2</p>
+            <p style="margin: 0.25rem 0;">Severe Injuries (2): +0 (doesn't boost Grit)</p>
+            <p style="margin: 0.25rem 0;">Leg-Skimmed: +0 (not skimmed)</p>
+            <p style="margin: 0.25rem 0;">Trauma Penalty: +0 (no trauma)</p>
+            <p style="margin: 0.25rem 0;">Faction Bonus: +1 vs Severe Injuries only</p>
+            <p style="margin: 1rem 0 0 0; padding-top: 1rem; border-top: 1px solid #b8860b; font-weight: bold; color: #d4af37;">FINAL GRIT: 2</p>
+            <p style="margin: 0.25rem 0; font-weight: bold; color: #d4af37;">EFFECTIVE GRIT VS SEVERE: 3 (2 + 1 Dwarven bonus)</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
+
+        <h2>Advanced Rules: Grit Synergies</h2>
+
+        <h3>Grit + Taint Exploitation</h3>
+
+        <p><strong>VARIANT RULE:</strong> Add Grit to Corruption Save roll</p>
         <ul>
-            <li>When you reach 10 Taint, roll Corruption Save (1d6, need 4+)</li>
-            <li><strong>VARIANT RULE</strong>: Add Grit to Corruption Save roll
-                <ul>
-                    <li>Grit 0: Roll 1d6, need 4+ (50% chance)</li>
-                    <li>Grit 3: Roll 1d6+3, need 4+ (83% chance to resist)</li>
-                </ul>
-            </li>
+            <li>Grit 0: Roll 1d6, need 4+ (50% chance)</li>
+            <li>Grit 3: Roll 1d6+3, need 4+ (83% chance to resist)</li>
         </ul>
 
-        <p><strong>Why</strong>: Veteran pilots have stronger willpower to resist Engine corruption.</p>
+        <p style="font-style: italic;"><strong>Why:</strong> Veteran pilots have stronger willpower to resist Engine corruption.</p>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <h3>Grit + Pilot Progression</h3>
+
+        <p>Some Pilot Scars grant +1 Grit:</p>
+        <ul>
+            <li>Example: "Battle-Scarred" scar (survived 3 near-deaths) → +1 Grit</li>
+            <li>Stacks with mission/injury progression</li>
+        </ul>
+
+        <h3>Grit + Support Units</h3>
+
+        <p>High-Grit pilots command better:</p>
+        <ul>
+            <li>Support Units gain +1 Morale if commanded by Grit 2+ pilot</li>
+            <li>Represents veteran's leadership inspiring troops</li>
+            <li>Mechanical benefit: Support Units less likely to flee</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
+
+        <h2>Integration with Other v3.0 Systems</h2>
+
+        <div style="background: rgba(139, 105, 20, 0.3); border: 2px solid #b8860b; padding: 1.5rem; margin: 2rem 0;">
+            <h3 style="margin-top: 0; color: #d4af37;">Cross-References</h3>
+            <ul style="margin-bottom: 0;">
+                <li><strong><a href="javascript:parent.loadContent('rules-taint-exploitation.html');">Taint Exploitation</a>:</strong> Danger Zone (5-7 Taint) = -1 to Grit checks</li>
+                <li><strong><a href="javascript:parent.loadContent('rules-dice-pool.html');">Dice Pool Advantage</a>:</strong> Grit affects resistance rolls, not Attack Dice</li>
+                <li><strong><a href="javascript:parent.loadContent('campaign-pilot-generation.html');">Pilot Generation</a>:</strong> Some traits modify starting Grit</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
         <h2>Quick Reference: Grit Check Procedure</h2>
 
-        <div style="background: var(--aged-parchment); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0;">
-            <p style="margin-top: 0;"><strong>WHEN PILOT TAKES DAMAGE:</strong></p>
-            <ol style="margin: 0.5rem 0;">
-                <li><strong>Identify Trigger</strong>: Capsule Breach, Neural Feedback, Thread Snap, Taint Overload, or Casket Destruction</li>
+        <div style="background: rgba(139, 105, 20, 0.4); border: 3px solid #b8860b; padding: 2rem; margin: 2rem 0;">
+            <h3 style="margin-top: 0; text-align: center; color: #d4af37;">WHEN PILOT TAKES DAMAGE:</h3>
+            <ol>
+                <li><strong>Identify Trigger:</strong> Capsule Breach, Neural Feedback, Thread Snap, Taint Overload, or Casket Destruction</li>
                 <li><strong>Roll 1d6 + Pilot's Grit stat</strong></li>
-                <li><strong>Compare to Table</strong>:
+                <li><strong>Compare to Table:</strong>
                     <ul>
                         <li>1-3: Full Wound (flip normally)</li>
                         <li>4-5: Tough It Out (Severe → Minor)</li>
@@ -349,20 +422,51 @@
                         <li>8+: Iron Will (no flip, no penalty)</li>
                     </ul>
                 </li>
-                <li><strong>Apply Result</strong>: Flip Wound card (or don't), apply penalties, continue</li>
+                <li><strong>Apply Result:</strong> Flip Wound card (or don't), apply penalties, continue</li>
             </ol>
+
+            <h3 style="margin-top: 2rem; text-align: center; color: #d4af37;">GRIT PROGRESSION:</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><strong>0 Missions:</strong> Grit 0</li>
+                <li><strong>5 Missions:</strong> Grit 1</li>
+                <li><strong>10 Missions:</strong> Grit 2</li>
+                <li><strong>20 Missions:</strong> Grit 3</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem; text-align: center; color: #d4af37;">FAST-TRACK:</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>1 Severe Injury survived: Grit 1</li>
+                <li>3 Severe Injuries survived: Grit 2</li>
+                <li>5 Severe Injuries survived: Grit 3</li>
+            </ul>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #d4af37;">&#10047;</span></div>
 
-        <div style="background: var(--shadow-black); border: 3px double var(--dark-red); padding: 2rem; margin: 3rem 0; font-style: italic;">
-            <p style="text-align: center; margin: 0;">
-                "Protect your veterans. They've earned their scars. They've earned their right to survive."
+        <h2>Designer's Notes</h2>
+
+        <h3>Why Grit Works</h3>
+        <ol>
+            <li><strong>Campaign Progression:</strong> Veterans feel mechanically superior (not just narrative)</li>
+            <li><strong>Risk/Reward:</strong> Rookies are fragile but cheap, veterans are tough but irreplaceable</li>
+            <li><strong>Faction Flavor:</strong> Church embraces pain, Dwarves endure, Elves shatter, Ossuarium transcend</li>
+            <li><strong>Trench Crusade Inspiration:</strong> Blood Marker shaking creates similar "tough it out" moments</li>
+        </ol>
+
+        <h3>Differences from Trench Crusade</h3>
+
+        <p><strong>Trench Crusade:</strong> Models can spend actions to shake off Blood Markers (active choice). Binary: Either marked or not.</p>
+
+        <p><strong>Penance Grit:</strong> Passive stat that grows with experience (not active choice). Rolled reactively when damage occurs. Threshold-based: Different results at 4, 6, 8 (gradations of success).</p>
+
+        <div style="background: var(--shadow-black); border: 3px double #b8860b; padding: 2rem; margin: 3rem 0; font-style: italic;">
+            <p style="text-align: center; margin: 0; color: #d4af37;" class="no-drop-cap">
+                "They say experience is the best teacher. In the Caskets, experience is the only thing keeping you alive."
             </p>
         </div>
 
-        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
-            <p><a href="javascript:parent.loadContent('campaign-pilot-progression.html');">See Also: Pilot Progression</a> | <a href="javascript:parent.loadContent('content-home.html');">Return to Wiki Home</a></p>
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #b8860b; color: #d4af37; font-size: 0.9rem;">
+            <p><a href="javascript:parent.loadContent('campaign-pilot-generation.html');">Pilot Generation</a> | <a href="javascript:parent.loadContent('rules-taint-exploitation.html');">Taint Exploitation</a> | <a href="javascript:parent.loadContent('content-home.html');">Return to Wiki Home</a></p>
         </div>
     </div>
 </body>
