@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "version": "3.0",
+    "lastUpdated": "2025-10-14",
+    "description": "Complete Penance card database with v3.0 mechanics"
+  },
   "universal": [
     {
       "id": "desperate-lunge",
@@ -8,8 +13,12 @@
       "range": "Self",
       "effect": "Move up to 2 hexes in any direction. You may rotate once during movement. Generate 1 Heat.",
       "heat": "+1",
-      "keywords": ["universal", "movement"],
-      "cardCount": 1
+      "keywords": [
+        "universal",
+        "movement"
+      ],
+      "cardCount": 1,
+      "cardType": "core"
     },
     {
       "id": "wardens-pivot",
@@ -19,8 +28,12 @@
       "range": "Self",
       "effect": "Rotate to any facing (no limit). Free action - does not cost SP.",
       "heat": "0",
-      "keywords": ["universal", "movement"],
-      "cardCount": 1
+      "keywords": [
+        "universal",
+        "movement"
+      ],
+      "cardCount": 1,
+      "cardType": "core"
     },
     {
       "id": "ironstriders-rush",
@@ -30,8 +43,12 @@
       "range": "Self",
       "effect": "Move up to 3 hexes in straight line. Ignore difficult terrain. Generate 2 Heat.",
       "heat": "+2",
-      "keywords": ["universal", "movement"],
-      "cardCount": 1
+      "keywords": [
+        "universal",
+        "movement"
+      ],
+      "cardCount": 1,
+      "cardType": "core"
     },
     {
       "id": "unyielding-bulwark",
@@ -41,8 +58,13 @@
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Discard this card after use.",
       "heat": "0",
-      "keywords": ["universal", "defense", "reactive"],
-      "cardCount": 1
+      "keywords": [
+        "universal",
+        "defense",
+        "reactive"
+      ],
+      "cardCount": 1,
+      "cardType": "core"
     },
     {
       "id": "second-skin",
@@ -52,8 +74,13 @@
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 1 (minimum 1). Discard this card after use.",
       "heat": "0",
-      "keywords": ["universal", "defense", "reactive"],
-      "cardCount": 1
+      "keywords": [
+        "universal",
+        "defense",
+        "reactive"
+      ],
+      "cardCount": 1,
+      "cardType": "core"
     },
     {
       "id": "breathe-the-core",
@@ -63,8 +90,13 @@
       "range": "Self",
       "effect": "Remove 1d3 Heat tokens.",
       "heat": "-1d3",
-      "keywords": ["universal", "utility", "heat"],
-      "cardCount": 3
+      "keywords": [
+        "universal",
+        "utility",
+        "heat"
+      ],
+      "cardCount": 3,
+      "cardType": "core"
     },
     {
       "id": "field-suture",
@@ -74,8 +106,13 @@
       "range": "Self or Adjacent",
       "effect": "Remove 1 Damage card from target's discard pile from the game. Can target self or adjacent ally.",
       "heat": "0",
-      "keywords": ["universal", "utility", "healing"],
-      "cardCount": 1
+      "keywords": [
+        "universal",
+        "utility",
+        "healing"
+      ],
+      "cardCount": 1,
+      "cardType": "core"
     },
     {
       "id": "souls-recall",
@@ -85,8 +122,13 @@
       "range": "Self",
       "effect": "Draw 2 cards.",
       "heat": "0",
-      "keywords": ["universal", "utility", "card-draw"],
-      "cardCount": 2
+      "keywords": [
+        "universal",
+        "utility",
+        "card-draw"
+      ],
+      "cardCount": 2,
+      "cardType": "core"
     },
     {
       "id": "tattered-hope",
@@ -96,8 +138,13 @@
       "range": "Self",
       "effect": "Discard your entire hand. Draw 3 cards. Use when desperate or hand is bad.",
       "heat": "0",
-      "keywords": ["universal", "utility", "card-draw"],
-      "cardCount": 1
+      "keywords": [
+        "universal",
+        "utility",
+        "card-draw"
+      ],
+      "cardCount": 1,
+      "cardType": "core"
     },
     {
       "id": "guardians-defiance",
@@ -107,8 +154,13 @@
       "range": "Self",
       "effect": "+2 Defense until your next turn. You may cover adjacent ally (redirect 1 attack to yourself).",
       "heat": "0",
-      "keywords": ["universal", "defense", "ally"],
-      "cardCount": 1
+      "keywords": [
+        "universal",
+        "defense",
+        "ally"
+      ],
+      "cardCount": 1,
+      "cardType": "core"
     }
   ],
   "church": [
@@ -119,8 +171,14 @@
       "cost": 0,
       "range": "Self",
       "effect": "Discard 2 cards from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and -1 to target number (easier to hit).",
-      "keywords": ["gambit", "self-harm", "buff", "accuracy"],
-      "cardCount": 1
+      "keywords": [
+        "gambit",
+        "self-harm",
+        "buff",
+        "accuracy"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "martyrdom-protocol",
@@ -130,8 +188,13 @@
       "range": "2 hexes",
       "effect": "When an ally within 2 hexes would take damage, redirect that damage to yourself instead. Gain 1 Heat.",
       "heat": "+1",
-      "keywords": ["reactive", "ally", "sacrifice"],
-      "cardCount": 1
+      "keywords": [
+        "reactive",
+        "ally",
+        "sacrifice"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "righteous-fury",
@@ -140,19 +203,13 @@
       "cost": 0,
       "range": "N/A",
       "effect": "Each time an allied Casket is destroyed this mission, gain +1 damage to all attacks permanently for the rest of the mission (stacks).",
-      "keywords": ["passive", "scaling", "vengeance"],
-      "cardCount": 1
-    },
-    {
-      "id": "divine-judgment",
-      "name": "Divine Judgment",
-      "type": "attack",
-      "cost": 4,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 6 damage. If target has 10 HP or less after damage, deal 8 damage instead.",
-      "damage": "6-8",
-      "keywords": ["attack", "execute", "judgment"],
-      "cardCount": 1
+      "keywords": [
+        "passive",
+        "scaling",
+        "vengeance"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "consecrated-ground",
@@ -161,8 +218,14 @@
       "cost": 3,
       "range": "3-hex radius",
       "effect": "Create a 3-hex radius healing zone centered on you until end of round. Allied Caskets in this zone recover 2 cards from discard pile at start of their turn.",
-      "keywords": ["utility", "ally", "healing", "zone"],
-      "cardCount": 1
+      "keywords": [
+        "utility",
+        "ally",
+        "healing",
+        "zone"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "last-rites",
@@ -171,41 +234,14 @@
       "cost": 0,
       "range": "3 hexes",
       "effect": "When an allied Casket within 3 hexes is destroyed (deck reaches 0), immediately recover 5 cards from your discard pile and draw 2 cards.",
-      "keywords": ["reactive", "ally", "healing", "death-trigger"],
-      "cardCount": 1
-    },
-    {
-      "id": "divine-guidance",
-      "name": "Divine Guidance",
-      "type": "accuracy-buff",
-      "cost": 1,
-      "range": "Self",
-      "effect": "Your next attack this turn: -2 to target number (easier to hit). If it hits, apply 'Blessed' status to target (all allies' attacks against this target: -1 to target number until end of round).",
-      "keywords": ["accuracy", "buff", "targeting"],
+      "keywords": [
+        "reactive",
+        "ally",
+        "healing",
+        "death-trigger"
+      ],
       "cardCount": 1,
-      "slot": "sigil"
-    },
-    {
-      "id": "martyrdoms-certainty",
-      "name": "Martyrdom's Certainty",
-      "type": "accuracy-buff",
-      "cost": 0,
-      "range": "Self",
-      "effect": "Discard 1 card from deck. Your next attack cannot miss (auto-hit) but deals -2 damage.",
-      "keywords": ["gambit", "self-harm", "auto-hit"],
-      "cardCount": 1,
-      "slot": "sigil"
-    },
-    {
-      "id": "zealots-focus",
-      "name": "Zealot's Focus",
-      "type": "attack-enhancement",
-      "cost": 0,
-      "range": "Self",
-      "effect": "Reroll 1 Attack Die on your next attack this turn.",
-      "keywords": ["reroll", "accuracy"],
-      "cardCount": 2,
-      "slot": "sigil"
+      "cardType": "faction"
     },
     {
       "id": "righteous-wrath",
@@ -215,41 +251,13 @@
       "range": "Melee (1 hex)",
       "effect": "Deal 5 damage. This attack cannot miss. If target has killed an ally this mission, deal 7 damage instead.",
       "damage": "5-7",
-      "keywords": ["attack", "auto-hit", "vengeance"],
-      "cardCount": 1
-    },
-    {
-      "id": "confession-under-duress",
-      "name": "Confession Under Duress",
-      "type": "debuff",
-      "cost": 2,
-      "range": "2 hexes",
-      "effect": "Target enemy's next attack: +2 to target number (harder for them to hit). Draw 1 card.",
-      "keywords": ["debuff", "utility", "control"],
-      "cardCount": 1
-    },
-    {
-      "id": "point-blank-execution",
-      "name": "Point-Blank Execution",
-      "type": "attack",
-      "cost": 3,
-      "range": "1 hex (adjacent only)",
-      "effect": "Deal 6 damage. This attack cannot miss. If attacking from rear arc (hex 4), deal 8 damage instead.",
-      "damage": "6-8",
-      "keywords": ["attack", "auto-hit", "execute"],
-      "cardCount": 1
-    },
-    {
-      "id": "divine-judgment-revised",
-      "name": "Divine Judgment (Revised)",
-      "type": "attack",
-      "cost": 4,
-      "range": "Melee (1 hex)",
-      "effect": "Deal 8 damage, ignore 1 Defense. On Miss: Recover 2 SP and gain 'Judgment Delayed' status (+3 damage to next attack).",
-      "damage": "8",
-      "keywords": ["attack", "execute", "miss-compensation"],
+      "keywords": [
+        "attack",
+        "auto-hit",
+        "vengeance"
+      ],
       "cardCount": 1,
-      "note": "Replaces original Divine Judgment"
+      "cardType": "faction"
     }
   ],
   "dwarves": [
@@ -261,8 +269,13 @@
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage. ARMOR PIERCING (ignore all Defense buffs and armor).",
       "damage": "4",
-      "keywords": ["attack", "armor-piercing", "melee"],
-      "cardCount": 1
+      "keywords": [
+        "attack",
+        "armor-piercing",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "forge-fury",
@@ -272,8 +285,13 @@
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage + 1 damage per Heat you currently have (max +6). Remove all Heat after attack resolves.",
       "damage": "3-9",
-      "keywords": ["attack", "heat-conversion", "melee"],
-      "cardCount": 1
+      "keywords": [
+        "attack",
+        "heat-conversion",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "rune-of-protection",
@@ -282,8 +300,13 @@
       "cost": 2,
       "range": "Self",
       "effect": "Gain 1 Rune Counter. While you have Rune Counters, reduce all damage by 1 per counter (max 3 counters). Duration: Until end of mission or destroyed.",
-      "keywords": ["buff", "rune", "defense"],
-      "cardCount": 1
+      "keywords": [
+        "buff",
+        "rune",
+        "defense"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "unbreakable",
@@ -293,8 +316,13 @@
       "range": "Self",
       "effect": "When you would take Component Damage, prevent 1 Component Damage. Gain 1 Heat.",
       "heat": "+1",
-      "keywords": ["reactive", "component-protection", "heat"],
-      "cardCount": 1
+      "keywords": [
+        "reactive",
+        "component-protection",
+        "heat"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "earthshaker",
@@ -304,8 +332,14 @@
       "range": "Melee (Range 1)",
       "effect": "Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.",
       "damage": "5 + 2 AoE",
-      "keywords": ["attack", "aoe", "push", "melee"],
-      "cardCount": 1
+      "keywords": [
+        "attack",
+        "aoe",
+        "push",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "clan-vengeance",
@@ -314,8 +348,13 @@
       "cost": 0,
       "range": "N/A",
       "effect": "Each time you take Component Damage, your next attack deals +2 damage. This bonus stacks (3 Component Damage = +6 damage on next attack).",
-      "keywords": ["passive", "scaling", "vengeance"],
-      "cardCount": 1
+      "keywords": [
+        "passive",
+        "scaling",
+        "vengeance"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     }
   ],
   "ossuarium": [
@@ -327,8 +366,14 @@
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 4 cards).",
       "damage": "4",
-      "keywords": ["attack", "lifesteal", "vampiric", "melee"],
-      "cardCount": 1
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "vampiric",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "corpse-fuel",
@@ -337,8 +382,14 @@
       "cost": 2,
       "range": "3 hexes",
       "effect": "When an enemy Casket is destroyed within 3 hexes, immediately recover 5 cards from your discard pile and shuffle into deck.",
-      "keywords": ["utility", "death-trigger", "healing", "corpse-exploitation"],
-      "cardCount": 1
+      "keywords": [
+        "utility",
+        "death-trigger",
+        "healing",
+        "corpse-exploitation"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "phylactery",
@@ -347,8 +398,13 @@
       "cost": 0,
       "range": "N/A",
       "effect": "The first time each mission you would be reduced to 0 HP, instead set HP to 5 (recover 5 cards from discard pile). This is automatic and costs nothing.",
-      "keywords": ["passive", "resurrection", "survival"],
-      "cardCount": 1
+      "keywords": [
+        "passive",
+        "resurrection",
+        "survival"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "bone-scythe-reap",
@@ -358,8 +414,14 @@
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 4 cards).",
       "damage": "3 + 2 AoE",
-      "keywords": ["attack", "aoe", "lifesteal", "melee"],
-      "cardCount": 1
+      "keywords": [
+        "attack",
+        "aoe",
+        "lifesteal",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "deathless-advance",
@@ -368,8 +430,13 @@
       "cost": 2,
       "range": "Self",
       "effect": "Move up to 3 hexes. Until end of your turn, you cannot take more than 5 damage from any single attack (damage cap).",
-      "keywords": ["movement", "defense", "resilience"],
-      "cardCount": 1
+      "keywords": [
+        "movement",
+        "defense",
+        "resilience"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "necrotic-surge",
@@ -378,8 +445,13 @@
       "cost": 0,
       "range": "N/A",
       "effect": "Whenever you recover cards from discard pile (via any effect), recover +1 additional card.",
-      "keywords": ["passive", "synergy", "healing"],
-      "cardCount": 1
+      "keywords": [
+        "passive",
+        "synergy",
+        "healing"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     }
   ],
   "elves": [
@@ -391,8 +463,14 @@
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage. Apply Bleed 2 (target takes 2 damage at start of their next turn).",
       "damage": "3",
-      "keywords": ["attack", "bleed", "precision", "melee"],
-      "cardCount": 1
+      "keywords": [
+        "attack",
+        "bleed",
+        "precision",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "pruning-cut",
@@ -402,8 +480,14 @@
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). If target discards cards from that component type, deal +2 Component Damage.",
       "damage": "4",
-      "keywords": ["attack", "component-targeting", "surgical", "melee"],
-      "cardCount": 1
+      "keywords": [
+        "attack",
+        "component-targeting",
+        "surgical",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "root-bind",
@@ -413,8 +497,14 @@
       "range": "Ranged (1-3 hexes)",
       "effect": "Target enemy cannot move until end of their next turn. If they attempt to move, take 3 damage and Bleed 1.",
       "damage": "3",
-      "keywords": ["utility", "control", "root", "nature"],
-      "cardCount": 1
+      "keywords": [
+        "utility",
+        "control",
+        "root",
+        "nature"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "photosynthesis",
@@ -424,8 +514,14 @@
       "range": "N/A",
       "effect": "At end of your turn, if you did NOT attack this turn, recover 1 card from discard pile and remove 1 Heat.",
       "heat": "-1",
-      "keywords": ["passive", "healing", "patience", "nature"],
-      "cardCount": 1
+      "keywords": [
+        "passive",
+        "healing",
+        "patience",
+        "nature"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "leaf-dance",
@@ -434,8 +530,14 @@
       "cost": 3,
       "range": "Self",
       "effect": "Move up to 3 hexes. You may make 1 attack during this movement (at any point). After attacking, you may continue moving.",
-      "keywords": ["movement", "attack", "mobility", "hit-and-run"],
-      "cardCount": 1
+      "keywords": [
+        "movement",
+        "attack",
+        "mobility",
+        "hit-and-run"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "verdant-regeneration",
@@ -444,8 +546,14 @@
       "cost": 0,
       "range": "N/A",
       "effect": "At the start of each round, recover 1 card from discard pile. If you have Living Seal equipped, recover 2 cards instead.",
-      "keywords": ["passive", "regeneration", "healing", "nature"],
-      "cardCount": 1
+      "keywords": [
+        "passive",
+        "regeneration",
+        "healing",
+        "nature"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     }
   ],
   "equipment": {
@@ -464,23 +572,27 @@
             "cost": 1,
             "range": "Melee",
             "effect": "Deal 3 damage",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Deflect",
             "cost": 0,
             "range": "Self",
             "effect": "Reduce damage by 1",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Double-Strike",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 2 damage twice (two separate attacks)",
-            "damage": "2x2"
+            "damage": "2x2",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "pistol",
@@ -496,7 +608,8 @@
             "cost": 1,
             "range": "Ranged 1-4",
             "effect": "Deal 2 damage",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Point Blank",
@@ -504,16 +617,19 @@
             "range": "Melee",
             "effect": "Deal 4 damage, gain 1 Heat",
             "damage": "4",
-            "heat": "+1"
+            "heat": "+1",
+            "cardType": "equipment"
           },
           {
             "name": "Reload",
             "cost": 1,
             "range": "Self",
             "effect": "Draw 1 card",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "hand-axe",
@@ -529,30 +645,35 @@
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 4 damage",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Hook",
             "cost": 1,
             "range": "Melee",
             "effect": "Deal 2 damage, pull enemy 1 hex toward you",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Throw",
             "cost": 2,
             "range": "Ranged 1-3",
             "effect": "Deal 3 damage, discard this card",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Retrieve",
             "cost": 1,
             "range": "Self",
             "effect": "Recover 1 discarded Hand Axe card from discard pile",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "longsword",
@@ -568,21 +689,24 @@
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 4 damage",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Thrust",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 3 damage, +2 damage if attacking from front arc",
-            "damage": "3-5"
+            "damage": "3-5",
+            "cardType": "equipment"
           },
           {
             "name": "Parry",
             "cost": 0,
             "range": "Self",
             "effect": "Reduce damage by 2, next attack this turn +1 damage",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Riposte",
@@ -590,23 +714,27 @@
             "range": "Self",
             "effect": "When attacked in melee, deal 3 damage to attacker",
             "damage": "3",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Pommel Strike",
             "cost": 1,
             "range": "Melee",
             "effect": "Deal 2 damage, target loses 1 SP next turn",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Guard Stance",
             "cost": 2,
             "range": "Self",
             "effect": "+2 Defense until your next turn",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "spear",
@@ -622,37 +750,43 @@
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 4 damage",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Sweep",
             "cost": 3,
             "range": "Melee AoE",
             "effect": "Deal 3 damage to up to 2 adjacent enemies",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Brace",
             "cost": 2,
             "range": "Self",
             "effect": "+3 Defense vs next melee attack",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           },
           {
             "name": "Javelin Throw",
             "cost": 3,
             "range": "Ranged 1-5",
             "effect": "Deal 5 damage, discard this card",
-            "damage": "5"
+            "damage": "5",
+            "cardType": "equipment"
           },
           {
             "name": "Defensive Stance",
             "cost": 1,
             "range": "Self",
             "effect": "Move up to 1 hex, +1 Defense until your next turn",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "mace",
@@ -668,21 +802,24 @@
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 4 damage",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Shield Break",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 3 damage, destroy 1 Shield card in target's hand",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Stun Strike",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 3 damage, target loses 2 SP next turn",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Overhead Smash",
@@ -690,16 +827,19 @@
             "range": "Melee",
             "effect": "Deal 6 damage, gain 1 Heat",
             "damage": "6",
-            "heat": "+1"
+            "heat": "+1",
+            "cardType": "equipment"
           },
           {
             "name": "Backswing",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 3 damage to target, 2 damage to adjacent enemy",
-            "damage": "3 + 2"
+            "damage": "3 + 2",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "greatsword",
@@ -716,49 +856,56 @@
             "cost": 3,
             "range": "Melee AoE",
             "effect": "Deal 5 damage to primary target, 3 damage to adjacent enemies",
-            "damage": "5 + 3 AoE"
+            "damage": "5 + 3 AoE",
+            "cardType": "equipment"
           },
           {
             "name": "Overhead Smash",
             "cost": 4,
             "range": "Melee",
             "effect": "Deal 7 damage",
-            "damage": "7"
+            "damage": "7",
+            "cardType": "equipment"
           },
           {
             "name": "Spinning Slash",
             "cost": 4,
             "range": "Melee AoE",
             "effect": "Deal 4 damage to ALL adjacent hexes",
-            "damage": "4 AoE"
+            "damage": "4 AoE",
+            "cardType": "equipment"
           },
           {
             "name": "Execute",
             "cost": 5,
             "range": "Melee",
             "effect": "Deal 8 damage if target has 10 HP or less",
-            "damage": "8"
+            "damage": "8",
+            "cardType": "equipment"
           },
           {
             "name": "Guard Break",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 4 damage, ignore all Defense buffs",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Pommel Bash",
             "cost": 1,
             "range": "Melee",
             "effect": "Deal 2 damage, push 1 hex",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Impale",
             "cost": 4,
             "range": "Melee",
             "effect": "Deal 6 damage, target cannot move next turn",
-            "damage": "6"
+            "damage": "6",
+            "cardType": "equipment"
           },
           {
             "name": "Defensive Sweep",
@@ -766,9 +913,11 @@
             "range": "Self",
             "effect": "+1 Defense, deal 2 damage to attackers in melee",
             "damage": "2",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "warhammer",
@@ -785,35 +934,42 @@
             "range": "Melee",
             "effect": "Deal 4 damage, Armor-Piercing",
             "damage": "4",
-            "keywords": ["armor-piercing"]
+            "keywords": [
+              "armor-piercing"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Earthshaker",
             "cost": 4,
             "range": "Melee AoE",
             "effect": "Deal 5 damage to primary, 2 damage + push to adjacent enemies",
-            "damage": "5 + 2 AoE"
+            "damage": "5 + 2 AoE",
+            "cardType": "equipment"
           },
           {
             "name": "Backswing",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 3 damage twice (two targets)",
-            "damage": "3x2"
+            "damage": "3x2",
+            "cardType": "equipment"
           },
           {
             "name": "Forge Fury",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 3 damage + 1 per Heat you have (max +6), remove all Heat",
-            "damage": "3-9"
+            "damage": "3-9",
+            "cardType": "equipment"
           },
           {
             "name": "Armor Break",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 3 damage, target loses all Armor counters",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Slam",
@@ -821,9 +977,11 @@
             "range": "Melee",
             "effect": "Deal 4 damage, target loses 1 SP next turn, gain 1 Heat",
             "damage": "4",
-            "heat": "+1"
+            "heat": "+1",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "halberd",
@@ -840,42 +998,48 @@
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 4 damage",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Slash",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 5 damage",
-            "damage": "5"
+            "damage": "5",
+            "cardType": "equipment"
           },
           {
             "name": "Hook",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 3 damage, pull enemy 2 hexes toward you",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Trip",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 2 damage, target cannot move next turn",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Overhead Chop",
             "cost": 4,
             "range": "Melee",
             "effect": "Deal 7 damage",
-            "damage": "7"
+            "damage": "7",
+            "cardType": "equipment"
           },
           {
             "name": "Defensive Sweep",
             "cost": 1,
             "range": "Melee AoE",
             "effect": "Deal 2 damage to all adjacent enemies",
-            "damage": "2 AoE"
+            "damage": "2 AoE",
+            "cardType": "equipment"
           },
           {
             "name": "Impale",
@@ -883,9 +1047,13 @@
             "range": "Melee",
             "effect": "Deal 8 damage, Armor-Piercing",
             "damage": "8",
-            "keywords": ["armor-piercing"]
+            "keywords": [
+              "armor-piercing"
+            ],
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "crossbow",
@@ -901,14 +1069,16 @@
             "cost": 2,
             "range": "Ranged 2-6",
             "effect": "Deal 4 damage",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Quick Shot",
             "cost": 1,
             "range": "Ranged 2-4",
             "effect": "Deal 2 damage",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Reload",
@@ -916,23 +1086,27 @@
             "range": "Self",
             "effect": "Draw 1 card, remove 1 Heat",
             "heat": "-1",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Suppressing Fire",
             "cost": 3,
             "range": "Ranged 2-6",
             "effect": "Deal 2 damage, target loses 1 SP next turn",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Leg Shot",
             "cost": 3,
             "range": "Ranged 2-6",
             "effect": "Deal 3 damage, target's movement costs +1 SP next turn",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "longbow",
@@ -949,21 +1123,24 @@
             "cost": 1,
             "range": "Ranged 2-5",
             "effect": "Deal 2 damage",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Aimed Shot",
             "cost": 3,
             "range": "Ranged 3-8",
             "effect": "Deal 5 damage",
-            "damage": "5"
+            "damage": "5",
+            "cardType": "equipment"
           },
           {
             "name": "Volley",
             "cost": 4,
             "range": "Ranged 3-6",
             "effect": "Deal 3 damage to up to 3 targets",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Pierce Shot",
@@ -971,9 +1148,14 @@
             "range": "Ranged 2-6",
             "effect": "Deal 4 damage, Armor-Piercing, Bleed 1",
             "damage": "4",
-            "keywords": ["armor-piercing", "bleed"]
+            "keywords": [
+              "armor-piercing",
+              "bleed"
+            ],
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "rifle",
@@ -991,35 +1173,42 @@
             "range": "Ranged 4-10",
             "effect": "Deal 6 damage, Armor-Piercing",
             "damage": "6",
-            "keywords": ["armor-piercing"]
+            "keywords": [
+              "armor-piercing"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Burst Fire",
             "cost": 4,
             "range": "Ranged 2-6",
             "effect": "Deal 3 damage three times (same or different targets)",
-            "damage": "3x3"
+            "damage": "3x3",
+            "cardType": "equipment"
           },
           {
             "name": "Suppressing Fire",
             "cost": 2,
             "range": "Ranged 2-8",
             "effect": "Deal 2 damage, target loses 1 SP",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Reload",
             "cost": 0,
             "range": "Self",
             "effect": "Draw 1 card",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Aimed Shot",
             "cost": 2,
             "range": "Ranged 3-8",
             "effect": "Deal 4 damage",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Hip Fire",
@@ -1027,9 +1216,11 @@
             "range": "Ranged 1-3",
             "effect": "Deal 3 damage, gain 1 Heat",
             "damage": "3",
-            "heat": "+1"
+            "heat": "+1",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "chain-whip",
@@ -1046,44 +1237,53 @@
             "range": "Ranged 1-2",
             "effect": "Deal 3 damage, Bleed 1",
             "damage": "3",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Grapple",
             "cost": 2,
             "range": "Ranged 1-3",
             "effect": "Pull enemy 2 hexes toward you",
-            "type": "control"
+            "type": "control",
+            "cardType": "equipment"
           },
           {
             "name": "Trip",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 2 damage, target cannot move next turn",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Disarm",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 2 damage, target discards 1 random weapon card from hand",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Strangle",
             "cost": 4,
             "range": "Melee",
             "effect": "Deal 4 damage, target loses 2 SP next turn",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Sweep",
             "cost": 3,
             "range": "Melee AoE",
             "effect": "Deal 3 damage to all adjacent enemies",
-            "damage": "3 AoE"
+            "damage": "3 AoE",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "flail",
@@ -1099,7 +1299,8 @@
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 4 damage, ignore Defense buffs",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Overhead Crush",
@@ -1107,14 +1308,16 @@
             "range": "Melee",
             "effect": "Deal 5 damage, gain 1 Heat",
             "damage": "5",
-            "heat": "+1"
+            "heat": "+1",
+            "cardType": "equipment"
           },
           {
             "name": "Chain Wrap",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 2 damage, target loses 1 SP next turn",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Momentum Strike",
@@ -1122,16 +1325,19 @@
             "range": "Melee",
             "effect": "Deal 6 damage, gain 2 Heat",
             "damage": "6",
-            "heat": "+2"
+            "heat": "+2",
+            "cardType": "equipment"
           },
           {
             "name": "Defensive Spin",
             "cost": 1,
             "range": "Self",
             "effect": "+1 Defense until next turn",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       }
     ],
     "shields": [
@@ -1149,16 +1355,19 @@
             "cost": 0,
             "range": "Self",
             "effect": "Reduce damage by 1",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Shield Bash",
             "cost": 1,
             "range": "Melee",
             "effect": "Deal 2 damage, push 1 hex",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "dueling-dagger",
@@ -1174,16 +1383,19 @@
             "cost": 0,
             "range": "Self",
             "effect": "Reduce damage by 1, next attack +1 damage",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Offhand Strike",
             "cost": 1,
             "range": "Melee",
             "effect": "Deal 2 damage",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "kite-shield",
@@ -1199,23 +1411,27 @@
             "cost": 0,
             "range": "Self",
             "effect": "Reduce damage by 2",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Shield Charge",
             "cost": 2,
             "range": "Melee",
             "effect": "Move 2 hexes, deal 3 damage, push 1 hex",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Defensive Stance",
             "cost": 2,
             "range": "Self",
             "effect": "+2 Defense until next turn",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "tower-shield",
@@ -1232,30 +1448,35 @@
             "range": "Self",
             "effect": "Reduce damage by 3, gain 1 Heat",
             "heat": "+1",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Shield Wall",
             "cost": 3,
             "range": "Adjacent",
             "effect": "Allies behind you gain +2 Defense until your next turn",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           },
           {
             "name": "Advance",
             "cost": 2,
             "range": "Self",
             "effect": "Move 2 hexes, +1 Defense this turn",
-            "type": "movement"
+            "type": "movement",
+            "cardType": "equipment"
           },
           {
             "name": "Hunker Down",
             "cost": 2,
             "range": "Self",
             "effect": "+3 Defense, cannot attack until next turn",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       }
     ],
     "plating": [
@@ -1272,7 +1493,8 @@
             "cost": 0,
             "range": "Self",
             "effect": "When damaged, reduce by 1 and remove this card",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Shrapnel Burst",
@@ -1280,16 +1502,19 @@
             "range": "Self",
             "effect": "When damaged, deal 2 damage to attacker",
             "damage": "2",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Sacrificial Layer",
             "cost": 0,
             "range": "Self",
             "effect": "First damage you take each round is reduced by 1",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "spike-plating",
@@ -1305,7 +1530,8 @@
             "range": "Self",
             "effect": "Enemies in melee range take 1 damage when they attack you",
             "damage": "1",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Charge Damage",
@@ -1313,9 +1539,11 @@
             "range": "Self",
             "effect": "Next movement: deal 2 damage to enemies you move through",
             "damage": "2",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "reinforced-plating",
@@ -1330,23 +1558,27 @@
             "cost": 0,
             "range": "Self",
             "effect": "All damage you take is reduced by 1 (minimum 1)",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Fortified Hull",
             "cost": 2,
             "range": "Self",
             "effect": "+2 Defense until end of round",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           },
           {
             "name": "Emergency Bulkhead",
             "cost": 0,
             "range": "Self",
             "effect": "Prevent 1 Component Damage, remove this card",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "stealth-plating",
@@ -1361,7 +1593,8 @@
             "cost": 0,
             "range": "Self",
             "effect": "Ranged attacks against you have -1 to hit",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Heat Signature Reduction",
@@ -1369,16 +1602,19 @@
             "range": "Self",
             "effect": "Remove 2 Heat",
             "heat": "-2",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Optical Camouflage",
             "cost": 3,
             "range": "Self",
             "effect": "Cannot be targeted by ranged attacks until your next turn",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       }
     ],
     "sigils": [
@@ -1395,16 +1631,19 @@
             "cost": 2,
             "range": "Self",
             "effect": "Recover 3 cards from discard pile",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Auto-Patch System",
             "cost": 0,
             "range": "Self",
             "effect": "At start of your turn, if below 10 HP, recover 1 card",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "heat-sink-sigil",
@@ -1420,7 +1659,8 @@
             "range": "Self",
             "effect": "At end of your turn, remove 1 Heat",
             "heat": "-1",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Vent Boost",
@@ -1428,9 +1668,11 @@
             "range": "Self",
             "effect": "Remove 3 Heat, draw 1 card",
             "heat": "-3",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "targeting-sigil",
@@ -1445,23 +1687,27 @@
             "cost": 1,
             "range": "Self",
             "effect": "Next attack this turn +2 damage",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Weak Point Scan",
             "cost": 2,
             "range": "Target",
             "effect": "Look at target's hand, choose 1 card to discard",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Lock-On",
             "cost": 2,
             "range": "Self",
             "effect": "Your next ranged attack ignores cover and range penalties",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "martyrs-brand",
@@ -1476,23 +1722,27 @@
             "cost": 0,
             "range": "3 hexes",
             "effect": "Redirect attack targeting ally within 3 hexes to yourself",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Faith Shield",
             "cost": 2,
             "range": "2 hexes",
             "effect": "Ally within 2 hexes gains +2 Defense until your next turn",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           },
           {
             "name": "Consecrated Aura",
             "cost": 0,
             "range": "2 hexes",
             "effect": "Allies within 2 hexes recover +1 card when drawing",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "forge-rune",
@@ -1507,7 +1757,8 @@
             "cost": 2,
             "range": "Self",
             "effect": "Your next attack deals +1 damage per 2 Heat you have",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Runic Overcharge",
@@ -1515,7 +1766,8 @@
             "range": "Self",
             "effect": "Gain 2 Rune Counters, gain 2 Heat",
             "heat": "+2",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Component Protection",
@@ -1523,9 +1775,11 @@
             "range": "Self",
             "effect": "Prevent 1 Component Damage, gain 1 Heat",
             "heat": "+1",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "living-seal",
@@ -1540,7 +1794,8 @@
             "cost": 0,
             "range": "Self",
             "effect": "At end of your turn, recover 1 card if you did not attack this turn",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Thorn Aura",
@@ -1548,16 +1803,19 @@
             "range": "Adjacent",
             "effect": "Enemies adjacent to you take 1 damage at start of their turn",
             "damage": "1",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           },
           {
             "name": "Root Network",
             "cost": 3,
             "range": "Self",
             "effect": "Summon vine wall (3 hexes), blocks movement, lasts 2 rounds",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "death-mark",
@@ -1572,23 +1830,27 @@
             "cost": 0,
             "range": "Self",
             "effect": "Whenever you deal damage, recover 1 card (once per turn)",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Soul Harvest",
             "cost": 3,
             "range": "Target",
             "effect": "Target enemy discards 3 cards, you recover 2 cards",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Corpse Fuel",
             "cost": 2,
             "range": "Self",
             "effect": "When enemy is destroyed, recover 5 cards",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       }
     ],
     "faction_exclusive_weapons": [
@@ -1607,21 +1869,26 @@
             "range": "Melee",
             "effect": "Deal 4 damage, Armor-Piercing",
             "damage": "4",
-            "keywords": ["armor-piercing"]
+            "keywords": [
+              "armor-piercing"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Armor Break",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 3 damage, destroy 1 Armor counter on target",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Hook & Pull",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 2 damage, pull enemy 1 hex",
-            "damage": "2"
+            "damage": "2",
+            "cardType": "equipment"
           },
           {
             "name": "Overhead Chop",
@@ -1629,23 +1896,27 @@
             "range": "Melee",
             "effect": "Deal 5 damage, gain 1 Heat",
             "damage": "5",
-            "heat": "+1"
+            "heat": "+1",
+            "cardType": "equipment"
           },
           {
             "name": "Mining Strike",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 3 damage, if target is adjacent to terrain, +2 damage",
-            "damage": "3-5"
+            "damage": "3-5",
+            "cardType": "equipment"
           },
           {
             "name": "Backswing",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 3 damage twice (two targets)",
-            "damage": "3x2"
+            "damage": "3x2",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "battle-axe",
@@ -1662,21 +1933,26 @@
             "range": "Melee",
             "effect": "Deal 5 damage, Armor-Piercing",
             "damage": "5",
-            "keywords": ["armor-piercing"]
+            "keywords": [
+              "armor-piercing"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Hewing Strike",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 4 damage",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Shield Breaker",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 3 damage, discard 1 Shield card from target's hand",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Berserker Fury",
@@ -1684,23 +1960,27 @@
             "range": "Melee",
             "effect": "Deal 6 damage, gain 2 Heat",
             "damage": "6",
-            "heat": "+2"
+            "heat": "+2",
+            "cardType": "equipment"
           },
           {
             "name": "Throwing Axe",
             "cost": 3,
             "range": "Ranged 1-3",
             "effect": "Deal 4 damage, discard this card",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Defensive Chop",
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 3 damage, +1 Defense this turn",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "siege-cannon",
@@ -1719,8 +1999,11 @@
             "effect": "Deal 4 damage, Armor-Piercing, gain 2 Heat",
             "damage": "4",
             "heat": "+2",
-            "keywords": ["armor-piercing"],
-            "cardCount": 2
+            "keywords": [
+              "armor-piercing"
+            ],
+            "cardCount": 2,
+            "cardType": "equipment"
           },
           {
             "name": "Explosive Shell",
@@ -1728,7 +2011,8 @@
             "range": "Ranged 4-7",
             "effect": "Deal 3 damage + 2 splash to adjacent hexes, gain 3 Heat",
             "damage": "3 + 2 AoE",
-            "heat": "+3"
+            "heat": "+3",
+            "cardType": "equipment"
           },
           {
             "name": "Suppressing Fire",
@@ -1736,7 +2020,8 @@
             "range": "Ranged 4-7",
             "effect": "Deal 2 damage, target loses 1 SP next turn, gain 2 Heat",
             "damage": "2",
-            "heat": "+2"
+            "heat": "+2",
+            "cardType": "equipment"
           },
           {
             "name": "Reload",
@@ -1744,7 +2029,8 @@
             "range": "Self",
             "effect": "Remove 2 Heat, draw 1 card",
             "heat": "-2",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Canister Shot",
@@ -1752,9 +2038,11 @@
             "range": "Ranged 2-5",
             "effect": "Deal 2 damage to up to 3 targets, gain 2 Heat",
             "damage": "2x3",
-            "heat": "+2"
+            "heat": "+2",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "bone-scythe",
@@ -1770,35 +2058,40 @@
             "cost": 2,
             "range": "Melee",
             "effect": "Deal 3 damage, recover 2 cards from discard",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Harvest",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 4 damage, recover 3 cards from discard",
-            "damage": "4"
+            "damage": "4",
+            "cardType": "equipment"
           },
           {
             "name": "Death Sweep",
             "cost": 4,
             "range": "Melee AoE",
             "effect": "Deal 3 damage to all adjacent enemies, recover 1 card per enemy hit",
-            "damage": "3 AoE"
+            "damage": "3 AoE",
+            "cardType": "equipment"
           },
           {
             "name": "Lifesteal",
             "cost": 0,
             "range": "Self",
             "effect": "Whenever you deal damage with Bone Scythe attacks, recover 1 card (once per turn)",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Soul Rend",
             "cost": 3,
             "range": "Melee",
             "effect": "Deal 3 damage, target cannot recover cards next turn",
-            "damage": "3"
+            "damage": "3",
+            "cardType": "equipment"
           },
           {
             "name": "Necrotic Cut",
@@ -1806,9 +2099,13 @@
             "range": "Melee",
             "effect": "Deal 2 damage, Bleed 2 (necrotic damage over time)",
             "damage": "2",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "summoning-staff",
@@ -1826,7 +2123,8 @@
             "range": "Adjacent",
             "effect": "Summon 1 Thrall adjacent to you (1 HP, 2 damage, lasts 3 rounds)",
             "type": "utility",
-            "cardCount": 2
+            "cardCount": 2,
+            "cardType": "equipment"
           },
           {
             "name": "Command Thrall",
@@ -1834,30 +2132,35 @@
             "range": "Self",
             "effect": "All your Thralls attack (2 damage each)",
             "damage": "2x",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Sacrifice Thrall",
             "cost": 0,
             "range": "Self",
             "effect": "Destroy 1 Thrall, recover 3 cards from discard",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Death Bolt",
             "cost": 2,
             "range": "Ranged 1-4",
             "effect": "Deal 2 damage, if target is adjacent to your Thrall, deal 4 damage instead",
-            "damage": "2-4"
+            "damage": "2-4",
+            "cardType": "equipment"
           },
           {
             "name": "Mass Summon",
             "cost": 5,
             "range": "Adjacent",
             "effect": "Summon 3 Thralls simultaneously (once per mission)",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "shroud-of-souls",
@@ -1874,30 +2177,35 @@
             "range": "Self",
             "effect": "Reduce damage by 2, gain 1 Heat",
             "heat": "+1",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Corpse Wall",
             "cost": 2,
             "range": "2 hexes",
             "effect": "When enemy dies within 2 hexes, place corpse token (blocks movement, grants +1 Defense to you if behind it)",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Spirit Shield",
             "cost": 3,
             "range": "Self",
             "effect": "Summon 1 spirit (1 HP, intercepts next attack targeting you, then vanishes)",
-            "type": "defense"
+            "type": "defense",
+            "cardType": "equipment"
           },
           {
             "name": "Harvest Souls",
             "cost": 2,
             "range": "3 hexes",
             "effect": "Remove all corpse tokens within 3 hexes, recover 2 cards per token removed",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "phylactery-relic",
@@ -1912,23 +2220,27 @@
             "cost": 2,
             "range": "Self",
             "effect": "Move up to 5 cards from discard pile into Phylactery (storage). Max 5 cards stored.",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Soul Anchor",
             "cost": 0,
             "range": "Self",
             "effect": "If you are reduced to 0 HP and Phylactery has stored cards, resurrect with stored cards as HP. Phylactery empties. Once per mission.",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Death's Door",
             "cost": 0,
             "range": "Self",
             "effect": "When you would take lethal damage, transfer damage to Phylactery (destroys stored cards instead). Prevent up to 5 damage.",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "thorn-blade",
@@ -1945,7 +2257,10 @@
             "range": "Melee",
             "effect": "Deal 3 damage, apply Bleed 2",
             "damage": "3",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Leaf Slash",
@@ -1953,7 +2268,10 @@
             "range": "Melee",
             "effect": "Deal 4 damage, apply Bleed 1",
             "damage": "4",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Surgical Cut",
@@ -1961,7 +2279,11 @@
             "range": "Melee",
             "effect": "Deal 3 damage to specific component, apply Bleed 2, +1 Component Damage if target discards that component type",
             "damage": "3",
-            "keywords": ["bleed", "component-targeting"]
+            "keywords": [
+              "bleed",
+              "component-targeting"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Dancing Blades",
@@ -1969,7 +2291,10 @@
             "range": "Melee",
             "effect": "Attack twice for 2 damage each, apply Bleed 1 per hit",
             "damage": "2x2",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Thorn Burst",
@@ -1977,16 +2302,21 @@
             "range": "Melee AoE",
             "effect": "Deal 2 damage to all adjacent enemies, apply Bleed 1 to each",
             "damage": "2 AoE",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Execute",
             "cost": 4,
             "range": "Melee",
             "effect": "Deal 5 damage, if target has 3+ Bleed counters, deal 8 damage instead",
-            "damage": "5-8"
+            "damage": "5-8",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "thorn-whip",
@@ -2003,14 +2333,20 @@
             "range": "Ranged 1-2",
             "effect": "Deal 3 damage, apply Bleed 1",
             "damage": "3",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Grapple",
             "cost": 2,
             "range": "Ranged 1-3",
             "effect": "Pull enemy 2 hexes, apply Bleed 1",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Strangle",
@@ -2018,7 +2354,10 @@
             "range": "Melee",
             "effect": "Deal 4 damage, target loses 2 SP next turn, apply Bleed 2",
             "damage": "4",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Whip Storm",
@@ -2026,7 +2365,10 @@
             "range": "Melee AoE",
             "effect": "Deal 2 damage to all adjacent enemies, apply Bleed 1 to each",
             "damage": "2 AoE",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Disarm",
@@ -2034,16 +2376,23 @@
             "range": "Ranged 1-2",
             "effect": "Deal 2 damage, discard 1 weapon card from target's hand, apply Bleed 1",
             "damage": "2",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Entangle",
             "cost": 2,
             "range": "Ranged 1-3",
             "effect": "Target cannot move next turn, apply Bleed 1",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "nature-staff",
@@ -2061,14 +2410,16 @@
             "range": "Adjacent",
             "effect": "Summon 1 Ent adjacent to you (2 HP, 3 damage, lasts 3 rounds)",
             "type": "utility",
-            "cardCount": 2
+            "cardCount": 2,
+            "cardType": "equipment"
           },
           {
             "name": "Command Nature",
             "cost": 1,
             "range": "Self",
             "effect": "All your Ents and plants attack/activate",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Thorn Barrage",
@@ -2076,7 +2427,10 @@
             "range": "Ranged 1-4 AoE",
             "effect": "Deal 2 damage to target + adjacent hexes, apply Bleed 1 to each",
             "damage": "2 AoE",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Root Prison",
@@ -2084,7 +2438,10 @@
             "range": "Ranged 1-3",
             "effect": "Target cannot move for 2 turns, takes 2 damage per turn, apply Bleed 1",
             "damage": "2",
-            "keywords": ["bleed"]
+            "keywords": [
+              "bleed"
+            ],
+            "cardType": "equipment"
           },
           {
             "name": "Healing Bloom",
@@ -2092,9 +2449,11 @@
             "range": "Self",
             "effect": "Recover 3 cards from discard, remove 2 Heat",
             "heat": "-2",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "bark-shield",
@@ -2110,14 +2469,16 @@
             "cost": 0,
             "range": "Self",
             "effect": "At end of your turn, if you took damage this turn, recover 1 card from discard",
-            "type": "passive"
+            "type": "passive",
+            "cardType": "equipment"
           },
           {
             "name": "Shield Block",
             "cost": 0,
             "range": "Self",
             "effect": "Reduce damage by 2",
-            "type": "reactive"
+            "type": "reactive",
+            "cardType": "equipment"
           },
           {
             "name": "Thorn Defense",
@@ -2125,10 +2486,14 @@
             "range": "Self",
             "effect": "Reduce damage by 1, deal 2 damage to attacker, apply Bleed 1",
             "damage": "2",
-            "keywords": ["bleed"],
-            "type": "reactive"
+            "keywords": [
+              "bleed"
+            ],
+            "type": "reactive",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       },
       {
         "id": "seed-pod",
@@ -2143,14 +2508,16 @@
             "cost": 2,
             "range": "Self",
             "effect": "Summon 3-hex Vine Wall (blocks movement, lasts 2 rounds)",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Plant Healing Flower",
             "cost": 2,
             "range": "Self",
             "effect": "Place flower (3-hex radius, allies recover 1 card per turn, lasts 3 rounds)",
-            "type": "utility"
+            "type": "utility",
+            "cardType": "equipment"
           },
           {
             "name": "Plant Thorn Trap",
@@ -2158,11 +2525,433 @@
             "range": "Self",
             "effect": "Place trap (3 damage + Bleed 2 when enemy moves into it, 1 use)",
             "damage": "3",
-            "keywords": ["bleed"],
-            "type": "utility"
+            "keywords": [
+              "bleed"
+            ],
+            "type": "utility",
+            "cardType": "equipment"
           }
-        ]
+        ],
+        "cardType": "equipment"
       }
     ]
-  }
+  },
+  "tactics": {
+    "church": [
+      {
+        "id": "divine-guidance",
+        "name": "Divine Guidance",
+        "type": "accuracy-buff",
+        "cost": 1,
+        "range": "Self",
+        "effect": "Your next attack this turn: -2 to target number (easier to hit). If it hits, apply 'Blessed' status to target (all allies' attacks against this target: -1 to target number until end of round).",
+        "keywords": [
+          "accuracy",
+          "buff",
+          "targeting"
+        ],
+        "cardCount": 1,
+        "cardType": "tactic"
+      },
+      {
+        "id": "martyrdoms-certainty",
+        "name": "Martyrdom's Certainty",
+        "type": "accuracy-buff",
+        "cost": 0,
+        "range": "Self",
+        "effect": "Discard 1 card from deck. Your next attack cannot miss (auto-hit) but deals -2 damage.",
+        "keywords": [
+          "gambit",
+          "self-harm",
+          "auto-hit"
+        ],
+        "cardCount": 1,
+        "cardType": "tactic"
+      },
+      {
+        "id": "zealots-focus",
+        "name": "Zealot's Focus",
+        "type": "attack-enhancement",
+        "cost": 0,
+        "range": "Self",
+        "effect": "Reroll 1 Attack Die on your next attack this turn.",
+        "keywords": [
+          "reroll",
+          "accuracy"
+        ],
+        "cardCount": 2,
+        "cardType": "tactic"
+      }
+    ],
+    "dwarves": [],
+    "ossuarium": [],
+    "elves": [],
+    "universal": []
+  },
+  "v3_optional": {
+    "taint_exploitation": [
+      {
+        "id": "tainted-fury",
+        "name": "Tainted Fury",
+        "cardType": "v3_optional",
+        "type": "gambit",
+        "cost": 0,
+        "range": "Self",
+        "effect": "Spend 2 Taint Markers: Your next attack this turn deals +2 damage. Gain 1 Heat.",
+        "taintCost": 2,
+        "heat": "+1",
+        "keywords": [
+          "taint",
+          "self-exploit",
+          "gambit"
+        ],
+        "faction": "universal",
+        "cardCount": 1
+      },
+      {
+        "id": "ignore-pain",
+        "name": "Ignore Pain",
+        "cardType": "v3_optional",
+        "type": "reactive-defense",
+        "cost": 0,
+        "range": "Self",
+        "effect": "Spend 3 Taint Markers: Reduce next damage taken by 3 (before Defense roll). Gain 1 Heat.",
+        "taintCost": 3,
+        "heat": "+1",
+        "keywords": [
+          "taint",
+          "self-exploit",
+          "reactive"
+        ],
+        "faction": "universal",
+        "cardCount": 1
+      },
+      {
+        "id": "void-step",
+        "name": "Void Step",
+        "cardType": "v3_optional",
+        "type": "movement",
+        "cost": 0,
+        "range": "Self",
+        "effect": "Spend 1 Taint Marker: Move 2 hexes (costs 0 SP). Gain 1 Heat.",
+        "taintCost": 1,
+        "heat": "+1",
+        "keywords": [
+          "taint",
+          "self-exploit",
+          "movement"
+        ],
+        "faction": "universal",
+        "cardCount": 1
+      },
+      {
+        "id": "exposed-weakness",
+        "name": "Exposed Weakness",
+        "cardType": "v3_optional",
+        "type": "tactic",
+        "cost": 0,
+        "range": "Target",
+        "effect": "Spend 1 enemy Taint Marker: Gain Advantage on your next attack against that enemy (roll 3 Attack Dice, take 2 highest).",
+        "taintCost": 1,
+        "keywords": [
+          "taint",
+          "enemy-exploit",
+          "advantage"
+        ],
+        "faction": "universal",
+        "cardCount": 2
+      },
+      {
+        "id": "force-reroll",
+        "name": "Force Reroll",
+        "cardType": "v3_optional",
+        "type": "reactive",
+        "cost": 0,
+        "range": "Target",
+        "effect": "Spend 2 enemy Taint Markers: Force target to reroll up to 2 successful Defense Dice.",
+        "taintCost": 2,
+        "keywords": [
+          "taint",
+          "enemy-exploit",
+          "reactive"
+        ],
+        "faction": "universal",
+        "cardCount": 1
+      },
+      {
+        "id": "heat-spike",
+        "name": "Heat Spike",
+        "cardType": "v3_optional",
+        "type": "debuff",
+        "cost": 0,
+        "range": "Target",
+        "effect": "Spend 1 enemy Taint Marker: Target gains +1 Heat immediately.",
+        "taintCost": 1,
+        "keywords": [
+          "taint",
+          "enemy-exploit",
+          "debuff"
+        ],
+        "faction": "universal",
+        "cardCount": 1
+      },
+      {
+        "id": "taint-overload",
+        "name": "Taint Overload",
+        "cardType": "v3_optional",
+        "type": "attack",
+        "cost": 0,
+        "range": "Target",
+        "effect": "Spend 5 enemy Taint Markers: Target immediately flips 1 Pilot Wound card (neural feedback).",
+        "taintCost": 5,
+        "keywords": [
+          "taint",
+          "enemy-exploit",
+          "pilot-damage"
+        ],
+        "faction": "universal",
+        "cardCount": 1
+      },
+      {
+        "id": "flagellants-zeal-taint",
+        "name": "Flagellant's Zeal (Taint)",
+        "cardType": "v3_optional",
+        "type": "gambit",
+        "cost": 2,
+        "range": "Self",
+        "effect": "Discard 3 cards (self-harm), gain 2 Taint Markers. Gain +2 SP this turn only (temporary burst).",
+        "taintGain": 2,
+        "keywords": [
+          "taint",
+          "self-harm",
+          "church",
+          "gambit"
+        ],
+        "faction": "church",
+        "cardCount": 1
+      },
+      {
+        "id": "decay-aura",
+        "name": "Decay Aura",
+        "cardType": "v3_optional",
+        "type": "passive",
+        "cost": 0,
+        "range": "3 hexes",
+        "effect": "Enemies within 3 hexes gain +1 Taint per turn (passive corruption radiation).",
+        "keywords": [
+          "taint",
+          "passive",
+          "ossuarium",
+          "aura"
+        ],
+        "faction": "ossuarium",
+        "cardCount": 1
+      },
+      {
+        "id": "regeneration-purges-taint",
+        "name": "Regeneration Purge",
+        "cardType": "v3_optional",
+        "type": "utility",
+        "cost": 2,
+        "range": "Self",
+        "effect": "Recover 2 cards from discard pile. Remove 1 Taint Marker.",
+        "taintRemoval": 1,
+        "keywords": [
+          "taint",
+          "healing",
+          "elves",
+          "nature"
+        ],
+        "faction": "elves",
+        "cardCount": 1
+      }
+    ],
+    "grit_related": [
+      {
+        "id": "iron-will-training",
+        "name": "Iron Will Training",
+        "cardType": "v3_optional",
+        "type": "passive",
+        "cost": 0,
+        "range": "N/A",
+        "effect": "Once per mission: When you would fail a Grit Check, reroll it. If you still fail, gain +1 Grit permanently (trauma builds character).",
+        "keywords": [
+          "grit",
+          "passive",
+          "training"
+        ],
+        "faction": "universal",
+        "cardCount": 1
+      },
+      {
+        "id": "grit-your-teeth",
+        "name": "Grit Your Teeth",
+        "cardType": "v3_optional",
+        "type": "reactive",
+        "cost": 0,
+        "range": "Self",
+        "effect": "When you take Pilot Damage: Add +2 to your Grit Check roll for this damage only.",
+        "keywords": [
+          "grit",
+          "reactive",
+          "resilience"
+        ],
+        "faction": "universal",
+        "cardCount": 1
+      },
+      {
+        "id": "martyrs-endurance",
+        "name": "Martyr's Endurance",
+        "cardType": "v3_optional",
+        "type": "passive",
+        "cost": 0,
+        "range": "N/A",
+        "effect": "When you use Blood Offering or other self-harm Church cards: Gain +1 to your next Grit Check this mission.",
+        "keywords": [
+          "grit",
+          "church",
+          "martyrdom",
+          "passive"
+        ],
+        "faction": "church",
+        "cardCount": 1
+      },
+      {
+        "id": "stone-endurance-boost",
+        "name": "Stone Endurance Boost",
+        "cardType": "v3_optional",
+        "type": "utility",
+        "cost": 1,
+        "range": "Self",
+        "effect": "Until end of mission: +1 to all Grit Checks (not just vs Severe Injuries). Gain 1 Heat.",
+        "heat": "+1",
+        "keywords": [
+          "grit",
+          "dwarves",
+          "buff",
+          "utility"
+        ],
+        "faction": "dwarves",
+        "cardCount": 1
+      }
+    ]
+  },
+  "support_units": [
+    {
+      "id": "medic",
+      "name": "Field Medic",
+      "cardType": "support",
+      "type": "support-unit",
+      "cost": 2,
+      "range": "Adjacent",
+      "effect": "Support Unit (1 HP, 0 attack). Action: Adjacent ally recovers 2 cards from discard pile. Can be destroyed by AoE or targeted attacks.",
+      "keywords": [
+        "support",
+        "healing",
+        "unit"
+      ],
+      "faction": "universal",
+      "cardCount": 1
+    },
+    {
+      "id": "engineer",
+      "name": "Field Engineer",
+      "cardType": "support",
+      "type": "support-unit",
+      "cost": 2,
+      "range": "Adjacent",
+      "effect": "Support Unit (1 HP, 0 attack). Action: Adjacent ally removes 2 Heat. Can be destroyed by AoE or targeted attacks.",
+      "keywords": [
+        "support",
+        "heat-management",
+        "unit"
+      ],
+      "faction": "universal",
+      "cardCount": 1
+    },
+    {
+      "id": "spotter",
+      "name": "Spotter",
+      "cardType": "support",
+      "type": "support-unit",
+      "cost": 2,
+      "range": "6 hexes",
+      "effect": "Support Unit (1 HP, 0 attack). Passive: Allies within 6 hexes ignore Disadvantage from cover. Can be destroyed by AoE or targeted attacks.",
+      "keywords": [
+        "support",
+        "accuracy",
+        "unit"
+      ],
+      "faction": "universal",
+      "cardCount": 1
+    },
+    {
+      "id": "confessor-support",
+      "name": "Confessor",
+      "cardType": "support",
+      "type": "support-unit",
+      "cost": 3,
+      "range": "2 hexes",
+      "effect": "Support Unit (2 HP, 0 attack). Passive: Allies within 2 hexes gain +1 to Grit Checks. Can redirect 1 attack per turn to self (martyr).",
+      "keywords": [
+        "support",
+        "grit",
+        "church",
+        "unit"
+      ],
+      "faction": "church",
+      "cardCount": 1
+    },
+    {
+      "id": "forge-priest",
+      "name": "Forge Priest",
+      "cardType": "support",
+      "type": "support-unit",
+      "cost": 3,
+      "range": "Adjacent",
+      "effect": "Support Unit (2 HP, 0 attack). Action: Adjacent ally gains 1 Rune Counter. Passive: Remove 1 Heat from adjacent allies at end of round.",
+      "keywords": [
+        "support",
+        "dwarves",
+        "rune",
+        "unit"
+      ],
+      "faction": "dwarves",
+      "cardCount": 1
+    },
+    {
+      "id": "bone-servant",
+      "name": "Bone Servant",
+      "cardType": "support",
+      "type": "support-unit",
+      "cost": 2,
+      "range": "3 hexes",
+      "effect": "Support Unit (1 HP, 1 attack). Action: Deal 1 damage to target. Passive: When destroyed, owner recovers 3 cards from discard.",
+      "keywords": [
+        "support",
+        "ossuarium",
+        "expendable",
+        "unit"
+      ],
+      "faction": "ossuarium",
+      "cardCount": 1
+    },
+    {
+      "id": "ent-sapling",
+      "name": "Ent Sapling",
+      "cardType": "support",
+      "type": "support-unit",
+      "cost": 3,
+      "range": "Adjacent",
+      "effect": "Support Unit (3 HP, 2 attack). Action: Deal 2 damage to adjacent enemy. Passive: Owner recovers 1 card at start of each round while Ent alive.",
+      "keywords": [
+        "support",
+        "elves",
+        "nature",
+        "unit"
+      ],
+      "faction": "elves",
+      "cardCount": 1
+    }
+  ]
 }
