@@ -319,7 +319,7 @@
             <p><strong>Loot:</strong> 5 Credits per rat. 1/10 chance of 1 Scrap.</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal('corrupted-villager')">
             <h3>2. Corrupted Villager</h3>
             <span class="enemy-type">Swarm</span>
             <div class="enemy-stats">
@@ -334,7 +334,7 @@
             <p><strong>Loot:</strong> 10 Credits per villager.</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'scrap-drone\')">
             <h3>3. Scrap Drone</h3>
             <span class="enemy-type">Swarm</span>
             <div class="enemy-stats">
@@ -371,7 +371,7 @@
             <p><strong>Loot:</strong> 50 Credits, 1d3 Scrap, Equipment roll (1d20, 15+ = loot weapon).</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'bandit-captain\')">
             <h3>5. Bandit Captain</h3>
             <span class="enemy-type">Elite (Leader)</span>
             <div class="enemy-stats">
@@ -386,7 +386,7 @@
             <p><strong>Loot:</strong> 100 Credits, 2d3 Scrap, roll twice Equipment, 1/5 chance "Captain's Insignia" (Relic).</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'tainted-ogre\')">
             <h3>6. Tainted Ogre</h3>
             <span class="enemy-type">Elite (Brute)</span>
             <div class="enemy-stats">
@@ -401,7 +401,7 @@
             <p><strong>Loot:</strong> 150 Credits, 3d3 Scrap, Equipment roll, 1/3 chance "Tainted Ogre Hide" (crafting: +2 Armor).</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'scrap-golem\')">
             <h3>7. Scrap Golem</h3>
             <span class="enemy-type">Elite (Construct)</span>
             <div class="enemy-stats">
@@ -416,7 +416,7 @@
             <p><strong>Loot:</strong> 200 Credits, 5 Scrap (guaranteed), Equipment roll, 1/4 chance "Golem Core" (Relic: +1 Armor permanent).</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'engine-wraith\')">
             <h3>8. Engine Wraith</h3>
             <span class="enemy-type">Elite (Supernatural)</span>
             <div class="enemy-stats">
@@ -491,6 +491,83 @@
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
+        <h2>Subfaction Enemy Variants</h2>
+
+        <p class="manuscript-text">
+            <strong>Warhammer-style schisms create faction-specific enemies.</strong> When you fight Church Scourged, Ashbound Dwarves, or Thornblood Elves, use the base enemy stat blocks (Church Zealot, Dwarven Ironclad, etc.) but apply subfaction tactical modifiers.
+        </p>
+
+        <div class="enemy-grid">
+        <div class="enemy-card" style="border-color: #ff4444;">
+            <h3>Scourged Zealot (Church Renegade)</h3>
+            <span class="enemy-type">Elite (Scourged)</span>
+            <p><strong>Base:</strong> Church Zealot (18 HP, Armor 1, 5 SP)</p>
+            <p><strong>Subfaction Modifiers:</strong></p>
+            <ul style="font-size: 0.9rem;">
+                <li><strong>Extreme Blood Offering:</strong> Uses Blood Offering every turn, even inefficiently (prioritizes self-harm over tactics)</li>
+                <li><strong>Martyrdom Addiction:</strong> Uses Martyrdom Protocol recklessly, even when allies don't need it</li>
+                <li><strong>Reject Healing:</strong> Never uses Consecrated Ground on self (refuses "gift of torment rejection")</li>
+                <li><strong>Inverse Power:</strong> At 8 HP or below, gains +2 damage to all attacks (more wounded = more faithful)</li>
+            </ul>
+            <p><strong>Tactics:</strong> Suicidal aggression. Spams self-harm. Becomes deadly when near death. "Pain IS salvation."</p>
+            <p><strong>Loot:</strong> Same as Church Zealot + 1/10 chance "Scourged Brand" (cursed relic: +3 dmg, gain 1 Taint per turn)</p>
+        </div>
+
+        <div class="enemy-card" style="border-color: #d4af37;">
+            <h3>Ashbound Ironclad (Dwarven Renegade)</h3>
+            <span class="enemy-type">Elite (Ashbound)</span>
+            <p><strong>Base:</strong> Dwarven Ironclad (22 HP, Armor 3, 4 SP)</p>
+            <p><strong>Subfaction Modifiers:</strong></p>
+            <ul style="font-size: 0.9rem;">
+                <li><strong>Corrupted Runes:</strong> Gains Rune Counters faster (costs 1 SP instead of 2), but gains 1 Taint per Rune</li>
+                <li><strong>Unstable Defense:</strong> Rune Counters provide +2 damage reduction (not +1), but roll 1d6 each use—on 1-3, Rune fails and is lost</li>
+                <li><strong>Tainted Fury:</strong> Can spend 3 Taint to gain +3 damage for 1 turn (weaponize corruption)</li>
+                <li><strong>Explosive Overload:</strong> When below 10 HP, can spend all Runes + all Taint for massive AOE (3 hex radius, 8d6)</li>
+            </ul>
+            <p><strong>Tactics:</strong> High-risk power. Faster rune gain but unstable. Accumulates Taint, then explodes. "Purity is weakness."</p>
+            <p><strong>Loot:</strong> Same as Dwarven Ironclad + guaranteed "Corrupted Rune Shard" (Tainted crafting material)</p>
+        </div>
+
+        <div class="enemy-card" style="border-color: #228B22;">
+            <h3>Thornblood Stalker (Elven Renegade)</h3>
+            <span class="enemy-type">Elite (Thornblood)</span>
+            <p><strong>Base:</strong> Elven Verdant Stalker (16 HP, Armor 1, 5 SP)</p>
+            <p><strong>Subfaction Modifiers:</strong></p>
+            <ul style="font-size: 0.9rem;">
+                <li><strong>Aggressive Bleed:</strong> All attacks apply +1 Bleed (Thorn Strike becomes Bleed 3 instead of 2)</li>
+                <li><strong>No Regeneration:</strong> Cannot use Verdant Regeneration or Photosynthesis (rejected healing in favor of offense)</li>
+                <li><strong>Carnivorous Terrain:</strong> Forest hexes deal 2 damage to ALL units (including allies), but Thornbloods ignore this</li>
+                <li><strong>Berserk Fury:</strong> At 8 HP or below, gain +3 damage to all attacks (low HP = maximum aggression)</li>
+            </ul>
+            <p><strong>Tactics:</strong> Glass cannon assassin. Maximum Bleed stacking, no defensive play, suicide charges. "We are the thorns."</p>
+            <p><strong>Loot:</strong> Same as Elven Stalker + 1/8 chance "Thornblood Toxin" (poison crafting material)</p>
+        </div>
+
+        <div class="enemy-card" style="border-color: #8b6914;">
+            <h3>Branded Hunter (Nomad Renegade)</h3>
+            <span class="enemy-type">Elite (Branded)</span>
+            <p><strong>Base:</strong> Bandit Captain stats (20 HP, Armor 2, 5 SP) but solo hunter</p>
+            <p><strong>Subfaction Modifiers:</strong></p>
+            <ul style="font-size: 0.9rem;">
+                <li><strong>Vendetta Mark:</strong> At battle start, marks 1 player. Deal +3 damage to marked target, ignore their Defense</li>
+                <li><strong>No Retreat:</strong> Cannot sprint away or disengage while marked target alive (locked in pursuit)</li>
+                <li><strong>Blood Contract:</strong> If marked target dies, gain +2 SP permanently rest of battle</li>
+                <li><strong>Suicide Pursuit:</strong> Can spend all SP to teleport 10 hexes toward marked target (desperate chase)</li>
+            </ul>
+            <p><strong>Tactics:</strong> Single-minded assassination. Ignores everyone except marked target. High-risk tunnel vision. "Every debt. Every scar."</p>
+            <p><strong>Loot:</strong> 120 Credits, 2d3 Scrap, Equipment roll, 1/6 chance "Brand of Vengeance" (cursed mark)</p>
+        </div>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border: 2px solid #660000; padding: 1.5rem; margin: 2rem 0;">
+            <h3 style="margin-top: 0; color: #8B0000;">Using Subfaction Enemies</h3>
+            <p><strong>When to Deploy:</strong> Campaign missions against renegade factions, mirror matches, settlement defense vs splinter groups, special "civil war" scenarios.</p>
+            <p><strong>How to Run:</strong> Use base enemy AI behavior deck, but apply subfaction tactical modifiers. Example: Scourged Zealot uses Church Zealot deck, but ALWAYS plays Blood Offering first, refuses healing cards on self.</p>
+            <p><strong>Lore Integration:</strong> "You're not fighting the Church of Absolution. You're fighting <em>The Scourged</em>—heretics who believe pain IS salvation. They fight like zealots because they <em>are</em> zealots."</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+
         <h2>Mission Templates</h2>
 
         <h3>Swarm Mission (10-15 enemies):</h3>
@@ -536,7 +613,7 @@
         <h2>Additional Enemies</h2>
 
         <div class="enemy-grid">
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'tainted-wolf\')">
             <h3>12. Tainted Wolf Pack</h3>
             <span class="enemy-type">Swarm</span>
             <div class="enemy-stats">
@@ -551,7 +628,7 @@
             <p><strong>Loot:</strong> 10 Credits per wolf, 1/8 chance "Tainted Wolf Pelt" (crafting material).</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'church-zealot\')">
             <h3>13. Church Zealot</h3>
             <span class="enemy-type">Elite</span>
             <div class="enemy-stats">
@@ -566,7 +643,7 @@
             <p><strong>Loot:</strong> 120 Credits, 2d3 Scrap, Equipment roll, 1/6 chance "Penitent Blade" (Church primary weapon).</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'dwarven-ironclad\')">
             <h3>14. Dwarven Ironclad</h3>
             <span class="enemy-type">Elite</span>
             <div class="enemy-stats">
@@ -581,7 +658,7 @@
             <p><strong>Loot:</strong> 180 Credits, 4d3 Scrap, Equipment roll, 1/5 chance "Runic Warhammer" (Dwarven primary weapon).</p>
         </div>
 
-        <div class="enemy-card">
+        <div class="enemy-card clickable" onclick="openBehaviorModal(\'elven-stalker\')">
             <h3>15. Elven Verdant Stalker</h3>
             <span class="enemy-type">Elite</span>
             <div class="enemy-stats">
@@ -688,6 +765,172 @@
                 cards: [
                     { name: 'Swarm Tactics', count: 2, effect: 'If 2+ rat allies within 2 hexes, attack 1d6 + Diseased Bite. Else, move closer to ally rats.' },
                     { name: 'Panic Scatter', count: 1, effect: 'If below 2 HP, sprint away 6 hexes (random direction). Cannot attack this turn.' }
+                ]
+            },
+            'corrupted-villager': {
+                name: '2. Corrupted Villager',
+                type: 'Swarm',
+                deckSize: 5,
+                cards: [
+                    { name: 'Shambling Advance', count: 3, effect: 'Move toward nearest enemy. If adjacent, attack 2d6. Simple, relentless.' },
+                    { name: 'Desperate Lunge', count: 1, effect: 'Sprint 4 hexes toward target, attack 3d6, take 1 self-damage. Trigger: Target within 6 hexes.' },
+                    { name: 'Tainted Scream', count: 1, effect: 'AOE fear (3 hex radius). All enemies lose 1 SP. Trigger: 2+ enemies nearby.' }
+                ]
+            },
+            'scrap-drone': {
+                name: '3. Scrap Drone',
+                type: 'Swarm (Construct)',
+                deckSize: 4,
+                cards: [
+                    { name: 'Patrol', count: 2, effect: 'Move randomly 3 hexes. If enemy within 6 hexes, attack 1d6 ranged. Flying (ignores terrain).' },
+                    { name: 'Self-Destruct', count: 1, effect: 'If below 2 HP, kamikaze nearest enemy. Explode for 3d6 damage (1 hex radius). Drone destroyed.' },
+                    { name: 'Repair Protocol', count: 1, effect: 'Heal adjacent ally drone 1 card. Trigger: Ally drone below 50% HP.' }
+                ]
+            },
+            'bandit-captain': {
+                name: '5. Bandit Captain',
+                type: 'Elite (Leader)',
+                deckSize: 20,
+                cards: [
+                    { name: 'Commanding Strike', count: 6, effect: 'Attack 4d6. All bandit allies within 4 hexes gain +1 damage this turn. Leadership buff.' },
+                    { name: 'Tactical Repositioning', count: 4, effect: 'Move 5 hexes. 1 ally within 4 hexes can immediately move 3 hexes (coordinated movement).' },
+                    { name: 'Inspire Troops', count: 3, effect: 'All allies within 4 hexes gain +2 Defense until Captain\'s next turn. Rally ability.' },
+                    { name: 'Execute the Weak', count: 2, effect: 'Attack enemy below 8 HP for 6d6, ignoring Defense. Execute mechanic.' },
+                    { name: 'Desperate Gambit', count: 2, effect: 'Attack 5d6, take 2 self-damage. Trigger: Below 10 HP.' },
+                    { name: 'Tactical Retreat', count: 2, effect: 'Sprint 6 hexes away. All allies within 4 hexes can move 3 hexes. Trigger: Below 8 HP.' },
+                    { name: 'Smoke Grenade', count: 1, effect: 'Create 2 hex smoke cloud. Enemies inside have -2 to ranged attacks. Lasts 2 turns.' }
+                ]
+            },
+            'tainted-ogre': {
+                name: '6. Tainted Ogre',
+                type: 'Elite (Brute)',
+                deckSize: 25,
+                cards: [
+                    { name: 'Brutal Smash', count: 8, effect: '5d6 melee damage + knockback 2 hexes. Always use if adjacent. Simple but devastating.' },
+                    { name: 'Enraged Charge', count: 5, effect: 'Sprint 5 hexes straight line, attack 6d6 if hit target. Trigger: No enemies adjacent.' },
+                    { name: 'Regenerate', count: 3, effect: 'Recover 2 cards from discard pile. Trigger: Below 15 HP or at 5+ Taint.' },
+                    { name: 'Ground Slam', count: 3, effect: 'AOE attack (2 hex radius). 4d6 damage + knockdown (lose 1 SP). Costs 3 SP.' },
+                    { name: 'Intimidating Roar', count: 2, effect: 'All enemies within 4 hexes: Willpower Save (1d6+Grit, need 5+). Fail: lose 2 SP.' },
+                    { name: 'Berserk Rage', count: 2, effect: '[At 10 HP or below] Attack twice (5d6 each). Ignore pain, pure fury.' },
+                    { name: 'Cannibalize', count: 1, effect: 'If corpse within 2 hexes, consume it. Heal 3 cards. Disturbing.' },
+                    { name: 'Throw Boulder', count: 1, effect: 'Ranged attack (8 hex range). 4d6 + knockback 3 hexes. Once per battle.' }
+                ]
+            },
+            'scrap-golem': {
+                name: '7. Scrap Golem',
+                type: 'Elite (Construct)',
+                deckSize: 20,
+                cards: [
+                    { name: 'Hydraulic Punch', count: 6, effect: '4d6 armor-piercing (ignore 2 Defense). Trigger: Enemy adjacent.' },
+                    { name: 'Defensive Stance', count: 4, effect: '+3 Defense until next turn. If attacked during this, counter for 3d6.' },
+                    { name: 'Repair Subroutine', count: 3, effect: 'Recover 2 cards from discard. If drones within 3 hexes, heal 3 cards instead.' },
+                    { name: 'Ram', count: 2, effect: 'Sprint 4 hexes straight line. Trample all in path (3d6 each + knockback).' },
+                    { name: 'Overload', count: 2, effect: 'Charge attack 7d6, take 2 self-damage. Trigger: Below 12 HP (desperation).' },
+                    { name: 'Summon Drones', count: 2, effect: 'Spawn 2 Scrap Drones adjacent to Golem. Max 4 drones on field.' },
+                    { name: 'Shutdown', count: 1, effect: 'Enter hibernation. Cannot act for 1 turn, but heal 5 cards. Emergency repair.' }
+                ]
+            },
+            'engine-wraith': {
+                name: '8. Engine Wraith',
+                type: 'Elite (Supernatural)',
+                deckSize: 12,
+                cards: [
+                    { name: 'Phase Strike', count: 4, effect: 'Teleport adjacent to target, attack 3d6 + inflict 1 Taint. Ethereal movement.' },
+                    { name: 'Drain Life', count: 3, effect: 'Attack 4d6. Heal self for half damage dealt (lifesteal). Trigger: Target below 15 HP.' },
+                    { name: 'Void Shift', count: 2, effect: 'Teleport up to 6 hexes. Leave shadow echo at departure (attacks once for 2d6, then vanishes).' },
+                    { name: 'Taint Pulse', count: 2, effect: 'AOE (3 hex radius). All enemies gain 2 Taint. No damage, pure corruption.' },
+                    { name: 'Reality Anchor', count: 1, effect: 'Target cannot move more than 3 hexes from current position for 2 turns. Dimensional bind.' }
+                ]
+            },
+            'rogue-casket': {
+                name: '10. Rogue Casket (Enemy Pilot)',
+                type: 'Boss (Rival Pilot)',
+                deckSize: 30,
+                cards: [
+                    { name: 'Primary Weapon Attack', count: 12, effect: 'Standard melee/ranged attack based on equipped weapon. Priority: Always use if in range.' },
+                    { name: 'Tactical Movement', count: 5, effect: 'Move toward optimal position: cover if taking damage, flank if advantage, close gap if ranged.' },
+                    { name: 'Defensive Stance', count: 3, effect: '+2 Defense until next turn. Trigger: Below 15 HP or taking heavy fire.' },
+                    { name: 'Equipment Use', count: 3, effect: 'Use Secondary Equipment (shield, repair kit, utility). Trigger: Situational (low HP = repair).' },
+                    { name: 'Faction Tactic', count: 2, effect: 'Activate faction-specific ability (Church: Blood Offering, Dwarves: Forge-Ward, etc).' },
+                    { name: 'Sprint', count: 2, effect: 'Move 8+ hexes. Trigger: Need to close distance or retreat from losing fight.' },
+                    { name: 'Heat Management', count: 2, effect: 'Reduce Heat by 3. Trigger: Heat at 5+.' },
+                    { name: 'Desperate Gambit', count: 1, effect: 'All-out attack. Use most powerful card + spend all SP. Trigger: Below 8 HP (win-or-die).' }
+                ]
+            },
+            'bonelord-thresh': {
+                name: '11. Bonelord Thresh',
+                type: 'Boss (Ossuarium Champion)',
+                deckSize: 50,
+                phases: [
+                    { name: 'Phase 1', hp: '50-35 HP', description: 'Summons undead minions' },
+                    { name: 'Phase 2', hp: '34-15 HP', description: 'Lifesteal attacks, mass summons' },
+                    { name: 'Phase 3', hp: '14-0 HP', description: 'Resurrection + AOE corruption' }
+                ],
+                cards: [
+                    { name: 'Soul Harvest', count: 12, effect: '4d6 attack. If target dies, heal 3 cards (lifesteal on kill). Necromantic vampirism.' },
+                    { name: 'Raise Dead', count: 8, effect: 'Summon 2 Bone Thralls (3 HP, 2d6 attack). Thralls activate after Thresh.' },
+                    { name: 'Bone Armor', count: 6, effect: '+3 Defense until next turn. Skeletal reinforcement.' },
+                    { name: 'Necrotic Bolt', count: 5, effect: 'Ranged attack (8 hex). 3d6 + inflict 1 Taint. Death magic projectile.' },
+                    { name: 'Move', count: 5, effect: 'Reposition 4 hexes. Priority: Move toward weakest enemy or away if overwhelmed.' },
+                    { name: 'Defend', count: 4, effect: '+4 Defense, cannot attack. Trigger: Below 20 HP or 3+ enemies adjacent.' },
+                    { name: 'Vampiric Strike', count: 4, effect: '[Phase 2+] Attack 6d6, heal half damage dealt. Inflict Bleed 2. Drain essence.' },
+                    { name: 'Mass Raise Dead', count: 2, effect: '[Phase 2+] Summon 6 Bone Thralls at once. Massive undead wave.' },
+                    { name: 'Siphon Life', count: 2, effect: '[Phase 2+] AOE (4 hex radius). 3d6 to all enemies, heal 1 card per enemy hit.' },
+                    { name: 'Resurrection', count: 1, effect: '[Phase 3 only] When Thresh reaches 0 HP, immediately return with 15 HP. Once per battle.' },
+                    { name: 'Apocalyptic Harvest', count: 3, effect: '[Phase 3 only] AOE (5 hex radius). 5d6 + 3 Taint to all enemies. Death wave.' },
+                    { name: 'The Ledger\'s Command', count: 3, effect: '[Phase 3 only] Sacrifice all Thralls on field. Heal 2 cards per Thrall. Desperate gambit.' }
+                ]
+            },
+            'tainted-wolf': {
+                name: '12. Tainted Wolf Pack',
+                type: 'Swarm',
+                deckSize: 6,
+                cards: [
+                    { name: 'Pack Tactics', count: 3, effect: 'If 2+ wolves within 2 hexes, attack 2d6 + Bleed 1. Else, move toward nearest wolf. Pack synergy.' },
+                    { name: 'Flanking Strike', count: 2, effect: 'If attacking from rear arc, attack 3d6 + Bleed 2. Trigger: Behind target.' },
+                    { name: 'Howl', count: 1, effect: 'Call reinforcements. Summon 1 Tainted Wolf adjacent to howler. Max 8 wolves on field.' }
+                ]
+            },
+            'church-zealot': {
+                name: '13. Church Zealot',
+                type: 'Elite (Church)',
+                deckSize: 18,
+                cards: [
+                    { name: 'Blood Offering + Strike', count: 5, effect: 'Discard 2 cards (self-harm), then attack 5d6 ignoring 1 Defense. Pain for power.' },
+                    { name: 'Martyrdom Protocol', count: 3, effect: 'When ally within 2 hexes takes damage, redirect to self. Gain 1 Heat. Protective sacrifice.' },
+                    { name: 'Divine Judgment', count: 2, effect: 'Attack 6d6, ignore 1 Defense. On Miss: recover 2 SP. Execute mechanic.' },
+                    { name: 'Consecrated Ground', count: 2, effect: 'Create 3-hex healing zone (lasts 2 turns). Allies in zone recover 1 card per turn.' },
+                    { name: 'Righteous Fury', count: 2, effect: 'Gain +2 damage to all attacks this turn. Trigger: Ally destroyed or self below 10 HP.' },
+                    { name: 'Desperate Attack', count: 2, effect: 'Attack 4d6, take 1 self-damage. Priority: Always use if adjacent.' },
+                    { name: 'Crusader\'s Charge', count: 2, effect: 'Sprint 6 hexes, attack 5d6 if reach target. Zealous assault.' }
+                ]
+            },
+            'dwarven-ironclad': {
+                name: '14. Dwarven Ironclad',
+                type: 'Elite (Dwarven)',
+                deckSize: 22,
+                cards: [
+                    { name: 'Runic Strike', count: 6, effect: '4d6 armor-piercing (ignore 2 Defense). Priority: Always use if adjacent and have SP.' },
+                    { name: 'Forge-Ward', count: 4, effect: 'Gain 1 Rune Counter (reduce next damage by 1, max 5 Runes). Defensive rune.' },
+                    { name: 'Earthshaker', count: 3, effect: 'AOE (2 hex radius). 4d6 + knockback 2 hexes. Spend 2 Runes for +2d6.' },
+                    { name: 'Defensive Stance', count: 3, effect: '+3 Defense until next turn. If attacked, mark attacker (Grudge).' },
+                    { name: 'Rune Overcharge', count: 2, effect: 'Spend all Runes (min 3). Attack 6d6 + (2d6 per Rune spent). Burst damage.' },
+                    { name: 'Grudge Strike', count: 2, effect: 'Attack marked enemy for 5d6 + 2. Vengeance attack.' },
+                    { name: 'Mountain Stance', count: 2, effect: 'Cannot move, but gain +3 Defense and +2 damage. Immovable.' }
+                ]
+            },
+            'elven-stalker': {
+                name: '15. Elven Verdant Stalker',
+                type: 'Elite (Elven)',
+                deckSize: 16,
+                cards: [
+                    { name: 'Thorn Strike', count: 5, effect: '3d6 + inflict Bleed 2 (stacks). Signature attack.' },
+                    { name: 'Piercing Arrow', count: 3, effect: 'Ranged attack (8 hex range). 3d6, ignores Defense. Precision shot.' },
+                    { name: 'Root Bind', count: 2, effect: 'Target cannot move for 2 turns. Immobilize. Trigger: Target has 2+ Bleed stacks.' },
+                    { name: 'Leaf Dance', count: 2, effect: 'Move 4 hexes AND attack 3d6 during movement. Mobile strike.' },
+                    { name: 'Sylvan Step', count: 1, effect: 'Teleport up to 5 hexes (forest terrain only). Once per battle.' },
+                    { name: 'Verdant Regeneration', count: 2, effect: 'Passive: Recover 1 card per turn if not attacked previous turn. Natural healing.' },
+                    { name: 'Camouflage', count: 1, effect: 'Next attack against Stalker has -3 to hit. Stealth. Trigger: In forest terrain.' }
                 ]
             }
         };
