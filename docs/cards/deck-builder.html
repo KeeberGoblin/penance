@@ -1023,98 +1023,98 @@
 
                 // Equipment cards (flatten structure) - tolerant to multiple JSON shapes
                 if (data.equipment) {
-                    if (Array.isArray(data.equipment)) {
-                        data.equipment.forEach(equipItem => {
-                            if (Array.isArray(equipItem.cards) && equipItem.cards.length > 0) {
-                                equipItem.cards.forEach((card, index) => {
-                                    allCards.push({
-                                        id: `${equipItem.id}-${index}`,
-                                        name: `${equipItem.name}: ${card.name}`,
-                                        type: card.type || 'attack',
-                                        cost: card.cost,
-                                        range: card.range,
-                                        effect: card.effect,
-                                        damage: card.damage,
-                                        heat: card.heat,
-                                        keywords: card.keywords || [],
-                                        faction: 'equipment',
-                                        source: 'equipment',
-                                        slot: equipItem.slot,
-                                        weight: equipItem.weight,
-                                        craftingCost: equipItem.craftingCost,
-                                        equipmentName: equipItem.name,
-                                        cardCount: equipItem.cardCount || card.cardCount || 1
-                                    });
-                                });
-                            } else {
-                                allCards.push({
-                                    id: equipItem.id,
-                                    name: equipItem.name,
-                                    type: equipItem.type || 'attack',
-                                    cost: equipItem.cost,
-                                    range: equipItem.range,
-                                    effect: equipItem.effect,
-                                    damage: equipItem.damage,
-                                    heat: equipItem.heat,
-                                    keywords: equipItem.keywords || [],
-                                    faction: 'equipment',
-                                    source: 'equipment',
-                                    slot: equipItem.slot,
-                                    weight: equipItem.weight,
-                                    craftingCost: equipItem.craftingCost,
-                                    equipmentName: equipItem.name,
-                                    cardCount: equipItem.cardCount || 1
-                                });
-                            }
+                  if (Array.isArray(data.equipment)) {
+                    data.equipment.forEach(equipItem => {
+                      if (Array.isArray(equipItem.cards) && equipItem.cards.length > 0) {
+                        equipItem.cards.forEach((card, index) => {
+                          allCards.push({
+                            id: `${equipItem.id}-${index}`,
+                            name: `${equipItem.name}: ${card.name}`,
+                            type: card.type || 'attack',
+                            cost: card.cost,
+                            range: card.range,
+                            effect: card.effect,
+                            damage: card.damage,
+                            heat: card.heat,
+                            keywords: card.keywords || [],
+                            faction: 'equipment',
+                            source: 'equipment',
+                            slot: equipItem.slot,
+                            weight: equipItem.weight,
+                            craftingCost: equipItem.craftingCost,
+                            equipmentName: equipItem.name,
+                            cardCount: equipItem.cardCount || card.cardCount || 1
+                          });
                         });
-                    } else {
-                        Object.keys(data.equipment).forEach(category => {
-                            const items = data.equipment[category] || [];
-                            items.forEach(equipItem => {
-                                if (Array.isArray(equipItem.cards) && equipItem.cards.length > 0) {
-                                    equipItem.cards.forEach((card, index) => {
-                                        allCards.push({
-                                            id: `${equipItem.id}-${index}`,
-                                            name: `${equipItem.name}: ${card.name}`,
-                                            type: card.type || 'attack',
-                                            cost: card.cost,
-                                            range: card.range,
-                                            effect: card.effect,
-                                            damage: card.damage,
-                                            heat: card.heat,
-                                            keywords: card.keywords || [],
-                                            faction: 'equipment',
-                                            source: 'equipment',
-                                            slot: equipItem.slot,
-                                            weight: equipItem.weight,
-                                            craftingCost: equipItem.craftingCost,
-                                            equipmentName: equipItem.name,
-                                            cardCount: equipItem.cardCount || card.cardCount || 1
-                                        });
-                                    });
-                                } else {
-                                    allCards.push({
-                                        id: equipItem.id,
-                                        name: equipItem.name,
-                                        type: equipItem.type || 'attack',
-                                        cost: equipItem.cost,
-                                        range: equipItem.range,
-                                        effect: equipItem.effect,
-                                        damage: equipItem.damage,
-                                        heat: equipItem.heat,
-                                        keywords: equipItem.keywords || [],
-                                        faction: 'equipment',
-                                        source: 'equipment',
-                                        slot: equipItem.slot,
-                                        weight: equipItem.weight,
-                                        craftingCost: equipItem.craftingCost,
-                                        equipmentName: equipItem.name,
-                                        cardCount: equipItem.cardCount || 1
-                                    });
-                                }
+                      } else {
+                        allCards.push({
+                          id: equipItem.id,
+                          name: equipItem.name,
+                          type: equipItem.type || 'attack',
+                          cost: equipItem.cost,
+                          range: equipItem.range,
+                          effect: equipItem.effect,
+                          damage: equipItem.damage,
+                          heat: equipItem.heat,
+                          keywords: equipItem.keywords || [],
+                          faction: 'equipment',
+                          source: 'equipment',
+                          slot: equipItem.slot,
+                          weight: equipItem.weight,
+                          craftingCost: equipItem.craftingCost,
+                          equipmentName: equipItem.name,
+                          cardCount: equipItem.cardCount || 1
+                        });
+                      }
+                    });
+                  } else {
+                    Object.keys(data.equipment).forEach(category => {
+                      const items = data.equipment[category] || [];
+                      items.forEach(equipItem => {
+                        if (Array.isArray(equipItem.cards) && equipItem.cards.length > 0) {
+                          equipItem.cards.forEach((card, index) => {
+                            allCards.push({
+                              id: `${equipItem.id}-${index}`,
+                              name: `${equipItem.name}: ${card.name}`,
+                              type: card.type || 'attack',
+                              cost: card.cost,
+                              range: card.range,
+                              effect: card.effect,
+                              damage: card.damage,
+                              heat: card.heat,
+                              keywords: card.keywords || [],
+                              faction: 'equipment',
+                              source: 'equipment',
+                              slot: equipItem.slot,
+                              weight: equipItem.weight,
+                              craftingCost: equipItem.craftingCost,
+                              equipmentName: equipItem.name,
+                              cardCount: equipItem.cardCount || card.cardCount || 1
                             });
-                        });
-                    }
+                          });
+                        } else {
+                          allCards.push({
+                            id: equipItem.id,
+                            name: equipItem.name,
+                            type: equipItem.type || 'attack',
+                            cost: equipItem.cost,
+                            range: equipItem.range,
+                            effect: equipItem.effect,
+                            damage: equipItem.damage,
+                            heat: equipItem.heat,
+                            keywords: equipItem.keywords || [],
+                            faction: 'equipment',
+                            source: 'equipment',
+                            slot: equipItem.slot,
+                            weight: equipItem.weight,
+                            craftingCost: equipItem.craftingCost,
+                            equipmentName: equipItem.name,
+                            cardCount: equipItem.cardCount || 1
+                          });
+                        }
+                      });
+                    });
+                  }
                 }
 
                 updateTabCounts();
