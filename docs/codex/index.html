@@ -228,6 +228,25 @@
         // Set home page as active on load
         window.addEventListener('DOMContentLoaded', function() {
             // No active state on load - home content is shown by default
+            
+            // Handle sidebar scroll indicator
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) {
+                sidebar.addEventListener('scroll', function() {
+                    const isAtBottom = (sidebar.scrollHeight - sidebar.scrollTop) <= (sidebar.clientHeight + 50);
+                    if (isAtBottom) {
+                        sidebar.style.setProperty('--scroll-indicator-opacity', '0');
+                    } else {
+                        sidebar.style.setProperty('--scroll-indicator-opacity', '0.8');
+                    }
+                });
+                
+                // Check initial scroll position
+                const isScrollable = sidebar.scrollHeight > sidebar.clientHeight;
+                if (!isScrollable) {
+                    sidebar.style.setProperty('--scroll-indicator-opacity', '0');
+                }
+            }
         });
     </script>
 </body>

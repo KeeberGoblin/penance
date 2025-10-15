@@ -139,11 +139,16 @@ body::before {
         rgba(26, 20, 16, 0.95)
     );
     border-right: 4px double var(--dark-red);
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 3rem 1.5rem;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8);
     position: relative;
     overflow-y: auto;
+    overflow-x: hidden;
     max-height: calc(100vh - 160px);
+    /* Ensure scrollbar is visible and functional */
+    scrollbar-width: thin;
+    scrollbar-color: var(--blood-red) var(--shadow-black);
+    --scroll-indicator-opacity: 0.8;
 }
 
 .sidebar::before {
@@ -156,6 +161,26 @@ body::before {
     background-image: var(--leather-texture);
     opacity: 0.3;
     pointer-events: none;
+    z-index: 0;
+}
+
+/* Scroll indicator at bottom of sidebar */
+.sidebar::after {
+    content: '▼ Scroll for more ▼';
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(26, 20, 16, 1) 0%, rgba(26, 20, 16, 0.9) 50%, transparent 100%);
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--aged-gold);
+    opacity: var(--scroll-indicator-opacity, 0.8);
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease;
 }
 
 .nav-section {
@@ -163,10 +188,13 @@ body::before {
     position: relative;
     border-bottom: 1px solid var(--blood-red);
     padding-bottom: 1.5rem;
+    z-index: 1;
 }
 
 .nav-section:last-child {
     border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .nav-title {
@@ -694,22 +722,40 @@ p.no-drop-cap::first-letter {
 
 /* Scrollbar Styling - Gothic */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 14px;
     background: var(--shadow-black);
 }
 
 ::-webkit-scrollbar-track {
     background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
     border: 1px solid var(--blood-red);
+    border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, var(--blood-red), var(--blackish-red));
     border: 1px solid var(--dark-red);
+    border-radius: 2px;
+    min-height: 40px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--dark-red);
+    cursor: pointer;
+}
+
+/* Specific scrollbar for sidebar to make it more prominent */
+.sidebar::-webkit-scrollbar {
+    width: 16px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--dark-red), var(--blood-red));
+    border: 2px solid var(--aged-gold);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--aged-gold);
 }
 
 /* Selection Styling */
