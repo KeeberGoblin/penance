@@ -363,6 +363,78 @@
             line-height: 0.9;
             margin-bottom: 1rem;
             letter-spacing: 0.05em;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Glitch effect - starts subtle, gets more intense */
+        .hero-title.glitch {
+            animation: glitch-intensity 1s steps(1) infinite;
+        }
+
+        .hero-title.glitch::before,
+        .hero-title.glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        .hero-title.glitch::before {
+            color: var(--blood-red);
+            animation: glitch-red 0.3s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+        .hero-title.glitch::after {
+            color: rgba(184, 149, 106, 0.8);
+            animation: glitch-blue 0.4s infinite reverse;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch-intensity {
+            0%, 50%, 100% {
+                filter: none;
+            }
+            25% {
+                filter: blur(1px);
+            }
+            75% {
+                filter: blur(0.5px);
+            }
+        }
+
+        @keyframes glitch-red {
+            0% {
+                opacity: 0;
+                transform: translate(0);
+            }
+            10% {
+                opacity: var(--glitch-opacity, 0.1);
+                transform: translate(var(--glitch-x, -2px), var(--glitch-y, 2px));
+            }
+            20% {
+                opacity: 0;
+                transform: translate(0);
+            }
+        }
+
+        @keyframes glitch-blue {
+            0% {
+                opacity: 0;
+                transform: translate(0);
+            }
+            15% {
+                opacity: var(--glitch-opacity, 0.1);
+                transform: translate(var(--glitch-x2, 2px), var(--glitch-y2, -2px));
+            }
+            30% {
+                opacity: 0;
+                transform: translate(0);
+            }
         }
 
         .hero-tagline {
@@ -966,7 +1038,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">PENANCE</h1>
+            <h1 class="hero-title" id="glitch-title" data-text="PENANCE">PENANCE</h1>
             <p class="hero-tagline">ABSOLUTION THROUGH STEEL</p>
             <p class="hero-description">Four centuries after the end, the dead still walk. Bound to iron shells. Seeking redemption through violence.</p>
 
@@ -1350,6 +1422,73 @@
             });
         });
 
+    </script>
+
+    <!-- Progressive Glitch Effect -->
+    <script>
+        (function() {
+            const title = document.getElementById('glitch-title');
+            if (!title) return;
+
+            let startTime = Date.now();
+            let glitchActive = false;
+            let glitchInterval = null;
+
+            function updateGlitchIntensity() {
+                const elapsed = (Date.now() - startTime) / 1000; // seconds
+
+                // Progressive intensity over 60 seconds
+                if (elapsed < 10) {
+                    // 0-10s: No glitch
+                    return;
+                } else if (elapsed < 20) {
+                    // 10-20s: Very subtle glitch (5% chance per second)
+                    if (Math.random() < 0.05 && !glitchActive) {
+                        triggerGlitch(0.2, 1, 1);
+                    }
+                } else if (elapsed < 35) {
+                    // 20-35s: Subtle glitch (15% chance)
+                    if (Math.random() < 0.15 && !glitchActive) {
+                        triggerGlitch(0.4, 3, 3);
+                    }
+                } else if (elapsed < 50) {
+                    // 35-50s: Moderate glitch (25% chance)
+                    if (Math.random() < 0.25 && !glitchActive) {
+                        triggerGlitch(0.6, 5, 5);
+                    }
+                } else {
+                    // 50s+: Intense glitch (40% chance)
+                    if (Math.random() < 0.4 && !glitchActive) {
+                        triggerGlitch(0.9, 8, 8);
+                    }
+                }
+            }
+
+            function triggerGlitch(opacity, maxX, maxY) {
+                glitchActive = true;
+                title.classList.add('glitch');
+
+                // Set CSS custom properties for glitch intensity
+                title.style.setProperty('--glitch-opacity', opacity);
+                title.style.setProperty('--glitch-x', `${Math.random() * maxX - maxX/2}px`);
+                title.style.setProperty('--glitch-y', `${Math.random() * maxY - maxY/2}px`);
+                title.style.setProperty('--glitch-x2', `${Math.random() * maxX - maxX/2}px`);
+                title.style.setProperty('--glitch-y2', `${Math.random() * maxY - maxY/2}px`);
+
+                // Random glitch duration (100-500ms)
+                const duration = 100 + Math.random() * 400;
+
+                setTimeout(() => {
+                    title.classList.remove('glitch');
+                    glitchActive = false;
+                }, duration);
+            }
+
+            // Check for glitch every 100ms
+            setInterval(updateGlitchIntensity, 100);
+
+            console.log('[Glitch] Progressive glitch effect initialized. Watch the title...');
+        })();
     </script>
 </body>
 </html>
