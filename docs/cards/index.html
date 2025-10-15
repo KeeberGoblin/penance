@@ -1047,8 +1047,11 @@
         // Load card data
         async function loadCardData() {
             try {
+                console.log('[Card DB] Starting to load card data...');
                 const response = await fetch('complete-card-data.json');
+                console.log('[Card DB] Fetch response:', response.status, response.statusText);
                 const data = await response.json();
+                console.log('[Card DB] JSON parsed successfully');
 
                 // Flatten card data into single array
                 allCards = [];
@@ -1098,11 +1101,14 @@
                 updateTabCounts();
 
                 // Initial render
+                console.log('[Card DB] Total cards loaded:', allCards.length);
                 applyFilters();
+                console.log('[Card DB] Cards rendered successfully!');
 
             } catch (error) {
-                console.error('Error loading card data:', error);
-                document.getElementById('card-container').innerHTML = '<div class="no-results"><h3>Error loading cards</h3></div>';
+                console.error('[Card DB] ERROR loading card data:', error);
+                console.error('[Card DB] Error stack:', error.stack);
+                document.getElementById('card-container').innerHTML = `<div class="no-results"><h3>Error loading cards</h3><p>${error.message}</p></div>`;
             }
         }
 
