@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version 3.0 Optional Rules - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Purple accents for Taint section */
+        .taint-accent { color: #9b59b6; }
+        .taint-border { border-color: #8e44ad !important; }
+
+        /* Gold accents for Grit section */
+        .grit-accent { color: #d4af37; }
+        .grit-border { border-color: #b8860b !important; }
+
+        /* Section dividers */
+        .v3-section {
+            margin: 4rem 0;
+            padding-top: 3rem;
+            border-top: 3px double var(--dark-red);
+        }
+
+        .v3-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#core-rules">CORE RULES</a> /
+            Version 3.0 Optional Rules
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border: 3px solid var(--dark-red); padding: 1rem; text-align: center; margin-bottom: 2rem; font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: var(--aged-gold); letter-spacing: 0.15em;">
+            v3.0 OPTIONAL MECHANICS
+        </div>
+
+        <h1>Version 3.0 Optional Rules</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
+            Trench Crusade-Inspired Advanced Mechanics • Modular Enhancement Systems
+        </p>
+
+        <div class="manuscript-quote">
+            "The core rules teach you to survive. These rules teach you to master the art of war."
+        </div>
+
+        <h2>Overview</h2>
+
+        <p class="manuscript-text">
+            Version 3.0 introduces three optional mechanics inspired by Trench Crusade's tactical depth. Each system is modular—use one, two, all three, or none. They integrate seamlessly with Penance's core combat without requiring complete rewrites.
+        </p>
+
+        <h3>The Three Systems</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Dice Pool Advantage</strong> - Replaces static modifiers with dynamic dice pools (roll 3, take 2 highest/lowest)</li>
+            <li><strong>Taint Exploitation</strong> - Makes Taint an active resource you can exploit offensively</li>
+            <li><strong>Pilot Grit</strong> - Campaign progression system tracking pilot experience and mental resilience</li>
+        </ul>
+
+        <p class="manuscript-text">
+            <strong>Recommended Use:</strong> Start with Dice Pool Advantage (adds visceral feel), then add Taint Exploitation (tactical depth), then Pilot Grit (campaign progression).
+        </p>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- SYSTEM 1: DICE POOL ADVANTAGE -->
+        <div class="v3-section">
+            <h1>System 1: Dice Pool Advantage</h1>
+
+            <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;" class="no-drop-cap">
+                Replaces Static Modifiers with Dynamic Dice Pools
+            </p>
+
+            <div class="manuscript-quote">
+                "Three dice. Two kept. One discarded. The difference between glory and a shallow grave."
+            </div>
+
+            <h2>Core Mechanic</h2>
+
+            <p class="manuscript-text">
+                Instead of adding +1 or +2 to your target number, you roll extra dice and take the highest or lowest results. This creates more dramatic swings in combat and makes every attack feel more exciting.
+            </p>
+
+            <h3>Base Roll: 2 Attack Dice</h3>
+            <p class="manuscript-text">
+                Standard attack (no modifiers): Roll 2 Attack Dice, add both values together, compare to target number (usually 5+).
+            </p>
+
+            <h3>Advantage: Roll 3, Take Highest 2</h3>
+            <p class="manuscript-text">When you have tactical ADVANTAGE:</p>
+            <ul class="manuscript-list">
+                <li>Roll 3 Attack Dice</li>
+                <li>Discard the LOWEST die</li>
+                <li>Add the 2 highest values together</li>
+            </ul>
+
+            <h4>Advantage Sources</h4>
+            <ul class="manuscript-list">
+                <li>Flanking attack (hex-sides 3, 5)</li>
+                <li>Rear attack (hex-side 4)</li>
+                <li>Higher ground (1+ elevation)</li>
+                <li>Target is Stunned/Immobilized</li>
+                <li>Aiming (spent previous turn stationary)</li>
+                <li>Taint Exploitation: "Exposed Weakness" (1 Taint spent)</li>
+            </ul>
+
+            <h3>Disadvantage: Roll 3, Take Lowest 2</h3>
+            <p class="manuscript-text">When you have tactical DISADVANTAGE:</p>
+            <ul class="manuscript-list">
+                <li>Roll 3 Attack Dice</li>
+                <li>Discard the HIGHEST die</li>
+                <li>Add the 2 lowest values together</li>
+            </ul>
+
+            <h4>Disadvantage Sources</h4>
+            <ul class="manuscript-list">
+                <li>Heavy cover (fortress walls, dense forest)</li>
+                <li>Obscured target (smoke, darkness)</li>
+                <li>Long range (7-10 hexes) or Extreme range (11+ hexes)</li>
+                <li>Attacker moved 6+ hexes this turn</li>
+                <li>Attacker has 5+ Heat (Danger Zone)</li>
+                <li>Primary Weapon destroyed</li>
+            </ul>
+
+            <h3>Critical Advantage/Disadvantage</h3>
+
+            <p class="manuscript-text">
+                <strong>Critical Advantage</strong> (2+ sources): Roll 4 dice, discard 2 lowest, take 2 highest<br>
+                <strong>Critical Disadvantage</strong> (2+ sources): Roll 4 dice, discard 2 highest, take 2 lowest
+            </p>
+
+            <h3>Cancellation</h3>
+            <p class="manuscript-text">
+                Advantage and Disadvantage cancel 1-for-1. If you have 2 Advantages and 1 Disadvantage, you have net +1 Advantage (roll 3, take 2 highest).
+            </p>
+
+            <h3>Probability Impact</h3>
+
+            <table class="manuscript-table">
+                <thead>
+                    <tr>
+                        <th>Dice Pool</th>
+                        <th>Strong Hit (7+)</th>
+                        <th>EXECUTION (10)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Straight Roll (2d6)</td>
+                        <td>~42%</td>
+                        <td>~2.8%</td>
+                    </tr>
+                    <tr>
+                        <td>Advantage (3d6, take 2 highest)</td>
+                        <td>~59% (+17%)</td>
+                        <td>~5.1% (nearly double!)</td>
+                    </tr>
+                    <tr>
+                        <td>Critical Advantage (4d6, take 2 highest)</td>
+                        <td>~68%</td>
+                        <td>~8.5% (triple!)</td>
+                    </tr>
+                    <tr>
+                        <td>Disadvantage (3d6, take 2 lowest)</td>
+                        <td>~26% (-16%)</td>
+                        <td>~0.5%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="manuscript-text" style="font-style: italic; text-align: center;">
+                Perfect tactical positioning (Critical Advantage) triples your chance of EXECUTION attacks!
+            </p>
+        </div>
+
+        <!-- SYSTEM 2: TAINT EXPLOITATION -->
+        <div class="v3-section">
+            <h1 style="color: #9b59b6;">System 2: Taint Exploitation</h1>
+
+            <p style="font-style: italic; color: #c39bd3; margin-bottom: 2rem;" class="no-drop-cap">
+                Blood Marker-Inspired Tactical Resource Management
+            </p>
+
+            <div class="manuscript-quote">
+                "The Engine whispers. Some hear power. Some hear madness. The wise hear both."
+            </div>
+
+            <h2 style="color: #9b59b6;">Core Concept</h2>
+
+            <p class="manuscript-text">
+                Taint is no longer just a threshold (0-10 scale, hit 10 = Corruption). It's now an active battlefield mechanic you can exploit:
+            </p>
+
+            <ul class="manuscript-list">
+                <li>When you damage enemies, they accumulate <strong>Taint Markers</strong></li>
+                <li>YOU can spend THEIR Taint to debuff them</li>
+                <li>THEY can spend their OWN Taint for desperate power (risk/reward)</li>
+                <li>Creates offensive counterplay and mirrors Church's self-harm mechanics</li>
+            </ul>
+
+            <h2 style="color: #9b59b6;">Gaining Taint Markers</h2>
+
+            <h3>Damage-Based Taint</h3>
+            <p class="manuscript-text">
+                When you take damage, gain <strong>1 Taint Marker per 3 damage dealt</strong> (round down).
+            </p>
+
+            <div style="background: rgba(74, 35, 90, 0.4); border-left: 6px solid #8e44ad; padding: 1.5rem; margin: 1.5rem 0;">
+                <p style="margin: 0;"><strong>Example:</strong></p>
+                <p style="margin: 0.5rem 0; font-family: 'Courier New', monospace; color: #c39bd3;">
+                    Enemy deals 8 damage to you<br>
+                    8 ÷ 3 = 2.67 → Round down = 2 Taint Markers gained
+                </p>
+            </div>
+
+            <h3>Other Taint Sources</h3>
+            <ul class="manuscript-list">
+                <li><strong>Taint Pulse card:</strong> All enemies within 3 hexes gain 2 Taint</li>
+                <li><strong>Standing in Tainted Terrain:</strong> Gain 1 Taint per turn</li>
+                <li><strong>Capsule Breach:</strong> Gain 3 Taint (pilot exposed)</li>
+                <li><strong>Church Blood Offering:</strong> Self-inflict 1 Taint for +3 damage</li>
+            </ul>
+
+            <h2 style="color: #9b59b6;">Taint Threshold (Corruption Risk)</h2>
+
+            <table class="manuscript-table">
+                <thead>
+                    <tr>
+                        <th>Taint Level</th>
+                        <th>Status</th>
+                        <th>Effects</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0-4 Taint</td>
+                        <td>Safe</td>
+                        <td>No penalties</td>
+                    </tr>
+                    <tr>
+                        <td>5-7 Taint</td>
+                        <td>Danger Zone</td>
+                        <td>Enemies can exploit; -1 Pilot Grit; Cannot heal</td>
+                    </tr>
+                    <tr>
+                        <td>8-9 Taint</td>
+                        <td>Critical</td>
+                        <td>-1 SP max; +1 Heat generation; Enemy attacks have Advantage</td>
+                    </tr>
+                    <tr style="background: rgba(155, 89, 182, 0.3);">
+                        <td>10+ Taint</td>
+                        <td>CORRUPTED</td>
+                        <td>Roll 1d6: 4+ resist, 1-3 roll Corruption Table</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="color: #9b59b6;">Offensive Taint Exploitation</h2>
+
+            <p class="manuscript-text"><strong>YOU Can Spend THEIR Taint</strong></p>
+
+            <p class="manuscript-text">
+                When attacking an enemy with Taint Markers, you may spend their Taint for offensive bonuses BEFORE rolling Attack Dice.
+            </p>
+
+            <table class="manuscript-table">
+                <thead>
+                    <tr>
+                        <th>Cost</th>
+                        <th>Effect</th>
+                        <th>Timing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 Taint</td>
+                        <td><strong>EXPOSED WEAKNESS</strong><br>Gain Advantage (roll 3, take 2 highest)</td>
+                        <td>Before rolling</td>
+                    </tr>
+                    <tr>
+                        <td>2 Taint</td>
+                        <td><strong>FORCE REROLL</strong><br>Force target to reroll up to 2 successful Defense Dice</td>
+                        <td>After Defense</td>
+                    </tr>
+                    <tr>
+                        <td>1 Taint</td>
+                        <td><strong>HEAT SPIKE</strong><br>Target gains +1 Heat immediately</td>
+                        <td>Any time</td>
+                    </tr>
+                    <tr>
+                        <td>3 Taint</td>
+                        <td><strong>COMPONENT VULNERABILITY</strong><br>+1 Component Damage this attack</td>
+                        <td>Before rolling</td>
+                    </tr>
+                    <tr>
+                        <td>4 Taint</td>
+                        <td><strong>NEURAL DISRUPTION</strong><br>Target cannot play Reactive cards</td>
+                        <td>Before rolling</td>
+                    </tr>
+                    <tr>
+                        <td>5 Taint</td>
+                        <td><strong>TAINT OVERLOAD</strong><br>Target flips 1 Pilot Wound card</td>
+                        <td>Any time</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="color: #9b59b6;">Defensive Taint Exploitation</h2>
+
+            <p class="manuscript-text"><strong>THEY Can Spend THEIR OWN Taint</strong></p>
+
+            <p class="manuscript-text">
+                When YOU have Taint Markers, you may spend them for desperate power. BUT: This increases your Corruption risk.
+            </p>
+
+            <table class="manuscript-table">
+                <thead>
+                    <tr>
+                        <th>Cost</th>
+                        <th>Effect</th>
+                        <th>Risk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2 Taint</td>
+                        <td><strong>TAINTED FURY</strong><br>+2 damage to next attack</td>
+                        <td>Gain 1 Heat</td>
+                    </tr>
+                    <tr>
+                        <td>3 Taint</td>
+                        <td><strong>IGNORE PAIN</strong><br>Reduce next damage taken by 3</td>
+                        <td>Gain 1 Heat</td>
+                    </tr>
+                    <tr>
+                        <td>1 Taint</td>
+                        <td><strong>VOID STEP</strong><br>Move 2 hexes (0 SP)</td>
+                        <td>Gain 1 Heat</td>
+                    </tr>
+                    <tr>
+                        <td>4 Taint</td>
+                        <td><strong>THERMAL PURGE</strong><br>Remove ALL Heat, ignore Strain</td>
+                        <td>-1 SP max (mission)</td>
+                    </tr>
+                    <tr>
+                        <td>5 Taint</td>
+                        <td><strong>RESURRECTION</strong> (Once/battle)<br>Reshuffle at 0 HP, return with 10 cards</td>
+                        <td>Flip 2 Wounds</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="color: #9b59b6;">Corruption Table</h2>
+
+            <p class="manuscript-text">When you fail Corruption Save at 10+ Taint (rolled 1-3), roll 1d6:</p>
+
+            <table class="manuscript-table">
+                <thead>
+                    <tr>
+                        <th>d6</th>
+                        <th>Result</th>
+                        <th>Effect</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1-2</td>
+                        <td><strong>PUPPET OF THE ENGINE</strong></td>
+                        <td>Enemy controls your Casket for 1 turn. Reset to 5 Taint after</td>
+                    </tr>
+                    <tr>
+                        <td>3-4</td>
+                        <td><strong>TAINT NOVA</strong></td>
+                        <td>3d6 damage to all within 3 hexes (including allies). You take 6 damage. Reset to 0 Taint</td>
+                    </tr>
+                    <tr>
+                        <td>5-6</td>
+                        <td><strong>MUTATION</strong></td>
+                        <td>Flip 1 Severe Injury. Gain permanent mutation (roll 1d6). Reset to 5 Taint</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Mutation Table (1d6)</h3>
+            <ul class="manuscript-list">
+                <li><strong>1-2: Clawed Limb</strong> - +1 melee damage, but -1 SP max</li>
+                <li><strong>3-4: Third Eye</strong> - Ignore Disadvantage from cover, but -1 Defense</li>
+                <li><strong>5-6: Void Touched</strong> - Spend Taint at -1 cost, but gain +1 Taint per turn</li>
+            </ul>
+
+            <h2 style="color: #9b59b6;">Faction Interactions</h2>
+
+            <table class="manuscript-table">
+                <thead>
+                    <tr>
+                        <th>Faction</th>
+                        <th>Taint Interaction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Church of Absolution</strong></td>
+                        <td>WANTS Taint for martyrdom. Corruption Save 3+ (resistant). Can self-inflict via Blood Offering</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dwarven Forge-Guilds</strong></td>
+                        <td>Rune-warded: Gain Taint at half rate. Cannot be exploited until 8+ Taint. Cannot spend own Taint</td>
+                    </tr>
+                    <tr>
+                        <td><strong>The Ossuarium</strong></td>
+                        <td>"Soul Harvest": Spend 2 Taint, recover 3 cards. "Decay Aura": Enemies within 3 hexes gain 1 Taint/turn</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Elven Verdant Covenant</strong></td>
+                        <td>Vulnerable: Gain Taint at DOUBLE rate. "Regeneration" removes 1 Taint. Corruption Save 5+ in Forests only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SYSTEM 3: PILOT GRIT -->
+        <div class="v3-section">
+            <h1 style="color: #d4af37;">System 3: Pilot Grit</h1>
+
+            <p style="font-style: italic; color: #d4af37; margin-bottom: 2rem;" class="no-drop-cap">
+                Campaign Progression • Mental Resilience • Experience Tracking
+            </p>
+
+            <div class="manuscript-quote">
+                "Grit is not given. It is earned. In blood. In pain. In refusing to break when the universe demands it."
+            </div>
+
+            <h2 style="color: #d4af37;">Core Concept</h2>
+
+            <p class="manuscript-text">
+                Pilot Grit represents a pilot's mental toughness, combat experience, and resistance to psychological trauma. It's a campaign-only mechanic that tracks how hardened your pilot becomes through repeated battles.
+            </p>
+
+            <h3>Grit Score (0-10)</h3>
+
+            <ul class="manuscript-list">
+                <li><strong>Starting Grit:</strong> All pilots begin at Grit 3 (average veteran)</li>
+                <li><strong>Minimum:</strong> Grit 0 (shell-shocked, barely functional)</li>
+                <li><strong>Maximum:</strong> Grit 10 (legendary, unbreakable)</li>
+            </ul>
+
+            <h2 style="color: #d4af37;">Grit Checks</h2>
+
+            <p class="manuscript-text">
+                When you face mental trauma, roll 1d6. If you roll UNDER your Grit score, you resist the effect. If you roll EQUAL TO OR OVER, you suffer the consequence.
+            </p>
+
+            <div style="background: rgba(184, 134, 11, 0.3); border-left: 6px solid #b8860b; padding: 1.5rem; margin: 1.5rem 0;">
+                <p style="margin: 0;"><strong>Example:</strong></p>
+                <p style="margin: 0.5rem 0; font-family: 'Courier New', monospace; color: #d4af37;">
+                    Pilot has Grit 5<br>
+                    Capsule breached → Make Grit check<br>
+                    Roll 1d6: [4] → Success (4 < 5)<br>
+                    Pilot resists panic, continues fighting
+                </p>
+            </div>
+
+            <h3>When to Make Grit Checks</h3>
+
+            <ul class="manuscript-list">
+                <li><strong>Capsule Breach:</strong> When pilot takes direct damage (Thread snap, neural feedback)</li>
+                <li><strong>Component Destroyed:</strong> When a critical component is destroyed (Right Arm, Legs)</li>
+                <li><strong>Ally Dies:</strong> When witnessing a fellow pilot's Casket destroyed</li>
+                <li><strong>High Taint:</strong> At 5-7 Taint (Danger Zone) or 8-9 Taint (Critical)</li>
+                <li><strong>Facing Boss:</strong> First encounter with a named boss enemy</li>
+                <li><strong>Severe Injury:</strong> When flipping a Severe Injury or Trauma card</li>
+            </ul>
+
+            <h2 style="color: #d4af37;">Grit Modifiers</h2>
+
+            <table class="manuscript-table">
+                <thead>
+                    <tr>
+                        <th>Grit Score</th>
+                        <th>Mental State</th>
+                        <th>Effects</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0-2</td>
+                        <td>Shell-Shocked</td>
+                        <td>-1 SP max, cannot gain Advantage, Disadvantage on all checks</td>
+                    </tr>
+                    <tr>
+                        <td>3-4</td>
+                        <td>Green</td>
+                        <td>No modifiers (starting baseline)</td>
+                    </tr>
+                    <tr>
+                        <td>5-6</td>
+                        <td>Veteran</td>
+                        <td>+1 to resist Taint corruption checks</td>
+                    </tr>
+                    <tr>
+                        <td>7-8</td>
+                        <td>Hardened</td>
+                        <td>+1 to Grit checks, immune to first Capsule Breach per mission</td>
+                    </tr>
+                    <tr>
+                        <td>9-10</td>
+                        <td>Unbreakable</td>
+                        <td>Auto-succeed all Grit checks except Critical Trauma</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="color: #d4af37;">Gaining & Losing Grit</h2>
+
+            <h3>Gain +1 Grit</h3>
+            <ul class="manuscript-list">
+                <li>Survive a mission where you took 15+ damage</li>
+                <li>Defeat a named boss enemy</li>
+                <li>Survive with a Severe Injury for 3+ missions</li>
+                <li>Make 5 successful Grit checks in a single mission</li>
+            </ul>
+
+            <h3>Lose -1 Grit</h3>
+            <ul class="manuscript-list">
+                <li>Fail 3 Grit checks in a single mission</li>
+                <li>Witness 2+ allied Caskets destroyed in one battle</li>
+                <li>Suffer Trauma (PTSD, Dissociation, Madness)</li>
+                <li>Accumulate 10+ Taint without purging</li>
+            </ul>
+
+            <h2 style="color: #d4af37;">Integration with Other Systems</h2>
+
+            <h3>With Taint Exploitation</h3>
+            <p class="manuscript-text">
+                <strong>Danger Zone (5-7 Taint):</strong> -1 to Grit checks<br>
+                <strong>Critical (8-9 Taint):</strong> -2 to Grit checks<br>
+                <strong>High Grit (7+):</strong> +1 to resist Taint Corruption
+            </p>
+
+            <h3>With Dice Pool Advantage</h3>
+            <p class="manuscript-text">
+                Grit affects resistance rolls, not Attack Dice. However, Shell-Shocked pilots (Grit 0-2) suffer Disadvantage on ALL checks.
+            </p>
+
+            <h2 style="color: #d4af37;">Campaign Tracking</h2>
+
+            <p class="manuscript-text">
+                Track Pilot Grit on your campaign sheet alongside:
+            </p>
+
+            <ul class="manuscript-list">
+                <li>Current Grit Score (0-10)</li>
+                <li>Missions Survived (experience counter)</li>
+                <li>Failed Grit Checks This Mission (temporary tracker)</li>
+                <li>Permanent Trauma Cards (reduce max Grit)</li>
+            </ul>
+
+            <div style="background: var(--shadow-black); border: 3px double #b8860b; padding: 2rem; margin: 3rem 0; font-style: italic;">
+                <p style="text-align: center; margin: 0; color: #d4af37;" class="no-drop-cap">
+                    "The difference between a veteran and a corpse is not skill. It's the refusal to break."
+                </p>
+            </div>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div style="text-align: center; margin: 4rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Designer's Notes</h2>
+
+        <h3>Why These Systems Work Together</h3>
+
+        <ol>
+            <li><strong>Dice Pool Advantage:</strong> Adds visceral excitement (rolling more dice is fun!)</li>
+            <li><strong>Taint Exploitation:</strong> Creates offensive counterplay (stack Taint → exploit it)</li>
+            <li><strong>Pilot Grit:</strong> Adds campaign progression (pilots grow or break over time)</li>
+        </ol>
+
+        <h3>Trench Crusade Inspiration</h3>
+
+        <p class="manuscript-text">
+            These systems are adapted from Tuomas Pirinen's Trench Crusade:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Dice Pool Advantage:</strong> Directly inspired by TC's 3d6-take-2 system</li>
+            <li><strong>Taint (Blood Markers):</strong> Adapted from TC's Blood Marker accumulation and exploitation</li>
+            <li><strong>Grit (Resilience):</strong> Inspired by TC's mental state tracking for campaign veterans</li>
+        </ul>
+
+        <h3>Modularity</h3>
+
+        <p class="manuscript-text">
+            You can use ANY COMBINATION of these systems:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Just Dice Pool:</strong> Adds drama without complexity</li>
+            <li><strong>Dice Pool + Taint:</strong> Tactical depth for competitive players</li>
+            <li><strong>All Three:</strong> Full campaign experience with progression</li>
+            <li><strong>None:</strong> Core Penance works perfectly without v3.0 rules</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            "The core game is a knife. These rules are a whetstone. Use them if you want a sharper edge."
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="rules-combat.html" target="_parent">Core Combat System</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        </div>
+    </div>
+</body>
+</html>
