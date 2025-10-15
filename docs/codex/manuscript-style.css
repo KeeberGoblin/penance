@@ -12,6 +12,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 :root {
     /* Gothic Color Palette */
     --parchment-dark: #1a1410;
@@ -38,6 +44,8 @@ body {
     color: var(--bone-white);
     line-height: 1.75;
     letter-spacing: 0.02em;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Decorative Page Border */
@@ -121,6 +129,7 @@ body::before {
     grid-template-columns: 280px 1fr;
     min-height: calc(100vh - 160px);
     margin: 0 20px 20px 20px;
+    max-height: calc(100vh - 160px);
 }
 
 /* Gothic Sidebar */
@@ -133,6 +142,8 @@ body::before {
     padding: 2rem 1.5rem;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8);
     position: relative;
+    overflow-y: auto;
+    max-height: calc(100vh - 160px);
 }
 
 .sidebar::before {
@@ -229,9 +240,10 @@ body::before {
     );
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
     position: relative;
-    min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
+    overflow-y: auto;
+    max-height: calc(100vh - 160px);
 }
 
 .content::before {
@@ -544,15 +556,20 @@ p.no-drop-cap::first-letter {
     .container {
         grid-template-columns: 1fr;
         margin: 0 10px 10px 10px;
+        max-height: none;
     }
 
     .sidebar {
         border-right: none;
         border-bottom: 4px double var(--dark-red);
+        max-height: none;
+        overflow-y: visible;
     }
 
     .content {
         padding: 2rem 1.5rem;
+        max-height: none;
+        overflow-y: visible;
     }
 
     .header-title {
@@ -583,10 +600,16 @@ p.no-drop-cap::first-letter {
     .container {
         grid-template-columns: 250px 1fr;
         margin: 0 15px 15px 15px;
+        max-height: calc(100vh - 140px);
+    }
+
+    .sidebar {
+        max-height: calc(100vh - 140px);
     }
 
     .content {
         padding: 2.5rem 3rem;
+        max-height: calc(100vh - 140px);
     }
 }
 
@@ -711,6 +734,21 @@ p.no-drop-cap::first-letter {
     );
     min-height: 100vh;
     position: relative;
+}
+
+/* Ensure iframe content can scroll properly */
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+}
+
+/* Ensure iframe body doesn't restrict height */
+iframe body {
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow-y: visible !important;
 }
 
 .manuscript-page::before {
