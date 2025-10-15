@@ -34,6 +34,40 @@
             font-weight: 700;
             background: rgba(75, 14, 14, 0.3);
         }
+
+        /* Dropdown menu styling */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-submenu {
+            display: none;
+            padding-left: 1rem;
+            margin-top: 0.25rem;
+            border-left: 2px solid var(--dark-red);
+            margin-left: 0.5rem;
+        }
+
+        .nav-dropdown:hover .nav-submenu {
+            display: block;
+        }
+
+        .nav-submenu .nav-link {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.75rem;
+            opacity: 0.85;
+        }
+
+        .nav-submenu .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link.has-submenu::after {
+            content: '▼';
+            font-size: 0.6rem;
+            margin-left: 0.5rem;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
@@ -87,11 +121,15 @@
             <!-- 5. SCENARIOS (Start Playing) -->
             <div class="nav-section">
                 <div class="nav-title">Scenarios</div>
-                <a class="nav-link" onclick="loadContent('scenarios.html'); return false;">Scenario Overview</a>
-                <a class="nav-link" onclick="loadContent('scenario-proving-grounds.html'); return false;">Scenario #1: Proving Grounds</a>
-                <a class="nav-link" onclick="loadContent('scenario-reliquary-ruins.html'); return false;">Scenario #2: Reliquary Ruins</a>
-                <a class="nav-link" onclick="loadContent('scenario-example-of-play.html'); return false;">Example of Play</a>
-                <a class="nav-link" onclick="loadContent('scenario-boss-iron-saint.html'); return false;">Boss: The Iron Saint</a>
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" onclick="loadContent('scenarios.html'); return false;">Scenario Overview</a>
+                    <div class="nav-submenu">
+                        <a class="nav-link" onclick="loadContent('scenario-proving-grounds.html'); return false;">Scenario #1: Proving Grounds</a>
+                        <a class="nav-link" onclick="loadContent('scenario-reliquary-ruins.html'); return false;">Scenario #2: Reliquary Ruins</a>
+                        <a class="nav-link" onclick="loadContent('scenario-example-of-play.html'); return false;">Example of Play</a>
+                        <a class="nav-link" onclick="loadContent('scenario-boss-iron-saint.html'); return false;">Boss: The Iron Saint</a>
+                    </div>
+                </div>
             </div>
 
             <!-- 6. CAMPAIGN (Long-Term Play) -->
