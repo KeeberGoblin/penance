@@ -1,13 +1,234 @@
-html, body {
-    height: 100%;
-    overflow: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penance: Manuscript of Caskets and Bound Souls</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Ensure full-height layout chain */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
 
-.sidebar {
-    overflow-y: auto;
-}
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
 
-iframe {
-    width: 100%;
-    height: 100%;
-}
+        /* Allow sidebar to scroll */
+        .sidebar {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* Make content area fill available space */
+        .content {
+            padding: 0;
+            max-width: none;
+            background: transparent;
+            box-shadow: none;
+            height: 100%;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        /* Iframe with full-height matching */
+        .content-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+            display: block;
+        }
+
+        .content::before {
+            display: none;
+        }
+
+        /* Active link styling */
+        .nav-link.active {
+            border-left-color: var(--bone-white);
+            font-weight: 700;
+            background: rgba(75, 14, 14, 0.3);
+        }
+
+        /* Dropdown menu styling */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-submenu {
+            max-height: 0;
+            overflow: hidden;
+            padding-left: 1rem;
+            margin-left: 0.5rem;
+            border-left: 2px solid var(--dark-red);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.3s ease,
+                        transform 0.3s ease;
+        }
+
+        .nav-dropdown:hover .nav-submenu {
+            max-height: 300px;
+            opacity: 1;
+            transform: translateY(0);
+            margin-top: 0.25rem;
+        }
+
+        .nav-submenu .nav-link {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.75rem;
+            opacity: 0.85;
+            transition: opacity 0.2s ease, padding-left 0.3s ease;
+        }
+
+        .nav-submenu .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link.has-submenu::after {
+            content: '▼';
+            font-size: 0.6rem;
+            margin-left: 0.5rem;
+            opacity: 0.5;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-dropdown:hover .nav-link.has-submenu::after {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-title">PENANCE</div>
+        <div class="header-subtitle">Codex of the Bound • Chronicle of Iron and Blood</div>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <!-- 1. LORE & WORLD (Context First) -->
+            <div class="nav-section">
+                <div class="nav-title">Lore & World</div>
+                <a class="nav-link" onclick="loadContent('cosmology.html'); return false;">Cosmology & Origins</a>
+                <a class="nav-link" onclick="loadContent('lore-sundering.html'); return false;">The Sundering</a>
+                <a class="nav-link" onclick="loadContent('lore-engine.html'); return false;">Theslar Engine</a>
+                <a class="nav-link" onclick="loadContent('lore-chronicle.html'); return false;">Chronicle (437 Years)</a>
+                <a class="nav-link" onclick="loadContent('lore-npcs.html'); return false;">Iconic Pilots</a>
+            </div>
+
+            <!-- 2. CORE RULES (Learn to Play) -->
+            <div class="nav-section">
+                <div class="nav-title">Core Rules</div>
+                <a class="nav-link" onclick="loadContent('rules-turn-structure.html'); return false;">Turn Structure</a>
+                <a class="nav-link" onclick="loadContent('rules-combat.html'); return false;">Combat System</a>
+                <a class="nav-link" onclick="loadContent('rules-range-los.html'); return false;">Range & Line of Sight</a>
+                <a class="nav-link" onclick="loadContent('rules-dice.html'); return false;">Dice Reference</a>
+                <a class="nav-link" onclick="loadContent('rules-quick-ref.html'); return false;">Quick Reference</a>
+                <a class="nav-link" onclick="loadContent('rules-v3-optional.html'); return false;">v3.0 Optional Rules</a>
+            </div>
+
+            <!-- 3. PLAYABLE FACTIONS (Choose Your Army) -->
+            <div class="nav-section">
+                <div class="nav-title">Playable Factions</div>
+                <a class="nav-link" onclick="loadContent('faction-church.html'); return false;">Church of Absolution</a>
+                <a class="nav-link" onclick="loadContent('faction-dwarves.html'); return false;">Dwarven Forge-Guilds</a>
+                <a class="nav-link" onclick="loadContent('faction-undead.html'); return false;">The Ossuarium</a>
+                <a class="nav-link" onclick="loadContent('faction-elves.html'); return false;">Elven Verdant Covenant</a>
+            </div>
+
+            <!-- 4. EQUIPMENT & BUILDING (Customize Your Forces) -->
+            <div class="nav-section">
+                <div class="nav-title">Equipment & Building</div>
+                <a class="nav-link" onclick="loadContent('equipment-decks.html'); return false;">Equipment & Deck Building</a>
+                <a class="nav-link" onclick="loadContent('support-units.html'); return false;">Support Units System</a>
+            </div>
+
+            <!-- 5. SCENARIOS (Start Playing) -->
+            <div class="nav-section">
+                <div class="nav-title">Scenarios</div>
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" onclick="loadContent('scenarios.html'); return false;">Scenario Overview</a>
+                    <div class="nav-submenu">
+                        <a class="nav-link" onclick="loadContent('scenario-proving-grounds.html'); return false;">Scenario #1: Proving Grounds</a>
+                        <a class="nav-link" onclick="loadContent('scenario-reliquary-ruins.html'); return false;">Scenario #2: Reliquary Ruins</a>
+                        <a class="nav-link" onclick="loadContent('scenario-example-of-play.html'); return false;">Example of Play</a>
+                        <a class="nav-link" onclick="loadContent('scenario-boss-iron-saint.html'); return false;">Boss: The Iron Saint</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. CAMPAIGN (Long-Term Play) -->
+            <div class="nav-section">
+                <div class="nav-title">Campaign</div>
+                <a class="nav-link" onclick="loadContent('campaign-settlement-phase.html'); return false;">Settlement Phase Procedure</a>
+                <a class="nav-link" onclick="loadContent('campaign-settlements.html'); return false;">Settlements</a>
+                <a class="nav-link" onclick="loadContent('campaign-pilot-generation.html'); return false;">Pilot Generation Tables</a>
+                <a class="nav-link" onclick="loadContent('campaign-pilot-progression.html'); return false;">Pilot Progression</a>
+                <a class="nav-link" onclick="loadContent('campaign-leg-skimming.html'); return false;">Soul Sacrifice</a>
+                <a class="nav-link" onclick="loadContent('enemies-bestiary.html'); return false;">Core Bestiary</a>
+                <a class="nav-link" onclick="loadContent('campaign-event-tables.html'); return false;">Event Tables (132)</a>
+                <a class="nav-link" onclick="loadContent('campaign-anomalous-events.html'); return false;">Anomalous Events (100)</a>
+                <a class="nav-link" onclick="loadContent('campaign-loot-tables.html'); return false;">Loot Tables</a>
+            </div>
+
+            <!-- 7. UNPLAYABLE FACTIONS (Lore & Design) -->
+            <div class="nav-section">
+                <div class="nav-title">Unplayable Factions</div>
+                <a class="nav-link" onclick="loadContent('faction-fae.html'); return false;">The Wyrd Conclave</a>
+                <a class="nav-link" onclick="loadContent('faction-nomads.html'); return false;">Nomad Collective</a>
+                <a class="nav-link" onclick="loadContent('faction-merchants.html'); return false;">Merchant Guilds</a>
+                <a class="nav-link" onclick="loadContent('faction-blighted.html'); return false;">Blighted Packs</a>
+                <a class="nav-link" onclick="loadContent('faction-chitinous.html'); return false;">Chitinous Ascendancy</a>
+            </div>
+
+            <!-- 8. RESOURCES -->
+            <div class="nav-section">
+                <div class="nav-title">Resources</div>
+                <a href="../pdfs/reference-PLAYTEST-READY.pdf" class="nav-link" download>Playtest PDF</a>
+                <a href="../cards/" class="nav-link">Card Database</a>
+                <a href="../cards/deck-builder.html" class="nav-link">Deck Builder</a>
+                <a href="../index.html" class="nav-link">Main Site</a>
+                <a href="https://github.com/KeeberGoblin/penance" class="nav-link" target="_blank">GitHub Repository</a>
+            </div>
+        </nav>
+
+        <!-- Content Frame -->
+        <main class="content">
+            <iframe id="contentFrame" class="content-frame" src="content-home.html"></iframe>
+        </main>
+    </div>
+
+    <script>
+        function loadContent(url) {
+            const frame = document.getElementById('contentFrame');
+            const allLinks = document.querySelectorAll('.nav-link[onclick]');
+
+            // Remove active class from all clickable links
+            allLinks.forEach(link => link.classList.remove('active'));
+
+            // Add active class to clicked link (if called from navigation, not from iframe link)
+            if (typeof event !== 'undefined' && event.target) {
+                event.target.classList.add('active');
+            }
+
+            // Load content in iframe
+            frame.src = url;
+        }
+
+        // Set home page as active on load
+        window.addEventListener('DOMContentLoaded', function() {
+            // No active state on load - home content is shown by default
+        });
+    </script>
+</body>
+</html>
