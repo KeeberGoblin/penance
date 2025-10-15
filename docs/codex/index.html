@@ -41,21 +41,30 @@
         }
 
         .nav-submenu {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
             padding-left: 1rem;
-            margin-top: 0.25rem;
-            border-left: 2px solid var(--dark-red);
             margin-left: 0.5rem;
+            border-left: 2px solid var(--dark-red);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.3s ease,
+                        transform 0.3s ease;
         }
 
         .nav-dropdown:hover .nav-submenu {
-            display: block;
+            max-height: 300px;
+            opacity: 1;
+            transform: translateY(0);
+            margin-top: 0.25rem;
         }
 
         .nav-submenu .nav-link {
             font-size: 0.8rem;
             padding: 0.4rem 0.75rem;
             opacity: 0.85;
+            transition: opacity 0.2s ease, padding-left 0.3s ease;
         }
 
         .nav-submenu .nav-link:hover {
@@ -67,6 +76,11 @@
             font-size: 0.6rem;
             margin-left: 0.5rem;
             opacity: 0.5;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-dropdown:hover .nav-link.has-submenu::after {
+            transform: rotate(180deg);
         }
     </style>
 </head>
