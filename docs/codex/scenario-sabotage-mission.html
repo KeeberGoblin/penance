@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabotage Mission - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="manuscript-page">
+        <div class="illuminated-header">
+            <span class="drop-cap">S</span>
+            <h1 class="title">abotage Mission</h1>
+            <p class="subtitle">"Move in shadow. Strike unseen. Escape before they know you were there."</p>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Scenario Overview</h2>
+
+        <table class="manuscript-table">
+            <tr>
+                <th>Scenario Type</th>
+                <td>Stealth & Destruction</td>
+            </tr>
+            <tr>
+                <th>Players</th>
+                <td>1 vs 1 (Saboteur vs Defender) or Solo</td>
+            </tr>
+            <tr>
+                <th>Map Size</th>
+                <td>14×14 hex grid</td>
+            </tr>
+            <tr>
+                <th>Estimated Playtime</th>
+                <td>45-60 minutes</td>
+            </tr>
+            <tr>
+                <th>Difficulty</th>
+                <td>⭐⭐⭐⭐ Expert</td>
+            </tr>
+            <tr>
+                <th>Victory Condition</th>
+                <td><strong>Saboteur:</strong> Destroy 3 of 5 Reactor Cores OR eliminate the Defender<br>
+                <strong>Defender:</strong> Prevent the Saboteur from destroying 3 Reactors for 10 turns OR eliminate the Saboteur</td>
+            </tr>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Scenario Description</h2>
+
+        <p class="manuscript-text">
+            A heavily fortified facility houses five unstable Reactor Cores. The Saboteur must sneak in, plant explosives, and escape before the Defender can stop them. The twist? <strong>The Saboteur starts HIDDEN</strong> and can move undetected... until they attack.
+        </p>
+
+        <p class="manuscript-text">
+            This scenario teaches <strong>stealth mechanics</strong>, <strong>asymmetric information</strong>, bluffing, area denial, and high-stakes decision-making. The Saboteur player must think like a stealth game protagonist, while the Defender plays a tense game of cat-and-mouse.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Map: The Reactor Facility</h2>
+
+        <div style="background: var(--parchment-dark); padding: 1rem; border: 2px solid var(--accent); margin: 1rem 0; font-family: 'Courier New', monospace; overflow-x: auto;">
+<pre style="margin: 0; font-size: 0.85em;">
+[W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ]
+[W ][##][##][##][##][##][  ][  ][##][##][##][##][##][W ]
+[W ][##][R1][  ][  ][##][  ][  ][##][  ][  ][R2][##][W ]
+[W ][##][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][##][W ]
+[W ][##][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][##][W ]
+[W ][  ][  ][  ][  ][##][R3][R3][##][  ][  ][  ][  ][W ]
+[W ][  ][  ][  ][  ][##][R3][R3][##][  ][  ][  ][  ][W ]
+[W ][  ][  ][  ][  ][##][R3][R3][##][  ][  ][  ][  ][W ]
+[W ][##][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][##][W ]
+[W ][##][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][##][W ]
+[W ][##][R4][  ][  ][##][  ][  ][##][  ][  ][R5][##][W ]
+[W ][##][##][##][##][##][  ][  ][##][##][##][##][##][W ]
+[W ][W ][W ][W ][W ][W ][EN][EN][W ][W ][W ][W ][W ][W ]
+[W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ]
+</pre>
+        </div>
+
+        <h3>Terrain Legend</h3>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Terrain Type</th>
+                    <th>Effects</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[W]</td>
+                    <td><strong>Water/Perimeter</strong></td>
+                    <td>Impassable terrain (can't enter or see through)</td>
+                </tr>
+                <tr>
+                    <td>[##]</td>
+                    <td><strong>Walls</strong></td>
+                    <td>Impassable, blocks LOS</td>
+                </tr>
+                <tr>
+                    <td>[R1-R5]</td>
+                    <td><strong>Reactor Cores</strong></td>
+                    <td>Objectives (5 total)</td>
+                </tr>
+                <tr>
+                    <td>[EN]</td>
+                    <td><strong>Entry Point</strong></td>
+                    <td>Where the Saboteur enters and must escape</td>
+                </tr>
+                <tr>
+                    <td>[  ]</td>
+                    <td><strong>Open Floor</strong></td>
+                    <td>Normal movement (1 SP), no defensive bonus</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>The Reactor Cores (5 Objectives)</h2>
+
+        <h3>Reactor Locations</h3>
+        <ul class="manuscript-list">
+            <li><strong>Reactor 1:</strong> Top-left (hex [2,2])</li>
+            <li><strong>Reactor 2:</strong> Top-right (hex [11,2])</li>
+            <li><strong>Reactor 3:</strong> Center (4-hex cluster, [6,5], [7,5], [6,6], [7,6])</li>
+            <li><strong>Reactor 4:</strong> Bottom-left (hex [2,10])</li>
+            <li><strong>Reactor 5:</strong> Bottom-right (hex [11,10])</li>
+        </ul>
+
+        <h3>Destroying a Reactor</h3>
+
+        <p class="manuscript-text"><strong>Step 1: Plant Explosive</strong> (Costs 3 SP)</p>
+        <ul class="manuscript-list">
+            <li>Stand adjacent to a Reactor hex</li>
+            <li>Spend 3 SP and discard 1 card to plant an explosive</li>
+            <li>Place an "Explosive" token on the Reactor hex</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Step 2: Detonate</strong> (Costs 1 SP, can be done from anywhere)</p>
+        <ul class="manuscript-list">
+            <li>On a later turn, spend 1 SP to detonate ALL planted explosives simultaneously</li>
+            <li>All Reactors with Explosive tokens are destroyed</li>
+            <li>Detonation creates a <strong>Shockwave</strong> (see below)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Step 3: Escape</strong></p>
+        <ul class="manuscript-list">
+            <li>After detonating, the Saboteur must exit through the Entry Point [6,12] or [7,12]</li>
+        </ul>
+
+        <h3>Shockwave Effect (When Reactors Detonate)</h3>
+
+        <p class="manuscript-text">When explosives detonate:</p>
+        <ol class="manuscript-list">
+            <li>All Caskets within <strong>5 hexes</strong> of ANY destroyed Reactor take <strong>8 damage</strong> (ignore armor)</li>
+            <li>All Caskets are <strong>Stunned</strong> until their next turn (cannot spend SP on their next turn)</li>
+            <li>The facility loses power: <strong>All lights go out</strong> (see Darkness rules)</li>
+        </ol>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Stealth Mechanics (Hidden Movement)</h2>
+
+        <h3>The Saboteur Starts Hidden</h3>
+
+        <p class="manuscript-text"><strong>Setup:</strong></p>
+        <ul class="manuscript-list">
+            <li>The Saboteur does NOT place their Casket on the map at the start</li>
+            <li>Instead, the Saboteur secretly writes down their starting location (must be within 3 hexes of [6,12] or [7,12])</li>
+            <li>The Saboteur moves in secret, tracking their position on paper or a hidden map</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Hidden Movement:</strong></p>
+        <ul class="manuscript-list">
+            <li>While hidden, the Saboteur can move normally but does NOT reveal their position</li>
+            <li>The Defender cannot attack or see the Saboteur</li>
+            <li>The Saboteur can plant explosives while hidden</li>
+        </ul>
+
+        <h3>Revealing the Saboteur</h3>
+
+        <p class="manuscript-text">The Saboteur becomes <strong>Revealed</strong> (place their Casket model on the map) when:</p>
+        <ol class="manuscript-list">
+            <li>The Saboteur <strong>attacks</strong> the Defender</li>
+            <li>The Saboteur <strong>moves within 3 hexes</strong> of the Defender (Defender's sensors detect movement)</li>
+            <li>The Saboteur <strong>detonates explosives</strong> (explosion reveals their position)</li>
+            <li>The Defender <strong>scans</strong> the area and catches the Saboteur (see Scanning)</li>
+        </ol>
+
+        <p class="manuscript-text"><strong>Once Revealed:</strong> The Saboteur remains revealed for the rest of the game (normal combat rules apply)</p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Defender Mechanics</h2>
+
+        <h3>Scanning for the Saboteur</h3>
+
+        <p class="manuscript-text"><strong>Scan Action</strong> (Costs 4 SP):</p>
+        <ul class="manuscript-list">
+            <li>The Defender can spend 4 SP to scan a <strong>5-hex radius area</strong></li>
+            <li>Choose a center hex within 8 hexes of the Defender</li>
+            <li>If the Saboteur is within that 5-hex area, they are <strong>Revealed</strong> (place their Casket on the map)</li>
+            <li>If the Saboteur is NOT in the area, they remain hidden (wasted SP)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Sensor Range:</strong></p>
+        <ul class="manuscript-list">
+            <li>The Defender automatically detects the Saboteur if the Saboteur moves within <strong>3 hexes</strong> (no SP cost)</li>
+        </ul>
+
+        <h3>Patrolling</h3>
+
+        <p class="manuscript-text">
+            The Defender starts in the <strong>center of the facility</strong> (hex [7,7]) and must patrol to protect the Reactors.
+        </p>
+
+        <p class="manuscript-text"><strong>Strategic Dilemma:</strong></p>
+        <ul class="manuscript-list">
+            <li>Do you stay near the <strong>Center Reactor</strong> (R3, most valuable) or patrol the corners?</li>
+            <li>Do you <strong>scan aggressively</strong> (costs SP) or <strong>move defensively</strong>?</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Deployment</h2>
+
+        <h3>Saboteur Deployment (Hidden)</h3>
+        <ul class="manuscript-list">
+            <li>The Saboteur does NOT place their model on the map</li>
+            <li>Secretly write down starting position within 3 hexes of [6,12] or [7,12] (Entry Point)</li>
+            <li>Use a hidden map or paper to track movement</li>
+        </ul>
+
+        <h3>Defender Deployment (Visible)</h3>
+        <ul class="manuscript-list">
+            <li>Place Defender's Casket on hex [7,7] (center of facility)</li>
+            <li>Facing any direction</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Victory Conditions</h2>
+
+        <h3>Saboteur Wins If:</h3>
+        <ol class="manuscript-list">
+            <li><strong>3 or more Reactors are destroyed</strong> (detonate explosives on 3+ Reactors) <strong>AND</strong></li>
+            <li>The Saboteur escapes through the Entry Point [6,12] or [7,12] (after detonation) <strong>OR</strong></li>
+            <li>The Defender is reduced to 0 HP</li>
+        </ol>
+
+        <h3>Defender Wins If:</h3>
+        <ol class="manuscript-list">
+            <li>The Saboteur is reduced to 0 HP <strong>OR</strong></li>
+            <li><strong>Turn 10 ends</strong> and the Saboteur has not destroyed 3+ Reactors (time runs out, Saboteur mission fails)</li>
+        </ol>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Special Rules</h2>
+
+        <h3>Darkness (After Detonation)</h3>
+
+        <p class="manuscript-text">When the first Reactor explodes, the facility loses power:</p>
+        <ul class="manuscript-list">
+            <li><strong>All Caskets have -2 to Attack Dice rolls</strong> (fighting in darkness)</li>
+            <li><strong>LOS is reduced to 6 hexes maximum</strong> (can't see far in the dark)</li>
+            <li><strong>Defender's Scan action costs 6 SP</strong> instead of 4 SP (sensors are damaged)</li>
+        </ul>
+
+        <h3>Reactor Alarm</h3>
+
+        <p class="manuscript-text">If the Defender <strong>sees</strong> the Saboteur planting an explosive (i.e., the Saboteur is Revealed and adjacent to a Reactor):</p>
+        <ul class="manuscript-list">
+            <li>The Defender gains <strong>+2 SP immediately</strong> (alarm boosts power systems)</li>
+            <li>The Defender can interrupt the Saboteur's turn with a single attack (costs 2 SP)</li>
+        </ul>
+
+        <h3>Escape Under Fire</h3>
+
+        <p class="manuscript-text">If the Saboteur is Revealed and tries to exit through the Entry Point:</p>
+        <ul class="manuscript-list">
+            <li>The Defender gets <strong>one free attack</strong> (no SP cost) as the Saboteur flees</li>
+            <li>If the Saboteur survives, they escape successfully</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Tactical Considerations</h2>
+
+        <h3>Saboteur Strategy</h3>
+        <ul class="manuscript-list">
+            <li><strong>Stay Hidden:</strong> Avoid the Defender's patrols and scans</li>
+            <li><strong>Plant Multiple Explosives:</strong> Plant on 3+ Reactors BEFORE detonating (simultaneous explosions)</li>
+            <li><strong>Bait the Defender:</strong> Move loudly in one area, then sneak to another</li>
+            <li><strong>Know When to Fight:</strong> If caught, decide: fight the Defender or run?</li>
+        </ul>
+
+        <h3>Defender Strategy</h3>
+        <ul class="manuscript-list">
+            <li><strong>Patrol Efficiently:</strong> Cover multiple Reactors in each patrol route</li>
+            <li><strong>Scan Smart:</strong> Don't waste SP on empty areas, predict where Saboteur will go</li>
+            <li><strong>Protect High-Value Reactors:</strong> Center Reactor (R3) is hardest to defend (4 hexes, multiple angles)</li>
+            <li><strong>Force Reveals:</strong> Stand near choke points to trigger the 3-hex detection</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Balancing Notes</h2>
+
+        <p class="manuscript-text"><strong>If Saboteur Wins Too Easily:</strong></p>
+        <ul class="manuscript-list">
+            <li>Reduce turn limit to Turn 8 (more pressure on Saboteur)</li>
+            <li>Increase Defender's scan range to 6 hexes</li>
+            <li>Require Saboteur to destroy 4 Reactors instead of 3</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>If Defender Wins Too Easily:</strong></p>
+        <ul class="manuscript-list">
+            <li>Increase turn limit to Turn 12 (more time for Saboteur)</li>
+            <li>Reduce Defender's scan cost to 3 SP</li>
+            <li>Allow Saboteur to plant explosives for 2 SP instead of 3 SP</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Variants</h2>
+
+        <h3>Variant: Co-Op Mode (Solo Saboteur vs AI Defender)</h3>
+
+        <p class="manuscript-text">The Defender follows a simple AI patrol pattern:</p>
+        <ol class="manuscript-list">
+            <li><strong>Turn 1-2:</strong> Move to Reactor 1 (top-left), scan 5-hex radius</li>
+            <li><strong>Turn 3-4:</strong> Move to Reactor 2 (top-right), scan 5-hex radius</li>
+            <li><strong>Turn 5-6:</strong> Move to Reactor 3 (center), scan 5-hex radius</li>
+            <li><strong>Turn 7-8:</strong> Move to Reactor 4 (bottom-left), scan 5-hex radius</li>
+            <li><strong>Turn 9-10:</strong> Move to Reactor 5 (bottom-right), scan 5-hex radius</li>
+            <li>If Saboteur is Revealed, AI moves toward Saboteur and attacks</li>
+        </ol>
+
+        <p class="manuscript-text"><strong>Solo Victory:</strong> Destroy 3 Reactors without getting caught by AI patrols</p>
+
+        <h3>Variant: Reversed Roles</h3>
+        <ul class="manuscript-list">
+            <li>The <strong>Defender</strong> starts hidden and must survive 10 turns without being found</li>
+            <li>The <strong>Saboteur</strong> patrols and scans to find the Defender</li>
+            <li>Tests the opposite skill set (Saboteur hunts, Defender hides)</li>
+        </ul>
+
+        <h3>Variant: Time Bomb</h3>
+        <ul class="manuscript-list">
+            <li>The Saboteur can only detonate explosives on <strong>Turn 7</strong> (exactly)</li>
+            <li>Must plant all explosives by Turn 6, then detonate on Turn 7</li>
+            <li>Creates predictable timing, increases tension</li>
+        </ul>
+
+        <h3>Variant: Multiple Saboteurs</h3>
+        <ul class="manuscript-list">
+            <li>2 Saboteurs vs 1 Defender (2v1 asymmetric)</li>
+            <li>Both Saboteurs start hidden separately</li>
+            <li>Defender must catch both before Turn 10</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Recommended Factions</h2>
+
+        <h3>Good Saboteur Choices</h3>
+        <ul class="manuscript-list">
+            <li><strong>Elven Verdant Covenant:</strong> High mobility, can plant and escape quickly</li>
+            <li><strong>The Ossuarium:</strong> Lifesteal survives shockwave damage</li>
+            <li><strong>Church of Absolution:</strong> Burst damage if caught (can fight way out)</li>
+        </ul>
+
+        <h3>Good Defender Choices</h3>
+        <ul class="manuscript-list">
+            <li><strong>Dwarven Forge-Guilds:</strong> Tanky, can patrol aggressively</li>
+            <li><strong>Church of Absolution:</strong> High damage stops Saboteur before escape</li>
+            <li><strong>Elven Verdant Covenant:</strong> Mobile, can patrol multiple areas quickly</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Design Notes</h2>
+
+        <p class="manuscript-text">
+            This scenario introduces <strong>hidden information</strong> and <strong>bluffing</strong>. The Saboteur player must think like a stealth game protagonist, while the Defender plays a tense game of cat-and-mouse.
+        </p>
+
+        <p class="manuscript-text">
+            The <strong>Scan action</strong> is expensive but necessary. Defenders must balance aggression (chasing the Saboteur) with information-gathering (scanning for hidden threats).
+        </p>
+
+        <p class="manuscript-text">
+            The <strong>turn limit</strong> creates urgency. Saboteurs can't turtle forever—they must take risks to plant explosives and escape.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Lesson:</strong> Information is a resource. Sometimes what you DON'T know is more dangerous than what you DO know.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div style="text-align: center; margin: 2rem 0; color: var(--blood-red);">
+            <p><em>"Move in shadow. Strike unseen. Escape before they know you were there."</em></p>
+        </div>
+
+    </div>
+</body>
+</html>

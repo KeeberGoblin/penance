@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King of the Hill - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="manuscript-page">
+        <div class="illuminated-header">
+            <span class="drop-cap">K</span>
+            <h1 class="title">ing of the Hill</h1>
+            <p class="subtitle">"Stand on the Spire. Claim its power. Survive its curse."</p>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Scenario Overview</h2>
+
+        <table class="manuscript-table">
+            <tr>
+                <th>Scenario Type</th>
+                <td>Control Point Battle</td>
+            </tr>
+            <tr>
+                <th>Players</th>
+                <td>2-4 (Free-for-all or 2v2)</td>
+            </tr>
+            <tr>
+                <th>Map Size</th>
+                <td>14×14 hex grid</td>
+            </tr>
+            <tr>
+                <th>Estimated Playtime</th>
+                <td>75-90 minutes</td>
+            </tr>
+            <tr>
+                <th>Difficulty</th>
+                <td>⭐⭐⭐ Advanced</td>
+            </tr>
+            <tr>
+                <th>Victory Condition</th>
+                <td>Hold the Central Spire for 3 consecutive turns OR eliminate all opponents</td>
+            </tr>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Scenario Description</h2>
+
+        <p class="manuscript-text">
+            A massive Soulstone Spire erupts from the ground, radiating unstable energy. Factions converge to claim it. Standing on the Spire grants immense power but also corrupts the pilot. Hold it too long, and you might not survive your own victory.
+        </p>
+
+        <p class="manuscript-text">
+            This scenario teaches <strong>area control</strong>, <strong>risk/reward decisions</strong>, managing debuffs, multi-player tactics, and king-making dynamics. In free-for-all games, politics matter as much as combat skill.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Map: The Soulstone Spire</h2>
+
+        <div style="background: var(--parchment-dark); padding: 1rem; border: 2px solid var(--accent); margin: 1rem 0; font-family: 'Courier New', monospace; overflow-x: auto;">
+<pre style="margin: 0; font-size: 0.85em;">
+[  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ]
+[  ][R ][R ][  ][  ][  ][  ][  ][  ][  ][  ][R ][R ][  ]
+[  ][R ][W ][W ][  ][  ][  ][  ][  ][  ][W ][W ][R ][  ]
+[  ][  ][W ][E1][E1][  ][  ][  ][  ][E1][E1][W ][  ][  ]
+[  ][  ][  ][E1][E2][E2][  ][  ][E2][E2][E1][  ][  ][  ]
+[  ][  ][  ][  ][E2][SP][SP][SP][SP][E2][  ][  ][  ][  ]
+[  ][  ][  ][  ][  ][SP][SP][SP][SP][  ][  ][  ][  ][  ]
+[  ][  ][  ][  ][  ][SP][SP][SP][SP][  ][  ][  ][  ][  ]
+[  ][  ][  ][  ][E2][SP][SP][SP][SP][E2][  ][  ][  ][  ]
+[  ][  ][  ][E1][E2][E2][  ][  ][E2][E2][E1][  ][  ][  ]
+[  ][  ][W ][E1][E1][  ][  ][  ][  ][E1][E1][W ][  ][  ]
+[  ][R ][W ][W ][  ][  ][  ][  ][  ][  ][W ][W ][R ][  ]
+[  ][R ][R ][  ][  ][  ][  ][  ][  ][  ][  ][R ][R ][  ]
+[  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ]
+</pre>
+        </div>
+
+        <h3>Terrain Legend</h3>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Terrain Type</th>
+                    <th>Effects</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[R]</td>
+                    <td><strong>Rubble</strong></td>
+                    <td>+1 Defense, difficult terrain (2 SP)</td>
+                </tr>
+                <tr>
+                    <td>[W]</td>
+                    <td><strong>Water/Mud</strong></td>
+                    <td>Difficult terrain (2 SP), remove 1 Heat at end of turn</td>
+                </tr>
+                <tr>
+                    <td>[E1]</td>
+                    <td><strong>Elevation 1</strong></td>
+                    <td>+1 damage, ignore cover</td>
+                </tr>
+                <tr>
+                    <td>[E2]</td>
+                    <td><strong>Elevation 2</strong></td>
+                    <td>+2 damage, ignore cover, +1 Range</td>
+                </tr>
+                <tr>
+                    <td>[SP]</td>
+                    <td><strong>Soulstone Spire</strong></td>
+                    <td>Special terrain (see below)</td>
+                </tr>
+                <tr>
+                    <td>[  ]</td>
+                    <td><strong>Clear Ground</strong></td>
+                    <td>Standard movement (1 SP per hex)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>The Soulstone Spire (Center 12 Hexes)</h2>
+
+        <h3>Spire Mechanics</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Movement:</strong> Costs <strong>3 SP</strong> to enter a Spire hex (difficult terrain, unstable footing)</li>
+            <li><strong>Control:</strong> A player "controls" the Spire if they have a Casket standing on any Spire hex at the end of their turn</li>
+            <li><strong>Elevation:</strong> Spire hexes count as Elevation 1 for LOS purposes</li>
+            <li><strong>No Defense Bonus:</strong> The Spire provides no defensive bonus (you're exposed at the top)</li>
+        </ul>
+
+        <h3>Spire Bonuses (While Standing on Spire)</h3>
+
+        <p class="manuscript-text">When you start your turn on a Spire hex, gain the following benefits:</p>
+
+        <ol class="manuscript-list">
+            <li><strong>+2 SP</strong> (Soulstone energy empowers your Casket)</li>
+            <li><strong>+1 to all Attack Dice rolls</strong> (raw power boost)</li>
+            <li><strong>Recover 2 HP</strong> at start of turn (draw 2 cards, shuffle into deck)</li>
+        </ol>
+
+        <h3>Spire Corruption (While Standing on Spire)</h3>
+
+        <p class="manuscript-text">At the <strong>end of your turn</strong>, if you're standing on a Spire hex:</p>
+
+        <ol class="manuscript-list">
+            <li><strong>Gain 2 Taint</strong> (Soulstone corruption)</li>
+            <li><strong>Take 1 unavoidable damage</strong> (neural feedback from prolonged exposure)</li>
+            <li><strong>Roll 1d6 Corruption Check</strong> if you have 10+ Taint:
+                <ul>
+                    <li><strong>1-3:</strong> Take 3 additional damage (corrupted systems)</li>
+                    <li><strong>4-5:</strong> Lose 1 SP next turn (motor control failing)</li>
+                    <li><strong>6:</strong> No additional effect (you resist the corruption... for now)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Deployment</h2>
+
+        <h3>2-Player Setup</h3>
+        <ul class="manuscript-list">
+            <li><strong>Player 1:</strong> Deploy within 3 hexes of [1,7] (left side)</li>
+            <li><strong>Player 2:</strong> Deploy within 3 hexes of [13,7] (right side)</li>
+        </ul>
+
+        <h3>3-Player Setup</h3>
+        <ul class="manuscript-list">
+            <li><strong>Player 1:</strong> Deploy within 3 hexes of [1,7] (left side)</li>
+            <li><strong>Player 2:</strong> Deploy within 3 hexes of [13,7] (right side)</li>
+            <li><strong>Player 3:</strong> Deploy within 3 hexes of [7,1] (top)</li>
+        </ul>
+
+        <h3>4-Player Setup (2v2 Teams)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Team 1 Player A:</strong> Deploy within 3 hexes of [1,7] (left)</li>
+            <li><strong>Team 1 Player B:</strong> Deploy within 3 hexes of [7,13] (bottom)</li>
+            <li><strong>Team 2 Player A:</strong> Deploy within 3 hexes of [13,7] (right)</li>
+            <li><strong>Team 2 Player B:</strong> Deploy within 3 hexes of [7,1] (top)</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Victory Conditions</h2>
+
+        <h3>Primary Victory: Control the Spire</h3>
+        <ul class="manuscript-list">
+            <li><strong>Hold the Spire for 3 consecutive turns</strong> (your Casket stands on Spire hex at end of 3 consecutive turns)</li>
+            <li>Turns do not need to be the same hex (can move around Spire)</li>
+            <li>If you leave the Spire or are pushed off, the counter resets</li>
+        </ul>
+
+        <h3>Secondary Victory: Last Casket Standing</h3>
+        <ul class="manuscript-list">
+            <li>Eliminate all other Caskets (reduce them to 0 HP)</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Spire Control Tracker</h2>
+
+        <p class="manuscript-text">Use tokens or dice to track how many turns each player has controlled the Spire:</p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Turn 1</th>
+                    <th>Turn 2</th>
+                    <th>Turn 3</th>
+                    <th>Controlled?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Player 1</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Player 2</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Player 3</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Player 4</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="manuscript-text"><strong>Rule:</strong> If a player ends their turn on the Spire, check the box. If they end their turn OFF the Spire, erase all their checks (reset to 0).</p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Special Rules</h2>
+
+        <h3>Multi-Target Attacks</h3>
+        <ul class="manuscript-list">
+            <li>In 3+ player games, you can attack any player within range</li>
+            <li>Area-of-Effect attacks (if using equipment with Blast) can hit multiple players</li>
+        </ul>
+
+        <h3>King-Making</h3>
+        <ul class="manuscript-list">
+            <li>If you're eliminated, you do NOT lose immediately</li>
+            <li>Your Casket remains on the field as a "wreck" for 1 turn</li>
+            <li>Other players can push your wreck or use it for cover</li>
+            <li>This prevents early eliminations from deciding the game</li>
+        </ul>
+
+        <h3>Sudden Death</h3>
+        <ul class="manuscript-list">
+            <li>If <strong>Turn 10</strong> ends and no one has won, the Spire explodes</li>
+            <li>All Caskets take 10 damage (ignore armor)</li>
+            <li>Survivors fight a deathmatch with no Spire bonuses</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Tactical Considerations</h2>
+
+        <h3>The Dilemma</h3>
+        <ul class="manuscript-list">
+            <li><strong>Stay on Spire:</strong> Gain power, but take corruption damage and Taint</li>
+            <li><strong>Leave Spire:</strong> Lose bonuses, reset control counter, but avoid corruption</li>
+            <li><strong>Harass Leaders:</strong> If someone has 2/3 control, EVERYONE should target them</li>
+        </ul>
+
+        <h3>Faction Synergies</h3>
+
+        <p class="manuscript-text"><strong>Strong on Spire:</strong></p>
+        <ul class="manuscript-list">
+            <li><strong>The Ossuarium:</strong> Lifesteal offsets corruption damage</li>
+            <li><strong>Church of Absolution:</strong> Already uses Taint for martyr mechanics</li>
+            <li><strong>Dwarven Forge-Guilds:</strong> High armor reduces incoming damage</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Weak on Spire:</strong></p>
+        <ul class="manuscript-list">
+            <li><strong>Elven Verdant Covenant:</strong> Fragile, can't tank corruption damage</li>
+            <li>Factions with low Taint resistance</li>
+        </ul>
+
+        <h3>Multi-Player Politics</h3>
+        <ul class="manuscript-list">
+            <li><strong>Focus Fire:</strong> If someone has 2/3 control, team up to knock them off</li>
+            <li><strong>Kingmaker Problem:</strong> If you're losing, you can decide who wins by attacking one player over another</li>
+            <li><strong>Betrayal:</strong> In 2v2, teams can turn on each other once Spire is secured</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Balancing Notes</h2>
+
+        <p class="manuscript-text"><strong>If Games End Too Quickly</strong> (someone wins Turn 5):</p>
+        <ul class="manuscript-list">
+            <li>Increase control requirement to <strong>4 consecutive turns</strong></li>
+            <li>Increase Spire Taint gain to <strong>3 Taint per turn</strong></li>
+        </ul>
+
+        <p class="manuscript-text"><strong>If Games Stalemate</strong> (no one can hold Spire):</p>
+        <ul class="manuscript-list">
+            <li>Reduce control requirement to <strong>2 consecutive turns</strong></li>
+            <li>Reduce Spire corruption damage to <strong>0 damage</strong> (only Taint)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>If Spire is Ignored</strong> (players just fight each other):</p>
+        <ul class="manuscript-list">
+            <li>Increase Spire bonuses to <strong>+3 SP, +2 to Attack Dice</strong></li>
+            <li>Add Spire bonus: <strong>+2 Range on all attacks</strong></li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Variants</h2>
+
+        <h3>Variant: Escalating Power</h3>
+        <ul class="manuscript-list">
+            <li><strong>Turn 1-3:</strong> Spire gives +1 SP, +0 Attack</li>
+            <li><strong>Turn 4-6:</strong> Spire gives +2 SP, +1 Attack</li>
+            <li><strong>Turn 7+:</strong> Spire gives +3 SP, +2 Attack, recover 3 HP per turn</li>
+            <li>Creates escalating tension as Spire gets more valuable</li>
+        </ul>
+
+        <h3>Variant: No Corruption</h3>
+        <ul class="manuscript-list">
+            <li>Remove all Taint and corruption damage</li>
+            <li>Spire only gives bonuses, no drawbacks</li>
+            <li>Makes the scenario more beginner-friendly</li>
+        </ul>
+
+        <h3>Variant: Pulsing Spire</h3>
+        <ul class="manuscript-list">
+            <li>On <strong>even turns</strong> (2, 4, 6, 8), the Spire pulses</li>
+            <li>All Caskets within 3 hexes of Spire take 2 damage</li>
+            <li>All Caskets ON the Spire take 5 damage</li>
+            <li>Creates a rhythm where players rush in on odd turns, retreat on even turns</li>
+        </ul>
+
+        <h3>Variant: Shifting Spire</h3>
+        <ul class="manuscript-list">
+            <li>After someone controls the Spire for 3 turns, the Spire <strong>moves</strong></li>
+            <li>Remove all Spire hexes, place them in a new 12-hex cluster elsewhere on the map</li>
+            <li>Players must race to the new location</li>
+            <li>Requires pre-planned alternate Spire positions</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Recommended Factions</h2>
+
+        <h3>Best for 2-Player</h3>
+        <ul class="manuscript-list">
+            <li>Church vs Ossuarium (high aggression, both can tank Taint)</li>
+            <li>Dwarves vs Elves (tank vs assassin, very different playstyles)</li>
+        </ul>
+
+        <h3>Best for 3-4 Player</h3>
+        <ul class="manuscript-list">
+            <li>Mixed factions (variety creates interesting dynamics)</li>
+            <li>Avoid mirror matches (two Church players will both rush Spire, feels repetitive)</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Design Notes</h2>
+
+        <p class="manuscript-text">
+            This scenario is about <strong>risk management</strong>. The Spire gives you power, but staying too long kills you. Players must decide: "Do I go for the win now, or retreat and heal?" and "Do I attack the leader, or secure my own position?"
+        </p>
+
+        <p class="manuscript-text">
+            In multi-player games, <strong>politics matter</strong>. Teaming up against the leader is often correct, but it's hard to coordinate without explicit alliances.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Lesson:</strong> Power has a price. Victory requires balancing greed with survival.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div style="text-align: center; margin: 2rem 0; color: var(--blood-red);">
+            <p><em>"Stand on the Spire. Claim its power. Survive its curse. If you can."</em></p>
+        </div>
+
+    </div>
+</body>
+</html>

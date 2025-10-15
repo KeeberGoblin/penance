@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escort Duty - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="manuscript-page">
+        <div class="illuminated-header">
+            <span class="drop-cap">E</span>
+            <h1 class="title">scort Duty</h1>
+            <p class="subtitle">"Protect the convoy. Slow it down. The road is a battlefield."</p>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Scenario Overview</h2>
+
+        <table class="manuscript-table">
+            <tr>
+                <th>Scenario Type</th>
+                <td>Asymmetric Objective (Moving Target)</td>
+            </tr>
+            <tr>
+                <th>Players</th>
+                <td>1 vs 1 (Defender vs Attacker)</td>
+            </tr>
+            <tr>
+                <th>Map Size</th>
+                <td>16×10 hex grid</td>
+            </tr>
+            <tr>
+                <th>Estimated Playtime</th>
+                <td>60-75 minutes</td>
+            </tr>
+            <tr>
+                <th>Difficulty</th>
+                <td>⭐⭐ Intermediate</td>
+            </tr>
+            <tr>
+                <th>Victory Condition</th>
+                <td><strong>Defender:</strong> Get the Caravan to the exit by Turn 12<br>
+                <strong>Attacker:</strong> Destroy the Caravan (reduce to 0 HP) OR block it for 12 turns</td>
+            </tr>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Scenario Description</h2>
+
+        <p class="manuscript-text">
+            A slow-moving Supply Caravan carries critical resources across the battlefield. The Defender must escort it safely to the exit while fending off the Attacker. The Caravan moves automatically each turn but has no weapons or defenses—it's a sitting duck.
+        </p>
+
+        <p class="manuscript-text">
+            This scenario teaches <strong>asymmetric objectives</strong> and <strong>tempo management</strong>. The Defender must balance aggression (stopping the Attacker) with protection (keeping the Caravan safe). The Attacker faces a dilemma: destroy the Caravan quickly, or tie up the Defender in combat?
+        </p>
+
+        <p class="manuscript-text">
+            The <strong>turn limit</strong> creates pressure. Every turn the Attacker delays is a turn closer to the Defender's victory.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Map: The Supply Road</h2>
+
+        <div style="background: var(--parchment-dark); padding: 1rem; border: 2px solid var(--accent); margin: 1rem 0; font-family: 'Courier New', monospace; overflow-x: auto;">
+<pre style="margin: 0; font-size: 0.85em;">
+[  ][  ][F ][  ][  ][  ][  ][  ][  ][  ][  ][  ][F ][  ][  ][  ]
+[  ][F ][F ][R ][  ][  ][  ][  ][  ][  ][  ][R ][F ][F ][  ][  ]
+[E1][E1][R ][  ][==][==][==][==][==][==][==][==][  ][R ][E1][E1]
+[E2][E1][  ][  ][==][  ][  ][  ][  ][  ][  ][==][  ][  ][E1][E2]
+[E2][E1][  ][  ][==][  ][  ][  ][  ][  ][  ][==][  ][  ][E1][E2]
+[E2][E1][  ][  ][==][  ][  ][  ][  ][  ][  ][==][  ][  ][E1][E2]
+[E1][E1][R ][  ][==][==][==][==][==][==][==][==][  ][R ][E1][E1]
+[  ][F ][F ][R ][  ][  ][  ][  ][  ][  ][  ][R ][F ][F ][  ][  ]
+[  ][  ][F ][  ][  ][  ][  ][  ][  ][  ][  ][  ][F ][  ][  ][  ]
+[  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ]
+</pre>
+        </div>
+
+        <h3>Terrain Legend</h3>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Terrain Type</th>
+                    <th>Effects</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[==]</td>
+                    <td><strong>Road</strong></td>
+                    <td>Moving horizontally along road costs <strong>1 SP for 2 hexes</strong> (fast travel). Provides <strong>no defensive bonus</strong>.</td>
+                </tr>
+                <tr>
+                    <td>[R]</td>
+                    <td><strong>Rubble</strong></td>
+                    <td>+1 Defense, difficult terrain (2 SP per hex)</td>
+                </tr>
+                <tr>
+                    <td>[F]</td>
+                    <td><strong>Forest</strong></td>
+                    <td>+1 Defense, blocks LOS if 2+ consecutive forest hexes</td>
+                </tr>
+                <tr>
+                    <td>[E1]/[E2]</td>
+                    <td><strong>Elevation</strong></td>
+                    <td>E1: +1 damage, ignore cover. E2: +2 damage, +1 Range</td>
+                </tr>
+                <tr>
+                    <td>[  ]</td>
+                    <td><strong>Clear Ground</strong></td>
+                    <td>Standard movement (1 SP per hex)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>The Supply Caravan</h2>
+
+        <table class="manuscript-table">
+            <tr>
+                <th>Stat</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>HP</td>
+                <td><strong>40</strong></td>
+            </tr>
+            <tr>
+                <td>Armor</td>
+                <td><strong>2</strong> (heavy plating)</td>
+            </tr>
+            <tr>
+                <td>Movement</td>
+                <td><strong>2 hexes per turn</strong> (automatic, moves at end of Defender's turn)</td>
+            </tr>
+            <tr>
+                <td>LOS</td>
+                <td>Counts as a large obstacle (blocks LOS for 1 hex)</td>
+            </tr>
+            <tr>
+                <td>Attacks</td>
+                <td><strong>None</strong> (cannot defend itself)</td>
+            </tr>
+        </table>
+
+        <h3>Caravan Movement Rules</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Automatic Movement:</strong> At the end of the Defender's turn, the Caravan moves 2 hexes along the road toward the exit.</li>
+            <li><strong>Road-Only:</strong> The Caravan MUST follow the road (cannot move off-road).</li>
+            <li><strong>Cannot Be Pushed:</strong> Push/Pull effects do not move the Caravan.</li>
+            <li><strong>Blocking:</strong> If the Attacker stands on the Road directly in front of the Caravan, the Caravan stops moving (it cannot push through enemies).</li>
+            <li><strong>Exit Point:</strong> If the Caravan reaches hex [15,5] (right side of map), the Defender wins immediately.</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Deployment</h2>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Starting Position</th>
+                    <th>Restrictions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Supply Caravan</strong></td>
+                    <td>Hex [1,5] (left side, on Road)</td>
+                    <td>Faces right (toward exit)</td>
+                </tr>
+                <tr>
+                    <td><strong>Defender</strong></td>
+                    <td>Within 3 hexes of Caravan</td>
+                    <td>Can deploy on road or adjacent terrain</td>
+                </tr>
+                <tr>
+                    <td><strong>Attacker</strong></td>
+                    <td>Within 8 hexes of exit [15,5]</td>
+                    <td>Must start at least 6 hexes from Caravan</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Special Rules</h2>
+
+        <h3>Road Movement</h3>
+        <ul class="manuscript-list">
+            <li>Moving along Road hexes (horizontally) costs <strong>1 SP for 2 hexes</strong> (fast travel)</li>
+            <li>Moving OFF the road costs normal SP (1 SP per hex)</li>
+            <li>Road provides <strong>no defensive bonus</strong> (you're exposed)</li>
+        </ul>
+
+        <h3>Caravan Combat</h3>
+        <ul class="manuscript-list">
+            <li>The Caravan cannot attack or use cards</li>
+            <li>The Caravan cannot be moved by Push/Pull effects</li>
+            <li>The Caravan ignores Heat, Taint, and Component Damage</li>
+            <li>When the Caravan takes damage, mark it on a separate HP track (starts at 40)</li>
+        </ul>
+
+        <h3>Blocking the Road</h3>
+        <ul class="manuscript-list">
+            <li>If the Attacker stands on the Road directly in front of the Caravan, it stops moving</li>
+            <li>The Defender can Push the Attacker off the road to unblock the Caravan</li>
+            <li>Blocking the Caravan generates <strong>1 Heat per turn</strong> (engines overheat from holding position)</li>
+        </ul>
+
+        <h3>Turn Limit</h3>
+        <ul class="manuscript-list">
+            <li>The scenario ends after <strong>Turn 12</strong> (about 12-15 minutes of real time)</li>
+            <li>If the Caravan has not exited by Turn 12, the Attacker wins</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Tactical Considerations</h2>
+
+        <h3>Defender Strategy</h3>
+        <ul class="manuscript-list">
+            <li><strong>Protect the Caravan:</strong> Stay close and intercept the Attacker</li>
+            <li><strong>Clear the Road:</strong> Push the Attacker off the road if they're blocking</li>
+            <li><strong>Speed Matters:</strong> The faster the Caravan moves, the less time the Attacker has</li>
+            <li><strong>Positioning:</strong> Use elevation to threaten the Attacker from range</li>
+        </ul>
+
+        <h3>Attacker Strategy</h3>
+        <ul class="manuscript-list">
+            <li><strong>Destroy the Caravan:</strong> Focus fire on the vulnerable Caravan</li>
+            <li><strong>Block and Delay:</strong> Stand on the Road to stop the Caravan's movement</li>
+            <li><strong>Ignore the Defender:</strong> Sometimes it's better to rush past and hit the Caravan directly</li>
+            <li><strong>Use Terrain:</strong> Elevation and rubble give you defensive bonuses while attacking</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Balancing Notes</h2>
+
+        <p class="manuscript-text">
+            <strong>If Attacker Wins Too Easily:</strong>
+        </p>
+        <ul class="manuscript-list">
+            <li>Increase Caravan HP to 50</li>
+            <li>Reduce turn limit to Turn 10</li>
+        </ul>
+
+        <p class="manuscript-text">
+            <strong>If Defender Wins Too Easily:</strong>
+        </p>
+        <ul class="manuscript-list">
+            <li>Reduce Caravan HP to 30</li>
+            <li>Increase turn limit to Turn 15</li>
+            <li>Allow Attacker to deploy closer (within 5 hexes of exit)</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Variants</h2>
+
+        <h3>Variant: Reinforcements</h3>
+        <p class="manuscript-text">
+            On Turn 6, a second Attacker Casket (controlled by same player) enters from hex [13,9] (bottom right). Defender must split attention between two threats.
+        </p>
+
+        <h3>Variant: Hazardous Cargo</h3>
+        <p class="manuscript-text">
+            When the Caravan takes 20+ damage, it drops Unstable Soulstones. Place 3 Soulstone tokens on the road where the Caravan was hit. Any Casket that moves through those hexes takes 3 damage (explosion).
+        </p>
+
+        <h3>Variant: No Turn Limit</h3>
+        <p class="manuscript-text">
+            Remove the Turn 12 limit. Attacker must destroy the Caravan OR eliminate the Defender to win. Makes the scenario less tense but more forgiving for new players.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Recommended Factions</h2>
+
+        <h3>Good Defender Choices</h3>
+        <ul class="manuscript-list">
+            <li><strong>Dwarven Forge-Guilds:</strong> Tanky, can shield the Caravan with high armor</li>
+            <li><strong>Church of Absolution:</strong> Aggressive, can threaten the Attacker into retreating</li>
+            <li><strong>Elven Verdant Covenant:</strong> Mobile, can reposition quickly to intercept</li>
+        </ul>
+
+        <h3>Good Attacker Choices</h3>
+        <ul class="manuscript-list">
+            <li><strong>The Ossuarium:</strong> Lifesteal and attrition, can outlast the Defender</li>
+            <li><strong>Church of Absolution:</strong> Burst damage, can kill the Caravan quickly</li>
+            <li><strong>Dwarven Forge-Guilds:</strong> Armor-piercing, ignores Caravan's armor</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Design Notes</h2>
+
+        <p class="manuscript-text">
+            This scenario tests <strong>asymmetric objectives</strong> and <strong>tempo management</strong>. The Defender must balance aggression (stopping the Attacker) with protection (keeping the Caravan safe). The Attacker must decide: "Do I destroy the Caravan, or eliminate the Defender?"
+        </p>
+
+        <p class="manuscript-text">
+            The <strong>turn limit</strong> creates urgency. The Defender wants to move fast; the Attacker wants to slow everything down.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Lesson:</strong> Not every scenario is "kill the enemy." Sometimes survival is victory.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div style="text-align: center; margin: 2rem 0; color: var(--blood-red);">
+            <p><em>"The road is long. The enemy is relentless. Protect what matters."</em></p>
+        </div>
+
+    </div>
+</body>
+</html>
