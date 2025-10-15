@@ -6,23 +6,37 @@
     <title>Penance: Manuscript of Caskets and Bound Souls</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
-        /* Iframe with full-height matching */
-        .content-frame {
-            width: 100%;
+        /* Ensure full-height layout chain */
+        html, body {
             height: 100%;
-            border: none;
-            background: transparent;
+            margin: 0;
+            overflow: hidden;
         }
 
-        /* Make content container fill available height */
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* Make content area fill available space */
         .content {
             padding: 0;
             max-width: none;
             background: transparent;
             box-shadow: none;
             height: 100%;
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        /* Iframe with full-height matching */
+        .content-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+            display: block;
         }
 
         .content::before {
