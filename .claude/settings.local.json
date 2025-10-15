@@ -30,7 +30,9 @@
       "Bash(do echo \"===Processing faction-$faction.html===\")",
       "Bash(git stash:*)",
       "Bash(mv:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(if [ -f \"$file\" ])",
+      "Bash(else)"
     ],
     "deny": [],
     "ask": []
