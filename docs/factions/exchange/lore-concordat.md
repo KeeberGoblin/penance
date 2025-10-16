@@ -163,5 +163,157 @@
 - **Church**: Needs Credits to pay for crusades (mercenary soldiers expensive)
 - **Dwarves**: Sells Soulstones to Exchange (primary income source)
 - **Nomads**: Entire economy is Credits (no alternative currency)
-- **Ossuarium**: Even undead use Credits (pay for
-
+- **Ossuarium**: Even undead use Credits (pay for Casket parts, necromantic materials)
+
+**Result**: Exchange has de facto control over all factions (economic leverage > military power).
+
+---
+
+### Internal Tensions
+
+**Year 200-437: Orthodox vs. Rational Power Struggle**:
+- Orthodox: Moral authority declining (younger generations secular)
+- Rational: Economic power increasing (profits > faith)
+- **Flashpoints**:
+  - Year 250: Orthodox try to ban mercenary contracts (Rational refuse, deadlock)
+  - Year 300: Rational propose removing sanctification (Orthodox threaten to quit, deadlock)
+  - Year 350: Orthodox reduce usury cap to 15% (Rational furious, comply reluctantly)
+  - Year 400: Rational gain majority on Board (6/10 votes, Orthodox losing control)
+
+**Current State (Year 437)**:
+- Rational House dominant (Director Voss controls day-to-day operations)
+- Orthodox declining (Brother Balthus fighting to maintain relevance)
+- **Treaty expiration looming (Year 440)**: Renegotiation will determine future
+
+---
+
+## Year 440: Treaty Expiration
+
+### The Renegotiation
+
+**Year 440, Third Month**: Original Concordat expires (367-year term ends)
+
+**Orthodox Demands**:
+1. Increase sanctification requirements (slow currency issuance, maintain Orthodox leverage)
+2. Reduce usury cap to 10% (more merciful lending)
+3. Ban mercenary contracts (too sinful)
+4. Increase Orthodox Board seats (6/10 instead of 5/10)
+
+**Rational House Counter-Demands**:
+1. Remove sanctification requirement (speed currency issuance)
+2. Remove usury cap (allow free-market interest rates)
+3. Full legalization of mercenary contracts (no moral oversight)
+4. Reduce Orthodox Board seats (3/10 instead of 5/10)
+
+**Predictions**:
+- **Deadlock likely** (neither side willing to compromise)
+- **Possible outcomes**:
+  - **Compromise**: Treaty renewed with minor adjustments (status quo continues)
+  - **Schism**: Exchange splits into Orthodox Credits vs. Rational Credits (economic chaos)
+  - **Takeover**: One side forces other out (winner takes full control)
+
+---
+
+## Player Campaign Integration
+
+### Early Campaign (Year 437-438)
+
+**Quest**: "The First Exchange"
+- Players need Credits for equipment/supplies
+- Visit Exchange branch, meet Orthodox and Rational representatives
+- Learn about factional split (Orthodox priest blessing Soulstones, Rational banker rolling eyes)
+
+---
+
+### Mid Campaign (Year 438-439)
+
+**Quest**: "Contract Enforcement"
+- Exchange hires players to hunt contract breaker
+- Orthodox representative wants mercy (capture alive)
+- Rational representative wants death (send message)
+- **Choice**: Mercy (Orthodox favor) OR execution (Rational favor)
+
+---
+
+### Late Campaign (Year 440)
+
+**Quest**: "The Concordat's End"
+- Treaty expiration imminent
+- Orthodox and Rational deadlocked in negotiation
+- **Player role**: Mediate compromise OR pick a side
+- **Outcomes**:
+  - **Mediation success**: Treaty renewed, Exchange survives united
+  - **Orthodox victory**: Moral authority restored, usury cap enforced, mercenary contracts banned
+  - **Rational victory**: Sanctification removed, free-market economics, Orthodox relegated to ceremonial role
+  - **Schism**: Exchange splits, economic chaos, two competing currencies
+
+---
+
+## The Great Ledger (Orthodox Holy Text)
+
+### What Is It?
+
+**Orthodox Belief**:
+- Divine book written by God (not physical, metaphysical)
+- Records all transactions, debts, contracts across all time
+- Every Credit spent = entry in Ledger
+- At death, souls judged by Ledger balance (debts unpaid = damnation)
+
+**Rational House View**:
+- Metaphor (not literal book)
+- Useful fiction (keeps borrowers honest, fear of divine punishment)
+- No evidence of existence (no one's ever seen it)
+
+---
+
+### Ledger Mechanics (Orthodox Rituals)
+
+**Balance Day** (annual Orthodox holiday):
+- Orthodox priests "audit" The Great Ledger (ritual, not literal)
+- Publicly announce total Credits in circulation
+- Forgive smallest debts (bottom 10% of debtors pardoned)
+- **Purpose**: Maintain moral legitimacy, show mercy
+
+**Ledger Sight** (Orthodox rare ability):
+- Some Orthodox priests claim to "see" The Great Ledger
+- Can allegedly recall any transaction ever made
+- **Skeptics** (Rational House): "Photographic memory, not divine vision"
+- **Believers** (Orthodox): "Gift from God, prove faith"
+
+**Brother Balthus claims Ledger Sight** (unverified, but his memory is eerily perfect).
+
+---
+
+## Economic Vocabulary (Post-Concordat)
+
+**Terms Invented by Exchange**:
+
+- **Credit**: Unit of currency (1 Credit = 0.1g Soulstone dust)
+- **Sanctification**: Blessing of Soulstones by Orthodox priests
+- **Clearinghouse**: Exchange branch (place to clear debts/credits)
+- **Contract Enforcement**: Hunting/killing contract breakers
+- **Usury**: Excessive interest (Orthodox definition: >20%)
+- **Ledger Balance**: Total debts vs. credits (financial health)
+- **The Great Ledger**: Divine record of all transactions (Orthodox theology)
+
+---
+
+## Legacy of the Concordat
+
+**What Year 73 Changed**:
+1. **Unified economy**: All factions can trade (no more currency wars)
+2. **Coordinated defense**: Factions can pay mercenaries in trusted currency (Void defenses improved)
+3. **Economic peace**: No faction wars over money (too economically interdependent)
+4. **Exchange dominance**: Created most powerful post-Sundering institution (rivals Church in influence)
+
+**What Didn't Change**:
+1. **Factional hatred**: Factions still distrust each other (economics ≠ friendship)
+2. **War**: Factions still fight (but pay for wars in Credits instead of barter)
+3. **Poverty**: Unified currency didn't end inequality (rich still rich, poor still poor)
+
+**Quote from Brother Matthias (Year 73)**:
+> "The Concordat won't save us. It will only postpone our collapse. But postponement is all we have."
+
+---
+
+**[← Previous: Ledger Orthodox vs Rational](ledger-orthodox-vs-rational.md)** | **[Back to Main Faction](deck-equipment-system.md)**
