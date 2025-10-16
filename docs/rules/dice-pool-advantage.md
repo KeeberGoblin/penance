@@ -47,8 +47,8 @@ This system replaces static to-hit modifiers with a **dice pool mechanic** inspi
 **Example**:
 ```
 You're attacking from higher ground (Advantage)
-Roll 3 Attack Dice: ⚔️ (3) + 💀 (5) + ⚙️ (0)
-Discard lowest (⚙️): Keep ⚔️ (3) + 💀 (5) = 8 total
+Roll 3 Attack Dice: (3) + (5) + (0)
+Discard lowest (): Keep (3) + (5) = 8 total
 Result: Strong Hit! (+1 damage)
 ```
 
@@ -73,9 +73,9 @@ Result: Strong Hit! (+1 damage)
 **Example**:
 ```
 You're shooting through heavy cover (Disadvantage)
-Roll 3 Attack Dice: ⚔️ (3) + 💀 (5) + ⚔️⚔️ (4)
-Discard highest (💀): Keep ⚔️ (3) + ⚔️⚔️ (4) = 7 total
-Result: Strong Hit (but you discarded the 💀, missed crit chance)
+Roll 3 Attack Dice: (3) + (5) + (4)
+Discard highest (): Keep (3) + (4) = 7 total
+Result: Strong Hit (but you discarded the , missed crit chance)
 ```
 
 ---
@@ -93,15 +93,15 @@ Result: Strong Hit (but you discarded the 💀, missed crit chance)
 - Aiming (Advantage) + Target has 5+ Momentum (Advantage) = Critical Advantage
 
 **Why This Matters**:
-- Dramatically increases chance of double 💀 (EXECUTION: auto-destroy component)
+- Dramatically increases chance of double (EXECUTION: auto-destroy component)
 - Rewards perfect tactical positioning
 - Creates "alpha strike" moments
 
 **Example**:
 ```
 You're attacking rear (Advantage) from higher ground (Advantage) = Critical Advantage
-Roll 4 Attack Dice: ⚔️ (3) + 💀 (5) + 💀 (5) + ⚔️⚔️ (4)
-Discard 2 lowest (⚔️, ⚔️⚔️): Keep 💀 (5) + 💀 (5) = 10 total
+Roll 4 Attack Dice: (3) + (5) + (5) + (4)
+Discard 2 lowest (, ): Keep (5) + (5) = 10 total
 Result: EXECUTION! Auto-destroy component, bypass all Defense!
 ```
 
@@ -127,8 +127,8 @@ Result: EXECUTION! Auto-destroy component, bypass all Defense!
 **Example**:
 ```
 You're shooting through heavy cover (Disadvantage) at long range (Disadvantage) = Critical Disadvantage
-Roll 4 Attack Dice: ⚔️ (3) + 💀 (5) + ⚙️ (0) + 🛡️ (1)
-Discard 2 highest (⚔️, 💀): Keep ⚙️ (0) + 🛡️ (1) = 1 total
+Roll 4 Attack Dice: (3) + (5) + (0) + (1)
+Discard 2 highest (, ): Keep (0) + (1) = 1 total
 Result: CATASTROPHIC FAILURE! Weapon jams, +2 Heat, next attack -2 damage
 ```
 
@@ -167,7 +167,7 @@ Roll 3 Attack Dice, take highest 2
 **Advantage (3d6, take 2 highest)**: ~59% (+17% improvement)
 **Disadvantage (3d6, take 2 lowest)**: ~26% (-16% penalty)
 
-### Chance of EXECUTION (Double 💀, value 10):
+### Chance of EXECUTION (Double , value 10):
 
 **Straight Roll**: ~2.8%
 **Advantage**: ~5.1% (+2.3% improvement, nearly DOUBLE)
@@ -298,8 +298,8 @@ Chance to hit 5+: ~15% (worse than old system, but more dramatic)
 - Reduce Disadvantage impact (3d6 take highest 1 and lowest 1, add together)
 
 ### If EXECUTIONS Happen Too Often:
-- Change EXECUTION to require triple 💀 (not double)
-- Or: EXECUTION requires 10+ AND all dice show 💀 or ⚔️
+- Change EXECUTION to require triple (not double)
+- Or: EXECUTION requires 10+ AND all dice show or 
 
 ### If Dice Pool Feels Too Swingy:
 - Revert to static modifiers for competitive play
@@ -321,7 +321,7 @@ Base: 5+
 Flanking: -1 (easier, need 4+)
 Heavy cover: +2 (harder, need 6+)
 Net: Need 6+ to hit
-Roll 2d6: ⚔️ (3) + ⚔️⚔️ (4) = 7 total
+Roll 2d6: (3) + (4) = 7 total
 Result: Hit!
 ```
 
@@ -332,7 +332,7 @@ Flanking: Advantage (3d6, take 2 highest)
 Heavy cover: Disadvantage (3d6, take 2 lowest)
 Net: 1 Advantage - 1 Disadvantage = Cancel out (straight roll, 2d6)
 
-Roll 2d6: ⚔️ (3) + ⚔️⚔️ (4) = 7 total
+Roll 2d6: (3) + (4) = 7 total
 Result: Hit!
 ```
 
@@ -349,7 +349,7 @@ Result: Hit!
 1. **Feels Better**: Rolling more dice is viscerally fun
 2. **More Dramatic**: Higher variance at extremes (perfect positioning = god rolls)
 3. **Intuitive**: "I have advantage" is easier to understand than "need 7+ instead of 5+"
-4. **Compatible**: Works with existing Attack Dice symbols (⚔️ 💀 ⚙️ etc.)
+4. **Compatible**: Works with existing Attack Dice symbols ( etc.)
 5. **Rewards Skill**: Perfect setups (Critical Advantage) = triple EXECUTION chance
 
 ### Trench Crusade Inspiration

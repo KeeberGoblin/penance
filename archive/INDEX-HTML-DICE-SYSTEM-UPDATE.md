@@ -76,18 +76,18 @@ Defense Dice create brutal variance. Every attack is a risk for attacker and def
 ##### B. Dice Type Grid (3 Cards)
 
 **Attack Dice (2d6)**:
-- Symbol breakdown (⚔️ STRIKE, 💀 DEATH BLOW, ⚙️ JAM, etc.)
+- Symbol breakdown ( STRIKE, DEATH BLOW, JAM, etc.)
 - Hit results table (5-6 = Hit, 9 = Crit, 10 = Component destroyed)
 - Border: Blood-red
 
 **Defense Dice (1d6 per damage)**:
-- Symbol breakdown (🛡️ SHIELD, 💀 CRITICAL, 🔥 HEAT, etc.)
+- Symbol breakdown ( SHIELD, CRITICAL, HEAT, etc.)
 - Statistics: 33% block rate, 17% critical escalation
 - Border: Accent (gold)
 
 **Suffering Dice (1d6)**:
 - Church-specific mechanics
-- Symbols (🛡️ DIVINE MERCY, 💀 MARTYRDOM, ⚙️ ABSOLUTION)
+- Symbols ( DIVINE MERCY, MARTYRDOM, ABSOLUTION)
 - Border: White
 
 ##### C. To-Hit Modifiers Table
@@ -277,7 +277,7 @@ miss compensation).
 4. **Smooth Scrolling**: Test `#dice-system` anchor from navigation
 
 ### Content Validation
-1. **Symbol Rendering**: Verify emojis (⚔️🛡️💀🩸🔥⚙️) display correctly across browsers
+1. **Symbol Rendering**: Verify emojis () display correctly across browsers
 2. **Link Functionality**: Test all 3 new links (nav, footer, CTA)
 3. **Download Attribute**: Verify `dice-reference.md` download behavior
 

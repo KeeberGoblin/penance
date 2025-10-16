@@ -3,7 +3,7 @@
 **Type**: Asymmetric Objective
 **Players**: 2 (Attacker vs Defender)
 **Estimated Playtime**: 60-75 minutes
-**Difficulty**: ⭐⭐⭐ Advanced
+**Difficulty**: Advanced
 **Victory Condition**:
 - **Defender**: Escort the Supply Caravan to the exit
 - **Attacker**: Destroy the Supply Caravan OR eliminate the Defender
@@ -21,16 +21,16 @@ A vital supply caravan must reach the settlement before nightfall. The Defender 
 ## MAP: THE TRADE ROAD (16×10 Hexes)
 
 ```
-[F ][F ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][F ][F ]
-[F ][R ][  ][  ][W ][W ][  ][  ][  ][  ][W ][W ][  ][  ][R ][F ]
-[  ][  ][==][==][  ][  ][==][==][==][==][  ][  ][==][==][  ][  ]
-[  ][R ][==][R ][  ][E1][==][  ][  ][==][E1][  ][R ][==][R ][  ]
-[W ][  ][==][  ][  ][  ][==][  ][  ][==][  ][  ][  ][==][  ][W ]
-[W ][  ][==][  ][  ][  ][==][  ][  ][==][  ][  ][  ][==][  ][W ]
-[  ][R ][==][R ][  ][E1][==][  ][  ][==][E1][  ][R ][==][R ][  ]
-[  ][  ][==][==][  ][  ][==][==][==][==][  ][  ][==][==][  ][  ]
-[F ][R ][  ][  ][W ][W ][  ][  ][  ][  ][W ][W ][  ][  ][R ][F ]
-[F ][F ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][F ][F ]
+[F ][F ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][F ][F ]
+[F ][R ][ ][ ][W ][W ][ ][ ][ ][ ][W ][W ][ ][ ][R ][F ]
+[ ][ ][==][==][ ][ ][==][==][==][==][ ][ ][==][==][ ][ ]
+[ ][R ][==][R ][ ][E1][==][ ][ ][==][E1][ ][R ][==][R ][ ]
+[W ][ ][==][ ][ ][ ][==][ ][ ][==][ ][ ][ ][==][ ][W ]
+[W ][ ][==][ ][ ][ ][==][ ][ ][==][ ][ ][ ][==][ ][W ]
+[ ][R ][==][R ][ ][E1][==][ ][ ][==][E1][ ][R ][==][R ][ ]
+[ ][ ][==][==][ ][ ][==][==][==][==][ ][ ][==][==][ ][ ]
+[F ][R ][ ][ ][W ][W ][ ][ ][ ][ ][W ][W ][ ][ ][R ][F ]
+[F ][F ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][F ][F ]
 ```
 
 ### Terrain Legend

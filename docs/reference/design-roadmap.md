@@ -82,15 +82,15 @@ PHASE 4: End Turn
 **Content**:
 - Hex range counting (visual diagram: Range 1-6 from center)
 - LOS blocking rules:
-  - **Blocks LOS**: Walls, large terrain
-  - **Provides Cover (+1 Defense)**: Forests, rubble, other Caskets
-  - **Transparent**: Water, ice, open ground
+ - **Blocks LOS**: Walls, large terrain
+ - **Provides Cover (+1 Defense)**: Forests, rubble, other Caskets
+ - **Transparent**: Water, ice, open ground
 - Firing arcs:
-  - Front 180° (3 front-facing hexes) = can attack
-  - Rear 180° (3 rear-facing hexes) = cannot attack (must pivot first)
+ - Front 180° (3 front-facing hexes) = can attack
+ - Rear 180° (3 rear-facing hexes) = cannot attack (must pivot first)
 - Elevation rules:
-  - Higher ground: +1 damage
-  - Ignore cover if 2+ levels above target
+ - Higher ground: +1 damage
+ - Ignore cover if 2+ levels above target
 
 **Include**: 3-4 hex diagrams showing:
 1. Range counting (1, 2, 3, 4+ hexes)
@@ -139,10 +139,10 @@ COMPONENT DAMAGE
 **Bottom: Strain Table**
 | Roll | Effect |
 |------|--------|
-| 1-5  | +1 Heat |
-| 6-8  | -1 SP this turn |
+| 1-5 | +1 Heat |
+| 6-8 | -1 SP this turn |
 | 9-11 | Take 2 damage |
-| 12+  | Component malfunction |
+| 12+ | Component malfunction |
 
 **Format**: Markdown table format, easy to print/reference
 
@@ -199,9 +199,9 @@ COMPONENT DAMAGE
 **Primary Weapon: Runic Warhammer** (12 cards):
 - Emphasis on armor-piercing, defensive buffs, redundancy
 - Example cards:
-  - Crushing Blow × 3: "3 SP. Deal 6 damage. Ignore 2 Armor."
-  - Rune of Protection × 2: "2 SP. Gain +2 Defense until end of round."
-  - Emergency Override × 2: "1 SP. If a Component is destroyed this turn, prevent it (once per mission)."
+ - Crushing Blow × 3: "3 SP. Deal 6 damage. Ignore 2 Armor."
+ - Rune of Protection × 2: "2 SP. Gain +2 Defense until end of round."
+ - Emergency Override × 2: "1 SP. If a Component is destroyed this turn, prevent it (once per mission)."
 
 **Secondary Equipment**:
 - Great Shield (heavy defense)
@@ -256,14 +256,14 @@ COMPONENT DAMAGE
 
 ### Pre-Built Decks
 - Church Confessor (Light, 6 SP)
-  - Primary: Penitent Blades
-  - Secondary: Buckler Shield
-  - Tactics: Blood Offering + Righteous Fury
+ - Primary: Penitent Blades
+ - Secondary: Buckler Shield
+ - Tactics: Blood Offering + Righteous Fury
 
 - Dwarven Ironclad (Heavy, 4 SP)
-  - Primary: Runic Warhammer
-  - Secondary: Great Shield
-  - Tactics: Runic Shielding + Unbreakable
+ - Primary: Runic Warhammer
+ - Secondary: Great Shield
+ - Tactics: Runic Shielding + Unbreakable
 ```
 
 **Include**: ASCII map of arena layout
@@ -302,15 +302,15 @@ COMPONENT DAMAGE
 - ACTION: Rotate to face Dwarves (free action)
 - ACTION: Play Blood Offering (0 SP) → Discard 2 cards from deck (now at 28 HP)
 - ACTION: Play Faithful Thrust (2 SP) → Attack, Range: Melee
-  - Church is on elevated platform: +1 damage
-  - Blood Offering active: +3 damage, ignore 1 Armor
-  - Attacking from front: No facing bonus
-  - **Total: 4 (base) +1 (elevation) +3 (Blood Offering) = 8 damage**
+ - Church is on elevated platform: +1 damage
+ - Blood Offering active: +3 damage, ignore 1 Armor
+ - Attacking from front: No facing bonus
+ - **Total: 4 (base) +1 (elevation) +3 (Blood Offering) = 8 damage**
 - RESOLUTION: Dwarves discard top 8 cards
-  - Cards discarded: 3 Universal, 3 Primary (Warhammer), 1 Secondary, 1 Tactic
-  - **3 Primary Weapon cards → 3 Component Damage on Right Arm**
-  - **RIGHT ARM DESTROYED!**
-  - Dwarves immediately discard all Runic Warhammer cards from hand (3 cards)
+ - Cards discarded: 3 Universal, 3 Primary (Warhammer), 1 Secondary, 1 Tactic
+ - **3 Primary Weapon cards → 3 Component Damage on Right Arm**
+ - **RIGHT ARM DESTROYED!**
+ - Dwarves immediately discard all Runic Warhammer cards from hand (3 cards)
 - DRAW: Draw 4 cards
 - END TURN
 
@@ -349,10 +349,10 @@ COMPONENT DAMAGE
 2. Lay out both decks physically (or use TTS if digital)
 3. Play through Arena scenario
 4. **Take notes constantly**:
-   - What was confusing?
-   - What took too long?
-   - What was boring?
-   - What felt awesome?
+ - What was confusing?
+ - What took too long?
+ - What was boring?
+ - What felt awesome?
 5. Record final game state (who won, how many turns, HP remaining)
 
 **Expected issues**:
@@ -500,12 +500,12 @@ Mission 1: Tutorial (vs easy AI)
 1. Earn Credits (100 for primary, 50 for secondary)
 2. Roll on Settlement Event table (d20)
 3. Spend Credits:
-   - Repair Caskets (10 Credits per 5 HP restored)
-   - Buy equipment (weapons, shields, relics)
-   - Build settlement buildings (unlock bonuses)
+ - Repair Caskets (10 Credits per 5 HP restored)
+ - Buy equipment (weapons, shields, relics)
+ - Build settlement buildings (unlock bonuses)
 4. Pilot recovery:
-   - Roll for Pilot Scars (if took 5+ Wounds)
-   - Downtime activities (train, research, socialize)
+ - Roll for Pilot Scars (if took 5+ Wounds)
+ - Downtime activities (train, research, socialize)
 
 **Time**: 3-4 hours to write Workshop phase rules
 
@@ -599,7 +599,7 @@ Mission 1: Tutorial (vs easy AI)
 **Week 2** ✅: Added 2 factions (Ossuarium, Elves), terrain system, event tables
 **Week 3** ⏳: Campaign mode (systems complete, need 5-mission chain)
 **Week 4** ⏳: AI opponents, polish, second playtest (READY TO BEGIN)
-**Weeks 5-6** ⏸️: Iteration, art, TTS mod (pending playtest feedback)
+**Weeks 5-6** ⏸: Iteration, art, TTS mod (pending playtest feedback)
 
 ---
 
@@ -645,10 +645,10 @@ If I were you, here's my exact next steps:
 
 ### Day 2:
 4. Complete Church faction deck (3 hrs)
-   - All 30 cards with exact text
-   - 4 Secondary Equipment options
-   - 5 Faction Tactics
-   - 10 Pilot Wounds
+ - All 30 cards with exact text
+ - 4 Secondary Equipment options
+ - 5 Faction Tactics
+ - 10 Pilot Wounds
 
 ### Day 3:
 5. Complete Dwarves faction deck (2 hrs)
@@ -666,17 +666,17 @@ If I were you, here's my exact next steps:
 ## Red Flags to Watch For
 
 **During design**:
-- ⚠️ Cards that say "Draw your entire deck" (broken)
-- ⚠️ SP costs below 1 for attacks (too spammable)
-- ⚠️ Component destruction triggering on first hit (too fast)
-- ⚠️ Infinite combos (X card + Y card = repeat forever)
+- ⚠ Cards that say "Draw your entire deck" (broken)
+- ⚠ SP costs below 1 for attacks (too spammable)
+- ⚠ Component destruction triggering on first hit (too fast)
+- ⚠ Infinite combos (X card + Y card = repeat forever)
 
 **During playtest**:
-- ⚠️ Games ending in 2-3 turns (too fast)
-- ⚠️ Games lasting 2+ hours (too slow)
-- ⚠️ One faction wins 100% of the time (balance issue)
-- ⚠️ Players get decision paralysis every turn (too complex)
-- ⚠️ "I don't know what to do" moments (unclear rules)
+- ⚠ Games ending in 2-3 turns (too fast)
+- ⚠ Games lasting 2+ hours (too slow)
+- ⚠ One faction wins 100% of the time (balance issue)
+- ⚠ Players get decision paralysis every turn (too complex)
+- ⚠ "I don't know what to do" moments (unclear rules)
 
 ---
 

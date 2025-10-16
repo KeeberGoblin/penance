@@ -18,7 +18,7 @@ Filterable, searchable card database with:
 ### [Universal Core Cards](universal.md)
 The 10 cards every Casket has. Movement, defense, utility - the foundation of every deck.
 
-### [Weapon Cards - Complete Move Sets](weapon-cards-detailed.md) ⭐ NEW
+### [Weapon Cards - Complete Move Sets](weapon-cards-detailed.md) NEW
 **16 weapons, 89 total cards** with full mechanics:
 - **Standard Weapons** (11): Longsword, Greatsword, Warhammer, Spear, Dagger, Halberd, Chain Whip, Flail, Crossbow, Pistol, Rifle
 - **Craftable Weapons** (5 Monster Hunter-style): Abomination Cleaver, Thunder Maul, Frostbite Lance, Phoenix Glaive, Void Reaper

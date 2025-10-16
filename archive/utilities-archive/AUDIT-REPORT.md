@@ -15,7 +15,7 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 - ✅ **High Priority**: 5 codex faction pages - COMPLETE
 - ✅ **Medium Priority**: 3 reference documentation files - COMPLETE
 - ✅ **Additional**: 4 core documentation files - COMPLETE
-- ⏸️ **Low Priority**: 4 card database files - DEFERRED (not critical for playtest)
+- ⏸ **Low Priority**: 4 card database files - DEFERRED (not critical for playtest)
 
 ---
 
@@ -104,14 +104,14 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 - Section "Universal Card Deck" → "Universal Core Deck" (10 cards)
 - Added new section: "Faction Core Cards" (6 cards per faction × 4 factions = 24 cards)
 - Updated "Equipment Cards" section:
-  - OLD: 5 weapons (Longsword 4, Greatsword 5, Bow 4, Shield 3, Hammer 4) = 20 cards
-  - NEW: 10 weapons (Dagger 3, Longsword 6, Greatsword 8, Warhammer 6, Spear 5, Pistol 3, Crossbow 5, Buckler 2, Tower 4, Repair Kit 3) = 45 cards
+ - OLD: 5 weapons (Longsword 4, Greatsword 5, Bow 4, Shield 3, Hammer 4) = 20 cards
+ - NEW: 10 weapons (Dagger 3, Longsword 6, Greatsword 8, Warhammer 6, Spear 5, Pistol 3, Crossbow 5, Buckler 2, Tower 4, Repair Kit 3) = 45 cards
 - Updated "Recommended First Playtest Setup":
-  - OLD: "2 Decks: Universal cards (10 each player)"
-  - NEW: "Universal Core: 10 cards (both players share)"
-  - OLD: "3-4 card sheets (40 cards total)"
-  - NEW: "5-6 card sheets (~50 cards total)"
-  - Added note: "Variable deck sizes (26-50 cards) mean players construct decks before importing to TTS"
+ - OLD: "2 Decks: Universal cards (10 each player)"
+ - NEW: "Universal Core: 10 cards (both players share)"
+ - OLD: "3-4 card sheets (40 cards total)"
+ - NEW: "5-6 card sheets (~50 cards total)"
+ - Added note: "Variable deck sizes (26-50 cards) mean players construct decks before importing to TTS"
 
 **PDF Regenerated**: ✅ docs/pdfs/reference-tabletop-simulator-guide.pdf
 
@@ -153,7 +153,7 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 
 ---
 
-## ⏸️ LOW PRIORITY - Deferred Files
+## ⏸ LOW PRIORITY - Deferred Files
 
 **These files are not critical for playtest and were intentionally left for future updates:**
 
@@ -182,14 +182,14 @@ Comprehensive audit of Penance repository to identify and fix outdated reference
 3. ✅ **Fix broken links throughout documentation** (commit: edaf97e)
 4. ✅ **Update codex faction pages: Church corrections** (commit: 67cec65)
 5. ✅ **Update reference docs to v2.0 system** (commit: 1e511dc)
-   - playtest-assessment.md
-   - design-roadmap.md
-   - tabletop-simulator-guide.md
+ - playtest-assessment.md
+ - design-roadmap.md
+ - tabletop-simulator-guide.md
 6. ✅ **Regenerate PDFs with updated reference docs** (commit: a42b8eb)
 7. ✅ **Update remaining codex faction pages** (commit: e235072)
-   - faction-dwarves.html
-   - faction-elves.html
-   - faction-undead.html
+ - faction-dwarves.html
+ - faction-elves.html
+ - faction-undead.html
 
 **All commits pushed to remote**: ✅ Complete
 

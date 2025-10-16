@@ -1,6 +1,6 @@
-# ⚠️ DEPRECATED - Church of Absolution - Complete Faction Deck
+# ⚠ DEPRECATED - Church of Absolution - Complete Faction Deck
 
-> **⚠️ WARNING: This file uses the OLD fixed-deck system (deprecated October 11, 2025)**
+> **⚠ WARNING: This file uses the OLD fixed-deck system (deprecated October 11, 2025)**
 >
 > **CURRENT SYSTEM**: See [deck-equipment-system.md](church/deck-equipment-system.md) for the NEW variable equipment system
 >
@@ -504,11 +504,11 @@
 
 ## COUNTER-PLAY (How to Beat Church)
 
-🎯 **Target their HP deck early** (they rely on self-harm, accelerate it)
-🎯 **Spread damage** (don't feed Righteous Fury kills)
-🎯 **Attack from range** (Holy Pistol is weak, melee is dangerous)
-🎯 **Destroy Right Arm early** (no Penitent Blades = no threat)
-🎯 **Inflict Pilot Wounds** (PTSD ruins their aggression)
+ **Target their HP deck early** (they rely on self-harm, accelerate it)
+ **Spread damage** (don't feed Righteous Fury kills)
+ **Attack from range** (Holy Pistol is weak, melee is dangerous)
+ **Destroy Right Arm early** (no Penitent Blades = no threat)
+ **Inflict Pilot Wounds** (PTSD ruins their aggression)
 
 ---
 

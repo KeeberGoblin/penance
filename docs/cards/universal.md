@@ -20,20 +20,20 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  ⚡ DESPERATE LUNGE              [1]   ║
+║ DESPERATE LUNGE [1] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 1  |  Range: Self           ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 1 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Move up to 2 hexes in any direction. ║
-║  You may rotate once during movement. ║
-║                                       ║
-║  Generate 1 Heat.                     ║
+║ EFFECT: ║
+║ Move up to 2 hexes in any direction. ║
+║ You may rotate once during movement. ║
+║ ║
+║ Generate 1 Heat. ║
 ╠═══════════════════════════════════════╣
-║  Heat: +1  |  Keywords: Universal     ║
+║ Heat: +1 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Desperation grants wings."          ║
+║ "Desperation grants wings." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -45,19 +45,19 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  ⚡ WARDEN'S PIVOT               [2]   ║
+║ WARDEN'S PIVOT [2] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 0  |  Range: Self           ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 0 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Rotate to any facing (no limit).     ║
-║                                       ║
-║  Free action - does not cost SP.      ║
+║ EFFECT: ║
+║ Rotate to any facing (no limit). ║
+║ ║
+║ Free action - does not cost SP. ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Universal      ║
+║ Heat: 0 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Positioning is survival."           ║
+║ "Positioning is survival." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -69,20 +69,20 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  ⚡ IRONSTRIDER'S RUSH           [1]   ║
+║ IRONSTRIDER'S RUSH [1] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 2  |  Range: Self           ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 2 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Move up to 3 hexes in straight line. ║
-║                                       ║
-║  Ignore difficult terrain.            ║
-║  Generate 2 Heat.                     ║
+║ EFFECT: ║
+║ Move up to 3 hexes in straight line. ║
+║ ║
+║ Ignore difficult terrain. ║
+║ Generate 2 Heat. ║
 ╠═══════════════════════════════════════╣
-║  Heat: +2  |  Keywords: Universal     ║
+║ Heat: +2 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Speed conquers distance."           ║
+║ "Speed conquers distance." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -94,20 +94,20 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  🛡 UNYIELDING BULWARK          [—]   ║
+║ UNYIELDING BULWARK [—] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Reaction)           ║
-║  SP Cost: 0  |  Range: Self           ║
+║ Type: UNIVERSAL (Reaction) ║
+║ SP Cost: 0 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Play when targeted by attack.        ║
-║                                       ║
-║  Reduce damage by 2 (minimum 1).      ║
-║  Discard this card after use.         ║
+║ EFFECT: ║
+║ Play when targeted by attack. ║
+║ ║
+║ Reduce damage by 2 (minimum 1). ║
+║ Discard this card after use. ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Universal      ║
+║ Heat: 0 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Stand firm. Endure."                ║
+║ "Stand firm. Endure." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -119,20 +119,20 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  🛡 SECOND SKIN                 [—]   ║
+║ SECOND SKIN [—] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Reaction)           ║
-║  SP Cost: 0  |  Range: Self           ║
+║ Type: UNIVERSAL (Reaction) ║
+║ SP Cost: 0 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Play when targeted by attack.        ║
-║                                       ║
-║  Reduce damage by 1 (minimum 1).      ║
-║  Discard this card after use.         ║
+║ EFFECT: ║
+║ Play when targeted by attack. ║
+║ ║
+║ Reduce damage by 1 (minimum 1). ║
+║ Discard this card after use. ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Universal      ║
+║ Heat: 0 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Reflex saves lives."                ║
+║ "Reflex saves lives." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -144,19 +144,19 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  🔥 BREATHE THE CORE            [3]   ║
+║ BREATHE THE CORE [3] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 2  |  Range: Self           ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 2 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Remove 1d3 Heat tokens.              ║
-║                                       ║
-║  "Vent systems, exhale the fire."     ║
+║ EFFECT: ║
+║ Remove 1d3 Heat tokens. ║
+║ ║
+║ "Vent systems, exhale the fire." ║
 ╠═══════════════════════════════════════╣
-║  Heat: -1d3  |  Keywords: Universal   ║
+║ Heat: -1d3 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Slow the heart. Cool the stone."    ║
+║ "Slow the heart. Cool the stone." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -168,20 +168,20 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  🔧 FIELD SUTURE                [4]   ║
+║ FIELD SUTURE [4] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 2  |  Range: Self or Adj.   ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 2 | Range: Self or Adj. ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Remove 1 Damage card from target's   ║
-║  discard pile from the game.          ║
-║                                       ║
-║  Can target self or adjacent ally.    ║
+║ EFFECT: ║
+║ Remove 1 Damage card from target's ║
+║ discard pile from the game. ║
+║ ║
+║ Can target self or adjacent ally. ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Universal      ║
+║ Heat: 0 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Patch the wound. Fight on."         ║
+║ "Patch the wound. Fight on." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -195,19 +195,19 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  📖 SOUL'S RECALL               [2]   ║
+║ 📖 SOUL'S RECALL [2] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 1  |  Range: Self           ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 1 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Draw 2 cards.                        ║
-║                                       ║
-║  "Reach into the stone's memory."     ║
+║ EFFECT: ║
+║ Draw 2 cards. ║
+║ ║
+║ "Reach into the stone's memory." ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Universal      ║
+║ Heat: 0 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "The stone remembers what you need." ║
+║ "The stone remembers what you need." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -219,20 +219,20 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  📖 TATTERED HOPE               [—]   ║
+║ 📖 TATTERED HOPE [—] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 0  |  Range: Self           ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 0 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Discard your entire hand.            ║
-║  Draw 3 cards.                        ║
-║                                       ║
-║  Use when desperate or hand is bad.   ║
+║ EFFECT: ║
+║ Discard your entire hand. ║
+║ Draw 3 cards. ║
+║ ║
+║ Use when desperate or hand is bad. ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Universal      ║
+║ Heat: 0 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Start again. Hope remains."         ║
+║ "Start again. Hope remains." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -244,20 +244,20 @@ Universal cards provide baseline tactical options and ensure players always have
 
 ```
 ╔═══════════════════════════════════════╗
-║  🛡 GUARDIAN'S DEFIANCE          [5]   ║
+║ GUARDIAN'S DEFIANCE [5] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 1  |  Range: Self           ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 1 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  +2 Defense until your next turn.     ║
-║                                       ║
-║  You may cover adjacent ally          ║
-║  (redirect 1 attack to yourself).     ║
+║ EFFECT: ║
+║ +2 Defense until your next turn. ║
+║ ║
+║ You may cover adjacent ally ║
+║ (redirect 1 attack to yourself). ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Universal      ║
+║ Heat: 0 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "None shall pass."                   ║
+║ "None shall pass." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -387,16 +387,16 @@ For playtesting, print this sheet and cut out cards:
 
 ```
 ┌─────────────┬─────────────┬─────────────┐
-│ Desperate   │ Warden's    │ Ironstrider │
-│ Lunge       │ Pivot       │ Rush        │
+│ Desperate │ Warden's │ Ironstrider │
+│ Lunge │ Pivot │ Rush │
 ├─────────────┼─────────────┼─────────────┤
-│ Unyielding  │ Second      │ Guardian's  │
-│ Bulwark     │ Skin        │ Defiance    │
+│ Unyielding │ Second │ Guardian's │
+│ Bulwark │ Skin │ Defiance │
 ├─────────────┼─────────────┼─────────────┤
-│ Breathe     │ Field       │ Soul's      │
-│ the Core    │ Suture      │ Recall      │
+│ Breathe │ Field │ Soul's │
+│ the Core │ Suture │ Recall │
 ├─────────────┴─────────────┴─────────────┤
-│         Tattered Hope                   │
+│ Tattered Hope │
 └─────────────────────────────────────────┘
 ```
 

@@ -1,1780 +1,1780 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penance: Absolution Through Steel - Interactive Reference</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Penance: Absolution Through Steel - Interactive Reference</title>
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
 
-        :root {
-            --dark-bg: #1a1a1a;
-            --medium-bg: #2a2a2a;
-            --light-bg: #3a3a3a;
-            --accent-gold: #d4af37;
-            --accent-red: #8b0000;
-            --text-light: #e0e0e0;
-            --border-color: #555;
-        }
+ :root {
+ --dark-bg: #1a1a1a;
+ --medium-bg: #2a2a2a;
+ --light-bg: #3a3a3a;
+ --accent-gold: #d4af37;
+ --accent-red: #8b0000;
+ --text-light: #e0e0e0;
+ --border-color: #555;
+ }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background: var(--dark-bg);
+ color: var(--text-light);
+ line-height: 1.6;
+ }
 
-        header {
-            background: linear-gradient(135deg, var(--accent-red), var(--dark-bg));
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 3px solid var(--accent-gold);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
+ header {
+ background: linear-gradient(135deg, var(--accent-red), var(--dark-bg));
+ padding: 2rem;
+ text-align: center;
+ border-bottom: 3px solid var(--accent-gold);
+ box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+ }
 
-        h1 {
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin-bottom: 0.5rem;
-        }
+ h1 {
+ font-size: 2.5rem;
+ color: var(--accent-gold);
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+ margin-bottom: 0.5rem;
+ }
 
-        .tagline {
-            font-style: italic;
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
+ .tagline {
+ font-style: italic;
+ color: var(--text-light);
+ font-size: 1.1rem;
+ }
 
-        nav {
-            background: var(--medium-bg);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
+ nav {
+ background: var(--medium-bg);
+ padding: 1rem;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+ }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
+ nav ul {
+ list-style: none;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 1rem;
+ }
 
-        nav button {
-            background: var(--light-bg);
-            color: var(--text-light);
-            border: 2px solid var(--border-color);
-            padding: 0.75rem 1.5rem;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s;
-            border-radius: 4px;
-        }
+ nav button {
+ background: var(--light-bg);
+ color: var(--text-light);
+ border: 2px solid var(--border-color);
+ padding: 0.75rem 1.5rem;
+ cursor: pointer;
+ font-size: 1rem;
+ transition: all 0.3s;
+ border-radius: 4px;
+ }
 
-        nav button:hover, nav button.active {
-            background: var(--accent-gold);
-            color: var(--dark-bg);
-            border-color: var(--accent-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
-        }
+ nav button:hover, nav button.active {
+ background: var(--accent-gold);
+ color: var(--dark-bg);
+ border-color: var(--accent-gold);
+ transform: translateY(-2px);
+ box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+ }
 
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
+ .container {
+ max-width: 1200px;
+ margin: 2rem auto;
+ padding: 0 2rem;
+ }
 
-        .section {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
+ .section {
+ display: none;
+ animation: fadeIn 0.5s;
+ }
 
-        .section.active {
-            display: block;
-        }
+ .section.active {
+ display: block;
+ }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+ @keyframes fadeIn {
+ from { opacity: 0; transform: translateY(20px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
+ .card-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 2rem;
+ margin: 2rem 0;
+ }
 
-        .info-card {
-            background: var(--medium-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+ .info-card {
+ background: var(--medium-bg);
+ border: 2px solid var(--border-color);
+ border-radius: 8px;
+ padding: 1.5rem;
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
 
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-            border-color: var(--accent-gold);
-        }
+ .info-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+ border-color: var(--accent-gold);
+ }
 
-        .info-card h3 {
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
+ .info-card h3 {
+ color: var(--accent-gold);
+ margin-bottom: 1rem;
+ border-bottom: 2px solid var(--border-color);
+ padding-bottom: 0.5rem;
+ }
 
-        .info-card ul {
-            list-style-position: inside;
-            margin-left: 1rem;
-        }
+ .info-card ul {
+ list-style-position: inside;
+ margin-left: 1rem;
+ }
 
-        .info-card li {
-            margin: 0.5rem 0;
-        }
+ .info-card li {
+ margin: 0.5rem 0;
+ }
 
-        .weight-class-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
+ .weight-class-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 1.5rem;
+ margin: 2rem 0;
+ }
 
-        .weight-class {
-            background: var(--light-bg);
-            border-left: 4px solid var(--accent-gold);
-            padding: 1rem;
-            border-radius: 4px;
-        }
+ .weight-class {
+ background: var(--light-bg);
+ border-left: 4px solid var(--accent-gold);
+ padding: 1rem;
+ border-radius: 4px;
+ }
 
-        .weight-class h4 {
-            color: var(--accent-gold);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
+ .weight-class h4 {
+ color: var(--accent-gold);
+ font-size: 1.3rem;
+ margin-bottom: 0.5rem;
+ }
 
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            margin: 0.3rem 0;
-            padding: 0.3rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
+ .stat-row {
+ display: flex;
+ justify-content: space-between;
+ margin: 0.3rem 0;
+ padding: 0.3rem 0;
+ border-bottom: 1px solid var(--border-color);
+ }
 
-        .stat-label {
-            font-weight: bold;
-            color: var(--accent-gold);
-        }
+ .stat-label {
+ font-weight: bold;
+ color: var(--accent-gold);
+ }
 
-        .race-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
+ .race-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 1.5rem;
+ }
 
-        .race-card {
-            background: var(--medium-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
+ .race-card {
+ background: var(--medium-bg);
+ border: 2px solid var(--border-color);
+ border-radius: 8px;
+ padding: 1.5rem;
+ position: relative;
+ overflow: hidden;
+ }
 
-        .race-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-gold), transparent);
-        }
+ .race-card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 4px;
+ background: linear-gradient(90deg, var(--accent-gold), transparent);
+ }
 
-        .race-card h4 {
-            color: var(--accent-gold);
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
+ .race-card h4 {
+ color: var(--accent-gold);
+ font-size: 1.4rem;
+ margin-bottom: 0.5rem;
+ }
 
-        .race-subtitle {
-            font-style: italic;
-            color: #888;
-            margin-bottom: 1rem;
-        }
+ .race-subtitle {
+ font-style: italic;
+ color: #888;
+ margin-bottom: 1rem;
+ }
 
-        .mechanic-box {
-            background: var(--dark-bg);
-            border-left: 3px solid var(--accent-red);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-        }
+ .mechanic-box {
+ background: var(--dark-bg);
+ border-left: 3px solid var(--accent-red);
+ padding: 1rem;
+ margin: 1rem 0;
+ border-radius: 4px;
+ }
 
-        .mechanic-title {
-            color: var(--accent-gold);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
+ .mechanic-title {
+ color: var(--accent-gold);
+ font-weight: bold;
+ margin-bottom: 0.5rem;
+ }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            background: var(--medium-bg);
-        }
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ margin: 1rem 0;
+ background: var(--medium-bg);
+ }
 
-        th, td {
-            padding: 0.75rem;
-            text-align: left;
-            border: 1px solid var(--border-color);
-        }
+ th, td {
+ padding: 0.75rem;
+ text-align: left;
+ border: 1px solid var(--border-color);
+ }
 
-        th {
-            background: var(--light-bg);
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
+ th {
+ background: var(--light-bg);
+ color: var(--accent-gold);
+ font-weight: bold;
+ }
 
-        tr:hover {
-            background: var(--light-bg);
-        }
+ tr:hover {
+ background: var(--light-bg);
+ }
 
-        .card-preview {
-            background: #fff;
-            color: #000;
-            border: 2px solid #000;
-            border-radius: 8px;
-            padding: 1rem;
-            max-width: 350px;
-            margin: 1rem auto;
-            font-family: 'Courier New', monospace;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-        }
+ .card-preview {
+ background: #fff;
+ color: #000;
+ border: 2px solid #000;
+ border-radius: 8px;
+ padding: 1rem;
+ max-width: 350px;
+ margin: 1rem auto;
+ font-family: 'Courier New', monospace;
+ box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+ }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #000;
-            padding-bottom: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
+ .card-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 2px solid #000;
+ padding-bottom: 0.5rem;
+ margin-bottom: 0.5rem;
+ font-weight: bold;
+ }
 
-        .card-title {
-            font-size: 1.2rem;
-        }
+ .card-title {
+ font-size: 1.2rem;
+ }
 
-        .card-initiative {
-            background: #000;
-            color: #fff;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-        }
+ .card-initiative {
+ background: #000;
+ color: #fff;
+ padding: 0.25rem 0.5rem;
+ border-radius: 4px;
+ }
 
-        .card-type {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 0.5rem;
-        }
+ .card-type {
+ font-size: 0.9rem;
+ color: #555;
+ margin-bottom: 0.5rem;
+ }
 
-        .card-cost {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 0.5rem;
-        }
+ .card-cost {
+ display: flex;
+ justify-content: space-between;
+ padding: 0.5rem 0;
+ border-bottom: 1px solid #ccc;
+ margin-bottom: 0.5rem;
+ }
 
-        .card-effect {
-            background: #f5f5f5;
-            padding: 0.75rem;
-            border-radius: 4px;
-            margin: 0.5rem 0;
-            min-height: 80px;
-        }
+ .card-effect {
+ background: #f5f5f5;
+ padding: 0.75rem;
+ border-radius: 4px;
+ margin: 0.5rem 0;
+ min-height: 80px;
+ }
 
-        .card-keywords {
-            font-size: 0.85rem;
-            color: #666;
-            padding: 0.5rem 0;
-            border-top: 1px solid #ccc;
-        }
+ .card-keywords {
+ font-size: 0.85rem;
+ color: #666;
+ padding: 0.5rem 0;
+ border-top: 1px solid #ccc;
+ }
 
-        .card-flavor {
-            font-style: italic;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
-            border-top: 1px solid #ccc;
-        }
+ .card-flavor {
+ font-style: italic;
+ color: #666;
+ font-size: 0.9rem;
+ margin-top: 0.5rem;
+ padding-top: 0.5rem;
+ border-top: 1px solid #ccc;
+ }
 
-        .print-button {
-            background: var(--accent-gold);
-            color: var(--dark-bg);
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            margin: 2rem auto;
-            display: block;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
+ .print-button {
+ background: var(--accent-gold);
+ color: var(--dark-bg);
+ border: none;
+ padding: 1rem 2rem;
+ font-size: 1.1rem;
+ cursor: pointer;
+ border-radius: 4px;
+ margin: 2rem auto;
+ display: block;
+ font-weight: bold;
+ transition: all 0.3s;
+ }
 
-        .print-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
-        }
+ .print-button:hover {
+ transform: scale(1.05);
+ box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
+ }
 
-        footer {
-            background: var(--medium-bg);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid var(--border-color);
-        }
+ footer {
+ background: var(--medium-bg);
+ text-align: center;
+ padding: 2rem;
+ margin-top: 4rem;
+ border-top: 2px solid var(--border-color);
+ }
 
-        .badge {
-            display: inline-block;
-            background: var(--accent-red);
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin-left: 0.5rem;
-        }
+ .badge {
+ display: inline-block;
+ background: var(--accent-red);
+ color: white;
+ padding: 0.25rem 0.5rem;
+ border-radius: 4px;
+ font-size: 0.85rem;
+ margin-left: 0.5rem;
+ }
 
-        .filter-btn {
-            background: var(--light-bg);
-            color: var(--text-light);
-            border: 2px solid var(--border-color);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            border-radius: 4px;
-        }
+ .filter-btn {
+ background: var(--light-bg);
+ color: var(--text-light);
+ border: 2px solid var(--border-color);
+ padding: 0.5rem 1rem;
+ cursor: pointer;
+ font-size: 0.9rem;
+ transition: all 0.3s;
+ border-radius: 4px;
+ }
 
-        .filter-btn:hover {
-            background: var(--accent-gold);
-            color: var(--dark-bg);
-            border-color: var(--accent-gold);
-        }
+ .filter-btn:hover {
+ background: var(--accent-gold);
+ color: var(--dark-bg);
+ border-color: var(--accent-gold);
+ }
 
-        .filter-btn.active {
-            background: var(--accent-gold);
-            color: var(--dark-bg);
-            border-color: var(--accent-gold);
-            font-weight: bold;
-        }
+ .filter-btn.active {
+ background: var(--accent-gold);
+ color: var(--dark-bg);
+ border-color: var(--accent-gold);
+ font-weight: bold;
+ }
 
-        .card-preview[data-card-type] {
-            transition: opacity 0.3s, transform 0.3s;
-        }
+ .card-preview[data-card-type] {
+ transition: opacity 0.3s, transform 0.3s;
+ }
 
-        .card-preview.hidden {
-            display: none;
-        }
+ .card-preview.hidden {
+ display: none;
+ }
 
-        @media print {
-            body { background: white; color: black; }
-            nav, footer, .print-button, header, .section:not(#print) { display: none; }
+ @media print {
+ body { background: white; color: black; }
+ nav, footer, .print-button, header, .section:not(#print) { display: none; }
 
-            .print-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 0.5cm;
-                page-break-inside: avoid;
-            }
+ .print-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 0.5cm;
+ page-break-inside: avoid;
+ }
 
-            .print-card {
-                width: 6.3cm;
-                height: 8.8cm;
-                border: 2px solid #000;
-                background: white;
-                page-break-inside: avoid;
-                display: block !important;
-            }
+ .print-card {
+ width: 6.3cm;
+ height: 8.8cm;
+ border: 2px solid #000;
+ background: white;
+ page-break-inside: avoid;
+ display: block !important;
+ }
 
-            #print h2, #print p, #print > div:not(.print-grid) {
-                display: none;
-            }
-        }
+ #print h2, #print p, #print > div:not(.print-grid) {
+ display: none;
+ }
+ }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            .card-grid { grid-template-columns: 1fr; }
-            nav ul { flex-direction: column; }
-        }
-    </style>
+ @media (max-width: 768px) {
+ h1 { font-size: 1.8rem; }
+ .card-grid { grid-template-columns: 1fr; }
+ nav ul { flex-direction: column; }
+ }
+ </style>
 </head>
 <body>
-    <header>
-        <h1>⚔ PENANCE: ABSOLUTION THROUGH STEEL ⚔</h1>
-        <p class="tagline">"In iron we seek forgiveness. Through blood, absolution."</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><button onclick="showSection('overview')" class="active">Overview</button></li>
-            <li><button onclick="showSection('classes')">Weight Classes</button></li>
-            <li><button onclick="showSection('races')">Races</button></li>
-            <li><button onclick="showSection('cards')">Card Library</button></li>
-            <li><button onclick="showSection('glossary')">Glossary</button></li>
-            <li><button onclick="showSection('damage')">Damage System</button></li>
-            <li><button onclick="showSection('lore')">World Lore</button></li>
-            <li><button onclick="showSection('victory')">Victory</button></li>
-            <li><button onclick="showSection('print')">Print Cards</button></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <!-- OVERVIEW SECTION -->
-        <section id="overview" class="section active">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Game Overview</h2>
-
-            <div class="card-grid">
-                <div class="info-card">
-                    <h3>Core Concept</h3>
-                    <p>A tactical hex-based card game where players pilot massive armored suits called <strong>Caskets</strong> in brutal medieval fantasy combat. Your deck IS your Casket - cards represent equipment, actions, and battle damage.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Core Pillars</h3>
-                    <ul>
-                        <li><strong>Tactical Hex Combat</strong> - Positioning matters</li>
-                        <li><strong>Deck-Building</strong> - Your deck IS your Casket</li>
-                        <li><strong>Push-Your-Luck</strong> - Risk vs reward action economy</li>
-                        <li><strong>Corruption System</strong> - Power at a terrible price</li>
-                        <li><strong>Campaign Progression</strong> - Permanent consequences</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>Game Modes</h3>
-                    <ul>
-                        <li><strong>Arena (PvP)</strong> - 1v1, 2v2, or FFA battles</li>
-                        <li><strong>Campaign (Co-op)</strong> - Story-driven progression</li>
-                        <li><strong>Raid (Boss Fight)</strong> - Team vs massive monsters</li>
-                        <li><strong>Skirmish (Mixed)</strong> - Objective-based gameplay</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>Deck-as-Health</h3>
-                    <p>Your deck represents your Casket's operational capacity. When damaged, you discard cards. When deck AND hand are empty = disabled.</p>
-                    <p style="margin-top: 1rem;"><strong>Choice:</strong> Discard from hand (lose options) or mill from deck (preserve hand).</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Soul-Point System</h3>
-                    <p><strong>Safe Zone:</strong> Spend SP safely within your limit</p>
-                    <p><strong>Danger Zone:</strong> Push beyond for +2 SP, but roll on Strain Table (risk overheating, damage, corruption)</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Corruption & Taint</h3>
-                    <p>Soulstones grant power but corrupt you:</p>
-                    <ul>
-                        <li>0-2 Taint: Clean, safe</li>
-                        <li>3-6 Taint: More power, more risk</li>
-                        <li>7-9 Taint: Forbidden abilities unlocked</li>
-                        <li>10 Taint: Transform into AI Abomination</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- WEIGHT CLASSES SECTION -->
-        <section id="classes" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Weight Classes</h2>
-
-            <div class="weight-class-grid">
-                <div class="weight-class">
-                    <h4>⚡ Scout</h4>
-                    <div class="stat-row">
-                        <span class="stat-label">Weight:</span>
-                        <span>500-800 lbs</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">SP Safe Zone:</span>
-                        <span>5 SP</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Deck Size:</span>
-                        <span>20-25 cards</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Relic Slots:</span>
-                        <span>1 slot</span>
-                    </div>
-                    <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Speed & evasion. Scouts survive by not getting hit.</p>
-                    <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Sensor Sweep - Reveal enemy cards/AI</p>
-                </div>
-
-                <div class="weight-class">
-                    <h4>🛡 Support</h4>
-                    <div class="stat-row">
-                        <span class="stat-label">Weight:</span>
-                        <span>900-1,200 lbs</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">SP Safe Zone:</span>
-                        <span>4 SP</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Deck Size:</span>
-                        <span>25-30 cards</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Relic Slots:</span>
-                        <span>2 slots</span>
-                    </div>
-                    <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Force multiplier. Weaker alone, devastating with allies.</p>
-                    <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Field Repairs - Remove ally Damage cards</p>
-                </div>
-
-                <div class="weight-class">
-                    <h4>🏰 Heavy</h4>
-                    <div class="stat-row">
-                        <span class="stat-label">Weight:</span>
-                        <span>1,300-1,800 lbs</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">SP Safe Zone:</span>
-                        <span>3 SP</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Deck Size:</span>
-                        <span>30-35 cards</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Relic Slots:</span>
-                        <span>3 slots</span>
-                    </div>
-                    <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Built to last. Control space through sheer presence.</p>
-                    <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Brace Protocols - Root for defense bonus</p>
-                </div>
-
-                <div class="weight-class">
-                    <h4>💀 Assault</h4>
-                    <div class="stat-row">
-                        <span class="stat-label">Weight:</span>
-                        <span>1,900-2,500 lbs</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">SP Safe Zone:</span>
-                        <span>2 SP</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Deck Size:</span>
-                        <span>35-40 cards</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Relic Slots:</span>
-                        <span>3 slots</span>
-                    </div>
-                    <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Walking apocalypse. Reshape the battlefield.</p>
-                    <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Siege Mode - Multi-turn devastating attacks</p>
-                </div>
-
-                <div class="weight-class">
-                    <h4>🌀 Aberrant</h4>
-                    <div class="stat-row">
-                        <span class="stat-label">Weight:</span>
-                        <span>600-1,500 lbs</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">SP Safe Zone:</span>
-                        <span>3 SP</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Deck Size:</span>
-                        <span>25-30 cards</span>
-                    </div>
-                    <div class="stat-row">
-                        <span class="stat-label">Relic Slots:</span>
-                        <span>2 slots</span>
-                    </div>
-                    <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Rules are optional. Reality is negotiable.</p>
-                    <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Warp Flux - Reality-bending chaos</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- RACES SECTION -->
-        <section id="races" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Racial Casket Variants</h2>
-            <p style="margin-bottom: 2rem;">All weight classes available to all races, but each brings unique mechanics.</p>
-
-            <div class="race-grid">
-                <div class="race-card">
-                    <h4>⚔ Human - "Penitent Frames"</h4>
-                    <p class="race-subtitle">Redemption through suffering</p>
-                    <div class="mechanic-box">
-                        <div class="mechanic-title">Vow System</div>
-                        <p>Choose 1 Vow at mission start:</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li><strong>Mercy:</strong> Can't kill disabled, +1 SP</li>
-                            <li><strong>Poverty:</strong> No relic tech, -1 Taint gain</li>
-                            <li><strong>Wrath:</strong> Must attack, +1 damage</li>
-                            <li><strong>Penance:</strong> Start at 1 Taint, can purge</li>
-                            <li><strong>Protection:</strong> Shield allies, +1 Defense</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="race-card">
-                    <h4>🌿 Elven - "Verdant Walkers"</h4>
-                    <p class="race-subtitle">Nature integrated with machinery</p>
-                    <div class="mechanic-box">
-                        <div class="mechanic-title">Symbiosis</div>
-                        <p>End of each round: Remove 1 Damage card from discard</p>
-                        <p style="margin-top: 0.5rem;"><strong>Weakness:</strong> Vulnerable to fire (+1 fire damage)</p>
-                    </div>
-                </div>
-
-                <div class="race-card">
-                    <h4>⚒ Dwarven - "Forge Titans"</h4>
-                    <p class="race-subtitle">Overengineered masterworks</p>
-                    <div class="mechanic-box">
-                        <div class="mechanic-title">Runic Overcharge</div>
-                        <p>Inscribe Runes on equipment (once per campaign)</p>
-                        <p style="margin-top: 0.5rem;">Trigger once per mission:</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li><strong>Stone:</strong> Ignore next 3 damage</li>
-                            <li><strong>Flame:</strong> Double attack damage</li>
-                            <li><strong>Iron:</strong> Ignore forced movement</li>
-                            <li><strong>Warding:</strong> +2 Defense vs magic</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="race-card">
-                    <h4>💀 Orcish - "War Hulks"</h4>
-                    <p class="race-subtitle">Scrap metal monsters</p>
-                    <div class="mechanic-box">
-                        <div class="mechanic-title">Scrap Fury</div>
-                        <p>Each reshuffle: +1 damage on all attacks (stacks!)</p>
-                        <p style="margin-top: 0.5rem;"><strong>At 3+ reshuffles:</strong> Berserk!</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li>Must attack if able</li>
-                            <li>+2 damage on all attacks</li>
-                            <li>First Damage card/round doesn't clog</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="race-card">
-                    <h4>🐉 Draconid - "Dragonborn Shells"</h4>
-                    <p class="race-subtitle">Ancient draconic power</p>
-                    <div class="mechanic-box">
-                        <div class="mechanic-title">Draconic Breath</div>
-                        <p>Once per mission: 3 SP, AOE breath attack</p>
-                        <p style="margin-top: 0.5rem;">Choose element at creation:</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li><strong>Fire:</strong> 3 dmg, +2 Heat</li>
-                            <li><strong>Ice:</strong> 2 dmg, slow enemies</li>
-                            <li><strong>Lightning:</strong> 4 dmg primary, 1 adjacent</li>
-                            <li><strong>Poison:</strong> 2 dmg + ongoing</li>
-                            <li><strong>Acid:</strong> 3 dmg, ignore armor</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="race-card">
-                    <h4>💀 Undead - "Bonecage Sentinels"</h4>
-                    <p class="race-subtitle">Death-powered machinery</p>
-                    <div class="mechanic-box">
-                        <div class="mechanic-title">Unliving Resilience</div>
-                        <p>Start at 3 Taint (stable corruption)</p>
-                        <p style="margin-top: 0.5rem;"><strong>Death's Door:</strong> When disabled, roll 1d6</p>
-                        <p style="margin-top: 0.5rem;">4+ = Draw 5 from Soul Reserve, fight 1 more round!</p>
-                    </div>
-                </div>
-
-                <div class="race-card">
-                    <h4>✨ Fae - "Glamour Suits"</h4>
-                    <p class="race-subtitle">Illusion and trickery</p>
-                    <div class="mechanic-box">
-                        <div class="mechanic-title">Fae Bargain</div>
-                        <p>Once per mission, activate for 3 turns:</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li>+2 SP Safe Zone</li>
-                            <li>Ignore terrain</li>
-                            <li>+2 initiative (act faster)</li>
-                            <li>Ignore partial cover</li>
-                        </ul>
-                        <p style="margin-top: 0.5rem;"><strong>Price:</strong> Gain 2 Taint, -1 SP rest of mission</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GLOSSARY SECTION -->
-        <section id="glossary" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">📖 Glossary of Terms</h2>
-            <p style="margin-bottom: 2rem;">Quick reference guide to Penance terminology</p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
-                <div class="info-card">
-                    <h3>Core Terms</h3>
-                    <dl style="line-height: 1.8;">
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Casket</dt>
-                        <dd style="margin-left: 1rem;">Massive armored suit powered by a Soulstone. Your character and your deck.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Soulstone</dt>
-                        <dd style="margin-left: 1rem;">Crystalline power core. Grants strength but corrupts your pilot over time.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Soul-Points (SP)</dt>
-                        <dd style="margin-left: 1rem;">Action currency. Each Casket has a Safe Zone limit per turn.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Initiative</dt>
-                        <dd style="margin-left: 1rem;">Number on cards (0-10). Lower acts first. [—] means reactive/no initiative.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Deck-as-Health</dt>
-                        <dd style="margin-left: 1rem;">Your deck represents operational capacity. Damage = discard cards. Empty deck + hand = disabled.</dd>
-                    </dl>
-                </div>
-
-                <div class="info-card">
-                    <h3>Combat Terms</h3>
-                    <dl style="line-height: 1.8;">
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Safe Zone</dt>
-                        <dd style="margin-left: 1rem;">SP you can spend per turn without risk. Varies by weight class (Scout: 5, Heavy: 3).</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Danger Zone</dt>
-                        <dd style="margin-left: 1rem;">Pushing beyond Safe Zone grants +2 SP but forces Strain Table roll.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Heat</dt>
-                        <dd style="margin-left: 1rem;">Thermal load/system stress. High Heat increases Strain roll penalties.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Strain Table</dt>
-                        <dd style="margin-left: 1rem;">Roll when entering Danger Zone. Higher result = worse malfunction (Heat gain, damage, forced rotation).</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Facing</dt>
-                        <dd style="margin-left: 1rem;">Hex direction you're oriented. Front attacks are normal, rear attacks devastating.</dd>
-                    </dl>
-                </div>
-
-                <div class="info-card">
-                    <h3>Damage Terms</h3>
-                    <dl style="line-height: 1.8;">
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Component</dt>
-                        <dd style="margin-left: 1rem;">Casket parts: Right Arm, Left Arm, Chassis (core), Legs. Track damage separately.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Damage Card</dt>
-                        <dd style="margin-left: 1rem;">Injury cards added to deck when reshuffling. Cannot be played, clog your hand.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Degraded</dt>
-                        <dd style="margin-left: 1rem;">Component with 6+ damage. Penalties apply (weapons -1 dmg, shields -1 Defense, etc.).</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Disabled</dt>
-                        <dd style="margin-left: 1rem;">Component with 9+ damage (unusable) OR Casket with empty deck + hand (mission loss).</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Reshuffle</dt>
-                        <dd style="margin-left: 1rem;">When deck runs out, shuffle discard pile. Add Damage cards based on injuries (1 per 2 damage).</dd>
-                    </dl>
-                </div>
-
-                <div class="info-card">
-                    <h3>Corruption Terms</h3>
-                    <dl style="line-height: 1.8;">
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Taint</dt>
-                        <dd style="margin-left: 1rem;">Corruption level (0-10). Higher Taint = more power, more risk. 10 = transform into Abomination.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Tainted Cards</dt>
-                        <dd style="margin-left: 1rem;">Require 3+ Taint to use. Powerful effects with drawbacks.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Forbidden Cards</dt>
-                        <dd style="margin-left: 1rem;">Require 7+ Taint. Game-breaking abilities, severe side effects.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Abomination</dt>
-                        <dd style="margin-left: 1rem;">Player who reaches 10 Taint transforms. Becomes AI-controlled boss, hostile to all.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">The Void</dt>
-                        <dd style="margin-left: 1rem;">Dimension of chaotic magic. Source of Taint, Soulstones, and Abominations.</dd>
-                    </dl>
-                </div>
-
-                <div class="info-card">
-                    <h3>Card Keywords</h3>
-                    <dl style="line-height: 1.8;">
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Universal</dt>
-                        <dd style="margin-left: 1rem;">Mandatory base cards. Every deck has exactly 10 Universal cards.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Weapon</dt>
-                        <dd style="margin-left: 1rem;">Attack card from equipped arms (sword, hammer, bow, etc.). Requires SP.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Spell</dt>
-                        <dd style="margin-left: 1rem;">Magic from Source Conduit arm. Choose school: Fire, Ice, Lightning, Void.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Relic</dt>
-                        <dd style="margin-left: 1rem;">Ancient technology. Often requires ammo/charge tokens (limited uses).</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Reactive</dt>
-                        <dd style="margin-left: 1rem;">Play in response to enemy action (defense cards, interrupts). Initiative [—].</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Corruption</dt>
-                        <dd style="margin-left: 1rem;">Using this card causes Taint gain. High risk, high reward.</dd>
-                    </dl>
-                </div>
-
-                <div class="info-card">
-                    <h3>Campaign Terms</h3>
-                    <dl style="line-height: 1.8;">
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Workshop</dt>
-                        <dd style="margin-left: 1rem;">Between missions, spend Credits to buy equipment, repair damage, purify Taint.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Credits</dt>
-                        <dd style="margin-left: 1rem;">Currency earned from missions. Used at Workshop for upgrades/repairs.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Pilot Scar</dt>
-                        <dd style="margin-left: 1rem;">Permanent trait gained every 3 missions. Can be positive, negative, or mixed.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Permadeath</dt>
-                        <dd style="margin-left: 1rem;">Optional rule: If pilot dies in mission, gone forever. Create new pilot, lose progress.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">AI Behavior Deck</dt>
-                        <dd style="margin-left: 1rem;">Monsters act via card deck (15-20 cards). Draw each turn, execute action.</dd>
-                    </dl>
-                </div>
-
-                <div class="info-card">
-                    <h3>Lore Terms</h3>
-                    <dl style="line-height: 1.8;">
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">The Sundering</dt>
-                        <dd style="margin-left: 1rem;">The Cataclysm. Nikolas Theslar's experiment tore reality, killed civilization 100 years ago.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Resonance Engine</dt>
-                        <dd style="margin-left: 1rem;">Ground zero in Sibarian Wastes. Still pulses, still tears reality. Source of Void rifts.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Penitent Knight</dt>
-                        <dd style="margin-left: 1rem;">Human Casket pilot. Seeks absolution through combat, bound by sacred Vows.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Verdant Covenant</dt>
-                        <dd style="margin-left: 1rem;">Elven faction. Believes world is alive, seeks harmony with Soulstones.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Forge-Guilds</dt>
-                        <dd style="margin-left: 1rem;">Dwarven engineers. Treat Sundering as fixable problem, most advanced Soulstone research.</dd>
-                    </dl>
-                </div>
-
-                <div class="info-card">
-                    <h3>Range & Movement</h3>
-                    <dl style="line-height: 1.8;">
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Hex</dt>
-                        <dd style="margin-left: 1rem;">Board space. Caskets occupy 1 hex. Has 6 facings (front, sides, rear).</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Adjacent / Melee</dt>
-                        <dd style="margin-left: 1rem;">Touching hexes. Range for swords, hammers, close combat.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Close (2-3)</dt>
-                        <dd style="margin-left: 1rem;">2-3 hexes away. Optimal for short-range weapons (pistols, thrown).</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Medium (4-6)</dt>
-                        <dd style="margin-left: 1rem;">4-6 hexes. Standard engagement (rifles, bows, most combat).</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Long (7+)</dt>
-                        <dd style="margin-left: 1rem;">7+ hexes. Sniper range, artillery. Penalties for small targets.</dd>
-
-                        <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Line of Sight (LOS)</dt>
-                        <dd style="margin-left: 1rem;">Clear path to target. Terrain/obstacles can block or provide cover.</dd>
-                    </dl>
-                </div>
-            </div>
-        </section>
-
-        <!-- CARDS SECTION -->
-        <section id="cards" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">📚 Complete Card Library</h2>
-            <p style="margin-bottom: 2rem;">Browse all cards available in Penance. Filter by type, search by name.</p>
-
-            <!-- Card Filters -->
-            <div style="background: var(--medium-bg); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                    <label style="color: var(--accent-gold); font-weight: bold;">Filter by Type:</label>
-                    <button class="filter-btn active" onclick="filterCards('all')" data-filter="all">All Cards</button>
-                    <button class="filter-btn" onclick="filterCards('universal')" data-filter="universal">Universal (10)</button>
-                    <button class="filter-btn" onclick="filterCards('weapon')" data-filter="weapon">Weapons</button>
-                    <button class="filter-btn" onclick="filterCards('damage')" data-filter="damage">Damage</button>
-                    <button class="filter-btn" onclick="filterCards('spell')" data-filter="spell">Spells</button>
-                    <button class="filter-btn" onclick="filterCards('relic')" data-filter="relic">Relics</button>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <input type="text" id="cardSearch" placeholder="🔍 Search cards by name..."
-                           style="width: 100%; padding: 0.75rem; background: var(--dark-bg); color: var(--text-light); border: 2px solid var(--border-color); border-radius: 4px; font-size: 1rem;"
-                           oninput="searchCards(this.value)">
-                </div>
-            </div>
-
-            <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Universal Cards (10)</h3>
-            <p style="margin-bottom: 1rem;">Every deck contains these 10 universal cards:</p>
-
-            <div class="card-grid" id="cardGrid">
-                <div class="card-preview" data-card-type="universal" data-card-name="Desperate Lunge">
-                    <div class="card-header">
-                        <span class="card-title">⚡ DESPERATE LUNGE</span>
-                        <span class="card-initiative">[1]</span>
-                    </div>
-                    <div class="card-type">Type: UNIVERSAL (Action)</div>
-                    <div class="card-cost">
-                        <span><strong>SP Cost:</strong> 1</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Move up to 2 hexes in any direction.<br>
-                        You may rotate once during movement.<br><br>
-                        Generate 1 Heat.
-                    </div>
-                    <div class="card-keywords">
-                        <strong>Heat:</strong> +1 | <strong>Keywords:</strong> Universal
-                    </div>
-                    <div class="card-flavor">
-                        "Desperation grants wings."
-                    </div>
-                </div>
-
-                <div class="card-preview" data-card-type="universal" data-card-name="Unyielding Bulwark">
-                    <div class="card-header">
-                        <span class="card-title">🛡 UNYIELDING BULWARK</span>
-                        <span class="card-initiative">[—]</span>
-                    </div>
-                    <div class="card-type">Type: UNIVERSAL (Reaction)</div>
-                    <div class="card-cost">
-                        <span><strong>SP Cost:</strong> 0</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Play when targeted by attack.<br><br>
-                        Reduce damage by 2 (minimum 1).<br>
-                        Discard this card after use.
-                    </div>
-                    <div class="card-keywords">
-                        <strong>Heat:</strong> 0 | <strong>Keywords:</strong> Universal
-                    </div>
-                    <div class="card-flavor">
-                        "Stand firm. Endure."
-                    </div>
-                </div>
-
-                <div class="card-preview" data-card-type="weapon" data-card-name="Faithful Thrust">
-                    <div class="card-header">
-                        <span class="card-title">⚔ FAITHFUL THRUST</span>
-                        <span class="card-initiative">[3]</span>
-                    </div>
-                    <div class="card-type">Type: WEAPON (Right Arm)</div>
-                    <div class="card-cost">
-                        <span><strong>SP Cost:</strong> 2</span>
-                        <span><strong>Range:</strong> Melee</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Deal 4 damage to adjacent enemy.<br><br>
-                        If attacking from rear: +2 damage.
-                    </div>
-                    <div class="card-keywords">
-                        <strong>Heat:</strong> 0 | <strong>Keywords:</strong> Blade, Holy
-                    </div>
-                    <div class="card-flavor">
-                        "Steel guided by conviction."
-                    </div>
-                </div>
-
-                <div class="card-preview" data-card-type="damage" data-card-name="Cracked Soulveins">
-                    <div class="card-header">
-                        <span class="card-title">💔 CRACKED SOULVEINS</span>
-                        <span class="card-initiative">[—]</span>
-                    </div>
-                    <div class="card-type">Type: DAMAGE (Chassis)</div>
-                    <div class="card-cost">
-                        <span><strong>Cannot be played</strong></span>
-                        <span></span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        This card clogs your deck.<br><br>
-                        All SP costs increased by 1.
-                    </div>
-                    <div class="card-keywords">
-                        <strong>Keywords:</strong> Injury, Critical
-                    </div>
-                    <div class="card-flavor">
-                        "The stone bleeds its light."
-                    </div>
-                </div>
-            </div>
-
-            <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">Complete Universal Card List</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Card Name</th>
-                        <th>Init</th>
-                        <th>SP</th>
-                        <th>Effect Summary</th>
-                        <th>Heat</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>⚡ Desperate Lunge</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>Move 2 hexes, rotate once</td>
-                        <td>+1</td>
-                    </tr>
-                    <tr>
-                        <td>⚡ Warden's Pivot</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>Rotate to any facing (free)</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>⚡ Ironstrider's Rush</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>Move 3 hexes straight, ignore terrain</td>
-                        <td>+2</td>
-                    </tr>
-                    <tr>
-                        <td>🛡 Unyielding Bulwark</td>
-                        <td>—</td>
-                        <td>0</td>
-                        <td>Reduce damage by 2 (reaction)</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>🛡 Second Skin</td>
-                        <td>—</td>
-                        <td>0</td>
-                        <td>Reduce damage by 1 (reaction)</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>🛡 Guardian's Defiance</td>
-                        <td>5</td>
-                        <td>1</td>
-                        <td>+2 Defense until next turn</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>🔥 Breathe the Core</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>Remove 1d3 Heat</td>
-                        <td>-1d3</td>
-                    </tr>
-                    <tr>
-                        <td>🔧 Field Suture</td>
-                        <td>4</td>
-                        <td>2</td>
-                        <td>Remove 1 Damage card from discard</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>📖 Soul's Recall</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>Draw 2 cards</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>📖 Tattered Hope</td>
-                        <td>—</td>
-                        <td>0</td>
-                        <td>Discard hand, draw 3</td>
-                        <td>0</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- LORE SECTION -->
-        <section id="lore" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">🌍 World Lore: The Sundering</h2>
-            <p style="margin-bottom: 2rem;">The dark history of how the world ended... and began anew.</p>
-
-            <div class="info-card" style="margin-bottom: 2rem; border-left: 4px solid var(--accent-red);">
-                <h3>The Cataclysm: Year 0</h3>
-                <p style="line-height: 1.8;">In the height of the Old World's Golden Age, the great artificer-mage <strong style="color: var(--accent-gold);">Nikolas Theslar</strong> believed he had discovered the secret to infinite energy—a method to harness the planet's magnetic field and broadcast power wirelessly across the entire world.</p>
-                <p style="margin-top: 1rem; line-height: 1.8;">His grand experiment at the <strong>Sibarian Wastes Research Station</strong> did not fail. It succeeded... catastrophically. The <strong style="color: var(--accent-red);">Resonance Engine</strong> didn't just tap the magnetic field—it <strong>ripped open the boundary between the material world and the Void</strong>.</p>
-                <div style="background: var(--dark-bg); padding: 1rem; margin-top: 1rem; border-left: 3px solid var(--accent-gold); font-style: italic;">
-                    "The world died screaming. We built tombs of iron to survive it."
-                </div>
-            </div>
-
-            <div class="card-grid">
-                <div class="info-card">
-                    <h3>⚡ The Pulse (Hour 0-6)</h3>
-                    <ul>
-                        <li>Electromagnetic shockwave at speed of light</li>
-                        <li>All technology instantly fails</li>
-                        <li>Skyships plummet, engines explode</li>
-                        <li>Millions die in first six hours</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>🌀 The Scream (Day 1-30)</h3>
-                    <ul>
-                        <li>Magical energy floods world like radiation</li>
-                        <li>Mages burn from inside, reality tears</li>
-                        <li>Void creatures begin manifesting</li>
-                        <li><strong>Taint</strong> enters the world</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>💀 The Collapse (Year 0-10)</h3>
-                    <ul>
-                        <li>Civilization crumbles without infrastructure</li>
-                        <li>Kingdoms fragment into city-states</li>
-                        <li>Knowledge lost as libraries burn</li>
-                        <li>The New Dark Age begins</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>💎 The Adaptation (Year 10-50)</h3>
-                    <ul>
-                        <li>Survivors discover <strong>Soulstones</strong></li>
-                        <li>Crystalline formations near Void rifts</li>
-                        <li>Can store and regulate Tainted magic</li>
-                        <li>Church of Absolution forms</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>⚔ The Casket Era (Year 50-100)</h3>
-                    <ul>
-                        <li>First primitive Caskets built</li>
-                        <li>Armored suits powered by Soulstones</li>
-                        <li>Knights can channel magic through machines</li>
-                        <li>New arms race begins</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>🔥 Present Day (Year 100+)</h3>
-                    <ul>
-                        <li>World fragmented into realms</li>
-                        <li>Casket technology mature but dangerous</li>
-                        <li>Void rifts still spawn monsters</li>
-                        <li><strong>The Engine still pulses...</strong></li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">The Great Mystery: What Are Soulstones?</h3>
-            <p style="margin-bottom: 1rem;">Each faction has a different belief...</p>
-
-            <div class="race-grid">
-                <div class="info-card" style="border-left: 3px solid #d4af37;">
-                    <h4 style="color: var(--accent-gold);">⚔ Human Church</h4>
-                    <p style="font-style: italic;">"Fragments of fallen angels. Divine punishment for our hubris."</p>
-                </div>
-
-                <div class="info-card" style="border-left: 3px solid #2d8659;">
-                    <h4 style="color: #5fb57d;">🌿 Elven Covenant</h4>
-                    <p style="font-style: italic;">"Crystallized Worldheart blood. The planet trying to heal itself."</p>
-                </div>
-
-                <div class="info-card" style="border-left: 3px solid #8b4513;">
-                    <h4 style="color: #cd853f;">⚒ Dwarven Guilds</h4>
-                    <p style="font-style: italic;">"Solidified exotic radiation. Byproduct of dimensional bleed. Fixable."</p>
-                </div>
-
-                <div class="info-card" style="border-left: 3px solid #654321;">
-                    <h4 style="color: #a0826d;">💀 Orcish Clans</h4>
-                    <p style="font-style: italic;">"Power rocks. Make you strong. That's all that matters."</p>
-                </div>
-
-                <div class="info-card" style="border-left: 3px solid #ff4500;">
-                    <h4 style="color: #ff6347;">🐉 Draconids</h4>
-                    <p style="font-style: italic;">"Fossilized dragon hearts. This has happened before. It will happen again."</p>
-                </div>
-
-                <div class="info-card" style="border-left: 3px solid #2f4f4f;">
-                    <h4 style="color: #708090;">💀 Undead Courts</h4>
-                    <p style="font-style: italic;">"Crystallized life-force. Proof that death is no longer the end."</p>
-                </div>
-
-                <div class="info-card" style="border-left: 3px solid #9370db;">
-                    <h4 style="color: #ba55d3;">✨ Fae Courts</h4>
-                    <p style="font-style: italic;">"Condensed possibility. Reality is now negotiable. Thank you, Theslar!"</p>
-                </div>
-            </div>
-
-            <div style="background: var(--medium-bg); padding: 2rem; margin-top: 2rem; border-radius: 8px; border: 2px solid var(--accent-gold);">
-                <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">🗺 The Shattered Realms</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Realm</th>
-                            <th>Faction</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Sibarian Wastes</strong></td>
-                            <td>Uninhabitable</td>
-                            <td>Ground zero. Resonance Engine still pulses. Reality is "soft"</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Penitent Kingdoms</strong></td>
-                            <td>Human</td>
-                            <td>Gothic theocracy. Church rules. Guilt and redemption culture</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Verdant Enclaves</strong></td>
-                            <td>Elven</td>
-                            <td>Forest realms. Mobile tree-cities. Nature-integrated tech</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Forge-Holds</strong></td>
-                            <td>Dwarven</td>
-                            <td>Mountain kingdoms. Industrial powerhouses. Best Soulstone research</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ashland Clans</strong></td>
-                            <td>Orcish</td>
-                            <td>Volcanic wastes. Tribal warfare. Scrap-built Caskets</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Bone-Marches</strong></td>
-                            <td>Undead</td>
-                            <td>Necropolis territories. Mist-shrouded. Patient and alien</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Shimmerlands</strong></td>
-                            <td>Fae</td>
-                            <td>Reality-optional zones. Feywild bleeds into world. Beautiful and deadly</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dragon Peaks</strong></td>
-                            <td>Draconid</td>
-                            <td>High mountains. Ancient dragon lairs. Repository of lost knowledge</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- DAMAGE SECTION -->
-        <section id="damage" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Damage & Injury System</h2>
-
-            <div class="card-grid">
-                <div class="info-card">
-                    <h3>Taking Damage</h3>
-                    <p>When damaged, choose how to discard:</p>
-                    <ul>
-                        <li><strong>From Hand:</strong> Lose tactical options now</li>
-                        <li><strong>From Deck:</strong> Preserve hand, risk important cards</li>
-                        <li><strong>Mixed:</strong> Balance both</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Example:</strong> Take 4 damage with 6 cards in hand</p>
-                    <p>→ Discard 2 from hand + mill 2 from deck</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Component Damage</h3>
-                    <p>Track damage per component on player mat:</p>
-                    <ul>
-                        <li>Right Arm</li>
-                        <li>Left Arm</li>
-                        <li>Chassis (core)</li>
-                        <li>Legs</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>9+ damage to Chassis = Destroyed</strong></p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Reshuffle Injuries</h3>
-                    <p>When deck runs out, reshuffle and add Damage cards:</p>
-                    <p style="margin-top: 0.5rem;"><strong>Formula:</strong> 1 Damage card per 2 damage to component</p>
-                    <p style="margin-top: 1rem;"><strong>Example:</strong></p>
-                    <ul>
-                        <li>Right Arm: 5 damage → 2 Damage cards</li>
-                        <li>Chassis: 3 damage → 1 Damage card</li>
-                        <li>Total: 3 new Damage cards in deck</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">Component Damage Thresholds</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Damage</th>
-                        <th>Status</th>
-                        <th>Effect</th>
-                        <th>Damage Cards</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0-2</td>
-                        <td>Minor</td>
-                        <td>No immediate effect</td>
-                        <td>1 card at reshuffle</td>
-                    </tr>
-                    <tr>
-                        <td>3-5</td>
-                        <td>Moderate</td>
-                        <td>No degradation yet</td>
-                        <td>2 cards at reshuffle</td>
-                    </tr>
-                    <tr>
-                        <td>6-8</td>
-                        <td style="color: orange;">Degraded</td>
-                        <td>Component penalties apply</td>
-                        <td>3-4 cards at reshuffle</td>
-                    </tr>
-                    <tr>
-                        <td>9+</td>
-                        <td style="color: red;">Disabled</td>
-                        <td>Component unusable</td>
-                        <td>All cards unusable</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">Degradation Effects (6+ damage)</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Component</th>
-                        <th>Degraded Effect</th>
-                        <th>Disabled Effect</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Right Arm</td>
-                        <td>Attacks -1 damage</td>
-                        <td>Cannot use Right Arm cards</td>
-                    </tr>
-                    <tr>
-                        <td>Left Arm</td>
-                        <td>Defense -1</td>
-                        <td>Cannot use Left Arm cards</td>
-                    </tr>
-                    <tr>
-                        <td>Chassis</td>
-                        <td>Safe Zone SP -1</td>
-                        <td style="color: red;">CASKET DESTROYED</td>
-                    </tr>
-                    <tr>
-                        <td>Legs</td>
-                        <td>Movement +1 SP cost</td>
-                        <td>Cannot move (can rotate/attack)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- VICTORY CONDITIONS SECTION -->
-        <section id="victory" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Victory & Defeat Conditions</h2>
-
-            <div class="card-grid">
-                <div class="info-card">
-                    <h3>Arena (PvP)</h3>
-                    <p><strong>Victory:</strong></p>
-                    <ul>
-                        <li>Last Casket standing</li>
-                        <li>Reach VP threshold (10-15 VP)</li>
-                        <li>Most VP at time limit</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Defeat:</strong> Casket disabled</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Campaign (Co-op)</h3>
-                    <p><strong>Victory:</strong> Complete mission objective</p>
-                    <ul>
-                        <li>Earn credits & experience</li>
-                        <li>Unlock equipment</li>
-                        <li>Advance story</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Defeat:</strong></p>
-                    <ul>
-                        <li>All Caskets disabled</li>
-                        <li>Objective fails</li>
-                        <li>Pilot may die (permadeath)</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>Raid (Boss Fight)</h3>
-                    <p><strong>Victory:</strong> Reduce boss to 0 HP</p>
-                    <p><strong>Rewards:</strong></p>
-                    <ul>
-                        <li>Legendary equipment</li>
-                        <li>Rare Soulstone fragments</li>
-                        <li>Unique relic tech</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Defeat:</strong> All players disabled or time expires</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Skirmish (Mixed)</h3>
-                    <p><strong>First to 20 VP wins:</strong></p>
-                    <ul>
-                        <li>Primary Objective: 10 VP</li>
-                        <li>Secondary Objectives: 3-5 VP</li>
-                        <li>Hidden Agendas: 2 VP</li>
-                        <li>Eliminations: 5 VP each</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>Disabled State</h3>
-                    <p><strong>You are disabled when:</strong></p>
-                    <ul>
-                        <li>Deck empty AND hand empty</li>
-                        <li>Chassis takes 9+ damage</li>
-                        <li>Scenario-specific condition</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Co-op:</strong> You're out, but allies can continue</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Special Conditions</h3>
-                    <p><strong>Corruption Victory:</strong> Reach 10 Taint, transform into AI Abomination. Other players must destroy you!</p>
-                    <p style="margin-top: 1rem;"><strong>Extraction:</strong> Reach zone, survive 2 turns, escape battlefield</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PRINT CARDS SECTION -->
-        <section id="print" class="section">
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Print & Play Cards</h2>
-            <p style="margin-bottom: 2rem;">Print these cards on standard letter/A4 paper, cut out, and start playtesting!</p>
-
-            <div style="text-align: center; margin: 2rem 0;">
-                <p style="margin-bottom: 1rem;">Click the button below to generate a printable PDF with all Universal cards.</p>
-                <button class="print-button" onclick="window.print()">🖨 Print Cards (Ctrl+P)</button>
-                <p style="margin-top: 1rem; color: #888;">Print at 100% scale, no margins adjustment needed</p>
-            </div>
-
-            <div style="background: var(--medium-bg); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
-                <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Assembly Instructions</h3>
-                <ol style="line-height: 2;">
-                    <li>Print card sheets on cardstock (110lb recommended) or regular paper</li>
-                    <li>If using regular paper, sleeve with card sleeves + backing card</li>
-                    <li>Cut along card borders (sharp scissors or paper cutter)</li>
-                    <li>Optional: Round corners with corner rounder for professional look</li>
-                    <li>Sleeve all cards for consistent shuffle feel (recommended: 63.5mm x 88mm sleeves)</li>
-                </ol>
-            </div>
-
-            <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-gold);">
-                <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">📦 Starter Deck Contents</h4>
-                <p><strong>Scout Deck (22 cards):</strong></p>
-                <ul>
-                    <li>10 Universal cards</li>
-                    <li>4 Longsword cards (Faithkeeper)</li>
-                    <li>3 Buckler cards</li>
-                    <li>2 Jump Jet cards (Relic)</li>
-                    <li>3 player choice cards</li>
-                </ul>
-            </div>
-
-            <!-- PRINTABLE CARDS GRID (Hidden on screen, visible when printing) -->
-            <div class="print-grid">
-                <!-- Universal Cards -->
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">⚡ DESPERATE LUNGE</span>
-                        <span class="card-initiative">[1]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 1</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Move up to 2 hexes in any direction. You may rotate once during movement.<br><br>
-                        Generate 1 Heat.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: +1 | Universal
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">⚡ WARDEN'S PIVOT</span>
-                        <span class="card-initiative">[2]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 0</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Rotate to any facing (free action).<br><br>
-                        This does not generate Heat.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: 0 | Universal
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">⚡ IRONSTRIDER'S RUSH</span>
-                        <span class="card-initiative">[1]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 2</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Move up to 3 hexes in a straight line.<br><br>
-                        Ignore difficult terrain. Generate 2 Heat.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: +2 | Universal
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">🛡 UNYIELDING BULWARK</span>
-                        <span class="card-initiative">[—]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL (Reaction)</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 0</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Play when targeted by attack.<br><br>
-                        Reduce damage by 2 (minimum 1). Discard after use.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: 0 | Reactive
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">🛡 SECOND SKIN</span>
-                        <span class="card-initiative">[—]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL (Reaction)</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 0</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Play when targeted by attack.<br><br>
-                        Reduce damage by 1. Discard after use.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: 0 | Reactive
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">🛡 GUARDIAN'S DEFIANCE</span>
-                        <span class="card-initiative">[5]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 1</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Gain +2 Defense until your next turn.<br><br>
-                        You may use this with Reactive cards.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: 0 | Universal
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">🔥 BREATHE THE CORE</span>
-                        <span class="card-initiative">[3]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 2</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Roll 1d3.<br><br>
-                        Remove that much Heat from your Casket.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: -1d3 | Universal
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">🔧 FIELD SUTURE</span>
-                        <span class="card-initiative">[4]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 2</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Remove 1 Damage card from your discard pile permanently.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: 0 | Universal
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">📖 SOUL'S RECALL</span>
-                        <span class="card-initiative">[2]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 1</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Draw 2 cards from your deck.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: 0 | Universal
-                    </div>
-                </div>
-
-                <div class="card-preview print-card">
-                    <div class="card-header">
-                        <span class="card-title">📖 TATTERED HOPE</span>
-                        <span class="card-initiative">[—]</span>
-                    </div>
-                    <div class="card-type">UNIVERSAL (Reaction)</div>
-                    <div class="card-cost">
-                        <span><strong>SP:</strong> 0</span>
-                        <span><strong>Range:</strong> Self</span>
-                    </div>
-                    <div class="card-effect">
-                        <strong>EFFECT:</strong><br>
-                        Discard your entire hand, then draw 3 cards.
-                    </div>
-                    <div class="card-keywords">
-                        Heat: 0 | Reactive
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Penance: Absolution Through Steel</p>
-        <p style="margin-top: 0.5rem;">Licensed under CC BY-NC-SA 4.0</p>
-        <p style="margin-top: 1rem; font-style: italic;">"In iron we seek forgiveness. Through blood, absolution."</p>
-    </footer>
-
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-
-            // Remove active from all buttons
-            const buttons = document.querySelectorAll('nav button');
-            buttons.forEach(button => button.classList.remove('active'));
-
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-
-            // Activate clicked button
-            event.target.classList.add('active');
-
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function filterCards(filterType) {
-            const cards = document.querySelectorAll('.card-preview[data-card-type]');
-            const filterButtons = document.querySelectorAll('.filter-btn');
-
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            // Filter cards
-            cards.forEach(card => {
-                const cardType = card.getAttribute('data-card-type');
-                if (filterType === 'all' || cardType === filterType) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
-
-        function searchCards(searchTerm) {
-            const cards = document.querySelectorAll('.card-preview[data-card-name]');
-            const lowerSearchTerm = searchTerm.toLowerCase();
-
-            cards.forEach(card => {
-                const cardName = card.getAttribute('data-card-name').toLowerCase();
-                if (cardName.includes(lowerSearchTerm)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            // If search is empty, reset to show all or current filter
-            if (searchTerm === '') {
-                const activeFilter = document.querySelector('.filter-btn.active');
-                if (activeFilter) {
-                    const filterType = activeFilter.getAttribute('data-filter');
-                    cards.forEach(card => {
-                        const cardType = card.getAttribute('data-card-type');
-                        if (filterType === 'all' || cardType === filterType) {
-                            card.classList.remove('hidden');
-                        }
-                    });
-                }
-            }
-        }
-    </script>
+ <header>
+ <h1> PENANCE: ABSOLUTION THROUGH STEEL </h1>
+ <p class="tagline">"In iron we seek forgiveness. Through blood, absolution."</p>
+ </header>
+
+ <nav>
+ <ul>
+ <li><button onclick="showSection('overview')" class="active">Overview</button></li>
+ <li><button onclick="showSection('classes')">Weight Classes</button></li>
+ <li><button onclick="showSection('races')">Races</button></li>
+ <li><button onclick="showSection('cards')">Card Library</button></li>
+ <li><button onclick="showSection('glossary')">Glossary</button></li>
+ <li><button onclick="showSection('damage')">Damage System</button></li>
+ <li><button onclick="showSection('lore')">World Lore</button></li>
+ <li><button onclick="showSection('victory')">Victory</button></li>
+ <li><button onclick="showSection('print')">Print Cards</button></li>
+ </ul>
+ </nav>
+
+ <div class="container">
+ <!-- OVERVIEW SECTION -->
+ <section id="overview" class="section active">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Game Overview</h2>
+
+ <div class="card-grid">
+ <div class="info-card">
+ <h3>Core Concept</h3>
+ <p>A tactical hex-based card game where players pilot massive armored suits called <strong>Caskets</strong> in brutal medieval fantasy combat. Your deck IS your Casket - cards represent equipment, actions, and battle damage.</p>
+ </div>
+
+ <div class="info-card">
+ <h3>Core Pillars</h3>
+ <ul>
+ <li><strong>Tactical Hex Combat</strong> - Positioning matters</li>
+ <li><strong>Deck-Building</strong> - Your deck IS your Casket</li>
+ <li><strong>Push-Your-Luck</strong> - Risk vs reward action economy</li>
+ <li><strong>Corruption System</strong> - Power at a terrible price</li>
+ <li><strong>Campaign Progression</strong> - Permanent consequences</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3>Game Modes</h3>
+ <ul>
+ <li><strong>Arena (PvP)</strong> - 1v1, 2v2, or FFA battles</li>
+ <li><strong>Campaign (Co-op)</strong> - Story-driven progression</li>
+ <li><strong>Raid (Boss Fight)</strong> - Team vs massive monsters</li>
+ <li><strong>Skirmish (Mixed)</strong> - Objective-based gameplay</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3>Deck-as-Health</h3>
+ <p>Your deck represents your Casket's operational capacity. When damaged, you discard cards. When deck AND hand are empty = disabled.</p>
+ <p style="margin-top: 1rem;"><strong>Choice:</strong> Discard from hand (lose options) or mill from deck (preserve hand).</p>
+ </div>
+
+ <div class="info-card">
+ <h3>Soul-Point System</h3>
+ <p><strong>Safe Zone:</strong> Spend SP safely within your limit</p>
+ <p><strong>Danger Zone:</strong> Push beyond for +2 SP, but roll on Strain Table (risk overheating, damage, corruption)</p>
+ </div>
+
+ <div class="info-card">
+ <h3>Corruption & Taint</h3>
+ <p>Soulstones grant power but corrupt you:</p>
+ <ul>
+ <li>0-2 Taint: Clean, safe</li>
+ <li>3-6 Taint: More power, more risk</li>
+ <li>7-9 Taint: Forbidden abilities unlocked</li>
+ <li>10 Taint: Transform into AI Abomination</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- WEIGHT CLASSES SECTION -->
+ <section id="classes" class="section">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Weight Classes</h2>
+
+ <div class="weight-class-grid">
+ <div class="weight-class">
+ <h4> Scout</h4>
+ <div class="stat-row">
+ <span class="stat-label">Weight:</span>
+ <span>500-800 lbs</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">SP Safe Zone:</span>
+ <span>5 SP</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Deck Size:</span>
+ <span>20-25 cards</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Relic Slots:</span>
+ <span>1 slot</span>
+ </div>
+ <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Speed & evasion. Scouts survive by not getting hit.</p>
+ <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Sensor Sweep - Reveal enemy cards/AI</p>
+ </div>
+
+ <div class="weight-class">
+ <h4> Support</h4>
+ <div class="stat-row">
+ <span class="stat-label">Weight:</span>
+ <span>900-1,200 lbs</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">SP Safe Zone:</span>
+ <span>4 SP</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Deck Size:</span>
+ <span>25-30 cards</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Relic Slots:</span>
+ <span>2 slots</span>
+ </div>
+ <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Force multiplier. Weaker alone, devastating with allies.</p>
+ <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Field Repairs - Remove ally Damage cards</p>
+ </div>
+
+ <div class="weight-class">
+ <h4>🏰 Heavy</h4>
+ <div class="stat-row">
+ <span class="stat-label">Weight:</span>
+ <span>1,300-1,800 lbs</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">SP Safe Zone:</span>
+ <span>3 SP</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Deck Size:</span>
+ <span>30-35 cards</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Relic Slots:</span>
+ <span>3 slots</span>
+ </div>
+ <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Built to last. Control space through sheer presence.</p>
+ <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Brace Protocols - Root for defense bonus</p>
+ </div>
+
+ <div class="weight-class">
+ <h4> Assault</h4>
+ <div class="stat-row">
+ <span class="stat-label">Weight:</span>
+ <span>1,900-2,500 lbs</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">SP Safe Zone:</span>
+ <span>2 SP</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Deck Size:</span>
+ <span>35-40 cards</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Relic Slots:</span>
+ <span>3 slots</span>
+ </div>
+ <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Walking apocalypse. Reshape the battlefield.</p>
+ <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Siege Mode - Multi-turn devastating attacks</p>
+ </div>
+
+ <div class="weight-class">
+ <h4> Aberrant</h4>
+ <div class="stat-row">
+ <span class="stat-label">Weight:</span>
+ <span>600-1,500 lbs</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">SP Safe Zone:</span>
+ <span>3 SP</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Deck Size:</span>
+ <span>25-30 cards</span>
+ </div>
+ <div class="stat-row">
+ <span class="stat-label">Relic Slots:</span>
+ <span>2 slots</span>
+ </div>
+ <p style="margin-top: 1rem;"><strong>Philosophy:</strong> Rules are optional. Reality is negotiable.</p>
+ <p style="margin-top: 0.5rem;"><strong>Unique:</strong> Warp Flux - Reality-bending chaos</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- RACES SECTION -->
+ <section id="races" class="section">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Racial Casket Variants</h2>
+ <p style="margin-bottom: 2rem;">All weight classes available to all races, but each brings unique mechanics.</p>
+
+ <div class="race-grid">
+ <div class="race-card">
+ <h4> Human - "Penitent Frames"</h4>
+ <p class="race-subtitle">Redemption through suffering</p>
+ <div class="mechanic-box">
+ <div class="mechanic-title">Vow System</div>
+ <p>Choose 1 Vow at mission start:</p>
+ <ul style="margin-top: 0.5rem;">
+ <li><strong>Mercy:</strong> Can't kill disabled, +1 SP</li>
+ <li><strong>Poverty:</strong> No relic tech, -1 Taint gain</li>
+ <li><strong>Wrath:</strong> Must attack, +1 damage</li>
+ <li><strong>Penance:</strong> Start at 1 Taint, can purge</li>
+ <li><strong>Protection:</strong> Shield allies, +1 Defense</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="race-card">
+ <h4> Elven - "Verdant Walkers"</h4>
+ <p class="race-subtitle">Nature integrated with machinery</p>
+ <div class="mechanic-box">
+ <div class="mechanic-title">Symbiosis</div>
+ <p>End of each round: Remove 1 Damage card from discard</p>
+ <p style="margin-top: 0.5rem;"><strong>Weakness:</strong> Vulnerable to fire (+1 fire damage)</p>
+ </div>
+ </div>
+
+ <div class="race-card">
+ <h4>⚒ Dwarven - "Forge Titans"</h4>
+ <p class="race-subtitle">Overengineered masterworks</p>
+ <div class="mechanic-box">
+ <div class="mechanic-title">Runic Overcharge</div>
+ <p>Inscribe Runes on equipment (once per campaign)</p>
+ <p style="margin-top: 0.5rem;">Trigger once per mission:</p>
+ <ul style="margin-top: 0.5rem;">
+ <li><strong>Stone:</strong> Ignore next 3 damage</li>
+ <li><strong>Flame:</strong> Double attack damage</li>
+ <li><strong>Iron:</strong> Ignore forced movement</li>
+ <li><strong>Warding:</strong> +2 Defense vs magic</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="race-card">
+ <h4> Orcish - "War Hulks"</h4>
+ <p class="race-subtitle">Scrap metal monsters</p>
+ <div class="mechanic-box">
+ <div class="mechanic-title">Scrap Fury</div>
+ <p>Each reshuffle: +1 damage on all attacks (stacks!)</p>
+ <p style="margin-top: 0.5rem;"><strong>At 3+ reshuffles:</strong> Berserk!</p>
+ <ul style="margin-top: 0.5rem;">
+ <li>Must attack if able</li>
+ <li>+2 damage on all attacks</li>
+ <li>First Damage card/round doesn't clog</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="race-card">
+ <h4>🐉 Draconid - "Dragonborn Shells"</h4>
+ <p class="race-subtitle">Ancient draconic power</p>
+ <div class="mechanic-box">
+ <div class="mechanic-title">Draconic Breath</div>
+ <p>Once per mission: 3 SP, AOE breath attack</p>
+ <p style="margin-top: 0.5rem;">Choose element at creation:</p>
+ <ul style="margin-top: 0.5rem;">
+ <li><strong>Fire:</strong> 3 dmg, +2 Heat</li>
+ <li><strong>Ice:</strong> 2 dmg, slow enemies</li>
+ <li><strong>Lightning:</strong> 4 dmg primary, 1 adjacent</li>
+ <li><strong>Poison:</strong> 2 dmg + ongoing</li>
+ <li><strong>Acid:</strong> 3 dmg, ignore armor</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="race-card">
+ <h4> Undead - "Bonecage Sentinels"</h4>
+ <p class="race-subtitle">Death-powered machinery</p>
+ <div class="mechanic-box">
+ <div class="mechanic-title">Unliving Resilience</div>
+ <p>Start at 3 Taint (stable corruption)</p>
+ <p style="margin-top: 0.5rem;"><strong>Death's Door:</strong> When disabled, roll 1d6</p>
+ <p style="margin-top: 0.5rem;">4+ = Draw 5 from Soul Reserve, fight 1 more round!</p>
+ </div>
+ </div>
+
+ <div class="race-card">
+ <h4> Fae - "Glamour Suits"</h4>
+ <p class="race-subtitle">Illusion and trickery</p>
+ <div class="mechanic-box">
+ <div class="mechanic-title">Fae Bargain</div>
+ <p>Once per mission, activate for 3 turns:</p>
+ <ul style="margin-top: 0.5rem;">
+ <li>+2 SP Safe Zone</li>
+ <li>Ignore terrain</li>
+ <li>+2 initiative (act faster)</li>
+ <li>Ignore partial cover</li>
+ </ul>
+ <p style="margin-top: 0.5rem;"><strong>Price:</strong> Gain 2 Taint, -1 SP rest of mission</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- GLOSSARY SECTION -->
+ <section id="glossary" class="section">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">📖 Glossary of Terms</h2>
+ <p style="margin-bottom: 2rem;">Quick reference guide to Penance terminology</p>
+
+ <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
+ <div class="info-card">
+ <h3>Core Terms</h3>
+ <dl style="line-height: 1.8;">
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Casket</dt>
+ <dd style="margin-left: 1rem;">Massive armored suit powered by a Soulstone. Your character and your deck.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Soulstone</dt>
+ <dd style="margin-left: 1rem;">Crystalline power core. Grants strength but corrupts your pilot over time.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Soul-Points (SP)</dt>
+ <dd style="margin-left: 1rem;">Action currency. Each Casket has a Safe Zone limit per turn.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Initiative</dt>
+ <dd style="margin-left: 1rem;">Number on cards (0-10). Lower acts first. [—] means reactive/no initiative.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Deck-as-Health</dt>
+ <dd style="margin-left: 1rem;">Your deck represents operational capacity. Damage = discard cards. Empty deck + hand = disabled.</dd>
+ </dl>
+ </div>
+
+ <div class="info-card">
+ <h3>Combat Terms</h3>
+ <dl style="line-height: 1.8;">
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Safe Zone</dt>
+ <dd style="margin-left: 1rem;">SP you can spend per turn without risk. Varies by weight class (Scout: 5, Heavy: 3).</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Danger Zone</dt>
+ <dd style="margin-left: 1rem;">Pushing beyond Safe Zone grants +2 SP but forces Strain Table roll.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Heat</dt>
+ <dd style="margin-left: 1rem;">Thermal load/system stress. High Heat increases Strain roll penalties.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Strain Table</dt>
+ <dd style="margin-left: 1rem;">Roll when entering Danger Zone. Higher result = worse malfunction (Heat gain, damage, forced rotation).</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Facing</dt>
+ <dd style="margin-left: 1rem;">Hex direction you're oriented. Front attacks are normal, rear attacks devastating.</dd>
+ </dl>
+ </div>
+
+ <div class="info-card">
+ <h3>Damage Terms</h3>
+ <dl style="line-height: 1.8;">
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Component</dt>
+ <dd style="margin-left: 1rem;">Casket parts: Right Arm, Left Arm, Chassis (core), Legs. Track damage separately.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Damage Card</dt>
+ <dd style="margin-left: 1rem;">Injury cards added to deck when reshuffling. Cannot be played, clog your hand.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Degraded</dt>
+ <dd style="margin-left: 1rem;">Component with 6+ damage. Penalties apply (weapons -1 dmg, shields -1 Defense, etc.).</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Disabled</dt>
+ <dd style="margin-left: 1rem;">Component with 9+ damage (unusable) OR Casket with empty deck + hand (mission loss).</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Reshuffle</dt>
+ <dd style="margin-left: 1rem;">When deck runs out, shuffle discard pile. Add Damage cards based on injuries (1 per 2 damage).</dd>
+ </dl>
+ </div>
+
+ <div class="info-card">
+ <h3>Corruption Terms</h3>
+ <dl style="line-height: 1.8;">
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Taint</dt>
+ <dd style="margin-left: 1rem;">Corruption level (0-10). Higher Taint = more power, more risk. 10 = transform into Abomination.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Tainted Cards</dt>
+ <dd style="margin-left: 1rem;">Require 3+ Taint to use. Powerful effects with drawbacks.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Forbidden Cards</dt>
+ <dd style="margin-left: 1rem;">Require 7+ Taint. Game-breaking abilities, severe side effects.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Abomination</dt>
+ <dd style="margin-left: 1rem;">Player who reaches 10 Taint transforms. Becomes AI-controlled boss, hostile to all.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">The Void</dt>
+ <dd style="margin-left: 1rem;">Dimension of chaotic magic. Source of Taint, Soulstones, and Abominations.</dd>
+ </dl>
+ </div>
+
+ <div class="info-card">
+ <h3>Card Keywords</h3>
+ <dl style="line-height: 1.8;">
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Universal</dt>
+ <dd style="margin-left: 1rem;">Mandatory base cards. Every deck has exactly 10 Universal cards.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Weapon</dt>
+ <dd style="margin-left: 1rem;">Attack card from equipped arms (sword, hammer, bow, etc.). Requires SP.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Spell</dt>
+ <dd style="margin-left: 1rem;">Magic from Source Conduit arm. Choose school: Fire, Ice, Lightning, Void.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Relic</dt>
+ <dd style="margin-left: 1rem;">Ancient technology. Often requires ammo/charge tokens (limited uses).</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Reactive</dt>
+ <dd style="margin-left: 1rem;">Play in response to enemy action (defense cards, interrupts). Initiative [—].</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Corruption</dt>
+ <dd style="margin-left: 1rem;">Using this card causes Taint gain. High risk, high reward.</dd>
+ </dl>
+ </div>
+
+ <div class="info-card">
+ <h3>Campaign Terms</h3>
+ <dl style="line-height: 1.8;">
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Workshop</dt>
+ <dd style="margin-left: 1rem;">Between missions, spend Credits to buy equipment, repair damage, purify Taint.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Credits</dt>
+ <dd style="margin-left: 1rem;">Currency earned from missions. Used at Workshop for upgrades/repairs.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Pilot Scar</dt>
+ <dd style="margin-left: 1rem;">Permanent trait gained every 3 missions. Can be positive, negative, or mixed.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Permadeath</dt>
+ <dd style="margin-left: 1rem;">Optional rule: If pilot dies in mission, gone forever. Create new pilot, lose progress.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">AI Behavior Deck</dt>
+ <dd style="margin-left: 1rem;">Monsters act via card deck (15-20 cards). Draw each turn, execute action.</dd>
+ </dl>
+ </div>
+
+ <div class="info-card">
+ <h3>Lore Terms</h3>
+ <dl style="line-height: 1.8;">
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">The Sundering</dt>
+ <dd style="margin-left: 1rem;">The Cataclysm. Nikolas Theslar's experiment tore reality, killed civilization 100 years ago.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Resonance Engine</dt>
+ <dd style="margin-left: 1rem;">Ground zero in Sibarian Wastes. Still pulses, still tears reality. Source of Void rifts.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Penitent Knight</dt>
+ <dd style="margin-left: 1rem;">Human Casket pilot. Seeks absolution through combat, bound by sacred Vows.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Verdant Covenant</dt>
+ <dd style="margin-left: 1rem;">Elven faction. Believes world is alive, seeks harmony with Soulstones.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Forge-Guilds</dt>
+ <dd style="margin-left: 1rem;">Dwarven engineers. Treat Sundering as fixable problem, most advanced Soulstone research.</dd>
+ </dl>
+ </div>
+
+ <div class="info-card">
+ <h3>Range & Movement</h3>
+ <dl style="line-height: 1.8;">
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Hex</dt>
+ <dd style="margin-left: 1rem;">Board space. Caskets occupy 1 hex. Has 6 facings (front, sides, rear).</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Adjacent / Melee</dt>
+ <dd style="margin-left: 1rem;">Touching hexes. Range for swords, hammers, close combat.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Close (2-3)</dt>
+ <dd style="margin-left: 1rem;">2-3 hexes away. Optimal for short-range weapons (pistols, thrown).</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Medium (4-6)</dt>
+ <dd style="margin-left: 1rem;">4-6 hexes. Standard engagement (rifles, bows, most combat).</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Long (7+)</dt>
+ <dd style="margin-left: 1rem;">7+ hexes. Sniper range, artillery. Penalties for small targets.</dd>
+
+ <dt style="color: var(--accent-gold); font-weight: bold; margin-top: 0.5rem;">Line of Sight (LOS)</dt>
+ <dd style="margin-left: 1rem;">Clear path to target. Terrain/obstacles can block or provide cover.</dd>
+ </dl>
+ </div>
+ </div>
+ </section>
+
+ <!-- CARDS SECTION -->
+ <section id="cards" class="section">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">📚 Complete Card Library</h2>
+ <p style="margin-bottom: 2rem;">Browse all cards available in Penance. Filter by type, search by name.</p>
+
+ <!-- Card Filters -->
+ <div style="background: var(--medium-bg); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+ <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+ <label style="color: var(--accent-gold); font-weight: bold;">Filter by Type:</label>
+ <button class="filter-btn active" onclick="filterCards('all')" data-filter="all">All Cards</button>
+ <button class="filter-btn" onclick="filterCards('universal')" data-filter="universal">Universal (10)</button>
+ <button class="filter-btn" onclick="filterCards('weapon')" data-filter="weapon">Weapons</button>
+ <button class="filter-btn" onclick="filterCards('damage')" data-filter="damage">Damage</button>
+ <button class="filter-btn" onclick="filterCards('spell')" data-filter="spell">Spells</button>
+ <button class="filter-btn" onclick="filterCards('relic')" data-filter="relic">Relics</button>
+ </div>
+ <div style="margin-top: 1rem;">
+ <input type="text" id="cardSearch" placeholder="🔍 Search cards by name..."
+ style="width: 100%; padding: 0.75rem; background: var(--dark-bg); color: var(--text-light); border: 2px solid var(--border-color); border-radius: 4px; font-size: 1rem;"
+ oninput="searchCards(this.value)">
+ </div>
+ </div>
+
+ <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Universal Cards (10)</h3>
+ <p style="margin-bottom: 1rem;">Every deck contains these 10 universal cards:</p>
+
+ <div class="card-grid" id="cardGrid">
+ <div class="card-preview" data-card-type="universal" data-card-name="Desperate Lunge">
+ <div class="card-header">
+ <span class="card-title"> DESPERATE LUNGE</span>
+ <span class="card-initiative">[1]</span>
+ </div>
+ <div class="card-type">Type: UNIVERSAL (Action)</div>
+ <div class="card-cost">
+ <span><strong>SP Cost:</strong> 1</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Move up to 2 hexes in any direction.<br>
+ You may rotate once during movement.<br><br>
+ Generate 1 Heat.
+ </div>
+ <div class="card-keywords">
+ <strong>Heat:</strong> +1 | <strong>Keywords:</strong> Universal
+ </div>
+ <div class="card-flavor">
+ "Desperation grants wings."
+ </div>
+ </div>
+
+ <div class="card-preview" data-card-type="universal" data-card-name="Unyielding Bulwark">
+ <div class="card-header">
+ <span class="card-title"> UNYIELDING BULWARK</span>
+ <span class="card-initiative">[—]</span>
+ </div>
+ <div class="card-type">Type: UNIVERSAL (Reaction)</div>
+ <div class="card-cost">
+ <span><strong>SP Cost:</strong> 0</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Play when targeted by attack.<br><br>
+ Reduce damage by 2 (minimum 1).<br>
+ Discard this card after use.
+ </div>
+ <div class="card-keywords">
+ <strong>Heat:</strong> 0 | <strong>Keywords:</strong> Universal
+ </div>
+ <div class="card-flavor">
+ "Stand firm. Endure."
+ </div>
+ </div>
+
+ <div class="card-preview" data-card-type="weapon" data-card-name="Faithful Thrust">
+ <div class="card-header">
+ <span class="card-title"> FAITHFUL THRUST</span>
+ <span class="card-initiative">[3]</span>
+ </div>
+ <div class="card-type">Type: WEAPON (Right Arm)</div>
+ <div class="card-cost">
+ <span><strong>SP Cost:</strong> 2</span>
+ <span><strong>Range:</strong> Melee</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Deal 4 damage to adjacent enemy.<br><br>
+ If attacking from rear: +2 damage.
+ </div>
+ <div class="card-keywords">
+ <strong>Heat:</strong> 0 | <strong>Keywords:</strong> Blade, Holy
+ </div>
+ <div class="card-flavor">
+ "Steel guided by conviction."
+ </div>
+ </div>
+
+ <div class="card-preview" data-card-type="damage" data-card-name="Cracked Soulveins">
+ <div class="card-header">
+ <span class="card-title">💔 CRACKED SOULVEINS</span>
+ <span class="card-initiative">[—]</span>
+ </div>
+ <div class="card-type">Type: DAMAGE (Chassis)</div>
+ <div class="card-cost">
+ <span><strong>Cannot be played</strong></span>
+ <span></span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ This card clogs your deck.<br><br>
+ All SP costs increased by 1.
+ </div>
+ <div class="card-keywords">
+ <strong>Keywords:</strong> Injury, Critical
+ </div>
+ <div class="card-flavor">
+ "The stone bleeds its light."
+ </div>
+ </div>
+ </div>
+
+ <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">Complete Universal Card List</h3>
+ <table>
+ <thead>
+ <tr>
+ <th>Card Name</th>
+ <th>Init</th>
+ <th>SP</th>
+ <th>Effect Summary</th>
+ <th>Heat</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td> Desperate Lunge</td>
+ <td>1</td>
+ <td>1</td>
+ <td>Move 2 hexes, rotate once</td>
+ <td>+1</td>
+ </tr>
+ <tr>
+ <td> Warden's Pivot</td>
+ <td>2</td>
+ <td>0</td>
+ <td>Rotate to any facing (free)</td>
+ <td>0</td>
+ </tr>
+ <tr>
+ <td> Ironstrider's Rush</td>
+ <td>1</td>
+ <td>2</td>
+ <td>Move 3 hexes straight, ignore terrain</td>
+ <td>+2</td>
+ </tr>
+ <tr>
+ <td> Unyielding Bulwark</td>
+ <td>—</td>
+ <td>0</td>
+ <td>Reduce damage by 2 (reaction)</td>
+ <td>0</td>
+ </tr>
+ <tr>
+ <td> Second Skin</td>
+ <td>—</td>
+ <td>0</td>
+ <td>Reduce damage by 1 (reaction)</td>
+ <td>0</td>
+ </tr>
+ <tr>
+ <td> Guardian's Defiance</td>
+ <td>5</td>
+ <td>1</td>
+ <td>+2 Defense until next turn</td>
+ <td>0</td>
+ </tr>
+ <tr>
+ <td> Breathe the Core</td>
+ <td>3</td>
+ <td>2</td>
+ <td>Remove 1d3 Heat</td>
+ <td>-1d3</td>
+ </tr>
+ <tr>
+ <td> Field Suture</td>
+ <td>4</td>
+ <td>2</td>
+ <td>Remove 1 Damage card from discard</td>
+ <td>0</td>
+ </tr>
+ <tr>
+ <td>📖 Soul's Recall</td>
+ <td>2</td>
+ <td>1</td>
+ <td>Draw 2 cards</td>
+ <td>0</td>
+ </tr>
+ <tr>
+ <td>📖 Tattered Hope</td>
+ <td>—</td>
+ <td>0</td>
+ <td>Discard hand, draw 3</td>
+ <td>0</td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- LORE SECTION -->
+ <section id="lore" class="section">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">🌍 World Lore: The Sundering</h2>
+ <p style="margin-bottom: 2rem;">The dark history of how the world ended... and began anew.</p>
+
+ <div class="info-card" style="margin-bottom: 2rem; border-left: 4px solid var(--accent-red);">
+ <h3>The Cataclysm: Year 0</h3>
+ <p style="line-height: 1.8;">In the height of the Old World's Golden Age, the great artificer-mage <strong style="color: var(--accent-gold);">Nikolas Theslar</strong> believed he had discovered the secret to infinite energy—a method to harness the planet's magnetic field and broadcast power wirelessly across the entire world.</p>
+ <p style="margin-top: 1rem; line-height: 1.8;">His grand experiment at the <strong>Sibarian Wastes Research Station</strong> did not fail. It succeeded... catastrophically. The <strong style="color: var(--accent-red);">Resonance Engine</strong> didn't just tap the magnetic field—it <strong>ripped open the boundary between the material world and the Void</strong>.</p>
+ <div style="background: var(--dark-bg); padding: 1rem; margin-top: 1rem; border-left: 3px solid var(--accent-gold); font-style: italic;">
+ "The world died screaming. We built tombs of iron to survive it."
+ </div>
+ </div>
+
+ <div class="card-grid">
+ <div class="info-card">
+ <h3> The Pulse (Hour 0-6)</h3>
+ <ul>
+ <li>Electromagnetic shockwave at speed of light</li>
+ <li>All technology instantly fails</li>
+ <li>Skyships plummet, engines explode</li>
+ <li>Millions die in first six hours</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3> The Scream (Day 1-30)</h3>
+ <ul>
+ <li>Magical energy floods world like radiation</li>
+ <li>Mages burn from inside, reality tears</li>
+ <li>Void creatures begin manifesting</li>
+ <li><strong>Taint</strong> enters the world</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3> The Collapse (Year 0-10)</h3>
+ <ul>
+ <li>Civilization crumbles without infrastructure</li>
+ <li>Kingdoms fragment into city-states</li>
+ <li>Knowledge lost as libraries burn</li>
+ <li>The New Dark Age begins</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3> The Adaptation (Year 10-50)</h3>
+ <ul>
+ <li>Survivors discover <strong>Soulstones</strong></li>
+ <li>Crystalline formations near Void rifts</li>
+ <li>Can store and regulate Tainted magic</li>
+ <li>Church of Absolution forms</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3> The Casket Era (Year 50-100)</h3>
+ <ul>
+ <li>First primitive Caskets built</li>
+ <li>Armored suits powered by Soulstones</li>
+ <li>Knights can channel magic through machines</li>
+ <li>New arms race begins</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3> Present Day (Year 100+)</h3>
+ <ul>
+ <li>World fragmented into realms</li>
+ <li>Casket technology mature but dangerous</li>
+ <li>Void rifts still spawn monsters</li>
+ <li><strong>The Engine still pulses...</strong></li>
+ </ul>
+ </div>
+ </div>
+
+ <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">The Great Mystery: What Are Soulstones?</h3>
+ <p style="margin-bottom: 1rem;">Each faction has a different belief...</p>
+
+ <div class="race-grid">
+ <div class="info-card" style="border-left: 3px solid #d4af37;">
+ <h4 style="color: var(--accent-gold);"> Human Church</h4>
+ <p style="font-style: italic;">"Fragments of fallen angels. Divine punishment for our hubris."</p>
+ </div>
+
+ <div class="info-card" style="border-left: 3px solid #2d8659;">
+ <h4 style="color: #5fb57d;"> Elven Covenant</h4>
+ <p style="font-style: italic;">"Crystallized Worldheart blood. The planet trying to heal itself."</p>
+ </div>
+
+ <div class="info-card" style="border-left: 3px solid #8b4513;">
+ <h4 style="color: #cd853f;">⚒ Dwarven Guilds</h4>
+ <p style="font-style: italic;">"Solidified exotic radiation. Byproduct of dimensional bleed. Fixable."</p>
+ </div>
+
+ <div class="info-card" style="border-left: 3px solid #654321;">
+ <h4 style="color: #a0826d;"> Orcish Clans</h4>
+ <p style="font-style: italic;">"Power rocks. Make you strong. That's all that matters."</p>
+ </div>
+
+ <div class="info-card" style="border-left: 3px solid #ff4500;">
+ <h4 style="color: #ff6347;">🐉 Draconids</h4>
+ <p style="font-style: italic;">"Fossilized dragon hearts. This has happened before. It will happen again."</p>
+ </div>
+
+ <div class="info-card" style="border-left: 3px solid #2f4f4f;">
+ <h4 style="color: #708090;"> Undead Courts</h4>
+ <p style="font-style: italic;">"Crystallized life-force. Proof that death is no longer the end."</p>
+ </div>
+
+ <div class="info-card" style="border-left: 3px solid #9370db;">
+ <h4 style="color: #ba55d3;"> Fae Courts</h4>
+ <p style="font-style: italic;">"Condensed possibility. Reality is now negotiable. Thank you, Theslar!"</p>
+ </div>
+ </div>
+
+ <div style="background: var(--medium-bg); padding: 2rem; margin-top: 2rem; border-radius: 8px; border: 2px solid var(--accent-gold);">
+ <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">🗺 The Shattered Realms</h3>
+ <table>
+ <thead>
+ <tr>
+ <th>Realm</th>
+ <th>Faction</th>
+ <th>Description</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Sibarian Wastes</strong></td>
+ <td>Uninhabitable</td>
+ <td>Ground zero. Resonance Engine still pulses. Reality is "soft"</td>
+ </tr>
+ <tr>
+ <td><strong>Penitent Kingdoms</strong></td>
+ <td>Human</td>
+ <td>Gothic theocracy. Church rules. Guilt and redemption culture</td>
+ </tr>
+ <tr>
+ <td><strong>Verdant Enclaves</strong></td>
+ <td>Elven</td>
+ <td>Forest realms. Mobile tree-cities. Nature-integrated tech</td>
+ </tr>
+ <tr>
+ <td><strong>Forge-Holds</strong></td>
+ <td>Dwarven</td>
+ <td>Mountain kingdoms. Industrial powerhouses. Best Soulstone research</td>
+ </tr>
+ <tr>
+ <td><strong>Ashland Clans</strong></td>
+ <td>Orcish</td>
+ <td>Volcanic wastes. Tribal warfare. Scrap-built Caskets</td>
+ </tr>
+ <tr>
+ <td><strong>Bone-Marches</strong></td>
+ <td>Undead</td>
+ <td>Necropolis territories. Mist-shrouded. Patient and alien</td>
+ </tr>
+ <tr>
+ <td><strong>Shimmerlands</strong></td>
+ <td>Fae</td>
+ <td>Reality-optional zones. Feywild bleeds into world. Beautiful and deadly</td>
+ </tr>
+ <tr>
+ <td><strong>Dragon Peaks</strong></td>
+ <td>Draconid</td>
+ <td>High mountains. Ancient dragon lairs. Repository of lost knowledge</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+
+ <!-- DAMAGE SECTION -->
+ <section id="damage" class="section">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Damage & Injury System</h2>
+
+ <div class="card-grid">
+ <div class="info-card">
+ <h3>Taking Damage</h3>
+ <p>When damaged, choose how to discard:</p>
+ <ul>
+ <li><strong>From Hand:</strong> Lose tactical options now</li>
+ <li><strong>From Deck:</strong> Preserve hand, risk important cards</li>
+ <li><strong>Mixed:</strong> Balance both</li>
+ </ul>
+ <p style="margin-top: 1rem;"><strong>Example:</strong> Take 4 damage with 6 cards in hand</p>
+ <p>→ Discard 2 from hand + mill 2 from deck</p>
+ </div>
+
+ <div class="info-card">
+ <h3>Component Damage</h3>
+ <p>Track damage per component on player mat:</p>
+ <ul>
+ <li>Right Arm</li>
+ <li>Left Arm</li>
+ <li>Chassis (core)</li>
+ <li>Legs</li>
+ </ul>
+ <p style="margin-top: 1rem;"><strong>9+ damage to Chassis = Destroyed</strong></p>
+ </div>
+
+ <div class="info-card">
+ <h3>Reshuffle Injuries</h3>
+ <p>When deck runs out, reshuffle and add Damage cards:</p>
+ <p style="margin-top: 0.5rem;"><strong>Formula:</strong> 1 Damage card per 2 damage to component</p>
+ <p style="margin-top: 1rem;"><strong>Example:</strong></p>
+ <ul>
+ <li>Right Arm: 5 damage → 2 Damage cards</li>
+ <li>Chassis: 3 damage → 1 Damage card</li>
+ <li>Total: 3 new Damage cards in deck</li>
+ </ul>
+ </div>
+ </div>
+
+ <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">Component Damage Thresholds</h3>
+ <table>
+ <thead>
+ <tr>
+ <th>Damage</th>
+ <th>Status</th>
+ <th>Effect</th>
+ <th>Damage Cards</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>0-2</td>
+ <td>Minor</td>
+ <td>No immediate effect</td>
+ <td>1 card at reshuffle</td>
+ </tr>
+ <tr>
+ <td>3-5</td>
+ <td>Moderate</td>
+ <td>No degradation yet</td>
+ <td>2 cards at reshuffle</td>
+ </tr>
+ <tr>
+ <td>6-8</td>
+ <td style="color: orange;">Degraded</td>
+ <td>Component penalties apply</td>
+ <td>3-4 cards at reshuffle</td>
+ </tr>
+ <tr>
+ <td>9+</td>
+ <td style="color: red;">Disabled</td>
+ <td>Component unusable</td>
+ <td>All cards unusable</td>
+ </tr>
+ </tbody>
+ </table>
+
+ <h3 style="color: var(--accent-gold); margin: 2rem 0 1rem;">Degradation Effects (6+ damage)</h3>
+ <table>
+ <thead>
+ <tr>
+ <th>Component</th>
+ <th>Degraded Effect</th>
+ <th>Disabled Effect</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Right Arm</td>
+ <td>Attacks -1 damage</td>
+ <td>Cannot use Right Arm cards</td>
+ </tr>
+ <tr>
+ <td>Left Arm</td>
+ <td>Defense -1</td>
+ <td>Cannot use Left Arm cards</td>
+ </tr>
+ <tr>
+ <td>Chassis</td>
+ <td>Safe Zone SP -1</td>
+ <td style="color: red;">CASKET DESTROYED</td>
+ </tr>
+ <tr>
+ <td>Legs</td>
+ <td>Movement +1 SP cost</td>
+ <td>Cannot move (can rotate/attack)</td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- VICTORY CONDITIONS SECTION -->
+ <section id="victory" class="section">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Victory & Defeat Conditions</h2>
+
+ <div class="card-grid">
+ <div class="info-card">
+ <h3>Arena (PvP)</h3>
+ <p><strong>Victory:</strong></p>
+ <ul>
+ <li>Last Casket standing</li>
+ <li>Reach VP threshold (10-15 VP)</li>
+ <li>Most VP at time limit</li>
+ </ul>
+ <p style="margin-top: 1rem;"><strong>Defeat:</strong> Casket disabled</p>
+ </div>
+
+ <div class="info-card">
+ <h3>Campaign (Co-op)</h3>
+ <p><strong>Victory:</strong> Complete mission objective</p>
+ <ul>
+ <li>Earn credits & experience</li>
+ <li>Unlock equipment</li>
+ <li>Advance story</li>
+ </ul>
+ <p style="margin-top: 1rem;"><strong>Defeat:</strong></p>
+ <ul>
+ <li>All Caskets disabled</li>
+ <li>Objective fails</li>
+ <li>Pilot may die (permadeath)</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3>Raid (Boss Fight)</h3>
+ <p><strong>Victory:</strong> Reduce boss to 0 HP</p>
+ <p><strong>Rewards:</strong></p>
+ <ul>
+ <li>Legendary equipment</li>
+ <li>Rare Soulstone fragments</li>
+ <li>Unique relic tech</li>
+ </ul>
+ <p style="margin-top: 1rem;"><strong>Defeat:</strong> All players disabled or time expires</p>
+ </div>
+
+ <div class="info-card">
+ <h3>Skirmish (Mixed)</h3>
+ <p><strong>First to 20 VP wins:</strong></p>
+ <ul>
+ <li>Primary Objective: 10 VP</li>
+ <li>Secondary Objectives: 3-5 VP</li>
+ <li>Hidden Agendas: 2 VP</li>
+ <li>Eliminations: 5 VP each</li>
+ </ul>
+ </div>
+
+ <div class="info-card">
+ <h3>Disabled State</h3>
+ <p><strong>You are disabled when:</strong></p>
+ <ul>
+ <li>Deck empty AND hand empty</li>
+ <li>Chassis takes 9+ damage</li>
+ <li>Scenario-specific condition</li>
+ </ul>
+ <p style="margin-top: 1rem;"><strong>Co-op:</strong> You're out, but allies can continue</p>
+ </div>
+
+ <div class="info-card">
+ <h3>Special Conditions</h3>
+ <p><strong>Corruption Victory:</strong> Reach 10 Taint, transform into AI Abomination. Other players must destroy you!</p>
+ <p style="margin-top: 1rem;"><strong>Extraction:</strong> Reach zone, survive 2 turns, escape battlefield</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- PRINT CARDS SECTION -->
+ <section id="print" class="section">
+ <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Print & Play Cards</h2>
+ <p style="margin-bottom: 2rem;">Print these cards on standard letter/A4 paper, cut out, and start playtesting!</p>
+
+ <div style="text-align: center; margin: 2rem 0;">
+ <p style="margin-bottom: 1rem;">Click the button below to generate a printable PDF with all Universal cards.</p>
+ <button class="print-button" onclick="window.print()">🖨 Print Cards (Ctrl+P)</button>
+ <p style="margin-top: 1rem; color: #888;">Print at 100% scale, no margins adjustment needed</p>
+ </div>
+
+ <div style="background: var(--medium-bg); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+ <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Assembly Instructions</h3>
+ <ol style="line-height: 2;">
+ <li>Print card sheets on cardstock (110lb recommended) or regular paper</li>
+ <li>If using regular paper, sleeve with card sleeves + backing card</li>
+ <li>Cut along card borders (sharp scissors or paper cutter)</li>
+ <li>Optional: Round corners with corner rounder for professional look</li>
+ <li>Sleeve all cards for consistent shuffle feel (recommended: 63.5mm x 88mm sleeves)</li>
+ </ol>
+ </div>
+
+ <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-gold);">
+ <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">📦 Starter Deck Contents</h4>
+ <p><strong>Scout Deck (22 cards):</strong></p>
+ <ul>
+ <li>10 Universal cards</li>
+ <li>4 Longsword cards (Faithkeeper)</li>
+ <li>3 Buckler cards</li>
+ <li>2 Jump Jet cards (Relic)</li>
+ <li>3 player choice cards</li>
+ </ul>
+ </div>
+
+ <!-- PRINTABLE CARDS GRID (Hidden on screen, visible when printing) -->
+ <div class="print-grid">
+ <!-- Universal Cards -->
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title"> DESPERATE LUNGE</span>
+ <span class="card-initiative">[1]</span>
+ </div>
+ <div class="card-type">UNIVERSAL</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 1</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Move up to 2 hexes in any direction. You may rotate once during movement.<br><br>
+ Generate 1 Heat.
+ </div>
+ <div class="card-keywords">
+ Heat: +1 | Universal
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title"> WARDEN'S PIVOT</span>
+ <span class="card-initiative">[2]</span>
+ </div>
+ <div class="card-type">UNIVERSAL</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 0</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Rotate to any facing (free action).<br><br>
+ This does not generate Heat.
+ </div>
+ <div class="card-keywords">
+ Heat: 0 | Universal
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title"> IRONSTRIDER'S RUSH</span>
+ <span class="card-initiative">[1]</span>
+ </div>
+ <div class="card-type">UNIVERSAL</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 2</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Move up to 3 hexes in a straight line.<br><br>
+ Ignore difficult terrain. Generate 2 Heat.
+ </div>
+ <div class="card-keywords">
+ Heat: +2 | Universal
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title"> UNYIELDING BULWARK</span>
+ <span class="card-initiative">[—]</span>
+ </div>
+ <div class="card-type">UNIVERSAL (Reaction)</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 0</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Play when targeted by attack.<br><br>
+ Reduce damage by 2 (minimum 1). Discard after use.
+ </div>
+ <div class="card-keywords">
+ Heat: 0 | Reactive
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title"> SECOND SKIN</span>
+ <span class="card-initiative">[—]</span>
+ </div>
+ <div class="card-type">UNIVERSAL (Reaction)</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 0</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Play when targeted by attack.<br><br>
+ Reduce damage by 1. Discard after use.
+ </div>
+ <div class="card-keywords">
+ Heat: 0 | Reactive
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title"> GUARDIAN'S DEFIANCE</span>
+ <span class="card-initiative">[5]</span>
+ </div>
+ <div class="card-type">UNIVERSAL</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 1</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Gain +2 Defense until your next turn.<br><br>
+ You may use this with Reactive cards.
+ </div>
+ <div class="card-keywords">
+ Heat: 0 | Universal
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title"> BREATHE THE CORE</span>
+ <span class="card-initiative">[3]</span>
+ </div>
+ <div class="card-type">UNIVERSAL</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 2</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Roll 1d3.<br><br>
+ Remove that much Heat from your Casket.
+ </div>
+ <div class="card-keywords">
+ Heat: -1d3 | Universal
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title"> FIELD SUTURE</span>
+ <span class="card-initiative">[4]</span>
+ </div>
+ <div class="card-type">UNIVERSAL</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 2</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Remove 1 Damage card from your discard pile permanently.
+ </div>
+ <div class="card-keywords">
+ Heat: 0 | Universal
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title">📖 SOUL'S RECALL</span>
+ <span class="card-initiative">[2]</span>
+ </div>
+ <div class="card-type">UNIVERSAL</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 1</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Draw 2 cards from your deck.
+ </div>
+ <div class="card-keywords">
+ Heat: 0 | Universal
+ </div>
+ </div>
+
+ <div class="card-preview print-card">
+ <div class="card-header">
+ <span class="card-title">📖 TATTERED HOPE</span>
+ <span class="card-initiative">[—]</span>
+ </div>
+ <div class="card-type">UNIVERSAL (Reaction)</div>
+ <div class="card-cost">
+ <span><strong>SP:</strong> 0</span>
+ <span><strong>Range:</strong> Self</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong><br>
+ Discard your entire hand, then draw 3 cards.
+ </div>
+ <div class="card-keywords">
+ Heat: 0 | Reactive
+ </div>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <footer>
+ <p>&copy; 2025 Penance: Absolution Through Steel</p>
+ <p style="margin-top: 0.5rem;">Licensed under CC BY-NC-SA 4.0</p>
+ <p style="margin-top: 1rem; font-style: italic;">"In iron we seek forgiveness. Through blood, absolution."</p>
+ </footer>
+
+ <script>
+ function showSection(sectionId) {
+ // Hide all sections
+ const sections = document.querySelectorAll('.section');
+ sections.forEach(section => section.classList.remove('active'));
+
+ // Remove active from all buttons
+ const buttons = document.querySelectorAll('nav button');
+ buttons.forEach(button => button.classList.remove('active'));
+
+ // Show selected section
+ document.getElementById(sectionId).classList.add('active');
+
+ // Activate clicked button
+ event.target.classList.add('active');
+
+ // Scroll to top
+ window.scrollTo({ top: 0, behavior: 'smooth' });
+ }
+
+ function filterCards(filterType) {
+ const cards = document.querySelectorAll('.card-preview[data-card-type]');
+ const filterButtons = document.querySelectorAll('.filter-btn');
+
+ // Update active button
+ filterButtons.forEach(btn => btn.classList.remove('active'));
+ event.target.classList.add('active');
+
+ // Filter cards
+ cards.forEach(card => {
+ const cardType = card.getAttribute('data-card-type');
+ if (filterType === 'all' || cardType === filterType) {
+ card.classList.remove('hidden');
+ } else {
+ card.classList.add('hidden');
+ }
+ });
+ }
+
+ function searchCards(searchTerm) {
+ const cards = document.querySelectorAll('.card-preview[data-card-name]');
+ const lowerSearchTerm = searchTerm.toLowerCase();
+
+ cards.forEach(card => {
+ const cardName = card.getAttribute('data-card-name').toLowerCase();
+ if (cardName.includes(lowerSearchTerm)) {
+ card.classList.remove('hidden');
+ } else {
+ card.classList.add('hidden');
+ }
+ });
+
+ // If search is empty, reset to show all or current filter
+ if (searchTerm === '') {
+ const activeFilter = document.querySelector('.filter-btn.active');
+ if (activeFilter) {
+ const filterType = activeFilter.getAttribute('data-filter');
+ cards.forEach(card => {
+ const cardType = card.getAttribute('data-card-type');
+ if (filterType === 'all' || cardType === filterType) {
+ card.classList.remove('hidden');
+ }
+ });
+ }
+ }
+ }
+ </script>
 </body>
 </html>

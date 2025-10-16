@@ -227,13 +227,13 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 
 ---
 
-### Merchant Guilds: **Premium Service Upgrade**
+### The Soulstone Exchange: **Premium Service Upgrade**
 
 **Title**: **"Executive Pilots"**
 
 **Cultural View**:
 - Seen as sign of serious professional commitment (you invested in yourself)
-- Guilds pay premium contracts to Skimmed pilots (+20% salary boost)
+- Exchange pays premium contracts to Skimmed pilots (+20% salary boost)
 - Best prosthetics (gold-trimmed peg-legs, cushioned stumps)
 - Best post-op care (private recovery rooms, dedicated nurses)
 - Best rehabilitation (physical therapy, psychological counseling)
@@ -241,16 +241,16 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 **Quote**:
 > *"You cut off your legs for efficiency? We'll compensate you for that efficiency. Welcome to Executive tier, pilot."*
 
-**Pressure**: High. Guilds WANT you to Skim (more efficient = more profit). They'll pay for surgery if you agree to 5-year contract.
+**Pressure**: High. Exchange WANTS you to Skim (more efficient = more profit). They'll pay for surgery if you agree to 5-year contract.
 
 ---
 
-### Blighted Packs: **Evolutionary Adaptation**
+### Vestige Bloodlines: **Evolutionary Adaptation**
 
 **Title**: **"Shedders"**
 
 **Cultural View**:
-- Some Blighted legs mutate into useless forms (tentacles, backwards joints, fused toes)
+- Some Bloodline legs mutate into useless forms (tentacles, backwards joints, fused toes)
 - Skimming is both medical necessity AND upgrade
 - Stumps often regenerate as something new (not legs, but functional—maybe claws, maybe stabilizer spines)
 - Seen as embracing mutation rather than fighting it
@@ -258,24 +258,24 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 **Quote**:
 > *"We didn't need those legs anyway. The Void will give us better ones. Or it won't. Either way, we adapt."*
 
-**Pressure**: Variable. If legs are mutating badly, Pack Leaders strongly suggest Skimming. Otherwise, it's personal choice.
+**Pressure**: Variable. If legs are mutating badly, Bloodline Elders strongly suggest Skimming. Otherwise, it's personal choice.
 
 ---
 
-### Chitinous Ascendancy: **Metamorphosis Stage**
+### Emergent Syndicate: **Metamorphosis Stage**
 
 **Title**: **"Pupae"**
 
 **Cultural View**:
 - Skimming is seen as molting—shedding inferior human form
-- Skimmed Ascendancy pilots often grow chitin plates over stumps (natural armor)
+- Skimmed Syndicate pilots often grow chitin plates over stumps (natural armor)
 - Hive views it as progress toward perfect form (less human = closer to ascension)
-- Some Ascendancy pilots never leave capsules after Skimming (permanent fusion)
+- Some Syndicate pilots never leave capsules after Skimming (permanent fusion)
 
 **Quote**:
 > *"Legs are for crawling. We have transcended crawling. Shed the flesh. Join the hive fully."*
 
-**Pressure**: Extreme. Ascendancy expects ALL pilots to Skim by Mission 5. Refusing is seen as rejecting evolution.
+**Pressure**: Extreme. Syndicate expects ALL pilots to Skim by Mission 5. Refusing is seen as rejecting evolution.
 
 ---
 
@@ -287,7 +287,7 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 - Almost never voluntarily
 - Still adjusting to capsule trauma, not ready for more
 - Need to prove they'll survive before committing
-- Exception: Undead and Chitinous factions may Skim immediately (cultural pressure)
+- Exception: Undead and Emergent Syndicate factions may Skim immediately (cultural pressure)
 
 **Experienced Pilots (5-15 missions)**:
 - Most common window for Skimming
@@ -441,9 +441,9 @@ Some pilots go beyond Skimming. They remove:
 | **Undead** | *"Efficient. We approve."* (fully support it, encourage it) |
 | **Fae** | *"Magnificent tragedy. We'll watch them until they break completely."* (fascinated) |
 | **Nomads** | *"That's not surviving. That's just existing."* (pity them) |
-| **Merchants** | *"Not profitable. Can't transfer to new Casket if current one destroyed."* (discourage it) |
-| **Blighted** | *"They shed everything. Are they still human? Do they care?"* (philosophical) |
-| **Chitinous** | *"Perfect. They are one with the machine. The hive welcomes them."* (celebrate it) |
+| **Exchange** | *"Not profitable. Can't transfer to new Casket if current one destroyed."* (discourage it) |
+| **Bloodlines** | *"They shed everything. Are they still human? Do they care?"* (philosophical) |
+| **Syndicate** | *"Perfect. They are one with the machine. The hive welcomes them."* (celebrate it) |
 
 **Gameplay Note**: The Torso is an **endgame state**, not a mid-campaign choice. Only offer it:
 - After 20+ missions

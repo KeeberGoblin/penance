@@ -23,14 +23,14 @@ The introduction of **Attack Dice (to-hit rolls)** and **Defense Dice (damage mi
 - **To-hit rolls**: Attacks can miss (5+ base, modifiers stack)
 - **Defense Dice variance**: Same damage can be blocked 0-100% of time
 - **Critical effects**:
-  - Strong Hits (+1 dmg on 7-8)
-  - Critical Hits (+2 dmg on 9, bypass 1 Defense)
-  - EXECUTION (10, auto-destroy component)
-  - Catastrophic Failures (2, weapon jams)
+ - Strong Hits (+1 dmg on 7-8)
+ - Critical Hits (+2 dmg on 9, bypass 1 Defense)
+ - EXECUTION (10, auto-destroy component)
+ - Catastrophic Failures (2, weapon jams)
 - **Defense Dice effects**:
-  - 💀 CRITICAL (+1 Component Damage per symbol, 17% chance)
-  - 🔥 HEAT (+1 Heat, 17% chance)
-  - ⚔️ PIERCE (no reactives, 17% chance)
+ - CRITICAL (+1 Component Damage per symbol, 17% chance)
+ - HEAT (+1 Heat, 17% chance)
+ - PIERCE (no reactives, 17% chance)
 
 ---
 
@@ -102,7 +102,7 @@ Special: Attacks cannot miss (ground eruption guaranteed)
 **How Dice Affect Them**:
 - ✅ **Synergize with Defense Dice**: Defense bonuses + Defense Dice blocks stack
 - ❌ **Less valuable** now that Defense Dice provide 33% block chance baseline
-- ⚔️ **PIERCE symbols** (Defense Die face) disable reactive cards (17% chance)
+- **PIERCE symbols** (Defense Die face) disable reactive cards (17% chance)
 - ✅ **Still necessary** for guaranteed damage reduction (Defense Dice are RNG)
 
 **Recommendation**:
@@ -113,7 +113,7 @@ Special: Attacks cannot miss (ground eruption guaranteed)
 ```
 Brace for Impact (Universal)
 Cost: 0 SP, Reactive
-Effect: Reduce damage by 2 AND reroll all 💀 CRITICAL symbols on Defense Dice
+Effect: Reduce damage by 2 AND reroll all CRITICAL symbols on Defense Dice
 (Prevents Component Damage spikes)
 
 Deflect (Buckler Shield)
@@ -123,7 +123,7 @@ Effect: Reduce damage by 2 AND reroll up to 3 Defense Dice
 
 Unbreakable (Dwarves)
 Cost: 1 SP, Reactive
-Effect: Reduce damage by 3 AND ignore all ⚔️ PIERCE symbols (can still use other reactives)
+Effect: Reduce damage by 3 AND ignore all PIERCE symbols (can still use other reactives)
 (Counterplay to Pierce)
 ```
 
@@ -231,17 +231,17 @@ Effect: Once per turn, reroll up to 2 Defense Dice
 
 Armor-Piercing Rounds (Ammunition - NEW)
 Cost: 2 SP
-Effect: Your next ranged attack: All defender's Defense Dice showing 🛡️ SHIELD become 🩸 FLESH WOUND instead.
+Effect: Your next ranged attack: All defender's Defense Dice showing SHIELD become FLESH WOUND instead.
 "Hardened tips punch through plating."
 
 Runic Warding (Dwarves)
 Cost: 2 SP
-Effect: Until your next turn, convert all 💀 CRITICAL symbols to 🛡️ SHIELD symbols on Defense Dice.
+Effect: Until your next turn, convert all CRITICAL symbols to SHIELD symbols on Defense Dice.
 "Ancient runes deflect fate itself."
 
 Heat-Seeking Munitions (Tech - NEW)
 Cost: 3 SP
-Effect: Your next attack: For each 🔥 HEAT symbol on Defense Dice, deal +1 additional damage.
+Effect: Your next attack: For each HEAT symbol on Defense Dice, deal +1 additional damage.
 "Their own heat betrays them."
 ```
 
@@ -263,9 +263,9 @@ Effect: Discard 2 cards, next attack +3 damage, ignore 1 Armor
 ```
 Cost: 0 SP
 Effect: Discard 2 cards, next attack:
-  - +3 damage
-  - Ignore 1 Defense
-  - Gain -1 to target number (easier to hit, blood sacrifice improves aim)
+ - +3 damage
+ - Ignore 1 Defense
+ - Gain -1 to target number (easier to hit, blood sacrifice improves aim)
 Reasoning: Self-harm should guarantee the attack lands
 ```
 
@@ -279,8 +279,8 @@ Passive: +1 damage per enemy killed (permanent)
 **Righteous Fury (Optimized)**:
 ```
 Passive:
-  - +1 damage per enemy killed (permanent)
-  - For each kill, gain -1 to target number on your next attack (max -3)
+ - +1 damage per enemy killed (permanent)
+ - For each kill, gain -1 to target number on your next attack (max -3)
 Reasoning: Killing spree improves confidence = better aim
 ```
 
@@ -315,8 +315,8 @@ Effect: Gain 1 Rune Counter (max 3), reduce all damage by 1 per counter
 ```
 Cost: 2 SP
 Effect: Gain 1 Rune Counter (max 3)
-  - Reduce all damage by 1 per counter
-  - For each Rune Counter, reroll 1 Defense Die showing 💀 CRITICAL
+ - Reduce all damage by 1 per counter
+ - For each Rune Counter, reroll 1 Defense Die showing CRITICAL
 Reasoning: Runes should protect against critical failures
 ```
 
@@ -387,17 +387,17 @@ Reasoning: "Focus" should improve accuracy, not just card draw
 - "On EXECUTION: Recover all SP"
 
 ### 3. Punish Bad Rolls (For Opponent)
-**Problem**: Defender rolling all 💀 CRITICAL should feel devastating
+**Problem**: Defender rolling all CRITICAL should feel devastating
 **Solution**: Cards that exploit bad Defense Dice
-- "For each 💀 CRITICAL on Defense Dice, deal +1 damage"
-- "If defender rolls 3+ 🩸 FLESH WOUND, gain +1 SP"
+- "For each CRITICAL on Defense Dice, deal +1 damage"
+- "If defender rolls 3+ FLESH WOUND, gain +1 SP"
 
 ### 4. Manipulate Probability
 **Problem**: Pure RNG can feel unfair
 **Solution**: Cards that give control over dice
 - "Reroll up to 2 Defense Dice"
 - "Reroll 1 Attack Die"
-- "Convert 💀 CRITICAL to 🛡️ SHIELD"
+- "Convert CRITICAL to SHIELD"
 
 ### 5. Auto-Hit for Consistency
 **Problem**: Some tactics need guaranteed damage
@@ -417,17 +417,17 @@ Reasoning: "Focus" should improve accuracy, not just card draw
 
 ### 2. Defense Dice Manipulation (5-8 per faction)
 - Reroll Defense Dice
-- Convert symbols (💀 → 🛡️)
+- Convert symbols ( → )
 - Block-all cards (expensive, block all damage regardless of Defense Dice)
 
 ### 3. Punisher Cards (3-5 per faction)
 - Trigger on opponent's bad rolls
-- "If defender rolls 3+ 🩸, draw 1 card"
-- "For each 💀 rolled, gain +1 Heat on opponent"
+- "If defender rolls 3+ , draw 1 card"
+- "For each rolled, gain +1 Heat on opponent"
 
 ### 4. Gambler Cards (2-3 per faction)
 - High risk, high reward
-- "Roll 1 Attack Die. If 💀, deal 10 damage. Otherwise, miss."
+- "Roll 1 Attack Die. If , deal 10 damage. Otherwise, miss."
 - "Discard top 5 Defense Dice results, apply only the best 3"
 
 ### 5. Terrain Manipulation (3-4 per faction)
@@ -454,7 +454,7 @@ Reasoning: "Focus" should improve accuracy, not just card draw
 
 ### Expected Defense Dice Blocks
 
-**Per Die**: 33% block chance (🛡️ or ⚙️)
+**Per Die**: 33% block chance ( or )
 
 **Expected Blocks by Damage**:
 - 3 damage = 1 block (33%) → 2 final damage
@@ -496,10 +496,10 @@ Reasoning: "Focus" should improve accuracy, not just card draw
 - Defense Dice provide 33% block baseline, diminishing value of +3 Defense from Shield Wall
 
 **Optimizations**:
-1. **Rune of Protection**: Add "Reroll 1 Defense Die showing 💀 per Rune Counter"
-2. **Shield Wall**: Change to "+3 Defense AND convert all 🩸 to 🛡️ on Defense Dice"
+1. **Rune of Protection**: Add "Reroll 1 Defense Die showing per Rune Counter"
+2. **Shield Wall**: Change to "+3 Defense AND convert all to on Defense Dice"
 3. **NEW CARD**: "Runic Fate" (2 SP, Reroll all Defense Dice once)
-4. **NEW CARD**: "Stone Certainty" (Passive, 💀 CRITICAL symbols cannot destroy components)
+4. **NEW CARD**: "Stone Certainty" (Passive, CRITICAL symbols cannot destroy components)
 
 ---
 
@@ -512,7 +512,7 @@ Reasoning: "Focus" should improve accuracy, not just card draw
 - Missing attacks = no Soul Harvest
 
 **Optimizations**:
-1. **Soul Harvest**: Change to "Gain 1 HP per Attack Die showing 💀 DEATH BLOW (even if miss)"
+1. **Soul Harvest**: Change to "Gain 1 HP per Attack Die showing DEATH BLOW (even if miss)"
 2. **NEW CARD**: "Vampiric Precision" (1 SP, Next attack -1 to target number, heal 2 HP if hit)
 3. **NEW CARD**: "Draining Touch" (2 SP, Cannot miss, deal 3 damage, heal 3 HP)
 4. **NEW CARD**: "Death's Certainty" (Passive, Reroll 1 Attack Die per Decay card in deck)
@@ -544,7 +544,7 @@ Reasoning: "Focus" should improve accuracy, not just card draw
 4. **Add 2-3 Auto-Hit cards** per faction (point-blank, grapple, AoE)
 
 ### MEDIUM PRIORITY (Do Second)
-5. **Add Defense Dice manipulation** cards (Reroll, convert 💀 → 🛡️)
+5. **Add Defense Dice manipulation** cards (Reroll, convert → )
 6. **Buff self-harm cards** (Blood Offering should guarantee hit)
 7. **Add Strong Hit/Critical synergy** cards ("On Critical, do X")
 8. **Add terrain manipulation** (smoke, tremors, blinding)

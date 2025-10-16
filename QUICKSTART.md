@@ -8,23 +8,23 @@ Welcome to **Penance: Absolution Through Steel**!
 
 ```
 penance/
-├── docs/                          # All game design documents
-│   ├── CoreDesign.md              # Main design document
-│   ├── card-anatomy.md            # Card template & structure
-│   ├── damage-system.md           # Injury & component damage rules
-│   ├── universal-cards.md         # The 10 base cards
-│   └── 3d-printable-system.md     # Modular 3D printing guide
+├── docs/ # All game design documents
+│ ├── CoreDesign.md # Main design document
+│ ├── card-anatomy.md # Card template & structure
+│ ├── damage-system.md # Injury & component damage rules
+│ ├── universal-cards.md # The 10 base cards
+│ └── 3d-printable-system.md # Modular 3D printing guide
 │
 ├── tools/
-│   └── card-generator/
-│       ├── index.html             # 🌐 Interactive reference site
-│       ├── printable-cards.html   # 🖨 Print & play cards
-│       └── README.md              # Card generator guide
+│ └── card-generator/
+│ ├── index.html # 🌐 Interactive reference site
+│ ├── printable-cards.html # 🖨 Print & play cards
+│ └── README.md # Card generator guide
 │
-├── cards/                         # Card designs (future)
-├── assets/                        # Art & visual resources (future)
-├── playtesting/                   # Playtest reports (future)
-└── examples/                      # Sample decks & scenarios (future)
+├── cards/ # Card designs (future)
+├── assets/ # Art & visual resources (future)
+├── playtesting/ # Playtest reports (future)
+└── examples/ # Sample decks & scenarios (future)
 ```
 
 ---
@@ -75,9 +75,9 @@ Ready to test the game?
 1. Open `printable-cards.html` in browser
 2. Press `Ctrl+P` (or Cmd+P on Mac)
 3. Settings:
-   - Paper: Letter (8.5" x 11")
-   - Scale: 100%
-   - Margins: 0.25"
+ - Paper: Letter (8.5" x 11")
+ - Scale: 100%
+ - Margins: 0.25"
 4. Print on cardstock (110lb) or regular paper + sleeves
 
 ---
@@ -113,7 +113,7 @@ Ready to test the game?
 
 ---
 
-## 🎲 First Playtest Setup
+## First Playtest Setup
 
 ### Scout vs Scout Duel (Quickest Start)
 
@@ -242,7 +242,7 @@ See [CONTRIBUTING.md](community/CONTRIBUTING.md) (coming soon)
 
 ---
 
-## ⚖ License
+## License
 
 Penance: Absolution Through Steel
 Licensed under [CC BY-NC-SA 4.0](LICENSE.md)
@@ -260,4 +260,4 @@ Licensed under [CC BY-NC-SA 4.0](LICENSE.md)
 
 *"In iron we seek forgiveness. Through blood, absolution."*
 
-⚔ **Ready to pilot your Casket?** Start with [tools/card-generator/index.html](tools/card-generator/index.html) ⚔
+ **Ready to pilot your Casket?** Start with [tools/card-generator/index.html](tools/card-generator/index.html) 

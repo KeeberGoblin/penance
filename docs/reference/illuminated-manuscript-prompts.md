@@ -68,7 +68,7 @@ BACKGROUND:
 
 MARGINALIA:
 - Top left: Blood Offering card sketch (chalice and dagger)
-- Top right: Attack dice showing 💀 DEATH BLOW symbol
+- Top right: Attack dice showing DEATH BLOW symbol
 - Bottom: Small sketches of martyred saints
 - Border: Thorny vines with roses, intertwined with chains
 
@@ -143,7 +143,7 @@ BACKGROUND:
 
 MARGINALIA:
 - Top left: Technical diagram of Rune Counter system (1-2-3 progression)
-- Top right: Defense dice showing 🛡️ SHIELD symbol
+- Top right: Defense dice showing SHIELD symbol
 - Bottom left: Sketch of tower shield (exploded view showing layers)
 - Bottom right: Warhammer blueprint (Da Vinci-style mechanical drawing)
 - Border: Interlocking geometric knotwork (Celtic/Norse fusion) with embedded gemstones
@@ -219,7 +219,7 @@ BACKGROUND:
 
 MARGINALIA:
 - Top left: Soul Harvest card sketch (reaping soul from fallen enemy)
-- Top right: Defense dice showing 💀 CRITICAL symbol
+- Top right: Defense dice showing CRITICAL symbol
 - Bottom left: Decay card (withering flower transforming to skull)
 - Bottom right: Anatomical study of pilot's neural thread connections
 - Border: Intertwined bones forming Art Nouveau-style flowing curves, black roses blooming
@@ -301,7 +301,7 @@ BACKGROUND:
 
 MARGINALIA:
 - Top left: Bleed stack counter (droplets 1-2-3-4-5 increasing in size)
-- Top right: Attack dice showing ⚔️ STRIKE symbol
+- Top right: Attack dice showing STRIKE symbol
 - Bottom left: Hunter's Patience card sketch (elven archer waiting motionless)
 - Bottom right: Botanical study of bioluminescent flower (technical cross-section)
 - Border: Ivy vines with thorns, intertwined with spider webs, beetles crawling
@@ -355,27 +355,27 @@ hunting manuscript meets herbal codex style. Aged parchment.
 ### Layout Structure
 ```
 ┌─────────────────────────────┐
-│   DECORATIVE BORDER TOP     │ ← Knotwork, vines, faction motifs
+│ DECORATIVE BORDER TOP │ ← Knotwork, vines, faction motifs
 ├─────────────────────────────┤
 │ ┌─────────────────────────┐ │
-│ │   LATIN BANNER TEXT     │ │ ← "ABSOLUTIO PER SANGUINEM"
+│ │ LATIN BANNER TEXT │ │ ← "ABSOLUTIO PER SANGUINEM"
 │ └─────────────────────────┘ │
-│                             │
-│    MAIN CASKET IMAGE        │ ← 60% of page height
-│  (Hierarchical scale,       │
-│   Casket largest element)   │
-│                             │
-│    BACKGROUND SCENE         │ ← Faction-specific setting
-│  (Cathedral/Forge/Crypt/    │
-│   Forest)                   │
-│                             │
-│ ┌───────┐         ┌───────┐ │
-│ │Margin-│         │Margin-│ │ ← Dice, cards, technical
-│ │alia L │         │alia R │ │   sketches (10% page width)
-│ └───────┘         └───────┘ │
+│ │
+│ MAIN CASKET IMAGE │ ← 60% of page height
+│ (Hierarchical scale, │
+│ Casket largest element) │
+│ │
+│ BACKGROUND SCENE │ ← Faction-specific setting
+│ (Cathedral/Forge/Crypt/ │
+│ Forest) │
+│ │
+│ ┌───────┐ ┌───────┐ │
+│ │Margin-│ │Margin-│ │ ← Dice, cards, technical
+│ │alia L │ │alia R │ │ sketches (10% page width)
+│ └───────┘ └───────┘ │
 ├─────────────────────────────┤
-│  DECORATIVE BORDER BOTTOM   │ ← Faction-specific (thorns/
-└─────────────────────────────┘   gears/bones/roots)
+│ DECORATIVE BORDER BOTTOM │ ← Faction-specific (thorns/
+└─────────────────────────────┘ gears/bones/roots)
 ```
 
 ---

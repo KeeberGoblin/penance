@@ -24,7 +24,7 @@ The Dwarven Forge-Guilds deploy mechanical constructs, armored infantry, and anc
 
 ---
 
-## 1. SHIELD WALL GUARD ⭐ STARTER UNIT
+## 1. SHIELD WALL GUARD STARTER UNIT
 **Category**: Infantry (Defensive)
 **HP**: 12 | **Movement**: 2 | **Defense**: 4
 **Equipment Slots**: 2
@@ -37,7 +37,7 @@ Five stocky dwarven warriors in heavy plate armor, each carrying a tower shield 
 
 ---
 
-#### 🛡️ FORM SHIELD WALL
+#### FORM SHIELD WALL
 **Type**: Defense / Formation
 **Priority**: High (when enemy within 4 hexes)
 
@@ -52,7 +52,7 @@ Five stocky dwarven warriors in heavy plate armor, each carrying a tower shield 
 
 ---
 
-#### ⚔️ SHIELD BASH
+#### SHIELD BASH
 **Type**: Attack / Control
 **Priority**: Medium (when enemy adjacent)
 
@@ -81,7 +81,7 @@ Five stocky dwarven warriors in heavy plate armor, each carrying a tower shield 
 
 ---
 
-#### 🛡️ ADVANCE THE WALL
+#### ADVANCE THE WALL
 **Type**: Movement / Defensive
 **Priority**: High (when no enemy within 2 hexes)
 
@@ -94,7 +94,7 @@ Five stocky dwarven warriors in heavy plate armor, each carrying a tower shield 
 
 ---
 
-#### ⚡ COUNTERCHARGE
+#### COUNTERCHARGE
 **Type**: Reactive / Attack
 **Priority**: Critical (when Guard at full HP and enemy charges)
 
@@ -127,7 +127,7 @@ Five stocky dwarven warriors in heavy plate armor, each carrying a tower shield 
 
 ---
 
-## 2. BOMBARD BATTERY ⭐ STARTER UNIT
+## 2. BOMBARD BATTERY STARTER UNIT
 **Category**: Artillery (Heavy Ranged)
 **HP**: 8 | **Movement**: 2 | **Defense**: 2
 **Equipment Slots**: 3
@@ -140,7 +140,7 @@ A wheeled platform carrying a massive cannon, crewed by three dwarven engineers.
 
 ---
 
-#### 💣 SIEGE SHOT
+#### SIEGE SHOT
 **Type**: Attack / Heavy
 **Priority**: High (when enemy within 8 hexes)
 
@@ -154,7 +154,7 @@ A wheeled platform carrying a massive cannon, crewed by three dwarven engineers.
 
 ---
 
-#### 💣 SHRAPNEL BARRAGE
+#### SHRAPNEL BARRAGE
 **Type**: Attack / Area
 **Priority**: High (when 2+ enemies grouped within 6 hexes)
 
@@ -168,7 +168,7 @@ A wheeled platform carrying a massive cannon, crewed by three dwarven engineers.
 
 ---
 
-#### 🔧 RELOAD AND REPOSITION
+#### RELOAD AND REPOSITION
 **Type**: Utility / Movement
 **Priority**: Medium (when Battery Heat > 3 OR no enemies in range)
 
@@ -181,7 +181,7 @@ A wheeled platform carrying a massive cannon, crewed by three dwarven engineers.
 
 ---
 
-#### 💣 DANGER CLOSE
+#### DANGER CLOSE
 **Type**: Attack / Desperate
 **Priority**: Critical (when enemy within 3 hexes)
 
@@ -196,7 +196,7 @@ A wheeled platform carrying a massive cannon, crewed by three dwarven engineers.
 
 ---
 
-#### 🛡️ DEPLOY BARRICADE
+#### DEPLOY BARRICADE
 **Type**: Defense / Utility
 **Priority**: Low (when no enemies within 5 hexes)
 
@@ -229,7 +229,7 @@ A wheeled platform carrying a massive cannon, crewed by three dwarven engineers.
 
 ---
 
-## 3. RUNE SENTINEL ⭐ STARTER UNIT
+## 3. RUNE SENTINEL STARTER UNIT
 **Category**: Construct (Magical Tank)
 **HP**: 15 | **Movement**: 3 | **Defense**: 3
 **Equipment Slots**: 3
@@ -242,7 +242,7 @@ A humanoid construct of carved granite, standing 12 feet tall. Glowing runes are
 
 ---
 
-#### 🗿 CRUSHING BLOW
+#### CRUSHING BLOW
 **Type**: Attack / Heavy
 **Priority**: High (when enemy within 4 hexes)
 
@@ -256,7 +256,7 @@ A humanoid construct of carved granite, standing 12 feet tall. Glowing runes are
 
 ---
 
-#### 🗿 RUNIC BARRIER
+#### RUNIC BARRIER
 **Type**: Defense / Aura
 **Priority**: High (when Casket within 3 hexes)
 
@@ -271,7 +271,7 @@ A humanoid construct of carved granite, standing 12 feet tall. Glowing runes are
 
 ---
 
-#### 🗿 STONE SKIN
+#### STONE SKIN
 **Type**: Defense / Healing
 **Priority**: Critical (when Sentinel HP ≤ 7)
 
@@ -286,7 +286,7 @@ A humanoid construct of carved granite, standing 12 feet tall. Glowing runes are
 
 ---
 
-#### ⚡ RUNE PULSE
+#### RUNE PULSE
 **Type**: Attack / Area
 **Priority**: Medium (when Sentinel has 2+ Rune Counters)
 
@@ -301,7 +301,7 @@ A humanoid construct of carved granite, standing 12 feet tall. Glowing runes are
 
 ---
 
-#### 🗿 ADVANCE STEADILY
+#### ADVANCE STEADILY
 **Type**: Movement / Tank
 **Priority**: Medium (when no enemies within 2 hexes)
 
@@ -356,7 +356,7 @@ A nightmarish fusion of artillery platform and mechanical spider. Eight mechanic
 
 ---
 
-#### 🕷️ MULTI-TARGET BARRAGE
+#### MULTI-TARGET BARRAGE
 **Type**: Attack / Multiple
 **Priority**: High
 
@@ -371,7 +371,7 @@ A nightmarish fusion of artillery platform and mechanical spider. Eight mechanic
 
 ---
 
-#### 🕷️ TRAMPLE
+#### TRAMPLE
 **Type**: Attack / Movement
 **Priority**: High (when enemies in path)
 
@@ -385,7 +385,7 @@ A nightmarish fusion of artillery platform and mechanical spider. Eight mechanic
 
 ---
 
-#### 🔧 EMERGENCY REPAIR PROTOCOL
+#### EMERGENCY REPAIR PROTOCOL
 **Type**: Utility / Healing
 **Priority**: Critical (when Crawler HP ≤ 9)
 
@@ -400,7 +400,7 @@ A nightmarish fusion of artillery platform and mechanical spider. Eight mechanic
 
 ---
 
-#### 💣 SIEGE MODE
+#### SIEGE MODE
 **Type**: Stance / Heavy Fire
 **Priority**: High (when 2+ enemies within 8 hexes)
 
@@ -415,7 +415,7 @@ A nightmarish fusion of artillery platform and mechanical spider. Eight mechanic
 
 ---
 
-#### 🕷️ RELOCATE
+#### RELOCATE
 **Type**: Movement / Tactical
 **Priority**: Low (when Siege Mode active OR no enemies in range)
 
@@ -465,7 +465,7 @@ A massive golem of black iron and mithril, standing 15 feet tall. Unlike crude R
 
 ---
 
-#### 👑 ANCESTOR'S WRATH
+#### ANCESTOR'S WRATH
 **Type**: Attack / Elite
 **Priority**: High
 
@@ -479,7 +479,7 @@ A massive golem of black iron and mithril, standing 15 feet tall. Unlike crude R
 
 ---
 
-#### 👑 FORGE KING'S BLESSING
+#### FORGE KING'S BLESSING
 **Type**: Support / Aura
 **Priority**: High (when allies within 4 hexes)
 
@@ -487,16 +487,16 @@ A massive golem of black iron and mithril, standing 15 feet tall. Unlike crude R
 - Do not move
 - Ancient power radiates from Golem
 - All allies within 4 hexes gain:
-  - +2 damage to next attack
-  - +2 Defense until end of round
-  - Recover 2 HP (divine blessing)
+ - +2 damage to next attack
+ - +2 Defense until end of round
+ - Recover 2 HP (divine blessing)
 - Golem spends 1 Glory Counter (costs legendary power)
 
 **Flavor**: "Fight on, clan-kin. I stand with you."
 
 ---
 
-#### 👑 UNBREAKABLE GUARDIAN
+#### UNBREAKABLE GUARDIAN
 **Type**: Defense / Taunt
 **Priority**: Critical (when Casket HP < 15)
 
@@ -510,7 +510,7 @@ A massive golem of black iron and mithril, standing 15 feet tall. Unlike crude R
 
 ---
 
-#### 👑 LEGACY OF STONE
+#### LEGACY OF STONE
 **Type**: Ultimate / Once Per Battle
 **Priority**: Special (only usable once)
 
@@ -569,16 +569,16 @@ A colossal mechanical construct - a walking mountain of iron, bronze, and stone.
 
 ---
 
-#### 🏔️ ADVANCE THE TITAN
+#### ADVANCE THE TITAN
 **Type**: Movement / Aura
 **Priority**: High
 
 **Effect**:
 - Move 1 hex toward objective (slow, inexorable)
 - **Fortress Aura**: All allies within 4 hexes gain:
-  - +2 Defense
-  - +1 SP regeneration
-  - Recover 1 HP per turn (sheltered by Titan)
+ - +2 Defense
+ - +1 SP regeneration
+ - Recover 1 HP per turn (sheltered by Titan)
 - All enemies within 3 hexes take 2 damage per turn (radiating power)
 - Leave Fortified Ground token in vacated hex (provides cover, lasts 5 turns)
 
@@ -586,7 +586,7 @@ A colossal mechanical construct - a walking mountain of iron, bronze, and stone.
 
 ---
 
-#### 🏔️ ALL BATTERIES FIRE
+#### ALL BATTERIES FIRE
 **Type**: Attack / Massive
 **Priority**: High (when 1+ enemy within 8 hexes)
 
@@ -601,7 +601,7 @@ A colossal mechanical construct - a walking mountain of iron, bronze, and stone.
 
 ---
 
-#### 🏔️ TITAN'S FORTRESS
+#### TITAN'S FORTRESS
 **Type**: Defense / Ultimate
 **Priority**: Critical (when Titan HP ≤ 12 OR multiple enemies within 5 hexes)
 

@@ -3,7 +3,7 @@
 **Type**: Stealth & Destruction
 **Players**: 1 vs 1 (Saboteur vs Defender) or Solo
 **Estimated Playtime**: 45-60 minutes
-**Difficulty**: ⭐⭐⭐⭐ Expert
+**Difficulty**: Expert
 **Victory Condition**:
 - **Saboteur**: Destroy 3 of 5 Reactor Cores OR eliminate the Defender
 - **Defender**: Prevent the Saboteur from destroying 3 Reactors for 10 turns OR eliminate the Saboteur
@@ -22,17 +22,17 @@ A heavily fortified facility houses five unstable Reactor Cores. The Saboteur mu
 
 ```
 [W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ]
-[W ][##][##][##][##][##][  ][  ][##][##][##][##][##][W ]
-[W ][##][R1][  ][  ][##][  ][  ][##][  ][  ][R2][##][W ]
-[W ][##][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][##][W ]
-[W ][##][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][##][W ]
-[W ][  ][  ][  ][  ][##][R3][R3][##][  ][  ][  ][  ][W ]
-[W ][  ][  ][  ][  ][##][R3][R3][##][  ][  ][  ][  ][W ]
-[W ][  ][  ][  ][  ][##][R3][R3][##][  ][  ][  ][  ][W ]
-[W ][##][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][##][W ]
-[W ][##][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][##][W ]
-[W ][##][R4][  ][  ][##][  ][  ][##][  ][  ][R5][##][W ]
-[W ][##][##][##][##][##][  ][  ][##][##][##][##][##][W ]
+[W ][##][##][##][##][##][ ][ ][##][##][##][##][##][W ]
+[W ][##][R1][ ][ ][##][ ][ ][##][ ][ ][R2][##][W ]
+[W ][##][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][##][W ]
+[W ][##][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][##][W ]
+[W ][ ][ ][ ][ ][##][R3][R3][##][ ][ ][ ][ ][W ]
+[W ][ ][ ][ ][ ][##][R3][R3][##][ ][ ][ ][ ][W ]
+[W ][ ][ ][ ][ ][##][R3][R3][##][ ][ ][ ][ ][W ]
+[W ][##][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][##][W ]
+[W ][##][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][##][W ]
+[W ][##][R4][ ][ ][##][ ][ ][##][ ][ ][R5][##][W ]
+[W ][##][##][##][##][##][ ][ ][##][##][##][##][##][W ]
 [W ][W ][W ][W ][W ][W ][EN][EN][W ][W ][W ][W ][W ][W ]
 [W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ][W ]
 ```
@@ -43,7 +43,7 @@ A heavily fortified facility houses five unstable Reactor Cores. The Saboteur mu
 - **[##] Walls**: Impassable, blocks LOS
 - **[R1-R5] Reactor Cores**: Objectives (5 total)
 - **[EN] Entry Point**: Where the Saboteur enters
-- **[  ] Open Floor**: Normal movement (1 SP), no defensive bonus
+- **[ ] Open Floor**: Normal movement (1 SP), no defensive bonus
 
 ---
 

@@ -268,44 +268,44 @@ Strain failures: Lose SP, take damage, component malfunctions
 
 ```
 penance/
-├── README.md                          # Main project overview
-├── utilities/CLAUDE.md                # THIS FILE (AI assistant context)
+├── README.md # Main project overview
+├── utilities/CLAUDE.md # THIS FILE (AI assistant context)
 │
 ├── docs/
-│   ├── index.html                     # Interactive website (timeline, factions)
-│   │
-│   ├── rules/                         # Core mechanics
-│   │   ├── turn-structure.md, combat-system.md, dice-reference.md
-│   │   ├── dice-pool-advantage.md (v3.0), taint-exploitation.md (v3.0)
-│   │   └── quick-reference.md
-│   │
-│   ├── factions/                      # Faction decks
-│   │   ├── church/, dwarves/, ossuarium/, elves/
-│   │   └── (each has deck-equipment-system.md)
-│   │
-│   ├── campaigns/                     # Long-term progression
-│   │   ├── pilot-generation-tables.md, settlement-phase-procedure.md
-│   │   ├── pilot-grit-system.md (v3.0), soul-sacrifice-variants.md
-│   │   ├── event-tables-kdm-style.md, anomalous-events-scp-style.md
-│   │   └── loot-tables.md
-│   │
-│   ├── enemies/                       # Bestiary
-│   │   └── bestiary-core.md (15 enemies, KDM-style If-Then AI)
-│   │
-│   ├── tools/                         # Interactive tools
-│   │   └── pilot-generator.html (JavaScript character generator)
-│   │
-│   ├── codex/                          # THE CODEX - Interactive reference (HTML)
-│   │   ├── index.html (iframe navigation), manuscript-style.css
-│   │   ├── rules-dice-pool.html (v3.0), rules-taint-exploitation.html (v3.0)
-│   │   ├── campaign-pilot-grit.html (v3.0)
-│   │   ├── faction-church.html, faction-dwarves.html, etc. (all have v3.0 sections)
-│   │   └── (30+ total HTML pages)
-│   │
-│   └── reference/                     # Design docs
-│       ├── equipment-pool-complete.md, faction-comparison-playtest.md
-│       ├── casket-control-system.md (puppeteer capsule, body horror)
-│       └── PLAYTEST-READY.md
+│ ├── index.html # Interactive website (timeline, factions)
+│ │
+│ ├── rules/ # Core mechanics
+│ │ ├── turn-structure.md, combat-system.md, dice-reference.md
+│ │ ├── dice-pool-advantage.md (v3.0), taint-exploitation.md (v3.0)
+│ │ └── quick-reference.md
+│ │
+│ ├── factions/ # Faction decks
+│ │ ├── church/, dwarves/, ossuarium/, elves/
+│ │ └── (each has deck-equipment-system.md)
+│ │
+│ ├── campaigns/ # Long-term progression
+│ │ ├── pilot-generation-tables.md, settlement-phase-procedure.md
+│ │ ├── pilot-grit-system.md (v3.0), soul-sacrifice-variants.md
+│ │ ├── event-tables-kdm-style.md, anomalous-events-scp-style.md
+│ │ └── loot-tables.md
+│ │
+│ ├── enemies/ # Bestiary
+│ │ └── bestiary-core.md (15 enemies, KDM-style If-Then AI)
+│ │
+│ ├── tools/ # Interactive tools
+│ │ └── pilot-generator.html (JavaScript character generator)
+│ │
+│ ├── codex/ # THE CODEX - Interactive reference (HTML)
+│ │ ├── index.html (iframe navigation), manuscript-style.css
+│ │ ├── rules-dice-pool.html (v3.0), rules-taint-exploitation.html (v3.0)
+│ │ ├── campaign-pilot-grit.html (v3.0)
+│ │ ├── faction-church.html, faction-dwarves.html, etc. (all have v3.0 sections)
+│ │ └── (30+ total HTML pages)
+│ │
+│ └── reference/ # Design docs
+│ ├── equipment-pool-complete.md, faction-comparison-playtest.md
+│ ├── casket-control-system.md (puppeteer capsule, body horror)
+│ └── PLAYTEST-READY.md
 ```
 
 ---
@@ -350,7 +350,7 @@ penance/
 > "The Church faction gains +1 damage per enemy killed (permanent). This scales infinitely."
 
 **Bad**:
-> "The Church faction is super cool! 😊 They get stronger as they kill enemies, which is awesome! 🔥"
+> "The Church faction is super cool! 😊 They get stronger as they kill enemies, which is awesome! "
 
 ---
 

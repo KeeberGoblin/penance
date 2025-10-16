@@ -275,7 +275,7 @@ Before pushing major changes:
 - ✅ Accessibility (aria-labels, semantic HTML)
 
 **Minor Issues**:
-- ⚠️ Some older markdown files could use formatting polish (non-critical)
+- ⚠ Some older markdown files could use formatting polish (non-critical)
 
 ### User Experience: 97%
 

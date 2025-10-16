@@ -235,12 +235,12 @@ Mission will have **increased Void activity**:
 
 **Type**: Trade Opportunity
 
-A **Merchant Guild caravan** arrives:
+An **Exchange caravan** arrives:
 - Can purchase equipment at **standard price** (no markup)
 - Can sell Scrap for **2 Credits per Scrap**
 - Limited stock: 3 random items (roll on Universal Equipment table)
 
-**Narrative**: Wagons arrive flying guild banners. They have goods. You have need. Commerce in the apocalypse.
+**Narrative**: Wagons arrive flying Exchange banners. They have goods. You have need. Commerce in the apocalypse.
 
 ---
 
@@ -633,9 +633,9 @@ Gain **2 Scrap** from battlefield salvage.
 
 **Type**: Trade Pressure
 
-Merchant Guild demands **payment**:
+The Exchange demands **payment**:
 - Pay 5 Credits OR 3 Scrap
-- If cannot pay, lose access to Merchant trades for 2 missions
+- If cannot pay, lose access to Exchange trades for 2 missions
 
 **Narrative**: "You bought on credit. Now pay up, or we walk."
 
@@ -935,7 +935,7 @@ Settlement loses **2 Morale**:
 
 **Type**: Economic Windfall
 
-Merchant Guild rewards your success:
+The Exchange rewards your success:
 - Gain 1d6 × 2 Credits
 - Gain 1 random Common equipment
 

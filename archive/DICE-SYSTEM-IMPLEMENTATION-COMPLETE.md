@@ -17,19 +17,19 @@ This document summarizes the **complete implementation** of the custom dice syst
 ### 1. CUSTOM DICE (3 Types)
 
 **Attack Dice (2d6)** - To-hit rolls
-- ⚔️ STRIKE (3), ⚔️⚔️ DOUBLE STRIKE (4), 💀 DEATH BLOW (5)
-- 🛡️ GLANCE (1), 🩸 BLOOD (2), ⚙️ JAM (0)
+- STRIKE (3), DOUBLE STRIKE (4), DEATH BLOW (5)
+- GLANCE (1), BLOOD (2), JAM (0)
 - Results: Hit (5-6), Strong Hit (7-8, +1 dmg), Critical (9, +2 dmg), **EXECUTION** (10, auto-destroy component), Catastrophic Failure (2, weapon jams)
 
 **Defense Dice (1d6 per damage)** - Mitigation rolls
-- 🛡️ SHIELD (block 1), ⚙️ ABSORB (block 1)
-- 🩸 FLESH WOUND (take damage), 💀 CRITICAL (+1 Component Damage)
-- ⚔️ PIERCE (no reactives), 🔥 HEAT (+1 Heat)
+- SHIELD (block 1), ABSORB (block 1)
+- FLESH WOUND (take damage), CRITICAL (+1 Component Damage)
+- PIERCE (no reactives), HEAT (+1 Heat)
 - Expected: 33% block rate per die
 
 **Suffering Dice (1d6)** - Church faction self-harm
-- 🛡️ DIVINE MERCY (no harm), 🩸 BLOOD PRICE (discard 2)
-- ⚔️ ZEALOT'S FURY (+1 dmg all attacks), 💀 MARTYRDOM (discard 3, +3 dmg next)
+- DIVINE MERCY (no harm), BLOOD PRICE (discard 2)
+- ZEALOT'S FURY (+1 dmg all attacks), MARTYRDOM (discard 3, +3 dmg next)
 - Church-exclusive for Blood Offering mechanics
 
 ---
@@ -38,21 +38,21 @@ This document summarizes the **complete implementation** of the custom dice syst
 
 ### Core Dice Documentation
 1. **[docs/rules/dice-reference.md](docs/rules/dice-reference.md)** - 17,000+ words
-   - Complete dice specifications
-   - All 3 dice types with probabilities
-   - To-hit modifier tables (GKR + BattleTech hybrid)
-   - Manufacturing specifications
+ - Complete dice specifications
+ - All 3 dice types with probabilities
+ - To-hit modifier tables (GKR + BattleTech hybrid)
+ - Manufacturing specifications
 
 2. **[docs/cards/new-cards-dice-system.md](docs/cards/new-cards-dice-system.md)** - 15,000+ words
-   - 32 new cards (8 per faction + 4 Universal)
-   - 7 revised cards
-   - Complete card database for dice optimization
+ - 32 new cards (8 per faction + 4 Universal)
+ - 7 revised cards
+ - Complete card database for dice optimization
 
 3. **[docs/reference/card-optimization-dice-system.md](docs/reference/card-optimization-dice-system.md)** - 14,000+ words
-   - Design analysis
-   - Balance recommendations
-   - Faction-specific optimization strategies
-   - Priority implementation checklist
+ - Design analysis
+ - Balance recommendations
+ - Faction-specific optimization strategies
+ - Priority implementation checklist
 
 ---
 
@@ -60,51 +60,51 @@ This document summarizes the **complete implementation** of the custom dice syst
 
 ### Rule Documents
 1. **[docs/rules/combat-system.md](docs/rules/combat-system.md)**
-   - Complete attack resolution with to-hit (Steps 1-6)
-   - Attack Dice mechanics
-   - Defense Dice mechanics
-   - Updated combat examples with dice rolls
+ - Complete attack resolution with to-hit (Steps 1-6)
+ - Attack Dice mechanics
+ - Defense Dice mechanics
+ - Updated combat examples with dice rolls
 
 2. **[docs/rules/range-and-los.md](docs/rules/range-and-los.md)**
-   - Range bands with to-hit modifiers
-   - 6-hex facing with to-hit modifiers
-   - Cover as to-hit penalties
-   - Elevation to-hit modifiers
+ - Range bands with to-hit modifiers
+ - 6-hex facing with to-hit modifiers
+ - Cover as to-hit penalties
+ - Elevation to-hit modifiers
 
 3. **[docs/rules/turn-structure.md](docs/rules/turn-structure.md)**
-   - Reactive resolution with dice
-   - Example turn with Attack + Defense Dice
-   - To-hit calculation integration
+ - Reactive resolution with dice
+ - Example turn with Attack + Defense Dice
+ - To-hit calculation integration
 
 4. **[docs/rules/quick-reference.md](docs/rules/quick-reference.md)**
-   - Complete dice quick reference section (3 dice types)
-   - Updated combat resolution steps
-   - Sample turn with dice example
-   - Printable dice tables
+ - Complete dice quick reference section (3 dice types)
+ - Updated combat resolution steps
+ - Sample turn with dice example
+ - Printable dice tables
 
 ### Scenario Files
 5. **[docs/scenarios/01-proving-grounds.md](docs/scenarios/01-proving-grounds.md)**
-   - Combat resolution with dice steps
-   - Detailed dice example (9-damage attack with Defense Dice)
-   - Setup checklist includes dice requirements
-   - Regular d6 fallback conversion table
+ - Combat resolution with dice steps
+ - Detailed dice example (9-damage attack with Defense Dice)
+ - Setup checklist includes dice requirements
+ - Regular d6 fallback conversion table
 
 6. **[docs/scenarios/02-reliquary-ruins.md](docs/scenarios/02-reliquary-ruins.md)**
-   - Combat resolution with dice mechanics
-   - Cathedral combat example (elevation + Defense Dice)
-   - Setup checklist with dice requirements
+ - Combat resolution with dice mechanics
+ - Cathedral combat example (elevation + Defense Dice)
+ - Setup checklist with dice requirements
 
 7. **[docs/scenarios/example-of-play.md](docs/scenarios/example-of-play.md)**
-   - Turn 3 features complete dice walkthrough
-   - Shows Critical Hit + Defense Dice interaction
-   - Component destruction from 💀 CRITICAL symbols (early Right Arm destruction)
+ - Turn 3 features complete dice walkthrough
+ - Shows Critical Hit + Defense Dice interaction
+ - Component destruction from CRITICAL symbols (early Right Arm destruction)
 
 ### Faction Files
 8. **[docs/factions/church/deck-equipment-system.md](docs/factions/church/deck-equipment-system.md)**
-   - 7 new Church cards integrated
-   - Blood Offering revised (+1 to target number)
-   - Divine Judgment revised (miss compensation)
-   - Full dice optimization section
+ - 7 new Church cards integrated
+ - Blood Offering revised (+1 to target number)
+ - Divine Judgment revised (miss compensation)
+ - Full dice optimization section
 
 ---
 
@@ -130,7 +130,7 @@ This document summarizes the **complete implementation** of the custom dice syst
 2. **Siege Lock-On** (2 SP) - Cannot move, ranged attacks -2 to target number + +1 Range
 3. **Runic Sight** (1 SP, ×2) - All attacks -1 to target number, gain 1 Rune Counter
 4. **Earthshaker (Revised)** (3 SP) - 3 damage AoE, auto-hit, push 1 hex
-5. **Stone Certainty** (1 SP) - Convert all 💀 CRITICAL to 🛡️ SHIELD until next turn
+5. **Stone Certainty** (1 SP) - Convert all CRITICAL to SHIELD until next turn
 6. **Crushing Certainty** (3 SP) - 5-10 damage, auto-hit, armor-piercing, Strong Hit bonus
 7. **Grapple Smash** (2 SP) - 4 damage, auto-hit, target cannot move next turn
 
@@ -138,10 +138,10 @@ This document summarizes the **complete implementation** of the custom dice syst
 1. **Death's Certainty** (1 SP) - Reroll up to 2 Attack Dice (more per Decay card)
 2. **Vampiric Precision** (1 SP) - Next attack -2 to target number, recover 2 cards if hit
 3. **Inevitable Decay** (2 SP, ×2) - 2 damage + 2 Bleed, auto-hit
-4. **Soul Harvest (Revised)** (Passive) - Heal 1 per Attack Die showing 💀 (even if miss)
+4. **Soul Harvest (Revised)** (Passive) - Heal 1 per Attack Die showing (even if miss)
 5. **Draining Grasp** (3 SP) - 4 damage, auto-hit, recover 4 cards (lifesteal)
-6. **Undying Fortitude** (1 SP Reactive) - Reroll all 💀 CRITICAL
-7. **Bone Armor** (2 SP) - Convert all 🩸 to 🛡️ until next turn
+6. **Undying Fortitude** (1 SP Reactive) - Reroll all CRITICAL
+7. **Bone Armor** (2 SP) - Convert all to until next turn
 
 ### Elven Verdant Covenant (7 new cards)
 1. **Nature's Guidance** (1 SP) - Next attack -1 to target number per Bleed (max -3)
@@ -159,13 +159,13 @@ This document summarizes the **complete implementation** of the custom dice syst
 ### Universal Core (3 revised)
 1. **Focus** - Now: Draw 1 card OR Reroll 1 Attack Die
 2. **Sprint** - Now: Added penalty (+1 to target number on next attack)
-3. **Brace for Impact** - Now: -2 damage AND reroll up to 2 💀 CRITICAL
+3. **Brace for Impact** - Now: -2 damage AND reroll up to 2 CRITICAL
 
 ### Faction Cards (4 revised)
 1. **Blood Offering** (Church) - Added: -1 to target number
 2. **Divine Judgment** (Church) - Added: Miss compensation (recover 2 SP + +3 dmg buff)
 3. **Earthshaker** (Dwarves) - Changed: Now auto-hits (AoE compensation)
-4. **Soul Harvest** (Ossuarium) - Changed: Triggers on Attack Dice 💀 even if miss
+4. **Soul Harvest** (Ossuarium) - Changed: Triggers on Attack Dice even if miss
 5. **Thorn Strike** (Elves) - Added: Applies Bleed even on miss
 
 ---
@@ -191,8 +191,8 @@ This document summarizes the **complete implementation** of the custom dice syst
 
 ### Defense Dice System (Kingdom Death-inspired)
 - Roll 1d6 per damage point
-- **Block rate**: 33% per die (🛡️ or ⚙️)
-- **Critical rate**: 17% per die (💀 adds Component Damage)
+- **Block rate**: 33% per die ( or )
+- **Critical rate**: 17% per die ( adds Component Damage)
 - **Variance**: Same 6 damage can be 0-6 final damage
 
 **Expected Blocks**:
@@ -205,29 +205,29 @@ This document summarizes the **complete implementation** of the custom dice syst
 ## Design Principles Applied
 
 1. **Mitigate Whiff Risk**
-   - High-cost attacks (4+ SP) have miss compensation
-   - Example: Divine Judgment recovers 2 SP + +3 dmg buff on miss
+ - High-cost attacks (4+ SP) have miss compensation
+ - Example: Divine Judgment recovers 2 SP + +3 dmg buff on miss
 
 2. **Reward Good Rolls**
-   - Strong Hits (+1 dmg on 7-8)
-   - Critical Hits (+2 dmg on 9, bypass 1 Defense)
-   - EXECUTION (10, auto-destroy component)
+ - Strong Hits (+1 dmg on 7-8)
+ - Critical Hits (+2 dmg on 9, bypass 1 Defense)
+ - EXECUTION (10, auto-destroy component)
 
 3. **Manipulate Probability**
-   - Reroll mechanics (Zealot's Focus, Lucky Charm)
-   - Symbol conversion (Stone Certainty, Bone Armor)
-   - Auto-hit cards (2-3 per faction)
+ - Reroll mechanics (Zealot's Focus, Lucky Charm)
+ - Symbol conversion (Stone Certainty, Bone Armor)
+ - Auto-hit cards (2-3 per faction)
 
 4. **Faction Identity Reinforcement**
-   - Church: Self-harm for accuracy (Martyrdom's Certainty)
-   - Dwarves: Runic perfection (Forge-Tempered Precision at 3 Runes = auto-hit)
-   - Ossuarium: Death's inevitability (Soul Harvest triggers even on miss)
-   - Elves: Predator patience (Hunter's Patience = -3 to target number if stationary)
+ - Church: Self-harm for accuracy (Martyrdom's Certainty)
+ - Dwarves: Runic perfection (Forge-Tempered Precision at 3 Runes = auto-hit)
+ - Ossuarium: Death's inevitability (Soul Harvest triggers even on miss)
+ - Elves: Predator patience (Hunter's Patience = -3 to target number if stationary)
 
 5. **Balanced Auto-Hit Premium**
-   - Auto-hit cards cost 2-4 SP (premium)
-   - Deal 2-6 base damage (lower than risky attacks)
-   - Often have utility riders (grapple, apply Bleed, slow)
+ - Auto-hit cards cost 2-4 SP (premium)
+ - Deal 2-6 base damage (lower than risky attacks)
+ - Often have utility riders (grapple, apply Bleed, slow)
 
 ---
 
@@ -247,24 +247,24 @@ Before final release, verify:
 ## Next Steps (Optional)
 
 1. **Physical Dice Manufacturing**
-   - Custom d6 with engraved symbols
-   - 16mm standard dice recommended
-   - Kickstarter stretch goal
+ - Custom d6 with engraved symbols
+ - 16mm standard dice recommended
+ - Kickstarter stretch goal
 
 2. **Digital Implementation**
-   - Tabletop Simulator mod with scripted dice
-   - Automated to-hit calculator
-   - Defense Dice roller with symbol tracker
+ - Tabletop Simulator mod with scripted dice
+ - Automated to-hit calculator
+ - Defense Dice roller with symbol tracker
 
 3. **Additional Card Sets**
-   - Medium-priority cards (terrain manipulation, gambler cards)
-   - Low-priority cards (punisher cards, critical synergy)
-   - Playtesting feedback integration
+ - Medium-priority cards (terrain manipulation, gambler cards)
+ - Low-priority cards (punisher cards, critical synergy)
+ - Playtesting feedback integration
 
 4. **Faction Expansion**
-   - Add dice-optimized cards to remaining 5 factions
-   - Wyrd Conclave, Nomads, Merchants, Blighted, Horde
-   - Each needs 7 new cards (5 Accuracy, 2 Auto-Hit)
+ - Add dice-optimized cards to remaining 5 factions
+ - Wyrd Conclave, Nomads, Merchants, Blighted, Horde
+ - Each needs 7 new cards (5 Accuracy, 2 Auto-Hit)
 
 ---
 

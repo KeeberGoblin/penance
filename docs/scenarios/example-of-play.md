@@ -10,7 +10,7 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - SP economy and decision-making
 - **To-hit rolls with Attack Dice (2d6 custom dice)**
 - **Defense rolls with Defense Dice (1d6 per damage)**
-- Component damage tracking (including 💀 CRITICAL symbols)
+- Component damage tracking (including CRITICAL symbols)
 - Heat management and Strain checks
 - Reactive card usage
 - Death spiral mechanics
@@ -207,13 +207,13 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 1. **LOS Check**: Clear line of sight ✓
 2. **Range Check**: 3 hexes = CLOSE RANGE ✓
 3. **Calculate Damage**:
-   - Base damage: 2 (Quick Shot)
-   - Facing: Alice is in Bob's FRONT arc (+0 dmg)
-   - **Total damage: 2**
+ - Base damage: 2 (Quick Shot)
+ - Facing: Alice is in Bob's FRONT arc (+0 dmg)
+ - **Total damage: 2**
 4. **Defense Modifiers**:
-   - Bob's Rune Counters: -1 damage
-   - Bob's terrain (Rubble): +1 Defense (reduces damage by 1)
-   - **Total reduction: -2 damage**
+ - Bob's Rune Counters: -1 damage
+ - Bob's terrain (Rubble): +1 Defense (reduces damage by 1)
+ - **Total reduction: -2 damage**
 5. **Final Damage: 2 - 2 = 0 damage** (minimum 1)
 
 **Minimum Damage Rule**: All attacks deal at least 1 damage
@@ -346,7 +346,7 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - **Final To-Hit**: Need **6+**
 
 **Step 2: Roll Attack Dice** (Alice rolls 2d6 Attack Dice)
-- **Roll**: 💀 (5) + ⚔️⚔️ (4) = **9 total**
+- **Roll**: (5) + (4) = **9 total**
 - **Result**: **CRITICAL HIT** (+2 damage, bypass 1 Defense)
 
 **Step 3: Calculate Damage**:
@@ -357,11 +357,11 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - **Total damage: 4 + 3 + 2 + 3 = 12 damage**
 
 **Step 4: Roll Defense Dice** (Bob rolls 12 Defense Dice)
-- **Roll**: 🛡️ 🛡️ 🛡️ ⚙️ ⚙️ 🩸 🩸 🩸 💀 💀 🔥 ⚔️
-- **Blocks**: 5 (🛡️🛡️🛡️⚙️⚙️) = Reduce damage by 5
-- **Criticals**: 2 (💀💀) = +2 Component Damage
-- **Heat**: 1 (🔥) = +1 Heat to Bob
-- **Pierce**: 1 (⚔️) = Cannot use reactive cards
+- **Roll**: 
+- **Blocks**: 5 () = Reduce damage by 5
+- **Criticals**: 2 () = +2 Component Damage
+- **Heat**: 1 () = +1 Heat to Bob
+- **Pierce**: 1 () = Cannot use reactive cards
 - **Reduced damage**: 12 - 5 = **7 damage**
 
 **Step 5: Apply Defense Modifiers**:
@@ -384,7 +384,7 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 
 **Component Damage Check**:
 - 1 Primary Weapon card discarded = +1 Component Damage
-- 2 Defense Dice 💀 CRITICAL symbols = +2 Component Damage
+- 2 Defense Dice CRITICAL symbols = +2 Component Damage
 - **Total Component Damage: +3** (Right Arm)
 - Bob's Right Arm Component Damage: 0 → **3**
 - **3 COMPONENT DAMAGE = RIGHT ARM DESTROYED**
@@ -392,12 +392,12 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 **RIGHT ARM DESTRUCTION EFFECT** (Triggered Early!):
 - Bob must **discard all Primary Weapon cards from hand immediately**
 - Bob's current hand:
-  - Crushing Blow (Primary) → DISCARD
-  - Runic Overcharge (Tactic - keep)
-  - Shield Wall (Secondary - keep)
-  - Survey the Field (Universal - keep)
-  - Earthshaker (Primary) → DISCARD
-  - Iron Bulwark (Secondary - keep)
+ - Crushing Blow (Primary) → DISCARD
+ - Runic Overcharge (Tactic - keep)
+ - Shield Wall (Secondary - keep)
+ - Survey the Field (Universal - keep)
+ - Earthshaker (Primary) → DISCARD
+ - Iron Bulwark (Secondary - keep)
 
 **Bob discards 2 Primary Weapon cards from hand**
 
@@ -471,8 +471,8 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 
 ### PHASE 4: END TURN
 - Remove temporary effects:
-  - Shield Wall expires (+3 Defense removed)
-  - Advance defense buff expires (+2 Defense removed)
+ - Shield Wall expires (+3 Defense removed)
+ - Advance defense buff expires (+2 Defense removed)
 
 **Bob's End State**:
 - Position: (10,8)
@@ -517,12 +517,12 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 **COMBAT RESOLUTION**:
 
 1. **Calculate Damage**:
-   - Base damage: 5
-   - Facing: Front arc (+0)
-   - **Total: 5 damage**
+ - Base damage: 5
+ - Facing: Front arc (+0)
+ - **Total: 5 damage**
 2. **Defense Modifiers**:
-   - Bob's Rune Counters: -3
-   - **Total reduction: -3**
+ - Bob's Rune Counters: -3
+ - **Total reduction: -3**
 3. **Final Damage: 5 - 3 = 2 damage**
 
 **Bob takes 2 damage**: Discard top 2 cards
@@ -575,13 +575,13 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 **COMBAT RESOLUTION**:
 
 1. **Calculate Damage**:
-   - Base damage: 4
-   - **ARMOR PIERCING**: Ignore all defense buffs
-   - Facing: Side arc (+1 dmg)
-   - **Total: 5 damage**
+ - Base damage: 4
+ - **ARMOR PIERCING**: Ignore all defense buffs
+ - Facing: Side arc (+1 dmg)
+ - **Total: 5 damage**
 2. **Defense Modifiers**:
-   - **ARMOR PIERCING** ignores all defenses
-   - **Final: 5 damage**
+ - **ARMOR PIERCING** ignores all defenses
+ - **Final: 5 damage**
 
 **Alice takes 5 damage**: Discard top 5 cards from deck
 
@@ -651,12 +651,12 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 **COMBAT RESOLUTION**:
 
 1. **Calculate Damage**:
-   - Base damage: 6
-   - Facing: Front arc (+0)
-   - **Total: 6 damage**
+ - Base damage: 6
+ - Facing: Front arc (+0)
+ - **Total: 6 damage**
 2. **Defense Modifiers**:
-   - Bob's Rune Counters: -3
-   - **Total reduction: -3**
+ - Bob's Rune Counters: -3
+ - **Total reduction: -3**
 3. **Final Damage: 6 - 3 = 3 damage**
 
 **Bob takes 3 damage**: Discard top 3 cards
@@ -674,12 +674,12 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 **RIGHT ARM DESTRUCTION EFFECT**:
 - Bob must **discard all Primary Weapon cards from hand immediately**
 - Bob's hand contains:
-  - Crushing Blow (Primary) → DISCARD
-  - Forge Fury (Primary) → DISCARD
-  - Hammerfall (Primary) → DISCARD
-  - Iron Bulwark (Secondary - keep)
-  - Unbreakable (Primary) → DISCARD
-  - Advance (Secondary - keep)
+ - Crushing Blow (Primary) → DISCARD
+ - Forge Fury (Primary) → DISCARD
+ - Hammerfall (Primary) → DISCARD
+ - Iron Bulwark (Secondary - keep)
+ - Unbreakable (Primary) → DISCARD
+ - Advance (Secondary - keep)
 
 **Bob discards 4 Primary Weapon cards from hand**
 
@@ -799,16 +799,16 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 
 ### Potential Balance Changes
 1. **Component Destruction**: May be too punishing
-   - Consider: Destroyed components reduce effectiveness (not eliminate)
-   - Example: Right Arm Destroyed = Primary Weapon cards cost +1 SP (not discarded)
+ - Consider: Destroyed components reduce effectiveness (not eliminate)
+ - Example: Right Arm Destroyed = Primary Weapon cards cost +1 SP (not discarded)
 
 2. **Blood Offering**: May be too efficient
-   - 0 SP cost, discard 2 cards, +3 dmg + ignore 1 Armor
-   - Consider: Increase to 1 SP cost OR reduce buff to +2 dmg
+ - 0 SP cost, discard 2 cards, +3 dmg + ignore 1 Armor
+ - Consider: Increase to 1 SP cost OR reduce buff to +2 dmg
 
 3. **Unbreakable**: Bob had counter-play available but didn't use it
-   - This is player error, not balance issue
-   - Reward good reactive card timing
+ - This is player error, not balance issue
+ - Reward good reactive card timing
 
 ---
 

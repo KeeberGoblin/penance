@@ -16,7 +16,7 @@
 
 ## Support Unit Roster
 
-### ⭐ STARTER UNITS (Choose 1-2)
+### STARTER UNITS (Choose 1-2)
 
 1. **Thorn Stalkers** (Scout/Harassment) - 2 slots
 2. **Rootweaver Circle** (Control/Support) - 3 slots
@@ -30,7 +30,7 @@
 
 ---
 
-## 1. THORN STALKERS ⭐ STARTER UNIT
+## 1. THORN STALKERS STARTER UNIT
 **HP**: 6 | **Movement**: 5 | **Defense**: 1
 **Equipment Slots**: 2
 **Unit Composition**: 3 elven scouts with thorn blades and living vine armor
@@ -47,7 +47,7 @@ Three lithe elven warriors wrapped in living thorns and moss. Their armor appear
 
 ### Behavior Deck (6 Cards)
 
-#### 🌿 AMBUSH APPROACH
+#### AMBUSH APPROACH
 **Type**: Movement / Stealth
 **Priority**: High (when no enemies within 3 hexes)
 
@@ -60,7 +60,7 @@ Three lithe elven warriors wrapped in living thorns and moss. Their armor appear
 
 ---
 
-#### ⚔️ THORN STRIKE
+#### THORN STRIKE
 **Type**: Attack / Melee
 **Priority**: Critical (when adjacent to enemy)
 
@@ -73,7 +73,7 @@ Three lithe elven warriors wrapped in living thorns and moss. Their armor appear
 
 ---
 
-#### 🩸 BLEEDING FRENZY
+#### BLEEDING FRENZY
 **Type**: Attack / Execute
 **Priority**: Critical (when enemy has 5+ Bleed counters)
 
@@ -86,7 +86,7 @@ Three lithe elven warriors wrapped in living thorns and moss. Their armor appear
 
 ---
 
-#### 🏃 FADE INTO SHADOWS
+#### FADE INTO SHADOWS
 **Type**: Defense / Repositioning
 **Priority**: High (when HP ≤ 3)
 
@@ -99,7 +99,7 @@ Three lithe elven warriors wrapped in living thorns and moss. Their armor appear
 
 ---
 
-#### 🌀 HARRYING STRIKES
+#### HARRYING STRIKES
 **Type**: Attack / Multi-Target
 **Priority**: Medium (when 2+ enemies within 4 hexes)
 
@@ -112,7 +112,7 @@ Three lithe elven warriors wrapped in living thorns and moss. Their armor appear
 
 ---
 
-#### 🎯 COORDINATED ASSAULT
+#### COORDINATED ASSAULT
 **Type**: Attack / Synergy
 **Priority**: High (when allied Casket within 3 hexes of enemy)
 
@@ -146,7 +146,7 @@ Three lithe elven warriors wrapped in living thorns and moss. Their armor appear
 
 ---
 
-## 2. ROOTWEAVER CIRCLE ⭐ STARTER UNIT
+## 2. ROOTWEAVER CIRCLE STARTER UNIT
 **HP**: 8 | **Movement**: 2 | **Defense**: 2
 **Equipment Slots**: 3
 **Unit Composition**: 4 elven druids holding staffs, chanting in unison
@@ -166,7 +166,7 @@ Four elven mystics in living wooden robes, their feet rooted to the ground. Vine
 
 ### Behavior Deck (5 Cards)
 
-#### 🌱 ROOT DEEP
+#### ROOT DEEP
 **Type**: Utility / Setup
 **Priority**: High (first turn, or after being moved)
 
@@ -179,7 +179,7 @@ Four elven mystics in living wooden robes, their feet rooted to the ground. Vine
 
 ---
 
-#### 🪢 ENTANGLE
+#### ENTANGLE
 **Type**: Control / Crowd Control
 **Priority**: Critical (when enemy within 4 hexes)
 
@@ -193,7 +193,7 @@ Four elven mystics in living wooden robes, their feet rooted to the ground. Vine
 
 ---
 
-#### 🌿 VERDANT GROWTH
+#### VERDANT GROWTH
 **Type**: Healing / Support
 **Priority**: High (when ally within 3 hexes has ≤10 HP)
 
@@ -206,7 +206,7 @@ Four elven mystics in living wooden robes, their feet rooted to the ground. Vine
 
 ---
 
-#### 🌹 THORN ERUPTION
+#### THORN ERUPTION
 **Type**: Attack / Area Denial
 **Priority**: Medium (when enemy enters Verdant Zone)
 
@@ -219,7 +219,7 @@ Four elven mystics in living wooden robes, their feet rooted to the ground. Vine
 
 ---
 
-#### 🌳 FOREST SANCTUARY
+#### FOREST SANCTUARY
 **Type**: Defense / Fortification
 **Priority**: High (when Rootweavers at ≤4 HP)
 
@@ -252,7 +252,7 @@ Four elven mystics in living wooden robes, their feet rooted to the ground. Vine
 
 ---
 
-## 3. VERDANT ARCHER CADRE ⭐ STARTER UNIT
+## 3. VERDANT ARCHER CADRE STARTER UNIT
 **HP**: 5 | **Movement**: 4 | **Defense**: 0
 **Equipment Slots**: 2
 **Unit Composition**: 4 elven archers with living wood bows
@@ -274,7 +274,7 @@ Four slender elves carrying longbows that appear grown rather than carved. Their
 
 ### Behavior Deck (5 Cards)
 
-#### 🏹 AIMED SHOT
+#### AIMED SHOT
 **Type**: Attack / Single Target
 **Priority**: High (when high-value target in range)
 
@@ -287,7 +287,7 @@ Four slender elves carrying longbows that appear grown rather than carved. Their
 
 ---
 
-#### 🎯 VOLLEY BARRAGE
+#### VOLLEY BARRAGE
 **Type**: Attack / Focus Fire
 **Priority**: Critical (when enemy has ≤8 HP)
 
@@ -301,7 +301,7 @@ Four slender elves carrying longbows that appear grown rather than carved. Their
 
 ---
 
-#### 🌿 POISON ARROWS
+#### POISON ARROWS
 **Type**: Attack / Debuff
 **Priority**: High (when attacking Heavy Casket or boss)
 
@@ -314,7 +314,7 @@ Four slender elves carrying longbows that appear grown rather than carved. Their
 
 ---
 
-#### 🏃 REPOSITION
+#### REPOSITION
 **Type**: Movement / Kiting
 **Priority**: Critical (when enemy within 3 hexes)
 
@@ -327,7 +327,7 @@ Four slender elves carrying longbows that appear grown rather than carved. Their
 
 ---
 
-#### 🌳 SEEK COVER
+#### SEEK COVER
 **Type**: Defense / Concealment
 **Priority**: High (when taking damage)
 
@@ -379,7 +379,7 @@ A massive humanoid construct woven from living briarwood and iron-hard thorns. I
 
 ### Behavior Deck (5 Cards)
 
-#### 🌳 ADVANCE THE LINE
+#### ADVANCE THE LINE
 **Type**: Movement / Pushing
 **Priority**: High (when enemies within 5 hexes)
 
@@ -392,7 +392,7 @@ A massive humanoid construct woven from living briarwood and iron-hard thorns. I
 
 ---
 
-#### 🪨 BRIARWOOD SLAM
+#### BRIARWOOD SLAM
 **Type**: Attack / Melee
 **Priority**: Critical (when adjacent to enemy)
 
@@ -406,7 +406,7 @@ A massive humanoid construct woven from living briarwood and iron-hard thorns. I
 
 ---
 
-#### 🌿 OVERGROWTH
+#### OVERGROWTH
 **Type**: Utility / Terrain Transformation
 **Priority**: Medium (when in open terrain)
 
@@ -419,7 +419,7 @@ A massive humanoid construct woven from living briarwood and iron-hard thorns. I
 
 ---
 
-#### 🛡️ THORN WALL BARRIER
+#### THORN WALL BARRIER
 **Type**: Defense / Area Denial
 **Priority**: High (when allies nearby are threatened)
 
@@ -433,7 +433,7 @@ A massive humanoid construct woven from living briarwood and iron-hard thorns. I
 
 ---
 
-#### 🌹 VERDANT RAGE
+#### VERDANT RAGE
 **Type**: Attack / Berserk
 **Priority**: Critical (when Colossus at ≤8 HP)
 
@@ -486,7 +486,7 @@ A lone elven warrior draped in living shadow-moss. Their form seems to flicker a
 
 ### Behavior Deck (6 Cards)
 
-#### 🗡️ THROAT CUT
+#### THROAT CUT
 **Type**: Attack / Execute
 **Priority**: Critical (when behind enemy or Concealed)
 
@@ -500,7 +500,7 @@ A lone elven warrior draped in living shadow-moss. Their form seems to flicker a
 
 ---
 
-#### 🌑 VANISH
+#### VANISH
 **Type**: Movement / Stealth
 **Priority**: High (when revealed or in danger)
 
@@ -514,7 +514,7 @@ A lone elven warrior draped in living shadow-moss. Their form seems to flicker a
 
 ---
 
-#### 🩸 BLEEDING STRIKES
+#### BLEEDING STRIKES
 **Type**: Attack / Multi-Hit
 **Priority**: High (when multiple enemies in range)
 
@@ -527,7 +527,7 @@ A lone elven warrior draped in living shadow-moss. Their form seems to flicker a
 
 ---
 
-#### 🎯 STALKER'S PATIENCE
+#### STALKER'S PATIENCE
 **Type**: Positioning / Setup
 **Priority**: Medium (when no immediate threats)
 
@@ -540,7 +540,7 @@ A lone elven warrior draped in living shadow-moss. Their form seems to flicker a
 
 ---
 
-#### 🌿 POISON CLOUD
+#### POISON CLOUD
 **Type**: Attack / Area Denial
 **Priority**: High (when enemies clustered)
 
@@ -554,7 +554,7 @@ A lone elven warrior draped in living shadow-moss. Their form seems to flicker a
 
 ---
 
-#### ⚔️ DEATH FROM ABOVE
+#### DEATH FROM ABOVE
 **Type**: Attack / Mobility
 **Priority**: Critical (when on elevated terrain)
 
@@ -613,7 +613,7 @@ A towering tree brought to life, ancient beyond measure. Its bark is iron-hard, 
 
 ### Behavior Deck (4 Cards)
 
-#### 🌳 ROOT PRISON
+#### ROOT PRISON
 **Type**: Control / Lockdown
 **Priority**: Critical (when high-value target within 5 hexes)
 
@@ -627,7 +627,7 @@ A towering tree brought to life, ancient beyond measure. Its bark is iron-hard, 
 
 ---
 
-#### 🪨 TITANIC STRIKE
+#### TITANIC STRIKE
 **Type**: Attack / Melee
 **Priority**: High (when enemy within 2 hexes)
 
@@ -641,7 +641,7 @@ A towering tree brought to life, ancient beyond measure. Its bark is iron-hard, 
 
 ---
 
-#### 🌿 FOREST AWAKENING
+#### FOREST AWAKENING
 **Type**: Utility / Ultimate
 **Priority**: High (once per battle, when enemies within aura)
 
@@ -656,7 +656,7 @@ A towering tree brought to life, ancient beyond measure. Its bark is iron-hard, 
 
 ---
 
-#### 🛡️ IRONBARK DEFENSE
+#### IRONBARK DEFENSE
 **Type**: Defense / Fortification
 **Priority**: Critical (when Treant at ≤12 HP or allies threatened)
 

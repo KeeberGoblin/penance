@@ -21,7 +21,7 @@ TTS imports cards from image sheets (10 cards per sheet recommended).
 - Resolution: **4096x4096 pixels** (or 2048x2048 for smaller files)
 - Format: **PNG or JPG**
 - Layout: **10 cards in 2 rows of 5** (most common)
-  - Each card: **819x1024 pixels** (poker-sized)
+ - Each card: **819x1024 pixels** (poker-sized)
 - Alternative: **69 cards in 7x10 grid** (for full decks)
 
 ### 2. **Card Backs**
@@ -78,8 +78,8 @@ TEXTBOX="[effect]",0.5,3,5.8,3,LEFT,#000000,#F5F5F5
 **Template Layout**:
 ```
 ┌─────────────────────────────────────────────────────┐
-│  [Card1] [Card2] [Card3] [Card4] [Card5]            │
-│  [Card6] [Card7] [Card8] [Card9] [Card10]           │
+│ [Card1] [Card2] [Card3] [Card4] [Card5] │
+│ [Card6] [Card7] [Card8] [Card9] [Card10] │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -99,8 +99,8 @@ TEXTBOX="[effect]",0.5,3,5.8,3,LEFT,#000000,#F5F5F5
 1. Upload card sheets to **Imgur** or **Google Drive** (public link)
 2. In TTS: `Objects → Components → Custom → Custom Deck`
 3. Paste image URLs:
-   - **Face URL**: Your card sheet image
-   - **Back URL**: Your card back image
+ - **Face URL**: Your card sheet image
+ - **Back URL**: Your card back image
 4. Set deck dimensions: **Width 5, Height 2** (for 10 cards)
 5. Click "Import"
 
@@ -183,10 +183,10 @@ TEXTBOX="[effect]",0.5,3,5.8,3,LEFT,#000000,#F5F5F5
 6. Host TTS game, invite 1 friend
 7. Play 1v1 Arena match (Scout vs Heavy)
 8. Take notes on:
-   - Confusing rules
-   - Balance issues
-   - Fun factor
-   - Card text clarity
+ - Confusing rules
+ - Balance issues
+ - Fun factor
+ - Card text clarity
 
 **Week 3: Iterate**
 9. Revise card text based on feedback
@@ -205,29 +205,29 @@ Tabletop Simulator supports Lua scripting for automation.
 **Auto-Shuffle on Deck Empty**:
 ```lua
 function onObjectDeck(deck)
-    if deck.tag == "Deck" and deck.getQuantity() == 0 then
-        -- Shuffle discard pile into new deck
-        local discard = getObjectFromGUID("discard_pile_guid")
-        discard.shuffle()
-    end
+ if deck.tag == "Deck" and deck.getQuantity() == 0 then
+ -- Shuffle discard pile into new deck
+ local discard = getObjectFromGUID("discard_pile_guid")
+ discard.shuffle()
+ end
 end
 ```
 
 **Heat Tracker Button**:
 ```lua
 function addHeat()
-    local counter = getObjectFromGUID("heat_counter_guid")
-    counter.Counter.increment()
+ local counter = getObjectFromGUID("heat_counter_guid")
+ counter.Counter.increment()
 end
 ```
 
 **Taint Tracker with Warning at 10**:
 ```lua
 function checkTaint()
-    local taint = getObjectFromGUID("taint_counter_guid")
-    if taint.Counter.getValue() >= 10 then
-        printToAll("ABOMINATION TRANSFORMATION!", {1,0,0})
-    end
+ local taint = getObjectFromGUID("taint_counter_guid")
+ if taint.Counter.getValue() >= 10 then
+ printToAll("ABOMINATION TRANSFORMATION!", {1,0,0})
+ end
 end
 ```
 
@@ -239,49 +239,49 @@ end
 
 ### Graphic Design (No Photoshop Required):
 1. **Canva** (browser-based, free tier): https://www.canva.com
-   - Templates for cards
-   - Drag-and-drop interface
-   - Export as PNG
+ - Templates for cards
+ - Drag-and-drop interface
+ - Export as PNG
 
 2. **GIMP** (free Photoshop alternative): https://www.gimp.org
-   - Full image editing
-   - Layer support
-   - Batch processing
+ - Full image editing
+ - Layer support
+ - Batch processing
 
 3. **Inkscape** (vector graphics, free): https://inkscape.org
-   - Scalable card designs
-   - PDF export
+ - Scalable card designs
+ - PDF export
 
 ### Card Sheet Generators:
 1. **Nanideck** (recommended): https://www.nandeck.com
-   - Script-based card generation
-   - CSV data import
-   - Direct TTS export
+ - Script-based card generation
+ - CSV data import
+ - Direct TTS export
 
 2. **Squib** (Ruby-based): https://squib.rocks
-   - Code-driven card creation
-   - Version control friendly
-   - Programmers will love this
+ - Code-driven card creation
+ - Version control friendly
+ - Programmers will love this
 
 3. **Card Maker** (online): https://mtg.design (Magic card style, but adaptable)
-   - Browser-based
-   - Quick prototypes
-   - Export PNG
+ - Browser-based
+ - Quick prototypes
+ - Export PNG
 
 ### Image Hosting:
 1. **Imgur** (easiest): https://imgur.com
-   - Free, no account needed
-   - Direct image links work in TTS
+ - Free, no account needed
+ - Direct image links work in TTS
 
 2. **Google Drive** (if you have storage):
-   - Upload image
-   - Share → "Anyone with link can view"
-   - Right-click image → "Open in new tab" → Copy URL
+ - Upload image
+ - Share → "Anyone with link can view"
+ - Right-click image → "Open in new tab" → Copy URL
 
 3. **GitHub** (if you're a developer):
-   - Upload to repo
-   - Use raw.githubusercontent.com URLs
-   - Free, version controlled
+ - Upload to repo
+ - Use raw.githubusercontent.com URLs
+ - Free, version controlled
 
 ---
 
@@ -292,10 +292,10 @@ end
 2. Set slide size: Custom → 2.5" x 3.5" (poker card size)
 3. Create 10 slides (1 per Universal card)
 4. Format:
-   - Title: Card name (e.g., "Desperate Lunge")
-   - Subtitle: Type (e.g., "UNIVERSAL - Action")
-   - Body: SP cost, Range, Effect
-   - Footer: Heat, Keywords
+ - Title: Card name (e.g., "Desperate Lunge")
+ - Subtitle: Type (e.g., "UNIVERSAL - Action")
+ - Body: SP cost, Range, Effect
+ - Footer: Heat, Keywords
 
 ### Step 2: Export & Arrange (10 min)
 5. File → Download → PNG (all slides)
@@ -340,21 +340,21 @@ Create a simple reference mat:
 
 ```
 ┌─────────────────────────────────────────┐
-│  CASKET STATUS                          │
-│  ┌────────┬────────┬────────┬────────┐  │
-│  │ R.Arm  │ L.Arm  │Chassis │ Legs   │  │
-│  │ [    ] │ [    ] │ [    ] │ [    ] │  │
-│  │ 0-9    │ 0-9    │ 0-9    │ 0-9    │  │
-│  └────────┴────────┴────────┴────────┘  │
-│                                         │
-│  HEAT: [ 0 1 2 3 4 5 6 7 8 9 ]          │
-│  TAINT: [ 0 1 2 3 4 5 6 7 8 9 10 ]      │
-│  SP SAFE ZONE: [ Scout: 5 | Heavy: 3 ] │
-│                                         │
-│  ┌──────┐  ┌──────┐  ┌──────┐          │
-│  │ Deck │  │ Hand │  │Discard│          │
-│  │      │  │      │  │       │          │
-│  └──────┘  └──────┘  └──────┘          │
+│ CASKET STATUS │
+│ ┌────────┬────────┬────────┬────────┐ │
+│ │ R.Arm │ L.Arm │Chassis │ Legs │ │
+│ │ [ ] │ [ ] │ [ ] │ [ ] │ │
+│ │ 0-9 │ 0-9 │ 0-9 │ 0-9 │ │
+│ └────────┴────────┴────────┴────────┘ │
+│ │
+│ HEAT: [ 0 1 2 3 4 5 6 7 8 9 ] │
+│ TAINT: [ 0 1 2 3 4 5 6 7 8 9 10 ] │
+│ SP SAFE ZONE: [ Scout: 5 | Heavy: 3 ] │
+│ │
+│ ┌──────┐ ┌──────┐ ┌──────┐ │
+│ │ Deck │ │ Hand │ │Discard│ │
+│ │ │ │ │ │ │ │
+│ └──────┘ └──────┘ └──────┘ │
 └─────────────────────────────────────────┘
 ```
 
@@ -368,9 +368,9 @@ Export this as PNG, upload, use as custom table in TTS.
 1. **Universal Core**: 10 cards (both players share same Universal Core)
 2. **2 Faction Core sets**: Church (6 cards) + Dwarves (6 cards)
 3. **Equipment Pool** (start with these):
-   - Longsword (6 cards), Warhammer (6 cards)
-   - Buckler Shield (2 cards), Tower Shield (4 cards)
-   - Repair Kit (3 cards)
+ - Longsword (6 cards), Warhammer (6 cards)
+ - Buckler Shield (2 cards), Tower Shield (4 cards)
+ - Repair Kit (3 cards)
 4. **1 Hex board**: 7x7 grid for Arena scenario
 5. **2 Player mats**: Status trackers with component damage zones
 6. **Tokens**: Heat (red cubes), Component Damage markers
@@ -417,10 +417,10 @@ Export this as PNG, upload, use as custom table in TTS.
 ### Note-Taking During Play:
 - One player keeps Google Doc open
 - Write down:
-  - "This card text is confusing"
-  - "SP costs feel wrong for X"
-  - "We had fun when Y happened"
-  - "Turn took too long because Z"
+ - "This card text is confusing"
+ - "SP costs feel wrong for X"
+ - "We had fun when Y happened"
+ - "Turn took too long because Z"
 
 ---
 
@@ -476,4 +476,4 @@ Roll20 is free and browser-based (no Steam required).
 
 **You absolutely can playtest Penance online with friends!** Start simple (10 Universal cards + 2 weapons), get it into TTS, play a game, iterate. The first version will be rough, but that's the point—playtesting reveals what works and what doesn't.
 
-Good luck, and happy playtesting! 🎲⚔️
+Good luck, and happy playtesting! 

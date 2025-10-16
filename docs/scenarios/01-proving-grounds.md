@@ -13,18 +13,18 @@
 ### Map: The Proving Grounds (12×12 Hexes)
 
 ```
-     [F ][F ][  ][  ][  ][  ][  ][  ][  ][  ][F ][F ]
-    [F ][F ][R ][  ][  ][  ][  ][  ][  ][R ][F ][F ]
-   [  ][R ][R ][  ][  ][W ][W ][  ][  ][R ][R ][  ]
-  [  ][  ][  ][  ][W ][W ][W ][W ][  ][  ][  ][  ]
- [  ][  ][  ][W ][W ][E1][E1][W ][W ][  ][  ][  ]
-[  ][  ][W ][W ][E1][  ][  ][E1][W ][W ][  ][  ]
-[  ][  ][W ][W ][E2][  ][  ][E2][W ][W ][  ][  ]
- [  ][  ][  ][W ][W ][E2][E2][W ][W ][  ][  ][  ]
-  [  ][  ][  ][  ][W ][W ][W ][W ][  ][  ][  ][  ]
-   [  ][R ][R ][  ][  ][W ][W ][  ][  ][R ][R ][  ]
-    [F ][F ][R ][  ][  ][  ][  ][  ][  ][R ][F ][F ]
-     [F ][F ][  ][  ][  ][  ][  ][  ][  ][  ][F ][F ]
+ [F ][F ][ ][ ][ ][ ][ ][ ][ ][ ][F ][F ]
+ [F ][F ][R ][ ][ ][ ][ ][ ][ ][R ][F ][F ]
+ [ ][R ][R ][ ][ ][W ][W ][ ][ ][R ][R ][ ]
+ [ ][ ][ ][ ][W ][W ][W ][W ][ ][ ][ ][ ]
+ [ ][ ][ ][W ][W ][E1][E1][W ][W ][ ][ ][ ]
+[ ][ ][W ][W ][E1][ ][ ][E1][W ][W ][ ][ ]
+[ ][ ][W ][W ][E2][ ][ ][E2][W ][W ][ ][ ]
+ [ ][ ][ ][W ][W ][E2][E2][W ][W ][ ][ ][ ]
+ [ ][ ][ ][ ][W ][W ][W ][W ][ ][ ][ ][ ]
+ [ ][R ][R ][ ][ ][W ][W ][ ][ ][R ][R ][ ]
+ [F ][F ][R ][ ][ ][ ][ ][ ][ ][R ][F ][F ]
+ [F ][F ][ ][ ][ ][ ][ ][ ][ ][ ][F ][F ]
 ```
 
 ### Terrain Legend
@@ -58,7 +58,7 @@
 - **LOS**: Can see over all terrain except Elevation 2
 - **Special**: Attacks FROM Elevation 2 gain +1 Range
 
-**[  ] - Clear Ground** (All other hexes)
+**[ ] - Clear Ground** (All other hexes)
 - **Effect**: No modifiers
 - **Movement**: Normal (1 SP per hex)
 
@@ -69,9 +69,9 @@
 ### Church of Absolution Deployment Zone
 **Hexes**: Top-left quadrant (rows 1-3, columns 1-3)
 ```
-  [F ][F ][  ]
+ [F ][F ][ ]
  [F ][F ][R ]
-[  ][R ][R ]
+[ ][R ][R ]
 ```
 **Starting Position**: Player chooses any hex in this zone
 **Facing**: Player chooses initial facing
@@ -79,9 +79,9 @@
 ### Dwarven Clans Deployment Zone
 **Hexes**: Bottom-right quadrant (rows 10-12, columns 10-12)
 ```
-       [R ][R ][  ]
-        [R ][F ][F ]
-         [  ][F ][F ]
+ [R ][R ][ ]
+ [R ][F ][F ]
+ [ ][F ][F ]
 ```
 **Starting Position**: Player chooses any hex in this zone
 **Facing**: Player chooses initial facing
@@ -235,13 +235,13 @@
 
 #### PHASE 1: REFRESH
 1. Restore SP to maximum
-   - Church: 5 SP (Medium Frame)
-   - Dwarves: 5 SP (Medium Frame)
+ - Church: 5 SP (Medium Frame)
+ - Dwarves: 5 SP (Medium Frame)
 2. If Heat 5+: Roll Strain (1d6 + current Heat)
-   - 1-5: +1 Heat
-   - 6-8: -1 SP this turn
-   - 9-11: Take 2 damage
-   - 12+: Component malfunction (lose 1 random card type for turn)
+ - 1-5: +1 Heat
+ - 6-8: -1 SP this turn
+ - 9-11: Take 2 damage
+ - 12+: Component malfunction (lose 1 random card type for turn)
 
 #### PHASE 2: ACTION PHASE
 - Play cards from hand (costs SP)
@@ -251,9 +251,9 @@
 #### PHASE 3: DRAW PHASE
 1. Draw cards until hand size = 6
 2. If deck is empty:
-   - Shuffle discard pile
-   - Add 1 "Damage" card (blank, dead draw)
-   - This is your new deck
+ - Shuffle discard pile
+ - Add 1 "Damage" card (blank, dead draw)
+ - This is your new deck
 
 #### PHASE 4: END TURN
 - Resolve end-of-turn effects
@@ -267,24 +267,24 @@
 ### Attack Steps
 1. **Declare attack**: Play attack card, spend SP, declare target component
 2. **Calculate To-Hit Number**:
-   - Base: **5+** (roll 2d6 Attack Dice)
-   - + Range (Short 0-3 hexes +0, Medium 4-6 +1, Long 7-10 +2)
-   - + Attacker movement this turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)
-   - + Defender movement last turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)
-   - + Hex-side facing (Front +0, Weapon +0, Flank -1, Rear -2, Shield +1)
-   - + Cover (Light +1, Heavy +2)
-   - + Elevation (Higher -1, Lower +1)
+ - Base: **5+** (roll 2d6 Attack Dice)
+ - + Range (Short 0-3 hexes +0, Medium 4-6 +1, Long 7-10 +2)
+ - + Attacker movement this turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)
+ - + Defender movement last turn (0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3)
+ - + Hex-side facing (Front +0, Weapon +0, Flank -1, Rear -2, Shield +1)
+ - + Cover (Light +1, Heavy +2)
+ - + Elevation (Higher -1, Lower +1)
 3. **Roll 2 Attack Dice**, add values:
-   - **5-6** = Hit (standard damage)
-   - **7-8** = Strong Hit (+1 damage)
-   - **9** = Critical Hit (+2 damage, bypass 1 Defense)
-   - **10** (double 💀) = **EXECUTION** (auto-destroy component)
-   - **<5** = Miss (attack wasted)
-   - **2** (double ⚙️) = Catastrophic Failure (weapon jams, discard all Primary Weapon cards from hand)
+ - **5-6** = Hit (standard damage)
+ - **7-8** = Strong Hit (+1 damage)
+ - **9** = Critical Hit (+2 damage, bypass 1 Defense)
+ - **10** (double ) = **EXECUTION** (auto-destroy component)
+ - **<5** = Miss (attack wasted)
+ - **2** (double ) = Catastrophic Failure (weapon jams, discard all Primary Weapon cards from hand)
 4. **If hit**, defender plays reactive card (optional, 0 SP)
 5. **Defender rolls Defense Dice** (1d6 per damage point):
-   - Count blocks: 🛡️ SHIELD, ⚙️ ABSORB (each blocks 1 damage)
-   - Apply special effects: 💀 CRITICAL (+1 Component Damage), 🔥 HEAT (+1 Heat), ⚔️ PIERCE (no reactives)
+ - Count blocks: SHIELD, ABSORB (each blocks 1 damage)
+ - Apply special effects: CRITICAL (+1 Component Damage), HEAT (+1 Heat), PIERCE (no reactives)
 6. **Defender discards** final damage (original - blocks) from hand/deck
 
 ### Damage Example (With Dice)
@@ -298,7 +298,7 @@ Church plays **Slash** (4 damage, Melee) against Dwarven Casket:
 - Attacking rear arc (hex-side 4) = -2 (need **5+**)
 - Church on Elevation 1 (higher ground) = -1 (need **4+**)
 
-**Attack Roll**: ⚔️ (3) + 💀 (5) = **8 total** → **STRONG HIT** (+1 damage)
+**Attack Roll**: (3) + (5) = **8 total** → **STRONG HIT** (+1 damage)
 
 **Damage Calculation**:
 - Base: 4 damage
@@ -308,15 +308,15 @@ Church plays **Slash** (4 damage, Melee) against Dwarven Casket:
 - **Total: 9 damage**
 
 **Defense Roll** (Dwarf rolls 9 Defense Dice):
-- Result: 🛡️ 🛡️ ⚙️ 🩸 🩸 💀 💀 🔥 ⚔️
-- **3 blocks** (🛡️🛡️⚙️) = Reduce to 6 damage
-- **2 Criticals** (💀💀) = +2 Component Damage to targeted component
-- **1 Heat** (🔥) = +1 Heat to Dwarf
-- **1 Pierce** (⚔️) = Cannot use reactive cards
+- Result: 
+- **3 blocks** () = Reduce to 6 damage
+- **2 Criticals** () = +2 Component Damage to targeted component
+- **1 Heat** () = +1 Heat to Dwarf
+- **1 Pierce** () = Cannot use reactive cards
 
 **Final Result**:
 - Dwarf discards 6 cards (chooses 4 from hand, 2 from deck)
-- +2 Component Damage to Right Arm (from 💀💀)
+- +2 Component Damage to Right Arm (from )
 - +1 Heat to Dwarf
 - If any Primary Weapon cards discarded → Add to Component Damage total
 
@@ -325,10 +325,10 @@ When you discard cards from damage:
 1. Count how many **Primary Weapon cards** were discarded
 2. Each Primary Weapon card = 1 **Component Damage**
 3. Track Component Damage by location:
-   - Arms (weapon systems)
-   - Legs (movement systems)
-   - Head (sensors)
-   - Chassis (core systems)
+ - Arms (weapon systems)
+ - Legs (movement systems)
+ - Head (sensors)
+ - Chassis (core systems)
 4. When **3 Component Damage** to same location = **Component Destroyed**
 
 #### Component Destruction Effects
@@ -541,23 +541,23 @@ Before starting:
 - [ ] Prepare Church deck (29 cards shuffled)
 - [ ] Prepare Dwarven deck (33 cards shuffled)
 - [ ] **Prepare DICE**:
-  - **2 Attack Dice** (custom d6 with ⚔️💀🛡️🩸⚙️ symbols, or regular 2d6)
-  - **10+ Defense Dice** (custom d6 with 🛡️⚙️🩸💀⚔️🔥 symbols, or regular d6)
-  - **2d6 for Initiative** (regular dice)
+ - **2 Attack Dice** (custom d6 with symbols, or regular 2d6)
+ - **10+ Defense Dice** (custom d6 with symbols, or regular d6)
+ - **2d6 for Initiative** (regular dice)
 - [ ] Prepare tokens for:
-  - Heat tracking (0-10+)
-  - SP tracking (current SP)
-  - Rune Counters (Dwarves)
-  - Component Damage markers
-  - Facing indicator (arrow or die)
+ - Heat tracking (0-10+)
+ - SP tracking (current SP)
+ - Rune Counters (Dwarves)
+ - Component Damage markers
+ - Facing indicator (arrow or die)
 - [ ] Prepare paper for tracking:
-  - Current HP (cards remaining in deck)
-  - Damage cards in deck (reshuffle count)
-  - Component Damage by location (optional)
+ - Current HP (cards remaining in deck)
+ - Damage cards in deck (reshuffle count)
+ - Component Damage by location (optional)
 
 **NOTE**: If you don't have custom dice, use regular d6:
-- **Attack Dice**: Face 1=🛡️(1), 2=🩸(2), 3=⚔️(3), 4=⚔️⚔️(4), 5=💀(5), 6=⚙️(0)
-- **Defense Dice**: Face 1=🛡️, 2=⚙️, 3=🩸, 4=💀, 5=⚔️, 6=🔥
+- **Attack Dice**: Face 1=(1), 2=(2), 3=(3), 4=(4), 5=(5), 6=(0)
+- **Defense Dice**: Face 1=, 2=, 3=, 4=, 5=, 6=
 
 ---
 

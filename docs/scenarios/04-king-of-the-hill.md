@@ -3,7 +3,7 @@
 **Type**: Control Point Battle
 **Players**: 2-4 (Free-for-all or 2v2)
 **Estimated Playtime**: 75-90 minutes
-**Difficulty**: ⭐⭐⭐ Advanced
+**Difficulty**: Advanced
 **Victory Condition**: Hold the Central Spire for 3 consecutive turns OR eliminate all opponents
 
 ---
@@ -19,20 +19,20 @@ A massive Soulstone Spire erupts from the ground, radiating unstable energy. Fac
 ## MAP: THE SOULSTONE SPIRE (14×14 Hexes)
 
 ```
-[  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ]
-[  ][R ][R ][  ][  ][  ][  ][  ][  ][  ][  ][R ][R ][  ]
-[  ][R ][W ][W ][  ][  ][  ][  ][  ][  ][W ][W ][R ][  ]
-[  ][  ][W ][E1][E1][  ][  ][  ][  ][E1][E1][W ][  ][  ]
-[  ][  ][  ][E1][E2][E2][  ][  ][E2][E2][E1][  ][  ][  ]
-[  ][  ][  ][  ][E2][SP][SP][SP][SP][E2][  ][  ][  ][  ]
-[  ][  ][  ][  ][  ][SP][SP][SP][SP][  ][  ][  ][  ][  ]
-[  ][  ][  ][  ][  ][SP][SP][SP][SP][  ][  ][  ][  ][  ]
-[  ][  ][  ][  ][E2][SP][SP][SP][SP][E2][  ][  ][  ][  ]
-[  ][  ][  ][E1][E2][E2][  ][  ][E2][E2][E1][  ][  ][  ]
-[  ][  ][W ][E1][E1][  ][  ][  ][  ][E1][E1][W ][  ][  ]
-[  ][R ][W ][W ][  ][  ][  ][  ][  ][  ][W ][W ][R ][  ]
-[  ][R ][R ][  ][  ][  ][  ][  ][  ][  ][  ][R ][R ][  ]
-[  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ]
+[ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
+[ ][R ][R ][ ][ ][ ][ ][ ][ ][ ][ ][R ][R ][ ]
+[ ][R ][W ][W ][ ][ ][ ][ ][ ][ ][W ][W ][R ][ ]
+[ ][ ][W ][E1][E1][ ][ ][ ][ ][E1][E1][W ][ ][ ]
+[ ][ ][ ][E1][E2][E2][ ][ ][E2][E2][E1][ ][ ][ ]
+[ ][ ][ ][ ][E2][SP][SP][SP][SP][E2][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][SP][SP][SP][SP][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][SP][SP][SP][SP][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][E2][SP][SP][SP][SP][E2][ ][ ][ ][ ]
+[ ][ ][ ][E1][E2][E2][ ][ ][E2][E2][E1][ ][ ][ ]
+[ ][ ][W ][E1][E1][ ][ ][ ][ ][E1][E1][W ][ ][ ]
+[ ][R ][W ][W ][ ][ ][ ][ ][ ][ ][W ][W ][R ][ ]
+[ ][R ][R ][ ][ ][ ][ ][ ][ ][ ][ ][R ][R ][ ]
+[ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
 ```
 
 ### Terrain Legend
@@ -72,9 +72,9 @@ At the **end of your turn**, if you're standing on a Spire hex:
 1. **Gain 2 Taint** (Soulstone corruption)
 2. **Take 1 unavoidable damage** (neural feedback from prolonged exposure)
 3. **Roll 1d6 Corruption Check** if you have 10+ Taint:
-   - **1-3**: Take 3 additional damage (corrupted systems)
-   - **4-5**: Lose 1 SP next turn (motor control failing)
-   - **6**: No additional effect (you resist the corruption... for now)
+ - **1-3**: Take 3 additional damage (corrupted systems)
+ - **4-5**: Lose 1 SP next turn (motor control failing)
+ - **6**: No additional effect (you resist the corruption... for now)
 
 ---
 

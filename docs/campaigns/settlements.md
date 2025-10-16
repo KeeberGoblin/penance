@@ -58,11 +58,11 @@ After every **2-3 missions**, players return to their settlement for:
 - Scale: 0 (Despair) → 10 (Hope)
 - Affects event table results (low morale = worse events)
 - **Morale Modifiers**:
-  - Mission success: +1 Morale
-  - Mission failure: -2 Morale
-  - Pilot death: -1 Morale
-  - Abomination raid survived: +2 Morale
-  - Certain buildings provide passive +1 Morale
+ - Mission success: +1 Morale
+ - Mission failure: -2 Morale
+ - Pilot death: -1 Morale
+ - Abomination raid survived: +2 Morale
+ - Certain buildings provide passive +1 Morale
 
 ---
 
@@ -98,7 +98,7 @@ Buildings are categorized by function:
 
 ---
 
-### 2. **The Barracks** (Military) ⚔️
+### 2. **The Barracks** (Military) 
 **Cost**: 2 Scrap, 50 Credits
 **Build Time**: Immediate
 **Effect**:
@@ -122,7 +122,7 @@ Buildings are categorized by function:
 
 ---
 
-### 4. **The Market** (Economic) 💰
+### 4. **The Market** (Economic) 
 **Cost**: 1 Scrap, 50 Credits
 **Build Time**: Immediate
 **Effect**:
@@ -134,7 +134,7 @@ Buildings are categorized by function:
 
 ---
 
-### 5. **The Shrine** (Infrastructure) 🕯️
+### 5. **The Shrine** (Infrastructure) 
 **Cost**: 2 Scrap, 50 Credits
 **Build Time**: Immediate
 **Effect**:
@@ -148,7 +148,7 @@ Buildings are categorized by function:
 
 ## Tier 2 Buildings (Unlocked at Population 20)
 
-### 6. **The Arsenal** (Military) 🗡️
+### 6. **The Arsenal** (Military) 
 **Cost**: 5 Scrap, 200 Credits
 **Build Time**: 1 settlement phase
 **Requires**: The Forge
@@ -161,7 +161,7 @@ Buildings are categorized by function:
 
 ---
 
-### 7. **The Workshop** (Infrastructure) 🔧
+### 7. **The Workshop** (Infrastructure) 
 **Cost**: 4 Scrap, 150 Credits
 **Build Time**: 1 settlement phase
 **Requires**: The Forge
@@ -174,7 +174,7 @@ Buildings are categorized by function:
 
 ---
 
-### 8. **The Soulstone Refinery** (Economic) 💎
+### 8. **The Soulstone Refinery** (Economic) 
 **Cost**: 6 Scrap, 250 Credits
 **Build Time**: 2 settlement phases
 **Requires**: The Forge
@@ -199,7 +199,7 @@ Buildings are categorized by function:
 
 ---
 
-### 10. **The Watchtower** (Military) 👁️
+### 10. **The Watchtower** (Military) 
 **Cost**: 4 Scrap, 100 Credits
 **Build Time**: 1 settlement phase
 **Effect**:
@@ -213,7 +213,7 @@ Buildings are categorized by function:
 
 ## Tier 3 Buildings (Unlocked at Population 35)
 
-### 11. **The Reliquary** (Special) ✨
+### 11. **The Reliquary** (Special) 
 **Cost**: 10 Scrap, 400 Credits
 **Build Time**: 3 settlement phases
 **Requires**: The Shrine + The Archive
@@ -239,7 +239,7 @@ Buildings are categorized by function:
 
 ---
 
-### 13. **The Sanctuary** (Infrastructure) 🌿
+### 13. **The Sanctuary** (Infrastructure) 
 **Cost**: 7 Scrap, 300 Credits
 **Build Time**: 2 settlement phases
 **Requires**: The Apothecary + The Shrine
@@ -252,7 +252,7 @@ Buildings are categorized by function:
 
 ---
 
-### 14. **The War Council Hall** (Military) 🏛️
+### 14. **The War Council Hall** (Military) 
 **Cost**: 5 Scrap, 200 Credits
 **Build Time**: 2 settlement phases
 **Effect**:

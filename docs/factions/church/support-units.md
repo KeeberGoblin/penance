@@ -24,7 +24,7 @@ The Church of Absolution fields zealous followers who embrace martyrdom and self
 
 ---
 
-## 1. FLAGELLANT PACK ⭐ STARTER UNIT
+## 1. FLAGELLANT PACK - STARTER UNIT
 **Category**: Infantry (Berserker)
 **HP**: 6 | **Movement**: 4 | **Defense**: 0
 **Equipment Slots**: 2
@@ -37,7 +37,7 @@ Hooded figures in tattered crimson robes, backs scarred from whips and chains. T
 
 ---
 
-#### 🩸 SELF-FLAGELLATION
+#### SELF-FLAGELLATION
 **Type**: Utility / Self-Harm
 **Priority**: High (when HP > 3)
 
@@ -50,7 +50,7 @@ Hooded figures in tattered crimson robes, backs scarred from whips and chains. T
 
 ---
 
-#### ⚔️ FRENZIED ASSAULT
+#### FRENZIED ASSAULT
 **Type**: Attack / Reckless
 **Priority**: Critical (when HP ≤ 3)
 
@@ -64,7 +64,7 @@ Hooded figures in tattered crimson robes, backs scarred from whips and chains. T
 
 ---
 
-#### 🔪 BLEEDING STRIKE
+#### BLEEDING STRIKE
 **Type**: Attack
 **Priority**: Medium
 
@@ -78,7 +78,7 @@ Hooded figures in tattered crimson robes, backs scarred from whips and chains. T
 
 ---
 
-#### 🙏 PRAYER OF AGONY
+#### PRAYER OF AGONY
 **Type**: Support / Self-Harm
 **Priority**: Medium (when Casket within 4 hexes has <15 HP)
 
@@ -92,7 +92,7 @@ Hooded figures in tattered crimson robes, backs scarred from whips and chains. T
 
 ---
 
-#### 🩸 BLOOD FOR BLOOD
+#### BLOOD FOR BLOOD
 **Type**: Reactive / Counterattack
 **Priority**: Reactive (triggers when damaged)
 
@@ -105,7 +105,7 @@ Hooded figures in tattered crimson robes, backs scarred from whips and chains. T
 
 ---
 
-#### 🔥 MARTYRDOM CHARGE
+#### MARTYRDOM CHARGE
 **Type**: Attack / Suicide
 **Priority**: Critical (when HP ≤ 2)
 
@@ -136,7 +136,7 @@ Hooded figures in tattered crimson robes, backs scarred from whips and chains. T
 
 ---
 
-## 2. PENITENT SQUAD ⭐ STARTER UNIT
+## 2. PENITENT SQUAD STARTER UNIT
 **Category**: Infantry (Balanced)
 **HP**: 8 | **Movement**: 3 | **Defense**: 1
 **Equipment Slots**: 2
@@ -149,7 +149,7 @@ Former criminals and sinners clad in gray penitent robes with heavy armor plates
 
 ---
 
-#### ⚔️ CHARGE FORWARD
+#### CHARGE FORWARD
 **Type**: Attack / Aggressive
 **Priority**: High
 
@@ -162,7 +162,7 @@ Former criminals and sinners clad in gray penitent robes with heavy armor plates
 
 ---
 
-#### 🛡️ SHIELD WALL
+#### SHIELD WALL
 **Type**: Defense / Formation
 **Priority**: High (when Casket within 3 hexes)
 
@@ -176,7 +176,7 @@ Former criminals and sinners clad in gray penitent robes with heavy armor plates
 
 ---
 
-#### ⚔️ SURROUND AND STRIKE
+#### SURROUND AND STRIKE
 **Type**: Attack / Tactical
 **Priority**: Medium
 
@@ -189,7 +189,7 @@ Former criminals and sinners clad in gray penitent robes with heavy armor plates
 
 ---
 
-#### 🔥 RIGHTEOUS FURY
+#### RIGHTEOUS FURY
 **Type**: Attack / Burst
 **Priority**: Critical (when enemy has killed an ally this round)
 
@@ -202,7 +202,7 @@ Former criminals and sinners clad in gray penitent robes with heavy armor plates
 
 ---
 
-#### 🙏 HOLD POSITION
+#### HOLD POSITION
 **Type**: Defense / Stance
 **Priority**: Low (when no enemies within 4 hexes)
 
@@ -232,7 +232,7 @@ Former criminals and sinners clad in gray penitent robes with heavy armor plates
 
 ---
 
-## 3. RELIC BEARERS ⭐ STARTER UNIT
+## 3. RELIC BEARERS STARTER UNIT
 **Category**: Support (Buff/Aura)
 **HP**: 10 | **Movement**: 2 | **Defense**: 2
 **Equipment Slots**: 3
@@ -252,7 +252,7 @@ Six robed pilgrims carrying a massive ornate cross on their shoulders - an iron 
 
 ---
 
-#### ⚡ ADVANCE THE RELIC
+#### ADVANCE THE RELIC
 **Type**: Movement / Aura
 **Priority**: High
 
@@ -265,23 +265,23 @@ Six robed pilgrims carrying a massive ornate cross on their shoulders - an iron 
 
 ---
 
-#### ⚡ CONSECRATED GROUND
+#### CONSECRATED GROUND
 **Type**: Support / Zone Control
 **Priority**: Medium (when friendly Casket within 3 hexes)
 
 **Effect**:
 - Do not move
 - Create 3-hex aura around Relic Bearers:
-  - All friendly units in aura gain +1 Defense
-  - All friendly units in aura deal +1 damage
-  - All enemy units in aura take 1 damage per turn (Tesla Arc)
+ - All friendly units in aura gain +1 Defense
+ - All friendly units in aura deal +1 damage
+ - All enemy units in aura take 1 damage per turn (Tesla Arc)
 - Aura lasts until Relic Bearers move
 
 **Flavor**: "Where the relic stands, divine power flows."
 
 ---
 
-#### 🛡️ DEFENSIVE CIRCLE
+#### DEFENSIVE CIRCLE
 **Type**: Defense / Protective
 **Priority**: Critical (when Relic HP ≤ 5)
 
@@ -295,7 +295,7 @@ Six robed pilgrims carrying a massive ornate cross on their shoulders - an iron 
 
 ---
 
-#### ⚡ DIVINE JUDGMENT
+#### DIVINE JUDGMENT
 **Type**: Attack / Area
 **Priority**: High (when 2+ enemies within 3 hexes)
 
@@ -343,7 +343,7 @@ A young warrior encased in prototype armor - a smaller, incomplete version of a 
 
 ---
 
-#### ⚔️ PROVE MY WORTH
+#### PROVE MY WORTH
 **Type**: Attack / Aggressive
 **Priority**: High (when within 4 hexes of Casket)
 
@@ -357,7 +357,7 @@ A young warrior encased in prototype armor - a smaller, incomplete version of a 
 
 ---
 
-#### 🔥 RECKLESS ASSAULT
+#### RECKLESS ASSAULT
 **Type**: Attack / High Risk
 **Priority**: Critical (when Aspirant has 2+ Glory counters)
 
@@ -370,7 +370,7 @@ A young warrior encased in prototype armor - a smaller, incomplete version of a 
 
 ---
 
-#### 🛡️ LEARN FROM THE MASTER
+#### LEARN FROM THE MASTER
 **Type**: Support / Tactical
 **Priority**: Medium (when Casket within 3 hexes)
 
@@ -383,7 +383,7 @@ A young warrior encased in prototype armor - a smaller, incomplete version of a 
 
 ---
 
-#### ⚡ PROTOTYPE OVERCHARGE
+#### PROTOTYPE OVERCHARGE
 **Type**: Utility / Risk
 **Priority**: Medium (when Aspirant HP > 6)
 
@@ -397,7 +397,7 @@ A young warrior encased in prototype armor - a smaller, incomplete version of a 
 
 ---
 
-#### 🙏 DESPERATE PRAYER
+#### DESPERATE PRAYER
 **Type**: Utility / Healing
 **Priority**: Critical (when Aspirant HP ≤ 4)
 
@@ -444,7 +444,7 @@ A group of seven hooded monks in blood-red robes, standing in perfect formation.
 
 ---
 
-#### 🎵 HYMN OF SUFFERING
+#### HYMN OF SUFFERING
 **Type**: Debuff / Area
 **Priority**: High
 
@@ -458,23 +458,23 @@ A group of seven hooded monks in blood-red robes, standing in perfect formation.
 
 ---
 
-#### 🎵 DIRGE OF DESPAIR
+#### DIRGE OF DESPAIR
 **Type**: Debuff / Morale
 **Priority**: Medium (when enemy within 3 hexes has <10 HP)
 
 **Effect**:
 - Choir focuses their song on weakest enemy within 4 hexes
 - Target enemy:
-  - Has -2 to all attacks
-  - Cannot draw extra cards
-  - Movement costs +1 SP per hex
+ - Has -2 to all attacks
+ - Cannot draw extra cards
+ - Movement costs +1 SP per hex
 - Effect lasts until Choir's next turn
 
 **Flavor**: "They sing of your failures, your sins, your death."
 
 ---
 
-#### 🎵 REQUIEM FOR THE FALLEN
+#### REQUIEM FOR THE FALLEN
 **Type**: Support / Resurrection
 **Priority**: Critical (when ally destroyed within 4 hexes this round)
 
@@ -489,23 +489,23 @@ A group of seven hooded monks in blood-red robes, standing in perfect formation.
 
 ---
 
-#### 🎵 BATTLE HYMN
+#### BATTLE HYMN
 **Type**: Buff / Morale
 **Priority**: High (when Casket within 4 hexes)
 
 **Effect**:
 - Do not move
 - All allies within 4 hexes gain:
-  - +2 damage to next attack
-  - +1 Defense until end of round
-  - Ignore 1 Heat on next action
+ - +2 damage to next attack
+ - +1 Defense until end of round
+ - Ignore 1 Heat on next action
 - Effect lasts one full round
 
 **Flavor**: "Sing of glory. Sing of absolution. Sing of victory!"
 
 ---
 
-#### 🎵 CACOPHONY OF GUILT
+#### CACOPHONY OF GUILT
 **Type**: Attack / Psychic
 **Priority**: Medium (when 2+ enemies within 3 hexes)
 
@@ -519,7 +519,7 @@ A group of seven hooded monks in blood-red robes, standing in perfect formation.
 
 ---
 
-#### 🎵 SILENT VIGIL
+#### SILENT VIGIL
 **Type**: Defense / Stance
 **Priority**: Low (when no enemies within 4 hexes)
 
@@ -569,7 +569,7 @@ A towering mechanical construct - a walking cathedral of iron and gold. The cent
 
 ---
 
-#### 🔥 ADVANCE THE CATHEDRAL
+#### ADVANCE THE CATHEDRAL
 **Type**: Movement / Aura
 **Priority**: High
 
@@ -585,7 +585,7 @@ A towering mechanical construct - a walking cathedral of iron and gold. The cent
 
 ---
 
-#### 🔥 DIVINE IMMOLATION
+#### DIVINE IMMOLATION
 **Type**: Attack / Area
 **Priority**: High (when 2+ enemies within 4 hexes)
 
@@ -601,7 +601,7 @@ A towering mechanical construct - a walking cathedral of iron and gold. The cent
 
 ---
 
-#### 🛡️ SANCTIFIED BARRIER
+#### SANCTIFIED BARRIER
 **Type**: Defense / Protection
 **Priority**: Critical (when Engine HP ≤ 10)
 
@@ -617,7 +617,7 @@ A towering mechanical construct - a walking cathedral of iron and gold. The cent
 
 ---
 
-#### 🔥 JUDGMENT DAY
+#### JUDGMENT DAY
 **Type**: Attack / Ultimate
 **Priority**: Critical (can only be used once per battle)
 

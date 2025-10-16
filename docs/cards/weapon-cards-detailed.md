@@ -771,7 +771,7 @@ These weapons require specific materials and cannot be purchased. They must be c
 
 ### Crafting Materials
 - **Arc Capacitor**: Salvaged from destroyed Scout Caskets (rare loot)
-- **Charged Coils**: Purchased from Merchant Guilds (50 Credits each)
+- **Charged Coils**: Purchased from The Soulstone Exchange (50 Credits each)
 
 ### 1. THUNDER STRIKE
 - **SP Cost**: 3

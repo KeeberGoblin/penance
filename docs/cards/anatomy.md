@@ -12,20 +12,20 @@ Every card in Penance follows this standard layout:
 
 ```
 ╔═══════════════════════════════════════╗
-║  [Icon] CARD TITLE            [Init] ║  <- Title + Initiative Number
+║ [Icon] CARD TITLE [Init] ║ <- Title + Initiative Number
 ╠═══════════════════════════════════════╣
-║  Type: CARD TYPE (Slot)               ║  <- Card Type + Equipment Slot
-║  SP Cost: X  |  Range: RANGE          ║  <- Soul-Point Cost + Range
+║ Type: CARD TYPE (Slot) ║ <- Card Type + Equipment Slot
+║ SP Cost: X | Range: RANGE ║ <- Soul-Point Cost + Range
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Mechanical description of what       ║  <- Rules Text
-║  this card does when played.          ║
-║                                       ║
-║  Additional effects or conditions.    ║
+║ EFFECT: ║
+║ Mechanical description of what ║ <- Rules Text
+║ this card does when played. ║
+║ ║
+║ Additional effects or conditions. ║
 ╠═══════════════════════════════════════╣
-║  Heat: +X  |  Keywords: Tag, Tag      ║  <- Heat Generation + Keywords
+║ Heat: +X | Keywords: Tag, Tag ║ <- Heat Generation + Keywords
 ╠═══════════════════════════════════════╣
-║  "Flavor text goes here."             ║  <- Atmospheric Quote
+║ "Flavor text goes here." ║ <- Atmospheric Quote
 ╚═══════════════════════════════════════╝
 ```
 
@@ -34,7 +34,7 @@ Every card in Penance follows this standard layout:
 ## Card Information Fields
 
 ### 1. Title & Icon
-- **Icon**: Visual symbol (⚔ weapon, 🛡 defense, ⚡ movement, 🔥 spell, 💔 damage)
+- **Icon**: Visual symbol ( weapon, defense, movement, spell, 💔 damage)
 - **Title**: Evocative fantasy name (e.g., "Faithful Thrust", "Soulfire Lance", "Desperate Lunge")
 
 ### 2. Initiative Number [X]
@@ -111,19 +111,19 @@ Equipment weapons add 3-5 cards to your deck. Each weapon has a unique set.
 **Example: Longsword "Faithkeeper"**
 ```
 ╔═══════════════════════════════════════╗
-║  ⚔ FAITHFUL THRUST              [3]   ║
+║ FAITHFUL THRUST [3] ║
 ╠═══════════════════════════════════════╣
-║  Type: WEAPON (Right Arm)             ║
-║  SP Cost: 2  |  Range: Melee          ║
+║ Type: WEAPON (Right Arm) ║
+║ SP Cost: 2 | Range: Melee ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Deal 4 damage to adjacent enemy.     ║
-║                                       ║
-║  If attacking from rear: +2 damage.   ║
+║ EFFECT: ║
+║ Deal 4 damage to adjacent enemy. ║
+║ ║
+║ If attacking from rear: +2 damage. ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Blade, Holy    ║
+║ Heat: 0 | Keywords: Blade, Holy ║
 ╠═══════════════════════════════════════╣
-║  "Steel guided by conviction."        ║
+║ "Steel guided by conviction." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -134,20 +134,20 @@ Every deck contains 10 universal cards regardless of equipment.
 **Example: Movement**
 ```
 ╔═══════════════════════════════════════╗
-║  ⚡ DESPERATE LUNGE              [1]   ║
+║ DESPERATE LUNGE [1] ║
 ╠═══════════════════════════════════════╣
-║  Type: UNIVERSAL (Action)             ║
-║  SP Cost: 1  |  Range: Self           ║
+║ Type: UNIVERSAL (Action) ║
+║ SP Cost: 1 | Range: Self ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Move up to 2 hexes in any direction. ║
-║  You may rotate once during movement. ║
-║                                       ║
-║  Generate 1 Heat.                     ║
+║ EFFECT: ║
+║ Move up to 2 hexes in any direction. ║
+║ You may rotate once during movement. ║
+║ ║
+║ Generate 1 Heat. ║
 ╠═══════════════════════════════════════╣
-║  Heat: +1  |  Keywords: Universal     ║
+║ Heat: +1 | Keywords: Universal ║
 ╠═══════════════════════════════════════╣
-║  "Desperation grants wings."          ║
+║ "Desperation grants wings." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -158,19 +158,19 @@ Source Conduit arms grant 5 spell cards from a chosen school.
 **Example: Fire School**
 ```
 ╔═══════════════════════════════════════╗
-║  🔥 SOULFIRE LANCE              [4]   ║
+║ SOULFIRE LANCE [4] ║
 ╠═══════════════════════════════════════╣
-║  Type: SPELL (Source Conduit)         ║
-║  SP Cost: 2  |  Range: Medium         ║
+║ Type: SPELL (Source Conduit) ║
+║ SP Cost: 2 | Range: Medium ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Deal 3 damage to target.             ║
-║                                       ║
-║  Ignite: Target gains 1 Heat token.   ║
+║ EFFECT: ║
+║ Deal 3 damage to target. ║
+║ ║
+║ Ignite: Target gains 1 Heat token. ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Fire, Tainted  ║
+║ Heat: 0 | Keywords: Fire, Tainted ║
 ╠═══════════════════════════════════════╣
-║  "The stone remembers burning."       ║
+║ "The stone remembers burning." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -181,19 +181,19 @@ Added to deck when injured. Cannot be played, clog your hand/deck.
 **Example: Injury**
 ```
 ╔═══════════════════════════════════════╗
-║  💔 CRACKED SOULVEINS           [—]   ║
+║ 💔 CRACKED SOULVEINS [—] ║
 ╠═══════════════════════════════════════╣
-║  Type: DAMAGE (Chassis)               ║
-║  Cannot be played                     ║
+║ Type: DAMAGE (Chassis) ║
+║ Cannot be played ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  This card clogs your deck.           ║
-║                                       ║
-║  All SP costs increased by 1.         ║
+║ EFFECT: ║
+║ This card clogs your deck. ║
+║ ║
+║ All SP costs increased by 1. ║
 ╠═══════════════════════════════════════╣
-║  Keywords: Injury, Critical           ║
+║ Keywords: Injury, Critical ║
 ╠═══════════════════════════════════════╣
-║  "The stone bleeds its light."        ║
+║ "The stone bleeds its light." ║
 ╚═══════════════════════════════════════╝
 ```
 
@@ -204,20 +204,20 @@ Rare technology with limited uses (ammo/charge tokens).
 **Example: Ancient Tech**
 ```
 ╔═══════════════════════════════════════╗
-║  🔫 THUNDERSPEAKER'S ROAR       [4]   ║
+║ 🔫 THUNDERSPEAKER'S ROAR [4] ║
 ╠═══════════════════════════════════════╣
-║  Type: RELIC WEAPON (Right Arm)       ║
-║  SP Cost: 2  |  Range: Long           ║
+║ Type: RELIC WEAPON (Right Arm) ║
+║ SP Cost: 2 | Range: Long ║
 ╠═══════════════════════════════════════╣
-║  EFFECT:                              ║
-║  Spend 1 Ammo token: Deal 5 damage.   ║
-║                                       ║
-║  If no Ammo: This card cannot be      ║
-║  played.                              ║
+║ EFFECT: ║
+║ Spend 1 Ammo token: Deal 5 damage. ║
+║ ║
+║ If no Ammo: This card cannot be ║
+║ played. ║
 ╠═══════════════════════════════════════╣
-║  Heat: 0  |  Keywords: Relic, Tech    ║
+║ Heat: 0 | Keywords: Relic, Tech ║
 ╠═══════════════════════════════════════╣
-║  "Thunder from the old world."        ║
+║ "Thunder from the old world." ║
 ╚═══════════════════════════════════════╝
 ```
 

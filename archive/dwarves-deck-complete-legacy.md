@@ -1,6 +1,6 @@
-# ⚠️ DEPRECATED - DWARVEN CLANS - COMPLETE FACTION DECK
+# ⚠ DEPRECATED - DWARVEN CLANS - COMPLETE FACTION DECK
 
-> **⚠️ WARNING: This file uses the OLD fixed-deck system (deprecated October 11, 2025)**
+> **⚠ WARNING: This file uses the OLD fixed-deck system (deprecated October 11, 2025)**
 >
 > **CURRENT SYSTEM**: See [deck-equipment-system.md](dwarves/deck-equipment-system.md) for the NEW variable equipment system
 >

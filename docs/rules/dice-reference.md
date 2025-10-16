@@ -27,14 +27,14 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 
 | Face | Symbol | Value | Name |
 |------|--------|-------|------|
-| 1 | 🛡️ | 1 | GLANCE |
-| 2 | 🩸 | 2 | BLOOD |
-| 3 | ⚔️ | 3 | STRIKE |
-| 4 | ⚔️⚔️ | 4 | DOUBLE STRIKE |
-| 5 | 💀 | 5 | DEATH BLOW |
-| 6 | ⚙️ | 0 | JAM (critical fail face) |
+| 1 | | 1 | GLANCE |
+| 2 | | 2 | BLOOD |
+| 3 | | 3 | STRIKE |
+| 4 | | 4 | DOUBLE STRIKE |
+| 5 | | 5 | DEATH BLOW |
+| 6 | | 0 | JAM (critical fail face) |
 
-**Note**: Face 6 (⚙️ JAM) = 0 value for tactical unpredictability
+**Note**: Face 6 ( JAM) = 0 value for tactical unpredictability
 
 ---
 
@@ -51,30 +51,30 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 
 | Total | Result | Effect |
 |-------|--------|--------|
-| **2** (double ⚙️) | **CATASTROPHIC FAILURE** | Weapon jams: discard all Primary Weapon cards from hand, +2 Heat, next attack -2 damage |
+| **2** (double ) | **CATASTROPHIC FAILURE** | Weapon jams: discard all Primary Weapon cards from hand, +2 Heat, next attack -2 damage |
 | **3-4** | **Miss** (if target 5+) | No damage, attack wasted |
 | **5-6** | **Hit** | Standard damage from attack card |
 | **7-8** | **Strong Hit** | Standard damage **+1** |
 | **9** | **Critical Hit** | Standard damage **+2**, bypass 1 Defense |
-| **10** (double 💀) | **EXECUTION** | Auto-destroy 1 Component, bypass ALL Defense |
+| **10** (double ) | **EXECUTION** | Auto-destroy 1 Component, bypass ALL Defense |
 
 **Example Rolls**:
-- ⚔️ (3) + 💀 (5) = **8 total** → Strong Hit (+1 damage)
-- 💀 (5) + 💀 (5) = **10 total** → **EXECUTION** (instant component destruction)
-- ⚙️ (0) + ⚙️ (0) = **2 total** → **CATASTROPHIC FAILURE** (weapon jams)
+- (3) + (5) = **8 total** → Strong Hit (+1 damage)
+- (5) + (5) = **10 total** → **EXECUTION** (instant component destruction)
+- (0) + (0) = **2 total** → **CATASTROPHIC FAILURE** (weapon jams)
 
 ---
 
 ### Special Roll Outcomes
 
-**EXECUTION (Double 💀, total 10)**:
+**EXECUTION (Double , total 10)**:
 - Automatically destroy 1 targeted component (even if <3 Component Damage)
 - Bypass ALL Defense (shields, armor, reactive cards don't work)
 - Still deal standard damage from attack card
 - Defender cannot choose to discard from hand (must discard from deck)
 - **Brutality**: Even a 1-damage attack with EXECUTION destroys a component
 
-**CATASTROPHIC FAILURE (Double ⚙️, total 2)**:
+**CATASTROPHIC FAILURE (Double , total 2)**:
 - Your weapon critically malfunctions
 - Discard all Primary Weapon cards from hand immediately
 - Gain +2 Heat (weapon overheats from malfunction)
@@ -83,7 +83,7 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 
 **Example**:
 - Church Confessor attacks with Faithful Thrust (4 damage)
-- Rolls: ⚙️ (0) + ⚙️ (0) = **2 total** (Catastrophic Failure)
+- Rolls: (0) + (0) = **2 total** (Catastrophic Failure)
 - Must discard all Penitent Blade cards from hand
 - Gains 2 Heat
 - Next attack -2 damage
@@ -97,12 +97,12 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 
 | Face | Symbol | Effect |
 |------|--------|--------|
-| 1 | 🛡️ | **SHIELD** - Block 1 damage |
-| 2 | ⚙️ | **ABSORB** - Block 1 damage |
-| 3 | 🩸 | **FLESH WOUND** - Take damage (discard 1 card) |
-| 4 | 💀 | **CRITICAL** - Take damage + 1 Component Damage |
-| 5 | ⚔️ | **PIERCE** - Take damage, cannot use reactive cards |
-| 6 | 🔥 | **HEAT** - Take damage + 1 Heat |
+| 1 | | **SHIELD** - Block 1 damage |
+| 2 | | **ABSORB** - Block 1 damage |
+| 3 | | **FLESH WOUND** - Take damage (discard 1 card) |
+| 4 | | **CRITICAL** - Take damage + 1 Component Damage |
+| 5 | | **PIERCE** - Take damage, cannot use reactive cards |
+| 6 | | **HEAT** - Take damage + 1 Heat |
 
 ---
 
@@ -110,45 +110,45 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 
 1. **Attacker's attack hits** → Determine damage amount
 2. **Defender rolls 1 Defense Die per damage point**
-   - Example: 6 damage = roll 6 Defense Dice
-3. **Count 🛡️ SHIELD and ⚙️ ABSORB symbols**
-   - Each blocks 1 damage
+ - Example: 6 damage = roll 6 Defense Dice
+3. **Count SHIELD and ABSORB symbols**
+ - Each blocks 1 damage
 4. **Apply special effects** from other symbols
 5. **Final damage = Original damage - Total blocks**
 
-**Block Probability**: 2/6 faces block (🛡️, ⚙️) = **33% chance per die**
+**Block Probability**: 2/6 faces block (, ) = **33% chance per die**
 
 ---
 
 ### Defense Die Effects
 
-**🛡️ SHIELD (Face 1)**:
+** SHIELD (Face 1)**:
 - Blocks 1 damage
 - No side effects
 - Most reliable defense
 
-**⚙️ ABSORB (Face 2)**:
+** ABSORB (Face 2)**:
 - Blocks 1 damage
 - Represents armor plating absorbing hit
 - No side effects
 
-**🩸 FLESH WOUND (Face 3)**:
+** FLESH WOUND (Face 3)**:
 - Take 1 damage (no block)
 - Standard hit, no special effects
 
-**💀 CRITICAL (Face 4)**:
+** CRITICAL (Face 4)**:
 - Take 1 damage (no block)
 - **+1 Component Damage to targeted component**
 - Stacks with Component Damage from discarding Primary Weapon cards
-- **Example**: Roll 3 Defense Dice, get 💀💀💀 = +3 Component Damage (instant destruction)
+- **Example**: Roll 3 Defense Dice, get = +3 Component Damage (instant destruction)
 
-**⚔️ PIERCE (Face 5)**:
+** PIERCE (Face 5)**:
 - Take 1 damage (no block)
 - **Cannot use reactive defense cards** (shield blocks, parries, etc.)
 - Represents armor-piercing hit
 - Disable reactive cards for THIS damage instance only
 
-**🔥 HEAT (Face 6)**:
+** HEAT (Face 6)**:
 - Take 1 damage (no block)
 - **+1 Heat**
 - Can trigger Strain roll if pushed into Danger Zone (5+ Heat)
@@ -160,23 +160,23 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 **Setup**: Dwarven Heavy takes **8 damage** from Church attack
 
 **Step 1**: Roll 8 Defense Dice
-- Result: 🛡️ 🛡️ 🛡️ 🩸 💀 💀 🔥 ⚔️
+- Result: 
 
 **Step 2**: Count Blocks
-- **3 Shield symbols (🛡️🛡️🛡️)** = Block 3 damage
+- **3 Shield symbols ()** = Block 3 damage
 - Reduced from 8 → **5 damage**
 
 **Step 3**: Apply Special Effects
-- **2 Critical symbols (💀💀)** = +2 Component Damage to targeted component
-- **1 Heat symbol (🔥)** = +1 Heat
-- **1 Pierce symbol (⚔️)** = Cannot use reactive defense cards
+- **2 Critical symbols ()** = +2 Component Damage to targeted component
+- **1 Heat symbol ()** = +1 Heat
+- **1 Pierce symbol ()** = Cannot use reactive defense cards
 
 **Step 4**: Defender Chooses Discard
 - Must discard 5 cards (chooses 3 from hand, 2 from deck)
 - If any Primary Weapon cards discarded → Add to Component Damage
 
 **Step 5**: Final Component Damage
-- 2 (from 💀💀) + 1 (from 1 Primary Weapon card discarded) = **3 Component Damage**
+- 2 (from ) + 1 (from 1 Primary Weapon card discarded) = **3 Component Damage**
 - **Component DESTROYED** (reached threshold)
 
 ---
@@ -184,11 +184,11 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 ### Statistical Breakdown
 
 **Defense Die Probabilities**:
-- Block (🛡️ or ⚙️): 2/6 = **33.3%**
-- Standard damage (🩸): 1/6 = **16.7%**
-- Critical damage (💀): 1/6 = **16.7%**
-- Pierce (⚔️): 1/6 = **16.7%**
-- Heat (🔥): 1/6 = **16.7%**
+- Block ( or ): 2/6 = **33.3%**
+- Standard damage (): 1/6 = **16.7%**
+- Critical damage (): 1/6 = **16.7%**
+- Pierce (): 1/6 = **16.7%**
+- Heat (): 1/6 = **16.7%**
 
 **Expected Blocks per Damage**:
 - 3 damage = ~1 block (33%)
@@ -196,8 +196,8 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 - 9 damage = ~3 blocks (33%)
 
 **Variance**:
-- Lucky roll: 6 damage, roll 6 blocks (all 🛡️/⚙️) = **0 damage taken**
-- Unlucky roll: 6 damage, roll 0 blocks (all 🩸💀⚔️🔥) = **6 damage + penalties**
+- Lucky roll: 6 damage, roll 6 blocks (all /) = **0 damage taken**
+- Unlucky roll: 6 damage, roll 0 blocks (all ) = **6 damage + penalties**
 
 ---
 
@@ -259,11 +259,11 @@ Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
 
 **Facing Diagram**:
 ```
-         [1]          1 = FRONT (hardest to hit)
-      [6] [X] [2]     2 = WEAPON SIDE (vulnerable, +1 damage)
-      [5]   [3]       3-5 = FLANKS (easier to hit)
-         [4]          4 = REAR (easiest, +3 damage)
-                      6 = SHIELD SIDE (harder, +1 Defense)
+ [1] 1 = FRONT (hardest to hit)
+ [6] [X] [2] 2 = WEAPON SIDE (vulnerable, +1 damage)
+ [5] [3] 3-5 = FLANKS (easier to hit)
+ [4] 4 = REAR (easiest, +3 damage)
+ 6 = SHIELD SIDE (harder, +1 Defense)
 X = Your Casket
 ```
 
@@ -302,9 +302,9 @@ X = Your Casket
 5. Shield-side facing: +1 → **9+**
 6. Light cover: +1 → **10+**
 
-**Final To-Hit**: **10+** (only possible with double 💀 EXECUTION roll)
+**Final To-Hit**: **10+** (only possible with double EXECUTION roll)
 
-**Attack Roll**: 💀 (5) + ⚔️ (3) = **8 total**
+**Attack Roll**: (5) + (3) = **8 total**
 **Result**: **MISS** (needed 10+, got 8)
 
 ---
@@ -381,12 +381,12 @@ X = Your Casket
 
 | Face | Symbol | Effect |
 |------|--------|--------|
-| 1 | 🛡️ | **DIVINE MERCY** - No self-harm |
-| 2 | 🩸 | **BLOOD PRICE** - Discard 2 cards (self-harm) |
-| 3 | ⚔️ | **ZEALOT'S FURY** - Discard 1 card, +1 damage to all attacks this turn |
-| 4 | 🔥 | **PENANCE** - Discard 1 card, +1 Heat, +2 damage next attack |
-| 5 | 💀 | **MARTYRDOM** - Discard 3 cards, +3 damage to next attack |
-| 6 | ⚙️ | **ABSOLUTION** - Discard 1 card, recover 1 card from discard |
+| 1 | | **DIVINE MERCY** - No self-harm |
+| 2 | | **BLOOD PRICE** - Discard 2 cards (self-harm) |
+| 3 | | **ZEALOT'S FURY** - Discard 1 card, +1 damage to all attacks this turn |
+| 4 | | **PENANCE** - Discard 1 card, +1 Heat, +2 damage next attack |
+| 5 | | **MARTYRDOM** - Discard 3 cards, +3 damage to next attack |
+| 6 | | **ABSOLUTION** - Discard 1 card, recover 1 card from discard |
 
 ---
 
@@ -407,33 +407,33 @@ X = Your Casket
 
 ### Suffering Die Effects
 
-**🛡️ DIVINE MERCY (Face 1)**:
+** DIVINE MERCY (Face 1)**:
 - No self-harm
 - **Rare blessing** (16.7% chance)
 - Church pilot prays: "The Harmony spares me this time."
 
-**🩸 BLOOD PRICE (Face 2)**:
+** BLOOD PRICE (Face 2)**:
 - Discard 2 cards (self-harm)
 - Standard Church sacrifice
 - Expected outcome for BLOOD OFFERING
 
-**⚔️ ZEALOT'S FURY (Face 3)**:
+** ZEALOT'S FURY (Face 3)**:
 - Discard 1 card
 - +1 damage to ALL attacks this turn
 - **Tactical choice**: Less self-harm, sustained damage boost
 
-**🔥 PENANCE (Face 4)**:
+** PENANCE (Face 4)**:
 - Discard 1 card
 - +1 Heat
 - +2 damage to **next attack only**
 - Risk/reward: Heat buildup for burst damage
 
-**💀 MARTYRDOM (Face 5)**:
+** MARTYRDOM (Face 5)**:
 - Discard 3 cards (brutal self-harm)
 - +3 damage to **next attack only**
 - **High risk, high reward**: Sacrifice for lethal strike
 
-**⚙️ ABSOLUTION (Face 6)**:
+** ABSOLUTION (Face 6)**:
 - Discard 1 card
 - Recover 1 card from discard pile
 - **Net cost**: 0 cards (discard 1, recover 1)
@@ -448,20 +448,20 @@ X = Your Casket
 - **New mechanic**: Roll 1 Suffering Die
 - **Expected value**: ~2 cards discarded (same as before)
 - **Variance**:
-  - Best case: 🛡️ DIVINE MERCY (0 cards)
-  - Worst case: 💀 MARTYRDOM (3 cards)
+ - Best case: DIVINE MERCY (0 cards)
+ - Worst case: MARTYRDOM (3 cards)
 
 **Risk/Reward Analysis**:
-- 1/6 chance (16.7%) to avoid all self-harm (🛡️)
-- 1/6 chance (16.7%) to get +3 damage burst (💀)
-- 2/6 chance (33.3%) to get sustained +1 damage (⚔️ or 🔥)
+- 1/6 chance (16.7%) to avoid all self-harm ()
+- 1/6 chance (16.7%) to get +3 damage burst ()
+- 2/6 chance (33.3%) to get sustained +1 damage ( or )
 - **Trade consistency for unpredictability**
 
 **Multiple Suffering Dice** (Flagellant's Zeal):
 - Roll 2 Suffering Dice, apply both
-- **Example**: 🩸 + 💀 = Discard 5 cards total, +3 damage next attack
-- **Example**: 🛡️ + ⚙️ = Discard 1, recover 1 (net 0 cards, no bonus)
-- **Example**: ⚔️ + 🔥 = Discard 2, +1 Heat, +1 damage all attacks + +2 damage next
+- **Example**: + = Discard 5 cards total, +3 damage next attack
+- **Example**: + = Discard 1, recover 1 (net 0 cards, no bonus)
+- **Example**: + = Discard 2, +1 Heat, +1 damage all attacks + +2 damage next
 
 ---
 
@@ -471,7 +471,7 @@ X = Your Casket
 
 | Total | Probability | Cumulative | Result |
 |-------|-------------|------------|--------|
-| 2 (⚙️⚙️) | 2.78% | 2.78% | Catastrophic Failure |
+| 2 () | 2.78% | 2.78% | Catastrophic Failure |
 | 3 | 5.56% | 8.33% | Likely miss |
 | 4 | 8.33% | 16.67% | Likely miss |
 | 5 | 11.11% | 27.78% | Hit (if target 5+) |
@@ -479,7 +479,7 @@ X = Your Casket
 | 7 | 16.67% | 58.33% | Strong Hit |
 | 8 | 13.89% | 72.22% | Strong Hit |
 | 9 | 11.11% | 83.33% | Critical Hit |
-| 10 (💀💀) | 2.78% | 86.11% | EXECUTION |
+| 10 () | 2.78% | 86.11% | EXECUTION |
 
 **Note**: Totals above 10 impossible (max die value = 5)
 
@@ -496,11 +496,11 @@ X = Your Casket
 ### Defense Dice Block Probability
 
 **Single Die**:
-- Block: 33.3% (🛡️ or ⚙️)
-- Standard damage: 16.7% (🩸)
-- Critical: 16.7% (💀)
-- Pierce: 16.7% (⚔️)
-- Heat: 16.7% (🔥)
+- Block: 33.3% ( or )
+- Standard damage: 16.7% ()
+- Critical: 16.7% ()
+- Pierce: 16.7% ()
+- Heat: 16.7% ()
 
 **Expected Blocks**:
 | Damage | Expected Blocks | Expected Damage |
@@ -511,8 +511,8 @@ X = Your Casket
 | 12 | 4 | 8 |
 
 **Variance Examples**:
-- **6 damage, 0 blocks** (all 🩸💀⚔️🔥): 11.6% chance
-- **6 damage, 6 blocks** (all 🛡️⚙️): 0.14% chance (very rare)
+- **6 damage, 0 blocks** (all ): 11.6% chance
+- **6 damage, 6 blocks** (all ): 0.14% chance (very rare)
 - **6 damage, 2 blocks** (expected): ~29% chance
 
 ---
@@ -521,12 +521,12 @@ X = Your Casket
 
 | Face | Symbol | Effect | Probability |
 |------|--------|--------|-------------|
-| 1 | 🛡️ | Divine Mercy (0 cards) | 16.7% |
-| 2 | 🩸 | Blood Price (2 cards) | 16.7% |
-| 3 | ⚔️ | Zealot's Fury (1 card, +1 dmg) | 16.7% |
-| 4 | 🔥 | Penance (1 card, +1 Heat, +2 dmg) | 16.7% |
-| 5 | 💀 | Martyrdom (3 cards, +3 dmg) | 16.7% |
-| 6 | ⚙️ | Absolution (1 card, recover 1) | 16.7% |
+| 1 | | Divine Mercy (0 cards) | 16.7% |
+| 2 | | Blood Price (2 cards) | 16.7% |
+| 3 | | Zealot's Fury (1 card, +1 dmg) | 16.7% |
+| 4 | | Penance (1 card, +1 Heat, +2 dmg) | 16.7% |
+| 5 | | Martyrdom (3 cards, +3 dmg) | 16.7% |
+| 6 | | Absolution (1 card, recover 1) | 16.7% |
 
 **Expected Cards Discarded** (single die):
 - (0×1 + 2×1 + 1×1 + 1×1 + 3×1 + 0×1) / 6 = **1.17 cards average**
@@ -545,12 +545,12 @@ X = Your Casket
 **Colors**: Black dice, silver/white symbols
 
 **Face Layout**:
-1. 🛡️ GLANCE (value 1) - Shield symbol
-2. 🩸 BLOOD (value 2) - Blood droplet
-3. ⚔️ STRIKE (value 3) - Single crossed swords
-4. ⚔️⚔️ DOUBLE STRIKE (value 4) - Double crossed swords
-5. 💀 DEATH BLOW (value 5) - Skull
-6. ⚙️ JAM (value 0) - Broken gear
+1. GLANCE (value 1) - Shield symbol
+2. BLOOD (value 2) - Blood droplet
+3. STRIKE (value 3) - Single crossed swords
+4. DOUBLE STRIKE (value 4) - Double crossed swords
+5. DEATH BLOW (value 5) - Skull
+6. JAM (value 0) - Broken gear
 
 **Value markings**: Small number in corner (1-5, 0 for JAM)
 
@@ -562,12 +562,12 @@ X = Your Casket
 **Colors**: Red dice, white symbols
 
 **Face Layout**:
-1. 🛡️ SHIELD - Shield icon
-2. ⚙️ ABSORB - Gear/armor icon
-3. 🩸 FLESH WOUND - Blood droplet
-4. 💀 CRITICAL - Skull
-5. ⚔️ PIERCE - Piercing arrow
-6. 🔥 HEAT - Flame
+1. SHIELD - Shield icon
+2. ABSORB - Gear/armor icon
+3. FLESH WOUND - Blood droplet
+4. CRITICAL - Skull
+5. PIERCE - Piercing arrow
+6. HEAT - Flame
 
 **No value markings** (effect-based, not numeric)
 
@@ -579,12 +579,12 @@ X = Your Casket
 **Colors**: Crimson/dark red dice, gold symbols
 
 **Face Layout**:
-1. 🛡️ DIVINE MERCY - Holy shield
-2. 🩸 BLOOD PRICE - Blood droplets
-3. ⚔️ ZEALOT'S FURY - Flaming sword
-4. 🔥 PENANCE - Sacred flame
-5. 💀 MARTYRDOM - Crowned skull
-6. ⚙️ ABSOLUTION - Halo/holy gear
+1. DIVINE MERCY - Holy shield
+2. BLOOD PRICE - Blood droplets
+3. ZEALOT'S FURY - Flaming sword
+4. PENANCE - Sacred flame
+5. MARTYRDOM - Crowned skull
+6. ABSOLUTION - Halo/holy gear
 
 **Aesthetic**: Church of Absolution theme (religious martyrdom)
 
@@ -603,8 +603,8 @@ X = Your Casket
 
 1. **Attack hits** → Determine damage amount
 2. **Roll X Defense Dice** (X = damage)
-3. **Count blocks** (🛡️ and ⚙️)
-4. **Apply special effects** (💀 💀⚔️🔥)
+3. **Count blocks** ( and )
+4. **Apply special effects** ( )
 5. **Discard final damage** (original - blocks)
 
 ### Church Self-Harm

@@ -201,12 +201,12 @@ Wait, this creates duplication issues. Let me revise:
 #### Attack Die Faces
 | Symbol | Value | Name |
 |--------|-------|------|
-| ⚔️ | 3 | STRIKE |
-| ⚔️⚔️ | 4 | DOUBLE STRIKE |
-| 💀 | 5 | DEATH BLOW |
-| 🛡️ | 1 | GLANCE |
-| ⚙️ | 0 | JAM |
-| 🩸 | 2 | BLOOD |
+| | 3 | STRIKE |
+| | 4 | DOUBLE STRIKE |
+| | 5 | DEATH BLOW |
+| | 1 | GLANCE |
+| | 0 | JAM |
+| | 2 | BLOOD |
 
 **Add both dice results, compare to target number**:
 
@@ -214,14 +214,14 @@ Wait, this creates duplication issues. Let me revise:
 - **5-6 total** = **Hit** (standard damage)
 - **7-8 total** = **Strong Hit** (standard damage +1)
 - **9-10 total** = **Critical Hit** (standard damage +2, bypass 1 Defense)
-- **10 (double 💀)** = **EXECUTION** (auto-destroy 1 Component, bypass ALL Defense)
+- **10 (double )** = **EXECUTION** (auto-destroy 1 Component, bypass ALL Defense)
 
 #### Miss Results
 - **Below target number** = **MISS** (no damage, attack wasted)
-- **2 (double ⚙️)** = **CATASTROPHIC FAILURE**:
-  - Weapon jams (discard all Primary Weapon cards from hand)
-  - +2 Heat (weapon overload)
-  - Next attack -2 damage (weapon damaged)
+- **2 (double )** = **CATASTROPHIC FAILURE**:
+ - Weapon jams (discard all Primary Weapon cards from hand)
+ - +2 Heat (weapon overload)
+ - Next attack -2 damage (weapon damaged)
 
 ---
 
@@ -234,24 +234,24 @@ Wait, this creates duplication issues. Let me revise:
 #### Defense Die Faces
 | Symbol | Effect |
 |--------|--------|
-| 🛡️ **SHIELD** | Block 1 damage |
-| ⚙️ **ABSORB** | Block 1 damage |
-| 🩸 **FLESH WOUND** | Take damage (discard 1 card) |
-| 💀 **CRITICAL** | Take damage + 1 Component Damage |
-| ⚔️ **PIERCE** | Take damage, cannot use reactive cards |
-| 🔥 **HEAT** | Take damage + 1 Heat |
+| **SHIELD** | Block 1 damage |
+| **ABSORB** | Block 1 damage |
+| **FLESH WOUND** | Take damage (discard 1 card) |
+| **CRITICAL** | Take damage + 1 Component Damage |
+| **PIERCE** | Take damage, cannot use reactive cards |
+| **HEAT** | Take damage + 1 Heat |
 
 **Count results**:
-1. Count **SHIELD** (🛡️) and **ABSORB** (⚙️) symbols → Reduce damage by this amount
-2. Apply special effects from **CRITICAL** (💀), **PIERCE** (⚔️), **HEAT** (🔥)
+1. Count **SHIELD** () and **ABSORB** () symbols → Reduce damage by this amount
+2. Apply special effects from **CRITICAL** (), **PIERCE** (), **HEAT** ()
 3. Final damage = Original damage - Blocks
 
 **Example**: Take 6 damage → Roll 6 Defense Dice
-- Result: 🛡️ 🛡️ 🩸 💀 🔥 ⚔️
+- Result: 
 - **2 blocks** = Reduce to 4 damage
-- **1 Critical** (💀) = +1 Component Damage
-- **1 Heat** (🔥) = +1 Heat
-- **1 Pierce** (⚔️) = Cannot use reactive defense cards
+- **1 Critical** () = +1 Component Damage
+- **1 Heat** () = +1 Heat
+- **1 Pierce** () = Cannot use reactive defense cards
 - **Final**: Discard 4 cards + 1 Component Damage + 1 Heat
 
 ---
@@ -277,8 +277,8 @@ Wait, this creates duplication issues. Let me revise:
 - Track separately: Right Arm, Left Arm, Legs, Head, Chassis
 - **3 Component Damage = Component DESTROYED**
 
-**If Defense Dice showed CRITICAL symbols (💀)**:
-- Add +1 Component Damage per 💀 symbol to targeted component
+**If Defense Dice showed CRITICAL symbols ()**:
+- Add +1 Component Damage per symbol to targeted component
 
 > **v2.0 NOTE**: "Primary Weapon cards" refers to your equipped weapon cards (e.g., Longsword, Greatsword, Pistol). These are the cards you discarded from your Primary Weapon slot equipment.
 
@@ -296,16 +296,16 @@ Wait, this creates duplication issues. Let me revise:
 **How it accumulates**:
 1. Attacker declares which component to target (or roll 1d6 if random)
 2. When Primary Weapon cards are discarded from damage → 1 Component Damage per card
-3. When Defense Dice show 💀 CRITICAL → +1 Component Damage
+3. When Defense Dice show CRITICAL → +1 Component Damage
 4. **3 Component Damage to same location = Component DESTROYED**
 
 **Example**:
 - Enemy attacks your Right Arm for 6 damage
-- Roll 6 Defense Dice: 🛡️ 🩸 🩸 💀 💀 🔥
+- Roll 6 Defense Dice: 
 - **2 Shield blocks** = Reduce to 4 damage
 - **2 Critical symbols** = +2 Component Damage to Right Arm
 - You choose to discard 2 from hand (both Primary Weapon cards) + 2 from deck
-- **Total**: 2 Component Damage (from discarded Primary cards) + 2 (from 💀 symbols) = **4 Component Damage**
+- **Total**: 2 Component Damage (from discarded Primary cards) + 2 (from symbols) = **4 Component Damage**
 - Right Arm has **EXCEEDED 3** → **Right Arm DESTROYED**
 
 ---
@@ -431,12 +431,12 @@ This represents pilot physical/mental state inside the capsule.
 
 | Symbol | Effect |
 |--------|--------|
-| 🩸 **BLOOD PRICE** | Discard 2 cards (self-harm) |
-| 💀 **MARTYRDOM** | Discard 3 cards, +3 damage to next attack |
-| ⚔️ **ZEALOT'S FURY** | Discard 1 card, +1 damage to all attacks this turn |
-| 🛡️ **DIVINE MERCY** | No self-harm |
-| 🔥 **PENANCE** | Discard 1 card, +1 Heat, +2 damage next attack |
-| ⚙️ **ABSOLUTION** | Discard 1 card, recover 1 card from discard |
+| **BLOOD PRICE** | Discard 2 cards (self-harm) |
+| **MARTYRDOM** | Discard 3 cards, +3 damage to next attack |
+| **ZEALOT'S FURY** | Discard 1 card, +1 damage to all attacks this turn |
+| **DIVINE MERCY** | No self-harm |
+| **PENANCE** | Discard 1 card, +1 Heat, +2 damage next attack |
+| **ABSOLUTION** | Discard 1 card, recover 1 card from discard |
 
 ### When to Roll Suffering Dice
 
@@ -565,24 +565,24 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 **Total Deck: 30 cards**
 
 1. **Universal Core** (10 cards) - MANDATORY
-   - Desperate Lunge, Brace for Impact, Emergency Vent, Sensor Sweep, Overextend, Rally Cry, Survey the Field, Feint, Retreat, Breathe the Core
+ - Desperate Lunge, Brace for Impact, Emergency Vent, Sensor Sweep, Overextend, Rally Cry, Survey the Field, Feint, Retreat, Breathe the Core
 
 2. **Primary Weapon: Penitent Blades** (12 cards) - FACTION-SPECIFIC
-   - Blood Offering × 2
-   - Faithful Thrust × 3
-   - Righteous Cleave × 2
-   - Martyrdom Protocol × 2
-   - Divine Judgment × 2
-   - Consecrated Ground × 1
+ - Blood Offering × 2
+ - Faithful Thrust × 3
+ - Righteous Cleave × 2
+ - Martyrdom Protocol × 2
+ - Divine Judgment × 2
+ - Consecrated Ground × 1
 
 3. **Secondary Equipment: Buckler Shield** (6 cards) - PLAYER CHOICE
-   - Deflect × 2
-   - Bash × 2
-   - Hunker Down × 2
+ - Deflect × 2
+ - Bash × 2
+ - Hunker Down × 2
 
 4. **Faction Tactics** (2 cards) - CHOOSE 2 FROM 5
-   - Righteous Fury
-   - Flagellant's Zeal
+ - Righteous Fury
+ - Flagellant's Zeal
 
 **SP Maximum**: 6 (Light Casket)
 **Pilot Wound Deck**: 10 cards (separate)
@@ -605,10 +605,10 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 - ✅ Brutal consequences (losing Primary Weapon cards = component damage)
 
 ### Unique to Penance:
-- 🔥 Heat system (risk/reward pushing into Danger Zone)
-- 🧠 Pilot Wound deck (separate from Casket HP)
-- 🩸 Neural Thread damage (pilot takes damage when components destroyed)
-- ⚙️ Asymmetric factions (Primary Weapon cards completely different per faction)
+- Heat system (risk/reward pushing into Danger Zone)
+- Pilot Wound deck (separate from Casket HP)
+- Neural Thread damage (pilot takes damage when components destroyed)
+- Asymmetric factions (Primary Weapon cards completely different per faction)
 
 ---
 
@@ -626,16 +626,16 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 1. Refresh to 6 SP
 2. Play **Desperate Lunge** (1 SP) → Move 2 hexes toward enemy (total moved: 2 hexes)
 3. Play **Faithful Thrust** (2 SP) → Declare attack for 4 damage, Range: Melee
-   - **To-Hit Calculation**: Base 5+ | Moved 2 hexes +1 | Front arc +0 = **Need 6+**
-   - **Attack Roll**: ⚔️ (3) + ⚔️⚔️ (4) = **7 total** → **STRONG HIT** (+1 damage)
-   - Final damage: 4 base + 1 (Strong Hit) = **5 damage**
-4. Player B rolls **5 Defense Dice**: 🛡️ 🩸 🩸 💀 🔥
-   - **1 Shield block** → Reduce to 4 damage
-   - **1 Critical (💀)** → +1 Component Damage to Right Arm
-   - **1 Heat (🔥)** → +1 Heat
+ - **To-Hit Calculation**: Base 5+ | Moved 2 hexes +1 | Front arc +0 = **Need 6+**
+ - **Attack Roll**: (3) + (4) = **7 total** → **STRONG HIT** (+1 damage)
+ - Final damage: 4 base + 1 (Strong Hit) = **5 damage**
+4. Player B rolls **5 Defense Dice**: 
+ - **1 Shield block** → Reduce to 4 damage
+ - **1 Critical ()** → +1 Component Damage to Right Arm
+ - **1 Heat ()** → +1 Heat
 5. Player B discards 4 cards (chooses: 2 from hand, 2 from deck)
-   - Discarded from hand: 1× Primary Weapon card → +1 Component Damage
-   - **Total Component Damage to Right Arm: 2** (1 from 💀, 1 from Primary card)
+ - Discarded from hand: 1× Primary Weapon card → +1 Component Damage
+ - **Total Component Damage to Right Arm: 2** (1 from , 1 from Primary card)
 6. Player A has 3 SP remaining → Passes
 7. Draw Phase: Draw 2 cards (hand back to 6)
 
@@ -643,19 +643,19 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 1. Refresh to 4 SP, currently at 1 Heat (safe)
 2. Play **Advance** (2 SP) → Move 2 hexes toward enemy
 3. Play **Hammer Strike** (3 SP) → Declare attack for 6 damage, ignore 1 Armor
-   - **To-Hit Calculation**: Base 5+ | Moved 2 hexes +1 | Attacking front +0 = **Need 6+**
-   - **Attack Roll**: 💀 (5) + ⚔️ (3) = **8 total** → **STRONG HIT** (+1 damage)
-   - Final damage: 6 base + 1 (Strong Hit) = **7 damage**
-4. Player A rolls **7 Defense Dice**: 🛡️ 🩸 🩸 💀 💀 🔥 ⚔️
-   - **1 Shield block** → Reduce to 6 damage
-   - **2 Critical (💀💀)** → +2 Component Damage to Right Arm
-   - **1 Heat (🔥)** → +1 Heat
-   - **1 Pierce (⚔️)** → Cannot use reactive defense cards
+ - **To-Hit Calculation**: Base 5+ | Moved 2 hexes +1 | Attacking front +0 = **Need 6+**
+ - **Attack Roll**: (5) + (3) = **8 total** → **STRONG HIT** (+1 damage)
+ - Final damage: 6 base + 1 (Strong Hit) = **7 damage**
+4. Player A rolls **7 Defense Dice**: 
+ - **1 Shield block** → Reduce to 6 damage
+ - **2 Critical ()** → +2 Component Damage to Right Arm
+ - **1 Heat ()** → +1 Heat
+ - **1 Pierce ()** → Cannot use reactive defense cards
 5. Player A discards 6 cards (chooses: 3 from hand, 3 from deck)
-   - Discarded from hand: 2× Primary Weapon (Penitent Blades) → +2 Component Damage
-   - **Total Component Damage to Right Arm**: 2 (from 💀💀) + 2 (from Primary cards) = **4 Component Damage**
-   - Right Arm has **EXCEEDED 3** → **RIGHT ARM DESTROYED!**
-   - Player A discards all remaining Penitent Blade cards from hand (cannot use Primary Weapon)
+ - Discarded from hand: 2× Primary Weapon (Penitent Blades) → +2 Component Damage
+ - **Total Component Damage to Right Arm**: 2 (from ) + 2 (from Primary cards) = **4 Component Damage**
+ - Right Arm has **EXCEEDED 3** → **RIGHT ARM DESTROYED!**
+ - Player A discards all remaining Penitent Blade cards from hand (cannot use Primary Weapon)
 6. Player B has 0 SP → Turn ends
 7. Draw Phase: Draw 3 cards
 

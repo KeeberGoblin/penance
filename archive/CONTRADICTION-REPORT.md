@@ -40,11 +40,11 @@
 - [ ] **Option A**: Delete all `deck-complete.md` files (clean slate)
 - [ ] **Option B**: Move `deck-complete.md` to `docs/factions/archive/` folder with deprecation notice
 - [ ] **Option C**: Add prominent deprecation warning at top of each `deck-complete.md`:
-  ```markdown
-  # ⚠️ DEPRECATED - This file uses the OLD fixed-deck system
-  **Current System**: See `deck-equipment-system.md` for variable equipment system
-  **Date Deprecated**: October 11, 2025
-  ```
+ ```markdown
+ # ⚠ DEPRECATED - This file uses the OLD fixed-deck system
+ **Current System**: See `deck-equipment-system.md` for variable equipment system
+ **Date Deprecated**: October 11, 2025
+ ```
 
 ---
 
@@ -100,9 +100,9 @@
 
 **Evidence**:
 - All `docs/wiki/*.html` files have navigation link:
-  ```html
-  <a href="faction-elves.html" class="nav-link">Elven Remnants</a>
-  ```
+ ```html
+ <a href="faction-elves.html" class="nav-link">Elven Remnants</a>
+ ```
 
 **Impact**: Low (HTML wiki may be outdated/deprecated)
 
@@ -177,16 +177,16 @@
 ### Files Identified as Potentially Obsolete:
 
 1. **`docs/factions/*/deck-complete.md`** (4 files)
-   - Status: Uses OLD fixed-deck system
-   - Action: Archive or deprecate
+ - Status: Uses OLD fixed-deck system
+ - Action: Archive or deprecate
 
 2. **`docs/wiki/*.html`** (unknown number)
-   - Status: May be outdated (uses "Elven Remnants")
-   - Action: Verify if wiki is still maintained
+ - Status: May be outdated (uses "Elven Remnants")
+ - Action: Verify if wiki is still maintained
 
 3. **`docs/reference/FACTION-NAME-IDEAS.md`**
-   - Status: Brainstorming document (shows old "Undead Court" name)
-   - Action: Safe to keep (historical reference), but add note that names are finalized
+ - Status: Brainstorming document (shows old "Undead Court" name)
+ - Action: Safe to keep (historical reference), but add note that names are finalized
 
 ---
 
@@ -206,38 +206,38 @@
 ### Immediate (Do Now):
 
 1. **Fix Elven Faction Name** (7 files)
-   ```bash
-   # Find and replace in these files:
-   docs/reference/design-roadmap.md
-   docs/reference/ai-art-prompts.md
-   docs/reference/PLAYTEST-READY.md
-   docs/reference/casket-control-system.md
-   docs/factions/dwarves/deck-complete.md
-   docs/factions/index.md
-   docs/campaigns/leg-skimming.md
-   ```
+ ```bash
+ # Find and replace in these files:
+ docs/reference/design-roadmap.md
+ docs/reference/ai-art-prompts.md
+ docs/reference/PLAYTEST-READY.md
+ docs/reference/casket-control-system.md
+ docs/factions/dwarves/deck-complete.md
+ docs/factions/index.md
+ docs/campaigns/leg-skimming.md
+ ```
 
 2. **Resolve Deck System Confusion**
-   - Add deprecation notice to all `deck-complete.md` files
-   - OR move to `/docs/factions/archive/` folder
-   - Update CLAUDE.md to explicitly state `deck-complete.md` is deprecated
+ - Add deprecation notice to all `deck-complete.md` files
+ - OR move to `/docs/factions/archive/` folder
+ - Update CLAUDE.md to explicitly state `deck-complete.md` is deprecated
 
 ### Short-Term (Next Session):
 
 3. **Update HTML Wiki** (if still active)
-   - Replace "Elven Remnants" with "Elven Verdant Covenant" in navigation
-   - Verify wiki is still maintained or mark as deprecated
+ - Replace "Elven Remnants" with "Elven Verdant Covenant" in navigation
+ - Verify wiki is still maintained or mark as deprecated
 
 4. **Create Migration Guide**
-   - Document transition from fixed-deck to equipment system
-   - Explain why old `deck-complete.md` files exist
+ - Document transition from fixed-deck to equipment system
+ - Explain why old `deck-complete.md` files exist
 
 ### Long-Term (Optional):
 
 5. **Audit All Documentation**
-   - Systematic review of every markdown file
-   - Cross-reference all game mechanics (SP costs, damage values, Heat)
-   - Verify all lore dates and events
+ - Systematic review of every markdown file
+ - Cross-reference all game mechanics (SP costs, damage values, Heat)
+ - Verify all lore dates and events
 
 ---
 
@@ -271,7 +271,7 @@
 - ✅ Pilot state contradictions were already resolved (commit 2b021ab)
 - ✅ Faction name corrections were previously applied to FACTION-NAME-IDEAS.md
 - ✅ Core game mechanics (SP, Heat, dice) appear consistent across documentation
-- ⚠️ Main issues are legacy files (`deck-complete.md`) and incomplete name migration
+- ⚠ Main issues are legacy files (`deck-complete.md`) and incomplete name migration
 
 ---
 

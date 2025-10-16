@@ -36,10 +36,10 @@ Interactive HTML tools for Penance: Absolution Through Steel
 1. Open `printable-cards.html` in browser
 2. Click "Print All Sheets" or use Ctrl+P
 3. Settings:
-   - Paper: Letter (8.5" x 11")
-   - Orientation: Portrait
-   - Scale: 100% (no fit-to-page)
-   - Margins: 0.25" all sides
+ - Paper: Letter (8.5" x 11")
+ - Orientation: Portrait
+ - Scale: 100% (no fit-to-page)
+ - Margins: 0.25" all sides
 4. Recommended paper: 110lb cardstock
 5. Cut along black borders
 6. Optional: Sleeve with standard card sleeves (63.5mm x 88mm)
@@ -58,27 +58,27 @@ To add custom cards to the printable sheet, copy this template:
 
 ```html
 <div class="card weapon">
-    <div class="card-inner">
-        <div class="card-header">
-            <div class="card-title">⚔ CARD<br>NAME</div>
-            <div class="card-initiative">[X]</div>
-        </div>
-        <div class="card-type">CARD TYPE (Slot)</div>
-        <div class="card-cost-row">
-            <span><strong>SP:</strong> X</span>
-            <span><strong>Range:</strong> Range</span>
-        </div>
-        <div class="card-effect">
-            <strong>EFFECT:</strong>
-            Card effect text here.
-        </div>
-        <div class="card-keywords">
-            <strong>Heat:</strong> +X | <strong>Keywords:</strong> Tags
-        </div>
-        <div class="card-flavor">
-            "Flavor text quote here."
-        </div>
-    </div>
+ <div class="card-inner">
+ <div class="card-header">
+ <div class="card-title"> CARD<br>NAME</div>
+ <div class="card-initiative">[X]</div>
+ </div>
+ <div class="card-type">CARD TYPE (Slot)</div>
+ <div class="card-cost-row">
+ <span><strong>SP:</strong> X</span>
+ <span><strong>Range:</strong> Range</span>
+ </div>
+ <div class="card-effect">
+ <strong>EFFECT:</strong>
+ Card effect text here.
+ </div>
+ <div class="card-keywords">
+ <strong>Heat:</strong> +X | <strong>Keywords:</strong> Tags
+ </div>
+ <div class="card-flavor">
+ "Flavor text quote here."
+ </div>
+ </div>
 </div>
 ```
 

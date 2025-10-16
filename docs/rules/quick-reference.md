@@ -45,26 +45,26 @@ Modified by destroyed Chassis (-1 SP) or Leg-Skimming (+1 SP)
 ### Attack Sequence
 1. **Play attack card** (spend SP), declare target component
 2. **Calculate To-Hit Number**:
-   - Base: **5+** (roll 2d6 Attack Dice)
-   - \+ Range (Short +0, Medium +1, Long +2, Extreme +3)
-   - \+ Attacker movement (1-3 hexes +1, 4-6 +2, 7+ +3)
-   - \+ Defender movement (1-3 hexes +1, 4-6 +2, 7+ +3)
-   - \+ Hex-side (Front +0, Weapon +0, Flank -1, Rear -2, Shield +1)
-   - \+ Cover (Light +1, Heavy +2)
-   - \+ Elevation (Higher -1, Lower +1)
+ - Base: **5+** (roll 2d6 Attack Dice)
+ - \+ Range (Short +0, Medium +1, Long +2, Extreme +3)
+ - \+ Attacker movement (1-3 hexes +1, 4-6 +2, 7+ +3)
+ - \+ Defender movement (1-3 hexes +1, 4-6 +2, 7+ +3)
+ - \+ Hex-side (Front +0, Weapon +0, Flank -1, Rear -2, Shield +1)
+ - \+ Cover (Light +1, Heavy +2)
+ - \+ Elevation (Higher -1, Lower +1)
 3. **Roll 2 Attack Dice**, add values:
-   - **5-6** = Hit | **7-8** = Strong Hit (+1 dmg)
-   - **9** = Critical (+2 dmg, bypass 1 Def) | **10** = EXECUTION (destroy component)
-   - **<5** = Miss | **2** = Catastrophic Failure (weapon jams)
+ - **5-6** = Hit | **7-8** = Strong Hit (+1 dmg)
+ - **9** = Critical (+2 dmg, bypass 1 Def) | **10** = EXECUTION (destroy component)
+ - **<5** = Miss | **2** = Catastrophic Failure (weapon jams)
 4. **If hit**, Defender plays reactive card (optional, 0 SP)
 5. **Defender rolls Defense Dice** (1d6 per damage):
-   - Count blocks: 🛡️ SHIELD, ⚙️ ABSORB (each blocks 1 dmg)
-   - Apply effects: 💀 CRITICAL (+1 Component Dmg), 🔥 HEAT (+1 Heat), ⚔️ PIERCE (no reactives)
+ - Count blocks: SHIELD, ABSORB (each blocks 1 dmg)
+ - Apply effects: CRITICAL (+1 Component Dmg), HEAT (+1 Heat), PIERCE (no reactives)
 6. **Defender discards** final damage (original - blocks) from hand/deck
 
 ### Component Damage
 - Primary Weapon cards discarded → +1 Component Damage
-- Defense Dice 💀 CRITICAL → +1 Component Damage
+- Defense Dice CRITICAL → +1 Component Damage
 - **3 Component Damage = Component Destroyed**
 
 ---
@@ -278,34 +278,34 @@ Modified by destroyed Chassis (-1 SP) or Leg-Skimming (+1 SP)
 ### Attack Dice (2d6)
 | Symbol | Value | Name |
 |--------|-------|------|
-| 🛡️ | 1 | GLANCE |
-| 🩸 | 2 | BLOOD |
-| ⚔️ | 3 | STRIKE |
-| ⚔️⚔️ | 4 | DOUBLE STRIKE |
-| 💀 | 5 | DEATH BLOW |
-| ⚙️ | 0 | JAM |
+| | 1 | GLANCE |
+| | 2 | BLOOD |
+| | 3 | STRIKE |
+| | 4 | DOUBLE STRIKE |
+| | 5 | DEATH BLOW |
+| | 0 | JAM |
 
 **Results**: 5-6 Hit | 7-8 Strong Hit (+1) | 9 Critical (+2) | 10 EXECUTION | 2 Catastrophic Failure
 
 ### Defense Dice (1d6 per damage)
 | Symbol | Effect |
 |--------|--------|
-| 🛡️ | SHIELD - Block 1 dmg |
-| ⚙️ | ABSORB - Block 1 dmg |
-| 🩸 | FLESH WOUND - Take dmg |
-| 💀 | CRITICAL - Take dmg + 1 Component Dmg |
-| ⚔️ | PIERCE - Take dmg, no reactives |
-| 🔥 | HEAT - Take dmg + 1 Heat |
+| | SHIELD - Block 1 dmg |
+| | ABSORB - Block 1 dmg |
+| | FLESH WOUND - Take dmg |
+| | CRITICAL - Take dmg + 1 Component Dmg |
+| | PIERCE - Take dmg, no reactives |
+| | HEAT - Take dmg + 1 Heat |
 
 ### Suffering Dice (Church/Events, 1d6)
 | Symbol | Effect |
 |--------|--------|
-| 🛡️ | DIVINE MERCY - No harm |
-| 🩸 | BLOOD PRICE - Discard 2 |
-| ⚔️ | ZEALOT'S FURY - Discard 1, +1 dmg all attacks |
-| 🔥 | PENANCE - Discard 1, +1 Heat, +2 dmg next |
-| 💀 | MARTYRDOM - Discard 3, +3 dmg next |
-| ⚙️ | ABSOLUTION - Discard 1, recover 1 |
+| | DIVINE MERCY - No harm |
+| | BLOOD PRICE - Discard 2 |
+| | ZEALOT'S FURY - Discard 1, +1 dmg all attacks |
+| | PENANCE - Discard 1, +1 Heat, +2 dmg next |
+| | MARTYRDOM - Discard 3, +3 dmg next |
+| | ABSOLUTION - Discard 1, recover 1 |
 
 ---
 
@@ -330,15 +330,15 @@ Modified by destroyed Chassis (-1 SP) or Leg-Skimming (+1 SP)
 
 1. **REFRESH**: 6 SP, Heat check = Safe Zone (skip)
 2. **ACTION**:
-   - Rotate (free) → Face enemy
-   - Move 2 hexes (2 SP)
-   - Play Blood Offering (0 SP) → Discard 2 cards, buff active (+3 dmg)
-   - Play Faithful Thrust (2 SP) → Attack for 4 dmg + 3 buff = 7 dmg
-   - **To-Hit**: Base 5+ | Moved 2 hexes +1 = Need 6+
-   - **Roll**: ⚔️(3) + 💀(5) = 8 → Strong Hit (+1 dmg) = 8 total dmg
-   - **Enemy rolls 8 Defense Dice**: 🛡️🛡️🩸🩸💀🔥⚔️🩸 = 2 blocks, 1 Critical, 1 Heat
-   - Final: 6 damage + 1 Component Damage to enemy
-   - Pass (2 SP unused)
+ - Rotate (free) → Face enemy
+ - Move 2 hexes (2 SP)
+ - Play Blood Offering (0 SP) → Discard 2 cards, buff active (+3 dmg)
+ - Play Faithful Thrust (2 SP) → Attack for 4 dmg + 3 buff = 7 dmg
+ - **To-Hit**: Base 5+ | Moved 2 hexes +1 = Need 6+
+ - **Roll**: (3) + (5) = 8 → Strong Hit (+1 dmg) = 8 total dmg
+ - **Enemy rolls 8 Defense Dice**: = 2 blocks, 1 Critical, 1 Heat
+ - Final: 6 damage + 1 Component Damage to enemy
+ - Pass (2 SP unused)
 3. **DRAW**: Draw 2 cards (hand back to 6)
 4. **END**: Next player's turn
 

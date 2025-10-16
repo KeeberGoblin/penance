@@ -24,7 +24,7 @@ The Ossuarium fields undead thralls, bone constructs, and necromantic abominatio
 
 ---
 
-## 1. BONE THRALL SWARM ⭐ STARTER UNIT
+## 1. BONE THRALL SWARM STARTER UNIT
 **Category**: Swarm Infantry
 **HP**: 12 (3 HP per thrall, 4 thralls total) | **Movement**: 4 | **Defense**: 0
 **Equipment Slots**: 2
@@ -37,7 +37,7 @@ Four humanoid skeletons in tattered grave shrouds, armed with rusted weapons. Th
 
 ---
 
-#### 💀 SWARM ATTACK
+#### SWARM ATTACK
 **Type**: Attack / Coordinated
 **Priority**: High
 
@@ -51,7 +51,7 @@ Four humanoid skeletons in tattered grave shrouds, armed with rusted weapons. Th
 
 ---
 
-#### 💀 SCATTER AND SURROUND
+#### SCATTER AND SURROUND
 **Type**: Movement / Tactical
 **Priority**: Medium
 
@@ -65,22 +65,22 @@ Four humanoid skeletons in tattered grave shrouds, armed with rusted weapons. Th
 
 ---
 
-#### 🦴 FEAST ON CORPSES
+#### FEAST ON CORPSES
 **Type**: Utility / Resurrection
 **Priority**: High (when enemy died this round within 4 hexes)
 
 **Effect**:
 - Living thralls move toward nearest corpse marker within 4 hexes
 - If any thrall reaches corpse, consume it:
-  - Resurrect 1 dead thrall with 3 HP
-  - All living thralls heal 1 HP
-  - Remove corpse marker (consumed)
+ - Resurrect 1 dead thrall with 3 HP
+ - All living thralls heal 1 HP
+ - Remove corpse marker (consumed)
 
 **Flavor**: "The dead feed the dead."
 
 ---
 
-#### 💀 RECKLESS ASSAULT
+#### RECKLESS ASSAULT
 **Type**: Attack / Sacrifice
 **Priority**: Critical (when only 1-2 thralls alive)
 
@@ -94,7 +94,7 @@ Four humanoid skeletons in tattered grave shrouds, armed with rusted weapons. Th
 
 ---
 
-#### 🦴 BONE HARVEST
+#### BONE HARVEST
 **Type**: Utility / Summoning
 **Priority**: Medium (when 2+ thralls dead AND Casket within 4 hexes)
 
@@ -109,7 +109,7 @@ Four humanoid skeletons in tattered grave shrouds, armed with rusted weapons. Th
 
 ---
 
-#### 💀 SHIELD OF BONES
+#### SHIELD OF BONES
 **Type**: Defense / Sacrifice
 **Priority**: High (when Casket within 3 hexes is targeted)
 
@@ -147,7 +147,7 @@ Four humanoid skeletons in tattered grave shrouds, armed with rusted weapons. Th
 
 ---
 
-## 2. GRAVE KNIGHT ⭐ STARTER UNIT
+## 2. GRAVE KNIGHT STARTER UNIT
 **Category**: Elite Infantry (Death Knight)
 **HP**: 14 | **Movement**: 3 | **Defense**: 3
 **Equipment Slots**: 3
@@ -160,7 +160,7 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 
 ---
 
-#### ⚔️ DEATHBLOW
+#### DEATHBLOW
 **Type**: Attack / Execute
 **Priority**: High (when enemy HP < 10)
 
@@ -174,7 +174,7 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 
 ---
 
-#### 💀 SOUL DRAIN
+#### SOUL DRAIN
 **Type**: Attack / Lifesteal
 **Priority**: High
 
@@ -189,7 +189,7 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 
 ---
 
-#### 🛡️ NECROTIC ARMOR
+#### NECROTIC ARMOR
 **Type**: Defense / Aura
 **Priority**: Medium (when Knight HP < 8)
 
@@ -204,7 +204,7 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 
 ---
 
-#### ⚔️ RELENTLESS ADVANCE
+#### RELENTLESS ADVANCE
 **Type**: Attack / Pursuit
 **Priority**: Critical (when enemy fled/retreated last turn)
 
@@ -218,7 +218,7 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 
 ---
 
-#### 💀 DARK HARVEST
+#### DARK HARVEST
 **Type**: Utility / Power
 **Priority**: Low (when Knight has 3+ Soul Counters)
 
@@ -226,10 +226,10 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 - Do not move
 - Consume all Soul Counters (3+ required)
 - For each counter consumed, choose one:
-  - Heal 3 HP
-  - Deal 4 damage to nearest enemy
-  - Grant +2 Defense to self until end of round
-  - Remove 1 Decay counter from Casket (cleanse corruption)
+ - Heal 3 HP
+ - Deal 4 damage to nearest enemy
+ - Grant +2 Defense to self until end of round
+ - Remove 1 Decay counter from Casket (cleanse corruption)
 
 **Flavor**: "Feast on the souls of the fallen."
 
@@ -265,7 +265,7 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 
 ---
 
-## 3. FLESHCRAFTER ⭐ STARTER UNIT
+## 3. FLESHCRAFTER STARTER UNIT
 **Category**: Support (Healer/Debuffer)
 **HP**: 8 | **Movement**: 2 | **Defense**: 1
 **Equipment Slots**: 2
@@ -292,7 +292,7 @@ A hunched figure in blood-stained surgical robes, dragging a cart of body parts 
 
 ---
 
-#### 🧪 PLAGUE CLOUD
+#### PLAGUE CLOUD
 **Type**: Debuff / Area
 **Priority**: High (when 2+ enemies within 3 hexes)
 
@@ -300,9 +300,9 @@ A hunched figure in blood-stained surgical robes, dragging a cart of body parts 
 - Do not move
 - Release cloud of toxic vapors
 - All enemies within 3 hexes:
-  - Take 2 damage per turn for 2 turns (poison)
-  - Have -1 Defense (weakened)
-  - Movement costs +1 SP (sluggish)
+ - Take 2 damage per turn for 2 turns (poison)
+ - Have -1 Defense (weakened)
+ - Movement costs +1 SP (sluggish)
 - Cloud lingers (3-hex area becomes hazard terrain for 2 turns)
 
 **Flavor**: *Noxious green fog billows from vials*
@@ -316,16 +316,16 @@ A hunched figure in blood-stained surgical robes, dragging a cart of body parts 
 **Effect**:
 - Move toward nearest corpse marker
 - If adjacent, harvest useful parts:
-  - Gain 3 Essence tokens (raw materials)
-  - Recover 2 HP (grisly sustenance)
-  - Remove corpse marker (fully harvested)
+ - Gain 3 Essence tokens (raw materials)
+ - Recover 2 HP (grisly sustenance)
+ - Remove corpse marker (fully harvested)
 - Fleshcrafter can carry up to 5 Essence tokens
 
 **Flavor**: "Waste not. The dead have much to offer."
 
 ---
 
-#### 🧪 INJECT BLIGHT
+#### INJECT BLIGHT
 **Type**: Attack / Debuff
 **Priority**: Medium (when enemy within 4 hexes)
 
@@ -348,26 +348,26 @@ A hunched figure in blood-stained surgical robes, dragging a cart of body parts 
 - Do not move
 - Spend 5 Essence tokens
 - Create 1 Flesh Abomination (new unit):
-  - HP: 6 | Movement: 3 | Defense: 0
-  - Attacks for 4 damage (melee)
-  - Lasts until destroyed or end of battle
-  - Acts immediately after Fleshcrafter
-  - Follows simple AI: "Move toward and attack nearest enemy"
+ - HP: 6 | Movement: 3 | Defense: 0
+ - Attacks for 4 damage (melee)
+ - Lasts until destroyed or end of battle
+ - Acts immediately after Fleshcrafter
+ - Follows simple AI: "Move toward and attack nearest enemy"
 
 **Flavor**: "LIVE! In the name of the Ossuarium, LIVE!"
 
 ---
 
-#### 🧪 PRESERVATIVE MIST
+#### PRESERVATIVE MIST
 **Type**: Support / Protection
 **Priority**: Low (when no enemies within 4 hexes)
 
 **Effect**:
 - Spray preservative chemicals on nearby allies
 - All allies within 2 hexes:
-  - Gain +2 Defense until end of round
-  - Immune to Decay/Blight/Poison (preserved)
-  - Recover 1 HP per turn for 2 turns
+ - Gain +2 Defense until end of round
+ - Immune to Decay/Blight/Poison (preserved)
+ - Recover 1 HP per turn for 2 turns
 - Fleshcrafter gains 1 Essence token (recycled chemicals)
 
 **Flavor**: "This will keep you fresh."
@@ -418,23 +418,23 @@ A grotesque giant standing 18 feet tall, constructed from hundreds of bones boun
 
 ---
 
-#### 🦴 CRUSHING GRASP
+#### CRUSHING GRASP
 **Type**: Attack / Control
 **Priority**: High
 
 **Effect**:
 - Move toward nearest enemy (up to 2 hexes)
 - If adjacent, grab with two arms and crush:
-  - Deal 8 damage, ignore 2 Defense
-  - Target is Grappled (cannot move until they escape)
-  - Colossus can drag target 1 hex next turn while grappling
+ - Deal 8 damage, ignore 2 Defense
+ - Target is Grappled (cannot move until they escape)
+ - Colossus can drag target 1 hex next turn while grappling
 - To escape: Target must spend 3 SP or deal 8 damage to Colossus
 
 **Flavor**: *Four arms seize and squeeze. Bones crack.*
 
 ---
 
-#### 🦴 BONE STORM
+#### BONE STORM
 **Type**: Attack / Area
 **Priority**: High (when 2+ enemies within 3 hexes)
 
@@ -449,7 +449,7 @@ A grotesque giant standing 18 feet tall, constructed from hundreds of bones boun
 
 ---
 
-#### 🦴 REGENERATE
+#### REGENERATE
 **Type**: Utility / Healing
 **Priority**: Critical (when Colossus HP < 10)
 
@@ -464,7 +464,7 @@ A grotesque giant standing 18 feet tall, constructed from hundreds of bones boun
 
 ---
 
-#### 🦴 GROUND SLAM
+#### GROUND SLAM
 **Type**: Attack / AoE
 **Priority**: Medium
 
@@ -479,16 +479,16 @@ A grotesque giant standing 18 feet tall, constructed from hundreds of bones boun
 
 ---
 
-#### 🦴 BONE HARVEST
+#### BONE HARVEST
 **Type**: Utility / Power
 **Priority**: Low (when Colossus at full HP AND corpse markers nearby)
 
 **Effect**:
 - Absorb all corpse markers within 4 hexes
 - For each corpse absorbed (max 3):
-  - Gain 1 Bone Layer (+1 Defense, stacks)
-  - Gain +2 max HP this battle
-  - Grow larger (intimidation, enemies within 3 hexes have -1 to attacks)
+ - Gain 1 Bone Layer (+1 Defense, stacks)
+ - Gain +2 max HP this battle
+ - Grow larger (intimidation, enemies within 3 hexes have -1 to attacks)
 
 **Flavor**: *The colossus grows. And grows. And grows.*
 
@@ -560,9 +560,9 @@ A floating obsidian obelisk, 8 feet tall, covered in glowing death runes. Inside
 - Phylactery does not move
 - Extend spectral tether to weakest ally within 5 hexes
 - That ally:
-  - Recovers 4 HP per turn while tethered
-  - Gains +2 Defense while tethered
-  - Cannot be permanently destroyed (see Resurrection below)
+ - Recovers 4 HP per turn while tethered
+ - Gains +2 Defense while tethered
+ - Cannot be permanently destroyed (see Resurrection below)
 - Tether lasts until ally is at full HP or moves out of range
 
 **Flavor**: *Green chain binds you to unlife*
@@ -640,7 +640,7 @@ A towering skeletal figure in tattered black robes that flow impossibly in still
 
 ---
 
-#### 💀 REAP
+#### REAP
 **Type**: Attack / Execute
 **Priority**: High
 
@@ -657,23 +657,23 @@ A towering skeletal figure in tattered black robes that flow impossibly in still
 
 ---
 
-#### 💀 WINGS OF DESPAIR
+#### WINGS OF DESPAIR
 **Type**: Movement / Debuff
 **Priority**: Medium
 
 **Effect**:
 - Herald flies up to 5 hexes (ignores terrain, enemies, obstacles)
 - All enemies within 3 hexes of flight path:
-  - Take 3 damage (spectral wings slash)
-  - Lose 1 SP (sapped by despair)
-  - Have -2 to next attack (demoralized)
+ - Take 3 damage (spectral wings slash)
+ - Lose 1 SP (sapped by despair)
+ - Have -2 to next attack (demoralized)
 - Herald lands and gains +2 Defense until next turn
 
 **Flavor**: *Shadow wings spread. Hope dies.*
 
 ---
 
-#### 💀 DEATH'S EMBRACE
+#### DEATH'S EMBRACE
 **Type**: Attack / Control
 **Priority**: High (when Herald has 3+ Soul Tokens)
 
@@ -688,19 +688,19 @@ A towering skeletal figure in tattered black robes that flow impossibly in still
 
 ---
 
-#### 💀 FINAL HARVEST
+#### FINAL HARVEST
 **Type**: Ultimate / Apocalypse
 **Priority**: Special (only usable once per battle when Herald HP < 8)
 
 **Effect**:
 - Herald raises scythe and channels death itself
 - All enemies on battlefield:
-  - Take 8 damage (unblockable)
-  - Gain 5 Decay counters
-  - Must discard 2 random cards from hand
+ - Take 8 damage (unblockable)
+ - Gain 5 Decay counters
+ - Must discard 2 random cards from hand
 - All allies on battlefield:
-  - Fully healed
-  - Gain +3 damage until end of battle
+ - Fully healed
+ - Gain +3 damage until end of battle
 - Herald takes 8 damage (massive strain)
 - This card is removed from deck after use
 

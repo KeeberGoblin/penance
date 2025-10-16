@@ -29,7 +29,7 @@ You have an **excellent foundation** with strong thematic cohesion and innovativ
 
 ## Critical Decisions You Must Make (Before Playtesting)
 
-### 1. Turn Structure: Card-Based vs SP-Based ⚠️ CRITICAL
+### 1. Turn Structure: Card-Based vs SP-Based ⚠ CRITICAL
 
 **The Problem**: Your current docs are inconsistent.
 
@@ -39,7 +39,7 @@ You have an **excellent foundation** with strong thematic cohesion and innovativ
 - Multiple rounds until game ends or someone passes
 - SP is a "budget" limiting how many cards you can play across multiple turns
 
-**Option B: SP-Based (Deck-builder style)** ⭐ RECOMMENDED
+**Option B: SP-Based (Deck-builder style)** RECOMMENDED
 - Each player gets 1 turn per round
 - On your turn, play cards spending SP until you're out or choose to stop
 - Allows combos, chaining, strategic sequencing
@@ -53,7 +53,7 @@ You have an **excellent foundation** with strong thematic cohesion and innovativ
 
 ---
 
-### 2. Combat Resolution: Auto-Hit vs Dice Rolls ⚠️ CRITICAL
+### 2. Combat Resolution: Auto-Hit vs Dice Rolls ⚠ CRITICAL
 
 **The Problem**: Attack resolution isn't defined.
 
@@ -61,7 +61,7 @@ You have an **excellent foundation** with strong thematic cohesion and innovativ
 ```
 MELEE ATTACKS: Auto-hit (adjacent = hard to miss)
 RANGED ATTACKS: Roll 1d6, 4+ to hit
-  - Modifiers: Long range -1, Cover -1, Rear attack +1
+ - Modifiers: Long range -1, Cover -1, Rear attack +1
 MAGIC SPELLS: Auto-hit (magic seeks target)
 ```
 
@@ -74,7 +74,7 @@ MAGIC SPELLS: Auto-hit (magic seeks target)
 
 ---
 
-### 3. Deck Size: Fixed or Variable? ⚠️ HIGH PRIORITY
+### 3. Deck Size: Fixed or Variable? ⚠ HIGH PRIORITY
 
 **The Problem**: "Scout: 20-25 cards" - is that player choice or equipment variance?
 
@@ -101,23 +101,23 @@ Final Deck Size: 20 + 9 = 29 cards
 
 ---
 
-### 4. Campaign Progression: Gear Only or Pilot XP? ⚠️ MEDIUM PRIORITY
+### 4. Campaign Progression: Gear Only or Pilot XP? ⚠ MEDIUM PRIORITY
 
 **Recommendation**: **Hybrid (Gear + Scars)**
 
 **Workshop System** (Gear Progression):
 - Earn Credits per mission (100 primary, 50 secondary, 25 hidden agenda)
 - Spend Credits at Workshop:
-  - New equipment: 100-500 Credits
-  - Repairs: 50/150/500 Credits (minor/major/full)
-  - Soulstone purification: 200 Credits per Taint removed
+ - New equipment: 100-500 Credits
+ - Repairs: 50/150/500 Credits (minor/major/full)
+ - Soulstone purification: 200 Credits per Taint removed
 
 **Pilot Scars System** (Character Progression):
 - Earn 1 Scar every 3 missions completed
 - Scars are permanent traits (good, bad, or mixed)
-  - **Veteran's Instinct**: +1 hand size
-  - **Shattered Leg**: -1 movement permanently
-  - **Voidtouched**: +1 SP Safe Zone, start missions at 1 Taint
+ - **Veteran's Instinct**: +1 hand size
+ - **Shattered Leg**: -1 movement permanently
+ - **Voidtouched**: +1 SP Safe Zone, start missions at 1 Taint
 - Max 5 Scars per pilot (retire or die after that)
 
 **Why**: Gear provides power curve, Scars tell emergent stories.
@@ -160,56 +160,56 @@ Final Deck Size: 20 + 9 = 29 cards
 
 ### **THIS WEEK** (Critical Path to Playtest)
 
-1. **Decide and document turn structure** ⚠️ CRITICAL
-   - Recommendation: SP-based turns
-   - Write 1-page "Turn Structure" section for CoreDesign.md
+1. **Decide and document turn structure** ⚠ CRITICAL
+ - Recommendation: SP-based turns
+ - Write 1-page "Turn Structure" section for CoreDesign.md
 
-2. **Write combat resolution rules** ⚠️ CRITICAL
-   - Hit rolls (melee auto, ranged 4+, magic auto)
-   - Defense = damage reduction
-   - Step-by-step flowchart
-   - Add to CoreDesign.md (2-3 pages)
+2. **Write combat resolution rules** ⚠ CRITICAL
+ - Hit rolls (melee auto, ranged 4+, magic auto)
+ - Defense = damage reduction
+ - Step-by-step flowchart
+ - Add to CoreDesign.md (2-3 pages)
 
-3. **Create deck construction rules** ⚠️ CRITICAL
-   - Fixed base + equipment variance
-   - Max 2 copies per card
-   - Template for each weight class
-   - New doc: `deck-construction.md`
+3. **Create deck construction rules** ⚠ CRITICAL
+ - Fixed base + equipment variance
+ - Max 2 copies per card
+ - Template for each weight class
+ - New doc: `deck-construction.md`
 
-4. **Design 5 starter weapons** ⚠️ HIGH PRIORITY
-   - Longsword (4 cards), Greatsword (5 cards), Bow (4 cards), Shield (3 cards), Hammer (4 cards)
-   - Full card stats (SP cost, initiative, damage, heat, range)
-   - Add to Equipment Catalog doc (start it)
+4. **Design 5 starter weapons** ⚠ HIGH PRIORITY
+ - Longsword (4 cards), Greatsword (5 cards), Bow (4 cards), Shield (3 cards), Hammer (4 cards)
+ - Full card stats (SP cost, initiative, damage, heat, range)
+ - Add to Equipment Catalog doc (start it)
 
-5. **Create 1 Arena scenario** ⚠️ HIGH PRIORITY
-   - 7x7 hex map layout
-   - 2-3 terrain features (ruins, water hex, elevation)
-   - Deployment zones marked
-   - Victory: First to 10 VP or last standing
-   - New doc: `arena-scenarios.md`
+5. **Create 1 Arena scenario** ⚠ HIGH PRIORITY
+ - 7x7 hex map layout
+ - 2-3 terrain features (ruins, water hex, elevation)
+ - Deployment zones marked
+ - Victory: First to 10 VP or last standing
+ - New doc: `arena-scenarios.md`
 
 ### **NEXT WEEK** (Playtest Prep)
 
-6. **Write example of play** ⚠️ HIGH PRIORITY
-   - Full combat example (2-3 turns)
-   - Show deck, hand, board state, decisions
-   - Walk through damage resolution and card cycling
-   - Add to CoreDesign.md or separate `example-play.md`
+6. **Write example of play** ⚠ HIGH PRIORITY
+ - Full combat example (2-3 turns)
+ - Show deck, hand, board state, decisions
+ - Walk through damage resolution and card cycling
+ - Add to CoreDesign.md or separate `example-play.md`
 
-7. **Create quick reference sheet** ⚠️ MEDIUM PRIORITY
-   - 1-page combat flowchart
-   - SP costs (movement, attacks, utilities)
-   - Heat thresholds, Taint track
-   - Printable PDF
+7. **Create quick reference sheet** ⚠ MEDIUM PRIORITY
+ - 1-page combat flowchart
+ - SP costs (movement, attacks, utilities)
+ - Heat thresholds, Taint track
+ - Printable PDF
 
-8. **First playtest** ⚠️ CRITICAL
-   - You + 1 friend
-   - Scout vs Heavy, Arena 1v1
-   - Take notes on:
-     - Confusing rules
-     - Pacing (too fast/slow?)
-     - Balance (one side dominate?)
-     - Fun factor (exciting decisions?)
+8. **First playtest** ⚠ CRITICAL
+ - You + 1 friend
+ - Scout vs Heavy, Arena 1v1
+ - Take notes on:
+ - Confusing rules
+ - Pacing (too fast/slow?)
+ - Balance (one side dominate?)
+ - Fun factor (exciting decisions?)
 
 ### **MONTH 1** (Expand & Iterate)
 
@@ -236,8 +236,8 @@ Final Deck Size: 20 + 9 = 29 cards
 **Human Vows: Too Weak**
 - Current: Restrictions too minor for bonuses
 - **Fix**: Steepen penalties
-  - Vow of Wrath: Must attack if able, +1 damage, **-1 Defense**
-  - Vow of Poverty: No Relic Tech, -1 Taint gain, **+1 Heat per turn** (struggling without tech)
+ - Vow of Wrath: Must attack if able, +1 damage, **-1 Defense**
+ - Vow of Poverty: No Relic Tech, -1 Taint gain, **+1 Heat per turn** (struggling without tech)
 
 ### **Heat System** (Too Forgiving)
 
@@ -249,11 +249,11 @@ Final Deck Size: 20 + 9 = 29 cards
 ```
 | Heat | Effects |
 |------|---------|
-| 0-1  | Normal |
-| 2-3  | Strain +1 |
-| 4-5  | Strain +2, -1 Defense, weapons +1 SP |
-| 6-7  | Strain +3, weapons +1 SP, movement -1 hex |
-| 8+   | MELTDOWN: Take 2 Chassis damage OR vent all Heat (skip next turn) |
+| 0-1 | Normal |
+| 2-3 | Strain +1 |
+| 4-5 | Strain +2, -1 Defense, weapons +1 SP |
+| 6-7 | Strain +3, weapons +1 SP, movement -1 hex |
+| 8+ | MELTDOWN: Take 2 Chassis damage OR vent all Heat (skip next turn) |
 ```
 
 Now Heat 6+ is genuinely scary.

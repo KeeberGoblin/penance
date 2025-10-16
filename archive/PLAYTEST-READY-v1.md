@@ -51,25 +51,25 @@ You now have **everything needed** for your first playtest session!
 ### Preparation (15 minutes)
 
 1. **Print Materials**:
-   - [quick-reference.md](docs/quick-reference.md) (1 copy per player)
-   - [universal-cards.md](docs/universal-cards.md) (for card reference)
-   - [equipment-catalog.md](docs/equipment-catalog.md) (for weapon stats)
+ - [quick-reference.md](docs/quick-reference.md) (1 copy per player)
+ - [universal-cards.md](docs/universal-cards.md) (for card reference)
+ - [equipment-catalog.md](docs/equipment-catalog.md) (for weapon stats)
 
 2. **Build Decks**:
-   - Use [deck-construction.md](docs/deck-construction.md) templates
-   - **Recommended starter builds**:
-     - **Scout**: Dual Daggers + Jump Jets + Vents (22 cards)
-     - **Heavy**: Warhammer + Tower Shield + Ablative Plating + Vents + Repair Kit (28 cards)
+ - Use [deck-construction.md](docs/deck-construction.md) templates
+ - **Recommended starter builds**:
+ - **Scout**: Dual Daggers + Jump Jets + Vents (22 cards)
+ - **Heavy**: Warhammer + Tower Shield + Ablative Plating + Vents + Repair Kit (28 cards)
 
 3. **Set Up Board**:
-   - Use [arena-scenarios.md](docs/arena-scenarios.md) "First Blood" scenario
-   - 7x7 hex grid (can use paper, dry-erase grid, or Tabletop Simulator)
-   - Place terrain: Center elevated hex, 4 rubble hexes
+ - Use [arena-scenarios.md](docs/arena-scenarios.md) "First Blood" scenario
+ - 7x7 hex grid (can use paper, dry-erase grid, or Tabletop Simulator)
+ - Place terrain: Center elevated hex, 4 rubble hexes
 
 4. **Prep Tokens**:
-   - Heat tokens (dice, coins, or beads)
-   - Taint tokens (different color)
-   - SP tracker (dial or paper)
+ - Heat tokens (dice, coins, or beads)
+ - Taint tokens (different color)
+ - SP tracker (dial or paper)
 
 ---
 
@@ -334,4 +334,4 @@ When you're ready to share:
 
 ---
 
-**GO PLAYTEST! 🎲⚔️**
+**GO PLAYTEST! **

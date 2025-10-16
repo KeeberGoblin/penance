@@ -34,7 +34,7 @@ Most contradictions identified in the previous `CONTRADICTION-REPORT.md` have be
 
 ## REMAINING CONTRADICTIONS (5 Total - All LOW Severity)
 
-### 1. Codex HTML Navigation Links Still Use "Elven Remnants" ⚠️
+### 1. Codex HTML Navigation Links Still Use "Elven Remnants" ⚠
 
 **Severity**: LOW (Cosmetic, non-blocking)
 
@@ -73,7 +73,7 @@ docs/codex/faction-nomads.html
 
 ---
 
-### 2. Elven Population Number Mismatch (Minor Wording) ⚠️
+### 2. Elven Population Number Mismatch (Minor Wording) ⚠
 
 **Severity**: LOW (Essentially consistent, just rounding)
 
@@ -90,7 +90,7 @@ docs/codex/faction-nomads.html
 
 ---
 
-### 3. "Elven Remnants" in Elven Codex Page Population Field ⚠️
+### 3. "Elven Remnants" in Elven Codex Page Population Field ⚠
 
 **Severity**: LOW (Incorrect terminology, but clear context)
 
@@ -110,7 +110,7 @@ docs/codex/faction-nomads.html
 
 ---
 
-### 4. Cataclysm Count Terminology Variation ⚠️
+### 4. Cataclysm Count Terminology Variation ⚠
 
 **Severity**: LOW (Consistent facts, inconsistent phrasing)
 
@@ -145,7 +145,7 @@ docs/codex/faction-nomads.html
 
 ---
 
-### 5. CLAUDE.md Changelog Incomplete ⚠️
+### 5. CLAUDE.md Changelog Incomplete ⚠
 
 **Severity**: LOW (Documentation meta-issue, non-blocking)
 
@@ -216,7 +216,7 @@ docs/codex/faction-nomads.html
 | 1. Church | Church of Absolution | ✅ Consistent | All files correct |
 | 2. Dwarves | Dwarven Forge-Guilds | ✅ Consistent | All files correct |
 | 3. Undead | The Ossuarium | ✅ Consistent | All files correct |
-| 4. Elves | Elven Verdant Covenant | ⚠️ 5 codex HTML nav links | 95% consistent |
+| 4. Elves | Elven Verdant Covenant | ⚠ 5 codex HTML nav links | 95% consistent |
 | 5. Fae | The Wyrd Conclave | ✅ Consistent | All files correct |
 | 6. Nomads | Nomad Collective | ✅ Consistent | All files correct |
 | 7. Merchants | Merchant Guilds | ✅ Consistent | All files correct |
@@ -388,13 +388,13 @@ docs/codex/faction-nomads.html
 
 **Inconsistent phrasing found**:
 - ✅ Chronicle.md: "third ending we have witnessed" - CORRECT
-- ⚠️ Cosmology.md: "happened three times before" - AMBIGUOUS (could mean "before now" = twice, or "three previous times" = four total)
+- ⚠ Cosmology.md: "happened three times before" - AMBIGUOUS (could mean "before now" = twice, or "three previous times" = four total)
 
 **Recommendation**: Change cosmology.md line 331:
 ```markdown
 OLD: "The Cataclysm has happened **three times before**"
 NEW: "The Cataclysm has happened **three times total**"
-OR:  "The Cataclysm has happened **twice before - this is the third**"
+OR: "The Cataclysm has happened **twice before - this is the third**"
 ```
 
 ---
@@ -426,7 +426,7 @@ OR:  "The Cataclysm has happened **twice before - this is the third**"
 grep -r "Bone-Courts\|Undead Court\|Twilight Courts\|Fae Courts\|Elven Remnants" docs/
 
 # 2. Theslar name spelling
-grep -r "Teslar" docs/  # (found 0 - correct spelling used everywhere)
+grep -r "Teslar" docs/ # (found 0 - correct spelling used everywhere)
 
 # 3. Population numbers
 grep -r "200,000\|~200,000\|200000" docs/
@@ -444,7 +444,7 @@ grep -ri "three times\|third ending\|third cataclysm\|fourth ending" docs/
 grep -r "300-400 years\|150-200 years" docs/
 
 # 7. Deck system references
-find docs/factions -name "*deck-complete.md" -type f  # (found 0)
+find docs/factions -name "*deck-complete.md" -type f # (found 0)
 
 # 8. Codex HTML faction names
 grep -n "Elven Remnants" docs/codex/*.html
@@ -486,7 +486,7 @@ All medium contradictions resolved.
 | 1. Deck System Confusion | ✅ RESOLVED | Moved to /archive/, added deprecation notices |
 | 2. "Elven Remnants" in 7 files | ✅ RESOLVED | Fixed in all 7 markdown files |
 | 3. Pilot Physical States | ✅ RESOLVED | Fixed in commit 2b021ab |
-| 4. "Elven Remnants" in HTML codex | ⚠️ 5 files remain | Only design-only faction nav links |
+| 4. "Elven Remnants" in HTML codex | ⚠ 5 files remain | Only design-only faction nav links |
 
 ### New Issues Discovered in This Audit
 
@@ -524,25 +524,25 @@ All medium contradictions resolved.
 ### Immediate Actions (Do This Session)
 
 1. **Fix 5 codex HTML navigation links** (5 minutes)
-   ```bash
-   # In these files:
-   docs/codex/faction-blighted.html
-   docs/codex/faction-chitinous.html
-   docs/codex/faction-fae.html
-   docs/codex/faction-merchants.html
-   docs/codex/faction-nomads.html
+ ```bash
+ # In these files:
+ docs/codex/faction-blighted.html
+ docs/codex/faction-chitinous.html
+ docs/codex/faction-fae.html
+ docs/codex/faction-merchants.html
+ docs/codex/faction-nomads.html
 
-   # Change line 115:
-   # FROM: >Elven Remnants</a>
-   # TO:   >Elven Verdant Covenant</a>
-   ```
+ # Change line 115:
+ # FROM: >Elven Remnants</a>
+ # TO: >Elven Verdant Covenant</a>
+ ```
 
 2. **Clarify cataclysm count** (2 minutes)
-   ```markdown
-   # In docs/lore/cosmology-and-origins.md line 331:
-   # FROM: "The Cataclysm has happened **three times before**"
-   # TO:   "The Cataclysm has happened **three times total** (including current)"
-   ```
+ ```markdown
+ # In docs/lore/cosmology-and-origins.md line 331:
+ # FROM: "The Cataclysm has happened **three times before**"
+ # TO: "The Cataclysm has happened **three times total** (including current)"
+ ```
 
 ### Optional Actions (Future Session)
 

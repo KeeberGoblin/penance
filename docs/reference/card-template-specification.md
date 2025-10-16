@@ -37,28 +37,28 @@
 ### Vertical Layout Distribution
 
 ```
-┌─────────────────────────────────────┐  0px
-│  HEADER BAR (15% height = 158px)    │
-│  - Card Name (left)                 │
-│  - SP Cost Badge (top right)        │
-│  - Faction Icon (top left)          │
-├─────────────────────────────────────┤  158px
-│                                     │
-│                                     │
-│  ARTWORK AREA (60% height = 630px)  │
-│                                     │
-│  - Full bleed to edges              │
-│  - Extends behind text box          │
-│                                     │
-│                                     │
-├─────────────────────────────────────┤  788px
-│  TEXT BOX (25% height = 262px)      │
-│  - Semi-transparent background      │
-│  - Effect text                      │
-│  - Keywords                         │
-│  - Flavor quote                     │
-│  - Corner badges (DMG, RNG, INIT)   │
-└─────────────────────────────────────┘  1050px
+┌─────────────────────────────────────┐ 0px
+│ HEADER BAR (15% height = 158px) │
+│ - Card Name (left) │
+│ - SP Cost Badge (top right) │
+│ - Faction Icon (top left) │
+├─────────────────────────────────────┤ 158px
+│ │
+│ │
+│ ARTWORK AREA (60% height = 630px) │
+│ │
+│ - Full bleed to edges │
+│ - Extends behind text box │
+│ │
+│ │
+├─────────────────────────────────────┤ 788px
+│ TEXT BOX (25% height = 262px) │
+│ - Semi-transparent background │
+│ - Effect text │
+│ - Keywords │
+│ - Flavor quote │
+│ - Corner badges (DMG, RNG, INIT) │
+└─────────────────────────────────────┘ 1050px
 ```
 
 ---
@@ -113,10 +113,10 @@
 - **Size**: 60×60px
 - **Style**: White silhouette icon on transparent background
 - **Icons**:
-  - Church: Gothic cross with crown of thorns
-  - Dwarves: Anvil with hammer
-  - Ossuarium: Skull with vertebrae
-  - Elves: Thornbush leaf with roots
+ - Church: Gothic cross with crown of thorns
+ - Dwarves: Anvil with hammer
+ - Ossuarium: Skull with vertebrae
+ - Elves: Thornbush leaf with roots
 
 ---
 
@@ -168,10 +168,10 @@
 - **Size**: 20px (9pt @ 300 DPI)
 - **Weight**: Bold (700)
 - **Color**: Faction-specific color (lighter shade)
-  - Church: #FF4444 (light crimson)
-  - Dwarves: #FFD700 (bright gold)
-  - Ossuarium: #66CC66 (bright green)
-  - Elves: #44FF44 (bright emerald)
+ - Church: #FF4444 (light crimson)
+ - Dwarves: #FFD700 (bright gold)
+ - Ossuarium: #66CC66 (bright green)
+ - Elves: #44FF44 (bright emerald)
 - **Separator**: " • " (bullet point between keywords)
 - **Max Length**: 60 characters (truncate after)
 
@@ -366,39 +366,39 @@
 ```
 Card_Template_FACTION.psd
 ├── [LAYER GROUP] Header
-│   ├── SP_Cost_Badge (smart object)
-│   ├── Card_Name_Text (editable text)
-│   ├── Faction_Icon (smart object)
-│   └── Header_Gradient (faction-specific)
+│ ├── SP_Cost_Badge (smart object)
+│ ├── Card_Name_Text (editable text)
+│ ├── Faction_Icon (smart object)
+│ └── Header_Gradient (faction-specific)
 │
 ├── [LAYER GROUP] Artwork
-│   ├── Artwork_Main (smart object, linked)
-│   ├── Artwork_Fade_Mask (gradient mask)
-│   └── Artwork_Safe_Guide (non-printing guide)
+│ ├── Artwork_Main (smart object, linked)
+│ ├── Artwork_Fade_Mask (gradient mask)
+│ └── Artwork_Safe_Guide (non-printing guide)
 │
 ├── [LAYER GROUP] Text_Box
-│   ├── Effect_Text (editable text, linked style)
-│   ├── Keywords (editable text, linked style)
-│   ├── Flavor_Quote (editable text, linked style)
-│   ├── Text_Box_Background (40% black)
-│   └── Top_Border (2px faction color)
+│ ├── Effect_Text (editable text, linked style)
+│ ├── Keywords (editable text, linked style)
+│ ├── Flavor_Quote (editable text, linked style)
+│ ├── Text_Box_Background (40% black)
+│ └── Top_Border (2px faction color)
 │
 ├── [LAYER GROUP] Corner_Badges
-│   ├── Damage_Badge (smart object)
-│   ├── Range_Badge (smart object)
-│   └── Initiative_Badge (smart object)
+│ ├── Damage_Badge (smart object)
+│ ├── Range_Badge (smart object)
+│ └── Initiative_Badge (smart object)
 │
 ├── [LAYER GROUP] Frame_Decoration
-│   ├── Top_Left_Corner (faction-specific)
-│   ├── Top_Right_Corner (faction-specific)
-│   ├── Bottom_Left_Corner (faction-specific)
-│   ├── Bottom_Right_Corner (faction-specific)
-│   └── Border_Accent (faction glow/texture)
+│ ├── Top_Left_Corner (faction-specific)
+│ ├── Top_Right_Corner (faction-specific)
+│ ├── Bottom_Left_Corner (faction-specific)
+│ ├── Bottom_Right_Corner (faction-specific)
+│ └── Border_Accent (faction glow/texture)
 │
 └── [LAYER GROUP] Guides_and_Bleed
-    ├── Safe_Zone_Guide (non-printing, 0.25" margin)
-    ├── Bleed_Guide (non-printing, +0.125" extend)
-    └── Base_Card (white background, safety layer)
+ ├── Safe_Zone_Guide (non-printing, 0.25" margin)
+ ├── Bleed_Guide (non-printing, +0.125" extend)
+ └── Base_Card (white background, safety layer)
 ```
 
 ---
@@ -461,25 +461,25 @@ Card_Template_FACTION.psd
 
 ```
 ┌─────────────────────────────────────┐
-│ BLOOD OFFERING             [0 SP]   │ ← Crimson gradient header
-│ ✟ (icon)                            │
+│ BLOOD OFFERING [0 SP] │ ← Crimson gradient header
+│ ✟ (icon) │
 ├─────────────────────────────────────┤
-│ ╔═══════════════════════════════╗   │
-│ ║   [BAROQUE ARTWORK]           ║   │
-│ ║   Priest in Puppeteer         ║   │
-│ ║   Capsule, blood dripping     ║   │
-│ ║   from stigmata wounds,       ║   │
-│ ║   stained glass background    ║   │
-│ ╚═══════════════════════════════╝   │
+│ ╔═══════════════════════════════╗ │
+│ ║ [BAROQUE ARTWORK] ║ │
+│ ║ Priest in Puppeteer ║ │
+│ ║ Capsule, blood dripping ║ │
+│ ║ from stigmata wounds, ║ │
+│ ║ stained glass background ║ │
+│ ╚═══════════════════════════════╝ │
 ├─────────────────────────────────────┤
-│ Discard 2 cards from deck. Your     │ ← 40% black box
-│ next attack this turn: +3 damage,   │    (artwork behind)
-│ ignore 1 Defense.                   │
-│                                     │
-│ GAMBIT • SELF-HARM • BUFF           │ ← Light crimson
-│ "Pain purifies. Blood absolves."    │ ← Gray italic
-│                                     │
-│           [Self] [1]                │ ← Range, Initiative
+│ Discard 2 cards from deck. Your │ ← 40% black box
+│ next attack this turn: +3 damage, │ (artwork behind)
+│ ignore 1 Defense. │
+│ │
+│ GAMBIT • SELF-HARM • BUFF │ ← Light crimson
+│ "Pain purifies. Blood absolves." │ ← Gray italic
+│ │
+│ [Self] [1] │ ← Range, Initiative
 └─────────────────────────────────────┘
 ```
 
@@ -492,25 +492,25 @@ Card_Template_FACTION.psd
 
 ```
 ┌─────────────────────────────────────┐
-│ CRUSHING BLOW              [2 SP]   │ ← Bronze→Gold gradient
-│ ⚒ (icon)                  [+1 Heat] │
+│ CRUSHING BLOW [2 SP] │ ← Bronze→Gold gradient
+│ ⚒ (icon) [+1 Heat] │
 ├─────────────────────────────────────┤
-│ ╔═══════════════════════════════╗   │
-│ ║   [BAROQUE ARTWORK]           ║   │
-│ ║   Dwarven Casket mid-swing,   ║   │
-│ ║   runic warhammer glowing     ║   │
-│ ║   blue-white, sparks flying,  ║   │
-│ ║   forge fires background      ║   │
-│ ╚═══════════════════════════════╝   │
+│ ╔═══════════════════════════════╗ │
+│ ║ [BAROQUE ARTWORK] ║ │
+│ ║ Dwarven Casket mid-swing, ║ │
+│ ║ runic warhammer glowing ║ │
+│ ║ blue-white, sparks flying, ║ │
+│ ║ forge fires background ║ │
+│ ╚═══════════════════════════════╝ │
 ├─────────────────────────────────────┤
-│ Deal 4 damage. ARMOR PIERCING       │
-│ (ignore all armor/defense buffs).   │
-│                                     │
-│                                     │
-│ ATTACK • MELEE • ARMOR-PIERCING     │ ← Bright gold
-│ "Runes flare as hammer strikes."    │ ← Gray italic
-│                                     │
-│ [4 DMG]      [Melee] [2]            │ ← Badges
+│ Deal 4 damage. ARMOR PIERCING │
+│ (ignore all armor/defense buffs). │
+│ │
+│ │
+│ ATTACK • MELEE • ARMOR-PIERCING │ ← Bright gold
+│ "Runes flare as hammer strikes." │ ← Gray italic
+│ │
+│ [4 DMG] [Melee] [2] │ ← Badges
 └─────────────────────────────────────┘
 ```
 
@@ -523,26 +523,26 @@ Card_Template_FACTION.psd
 
 ```
 ┌─────────────────────────────────────┐
-│ SOUL HARVEST               [3 SP]   │ ← Black→Green gradient
-│ ☠ (icon)                            │
+│ SOUL HARVEST [3 SP] │ ← Black→Green gradient
+│ (icon) │
 ├─────────────────────────────────────┤
-│ ╔═══════════════════════════════╗   │
-│ ║   [BAROQUE ARTWORK]           ║   │
-│ ║   Bone Scythe mid-reap,       ║   │
-│ ║   green ethereal souls        ║   │
-│ ║   flowing from enemy into     ║   │
-│ ║   skeletal pilot, necrotic    ║   │
-│ ║   glow illuminating darkness  ║   │
-│ ╚═══════════════════════════════╝   │
+│ ╔═══════════════════════════════╗ │
+│ ║ [BAROQUE ARTWORK] ║ │
+│ ║ Bone Scythe mid-reap, ║ │
+│ ║ green ethereal souls ║ │
+│ ║ flowing from enemy into ║ │
+│ ║ skeletal pilot, necrotic ║ │
+│ ║ glow illuminating darkness ║ │
+│ ╚═══════════════════════════════╝ │
 ├─────────────────────────────────────┤
-│ Deal 4 damage. Recover cards equal  │
-│ to damage dealt from discard pile   │
-│ (max 4 cards).                      │
-│                                     │
-│ ATTACK • LIFESTEAL • VAMPIRIC       │ ← Bright green
-│ "Their life becomes yours."         │ ← Gray italic
-│                                     │
-│ [4 DMG]      [Melee] [3]            │
+│ Deal 4 damage. Recover cards equal │
+│ to damage dealt from discard pile │
+│ (max 4 cards). │
+│ │
+│ ATTACK • LIFESTEAL • VAMPIRIC │ ← Bright green
+│ "Their life becomes yours." │ ← Gray italic
+│ │
+│ [4 DMG] [Melee] [3] │
 └─────────────────────────────────────┘
 ```
 
@@ -555,26 +555,26 @@ Card_Template_FACTION.psd
 
 ```
 ┌─────────────────────────────────────┐
-│ LEAF DANCE                 [3 SP]   │ ← Forest→Emerald gradient
-│ 🌿 (icon)                           │
+│ LEAF DANCE [3 SP] │ ← Forest→Emerald gradient
+│ (icon) │
 ├─────────────────────────────────────┤
-│ ╔═══════════════════════════════╗   │
-│ ║   [BAROQUE ARTWORK]           ║   │
-│ ║   Elven Casket mid-leap,      ║   │
-│ ║   amber-preserved pilot       ║   │
-│ ║   visible, thorn blades       ║   │
-│ ║   trailing green energy,      ║   │
-│ ║   leaves swirling around      ║   │
-│ ╚═══════════════════════════════╝   │
+│ ╔═══════════════════════════════╗ │
+│ ║ [BAROQUE ARTWORK] ║ │
+│ ║ Elven Casket mid-leap, ║ │
+│ ║ amber-preserved pilot ║ │
+│ ║ visible, thorn blades ║ │
+│ ║ trailing green energy, ║ │
+│ ║ leaves swirling around ║ │
+│ ╚═══════════════════════════════╝ │
 ├─────────────────────────────────────┤
-│ Move up to 3 hexes. You may make    │
-│ 1 attack during movement. After     │
-│ attacking, continue moving.         │
-│                                     │
-│ MOVEMENT • ATTACK • HIT-AND-RUN     │ ← Bright emerald
-│ "Strike where weak. Vanish fast."   │ ← Gray italic
-│                                     │
-│            [Self] [3]               │
+│ Move up to 3 hexes. You may make │
+│ 1 attack during movement. After │
+│ attacking, continue moving. │
+│ │
+│ MOVEMENT • ATTACK • HIT-AND-RUN │ ← Bright emerald
+│ "Strike where weak. Vanish fast." │ ← Gray italic
+│ │
+│ [Self] [3] │
 └─────────────────────────────────────┘
 ```
 

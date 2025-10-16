@@ -9,7 +9,7 @@ Ready-to-play scenarios for testing Penance combat mechanics.
 **Map**: 12×12 hexes with elevation
 **Victory**: Reduce opponent to 0 HP
 **Time**: 45-60 minutes
-**Difficulty**: ⭐ Beginner-friendly
+**Difficulty**: Beginner-friendly
 **Teaches**: SP economy, Heat management, component damage, facing modifiers
 
 ### [Scenario #2: Reliquary Ruins](02-reliquary-ruins.md)
@@ -17,7 +17,7 @@ Ready-to-play scenarios for testing Penance combat mechanics.
 **Map**: 14×12 hexes with 5 Reliquaries
 **Victory**: Control 6+ points OR reduce opponent to 0 HP
 **Time**: 60-75 minutes
-**Difficulty**: ⭐⭐ Intermediate
+**Difficulty**: Intermediate
 **Teaches**: Map control, objective prioritization, high-ground advantage, contesting mechanics
 
 ---
@@ -29,7 +29,7 @@ Ready-to-play scenarios for testing Penance combat mechanics.
 **Map**: 16×10 hexes with road
 **Victory**: Escort caravan to exit (Defender) OR destroy caravan (Attacker)
 **Time**: 60-75 minutes
-**Difficulty**: ⭐⭐⭐ Advanced
+**Difficulty**: Advanced
 **Teaches**: Asymmetric objectives, protecting weak units, tempo control, blocking mechanics
 
 ### [Scenario #4: King of the Hill](04-king-of-the-hill.md)
@@ -37,7 +37,7 @@ Ready-to-play scenarios for testing Penance combat mechanics.
 **Map**: 14×14 hexes with central Soulstone Spire
 **Victory**: Hold the Spire for 3 consecutive turns OR eliminate all opponents
 **Time**: 75-90 minutes
-**Difficulty**: ⭐⭐⭐ Advanced
+**Difficulty**: Advanced
 **Teaches**: Area control, risk/reward decisions, managing debuffs, multi-player tactics
 
 ### [Scenario #5: Sabotage Mission](05-sabotage-mission.md)
@@ -45,7 +45,7 @@ Ready-to-play scenarios for testing Penance combat mechanics.
 **Map**: 14×14 hexes reactor facility
 **Victory**: Destroy 3 Reactors and escape (Saboteur) OR stop Saboteur for 10 turns (Defender)
 **Time**: 45-60 minutes
-**Difficulty**: ⭐⭐⭐⭐ Expert
+**Difficulty**: Expert
 **Teaches**: Hidden movement, stealth mechanics, asymmetric information, bluffing, area denial
 
 ---
@@ -65,7 +65,7 @@ Ready-to-play scenarios for testing Penance combat mechanics.
 
 ### [Boss: The Iron Saint](boss-iron-saint.md)
 Solo/co-op boss fight against a towering Church Casket piloted by a martyred cardinal.
-**Difficulty**: ⭐⭐⭐⭐ Advanced
+**Difficulty**: Advanced
 **Players**: 1-2
 **Special**: HP Deck system, phase transitions, enrage mechanics
 

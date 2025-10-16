@@ -36,8 +36,8 @@
 
 **Design Notes**:
 - Give player control over Defense Dice RNG
-- Can reroll 💀 CRITICAL to avoid Component Damage
-- Can reroll 🩸 FLESH WOUND hoping for 🛡️ SHIELD
+- Can reroll CRITICAL to avoid Component Damage
+- Can reroll FLESH WOUND hoping for SHIELD
 - Limited to 1 card in deck = rare clutch save
 
 **Flavor**: *"Fortune favors the prepared—and the desperate."*
@@ -121,7 +121,7 @@
 
 **Design Notes**:
 - Simple reroll mechanic
-- Can turn ⚙️ JAM (0) into 💀 DEATH BLOW (5)
+- Can turn JAM (0) into DEATH BLOW (5)
 - Low SP cost for common use
 
 **Flavor**: *"Failure is not an option when faith burns bright."*
@@ -267,7 +267,7 @@
 **Type**: Defense Enhancement
 **Cost**: 1 SP
 **Range**: Self
-**Effect**: Until your next turn, all 💀 CRITICAL symbols on Defense Dice become 🛡️ SHIELD symbols instead
+**Effect**: Until your next turn, all CRITICAL symbols on Defense Dice become SHIELD symbols instead
 **Quantity**: ×1
 
 **Design Notes**:
@@ -370,7 +370,7 @@
 #### 4. SOUL HARVEST (REVISED)
 **Type**: Passive Enhancement
 **Cost**: Passive (always active)
-**Effect**: Whenever you deal damage with an attack, recover 1 card from discard pile per **Attack Die showing 💀 DEATH BLOW** (even if attack misses).
+**Effect**: Whenever you deal damage with an attack, recover 1 card from discard pile per **Attack Die showing DEATH BLOW** (even if attack misses).
 **Quantity**: ×1 (Passive card)
 
 **Design Notes**:
@@ -410,7 +410,7 @@
 **Type**: Defense (Reactive)
 **Cost**: 1 SP, Reactive
 **Range**: Self
-**Effect**: When you would roll Defense Dice, **reroll all dice showing 💀 CRITICAL**. If any rerolls show 💀 again, gain 1 Decay card but prevent all Component Damage this attack.
+**Effect**: When you would roll Defense Dice, **reroll all dice showing CRITICAL**. If any rerolls show again, gain 1 Decay card but prevent all Component Damage this attack.
 **Quantity**: ×1
 
 **Design Notes**:
@@ -426,7 +426,7 @@
 **Type**: Defense Enhancement
 **Cost**: 2 SP
 **Range**: Self
-**Effect**: Until your next turn, convert all 🩸 FLESH WOUND symbols to 🛡️ SHIELD symbols on Defense Dice. If you take 0 damage this turn, gain 1 Decay card but draw 2 cards.
+**Effect**: Until your next turn, convert all FLESH WOUND symbols to SHIELD symbols on Defense Dice. If you take 0 damage this turn, gain 1 Decay card but draw 2 cards.
 **Quantity**: ×1
 
 **Design Notes**:
@@ -594,7 +594,7 @@
 **Type**: Defense (Reactive)
 **Cost**: 0 SP, Reactive
 **Range**: Self
-**Effect**: Reduce incoming damage by 2 AND **reroll up to 2 Defense Dice showing 💀 CRITICAL**
+**Effect**: Reduce incoming damage by 2 AND **reroll up to 2 Defense Dice showing CRITICAL**
 **Quantity**: ×2
 
 **Design Notes**:
