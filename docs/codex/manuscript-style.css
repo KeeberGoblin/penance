@@ -38,19 +38,24 @@ body {
     font-family: 'Libre Baskerville', 'Crimson Pro', Georgia, serif;
     background-color: var(--parchment-dark);
     background-image:
-        /* Subtle parchment-like fiber texture */
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 2px,
-            rgba(212, 197, 176, 0.015) 2px,
-            rgba(212, 197, 176, 0.015) 4px
-        ),
+        /* Horizontal paper grain lines (like the parchment headers) */
         repeating-linear-gradient(
             0deg,
             transparent,
+            transparent 1px,
+            rgba(212, 197, 176, 0.04) 1px,
+            rgba(212, 197, 176, 0.04) 2px,
             transparent 2px,
-            rgba(212, 197, 176, 0.015) 2px,
+            transparent 4px,
+            rgba(212, 197, 176, 0.025) 4px,
+            rgba(212, 197, 176, 0.025) 5px
+        ),
+        /* Subtle vertical fibers (less prominent) */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 3px,
+            rgba(212, 197, 176, 0.015) 3px,
             rgba(212, 197, 176, 0.015) 4px
         ),
         /* Organic variation spots */
