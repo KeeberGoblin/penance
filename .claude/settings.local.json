@@ -32,7 +32,11 @@
       "Bash(mv:*)",
       "Bash(mkdir:*)",
       "Bash(if [ -f \"$file\" ])",
-      "Bash(else)"
+      "Bash(else)",
+      "Bash(dir:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd comprehensive codex pages for 4 renamed factions\n\nCreated full HTML codex pages matching manuscript theme for:\n- The Soulstone Exchange (was Merchant Guild) - Gold theme, economic warfare\n- Vestige Bloodlines (was Blighted Pack) - Brown/olive theme, 5 bloodline variants\n- Emergent Syndicate (was Chitinous Ascendancy) - Green/teal theme, hive-mind\n- Crucible Packs (new faction) - Ash/fire theme, volcanic honor duelist\n\nEach page includes:\n- Complete faction overview & lore\n- Core mechanics & faction cards\n- Notable NPCs & leaders\n- Faction relations table\n- 3 recommended builds with strategies\n- Strategy notes (early/mid/late game)\n- Development history\n- Custom color schemes matching faction themes\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

@@ -47,9 +47,10 @@ How faction-specific Tactics cards work. Choose 2 from 5 per faction.
 
 - **The Wyrd Conclave**: Reality distortion, stolen faces, incomprehensible logic
 - **Nomad Collective**: Survival through mobility, reality fracture prediction
-- **Merchant Guilds**: War profiteering, economic control, selling to all sides
-- **Blighted Packs**: Chimeric mutations, pack tactics, weaponized transformation
-- **Chitinous Ascendancy**: Hive-mind arthropod fusion, post-human evolution
+- **The Soulstone Exchange**: War profiteering, economic control, dual governance system
+- **Vestige Bloodlines**: Five bloodline variants, extinction clock, generational degradation
+- **Emergent Syndicate**: Hive-mind collective, chosen evolution, metamorph transformations
+- **Crucible Packs**: Volcanic fire worship, honor duels, ancestral iron weapons
 
 ---
 
