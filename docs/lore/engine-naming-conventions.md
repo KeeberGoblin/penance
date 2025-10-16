@@ -102,7 +102,7 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
 
 ---
 
-### Merchant Guilds
+### The Soulstone Exchange (formerly Merchant Guilds)
 **"The Collapse"** or "The Theslar Recession"
 - Economic language
 - Focus on societal breakdown and market destruction
@@ -112,12 +112,12 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
   - "The Great Bankruptcy"
   - "The Market Death"
 
-**In Guild Ledgers**:
+**In Exchange Ledgers**:
 > "Year 0: Total economic collapse. All trade routes severed. Currency obsolete. Estimated loss: everything. Cause: Theslar prototype resonance device. Status: asset recovery ongoing for 437 years."
 
 ---
 
-### Blighted Packs
+### Vestige Bloodlines (formerly Blighted Packs)
 **"The Mutation Dawn"** or "The Change"
 - Biological transformation framing
 - See it as the source of their power
@@ -127,12 +127,12 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
   - "The Awakening Flesh"
   - "The First Shift"
 
-**In Blighted Howls**:
+**In Bloodline Songs**:
 > "Theslar cracked the world, and we crawled from the wound. His Engine broke the chains of form. Flesh became fluid. Bone became choice. We are not cursed—we are free."
 
 ---
 
-### Chitinous Ascendancy
+### Emergent Syndicate (formerly Chitinous Ascendancy)
 **"The Emergence"** or "The Hive-Birth"
 - Collective consciousness perspective
 - See it as their species' awakening
@@ -142,7 +142,7 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
   - "The First Thought" (when the hive-mind formed)
   - "The Shell-Breaking"
 
-**In Hive-Song**:
+**In Syndicate Hive-Song**:
 > "[Harmonic clicking] Theslar-thought-human built frequency-machine-tool. Frequency-machine-tool sang song-of-awakening. Chitinous-many became Chitinous-one. This-collective thanks dead-Theslar-thought. He gave us we."
 
 ---

@@ -461,7 +461,7 @@ Where X = total cards from equipped items
 #### MUTATION SIGIL (Horde Only)
 **Card Count**: 3 cards
 **Crafting Cost**: 5 Scrap
-**Faction**: Chitinous Horde only
+**Faction**: Emergent Syndicate only
 
 **Cards**:
 1. **Adaptive Evolution** (Passive): Each time you take damage, gain +1 damage permanently this mission
@@ -484,7 +484,7 @@ Where X = total cards from equipped items
 #### CONTRACT SIGIL (Merchants Only)
 **Card Count**: 3 cards
 **Crafting Cost**: 5 Scrap
-**Faction**: Merchant Guilds only
+**Faction**: The Soulstone Exchange only
 
 **Cards**:
 1. **Debt Marker** (2 SP, Utility): Mark target enemy, your attacks vs marked target +2 damage

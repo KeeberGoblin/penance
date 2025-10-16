@@ -36,7 +36,8 @@
       "Bash(dir:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nAdd comprehensive codex pages for 4 renamed factions\n\nCreated full HTML codex pages matching manuscript theme for:\n- The Soulstone Exchange (was Merchant Guild) - Gold theme, economic warfare\n- Vestige Bloodlines (was Blighted Pack) - Brown/olive theme, 5 bloodline variants\n- Emergent Syndicate (was Chitinous Ascendancy) - Green/teal theme, hive-mind\n- Crucible Packs (new faction) - Ash/fire theme, volcanic honor duelist\n\nEach page includes:\n- Complete faction overview & lore\n- Core mechanics & faction cards\n- Notable NPCs & leaders\n- Faction relations table\n- 3 recommended builds with strategies\n- Strategy notes (early/mid/late game)\n- Development history\n- Custom color schemes matching faction themes\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nUpdate faction navigation and add redirect notices\n\nUpdates to faction system navigation:\n- Added redirect notices to old placeholder pages (merchants, blighted, chitinous)\n- Updated content-home.html faction table with new names:\n  * Merchant Guilds → The Soulstone Exchange\n  * Blighted Packs → Vestige Bloodlines\n  * Chitinous Ascendancy → Emergent Syndicate\n  * Added Crucible Packs faction row\n- Updated /docs/factions/index.md with correct faction names\n- Changed iframe background to parchment color (#D4C5B0)\n\nAll redirect notices use prominent gradient backgrounds matching faction colors\nand link to new comprehensive faction pages.\n\nGenerated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
