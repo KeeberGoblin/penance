@@ -7,32 +7,72 @@
     <link rel="stylesheet" href="manuscript-style.css">
 </head>
 <body>
-    <div class="content">
-        <div class="breadcrumb">
-            <a href="content-home.html" target="_parent">CODEX</a> /
-            <a href="#factions">FACTIONS</a> /
-            Nomad Collective
+    <!-- Faction Header with Parchment Background -->
+    <div style="background: #D4C5B0; padding: 3rem 2rem 0 2rem; margin: 0; position: relative;">
+        <div style="text-align: center;">
+            <h1 style="color: #000; font-family: 'Cinzel Decorative', serif; font-size: 2rem; margin: 1.5rem 0 0 0; text-shadow: none;">Nomad Collective</h1>
+            <p style="color: #000; font-style: italic; margin-top: 0.5rem;">(Image pending)</p>
         </div>
-<h1>Nomad Collective</h1>
-        <p style="font-style: italic; color: #D2691E; font-size: 1.1rem; text-align: center; margin: 1rem 0;">
+        <!-- Torn Paper Effect -->
+        <div style="height: 30px; background: linear-gradient(to bottom, #D4C5B0 0%, transparent 100%); margin-top: 2rem; position: relative;">
+            <svg style="position: absolute; bottom: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#D4C5B0"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="content">
+        <p style="font-style: italic; color: var(--bone-white); font-size: 1.1rem; text-align: center; margin: 1rem 0;">
             "We move. We adapt. We survive. That is enough."
         </p>
 
         <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #D2691E;">&#10047;</span>
-        </div>
-
-        <div style="background: var(--blood-red); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2.5rem 0;">
-            <h2 style="margin-top: 0;">Design-Only Faction</h2>
-            <p class="manuscript-text" style="margin-bottom: 0;">
-                This faction page is currently under development. Detailed mechanics, lore, and deck information coming soon. For completed faction content, see: <a href="faction-church.html" style="color: var(--bone-white); text-decoration: underline;">Church of Absolution</a>, <a href="faction-dwarves.html" style="color: var(--bone-white); text-decoration: underline;">Dwarven Forge-Guilds</a>, <a href="faction-undead.html" style="color: var(--bone-white); text-decoration: underline;">The Ossuarium</a>, or <a href="faction-elves.html" style="color: var(--bone-white); text-decoration: underline;">Elven Verdant Covenant</a>.
-            </p>
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
         <h2>Faction Overview</h2>
 
+        <table class="manuscript-table">
+            <tr>
+                <th>Ideology</th>
+                <td>Ultra-mobile striker, opportunistic damage, hit-and-run tactics</td>
+            </tr>
+            <tr>
+                <th>Territory</th>
+                <td>No fixed settlements - The Trade Routes (mapped paths through the Wastes)</td>
+            </tr>
+            <tr>
+                <th>Population</th>
+                <td>~15,000 Nomads across dozens of convoys (ever-shifting)</td>
+            </tr>
+            <tr>
+                <th>Doctrine</th>
+                <td>Movement is life. Stillness is death. We endure.</td>
+            </tr>
+            <tr>
+                <th>Playstyle</th>
+                <td>Maximum mobility, salvage economy, opportunistic strikes, tactical retreats</td>
+            </tr>
+            <tr>
+                <th>Frame Type</th>
+                <td>Scout (6 SP per turn) - Fastest faction</td>
+            </tr>
+            <tr>
+                <th>Complete Deck</th>
+                <td><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/factions/nomads/deck-complete-design.md" target="_blank">View Full Nomad Deck</a></td>
+            </tr>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Lore & Identity</h2>
+
         <p class="manuscript-text">
-            No settlements, no territories, no fixed allegiances. The Nomads wander the wastes, taking what they need, trading when advantageous, and vanishing when threatened.
+            No settlements, no territories, no fixed allegiances. The Nomad Collective wanders the Wastes, taking what they need, trading when advantageous, and vanishing when threatened. They are the only faction to survive 437 years without a home—because they never stopped moving.
+        </p>
+
+        <p class="manuscript-text">
+            When the Sundering happened (Year 0), most survivors fortified cities and dug in. They died when Abominations came. A few thousand decided to do the opposite: <strong>never stop moving</strong>. These early Nomads—truck drivers, traders, refugees—scavenged fuel, mapped safe routes, and established "The Code": Never stop moving longer than three days. Share supplies with other convoys. No brands, no chains, no masters.
         </p>
 
         <div class="manuscript-quote">
@@ -40,149 +80,262 @@
             <span class="quote-attribution">—Nomad Philosophy</span>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #D2691E;">&#10047;</span>
-        </div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
         <h2>Core Mechanic: Improvisation</h2>
 
         <p class="manuscript-text">
-            The Nomad Collective thrives on improvisation—salvaging equipment mid-battle, adapting tactics on the fly, and turning scrap into weapons.
+            The Nomad Collective excels at <strong>opportunistic combat</strong> through extreme mobility and adaptive tactics.
         </p>
 
         <ul class="manuscript-list">
-            <li><strong>Salvage Economy:</strong> Loot equipment from destroyed enemies mid-combat for immediate use</li>
-            <li><strong>Movement Mastery:</strong> Extra mobility, terrain advantages, hit-and-run tactics</li>
-            <li><strong>Improvised Weapons:</strong> Random powerful effects, unpredictable but devastating</li>
-            <li><strong>Scout Networks:</strong> Superior vision, surprise attacks, guerrilla warfare</li>
+            <li><strong>Movement Mastery:</strong> 60% of cards involve movement or repositioning - highest in game</li>
+            <li><strong>Free Actions:</strong> Ghost Step (0 SP reactive movement after attacks) - unique to Nomads</li>
+            <li><strong>Conditional Damage:</strong> Opportunist (+2 damage vs enemies who moved), Vulture's Eye (6 damage to weakened targets)</li>
+            <li><strong>Resource Cycling:</strong> Scavenger's Cunning, Winds of Change (deck shuffle/card draw)</li>
+            <li><strong>Salvage Economy:</strong> Scrapper (draw 2 cards + recover 2 when enemy dies)</li>
+            <li><strong>Late-Game Scaling:</strong> Survivor's Instinct (gain +1 SP when deck ≤15 cards = 7 SP turns!)</li>
         </ul>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #D2691E;">&#10047;</span>
-        </div>
-
-        <h2>Playstyle (Conceptual)</h2>
 
         <p class="manuscript-text">
-            <em>Mobile survivor gameplay. Constant movement. Mid-battle salvage. Unpredictable improvised tactics. High skill ceiling, rewards creativity and adaptability.</em>
+            Nomad strategy is simple: strike when enemies are vulnerable, reposition constantly, never stay pinned down. Ghost Step (free movement after attacks) allows Nomads to attack and escape without spending SP—unmatched tactical flexibility.
         </p>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #D2691E;">&#10047;</span>
-        </div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>Key Casket Types (Placeholder)</h2>
+        <h2>Faction Core Cards (10 Available - Players Choose 6)</h2>
+
+        <h3>1. Ghost Step</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Reactive-Movement | <strong>SP Cost:</strong> 0 (FREE ACTION) | <strong>Range:</strong> Self
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Play after making an attack. Move up to 2 hexes in any direction. Does not cost SP.
+        </p>
+        <p class="manuscript-text"><em>"Strike and vanish. The Nomad way."</em></p>
+
+        <h3>2. Survivor's Instinct</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> When your deck has 15 cards or fewer remaining, gain +1 SP per turn (total 7 SP). Desperation sharpens the mind.
+        </p>
+        <p class="manuscript-text"><em>"The closer to death, the faster we move."</em></p>
+
+        <h3>3. Scavenger's Cunning</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 1 | <strong>Range:</strong> Self
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Draw 3 cards, then discard 2 cards of your choice. Sift through options.
+        </p>
+        <p class="manuscript-text"><em>"One person's trash is another's lifeline."</em></p>
+
+        <h3>4. Smoke and Mirrors</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Utility-Movement | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Self
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Create smoke cloud in your hex (blocks line of sight until end of round). Immediately move up to 2 hexes. Enemies lose targeting.
+        </p>
+        <p class="manuscript-text"><em>"Can't hit what they can't see."</em></p>
+
+        <h3>5. Opportunist</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Your attacks deal +2 damage to enemies who moved during their last turn. Punish repositioning.
+        </p>
+        <p class="manuscript-text"><em>"Catch them off-balance. Strike when they're exposed."</em></p>
+
+        <h3>6. Desperate Gamble</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Gambit | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> Self
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Discard 3 cards from your hand. Your next attack this turn deals +5 damage and ignores all Defense.
+        </p>
+        <p class="manuscript-text"><em>"When cornered, burn everything to survive."</em></p>
+
+        <h3>7. Wolves' Pact</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Your attacks deal +1 damage when you are adjacent to 2 or more allied Caskets. The pack hunts together.
+        </p>
+        <p class="manuscript-text"><em>"Alone we survive. Together we thrive."</em></p>
+
+        <h3>8. Scrapper</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Reactive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> 3 hexes
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> When an enemy Casket within 3 hexes is destroyed, immediately draw 2 cards and recover 2 cards from discard pile.
+        </p>
+        <p class="manuscript-text"><em>"Every wreck is a resource. Waste nothing."</em></p>
+
+        <h3>9. Feint and Strike</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Attack-Movement | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Deal 5 damage. After attack resolves, move up to 1 hex in any direction.
+        </p>
+        <p class="manuscript-text"><em>"Hit them where they don't expect. Be gone before they react."</em></p>
+
+        <h3>10. Winds of Change</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Self
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Shuffle your entire discard pile back into your deck. Remove 1 Heat. Adapt or perish.
+        </p>
+        <p class="manuscript-text"><em>"The road is long. Reinvent yourself as needed."</em></p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Primary Weapon: Scavenger Blade + Holdout Pistol (12 cards)</h2>
+
+        <p class="manuscript-text">Nomads wield dual-purpose weapons—a salvaged blade for melee and a holdout pistol for ranged pokes.</p>
 
         <ul class="manuscript-list">
-            <li><strong>Scout Frame:</strong> Fastest Casket in game, superior mobility and vision</li>
-            <li><strong>Scavenger Frame:</strong> Medium, salvage specialist, mid-battle equipment swaps</li>
-            <li><strong>Raider Frame:</strong> Heavy improvised weapons platform, hit-and-run specialist</li>
+            <li><strong>Quick Slash (×3):</strong> 2 SP, Melee (1 hex), 3 damage - Fast, efficient, reliable</li>
+            <li><strong>Pistol Shot (×3):</strong> 2 SP, Range 4, 3 damage - Keep your distance</li>
+            <li><strong>Hit and Run (×2):</strong> 3 SP, Melee, 4 damage + move 2 hexes after attack</li>
+            <li><strong>Opportunist Strike (×2):</strong> 2 SP, Melee, 5 damage (if target moved last turn), else 3 damage</li>
+            <li><strong>Dual Wield (×1):</strong> 4 SP, 3 melee + 3 ranged damage (two attacks, can target same enemy)</li>
+            <li><strong>Reckless Slash (×1):</strong> 3 SP, Melee, 6 damage, discard 1 card, move 1 hex after</li>
         </ul>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #D2691E;">&#10047;</span>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Secondary Equipment: Improvised Gear (6 cards)</h2>
+
+        <ul class="manuscript-list">
+            <li><strong>Smoke Bomb (×2):</strong> 1 SP, Range 3, create smoke terrain (blocks line of sight)</li>
+            <li><strong>Grappling Hook (×1):</strong> 1 SP, move 3 hexes in straight line, ignore terrain/obstacles</li>
+            <li><strong>Flash Grenade (×1):</strong> 2 SP, Range 4, 2 damage + target has -1 to next attack</li>
+            <li><strong>Adaptive Armor (×1):</strong> 0 SP (Reactive), reduce incoming damage by 1, move 1 hex after</li>
+            <li><strong>Scavenge (×1):</strong> 1 SP, draw 2 cards, discard 1 - sort through wreckage</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Expansion Cards (Optional Advanced Play)</h2>
+
+        <h3>Trade Routes Knowledge</h3>
+        <p class="manuscript-text">
+            <strong>Passive:</strong> Difficult terrain does not slow your movement. You know every path through the Wastes.
+        </p>
+
+        <h3>Convoy Tactics</h3>
+        <p class="manuscript-text">
+            <strong>2 SP, Range 3:</strong> Choose 1 allied Casket within 3 hexes. That ally gains +2 SP this turn.
+        </p>
+
+        <h3>No Looking Back</h3>
+        <p class="manuscript-text">
+            <strong>3 SP, Self:</strong> Move up to 4 hexes in straight line away from nearest enemy. Generate 1 Heat. Sometimes retreat is survival.
+        </p>
+
+        <h3>Vulture's Eye</h3>
+        <p class="manuscript-text">
+            <strong>3 SP, Range 6:</strong> Deal 6 damage to enemy with ≤15 cards remaining. Otherwise 3 damage. Target the weak.
+        </p>
+
+        <h3>Improvised Explosive</h3>
+        <p class="manuscript-text">
+            <strong>4 SP, Range 5:</strong> Deal 4 damage to target. All adjacent enemies take 2 damage. Discard 2 cards.
+        </p>
+
+        <h3>Marked for Salvage</h3>
+        <p class="manuscript-text">
+            <strong>1 SP, Range 5:</strong> Mark target enemy. When that enemy is destroyed, recover 3 cards from discard + draw 2 cards.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Recommended Builds</h2>
+
+        <h3>Ghost Outrider (Hit-and-Run Specialist)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Faction Cards (6):</strong> Ghost Step, Survivor's Instinct, Opportunist, Smoke and Mirrors, Feint and Strike, Trade Routes Knowledge</li>
+            <li><strong>Total Deck:</strong> 28 cards (fast cycle, maximum mobility)</li>
+            <li><strong>Strategy:</strong> Attack with Opportunist Strike (5 damage to movers) → Ghost Step away (free) → repeat. Survivor's Instinct activates late-game for 7 SP turns. Smoke and Mirrors for concealment. Never get hit.</li>
+            <li><strong>Strengths:</strong> Highest mobility in game, hard to pin down, opportunistic damage spikes, late-game power increase</li>
+            <li><strong>Weaknesses:</strong> Low sustained damage, fragile if caught, resource hungry, requires positioning skill</li>
+        </ul>
+
+        <h3>Convoy Scrapper (Team Support + Salvage)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Faction Cards (6):</strong> Scrapper, Wolves' Pact, Convoy Tactics, Scavenger's Cunning, Winds of Change, Marked for Salvage</li>
+            <li><strong>Total Deck:</strong> 30 cards (balanced)</li>
+            <li><strong>Strategy:</strong> Fight alongside allies for Wolves' Pact bonus. Use Scrapper and Marked for Salvage to recover resources when enemies die. Support team with Convoy Tactics. Cycle deck efficiently.</li>
+            <li><strong>Strengths:</strong> Excellent in team fights, resource generation from kills, support capabilities, deck cycling efficiency</li>
+            <li><strong>Weaknesses:</strong> Weak alone, needs allies nearby, lower burst damage, reliant on enemy deaths</li>
+        </ul>
+
+        <h3>Desert Vulture (Opportunistic Executioner)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Faction Cards (6):</strong> Vulture's Eye, Opportunist, Desperate Gamble, No Looking Back, Improvised Explosive, Survivor's Instinct</li>
+            <li><strong>Total Deck:</strong> 30 cards</li>
+            <li><strong>Strategy:</strong> Target weakened enemies with Vulture's Eye (6 damage). Use Desperate Gamble for burst damage when needed. Improvised Explosive for AoE cleanup. Retreat with No Looking Back when overwhelmed.</li>
+            <li><strong>Strengths:</strong> Execute specialist, high burst potential, AoE damage, tactical flexibility</li>
+            <li><strong>Weaknesses:</strong> Conditional damage, self-harm cards, needs setup, high risk plays</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Strategy Notes</h2>
+
+        <p class="manuscript-text">
+            <strong>Strengths:</strong> Highest mobility in game (Ghost Step free movement, Hit and Run, Feint and Strike), opportunistic damage (Opportunist +2 vs movers, Vulture's Eye 6 damage to weakened), best deck cycling (Scavenger's Cunning, Winds of Change, Scrapper), late-game scaling (Survivor's Instinct = 7 SP turns), salvage economy (Scrapper, Marked for Salvage), team support (Wolves' Pact, Convoy Tactics).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Weaknesses:</strong> Lower base damage than Church/Dwarves, fragile if caught (light armor, low HP on Scout frame), conditional triggers require smart positioning (Opportunist, Vulture's Eye, Wolves' Pact), resource hungry (many cards cost SP for optimal combos), high skill ceiling (rewards creativity, punishes mistakes).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Early Game (Turns 1-3):</strong> Poke with Pistol Shot (3 damage range 4), reposition constantly. Use Ghost Step after every attack. Opportunist triggers when enemies move—punish repositioning.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Mid Game (Turns 4-6):</strong> Smoke and Mirrors for concealment. Feint and Strike + Ghost Step combo = attack + move 3 hexes total. Scavenger's Cunning to find key cards. Wolves' Pact if fighting near allies.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Late Game (Turns 7+):</strong> Survivor's Instinct activates (deck ≤15 cards = 7 SP per turn!). Desperate Gamble for burst finishers (+5 damage ignore Defense). Scrapper triggers give massive card advantage from enemy deaths. Vulture's Eye executes weakened targets.
+        </p>
+
+        <div class="manuscript-quote">
+            "You cannot cage what refuses to stay. You cannot kill what will not stand still. We are the wind. We are the road. We endure."
+            <span class="quote-attribution">—Three-Card Morrow, the Drifter King</span>
         </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
         <h2>Notable Figures</h2>
 
         <h3>"Three-Card" Morrow (The Drifter King)</h3>
         <p class="manuscript-text">
-            A convoy runner who lost forty souls to a Void rift. Now he wanders the Wastes with three playing cards embedded in his eye socket - the Ace of Spades, Nine of Hearts, and Joker. He claims he can see the future through them. Traders say if Morrow warns you to turn back, you turn back. Pilots "The Tumbledown" - a patchwork scrap Casket held together by luck and spite.
+            A convoy runner who lost forty souls to a Void rift. Now he wanders the Wastes with three playing cards embedded in his eye socket—the Ace of Spades, Nine of Hearts, and Joker. He claims he can see the future through them. Traders say if Morrow warns you to turn back, you turn back. Pilots "The Tumbledown"—a patchwork scrap Casket held together by luck and spite.
         </p>
 
         <h3>The Branded (Asha Wolfmane)</h3>
         <p class="manuscript-text">
-            Once a Church Inquisitor, Asha was exiled for refusing to execute Taint-bearers. The Church burned her face with holy symbols as punishment. Now she leads a convoy of outcasts - criminals, deserters, and refugees the Collective rescued from execution. She pilots "The Scar" - a Casket painted with the faces of every soul she's saved. Forty-three so far.
+            Once a Church Inquisitor, Asha was exiled for refusing to execute Taint-bearers. The Church burned her face with holy symbols as punishment. Now she leads a convoy of outcasts—criminals, deserters, refugees the Collective rescued from execution. She pilots "The Scar"—a Casket painted with the faces of every soul she's saved. Forty-three so far.
         </p>
 
         <h3>Old Grit (The First Convoy Master)</h3>
         <p class="manuscript-text">
-            The oldest living Nomad - a weathered man who remembers Year 0. He was a truck driver when reality broke. His convoy was the first to establish "The Trade Routes" through the Wastes. Now in his 460s (prolonged by Soulstone exposure), he still guides convoys. Pilots "The Rust Bucket" - the oldest functional Casket in existence, held together by prayers and engine grease.
+            The oldest living Nomad—a weathered man who remembers Year 0. He was a truck driver when reality broke. His convoy was the first to establish "The Trade Routes" through the Wastes. Now in his 460s (prolonged by Soulstone exposure), he still guides convoys. Pilots "The Rust Bucket"—the oldest functional Casket in existence, held together by prayers and engine grease.
         </p>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #D2691E;">&#10047;</span>
-        </div>
-
-        <h2>Lore: The Wanderers Who Endure</h2>
-
-        <h3>Origins: The First Exodus (Year 1-10)</h3>
-        <p class="manuscript-text">
-            When the Sundering happened (Year 0), most survivors tried to rebuild. They fortified cities. They dug in. They died when Abominations came. A few thousand decided to do the opposite: <strong>never stop moving</strong>. If you don't settle, you can't be surrounded. If you keep driving, you might find safety over the next horizon.
-        </p>
-
-        <p class="manuscript-text">
-            These early Nomads were truck drivers, traders, refugees - anyone with wheels and the will to survive. They scavenged fuel, repaired vehicles, and mapped safe routes through the Wastes. The first convoy masters established "The Code" - rules for survival in the new world:
-        </p>
-
-        <ul class="manuscript-list">
-            <li><strong>Never stop moving longer than three days</strong> (Abominations track stationary prey)</li>
-            <li><strong>Share supplies with other convoys</strong> (today's charity is tomorrow's lifeline)</li>
-            <li><strong>No brands, no chains, no masters</strong> (freedom is survival)</li>
-            <li><strong>Take in refugees, no questions asked</strong> (everyone deserves a second chance)</li>
-        </ul>
-
-        <h3>Philosophy: Freedom Through Motion</h3>
-        <p class="manuscript-text">
-            The Nomad Collective isn't a faction - it's a philosophy. Anyone can join a convoy. No oath required. No test of purity. You just need to keep up. Can't keep up? Fall behind. Die. The Wastes are Darwinian.
-        </p>
-
-        <p class="manuscript-text">
-            Nomads view settlements as prisons. "You tie yourself to a place, you die with it." They trade with settlements, protect caravans, and rescue refugees - but they never stay. Motion is life. Stillness is death.
-        </p>
-
-        <h3>The Trade Routes: Lifelines of the Wastes</h3>
-        <p class="manuscript-text">
-            The Nomad Collective maintains the <strong>Trade Routes</strong> - mapped paths through the Wastes connecting settlements. These routes avoid Void rifts, mark safe water sources, and indicate shelter points. Every convoy master knows them by heart.
-        </p>
-
-        <p class="manuscript-text">
-            The routes are marked with cairns - stacked stones with symbols only Nomads can read. A triangle means "water 2 miles east." A circle with a slash means "Abomination nest, avoid." A hand means "shelter, abandoned building." The Church tried to decode these symbols for decades. They never figured it out. The Nomads change them yearly.
-        </p>
-
-        <h3>Major Events</h3>
-
-        <h4>Year 52 - The Siege of Rust City</h4>
-        <p class="manuscript-text">
-            A Church settlement refused to pay convoy tolls, claiming Nomads were "parasites." The Nomads responded by blockading the city - no trade in or out. The siege lasted six months. The Church apologized. The Nomads accepted. Tolls were paid. The Collective proved they could strangle settlements economically without firing a shot.
-        </p>
-
-        <h4>Year 134 - The Rescue of Ashenvale</h4>
-        <p class="manuscript-text">
-            When the Church split in the Great Schism, thousands of refugees fled into the Wastes to escape the civil war. Nomad convoys rescued 8,000 civilians, evacuating them to neutral settlements. The Church called it "harboring heretics." The Nomads called it "the right thing to do."
-        </p>
-
-        <h4>Year 289 - The Traitor Convoy</h4>
-        <p class="manuscript-text">
-            A convoy master named Kael sold refugees to the Merchant Guilds as indentured labor. When the Collective discovered this, they held a trial in the Wastes. Kael was found guilty of "violating The Code." His punishment? <strong>Branding</strong> - a red-hot iron mark on his face, permanent exile from all convoys. Kael now leads a mercenary band, hunting Nomads for revenge.
-        </p>
-
-        <h4>Year 352 - The Blighted Exodus</h4>
-        <p class="manuscript-text">
-            When the Church declared the Blighted "abominations to be exterminated," the Nomads offered sanctuary. Three thousand Blighted refugees were evacuated through Trade Routes. The Church declared this "treason." The Nomads declared it "none of your business." Tensions remain high.
-        </p>
-
-        <h4>Year 401 - The Dead Convoy</h4>
-        <p class="manuscript-text">
-            A twelve-rig convoy vanished in the Wastes. Search parties found the trucks weeks later - intact, fully loaded, no bodies. Just blood on the driver's seats and playing cards scattered across the road. The Aces of Spades. The convoy master was Three-Card Morrow. He was the only survivor. He never explained what happened. He just kept driving.
-        </p>
-
-        <h3>Current Goals (Year 437)</h3>
-        <p class="manuscript-text">
-            The Nomad Collective wants the Trade Routes to remain open. Every faction interferes with this: the Church demands tolls, the Merchants want monopolies, the Elves close forest roads, the Blighted spread mutations. The Nomads fight all of them - not for conquest, but for access.
-        </p>
-
-        <p class="manuscript-text">
-            Recently, a new threat: <strong>The Engine's instability is destroying Trade Routes</strong>. Void rifts appear along safe paths. Abomination spawns are increasing. Some convoy masters argue the Collective should destroy The Engine. Others say stabilizing it is safer. The debate is fracturing the Collective. For a faction built on freedom, unity is fragile.
-        </p>
-
-        <p class="manuscript-text">
-            One thing is certain: the Nomads will never stop moving. Even if the world burns around them, they'll find a road through the ashes.
-        </p>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #D2691E;">&#10047;</span>
-        </div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
         <h2>Schisms & Branded Outcasts</h2>
 
@@ -190,8 +343,8 @@
             Even the freest faction can fracture over ideology: freedom vs vengeance, movement vs purpose. These <strong>Schisms</strong> enable mirror matches—Nomad vs Nomad, free spirit vs bound killer.
         </p>
 
-        <div style="background: linear-gradient(to bottom, rgba(139, 105, 20, 0.1), rgba(100, 80, 15, 0.05)); border: 2px solid #8b6914; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
-            <h3 style="color: #8b6914; margin-top: 0;">The Branded (Renegade Warband)</h3>
+        <div style="background: linear-gradient(to bottom, rgba(139, 0, 0, 0.1), rgba(100, 0, 0, 0.05)); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
+            <h3 style="color: var(--dark-red); margin-top: 0;">The Branded (Renegade Warband)</h3>
 
             <p><strong>Ideology:</strong> Freedom is weakness. Only revenge contracts give purpose.</p>
 
@@ -207,10 +360,9 @@
 
             <p><strong>Tactical Differences:</strong></p>
             <ul>
-                <li><strong>Vendetta Mark:</strong> At start of battle, designate 1 enemy as "Marked Target". Deal +3 damage to them, ignore their Defense</li>
-                <li><strong>No Retreat:</strong> Cannot use Sprint or disengage mechanics while Marked Target is alive (locked in pursuit)</li>
-                <li><strong>Blood Contract:</strong> If Marked Target dies, gain +2 SP permanently for rest of mission (contract fulfilled = empowerment)</li>
-                <li><strong>Suicide Pursuit:</strong> Can spend all remaining SP to move double distance toward Marked Target (desperate chase)</li>
+                <li><strong>Vendetta Mark (Gambit):</strong> At start of battle, designate 1 enemy as "Marked Target". Deal +3 damage to them, ignore Defense. Cannot use movement cards that increase distance from target.</li>
+                <li><strong>Blood Contract (Reactive):</strong> When Marked Target is destroyed, gain +2 SP permanently for rest of mission (now 8 SP per turn!).</li>
+                <li><strong>Suicide Pursuit (Movement):</strong> Spend all remaining SP. Move double that distance toward Marked Target. Ignore terrain. Only usable with active Vendetta Mark.</li>
             </ul>
 
             <p><strong>Why They Fight the Collective:</strong> The Branded view free Nomads as "directionless cowards running from consequence." When they fight, it's personal: "You abandoned purpose. We remember every name. Every debt. Every scar."</p>
@@ -218,15 +370,51 @@
             <p><strong>Gameplay Note:</strong> Use standard Nomad deck, but hyper-aggressive tunnel vision. Mark 1 target, ignore everything else, chase them to death. High-risk, high-reward assassination playstyle.</p>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #D2691E;">&#10047;</span>
-        </div>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid #D2691E;">
-            <p style="font-style: italic; color: #D2691E;">
-                <a href="faction-fae.html" target="_parent" style="color: #D2691E; text-decoration: none;">← Fae</a>
+        <h2>Major Historical Events</h2>
+
+        <h3>Year 52 - The Siege of Rust City</h3>
+        <p class="manuscript-text">
+            A Church settlement refused to pay convoy tolls, claiming Nomads were "parasites." The Nomads responded by blockading the city—no trade in or out. The siege lasted six months. The Church apologized. The Nomads accepted. Tolls were paid. The Collective proved they could strangle settlements economically without firing a shot.
+        </p>
+
+        <h3>Year 134 - The Rescue of Ashenvale</h3>
+        <p class="manuscript-text">
+            When the Church split in the Great Schism, thousands of refugees fled into the Wastes to escape civil war. Nomad convoys rescued 8,000 civilians, evacuating them to neutral settlements. The Church called it "harboring heretics." The Nomads called it "the right thing to do."
+        </p>
+
+        <h3>Year 289 - The Traitor Convoy</h3>
+        <p class="manuscript-text">
+            A convoy master named Kael sold refugees to the Merchant Guilds as indentured labor. When the Collective discovered this, they held a trial in the Wastes. Kael was found guilty of "violating The Code." His punishment? <strong>Branding</strong>—a red-hot iron mark on his face, permanent exile from all convoys. Kael now leads a mercenary band, hunting Nomads for revenge.
+        </p>
+
+        <h3>Year 401 - The Dead Convoy</h3>
+        <p class="manuscript-text">
+            A twelve-rig convoy vanished in the Wastes. Search parties found the trucks weeks later—intact, fully loaded, no bodies. Just blood on the driver's seats and playing cards scattered across the road. The Aces of Spades. The convoy master was Three-Card Morrow. He was the only survivor. He never explained what happened. He just kept driving.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Current Goals (Year 437)</h2>
+
+        <p class="manuscript-text">
+            The Nomad Collective wants the Trade Routes to remain open. Every faction interferes: the Church demands tolls, the Merchants want monopolies, the Elves close forest roads, the Blighted spread mutations. The Nomads fight all of them—not for conquest, but for access.
+        </p>
+
+        <p class="manuscript-text">
+            Recently, a new threat: <strong>The Engine's instability is destroying Trade Routes</strong>. Void rifts appear along safe paths. Abomination spawns are increasing. Some convoy masters argue the Collective should destroy The Engine. Others say stabilizing it is safer. The debate is fracturing the Collective.
+        </p>
+
+        <p class="manuscript-text">
+            One thing is certain: the Nomads will never stop moving. Even if the world burns around them, they'll find a road through the ashes.
+        </p>
+
+        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid var(--dark-red);">
+            <p style="font-style: italic; color: var(--bone-white);">
+                <a href="faction-fae.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">← Fae</a>
                 •
-                <a href="faction-merchants.html" target="_parent" style="color: #D2691E; text-decoration: none;">Merchants →</a>
+                <a href="faction-exchange.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">Soulstone Exchange →</a>
             </p>
         </div>
     </div>
