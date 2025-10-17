@@ -141,7 +141,28 @@ Wait, this creates duplication issues. Let me revise:
 **Attacker declares**:
 1. Target enemy
 2. Which attack card to play (sets base damage)
-3. Which component to target (Right Arm, Left Arm, Legs, Head, Chassis, or Random)
+3. **Which component to target:**
+
+**Targeting Methods (choose one):**
+
+**A. Attacker Chooses (Tactical) - RECOMMENDED**
+- Attacker selects component: Head, Right Arm, Left Arm, Chassis, or Legs
+- Gives tactical control (target exposed components, focus fire, etc.)
+
+**B. Random Hit Location (Chaotic)**
+- Roll **1d6** for hit location:
+  - **1:** Head
+  - **2:** Left Arm
+  - **3:** Right Arm
+  - **4-5:** Chassis (most likely, center mass)
+  - **6:** Legs
+- Use for "wild" attacks or when card doesn't specify
+- Creates unpredictability (might hit fresh or damaged components)
+
+**C. Card Specifies**
+- Some cards have built-in targeting (e.g., "Leg Sweep" always targets Legs)
+- Card text overrides player choice
+
 4. Range and facing
 
 ---
@@ -282,63 +303,77 @@ Wait, this creates duplication issues. Let me revise:
 
 > **v2.0 NOTE**: "Primary Weapon cards" refers to your equipped weapon cards (e.g., Longsword, Greatsword, Pistol). These are the cards you discarded from your Primary Weapon slot equipment.
 
-## 3. Component Damage (KDM-Style Brutality - REVISED THRESHOLDS)
+## 3. Component Damage (AP/Structure/Pilot Exposure System)
+
+> **COMPREHENSIVE RULES**: See [component-damage-system.md](component-damage-system.md) for full AP/Structure/Pilot Exposure mechanics, SCRAP card rules, and complete examples.
+
+### Quick Reference: Component HP Zones
+
+**Each component has three defensive zones:**
+
+| Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone |
+|-----------|----------|---------|----------------|---------------------|
+| **Head** | 6 HP | 0-2 dmg | 3-4 dmg | 5-6 dmg |
+| **Right Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
+| **Left Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
+| **Chassis** | 10 HP | 0-4 dmg | 5-6 dmg | 7-10 dmg |
+| **Legs** | 8 HP | 0-3 dmg | 4-8 dmg | NEVER |
+
+**Zone Effects:**
+- **AP Zone**: Armor absorbs damage, no penalties
+- **Structure Zone**: Functional penalties begin (-1 to -2 damage, +1 SP costs, etc.)
+- **Pilot Exposure Zone**: **Every Component Damage = +1 Pilot Wound** (CRITICAL)
 
 ### Tracking Component Damage
 
-**5 Component Locations (with Limb-Specific HP)**:
-- **Head** (3 HP) - Sensors, targeting systems - fragile but critical
-- **Right Arm** (4 HP) - Primary Weapon mount - moderate durability
-- **Left Arm** (4 HP) - Secondary Equipment mount - moderate durability
-- **Chassis** (5 HP) - Core structure - heavily armored
-- **Legs** (6 HP) - Locomotion - most durable (redundant systems)
-
 **How it accumulates**:
-1. Attacker declares which component to target (or roll 1d6 if random)
-2. When Primary Weapon cards are discarded from damage → 1 Component Damage per card
-3. When Defense Dice show CRITICAL → +1 Component Damage
-4. **Component Damage threshold varies by location** (see above)
+1. Attacker declares target component (choose method):
+   - **Tactical (recommended):** Attacker chooses component
+   - **Random:** Roll 1d6 (1=Head, 2=L.Arm, 3=R.Arm, 4-5=Chassis, 6=Legs)
+   - **Card-specified:** Some cards auto-target (e.g., "Headshot" → Head)
 
-**BALANCE CHANGE (2025-10-16)**: Component destruction thresholds now vary by limb type. This creates a defensive layer - arms and legs can absorb more punishment before reaching the pilot. Head remains most fragile, Legs most durable.
+2. When **Primary Weapon or Shield/Offhand cards** are discarded from damage → 1 Component Damage per card
 
-**Example**:
-- Enemy attacks your Right Arm for 6 damage
-- Roll 6 Defense Dice:
-- **2 Shield blocks** = Reduce to 4 damage
-- **2 Critical symbols** = +2 Component Damage to Right Arm
-- You choose to discard 2 from hand (both Primary Weapon cards) + 2 from deck
-- **Total**: 2 Component Damage (from discarded Primary cards) + 2 (from symbols) = **4 Component Damage**
-- Right Arm has **REACHED 4 HP threshold** → **Right Arm DESTROYED**
+3. When Defense Dice show **CRITICAL ()** → +1 Component Damage (bypasses AP layer!)
+
+4. Component Damage accumulates, moving through zones (AP → Structure → Pilot Exposure → Destroyed)
+
+**Example Progression:**
+- Right Arm at 3/8 HP (AP zone, no penalties)
+- Takes 4 Component Damage → Now at 7/8 HP
+- Progression: 3 (AP) → 4 (enter structure, -1 dmg) → 5 (structure, -1 dmg) → 6 (enter pilot exposure, **+1 Wound**) → 7 (pilot exposed, **+1 Wound**)
+- **Total: +2 Pilot Wounds from this attack, arm near destruction**
 
 ---
 
-### Component Destroyed Effects (by Limb HP Threshold)
+### Component Effects by Zone
 
-**Head Destroyed** (3 Component Damage):
-- Cannot use Sensor Sweep or targeting cards
-- **-1 to all ranged attacks** (penalties stack with to-hit modifiers)
-- Most fragile component (sensors, optics easily damaged)
+**AP Zone (Armor Plating):**
+- No functional penalties
+- Armor cracking, sparks flying, but fully operational
+- This is the "safe zone" - pilot protected
 
-**Right Arm Destroyed** (4 Component Damage):
-- Discard all Primary Weapon cards from hand immediately
-- Cannot play Primary Weapon cards for rest of battle
-- Must rely on Universal Core + Secondary Equipment only
-- Moderate durability (weapon mounts have some reinforcement)
+**Structure Zone (Frame Damage):**
+- Functional penalties begin:
+  - Arms: -1 to -2 damage from attacks
+  - Chassis: -1 to -2 SP maximum, movement penalties
+  - Head: -1 ranged attacks, +1 Heat/turn
+  - Legs: +1 to +2 SP per hex movement
+- Component degrading but still usable
+- Pilot still protected (no wounds yet)
 
-**Left Arm Destroyed** (4 Component Damage):
-- Discard all Secondary Equipment cards from hand
-- Cannot use shield reactive cards or offhand weapons
-- Moderate durability (offhand systems protected like primary)
+**Pilot Exposure Zone (CRITICAL):**
+- **Every Component Damage taken = +1 Pilot Wound**
+- Capsule breached, pilot directly vulnerable
+- Component near total failure
+- Desperate situation - one more hit could destroy component
 
-**Chassis Destroyed** (5 Component Damage):
-- **Permanent -1 SP maximum** (Light 6 → 5, Heavy 4 → 3, etc.)
-- -1 Defense against all attacks
-- Core structure is heavily armored (5 HP threshold)
-
-**Legs Destroyed** (6 Component Damage):
-- Movement costs **+1 SP per hex**
-- Cannot Sprint (max 3 hexes/turn even with Sprint cards)
-- Most durable component (redundant locomotion systems, 6 HP threshold)
+**Component Destroyed:**
+- All associated equipment cards → **SCRAP** (see component-damage-system.md)
+- SCRAP cards can be cannibalized (0 SP): Discard → Draw 1 card
+- Component unusable for rest of battle
+- **Final destruction wound:** +1 Pilot Wound (except Legs)
+- **Chassis destruction special:** +3 Pilot Wounds immediately, ejection save required
 
 ## 4. Deck Depletion (Running Out of HP)
 
@@ -380,13 +415,26 @@ This represents pilot physical/mental state inside the capsule.
 
 ### When Pilot Takes Damage
 
-**Pilots take damage separately from Casket in these situations**:
+**Pilots take damage (flip Wound cards) in these situations**:
 
-1. **Capsule Breach** (enemy specifically targets capsule, rare)
-2. **Neural Feedback** (when 5+ Component Damage accumulated)
-3. **Thread Snap** (when Hand Threads break from damage)
-4. **Taint Overload** (when Taint reaches 10+, roll Corruption Save)
-5. **Casket Destruction** (when Casket HP deck runs out, pilot must save)
+1. **Component Pilot Exposure** (NEW PRIMARY SOURCE)
+   - Any Component Damage while component is in Pilot Exposure Zone → +1 Wound per damage
+   - Can take 2-3 Wounds in single attack if component destroyed from exposure zone
+   - See [component-damage-system.md](component-damage-system.md) for full mechanics
+
+2. **Chassis Destruction** (CRITICAL - INSTANT DEATH RISK)
+   - Chassis destroyed → +3 Wounds immediately
+   - Then roll ejection save: 1-2 = +2 more Wounds (likely death), 3-6 = survive
+
+3. **Head Destruction**
+   - Head destroyed → +1 Wound (neural feedback from sensor destruction)
+
+4. **Neural Feedback** (Cumulative Strain)
+   - When total Component Damage across ALL components ≥ 15 → +1 Wound
+   - Check at end of each attack that adds Component Damage
+
+5. **Casket HP Deck Empty**
+   - Deck + Discard both empty → Roll save (1d6): 1-3 = +2 Wounds, 4-6 = survive extraction
 
 > **v3.0 OPTIONAL**: Use [Taint Exploitation](taint-exploitation.md) to spend Taint tactically (offensive debuffs, defensive power-ups). Taint becomes a resource, not just a threshold.
 

@@ -62,22 +62,33 @@ Modified by destroyed Chassis (-1 SP) or Leg-Skimming (+1 SP)
  - Apply effects: CRITICAL (+1 Component Dmg), HEAT (+1 Heat), PIERCE (no reactives)
 6. **Defender discards** final damage (original - blocks) from hand/deck
 
-### Component Damage
-- Primary Weapon cards discarded → +1 Component Damage
-- Defense Dice CRITICAL → +1 Component Damage
-- **Component destroyed at threshold** (Head 3, Arms 4, Chassis 5, Legs 6)
+### Component Targeting & Damage
+**Choose target component:**
+- **Tactical (default):** Attacker chooses
+- **Random:** Roll 1d6 (1=Head, 2=L.Arm, 3=R.Arm, 4-5=Chassis, 6=Legs)
+- **Card-specified:** Some cards auto-target
+
+**Component Damage sources:**
+- Primary Weapon/Shield cards discarded → +1 Component Damage
+- Defense Dice CRITICAL () → +1 Component Damage (bypasses AP!)
 
 ---
 
-## COMPONENT DESTRUCTION EFFECTS
+## COMPONENT HP ZONES (AP/Structure/Pilot Exposure)
 
-| Component | Threshold | Effect |
-|-----------|-----------|--------|
-| **Head** | 3 damage | -1 to ranged attacks, no Sensor Sweep |
-| **Right Arm** | 4 damage | Lose all Primary Weapon cards from hand |
-| **Left Arm** | 4 damage | Lose all Secondary Equipment cards |
-| **Chassis** | 5 damage | -1 SP maximum (permanent) |
-| **Legs** | 6 damage | Movement costs +1 SP per hex |
+| Component | Total HP | AP Zone | Structure | **Pilot Exposure** | Destroyed |
+|-----------|----------|---------|-----------|-------------------|-----------|
+| **Head** | 6 | 0-2 | 3-4 (-1 ranged) | **5-6 (+1 Wound/dmg)** | 6+ |
+| **R.Arm** | 8 | 0-3 | 4-5 (-1 dmg) | **6-8 (+1 Wound/dmg)** | 8+ |
+| **L.Arm** | 8 | 0-3 | 4-5 (shields -1) | **6-8 (+1 Wound/dmg)** | 8+ |
+| **Chassis** | 10 | 0-4 | 5-6 (-1 SP) | **7-10 (+1 Wound/dmg)** | 10+ (+3 Wounds!) |
+| **Legs** | 8 | 0-3 | 4-8 (+1 SP/hex) | **NEVER** | 8+ |
+
+**CRITICAL:** Pilot Exposure Zone = Every Component Damage = +1 Pilot Wound!
+
+**Component Destroyed:**
+- Equipment cards → SCRAP (can cannibalize: 0 SP, discard → draw 1)
+- Chassis destroyed: +3 Wounds, ejection save (1-2 = +2 more Wounds)
 
 ---
 
