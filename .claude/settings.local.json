@@ -10,7 +10,9 @@
       "Bash(fi)",
       "Bash(done)",
       "Bash(then sed -i 's/fill=\"\"#8B7355\"\"/fill=\"\"#B59460\"\"/g' \"$file\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []

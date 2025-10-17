@@ -97,10 +97,10 @@ Emergent Syndicate hive-mind faction from post-apocalyptic dark fantasy, chitino
 
 ### Crucible Packs
 ```
-Crucible Packs volcanic warrior faction from post-apocalyptic dark fantasy, honor-bound fighters in ancestral iron armor, volcanic landscape with lava flows, forge temples built into obsidian cliffs, ritual combat circles and dueling grounds, ancestral iron weapons glowing with inner heat, ash-covered warriors with burn scars, orange and deep gray color palette with glowing embers, illuminated manuscript style, aged parchment texture, volcanic honor culture
+Crucible Packs goblinoid fire cult from post-apocalyptic dark fantasy, small wiry goblin scavengers (4 feet tall) with burn scars and soot-covered skin, crude explosive devices and jury-rigged bombs strapped to bodies, volcanic wasteland with sulfur pits and lava flows, ramshackle camps built from scavenged metal and obsidian shards, shamanic fire worship with totems of ash and bone, reckless mob swarm tactics, manic expressions and filed teeth, orange and charcoal black color palette with explosive bright flashes, illuminated manuscript style, aged parchment texture, chaotic goblinoid pyromania aesthetic
 ```
 
-**Key Elements**: Volcanic setting, ancestral iron, honor duels, lava imagery, ash aesthetic
+**Key Elements**: Small goblinoids, crude explosives, sulfur pits, ash totems, mob swarm, chaotic fire worship
 
 ---
 

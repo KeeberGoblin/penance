@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Damage System - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#rules">RULES</a> /
+            Component Damage System
+        </div>
+
+        <h1>Component Damage System v3.0</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            AP/Structure/Pilot Exposure • Three-Layer Defense • Brutal Escalation
+        </p>
+
+        <div class="manuscript-quote">
+            "Armor fails. Structure cracks. And when the chassis breaches, the pilot bleeds. Every hit brings you closer to exposure—closer to death."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Lore Context: How Caskets Work</h2>
+
+        <p><strong>Caskets are mechanical armored frames powered by soulstone energy.</strong> Pilots are <strong>living humans</strong> (usually desperate, dying, or half-dead volunteers) who have undergone soul-binding. The pilot is suspended in neural fluid inside a containment chamber (the <strong>capsule</strong>) within the Casket's chassis, arms crossed like a mummy. Ten <strong>neural threads</strong> pierce through their fingertips, connecting to the Casket's control nodes. The pilot manipulates the Casket like a puppeteer controlling a marionette—from inside. They are <strong>NOT autonomous machines</strong> - living pilots control every movement through the neural thread interface.</p>
+
+        <p style="font-style: italic; color: var(--aged-gold);">
+            When a Casket's armor is breached and structure fails, the pilot inside is exposed to catastrophic danger. This system models that brutal reality.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Component HP Zones (Master Reference)</h2>
+
+        <p>Each component has <strong>three defensive layers</strong>:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Total HP</th>
+                    <th>AP Zone</th>
+                    <th>Structure Zone</th>
+                    <th>Pilot Exposure Zone</th>
+                    <th>Destroyed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Head</strong></td>
+                    <td>6 HP</td>
+                    <td>0-2 dmg</td>
+                    <td>3-4 dmg</td>
+                    <td>5-6 dmg</td>
+                    <td>6+ dmg</td>
+                </tr>
+                <tr>
+                    <td><strong>Right Arm</strong></td>
+                    <td>8 HP</td>
+                    <td>0-3 dmg</td>
+                    <td>4-5 dmg</td>
+                    <td>6-8 dmg</td>
+                    <td>8+ dmg</td>
+                </tr>
+                <tr>
+                    <td><strong>Left Arm</strong></td>
+                    <td>8 HP</td>
+                    <td>0-3 dmg</td>
+                    <td>4-5 dmg</td>
+                    <td>6-8 dmg</td>
+                    <td>8+ dmg</td>
+                </tr>
+                <tr>
+                    <td><strong>Chassis</strong></td>
+                    <td>10 HP</td>
+                    <td>0-4 dmg</td>
+                    <td>5-6 dmg</td>
+                    <td>7-10 dmg</td>
+                    <td>10+ dmg</td>
+                </tr>
+                <tr>
+                    <td><strong>Legs</strong></td>
+                    <td>8 HP</td>
+                    <td>0-3 dmg</td>
+                    <td>4-8 dmg</td>
+                    <td>NEVER</td>
+                    <td>8+ dmg</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>The Three Defensive Layers</h2>
+
+        <h3>Layer 1: AP (Armor Plating) Zone</h3>
+
+        <p><strong>The outermost defensive layer.</strong> Armor absorbs punishment without affecting Casket function or pilot safety.</p>
+
+        <ul>
+            <li><strong>No penalties while in AP Zone</strong> - Armor is doing its job</li>
+            <li>Casket functions normally</li>
+            <li>Pilot is safe inside the capsule</li>
+            <li>Example: Head with 0-2 Component Damage = AP intact</li>
+        </ul>
+
+        <h4>AP Layer by Component:</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>AP Zone Range</th>
+                    <th>Thickness</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Head</td>
+                    <td>0-2 dmg</td>
+                    <td>Thin (sensors, optics)</td>
+                </tr>
+                <tr>
+                    <td>Arms</td>
+                    <td>0-3 dmg</td>
+                    <td>Moderate (weapon mounts)</td>
+                </tr>
+                <tr>
+                    <td>Chassis</td>
+                    <td>0-4 dmg</td>
+                    <td>Heavy (core armor)</td>
+                </tr>
+                <tr>
+                    <td>Legs</td>
+                    <td>0-3 dmg</td>
+                    <td>Moderate (locomotion)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Layer 2: Structure Zone</h3>
+
+        <p><strong>Armor is compromised.</strong> Structural damage causes functional penalties but pilot remains protected.</p>
+
+        <h4>Structure Penalties by Component:</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Structure Zone</th>
+                    <th>Penalty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Head</strong></td>
+                    <td>3-4 dmg</td>
+                    <td><strong>-1 to all ranged attacks</strong> (damaged sensors, cracked optics)</td>
+                </tr>
+                <tr>
+                    <td><strong>Right Arm</strong></td>
+                    <td>4-5 dmg</td>
+                    <td><strong>-1 damage to all attacks</strong> (weapon mount misaligned)</td>
+                </tr>
+                <tr>
+                    <td><strong>Left Arm</strong></td>
+                    <td>4-5 dmg</td>
+                    <td><strong>Shield cards -1 block value</strong> (min 0, compromised defense)</td>
+                </tr>
+                <tr>
+                    <td><strong>Chassis</strong></td>
+                    <td>5-6 dmg</td>
+                    <td><strong>-1 SP maximum</strong> (power relay damage, reduced mobility)</td>
+                </tr>
+                <tr>
+                    <td><strong>Legs</strong></td>
+                    <td>4-8 dmg</td>
+                    <td><strong>+1 SP per hex movement</strong> (damaged servos, 2 SP total per hex)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Layer 3: Pilot Exposure Zone (CRITICAL)</h3>
+
+        <p style="color: var(--dark-red); font-weight: 700;">
+            ⚠ DANGER: CAPSULE BREACH IMMINENT ⚠
+        </p>
+
+        <p><strong>Structure has failed.</strong> The pilot's capsule is exposed. Shrapnel, coolant, and neural feedback threaten the pilot directly.</p>
+
+        <p style="font-size: 1.2rem; color: var(--aged-gold); margin: 1rem 0;">
+            <strong>EVERY Component Damage taken in this zone = +1 Pilot Wound</strong>
+        </p>
+
+        <h4>Exposure Zones by Component:</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Exposure Zone</th>
+                    <th>Risk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Head</strong></td>
+                    <td>5-6 dmg</td>
+                    <td>Sensor shrapnel, neural feedback → Pilot takes +1 Wound per Component Dmg</td>
+                </tr>
+                <tr>
+                    <td><strong>Right Arm</strong></td>
+                    <td>6-8 dmg</td>
+                    <td>Thread snap, ammo cook-off → Pilot takes +1 Wound per Component Dmg</td>
+                </tr>
+                <tr>
+                    <td><strong>Left Arm</strong></td>
+                    <td>6-8 dmg</td>
+                    <td>Shield breach, servos explode → Pilot takes +1 Wound per Component Dmg</td>
+                </tr>
+                <tr>
+                    <td><strong>Chassis</strong></td>
+                    <td>7-10 dmg</td>
+                    <td><strong>CAPSULE BREACH</strong> - Direct pilot exposure → Pilot takes +1 Wound per Component Dmg</td>
+                </tr>
+                <tr>
+                    <td><strong>Legs</strong></td>
+                    <td>NEVER</td>
+                    <td>Legs are furthest from capsule - no pilot exposure</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Component Destruction</h2>
+
+        <p><strong>When Component Damage reaches the destruction threshold:</strong></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Destroyed At</th>
+                    <th>Effect</th>
+                    <th>Special</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Head</strong></td>
+                    <td>6+ dmg</td>
+                    <td>Cannot use Sensor cards. <strong>-1 to all ranged attacks permanently.</strong></td>
+                    <td>Blind fighting</td>
+                </tr>
+                <tr>
+                    <td><strong>Right Arm</strong></td>
+                    <td>8+ dmg</td>
+                    <td><strong>All Primary Weapon cards → SCRAP.</strong> Cannot play Primary Weapon cards.</td>
+                    <td>Disarmed</td>
+                </tr>
+                <tr>
+                    <td><strong>Left Arm</strong></td>
+                    <td>8+ dmg</td>
+                    <td><strong>All Secondary Equipment cards → SCRAP.</strong> Cannot use shields or offhand.</td>
+                    <td>No defense</td>
+                </tr>
+                <tr>
+                    <td><strong>Chassis</strong></td>
+                    <td>10+ dmg</td>
+                    <td><strong>CATASTROPHIC FAILURE:</strong> -1 SP max permanently. <strong>Pilot takes +3 Wounds!</strong> Roll ejection save (1d6, on 1-2 take +2 more Wounds).</td>
+                    <td>Near-death</td>
+                </tr>
+                <tr>
+                    <td><strong>Legs</strong></td>
+                    <td>8+ dmg</td>
+                    <td>Movement costs <strong>+2 SP per hex</strong> (3 SP total). Cannot Sprint. Immobilized in difficult terrain.</td>
+                    <td>Crippled</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>SCRAP Card Mechanic</h2>
+
+        <p><strong>When a component is destroyed, equipment cards associated with that component become "SCRAP".</strong></p>
+
+        <h3>What is SCRAP?</h3>
+        <ul>
+            <li>Destroyed equipment cards remain in your deck as <strong>"SCRAP"</strong></li>
+            <li>SCRAP cards <strong>do nothing when played</strong> (blank, useless)</li>
+            <li>BUT they <strong>still count as Casket HP</strong> - can absorb damage</li>
+            <li>Represents broken weapon parts, shattered armor plates, dead machinery</li>
+        </ul>
+
+        <h3>Cannibalize Action (0 SP)</h3>
+
+        <p><strong>You can salvage SCRAP for temporary advantage:</strong></p>
+
+        <div style="background: rgba(139, 0, 0, 0.2); padding: 1rem; border-left: 4px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>CANNIBALIZE</strong> (0 SP, Free Action)</p>
+            <ul>
+                <li>Discard 1 SCRAP card from hand → Draw 1 card</li>
+                <li>Cycle through dead weight to find useful cards</li>
+                <li>Can do multiple times per turn if you have multiple SCRAP in hand</li>
+            </ul>
+        </div>
+
+        <h4>Example:</h4>
+        <ol>
+            <li>Your Right Arm is destroyed → All 12 Primary Weapon cards become SCRAP</li>
+            <li>You draw 3 SCRAP cards in your hand (dead draws)</li>
+            <li>Play <strong>Cannibalize</strong> 3 times (0 SP each) → Discard 3 SCRAP, draw 3 new cards</li>
+            <li>Hope to draw Universal cards or Secondary Equipment to stay in the fight</li>
+        </ol>
+
+        <p style="font-style: italic; color: var(--aged-gold);">
+            "Scavenge your broken machine. Rip out dead circuits. Find anything that still works."
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Component Targeting</h2>
+
+        <p><strong>Attackers must declare which component they're targeting BEFORE rolling attack dice.</strong></p>
+
+        <h3>Method A: Tactical Targeting (RECOMMENDED)</h3>
+        <p><strong>Attacker chooses component:</strong></p>
+        <ul>
+            <li>Head (6 HP) - Target sensors, blind them</li>
+            <li>Right Arm (8 HP) - Disarm primary weapon</li>
+            <li>Left Arm (8 HP) - Strip shields</li>
+            <li>Chassis (10 HP) - Go for the kill, risk pilot wounds</li>
+            <li>Legs (8 HP) - Immobilize, no pilot exposure</li>
+        </ul>
+
+        <h3>Method B: Random Hit Location (Chaotic)</h3>
+        <p><strong>Roll 1d6 for hit location:</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll</th>
+                    <th>Component</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Head</td>
+                    <td>Fragile (6 HP), high-value target</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Left Arm</td>
+                    <td>Moderate (8 HP), shield side</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Right Arm</td>
+                    <td>Moderate (8 HP), weapon side</td>
+                </tr>
+                <tr>
+                    <td>4-5</td>
+                    <td>Chassis</td>
+                    <td>Center mass (10 HP), most likely hit</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Legs</td>
+                    <td>Durable (8 HP), no pilot exposure</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Method C: Card-Specified Targeting</h3>
+        <p>Some cards have built-in targeting:</p>
+        <ul>
+            <li><strong>"Leg Sweep"</strong> - Always targets Legs</li>
+            <li><strong>"Headshot"</strong> - Always targets Head</li>
+            <li><strong>"Disarm"</strong> - Always targets Right Arm</li>
+            <li><strong>"Core Breach"</strong> - Always targets Chassis</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>How Component Damage Accumulates</h2>
+
+        <h3>Sources of Component Damage:</h3>
+
+        <h4>1. Primary Weapon/Shield Cards Discarded</h4>
+        <p>When you discard <strong>Primary Weapon</strong> or <strong>Shield</strong> cards due to damage:</p>
+        <ul>
+            <li>Each Primary/Shield card discarded = <strong>+1 Component Damage</strong> to targeted component</li>
+            <li>You choose: discard from hand OR deck (tactical choice)</li>
+            <li>Discarding from hand = lose options but control what's lost</li>
+            <li>Discarding from deck = keep hand but risk Primary/Shield cards randomly</li>
+        </ul>
+
+        <h4>2. Defense Dice CRITICAL Symbols (⚔)</h4>
+        <p>When rolling Defense Dice, <strong>CRITICAL (⚔)</strong> symbols bypass AP:</p>
+        <ul>
+            <li>Each <strong>(⚔)</strong> symbol = <strong>+1 Component Damage</strong> directly to Structure</li>
+            <li><strong>Bypasses AP layer entirely!</strong></li>
+            <li>Goes straight to Structure or Pilot Exposure zone</li>
+            <li>Cannot be blocked by reactive cards</li>
+        </ul>
+
+        <h4>3. Special Attack Effects</h4>
+        <p>Some cards add Component Damage directly:</p>
+        <ul>
+            <li><strong>Critical Hit (9 on Attack Dice)</strong> - +2 damage, bypass 1 Defense</li>
+            <li><strong>EXECUTION (10 on Attack Dice)</strong> - Auto-destroy 1 Component</li>
+            <li>Church cards with <strong>"Ignore Armor"</strong> - Skip AP layer</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Example Combat Scenario</h2>
+
+        <h3>Setup:</h3>
+        <ul>
+            <li><strong>Attacker:</strong> Dwarven Ironclad</li>
+            <li><strong>Defender:</strong> Church Confessor (Head currently at 4 Component Damage - Structure Zone)</li>
+        </ul>
+
+        <h3>Turn Sequence:</h3>
+
+        <h4>Step 1: Declare Attack</h4>
+        <p>Ironclad plays <strong>"Hammer Strike"</strong> (6 damage), targets <strong>Head</strong></p>
+
+        <h4>Step 2: Roll Attack Dice</h4>
+        <p>Rolls: [DEATH BLOW] (5) + [STRIKE] (3) = <strong>8 total → Strong Hit (+1 damage)</strong></p>
+        <p>Final damage: 6 base + 1 (Strong Hit) = <strong>7 damage</strong></p>
+
+        <h4>Step 3: Roll Defense Dice</h4>
+        <p>Confessor rolls <strong>7 Defense Dice</strong>:</p>
+        <ul>
+            <li>Result: [SHIELD] [BLOOD] [BLOOD] [CRITICAL ⚔] [CRITICAL ⚔] [HEAT] [PIERCE]</li>
+            <li><strong>1 Shield block</strong> → Reduce to 6 damage</li>
+            <li><strong>2 Critical symbols (⚔⚔)</strong> → +2 Component Damage (bypasses AP!)</li>
+            <li><strong>1 Heat</strong> → +1 Heat</li>
+        </ul>
+
+        <h4>Step 4: Discard Damage</h4>
+        <p>Confessor discards <strong>6 cards</strong>:</p>
+        <ul>
+            <li>Chooses to discard: 3 from hand (2× Primary Weapon "Penitent Blade", 1 Universal)</li>
+            <li>Discards: 3 from deck (random)</li>
+            <li><strong>2 Primary Weapon cards discarded</strong> → +2 Component Damage</li>
+        </ul>
+
+        <h4>Step 5: Calculate Total Component Damage</h4>
+        <ul>
+            <li>Head was at: <strong>4 Component Damage</strong> (Structure Zone, -1 ranged attacks)</li>
+            <li>This attack adds:
+                <ul>
+                    <li>+2 from Critical symbols (⚔⚔)</li>
+                    <li>+2 from discarded Primary Weapon cards</li>
+                </ul>
+            </li>
+            <li>New total: 4 + 2 + 2 = <strong>8 Component Damage to Head</strong></li>
+        </ul>
+
+        <h4>Step 6: Apply Zone Effects</h4>
+        <ul>
+            <li>Head now at <strong>8 Component Damage</strong></li>
+            <li>Head Pilot Exposure Zone is <strong>5-6 dmg</strong></li>
+            <li>Head Destroyed threshold is <strong>6+ dmg</strong></li>
+            <li><strong>Result:</strong>
+                <ul>
+                    <li>Head is <strong>DESTROYED</strong> (6+ threshold reached)</li>
+                    <li>Cannot use Sensor cards, -1 to all ranged attacks permanently</li>
+                    <li><strong>Pilot Exposure triggered at 5-6 dmg:</strong> +1 Pilot Wound (from 5→6)</li>
+                    <li><strong>Additional Component Damage 6→8:</strong> +2 Pilot Wounds (6→7, 7→8)</li>
+                    <li><strong>Total Pilot Wounds from this attack: 3 Wounds!</strong></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="manuscript-quote">
+            "The head exploded. Sensor shards pierced the capsule. Neural fluid sprayed. The pilot screamed as feedback burned through their threads. Three Wounds in one brutal strike."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Strategic Implications</h2>
+
+        <h3>Offensive Tactics:</h3>
+        <ul>
+            <li><strong>Target weak components first</strong> - Head (6 HP) is easiest to destroy</li>
+            <li><strong>Aim for Exposure Zones</strong> - Chassis at 7+ dmg = every hit wounds pilot</li>
+            <li><strong>Disarm before finishing</strong> - Destroy Right Arm first, then go for Chassis kill</li>
+            <li><strong>Use Critical-heavy attacks</strong> - Defense Dice (⚔) bypass AP entirely</li>
+        </ul>
+
+        <h3>Defensive Tactics:</h3>
+        <ul>
+            <li><strong>Spread damage across components</strong> - Don't let one component enter Exposure</li>
+            <li><strong>Protect Chassis at all costs</strong> - Chassis breach = +3 Wounds + ejection save</li>
+            <li><strong>Discard from deck to save Primary cards</strong> - Keep weapons in hand, risk random loss</li>
+            <li><strong>Cannibalize SCRAP aggressively</strong> - Cycle dead cards to find useful ones</li>
+            <li><strong>Retreat when in Exposure Zone</strong> - One more hit = multiple Pilot Wounds</li>
+        </ul>
+
+        <h3>Component Priority Matrix:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attacking</th>
+                    <th>Target</th>
+                    <th>Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Heavy hitter</td>
+                    <td>Right Arm</td>
+                    <td>Disarm their weapons (8 HP, reachable)</td>
+                </tr>
+                <tr>
+                    <td>Fast skirmisher</td>
+                    <td>Legs</td>
+                    <td>Immobilize, prevent escape (8 HP, no pilot exposure)</td>
+                </tr>
+                <tr>
+                    <td>Assassin</td>
+                    <td>Head → Chassis</td>
+                    <td>Blind them (6 HP), then breach capsule (10 HP)</td>
+                </tr>
+                <tr>
+                    <td>Tank buster</td>
+                    <td>Chassis</td>
+                    <td>Direct pilot kill (10 HP, Exposure at 7+, +3 Wounds at 10+)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Quick Reference Table</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>HP</th>
+                    <th>AP</th>
+                    <th>Structure Effect</th>
+                    <th>Exposure</th>
+                    <th>Destroyed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Head</strong></td>
+                    <td>6</td>
+                    <td>0-2</td>
+                    <td>3-4: -1 ranged</td>
+                    <td>5-6: +1 Wound/dmg</td>
+                    <td>6+: Blind, -1 ranged permanent</td>
+                </tr>
+                <tr>
+                    <td><strong>R.Arm</strong></td>
+                    <td>8</td>
+                    <td>0-3</td>
+                    <td>4-5: -1 dmg all attacks</td>
+                    <td>6-8: +1 Wound/dmg</td>
+                    <td>8+: Primary → SCRAP</td>
+                </tr>
+                <tr>
+                    <td><strong>L.Arm</strong></td>
+                    <td>8</td>
+                    <td>0-3</td>
+                    <td>4-5: Shields -1 block</td>
+                    <td>6-8: +1 Wound/dmg</td>
+                    <td>8+: Secondary → SCRAP</td>
+                </tr>
+                <tr>
+                    <td><strong>Chassis</strong></td>
+                    <td>10</td>
+                    <td>0-4</td>
+                    <td>5-6: -1 SP max</td>
+                    <td>7-10: +1 Wound/dmg</td>
+                    <td>10+: <strong>+3 Wounds!</strong> Ejection save</td>
+                </tr>
+                <tr>
+                    <td><strong>Legs</strong></td>
+                    <td>8</td>
+                    <td>0-3</td>
+                    <td>4-8: +1 SP/hex move</td>
+                    <td>NEVER</td>
+                    <td>8+: +2 SP/hex, no Sprint</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="manuscript-quote">
+            "Armor fails. Structure cracks. The pilot bleeds. This is how Caskets die—layer by layer, wound by wound, until nothing remains but scrap and silence."
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="rules-combat.html" target="_parent">Previous: Combat System</a> | <a href="rules-scrap-cards.html" target="_parent">Next: SCRAP Cards & Cannibalize</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        </div>
+    </div>
+</body>
+</html>
