@@ -1,183 +1,291 @@
-# Crucible Packs - Faction Portrait Description
-## AI Image Generation Reference
+# Crucible Packs - Illuminated Manuscript Portrait
+## AI Image Generation Reference (Medieval Codex Style)
 
-**Purpose:** This document provides detailed visual reference for generating Crucible Packs faction portraits and character artwork using AI image generation tools (Midjourney, DALL-E, Stable Diffusion, etc.)
-
----
-
-## Core Visual Identity
-
-**Faction Theme:** Post-apocalyptic goblinoid metallurgists living in volcanic wastelands. Fire-worshipping survivors of Void-mutation. Blacksmiths forged by catastrophe.
-
-**Color Palette:**
-- **Primary:** Charcoal black (#1a0a04), ash-gray (#4a4a4a), volcanic orange (#FF6347)
-- **Accents:** Molten red (#D2691E), ember glow (#FF8C00), obsidian (#0a0604)
-- **Metal tones:** Scorched steel (dark gunmetal), copper oxidation (green-black patina)
-
-**Lighting:** Volcanic glow from below (lava light), embers floating in air, harsh rim lighting on armor, deep shadows with orange highlights
+**Purpose:** Generate Crucible Packs faction portrait in **illuminated manuscript/medieval codex aesthetic** matching the Penance codex art style.
 
 ---
 
-## Goblinoid Physical Characteristics
+## Reference Art Style Analysis
 
-### Body Structure
-- **Height:** 4-5 feet tall (short humanoids, roughly 1.2-1.5 meters)
-- **Build:** Wiry, lean muscle definition visible through taut skin. NOT frail—compact strength. Sinew and tendon prominent. Athletic climber's physique.
-- **Proportions:** Slightly longer arms relative to torso (climbing adaptation). Strong hands with thick fingers built for gripping hot metal.
+Based on the provided reference images, the target style is:
 
-### Skin & Texture
-- **Color Range:** Ash-gray (#6e6e6e) to charcoal-black (#2b2b2b). Some individuals have gradient patterns (lighter gray on limbs, darker on torso).
-- **Texture:** Thick, leathery skin with slight scaling (like burnt leather). Heat-resistant appearance—matte finish, non-reflective.
-- **Scars:** Ritual burn scars common (from Forge Trials). Brands and ash tattoos marking Pack membership. Scar tissue appears lighter gray against dark skin.
-
-### Facial Features
-- **Eyes:** Reflective yellow (#FFD700) or volcanic orange (#FF6347). Cat-like vertical pupils with tapetum lucidum glow in darkness. Wide-set for peripheral vision.
-- **Teeth:** Sharpened canines visible when mouth open. Slight underbite (bottom canines protrude). Carnivore dentition.
-- **Ears:** Pointed upward (elf-like) but tattered/burned at tips from heat exposure. Pierced with metal rings and obsidian shards.
-- **Nose:** Broad, flat (heat dissipation). Flared nostrils. Soot stains around nostrils from ash inhalation.
-- **Hair:** Sparse, coarse black hair. Often singed short or shaved completely. Some grow hair in mohawks or braids decorated with ash beads. White-gray hair on elders (like Kerra the Unburnt).
-
-### Hands & Extremities
-- **Hands:** Calloused, scarred, burn-marked. Thick fingers adapted for gripping hot metal without gloves. Blackened fingernails from soot.
-- **Feet:** Often bare or wearing minimal sandals (heat-resistant feet). Thick soles, cracked from walking on volcanic rock.
+**Medieval Illuminated Manuscript / Romanesque Codex Art:**
+- Flat, iconic composition (minimal perspective/depth)
+- Heavy black outlines (woodcut/linocut aesthetic)
+- Limited color palette (2-4 dominant colors per piece)
+- Decorative border frames with geometric patterns
+- Symbolic iconography in margins and corners
+- Latin motto/text at bottom
+- Parchment/aged paper texture background
+- Simplified, stylized human forms (not realistic anatomy)
+- Heraldic/emblematic presentation
 
 ---
 
-## Clothing & Armor Aesthetic
+## Crucible Packs Color Palette (Illuminated Manuscript Version)
 
-### Materials
-- **Primary:** Scorched leather (dark brown-black), volcanic glass (obsidian fragments), heat-treated steel plates
-- **Decoration:** Ash-dyed cloth wraps (charcoal gray), copper wire bindings, bone ornaments from ancestors, volcanic rock beads
+**Primary Colors:**
+- **Volcanic Orange/Red:** #D2691E (dominant background, like forge-fire)
+- **Charcoal Black:** #1a0a04 (outlines, details, text)
+- **Ash Gray:** #6e6e6e (goblinoid skin tone, shading)
+- **Ember Glow:** #FF6347 (accent highlights, flames, eyes)
 
-### Armor Style
-- **Heavy Armor (Warriors/Pilots):**
-  - Layered steel plates blackened from forge smoke
-  - Asymmetrical pauldrons (one shoulder larger for shield-bearing)
-  - Riveted construction with visible copper/bronze rivets (oxidized green)
-  - Minimal padding (goblinoids tolerate heat, don't need insulation)
-  - Open joints/gaps to vent heat (not fully sealed armor)
-  - Helmets with T-shaped visors or open-face designs showing yellow eyes
+**Parchment Base:** Aged tan/beige (#D4C5B0) with texture overlay
 
-- **Light Armor (Scouts/Smiths):**
-  - Leather wraps bound with metal wire
-  - Chest harness with tool loops (tongs, hammers visible)
-  - Bare arms showing scarred skin and burn marks
-  - Utility belts with pouches of volcanic ash (ritual use)
-
-### Iconic Elements
-- **Forge-Matron Kerra:** Long flowing robes (ash-gray) with ceremonial branding irons hanging from belt. White-gray hair braided with obsidian shards. Ritual scars covering arms. Carries ancestral hammer (oversized, glowing with heat).
-
-- **Ashen-King Torrak:** Spiked pauldrons (intimidation), dual-wielding volcanic blades (curved swords with lava-glow edges). Bare-chested to show duel scars (47 scars, one per victory). War paint (ash mixed with blood) across face.
-
-### Weapons
-- **Melee:** Obsidian-edged axes, volcanic hammers (glowing red from residual heat), curved swords with serrated edges
-- **Ranged:** Sling-staffs launching molten rock, crude crossbows with bone bolts
-- **Shields:** Circular steel shields with volcanic rock reinforcement, emblazoned with Pack symbols (flame motifs)
+**Pattern Elements (for borders):**
+- Flame motifs (stylized fire curls)
+- Anvil symbols
+- Hammer icons
+- Volcanic mountain silhouettes
+- Chain links
+- Gear/cog shapes (forge machinery)
 
 ---
 
-## Environmental Context
+## Composition: Forge-Matron Kerra Portrait
 
-### Typical Settings
-- **Volcanic Caldera:** Background shows lava flows, ash clouds, glowing fissures
-- **Underground Forges:** Anvils carved from volcanic rock, molten metal rivers, hanging chains and gears
-- **Wasteland Camps:** Tents made from scorched hide, bonfire centerpiece, volcanic peaks in distance
+### Central Figure (Goblinoid Forge-Matron)
 
-### Lighting Scenarios
-- **Forge Glow:** Character lit from below by lava pool (orange rim light, deep shadows on face)
-- **Ash Storm:** Backlit silhouette with embers swirling around figure
-- **Duel Scene:** Two warriors circling each other, lava pit between them casting flickering light
+**Physical Description:**
+- **Body:** Stylized humanoid figure, 4-5 feet tall (shortened proportions)
+- **Skin:** Flat ash-gray color (#6e6e6e) with minimal shading
+- **Face:** Simplified features with prominent yellow eyes (#FFD700), pointed ears (elf-like), broad flat nose
+- **Hair:** White-gray braids with obsidian beads (geometric triangle shapes)
+- **Expression:** Stern, stoic, frontal-facing (iconic pose like Byzantine saints)
+
+**Clothing & Equipment:**
+- Flowing ceremonial robes (charcoal gray with orange flame patterns)
+- Bare arms showing ritual burn scars (simplified line work)
+- Holding ceremonial hammer overhead in right hand (oversized, glowing orange)
+- Left hand holds branding iron with flame symbol
+- Utility belt with tongs, small hammers hanging
+
+**Pose:**
+- Standing frontally (Byzantine icon style, facing viewer directly)
+- Feet planted firmly (no dynamic action pose)
+- Symmetrical composition
+- Arms positioned ceremonially (hammer raised, branding iron lowered)
+
+### Background Elements
+
+**Upper Half (Behind Figure):**
+- Volcanic forge altar with flames rising (stylized orange/red flames)
+- Anvil silhouette on left side
+- Forge bellows on right side
+- Hanging chains with hooks (geometric shapes)
+- Molten metal cauldron at base (glowing orange pool)
+
+**Lower Half (Ground Level):**
+- Volcanic rock floor (simplified geometric stones)
+- Scattered embers (small orange dots)
+- Ash piles (dark gray mounds)
+- Tool silhouettes (tongs, hammers, molds)
+
+### Border Frame Design
+
+**Outer Border (Thick Black Lines):**
+- Rectangular frame with decorative corners
+- Corner ornaments: Flame symbols in geometric circles
+
+**Top Border:**
+- Geometric pattern: Alternating anvils and hammers
+- Center: Crucible Packs emblem (stylized volcano with flame)
+
+**Side Borders (Left & Right):**
+- Vertical chain link pattern
+- Small flame motifs at intervals
+- Gear/cog symbols alternating
+
+**Bottom Border:**
+- Latin motto banner: **"IGNIS VINCIT OMNIA"** (Fire Conquers All)
+- Below motto: **"CRUCIBLE PACKS"** or **"THE CRUCIBLE"**
+- Subtitle (smaller): **"Forged in Flame, Tempered by Loss"**
+
+**Corner Symbols (Four Corners):**
+- Top-left: Flame icon
+- Top-right: Anvil icon
+- Bottom-left: Hammer icon
+- Bottom-right: Volcanic mountain silhouette
+
+### Iconographic Details (Margin Symbols)
+
+**Left Margin (Vertical Stack):**
+- Obsidian shard
+- Ritual branding iron
+- Forge tongs
+- Molten metal droplet
+
+**Right Margin (Vertical Stack):**
+- Volcanic peak
+- Flame brazier
+- Ancestral hammer
+- Ash urn
 
 ---
 
-## Composition Suggestions for Faction Portrait
+## AI Generation Prompt (Master Template)
 
-### Option 1: Forge-Matron Kerra (Spiritual Leader)
-**Scene:** Standing before volcanic altar with molten lava flowing behind her. Arms raised holding ceremonial branding iron. White-gray braided hair. Ritual scars glowing faintly orange (Void corruption). Expression: serene confidence, eyes glowing yellow.
-
-**Mood:** Divine authority, fire-blessed prophet, ancient wisdom
-
-**Camera Angle:** Low angle (looking up at her), centered composition
-
-**Prompt Keywords:** "goblinoid matron priestess, ash-gray skin, glowing yellow eyes, white hair braided with obsidian, volcanic background, lava glow, ritual scars, ceremonial robes, dark fantasy, post-apocalyptic, detailed character art"
-
----
-
-### Option 2: Ashen-King Torrak (War Leader)
-**Scene:** Mid-duel stance, dual-wielding curved volcanic blades (blades glowing red-hot). Bare chest showing 47 duel scars. Ash war paint across face. Spiked armor on shoulders. Lava arena floor beneath feet.
-
-**Mood:** Brutal warrior, honor-obsessed duelist, dangerous elegance
-
-**Camera Angle:** Dynamic diagonal, action pose (lunging forward)
-
-**Prompt Keywords:** "goblinoid warlord, charcoal-black skin, orange glowing eyes, dual swords, lava battlefield, duel scars, spiked armor, war paint, intense expression, dark fantasy warrior, volcanic setting"
-
----
-
-### Option 3: Pack Warriors (Group Portrait)
-**Scene:** Three Crucible warriors standing in formation before volcanic forge. Center warrior holds ancestral hammer overhead. Left warrior wields obsidian axe. Right warrior carries steel shield with flame emblem. Ash storm swirling behind them. Embers floating in air.
-
-**Mood:** Unified strength, brotherhood, forged by fire
-
-**Camera Angle:** Straight-on heroic composition, slight low angle
-
-**Prompt Keywords:** "goblinoid warriors, ash-gray skin, yellow eyes, volcanic armor, ancestral weapons, forge background, ash storm, embers, dark fantasy, post-apocalyptic tribal, group portrait"
-
----
-
-## Style References
-
-**Art Style:** Grimdark fantasy realism (similar to Warhammer 40k, Dark Souls, Diablo)
-
-**Inspirations:**
-- Goblin redesigns (avoid cute/comical—emphasize survivalist mutation)
-- Volcanic environments (Iceland lava fields, Hawaiian volcanic parks)
-- Metalworking photography (blacksmiths at work, molten steel)
-- Post-apocalyptic tribal aesthetics (Mad Max meets fantasy forge-clans)
-
-**Avoid:**
-- Cartoonish proportions (keep realistic anatomy)
-- Bright saturated colors (muted palette only)
-- Clean/polished armor (everything should look scorched, used, battle-worn)
-- Generic orc/goblin tropes (this is Void-mutated humanity, not Tolkien greenskins)
-
----
-
-## Negative Prompts (What NOT to Include)
-
-- Green skin (NOT traditional goblins—ash-gray/charcoal only)
-- Large noses (avoid caricature features)
-- Comical expressions (serious/grim only)
-- Bright environments (always volcanic/dark settings)
-- Clean armor (weathered/scorched only)
-- Fantasy medieval castles (volcanic wasteland only)
-
----
-
-## Technical Specifications for AI Generation
-
-**Recommended Settings:**
-- **Aspect Ratio:** 2:3 (portrait orientation) or 16:9 (landscape faction banner)
-- **Resolution:** 1024x1536 minimum for portrait quality
-- **Detail Level:** High (emphasize skin texture, scars, armor weathering)
-- **Lighting:** Dramatic (high contrast, rim lighting, volcanic glow)
-
-**Example Master Prompt (Midjourney/DALL-E):**
+### Midjourney/DALL-E Prompt Structure
 
 ```
-A goblinoid Forge-Matron from the Crucible Packs faction, standing before a volcanic altar with molten lava flowing in the background. She has ash-gray leathery skin, glowing yellow cat-like eyes, and white-gray hair braided with obsidian shards. Her arms are covered in ritual burn scars that glow faintly orange. She wears flowing charcoal-gray robes and holds an oversized ceremonial hammer. The scene is lit from below by lava glow, casting dramatic shadows across her face. Embers and ash particles float in the air. Grimdark fantasy realism, post-apocalyptic tribal aesthetic, detailed character portrait, dark fantasy, volcanic wasteland setting. --ar 2:3 --style raw --v 6
+An illuminated manuscript portrait in medieval codex style depicting a goblinoid Forge-Matron from the Crucible Packs faction. The art style is flat, iconic, with heavy black outlines similar to Romanesque religious art or woodcut prints.
+
+CENTRAL FIGURE: A short goblinoid female (4-5 feet tall) with ash-gray skin, glowing yellow eyes, pointed ears, and white-gray braided hair decorated with obsidian beads. She wears flowing charcoal-gray ceremonial robes with orange flame patterns. Her bare arms show ritual burn scars (simple line work). She holds an oversized ceremonial hammer overhead in her right hand (glowing orange) and a branding iron in her left hand. Frontal pose, symmetrical composition, Byzantine icon style.
+
+BACKGROUND: Volcanic forge setting with stylized orange-red flames rising from an altar. Anvil silhouette on left, forge bellows on right. Hanging chains. Molten metal cauldron at base glowing orange. Volcanic rock floor with scattered embers (orange dots). Simplified, flat perspective.
+
+COLOR PALETTE: Dominant volcanic orange/red (#D2691E), charcoal black outlines (#1a0a04), ash-gray skin (#6e6e6e), ember glow accents (#FF6347). Aged parchment background (#D4C5B0).
+
+BORDER FRAME: Thick black rectangular border with decorative geometric patterns. Corner ornaments with flame symbols. Top border: alternating anvils and hammers. Side borders: chain link pattern with small flames. Bottom: Latin motto "IGNIS VINCIT OMNIA" in bold medieval lettering, subtitle "CRUCIBLE PACKS - Forged in Flame, Tempered by Loss".
+
+MARGIN SYMBOLS: Left side vertical icons (obsidian shard, branding iron, tongs, molten droplet). Right side vertical icons (volcanic peak, flame brazier, ancestral hammer, ash urn).
+
+STYLE REFERENCES: Medieval illuminated manuscript, Romanesque religious art, Byzantine iconography, woodcut/linocut aesthetic, heraldic emblem design, simplified flat composition, heavy black outlines, limited color palette, decorative border frames, symbolic marginalia.
+
+--ar 2:3 --style raw --no depth, no perspective, no realism, no shading gradients, no photographic lighting
 ```
 
 ---
 
-## Final Notes
+## Alternative Composition: Ashen-King Torrak (War Leader)
 
-**Faction Identity Summary:** The Crucible Packs are NOT traditional fantasy goblins. They are **Void-mutated humans** who survived volcanic catastrophe and adapted to become shorter, heat-resistant, ash-skinned survivors. Their culture revolves around fire-worship, honor duels, and blacksmithing. Every visual element should communicate: **"Forged in fire, tempered by loss, mutated by the Void."**
+### Central Figure Variant
 
-When generating portraits, prioritize:
-1. **Survivalist realism** (weathered, scarred, battle-hardened)
-2. **Volcanic environment integration** (lava glow, ash, embers)
-3. **Distinct goblinoid features** (4-5 feet tall, yellow eyes, ash-gray skin)
-4. **Cultural elements** (ancestral weapons, ritual scars, Pack symbols)
+**Goblinoid Warlord:**
+- Male goblinoid, charcoal-black skin (#2b2b2b)
+- Bare-chested showing 47 ritual duel scars (simplified tally marks)
+- Orange glowing eyes (#FF6347)
+- Dual-wielding curved volcanic swords (blades glowing red-orange)
+- Spiked pauldrons on shoulders
+- War paint (ash-white streaks) across face
+- Frontal heroic pose, arms crossed with swords
 
-The Crucible Packs should feel dangerous, honorable, and tragically beautiful—survivors who embrace their mutation as divine blessing rather than curse.
+**Background:**
+- Lava arena floor (geometric lava flow patterns)
+- Volcanic mountain backdrop
+- Crossed weapons behind figure (axes, spears)
+- Forge fires on sides
+
+**Border Motto:**
+- **"HONOR THROUGH FIRE"** (English)
+- OR **"FERRO ET IGNE"** (By Iron and Fire - Latin)
+
+---
+
+## Technical Specifications
+
+**Aspect Ratio:** 2:3 (portrait orientation, matching reference images)
+
+**Resolution:** 1024x1536 minimum (high detail for linework)
+
+**Color Mode:** Limited palette (4-5 colors maximum)
+
+**Line Weight:** Thick black outlines (3-5px equivalent at final resolution)
+
+**Texture:** Aged parchment overlay (subtle grain, stains, yellowing)
+
+**Typography:** Medieval blackletter or uncial script for Latin text
+
+---
+
+## Key Style Directives (Mandatory)
+
+**DO:**
+- Use flat, iconic composition (minimal depth)
+- Heavy black outlines on all elements
+- Simplified, stylized anatomy (not realistic)
+- Geometric shapes for background elements
+- Decorative border with symbolic marginalia
+- Limited color palette (volcanic orange/red, ash-gray, charcoal black)
+- Aged parchment texture background
+- Latin or archaic English motto text
+- Heraldic/emblematic presentation
+
+**DON'T:**
+- Use realistic shading or gradients
+- Add photographic lighting or depth of field
+- Use perspective or vanishing points
+- Include modern elements or details
+- Use full-spectrum color palette
+- Create dynamic action poses
+- Add realistic textures (cloth, metal, skin wrinkles)
+- Use painterly brushstrokes
+
+---
+
+## Negative Prompts (Critical Exclusions)
+
+```
+--no photorealistic, 3D rendering, depth of field, gradient shading, perspective, modern art, anime style, comic book style, digital painting, soft lighting, atmospheric effects, motion blur, lens flare, detailed textures, realistic anatomy, dynamic poses, bright colors, clean armor, pristine equipment
+```
+
+---
+
+## Comparison to Reference Images
+
+**Matching Elements from Reference Art:**
+
+1. **Image #1 (Forge-Matron - Orange):**
+   - Flat composition with frontal figure
+   - Heavy black outlines
+   - Limited warm color palette (orange/brown tones)
+   - Decorative border with corner symbols
+   - Text at bottom (title/motto)
+   - Background elements simplified (forge, flames, tools)
+
+2. **Image #2 (Church Knight - Gothic):**
+   - Byzantine icon-style frontal pose
+   - Religious symbolism (our version: fire-worship icons)
+   - Latin motto at bottom
+   - Ornate border frame with crosses (our version: flames/anvils)
+   - Limited color palette (browns, golds, greens)
+
+3. **Image #3 (Elf/Nature - Green):**
+   - Naturalistic background simplified to iconic elements
+   - Border with botanical patterns (our version: industrial/fire patterns)
+   - Flat figure against decorative background
+   - Latin motto: "NATURA PATIENS, NATURA IRATA"
+
+4. **Image #4 (Nomad - Desert Tan):**
+   - Monochromatic palette (tan/brown/orange)
+   - Iconographic margin symbols (tools, resources)
+   - Simplified architectural background
+   - Latin motto: "MOVEMUR, APTAMUR VIVIMUS"
+   - Geographic/cultural symbols in border
+
+---
+
+## Final Notes for AI Generation
+
+**Faction Identity in Manuscript Style:**
+
+The Crucible Packs are Void-mutated goblinoid blacksmiths who worship fire as divine. The illuminated manuscript portrait should communicate:
+
+1. **Fire as Sacred:** Flames, forges, and volcanic imagery dominate
+2. **Honor through Trial:** Burn scars are badges of pride, not wounds
+3. **Smithing Culture:** Tools (hammers, anvils, tongs) are religious symbols
+4. **Goblinoid Physique:** Shortened stature (4-5 feet), ash-gray skin, yellow eyes
+5. **Latin Motto:** "IGNIS VINCIT OMNIA" (Fire Conquers All)
+
+The art should feel like a **medieval religious icon depicting fire-worshipping forge-priests** rather than realistic character art. Think Byzantine saint portraits meets industrial blacksmith symbolism.
+
+---
+
+## Quick Reference Checklist
+
+Before generating, confirm:
+
+- ✅ Flat, iconic composition (no depth/perspective)
+- ✅ Heavy black outlines on all elements
+- ✅ Limited color palette (orange, gray, black)
+- ✅ Decorative border frame with geometric patterns
+- ✅ Latin motto at bottom: "IGNIS VINCIT OMNIA"
+- ✅ Symbolic marginalia (tools, flames, volcanic elements)
+- ✅ Simplified anatomy (stylized, not realistic)
+- ✅ Aged parchment background texture
+- ✅ Goblinoid features (short, ash-gray skin, yellow eyes)
+- ✅ Forge/fire symbolism throughout
+
+**Style Target:** Medieval illuminated manuscript meets industrial forge iconography
+
+**NOT:** Realistic character portrait, fantasy novel cover art, concept art
