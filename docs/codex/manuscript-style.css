@@ -289,7 +289,7 @@ body::before {
 
 /* Main Content Area */
 .content {
-    padding: 3rem 3rem 3rem 120px; /* 100px offset from left border + 20px padding */
+    padding: 3rem 3rem 0 120px; /* 100px offset from left border + 20px padding, no bottom padding to prevent gap */
     background: linear-gradient(to bottom,
         rgba(26, 20, 16, 0.85),
         rgba(10, 6, 4, 0.9)
