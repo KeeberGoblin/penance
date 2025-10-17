@@ -28,6 +28,36 @@ Nine powers struggle for control of a dying world. Each is broken. None are hero
 **Status**: ✅ Complete with v2.0 equipment system
 **Support Units**: [6 units](elves/support-units.md) - Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant
 
+### [Crucible Packs](crucible/deck-equipment-system.md)
+**Playstyle**: Honor duels, volcanic terrain control, ancestral weapons
+**Mechanic**: Forge tokens (generate in lava), Honor Duels (1v1 binding combat), Ancestral Iron (permanent upgrades)
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](crucible/support-units.md) - Honor Guard, Forge Apprentice, Tribal Hunter, Duelist Champion, Forge Master, Ancestral Spirit
+
+### [Soulstone Exchange](exchange/deck-equipment-system.md)
+**Playstyle**: Economic warfare, hired mercenaries, resource hoarding
+**Mechanic**: Credit economy (hire units mid-battle), Compound Interest (snowball resources), Corporate warfare
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](exchange/support-units.md) - Security Contractor, Corporate Enforcer, Debt Collector, Executive Bodyguard, Hostile Takeover Squad, Board of Directors
+
+### [Nomad Collective](nomads/deck-equipment-system.md)
+**Playstyle**: Mobility, scavenging, survival tactics
+**Mechanic**: Scrap tokens (salvage from destroyed units), Mobility focus, Adaptability
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: TBD
+
+### [Vestige Bloodlines](vestige-bloodlines/deck-equipment-system.md)
+**Playstyle**: Pack tactics, savage melee, animal bloodlines
+**Mechanic**: Bloodline mutations (wolf/bear/raven/chitin/serpent), Pack coordination, Desperate strength
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](vestige-bloodlines/support-units.md) - Fenmar Pack Hunters, Urtok Berserker, Corvath Murder, Vexis Swarmling, Serrak Assassin, Primal Alpha
+
+### [Emergent Syndicate](emergent/deck-equipment-system.md)
+**Playstyle**: Bio-engineered evolution, hive-mind coordination, transformation
+**Mechanic**: Metamorph tokens (transformation resource), Form shifting (Assault/Tank/Scout/Support), Hive intelligence
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](emergent/support-units.md) - Drone Swarm, Molt Guardian, Adaptation Form, Hive Spawn, Evolution Catalyst, Apex Predator
+
 ---
 
 ## Faction Systems
@@ -45,11 +75,7 @@ How faction-specific Tactics cards work. Choose 2 from 5 per faction.
 
 ## Design-Only Factions (Not Yet Playable)
 
-- **The Wyrd Conclave**: Reality distortion, stolen faces, incomprehensible logic
-- **Nomad Collective**: Survival through mobility, reality fracture prediction
-- **Merchant Guilds**: War profiteering, economic control, selling to all sides
-- **Blighted Packs**: Chimeric mutations, pack tactics, weaponized transformation
-- **Chitinous Ascendancy**: Hive-mind arthropod fusion, post-human evolution
+- **The Wyrd Conclave**: Reality distortion, stolen faces, incomprehensible logic (Lore only, no deck system yet)
 
 ---
 

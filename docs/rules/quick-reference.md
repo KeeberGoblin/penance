@@ -1,444 +1,323 @@
-# PENANCE: QUICK REFERENCE
-## Absolution Through Steel
+# Quick Reference Sheet
+## Penance: Absolution Through Steel
+
+**Print this page for table reference** (8.5" × 11", 1 page front/back)
 
 ---
 
 ## TURN STRUCTURE
 
-### Player Turn (4 Phases)
+### 1. START OF TURN
+- ☑ Draw 6 cards (or hand size limit)
+- ☑ Refresh SP (5 SP for Warden, 6/4/3 for other classes)
+- ☑ Trigger passive effects (Living Forge, etc.)
+- ☑ Take environmental damage (lava, poison, etc.)
+- ☑ Roll Strain if Heat ≥ 5
 
-**1. REFRESH**
-- Restore SP to maximum
-- If Heat 5+: Roll Strain (1d6 + Heat)
+### 2. ACTION PHASE
+- Play cards (cost SP)
+- Move, attack, defend, use abilities
+- Activate support units (independent)
+- Spend until SP = 0 or choose to end turn
 
-**2. ACTION PHASE**
-- Play cards (costs SP)
-- Move (1 SP per hex)
-- Rotate facing (free, once per turn)
-- Continue until out of SP or pass
-
-**3. DRAW PHASE**
-- Draw to hand size 6
-- If deck empty: Reshuffle + add 1 Damage card
-
-**4. END TURN**
-- Resolve end-of-turn effects
-- Next player goes
-
----
-
-## SP MAXIMUM (by Casket Type)
-
-| Casket Type | SP Max |
-|-------------|--------|
-| Light | 6 SP |
-| Medium | 5 SP |
-| Heavy | 4 SP |
-| Assault | 3 SP |
-
-Modified by destroyed Chassis (-1 SP) or Leg-Skimming (+1 SP)
+### 3. END OF TURN
+- ☑ Discard entire hand (all cards → discard pile)
+- ☑ Unspent SP lost (cannot bank)
+- ☑ Remove expired buffs/debuffs
+- ☑ Check for Heat reduction (safe zone 0-4)
 
 ---
 
-## COMBAT RESOLUTION (WITH DICE)
+## DAMAGE & HP
 
-### Attack Sequence
-1. **Play attack card** (spend SP), declare target component
-2. **Calculate To-Hit Number**:
-   - Base: **5+** (roll 2d6 Attack Dice)
-   - \+ Range (Short +0, Medium +1, Long +2, Extreme +3)
-   - \+ Attacker movement (1-3 hexes +1, 4-6 +2, 7+ +3)
-   - \+ Defender movement (1-3 hexes +1, 4-6 +2, 7+ +3)
-   - \+ Hex-side (Front +0, Weapon +0, Flank -1, Rear -2, Shield +1)
-   - \+ Cover (Light +1, Heavy +2)
-   - \+ Elevation (Higher -1, Lower +1)
-3. **Roll 2 Attack Dice**, add values:
-   - **5-6** = Hit | **7-8** = Strong Hit (+1 dmg)
-   - **9** = Critical (+2 dmg, bypass 1 Def) | **10** = EXECUTION (destroy component)
-   - **<5** = Miss | **2** = Catastrophic Failure (weapon jams)
-4. **If hit**, Defender plays reactive card (optional, 0 SP)
-5. **Defender rolls Defense Dice** (1d6 per damage):
-   - Count blocks: 🛡️ SHIELD, ⚙️ ABSORB (each blocks 1 dmg)
-   - Apply effects: 💀 CRITICAL (+1 Component Dmg), 🔥 HEAT (+1 Heat), ⚔️ PIERCE (no reactives)
-6. **Defender discards** final damage (original - blocks) from hand/deck
+### Deck = HP
+- **30-card deck** = 30 HP
+- Damage dealt = discard that many cards from top of deck
+- **0 cards = Death**
 
 ### Component Damage
-- Primary Weapon cards discarded → +1 Component Damage
-- Defense Dice 💀 CRITICAL → +1 Component Damage
-- **3 Component Damage = Component Destroyed**
+When damaged, if **3+ cards of same type** discarded:
+- **Primary Weapon** destroyed → lose all Primary Weapon cards from hand
+- **Right Arm** → lose Primary Weapon cards
+- **Left Arm** → lose Secondary Equipment cards
+- **Legs** → movement costs +1 SP per hex
+- **Head** → -1 to ranged attacks
+- **Chassis** → permanent -1 SP maximum
+
+### Reshuffling
+- When deck empty, reshuffle discard pile
+- **Add 1 "Damage" card** (dead draw, no effect)
+- After 3-4 reshuffles, deck is ~30% useless (death spiral)
 
 ---
 
-## COMPONENT DESTRUCTION EFFECTS
+## SP ECONOMY
 
-| Component | Effect |
-|-----------|--------|
-| **Right Arm** | Lose all Primary Weapon cards from hand |
-| **Left Arm** | Lose all Secondary Equipment cards |
-| **Legs** | Movement costs +1 SP per hex |
-| **Head** | -1 to ranged attacks, no Sensor Sweep |
-| **Chassis** | -1 SP maximum (permanent) |
+| Casket Class | SP per Turn | Weight | Speed |
+|--------------|-------------|---------|-------|
+| Scout (Light) | 6 | 700-900 lbs | Fast |
+| **Warden (Medium)** | **5** | 1,100-1,300 lbs | **Balanced** |
+| Vanguard (Heavy) | 4 | 1,600-1,800 lbs | Slow |
+| Colossus (Assault) | 3 | 2,200-2,500 lbs | Immobile |
 
----
-
-## RANGE & LINE OF SIGHT
-
-### Range Bands
-- **Melee**: Range 1 (adjacent only)
-- **Close**: Range 2-3
-- **Medium**: Range 4-6
-- **Long**: Range 7+
-
-### LOS Blocked By
-- Walls
-- Large terrain (buildings)
-- Dense forests (marked)
-
-### Cover (To-Hit Penalty)
-- Light cover (forest, rubble): +1 to target number
-- Heavy cover (fortress walls): +2 to target number
-- Behind other Caskets: +1 to target number
+**Common SP Costs**:
+- Move: 1 SP (4 hexes)
+- Basic Attack: 2 SP (3-4 damage)
+- Powerful Attack: 3-4 SP (5-7 damage)
+- Ultimate Ability: 5 SP (game-changing)
 
 ---
 
-## FACING MODIFIERS (6-HEX SYSTEM)
-
-| Hex-Side | To-Hit Mod | Damage Bonus | Def Penalty | Shield Blocks? |
-|----------|------------|--------------|-------------|----------------|
-| **1 (Front)** | +0 | +0 | 0 | Yes |
-| **2 (Weapon)** | +0 | +1 | -1 | No |
-| **3 (Flank-R)** | -1 | +2 | -2 | No |
-| **4 (Rear)** | -2 | +3 | -3 | No |
-| **5 (Flank-L)** | -1 | +2 | -2 | No |
-| **6 (Shield)** | +1 | +0 | +1 | Yes |
-
-**Rotating**: Free action, once per turn. 1 SP per additional rotation.
-
----
-
-## HEAT SYSTEM
+## HEAT & STRAIN
 
 ### Heat Zones
-| Heat | Zone | Effect |
-|------|------|--------|
-| 0-4 | Safe | None |
-| 5-9 | Danger | Roll Strain at start of turn |
-| 10+ | Critical | Auto-fail Strain |
+- **Safe Zone (0-4 Heat)**: No penalties
+- **Danger Zone (5+ Heat)**: Roll Strain at start of turn
 
-### Strain Table (1d6 + Heat)
+### Strain Roll (1d6)
 | Roll | Effect |
 |------|--------|
-| 1-5 | +1 Heat |
-| 6-8 | -1 SP this turn |
-| 9-11 | Take 2 damage |
-| 12+ | Component malfunction |
+| 1-2 | **Critical Failure**: Lose 2 SP + take 2 damage |
+| 3-4 | **Failure**: Lose 1 SP or take 1 damage |
+| 5-6 | **Success**: No penalty |
+
+### Gaining Heat
+- Powerful abilities (+1-2 Heat)
+- Standing in lava (+1 Heat per turn)
+- Overcharging weapons (+1 Heat)
 
 ### Removing Heat
-- Emergency Vent card (2 SP): Remove 3 Heat
-- Water hexes: Remove 2 Heat per turn
-- Pass entire turn: Remove 1 Heat
+- Vent abilities (-2-3 Heat)
+- End turn in safe zone (0 Heat)
+- Heat Sink equipment (passive -1)
 
 ---
 
-## MOVEMENT
+## FACTION MECHANICS (Quick)
 
-| Action | SP Cost |
-|--------|---------|
-| Move 1 hex (clear) | 1 SP |
-| Move 1 hex (difficult) | 2 SP |
-| Climb up 1 level | 2 SP |
-| Climb down 1 level | 1 SP |
-| Rotate facing | Free |
-
-**Cannot move through**: Enemies, walls, obstacles
-
----
-
-## PILOT WOUNDS
-
-### When Pilot Takes Damage
-- Capsule breach
-- Neural feedback (5+ Component Damage total)
-- Thread snap
-- Taint overload (10 Taint)
-- Casket destruction (roll save)
-
-### Wound Types
-- **Minor Injury** (5 cards): Temporary debuff
-- **Severe Injury** (3 cards): PERMANENT effect
-- **Trauma** (2 cards): Mental breakdown
-
-**10 Wounds = Pilot Death**
+| Faction | Resource | How to Generate | How to Spend |
+|---------|----------|-----------------|--------------|
+| **Church** | Blood Offering stacks | Self-harm, discard cards | +1 damage per stack |
+| **Dwarves** | Rune Counters | Standing still, defensive | Damage reduction, armor-piercing |
+| **Elves** | Bleed stacks | Attacks hit, no removal | Infinite scaling damage |
+| **Ossuarium** | Soul Harvest | Kill enemies | Heal, resurrect, thralls |
+| **Crucible** | Forge Tokens | Stand in lava | Buffs, terrain, weapons |
+| **Exchange** | Credits | Debt Collector, contracts | Hire mercenaries mid-battle |
+| **Nomads** | Scrap Tokens | Salvage destroyed units | Craft equipment mid-battle |
+| **Vestige** | Bloodline Forms | Metamorph, pack tactics | Transform, pack bonuses |
+| **Emergent** | Metamorph Tokens | Molting, evolution | Transform forms (Assault/Tank/Scout/Support) |
 
 ---
 
-## COMMON ACTIONS
+## COMBAT RESOLUTION
 
-| Action | SP Cost | Notes |
-|--------|---------|-------|
-| Play attack card | Varies | 1-5 SP typically |
-| Play reactive defense | 0 SP | During enemy turn |
-| Move 1 hex | 1 SP | +1 SP if difficult terrain |
-| Vent Heat | 2 SP | Remove 3 Heat (card) |
-| Rotate | Free | Once per turn |
-| Draw extra card | Varies | Some cards grant this |
+### Attack Sequence
+1. Declare attack (target + card)
+2. Check range (melee = 1 hex, ranged = varies)
+3. Calculate damage (base + buffs)
+4. Target applies Defense (reduce damage)
+5. Deal damage (discard cards from deck)
+6. Check for Component Damage (3+ same type)
 
----
+### Defense Formula
+**Damage Dealt = Total Damage - Defense**
+- Minimum damage: 1 (cannot reduce below 1)
+- Defense buffs stack (Shield Wall +2, Guard Stance +1 = +3 total)
 
-## DECK & HAND
-
-### Starting Hand
-- **6 cards**
-- **Mulligan**: Once at start, shuffle hand & redraw 6
-
-### Hand Size
-- **Maximum 6** (discard down at end of turn)
-- Draw to 6 every Draw Phase
-
-### Deck Depletion
-- Deck empty → **Reshuffle** discard pile
-- **Add 1 Damage card** when reshuffling
-- Damage cards do nothing (dead draws)
-
-### Defeat
-- Deck AND discard both empty → **Casket destroyed**
+### Range
+| Type | Range | Line of Sight |
+|------|-------|---------------|
+| Melee | 1 hex | Not required |
+| Ranged (Short) | 1-4 hexes | Required |
+| Ranged (Long) | 1-6 hexes | Required |
+| Artillery | 4-8 hexes | Not required (indirect fire) |
 
 ---
 
-## REACTIVE CARDS
+## TERRAIN EFFECTS
 
-### Timing
-- Played during **opponent's turn**
-- Must have **[—] Initiative** keyword
-- Cost **0 SP** (doesn't use your pool)
-
-### Limits
-- **1 reactive per attack**
-- Must be in hand
-- Played BEFORE damage is calculated
-
-### Examples
-- Brace for Impact: Reduce damage by 2
-- Deflect: Reduce damage by 1
-- Unyielding Bulwark: Reduce damage by 3, gain 1 Heat
+| Terrain | Movement | Combat Effect | Special |
+|---------|----------|---------------|---------|
+| **Lava** | Normal | 2 dmg/turn standing | Crucible: +2 Forge tokens |
+| **Ruins** | +1 SP | +1 DEF vs ranged | Cover |
+| **Forest** | +1 SP | Elves: +1 DEF | Dense vegetation |
+| **Water** | +1 SP | -1 to ranged attacks | Difficult footing |
+| **Elevated** | Normal | +1 dmg ranged attacks | High ground |
+| **Difficult** | +1 SP per hex | None | Rubble, mud |
 
 ---
 
-## VICTORY CONDITIONS
+## SUPPORT UNITS (Quick Reference)
 
-### Arena
-- Reduce enemy Casket to 0 HP (deck empty)
-- Kill enemy pilot (10 Wounds)
-- Scenario-specific objectives
+### Activation
+- Support units act independently (behavior deck AI)
+- Do not cost your SP
+- Draw 1 behavior card per turn, resolve effect
 
-### Campaign
-- Complete primary objective
-- At least 1 pilot survives
+### Common Unit Stats
+| Unit Type | HP | Movement | Defense | Role |
+|-----------|-----|----------|---------|------|
+| Scout | 6-10 | 6-8 | 0-1 | Recon, marking |
+| Tank | 15-20 | 3-4 | 3-4 | Protection, taunt |
+| Support | 8-12 | 4-5 | 1-2 | Buffs, healing |
+| Assault | 10-15 | 5-6 | 1-2 | Damage, pressure |
+
+### Support Unit Actions
+- Move toward/away from threats
+- Attack marked targets
+- Buff allies within range
+- Generate faction resources (Forge tokens, Blood stacks, etc.)
 
 ---
 
-## KEYWORDS
+## HONOR DUELS (Crucible Only)
+
+### Challenge
+- Cost: 2 SP, range 6 hexes
+- Target must accept or refuse
+
+### If Accepted
+- Only you and target attack each other (1 round)
+- Allies/enemies ignored
+- Kill target → gain 3 Forge tokens + recover 3 cards
+
+### If Refused
+- Target gains **Coward's Mark**
+- All Crucible deal +2 damage to marked target (permanent)
+
+---
+
+## COMMON KEYWORDS
 
 | Keyword | Meaning |
 |---------|---------|
-| **Melee** | Range 1 only |
-| **Reactive** | Play during enemy turn |
-| **[—] Initiative** | Reactive card |
-| **Aura X** | Affects X-hex radius |
-| **Ignore Armor** | Bypass Defense entirely |
-| **Self-Harm** | Discard from your deck |
-| **Component Target** | Choose which component to damage |
+| **Armor-Piercing** | Ignore Defense buffs |
+| **Bleed** | Damage over time (stacks infinitely) |
+| **Reactive** | Play on opponent's turn (response) |
+| **Passive** | Always active, no SP cost |
+| **AoE** | Area of Effect (hits multiple targets) |
+| **Taunt** | Forces enemies to attack this unit |
+| **Flying** | Ignore terrain, move over enemies |
+| **Mark** | Target takes +1 damage from faction |
+| **Grappled** | Cannot move next turn |
+| **Stunned** | Lose 2 SP next turn |
 
 ---
 
-## TERRAIN TYPES
+## UNIVERSAL CORE CARDS (All Decks)
 
-| Terrain | Movement | LOS | Cover | Special |
-|---------|----------|-----|-------|---------|
-| Clear | 1 SP | Yes | No | — |
-| Forest | 2 SP | Yes | +1 Def | — |
-| Rubble | 2 SP | Yes | +1 Def | — |
-| Wall | Impassable | BLOCKED | N/A | — |
-| Water | 1 SP | Yes | No | Remove 2 Heat/turn |
-| Elevated | 2 SP (up) | Yes | No | +1 dmg if higher |
-
----
-
-## CASKET DECK COMPOSITION (30 cards)
-
-- **10 Universal Core** (mandatory, everyone has)
-- **12 Primary Weapon** (faction-specific, cannot change)
-- **6 Secondary Equipment** (player choice)
-- **2 Faction Tactics** (choose 2 from 5 available)
+| Card Name | Cost | Effect |
+|-----------|------|--------|
+| **Move** | 1 SP | Move up to 4 hexes |
+| **Attack** | 2 SP | Deal 3 damage (melee) |
+| **Defend** | 0 SP (Reactive) | Reduce damage by 2 |
+| **Sprint** | 2 SP | Move up to 6 hexes, gain 1 Heat |
+| **Overwatch** | 1 SP | Next attack +1 damage |
+| **Brace** | 1 SP | +1 Defense until next turn |
+| **Vent Heat** | 1 SP | Remove 2 Heat |
+| **Draw Card** | 2 SP | Draw 1 additional card |
+| **Recover** | 3 SP | Recover 3 cards from discard |
+| **Desperate Strike** | 0 SP | Deal 2 damage, take 1 damage |
 
 ---
 
-## DICE QUICK REFERENCE
+## DECK CONSTRUCTION
 
-### Attack Dice (2d6)
-| Symbol | Value | Name |
-|--------|-------|------|
-| 🛡️ | 1 | GLANCE |
-| 🩸 | 2 | BLOOD |
-| ⚔️ | 3 | STRIKE |
-| ⚔️⚔️ | 4 | DOUBLE STRIKE |
-| 💀 | 5 | DEATH BLOW |
-| ⚙️ | 0 | JAM |
+### Standard Deck (30 cards)
+- **10 Universal Core** (always included)
+- **6 Faction Cards** (choose 6 from 10 available)
+- **12 Primary Weapon** (fixed, comes with Casket)
+- **2 Tactics** (choose 2 from 5 available)
 
-**Results**: 5-6 Hit | 7-8 Strong Hit (+1) | 9 Critical (+2) | 10 EXECUTION | 2 Catastrophic Failure
+**Total**: 30 cards = 30 HP
 
-### Defense Dice (1d6 per damage)
-| Symbol | Effect |
-|--------|--------|
-| 🛡️ | SHIELD - Block 1 dmg |
-| ⚙️ | ABSORB - Block 1 dmg |
-| 🩸 | FLESH WOUND - Take dmg |
-| 💀 | CRITICAL - Take dmg + 1 Component Dmg |
-| ⚔️ | PIERCE - Take dmg, no reactives |
-| 🔥 | HEAT - Take dmg + 1 Heat |
+### Equipment Expansion
+- Add **Secondary Equipment** (6 cards): Shields, accessories, plating
+- Add **Faction Tactics** (2 cards): Special abilities
+- Add **Support Units** (behavior decks, independent)
 
-### Suffering Dice (Church/Events, 1d6)
-| Symbol | Effect |
-|--------|--------|
-| 🛡️ | DIVINE MERCY - No harm |
-| 🩸 | BLOOD PRICE - Discard 2 |
-| ⚔️ | ZEALOT'S FURY - Discard 1, +1 dmg all attacks |
-| 🔥 | PENANCE - Discard 1, +1 Heat, +2 dmg next |
-| 💀 | MARTYRDOM - Discard 3, +3 dmg next |
-| ⚙️ | ABSOLUTION - Discard 1, recover 1 |
+**Max Deck Size**: ~40 cards (with full equipment)
+
+---
+
+## WINNING CONDITIONS
+
+### Victory
+- Reduce enemy Casket to **0 HP** (deck empty after reshuffles)
+- Complete scenario objective (capture, survive, escort, etc.)
+- Enemy surrenders (optional rule)
+
+### Defeat
+- Your deck reaches 0 cards (death)
+- Fail scenario objective (time limit, VIP death, etc.)
+- Surrender (optional)
+
+---
+
+## ADVANCED RULES (Quick Notes)
+
+### Pilot Wound Deck (10 cards)
+- Flip 1 when pilot takes damage (capsule breach, Thread snap, etc.)
+- 5 Minor Injuries (temporary debuffs)
+- 3 Severe Injuries (PERMANENT effects)
+- 2 Trauma (mental breakdowns)
+- All 10 Wounds = Pilot Death
+
+### Ancestral Iron (Crucible)
+- Spend 5 Forge tokens at end of mission
+- Forge 1 Ancestral Weapon (+1 dmg OR +1 DEF OR +1 move)
+- Permanent upgrade (persists across missions)
+- Max 3 Ancestral Weapons total
+
+### Leg-Skimming (Campaign)
+- Sacrifice pilot legs permanently
+- Gain permanent SP boost (+1 SP per turn)
+- Cannot undo (irreversible)
+
+---
+
+## PLAYTEST CHECKLIST
+
+Before first game:
+- ☑ Print 2 decks (30 cards each)
+- ☑ Print hex map (12×10 grid)
+- ☑ Tokens: SP, Heat, Forge/Blood stacks
+- ☑ D6 dice (for Strain rolls)
+- ☑ Support unit cards + behavior decks
+- ☑ Quick reference sheet (this page)
+
+During game:
+- ☑ Track SP each turn (refresh start of turn)
+- ☑ Discard hand at end of turn (important!)
+- ☑ Check Component Damage (3+ same type)
+- ☑ Roll Strain at 5+ Heat
+- ☑ Mark terrain effects (lava, ruins, etc.)
 
 ---
 
 ## COMMON MISTAKES
 
-❌ **Don't**: Draw cards during Action Phase (only Draw Phase)
-❌ **Don't**: Discard from hand when damaged (discard from DECK)
-❌ **Don't**: Stack cover bonuses (max +1 Defense from cover)
-❌ **Don't**: Attack targets outside your front 180° arc
-❌ **Don't**: Forget to roll Strain at 5+ Heat
+### ❌ Don't Forget:
+1. Discard entire hand at end of turn (even unplayed cards)
+2. Lava damage happens at START of turn (not end)
+3. Unspent SP is lost (cannot bank)
+4. Component Damage requires 3+ of SAME TYPE (not just 3+ total)
+5. Defense reduces damage but minimum 1 damage always dealt
+6. Support units act independently (don't cost your SP)
 
-✅ **Do**: Rotate before attacking rear targets (free action)
-✅ **Do**: Use reactive cards to mitigate damage
-✅ **Do**: Track Component Damage separately per component
-✅ **Do**: Add Damage card when reshuffling deck
-
----
-
-## SAMPLE TURN (WITH DICE)
-
-**Church Confessor (6 SP, 2 Heat, 24 HP)**
-
-1. **REFRESH**: 6 SP, Heat check = Safe Zone (skip)
-2. **ACTION**:
-   - Rotate (free) → Face enemy
-   - Move 2 hexes (2 SP)
-   - Play Blood Offering (0 SP) → Discard 2 cards, buff active (+3 dmg)
-   - Play Faithful Thrust (2 SP) → Attack for 4 dmg + 3 buff = 7 dmg
-   - **To-Hit**: Base 5+ | Moved 2 hexes +1 = Need 6+
-   - **Roll**: ⚔️(3) + 💀(5) = 8 → Strong Hit (+1 dmg) = 8 total dmg
-   - **Enemy rolls 8 Defense Dice**: 🛡️🛡️🩸🩸💀🔥⚔️🩸 = 2 blocks, 1 Critical, 1 Heat
-   - Final: 6 damage + 1 Component Damage to enemy
-   - Pass (2 SP unused)
-3. **DRAW**: Draw 2 cards (hand back to 6)
-4. **END**: Next player's turn
-
-**Result**: 22 HP remaining, enemy took 6 dmg + 1 Component Dmg + 1 Heat
+### ✅ Remember:
+1. Draw 6 cards EVERY turn (unless modified)
+2. Passive abilities trigger automatically (Living Forge, etc.)
+3. Reactive cards play on opponent's turn (Defend, Parry, etc.)
+4. Buffs expire at end of round (unless specified)
+5. Heat Strain roll ONLY at 5+ Heat (not below)
 
 ---
 
----
+**"Know these rules. Master the flow. Dominate the battlefield."**
 
-## VERSION 3.0 OPTIONAL RULES
-
-**These are OPTIONAL enhancements. Base v2.0 rules work perfectly without them.**
-
-### Dice Pool Advantage (Instead of Static Modifiers)
-
-**ADVANTAGE** (flanking, higher ground, aiming):
-- Roll **3d6 Attack Dice**
-- **Discard lowest**, add 2 highest
-- +17% hit chance, +2.3% crit chance
-
-**CRITICAL ADVANTAGE** (2+ advantages):
-- Roll **4d6 Attack Dice**
-- **Discard 2 lowest**, add 2 highest
-- Triple EXECUTION chance!
-
-**DISADVANTAGE** (heavy cover, long range, high Heat):
-- Roll **3d6 Attack Dice**
-- **Discard highest**, add 2 lowest
-- -16% hit chance, harder crits
-
-**CRITICAL DISADVANTAGE** (2+ disadvantages):
-- Roll **4d6 Attack Dice**
-- **Discard 2 highest**, add 2 lowest
-- Very likely to miss/jam
-
-**Cancellation**: 1 Advantage + 1 Disadvantage = straight 2d6 roll
+*Quick Reference Sheet v1.0 - Penance*
 
 ---
 
-### Taint Exploitation (Tactical Resource)
-
-**GAINING TAINT**:
-- 1 Taint per 3 damage taken
-- Event cards (Taint Pulse, Void Embrace)
-- Church self-harm cards
-
-**SPEND ENEMY TAINT** (offensive):
-- **[1 Taint]** Exposed Weakness → Advantage on attack
-- **[2 Taint]** Force Reroll → Reroll up to 2 Defense blocks
-- **[1 Taint]** Heat Spike → Target gains +1 Heat
-- **[3 Taint]** Component Vulnerability → +1 Component Dmg
-- **[4 Taint]** Neural Disruption → No Reactive cards
-- **[5 Taint]** Taint Overload → Flip 1 Pilot Wound
-
-**SPEND YOUR TAINT** (defensive/desperate):
-- **[2 Taint]** Tainted Fury → +2 damage, gain 1 Heat
-- **[3 Taint]** Ignore Pain → Reduce damage by 3, gain 1 Heat
-- **[1 Taint]** Void Step → Move 2 hexes (0 SP), gain 1 Heat
-- **[4 Taint]** Thermal Purge → Remove all Heat, -1 SP max
-- **[5 Taint]** Resurrection → Reshuffle when defeated (once), flip 2 Wounds
-
-**CORRUPTION THRESHOLD**:
-- 10+ Taint: Roll 1d6, need 4+ or become Corrupted
-- Corrupted: Mind control, explosion, or mutation (1d6 table)
-
----
-
-### Pilot Grit (Campaign Progression)
-
-**GRIT STAT** (0-3, grows with experience):
-- **Grit 0**: Untested (0-4 missions)
-- **Grit 1**: Seasoned (5 missions OR 1 Severe Injury survived)
-- **Grit 2**: Hardened (10 missions OR 3 Severe Injuries)
-- **Grit 3**: Iron Will (20 missions OR 5 Severe Injuries)
-
-**GRIT CHECK** (when Pilot takes damage):
-- Roll **1d6 + Grit**
-- Compare to table:
-
-| Roll | Effect |
-|------|--------|
-| **1-3** | Full Wound (flip normally) |
-| **4-5** | Tough It Out (Severe → Minor) |
-| **6-7** | Shrug It Off (no flip, +1 Heat) |
-| **8+** | Iron Will (no flip, no penalty) |
-
-**FACTION MODIFIERS**:
-- Church: +1 Starting Grit (zealot training)
-- Dwarves: +1 Grit vs Severe only (stoic endurance)
-- Ossuarium: Immune (already dead)
-- Elves: -1 Grit always (fragile immortals)
-
-**BONUSES**:
-- Leg-Skimmed: +1 Grit permanent
-- Trauma Wound: -1 Grit per Trauma
-
----
-
-**PRINT THIS PAGE FOR TABLE REFERENCE**
-
----
-
-*"Refresh. Fight. Draw. Endure. Adapt."*
+[← Back to Rules](../index.html) | [Example of Play](example-of-play.md) | [Full Combat Rules](combat-resolution-detailed.md)
