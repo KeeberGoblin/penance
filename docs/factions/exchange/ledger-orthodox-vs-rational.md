@@ -361,4 +361,4 @@
 
 ---
 
-**[← Previous: Mercenary Hiring](mercenary-hiring.md)** | **[Next: Lore - The Concordat →](lore-concordat.md)**
+**[← Previous: Mercenary Hiring](mercenary-hiring.md)** | **[Back to Exchange](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next: Lore - The Concordat →](lore-concordat.md)**

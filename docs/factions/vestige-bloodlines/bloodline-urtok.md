@@ -148,4 +148,4 @@ If convinced to fight, Grendok becomes **unstoppable tank ally** but risks death
 
 ---
 
-**[← Previous Bloodline: Fenmar](bloodline-fenmar.md)** | **[Next Bloodline: Vexis →](bloodline-vexis.md)**
+**[← Previous Bloodline: Fenmar](bloodline-fenmar.md)** | **[Back to Vestige Bloodlines](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next Bloodline: Vexis →](bloodline-vexis.md)**

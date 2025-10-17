@@ -761,3 +761,7 @@ Dwarven units have resource systems:
 ---
 
 **END OF DOCUMENT**
+
+---
+
+[← Back to Dwarven Faction](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)

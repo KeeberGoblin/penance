@@ -851,3 +851,7 @@ These 6 Command cards can be added to Elven Casket decks to interact with suppor
 **"In vine and thorn, we endure. In shadow and silence, we strike."**
 
 *Support units document version 1.0 - Elven Verdant Covenant*
+
+---
+
+[← Back to Elven Faction](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)

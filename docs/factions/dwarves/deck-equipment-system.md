@@ -455,3 +455,7 @@ Outcome: Dwarven toughness prevents permanent spinal damage
 **END OF DOCUMENT - v3.0 ENHANCED**
 
 *"Steel bends. Stone endures. We are stone wrapped in steel. We do not break."*
+
+---
+
+[← Back to Factions Index](../index.md) | [View All Faction Files](../)

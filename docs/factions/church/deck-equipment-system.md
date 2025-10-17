@@ -488,3 +488,7 @@ Outcome: Church pilot shrugs off permanent injury through willpower
 **END OF DOCUMENT**
 
 *"We bleed to absolve. We kill to repent. We die to be forgiven. Taint and pain are our sacraments."*
+
+---
+
+[← Back to Factions Index](../index.md) | [View All Faction Files](../)

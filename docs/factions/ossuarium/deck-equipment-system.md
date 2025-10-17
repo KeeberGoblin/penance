@@ -485,3 +485,7 @@ Instead, they add **"Decay" cards**:
 **END OF DOCUMENT - v3.0 ENHANCED**
 
 *"We died once. The Engine brought us back. Taint is our lifeblood. We embrace the rot."*
+
+---
+
+[← Back to Factions Index](../index.md) | [View All Faction Files](../)

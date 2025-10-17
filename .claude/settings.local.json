@@ -32,7 +32,10 @@
       "Bash(mv:*)",
       "Bash(mkdir:*)",
       "Bash(if [ -f \"$file\" ])",
-      "Bash(else)"
+      "Bash(else)",
+      "Bash(tree:*)",
+      "Bash(wc:*)",
+      "Bash(tail:*)"
     ],
     "deny": [],
     "ask": []

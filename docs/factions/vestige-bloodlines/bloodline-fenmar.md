@@ -148,4 +148,4 @@ If cure fails, Kael plans to lead final Fenmar exodus into the Void (controlled 
 
 ---
 
-**[← Back to Main Faction](deck-equipment-system.md)** | **[Next Bloodline: Urtok →](bloodline-urtok.md)**
+**[← Back to Vestige Bloodlines](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next Bloodline: Urtok →](bloodline-urtok.md)**

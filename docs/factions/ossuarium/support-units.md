@@ -820,3 +820,7 @@ Ossuarium excels in long battles:
 ---
 
 **END OF DOCUMENT**
+
+---
+
+[← Back to Ossuarium Faction](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)

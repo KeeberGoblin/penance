@@ -23,12 +23,9 @@ This folder contains historical development documents and status reports that ar
 - `dwarves-deck-complete-legacy.md` - Dwarven fixed-deck system (pre-v2.0)
 
 ### Old Tools & Assets
-- `card-generator-old/` - Original card generator prototype (replaced by docs/cards/)
 - `church-sample-sheet.svg` - Sample TTS sheet (Church faction)
 - `dwarven-sample-sheet.svg` - Sample TTS sheet (Dwarven faction)
-- `timeline-replacement.txt` - Old HTML timeline content
-- `update_timeline.py` - Timeline update script (obsolete)
-- `generate-dwarven-deck.py` - Old deck generator (replaced by generate-pdfs.py)
+- `utilities-archive/` - Old utility scripts and audits (moved from utilities/)
 
 ## Why Archive?
 
@@ -37,5 +34,22 @@ These documents were moved from the project root and tools directory to reduce c
 ### Current Locations
 - Playtest package: `docs/reference/PLAYTEST-READY.md`
 - Faction decks: `docs/factions/{faction}/deck-equipment-system.md`
-- Card database: `docs/cards/index.html`
-- PDF generation: `tools/generate-pdfs.py`
+- Card system: `docs/cards/` (index.html, deck-builder.html, print-deck.html)
+- Codex (wiki): `docs/codex/index.html`
+- PDF generation: `tools/generate-pdfs.py` (if exists)
+
+## Cleanup History
+
+### October 17, 2025 - Archive Cleanup
+Removed obsolete files that were fully replaced by current systems:
+- ❌ `card-generator-old/` (252KB) - Replaced by `docs/cards/`
+- ❌ `wiki-index-old.html` (23KB) - Replaced by `docs/codex/index.html`
+- ❌ `timeline-replacement.txt` (12KB) - One-time content, already integrated
+- ❌ `update_timeline.py` (4KB) - One-time script, no longer needed
+- ❌ `generate-dwarven-deck.py` (4KB) - Obsolete deck generator
+
+**Result**: Archive reduced from 540KB to 244KB (54% reduction)
+
+---
+
+**Last Updated**: October 17, 2025

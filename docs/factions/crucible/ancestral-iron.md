@@ -405,4 +405,4 @@ A: Yes. Ancestral +1 damage + Duelist's Stance +2 damage = +3 damage total.
 
 ---
 
-**[← Previous: Honor Duel System](honor-duel-system.md)** | **[Next: Lore - Forge Worship →](lore-forge-worship.md)**
+**[← Previous: Honor Duel System](honor-duel-system.md)** | **[Back to Crucible](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next: Lore - Forge Worship →](lore-forge-worship.md)**

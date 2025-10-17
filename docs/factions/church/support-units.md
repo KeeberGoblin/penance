@@ -799,3 +799,7 @@ Unlock new units through campaign:
 ---
 
 **END OF DOCUMENT**
+
+---
+
+[← Back to Church Faction](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)
