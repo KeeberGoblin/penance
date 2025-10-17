@@ -1,8 +1,8 @@
 # CLAUDE.md
 ## AI Assistant Context Document for Penance: Absolution Through Steel
 
-**Last Updated**: October 14, 2025
-**Project Status**: PLAYTEST READY (v3.0 Optional Mechanics Complete)
+**Last Updated**: October 17, 2025
+**Project Status**: PLAYTEST READY (v3.0 Optional Mechanics Complete + Codex Expansion Phase 3)
 **Purpose**: Complete context for AI assistants working on Penance
 
 ---
@@ -481,7 +481,123 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 
 ---
 
+## Recent Session Work (October 17, 2025)
+
+### Codex Expansion Phase 3: Lore Pages & Visual Consistency
+
+**1. Lore Iframe Pages Created (10 files)**
+- Created comprehensive lore HTML pages for codex navigation:
+  - `lore-theslar-overview.html` - The Theslar Event overview
+  - `lore-ground-zero.html` - North Pole detonation site (added by user)
+  - `lore-year-zero.html` - Timeline of Year 0 apocalypse
+  - `lore-engine.html` - The Engine mechanics and theory
+  - `lore-pre-sundering.html` - World before the catastrophe
+  - `lore-casket-origins.html` - History of Casket technology
+  - `lore-soul-binding.html` - Soul-binding process and ethics
+  - `lore-casket-manufacturing.html` - Post-Sundering production limitations
+  - `lore-bonelord-thresh.html` - Biography of Thresh, inventor of soul-binding
+  - `lore-climate.html` - Post-Sundering climate and environment
+  - `lore-void.html` - The Void, corruption stages, Abominations
+  - `lore-factions-overview.html` - Political landscape of all 10 factions
+  - `lore-settlements.html` - Major cities and population centers
+
+**2. Draconid Timeline Correction**
+- **Issue**: faction-draconid.html had contradictory apocalypse cycles
+  - Showed 1,200-year gaps instead of established 10,000+ year cycles
+- **Fix**: Updated to match canon timeline:
+  - First Cataclysm (The Flood): Year -50,000 (was Year -2,400)
+  - Second Cataclysm (The Inferno): Year -10,000 (was Year -1,200)
+  - Third Cataclysm (The Sundering): Year 0
+- **Files**: `faction-draconid.html`
+
+**3. Crucible Packs Goblinoid Lore Integration**
+- Added detailed Ashveil Catastrophe backstory (volcanic eruption, Year 0 Day 2)
+- Population: 80,000 → 15,000 survivors (65,000 casualties)
+- Added comprehensive goblinoid mutations section:
+  - Physical: 4-5 feet tall, ash-gray to charcoal-black skin, reflective yellow/orange eyes
+  - Adaptations: Heat-resistant skin (touch 200°C safely), elevated metabolism, sharpened canines
+  - Demographics: Reduced lifespan (40-50 years), increased fertility (3-5 children per female)
+- Created AI image generation reference: `docs/factions/crucible/FACTION_PORTRAIT_DESCRIPTION.md`
+  - Detailed physical characteristics for goblinoids
+  - Clothing/armor aesthetic (scorched leather, volcanic glass, heat-treated steel)
+  - Environment context (volcanic caldera, forge lighting, ash storms)
+  - Example Midjourney/DALL-E prompts with technical specs
+  - Character portraits: Forge-Matron Kerra, Ashen-King Torrak, Pack Warriors
+- **Files**: `faction-crucible.html`, `FACTION_PORTRAIT_DESCRIPTION.md`
+
+**4. Faction Artwork Integration**
+- Added header images with torn paper SVG effect to faction pages:
+  - Crucible Packs: `CruciblePact_PlaceH.png`
+  - The Exchange: `Exchange_PlaceH.png`
+- **Pattern**: Parchment background gradient → Faction image → Torn paper SVG overlay
+- **Files**: `faction-crucible.html`, `faction-exchange.html`
+
+**5. Navigation Iframe Loading Fix**
+- **Issue**: Clicking lore/faction navigation links didn't load content in iframe
+- **Root Cause**: Event propagation issues with onclick handlers
+- **Fix**:
+  - Updated loadContent() function to accept event parameter
+  - Added event.preventDefault() and event.stopPropagation()
+  - Changed all onclick handlers to pass event: `onclick="loadContent('file.html', event)"`
+- **Files**: `docs/codex/index.html` (entire navigation updated)
+
+**6. Faction Quote Formatting Standardization**
+- **Issue**: Faction opening quotes used centered inline styles that broke responsive layout
+- **Problem**: `<p style="font-style: italic; color: ...; text-align: center; margin: 1rem 0;">` caused offset centering on different screen sizes
+- **Fix**: Converted all 14 faction pages to use responsive `<div class="manuscript-quote">` format
+- **Benefits**:
+  - Responsive on all screen sizes (no more offset issues)
+  - Consistent with lore page formatting
+  - Cleaner HTML (class-based vs inline styles)
+  - Easier to maintain globally
+- **Files**: All faction HTML pages (church, dwarves, elves, undead, fae, nomads, exchange, bloodlines, emergent, crucible, draconid, merchants, blighted, chitinous)
+
+### Key Technical Notes
+
+**Codex Navigation System**:
+- Main file: `docs/codex/index.html` (iframe-based navigation)
+- Sidebar: 7 major sections (Lore & World, Core Rules, Playable Factions, Scenarios, Campaign, NPC-Only Factions, Resources)
+- Content frame: iframe loads individual HTML pages
+- All pages use `manuscript-style.css` for consistent theming
+
+**Manuscript Quote Format** (Standard Pattern):
+```html
+<div class="manuscript-quote">
+    "Quote text here."
+    <span class="quote-attribution">—Attribution</span>
+</div>
+```
+
+**Faction Header Pattern** (With Artwork):
+```html
+<div style="position: relative; width: 100%; height: 300px; margin: 2rem 0; overflow: hidden; background: [gradient];">
+    <img src="../images/[faction]_PlaceH.png" alt="[Faction Name]" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+    <!-- Torn paper effect SVG overlay -->
+    <svg style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
+        <path d="M0,0 L50,15 L100,5 L150,20..." fill="#D4C5B0" stroke="none"/>
+    </svg>
+</div>
+```
+
+**Available Faction Artwork** (docs/images/):
+- Church2_PlaceH.png, dwarves2_PlaceH.png, Ossuary_PlaceH.png
+- elves_PlaceH.png, fae_PlaceH.png, nomads_PlaceH.png
+- Exchange_PlaceH.png, bloodlines_PlaceH.png, syndicate_PlaceH.png
+- CruciblePact_PlaceH.png, draconis_PlaceH.png
+- blighted_PlaceH.png, merchant_PlaceH.png, chitinousH_PlaceH.png
+
+---
+
 ## Changelog for This Document
+
+**October 17, 2025** - Codex Expansion Phase 3 Complete
+- Created 10+ comprehensive lore iframe pages (Theslar Event, Caskets, Void, Climate, Factions, Settlements)
+- Fixed Draconid timeline contradiction (10,000+ year apocalypse cycles)
+- Integrated Crucible Packs goblinoid lore with AI portrait generation reference
+- Added faction header artwork to Crucible Packs and Exchange pages
+- Fixed iframe navigation loading issues (event propagation)
+- Standardized faction quote formatting across all 14 faction pages (responsive manuscript-quote class)
+- All codex pages now consistent with manuscript styling and responsive design
 
 **October 14, 2025** - v3.0 Integration Complete
 - Added Version 3.0 Optional Mechanics section (Dice Pool, Taint, Grit)
