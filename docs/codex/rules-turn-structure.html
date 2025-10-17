@@ -84,17 +84,24 @@
 
         <h4>1.1b Overspending SP (Tactical mech-style Push System)</h4>
         <ul>
-            <li>You can spend <strong>UP TO DOUBLE</strong> your SP maximum per turn</li>
+            <li>You can spend <strong>UP TO 1.5× your SP maximum</strong> per turn (rounded down)</li>
             <li><strong>Every SP beyond your maximum costs 1 card</strong> (discard from hand or deck)</li>
-            <li><strong>Example</strong>: Scout (6 SP) can spend up to 12 SP total
+            <li><strong>Every 2 SP overspent = +1 Heat</strong> (pushes systems into Danger Zone)</li>
+            <li><strong>Example</strong>: Scout (6 SP) can spend up to 9 SP total (6 × 1.5 = 9)
                 <ul>
                     <li>First 6 SP: Free</li>
-                    <li>7th-12th SP: Discard 1 card each</li>
+                    <li>7th-9th SP: Discard 1 card each + gain 1 Heat (at 8 SP), +1 Heat (at 9 SP) = +2 Heat total</li>
                 </ul>
             </li>
-            <li>This is <strong>voluntary self-harm</strong> for tactical advantage</li>
+            <li><strong>Example</strong>: Heavy (4 SP) can spend up to 6 SP total (4 × 1.5 = 6)
+                <ul>
+                    <li>First 4 SP: Free</li>
+                    <li>5th-6th SP: Discard 1 card each + gain 1 Heat (at 6 SP) = +1 Heat total</li>
+                </ul>
+            </li>
+            <li>This is <strong>voluntary self-harm</strong> for tactical advantage with Heat risk</li>
             <li>Discarded cards go to discard pile (can be recovered)</li>
-            <li><em>"Burn HP for power. Risk everything for the kill."</em></li>
+            <li><em>"Burn HP for power. Risk everything for the kill—but watch your Heat."</em></li>
         </ul>
 
         <h4>1.2 Heat Check</h4>
@@ -207,16 +214,69 @@
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
         <h3>PHASE 3: DRAW PHASE</h3>
-        <p><strong>Refill your hand to 6 cards.</strong></p>
+        <p><strong>Draw cards based on how many you played this turn.</strong></p>
 
-        <h4>3.1 Draw Cards</h4>
+        <h4>3.1 Variable Draw Mechanic</h4>
+        <p><strong>Draw = (Cards Played ÷ 2) rounded up, minimum 2, maximum 5</strong></p>
+
+        <h4>Draw Table:</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cards Played This Turn</th>
+                    <th>Cards Drawn</th>
+                    <th>Net Hand Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0-1 cards</td>
+                    <td>Draw 2</td>
+                    <td>+1 to +2</td>
+                </tr>
+                <tr>
+                    <td>2-3 cards</td>
+                    <td>Draw 2</td>
+                    <td>-1 to 0</td>
+                </tr>
+                <tr>
+                    <td>4-5 cards</td>
+                    <td>Draw 3</td>
+                    <td>-2 to -1</td>
+                </tr>
+                <tr>
+                    <td>6-7 cards</td>
+                    <td>Draw 4</td>
+                    <td>-3 to -2</td>
+                </tr>
+                <tr>
+                    <td>8-9 cards</td>
+                    <td>Draw 5</td>
+                    <td>-4 to -3</td>
+                </tr>
+                <tr>
+                    <td>10+ cards</td>
+                    <td>Draw 5 (max)</td>
+                    <td>-5 or worse</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Strategic Implications:</h4>
         <ul>
-            <li>Draw cards from your Casket HP deck until hand size = 6</li>
-            <li>If hand already has 6+ cards, don't draw</li>
-            <li>Draw one at a time (order matters for deck-out situations)</li>
+            <li><strong>Conservative play</strong> (0-3 cards): Draws 2, slow hand cycling</li>
+            <li><strong>Balanced play</strong> (4-5 cards): Draws 3, moderate hand cycling</li>
+            <li><strong>Aggressive play</strong> (6+ cards): Draws 4-5, fast hand cycling but risky hand depletion</li>
         </ul>
 
-        <h4>3.2 Reshuffle Trigger</h4>
+        <h4>3.2 Draw Cards</h4>
+        <ul>
+            <li>Draw calculated number of cards from your Casket HP deck</li>
+            <li>Draw one at a time (order matters for deck-out situations)</li>
+            <li>If your hand would exceed 6 cards after drawing, draw normally (will discard in End Phase)</li>
+        </ul>
+
+        <h4>3.3 Reshuffle Trigger</h4>
         <p>If deck runs out while drawing:</p>
         <ol>
             <li>Shuffle your discard pile into a new deck</li>
@@ -225,7 +285,7 @@
         </ol>
         <p><strong>Damage cards</strong>: Blank cards that do nothing when played (death spiral mechanic).</p>
 
-        <h4>3.3 Deck Empty = Defeated</h4>
+        <h4>3.4 Deck Empty = Defeated</h4>
         <p>If you need to draw but deck AND discard are both empty:</p>
         <ul>
             <li>Your Casket is <strong>defeated</strong> (structural failure)</li>
@@ -483,20 +543,22 @@
                     <li>Enemy chooses to discard 6 cards (4 from hand, 2 from deck)</li>
                 </ul>
             </li>
-            <li><strong>OVERSPEND</strong>: Move 2 more hexes (2 SP) → Costs 7th and 8th SP
+            <li><strong>OVERSPEND</strong>: Move 1 more hex (1 SP) → Costs 7th SP
                 <ul>
                     <li>7th SP = Discard 1 card (overspending cost)</li>
-                    <li>8th SP = Discard 1 card (overspending cost)</li>
-                    <li>Result: Moved total 5 hexes + attacked, but discarded 2 extra cards</li>
+                    <li>Result: Moved total 4 hexes + attacked, discarded 1 extra card</li>
+                    <li>Scout max is 9 SP (6 × 1.5), but chose to stop at 7 SP to avoid Heat</li>
                 </ul>
             </li>
-            <li><strong>Total spent: 8 SP (6 free + 2 paid with cards)</strong></li>
+            <li><strong>Total spent: 7 SP (6 free + 1 paid with card)</strong></li>
         </ol>
 
         <h3>PHASE 3: DRAW</h3>
         <ul>
-            <li>Hand has 4 cards (played Blood Offering, Faithful Thrust)</li>
-            <li>Draw 2 cards → Hand back to 6</li>
+            <li>Cards played this turn: 2 cards (Blood Offering, Faithful Thrust)</li>
+            <li><strong>Variable Draw</strong>: 2 cards played ÷ 2 = 1, rounded up, min 2 → <strong>Draw 2 cards</strong></li>
+            <li>Hand had 4 cards after Action Phase</li>
+            <li>Draw 2 → Hand now has 6 cards</li>
         </ul>
 
         <h3>PHASE 4: END TURN</h3>
@@ -543,7 +605,7 @@
         A: Yes, they're physical cards. They just do nothing when played (dead draws).</p>
 
         <p><strong>Q: Can I choose NOT to draw cards?</strong><br>
-        A: No. Draw Phase is mandatory (draw to hand size 6).</p>
+        A: No. Draw Phase is mandatory (draw based on cards played: min 2, max 5).</p>
 
         <p><strong>Q: If I take damage during my turn, do I draw back to 6?</strong><br>
         A: Damage discards from DECK, not hand. Hand only changes when you play cards or draw.</p>
