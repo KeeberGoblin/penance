@@ -17,18 +17,23 @@ This folder contains AI assistant context documents, audit reports, and diagnost
   - Documents major system changes, additions, and fixes
   - Organized by date and version
 
-### Audit Reports
-- **[COMPREHENSIVE-V3-AUDIT-2025-10-14.md](COMPREHENSIVE-V3-AUDIT-2025-10-14.md)** - Latest v3.0 integration audit
-  - Analyzes v3.0 mechanics integration across 103 files
-  - Identifies missing cross-references and integration gaps
-  - Provides priority fix list and action plans
+### Python Tools
+- **[rebuild-card-database-v3.py](rebuild-card-database-v3.py)** - Card database generation script
+  - Rebuilds card index from source markdown files
+  - Used for maintaining card catalog consistency
 
-**Archived Audits** (see `/archive/utilities-archive/`):
-- CONTRADICTION-AUDIT-2025-10-13.md - Engine naming fixes
-- REPOSITORY-AUDIT-2025-10-13.md - Structure audit
-- COMPREHENSIVE-CONTRADICTION-AUDIT.md - Earlier contradiction analysis
-- AUDIT-REPORT.md - v2.0 repository audit
-- VERSION-3.0-AUDIT.md - v3.0 planning (superseded by comprehensive)
+### Archived Audits
+All completed audit reports have been moved to **[archived-audits/](archived-audits/)** for historical reference:
+- audit_1030_1016 - October 16 comprehensive audit
+- AUDIT-2025-10-15.md - October 15 repository audit
+- BALANCE-ANALYSIS-2025-10-16.md - Balance analysis report
+- BALANCE-CHANGES-APPLIED-2025-10-16.md - Balance change implementation log
+- COMPREHENSIVE-V3-AUDIT-2025-10-14.md - v3.0 integration audit
+- HTML-AUDIT-2025-10-16.md - HTML codex page audit
+- HTML-RENOVATION-SUMMARY.md - HTML renovation summary
+- Implementation-todo.md - Completed implementation checklist
+
+These files remain available for historical tracking but are no longer actively referenced.
 
 ---
 
@@ -73,11 +78,13 @@ When creating new audit reports, check for:
 ### Active Files (Update Regularly)
 - `CLAUDE.md` - Keep synchronized with latest design changes
 - `CHANGELOG.md` - Add entries for all significant changes
+- `rebuild-card-database-v3.py` - Update when card structure changes
 
-### Historical Files (Keep for Reference)
-- Audit reports - Archive but don't delete (useful for tracking change history)
-- Old contradiction reports - Show evolution of consistency efforts
+### Archived Files
+- All audit reports older than current session → `archived-audits/`
+- Deprecated visual effects → `archived-effects/`
+- Completed todo lists → `archived-audits/`
 
 ---
 
-**Last Updated**: October 13, 2025
+**Last Updated**: October 17, 2025
