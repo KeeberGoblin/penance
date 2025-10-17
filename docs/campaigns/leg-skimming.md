@@ -227,7 +227,7 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 
 ---
 
-### The Soulstone Exchange: **Premium Service Upgrade**
+### The Exchange: **Premium Service Upgrade**
 
 **Title**: **"Executive Pilots"**
 

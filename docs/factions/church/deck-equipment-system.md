@@ -27,14 +27,16 @@ Where X depends on Casket class and equipment loadout.
 
 These 6 cards define Church identity and cannot be removed or smelted.
 
-### 1. BLOOD OFFERING (REVISED for Dice System)
+### 1. BLOOD OFFERING (REVISED for Dice System - BALANCE NERF)
 **Type**: Gambit (Self-Harm)
 **SP Cost**: 0
-**Effect**: Discard 2 cards from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and **-1 to target number** (easier to hit).
+**Effect**: Discard 2 cards from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and **-1 to target number** (easier to hit). **LIMIT: You can only play 1 Blood Offering per turn.**
 **Keywords**: Gambit, Self-Harm, Buff, Accuracy
 **Flavor**: *"Pain purifies. Blood absolves. Sacrifice ensures the strike."*
 
 **DESIGN NOTE**: Added -1 to target number so that self-harm guarantees better aim. Original version could miss after sacrificing 2 cards, which felt terrible.
+
+**BALANCE NOTE (2025-10-16)**: Added 1-per-turn limit to prevent degenerate turn-1 alpha strikes (original allowed stacking multiple Blood Offerings: discard 6 cards, +9 damage, instant win). Limit maintains power while preventing burst cheese.
 
 ---
 
@@ -47,12 +49,14 @@ These 6 cards define Church identity and cannot be removed or smelted.
 
 ---
 
-### 3. RIGHTEOUS FURY (Passive)
+### 3. RIGHTEOUS FURY (Passive - REVISED - BALANCE NERF)
 **Type**: Passive Ability
 **SP Cost**: N/A
-**Effect**: Each time an allied Casket is destroyed this mission, gain +1 damage to all attacks permanently for the rest of the mission (stacks).
+**Effect**: Each time an allied Casket is destroyed this mission, gain +1 damage to all attacks permanently for the rest of the mission (stacks). **LIMIT: Max +3 damage from this effect.**
 **Keywords**: Passive, Scaling, Vengeance
-**Flavor**: *"Their sacrifice will not be wasted."*
+**Flavor**: *"Their sacrifice will not be wasted. But even fury has limits."*
+
+**BALANCE NOTE (2025-10-16)**: Original infinite scaling broke multiplayer (5+ allies destroyed = +5 damage permanently). Capped at +3 damage (still 60% increase on 5-damage attacks) to maintain power while preventing runaway scaling.
 
 ---
 
@@ -365,11 +369,15 @@ These 6 cards define Church identity and cannot be removed or smelted.
 
 ## FACTION STRENGTHS
 
-- High burst damage (Blood Offering + Divine Judgment)
+- High burst damage (Blood Offering + Divine Judgment, limited to 1 Blood Offering/turn)
 - Strong ally support (Martyrdom Protocol, Consecrated Ground, Last Rites)
-- Scaling power (Righteous Fury gets stronger with each kill)
+- Scaling power (Righteous Fury caps at +3 damage, still strong)
 - Flexible builds (melee DPS, ranged support, tank, berserker)
 - Resource recursion (Consecrated Ground, Last Rites recover cards)
+
+**BALANCE NOTE (2025-10-16)**:
+- Blood Offering limited to 1 per turn (prevents turn-1 alpha strike)
+- Righteous Fury capped at +3 damage (prevents infinite scaling in multiplayer)
 
 ---
 

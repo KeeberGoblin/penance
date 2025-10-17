@@ -54,7 +54,7 @@
 - **Secular neutrality**: Non-religious merchants trusted Rational House (didn't care about faith)
 - **Economic expertise**: Pre-Sundering knowledge of markets, currency, regulation
 
-**Result**: The Soulstone Exchange founded
+**Result**: The Exchange founded
 - **Monopoly**: Only authorized Soulstone currency issuer (Year 73 treaty)
 - **Neutrality**: Must trade with all factions, even enemies (enforced by both wings)
 - **Dual governance**: Ledger Orthodox (moral oversight) + Rational House (operational management)

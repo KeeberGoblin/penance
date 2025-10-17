@@ -8,15 +8,15 @@
 </head>
 <body>
     <!-- Faction Header with Parchment Background -->
-    <div style="background: #D4C5B0; padding: 3rem 2rem 0 2rem; margin: 0; position: relative;">
+    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
-            <img src="../images/verdant2_PlaceH.png" alt="Verdant Covenant" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto;">
-            <h1 style="color: #000; font-family: 'Cinzel Decorative', serif; font-size: 2rem; margin: 1.5rem 0 0 0; text-shadow: none;">Verdant Covenant</h1>
+            <img src="../images/verdant2_PlaceH.png" alt="Verdant Covenant" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
+            <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Verdant Covenant</h1>
         </div>
         <!-- Torn Paper Effect -->
-        <div style="height: 30px; background: linear-gradient(to bottom, #D4C5B0 0%, transparent 100%); margin-top: 2rem; position: relative;">
+        <div style="height: 30px; background: linear-gradient(to bottom, #8B7355 0%, transparent 100%); margin-top: 2rem; position: relative;">
             <svg style="position: absolute; bottom: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#D4C5B0"/>
+                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#B59460"/>
             </svg>
         </div>
     </div>
@@ -126,7 +126,7 @@
 
         <ul class="manuscript-list">
             <li><strong>Bleed Counters:</strong> Enemies take 1 damage per Bleed counter at START of their turn (before they can act).</li>
-            <li><strong>Stacking Infinitely:</strong> Bleed 1 + Bleed 2 + Bleed 3 = Bleed 6 total on target. No cap.</li>
+            <li><strong>Stacking with Cap:</strong> Bleed 1 + Bleed 2 + Bleed 3 = Bleed 6 total on target. Maximum 10 Bleed stacks per target.</li>
             <li><strong>Never Expires:</strong> Counters last entire mission. Enemies slowly bleed to death.</li>
             <li><strong>Faction Bonus:</strong> All Elven weapons automatically apply Bleed 1 on hit (in addition to card effects).</li>
         </ul>
@@ -173,9 +173,9 @@
             <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
         </p>
         <p class="manuscript-text">
-            <strong>Effect:</strong> At end of your turn, if you did NOT attack this turn, recover 1 card from discard pile and remove 1 Heat.
+            <strong>Effect:</strong> At end of your turn, if you did NOT attack this turn AND did not take damage, recover 1 card from discard pile and remove 1 Heat.
         </p>
-        <p class="manuscript-text"><em>"We draw strength from stillness."</em></p>
+        <p class="manuscript-text"><em>"We draw strength from stillness and sanctuary."</em></p>
 
         <h3>5. Leaf Dance</h3>
         <p class="manuscript-text">
@@ -191,9 +191,18 @@
             <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
         </p>
         <p class="manuscript-text">
-            <strong>Effect:</strong> At the start of each round, recover 1 card from discard pile. If you have Living Seal equipped, recover 2 cards instead.
+            <strong>Effect:</strong> At the start of each round, recover 1 card from discard pile.
         </p>
         <p class="manuscript-text"><em>"Life finds a way."</em></p>
+
+        <h3>7. Living Seal (Equipment Integration)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Conditional Bonus | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Whenever you use other healing effects (Photosynthesis, equipment, etc.), recover +1 additional card from discard pile.
+        </p>
+        <p class="manuscript-text"><em>"Healing begets healing."</em></p>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
@@ -386,7 +395,7 @@
         <h2>Strategy Notes</h2>
 
         <p class="manuscript-text">
-            <strong>Strengths:</strong> Best damage-over-time in game (Bleed stacks infinitely), high mobility (Leaf Dance, Shadow Step, teleports), best regeneration (Photosynthesis + Verdant Regeneration + Living Seal = 3 cards per round passive), surgical strikes (Pruning Cut targets specific components), area control (Root Bind, Vine Walls, Seed Pods).
+            <strong>Strengths:</strong> Best damage-over-time in game (Bleed stacks to 10 max), high mobility (Leaf Dance, Shadow Step, teleports), strong regeneration (Photosynthesis + Verdant Regeneration conditionally), surgical strikes (Pruning Cut targets specific components), area control (Root Bind, Vine Walls, Seed Pods).
         </p>
 
         <p class="manuscript-text">
@@ -398,11 +407,11 @@
         </p>
 
         <p class="manuscript-text">
-            <strong>Mid Game (Turns 4-6):</strong> Enemies now have Bleed 3-5 (taking 3-5 damage per turn). Apex Predator adds +2 damage to attacks vs Bleeding targets. Photosynthesis triggers (skip attacks to heal).
+            <strong>Mid Game (Turns 4-6):</strong> Enemies now have Bleed 3-5 (taking 3-5 damage per turn). Apex Predator adds +2 damage to attacks vs Bleeding targets. Photosynthesis triggers when you don't attack AND don't take damage (requires safety).
         </p>
 
         <p class="manuscript-text">
-            <strong>Late Game (Turns 7+):</strong> Enemies have massive Bleed stacks (5-10 damage per turn). Focus on survival—they die to Bleed, you just need to not die. Verdant Regeneration keeps you alive (2 cards per round passive). Toxin Mastery (if taken) doubles all Bleed damage (Bleed 5 becomes Bleed 10).
+            <strong>Late Game (Turns 7+):</strong> Enemies have maximum Bleed stacks (10 damage per turn cap). Focus on survival—they die to Bleed, you just need to not die. Verdant Regeneration keeps you alive. Toxin Mastery (if taken) doubles Bleed damage within cap (Bleed 5 becomes Bleed 10, max).
         </p>
 
         <div class="manuscript-quote">

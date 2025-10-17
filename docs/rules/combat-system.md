@@ -282,56 +282,63 @@ Wait, this creates duplication issues. Let me revise:
 
 > **v2.0 NOTE**: "Primary Weapon cards" refers to your equipped weapon cards (e.g., Longsword, Greatsword, Pistol). These are the cards you discarded from your Primary Weapon slot equipment.
 
-## 3. Component Damage (KDM-Style Brutality)
+## 3. Component Damage (KDM-Style Brutality - REVISED THRESHOLDS)
 
 ### Tracking Component Damage
 
-**5 Component Locations**:
-- **Right Arm** (Primary Weapon)
-- **Left Arm** (Secondary Equipment)
-- **Legs** (Movement)
-- **Head** (Sensors)
-- **Chassis** (Core)
+**5 Component Locations (with Limb-Specific HP)**:
+- **Head** (3 HP) - Sensors, targeting systems - fragile but critical
+- **Right Arm** (4 HP) - Primary Weapon mount - moderate durability
+- **Left Arm** (4 HP) - Secondary Equipment mount - moderate durability
+- **Chassis** (5 HP) - Core structure - heavily armored
+- **Legs** (6 HP) - Locomotion - most durable (redundant systems)
 
 **How it accumulates**:
 1. Attacker declares which component to target (or roll 1d6 if random)
 2. When Primary Weapon cards are discarded from damage → 1 Component Damage per card
 3. When Defense Dice show CRITICAL → +1 Component Damage
-4. **3 Component Damage to same location = Component DESTROYED**
+4. **Component Damage threshold varies by location** (see above)
+
+**BALANCE CHANGE (2025-10-16)**: Component destruction thresholds now vary by limb type. This creates a defensive layer - arms and legs can absorb more punishment before reaching the pilot. Head remains most fragile, Legs most durable.
 
 **Example**:
 - Enemy attacks your Right Arm for 6 damage
-- Roll 6 Defense Dice: 
+- Roll 6 Defense Dice:
 - **2 Shield blocks** = Reduce to 4 damage
 - **2 Critical symbols** = +2 Component Damage to Right Arm
 - You choose to discard 2 from hand (both Primary Weapon cards) + 2 from deck
 - **Total**: 2 Component Damage (from discarded Primary cards) + 2 (from symbols) = **4 Component Damage**
-- Right Arm has **EXCEEDED 3** → **Right Arm DESTROYED**
+- Right Arm has **REACHED 4 HP threshold** → **Right Arm DESTROYED**
 
 ---
 
-### Component Destroyed Effects
+### Component Destroyed Effects (by Limb HP Threshold)
 
-**Right Arm Destroyed**:
+**Head Destroyed** (3 Component Damage):
+- Cannot use Sensor Sweep or targeting cards
+- **-1 to all ranged attacks** (penalties stack with to-hit modifiers)
+- Most fragile component (sensors, optics easily damaged)
+
+**Right Arm Destroyed** (4 Component Damage):
 - Discard all Primary Weapon cards from hand immediately
 - Cannot play Primary Weapon cards for rest of battle
 - Must rely on Universal Core + Secondary Equipment only
+- Moderate durability (weapon mounts have some reinforcement)
 
-**Left Arm Destroyed**:
+**Left Arm Destroyed** (4 Component Damage):
 - Discard all Secondary Equipment cards from hand
 - Cannot use shield reactive cards or offhand weapons
+- Moderate durability (offhand systems protected like primary)
 
-**Legs Destroyed**:
-- Movement costs **+1 SP per hex**
-- Cannot Sprint (max 3 hexes/turn even with Sprint cards)
-
-**Head Destroyed**:
-- Cannot use Sensor Sweep or targeting cards
-- **-1 to all ranged attacks** (penalties stack with to-hit modifiers)
-
-**Chassis Destroyed**:
+**Chassis Destroyed** (5 Component Damage):
 - **Permanent -1 SP maximum** (Light 6 → 5, Heavy 4 → 3, etc.)
 - -1 Defense against all attacks
+- Core structure is heavily armored (5 HP threshold)
+
+**Legs Destroyed** (6 Component Damage):
+- Movement costs **+1 SP per hex**
+- Cannot Sprint (max 3 hexes/turn even with Sprint cards)
+- Most durable component (redundant locomotion systems, 6 HP threshold)
 
 ## 4. Deck Depletion (Running Out of HP)
 

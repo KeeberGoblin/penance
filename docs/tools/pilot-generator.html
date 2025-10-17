@@ -286,42 +286,43 @@
         <!-- MANUAL MODE -->
         <div id="manual-mode" class="generator-section">
             <div class="manual-selector">
-                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Background (d20):</label>
+                <label for="manual-background" style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Background (d20):</label>
                 <select id="manual-background" onchange="updateManualPilot()">
                     <option value="">-- Select Background --</option>
                 </select>
             </div>
 
             <div class="manual-selector">
-                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Starting Trait (d20):</label>
+                <label for="manual-trait1" style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Starting Trait (d20):</label>
                 <select id="manual-trait1" onchange="updateManualPilot()">
                     <option value="">-- Select Trait --</option>
                 </select>
                 <div class="hybrid-checkbox">
                     <input type="checkbox" id="hybrid-enabled" onchange="toggleHybrid()">
-                    <label style="color: #b8956a;">Enable Hybrid (Roll second trait)</label>
+                    <label for="hybrid-enabled" style="color: #b8956a;">Enable Hybrid (Roll second trait)</label>
                 </div>
-                <select id="manual-trait2" style="display: none; margin-top: 0.5rem;" onchange="updateManualPilot()">
+                <label for="manual-trait2" class="sr-only">Second Trait (d20):</label>
+                <select id="manual-trait2" style="display: none; margin-top: 0.5rem;" onchange="updateManualPilot()" aria-label="Second Trait (d20)">
                     <option value="">-- Select Second Trait --</option>
                 </select>
             </div>
 
             <div class="manual-selector">
-                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Motivation (d20):</label>
+                <label for="manual-motivation" style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Motivation (d20):</label>
                 <select id="manual-motivation" onchange="updateManualPilot()">
                     <option value="">-- Select Motivation --</option>
                 </select>
             </div>
 
             <div class="manual-selector">
-                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Quirk (d100):</label>
+                <label for="manual-quirk" style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Quirk (d100):</label>
                 <select id="manual-quirk" onchange="updateManualPilot()">
                     <option value="">-- Select Quirk --</option>
                 </select>
             </div>
 
             <div class="manual-selector">
-                <label style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Appearance (d20):</label>
+                <label for="manual-appearance" style="color: #ffd700; font-weight: bold; display: block; margin-bottom: 0.5rem;">Appearance (d20):</label>
                 <select id="manual-appearance" onchange="updateManualPilot()">
                     <option value="">-- Select Appearance --</option>
                 </select>

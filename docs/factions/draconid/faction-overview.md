@@ -295,7 +295,7 @@ Draconids don't use Credits. They trade in **knowledge and artifacts**.
 | Church of Absolution | NEUTRAL | Church fears Draconid knowledge challenges dogma. Draconids pity Church's naivety. |
 | Elven Verdant Covenant | FRIENDLY | Many Draconids have elven ancestry. Mutual respect for long-term thinking. |
 | Dwarven Forge-Guilds | ALLIED | Dwarves respect Draconid engineering knowledge. Trade partners. |
-| The Soulstone Exchange | NEUTRAL | Exchange respects Draconid neutrality. Draconids distrust profit motive. |
+| The Exchange | NEUTRAL | Exchange respects Draconid neutrality. Draconids distrust profit motive. |
 | The Ossuarium | DISTRUSTFUL | Draconids view undeath as "cheating mortality." Philosophical incompatibility. |
 | The Wyrd Conclave | HOSTILE | Fae time manipulation offends Draconid linear historical records. |
 | Nomad Collective | FRIENDLY | Nomads deliver messages to remote dragon-cities. Mutual respect. |

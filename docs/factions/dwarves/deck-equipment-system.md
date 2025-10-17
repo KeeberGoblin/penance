@@ -37,6 +37,8 @@ These 6 cards define Dwarven identity and cannot be removed or smelted.
 **Keywords**: Attack, Armor-Piercing, Melee
 **Flavor**: *"Runes flare blue-white as the hammerhead strikes true."*
 
+**BALANCE NOTE (2025-10-16)**: Crushing Blow and equipment-based weapons retain Armor-Piercing. Other Dwarven faction cards NO LONGER have blanket Armor-Piercing (see Faction Strengths for clarification).
+
 ---
 
 ### 2. FORGE FURY
@@ -123,24 +125,24 @@ These 6 cards define Dwarven identity and cannot be removed or smelted.
 - **Accessory 3**: Heat Sink Sigil (2 cards)
 
 **Tactics** (choose 2):
-- Stone Endurance (+2 HP = 32 total)
+- Stone Endurance (slower death spiral)
 - Runic Overcharge
 
 **Total Deck**:
 - 10 Universal Core
 - 6 Dwarven Faction Core
 - 18 Equipment (6 + 4 + 3 + 3 + 2)
-- 2 Tactics (Stone Endurance adds 2 cards)
-- **Total: 38 cards** (maximum tankiness)
+- 2 Tactics
+- **Total: 36 cards** (maximum tankiness)
 
 **Playstyle**:
 - Stack Rune Counters early (Rune of Protection + Runic Overcharge = 3 counters)
 - Tower Shield + Reinforced Plating = massive damage reduction
-- 32 HP + 3 Rune Counters (-3 damage per hit) = nearly unkillable
-- Warhammer provides armor-piercing offense
+- 30 HP + 3 Rune Counters (-3 damage per hit) + Stone Endurance (slower death spiral) = high survivability
+- Warhammer provides selective armor-piercing offense (equipment-based)
 - Forge-Rune converts Heat → damage (Forge Fury synergy)
 - Heat Sink prevents overheating
-- Win through attrition warfare
+- Win through attrition warfare and deck resilience
 
 ---
 
@@ -244,13 +246,15 @@ These 6 cards define Dwarven identity and cannot be removed or smelted.
 
 ## DWARVEN FACTION TACTICS (Choose 2 from 5)
 
-### TACTIC 1: STONE ENDURANCE
+### TACTIC 1: STONE ENDURANCE (REVISED - BALANCE NERF)
 **Type**: Passive (Permanent)
 **SP Cost**: N/A
-**Effect**: **PERMANENT PASSIVE** - Your maximum HP is 32 instead of 30. Add 2 extra "Breathe the Core" cards to deck at start.
-**Strategic Use**: Long attrition games, outlast opponent
-**Keywords**: Passive, HP, Endurance
-**Flavor**: *"Dwarven constitution is legendary."*
+**Effect**: **PERMANENT PASSIVE** - Once per mission, when you reshuffle your deck, add only 1 Damage card instead of 2 (half death spiral penalty). Does NOT increase maximum HP.
+**Strategic Use**: Long attrition games, slower death spiral (not raw tankiness)
+**Keywords**: Passive, Reshuffle, Endurance
+**Flavor**: *"Dwarven steel endures longer, even when broken."*
+
+**BALANCE NOTE (2025-10-16)**: Original +2 HP passive was too strong (6.7% more HP + Rune Counters made Dwarves nearly unkillable). New version maintains thematic resilience through slower deck degradation instead of raw HP inflation.
 
 ---
 
@@ -341,11 +345,15 @@ These 6 cards define Dwarven identity and cannot be removed or smelted.
 
 ## FACTION STRENGTHS
 
-- Highest survivability (32 HP with Stone Endurance + Rune Counters)
-- All weapons gain Armor-Piercing (faction bonus ignores defenses)
+- High survivability (30 HP standard + Rune Counters + slower death spiral with Stone Endurance)
+- **Selective Armor-Piercing**: Crushing Blow (faction card) + equipment-based weapons (Warhammer, War Pick) ignore Defense. Other faction cards DO NOT have blanket Armor-Piercing.
 - Component protection (Unbreakable delays destruction)
 - Heat conversion (Forge Fury turns Heat into damage, Forge Mastery into cards)
-- Attrition warfare specialists (outlast opponents)
+- Attrition warfare specialists (outlast opponents through slower deck degradation)
+
+**BALANCE NOTE (2025-10-16)**:
+- Stone Endurance NO LONGER grants +2 HP (removed 32 HP baseline)
+- Armor-Piercing LIMITED to Crushing Blow + specific equipment (no longer all attacks)
 
 ---
 

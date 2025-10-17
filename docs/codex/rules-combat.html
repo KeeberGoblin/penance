@@ -364,17 +364,17 @@
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>3. Component Damage (Permanent Consequences)</h2>
+        <h2>3. Component Damage (Permanent Consequences - REVISED THRESHOLDS)</h2>
 
         <h3>Tracking Component Damage</h3>
 
-        <h4>5 Component Locations:</h4>
+        <h4>5 Component Locations (with Limb-Specific HP):</h4>
         <ul>
-            <li><strong>Right Arm</strong> (Primary Weapon)</li>
-            <li><strong>Left Arm</strong> (Secondary Equipment)</li>
-            <li><strong>Legs</strong> (Movement)</li>
-            <li><strong>Head</strong> (Sensors)</li>
-            <li><strong>Chassis</strong> (Core)</li>
+            <li><strong>Head</strong> (3 HP) - Sensors, targeting systems - fragile but critical</li>
+            <li><strong>Right Arm</strong> (4 HP) - Primary Weapon mount - moderate durability</li>
+            <li><strong>Left Arm</strong> (4 HP) - Secondary Equipment mount - moderate durability</li>
+            <li><strong>Chassis</strong> (5 HP) - Core structure - heavily armored</li>
+            <li><strong>Legs</strong> (6 HP) - Locomotion - most durable (redundant systems)</li>
         </ul>
 
         <h4>How it accumulates:</h4>
@@ -382,38 +382,48 @@
             <li>Attacker declares which component to target (or roll 1d6 if random)</li>
             <li>When Primary Weapon cards are discarded from damage → 1 Component Damage per card</li>
             <li>When Defense Dice show [CRITICAL] → +1 Component Damage</li>
-            <li><strong>3 Component Damage to same location = Component DESTROYED</strong></li>
+            <li><strong>Component Damage threshold varies by location</strong> (see HP values above)</li>
         </ol>
 
-        <h3>Component Destroyed Effects</h3>
+        <p style="font-style: italic; color: var(--aged-gold); margin-top: 1rem;">
+            <strong>BALANCE CHANGE (2025-10-16)</strong>: Component destruction thresholds now vary by limb type. This creates a defensive layer - arms and legs can absorb more punishment before reaching the pilot. Head remains most fragile, Legs most durable.
+        </p>
+
+        <h3>Component Destroyed Effects (by Limb HP Threshold)</h3>
 
         <table>
             <thead>
                 <tr>
                     <th>Component</th>
+                    <th>HP Threshold</th>
                     <th>Effect When Destroyed</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td><strong>Head</strong></td>
+                    <td>3 HP</td>
+                    <td>Cannot use Sensor Sweep or targeting cards. <strong>-1 to all ranged attacks</strong> (penalties stack with to-hit modifiers). Most fragile component (sensors, optics easily damaged).</td>
+                </tr>
+                <tr>
                     <td><strong>Right Arm</strong></td>
-                    <td>Discard all Primary Weapon cards from hand immediately. Cannot play Primary Weapon cards for rest of battle. Must rely on Universal Core + Secondary Equipment only.</td>
+                    <td>4 HP</td>
+                    <td>Discard all Primary Weapon cards from hand immediately. Cannot play Primary Weapon cards for rest of battle. Must rely on Universal Core + Secondary Equipment only. Moderate durability (weapon mounts have some reinforcement).</td>
                 </tr>
                 <tr>
                     <td><strong>Left Arm</strong></td>
-                    <td>Discard all Secondary Equipment cards from hand. Cannot use shield reactive cards or offhand weapons.</td>
-                </tr>
-                <tr>
-                    <td><strong>Legs</strong></td>
-                    <td>Movement costs <strong>+1 SP per hex</strong>. Cannot Sprint (max 3 hexes/turn even with Sprint cards).</td>
-                </tr>
-                <tr>
-                    <td><strong>Head</strong></td>
-                    <td>Cannot use Sensor Sweep or targeting cards. <strong>-1 to all ranged attacks</strong> (penalties stack with to-hit modifiers).</td>
+                    <td>4 HP</td>
+                    <td>Discard all Secondary Equipment cards from hand. Cannot use shield reactive cards or offhand weapons. Moderate durability (offhand systems protected like primary).</td>
                 </tr>
                 <tr>
                     <td><strong>Chassis</strong></td>
-                    <td><strong>Permanent -1 SP maximum</strong> (Light 6 → 5, Heavy 4 → 3, etc.). -1 Defense against all attacks.</td>
+                    <td>5 HP</td>
+                    <td><strong>Permanent -1 SP maximum</strong> (Light 6 → 5, Heavy 4 → 3, etc.). -1 Defense against all attacks. Core structure is heavily armored (5 HP threshold).</td>
+                </tr>
+                <tr>
+                    <td><strong>Legs</strong></td>
+                    <td>6 HP</td>
+                    <td>Movement costs <strong>+1 SP per hex</strong>. Cannot Sprint (max 3 hexes/turn even with Sprint cards). Most durable component (redundant locomotion systems, 6 HP threshold).</td>
                 </tr>
             </tbody>
         </table>
@@ -596,7 +606,7 @@
                 <ul>
                     <li>Discarded from hand: 2× Primary Weapon (Penitent Blades) → +2 Component Damage</li>
                     <li><strong>Total Component Damage to Right Arm</strong>: 2 (from [CRITICAL][CRITICAL]) + 2 (from Primary cards) = <strong>4 Component Damage</strong></li>
-                    <li>Right Arm has <strong>EXCEEDED 3</strong> → <strong>RIGHT ARM DESTROYED!</strong></li>
+                    <li>Right Arm has <strong>REACHED 4 HP THRESHOLD</strong> → <strong>RIGHT ARM DESTROYED!</strong></li>
                     <li>Player A discards all remaining Penitent Blade cards from hand (cannot use Primary Weapon)</li>
                 </ul>
             </li>

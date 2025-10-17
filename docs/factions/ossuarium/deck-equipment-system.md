@@ -27,13 +27,15 @@ Where X depends on Casket class and equipment loadout.
 
 ## THE OSSUARIUM FACTION CORE (6 Cards - Mandatory)
 
-### 1. SOUL HARVEST
+### 1. SOUL HARVEST (REVISED - BALANCE NERF)
 **Type**: Attack (Lifesteal)
 **SP Cost**: 3
 **Range**: Melee (Range 1)
-**Effect**: Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 4 cards).
+**Effect**: Deal 4 damage. Recover 3 cards from your discard pile (75% lifesteal, not 100%).
 **Keywords**: Attack, Lifesteal, Vampiric, Melee
-**Flavor**: *"Their life becomes yours. This is the calculus of necromancy."*
+**Flavor**: *"Their life becomes yours. Most of it."*
+
+**BALANCE NOTE (2025-10-16)**: Original 100% lifesteal (4 damage = 4 cards recovered) was too oppressive in attrition matchups. Reduced to 75% lifesteal (4 damage = 3 cards) maintains faction identity while preventing infinite sustain loops.
 
 ---
 
@@ -197,15 +199,17 @@ Where X depends on Casket class and equipment loadout.
 - **Total: 36 cards** (maximum survivability)
 
 **Playstyle**:
-- THREE resurrection mechanics:
+- THREE resurrection mechanics (CAMPAIGN-ONLY):
   1. Phylactery (Faction Core - resurrect at 5 HP)
-  2. Phylactery Relic (store 5 cards, resurrect once)
+  2. Phylactery Relic (store 5 cards, resurrect once) - **CAMPAIGN-ONLY**
   3. Undying Resilience (resurrect at 10 HP)
 - Tower Shield + Reinforced Plating + Bone Armor = massive defense
 - Death Mark provides constant lifesteal
-- Soul Harvest sustains HP
-- Literally cannot die (three lives + constant healing)
-- Ultimate tank
+- Soul Harvest sustains HP (75% lifesteal)
+- Extremely durable (three lives in campaign, two in casual + constant healing)
+- Ultimate campaign tank
+
+**BALANCE NOTE (2025-10-16)**: Phylactery Relic should only be used in campaign play. For casual/arena, use Repair Sigil or Heat Sink instead of Phylactery Relic (limits to 2 resurrections).
 
 ---
 
@@ -336,14 +340,17 @@ Where X depends on Casket class and equipment loadout.
 
 ---
 
-### Phylactery Relic (Accessory - 3 cards)
+### Phylactery Relic (Accessory - 3 cards - CAMPAIGN-ONLY)
 **Crafting Cost**: 6 Scrap
 **Faction**: Ossuarium only
+**Restriction**: **CAMPAIGN-ONLY ITEM** - Cannot be used in casual/arena play
 
 **Cards**:
 1. **Store Life** (2 SP, Utility): Move up to 5 cards from discard pile into Phylactery (storage). Max 5 cards stored.
 2. **Soul Anchor** (Passive): If you are reduced to 0 HP and Phylactery has stored cards, resurrect with stored cards as HP. Phylactery empties. Once per mission.
 3. **Death's Door** (0 SP, Reactive): When you would take lethal damage, transfer damage to Phylactery (destroys stored cards instead). Prevent up to 5 damage.
+
+**BALANCE NOTE (2025-10-16)**: Phylactery Relic provides third resurrection (Phylactery faction card + Undying Resilience tactic + Phylactery Relic = 3 resurrections total). This is balanced for campaign progression but breaks casual play. **REMOVED from casual/arena reference** - campaign-only end-game reward.
 
 ---
 
@@ -369,11 +376,15 @@ Instead, they add **"Decay" cards**:
 
 ## FACTION STRENGTHS
 
-- Best lifesteal in game (multiple cards recover HP)
-- Resurrection mechanics (Phylactery + Undying Resilience = 2 lives)
+- Strong lifesteal (multiple cards recover HP at 75% efficiency)
+- Resurrection mechanics (Phylactery + Undying Resilience = 2 lives in casual, 3 in campaign with Phylactery Relic)
 - Corpse exploitation (gain resources from enemy deaths)
-- Inevitable grinding (outlast through constant healing)
+- Inevitable grinding (outlast through consistent healing)
 - Minion summoning (action economy advantage)
+
+**BALANCE NOTE (2025-10-16)**:
+- Soul Harvest reduced to 75% lifesteal (4 damage = 3 cards recovered, not 4)
+- Phylactery Relic marked as CAMPAIGN-ONLY (removed from casual/arena reference)
 
 ---
 

@@ -1,4 +1,4 @@
-# The Soulstone Exchange - Complete Deck & Equipment System
+# The Exchange - Complete Deck & Equipment System
 
 **Faction Motto**: "PRETIUM FACIT PACEM" (The Price Makes Peace)
 
@@ -10,7 +10,7 @@
 
 ## Design Philosophy
 
-The Soulstone Exchange embodies faith-backed capitalism. Every card reflects their philosophy:
+The Exchange embodies faith-backed capitalism. Every card reflects their philosophy:
 
 - **Credit Economy**: Kill enemies to generate Credits, spend for powerful effects
 - **Mercenary Management**: Summon temporary allied units to fight for you
@@ -48,7 +48,7 @@ The Soulstone Exchange embodies faith-backed capitalism. Every card reflects the
 - Ledger Orthodox provided: Moral authority, Soulstone sanctification, religious legitimacy
 - Rational House provided: Financial infrastructure, accounting systems, international networks
 
-**Result**: The Soulstone Exchange founded
+**Result**: The Exchange founded
 - **Monopoly**: Only authorized Soulstone currency issuer
 - **Neutrality**: Must trade with all factions (even enemies)
 - **Authority**: Church-backed, merchant-operated, universally accepted
@@ -437,7 +437,7 @@ The Soulstone Exchange embodies faith-backed capitalism. Every card reflects the
 
 ### Director Ilyara Voss (Rational House Leader)
 
-**Title**: CEO of the Soulstone Exchange, Master of Markets
+**Title**: CEO of the Exchange, Master of Markets
 
 **Age**: 54 (secular, pragmatic)  
 **Casket**: "The Counting House" (mobile vault, market data displays)

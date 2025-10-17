@@ -75,7 +75,7 @@ When Theslar activated **The Engine** (then called the "Theslar Engine" by scien
 
 **Year 250-350: The Mutation Age**
 - Blighted Packs emerge as distinct faction after Exodus (Year 352)
-- Chitinous Ascendancy appears from Sibarian ground zero (Year 381)
+- Emergent Syndicate appears from Sibarian ground zero (Year 381)
 - Reality fractures increase in frequency and severity
 - Fae incursions become more frequent and unpredictable
 - Nomad Collective masters survival in the most hostile regions
@@ -229,7 +229,7 @@ Different factions have different interpretations of the Cataclysm:
 
 ---
 
-### The Chitinous Ascendancy (Arthropod Collective)
+### Emergent Syndicate (Arthropod Collective)
 **"Evolution Demanded Sacrifice. We Answered"**
 
 - Pre-Sundering, they were **human researchers** at Sibaria, exposed to the Engine at ground zero
@@ -237,11 +237,11 @@ Different factions have different interpretations of the Cataclysm:
 - Not mutation—**metamorphosis**. They are post-human, multi-limbed, chitinous, hive-minded
 - **Soulstones are neural bridges**, allowing individual consciousness within the collective
 - They remember being human, but those memories feel distant, irrelevant
-- Abominations are failures; the Ascendancy are **successes**—they adapted perfectly
+- Abominations are failures; the Syndicate are **successes**—they adapted perfectly
 
-**Cultural Impact**: Ascendancy view their transformation as **inevitable evolution**. Their Caskets are insectoid walkers—multi-legged, armored in carapace plating, bristling with sensory antennae. They communicate through pheromone signals and clicking mandibles. Other factions find them deeply unsettling—too organized, too alien, too willing to sacrifice individuals for hive efficiency.
+**Cultural Impact**: Syndicate view their transformation as **inevitable evolution**. Their Caskets are insectoid walkers—multi-legged, armored in carapace plating, bristling with sensory antennae. They communicate through pheromone signals and clicking mandibles. Other factions find them deeply unsettling—too organized, too alien, too willing to sacrifice individuals for hive efficiency.
 
-**Traits**: Hive communication, regenerative chitin, compound vision, limb redundancy, complete lack of individual self-preservation instinct. A single Ascendant will sacrifice itself without hesitation if it benefits the hive.
+**Traits**: Hive communication, regenerative chitin, compound vision, limb redundancy, complete lack of individual self-preservation instinct. A single Syndicate member will sacrifice itself without hesitation if it benefits the hive.
 
 **Goal**: Perfect the transformation, expand the hive, prove that post-human evolution is the only path to survival in a Void-tainted world.
 

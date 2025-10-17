@@ -88,7 +88,7 @@
 **Key Provisions**:
 
 1. **Unified Currency**: Soulstone-backed Credits (1 Credit = 0.1 grams Soulstone dust)
-2. **Monopoly Granted**: Only The Soulstone Exchange can issue Credits (all other currencies illegal)
+2. **Monopoly Granted**: Only The Exchange can issue Credits (all other currencies illegal)
 3. **Dual Governance**: Ledger Orthodox (moral oversight) + Rational House (operations)
 4. **Neutrality Clause**: Exchange must trade with all factions, even enemies (can't refuse service)
 5. **Sanctification Requirement**: All Soulstones must be blessed by Orthodox priests (Church approves)

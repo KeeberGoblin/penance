@@ -57,12 +57,14 @@ Where X depends on Casket class and equipment loadout.
 
 ---
 
-### 4. PHOTOSYNTHESIS (Passive)
+### 4. PHOTOSYNTHESIS (Passive - REVISED - BALANCE NERF)
 **Type**: Passive Ability
 **SP Cost**: N/A
-**Effect**: At end of your turn, if you did NOT attack this turn, recover 1 card from discard pile and remove 1 Heat.
+**Effect**: At end of your turn, if you did NOT attack this turn AND did NOT take damage this turn, recover 1 card from discard pile and remove 1 Heat.
 **Keywords**: Passive, Healing, Patience, Nature
-**Flavor**: *"We draw strength from stillness."*
+**Flavor**: *"We draw strength from stillness unthreatened."*
+
+**BALANCE NOTE (2025-10-16)**: Original version triggered even when taking damage (too consistent in combat). New version requires NO DAMAGE TAKEN, making it a true defensive positioning reward.
 
 ---
 
@@ -371,24 +373,29 @@ Where X depends on Casket class and equipment loadout.
 
 ---
 
-### Living Seal (Accessory Sigil - 3 cards)
+### Living Seal (Accessory Sigil - 3 cards - REVISED - BALANCE NERF)
 **Crafting Cost**: 5 Scrap
 **Faction**: Elves only
 
 **Cards**:
-1. **Regeneration** (Passive): At start of each round, recover 1 card from discard (stacks with Verdant Regeneration = 2 cards)
+1. **Regeneration** (Passive - REVISED): When you use a healing effect (Photosynthesis, Verdant Regeneration, Repair cards), recover +1 additional card. Does NOT grant passive card recovery per round.
 2. **Thorn Aura** (2 SP, Defense): Enemies adjacent to you take 1 damage at start of their turn (lasts 2 rounds)
 3. **Root Network** (3 SP, Utility): Summon 3-hex Vine Wall, lasts 3 rounds, you may teleport to it once
 
+**BALANCE NOTE (2025-10-16)**: Original "Regeneration" card granted +1 card per round passively (stacked with Verdant Regeneration for 2 cards/round). New version triggers conditionally when OTHER healing effects activate, preventing passive infinite sustain.
+
 ---
 
-## BLEED MECHANIC (Detailed Rules)
+## BLEED MECHANIC (Detailed Rules - REVISED - BALANCE NERF)
 
 **Bleed Counters**:
-- Stack infinitely (Bleed 1 + Bleed 2 = Bleed 3 total on target)
+- Stack up to **MAX 10 Bleed counters** per target (Bleed 1 + Bleed 2 = Bleed 3 total, cannot exceed 10)
 - Trigger at START of target's turn (before they can act)
 - Each counter deals 1 damage
 - Counters do NOT expire (last entire mission)
+- **NEW CAP**: Bleed damage cannot exceed 10 per turn
+
+**BALANCE NOTE (2025-10-16)**: Original infinite stacking was oppressive in long games (20+ Bleed stacks = automatic win). Cap of 10 maintains lethality while preventing degenerate scaling.
 
 **Example**:
 - Turn 1: You hit enemy for Bleed 2
@@ -406,11 +413,16 @@ Where X depends on Casket class and equipment loadout.
 
 ## FACTION STRENGTHS
 
-- Best damage-over-time in game (Bleed stacks infinitely)
+- Strong damage-over-time (Bleed stacks up to 10, still lethal)
 - High mobility (Leaf Dance, Shadow Step, teleports)
-- Best regeneration (Photosynthesis + Verdant Regeneration + Living Seal = 3 cards per round passive)
+- Good regeneration (Verdant Regeneration + conditional Photosynthesis + conditional Living Seal triggers)
 - Surgical strikes (Pruning Cut targets specific components)
 - Area control (Root Bind, Vine Walls, Seed Pods)
+
+**BALANCE NOTE (2025-10-16)**:
+- Bleed capped at 10 stacks (no longer infinite)
+- Photosynthesis requires NO DAMAGE TAKEN (conditional trigger)
+- Living Seal NO LONGER grants passive +1 card/round (conditional on healing effects)
 
 ---
 

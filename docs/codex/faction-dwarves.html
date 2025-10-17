@@ -8,15 +8,15 @@
 </head>
 <body>
     <!-- Faction Header with Parchment Background -->
-    <div style="background: #D4C5B0; padding: 3rem 2rem 0 2rem; margin: 0; position: relative;">
+    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
-            <img src="../images/ForgeG_PlaceH.png" alt="Dwarven Forge-Guilds" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto;">
-            <h1 style="color: #000; font-family: 'Cinzel Decorative', serif; font-size: 2rem; margin: 1.5rem 0 0 0; text-shadow: none;">Dwarven Forge-Guilds</h1>
+            <img src="../images/ForgeG_PlaceH.png" alt="Dwarven Forge-Guilds" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
+            <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Dwarven Forge-Guilds</h1>
         </div>
         <!-- Torn Paper Effect -->
-        <div style="height: 30px; background: linear-gradient(to bottom, #D4C5B0 0%, transparent 100%); margin-top: 2rem; position: relative;">
+        <div style="height: 30px; background: linear-gradient(to bottom, #8B7355 0%, transparent 100%); margin-top: 2rem; position: relative;">
             <svg style="position: absolute; bottom: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#D4C5B0"/>
+                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#B59460"/>
             </svg>
         </div>
     </div>
@@ -124,8 +124,8 @@
         <ul class="manuscript-list">
             <li><strong>Rune of Protection:</strong> Spend 2 SP to gain 1 Rune Counter. Each counter reduces all damage by 1 (max 3 counters).</li>
             <li><strong>Runic Overcharge (Tactic):</strong> Spend 3 SP to gain 2 Rune Counters immediately. Gain 2 Heat.</li>
-            <li><strong>Stone Endurance (Tactic):</strong> Your maximum HP is 32 instead of 30 (add 2 extra cards to deck).</li>
-            <li><strong>Armor-Piercing Attacks:</strong> All Dwarven weapons ignore Defense buffs and armor (faction bonus).</li>
+            <li><strong>Stone Endurance (Tactic):</strong> Once per mission, when you reshuffle your deck, add 1 Damage card instead of 2 (slower death spiral).</li>
+            <li><strong>Armor-Piercing Attacks:</strong> Only Crushing Blow and specific equipment weapons (Warhammer, War Pick) have Armor-Piercing keyword (ignore Defense).</li>
         </ul>
 
         <p class="manuscript-text">
@@ -383,9 +383,9 @@
         <h3>Immovable Wall (Forge Walker - Heavy, 4 SP)</h3>
         <ul class="manuscript-list">
             <li><strong>Equipment:</strong> Warhammer (6 cards), Tower Shield (4 cards), Forge-Rune Sigil (3), Reinforced Plating (3), Heat Sink Sigil (2)</li>
-            <li><strong>Tactics:</strong> Stone Endurance (+2 HP = 32 total), Runic Overcharge</li>
-            <li><strong>Total Deck:</strong> 38 cards (maximum tankiness)</li>
-            <li><strong>Strategy:</strong> Stack 3 Rune Counters early (Rune of Protection + Runic Overcharge). Tower Shield + Reinforced Plating = massive damage reduction. 32 HP with -3 damage per hit = nearly unkillable. Win through attrition warfare.</li>
+            <li><strong>Tactics:</strong> Stone Endurance (slower death spiral), Runic Overcharge</li>
+            <li><strong>Total Deck:</strong> 36 cards (maximum tankiness)</li>
+            <li><strong>Strategy:</strong> Stack 3 Rune Counters early (Rune of Protection + Runic Overcharge). Tower Shield + Reinforced Plating = massive damage reduction. 30 HP with -3 damage per hit and slower death spiral = nearly unkillable. Win through attrition warfare.</li>
         </ul>
 
         <h3>Armor-Piercing Assault (Ironclad - Assault, 5 SP)</h3>
@@ -411,7 +411,7 @@
         <h2>Strategy Notes</h2>
 
         <p class="manuscript-text">
-            <strong>Strengths:</strong> Highest survivability in game (32 HP with Stone Endurance), all weapons gain armor-piercing, component protection (Unbreakable delays destruction), Heat conversion mechanics (Forge Fury turns Heat into damage, Forge Mastery into card draw), attrition warfare mastery.
+            <strong>Strengths:</strong> High survivability (30 HP with slower death spiral), selective armor-piercing on key attacks, component protection (Unbreakable delays destruction), Heat conversion mechanics (Forge Fury turns Heat into damage, Forge Mastery into card draw), attrition warfare mastery.
         </p>
 
         <p class="manuscript-text">

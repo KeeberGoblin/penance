@@ -1,10 +1,10 @@
-# The Soulstone Exchange - Support Units
+# The Exchange - Support Units
 ## Penance: Mercenaries, Contracts, and Economic Warfare
 
 **Version**: 3.0 Equipment System (Asymmetric)
 **Date**: October 16, 2025
 
-The Soulstone Exchange fields hired mercenaries, contract enforcers, and debt collectors. Each unit embodies Exchange philosophy: everything has a price, loyalty is purchased, and contracts are sacred.
+The Exchange fields hired mercenaries, contract enforcers, and debt collectors. Each unit embodies Exchange philosophy: everything has a price, loyalty is purchased, and contracts are sacred.
 
 ---
 

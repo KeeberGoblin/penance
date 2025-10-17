@@ -102,7 +102,7 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
 
 ---
 
-### The Soulstone Exchange (formerly Merchant Guilds)
+### The Exchange (formerly Merchant Guilds)
 **"The Collapse"** or "The Theslar Recession"
 - Economic language
 - Focus on societal breakdown and market destruction

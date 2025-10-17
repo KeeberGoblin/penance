@@ -8,15 +8,15 @@
 </head>
 <body>
     <!-- Faction Header with Parchment Background -->
-    <div style="background: #D4C5B0; padding: 3rem 2rem 0 2rem; margin: 0; position: relative;">
+    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
-            <img src="../images/ossuarium_PlaceH.png" alt="The Ossuarium" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto;">
-            <h1 style="color: #000; font-family: 'Cinzel Decorative', serif; font-size: 2rem; margin: 1.5rem 0 0 0; text-shadow: none;">The Ossuarium</h1>
+            <img src="../images/ossuarium_PlaceH.png" alt="The Ossuarium" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
+            <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">The Ossuarium</h1>
         </div>
         <!-- Torn Paper Effect -->
-        <div style="height: 30px; background: linear-gradient(to bottom, #D4C5B0 0%, transparent 100%); margin-top: 2rem; position: relative;">
+        <div style="height: 30px; background: linear-gradient(to bottom, #8B7355 0%, transparent 100%); margin-top: 2rem; position: relative;">
             <svg style="position: absolute; bottom: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#D4C5B0"/>
+                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#B59460"/>
             </svg>
         </div>
     </div>
@@ -126,9 +126,10 @@
         </p>
 
         <ul class="manuscript-list">
-            <li><strong>Soul Harvest:</strong> Deal 4 damage. Recover cards equal to damage dealt from discard pile (max 4 cards).</li>
+            <li><strong>Soul Harvest:</strong> Deal 4 damage. Recover 3 cards from discard pile (75% lifesteal).</li>
             <li><strong>Corpse Fuel:</strong> When enemy destroyed within 3 hexes, immediately recover 5 cards from discard pile.</li>
             <li><strong>Phylactery (Passive):</strong> First time each mission you would be reduced to 0 HP, instead set HP to 5 (automatic resurrection).</li>
+            <li><strong>Phylactery Relic (Equipment):</strong> Campaign-only item (not available in casual/arena play). Provides second resurrection.</li>
             <li><strong>Decay Cards (Special):</strong> The Ossuarium does NOT add "Damage" cards on reshuffle. Instead, they add "Decay" cards (0 SP cost, discard to lose 1 SP this turn and gain 1 Heat). Slower penalty, but still a death spiral.</li>
         </ul>
 
@@ -147,7 +148,7 @@
             <strong>Type:</strong> Attack (Lifesteal) | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
         </p>
         <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 4 cards).
+            <strong>Effect:</strong> Deal 4 damage. Recover 3 cards from your discard pile (75% lifesteal).
         </p>
         <p class="manuscript-text"><em>"Their life becomes yours. This is the calculus of necromancy."</em></p>
 
@@ -168,6 +169,10 @@
             <strong>Effect:</strong> The first time each mission you would be reduced to 0 HP, instead set HP to 5 (recover 5 cards from discard pile). This is automatic and costs nothing.
         </p>
         <p class="manuscript-text"><em>"I have prepared for death. Many times."</em></p>
+
+        <p class="manuscript-text" style="margin-top: 1rem;">
+            <strong>Note:</strong> Phylactery Relic equipment (second resurrection) is <strong>campaign-only</strong> and not available in casual or arena play.
+        </p>
 
         <h3>4. Bone Scythe Reap</h3>
         <p class="manuscript-text">
@@ -323,7 +328,7 @@
             <li><strong>Equipment:</strong> Bone Scythe (6 cards), Buckler Shield (2 cards), Death Mark Sigil (3 cards)</li>
             <li><strong>Tactics:</strong> Eternal Hunger (double lifesteal), Grave Robber (loot enemy gear)</li>
             <li><strong>Total Deck:</strong> 29 cards (fast cycle, aggressive drain)</li>
-            <li><strong>Strategy:</strong> Soul Harvest every turn (4 damage + recover 4 cards). Bone Scythe provides multiple lifesteal attacks. Death Mark Sigil adds passive lifesteal (recover 1 card per turn when damaging). Fast, aggressive, self-sustaining vampire.</li>
+            <li><strong>Strategy:</strong> Soul Harvest every turn (4 damage + recover 3 cards). Bone Scythe provides multiple lifesteal attacks. Death Mark Sigil adds passive lifesteal (recover 1 card per turn when damaging). Fast, aggressive, self-sustaining vampire.</li>
         </ul>
 
         <h3>Corpse Grinder (Phylarch - Assault, 5 SP)</h3>
@@ -334,12 +339,12 @@
             <li><strong>Strategy:</strong> Kill enemies to trigger Corpse Fuel (recover 5 cards per kill). Necrotic Surge adds +1 card to all recovery effects. Flail provides ignore-Defense attacks. Grind enemies down through attrition.</li>
         </ul>
 
-        <h3>Immortal Fortress (Bonelord - Heavy, 4 SP)</h3>
+        <h3>Immortal Fortress (Bonelord - Heavy, 4 SP) - Campaign Only</h3>
         <ul class="manuscript-list">
-            <li><strong>Equipment:</strong> Mace (5 cards), Tower Shield (4 cards), Death Mark Sigil (3 cards), Reinforced Plating (3 cards), Phylactery Relic (3 cards)</li>
+            <li><strong>Equipment:</strong> Mace (5 cards), Tower Shield (4 cards), Death Mark Sigil (3 cards), Reinforced Plating (3 cards), Phylactery Relic (3 cards, campaign-only)</li>
             <li><strong>Tactics:</strong> Undying Resilience, Bone Armor</li>
             <li><strong>Total Deck:</strong> 36 cards (maximum survivability)</li>
-            <li><strong>Strategy:</strong> THREE resurrection mechanics: Phylactery (resurrect at 5 HP), Phylactery Relic (store 5 cards, resurrect once), Undying Resilience (resurrect at 10 HP). Tower Shield + Reinforced Plating + Bone Armor = massive defense. Literally cannot die.</li>
+            <li><strong>Strategy:</strong> THREE resurrection mechanics (campaign only): Phylactery (resurrect at 5 HP), Phylactery Relic (store 5 cards, resurrect once), Undying Resilience (resurrect at 10 HP). Tower Shield + Reinforced Plating + Bone Armor = massive defense. Literally cannot die. Not legal in casual/arena play.</li>
         </ul>
 
         <div style="text-align: center; margin: 2rem 0;">
