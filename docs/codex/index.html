@@ -154,9 +154,40 @@
             <!-- 1. LORE & WORLD (Context First) -->
             <div class="nav-section">
                 <div class="nav-title">Lore & World</div>
-                <a class="nav-link" onclick="loadContent('cosmology.html'); return false;">Cosmology & Origins</a>
-                <a class="nav-link" onclick="loadContent('lore-sundering.html'); return false;">The Sundering</a>
-                <a class="nav-link" onclick="loadContent('lore-engine.html'); return false;">Theslar Engine</a>
+
+                <!-- The Theslar Event submenu -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" onclick="loadContent('lore-theslar-overview.html'); return false;">The Theslar Event</a>
+                    <div class="nav-submenu">
+                        <a class="nav-link" onclick="loadContent('lore-ground-zero.html'); return false;">Ground Zero (North Pole)</a>
+                        <a class="nav-link" onclick="loadContent('lore-year-zero.html'); return false;">Year 0 Timeline</a>
+                        <a class="nav-link" onclick="loadContent('lore-engine.html'); return false;">The Engine Itself</a>
+                        <a class="nav-link" onclick="loadContent('lore-pre-sundering.html'); return false;">Before the Fall</a>
+                    </div>
+                </div>
+
+                <!-- Casket Technology submenu -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" onclick="loadContent('lore-caskets-overview.html'); return false;">Casket Technology</a>
+                    <div class="nav-submenu">
+                        <a class="nav-link" onclick="loadContent('lore-casket-origins.html'); return false;">Origins & History</a>
+                        <a class="nav-link" onclick="loadContent('lore-soul-binding.html'); return false;">Soul-Binding Mechanics</a>
+                        <a class="nav-link" onclick="loadContent('lore-casket-manufacturing.html'); return false;">Modern Manufacturing</a>
+                        <a class="nav-link" onclick="loadContent('lore-bonelord-thresh.html'); return false;">Bonelord Thresh</a>
+                    </div>
+                </div>
+
+                <!-- The World submenu -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" onclick="loadContent('cosmology.html'); return false;">The World</a>
+                    <div class="nav-submenu">
+                        <a class="nav-link" onclick="loadContent('lore-climate.html'); return false;">Climate & Geography</a>
+                        <a class="nav-link" onclick="loadContent('lore-void.html'); return false;">The Void</a>
+                        <a class="nav-link" onclick="loadContent('lore-factions-overview.html'); return false;">Faction Politics</a>
+                        <a class="nav-link" onclick="loadContent('lore-settlements.html'); return false;">Major Settlements</a>
+                    </div>
+                </div>
+
                 <a class="nav-link" onclick="loadContent('lore-chronicle.html'); return false;">Chronicle (437 Years)</a>
                 <a class="nav-link" onclick="loadContent('lore-npcs.html'); return false;">Iconic Pilots</a>
             </div>
