@@ -148,7 +148,7 @@
         <nav class="sidebar">
             <!-- 0. HOME - Quick return to index -->
             <div class="nav-section">
-                <a class="nav-link" style="font-weight: 700; color: var(--aged-gold); border-left-color: var(--dark-red);" onclick="loadContent('content-home.html'); return false;">⌂ CODEX HOME</a>
+                <a class="nav-link" style="font-weight: 700; color: var(--aged-gold); border-left-color: var(--dark-red);" onclick="loadContent('content-home.html', event)">⌂ CODEX HOME</a>
             </div>
 
             <!-- 1. LORE & WORLD (Context First) -->
@@ -157,82 +157,82 @@
 
                 <!-- The Theslar Event submenu -->
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('lore-theslar-overview.html'); return false;">The Theslar Event</a>
+                    <a class="nav-link has-submenu" onclick="loadContent('lore-theslar-overview.html', event)">The Theslar Event</a>
                     <div class="nav-submenu">
-                        <a class="nav-link" onclick="loadContent('lore-ground-zero.html'); return false;">Ground Zero (North Pole)</a>
-                        <a class="nav-link" onclick="loadContent('lore-year-zero.html'); return false;">Year 0 Timeline</a>
-                        <a class="nav-link" onclick="loadContent('lore-engine.html'); return false;">The Engine Itself</a>
-                        <a class="nav-link" onclick="loadContent('lore-pre-sundering.html'); return false;">Before the Fall</a>
+                        <a class="nav-link" onclick="loadContent('lore-ground-zero.html', event)">Ground Zero (North Pole)</a>
+                        <a class="nav-link" onclick="loadContent('lore-year-zero.html', event)">Year 0 Timeline</a>
+                        <a class="nav-link" onclick="loadContent('lore-engine.html', event)">The Engine Itself</a>
+                        <a class="nav-link" onclick="loadContent('lore-pre-sundering.html', event)">Before the Fall</a>
                     </div>
                 </div>
 
                 <!-- Casket Technology submenu -->
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('lore-caskets-overview.html'); return false;">Casket Technology</a>
+                    <a class="nav-link has-submenu" onclick="loadContent('lore-caskets-overview.html', event)">Casket Technology</a>
                     <div class="nav-submenu">
-                        <a class="nav-link" onclick="loadContent('lore-casket-origins.html'); return false;">Origins & History</a>
-                        <a class="nav-link" onclick="loadContent('lore-soul-binding.html'); return false;">Soul-Binding Mechanics</a>
-                        <a class="nav-link" onclick="loadContent('lore-casket-manufacturing.html'); return false;">Modern Manufacturing</a>
-                        <a class="nav-link" onclick="loadContent('lore-bonelord-thresh.html'); return false;">Bonelord Thresh</a>
+                        <a class="nav-link" onclick="loadContent('lore-casket-origins.html', event)">Origins & History</a>
+                        <a class="nav-link" onclick="loadContent('lore-soul-binding.html', event)">Soul-Binding Mechanics</a>
+                        <a class="nav-link" onclick="loadContent('lore-casket-manufacturing.html', event)">Modern Manufacturing</a>
+                        <a class="nav-link" onclick="loadContent('lore-bonelord-thresh.html', event)">Bonelord Thresh</a>
                     </div>
                 </div>
 
                 <!-- The World submenu -->
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('cosmology.html'); return false;">The World</a>
+                    <a class="nav-link has-submenu" onclick="loadContent('cosmology.html', event)">The World</a>
                     <div class="nav-submenu">
-                        <a class="nav-link" onclick="loadContent('lore-climate.html'); return false;">Climate & Geography</a>
-                        <a class="nav-link" onclick="loadContent('lore-void.html'); return false;">The Void</a>
-                        <a class="nav-link" onclick="loadContent('lore-factions-overview.html'); return false;">Faction Politics</a>
-                        <a class="nav-link" onclick="loadContent('lore-settlements.html'); return false;">Major Settlements</a>
+                        <a class="nav-link" onclick="loadContent('lore-climate.html', event)">Climate & Geography</a>
+                        <a class="nav-link" onclick="loadContent('lore-void.html', event)">The Void</a>
+                        <a class="nav-link" onclick="loadContent('lore-factions-overview.html', event)">Faction Politics</a>
+                        <a class="nav-link" onclick="loadContent('lore-settlements.html', event)">Major Settlements</a>
                     </div>
                 </div>
 
-                <a class="nav-link" onclick="loadContent('lore-chronicle.html'); return false;">Chronicle (437 Years)</a>
-                <a class="nav-link" onclick="loadContent('lore-npcs.html'); return false;">Iconic Pilots</a>
+                <a class="nav-link" onclick="loadContent('lore-chronicle.html', event)">Chronicle (437 Years)</a>
+                <a class="nav-link" onclick="loadContent('lore-npcs.html', event)">Iconic Pilots</a>
             </div>
 
             <!-- 2. CORE RULES (Learn to Play) -->
             <div class="nav-section">
                 <div class="nav-title">Core Rules</div>
-                <a class="nav-link" onclick="loadContent('rules-turn-structure.html'); return false;">Turn Structure</a>
-                <a class="nav-link" onclick="loadContent('rules-combat.html'); return false;">Combat System</a>
-                <a class="nav-link" onclick="loadContent('rules-range-los.html'); return false;">Range & Line of Sight</a>
-                <a class="nav-link" onclick="loadContent('equipment-decks.html'); return false;">Equipment & Deck Building</a>
-                <a class="nav-link" onclick="loadContent('support-units.html'); return false;">Support Units System</a>
-                <a class="nav-link" onclick="loadContent('rules-dice.html'); return false;">Dice Reference</a>
-                <a class="nav-link" onclick="loadContent('rules-quick-ref.html'); return false;">Quick Reference</a>
-                <a class="nav-link" onclick="loadContent('rules-v3-optional.html'); return false;">v3.0 Optional Rules</a>
+                <a class="nav-link" onclick="loadContent('rules-turn-structure.html', event)">Turn Structure</a>
+                <a class="nav-link" onclick="loadContent('rules-combat.html', event)">Combat System</a>
+                <a class="nav-link" onclick="loadContent('rules-range-los.html', event)">Range & Line of Sight</a>
+                <a class="nav-link" onclick="loadContent('equipment-decks.html', event)">Equipment & Deck Building</a>
+                <a class="nav-link" onclick="loadContent('support-units.html', event)">Support Units System</a>
+                <a class="nav-link" onclick="loadContent('rules-dice.html', event)">Dice Reference</a>
+                <a class="nav-link" onclick="loadContent('rules-quick-ref.html', event)">Quick Reference</a>
+                <a class="nav-link" onclick="loadContent('rules-v3-optional.html', event)">v3.0 Optional Rules</a>
             </div>
 
             <!-- 3. PLAYABLE FACTIONS (Choose Your Army) -->
             <div class="nav-section">
                 <div class="nav-title">Playable Factions</div>
-                <a class="nav-link" onclick="loadContent('faction-church.html'); return false;">Church of Absolution</a>
-                <a class="nav-link" onclick="loadContent('faction-dwarves.html'); return false;">Dwarven Forge-Guilds</a>
-                <a class="nav-link" onclick="loadContent('faction-undead.html'); return false;">The Ossuarium</a>
-                <a class="nav-link" onclick="loadContent('faction-elves.html'); return false;">Elven Verdant Covenant</a>
-                <a class="nav-link" onclick="loadContent('faction-nomads.html'); return false;">Nomad Collective</a>
-                <a class="nav-link" onclick="loadContent('faction-exchange.html'); return false;">The Exchange</a>
-                <a class="nav-link" onclick="loadContent('faction-bloodlines.html'); return false;">Vestige Bloodlines</a>
-                <a class="nav-link" onclick="loadContent('faction-emergent.html'); return false;">Emergent Syndicate</a>
-                <a class="nav-link" onclick="loadContent('faction-crucible.html'); return false;">Crucible Packs</a>
-                <a class="nav-link" onclick="loadContent('faction-fae.html'); return false;">The Wyrd Conclave</a>
+                <a class="nav-link" onclick="loadContent('faction-church.html', event)">Church of Absolution</a>
+                <a class="nav-link" onclick="loadContent('faction-dwarves.html', event)">Dwarven Forge-Guilds</a>
+                <a class="nav-link" onclick="loadContent('faction-undead.html', event)">The Ossuarium</a>
+                <a class="nav-link" onclick="loadContent('faction-elves.html', event)">Elven Verdant Covenant</a>
+                <a class="nav-link" onclick="loadContent('faction-nomads.html', event)">Nomad Collective</a>
+                <a class="nav-link" onclick="loadContent('faction-exchange.html', event)">The Exchange</a>
+                <a class="nav-link" onclick="loadContent('faction-bloodlines.html', event)">Vestige Bloodlines</a>
+                <a class="nav-link" onclick="loadContent('faction-emergent.html', event)">Emergent Syndicate</a>
+                <a class="nav-link" onclick="loadContent('faction-crucible.html', event)">Crucible Packs</a>
+                <a class="nav-link" onclick="loadContent('faction-fae.html', event)">The Wyrd Conclave</a>
             </div>
 
             <!-- 4. SCENARIOS (Start Playing) -->
             <div class="nav-section">
                 <div class="nav-title">Scenarios</div>
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('scenarios.html'); return false;">Scenario Overview</a>
+                    <a class="nav-link has-submenu" onclick="loadContent('scenarios.html', event)">Scenario Overview</a>
                     <div class="nav-submenu">
-                        <a class="nav-link" onclick="loadContent('scenario-proving-grounds.html'); return false;">Scenario #1: Proving Grounds</a>
-                        <a class="nav-link" onclick="loadContent('scenario-reliquary-ruins.html'); return false;">Scenario #2: Reliquary Ruins</a>
-                        <a class="nav-link" onclick="loadContent('scenario-escort-duty.html'); return false;">Scenario #3: Escort Duty</a>
-                        <a class="nav-link" onclick="loadContent('scenario-king-of-the-hill.html'); return false;">Scenario #4: King of the Hill</a>
-                        <a class="nav-link" onclick="loadContent('scenario-sabotage-mission.html'); return false;">Scenario #5: Sabotage Mission</a>
-                        <a class="nav-link" onclick="loadContent('scenario-example-of-play.html'); return false;">Example of Play</a>
-                        <a class="nav-link" onclick="loadContent('scenario-boss-iron-saint.html'); return false;">Boss: The Iron Saint</a>
+                        <a class="nav-link" onclick="loadContent('scenario-proving-grounds.html', event)">Scenario #1: Proving Grounds</a>
+                        <a class="nav-link" onclick="loadContent('scenario-reliquary-ruins.html', event)">Scenario #2: Reliquary Ruins</a>
+                        <a class="nav-link" onclick="loadContent('scenario-escort-duty.html', event)">Scenario #3: Escort Duty</a>
+                        <a class="nav-link" onclick="loadContent('scenario-king-of-the-hill.html', event)">Scenario #4: King of the Hill</a>
+                        <a class="nav-link" onclick="loadContent('scenario-sabotage-mission.html', event)">Scenario #5: Sabotage Mission</a>
+                        <a class="nav-link" onclick="loadContent('scenario-example-of-play.html', event)">Example of Play</a>
+                        <a class="nav-link" onclick="loadContent('scenario-boss-iron-saint.html', event)">Boss: The Iron Saint</a>
                     </div>
                 </div>
             </div>
@@ -240,21 +240,21 @@
             <!-- 5. CAMPAIGN (Long-Term Play) -->
             <div class="nav-section">
                 <div class="nav-title">Campaign</div>
-                <a class="nav-link" onclick="loadContent('campaign-settlement-phase.html'); return false;">Settlement Phase Procedure</a>
-                <a class="nav-link" onclick="loadContent('campaign-settlements.html'); return false;">Settlements</a>
-                <a class="nav-link" onclick="loadContent('campaign-pilot-generation.html'); return false;">Pilot Generation Tables</a>
-                <a class="nav-link" onclick="loadContent('campaign-pilot-progression.html'); return false;">Pilot Progression</a>
-                <a class="nav-link" onclick="loadContent('campaign-leg-skimming.html'); return false;">Soul Sacrifice</a>
-                <a class="nav-link" onclick="loadContent('enemies-bestiary.html'); return false;">Core Bestiary</a>
-                <a class="nav-link" onclick="loadContent('campaign-event-tables.html'); return false;">Event Tables (132)</a>
-                <a class="nav-link" onclick="loadContent('campaign-anomalous-events.html'); return false;">Anomalous Events (100)</a>
-                <a class="nav-link" onclick="loadContent('campaign-loot-tables.html'); return false;">Loot Tables</a>
+                <a class="nav-link" onclick="loadContent('campaign-settlement-phase.html', event)">Settlement Phase Procedure</a>
+                <a class="nav-link" onclick="loadContent('campaign-settlements.html', event)">Settlements</a>
+                <a class="nav-link" onclick="loadContent('campaign-pilot-generation.html', event)">Pilot Generation Tables</a>
+                <a class="nav-link" onclick="loadContent('campaign-pilot-progression.html', event)">Pilot Progression</a>
+                <a class="nav-link" onclick="loadContent('campaign-leg-skimming.html', event)">Soul Sacrifice</a>
+                <a class="nav-link" onclick="loadContent('enemies-bestiary.html', event)">Core Bestiary</a>
+                <a class="nav-link" onclick="loadContent('campaign-event-tables.html', event)">Event Tables (132)</a>
+                <a class="nav-link" onclick="loadContent('campaign-anomalous-events.html', event)">Anomalous Events (100)</a>
+                <a class="nav-link" onclick="loadContent('campaign-loot-tables.html', event)">Loot Tables</a>
             </div>
 
             <!-- 6. NPC-ONLY FACTIONS (Event Encounters) -->
             <div class="nav-section">
                 <div class="nav-title">NPC-Only Factions</div>
-                <a class="nav-link" onclick="loadContent('faction-draconid.html'); return false;">The Draconid Remembrance</a>
+                <a class="nav-link" onclick="loadContent('faction-draconid.html', event)">The Draconid Remembrance</a>
             </div>
 
 
@@ -276,16 +276,22 @@
     </div>
 
     <script>
-        function loadContent(url) {
+        function loadContent(url, event) {
+            // Prevent default link behavior and stop event bubbling
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
             const frame = document.getElementById('contentFrame');
             const allLinks = document.querySelectorAll('.nav-link[onclick]');
 
             // Remove active class from all clickable links
             allLinks.forEach(link => link.classList.remove('active'));
 
-            // Add active class to clicked link (if called from navigation, not from iframe link)
-            if (typeof event !== 'undefined' && event.target) {
-                event.target.classList.add('active');
+            // Add active class to clicked link
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
             }
 
             // Load content in iframe
