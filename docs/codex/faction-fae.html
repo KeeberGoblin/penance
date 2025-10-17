@@ -8,12 +8,26 @@
 </head>
 <body>
     <div class="content">
+        <!-- Faction Header with Parchment Background -->
+        <div style="background: #D4C5B0; padding: 3rem 2rem 0 2rem; margin: 0 0 2rem 0; position: relative;">
+            <div style="text-align: center;">
+                <img src="../images/Wyrd_PlaceH.png" alt="The Wyrd Conclave" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto;">
+                <h1 style="color: #4B0082; font-family: 'Cinzel Decorative', serif; font-size: 2rem; margin: 1.5rem 0 0 0; text-shadow: none;">The Wyrd Conclave</h1>
+            </div>
+            <!-- Torn Paper Effect -->
+            <div style="height: 30px; background: linear-gradient(to bottom, #D4C5B0 0%, transparent 100%); margin-top: 2rem; position: relative;">
+                <svg style="position: absolute; bottom: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
+                    <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#D4C5B0"/>
+                </svg>
+            </div>
+        </div>
+
         <div class="breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
-            <a href="#factions">FACTIONS</a> /
+            <a href="#factions">PLAYABLE FACTIONS</a> /
             The Wyrd Conclave
         </div>
-<h1>The Wyrd Conclave</h1>
+
         <p style="font-style: italic; color: #BA55D3; font-size: 1.1rem; text-align: center; margin: 1rem 0;">
             "A bargain? Oh, how delightful. Do read the fine print."
         </p>
@@ -22,17 +36,10 @@
             <span style="font-size: 2rem; color: #BA55D3;">&#10047;</span>
         </div>
 
-        <div style="background: var(--blood-red); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2.5rem 0;">
-            <h2 style="margin-top: 0;">Design-Only Faction</h2>
-            <p class="manuscript-text" style="margin-bottom: 0;">
-                This faction page is currently under development. Detailed mechanics, lore, and deck information coming soon. For completed faction content, see: <a href="faction-church.html" style="color: var(--bone-white); text-decoration: underline;">Church of Absolution</a>, <a href="faction-dwarves.html" style="color: var(--bone-white); text-decoration: underline;">Dwarven Forge-Guilds</a>, <a href="faction-undead.html" style="color: var(--bone-white); text-decoration: underline;">The Ossuarium</a>, or <a href="faction-elves.html" style="color: var(--bone-white); text-decoration: underline;">Elven Verdant Covenant</a>.
-            </p>
-        </div>
-
         <h2>Faction Overview</h2>
 
         <p class="manuscript-text">
-            The fae do not declare war. They simply appear, and settlements die. Tricksters, oath-keepers, and reality-benders who find the post-apocalypse endlessly amusing.
+            The fae do not declare war. They simply appear, and settlements die. Tricksters, oath-keepers, and reality-benders who find the post-apocalypse endlessly amusing. Masters of bargains and contracts, they pilot Caskets woven from living wood and crystal, bending space and stealing faces with equal ease.
         </p>
 
         <div class="manuscript-quote">
@@ -47,37 +54,151 @@
         <h2>Core Mechanic: Wyrd Tokens</h2>
 
         <p class="manuscript-text">
-            The Wyrd Conclave manipulates reality through Wyrd Tokens—reality distortions that bend space, steal faces, and make the impossible merely improbable.
+            The Wyrd Conclave manipulates reality through <strong>Wyrd Tokens</strong>—reality distortions gained through bargains and spent to teleport, copy abilities, and rewrite combat outcomes.
         </p>
 
         <ul class="manuscript-list">
-            <li><strong>Reality Distortion:</strong> Teleport across the battlefield, phase through obstacles, rewrite combat outcomes</li>
-            <li><strong>Stolen Faces:</strong> Impersonate enemies, sow confusion, turn allies against each other</li>
+            <li><strong>Generate Tokens:</strong> Force enemies into bargains (take damage or grant you power)</li>
+            <li><strong>Mirror Step:</strong> Teleport across the battlefield to allies, enemies, or reflective terrain</li>
+            <li><strong>Stolen Reflection:</strong> Copy up to 3 enemy abilities and use them against their owners</li>
+            <li><strong>What-If Paradox:</strong> Reactive defense that gambles on d6 rolls (negate damage or take double)</li>
             <li><strong>Oath-Binding:</strong> Force enemies into supernatural contracts with devastating penalties</li>
-            <li><strong>Trickery:</strong> Every action has hidden costs, every deal has fine print written in blood</li>
         </ul>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #BA55D3;">&#10047;</span>
         </div>
 
-        <h2>Playstyle (Conceptual)</h2>
+        <h2>Faction Core Cards (Mandatory - 6 Cards)</h2>
 
+        <h3>1. REALITY BARGAIN (Token Generation)</h3>
         <p class="manuscript-text">
-            <em>Reality-bending control. Teleportation. Illusions. Oath-bound contracts. Every mechanic is a trick, every victory feels unfair. High skill ceiling, deeply punishing to master.</em>
+            <strong>Type:</strong> Gambit (Bargain)<br>
+            <strong>SP Cost:</strong> 0<br>
+            <strong>Effect:</strong> Offer an enemy a bargain: "Take 2 damage now, or I gain 2 Wyrd Tokens." Enemy chooses. If they refuse damage (you gain tokens), place "Bargain Debt" status on them.
+        </p>
+
+        <h3>2. MIRROR STEP (Teleportation)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Movement (Special)<br>
+            <strong>SP Cost:</strong> 1 Wyrd Token<br>
+            <strong>Range:</strong> 4 hexes<br>
+            <strong>Effect:</strong> Teleport to any hex within range that is: (1) occupied by an ally, (2) adjacent to an enemy, OR (3) reflective terrain (water, ice, metal debris).
+        </p>
+
+        <h3>3. STOLEN REFLECTION (Ability Copy)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Utility (Mimicry)<br>
+            <strong>SP Cost:</strong> 2 Wyrd Tokens<br>
+            <strong>Range:</strong> 3 hexes<br>
+            <strong>Effect:</strong> Choose an enemy. Copy one ability from their deck. You may use that ability for the rest of the mission. Max 3 stolen abilities at once.
+        </p>
+
+        <h3>4. WHAT-IF PARADOX (Reactive Defense)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Reactive (Reality Manipulation)<br>
+            <strong>SP Cost:</strong> 2 Wyrd Tokens<br>
+            <strong>Range:</strong> Self<br>
+            <strong>Effect:</strong> When you would take damage, declare a "What-If" alternate outcome. Roll 1d6:
+        </p>
+        <ul class="manuscript-list">
+            <li>1-2: What-If fails, take double damage</li>
+            <li>3-4: What-If partial, take half damage</li>
+            <li>5-6: What-If succeeds, negate all damage</li>
+        </ul>
+
+        <h3>5. OATH-BINDING CONTRACT (Control)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Utility (Curse)<br>
+            <strong>SP Cost:</strong> 3<br>
+            <strong>Range:</strong> 4 hexes<br>
+            <strong>Effect:</strong> Target enemy must choose: (1) Skip their next turn, OR (2) take 4 damage and gain "Oathbreaker" status (+2 damage from all Wyrd attacks permanently).
+        </p>
+
+        <h3>6. FAIRY DUST (Passive - Disruptive)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Passive Ability<br>
+            <strong>SP Cost:</strong> N/A<br>
+            <strong>Effect:</strong> At start of each round, choose 1 enemy within 5 hexes. Enemy's hand is shuffled back into deck, then they draw same number of cards (disrupts planning).
         </p>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #BA55D3;">&#10047;</span>
         </div>
 
-        <h2>Key Casket Types (Placeholder)</h2>
+        <h2>Faction Unique Equipment</h2>
 
+        <h3>Fae Blade (Primary Weapon, 6 cards, 1 Equipment Slot)</h3>
         <ul class="manuscript-list">
-            <li><strong>Trickster Frame:</strong> Light, mobile, focused on illusions and teleportation</li>
-            <li><strong>Changeling Frame:</strong> Medium, impersonation specialist, steals enemy abilities</li>
-            <li><strong>Contract Keeper:</strong> Heavy, binds enemies in supernatural oaths with horrific penalties</li>
+            <li><strong>Glamour Strike (3 SP):</strong> Deal 5 damage. If target has Bargain Debt, steal 1 Wyrd Token from them.</li>
+            <li><strong>Illusion Slash (2 SP):</strong> Deal 4 damage. Create illusion of yourself in vacated hex (draws enemy attacks).</li>
+            <li><strong>Phase Strike (4 SP):</strong> Ignore Defense, deal 6 damage. Teleport 2 hexes after attacking.</li>
         </ul>
+
+        <h3>Mirror Shield (Secondary Equipment, 3 cards, 1 Equipment Slot)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Reflection Block (1 SP):</strong> +3 Defense. If you block 5+ damage, gain 1 Wyrd Token.</li>
+            <li><strong>Mirror Parry (2 SP):</strong> +4 Defense. Reflect half damage back to attacker.</li>
+            <li><strong>Shatter (3 Wyrd Tokens):</strong> Destroy shield, teleport 6 hexes in any direction (emergency escape).</li>
+        </ul>
+
+        <h3>Bargain Sigil (Accessory, 3 cards, 1 Equipment Slot)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Faustian Deal (0 SP):</strong> Offer bargain: "I take 3 damage now, or gain 3 Wyrd Tokens at start of next turn."</li>
+            <li><strong>Hidden Cost (1 Wyrd Token):</strong> When enemy uses ability, force them to pay +1 SP for all actions next turn.</li>
+            <li><strong>Contract Fine Print (2 Wyrd Tokens):</strong> Enemies with Bargain Debt cannot draw cards next turn.</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #BA55D3;">&#10047;</span>
+        </div>
+
+        <h2>Recommended Builds</h2>
+
+        <h3>Build #1: Mirror Assassin (Scout Frame, 29 cards)</h3>
+        <ul class="manuscript-list">
+            <li>10 Universal Core</li>
+            <li>6 Wyrd Faction Core</li>
+            <li>6 Fae Blade (1 slot)</li>
+            <li>3 Mirror Shield (1 slot)</li>
+            <li>2 Wyrd Tactics (0 slots)</li>
+        </ul>
+        <p class="manuscript-text"><strong>Playstyle:</strong> Teleport behind enemies, steal tokens, phase strike to escape. Maximum mobility.</p>
+
+        <h3>Build #2: Ability Thief (Assault Frame, 33 cards)</h3>
+        <ul class="manuscript-list">
+            <li>10 Universal Core</li>
+            <li>6 Wyrd Faction Core</li>
+            <li>6 Fae Blade (1 slot)</li>
+            <li>6 Twin Pistols (1 slot)</li>
+            <li>3 Bargain Sigil (1 slot)</li>
+            <li>2 Wyrd Tactics (0 slots)</li>
+        </ul>
+        <p class="manuscript-text"><strong>Playstyle:</strong> Copy 3 enemy abilities, use them better than they do. Mid-range generalist.</p>
+
+        <h3>Build #3: Contract Enforcer (Heavy Frame, 34 cards)</h3>
+        <ul class="manuscript-list">
+            <li>10 Universal Core</li>
+            <li>6 Wyrd Faction Core</li>
+            <li>6 Fae Blade (1 slot)</li>
+            <li>3 Mirror Shield (1 slot)</li>
+            <li>6 Reinforced Plating (1 slot)</li>
+            <li>3 Bargain Sigil (1 slot - optional)</li>
+            <li>2 Wyrd Tactics (0 slots)</li>
+        </ul>
+        <p class="manuscript-text"><strong>Playstyle:</strong> Tank that forces enemies into bad choices. Survive long enough to curse everyone.</p>
+
+        <h3>Build #4: Reality Bender (Fortress Frame, 37 cards)</h3>
+        <ul class="manuscript-list">
+            <li>10 Universal Core</li>
+            <li>6 Wyrd Faction Core</li>
+            <li>6 Fae Blade (1 slot)</li>
+            <li>3 Mirror Shield (1 slot)</li>
+            <li>6 Assault Rifle (1 slot)</li>
+            <li>3 Bargain Sigil (1 slot)</li>
+            <li>2 Wyrd Tactics (0 slots)</li>
+        </ul>
+        <p class="manuscript-text"><strong>Playstyle:</strong> Maximum versatility. Generate tokens, teleport, copy abilities, hold objectives.</p>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #BA55D3;">&#10047;</span>
@@ -99,6 +220,74 @@
         <p class="manuscript-text">
             A fae duchess who treats war as theater. She narrates battles like a play, critiquing combatants' performances. "Poor form! That parry lacked panache. Two stars." If you displease her, she erases you from memory - everyone forgets you existed.
         </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #BA55D3;">&#10047;</span>
+        </div>
+
+        <h2>Faction Relations</h2>
+
+        <table class="lore-table">
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Church of Absolution</td>
+                    <td style="color: #FF6B6B;">HOSTILE</td>
+                    <td>Church considers fae "demons from beyond Veil." Fae find Church dogma hilarious.</td>
+                </tr>
+                <tr>
+                    <td>Dwarven Forge-Guilds</td>
+                    <td style="color: #FFD93D;">DISTRUSTFUL</td>
+                    <td>Dwarves hate fae tricks. Fae prank Dwarven forges for entertainment.</td>
+                </tr>
+                <tr>
+                    <td>The Ossuarium</td>
+                    <td style="color: #A8DADC;">NEUTRAL</td>
+                    <td>Fae fascinated by undeath as "creative loophole to mortality rules."</td>
+                </tr>
+                <tr>
+                    <td>Elven Verdant Covenant</td>
+                    <td style="color: #FFD93D;">DISTRUSTFUL</td>
+                    <td>Elves remember pre-Veil fae invasions. Fae mock elven seriousness.</td>
+                </tr>
+                <tr>
+                    <td>Nomad Collective</td>
+                    <td style="color: #6BCB77;">FRIENDLY</td>
+                    <td>Nomads trade stories for safe passage. Fae respect good storytellers.</td>
+                </tr>
+                <tr>
+                    <td>The Soulstone Exchange</td>
+                    <td style="color: #A8DADC;">NEUTRAL</td>
+                    <td>Fae trade in favors, not Credits. Exchange finds them unprofitable.</td>
+                </tr>
+                <tr>
+                    <td>Vestige Bloodlines</td>
+                    <td style="color: #FFD93D;">DISTRUSTFUL</td>
+                    <td>Fae view mutations as "ugly evolution." Vestige hate fae arrogance.</td>
+                </tr>
+                <tr>
+                    <td>Emergent Syndicate</td>
+                    <td style="color: #A8DADC;">NEUTRAL</td>
+                    <td>Fae study Syndicate transformation as "fascinating experiment."</td>
+                </tr>
+                <tr>
+                    <td>Crucible Packs</td>
+                    <td style="color: #FFD93D;">DISTRUSTFUL</td>
+                    <td>Volcanic honor code clashes with fae trickery. Mutual contempt.</td>
+                </tr>
+                <tr>
+                    <td>Draconid Remembrance</td>
+                    <td style="color: #FF6B6B;">HOSTILE</td>
+                    <td>Fae time manipulation offends Draconid linear historical records.</td>
+                </tr>
+            </tbody>
+        </table>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #BA55D3;">&#10047;</span>
@@ -178,9 +367,9 @@
 
         <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid #BA55D3;">
             <p style="font-style: italic; color: #BA55D3;">
-                <a href="faction-undead.html" target="_parent" style="color: #BA55D3; text-decoration: none;">← Undead</a>
+                <a href="faction-crucible.html" target="_parent" style="color: #BA55D3; text-decoration: none;">← Crucible Packs</a>
                 •
-                <a href="faction-nomads.html" target="_parent" style="color: #BA55D3; text-decoration: none;">Nomads →</a>
+                <a href="content-home.html" target="_parent" style="color: #BA55D3; text-decoration: none;">Back to Codex</a>
             </p>
         </div>
     </div>
