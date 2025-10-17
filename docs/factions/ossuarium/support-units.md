@@ -1,31 +1,26 @@
 # The Ossuarium - Support Units
-## Penance: Absolution Through Steel
+## Penance: Death, Decay, and Resurrection
 
-**Version**: 2.0 Equipment System
-**Date**: October 12, 2025
+**Version**: 3.0 Equipment System (Asymmetric)
+**Date**: October 16, 2025
 
-The Ossuarium fields undead thralls, bone constructs, and necromantic abominations. Each unit embodies death and decay, with abilities to resurrect, drain life, and spread corruption. Ossuarium support units excel at attrition warfare and horrifying opponents.
+The Ossuarium fields undead thralls, bone constructs, and necromantic abominations. Each unit embodies death and decay, with abilities to resurrect, drain life, and spread corruption.
 
 ---
 
 ## OSSUARIUM SUPPORT UNITS OVERVIEW
 
-**Starting Units** (Available immediately):
-1. Bone Thrall Swarm
-2. Grave Knight
-3. Fleshcrafter
+**Faction-Specific Units** (Choose 1):
+1. Bone Thrall Swarm (2 Equipment Slots)
+2. Grave Knight (3 Equipment Slots)
+3. Fleshcrafter (2 Equipment Slots)
 
-**Unlockable Units** (Require campaign progression):
-4. Bone Colossus (Unlock: Complete 3 missions)
-5. Lich Phylactery (Unlock: Build Ossuary in settlement)
-6. Death's Herald (Unlock: Defeat Ossuarium boss "Bonelord Thresh")
-
-**Limit**: Choose 1-3 support units (based on Casket Equipment Slots available)
+**Note**: Ossuarium doctrine emphasizes three pillars of undeath: endless swarms that never stay dead, elite warriors empowered by souls, and grotesque necromancy. These 3 units represent core Ossuarium philosophy: attrition warfare through resurrection.
 
 ---
 
-## 1. BONE THRALL SWARM STARTER UNIT
-**Category**: Swarm Infantry
+## 1. BONE THRALL SWARM
+**Category**: Infantry (Swarm/Disposable)
 **HP**: 12 (3 HP per thrall, 4 thralls total) | **Movement**: 4 | **Defense**: 0
 **Equipment Slots**: 2
 **Theme**: Expendable skeleton swarm that reforms and multiplies
@@ -147,7 +142,7 @@ Four humanoid skeletons in tattered grave shrouds, armed with rusted weapons. Th
 
 ---
 
-## 2. GRAVE KNIGHT STARTER UNIT
+## 2. GRAVE KNIGHT
 **Category**: Elite Infantry (Death Knight)
 **HP**: 14 | **Movement**: 3 | **Defense**: 3
 **Equipment Slots**: 3
@@ -265,8 +260,8 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 
 ---
 
-## 3. FLESHCRAFTER STARTER UNIT
-**Category**: Support (Healer/Debuffer)
+## 3. FLESHCRAFTER
+**Category**: Support (Healer/Summoner)
 **HP**: 8 | **Movement**: 2 | **Defense**: 1
 **Equipment Slots**: 2
 **Theme**: Grotesque necromancer stitching corpses into abominations
@@ -278,7 +273,7 @@ A hunched figure in blood-stained surgical robes, dragging a cart of body parts 
 
 ---
 
-#### 🧵 STITCH WOUNDS
+#### STITCH WOUNDS
 **Type**: Utility / Healing
 **Priority**: High (when ally within 3 hexes has <10 HP)
 
@@ -309,7 +304,7 @@ A hunched figure in blood-stained surgical robes, dragging a cart of body parts 
 
 ---
 
-#### 🧵 HARVEST CORPSE
+#### HARVEST CORPSE
 **Type**: Utility / Resource
 **Priority**: Medium (when corpse marker within 3 hexes)
 
@@ -340,7 +335,7 @@ A hunched figure in blood-stained surgical robes, dragging a cart of body parts 
 
 ---
 
-#### 🧵 ANIMATE FLESH
+#### ANIMATE FLESH
 **Type**: Summon / Creation
 **Priority**: Critical (when Fleshcrafter has 5 Essence tokens)
 
@@ -404,419 +399,81 @@ A hunched figure in blood-stained surgical robes, dragging a cart of body parts 
 
 ---
 
-## 4. BONE COLOSSUS 🔒 UNLOCKABLE
-**Category**: Heavy Construct (Tank)
-**HP**: 22 | **Movement**: 2 | **Defense**: 4
-**Equipment Slots**: 4
-**Unlock Requirement**: Complete 3 missions with Ossuarium faction
-**Theme**: Massive skeletal giant assembled from dozens of corpses
+## ASYMMETRIC DESIGN NOTES
 
-### Visual Description
-A grotesque giant standing 18 feet tall, constructed from hundreds of bones bound together with necrotic sinew. Multiple skulls form the head (all screaming silently). Four massive arms swing independently. Rib cages from multiple bodies create layered armor. The spine is a twisted column of vertebrae. Green flame burns within the hollow chest cavity. It shambles forward with terrible purpose.
+### Why Only 3 Units?
+Ossuarium doctrine emphasizes three pillars of undeath. These 3 units represent:
+- **Bone Thrall Swarm**: Endless horde (quantity over quality, infinite resurrection)
+- **Grave Knight**: Elite undead warrior (soul harvesting, lifesteal dominance)
+- **Fleshcrafter**: Grotesque necromancy (healing allies, creating abominations)
 
-### Behavior Deck (5 Cards)
+Each unit offers distinct tactical approach while maintaining Ossuarium identity: nothing stays dead, attrition warfare, and horrifying body horror.
 
 ---
 
-#### CRUSHING GRASP
-**Type**: Attack / Control
-**Priority**: High
+## DECK BUILDING EXAMPLES
 
-**Effect**:
-- Move toward nearest enemy (up to 2 hexes)
-- If adjacent, grab with two arms and crush:
- - Deal 8 damage, ignore 2 Defense
- - Target is Grappled (cannot move until they escape)
- - Colossus can drag target 1 hex next turn while grappling
-- To escape: Target must spend 3 SP or deal 8 damage to Colossus
+### Example: Ossuarium Assault Casket with Bone Thrall Swarm
 
-**Flavor**: *Four arms seize and squeeze. Bones crack.*
-
----
-
-#### BONE STORM
-**Type**: Attack / Area
-**Priority**: High (when 2+ enemies within 3 hexes)
-
-**Effect**:
-- Do not move
-- Colossus violently shakes, launching bone shards
-- Deal 5 damage to all enemies within 3 hexes
-- All affected enemies gain 2 Bleed counters (shrapnel wounds)
-- Colossus loses 1 Bone Layer (takes 2 damage, armor destroyed)
-
-**Flavor**: *Ribs detach and fly like shrapnel*
-
----
-
-#### REGENERATE
-**Type**: Utility / Healing
-**Priority**: Critical (when Colossus HP < 10)
-
-**Effect**:
-- Do not move or attack
-- Draw bones from corpses on battlefield
-- Recover 8 HP (reassembling from available bones)
-- Gain 1 Bone Layer (additional armor, +1 Defense next turn)
-- Requires corpse marker within 4 hexes (consumed if used)
-
-**Flavor**: *Bones fly through air, grafting onto the colossus*
-
----
-
-#### GROUND SLAM
-**Type**: Attack / AoE
-**Priority**: Medium
-
-**Effect**:
-- Colossus slams all four fists into ground
-- Deal 6 damage to all adjacent enemies
-- Push all affected enemies 2 hexes away (shockwave)
-- Create Difficult Terrain in all adjacent hexes (shattered ground)
-- Colossus gains +2 Defense until next turn (braced position)
-
-**Flavor**: *BOOM* - The earth cracks
-
----
-
-#### BONE HARVEST
-**Type**: Utility / Power
-**Priority**: Low (when Colossus at full HP AND corpse markers nearby)
-
-**Effect**:
-- Absorb all corpse markers within 4 hexes
-- For each corpse absorbed (max 3):
- - Gain 1 Bone Layer (+1 Defense, stacks)
- - Gain +2 max HP this battle
- - Grow larger (intimidation, enemies within 3 hexes have -1 to attacks)
-
-**Flavor**: *The colossus grows. And grows. And grows.*
-
----
-
-### Command Response
-- **RALLY**: Move up to 2 hexes (slow but obedient). Recover 2 HP from ground bones.
-- **ATTACK**: Crushing Grasp for 10 damage, ignore 4 Defense. Auto-grapple target.
-- **DEFEND**: Anchor position. +5 Defense, regenerate 4 HP, all adjacent enemies take 2 damage (bone spikes emerge).
-- **HOLD**: Build mass. Absorb all corpses within 6 hexes, gain 2 Bone Layers.
-
-### Special Ability: BONE LAYER SYSTEM
-**Passive**: Colossus has layered armor (Bone Layers):
-- Start with 2 Bone Layers
-- Each Layer provides +1 Defense
-- When taking 10+ damage in one hit, lose 1 Bone Layer
-- Max Layers: 5
-
-**Regeneration**: Can rebuild Bone Layers by:
-- Using Regenerate behavior (corpse required)
-- Using Bone Harvest behavior
-- Spending Command: Defend
-
-**Corpse Magnet**: Whenever unit dies within 6 hexes, Colossus automatically pulls corpse marker 2 hexes toward self (gravitational pull of death).
-
-### Tactical Use
-- Ultimate tank (22 HP + 4-5 Defense)
-- Grows stronger from corpses
-- Area control through Ground Slam
-- Grappling locks down priority targets
-- Requires corpses to maximize potential
-
----
-
-## 5. LICH PHYLACTERY 🔒 UNLOCKABLE
-**Category**: Support (Resurrection Node)
-**HP**: 10 | **Movement**: 0 | **Defense**: 3
-**Equipment Slots**: 3
-**Unlock Requirement**: Build "Ossuary" building in settlement (costs 200 Credits)
-**Theme**: Immobile crystal containing lich's soul, resurrects units
-
-### Visual Description
-A floating obsidian obelisk, 8 feet tall, covered in glowing death runes. Inside, a pulsing green crystal contains the soul of an ancient lich. The Phylactery hovers 3 feet off the ground, rotating slowly. Spectral chains extend from it, connecting to nearby undead units. Whispers of the dead emanate from it constantly. It does not move—it is placed and anchors a position.
-
-### Behavior Deck (4 Cards)
-
----
-
-#### 👻 DEATH PULSE
-**Type**: Attack / Aura
-**Priority**: High
-
-**Effect**:
-- Phylactery does not move (cannot move)
-- Release pulse of necrotic energy
-- Deal 3 damage to all enemies within 4 hexes
-- All affected enemies gain 2 Decay counters
-- All allied undead units within 4 hexes recover 2 HP
-
-**Flavor**: *PULSE* - The heart of death beats
-
----
-
-#### 👻 SOUL TETHER
-**Type**: Support / Protection
-**Priority**: High (when ally within 5 hexes < 8 HP)
-
-**Effect**:
-- Phylactery does not move
-- Extend spectral tether to weakest ally within 5 hexes
-- That ally:
- - Recovers 4 HP per turn while tethered
- - Gains +2 Defense while tethered
- - Cannot be permanently destroyed (see Resurrection below)
-- Tether lasts until ally is at full HP or moves out of range
-
-**Flavor**: *Green chain binds you to unlife*
-
----
-
-#### 👻 MASS RESURRECTION
-**Type**: Summon / Ultimate
-**Priority**: Critical (when 2+ allied units destroyed this battle)
-
-**Effect**:
-- Phylactery channels massive power
-- Resurrect up to 2 destroyed allied support units within 6 hexes
-- Resurrected units return with 50% HP
-- Phylactery takes 5 damage (massive strain)
-- Can only be used once per battle (discard after use)
-
-**Flavor**: "RISE. Your service is not yet complete."
-
----
-
-#### 👻 DEATH'S SANCTUARY
-**Type**: Defense / Aura
-**Priority**: Low (when Phylactery HP < 6 OR no enemies within 5 hexes)
-
-**Effect**:
-- Phylactery creates protective barrier
-- Gain +4 Defense until next turn (total 7!)
-- All allies within 3 hexes gain +2 Defense
-- Remove all Decay counters from allied units (cleansing aura)
-- Phylactery recovers 3 HP (draws power from death around it)
-
-**Flavor**: *The sanctuary of death is absolute*
-
----
-
-### Command Response
-- **RALLY**: Cannot rally (Phylactery is immobile by design)
-- **ATTACK**: Death Pulse - 5 damage to all enemies within 4 hexes, 3 Decay counters
-- **DEFEND**: Death's Sanctuary - +5 Defense, all allies gain +3 Defense
-- **HOLD**: Channel resurrection power. Next Mass Resurrection can revive 3 units instead of 2.
-
-### Special Ability: PHYLACTERY ANCHOR
-**Immobile**: Phylactery cannot move. It is placed at deployment and stays there.
-
-**Passive Aura (4-hex radius)**:
-- All allied undead units gain +1 Defense
-- All allied undead units recover 1 HP per turn
-- All enemy units gain 1 Decay counter per turn
-
-**Tethered Immortality**: Any allied unit tethered to Phylactery cannot be permanently destroyed. When reduced to 0 HP, they are instantly resurrected at Phylactery's location with 5 HP (once per unit per battle).
-
-**Priority Target**: Phylactery is immobile, making it vulnerable. Enemies will prioritize destroying it.
-
-### Tactical Use
-- Deploy in defensive position
-- Anchors your strategy (everything revolves around it)
-- Ultimate support (healing, defense, resurrection)
-- Creates "fortress around the Phylactery" gameplay
-- High risk, high reward
-
----
-
-## 6. DEATH'S HERALD 🔒 UNLOCKABLE
-**Category**: Elite (Boss-Tier Unit)
-**HP**: 18 | **Movement**: 4 | **Defense**: 2
-**Equipment Slots**: 4
-**Unlock Requirement**: Defeat Ossuarium boss "Bonelord Thresh" in campaign
-**Theme**: Reaper incarnate, harvests souls and spreads despair
-
-### Visual Description
-A towering skeletal figure in tattered black robes that flow impossibly in still air. It wields an enormous scythe taller than most Caskets, the blade glowing with pale green fire. Its skull is crowned with black iron thorns. Spectral wings of smoke and shadow extend from its back. Where it walks, flowers wilt and frost forms. It does not speak—it is the silence of death made manifest.
-
-### Behavior Deck (4 Cards)
-
----
-
-#### REAP
-**Type**: Attack / Execute
-**Priority**: High
-
-**Effect**:
-- Move toward enemy with lowest HP (up to 4 hexes)
-- Attack for 9 damage, ignore all Defense
-- If this kills target, instant death (no death saves, no resurrections)
-- Herald gains 2 Soul Tokens (harvested essence)
-- Create Reaper's Mark on ground (6-hex area becomes cursed)
-
-**Reaper's Mark**: Enemies starting turn in marked area lose 2 HP and gain 1 Decay counter.
-
-**Flavor**: "Your time has come."
-
----
-
-#### WINGS OF DESPAIR
-**Type**: Movement / Debuff
-**Priority**: Medium
-
-**Effect**:
-- Herald flies up to 5 hexes (ignores terrain, enemies, obstacles)
-- All enemies within 3 hexes of flight path:
- - Take 3 damage (spectral wings slash)
- - Lose 1 SP (sapped by despair)
- - Have -2 to next attack (demoralized)
-- Herald lands and gains +2 Defense until next turn
-
-**Flavor**: *Shadow wings spread. Hope dies.*
-
----
-
-#### DEATH'S EMBRACE
-**Type**: Attack / Control
-**Priority**: High (when Herald has 3+ Soul Tokens)
-
-**Effect**:
-- Herald extends scythe toward target within 6 hexes (ranged attack)
-- Deal 7 damage
-- Pull target to hex adjacent to Herald (spectral chain drags them)
-- Target is marked with Death's Touch (next damage to them is doubled)
-- Spend 3 Soul Tokens (costs harvested souls)
-
-**Flavor**: "Come. I have need of you."
-
----
-
-#### FINAL HARVEST
-**Type**: Ultimate / Apocalypse
-**Priority**: Special (only usable once per battle when Herald HP < 8)
-
-**Effect**:
-- Herald raises scythe and channels death itself
-- All enemies on battlefield:
- - Take 8 damage (unblockable)
- - Gain 5 Decay counters
- - Must discard 2 random cards from hand
-- All allies on battlefield:
- - Fully healed
- - Gain +3 damage until end of battle
-- Herald takes 8 damage (massive strain)
-- This card is removed from deck after use
-
-**Flavor**: "ALL THINGS MUST END."
-
----
-
-### Command Response
-- **RALLY**: Fly up to 5 hexes. All enemies passed over take 2 damage. Gain 1 Soul Token.
-- **ATTACK**: Reap on target for 10 damage, ignore all Defense. Instant death if killed.
-- **DEFEND**: Herald becomes partially ethereal. +4 Defense, immune to Control effects, fly 2 hexes.
-- **HOLD**: Channel power. Gain 3 Soul Tokens, next attack deals +5 damage.
-
-### Special Ability: SOUL TOKEN SYSTEM
-**Passive**: Death's Herald collects souls:
-- Each kill: +2 Soul Tokens
-- Enemy dies within 5 hexes: +1 Soul Token
-- Herald takes 8+ damage: +1 Soul Token (death feeds death)
-
-**Soul Uses**:
-- Spend 3: Activate Death's Embrace (ranged pull + mark)
-- Spend 2: Heal 5 HP
-- Spend 5: Grant all allies +2 damage for 2 turns
-
-**Max Tokens**: 6
-
-**Aura of Death**: All enemies within 3 hexes of Herald have -1 Defense and gain 1 Decay counter per turn (passive debuff aura).
-
-**Flight**: Herald can fly, ignoring all terrain and obstacles.
-
-### Tactical Use
-- Elite assassin unit
-- Excels at executing weak targets
-- High mobility (fly 4 hexes)
-- Game-changing ultimate ability
-- Priority target (terrifying presence)
-
----
-
-## STRATEGIC CHOICES & PROGRESSION
-
-### Starting Loadout Recommendations
-
-**Swarm Build** (Assault Casket, 2 Equipment Slots):
+**Total Deck Construction**:
+- 10 Universal Core (mandatory)
+- 6 Ossuarium Faction Core (mandatory)
+- 6 Greatsword (weapon, 1 slot)
 - **Bone Thrall Swarm** (2 slots)
-- Theme: Overwhelming numbers
-- Synergy: Casket spreads Decay, thralls clean up weakened enemies
+- 2 Ossuarium Tactics (choose 2)
 
-**Balanced Build** (Heavy Casket, 3 Equipment Slots):
+**Total**: 24 cards, 1 Bone Thrall Swarm
+
+**Playstyle**: Overwhelming numbers. Casket + Swarm create corpse field. Thralls resurrect infinitely. Attrition dominance.
+
+### Example: Ossuarium Heavy Casket with Grave Knight
+
+**Total Deck Construction**:
+- 10 Universal Core
+- 6 Ossuarium Faction Core
 - **Grave Knight** (3 slots)
-- Theme: Two lifesteal units sustaining each other
-- Synergy: Both gain power from kills
+- 2 Ossuarium Tactics
 
-**Support Build** (Heavy Casket, 3 Equipment Slots):
-- **Fleshcrafter** (2 slots) + Accessory (1 slot)
-- Theme: Healing and summoning
-- Synergy: Heals Casket, creates disposable minions
+**Total**: 18 cards, 1 Grave Knight
 
-**Tank Build** (Fortress Casket, 4 Equipment Slots):
-- **Bone Colossus** (4 slots)
-- Theme: Unkillable bone giant
-- Synergy: Feeds on corpses from Casket's kills
+**Playstyle**: Double lifesteal. Both units drain souls, gain power from kills. Self-sustaining duo.
 
-**Phylactery Fortress** (Fortress Casket, unlocked):
-- **Lich Phylactery** (3 slots) + Accessory (1 slot)
-- Theme: Anchor position, resurrect endlessly
-- Synergy: Everything revolves around protecting Phylactery
+### Example: Ossuarium Heavy Casket with Fleshcrafter
 
-**Endgame Reaper** (Fortress Casket, endgame):
-- **Death's Herald** (4 slots)
-- Theme: Become death incarnate
-- Synergy: Execute weakened enemies, harvest souls
+**Total Deck Construction**:
+- 10 Universal Core
+- 6 Ossuarium Faction Core
+- 6 Warhammer (weapon, 1 slot)
+- **Fleshcrafter** (2 slots)
+- 2 Ossuarium Tactics
+
+**Total**: 24 cards, 1 Fleshcrafter
+
+**Playstyle**: Summoner army. Fleshcrafter heals Casket, creates Flesh Abominations from corpses. Build undead legion mid-battle.
 
 ---
 
 ## FACTION SYNERGIES
 
 ### Soul Harvest + Support Units
-- Casket's Soul Harvest triggers from any death
-- Support units create corpses
-- More corpses = more Soul Harvest triggers = more healing
+- Ossuarium Casket's Soul Harvest triggers from any death
+- Support units create corpses constantly
+- More corpses = more healing = more sustainability
 
-### Decay System + Grave Knight
+### Decay System + All Units
 - Casket spreads Decay counters
 - Grave Knight deals bonus damage to Decayed enemies
 - Fleshcrafter injects massive Decay
-- Everything dies faster to Decay stacking
+- Everything dies faster, creating more corpses for resurrection
 
 ### Resurrection Chains
 - Bone Thralls resurrect from corpses
 - Fleshcrafter harvests corpses for Essence
-- Bone Colossus absorbs corpses for armor
-- Phylactery resurrects destroyed units
-- Nothing stays dead!
-
----
-
-## DESIGN PHILOSOPHY
-
-### Theme: Nothing Stays Dead
-Every Ossuarium unit interacts with death:
-- Thralls: Resurrect from corpses
-- Knight: Gains power from kills
-- Fleshcrafter: Harvests corpses, creates abominations
-- Colossus: Absorbs bones, regenerates
-- Phylactery: Resurrects allies
-- Herald: Harvests souls, deals instant death
-
-### Attrition Warfare
-Ossuarium excels in long battles:
-- Resurrection mechanics
-- Lifesteal healing
-- Decay DoT damage
-- Corpse recycling
-- Gets stronger as battle continues
+- Grave Knight gains Soul Counters from kills
+- Nothing stays dead (core Ossuarium theme)
 
 ---
 
 **END OF DOCUMENT**
+
+*"Death is not the end. It is merely a change of employer."* — Ossuarium Proverb

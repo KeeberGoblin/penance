@@ -1,30 +1,25 @@
 # Church of Absolution - Support Units
 ## Penance: Absolution Through Steel
 
-**Version**: 2.0 Equipment System
-**Date**: October 12, 2025
+**Version**: 3.0 Equipment System (Asymmetric)
+**Date**: October 16, 2025
 
-The Church of Absolution fields zealous followers who embrace martyrdom and self-sacrifice. Each unit represents a different aspect of Church doctrine: flagellants seeking redemption, pilgrims bearing holy relics, and aspirants proving their worth.
+The Church of Absolution fields zealous followers who embrace martyrdom and self-sacrifice. Each unit represents a different aspect of Church doctrine: flagellants seeking redemption, disciplined penitents, and holy relic bearers.
 
 ---
 
 ## CHURCH SUPPORT UNITS OVERVIEW
 
-**Starting Units** (Available immediately):
-1. Flagellant Pack
-2. Penitent Squad
-3. Relic Bearers
+**Faction-Specific Units** (Choose 1):
+1. Flagellant Pack (2 Equipment Slots)
+2. Penitent Squad (2 Equipment Slots)
+3. Relic Bearers (3 Equipment Slots)
 
-**Unlockable Units** (Require campaign progression):
-4. Aspirant Pilot (Unlock: Complete 3 missions)
-5. Martyr's Choir (Unlock: Build Sanctum in settlement)
-6. Absolution Engine (Unlock: Defeat Church boss "Cardinal Sin")
-
-**Limit**: Choose 1-3 support units (based on Casket Equipment Slots available)
+**Note**: Church doctrine emphasizes personal redemption through suffering. These 3 units represent core Church philosophy: pain as path to absolution, atonement through service, and power of faith made manifest.
 
 ---
 
-## 1. FLAGELLANT PACK - STARTER UNIT
+## 1. FLAGELLANT PACK
 **Category**: Infantry (Berserker)
 **HP**: 6 | **Movement**: 4 | **Defense**: 0
 **Equipment Slots**: 2
@@ -136,7 +131,7 @@ Hooded figures in tattered crimson robes, backs scarred from whips and chains. T
 
 ---
 
-## 2. PENITENT SQUAD STARTER UNIT
+## 2. PENITENT SQUAD
 **Category**: Infantry (Balanced)
 **HP**: 8 | **Movement**: 3 | **Defense**: 1
 **Equipment Slots**: 2
@@ -232,7 +227,7 @@ Former criminals and sinners clad in gray penitent robes with heavy armor plates
 
 ---
 
-## 3. RELIC BEARERS STARTER UNIT
+## 3. RELIC BEARERS
 **Category**: Support (Buff/Aura)
 **HP**: 10 | **Movement**: 2 | **Defense**: 2
 **Equipment Slots**: 3
@@ -329,393 +324,19 @@ Six robed pilgrims carrying a massive ornate cross on their shoulders - an iron 
 
 ---
 
-## 4. ASPIRANT PILOT 🔒 UNLOCKABLE
-**Category**: Elite Infantry (Mini-Casket)
-**HP**: 12 | **Movement**: 4 | **Defense**: 2
-**Equipment Slots**: 3
-**Unlock Requirement**: Complete 3 missions with Church faction
-**Theme**: Pilot-in-training proving worth before bonding with Casket
+## ASYMMETRIC DESIGN NOTES
 
-### Visual Description
-A young warrior encased in prototype armor - a smaller, incomplete version of a Casket. The armor is unpainted metal with exposed wiring and hissing steam vents. The pilot's face is visible through a reinforced glass visor, eyes burning with desperate ambition. They wield a massive two-handed blade nearly as tall as they are.
+### Why Only 3 Units?
+Church doctrine emphasizes personal trial and redemption. These 3 units represent:
+- **Flagellant Pack**: Pain as path to absolution (self-sacrifice theme)
+- **Penitent Squad**: Atonement through honorable service (disciplined fighters)
+- **Relic Bearers**: Power of faith made manifest (zone control through relics)
 
-### Behavior Deck (5 Cards)
+Each unit offers distinct tactical approach while maintaining Church's martyrdom theme.
 
 ---
 
-#### PROVE MY WORTH
-**Type**: Attack / Aggressive
-**Priority**: High (when within 4 hexes of Casket)
-
-**Effect**:
-- Move toward nearest enemy
-- Attack for 5 damage
-- If this kills an enemy, Aspirant gains 1 Glory counter
-- Each Glory counter gives Aspirant +1 damage permanently this battle (max +3)
-
-**Flavor**: "I will earn my place among the pilots!"
-
----
-
-#### RECKLESS ASSAULT
-**Type**: Attack / High Risk
-**Priority**: Critical (when Aspirant has 2+ Glory counters)
-
-**Effect**:
-- Move full speed toward most dangerous enemy (highest HP or damage dealer)
-- Attack for 8 damage, ignore 2 Defense
-- Aspirant takes 3 damage (overexertion in prototype armor)
-
-**Flavor**: "Fear is weakness. I will not falter!"
-
----
-
-#### LEARN FROM THE MASTER
-**Type**: Support / Tactical
-**Priority**: Medium (when Casket within 3 hexes)
-
-**Effect**:
-- Move toward Casket
-- Copy Casket's last offensive action (if it was an attack, Aspirant attacks same target for 4 damage)
-- Aspirant gains +1 Defense until end of round (learning defensive posture)
-
-**Flavor**: "I watch. I learn. I adapt."
-
----
-
-#### PROTOTYPE OVERCHARGE
-**Type**: Utility / Risk
-**Priority**: Medium (when Aspirant HP > 6)
-
-**Effect**:
-- Aspirant channels excess power from prototype reactor
-- Deal 3 damage to self
-- Next 2 attacks deal +3 damage each
-- Movement increased by +1 until end of round
-
-**Flavor**: "The armor screams, but I push it further."
-
----
-
-#### DESPERATE PRAYER
-**Type**: Utility / Healing
-**Priority**: Critical (when Aspirant HP ≤ 4)
-
-**Effect**:
-- Aspirant does not move or attack
-- Recover 4 HP (emergency field repairs)
-- Remove all Glory counters (humility in near-defeat)
-- Gain +2 Defense until next turn
-
-**Flavor**: "Not yet. I am not ready to die yet."
-
----
-
-### Command Response
-- **RALLY**: Move up to 4 hexes eagerly. Gain 1 Glory counter (inspired by direct order).
-- **ATTACK**: Attack target for 6 damage. If this kills target, gain 2 Glory counters.
-- **DEFEND**: Aspirant reluctantly defends (+2 Defense), but resents not being allowed to prove themselves (loses 1 Glory counter).
-- **HOLD**: Hold position. Focus energy. Next attack deals +4 damage.
-
-### Special Ability: TRIAL BY FIRE
-**Passive**: Each time Aspirant kills an enemy, gain 1 Glory counter (permanent for this battle). Each Glory counter grants +1 damage to all attacks (max +3).
-
-**Triggered (Mission End)**: If Aspirant survives mission with 3 Glory counters, player gains 50 bonus Credits and 1 Reputation with Church.
-
-### Tactical Use
-- Scales throughout battle (Glory system)
-- High risk, high reward
-- Narrative weight (feels like mentoring a student)
-- Can become incredibly powerful if protected
-
----
-
-## 5. MARTYR'S CHOIR 🔒 UNLOCKABLE
-**Category**: Support (Debuff/Morale)
-**HP**: 7 | **Movement**: 2 | **Defense**: 1
-**Equipment Slots**: 3
-**Unlock Requirement**: Build "Sanctum" building in settlement (costs 150 Credits)
-**Theme**: Singing monks whose hymns curse enemies and inspire allies
-
-### Visual Description
-A group of seven hooded monks in blood-red robes, standing in perfect formation. They do not carry weapons. Instead, they hold illuminated hymnals and sing continuously - their voices harmonizing into an otherworldly drone that causes physical discomfort to enemies. Soulstone resonators hang from their necks, amplifying their song.
-
-### Behavior Deck (6 Cards)
-
----
-
-#### HYMN OF SUFFERING
-**Type**: Debuff / Area
-**Priority**: High
-
-**Effect**:
-- Do not move (must maintain formation)
-- All enemies within 4 hexes lose 1 SP at start of their next turn
-- All enemies within 4 hexes take 1 damage per turn (psychic assault from song)
-- Allies within 4 hexes gain +1 SP at start of their turn (inspiring hymn)
-
-**Flavor**: "Their voices are both beauty and agony."
-
----
-
-#### DIRGE OF DESPAIR
-**Type**: Debuff / Morale
-**Priority**: Medium (when enemy within 3 hexes has <10 HP)
-
-**Effect**:
-- Choir focuses their song on weakest enemy within 4 hexes
-- Target enemy:
- - Has -2 to all attacks
- - Cannot draw extra cards
- - Movement costs +1 SP per hex
-- Effect lasts until Choir's next turn
-
-**Flavor**: "They sing of your failures, your sins, your death."
-
----
-
-#### REQUIEM FOR THE FALLEN
-**Type**: Support / Resurrection
-**Priority**: Critical (when ally destroyed within 4 hexes this round)
-
-**Effect**:
-- Choir sings a resurrection hymn
-- Choose 1 destroyed friendly support unit within 4 hexes
-- That unit is restored with 5 HP (one-time miracle)
-- Choir takes 3 damage (strain from channeling divine power)
-- Can only be used once per battle
-
-**Flavor**: "Death is not the end. Rise, and fight again."
-
----
-
-#### BATTLE HYMN
-**Type**: Buff / Morale
-**Priority**: High (when Casket within 4 hexes)
-
-**Effect**:
-- Do not move
-- All allies within 4 hexes gain:
- - +2 damage to next attack
- - +1 Defense until end of round
- - Ignore 1 Heat on next action
-- Effect lasts one full round
-
-**Flavor**: "Sing of glory. Sing of absolution. Sing of victory!"
-
----
-
-#### CACOPHONY OF GUILT
-**Type**: Attack / Psychic
-**Priority**: Medium (when 2+ enemies within 3 hexes)
-
-**Effect**:
-- Choir erupts into discordant screaming
-- Deal 3 damage to all enemies within 3 hexes (unblockable psychic damage)
-- All affected enemies must discard 1 random card from hand
-- Choir takes 2 damage (vocal strain)
-
-**Flavor**: "YOUR SINS WILL DROWN YOU."
-
----
-
-#### SILENT VIGIL
-**Type**: Defense / Stance
-**Priority**: Low (when no enemies within 4 hexes)
-
-**Effect**:
-- Choir stops singing (eerie silence)
-- Recover 3 HP (rest and recuperation)
-- Gain +2 Defense until next turn
-- All allies within 4 hexes recover 1 card from discard (moment of peace)
-
-**Flavor**: "In silence, we find strength."
-
----
-
-### Command Response
-- **RALLY**: Move up to 2 hexes (slow, maintain formation). Sing as they move (all adjacent enemies take 1 damage).
-- **ATTACK**: Cannot attack directly. Instead, unleash Cacophony of Guilt (3 damage to all enemies within 3 hexes).
-- **DEFEND**: Kneel in prayer. +3 Defense, all allies within 4 hexes gain +1 Defense.
-- **HOLD**: Hold position, sing continuously. Double all hymn effects for next turn (twice the aura bonuses/debuffs).
-
-### Special Ability: HYMN AURA
-**Passive**: Martyr's Choir always has an active aura (4-hex radius):
-- Allies gain +1 SP regeneration
-- Enemies lose 1 SP per turn
-- Allies gain +1 morale (mechanical: +1 damage when within aura)
-
-**Stack Limit**: Effects do not stack with multiple Choirs.
-
-### Tactical Use
-- Area denial / zone control
-- Incredible team support
-- Weak if isolated (needs allies nearby to maximize effect)
-- High-value target (enemies will prioritize killing)
-
----
-
-## 6. ABSOLUTION ENGINE 🔒 UNLOCKABLE
-**Category**: Heavy Support (Walking Cathedral)
-**HP**: 20 | **Movement**: 1 | **Defense**: 3
-**Equipment Slots**: 4
-**Unlock Requirement**: Defeat Church boss "Cardinal Sin" in campaign
-**Theme**: Mobile shrine powered by Soulstone reactor, radiates holy fire
-
-### Visual Description
-A towering mechanical construct - a walking cathedral of iron and gold. The central structure is a massive Soulstone reactor encased in ornate religious iconography. Stained glass windows glow with inner fire. Four massive legs carry the structure forward with grinding, inevitable steps. Chains hang from its sides, and braziers burn with sacred flames. It is equal parts war machine and holy relic.
-
-### Behavior Deck (4 Cards)
-
----
-
-#### ADVANCE THE CATHEDRAL
-**Type**: Movement / Aura
-**Priority**: High
-
-**Effect**:
-- Move 1 hex toward nearest enemy (slow, inevitable advance)
-- **Holy Fire Aura**: All enemies within 3 hexes take 2 fire damage at end of their turn
-- All allies within 3 hexes gain +1 Defense (sheltered by Engine's presence)
-- Leave 1 Consecrated Ground token in hex Engine left (terrain effect lasts 3 turns)
-
-**Consecrated Ground Effect**: Allies standing on it recover 1 HP per turn. Enemies take 1 damage per turn.
-
-**Flavor**: "The cathedral moves. The unfaithful burn."
-
----
-
-#### DIVINE IMMOLATION
-**Type**: Attack / Area
-**Priority**: High (when 2+ enemies within 4 hexes)
-
-**Effect**:
-- Do not move
-- Engine's reactor surges with power
-- Deal 6 damage to all enemies within 4 hexes
-- Give all affected enemies 2 Burn counters (takes 2 damage per turn for 2 turns)
-- All allies within 4 hexes heal 3 HP (divine radiance)
-- Engine takes 3 damage (reactor strain)
-
-**Flavor**: "Burn away the sin. Purify the wicked."
-
----
-
-#### SANCTIFIED BARRIER
-**Type**: Defense / Protection
-**Priority**: Critical (when Engine HP ≤ 10)
-
-**Effect**:
-- Do not move
-- Engine deploys protective barriers
-- Gain +4 Defense until next turn
-- Create 3-hex barrier around Engine (blocks LOS, provides cover +2 Defense)
-- All allies within 3 hexes gain +2 Defense
-- Cannot attack while barrier is deployed
-
-**Flavor**: "The faithful shall be protected."
-
----
-
-#### JUDGMENT DAY
-**Type**: Attack / Ultimate
-**Priority**: Critical (can only be used once per battle)
-
-**Effect**:
-- Do not move
-- Engine's reactor goes critical
-- Deal 10 damage to all enemies within 5 hexes (ignore Defense)
-- All affected enemies gain 3 Burn counters
-- Create 5 Consecrated Ground tokens in adjacent hexes
-- Engine takes 5 damage (massive reactor overload)
-- This card is removed from deck after use
-
-**Flavor**: "WITNESS THE POWER OF THE DIVINE!"
-
----
-
-### Command Response
-- **RALLY**: Move up to 1 hex (Engine is extremely slow). Leave Consecrated Ground in vacated hex.
-- **ATTACK**: Cannot attack directly with commands. Instead, Engine pulses energy (4 damage to all adjacent enemies).
-- **DEFEND**: Anchor position. +5 Defense, deploy barriers, heal 3 HP.
-- **HOLD**: Channel power. Next Divine Immolation or Judgment Day deals +3 damage.
-
-### Special Ability: REACTOR CORE
-**Passive Aura**: All allies within 3 hexes of Absolution Engine gain:
-- +1 Defense
-- Recover 1 HP at end of each turn
-- +1 SP regeneration
-
-**Passive Damage**: All enemies within 3 hexes take 1 fire damage at end of their turn (ambient heat from reactor).
-
-**Critical Mass**: If Engine would be destroyed, it explodes. Deal 8 damage to everything within 4 hexes (friend and foe). Remove Engine from battlefield permanently.
-
-### Tactical Use
-- Ultimate support unit (costs 4 slots!)
-- Slow but unstoppable
-- Area denial king
-- High priority target
-- Game-changing presence
-
----
-
-## STRATEGIC CHOICES
-
-### Starting Loadout Recommendations
-
-**Aggressive Build** (Assault Casket, 2 Equipment Slots):
-- **Flagellant Pack** (2 slots)
-- Trade: Lose secondary weapon, gain suicidal melee pressure
-
-**Balanced Build** (Heavy Casket, 3 Equipment Slots):
-- **Penitent Squad** (2 slots) + Accessory (1 slot)
-- Trade: Keep some equipment, gain reliable infantry support
-
-**Zone Control Build** (Fortress Casket, 4 Equipment Slots):
-- **Relic Bearers** (3 slots) + Accessory (1 slot)
-- Trade: Become slow, immobile fortress with massive aura
-
-**Elite Build** (Heavy Casket, unlocked):
-- **Aspirant Pilot** (3 slots)
-- Trade: Invest in a unit that scales throughout battle
-
-**Maximum Support** (Fortress Casket, fully unlocked):
-- **Martyr's Choir** (3 slots) + **Penitent Squad** (2 slots) = 5 slots
-- Requires giving up 1 slot from accessories
-- Creates incredible support army
-
-**Walking Cathedral** (Fortress Casket, endgame):
-- **Absolution Engine** (4 slots)
-- No other equipment except Universal Core + Faction Core
-- Become a slow, unstoppable army
-
----
-
-## PROGRESSION SYSTEM
-
-### Unlock Path
-1. **Tier 0 (Start)**: Flagellant Pack, Penitent Squad, Relic Bearers
-2. **Tier 1 (3 missions)**: Unlock Aspirant Pilot
-3. **Tier 2 (Build Sanctum)**: Unlock Martyr's Choir
-4. **Tier 3 (Defeat boss)**: Unlock Absolution Engine
-
-### Experience System (Optional)
-Support units gain experience each mission:
-- Survive battle: +1 XP
-- Kill enemy: +1 XP
-- Complete objective: +2 XP
-
-**Upgrades at 5 XP**:
-- **Flagellants**: Start with 1 Frenzy counter
-- **Penitents**: Gain +2 HP (10 total)
-- **Relic Bearers**: Aura range +1 hex (3 hex radius)
-- **Aspirant**: Start with 1 Glory counter
-- **Choir**: Can revive 2 units per battle instead of 1
-- **Engine**: Starts with Consecrated Ground under it
-
----
-
-## DECK BUILDING WITH SUPPORT UNITS
+## DECK BUILDING EXAMPLES
 
 ### Example: Church Assault Casket with Flagellant Pack
 
@@ -730,17 +351,17 @@ Support units gain experience each mission:
 
 **Playstyle**: Aggressive double-melee pressure. Casket uses Blood Offering + Longsword attacks while Flagellants charge forward. Both units gain damage as they take damage (Church synergy).
 
-### Example: Church Fortress Casket with Absolution Engine
+### Example: Church Fortress Casket with Relic Bearers
 
 **Total Deck Construction**:
 - 10 Universal Core
 - 6 Church Faction Core
-- **Absolution Engine** (4 slots - entire equipment budget!)
+- **Relic Bearers** (3 slots)
 - 2 Church Tactics
 
-**Total**: 18 cards, 1 Absolution Engine
+**Total**: 18 cards, 1 Relic Bearers
 
-**Playstyle**: Ultra-slow, ultra-tanky. Engine advances while Casket provides ranged fire support and healing. Become an unstoppable cathedral fortress.
+**Playstyle**: Zone control fortress. Relic creates consecrated ground, Casket provides fire support. Slow but unstoppable.
 
 ---
 
@@ -751,51 +372,18 @@ Support units gain experience each mission:
 - Flagellants self-harm for damage boost
 - Both units gain power through suffering (thematic!)
 
-### Righteous Fury + Aspirant Pilot
-- Casket's infinite scaling (+1 damage per kill)
-- Aspirant's Glory counters (+1 damage per kill)
-- Both units race to get kills first (competitive!)
-
 ### Martyr Protocol + Penitent Squad
 - Casket can redirect damage from allies
 - Penitents protect Casket
 - Creates defensive synergy loop
 
-### Consecrated Ground + Relic Bearers / Engine
-- Multiple sources of healing zones
-- Stack effects for area denial
+### Consecrated Ground + Relic Bearers
+- Relic creates healing zones
+- Casket benefits from aura buffs
 - Turn battlefield into holy ground
 
 ---
 
-## DESIGN PHILOSOPHY
-
-### Theme First
-Each unit represents Church doctrine:
-- **Flagellants**: Pain as redemption
-- **Penitents**: Atonement through service
-- **Relic Bearers**: Power of faith made manifest
-- **Aspirant**: Trial before ascension
-- **Choir**: Voice of the divine
-- **Engine**: Walking cathedral of judgment
-
-### Meaningful Trade-offs
-Taking support units costs Equipment Slots:
-- More support = Less personal power
-- Creates strategic diversity
-- Forces build decisions
-
-### Progression Rewards
-Unlock new units through campaign:
-- Incentivizes long-term play
-- Rewards mastery
-- Creates sense of progression
-
-### AI Complexity Curve
-- **Starter units**: Simple behaviors (4-5 cards)
-- **Unlockable units**: Complex behaviors (5-6 cards)
-- **Elite unit**: Ultimate behaviors (4 cards but devastating)
-
----
-
 **END OF DOCUMENT**
+
+*"Through pain, we find purpose. Through sacrifice, we find salvation. Through death, we find absolution."* — Church Doctrine

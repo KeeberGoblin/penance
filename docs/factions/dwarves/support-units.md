@@ -1,30 +1,25 @@
 # Dwarven Forge-Guilds - Support Units
-## Penance: Absolution Through Steel
+## Penance: Defense, Engineering, and Ancient Runecraft
 
-**Version**: 2.0 Equipment System
-**Date**: October 12, 2025
+**Version**: 3.0 Equipment System (Asymmetric)
+**Date**: October 16, 2025
 
-The Dwarven Forge-Guilds deploy mechanical constructs, armored infantry, and ancient runic golems. Each unit emphasizes durability, engineering redundancy, and overwhelming firepower. Dwarven support units are built to last and hit hard.
+The Dwarven Forge-Guilds deploy mechanical constructs, armored infantry, and ancient runic golems. Each unit emphasizes durability, engineering mastery, and overwhelming firepower.
 
 ---
 
 ## DWARVEN SUPPORT UNITS OVERVIEW
 
-**Starting Units** (Available immediately):
-1. Shield Wall Guard
-2. Bombard Battery
-3. Rune Sentinel
+**Faction-Specific Units** (Choose 1):
+1. Shield Wall Guard (2 Equipment Slots)
+2. Bombard Battery (3 Equipment Slots)
+3. Rune Sentinel (3 Equipment Slots)
 
-**Unlockable Units** (Require campaign progression):
-4. Siege Crawler (Unlock: Complete 3 missions)
-5. Ancestor Golem (Unlock: Build Forge-Shrine in settlement)
-6. Dreadnought Titan (Unlock: Defeat Dwarf boss "Ironlord Thrain")
-
-**Limit**: Choose 1-3 support units (based on Casket Equipment Slots available)
+**Note**: Dwarven doctrine emphasizes three pillars: impenetrable defense, artillery superiority, and ancient runecraft. These 3 units represent core Dwarven engineering philosophy.
 
 ---
 
-## 1. SHIELD WALL GUARD STARTER UNIT
+## 1. SHIELD WALL GUARD
 **Category**: Infantry (Defensive)
 **HP**: 12 | **Movement**: 2 | **Defense**: 4
 **Equipment Slots**: 2
@@ -66,7 +61,7 @@ Five stocky dwarven warriors in heavy plate armor, each carrying a tower shield 
 
 ---
 
-#### 🔩 RUNIC REINFORCEMENT
+#### RUNIC REINFORCEMENT
 **Type**: Utility / Buff
 **Priority**: Medium (when Guard HP < 8)
 
@@ -127,7 +122,7 @@ Five stocky dwarven warriors in heavy plate armor, each carrying a tower shield 
 
 ---
 
-## 2. BOMBARD BATTERY STARTER UNIT
+## 2. BOMBARD BATTERY
 **Category**: Artillery (Heavy Ranged)
 **HP**: 8 | **Movement**: 2 | **Defense**: 2
 **Equipment Slots**: 3
@@ -229,7 +224,7 @@ A wheeled platform carrying a massive cannon, crewed by three dwarven engineers.
 
 ---
 
-## 3. RUNE SENTINEL STARTER UNIT
+## 3. RUNE SENTINEL
 **Category**: Construct (Magical Tank)
 **HP**: 15 | **Movement**: 3 | **Defense**: 3
 **Equipment Slots**: 3
@@ -342,371 +337,56 @@ A humanoid construct of carved granite, standing 12 feet tall. Glowing runes are
 
 ---
 
-## 4. SIEGE CRAWLER 🔒 UNLOCKABLE
-**Category**: Heavy Artillery (Mobile Fortress)
-**HP**: 18 | **Movement**: 1 | **Defense**: 4
-**Equipment Slots**: 4
-**Unlock Requirement**: Complete 3 missions with Dwarven faction
-**Theme**: Armored spider-tank with multiple weapon systems
+## ASYMMETRIC DESIGN NOTES
 
-### Visual Description
-A nightmarish fusion of artillery platform and mechanical spider. Eight mechanical legs carry a fortress-like body bristling with cannons, ballistae, and grinding drills. Smoke stacks belch black exhaust. Ammunition feeds click and whir. It advances with terrifying precision, each step crushing stone beneath it.
+### Why Only 3 Units?
+Dwarven doctrine emphasizes three engineering pillars. These 3 units represent:
+- **Shield Wall Guard**: Impenetrable defense (classic dwarven stubbornness)
+- **Bombard Battery**: Artillery superiority (engineering mastery)
+- **Rune Sentinel**: Ancient runecraft (magical tradition)
 
-### Behavior Deck (5 Cards)
+Each unit offers distinct tactical approach while maintaining Dwarven identity: slow, tanky, and devastating.
 
 ---
 
-#### MULTI-TARGET BARRAGE
-**Type**: Attack / Multiple
-**Priority**: High
+## DECK BUILDING EXAMPLES
 
-**Effect**:
-- Do not move (must anchor to fire all weapons)
-- Attack up to 3 different enemies within 8 hexes
-- Deal 5 damage to each target
-- All attacks ignore 1 Defense
-- Crawler gains 2 Heat (heavy ordnance)
+### Example: Dwarven Heavy Casket with Shield Wall Guard
 
-**Flavor**: "All batteries, fire at will!"
+**Total Deck Construction**:
+- 10 Universal Core (mandatory)
+- 6 Dwarven Faction Core (mandatory)
+- 6 Warhammer (weapon, 1 slot)
+- **Shield Wall Guard** (2 slots)
+- 2 Dwarven Tactics (choose 2)
 
----
+**Total**: 24 cards, 1 Shield Wall Guard support unit
 
-#### TRAMPLE
-**Type**: Attack / Movement
-**Priority**: High (when enemies in path)
+**Playstyle**: Immovable fortress. Casket + Guard form defensive wall. Combined Defense reaches 8+. Hold objectives indefinitely.
 
-**Effect**:
-- Move up to 2 hexes in straight line toward objective
-- Deal 6 damage to any enemy Crawler moves through or adjacent to
-- Crawler takes no damage from attacks of opportunity
-- Leave Difficult Terrain tokens behind (destroyed ground)
+### Example: Dwarven Assault Casket with Bombard Battery
 
-**Flavor**: *GRINDING MECHANICAL STEPS*
+**Total Deck Construction**:
+- 10 Universal Core
+- 6 Dwarven Faction Core
+- **Bombard Battery** (3 slots)
+- 2 Dwarven Tactics
 
----
+**Total**: 18 cards, 1 Bombard Battery
 
-#### EMERGENCY REPAIR PROTOCOL
-**Type**: Utility / Healing
-**Priority**: Critical (when Crawler HP ≤ 9)
+**Playstyle**: Artillery fortress. Casket provides close defense, Battery bombards from 8-hex range. Devastating long-range synergy.
 
-**Effect**:
-- Do not move or attack
-- Crawler's repair servitors activate
-- Recover 6 HP (automated repair)
-- Remove 3 Heat (coolant flush)
-- Deploy smoke screen (enemies attacking Crawler have -2 to hit until next turn)
+### Example: Dwarven Heavy Casket with Rune Sentinel
 
-**Flavor**: "Damage control! Seal the breaches!"
-
----
-
-#### SIEGE MODE
-**Type**: Stance / Heavy Fire
-**Priority**: High (when 2+ enemies within 8 hexes)
-
-**Effect**:
-- Crawler locks legs and braces for recoil
-- Cannot move while in Siege Mode
-- Next 2 attacks this turn deal +4 damage each
-- Ignore 3 Defense on all attacks
-- Gain +2 Defense while in Siege Mode
-
-**Flavor**: "Deploying stabilizers. Targeting solutions locked."
-
----
-
-#### RELOCATE
-**Type**: Movement / Tactical
-**Priority**: Low (when Siege Mode active OR no enemies in range)
-
-**Effect**:
-- Move 2 hexes toward better position
-- Remove Siege Mode stance (if active)
-- Remove 1 Heat
-- Gain +1 Defense while relocating
-
-**Flavor**: "Reposition for better firing lanes."
-
----
-
-### Command Response
-- **RALLY**: Move up to 1 hex (very slow when commanded). Remove 1 Heat.
-- **ATTACK**: Siege Shot - 10 damage to target, ignore 4 Defense, +3 Heat.
-- **DEFEND**: Lock down. +5 Defense, deploy armor plates, cannot move until next turn.
-- **HOLD**: Enter Siege Mode. Next turn all attacks deal +6 damage.
-
-### Special Ability: MULTI-WEAPON PLATFORM
-**Passive**: Siege Crawler can attack twice per turn (if Behavior cards allow it). Each attack generates Heat.
-
-**Overheating**: If Heat reaches 5+, Crawler must spend next action venting Heat or take 3 damage per turn.
-
-**Immobile Fortress**: While not moving, Crawler has +2 Defense and attacks deal +2 damage.
-
-### Tactical Use
-- Area suppression king
-- Slow but devastating
-- Excels at holding positions
-- Needs Heat management
-- High priority target
-
----
-
-## 5. ANCESTOR GOLEM 🔒 UNLOCKABLE
-**Category**: Elite Construct (Hero Unit)
-**HP**: 20 | **Movement**: 2 | **Defense**: 5
-**Equipment Slots**: 4
-**Unlock Requirement**: Build "Forge-Shrine" building in settlement (costs 200 Credits)
-**Theme**: Ancient guardian awakened, contains soul of legendary dwarf hero
-
-### Visual Description
-A massive golem of black iron and mithril, standing 15 feet tall. Unlike crude Rune Sentinels, this is a masterwork - every plate perfectly fitted, every joint smoothly articulated. Ancient dwarven king runes glow gold across its chest. The face is carved to resemble a stern dwarven ancestor. A spectral blue flame burns in its eye sockets - the soul of the hero within.
-
-### Behavior Deck (4 Cards)
-
----
-
-#### ANCESTOR'S WRATH
-**Type**: Attack / Elite
-**Priority**: High
-
-**Effect**:
-- Move up to 2 hexes toward priority target (highest threat enemy)
-- Attack for 9 damage, ignore 3 Defense
-- Target must discard 1 random card from hand (overwhelming power)
-- Golem gains 1 Glory Counter (ancient warrior's skill awakens)
-
-**Flavor**: "I have fought for 500 years. You are nothing."
-
----
-
-#### FORGE KING'S BLESSING
-**Type**: Support / Aura
-**Priority**: High (when allies within 4 hexes)
-
-**Effect**:
-- Do not move
-- Ancient power radiates from Golem
-- All allies within 4 hexes gain:
- - +2 damage to next attack
- - +2 Defense until end of round
- - Recover 2 HP (divine blessing)
-- Golem spends 1 Glory Counter (costs legendary power)
-
-**Flavor**: "Fight on, clan-kin. I stand with you."
-
----
-
-#### UNBREAKABLE GUARDIAN
-**Type**: Defense / Taunt
-**Priority**: Critical (when Casket HP < 15)
-
-**Effect**:
-- Move toward Casket (up to 2 hexes)
-- All enemies within 5 hexes must target Golem next turn if able (taunt)
-- Golem gains +3 Defense until next turn (total 8!)
-- If Golem takes 10+ damage this turn, gain 2 Glory Counters (battle-hardened)
-
-**Flavor**: "You want blood? Take mine, not theirs."
-
----
-
-#### LEGACY OF STONE
-**Type**: Ultimate / Once Per Battle
-**Priority**: Special (only usable once)
-
-**Effect**:
-- Golem channels the full power of the ancestor soul
-- Deal 12 damage to all enemies within 3 hexes (ignore all Defense)
-- All allies within 5 hexes are fully healed (recover all cards/HP)
-- Golem takes 8 damage (massive power drain)
-- This card is removed from deck after use
-
-**Flavor**: "WITNESS THE MIGHT OF OUR FOREFATHERS!"
-
----
-
-### Command Response
-- **RALLY**: Move up to 2 hexes with purpose. Gain 1 Glory Counter (inspired by direct orders).
-- **ATTACK**: Ancestor's Wrath on target for 10 damage, ignore 4 Defense. Gain 1 Glory Counter.
-- **DEFEND**: Guardian stance. +5 Defense (total 10!), taunt all enemies, recover 3 HP.
-- **HOLD**: Channel ancient power. Gain 2 Glory Counters, +3 damage to next attack.
-
-### Special Ability: GLORY COUNTER SYSTEM
-**Passive**: Ancestor Golem gains Glory Counters through heroic deeds:
-- Each enemy killed: +1 Counter
-- Taking 10+ damage in one hit: +1 Counter
-- Protecting Casket from death: +2 Counters
-
-**Glory Uses**:
-- Spend 1: Heal 5 HP
-- Spend 2: Grant all allies +2 damage for 1 round
-- Spend 3: Activate Legacy of Stone (even if already used this battle)
-
-**Max Counters**: 5
-
-**Legendary Presence**: All dwarven units within 4 hexes gain +1 damage (inspired by ancestor).
-
-### Tactical Use
-- Hero unit (feels legendary)
-- Protects entire army
-- Glory system creates narrative moments
-- Ultimate ability is game-changing
-- Expensive but worth it
-
----
-
-## 6. DREADNOUGHT TITAN 🔒 UNLOCKABLE
-**Category**: Super Heavy (Apocalypse Unit)
-**HP**: 25 | **Movement**: 1 | **Defense**: 6
-**Equipment Slots**: 5
-**Unlock Requirement**: Defeat Dwarf boss "Ironlord Thrain" in campaign
-**Theme**: Ultimate dwarven war machine, walking fortress
-
-### Visual Description
-A colossal mechanical construct - a walking mountain of iron, bronze, and stone. Three stories tall, with a central tower bristling with cannons. Massive pistons drive tree-trunk legs forward. Steam vents release clouds of scalding vapor. Runes the size of doors pulse with power. It is less a support unit and more a mobile fortress. The ground shakes with each step.
-
-### Behavior Deck (3 Cards)
-
----
-
-#### ADVANCE THE TITAN
-**Type**: Movement / Aura
-**Priority**: High
-
-**Effect**:
-- Move 1 hex toward objective (slow, inexorable)
-- **Fortress Aura**: All allies within 4 hexes gain:
- - +2 Defense
- - +1 SP regeneration
- - Recover 1 HP per turn (sheltered by Titan)
-- All enemies within 3 hexes take 2 damage per turn (radiating power)
-- Leave Fortified Ground token in vacated hex (provides cover, lasts 5 turns)
-
-**Flavor**: *The earth trembles. The fortress walks.*
-
----
-
-#### ALL BATTERIES FIRE
-**Type**: Attack / Massive
-**Priority**: High (when 1+ enemy within 8 hexes)
-
-**Effect**:
-- Do not move (must brace for firing)
-- Attack all enemies within 8 hexes simultaneously
-- Deal 6 damage to each enemy (ignore 2 Defense)
-- All enemies hit are pushed 1 hex away (shockwave)
-- Titan gains 4 Heat (massive ordnance expenditure)
-
-**Flavor**: "Every cannon. Every ballista. Fire."
-
----
-
-#### TITAN'S FORTRESS
-**Type**: Defense / Ultimate
-**Priority**: Critical (when Titan HP ≤ 12 OR multiple enemies within 5 hexes)
-
-**Effect**:
-- Titan deploys full defensive systems
-- Gain +4 Defense (total 10!) until next turn
-- All allies can move adjacent to Titan and gain Full Cover (cannot be targeted)
-- Titan's aura range increases to 5 hexes
-- Deploy 4 Shield Generator tokens around Titan (block LOS, 8 HP each)
-- Remove 3 Heat (coolant systems)
-
-**Flavor**: "Raise the shields. We hold this position."
-
----
-
-### Command Response
-- **RALLY**: Move 1 hex (Titan is extremely slow). Aura effects apply to new position immediately.
-- **ATTACK**: Focused bombardment - 15 damage to single target, ignore 5 Defense. Titan gains 3 Heat.
-- **DEFEND**: Lockdown mode. Cannot move, +8 Defense (total 14!), aura effects doubled, deploy 6 Shield Generators.
-- **HOLD**: Anchor position. All Batteries Fire next turn deals +4 damage and has 10-hex range.
-
-### Special Ability: MOBILE FORTRESS
-**Passive Aura (4-hex radius)**:
-- Allies gain +2 Defense
-- Allies recover 1 HP per turn
-- Allies gain +1 SP regeneration
-- Enemies take 2 damage per turn
-
-**Fortress Mode**: If Titan does not move for 2 consecutive turns, gain:
-- +4 Defense (becomes nearly invincible)
-- Attacks deal +4 damage
-- Aura radius increases to 6 hexes
-- Can deploy unlimited Shield Generators
-
-**Critical Meltdown**: If Titan is destroyed, it explodes. Deal 10 damage to everything within 5 hexes (friend and foe). Remove Titan permanently.
-
-### Tactical Use
-- Ultimate support unit (costs 5 slots!)
-- Defines entire strategy around it
-- Slow but unstoppable
-- Creates "fortress around the Titan" gameplay
-- Game-ending presence
-- Expensive but apocalyptic
-
----
-
-## STRATEGIC CHOICES
-
-### Starting Loadout Recommendations
-
-**Defensive Wall Build** (Heavy Casket, 3 Equipment Slots):
-- **Shield Wall Guard** (2 slots) + Accessory (1 slot)
-- Theme: Become immovable object
-- Trade: Lose some firepower, gain impenetrable defense
-
-**Artillery Build** (Assault Casket, 2 Equipment Slots):
-- **Bombard Battery** (3 slots) - Requires giving up 1 accessory slot
-- Theme: Long-range devastation
-- Trade: Vulnerable up close, dominates at range
-
-**Tank Build** (Heavy Casket, 3 Equipment Slots):
+**Total Deck Construction**:
+- 10 Universal Core
+- 6 Dwarven Faction Core
 - **Rune Sentinel** (3 slots)
-- Theme: Two tanky units advancing together
-- Trade: Slow but incredibly durable
+- 2 Dwarven Tactics
 
-**Siege Engine Build** (Fortress Casket, 4 Equipment Slots):
-- **Siege Crawler** (4 slots)
-- Theme: Mobile artillery fortress
-- Trade: No personal weapons, all-in on artillery
+**Total**: 18 cards, 1 Rune Sentinel
 
-**Hero Build** (Fortress Casket, unlocked):
-- **Ancestor Golem** (4 slots)
-- Theme: Legendary warrior leads from front
-- Trade: Invest in hero unit that carries the battle
-
-**Walking Fortress** (Fortress Casket, endgame):
-- **Dreadnought Titan** (5 slots)
-- Requires giving up 1 slot from base loadout
-- Theme: YOU ARE THE FORTRESS
-- Trade: Everything. But you become unstoppable.
-
----
-
-## PROGRESSION SYSTEM
-
-### Unlock Path
-1. **Tier 0 (Start)**: Shield Wall Guard, Bombard Battery, Rune Sentinel
-2. **Tier 1 (3 missions)**: Unlock Siege Crawler
-3. **Tier 2 (Build Forge-Shrine)**: Unlock Ancestor Golem
-4. **Tier 3 (Defeat boss)**: Unlock Dreadnought Titan
-
-### Experience System (Optional)
-Support units gain experience each mission:
-- Survive battle: +1 XP
-- Kill enemy: +1 XP per kill
-- Protect Casket from fatal blow: +3 XP
-- Take 15+ damage and survive: +2 XP
-
-**Upgrades at 5 XP**:
-- **Shield Wall**: +2 HP (14 total), +1 Defense (5 total)
-- **Bombard**: +2 hex range on all attacks
-- **Rune Sentinel**: Start with 1 Rune Counter, max counters increase to 4
-- **Siege Crawler**: Attacks generate -1 Heat (better cooling)
-- **Ancestor Golem**: Start with 1 Glory Counter
-- **Dreadnought**: Aura radius +1 hex (5 total)
+**Playstyle**: Double tank. Both units advance slowly, building Rune Counters. Late-game powerhouse (attrition warfare).
 
 ---
 
@@ -727,37 +407,8 @@ Support units gain experience each mission:
 - Battery provides long-range fire support
 - Pincer strategy: Casket tanks, Battery bombards
 
-### Ancestor Golem + Grudge Bearer
-- Casket's Grudge Bearer: +2 damage after component destroyed
-- Ancestor's Glory Counters: +1 damage per counter
-- Both units scale with combat (revenge mechanics)
-
----
-
-## DESIGN PHILOSOPHY
-
-### Theme First
-Each unit represents Dwarven values:
-- **Shield Wall**: Defense and discipline
-- **Bombard**: Engineering and firepower
-- **Rune Sentinel**: Ancient magic and stone
-- **Siege Crawler**: Innovation and overwhelming force
-- **Ancestor Golem**: Honor and legacy
-- **Dreadnought**: Ultimate expression of dwarven engineering
-
-### Defensive Scaling
-Dwarven units have highest HP and Defense:
-- Average HP: 14 (vs Church 8, other factions ~10)
-- Average Defense: 3.5 (vs Church 1, other factions ~2)
-- Trade-off: Slower movement (avg 2 vs others' 3-4)
-
-### Mechanical Complexity
-Dwarven units have resource systems:
-- Rune Counters (Sentinel)
-- Heat Management (Bombard, Crawler, Titan)
-- Glory Counters (Ancestor Golem)
-- Creates minigames within the battle
-
 ---
 
 **END OF DOCUMENT**
+
+*"Stone endures. Iron never breaks. The Forge remembers."* — Dwarven Proverb
