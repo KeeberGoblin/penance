@@ -841,11 +841,23 @@ iframe body {
 /* Remove any bottom spacing in content divs within iframes */
 .content {
     margin-bottom: 0 !important;
+    padding-bottom: 6rem !important; /* Add padding to push content away from bottom border */
 }
 
 .content > *:last-child {
     margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+}
+
+/* Ensure last elements don't have excess bottom spacing */
+.content > div:last-child,
+.content > p:last-child,
+.content > table:last-child,
+.content > ul:last-child,
+.content > ol:last-child,
+.content > h1:last-child,
+.content > h2:last-child,
+.content > h3:last-child {
+    margin-bottom: 0 !important;
 }
 
 .manuscript-page::before {
