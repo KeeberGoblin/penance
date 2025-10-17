@@ -1,6 +1,6 @@
 # Factions
 
-Nine powers struggle for control of a dying world. Each is broken. None are heroes.
+Ten powers struggle for control of a dying world. Each is broken. None are heroes.
 
 ## Playable Factions (Complete)
 
@@ -58,6 +58,12 @@ Nine powers struggle for control of a dying world. Each is broken. None are hero
 **Status**: ✅ Complete with v2.0 equipment system
 **Support Units**: [6 units](emergent/support-units.md) - Drone Swarm, Molt Guardian, Adaptation Form, Hive Spawn, Evolution Catalyst, Apex Predator
 
+### [The Wyrd Conclave](wyrd-conclave/deck-equipment-system.md)
+**Playstyle**: Reality distortion, bargain mechanics, illusion warfare, stolen identities
+**Mechanic**: Bargain Tokens (make deals with twisted costs), Reality manipulation (break game rules), Stolen Face (copy enemy abilities)
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](wyrd-conclave/support-units.md) - Shimmer Phantom, Bargain Broker, Stolen Soldier, Mirror Legion, Temporal Echo, The Un-Thing
+
 ---
 
 ## Faction Systems
@@ -66,16 +72,16 @@ Nine powers struggle for control of a dying world. Each is broken. None are hero
 Complete faction relationship matrix. Who is at war, who is allied, who merely tolerates each other.
 
 ### [Casket Types by Faction](casket-types.md)
-36 unique Caskets across all 9 factions. Weight classes, stats, and special abilities.
+40 unique Caskets across all 10 factions. Weight classes, stats, and special abilities.
 
 ### [Faction Tactics Overview](tactics-overview.md)
 How faction-specific Tactics cards work. Choose 2 from 5 per faction.
 
 ---
 
-## Design-Only Factions (Not Yet Playable)
+## All Factions Now Playable!
 
-- **The Wyrd Conclave**: Reality distortion, stolen faces, incomprehensible logic (Lore only, no deck system yet)
+All 10 major factions have complete deck systems, support units, and tactical frameworks. Choose your path through the dying world.
 
 ---
 
