@@ -1,5 +1,5 @@
 # Penance Card System
-**Version**: 3.1
+**Version**: 3.2
 **Last Updated**: October 17, 2025
 
 Complete card database and interactive tools for Penance: Absolution Through Steel.
@@ -30,8 +30,8 @@ Complete card database and interactive tools for Penance: Absolution Through Ste
 
 ### Data Files
 
-- **[complete-card-data.json](complete-card-data.json)** (51KB) - Master card database
-  - All 9 factions (86 faction cards)
+- **[complete-card-data.json](complete-card-data.json)** (87KB) - Master card database
+  - All 10 factions (107 faction cards)
   - 10 universal cards
   - Equipment, tactics, support units
   - JSON format for easy parsing
@@ -47,9 +47,9 @@ Complete card database and interactive tools for Penance: Absolution Through Ste
 
 ## 🃏 Database Contents
 
-### Version 3.1 (Current)
+### Version 3.2 (Current)
 
-**Factions** (9 complete):
+**Factions** (10 complete):
 - ✅ Church of Absolution (10 cards)
 - ✅ Crucible Packs (10 cards)
 - ✅ Dwarven Forge-Guilds (10 cards)
@@ -59,6 +59,7 @@ Complete card database and interactive tools for Penance: Absolution Through Ste
 - ✅ The Ossuarium (6 cards)
 - ✅ Soulstone Exchange (10 cards)
 - ✅ Vestige Bloodlines (10 cards)
+- ✅ The Wyrd Conclave (21 cards) ⭐ NEW
 
 **Core Cards**:
 - Universal Core: 10 cards (everyone has these)
@@ -66,7 +67,7 @@ Complete card database and interactive tools for Penance: Absolution Through Ste
 - Tactics: 5 categories
 - Support Units: 7 base units
 
-**Total Cards**: ~150+ unique cards
+**Total Cards**: ~170+ unique cards
 
 ---
 

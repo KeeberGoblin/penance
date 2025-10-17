@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "3.1",
+    "version": "3.2",
     "lastUpdated": "2025-10-17",
-    "description": "Complete Penance card database v3.1 - All 9 factions included"
+    "description": "Complete Penance card database v3.2 - All 10 factions included (added Wyrd Conclave)"
   },
   "universal": [
     {
@@ -816,7 +816,7 @@
       "cost": 4,
       "range": "Melee",
       "damage": 7,
-      "effect": "Deal 7 damage. +2 if target ≤15 HP.",
+      "effect": "Deal 7 damage. +2 if target \u226415 HP.",
       "keywords": [
         "attack",
         "melee",
@@ -2396,7 +2396,7 @@
       "type": "Passive",
       "cost": 0,
       "range": "N/A",
-      "effect": "Passive: You can see in 360° (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.",
+      "effect": "Passive: You can see in 360\u00b0 (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.",
       "keywords": [
         "passive",
         "defensive",
@@ -2809,6 +2809,394 @@
       ],
       "lore": "The call of the ancestor. The answer of the heir.",
       "cardCount": 1
+    }
+  ],
+  "wyrd-conclave": [
+    {
+      "id": "bargain-struck",
+      "name": "Bargain Struck",
+      "type": "passive",
+      "cost": "0 SP",
+      "range": "N/A",
+      "effect": "Passive: At start of your turn, gain 1 Bargain token. You may spend Bargain tokens to activate powerful effects (see other cards). Bargain tokens persist across missions (you owe the Fae). Maximum 10 Bargain tokens. Reality's currency.",
+      "keywords": [
+        "passive",
+        "resource-generation",
+        "bargain-token",
+        "persistent"
+      ],
+      "lore": "Everything has a price. Shall we discuss terms?",
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "stolen-face",
+      "name": "Stolen Face",
+      "type": "gambit",
+      "cost": "3 Bargain tokens",
+      "range": "6 hexes",
+      "effect": "Choose 1 visible enemy. Look at their hand. Choose 1 card from their hand and copy it into yours (you may play it this turn as if it were yours). That enemy loses that card. If you kill that enemy this mission, permanently gain that card (add to deck between missions). Thievery incarnate.",
+      "keywords": [
+        "gambit",
+        "theft",
+        "card-steal",
+        "identity-theft",
+        "permanent-gain"
+      ],
+      "lore": "I will wear your face. I will speak your words. I will BE you.",
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "reality-fracture",
+      "name": "Reality Fracture",
+      "type": "utility",
+      "cost": "4 Bargain tokens",
+      "range": "Self",
+      "effect": "Rewind time. Return to start of your turn (restore SP, return hand to state at turn start, undo all actions). Any damage dealt or taken this turn is undone. May only be used once per mission. Temporal violation.",
+      "keywords": [
+        "utility",
+        "time-manipulation",
+        "rewind",
+        "limit",
+        "reality-distortion"
+      ],
+      "lore": "That didn't happen. Try again.",
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "impossible-geometry",
+      "name": "Impossible Geometry",
+      "type": "passive",
+      "cost": "0 SP",
+      "range": "N/A",
+      "effect": "Passive: You may move through enemy-occupied hexes (they see a different you, illusion). You may ignore terrain costs (you don't walk, you *step between*). Your movement does not provoke reactions. Space means nothing to us.",
+      "keywords": [
+        "passive",
+        "movement",
+        "ignore-terrain",
+        "ignore-enemies",
+        "phase-walk"
+      ],
+      "lore": "Euclidean geometry is a suggestion, not a rule.",
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "fae-bargain",
+      "name": "Fae Bargain",
+      "type": "gambit",
+      "cost": "2 SP",
+      "range": "8 hexes",
+      "effect": "Offer bargain to enemy: \"Take 5 damage now, OR give me 3 Bargain tokens and take no damage.\" Enemy chooses. If they give tokens, you gain 3 Bargain tokens. If they refuse, deal 5 damage and gain \"Bargain Breaker\" mark on them (+2 damage from all Wyrd attacks permanently). Contracts bind.",
+      "keywords": [
+        "gambit",
+        "choice",
+        "bargain-generation",
+        "mark",
+        "coercion"
+      ],
+      "lore": "Choose. Pain now, or debt forever?",
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "mirror-self",
+      "name": "Mirror Self",
+      "type": "utility",
+      "cost": "5 Bargain tokens",
+      "range": "Self",
+      "effect": "Create illusory duplicate of yourself at your current location. Duplicate has 1 HP, acts on your turn, can move and attack (deals 0 damage, but enemies don't know it's fake). Lasts until destroyed or 3 turns. Enemies cannot tell which is real (you control both). Deception layered.",
+      "keywords": [
+        "utility",
+        "illusion",
+        "duplicate",
+        "deception",
+        "tactical"
+      ],
+      "lore": "Which one is me? All of them. None of them.",
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "price-paid",
+      "name": "Price Paid",
+      "type": "reactive",
+      "cost": "0 SP (but costs Bargain tokens retroactively)",
+      "range": "Self",
+      "effect": "Play when you would die (deck reaches 0). Instead, spend ALL Bargain tokens you have. For each token spent, recover 3 cards from discard pile. If you have 0 tokens, you die normally. Survival has a cost. Always.",
+      "keywords": [
+        "reactive",
+        "survival",
+        "bargain-cost",
+        "death-prevention",
+        "desperate"
+      ],
+      "lore": "Death? We renegotiate the terms.",
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "shimmer-step",
+      "name": "Shimmer Step",
+      "type": "attack",
+      "cost": "2 SP",
+      "range": "Teleport up to 8 hexes, then attack adjacent enemy",
+      "effect": "Teleport to any hex within 8 hexes (ignore terrain, enemies, obstacles). If adjacent to enemy after teleport, deal 4 damage. Spend 2 Bargain tokens to attack twice (teleport, attack, teleport again, attack again). Impossible positioning.",
+      "keywords": [
+        "attack",
+        "teleport",
+        "mobility",
+        "bargain-synergy"
+      ],
+      "lore": "Here. There. Everywhere. Nowhere.",
+      "cardCount": 1,
+      "cardType": "faction",
+      "damage": "4"
+    },
+    {
+      "id": "fae-curse",
+      "name": "Fae Curse",
+      "type": "attack-debuff",
+      "cost": "3 SP",
+      "range": "6 hexes",
+      "effect": "Deal 2 damage. Place \"Fae Curse\" on target (lasts until removed). Cursed targets: Draw 1 fewer card each turn (hand size 5 instead of 6). All allies within 3 hexes of cursed target also draw 1 fewer card (curse spreads). Curse removed when target kills a Wyrd unit. Malevolence spreads.",
+      "keywords": [
+        "attack",
+        "debuff",
+        "curse",
+        "area-effect",
+        "persistent"
+      ],
+      "lore": "You carry our mark now. It will follow you. It will consume you.",
+      "cardCount": 1,
+      "cardType": "faction",
+      "damage": "2"
+    },
+    {
+      "id": "deal-with-the-devil",
+      "name": "Deal with the Devil",
+      "type": "gambit",
+      "cost": "0 SP (but costs future actions)",
+      "range": "Self",
+      "effect": "Gain 5 Bargain tokens immediately. Draw 3 cards immediately. Next turn, you have 0 SP (cannot act). Alternates each turn: Full SP, then 0 SP, then full SP, etc. Lasts 3 turns total. Mortgage your future.",
+      "keywords": [
+        "gambit",
+        "bargain-generation",
+        "card-draw",
+        "SP-lock",
+        "high-risk"
+      ],
+      "lore": "Power now. Payment later. You'll barely notice.",
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "shimmer-strike",
+      "name": "Shimmer Strike",
+      "type": "attack",
+      "cost": "2 SP",
+      "range": "Melee (1 hex)",
+      "damage": "3",
+      "effect": "Deal 3 damage. If you have 3+ Bargain tokens, enemy cannot use Reactive cards against this attack (too confused by illusions).",
+      "keywords": [
+        "attack",
+        "melee",
+        "bargain-synergy",
+        "anti-reactive",
+        "wyrd",
+        "primary"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "phase-cut",
+      "name": "Phase Cut",
+      "type": "attack",
+      "cost": "2 SP",
+      "range": "Melee (1 hex)",
+      "damage": "4",
+      "effect": "Deal 4 damage. Ignore Defense buffs (attack phases through armor). Gain 1 Bargain token if this kills target (bargain fulfilled).",
+      "keywords": [
+        "attack",
+        "melee",
+        "armor-piercing",
+        "bargain-generation",
+        "wyrd",
+        "primary"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "mirage-assault",
+      "name": "Mirage Assault",
+      "type": "attack",
+      "cost": "3 SP",
+      "range": "3 hexes",
+      "damage": "3",
+      "effect": "Teleport to target, deal 3 damage, teleport back to starting hex. Enemy cannot retaliate (you were never there). Spend 1 Bargain token to attack 2 enemies (teleport to each).",
+      "keywords": [
+        "attack",
+        "teleport",
+        "untouchable",
+        "bargain-synergy",
+        "wyrd",
+        "primary"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "paradox-blade",
+      "name": "Paradox Blade",
+      "type": "attack",
+      "cost": "4 SP",
+      "range": "Melee (1 hex)",
+      "damage": "6",
+      "effect": "Deal 6 damage. You also take 2 damage (paradox hurts you too). Spend 2 Bargain tokens to negate self-damage (offload cost to another reality).",
+      "keywords": [
+        "attack",
+        "melee",
+        "high-damage",
+        "self-damage",
+        "bargain-cost",
+        "wyrd",
+        "primary"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "stolen-strength",
+      "name": "Stolen Strength",
+      "type": "attack",
+      "cost": "3 SP",
+      "range": "Melee (1 hex)",
+      "damage": "5",
+      "effect": "Deal 5 damage. If target has any buffs active (+damage, +Defense, etc.), steal 1 buff (you gain it, they lose it). Lasts until end of round. Thievery again.",
+      "keywords": [
+        "attack",
+        "melee",
+        "buff-steal",
+        "tactical",
+        "wyrd",
+        "primary"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "incomprehensible-strike",
+      "name": "Incomprehensible Strike",
+      "type": "attack",
+      "cost": "3 SP",
+      "range": "Choose: Melee OR Ranged 6",
+      "damage": "4",
+      "effect": "This attack has no fixed range (you choose melee or ranged when played). Enemy must discard 1 random card from hand (confusion effect). Spend 2 Bargain tokens to force discard 2 cards instead. Logic fails.",
+      "keywords": [
+        "attack",
+        "flexible-range",
+        "discard-force",
+        "bargain-synergy",
+        "wyrd",
+        "primary"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "fae-mirror",
+      "name": "Fae Mirror",
+      "type": "utility",
+      "cost": "1 SP",
+      "range": "Self",
+      "effect": "Create 1 Mirror Self illusion at your location (see Faction Card \"Mirror Self\"). Illusion lasts 2 turns or until destroyed. Spend 1 Bargain token to create 2 illusions instead. Multiply confusion.",
+      "keywords": [
+        "utility",
+        "illusion",
+        "duplicate",
+        "bargain-synergy",
+        "wyrd",
+        "secondary"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "bargain-siphon",
+      "name": "Bargain Siphon",
+      "type": "utility",
+      "cost": "0 SP (Reactive)",
+      "range": "Self",
+      "effect": "Play when enemy attacks you. Offer bargain: \"Miss this attack, give me 2 Bargain tokens.\" Enemy chooses. If they give tokens, attack misses. If they refuse, attack hits normally. Extortion mid-combat.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "bargain-generation",
+        "choice",
+        "wyrd",
+        "secondary"
+      ],
+      "cardCount": 1,
+      "cardType": "secondary"
+    },
+    {
+      "id": "shimmer-veil",
+      "name": "Shimmer Veil",
+      "type": "utility",
+      "cost": "2 SP",
+      "range": "Self",
+      "effect": "Become invisible (cannot be targeted by attacks) until your next turn. You may still move and attack (but attacking breaks invisibility). Spend 1 Bargain token to stay invisible even after attacking. Unseen predator.",
+      "keywords": [
+        "utility",
+        "stealth",
+        "untargetable",
+        "bargain-synergy",
+        "wyrd",
+        "secondary"
+      ],
+      "cardCount": 1,
+      "cardType": "secondary"
+    },
+    {
+      "id": "reality-shard",
+      "name": "Reality Shard",
+      "type": "attack",
+      "cost": "2 SP",
+      "range": "4 hexes",
+      "effect": "Throw shard of broken reality. Deal 2 damage. Create \"Distortion hex\" at impact location (lasts 3 turns). Distortion hexes: Enemies standing in them have -1 to all actions. Allies ignore effect. Warped space.",
+      "keywords": [
+        "attack",
+        "ranged",
+        "terrain-creation",
+        "debuff",
+        "wyrd",
+        "secondary"
+      ],
+      "cardCount": 1,
+      "cardType": "secondary",
+      "damage": "2"
+    },
+    {
+      "id": "temporal-loop",
+      "name": "Temporal Loop",
+      "type": "utility",
+      "cost": "3 SP",
+      "range": "Self",
+      "effect": "Next damage you take this turn is stored in temporal loop. At start of your next turn, choose 1 enemy within 6 hexes - they take that stored damage instead. Redirect pain through time.",
+      "keywords": [
+        "utility",
+        "damage-redirect",
+        "temporal",
+        "tactical",
+        "wyrd",
+        "secondary"
+      ],
+      "cardCount": 1,
+      "cardType": "secondary"
     }
   ]
 }
