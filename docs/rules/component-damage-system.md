@@ -7,10 +7,12 @@
 
 ## Overview: Three-Layer Defense
 
+**Lore Context:** Caskets are mechanical armored frames powered by soulstone energy. Pilots are living humans (usually desperate, dying, or half-dead volunteers) who have undergone soul-binding. The pilot is suspended in neural fluid inside a containment chamber (the capsule) within the Casket's chassis, arms crossed like a mummy. Ten neural threads pierce through their fingertips, connecting to the Casket's control nodes. The pilot manipulates the Casket like a puppeteer controlling a marionette—from inside. They are NOT autonomous machines - living pilots control every movement through the neural thread interface.
+
 Caskets have **dual-layer HP tracking**:
 
-1. **Casket HP Deck** (26-50 cards) - Overall structural integrity
-2. **Component HP** (per limb) - Localized damage with pilot exposure risk
+1. **Casket HP Deck** (26-50 cards) - Overall structural integrity of the mechanical frame
+2. **Component HP** (per limb) - Localized damage with **pilot chamber exposure risk**
 
 **When you take damage:**
 - **Discard cards** from deck/hand (Casket HP loss)
@@ -163,12 +165,12 @@ Caskets have **dual-layer HP tracking**:
   - **+1 Heat per turn** (cooling system damaged)
 
 **Zone 3: PILOT EXPOSURE (5-6 damage)**
-- Cockpit canopy cracked
-- Pilot's head adjacent to breach
+- Head armor shattered
+- Containment chamber breached near pilot's bound position
 - **Effects:**
   - All Zone 2 penalties continue
   - **+1 Pilot Wound per Component Damage taken**
-  - Pilot hearing enemy weapons impact inches from skull
+  - Soul-bound pilot's essence vulnerable to physical trauma
 
 **Destroyed (6+ damage):**
 - Head severed or crushed
@@ -255,13 +257,13 @@ Caskets have **dual-layer HP tracking**:
   - Movement costs **+1 SP per 3 hexes** (heavy frame)
 
 **Zone 3: PILOT EXPOSURE (7-10 damage) - CRITICAL**
-- **CAPSULE BREACHED**
-- Pilot directly exposed to combat
+- **CONTAINMENT CHAMBER BREACHED**
+- Soul-bound pilot's capsule directly exposed to combat
 - **Effects:**
-  - **-2 SP maximum** (5 SP → 3 SP)
-  - Movement costs **+1 SP per 2 hexes**
+  - **-2 SP maximum** (5 SP → 3 SP) - neural thread damage
+  - Movement costs **+1 SP per 2 hexes** - frame integrity failing
   - **+1 Pilot Wound per Component Damage taken**
-  - **+1 Heat per turn** (environmental breach)
+  - **+1 Heat per turn** (soulstone containment breach)
 
 **Destroyed (10+ damage):**
 - Catastrophic structural failure
@@ -294,8 +296,8 @@ Caskets have **dual-layer HP tracking**:
 
 **Zone 3: PILOT EXPOSURE**
 - **LEGS HAVE NO PILOT EXPOSURE ZONE**
-- Capsule is in chassis, above leg systems
-- Can sustain massive leg damage without pilot wounds
+- Containment chamber is located in chassis, above leg systems
+- Legs can be completely destroyed without breaching the pilot's chamber
 
 **Destroyed (8+ damage):**
 - Legs severed or immobilized
