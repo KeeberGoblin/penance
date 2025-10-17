@@ -9,7 +9,7 @@
 ## Game Structure
 
 ### Setup
-1. Both players shuffle their 30-card Casket HP decks
+1. Both players shuffle their Casket HP decks (26-50 cards, varies by equipment loadout)
 2. Draw starting hand (6 cards)
 3. **Mulligan** (optional): Shuffle hand back into deck, draw 6 new cards (once only)
 4. Place Pilot Wound deck (10 cards, face-down) next to Casket deck
@@ -259,14 +259,14 @@
 - Each Primary Weapon card discarded = 1 Component Damage
 - Track separately: Right Arm, Left Arm, Legs, Head, Chassis
 
-**Component Destroyed** (at 3 damage):
-| Component | Effect When Destroyed |
-|-----------|----------------------|
-| **Right Arm** | Discard all Primary Weapon cards from hand. Cannot play Primary Weapon cards. |
-| **Left Arm** | Discard all Secondary Equipment cards from hand. Cannot play Secondary Equipment cards. |
-| **Legs** | Movement costs +1 SP per hex (2 SP per hex total). |
-| **Head** | Cannot use Sensor Sweep. -1 to all ranged attacks. |
-| **Chassis** | Permanent -1 SP maximum (even after Refresh). |
+**Component Destroyed** (at threshold):
+| Component | Threshold | Effect When Destroyed |
+|-----------|-----------|----------------------|
+| **Head** | 3 damage | Cannot use Sensor Sweep. -1 to all ranged attacks. |
+| **Right Arm** | 4 damage | Discard all Primary Weapon cards from hand. Cannot play Primary Weapon cards. |
+| **Left Arm** | 4 damage | Discard all Secondary Equipment cards from hand. Cannot play Secondary Equipment cards. |
+| **Chassis** | 5 damage | Permanent -1 SP maximum (even after Refresh). |
+| **Legs** | 6 damage | Movement costs +1 SP per hex (2 SP per hex total). |
 
 **Destroyed components remain destroyed** for rest of battle (cannot be repaired mid-combat).
 

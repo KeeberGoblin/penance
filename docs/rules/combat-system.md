@@ -11,7 +11,7 @@
 Inspired by **GKR: Heavy Hitters** (deck-as-HP) + **Kingdom Death: Monster** (brutal consequences)
 
 **Two Separate Systems**:
-1. **Casket HP Deck** (30 cards) - Your mech's structural integrity
+1. **Casket HP Deck** (26-50 cards, varies by equipment loadout) - Your mech's structural integrity
 2. **Pilot Wound Deck** (10 cards) - Your pilot's physical/mental state
 
 When **Casket HP Deck runs out** → Casket is destroyed (pilot may survive)
@@ -275,7 +275,7 @@ Wait, this creates duplication issues. Let me revise:
 **If you discarded any Primary Weapon equipment cards**:
 - Mark 1 Component Damage per Primary Weapon card to targeted component
 - Track separately: Right Arm, Left Arm, Legs, Head, Chassis
-- **3 Component Damage = Component DESTROYED**
+- **Component destruction threshold varies by limb** (Head 3, Arms 4, Chassis 5, Legs 6)
 
 **If Defense Dice showed CRITICAL symbols ()**:
 - Add +1 Component Damage per symbol to targeted component
@@ -465,12 +465,12 @@ This represents pilot physical/mental state inside the capsule.
 
 Following GKR's energy economy, but adapted to Penance's weight classes:
 
-| Casket Type | SP Maximum | Deck Size | Philosophy |
-|-------------|------------|-----------|------------|
-| **Light** | 6 SP | 30 cards | Speed & efficiency |
-| **Medium** | 5 SP | 30 cards | Balanced |
-| **Heavy** | 4 SP | 30 cards | Endurance |
-| **Assault** | 3 SP | 30 cards | Power over finesse |
+| Casket Type | SP Maximum | Deck Size Range | Philosophy |
+|-------------|------------|-----------------|------------|
+| **Scout (Light)** | 6 SP | 26-32 cards | Speed & efficiency (minimal equipment) |
+| **Assault (Medium)** | 5 SP | 30-38 cards | Balanced (moderate equipment) |
+| **Heavy** | 4 SP | 35-45 cards | Endurance (heavy equipment) |
+| **Fortress** | 3 SP | 38-50 cards | Power over finesse (maximum equipment) |
 
 **Why decreasing SP for heavier frames?**
 - Heavy Caskets are slower, less energy-efficient
@@ -520,7 +520,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 ### Starting Hand: 6 Cards
 
 **At start of battle**:
-- Shuffle 30-card deck
+- Shuffle your Casket HP deck (26-50 cards depending on equipment loadout)
 - Draw 6 cards
 - Mulligan: May shuffle hand back and draw 6 new cards (once)
 
@@ -602,7 +602,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 - ✅ Deck = HP (discard cards when damaged)
 - ✅ Energy/SP refresh each turn
 - ✅ Primary vs Secondary weapon split
-- ✅ Deck is fixed 30 cards (no mid-game deck-building)
+- ✅ Pre-built decks (no mid-game deck-building)
 - ✅ Hand size fixed at 6
 
 ### Like KDM:
@@ -622,8 +622,8 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 ## 12. Example Combat Sequence (With Dice)
 
 ### Setup:
-- **Player A**: Church Confessor (30 HP, 6 SP, 6 cards in hand)
-- **Player B**: Dwarven Ironclad (30 HP, 4 SP, 6 cards in hand)
+- **Player A**: Church Confessor (28-card deck, 6 SP, 6 cards in hand)
+- **Player B**: Dwarven Ironclad (36-card deck, 4 SP, 6 cards in hand)
 
 ---
 
@@ -661,7 +661,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 5. Player A discards 6 cards (chooses: 3 from hand, 3 from deck)
  - Discarded from hand: 2× Primary Weapon (Penitent Blades) → +2 Component Damage
  - **Total Component Damage to Right Arm**: 2 (from ) + 2 (from Primary cards) = **4 Component Damage**
- - Right Arm has **EXCEEDED 3** → **RIGHT ARM DESTROYED!**
+ - Right Arm has **REACHED 4 HP THRESHOLD** → **RIGHT ARM DESTROYED!**
  - Player A discards all remaining Penitent Blade cards from hand (cannot use Primary Weapon)
 6. Player B has 0 SP → Turn ends
 7. Draw Phase: Draw 3 cards

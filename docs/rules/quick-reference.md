@@ -65,19 +65,19 @@ Modified by destroyed Chassis (-1 SP) or Leg-Skimming (+1 SP)
 ### Component Damage
 - Primary Weapon cards discarded → +1 Component Damage
 - Defense Dice CRITICAL → +1 Component Damage
-- **3 Component Damage = Component Destroyed**
+- **Component destroyed at threshold** (Head 3, Arms 4, Chassis 5, Legs 6)
 
 ---
 
 ## COMPONENT DESTRUCTION EFFECTS
 
-| Component | Effect |
-|-----------|--------|
-| **Right Arm** | Lose all Primary Weapon cards from hand |
-| **Left Arm** | Lose all Secondary Equipment cards |
-| **Legs** | Movement costs +1 SP per hex |
-| **Head** | -1 to ranged attacks, no Sensor Sweep |
-| **Chassis** | -1 SP maximum (permanent) |
+| Component | Threshold | Effect |
+|-----------|-----------|--------|
+| **Head** | 3 damage | -1 to ranged attacks, no Sensor Sweep |
+| **Right Arm** | 4 damage | Lose all Primary Weapon cards from hand |
+| **Left Arm** | 4 damage | Lose all Secondary Equipment cards |
+| **Chassis** | 5 damage | -1 SP maximum (permanent) |
+| **Legs** | 6 damage | Movement costs +1 SP per hex |
 
 ---
 
@@ -264,12 +264,14 @@ Modified by destroyed Chassis (-1 SP) or Leg-Skimming (+1 SP)
 
 ---
 
-## CASKET DECK COMPOSITION (30 cards)
+## CASKET DECK COMPOSITION (26-50 cards)
 
 - **10 Universal Core** (mandatory, everyone has)
-- **12 Primary Weapon** (faction-specific, cannot change)
-- **6 Secondary Equipment** (player choice)
+- **6 Faction Core** (faction-specific foundation)
+- **X Equipment Cards** (Weapon + Shield/Offhand + Accessories, varies by loadout)
 - **2 Faction Tactics** (choose 2 from 5 available)
+
+**Total deck size varies**: Light ~26-32 cards, Medium ~30-38, Heavy ~35-45, Fortress ~38-50
 
 ---
 
