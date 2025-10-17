@@ -199,13 +199,13 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>[BLOOD]</td>
-                    <td><strong>FLESH WOUND</strong> - Take damage (discard 1 card)</td>
+                    <td>[SHIELD]</td>
+                    <td><strong>SHIELD</strong> - Block 1 damage</td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>[CRITICAL]</td>
-                    <td><strong>CRITICAL</strong> - Take damage + 1 Component Damage</td>
+                    <td>[BLOOD]</td>
+                    <td><strong>FLESH WOUND</strong> - Take damage (discard 1 card)</td>
                 </tr>
                 <tr>
                     <td>5</td>
@@ -234,38 +234,38 @@
             <li><strong>Final damage = Original damage - Total blocks</strong></li>
         </ol>
 
-        <p><strong>Block Probability</strong>: 2/6 faces block ([SHIELD], [ABSORB]) = <strong>33% chance per die</strong></p>
+        <p><strong>Block Probability</strong>: 3/6 faces block ([SHIELD] ×2, [ABSORB]) = <strong>50% chance per die</strong></p>
 
         <h3>Defense Dice Example</h3>
 
         <p><strong>Setup</strong>: Dwarven Heavy takes <strong>8 damage</strong> from Church attack</p>
 
         <h4>Step 1: Roll 8 Defense Dice</h4>
-        <p>Result: [SHIELD] [SHIELD] [SHIELD] [BLOOD] [CRITICAL] [CRITICAL] [HEAT] [PIERCE]</p>
+        <p>Result: [SHIELD] [SHIELD] [SHIELD] [ABSORB] [BLOOD] [HEAT] [PIERCE] [BLOOD]</p>
 
         <h4>Step 2: Count Blocks</h4>
         <ul>
-            <li><strong>3 Shield symbols ([SHIELD][SHIELD][SHIELD])</strong> = Block 3 damage</li>
-            <li>Reduced from 8 → <strong>5 damage</strong></li>
+            <li><strong>4 block symbols ([SHIELD][SHIELD][SHIELD][ABSORB])</strong> = Block 4 damage</li>
+            <li>Reduced from 8 → <strong>4 damage</strong></li>
         </ul>
 
         <h4>Step 3: Apply Special Effects</h4>
         <ul>
-            <li><strong>2 Critical symbols ([CRITICAL][CRITICAL])</strong> = +2 Component Damage to targeted component</li>
+            <li><strong>2 Blood symbols ([BLOOD][BLOOD])</strong> = Standard damage (already counted)</li>
             <li><strong>1 Heat symbol ([HEAT])</strong> = +1 Heat</li>
             <li><strong>1 Pierce symbol ([PIERCE])</strong> = Cannot use reactive defense cards</li>
         </ul>
 
         <h4>Step 4: Defender Chooses Discard</h4>
         <ul>
-            <li>Must discard 5 cards (chooses 3 from hand, 2 from deck)</li>
+            <li>Must discard 4 cards (chooses 2 from hand, 2 from deck)</li>
             <li>If any Primary Weapon cards discarded → Add to Component Damage</li>
         </ul>
 
         <h4>Step 5: Final Component Damage</h4>
         <ul>
-            <li>2 (from [CRITICAL][CRITICAL]) + 1 (from 1 Primary Weapon card discarded) = <strong>3 Component Damage</strong></li>
-            <li><strong>Component DESTROYED</strong> (reached threshold)</li>
+            <li>Defender discarded 1 Primary Weapon card → <strong>+1 Component Damage</strong></li>
+            <li>Component now at 1 Component Damage (needs 8 total to destroy with new HP thresholds)</li>
         </ul>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
@@ -573,45 +573,57 @@
 
         <p><strong>Single Die</strong>:</p>
         <ul>
-            <li>Block: 33.3% ([SHIELD] or [ABSORB])</li>
+            <li>Block: 50.0% ([SHIELD] ×2 or [ABSORB])</li>
             <li>Standard damage: 16.7% ([BLOOD])</li>
-            <li>Critical: 16.7% ([CRITICAL])</li>
             <li>Pierce: 16.7% ([PIERCE])</li>
             <li>Heat: 16.7% ([HEAT])</li>
         </ul>
 
-        <h3>Expected Blocks:</h3>
+        <h3>Expected Blocks (50% block rate):</h3>
         <table>
             <thead>
                 <tr>
                     <th>Damage</th>
                     <th>Expected Blocks</th>
                     <th>Expected Damage</th>
+                    <th>Old (33% rate)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>3</td>
-                    <td>1</td>
-                    <td>2</td>
+                    <td>1.5</td>
+                    <td>1.5</td>
+                    <td>2 dmg</td>
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td>2</td>
-                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4 dmg</td>
                 </tr>
                 <tr>
                     <td>9</td>
-                    <td>3</td>
-                    <td>6</td>
+                    <td>4.5</td>
+                    <td>4.5</td>
+                    <td>6 dmg</td>
                 </tr>
                 <tr>
                     <td>12</td>
-                    <td>4</td>
-                    <td>8</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>8 dmg</td>
                 </tr>
             </tbody>
         </table>
+
+        <h4>Impact:</h4>
+        <ul>
+            <li>50% block rate reduces variance (more predictable outcomes)</li>
+            <li>Removed CRITICAL symbol eliminates random Component Damage spikes</li>
+            <li>Component Damage now only from discarding Primary Weapon cards (player choice)</li>
+            <li>Expected damage reduced by ~25-33% across all attack values</li>
+        </ul>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 

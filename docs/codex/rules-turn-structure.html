@@ -411,18 +411,26 @@
                 </tr>
                 <tr>
                     <td>6-8</td>
-                    <td><strong>SP Drain</strong>: Lose 1 SP this turn (max reduced temporarily)</td>
+                    <td><strong>SP Drain</strong>: Lose 1 SP this turn + discard 1 card</td>
                 </tr>
                 <tr>
                     <td>9-11</td>
-                    <td><strong>System Damage</strong>: Take 2 damage (discard 2 cards)</td>
+                    <td><strong>System Damage</strong>: Take 3 damage (discard 3 cards) + lose 1 SP</td>
                 </tr>
                 <tr>
                     <td>12+</td>
-                    <td><strong>Critical Failure</strong>: Random component malfunctions (roll 1d6: 1-2=Arm, 3-4=Leg, 5=Head, 6=Chassis)</td>
+                    <td><strong>Critical Failure</strong>: Discard 4 cards + random component takes +1 Component Damage (roll 1d6: 1-2=Arm, 3-4=Leg, 5=Head, 6=Chassis)</td>
                 </tr>
             </tbody>
         </table>
+
+        <h4>Strain Severity by Heat Level:</h4>
+        <ul>
+            <li><strong>5 Heat</strong> (Danger Zone entry): Roll 1d6+5 = 6-11 range → 50% SP Drain (6-8), 50% System Damage (9-11)</li>
+            <li><strong>7 Heat</strong> (Mid Danger): Roll 1d6+7 = 8-13 range → 50% System Damage (8-11), 50% Critical (12-13)</li>
+            <li><strong>9 Heat</strong> (High Danger): Roll 1d6+9 = 10-15 range → 33% System Damage (10-11), 67% Critical (12-15)</li>
+            <li><strong>10+ Heat</strong> (Critical Zone): Auto-fail Strain (automatic malfunction, roll on 12+ result)</li>
+        </ul>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
