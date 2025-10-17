@@ -1,0 +1,215 @@
+---
+
+## 🐉 DRACONID REMEMBRANCE - NPC Support Units
+
+**Concept**: Ancient, crystallizing giants who appear rarely as **neutral arbiters, quest-givers, or emergency support**. Not playable, but players can earn their assistance.
+
+**Size**: **20-25 feet tall** (larger than standard Caskets). They don't pilot machines - **they ARE the machines** (their bodies are so calcified they function like living Caskets)
+
+---
+
+## THE THREE ICONIC DRACONIDS
+
+### 1. **Skykeeper Vyrnathrax** - The Chronicler
+**Title**: "The Last Archive"  
+**Age**: 612 years old (awake for 180 years total)  
+**Role**: Quest-giver, historian, neutral arbiter
+
+#### Physical Description
+- **Height**: 24 feet, gaunt and skeletal
+- **Appearance**: Mostly **petrified** - his body is 70% crystallized stone. He can barely move anymore. Sits in a throne carved from a dragon skull in the Skyhold Archives
+- **Horns**: Massive spiraling horns with **visible memory crystal layers** (like tree rings). Each layer glows faintly when he accesses those memories
+- **Eyes**: Empty sockets with **floating sapphire gemstones** that hover where his eyes should be
+- **Voice**: Deep, echoing, sounds like speaking from inside a cave
+- **Skin**: Cracked marble texture, glowing cyan veins of liquid crystal visible underneath
+
+#### Unique Traits
+- **Living Library**: Vyrnathrax has witnessed **all three previous Cataclysms**. He remembers Year -50,000 (the Flood), Year -10,000 (the Fire), and Year 0 (the Void)
+- **Memory Crystal Access**: Players can touch his horns to experience **visions of past cycles** (cutscenes showing previous apocalypses)
+- **Prophetic Dreams**: He dreams of the **Fourth Ending** (20,000 years in the future). He can tell players what happens if they fail
+- **Immobile**: Vyrnathrax cannot leave his throne. His legs are fully calcified into the stone floor. He is part of the Archives now
+
+#### Story Hooks
+- **Quest**: "Bring me artifacts from the Old World. I must record them before the cycle ends."
+- **Information Broker**: Vyrnathrax knows **everything** - enemy weaknesses, Soulstone locations, Engine blueprints. But he won't give information for free. Players must trade **knowledge** (lore discoveries, completed mission reports)
+- **Neutral Ground**: Skyhold Archives is **sacred neutral territory**. All factions respect it. Players can negotiate truces here
+- **The Final Record**: If players discover Vyrnathrax is the **only Draconid still conscious** (the other two have entered hibernation), he'll give them his memory crystal and ask them to place it in the Archive when he finally petrifies
+
+---
+
+### 2. **Emberscale Kalthor** - The War-Witness
+**Title**: "The Burning Sentinel"  
+**Age**: 487 years old  
+**Role**: Combat support NPC, mobile artillery, boss fight (if players attack Draconid interests)
+
+#### Physical Description
+- **Height**: 22 feet, built like a walking fortress
+- **Appearance**: 50% calcified - still mobile, but his movements are **slow and deliberate** (like animated stone)
+- **Horns**: Short, blunt, covered in **scorch marks** (he still uses his breath weapon frequently)
+- **Eyes**: Molten ruby gemstones that **glow when he's about to attack**
+- **Armor**: Wears armor made from **dragon scales** (actual dragon hide grafted onto his calcifying skin)
+- **Weapon**: Carries a **dragon bone greatsword** (15 feet long, carved from a dragon's femur)
+
+#### Unique Traits
+- **Draconic Breath (Active)**: Unlike most Draconids, Kalthor can still breathe fire. Massive AoE cone attack (6 hexes, 8 damage, ignores cover)
+- **Fossilized Resilience**: Takes **half damage from physical attacks** (his stone skin is armor). Full damage from magic/Void
+- **War-Scarred**: Kalthor fought in the **Second Cataclysm** (Year -10,000). He has permanent scars from battles against entities players have never seen
+- **Mobile but Slow**: Moves 2 hexes per turn (half speed of normal Caskets), but hits like a siege weapon
+
+#### Story Hooks
+- **Mercenary**: Kalthor can be hired as **temporary support** (costs 500 Credits per mission). He fights alongside players, uses his AI behavior deck
+- **Boss Fight**: If players attack Skyhold Archives or harm Vyrnathrax, Kalthor awakens and becomes a **raid boss** (high HP, devastating attacks, only appears once)
+- **Training Dummy**: Kalthor offers to **spar with players** (non-lethal combat practice). Beating him unlocks a unique card
+- **The Last Warrior**: Kalthor knows he's the **last Draconid who can still fight**. When he fully petrifies, there will be no more Draconid warriors. He's trying to teach others his techniques before he's gone
+
+#### AI Behavior Deck (Ally Mode)
+- **Priority**: Tank hits for players (intercepts attacks on allies within 3 hexes)
+- **Breath Weapon**: Uses once per combat when 3+ enemies are grouped
+- **Greatsword Slam**: High damage single-target attack (6 damage, push 2 hexes)
+- **Fossilized Bulwark**: Gives adjacent allies +2 Defense (he's a walking wall)
+
+---
+
+### 3. **Duskwind the Fatalist** - The Sleeper
+**Title**: "The Dream-Lost"  
+**Age**: 731 years old (oldest living Draconid)  
+**Role**: Mystery NPC, hidden lore source, potential final boss (if players pursue "wrong" ending)
+
+#### Physical Description
+- **Height**: 26 feet (tallest Draconid)
+- **Appearance**: **90% petrified** - looks like a statue. Only his head remains semi-mobile
+- **Location**: Hidden deep in the Sibarian Wastes, sitting cross-legged in a meditation pose. Players must find him (he's a secret encounter)
+- **Horns**: Absolutely massive, **glowing with every memory he's ever witnessed**. Looking directly at them causes players to see **visions of apocalypses**
+- **Eyes**: Empty sockets leaking **liquid diamond** (he's crying crystal tears)
+- **State**: In **eternal hibernation**. Asleep for 300 years. Players must complete a ritual to wake him (or leave him sleeping)
+
+#### Unique Traits
+- **Prophetic Madness**: Duskwind has seen **too much**. He's witnessed three apocalypses and dreamed of the fourth. He's gone insane from the weight of knowledge
+- **The Fourth Ending Theory**: Duskwind believes the only way to break the cycle is to **cause the Fourth Ending NOW** (destroy the Engine completely, regardless of consequences)
+- **Dream Manipulation**: If woken, Duskwind can alter players' perception of reality (debuff attacks, confusion effects, mind games)
+- **The Final Petrification**: If players wake Duskwind, he will **complete his calcification within 24 hours** (his body gives up). He has one day to pass on his knowledge before becoming a statue
+
+#### Story Hooks
+- **Hidden Lore Boss**: Finding Duskwind is a **secret quest chain**. Requires translating ancient texts, following map fragments, exploring the most dangerous part of the Wastes
+- **Moral Choice**: Wake him or leave him sleeping?
+  - **Wake him**: Get critical lore about breaking the cycle, but he dies (petrifies) immediately after
+  - **Leave him sleeping**: He remains as a potential ally for future playthroughs, but players miss lore
+- **The Dangerous Knowledge**: Duskwind reveals that **Theslar's Engine can be reactivated** to cause a controlled Fourth Ending (restart the cycle cleanly instead of letting it rot). Some factions want this. Others are horrified
+- **Final Boss Variant**: If players pursue the "Fourth Ending" route (destroy everything to restart), Kalthor and other factions will try to stop them. Duskwind becomes an ally in this route
+
+#### AI Behavior Deck (Boss Mode - If Hostile)
+- **Reality Fracture**: AOE confusion effect (all units in 5 hexes must roll to avoid attacking random targets)
+- **Crystalline Cascade**: Ranged attack that creates **difficult terrain** (calcified ground, slows movement)
+- **Ancestral Summons**: Calls **dragon ghost echoes** (minor adds, 3 HP each, swarm players)
+- **Petrifying Gaze**: Stun 1 target for 1 turn (they're briefly calcified)
+
+---
+
+## DRACONID MECHANICS AS NPCs
+
+### Support Ally Mechanics
+When players **earn Draconid favor** (complete Archive quests, protect Skyhold, donate artifacts), they can call on Draconid support:
+
+**"Kalthor's Aid"** (Once per campaign)
+- Kalthor appears for 1 mission as a **friendly NPC ally**
+- Uses his own behavior deck (tanks damage, uses breath weapon, bodyguards players)
+- Costs 500 Credits or 1 Favor Token
+
+**"Vyrnathrax's Counsel"** (Unlimited, but requires travel to Archives)
+- Players can consult Vyrnathrax for **perfect information**
+  - Enemy weaknesses (reveals boss AI behavior cards)
+  - Soulstone locations (marks on map)
+  - Historical context (lore dumps)
+- Payment: Trade knowledge (mission reports, artifacts, lore discoveries)
+
+**"Duskwind's Vision"** (Once per campaign, secret unlock)
+- If players wake Duskwind, he gives them a **one-time vision of the future**
+  - Shows outcome of current choices (like Durr's Probability Matrix, but more cryptic)
+  - Warns of ambushes, betrayals, or catastrophic failures
+  - Payment: He dies (petrifies) after giving the vision
+
+---
+
+### Draconid Behavior Deck (Kalthor - Ally Mode)
+
+**Deck Size**: 10 cards (reshuffles when empty)
+
+1. **"Fossilized Bulwark"** - Give adjacent allies +2 Defense. Kalthor intercepts 1 attack targeting an ally within 2 hexes
+2. **"Dragon's Breath: Flame"** - AOE cone 6 hexes, 8 damage, ignores cover. Usable once per reshuffle
+3. **"Greatsword Slam"** - 6 damage to 1 target, push 2 hexes, knock prone
+4. **"Ancestral Roar"** - All enemies within 4 hexes have -1 to hit (fear effect). Lasts 1 round
+5. **"Calcified Strike"** - 5 damage, ignore 2 Defense (stone fists)
+6. **"Petrified Endurance"** - Reduce all damage by 3 this turn (minimum 1). Kalthor cannot move
+7. **"Memory of War"** - +3 damage on next attack (recalling ancient battles)
+8. **"Protective Stance"** - Adjacent allies cannot be pushed, pulled, or moved involuntarily
+9. **"Tail Sweep"** - 3 damage to all adjacent enemies, push 1 hex
+10. **"Inevitable March"** - Move 3 hexes (double speed, sacrifices defense for mobility)
+
+**Stats**:
+- **HP**: 60 (massive durability)
+- **Movement**: 2 hexes/turn
+- **Defense**: 3 (fossilized armor)
+- **Size**: Huge (takes 2 hexes, cannot be moved by normal effects)
+
+---
+
+### Draconid Behavior Deck (Duskwind - Boss Mode)
+
+**Deck Size**: 12 cards (reshuffles when empty)
+
+1. **"Reality Fracture"** - AOE 5 hexes, all units roll 1d6: [1-2] attack nearest ally, [3-4] attack self, [5-6] skip turn
+2. **"Petrifying Gaze"** - Stun 1 target for 1 turn (they calcify briefly)
+3. **"Crystalline Cascade"** - Ranged 6 hexes, 4 damage, create 3 hexes of difficult terrain (calcified ground)
+4. **"Ancestral Summons"** - Spawn 3 Dragon Echo adds (3 HP each, 2 damage attacks)
+5. **"Prophetic Dodge"** - Negate 1 attack completely (Duskwind saw it in a dream)
+6. **"Memory Overload"** - Force 1 player to discard 3 cards (mental assault)
+7. **"Fossilized Resilience"** - Reduce all damage by 5 this turn (becomes statue briefly)
+8. **"Dream Manipulation"** - Swap positions of 2 player Caskets (reality distortion)
+9. **"Diamond Tears"** - AOE 4 hexes, 3 damage, targets gain 1 Taint (crying liquid crystal)
+10. **"The Fourth Ending Vision"** - Show players a vision of their failure (all players -2 to hit for 2 turns, fear)
+11. **"Cycle Breaker"** - 8 damage to 1 target, ignore all Defense (desperate finisher)
+12. **"Final Petrification"** - When HP drops to 0, Duskwind turns to stone. Drops memory crystal (legendary loot)
+
+**Stats**:
+- **HP**: 80 (raid boss durability)
+- **Movement**: 0 (cannot move, stationary boss)
+- **Defense**: 5 (90% stone)
+- **Size**: Huge (takes 2 hexes, immobile)
+
+---
+
+## DRACONID LOOT DROPS
+
+### Kalthor's Drops (If killed - players must choose to betray him)
+- **Dragon Bone Greatsword** (weapon, 6 damage, ignores 2 Defense, +1 Taint per mission)
+- **Fossilized Scale Armor** (armor, +3 Defense, immune to fire, cannot use movement cards)
+- **Kalthor's Memory Crystal** (quest item, reveals Draconid history)
+
+### Duskwind's Drops (If killed or woken)
+- **The Dreamer's Prophecy** (scroll, reveals "Fourth Ending" option in campaign)
+- **Duskwind's Memory Crystal** (legendary quest item, contains all three apocalypse recordings)
+- **Liquid Diamond Tears** (consumable, heals all Damage cards, removes all Taint, 1 use)
+
+---
+
+## THEMATIC ROLE IN CAMPAIGN
+
+**Draconids as Arbiters**:
+- Players discover them mid-campaign (after 5-10 missions)
+- Skyhold Archives becomes a **neutral hub** for faction negotiations
+- Vyrnathrax judges disputes (if two players are from hostile factions, he enforces ceasefire in Archives)
+
+**Draconids as Tragedy**:
+- Players watch Vyrnathrax slowly petrify over the campaign
+- By endgame, his voice is slower, his movements stiffer
+- Final cutscene: Vyrnathrax completes petrification, becomes a statue holding his memory crystal
+- Players must decide: Take the crystal (preserve knowledge) or leave it (let history die with him)
+
+**Draconids as Secret Option**:
+- Finding Duskwind unlocks the **"Fourth Ending" campaign branch**
+- Players can choose to destroy the Engine completely (restart the cycle cleanly)
+- This ending is controversial (some factions support it, others violently oppose)
+
+---
+
+This makes the Draconids feel **mythical and rare** - players encounter them maybe 2-3 times per full campaign, and every encounter is **significant**. They're not playable, but they're **unforgettable**. Want me to add more iconic Draconids, or expand their behavior decks?
