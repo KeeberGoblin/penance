@@ -106,7 +106,7 @@
 ---
 
 ## Chronicle XIII: The Doppelganger Incident
-### Year 201 - Merchant Guild Trade Route
+### Year 201 - Exchange Trade Route
 
 **Source**: Multiple conflicting eyewitness accounts
 **Classification**: EUCLID (RESOLVED?)

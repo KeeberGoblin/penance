@@ -46,7 +46,7 @@
 3. Verdant Covenant (Rootwarden Sylra)
 4. The Ossuarium (Bonelord Thresh)
 5. Nomad Collective (Warlord Kess)
-6. Merchant Guilds (Proctor Vaelan)
+6. The Exchange (Proctor Vaelan)
 7. Ledger Orthodox (Brother Matthias "The First Accountant")
 8. Rational House (Director Eliana Voss, Ilyara's grandmother)
 9. Wyrd Conclave (Mockingbird, representing Fae interests)

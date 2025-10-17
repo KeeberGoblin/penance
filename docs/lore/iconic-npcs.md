@@ -472,10 +472,10 @@ The cards embedded in his eye when a Soulstone engine detonated two feet from hi
 
 ---
 
-## 7. Proctor Ilyara Voss (Merchant Guilds)
+## 7. Proctor Ilyara Voss (The Exchange)
 ### "The Actuary of Ash"
 
-**Faction**: Merchant Guilds
+**Faction**: The Exchange
 **Casket Type**: Heavy - "The Ledger" (1,400 lbs, reinforced vault-class)
 **Taint Level**: 2 (Controlled via quarterly "cleansing" fees paid to Church)
 
@@ -489,7 +489,7 @@ Her left hand is covered in **contract scars** - ritual cuts where blood oaths w
 The Ledger is not a Casket built for war - it's a **mobile vault**. Reinforced plating, no offensive weapons, but equipped with a communication suite that can call in **Guild mercenaries, orbital artillery, and legal injunctions** from up to 50 miles away.
 
 #### Backstory
-Ilyara Voss was born into the Merchant Guilds as a **debt collector** - the kind sent to settlements that defaulted on loans. Her job was simple: extract payment or extract assets. She was very good at it.
+Ilyara Voss was born into The Exchange as a **debt collector** - the kind sent to settlements that defaulted on loans. Her job was simple: extract payment or extract assets. She was very good at it.
 
 Her rise to Proctor (executive rank) came during the **Scorched Sky Auction** - a bidding war over the rights to an entire region's Soulstone deposits. Ilyara realized both bidders were fronts for the same faction and exposed the scheme, bankrupting both and claiming the deposits for the Guild. She was promoted. Her rivals were liquidated.
 
@@ -546,10 +546,10 @@ She's the most hated woman in three provinces. She's also the richest.
 
 ---
 
-## 8. "Woundwright" Tallis (Blighted Packs)
+## 8. "Woundwright" Tallis (Vestige Bloodlines)
 ### "The Stitcher"
 
-**Faction**: Blighted Packs
+**Faction**: Vestige Bloodlines
 **Casket Type**: Assault - "The Abattoir" (1,200 lbs, biomechanical horror)
 **Taint Level**: 12 (Permanent Mutation - no longer measures on standard scale)
 
@@ -567,7 +567,7 @@ Tallis was a **field medic** for the Church, stationed in the Blighted Wastes wh
 
 As his body mutated, he realized he could **control the process** - directing where fur grew, which limbs elongated, what organs shifted. He became the first **Woundwright** - a surgeon who grafts Blighted mutations onto others, creating hybrid soldiers.
 
-He left the Church and joined the Blighted Packs, offering his services to those desperate enough to trade humanity for power. He's created abominations. He's also saved lives by grafting resistant tissue onto radiation-scarred patients.
+He left the Church and joined the Vestige Bloodlines, offering his services to those desperate enough to trade humanity for power. He's created abominations. He's also saved lives by grafting resistant tissue onto radiation-scarred patients.
 
 His philosophy: **"The body is just meat. Meat can be rewritten."**
 
@@ -608,14 +608,14 @@ His philosophy: **"The body is just meat. Meat can be rewritten."**
 
 #### Combat Behavior (AI Deck Pattern)
 - **Focuses on wounded enemies** - prefers to harvest tissue from near-death targets
-- **Allies with other Blighted units** - uses Battlefield Surgery to buff allies
+- **Allies with other Vestige units** - uses Battlefield Surgery to buff allies
 - **Adapts mid-combat** - changes mutations based on enemy tactics (claws vs melee, scales vs ranged)
 - **Retreats at 25% HP** - only to graft emergency mutations, then re-engages
 
 #### Story Hooks
 - Players may need Tallis's surgery to remove a **cursed mutation** or graft resistant tissue
 - The Church wants him dead for "crimes against nature" - players could be hired as assassins OR bodyguards
-- Tallis is searching for **The First Blighted** - the original patient zero of the mutation plague, rumored to still be alive
+- Tallis is searching for **The First Vestige** - the original patient zero of the mutation plague, rumored to still be alive
 - He offers to "improve" player Caskets with bio-enhancements... but the side effects are permanent
 
 ---

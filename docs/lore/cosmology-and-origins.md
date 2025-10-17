@@ -129,7 +129,7 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 - Built vast underground cities (Ironhearth, Stoneroot, The Deeps)
 - Master craftsmen, metallurgists, and engineers
 - Pre-Sundering, dwarves numbered ~1.5 million globally
-- Traded with surface humans through intermediaries (Merchant Guilds acted as go-betweens)
+- Traded with surface humans through intermediaries (The Exchange acted as go-betweens)
 
 **How They Stayed Hidden**: Dwarven cities were entirely underground. Most humans knew of dwarves as "miners in the deep mountains" but assumed they were just reclusive human clans. Dwarven-forged goods were sold under human brand names.
 
@@ -181,7 +181,7 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 
 ---
 
-### Blighted Packs (Post-Human Chimeras)
+### Vestige Bloodlines (Post-Human Chimeras)
 
 **Origin**: Humans mutated by Void exposure in the first 50 years post-Sundering.
 

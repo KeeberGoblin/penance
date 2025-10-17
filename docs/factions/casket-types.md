@@ -734,7 +734,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 
 ---
 
-# MERCHANT GUILDS
+# THE EXCHANGE
 
 **Theme**: Everything has a price. War is profitable. Loyalty is purchased.
 
@@ -850,7 +850,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 
 ---
 
-# BLIGHTED PACKS
+# VESTIGE BLOODLINES
 
 **Theme**: Forced mutation. Survival at any cost. Hunted by all. Predators by necessity.
 
@@ -968,7 +968,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 
 ---
 
-# CHITINOUS ASCENDANCY
+# EMERGENT SYNDICATE
 
 **Theme**: Post-human hive mind. Arthropod collective. Individual is nothing. Hive is everything.
 

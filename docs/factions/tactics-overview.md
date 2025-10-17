@@ -419,7 +419,7 @@ Each faction has **5 unique tactical cards**. Before each battle, you choose **3
 
 ---
 
-# MERCHANT GUILDS
+# THE EXCHANGE
 
 **Theme**: Credit economy, hired guns, trading, war profiteering
 
@@ -484,7 +484,7 @@ Each faction has **5 unique tactical cards**. Before each battle, you choose **3
 
 ---
 
-# BLIGHTED PACKS
+# VESTIGE BLOODLINES
 
 **Theme**: Mutation, pack tactics, predatory instincts, adaptation
 
@@ -548,7 +548,7 @@ Each faction has **5 unique tactical cards**. Before each battle, you choose **3
 
 ---
 
-# CHITINOUS ASCENDANCY
+# EMERGENT SYNDICATE
 
 **Theme**: Hive mind, swarm coordination, suicide tactics, post-human efficiency
 

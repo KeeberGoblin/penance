@@ -26,11 +26,11 @@ The Crucible Packs embody honor through fire. Every card reflects their philosop
 
 ### Pre-Sundering Origins
 
-**The Forge-Clans** (Pre-Sundering volcanic territories):
-- Mountain clans living near active volcanoes
-- Metallurgy culture (forged legendary weapons in volcanic heat)
-- Shamanistic religion (worshipped "The First Forge" volcano deity)
-- Warrior society (honor duels to settle disputes)
+**The Cinder Tribes** (Pre-Sundering volcanic territories):
+- Goblinoid scavenger clans living in volcanic wastelands
+- Explosive alchemy culture (harvested sulfur, obsidian, and cinders for crude bombs)
+- Shamanistic fire worship (worshipped "The First Forge" volcano deity)
+- Mob society (strength in numbers, overwhelming swarm tactics)
 
 ---
 
@@ -39,50 +39,50 @@ The Crucible Packs embody honor through fire. Every card reflects their philosop
 **When Theslar activated the Engine**:
 - Void energy destabilized tectonic plates
 - Dormant volcanoes erupted across the world (hundreds simultaneously)
-- **Ashveil Mountains**: Entire volcanic range exploded (Year 0, Day 2)
-- Forge-Clans buried under ash and lava (estimated 50,000 dead)
+- **Ashveil Caldera**: Entire volcanic basin exploded (Year 0, Day 2)
+- Cinder Tribes caught in eruption (estimated 80,000 dead)
 
 **The Survivors**:
-- ~5,000 Forge-Clan members survived (underground forges, lava tubes)
+- ~15,000 goblinoids survived (living in deep lava tubes, already adapted to volcanic heat)
 - Emerged from volcano ruins (Year 0, Day 30)
-- Found homeland destroyed (everything buried under ash)
-- **Named themselves**: "The Crucible Packs" (forged in fire, tempered by loss)
+- Found wasteland perfect for scavenging (ash, obsidian, sulfur everywhere)
+- **Named themselves**: "The Crucible Packs" (tempered in fire, born from cinders)
 
 ---
 
-### Year 1-50: Nomadic Warrior Culture
+### Year 1-50: Nomadic Scavenger Culture
 
 **Early Survival**:
-- Scavenged pre-Sundering forges (salvaged ancestral equipment)
-- Migrated to new volcanic regions (followed active volcanoes)
-- Established "Pack" system (family units 20-50 members)
-- **Forge-Matrons** lead packs (eldest female smith, spiritual authority)
+- Scavenged volcanic materials (obsidian, sulfur, cinders for explosives)
+- Migrated to new volcanic regions (followed eruptions for fresh materials)
+- Established "Pack" system (mob units 50-200 members, safety in numbers)
+- **Ember-Bosses** lead packs (biggest, loudest goblin with most scars)
 
 **Religious Evolution**:
-- "The First Forge" deity survived Sundering (proves divinity)
-- Volcanoes are holy sites (each eruption is divine message)
-- Ash is sacred (ancestor's remains, used in rituals)
-- **New belief**: Fire tests worth (trial by combat, forge trials)
+- "The First Forge" deity survived Sundering (proves power)
+- Volcanoes are holy sites (each eruption brings gifts: lava, ash, sulfur)
+- Explosions are sacred (bigger boom = more blessed)
+- **New belief**: Fire favors the bold (reckless bravery rewarded, cowardice punished)
 
 ---
 
 ### Year 100-437: The Packs Today
 
-**Current Population**: ~12,000 Crucible Pack members
-- 8 major packs (1,500 members each)
-- Dozens of minor packs (100-500 members)
-- Nomadic (follow volcanic activity, never settle permanently)
+**Current Population**: ~25,000 Crucible Pack members (goblinoids breed fast)
+- 12 major packs (2,000 members each)
+- Hundreds of minor packs (50-300 members, constantly forming/disbanding)
+- Nomadic (follow volcanic activity, scavenge obsidian and sulfur)
 
 **Pack Structure**:
-- **Forge-Matron**: Leader (eldest female smith, spiritual authority)
-- **Ashen-King**: War leader (strongest male warrior, tactical command)
-- **Emberforges**: Smiths (craft weapons, maintain ancestral iron)
-- **Pack-Kin**: Warriors (hunters, duelists, defenders)
+- **Ember-Boss**: Leader (biggest goblin, wins mob challenges by being loudest/toughest)
+- **Boom-Shamans**: Alchemists (mix explosives, bless bombs, interpret volcanic omens)
+- **Cinder-Scavs**: Gatherers (harvest sulfur, obsidian, scrap metal from ruins)
+- **Pack-Mob**: Warriors (swarm tactics, suicide bombers, overwhelming numbers)
 
-**Territory**: Volcanic badlands (anywhere with active volcanoes)
-- Ashveil Desert (scorched wasteland, former homeland)
-- Magma Veins (underground lava tube networks)
-- The Burning Peaks (active volcano range)
+**Territory**: Volcanic badlands (anywhere with active volcanoes and scavenging)
+- Ashveil Wastes (scorched scrap fields, former homeland)
+- Sulfur Pits (toxic volcanic vents, goblinoid-only zones)
+- The Burning Peaks (active volcano range, sacred sites)
 
 ---
 
@@ -421,89 +421,89 @@ The Crucible Packs embody honor through fire. Every card reflects their philosop
 
 | Faction | Relationship | Why |
 |---------|--------------|-----|
-| **Church of Absolution** | -1 Distrustful | Church sees Crucible fire-worship as heresy (pagan volcano deity) |
-| **Verdant Covenant (Elves)** | -2 Hostile | Crucible burn forests for forges (environmental destruction) |
-| **Forge-Guilds (Dwarves)** | +1 Friendly | Mutual respect for smithing craft (honor among metalworkers) |
-| **The Exchange** | +1 Friendly | Exchange respects Crucible honor system (reliable contracts) |
-| **The Ossuarium** | 0 Neutral | Crucible distrust undead but tolerate them (pragmatic trade) |
-| **The Wyrd Conclave (Fae)** | -1 Distrustful | Fae trickery offends Crucible honor (dishonest bargains) |
-| **Nomad Collective** | +2 Allied | Fellow nomads, mutual survival pact (shared territories) |
-| **Vestige Bloodlines** | 0 Neutral | Crucible pity Vestige but respect their fighting spirit |
-| **Emergent Syndicate** | -1 Distrustful | Crucible view Syndicate evolution as "unnatural" (prefer traditional strength) |
+| **Church of Absolution** | -2 Hostile | Church sees Crucible as dangerous heretics (pagan fire cult with explosives) |
+| **Verdant Covenant (Elves)** | -3 Hated | Crucible burn forests for fun and scavenging (environmental terrorists) |
+| **Forge-Guilds (Dwarves)** | -2 Hostile | Dwarves despise Crucible's crude "crafting" (insult to smithing) |
+| **The Exchange** | 0 Neutral | Exchange tolerates Crucible but finds them unreliable (too chaotic) |
+| **The Ossuarium** | +1 Friendly | Ossuarium appreciates Crucible's disregard for death (pragmatic allies) |
+| **The Wyrd Conclave (Fae)** | +1 Friendly | Fae enjoy Crucible chaos and explosions (kindred spirits in mayhem) |
+| **Nomad Collective** | +2 Allied | Fellow nomads and scavengers, mutual survival pact (trade sulfur for supplies) |
+| **Vestige Bloodlines** | +1 Friendly | Both are outcasts hunted by others, respect each other's resilience |
+| **Emergent Syndicate** | -1 Distrustful | Crucible find hive-mind creepy (prefer loud individualism) |
 
 ---
 
 ## NOTABLE NPCs
 
-### Forge-Matron Kerra "The Unburnt"
+### Ember-Boss Skragg "Ash-Tongue"
 
-**Title**: Matron of the Ashveil Pack, Keeper of the First Flame
+**Title**: Boss of the Ashveil Pack, Loudest Voice in the Wastes
 
-**Age**: 58 (eldest living Crucible)  
-**Casket**: "The Eternal Forge" (mobile smithy, ancestral armor)
+**Age**: 38 (ancient for a goblinoid, most die by 30)
+**Casket**: "The Boom-Wagon" (mobile bomb-hauler, covered in scorch marks)
 
 **Appearance**:
-- Scarred from head to toe (ritual fire trials)
-- Gray-white hair (braided with ash)
-- Burns never heal (sacred wounds, proof of trials)
-- Wears ancestral plate armor (passed down 12 generations)
-- Carries forge-hammer (head carved from meteorite iron)
+- Short (4'2"), wiry, covered in burn scars and soot
+- Missing left ear (blown off in explosion), considers it lucky
+- Teeth filed to points, smeared with ash paste
+- Wears patchwork armor (scavenged plates bolted together haphazardly)
+- Carries oversized club studded with obsidian shards
 
 **Personality**:
-- Stoic, unshakable, impossibly patient
-- Speaks in forge metaphors ("You are untempered steel. Time will harden you.")
-- Mother-figure to entire Ashveil Pack (2,000 members)
-- Believes in earning respect through deeds, not words
+- Loud, boisterous, never stops talking
+- Speaks in explosive metaphors ("You're a dud bomb. All hiss, no BOOM!")
+- Commands through charisma and volume (out-shouts rivals)
+- Believes bigger explosions = stronger faith
 
 **Unique Abilities**:
-- **Unburnt** (Passive): Immune to fire damage, standing in lava heals 1 card per turn instead of damaging
-- **Forge-Matron's Blessing** (3 Forge tokens): All allied Crucible within 8 hexes gain +2 Defense for 2 turns (protective aura)
-- **Ancestral Reckoning** (Ultimate, once per mission): Summon spirits of 3 ancestral Crucible warriors (4 HP, 3 damage each, fight for 3 turns)
+- **Ash-Tongue** (Passive): Allied Crucible within 6 hexes gain +1 damage (inspired by constant yelling)
+- **Mob the Big'Un** (2 SP): All allied Crucible charge same target (coordinated swarm attack, +2d6 damage total)
+- **Glorious Boom** (Ultimate, once per mission): Self-destruct for 8d6 damage in 3-hex radius, then respawn next turn with 10 cards (goblinoid recklessness incarnate)
 
 **Backstory**:
-- Born Year 379, survived Ashveil volcanic eruption (Year 381, age 2)
-- Became Forge-Matron at age 30 (Year 409, youngest ever)
-- Led Ashveil Pack through 3 major faction wars (undefeated record)
-- **Personal tragedy**: Lost entire family in duel (husband + 2 sons killed by rival pack, Year 425)
-- Refuses to remarry (dedicates life to Pack)
+- Born Year 399, survived 47 explosions (most self-inflicted)
+- Became Ember-Boss at age 25 (Year 424, out-shouted previous boss in mob challenge)
+- Led Ashveil Pack through sulfur wars with rival packs (won via superior explosives)
+- **Personal philosophy**: "If it ain't on fire, it ain't worth doin'"
+- Obsessed with finding "The Biggest Boom" (legendary lost explosive recipe)
 
-**Campaign Hook**: Kerra seeks alliance with players to reclaim ancestral forge sites (buried under Void corruption).
+**Campaign Hook**: Skragg offers alliance if players help recover ancient pre-Sundering explosives cache.
 
 ---
 
-### Ashen-King Torrak "The Lineage"
+### Boom-Shaman Grikka "Cinder-Eyes"
 
-**Title**: War Leader of the Ironpeak Pack, Undefeated Duelist
+**Title**: Head Alchemist of the Sulfur Pit Pack, The Mad Mixer
 
-**Age**: 42 (prime warrior age)  
-**Casket**: "The Duelist's Pride" (lightweight armor, speed-focused)
+**Age**: 29 (old for a shaman, volatile work)
+**Casket**: "The Chem-Hauler" (mobile alchemy lab, constantly smoking)
 
 **Appearance**:
-- Tall, muscular, covered in duel scars (47 total, one per duel won)
-- Shaved head except ash-gray mohawk
-- Wears trophies from defeated enemies (rings, amulets, teeth)
-- Dual-wields volcanic blades (ancestral swords, 6 generations old)
-- Eyes glow faintly (volcanic exposure mutation, not Void)
+- Short (3'11"), hunched from inhaling fumes
+- Eyes permanently bloodshot and glowing orange (sulfur exposure)
+- Missing three fingers on right hand (mixing accidents)
+- Wears dozens of vials and pouches (explosives, catalysts, mystery substances)
+- Smells of sulfur, ash, and something sweet-rotten
 
 **Personality**:
-- Arrogant, glory-seeking, obsessed with honor
-- Challenges everyone (even allies, to "test their worth")
-- Respects strength, despises cowardice
-- **Lineage pride**: Descended from original Forge-Clan kings (noble bloodline)
+- Manic, giggles at explosions, talks to her bombs
+- Obsessed with "perfecting the recipe" (never satisfied)
+- Terrifies even other goblinoids (unpredictable, might blow up at any moment)
+- Speaks in chemical jargon mixed with religious fervor
 
 **Unique Abilities**:
-- **Undefeated** (Passive): When challenged to Honor Duel, gain +2 damage for duration (psychological edge)
-- **King's Challenge** (2 SP): Force enemy to accept Honor Duel (cannot refuse, overrides Coward's Mark)
-- **Ancestral Fury** (Ultimate, once per mission): For 3 turns, all attacks deal double damage but take double damage (glass cannon mode)
+- **Unstable Mixture** (Passive): When hit by attack, roll 1d6. On 6, explode for 2d6 damage to attacker (volatile alchemy)
+- **Bless the Boom** (3 Forge tokens): All allied Crucible's next explosive attack deals +2d6 damage (chemical blessing)
+- **The Perfect Bomb** (Ultimate, once per mission): Deploy massive bomb (10d6 damage, 4-hex radius, destroys terrain, creates 4 lava hexes)
 
 **Backstory**:
-- Born Year 395, trained from age 5 in dueling
-- Won first duel at age 15 (killed adult rival, proved worth)
-- Became Ashen-King at age 28 (Year 423, challenged previous king and won)
-- **47 duels, 47 victories** (undefeated record)
-- **Personal goal**: Challenge strongest warrior in world (prove Crucible superiority)
+- Born Year 408, survived sulfur pit cave-in (Year 410, age 2)
+- Became Boom-Shaman at age 18 (Year 426, invented new explosive formula)
+- Lost 3 fingers in "The Great Mixing Disaster" (Year 432, wiped out 30 goblins but created purple flame)
+- **Personal obsession**: Find mythical "Eternal Cinder" (substance that burns forever)
+- Believes First Forge speaks through chemical reactions
 
-**Campaign Hook**: Torrak challenges players to duel (test their honor). If they win, he pledges Ironpeak Pack as allies. If they lose, they owe him a debt.
+**Campaign Hook**: Grikka needs rare volcanic minerals for experiments, offers explosive support in exchange.
 
 ---
 

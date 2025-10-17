@@ -69,12 +69,12 @@ When Theslar activated **The Engine** (then called the "Theslar Engine" by scien
 **Year 150-250: The Factional Wars**
 - Major power blocs emerge and consolidate
 - Church of Absolution splits in the Great Schism (Year 134)
-- Merchant Guilds rise to dominance through war profiteering
+- The Exchange rises to dominance through war profiteering
 - Dwarven forge-cities become industrial powerhouses
 - The Ossuarium establishes permanent necropolis territories
 
 **Year 250-350: The Mutation Age**
-- Blighted Packs emerge as distinct faction after Exodus (Year 352)
+- Vestige Bloodlines emerge as distinct faction after Exodus (Year 352)
 - Emergent Syndicate appears from Sibarian ground zero (Year 381)
 - Reality fractures increase in frequency and severity
 - Fae incursions become more frequent and unpredictable
@@ -211,7 +211,7 @@ Different factions have different interpretations of the Cataclysm:
 
 ---
 
-### The Blighted Packs (Chimeric Survivors)
+### Vestige Bloodlines (Chimeric Survivors)
 **"We Didn't Choose This. The Void Did"**
 
 - The Sundering didn't just kill humans—it **mutated** them
@@ -221,7 +221,7 @@ Different factions have different interpretations of the Cataclysm:
 - Without Soulstones, Blighted continue degenerating until they become Abominations
 - They didn't ask to become monsters, but they've learned to weaponize what they've become
 
-**Cultural Impact**: Blighted Packs are nomadic, hunted by every "pure" faction. Their Caskets are **adaptive bio-mechanical hybrids**—part machine, part living tissue that shifts and mutates. They're survivors in the truest sense: rejected by their former species, feared by others, forced to become predators to stay alive.
+**Cultural Impact**: Vestige Bloodlines are nomadic, hunted by every "pure" faction. Their Caskets are **adaptive bio-mechanical hybrids**—part machine, part living tissue that shifts and mutates. They're survivors in the truest sense: rejected by their former species, feared by others, forced to become predators to stay alive.
 
 **Traits**: Enhanced senses, animal instincts, physical mutations (claws, enhanced strength, night vision), constant risk of further degradation. Every generation births fewer stable offspring. They know they're dying out.
 
