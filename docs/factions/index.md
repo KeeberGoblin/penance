@@ -43,14 +43,43 @@ How faction-specific Tactics cards work. Choose 2 from 5 per faction.
 
 ---
 
-## Design-Only Factions (Not Yet Playable)
+## Additional Playable Factions
 
-- **The Wyrd Conclave**: Reality distortion, stolen faces, incomprehensible logic
-- **Nomad Collective**: Survival through mobility, reality fracture prediction
-- **The Exchange**: War profiteering, economic control, dual governance system
-- **Vestige Bloodlines**: Five bloodline variants, extinction clock, generational degradation
-- **Emergent Syndicate**: Hive-mind collective, chosen evolution, metamorph transformations
-- **Crucible Packs**: Volcanic fire worship, honor duels, ancestral iron weapons
+### [The Wyrd Conclave](fae/deck-equipment-system.md)
+**Playstyle**: Reality manipulation tricksters
+**Mechanic**: Probability distortion, stolen identity, bargain mechanics
+**Status**: ✅ Playable in codex
+**Support Units**: TBD
+
+### [Nomad Collective](nomads/deck-equipment-system.md)
+**Playstyle**: Mobile survivalists
+**Mechanic**: Scavenged tech, prediction, adaptability
+**Status**: ✅ Playable in codex
+**Support Units**: TBD
+
+### [The Exchange](exchange/deck-equipment-system.md)
+**Playstyle**: Economic warfare and soul contracts
+**Mechanic**: Dual governance (Orthodox vs Rational), contract binding
+**Status**: ✅ Playable in codex
+**Support Units**: [6 units](exchange/support-units.md)
+
+### [Vestige Bloodlines](vestige-bloodlines/deck-equipment-system.md)
+**Playstyle**: Mutation-based adaptability
+**Mechanic**: Five bloodline variants, generational degradation
+**Status**: ✅ Playable in codex
+**Support Units**: TBD
+
+### [Emergent Syndicate](emergent/deck-equipment-system.md)
+**Playstyle**: Hive-mind collective
+**Mechanic**: Shared consciousness, metamorphosis forms
+**Status**: ✅ Playable in codex
+**Support Units**: TBD
+
+### [Crucible Packs](crucible/deck-equipment-system.md)
+**Playstyle**: Volcanic honor warriors
+**Mechanic**: Ancestral iron, fire worship, honor duels
+**Status**: ✅ Playable in codex
+**Support Units**: TBD
 
 ---
 
