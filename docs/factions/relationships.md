@@ -54,11 +54,16 @@ Faction relationships are rated on a **7-tier scale**:
 
 #### Relationships:
 
-**vs. Verdant Covenant (-1 Suspicious)**
+**vs. Verdant Covenant (-2 Hostile, formerly -3 War)**
 - **Why**: Elves worship the "Worldheart" instead of the Creator. Heresy.
 - **Friction Points**: Competing for same territories, ideological incompatibility
-- **Historical Grudge**: Elves sheltered Taint-corrupted refugees the Church wanted to execute (Year 87)
-- **Potential Alliance**: If Void threat grows severe enough, temporary ceasefire possible
+- **Historical Grudge**: The Forest Wars (Year 223-227). Church views Elves as heretics who chose nature-worship over salvation.
+- **Church Perspective on War**:
+  - **Roothold Purge (Year 223)**: High Confessor Aldric declared Elven groves "Tainted sanctuaries" and ordered purification by fire. Church claims 3,000 Elves died "resisting redemption."
+  - **Supply Convoy Attacks (Year 224)**: Church calls Elven ambush tactics "cowardly" and "dishonorable warfare."
+  - **Cathedral Siege (Year 226)**: Church martyrs celebrated the 15,000 civilians who starved rather than surrender. The siege is taught as example of "faithful endurance."
+  - **Treaty of Ash and Root (Year 227)**: Church begrudgingly accepted Forest Sanctuaries, viewing it as "tactical retreat" not true peace.
+- **Current Status**: Ceasefire holds, but Church still sends missionaries to "save" Elves. Elves view this as cultural warfare.
 
 **vs. Forge-Guilds (0 Neutral)**
 - **Why**: Dwarves sell weapons to the Church but mock their religion
@@ -98,10 +103,15 @@ Faction relationships are rated on a **7-tier scale**:
 
 #### Relationships:
 
-**vs. Church of Absolution (-1 Suspicious)**
+**vs. Church of Absolution (-2 Hostile, formerly -3 War)**
 - **Why**: Church clear-cuts forests for lumber, poisons rivers with runoff
 - **Friction Points**: Environmental destruction vs. civilization's needs
-- **Historical Grudge**: Church declared the Grove of First Light a "heretical sanctuary" (Year 91)
+- **Historical Grudge**: The Forest Wars (Year 223-227) ended in ceasefire but deep scars remain
+- **Major Battles**:
+  - **Betrayal at Roothold (Year 223)**: Church Crusaders burned sacred groves using alchemical fire, killing 3,000 Elves and destroying centuries-old Worldtrees. Sparked 4-year war.
+  - **The Verdant Retaliation (Year 224)**: Elven rangers ambushed Church supply convoys, using guerrilla tactics. 12 Penitent Caskets destroyed in forest ambushes over 6 months.
+  - **Siege of the Iron Cathedral (Year 226)**: Elven forces besieged Church capital for 8 months. Cathedral walls held, but famine killed 15,000 civilians. Both sides exhausted.
+  - **Treaty of Ash and Root (Year 227)**: Ceasefire brokered by The Exchange. Church agreed to "Forest Sanctuaries" (no-logging zones). Elves agreed to stop attacks on Church settlements. Uneasy peace holds, but neither side trusts the other.
 
 **vs. Forge-Guilds (-1 Suspicious)**
 - **Why**: Dwarven mining scars the earth, disrupts ley lines
