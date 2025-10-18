@@ -1078,7 +1078,7 @@
         async function loadCardData() {
             try {
                 console.log('[Card DB] Starting to load card data...');
-                const response = await fetch('complete-card-data.json');
+                const response = await fetch('complete-card-data.json?v=' + Date.now());
                 console.log('[Card DB] Fetch response:', response.status, response.statusText);
                 const data = await response.json();
                 console.log('[Card DB] JSON parsed successfully');
@@ -1233,8 +1233,11 @@
                 equipment: allCards.filter(c => c.faction === 'equipment').length
             };
 
+            console.log('[Card DB] Tab counts:', counts);
+
             Object.keys(counts).forEach(tab => {
                 const el = document.getElementById(`count-${tab}`);
+                console.log(`[Card DB] Updating count-${tab}:`, el ? counts[tab] : 'element not found');
                 if (el) el.textContent = counts[tab];
             });
 
