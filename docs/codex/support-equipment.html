@@ -591,15 +591,19 @@
                 .filter(f => f.checked)
                 .map(f => f.value);
 
-            const showAll = document.querySelector('.faction-filter[value="all"]').checked;
-            const category = document.querySelector('input[name="category"]:checked').value;
+            const showAll = document.querySelector('.faction-filter[value="all"]')?.checked || false;
+            const category = document.querySelector('input[name="category"]:checked')?.value || 'all';
 
             document.querySelectorAll('.unit-card').forEach(card => {
                 const cardFaction = card.dataset.faction;
                 const cardSlots = card.dataset.slots;
 
-                const factionMatch = showAll || selectedFactions.includes(cardFaction);
-                const slotMatch = selectedSlots.includes(cardSlots) || selectedSlots.includes('4') && parseInt(cardSlots) >= 4;
+                // Faction match: show all if "all" is checked, or if no factions selected, or if card's faction is selected
+                const factionMatch = showAll || selectedFactions.length === 0 || selectedFactions.includes(cardFaction);
+
+                // Slot match: show all if no slots selected, or if card's slot is selected, or if "4+" is selected and card has 4+ slots
+                const slotMatch = selectedSlots.length === 0 || selectedSlots.includes(cardSlots) || (selectedSlots.includes('4') && parseInt(cardSlots) >= 4);
+
                 const categoryMatch = category === 'all' || category === 'support-units';
 
                 card.style.display = (factionMatch && slotMatch && categoryMatch) ? 'block' : 'none';
@@ -747,21 +751,76 @@
             const container = document.getElementById('equipment-content');
             container.innerHTML = ''; // Clear demo content
 
-            equipment.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'equipment-card';
+            // Group equipment cards by their parent weapon/item
+            // We'll use a heuristic: cards from the same faction with similar keywords likely belong together
+            const equipmentGroups = groupEquipmentByWeapon(equipment);
 
-                card.innerHTML = `
-                    <div class="unit-header">
-                        <div class="unit-name">${item.name}</div>
-                        <div class="unit-faction">${item.category || 'Universal'}</div>
-                    </div>
-                    <div class="equipment-type">${item.type || 'Equipment'}</div>
-                    <div class="behavior-effect">${item.effect || item.description || 'No description available'}</div>
+            equipmentGroups.forEach(group => {
+                const card = document.createElement('div');
+                card.className = 'unit-card'; // Use same styling as support units
+                card.dataset.faction = group.faction || 'universal';
+                card.dataset.category = group.category;
+
+                // Equipment header
+                const header = document.createElement('div');
+                header.className = 'unit-header';
+                header.innerHTML = `
+                    <div class="unit-name">${group.weaponName}</div>
+                    <div class="unit-faction">${capitalize(group.faction || 'Universal')}</div>
                 `;
+                card.appendChild(header);
+
+                // Equipment stats/info
+                const info = document.createElement('div');
+                info.className = 'unit-theme';
+                info.textContent = `${group.category} • ${group.cards.length} cards total`;
+                card.appendChild(info);
+
+                // Equipment cards deck (similar to behavior deck)
+                const deck = document.createElement('div');
+                deck.className = 'behavior-deck';
+                deck.innerHTML = `<h3>Equipment Cards (${group.cards.length})</h3>`;
+
+                group.cards.forEach(equipCard => {
+                    const behavior = document.createElement('div');
+                    behavior.className = 'behavior-card';
+                    behavior.innerHTML = `
+                        <div class="behavior-name">${equipCard.name} ${equipCard.cardCount > 1 ? `(x${equipCard.cardCount})` : ''}</div>
+                        <div class="behavior-meta">
+                            ${equipCard.cost !== undefined ? `<span><strong>Cost:</strong> ${equipCard.cost} SP</span>` : ''}
+                            ${equipCard.range ? `<span><strong>Range:</strong> ${equipCard.range}</span>` : ''}
+                            ${equipCard.damage ? `<span><strong>Damage:</strong> ${equipCard.damage}</span>` : ''}
+                        </div>
+                        ${equipCard.effect ? `<div class="behavior-effect">${equipCard.effect}</div>` : ''}
+                    `;
+                    deck.appendChild(behavior);
+                });
+
+                card.appendChild(deck);
+
+                // Add click handler for expansion
+                card.addEventListener('click', () => {
+                    card.classList.toggle('expanded');
+                });
 
                 container.appendChild(card);
             });
+        }
+
+        function groupEquipmentByWeapon(equipment) {
+            // For now, show a placeholder message that equipment grouping needs weapon metadata
+            // In the future, this will group cards by their weapon/shield/accessory parent
+            return [{
+                weaponName: 'Equipment Database',
+                faction: 'universal',
+                category: 'All Equipment',
+                cards: equipment.slice(0, 10) // Show first 10 as demo
+            }];
+
+            // TODO: Properly group equipment cards by weapon name
+            // This requires either:
+            // 1. Adding weapon metadata to the extraction script
+            // 2. Parsing weapon groups from equipment-pool-complete.md
         }
 
         function capitalize(str) {
