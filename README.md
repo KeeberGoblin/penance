@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/status-PLAYTEST%20READY-red)
 ![Factions](https://img.shields.io/badge/factions-10%20Complete-green)
 ![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)
-![Version](https://img.shields.io/badge/version-2.1%20Balance%20Update-orange)
+![Version](https://img.shields.io/badge/version-2.2%20Casket%20System-orange)
 
 ---
 
@@ -156,6 +156,23 @@ Each faction has **21 unique cards** and a completely different playstyle:
 ---
 
 ## Recent Updates (October 2025)
+
+### v2.2 Revised Casket System (Oct 18)
+
+**Major Lore Integration:**
+- **Dual Entity System**: Caskets now explicitly contain **two entities**:
+  - **Living Pilot** (conscious human strapped in chamber, views through armored slit)
+  - **Bound Soul** (Soulstone Core power source, separate trapped soul)
+- **Neural Thread Control**: 10 bio-mechanical threads drilled through pilot's fingertips for puppet control
+- **Thread Snap Mechanic**: Combat damage can sever threads, causing function loss and pain
+- **Faction Amputation Rituals**:
+  - Church: "The Shortening" (legs removed)
+  - Dwarves: "Compact Form" (all four limbs removed, runic stumps)
+  - Ossuarium: "Efficient Form" (skull + spine only, brain in nutrient vat)
+  - Elves: "Root-Grafting" (legs replaced with living vine prosthetics)
+- **Updated Documentation**: 7 HTML codex pages revised for consistency
+
+**Why This Matters**: The dual-entity system creates new strategic depth (Soulstone Core can be targeted separately from pilot), adds faction-specific amputation flavor, and integrates Thread Snap as a combat mechanic tied to component damage.
 
 ### v2.1 Balance Update (Oct 17-18)
 
@@ -316,6 +333,14 @@ Licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Intern
 ---
 
 ## Version History
+
+### v2.2 Revised Casket System (October 18, 2025)
+- Dual entity system (Living Pilot + Bound Soul in Soulstone Core)
+- Neural Thread Control system (10 bio-mechanical puppet strings)
+- Thread Snap combat mechanic integration
+- Faction-specific amputation rituals (Church, Dwarves, Ossuarium, Elves)
+- Updated 7 HTML codex pages for lore consistency
+- Terminology standardization (capsule → chamber)
 
 ### v2.1 Balance Update (October 17-18, 2025)
 - Component HP normalization (Head 6→8, Legs 8→10)
