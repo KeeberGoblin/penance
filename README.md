@@ -9,7 +9,7 @@
 
 ---
 
-## 🎲 Quick Start
+## Quick Start
 
 **Ready to play in 3 steps:**
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 🌟 What Is Penance?
+## What Is Penance?
 
 Penance is a **tactical mech combat card game** where:
 
@@ -35,7 +35,7 @@ Penance is a **tactical mech combat card game** where:
 
 ---
 
-## 📖 The 10 Factions
+## The 10 Factions
 
 Each faction has **21 unique cards** and a completely different playstyle:
 
@@ -63,7 +63,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ---
 
-## 🔧 Core Mechanics
+## Core Mechanics
 
 ### Deck-as-HP System
 - **Your 30-card deck IS your HP** - Damage = discard from deck
@@ -95,7 +95,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ---
 
-## ✅ What's Included
+## What's Included
 
 ### Complete Game Systems
 - **10 Playable Factions** - 21 unique cards each
@@ -114,7 +114,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ---
 
-## 🚀 First Game Guide
+## First Game Guide
 
 ### Step-by-Step Setup
 
@@ -146,7 +146,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ---
 
-## 🎯 Recent Updates (October 2025)
+## Recent Updates (October 2025)
 
 ### v2.1 Balance Update (Oct 17-18)
 
@@ -165,7 +165,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ---
 
-## 📚 Full Documentation
+## Full Documentation
 
 ### Core Rules
 - **[Interactive Codex](https://keebergoblin.github.io/penance/codex/)** - All rules in one place
@@ -198,7 +198,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ---
 
-## 🎮 Interactive Tools
+## Interactive Tools
 
 ### Web-Based Tools
 - **[Interactive Codex](https://keebergoblin.github.io/penance/codex/)** - Complete game rules and lore
@@ -213,7 +213,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ---
 
-## 🎯 Design Philosophy
+## Design Philosophy
 
 ### Core Pillars
 - **Brutal Progression** - Permanent consequences (component destruction, pilot death, scars)
@@ -233,7 +233,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```
 penance/
@@ -265,7 +265,7 @@ penance/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 ### Playtesting Feedback
 After playing, open a GitHub issue:
@@ -281,7 +281,7 @@ After playing, open a GitHub issue:
 
 ---
 
-## 📜 License
+## License
 
 Licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](LICENSE.md).
 
@@ -297,7 +297,7 @@ Licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Intern
 
 ---
 
-## 📞 Contact
+## Contact
 
 - **GitHub**: [@KeeberGoblin](https://github.com/KeeberGoblin)
 - **Repository**: https://github.com/KeeberGoblin/penance
@@ -306,7 +306,7 @@ Licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Intern
 
 ---
 
-## 📝 Version History
+## Version History
 
 ### v2.1 Balance Update (October 17-18, 2025)
 - Component HP normalization (Head 6→8, Legs 8→10)
