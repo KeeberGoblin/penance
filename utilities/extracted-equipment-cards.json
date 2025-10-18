@@ -1,0 +1,1068 @@
+{
+  "church": {
+    "faction": "church",
+    "faction_name": "Church of Absolution",
+    "primary_cards": [],
+    "secondary_cards": [],
+    "total_equipment": 0,
+    "expected_total": 21
+  },
+  "dwarves": {
+    "faction": "dwarves",
+    "faction_name": "Dwarven Forge-Guilds",
+    "primary_cards": [],
+    "secondary_cards": [],
+    "total_equipment": 0,
+    "expected_total": 21
+  },
+  "elves": {
+    "faction": "elves",
+    "faction_name": "Elven Verdant Covenant",
+    "primary_cards": [],
+    "secondary_cards": [],
+    "total_equipment": 0,
+    "expected_total": 21
+  },
+  "ossuarium": {
+    "faction": "ossuarium",
+    "faction_name": "The Ossuarium",
+    "primary_cards": [],
+    "secondary_cards": [],
+    "total_equipment": 0,
+    "expected_total": 21
+  },
+  "emergent": {
+    "faction": "emergent",
+    "faction_name": "Emergent Syndicate",
+    "primary_cards": [
+      {
+        "id": "mantis-strikes",
+        "name": "Mantis Strikes",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 3 damage with blade-like mantis limbs. Basic melee attack.",
+        "keywords": [
+          "attack",
+          "melee",
+          "emergent",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "3"
+      },
+      {
+        "id": "chitin-claws",
+        "name": "Chitin Claws",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 4 damage. If you have Assault Form active (from Metamorphic Adaptation), deal 5 damage instead.",
+        "keywords": [
+          "attack",
+          "melee",
+          "transformation-synergy",
+          "emergent",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "4"
+      },
+      {
+        "id": "segmented-lash",
+        "name": "Segmented Lash",
+        "type": "attack",
+        "cost": 3,
+        "range": "2 hexes",
+        "effect": "Deal 3 damage at extended range (segmented limb extends). Can hit targets 2 hexes away.",
+        "keywords": [
+          "attack",
+          "melee-extended",
+          "reach",
+          "emergent",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "3"
+      },
+      {
+        "id": "multi-limb-barrage",
+        "name": "Multi-Limb Barrage",
+        "type": "attack",
+        "cost": 4,
+        "range": "Melee (1 hex)",
+        "effect": "Attack three times with different limbs for 2 damage each (total 6). Can split damage among up to 3 adjacent targets. Arthropod advantage.",
+        "keywords": [
+          "attack",
+          "melee",
+          "multi-target",
+          "split-damage",
+          "emergent",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "6"
+      },
+      {
+        "id": "arthropod-fury",
+        "name": "Arthropod Fury",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 6 damage. Spend 1 Metamorph token to deal 8 damage instead. Evolutionary power.",
+        "keywords": [
+          "attack",
+          "melee",
+          "metamorph-synergy",
+          "high-damage",
+          "emergent",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "6"
+      },
+      {
+        "id": "precision-strikes",
+        "name": "Precision Strikes",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 5 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). Compound eyes guide surgical strikes.",
+        "keywords": [
+          "attack",
+          "melee",
+          "component-targeting",
+          "surgical",
+          "emergent",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "5"
+      }
+    ],
+    "secondary_cards": [
+      {
+        "id": "pheromone-glands",
+        "name": "Pheromone Glands",
+        "type": "utility",
+        "cost": 1,
+        "range": "3 hexes (cone)",
+        "effect": "Release confusion pheromones. All enemies in cone have -1 to their next attack roll. Chemical warfare.",
+        "keywords": [
+          "utility",
+          "debuff",
+          "area-effect",
+          "pheromone",
+          "emergent",
+          "secondary"
+        ],
+        "cardCount": 2,
+        "cardType": "secondary"
+      },
+      {
+        "id": "reactive-carapace",
+        "name": "Reactive Carapace",
+        "type": "reactive",
+        "cost": "0 SP (Reactive)",
+        "range": "Self",
+        "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Metamorph token to reduce by 4 instead. Hardened exoskeleton.",
+        "keywords": [
+          "reactive",
+          "defense",
+          "metamorph-synergy",
+          "emergent",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "antenna-sense",
+        "name": "Antenna Sense",
+        "type": "utility",
+        "cost": 0,
+        "range": "Self",
+        "effect": "Draw 2 cards. If you have 3+ Metamorph tokens, draw 3 cards instead. Enhanced sensory input.",
+        "keywords": [
+          "utility",
+          "card-draw",
+          "metamorph-synergy",
+          "emergent",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "metamorph-serum",
+        "name": "Metamorph Serum",
+        "type": "utility",
+        "cost": 2,
+        "range": "Self or Adjacent",
+        "effect": "Target gains 2 Metamorph tokens immediately. Can target self or adjacent Emergent Syndicate ally. Accelerate transformation.",
+        "keywords": [
+          "utility",
+          "resource-generation",
+          "metamorph",
+          "ally",
+          "emergent",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "hivemind-beacon",
+        "name": "Hivemind Beacon",
+        "type": "utility",
+        "cost": 1,
+        "range": "6 hexes",
+        "effect": "Choose 1 allied Emergent Syndicate Casket within range. They immediately move up to 2 hexes toward you. Rally the collective.",
+        "keywords": [
+          "utility",
+          "ally",
+          "movement",
+          "positioning",
+          "emergent",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      }
+    ],
+    "total_equipment": 11,
+    "expected_total": 21
+  },
+  "nomads": {
+    "faction": "nomads",
+    "faction_name": "Nomad Collective",
+    "primary_cards": [
+      {
+        "id": "quick-slash",
+        "name": "Quick Slash",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 3 damage. Fast, efficient, reliable.",
+        "keywords": [
+          "attack",
+          "melee",
+          "nomads",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "3"
+      },
+      {
+        "id": "pistol-shot",
+        "name": "Pistol Shot",
+        "type": "attack",
+        "cost": 2,
+        "range": "4 hexes",
+        "effect": "Deal 3 damage at range. Keep your distance.",
+        "keywords": [
+          "attack",
+          "ranged",
+          "nomads",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "3"
+      },
+      {
+        "id": "hit-and-run",
+        "name": "Hit and Run",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 4 damage. After attack resolves, move up to 2 hexes.",
+        "keywords": [
+          "attack",
+          "melee",
+          "movement",
+          "nomads",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "4"
+      },
+      {
+        "id": "opportunist-strike",
+        "name": "Opportunist Strike",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 5 damage if target moved during their last turn. Otherwise deals 3 damage.",
+        "keywords": [
+          "attack",
+          "melee",
+          "conditional",
+          "nomads",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "5 (or 3)"
+      },
+      {
+        "id": "dual-wield",
+        "name": "Dual Wield",
+        "type": "attack",
+        "cost": 4,
+        "range": "Melee + 4 hexes",
+        "effect": "Make two attacks: 3 damage melee to adjacent target, then 3 damage ranged to target within 4 hexes. Can target same enemy twice.",
+        "keywords": [
+          "attack",
+          "melee",
+          "ranged",
+          "multi-attack",
+          "nomads",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "6 total (3+3)"
+      },
+      {
+        "id": "reckless-slash",
+        "name": "Reckless Slash",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 6 damage. Discard 1 card. Move up to 1 hex after attack.",
+        "keywords": [
+          "attack",
+          "melee",
+          "self-harm",
+          "movement",
+          "nomads",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "6"
+      }
+    ],
+    "secondary_cards": [
+      {
+        "id": "smoke-bomb",
+        "name": "Smoke Bomb",
+        "type": "utility",
+        "cost": 1,
+        "range": "3 hexes",
+        "effect": "Target hex becomes smoke terrain (blocks line of sight). Lasts until end of round.",
+        "keywords": [
+          "utility",
+          "terrain",
+          "concealment",
+          "nomads",
+          "secondary"
+        ],
+        "cardCount": 2,
+        "cardType": "secondary"
+      },
+      {
+        "id": "grappling-hook",
+        "name": "Grappling Hook",
+        "type": "utility",
+        "cost": 1,
+        "range": "Self",
+        "effect": "Move up to 3 hexes in straight line, ignoring all terrain and obstacles. Cannot move through enemies.",
+        "keywords": [
+          "movement",
+          "terrain-ignore",
+          "nomads",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "flash-grenade",
+        "name": "Flash Grenade",
+        "type": "attack",
+        "cost": 2,
+        "range": "4 hexes",
+        "effect": "Deal 2 damage. Target has -1 to their next attack roll.",
+        "keywords": [
+          "attack",
+          "ranged",
+          "debuff",
+          "nomads",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary",
+        "damage": "2"
+      },
+      {
+        "id": "adaptive-armor",
+        "name": "Adaptive Armor",
+        "type": "reactive",
+        "cost": "0 SP (Reactive)",
+        "range": "Self",
+        "effect": "Play when targeted by attack. Reduce damage by 1 (minimum 1). After damage resolves, move 1 hex in any direction.",
+        "keywords": [
+          "reactive",
+          "defense",
+          "movement",
+          "nomads",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "scavenge",
+        "name": "Scavenge",
+        "type": "utility",
+        "cost": 1,
+        "range": "Self",
+        "effect": "Draw 2 cards, then discard 1 card. Sort through the wreckage.",
+        "keywords": [
+          "utility",
+          "card-draw",
+          "hand-manipulation",
+          "nomads",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      }
+    ],
+    "total_equipment": 11,
+    "expected_total": 21
+  },
+  "exchange": {
+    "faction": "exchange",
+    "faction_name": "The Exchange",
+    "primary_cards": [
+      {
+        "id": "ledger-strike",
+        "name": "Ledger Strike",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 3 damage. If you have 3+ Credit tokens, deal 4 damage instead (wealth empowers).",
+        "keywords": [
+          "attack",
+          "melee",
+          "credit-synergy",
+          "exchange",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "3"
+      },
+      {
+        "id": "coin-throw",
+        "name": "Coin Throw",
+        "type": "attack",
+        "cost": 2,
+        "range": "4 hexes",
+        "effect": "Deal 2 damage at range. Spend 1 Credit token to deal 4 damage instead (premium ammunition).",
+        "keywords": [
+          "attack",
+          "ranged",
+          "credit-synergy",
+          "exchange",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "2"
+      },
+      {
+        "id": "hostile-acquisition",
+        "name": "Hostile Acquisition",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 5 damage. If target is adjacent to your Mercenary, deal 7 damage instead (coordinated assault).",
+        "keywords": [
+          "attack",
+          "melee",
+          "mercenary-synergy",
+          "exchange",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "5"
+      },
+      {
+        "id": "buyout-strike",
+        "name": "Buyout Strike",
+        "type": "attack",
+        "cost": 4,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 6 damage. If this kills the target, immediately summon 1 Mercenary (no Credit cost). Acquire their contracts.",
+        "keywords": [
+          "attack",
+          "melee",
+          "kill-trigger",
+          "summon",
+          "exchange",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "6"
+      },
+      {
+        "id": "executive-order",
+        "name": "Executive Order",
+        "type": "attack",
+        "cost": 3,
+        "range": "6 hexes",
+        "effect": "Deal 4 damage. Target has -2 SP next turn (economic pressure). Authority in action.",
+        "keywords": [
+          "attack",
+          "ranged",
+          "debuff",
+          "sp-reduction",
+          "exchange",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "4"
+      },
+      {
+        "id": "liquidation",
+        "name": "Liquidation",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 5 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). Spend 2 Credit tokens to deal 7 damage instead. Precision destruction.",
+        "keywords": [
+          "attack",
+          "melee",
+          "component-targeting",
+          "credit-synergy",
+          "exchange",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "5"
+      }
+    ],
+    "secondary_cards": [
+      {
+        "id": "market-forecast",
+        "name": "Market Forecast",
+        "type": "utility",
+        "cost": 1,
+        "range": "Self",
+        "effect": "Look at top 3 cards of your deck. Rearrange them in any order. Spend 1 Credit token to draw 1 additional card. Insider trading.",
+        "keywords": [
+          "utility",
+          "deck-manipulation",
+          "card-draw",
+          "credit-synergy",
+          "exchange",
+          "secondary"
+        ],
+        "cardCount": 2,
+        "cardType": "secondary"
+      },
+      {
+        "id": "defense-contract",
+        "name": "Defense Contract",
+        "type": "reactive",
+        "cost": "0 SP (Reactive)",
+        "range": "Self",
+        "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Credit token to reduce by 4 instead. Paid protection.",
+        "keywords": [
+          "reactive",
+          "defense",
+          "credit-synergy",
+          "exchange",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "corporate-espionage",
+        "name": "Corporate Espionage",
+        "type": "utility",
+        "cost": 2,
+        "range": "6 hexes",
+        "effect": "Look at target enemy's hand (see all their cards). Spend 2 Credit tokens to steal 1 card from their hand and add it to yours. Information warfare.",
+        "keywords": [
+          "utility",
+          "hand-reveal",
+          "card-theft",
+          "credit-synergy",
+          "exchange",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "war-bonds",
+        "name": "War Bonds",
+        "type": "utility",
+        "cost": 1,
+        "range": "Self",
+        "effect": "Gain 3 Credit tokens immediately. Generate 1 Heat. Investment with interest.",
+        "keywords": [
+          "utility",
+          "credit-generation",
+          "heat",
+          "exchange",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "mercenary-contract",
+        "name": "Mercenary Contract",
+        "type": "utility",
+        "cost": 2,
+        "range": "4 hexes",
+        "effect": "Target friendly Mercenary immediately moves up to 3 hexes and makes a 3-damage attack. Control your assets.",
+        "keywords": [
+          "utility",
+          "mercenary-synergy",
+          "movement",
+          "attack-trigger",
+          "exchange",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      }
+    ],
+    "total_equipment": 11,
+    "expected_total": 21
+  },
+  "crucible": {
+    "faction": "crucible",
+    "faction_name": "Crucible Packs",
+    "primary_cards": [
+      {
+        "id": "hammer-strike",
+        "name": "Hammer Strike",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 3 damage. If standing in lava, deal 4 damage instead.",
+        "keywords": [
+          "attack",
+          "melee",
+          "lava-synergy",
+          "crucible",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "3"
+      },
+      {
+        "id": "volcanic-slash",
+        "name": "Volcanic Slash",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 4 damage. If you have 3+ Forge tokens, deal 5 damage instead.",
+        "keywords": [
+          "attack",
+          "melee",
+          "forge-synergy",
+          "crucible",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "4"
+      },
+      {
+        "id": "lava-leap",
+        "name": "Lava Leap",
+        "type": "attack",
+        "cost": 3,
+        "range": "3 hexes",
+        "effect": "Move up to 3 hexes toward target (must end adjacent), then deal 4 damage. If you move through lava, deal 5 damage instead.",
+        "keywords": [
+          "attack",
+          "melee",
+          "movement",
+          "lava-synergy",
+          "crucible",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "4"
+      },
+      {
+        "id": "forge-fury",
+        "name": "Forge-Fury",
+        "type": "attack",
+        "cost": 4,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 6 damage. Gain 1 Heat. Spend 2 Forge tokens to deal 8 damage instead. Uncontrolled power.",
+        "keywords": [
+          "attack",
+          "melee",
+          "high-damage",
+          "forge-synergy",
+          "crucible",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "6"
+      },
+      {
+        "id": "ashen-kings-wrath",
+        "name": "Ashen King's Wrath",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 6 damage. If outnumbered (2+ enemies within 6 hexes), deal 8 damage instead. Desperate strength.",
+        "keywords": [
+          "attack",
+          "melee",
+          "outnumbered-bonus",
+          "conditional",
+          "crucible",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "6"
+      },
+      {
+        "id": "component-sunder",
+        "name": "Component Sunder",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 5 damage to specific component (choose: Right Arm, Left Arm, Legs, Head, Chassis). Spend 2 Forge tokens to deal 7 damage instead. Precision destruction.",
+        "keywords": [
+          "attack",
+          "melee",
+          "component-targeting",
+          "forge-synergy",
+          "crucible",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "5"
+      }
+    ],
+    "secondary_cards": [
+      {
+        "id": "lava-flask",
+        "name": "Lava Flask",
+        "type": "attack",
+        "cost": 1,
+        "range": "4 hexes",
+        "effect": "Throw flask of lava. Deal 2 damage and create 1 Lava Terrain hex at target location (lasts 2 turns). Portable volcano.",
+        "keywords": [
+          "attack",
+          "ranged",
+          "terrain-creation",
+          "crucible",
+          "secondary"
+        ],
+        "cardCount": 2,
+        "cardType": "secondary",
+        "damage": "2"
+      },
+      {
+        "id": "ember-shield",
+        "name": "Ember Shield",
+        "type": "reactive",
+        "cost": "0 SP (Reactive)",
+        "range": "Self",
+        "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Forge token to reduce by 4 instead. Molten defense.",
+        "keywords": [
+          "reactive",
+          "defense",
+          "forge-synergy",
+          "crucible",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "ash-cloak",
+        "name": "Ash Cloak",
+        "type": "utility",
+        "cost": 1,
+        "range": "Self",
+        "effect": "Draw 2 cards. If standing in lava, draw 3 cards instead. Ash obscures, fire reveals.",
+        "keywords": [
+          "utility",
+          "card-draw",
+          "lava-synergy",
+          "crucible",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "forge-call",
+        "name": "Forge Call",
+        "type": "utility",
+        "cost": 2,
+        "range": "Self",
+        "effect": "Gain 2 Forge tokens immediately. Generate 1 Heat. Summon the forge's blessing.",
+        "keywords": [
+          "utility",
+          "forge-generation",
+          "heat",
+          "crucible",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "duelists-stance",
+        "name": "Duelist's Stance",
+        "type": "attack",
+        "cost": 1,
+        "range": "Self",
+        "effect": "Until end of turn, your melee attacks deal +2 damage but you take +1 damage from all sources. High-risk aggression.",
+        "keywords": [
+          "utility",
+          "damage-buff",
+          "damage-taken-increase",
+          "risky",
+          "crucible",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary",
+        "damage": "2"
+      }
+    ],
+    "total_equipment": 11,
+    "expected_total": 21
+  },
+  "vestige-bloodlines": {
+    "faction": "vestige-bloodlines",
+    "faction_name": "Vestige Bloodlines",
+    "primary_cards": [
+      {
+        "id": "savage-strike",
+        "name": "Savage Strike",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 3 damage. Basic melee attack with mutated limbs.",
+        "keywords": [
+          "attack",
+          "melee",
+          "vestige",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "3"
+      },
+      {
+        "id": "rending-claws",
+        "name": "Rending Claws",
+        "type": "attack",
+        "cost": 2,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 4 damage. If you have Pack Instinct active, deal 5 damage instead.",
+        "keywords": [
+          "attack",
+          "melee",
+          "pack-synergy",
+          "vestige",
+          "primary"
+        ],
+        "cardCount": 3,
+        "cardType": "primary",
+        "damage": "4"
+      },
+      {
+        "id": "leaping-pounce",
+        "name": "Leaping Pounce",
+        "type": "attack",
+        "cost": 3,
+        "range": "3 hexes",
+        "effect": "Move up to 3 hexes in straight line toward target, then deal 4 damage. Predatory lunge.",
+        "keywords": [
+          "attack",
+          "melee",
+          "movement",
+          "vestige",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "4"
+      },
+      {
+        "id": "frenzy",
+        "name": "Frenzy",
+        "type": "attack",
+        "cost": 4,
+        "range": "Melee (1 hex)",
+        "effect": "Attack twice for 3 damage each against same target. Gain 1 Heat. Uncontrolled aggression.",
+        "keywords": [
+          "attack",
+          "melee",
+          "multi-hit",
+          "vestige",
+          "primary"
+        ],
+        "cardCount": 2,
+        "cardType": "primary",
+        "damage": "6"
+      },
+      {
+        "id": "alphas-bite",
+        "name": "Alpha's Bite",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 6 damage. If you have 2+ allied Vestige Caskets adjacent, deal 8 damage instead. Pack leader's fury.",
+        "keywords": [
+          "attack",
+          "melee",
+          "conditional",
+          "vestige",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "6"
+      },
+      {
+        "id": "bloodthirsty-rend",
+        "name": "Bloodthirsty Rend",
+        "type": "attack",
+        "cost": 3,
+        "range": "Melee (1 hex)",
+        "effect": "Deal 5 damage. If this kills the target, immediately make another attack against adjacent enemy for 3 damage. Chain kills.",
+        "keywords": [
+          "attack",
+          "melee",
+          "chain-attack",
+          "vestige",
+          "primary"
+        ],
+        "cardCount": 1,
+        "cardType": "primary",
+        "damage": "5"
+      }
+    ],
+    "secondary_cards": [
+      {
+        "id": "regenerative-flesh",
+        "name": "Regenerative Flesh",
+        "type": "utility",
+        "cost": 0,
+        "range": "Self",
+        "effect": "Recover 2 cards from your discard pile. Spend Biomass to heal wounds.",
+        "keywords": [
+          "utility",
+          "healing",
+          "biomass",
+          "vestige",
+          "secondary"
+        ],
+        "cardCount": 2,
+        "cardType": "secondary"
+      },
+      {
+        "id": "venomous-spit",
+        "name": "Venomous Spit",
+        "type": "attack",
+        "cost": 2,
+        "range": "4 hexes",
+        "effect": "Deal 2 damage. Target takes 2 additional damage at start of their next turn (poison). Toxic adaptation.",
+        "keywords": [
+          "attack",
+          "ranged",
+          "poison",
+          "vestige",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary",
+        "damage": "2"
+      },
+      {
+        "id": "reactive-scales",
+        "name": "Reactive Scales",
+        "type": "reactive",
+        "cost": "0 SP (Reactive)",
+        "range": "Self",
+        "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Biomass token to reduce by 3 instead. Hardened hide.",
+        "keywords": [
+          "reactive",
+          "defense",
+          "biomass",
+          "vestige",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      },
+      {
+        "id": "primal-roar",
+        "name": "Primal Roar",
+        "type": "attack",
+        "cost": 1,
+        "range": "4 hexes",
+        "effect": "Target enemy has -1 to their next attack roll. All Vestige allies within 4 hexes gain +1 damage on their next attack. Intimidation and inspiration.",
+        "keywords": [
+          "utility",
+          "debuff",
+          "ally-buff",
+          "vestige",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary",
+        "damage": "1"
+      },
+      {
+        "id": "tracking-scent",
+        "name": "Tracking Scent",
+        "type": "utility",
+        "cost": 0,
+        "range": "Self",
+        "effect": "Draw 2 cards. If you have a Prey marked, draw 3 cards instead. Enhanced senses guide the hunt.",
+        "keywords": [
+          "utility",
+          "card-draw",
+          "conditional",
+          "vestige",
+          "secondary"
+        ],
+        "cardCount": 1,
+        "cardType": "secondary"
+      }
+    ],
+    "total_equipment": 11,
+    "expected_total": 21
+  }
+}

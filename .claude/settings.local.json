@@ -14,7 +14,8 @@
       "Bash(do if [ -f \"$dir/deck-equipment-system.md\" ])",
       "Bash(then basename \"$dir\")",
       "Bash(gh pr close:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
