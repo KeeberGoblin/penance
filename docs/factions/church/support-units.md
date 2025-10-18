@@ -210,6 +210,20 @@ Former criminals and sinners clad in gray penitent robes with heavy armor plates
 
 ---
 
+#### MARCH IN FORMATION (Default)
+**Type**: Movement / Positioning
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Move 3 hexes toward nearest objective or friendly Casket
+- Maintain formation with other Church units
+- Ready Shield Wall if enemies approach within 4 hexes
+- Gain +1 Defense while moving in formation
+
+**Flavor**: "Disciplined. Orderly. Unbreakable."
+
+---
+
 ### Command Response
 - **RALLY**: Move up to 3 hexes. Next attack deals +1 damage.
 - **ATTACK**: Attack target for 5 damage. If from rear arc, 7 damage.
@@ -302,6 +316,35 @@ Six robed pilgrims carrying a massive ornate cross on their shoulders - an iron 
 - Relic Bearers take 2 damage (strain from power surge)
 
 **Flavor**: "Let the divine wrath be known!"
+
+---
+
+#### BLESSING OF THE FAITHFUL
+**Type**: Support / Healing
+**Priority**: Medium (when friendly Casket has taken 15+ damage)
+
+**Effect**:
+- Move toward friendly Casket (2 hexes)
+- Tesla Cross channels restorative energy
+- Heal friendly Casket for 5 HP
+- All friendly units within 3 hexes gain +1 Defense for 1 round
+- Relic Bearers take 1 damage (channeling strain)
+
+**Flavor**: "The relic gives as much as it takes."
+
+---
+
+#### STEADFAST MARCH (Default)
+**Type**: Movement / Passive
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Move 2 hexes toward nearest objective or center of battlefield
+- Maintain Tesla Cross aura (1 damage to adjacent enemies per turn)
+- Chant continuously, maintaining morale
+- Ready to activate Consecrated Ground if allies approach
+
+**Flavor**: "One step at a time. The divine is patient."
 
 ---
 
