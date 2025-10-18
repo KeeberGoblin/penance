@@ -15,7 +15,13 @@
       "Bash(then basename \"$dir\")",
       "Bash(gh pr close:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(python3:*)",
+      "Bash(for faction in elves undead fae nomads exchange crucible bloodlines emergent)",
+      "Bash(do)",
+      "Bash(echo \"=== faction-$faction.html ===\")",
+      "Bash(done)",
+      "Bash(git fetch)"
     ],
     "deny": [],
     "ask": []
