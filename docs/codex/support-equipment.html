@@ -640,16 +640,16 @@
                 const data = await response.json();
 
                 const supportUnits = data.support_units || [];
-                const equipmentCards = data.equipment || [];
+                const equipmentItems = data.equipment_items || [];
 
                 console.log(`Loaded ${supportUnits.length} support units`);
-                console.log(`Loaded ${equipmentCards.length} equipment cards`);
+                console.log(`Loaded ${equipmentItems.length} equipment items`);
 
                 // Render support units
                 renderSupportUnits(supportUnits);
 
-                // Render equipment cards
-                renderEquipment(equipmentCards);
+                // Render equipment items
+                renderEquipment(equipmentItems);
 
                 // Initialize filters after loading
                 applyFilters();
@@ -747,56 +747,72 @@
             });
         }
 
-        function renderEquipment(equipment) {
+        function renderEquipment(equipmentItems) {
             const container = document.getElementById('equipment-content');
             container.innerHTML = ''; // Clear demo content
 
-            // Group equipment cards by their parent weapon/item
-            // We'll use a heuristic: cards from the same faction with similar keywords likely belong together
-            const equipmentGroups = groupEquipmentByWeapon(equipment);
-
-            equipmentGroups.forEach(group => {
+            equipmentItems.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'unit-card'; // Use same styling as support units
-                card.dataset.faction = group.faction || 'universal';
-                card.dataset.category = group.category;
+                card.dataset.faction = item.faction || 'universal';
+                card.dataset.category = item.category || 'Equipment';
 
                 // Equipment header
                 const header = document.createElement('div');
                 header.className = 'unit-header';
                 header.innerHTML = `
-                    <div class="unit-name">${group.weaponName}</div>
-                    <div class="unit-faction">${capitalize(group.faction || 'Universal')}</div>
+                    <div class="unit-name">${item.name}</div>
+                    <div class="unit-faction">${capitalize(item.faction || 'Universal')}</div>
                 `;
                 card.appendChild(header);
 
-                // Equipment stats/info
-                const info = document.createElement('div');
-                info.className = 'unit-theme';
-                info.textContent = `${group.category} • ${group.cards.length} cards total`;
-                card.appendChild(info);
+                // Equipment info (weight, crafting cost, etc.)
+                const stats = document.createElement('div');
+                stats.className = 'unit-stats';
+                stats.innerHTML = `
+                    ${item.weight ? `<div class="stat">
+                        <div class="stat-label">Weight</div>
+                        <div class="stat-value">${item.weight}</div>
+                    </div>` : ''}
+                    ${item.totalCards ? `<div class="stat">
+                        <div class="stat-label">Cards</div>
+                        <div class="stat-value">${item.totalCards}</div>
+                    </div>` : ''}
+                    ${item.craftingCost ? `<div class="stat">
+                        <div class="stat-label">Crafting</div>
+                        <div class="stat-value">${item.craftingCost}</div>
+                    </div>` : ''}
+                    <div class="stat">
+                        <div class="stat-label">Type</div>
+                        <div class="stat-value">${item.category}</div>
+                    </div>
+                `;
+                card.appendChild(stats);
 
                 // Equipment cards deck (similar to behavior deck)
-                const deck = document.createElement('div');
-                deck.className = 'behavior-deck';
-                deck.innerHTML = `<h3>Equipment Cards (${group.cards.length})</h3>`;
+                if (item.cards && item.cards.length > 0) {
+                    const deck = document.createElement('div');
+                    deck.className = 'behavior-deck';
+                    deck.innerHTML = `<h3>Equipment Cards (${item.cards.length})</h3>`;
 
-                group.cards.forEach(equipCard => {
-                    const behavior = document.createElement('div');
-                    behavior.className = 'behavior-card';
-                    behavior.innerHTML = `
-                        <div class="behavior-name">${equipCard.name} ${equipCard.cardCount > 1 ? `(x${equipCard.cardCount})` : ''}</div>
-                        <div class="behavior-meta">
-                            ${equipCard.cost !== undefined ? `<span><strong>Cost:</strong> ${equipCard.cost} SP</span>` : ''}
-                            ${equipCard.range ? `<span><strong>Range:</strong> ${equipCard.range}</span>` : ''}
-                            ${equipCard.damage ? `<span><strong>Damage:</strong> ${equipCard.damage}</span>` : ''}
-                        </div>
-                        ${equipCard.effect ? `<div class="behavior-effect">${equipCard.effect}</div>` : ''}
-                    `;
-                    deck.appendChild(behavior);
-                });
+                    item.cards.forEach(equipCard => {
+                        const behavior = document.createElement('div');
+                        behavior.className = 'behavior-card';
+                        behavior.innerHTML = `
+                            <div class="behavior-name">${equipCard.name}</div>
+                            <div class="behavior-meta">
+                                ${equipCard.cost !== undefined ? `<span><strong>Cost:</strong> ${equipCard.cost} SP</span>` : ''}
+                                ${equipCard.range ? `<span><strong>Range:</strong> ${equipCard.range}</span>` : ''}
+                                ${equipCard.damage !== undefined ? `<span><strong>Damage:</strong> ${equipCard.damage}</span>` : ''}
+                                ${equipCard.type ? `<span><strong>Type:</strong> ${equipCard.type}</span>` : ''}
+                            </div>
+                            ${equipCard.effect ? `<div class="behavior-effect">${equipCard.effect}</div>` : ''}
+                        `;
+                        deck.appendChild(behavior);
+                    });
 
-                card.appendChild(deck);
+                    card.appendChild(deck);
+                }
 
                 // Add click handler for expansion
                 card.addEventListener('click', () => {
@@ -805,22 +821,6 @@
 
                 container.appendChild(card);
             });
-        }
-
-        function groupEquipmentByWeapon(equipment) {
-            // For now, show a placeholder message that equipment grouping needs weapon metadata
-            // In the future, this will group cards by their weapon/shield/accessory parent
-            return [{
-                weaponName: 'Equipment Database',
-                faction: 'universal',
-                category: 'All Equipment',
-                cards: equipment.slice(0, 10) // Show first 10 as demo
-            }];
-
-            // TODO: Properly group equipment cards by weapon name
-            // This requires either:
-            // 1. Adding weapon metadata to the extraction script
-            // 2. Parsing weapon groups from equipment-pool-complete.md
         }
 
         function capitalize(str) {
