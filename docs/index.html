@@ -1308,72 +1308,6 @@
 
     </script>
 
-    <!-- Progressive Glitch Effect -->
-    <script>
-        (function() {
-            const title = document.getElementById('glitch-title');
-            if (!title) return;
-
-            let startTime = Date.now();
-            let glitchActive = false;
-            let glitchInterval = null;
-
-            function updateGlitchIntensity() {
-                const elapsed = (Date.now() - startTime) / 1000; // seconds
-
-                // Progressive intensity over 60 seconds
-                if (elapsed < 10) {
-                    // 0-10s: No glitch
-                    return;
-                } else if (elapsed < 20) {
-                    // 10-20s: Very subtle glitch (5% chance per second)
-                    if (Math.random() < 0.05 && !glitchActive) {
-                        triggerGlitch(0.2, 1, 1);
-                    }
-                } else if (elapsed < 35) {
-                    // 20-35s: Subtle glitch (15% chance)
-                    if (Math.random() < 0.15 && !glitchActive) {
-                        triggerGlitch(0.4, 3, 3);
-                    }
-                } else if (elapsed < 50) {
-                    // 35-50s: Moderate glitch (25% chance)
-                    if (Math.random() < 0.25 && !glitchActive) {
-                        triggerGlitch(0.6, 5, 5);
-                    }
-                } else {
-                    // 50s+: Intense glitch (40% chance)
-                    if (Math.random() < 0.4 && !glitchActive) {
-                        triggerGlitch(0.9, 8, 8);
-                    }
-                }
-            }
-
-            function triggerGlitch(opacity, maxX, maxY) {
-                glitchActive = true;
-                title.classList.add('glitch');
-
-                // Set CSS custom properties for glitch intensity
-                title.style.setProperty('--glitch-opacity', opacity);
-                title.style.setProperty('--glitch-x', `${Math.random() * maxX - maxX/2}px`);
-                title.style.setProperty('--glitch-y', `${Math.random() * maxY - maxY/2}px`);
-                title.style.setProperty('--glitch-x2', `${Math.random() * maxX - maxX/2}px`);
-                title.style.setProperty('--glitch-y2', `${Math.random() * maxY - maxY/2}px`);
-
-                // Random glitch duration (100-500ms)
-                const duration = 100 + Math.random() * 400;
-
-                setTimeout(() => {
-                    title.classList.remove('glitch');
-                    glitchActive = false;
-                }, duration);
-            }
-
-            // Check for glitch every 100ms
-            setInterval(updateGlitchIntensity, 100);
-
-            console.log('[Glitch] Progressive glitch effect initialized. Watch the title...');
-        })();
-    </script>
 
     <!-- Particles.js Library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -1420,7 +1354,7 @@
                     }
                 },
                 "line_linked": {
-                    "enable": true,
+                    "enable": false,
                     "distance": 150,
                     "color": "#b8956a",
                     "opacity": 0.3,
@@ -1442,7 +1376,7 @@
                 }
             },
             "interactivity": {
-                "detect_on": "canvas",
+                "detect_on": "window",
                 "events": {
                     "onhover": {
                         "enable": true,
@@ -1471,3 +1405,4 @@
     </script>
 </body>
 </html>
+
