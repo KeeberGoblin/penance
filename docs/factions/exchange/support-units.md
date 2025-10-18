@@ -1,9 +1,9 @@
 # Soulstone Exchange - Support Units
 ## Penance: Absolution Through Steel
 
-**Version**: 2.0 Equipment System
-**Status**: 🚧 **DESIGN IN PROGRESS** - Framework Complete
-**Date**: October 17, 2025
+**Version**: 2.2 Casket System
+**Status**: ✅ **COMPLETE** - All 6 units with full behavior decks
+**Date**: October 18, 2025
 
 The Soulstone Exchange fields hired mercenaries, security contractors, and corporate enforcers. Unlike other factions' support units, Exchange units must be **purchased with Credits**.
 
@@ -66,6 +66,44 @@ The Soulstone Exchange fields hired mercenaries, security contractors, and corpo
 - Protect your Casket while you generate Credits
 - Area denial (Overwatch punishes aggression)
 
+### Behavior Deck (6 Cards)
+
+**Priority 1: DEFENSIVE POSITION**
+- **Trigger**: If Security Contractor is within 2 hexes of an objective OR friendly Casket
+- **Action**: Enter Defensive Stance (cannot move, gain +2 Defense to 4 total)
+- **Effect**: Activate Overwatch (reaction attacks on adjacent enemy movement)
+- **Flavor**: "Securing the perimeter."
+
+**Priority 2: OVERWATCH ZONE**
+- **Trigger**: If 2+ enemies are within 3 hexes
+- **Action**: Move to position covering most enemy approaches (maximize Overwatch triggers)
+- **Effect**: Asset Protection aura active (+1 Defense to friendlies within 2 hexes)
+- **Flavor**: "All access points monitored."
+
+**Priority 3: PROTECT ASSET**
+- **Trigger**: If friendly unit is under attack within 5 hexes
+- **Action**: Move adjacent to threatened ally
+- **Effect**: Enter Defensive Stance, grant +1 Defense to protected unit
+- **Flavor**: "Reinforcing position."
+
+**Priority 4: HOLD THE LINE**
+- **Trigger**: If Security Contractor has taken damage
+- **Action**: Remain stationary, activate Defensive Stance
+- **Effect**: Overwatch attacks deal +1 damage (total 4)
+- **Flavor**: "Not one step back."
+
+**Priority 5: SUPPRESSING FIRE**
+- **Trigger**: If no enemies within 3 hexes
+- **Action**: Move toward nearest objective or friendly unit
+- **Effect**: Maintain Asset Protection aura while repositioning
+- **Flavor**: "Repositioning to cover zone."
+
+**Priority 6: PATROL ROUTE (Default)**
+- **Trigger**: No other conditions met
+- **Action**: Move toward nearest objective, stopping at optimal defensive position (elevation/cover)
+- **Effect**: When reaching objective, automatically enter Defensive Stance
+- **Flavor**: "Standard security protocol."
+
 ---
 
 ## 2. CORPORATE ENFORCER (3 CREDITS)
@@ -84,6 +122,44 @@ The Soulstone Exchange fields hired mercenaries, security contractors, and corpo
 - Push objectives aggressively
 - Synergy with "Hostile Negotiations" card (attack + enforce = burst damage)
 
+### Behavior Deck (6 Cards)
+
+**Priority 1: TERMINATE CONTRACT**
+- **Trigger**: If enemy unit within 5 hexes is below 50% HP
+- **Action**: Move toward weakest target, attack with Terminate Contract (8 damage execution)
+- **Effect**: Intimidate aura reduces enemy attacks by -1 within 3 hexes
+- **Flavor**: "Liabilities will be eliminated."
+
+**Priority 2: HOSTILE NEGOTIATIONS**
+- **Trigger**: If enemy unit within attack range has Defense 2+
+- **Action**: Attack with Hostile Negotiations (6 damage, ignore 2 Defense)
+- **Effect**: Target must pass morale check or retreat 2 hexes (fear)
+- **Flavor**: "This is not a negotiation."
+
+**Priority 3: PRIORITY TARGET**
+- **Trigger**: If enemy support unit or high-value target within 6 hexes
+- **Action**: Move directly toward priority target (ignoring other threats)
+- **Effect**: Attack highest-value target with Hostile Negotiations
+- **Flavor**: "Eliminating key asset."
+
+**Priority 4: BREAK THEIR LINE**
+- **Trigger**: If 2+ enemy units are clustered within 3 hexes
+- **Action**: Move into center of enemy formation
+- **Effect**: Intimidate aura (-1 to enemy attacks) affects maximum targets
+- **Flavor**: "Show them what fear looks like."
+
+**Priority 5: AGGRESSIVE ADVANCE**
+- **Trigger**: If no enemies within 4 hexes
+- **Action**: Move at full speed (5 hexes) toward nearest enemy or objective
+- **Effect**: Professional trait active (immune to Taint/psychological effects)
+- **Flavor**: "Target acquired. Engaging."
+
+**Priority 6: SEEK AND DESTROY (Default)**
+- **Trigger**: No other conditions met
+- **Action**: Move toward nearest enemy, attack if in range
+- **Effect**: Standard attack (6 damage, ignore 2 Defense)
+- **Flavor**: "Contract enforcement in progress."
+
 ---
 
 ## 3. DEBT COLLECTOR (2 CREDITS)
@@ -101,6 +177,50 @@ The Soulstone Exchange fields hired mercenaries, security contractors, and corpo
 - Generate Credits by harassing enemies
 - Fund more expensive mercenaries
 - Economic snowball (use Credits to buy units that generate more Credits)
+
+### Behavior Deck (6 Cards)
+
+**Priority 1: SEIZE ASSETS**
+- **Trigger**: If enemy unit within attack range has taken damage this turn
+- **Action**: Attack with Seize Assets (3 damage)
+- **Effect**: If target loses HP, steal 1 Credit from enemy player
+- **Flavor**: "Payment is now due."
+
+**Priority 2: FORECLOSURE OPPORTUNITY**
+- **Trigger**: If enemy unit within 5 hexes is at 3 HP or less
+- **Action**: Move to attack weakened target
+- **Effect**: If target destroyed, gain 2 Credits (Foreclosure bonus)
+- **Flavor**: "Liquidating assets."
+
+**Priority 3: HARASSMENT PROTOCOL**
+- **Trigger**: If enemy Casket is within 6 hexes
+- **Action**: Move toward enemy Casket, attack if possible (3 damage)
+- **Effect**: Target cannot draw cards next turn (economic disruption)
+- **Flavor**: "Disrupting their operations."
+
+**Priority 4: HIT AND RUN**
+- **Trigger**: If Debt Collector took damage last turn
+- **Action**: Retreat 3 hexes toward friendly Casket, attack nearest enemy during retreat
+- **Effect**: Seize Assets triggers if attack hits
+- **Flavor**: "Collecting what's owed."
+
+**Priority 5: OPPORTUNISTIC STRIKE**
+- **Trigger**: If enemy support unit within 5 hexes
+- **Action**: Attack support unit (easier targets = more Credit generation)
+- **Effect**: Harassment active (target cannot draw cards next turn)
+- **Flavor**: "Targeting vulnerable assets."
+
+**Priority 6: SEEK PAYMENT (Default)**
+- **Trigger**: No other conditions met OR if friendly player has <3 Credits
+- **Action**: Move toward nearest damaged enemy, attack if in range
+- **Effect**: Prioritize staying alive (high-risk targets avoided)
+- **Flavor**: "Accounts receivable."
+
+**SPECIAL: LIQUIDATE (Emergency)**
+- **Condition**: If friendly player needs Credits urgently AND no enemies in immediate danger range
+- **Action**: Self-sacrifice (unit removed from battlefield)
+- **Effect**: Friendly player gains 3 Credits immediately
+- **Flavor**: "Converting assets to liquid capital."
 
 ---
 
@@ -121,6 +241,44 @@ The Soulstone Exchange fields hired mercenaries, security contractors, and corpo
 - Protects you while you execute high-risk economic strategies
 - Counter assassin-focused enemies
 
+### Behavior Deck (6 Cards)
+
+**Priority 1: BODYGUARD PROTOCOL**
+- **Trigger**: If friendly Casket is under attack OR enemy unit within 4 hexes of Casket
+- **Action**: Move adjacent to Casket, activate Bodyguard Protocol (intercept attacks)
+- **Effect**: Bulletproof Vest active (reduce all damage by 3, minimum 1), Casket gains +2 Defense
+- **Flavor**: "Primary asset must be protected."
+
+**Priority 2: INTERCEPT THREAT**
+- **Trigger**: If enemy unit is moving toward friendly Casket within 6 hexes
+- **Action**: Move to intercept path between enemy and Casket
+- **Effect**: Counterstrike ready (deal 4 damage to attacker when hit)
+- **Flavor**: "Threat neutralization in progress."
+
+**Priority 3: COUNTERSTRIKE POSITION**
+- **Trigger**: If Executive Bodyguard is being attacked
+- **Action**: Remain stationary, activate full defensive stance
+- **Effect**: Counterstrike deals 4 damage back to attacker, Bulletproof Vest reduces incoming damage
+- **Flavor**: "You made a mistake."
+
+**Priority 4: VIP PROTECTION ZONE**
+- **Trigger**: If friendly Casket has taken 10+ damage
+- **Action**: Move within 4 hexes of Casket to maintain VIP Protection aura
+- **Effect**: Casket has +2 Defense, Bodyguard can intercept attacks targeting Casket
+- **Flavor**: "Establishing protective perimeter."
+
+**Priority 5: DEFENSIVE REPOSITION**
+- **Trigger**: If no immediate threats within 4 hexes of Casket
+- **Action**: Move to optimal defensive position (cover, elevation, near Casket)
+- **Effect**: VIP Protection aura remains active (+2 Defense to Casket within 4 hexes)
+- **Flavor**: "Securing optimal coverage."
+
+**Priority 6: HOLD GROUND (Default)**
+- **Trigger**: No other conditions met
+- **Action**: Remain within 4 hexes of friendly Casket, face toward threats
+- **Effect**: All defensive abilities active (Bulletproof Vest, VIP Protection, Counterstrike)
+- **Flavor**: "Protective detail maintained."
+
 ---
 
 ## 5. HOSTILE TAKEOVER SQUAD (5 CREDITS) 🔒
@@ -139,6 +297,44 @@ The Soulstone Exchange fields hired mercenaries, security contractors, and corpo
 - Win objective-based scenarios
 - Counter enemy objective plays
 - Flexible: dismiss for refund if not needed
+
+### Behavior Deck (6 Cards)
+
+**Priority 1: SECURE OBJECTIVE**
+- **Trigger**: If uncontrolled objective within 6 hexes
+- **Action**: Use Rapid Deployment to move directly to objective (can deploy anywhere on map)
+- **Effect**: Capture objective in 1 turn instead of 2 (fast capture mechanic)
+- **Flavor**: "Hostile takeover initiated."
+
+**Priority 2: CONTEST ENEMY OBJECTIVE**
+- **Trigger**: If enemy-controlled objective within 6 hexes
+- **Action**: Move at full speed (6 hexes) toward enemy objective
+- **Effect**: Zone Control active (enemies cannot contest objectives held by Squad)
+- **Flavor**: "Acquiring enemy assets."
+
+**Priority 3: DEFEND CAPTURED OBJECTIVE**
+- **Trigger**: If Hostile Takeover Squad is on controlled objective AND enemies within 4 hexes
+- **Action**: Remain on objective, attack nearest threat
+- **Effect**: Zone Control prevents enemy contesting (they must destroy Squad first)
+- **Flavor**: "Position secured. Holding."
+
+**Priority 4: OBJECTIVE PRIORITY**
+- **Trigger**: If multiple objectives exist, prioritize closest to enemy Casket
+- **Action**: Move toward high-value objective (closest to enemy forces)
+- **Effect**: Rapid Deployment available for emergency repositioning
+- **Flavor**: "Targeting strategic assets."
+
+**Priority 5: EXIT STRATEGY**
+- **Trigger**: If Squad has taken 6+ damage AND no objectives within 4 hexes
+- **Action**: Dismiss unit for 2 Credit refund (emergency cash conversion)
+- **Effect**: Squad removed from battlefield, player gains 2 Credits
+- **Flavor**: "Tactical withdrawal approved."
+
+**Priority 6: RAPID RESPONSE (Default)**
+- **Trigger**: No other conditions met
+- **Action**: Move toward nearest objective at full speed (6 hexes)
+- **Effect**: Squad can be dismissed at any time for 2 Credit refund if needed
+- **Flavor**: "En route to acquisition target."
 
 ---
 
@@ -162,6 +358,44 @@ Not a combat unit—a luxurious hover-platform carrying 5 executives in suits. T
 - Ultimate force multiplier
 - Turn economic advantage into battlefield dominance
 - Expensive but game-changing
+
+### Behavior Deck (6 Cards)
+
+**Priority 1: HOSTILE ACQUISITION**
+- **Trigger**: If enemy support unit within 6 hexes (ONCE PER BATTLE ONLY)
+- **Action**: Use Hostile Acquisition to steal control of enemy support unit
+- **Effect**: Target unit now fights for Exchange player for remainder of battle
+- **Flavor**: "Your assets now belong to us."
+
+**Priority 2: EXECUTIVE ORDER**
+- **Trigger**: If friendly units (including Casket) are within 8 hexes
+- **Action**: Activate Executive Order aura (all friendly units gain +2 to attacks)
+- **Effect**: Shareholder Pressure reduces friendly Casket's SP costs by 1 (minimum 0)
+- **Flavor**: "Maximize returns. Execute directives."
+
+**Priority 3: QUARTERLY REVIEW**
+- **Trigger**: If friendly unit missed attack this turn
+- **Action**: Use Quarterly Review to allow reroll of 1 failed attack (once per round)
+- **Effect**: Executive Order aura continues (+2 to all friendly attacks)
+- **Flavor**: "Performance review: unacceptable. Try again."
+
+**Priority 4: COMMAND POSITION**
+- **Trigger**: If Board is within 4 hexes of combat
+- **Action**: Retreat to safe distance (8+ hexes from enemies)
+- **Effect**: All auras remain active at long range (Executive Order, Shareholder Pressure)
+- **Flavor**: "Management observes from a safe distance."
+
+**Priority 5: GOLDEN PARACHUTE INSURANCE**
+- **Trigger**: If Board of Directors has taken 10+ damage
+- **Action**: Activate defensive protocols, retreat toward friendly Casket
+- **Effect**: Golden Parachute ready (if destroyed, player gains 5 Credits)
+- **Flavor**: "Severance package prepared."
+
+**Priority 6: STRATEGIC OVERSIGHT (Default)**
+- **Trigger**: No other conditions met
+- **Action**: Maintain position within 6-8 hexes of friendly Casket (command range)
+- **Effect**: All passive bonuses active (Executive Order +2 attacks, SP cost -1, Quarterly Review available)
+- **Flavor**: "Shareholders demand results."
 
 ---
 
@@ -207,16 +441,19 @@ Not a combat unit—a luxurious hover-platform carrying 5 executives in suits. T
 
 **Balance Consideration**: Exchange units are STRONG, but temporary and expensive. Counterplay is to pressure Exchange economy (kill Debt Collectors, force Credit expenditure on defense).
 
-**Next Steps**:
-1. Develop full behavior decks (6 cards per unit)
-2. Playtest Credit economy (ensure hiring costs are balanced)
-3. Test Board of Directors power level (8 Credits should feel worth it)
+**Behavior Deck Design Philosophy**:
+- **Security Contractor**: Defensive AI prioritizes protecting assets and holding positions
+- **Corporate Enforcer**: Aggressive AI targets high-value enemies and executes weakened targets
+- **Debt Collector**: Economic AI generates Credits through harassment and opportunistic strikes
+- **Executive Bodyguard**: Protective AI stays near Casket, intercepts threats, counters attacks
+- **Hostile Takeover Squad**: Objective-focused AI captures and holds objectives with Zone Control
+- **Board of Directors**: Command AI stays at safe distance while buffing all friendly units
 
 ---
 
 **"In the Exchange, loyalty is measured in Credits. And Credits can buy anything."**
 
-*Support units document version 1.0 (Framework) - Soulstone Exchange*
+*Support units document version 2.0 (Complete) - Soulstone Exchange*
 
 ---
 
