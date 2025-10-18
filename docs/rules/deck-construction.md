@@ -68,20 +68,28 @@
 
 ---
 
-## Weight Class Templates
+## Casket Class Templates
 
-### Scout (500-800 lbs)
+> **SEE ALSO:** [Casket Classes](casket-classes.md) for full stat blocks, component HP, initiative modifiers, and matchup analysis.
 
-**Total Deck Size**: 22-26 cards
+### Scout Casket (Fast, Fragile, First Strike)
+
+**Total Deck Size**: 26-32 cards
 
 **Starting Hand Size**: 6 cards
 
-**Soul-Points (Safe Zone)**: 5 SP
+**Soul-Points (SP per Turn)**: 6 SP
+
+**Movement Cost**: 1 hex = 0.5 SP (12 hexes max)
+
+**Initiative**: 1d6 + 3
+
+**Major Wound Threshold**: 3+ damage
 
 **Equipment Slots**:
-- Right Arm: 1 slot
-- Left Arm: 1 slot
-- Relic Slots: 1 slot
+- Weapons: 2 slots
+- Shields: 0 slots
+- Accessories: 1 slot
 
 **Deck Composition**:
 - Universal Cards: **10** (mandatory)
@@ -128,18 +136,24 @@ Total: 10 + 4 + 3 + 3 + 1 = 21 cards
 
 ---
 
-### Support (900-1,200 lbs)
+### Warden Casket (Balanced, Flexible, Standard)
 
-**Total Deck Size**: 26-32 cards
+**Total Deck Size**: 30-38 cards
 
 **Starting Hand Size**: 6 cards
 
-**Soul-Points (Safe Zone)**: 4 SP
+**Soul-Points (SP per Turn)**: 5 SP
+
+**Movement Cost**: 1 hex = 1 SP (5 hexes max)
+
+**Initiative**: 1d6
+
+**Major Wound Threshold**: 5+ damage
 
 **Equipment Slots**:
-- Right Arm: 1 slot
-- Left Arm: 1 slot
-- Relic Slots: 2 slots
+- Weapons: 1 slot
+- Shields: 1 slot
+- Accessories: 1 slot
 
 **Deck Composition**:
 - Universal Cards: **10** (mandatory)
@@ -254,18 +268,24 @@ Total: 10 + 4 + 5 + 3 + 3 + 3 = 28 cards
 
 ---
 
-### Assault (1,900-2,500 lbs)
+### Vanguard Casket (Heavy, Tanky, Close-Range)
 
-**Total Deck Size**: 36-42 cards
+**Total Deck Size**: 36-46 cards
 
 **Starting Hand Size**: 6 cards
 
-**Soul-Points (Safe Zone)**: 2 SP
+**Soul-Points (SP per Turn)**: 4 SP
+
+**Movement Cost**: 1 hex = 1.5 SP (2-3 hexes max)
+
+**Initiative**: 1d6 - 1
+
+**Major Wound Threshold**: 7+ damage
 
 **Equipment Slots**:
-- Right Arm: 1 slot
-- Left Arm: 1 slot
-- Relic Slots: 3 slots
+- Weapons: 1 slot
+- Shields: 2 slots
+- Accessories: 2 slots
 
 **Deck Composition**:
 - Universal Cards: **10** (mandatory)
@@ -316,6 +336,90 @@ Total: 10 + 6 + 4 + 4 + 4 + 3 = 31 cards
 ```
 
 **Customization**: Swap Siege Ballista for Giant Maul (melee devastation), swap Coolant for Reactor Overdrive (more power, more risk), etc.
+
+---
+
+### Colossus Casket (Fortress, Ultra-Tank, Artillery)
+
+**Total Deck Size**: 42-50 cards
+
+**Starting Hand Size**: 6 cards
+
+**Soul-Points (SP per Turn)**: 3 SP
+
+**Movement Cost**: 1 hex = 2 SP (1-2 hexes max)
+
+**Initiative**: 1d6 - 2
+
+**Major Wound Threshold**: 9+ damage
+
+**Equipment Slots**:
+- Weapons: 1 slot
+- Shields: 1 slot
+- Accessories: 3 slots
+
+**Deck Composition**:
+- Universal Cards: **10** (mandatory)
+- Weapon Equipment: **6-8 cards**
+- Shield Equipment: **4-6 cards**
+- Accessory Slot 1: **4-6 cards**
+- Accessory Slot 2: **4-6 cards**
+- Accessory Slot 3: **3-5 cards**
+- Optional Faction Cards: **0-2 cards**
+
+**Equipment Budget**: 32-40 equipment cards max
+
+**Philosophy**: "I am the objective. Come to me." Siege artillery, immovable fortress, support platform. Needs teammates to protect flanks.
+
+**Example Colossus Deck** (46 cards total):
+```
+Universal Cards (10): Standard 10
+
+Weapon - Heavy Artillery Cannon (7 cards):
+- Bombardment (4 SP, 8 dmg, Long range, Init 9)
+- Siege Round (3 SP, 6 dmg + 3 dmg splash to adjacent hexes, Long, +2 Heat, Init 8)
+- Suppression Fire (2 SP, 4 dmg + target -2 SP next turn, Medium, Init 7)
+- High-Explosive Shell (4 SP, 7 dmg ignore 2 Defense, Long, +3 Heat, Init 10)
+- Aimed Barrage (3 SP, 5 dmg, called shot no penalty, Long, Init 7)
+- Reload Protocols (1 SP, draw 2 cards, Init 5)
+- Emergency Fire (2 SP, 4 dmg, can overspend beyond 1.5× cap this turn, Init 6)
+
+Shield - Fortress Barrier (5 cards):
+- Aegis Projection (+3 Defense to all allies within 2 hexes, 2 SP, Init 5)
+- Bastion Stance (+4 Defense until next turn, cannot move, 2 SP, Init 6)
+- Shield Wall (1 SP, +2 Defense, reactive)
+- Deflection Field (0 SP, negate next ranged attack, reactive)
+- Bulwark Protocol (2 SP, +3 Defense, adjacent allies gain +1 Defense, Init 5)
+
+Accessory 1 - Repair Systems (5 cards):
+- Emergency Repair (2 SP, recover 3 cards from Damage Graveyard to Discard Pile, Init 4)
+- Field Maintenance (1 SP, draw 2 cards, Init 3)
+- Structural Reinforcement (1 SP, ignore next Component Damage, reactive)
+- Auto-Repair Drones (passive, recover 1 card from Damage Graveyard at end of round)
+- Emergency Protocols (0 SP, if Chassis in Pilot Exposure, gain +2 Defense until end of round, reactive)
+
+Accessory 2 - Command Relay (5 cards):
+- Tactical Scan (1 SP, reveal all enemy hands until next turn, Init 2)
+- Coordinated Strike (1 SP, ally within 3 hexes gains +2 dmg on next attack, Init 3)
+- Rally Point (2 SP, all allies within 3 hexes gain +1 SP next turn, Init 4)
+- Strategic Withdrawal (1 SP, ally within 3 hexes may move 2 hexes, Init 2)
+- Fire Support (2 SP, designate hex, next attack targeting that hex gets +1 dmg, Init 3)
+
+Accessory 3 - Heat Sinks (4 cards):
+- Emergency Cooling (2 SP, remove 3d2 Heat, Init 4)
+- Thermal Venting (1 SP, remove 2 Heat, Init 3)
+- Coolant Injection (0 SP, remove 1 Heat, reactive)
+- Passive Cooling (passive, -1 Heat at end of round)
+
+Total: 10 + 7 + 5 + 5 + 5 + 4 = 36 cards
+```
+
+**Tactical Notes**:
+- Deploy in strong defensive position early, don't waste SP moving later
+- Use Accessories to support team (Rally Point, Coordinated Strike, Fire Support)
+- Repair Systems keep you alive through attrition warfare
+- Artillery Cannon controls long sightlines
+- Extremely vulnerable to fast Scout-class kiting - needs allies to screen
 
 ---
 

@@ -11,7 +11,7 @@
 Inspired by **GKR: Heavy Hitters** (deck-as-HP) + **Kingdom Death: Monster** (brutal consequences)
 
 **Two Separate Systems**:
-1. **Casket HP Deck** (26-50 cards, varies by equipment loadout) - Your mech's structural integrity
+1. **Casket HP Deck** (26-50 cards, varies by [Casket Class](casket-classes.md) and equipment loadout) - Your mech's structural integrity
 2. **Pilot Wound Deck** (10 cards) - Your pilot's physical/mental state
 
 When **Casket HP Deck runs out** → Casket is destroyed (pilot may survive)
@@ -43,8 +43,8 @@ When **Pilot Wound Deck runs out** → Pilot dies (Casket becomes inert)
 
 ### Major Wounds & DAMAGED Cards
 
-**When you take 5+ damage in a single attack:**
-- This is a **Major Wound**
+**When you take major damage in a single attack:**
+- This is a **Major Wound** (threshold varies by [Casket Class](casket-classes.md): Scout 3+, Warden 5+, Vanguard 7+, Colossus 9+)
 - Add 1 **DAMAGED card** to your **Discard Pile** immediately
 - That DAMAGED card will enter your HP Draw Deck on your next reshuffle
 - DAMAGED cards represent lingering injuries
@@ -396,6 +396,8 @@ Wait, this creates duplication issues. Let me revise:
 ### Quick Reference: Component HP Zones
 
 **Each component has three defensive zones:**
+
+> **NOTE:** These values are for the **Warden** (standard) Casket class. Component HP varies by class - see [Casket Classes](casket-classes.md) for Scout/Vanguard/Colossus variants.
 
 | Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone |
 |-----------|----------|---------|----------------|---------------------|

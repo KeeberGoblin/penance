@@ -38,7 +38,7 @@
 ### Taking Damage
 - **Play a card** → Goes to **Discard Pile**
 - **Take damage** → Cards go to **Damage Graveyard** (never returns)
-- **Major Wound (5+ damage)** → Add 1 DAMAGED card to Discard Pile
+- **Major Wound** (varies by class: Scout 3+, Warden 5+, Vanguard 7+, Colossus 9+) → Add 1 DAMAGED card to Discard Pile
 
 ### DAMAGED Cards (Persistent Curse)
 - **Persist in hand** (not discarded at end of round)
@@ -59,20 +59,28 @@
 
 ---
 
-## SP ECONOMY
+## CASKET CLASSES
 
-| Casket Class | SP per Turn | Weight | Speed |
-|--------------|-------------|---------|-------|
-| Scout (Light) | 6 | 700-900 lbs | Fast |
-| **Warden (Medium)** | **5** | 1,100-1,300 lbs | **Balanced** |
-| Vanguard (Heavy) | 4 | 1,600-1,800 lbs | Slow |
-| Colossus (Assault) | 3 | 2,200-2,500 lbs | Immobile |
+> **Full Details:** See [casket-classes.md](casket-classes.md)
 
-**Common SP Costs**:
-- Move: 1 SP (4 hexes)
+| Class | HP | SP | Move Cost | Init | Major Wound | Weapons | Shields | Access. |
+|-------|-----|-----|-----------|------|-------------|---------|---------|---------|
+| **Scout** | 36 | 6 | 0.5 SP/hex | +3 | 3+ | 2 | 0 | 1 |
+| **Warden** | 44 | 5 | 1 SP/hex | +0 | 5+ | 1 | 1 | 1 |
+| **Vanguard** | 52 | 4 | 1.5 SP/hex | -1 | 7+ | 1 | 2 | 2 |
+| **Colossus** | 60 | 3 | 2 SP/hex | -2 | 9+ | 1 | 1 | 3 |
+
+**Playstyles:**
+- **Scout:** Alpha strike, hit-and-run, kiting (12 hexes/turn max)
+- **Warden:** Frontline fighter, balanced, beginner-friendly (5 hexes/turn)
+- **Vanguard:** Zone control, brawler, immovable wall (2-3 hexes/turn)
+- **Colossus:** Artillery, fortress, support platform (1-2 hexes/turn)
+
+**Common SP Costs:**
+- Move: Varies by class (0.5-2 SP per hex)
 - Basic Attack: 2 SP (3-4 damage)
 - Powerful Attack: 3-4 SP (5-7 damage)
-- Ultimate Ability: 5 SP (game-changing)
+- Ultimate Ability: 5+ SP (game-changing)
 
 ---
 

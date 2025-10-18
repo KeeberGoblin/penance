@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casket Classes - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#rules">RULES</a> /
+            Casket Classes
+        </div>
+<h1>Casket Classes: Stat Blocks & Playstyles</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            Weight, Mobility, and Fate • Version 2.1 • Four Weight Classes: Scout / Warden / Vanguard / Colossus
+        </p>
+
+        <div class="manuscript-quote">
+            "Choose your Casket. Choose your fate. The Scout flees death. The Warden embraces balance. The Vanguard endures all wounds. The Colossus becomes the objective itself."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>The Four Weight Classes</h2>
+
+        <p>Every Casket in Penance belongs to one of four <strong>weight classes</strong>, each with different mobility, durability, and tactical roles. Your faction determines your playstyle (vampiric lifesteal, fire dueling, etc.), but your <strong>Casket Class</strong> determines your fundamental capabilities.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Philosophy</th>
+                    <th>Total HP</th>
+                    <th>SP/Turn</th>
+                    <th>Movement</th>
+                    <th>Initiative</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Scout</strong></td>
+                    <td>"Strike fast, don't get hit"</td>
+                    <td>36 HP</td>
+                    <td>6 SP</td>
+                    <td>0.5 SP/hex</td>
+                    <td>+3</td>
+                </tr>
+                <tr>
+                    <td><strong>Warden</strong></td>
+                    <td>"Adaptable. Reliable."</td>
+                    <td>44 HP</td>
+                    <td>5 SP</td>
+                    <td>1 SP/hex</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td><strong>Vanguard</strong></td>
+                    <td>"I don't dodge. I endure."</td>
+                    <td>52 HP</td>
+                    <td>4 SP</td>
+                    <td>1.5 SP/hex</td>
+                    <td>-1</td>
+                </tr>
+                <tr>
+                    <td><strong>Colossus</strong></td>
+                    <td>"I am the objective."</td>
+                    <td>60 HP</td>
+                    <td>3 SP</td>
+                    <td>2 SP/hex</td>
+                    <td>-2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Scout Casket (Fast, Fragile, First Strike)</h2>
+
+        <div style="background: linear-gradient(to bottom, rgba(139, 69, 19, 0.1), rgba(101, 67, 33, 0.05)); border: 2px solid var(--aged-gold); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
+            <h3>Core Stats</h3>
+            <table>
+                <tbody>
+                    <tr><td><strong>Total HP</strong></td><td>36 HP</td></tr>
+                    <tr><td><strong>Deck Size</strong></td><td>26-32 cards</td></tr>
+                    <tr><td><strong>SP per Turn</strong></td><td>6 SP</td></tr>
+                    <tr><td><strong>Movement Cost</strong></td><td>1 hex = 0.5 SP (12 hexes max)</td></tr>
+                    <tr><td><strong>Initiative</strong></td><td>1d6 + 3</td></tr>
+                    <tr><td><strong>Major Wound Threshold</strong></td><td>3+ damage</td></tr>
+                    <tr><td><strong>Equipment Slots</strong></td><td>2 Weapons, 0 Shields, 1 Accessory</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Component HP & Damage Zones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Total HP</th>
+                        <th>AP Zone</th>
+                        <th>Structure Zone</th>
+                        <th>Pilot Exposure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Head</strong></td><td>6 HP</td><td>0-2 dmg</td><td>3-4 dmg</td><td>5-6 dmg</td></tr>
+                    <tr><td><strong>Right Arm</strong></td><td>6 HP</td><td>0-2 dmg</td><td>3-4 dmg</td><td>5-6 dmg</td></tr>
+                    <tr><td><strong>Left Arm</strong></td><td>6 HP</td><td>0-2 dmg</td><td>3-4 dmg</td><td>5-6 dmg</td></tr>
+                    <tr><td><strong>Chassis</strong></td><td>8 HP</td><td>0-3 dmg</td><td>4-5 dmg</td><td>6-8 dmg</td></tr>
+                    <tr><td><strong>Legs</strong></td><td>10 HP</td><td>0-4 dmg</td><td>5-10 dmg</td><td>NEVER</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Strengths</h3>
+            <ul>
+                <li><strong>Highest SP (6)</strong> = Most actions per turn, can combo attacks</li>
+                <li><strong>Ultra-mobile (0.5 SP/hex)</strong> = Kiting god, can reposition constantly (12 hexes/turn!)</li>
+                <li><strong>Always wins initiative (+3)</strong> = Acts first, dictates engagements</li>
+                <li><strong>Dual-wield weapons</strong> = Burst damage potential with 2 Primary Weapons</li>
+            </ul>
+
+            <h3>Weaknesses</h3>
+            <ul>
+                <li><strong>Lowest HP (36)</strong> = Dies to focused fire in 6-7 hits</li>
+                <li><strong>Major Wounds at 3+ damage</strong> = Accumulates DAMAGED cards rapidly</li>
+                <li><strong>Pilot exposed after 5 damage to head</strong> = Fragile cockpit protection</li>
+                <li><strong>No shields</strong> = Cannot block incoming attacks</li>
+            </ul>
+
+            <h3>Playstyle</h3>
+            <p><strong>Alpha strike, hit-and-run, flanking, assassination.</strong> Get into optimal position, deal massive damage in one turn, retreat before retaliation. Dies if caught or cornered. Best on open maps with lots of cover.</p>
+
+            <p><strong>Ideal Factions:</strong> Verdant Covenant (Elves - Bleed stacking), Nomad Collective (mobility synergy), Wyrd Conclave (reality distortion escapes)</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Warden Casket (Balanced, Flexible, Standard)</h2>
+
+        <div style="background: linear-gradient(to bottom, rgba(70, 130, 180, 0.1), rgba(50, 100, 140, 0.05)); border: 2px solid steelblue; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
+            <h3>Core Stats</h3>
+            <table>
+                <tbody>
+                    <tr><td><strong>Total HP</strong></td><td>44 HP</td></tr>
+                    <tr><td><strong>Deck Size</strong></td><td>30-38 cards</td></tr>
+                    <tr><td><strong>SP per Turn</strong></td><td>5 SP</td></tr>
+                    <tr><td><strong>Movement Cost</strong></td><td>1 hex = 1 SP (5 hexes max)</td></tr>
+                    <tr><td><strong>Initiative</strong></td><td>1d6 (standard)</td></tr>
+                    <tr><td><strong>Major Wound Threshold</strong></td><td>5+ damage</td></tr>
+                    <tr><td><strong>Equipment Slots</strong></td><td>1 Weapon, 1 Shield, 1 Accessory</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Component HP & Damage Zones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Total HP</th>
+                        <th>AP Zone</th>
+                        <th>Structure Zone</th>
+                        <th>Pilot Exposure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Head</strong></td><td>8 HP</td><td>0-3 dmg</td><td>4-5 dmg</td><td>6-8 dmg</td></tr>
+                    <tr><td><strong>Right Arm</strong></td><td>8 HP</td><td>0-3 dmg</td><td>4-5 dmg</td><td>6-8 dmg</td></tr>
+                    <tr><td><strong>Left Arm</strong></td><td>8 HP</td><td>0-3 dmg</td><td>4-5 dmg</td><td>6-8 dmg</td></tr>
+                    <tr><td><strong>Chassis</strong></td><td>10 HP</td><td>0-4 dmg</td><td>5-6 dmg</td><td>7-10 dmg</td></tr>
+                    <tr><td><strong>Legs</strong></td><td>10 HP</td><td>0-4 dmg</td><td>5-10 dmg</td><td>NEVER</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Strengths</h3>
+            <ul>
+                <li><strong>Balanced stats</strong> = No glaring weaknesses, reliable in all situations</li>
+                <li><strong>Has shield slot</strong> = Defensive options available (tower shield, buckler)</li>
+                <li><strong>Standard Major Wound threshold (5+)</strong> = Manageable DAMAGED card accumulation</li>
+                <li><strong>Flexible equipment</strong> = Can adapt build to matchup</li>
+            </ul>
+
+            <h3>Weaknesses</h3>
+            <ul>
+                <li><strong>Jack-of-all-trades, master of none</strong> = Average in all categories</li>
+                <li><strong>No standout strengths</strong> = Won't dominate any specific role</li>
+                <li><strong>Outclassed by specialists</strong> = Loses to optimized matchups</li>
+            </ul>
+
+            <h3>Playstyle</h3>
+            <p><strong>Frontline fighter, adapts to matchup.</strong> Can build aggressive (drop shield for second weapon or accessory) or defensive (tower shield + counter-attacks). The reliable choice for beginners or mixed-composition teams.</p>
+
+            <p><strong>Ideal Factions:</strong> Church of Absolution (Blood Offering burst), Dwarven Forge-Guilds (Rune stacking defense), The Ossuarium (balanced lifesteal)</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Vanguard Casket (Heavy, Tanky, Close-Range)</h2>
+
+        <div style="background: linear-gradient(to bottom, rgba(139, 0, 0, 0.1), rgba(100, 0, 0, 0.05)); border: 2px solid darkred; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
+            <h3>Core Stats</h3>
+            <table>
+                <tbody>
+                    <tr><td><strong>Total HP</strong></td><td>52 HP</td></tr>
+                    <tr><td><strong>Deck Size</strong></td><td>36-46 cards</td></tr>
+                    <tr><td><strong>SP per Turn</strong></td><td>4 SP</td></tr>
+                    <tr><td><strong>Movement Cost</strong></td><td>1 hex = 1.5 SP (2-3 hexes max)</td></tr>
+                    <tr><td><strong>Initiative</strong></td><td>1d6 - 1</td></tr>
+                    <tr><td><strong>Major Wound Threshold</strong></td><td>7+ damage</td></tr>
+                    <tr><td><strong>Equipment Slots</strong></td><td>1 Weapon, 2 Shields, 2 Accessories</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Component HP & Damage Zones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Total HP</th>
+                        <th>AP Zone</th>
+                        <th>Structure Zone</th>
+                        <th>Pilot Exposure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Head</strong></td><td>10 HP</td><td>0-4 dmg</td><td>5-7 dmg</td><td>8-10 dmg</td></tr>
+                    <tr><td><strong>Right Arm</strong></td><td>10 HP</td><td>0-4 dmg</td><td>5-7 dmg</td><td>8-10 dmg</td></tr>
+                    <tr><td><strong>Left Arm</strong></td><td>10 HP</td><td>0-4 dmg</td><td>5-7 dmg</td><td>8-10 dmg</td></tr>
+                    <tr><td><strong>Chassis</strong></td><td>12 HP</td><td>0-5 dmg</td><td>6-8 dmg</td><td>9-12 dmg</td></tr>
+                    <tr><td><strong>Legs</strong></td><td>10 HP</td><td>0-4 dmg</td><td>5-10 dmg</td><td>NEVER</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Strengths</h3>
+            <ul>
+                <li><strong>High HP (52)</strong> = Survives long engagements, difficult to kill quickly</li>
+                <li><strong>Deep AP zones</strong> = Takes 5-8 hits before Structure Zone penalties apply</li>
+                <li><strong>Major Wounds at 7+ damage</strong> = Rarely accumulates DAMAGED cards</li>
+                <li><strong>2 Shield slots</strong> = Layered defense (Tower Shield + Buckler)</li>
+                <li><strong>2 Accessory slots</strong> = Utility/support options (Sigils, relics)</li>
+            </ul>
+
+            <h3>Weaknesses</h3>
+            <ul>
+                <li><strong>Low SP (4)</strong> = Few actions per turn, limited combos</li>
+                <li><strong>Slow movement (1.5 SP/hex)</strong> = Immobile, vulnerable to kiting</li>
+                <li><strong>Initiative penalty (-1)</strong> = Often goes last, reactive playstyle</li>
+                <li><strong>Can't catch Scouts</strong> = Frustrated by hit-and-run tactics</li>
+            </ul>
+
+            <h3>Playstyle</h3>
+            <p><strong>Zone control, brawler, last stand.</strong> Plant yourself on an objective and become an immovable wall. Trades mobility for survivability. Excels in chokepoints, king-of-the-hill scenarios, and defensive missions.</p>
+
+            <p><strong>Ideal Factions:</strong> Dwarven Forge-Guilds (Rune defense), Crucible Packs (honor duels in close range), Vestige Bloodlines (Biomass absorption tank)</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Colossus Casket (Fortress, Ultra-Tank, Artillery)</h2>
+
+        <div style="background: linear-gradient(to bottom, rgba(47, 79, 79, 0.1), rgba(30, 60, 60, 0.05)); border: 2px solid darkslategray; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
+            <h3>Core Stats</h3>
+            <table>
+                <tbody>
+                    <tr><td><strong>Total HP</strong></td><td>60 HP</td></tr>
+                    <tr><td><strong>Deck Size</strong></td><td>42-50 cards</td></tr>
+                    <tr><td><strong>SP per Turn</strong></td><td>3 SP</td></tr>
+                    <tr><td><strong>Movement Cost</strong></td><td>1 hex = 2 SP (1-2 hexes max)</td></tr>
+                    <tr><td><strong>Initiative</strong></td><td>1d6 - 2</td></tr>
+                    <tr><td><strong>Major Wound Threshold</strong></td><td>9+ damage</td></tr>
+                    <tr><td><strong>Equipment Slots</strong></td><td>1 Weapon, 1 Shield, 3 Accessories</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Component HP & Damage Zones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Total HP</th>
+                        <th>AP Zone</th>
+                        <th>Structure Zone</th>
+                        <th>Pilot Exposure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Head</strong></td><td>12 HP</td><td>0-5 dmg</td><td>6-9 dmg</td><td>10-12 dmg</td></tr>
+                    <tr><td><strong>Right Arm</strong></td><td>12 HP</td><td>0-5 dmg</td><td>6-9 dmg</td><td>10-12 dmg</td></tr>
+                    <tr><td><strong>Left Arm</strong></td><td>12 HP</td><td>0-5 dmg</td><td>6-9 dmg</td><td>10-12 dmg</td></tr>
+                    <tr><td><strong>Chassis</strong></td><td>14 HP</td><td>0-6 dmg</td><td>7-10 dmg</td><td>11-14 dmg</td></tr>
+                    <tr><td><strong>Legs</strong></td><td>10 HP</td><td>0-4 dmg</td><td>5-10 dmg</td><td>NEVER</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Strengths</h3>
+            <ul>
+                <li><strong>Massive HP (60)</strong> = Unkillable in early game, requires sustained focus fire</li>
+                <li><strong>Ultra-deep AP zones</strong> = Chassis takes 6 damage before Structure penalties!</li>
+                <li><strong>Major Wounds at 9+ damage</strong> = Almost never accumulates DAMAGED cards</li>
+                <li><strong>3 Accessory slots</strong> = Support/utility specialist (Sigils, relics, banners)</li>
+                <li><strong>Pilot extremely well-protected</strong> = 10-12 damage to expose pilot</li>
+            </ul>
+
+            <h3>Weaknesses</h3>
+            <ul>
+                <li><strong>Crippling SP (3)</strong> = 1-2 actions per turn maximum</li>
+                <li><strong>Glacial movement (2 SP/hex)</strong> = Basically immobile, deployment critical</li>
+                <li><strong>Initiative penalty (-2)</strong> = Always goes last, can't dictate engagements</li>
+                <li><strong>Dies to DAMAGED card accumulation</strong> = Slow card cycling means death spiral inevitable</li>
+                <li><strong>Vulnerable to kiting</strong> = Scouts ignore you completely</li>
+            </ul>
+
+            <h3>Playstyle</h3>
+            <p><strong>Siege artillery, immovable object, support platform.</strong> You don't move - the battle comes to you. Deploy in a strong position and rain hell. Needs teammates to protect flanks and prevent objective denial. Excels in defensive scenarios, attrition warfare, and team compositions.</p>
+
+            <p><strong>Ideal Factions:</strong> The Exchange (Credit economy + support), Emergent Syndicate (Metamorph support swarm), Church of Absolution (Blood Offering artillery)</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Matchup Analysis</h2>
+
+        <h3>Scout vs Colossus (Extreme Matchup)</h3>
+
+        <div style="background: rgba(139, 69, 19, 0.1); padding: 1rem; margin: 1rem 0; border-left: 4px solid var(--aged-gold);">
+            <p><strong>Scout Advantages:</strong></p>
+            <ul>
+                <li>6 SP vs 3 SP = twice as many actions</li>
+                <li>Moves 12 hexes vs 1 hex = infinite kiting potential</li>
+                <li>Goes first (+3 initiative) vs goes last (-2 initiative)</li>
+                <li>Can dictate all engagements</li>
+            </ul>
+
+            <p><strong>Colossus Advantages:</strong></p>
+            <ul>
+                <li>60 HP vs 36 HP = 24 HP advantage (40% more)</li>
+                <li>Scout needs 10-12 attacks to kill Colossus</li>
+                <li>Colossus only needs 6-7 hits to kill Scout</li>
+                <li>If Scout is forced to engage, Colossus wins</li>
+            </ul>
+
+            <p><strong>Winner:</strong> Scout if open terrain (kites forever), Colossus if chokepoint or objective-based (Scout must engage).</p>
+        </div>
+
+        <h3>Warden vs Vanguard (Standard Matchup)</h3>
+
+        <div style="background: rgba(70, 130, 180, 0.1); padding: 1rem; margin: 1rem 0; border-left: 4px solid steelblue;">
+            <p><strong>Warden Advantages:</strong></p>
+            <ul>
+                <li>Faster (5 SP, 1 SP/hex) = better repositioning</li>
+                <li>Gets initiative slightly more often (1d6 vs 1d6-1)</li>
+                <li>More flexible equipment (can swap shield for offense)</li>
+            </ul>
+
+            <p><strong>Vanguard Advantages:</strong></p>
+            <ul>
+                <li>+8 HP advantage = survives 2-3 more attacks</li>
+                <li>2 Shield slots = layered defense</li>
+                <li>2 Accessory slots = more utility</li>
+            </ul>
+
+            <p><strong>Winner:</strong> Skill-based, comes down to positioning and equipment choices.</p>
+        </div>
+
+        <h3>Matchup Rock-Paper-Scissors</h3>
+
+        <ul>
+            <li><strong>Scout beats Vanguard</strong> = Kites, Vanguard too slow to catch</li>
+            <li><strong>Vanguard beats Colossus</strong> = Can actually reach Colossus, trade favorably in brawl</li>
+            <li><strong>Colossus beats Scout</strong> = If Scout is forced to engage (objective scenarios), Colossus survives alpha strike and retaliates</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Choosing Your Class</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Player Type</th>
+                    <th>Recommended Class</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Beginner</strong></td>
+                    <td>Warden</td>
+                    <td>Balanced stats, no gotchas, forgiving playstyle</td>
+                </tr>
+                <tr>
+                    <td><strong>Aggressive</strong></td>
+                    <td>Scout</td>
+                    <td>High skill ceiling, punishes mistakes hard, rewarding when mastered</td>
+                </tr>
+                <tr>
+                    <td><strong>Defensive</strong></td>
+                    <td>Vanguard</td>
+                    <td>Straightforward tank gameplay, zone control specialist</td>
+                </tr>
+                <tr>
+                    <td><strong>Strategic</strong></td>
+                    <td>Colossus</td>
+                    <td>High-level tactical positioning, support/utility master</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <div class="manuscript-quote">
+            "The Scout dances through bullets. The Warden stands in the storm. The Vanguard becomes the wall. The Colossus IS the battlefield."
+        </div>
+
+    </div>
+</body>
+</html>
