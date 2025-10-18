@@ -58,7 +58,9 @@ When Theslar activated **The Engine** (then called the "Theslar Engine" by scien
 - Survivors discover **Soulstones**—crystalline formations that appear near Void rifts
 - These stones can store and regulate Tainted magic safely (mostly)
 - Early attempts to weaponize them fail catastrophically
-- The Church of Absolution forms, declaring the Cataclysm divine punishment
+- The Church of Absolution forms (Year 12), declaring the Cataclysm divine punishment
+- Verdant Covenant unifies (Year 34) after Elven enclaves sign the Rootmarch Accord
+- Nomad Collective emerges (Year 47) from displaced refugee caravans
 
 **Year 50-150: The Casket Era Dawn**
 - First primitive Caskets built—armored suits powered by Soulstones
@@ -69,9 +71,9 @@ When Theslar activated **The Engine** (then called the "Theslar Engine" by scien
 **Year 150-250: The Factional Wars**
 - Major power blocs emerge and consolidate
 - Church of Absolution splits in the Great Schism (Year 134)
-- The Exchange rises to dominance through war profiteering
+- The Exchange formalizes (Year 156) as neutral trade network between warring factions
 - Dwarven forge-cities become industrial powerhouses
-- The Ossuarium establishes permanent necropolis territories
+- The Ossuarium establishes permanent necropolis territories (Year 78)
 
 **Year 250-350: The Mutation Age**
 - Vestige Bloodlines emerge as distinct faction after Exodus (Year 352)
