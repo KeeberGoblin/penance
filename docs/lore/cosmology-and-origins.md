@@ -28,9 +28,41 @@
 - Over millennia, a **dual civilization** emerged: mundane human society (visible) and arcane society (hidden)
 
 **The Old World (Pre-Sundering)**:
-- Surface appearance: Industrial Age civilization (late 19th/early 20th century equivalent)
+- Surface appearance: Mid-20th century civilization (1950s-1970s equivalent technology)
 - Hidden reality: Mages, elves, dwarves, and other species coexisted in secret enclaves
 - Technology and magic were separate - **until Nikolas Theslar**
+
+### Technology Level (Pre-Sundering)
+
+The Old World's technology level was approximately **1950s-1970s equivalent**:
+
+**What Existed**:
+- Analog computers (mechanical calculators, punch card systems)
+- Radio communications (vacuum tubes, transistor radios)
+- Nuclear reactors (early fission power, experimental)
+- Diesel engines, steam locomotives (mature technology)
+- Mechanical engineering (advanced precision machining)
+- Basic rocketry (experimental, no orbital satellites)
+
+**What Did NOT Exist**:
+- Internet or digital networks
+- Orbital satellites or GPS
+- Microprocessors or integrated circuits
+- Personal computers or smartphones
+- Advanced materials (carbon fiber, kevlar, etc.)
+
+**Why This Matters**:
+Dr. Theslar had access to **atomic physics knowledge** (explaining nuclear reactor references) and **analog computing machines** (mechanical mainframes using punch cards and vacuum tubes). His work with ley lines paralleled real-world atomic research of the 1940s-60s.
+
+**Post-Sundering Regression**:
+437 years later (Year 437), survivors have regressed to **1800s-1850s Victorian-era technology**:
+- Steam power (relearned from salvaged books)
+- Mechanical engineering (basic, lost precision machining knowledge)
+- Metallurgy (iron/steel forging, lost advanced alloys)
+- NO electronics (vacuum tube technology lost)
+- NO radio (all radio infrastructure destroyed by EMP)
+
+The current world is a steampunk-level civilization built on the ruins of a mid-20th-century atomic age.
 
 ---
 
@@ -282,7 +314,7 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 **Pre-Sundering Society** operated on a two-tiered system:
 
 **Mundane Layer** (visible to 99.9% of humans):
-- Industrial Age technology (trains, factories, telegraphs, early electricity)
+- Mid-20th century technology (trains, factories, radio, analog computers, nuclear power)
 - No knowledge of non-human species
 - Magic was folklore, superstition, and stage tricks
 - Science was the dominant worldview

@@ -219,7 +219,7 @@ Marius demands: *"Stand down, heretics! This facility is an abomination! We will
 - **Church Hostile**: Enemy encounters increase, settlement under Inquisition scrutiny
 
 ### Story Beats
-- Computer terminals show research logs: **Dr. Theslar was trying to UNDO the Cataclysm** before he vanished
+- Analog computing terminals show research logs: **Dr. Theslar was trying to UNDO the Cataclysm** before he vanished
 - One terminal flickers: *"Failsafe Protocol Active. Containment Breach imminent. Days since activation: 159,505"*
 - Marius shouts: "This heresy must end! The past should stay buried!"
 - Final terminal before Level 2 access: *"Warning: Subject Sigma is awake. Recommend immediate evacuation."*
@@ -230,9 +230,9 @@ Marius demands: *"Stand down, heretics! This facility is an abomination! We will
 **Act 2 - Moral Choice Crystalizes**
 
 ### Setup
-You've reached Research Level 2—Theslar's personal laboratory. Intact Soulstone research, working computers, prototype equipment. And in the center: a **containment chamber** holding a pulsing, crystalline mass—*an artificial Soulstone the size of a Casket*, radiating immense power and Taint.
+You've reached Research Level 2—Theslar's personal laboratory. Intact Soulstone research, working analog computing machines, prototype equipment. And in the center: a **containment chamber** holding a pulsing, crystalline mass—*an artificial Soulstone the size of a Casket*, radiating immense power and Taint.
 
-Computer logs reveal the truth:
+Analog computing logs reveal the truth:
 - Theslar created this prototype to **stabilize The Engine**
 - It works... but requires a "compatible catalyst" (living pilot's consciousness)
 - Using it could shut down The Engine permanently

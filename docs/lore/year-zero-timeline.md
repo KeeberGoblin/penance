@@ -62,8 +62,8 @@
 - Governments issue emergency broadcasts (few receive them)
 
 **24:00 (Midnight)** - Communication officially ends
-- Last functioning satellites go dark
-- Internet completely offline
+- Last functioning radio relay stations go dark
+- Radio networks completely offline
 - Radio transmissions sporadic and failing
 
 **02:00** - Hospital failures
