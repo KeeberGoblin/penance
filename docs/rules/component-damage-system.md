@@ -384,34 +384,34 @@ Caskets have **dual-layer HP tracking**:
 └──────────────────────────────┘
 ```
 
-### Cannibalize Action (0 SP)
+### Salvage Action (0 SP)
 
-**Play SCRAP card as action during your turn:**
+**Play 2 SCRAP cards as action during your turn:**
 - **Cost:** 0 SP (free action)
-- **Effect:** Discard this SCRAP card → Draw 1 card immediately
-- **Limit:** Can play as many SCRAP cards per turn as you have
+- **Effect:** Discard 2 SCRAP cards → Draw 1 card immediately
+- **Limit:** Can Salvage multiple times per turn if you have enough SCRAP
 - **Timing:** During Action Phase (not reactive)
 
 **Strategic Uses:**
-- **Cycle dead draws:** Convert 3 SCRAP cards → Draw 3 fresh cards (0 SP total)
-- **Dig for key cards:** Cycle SCRAP until you find the card you need
-- **Avoid hand clog:** Don't waste turns with 4 SCRAP + 2 useful cards
+- **Cycle dead draws:** Convert 4 SCRAP cards → Draw 2 fresh cards (0 SP total)
+- **Dig for key cards:** Salvage SCRAP to dig for the card you need (expensive!)
+- **Avoid hand clog:** Don't waste turns with multiple SCRAP in hand
+- **Risk/Reward:** Burns through deck 2-for-1, accelerates death spiral
 
 **Example Turn with SCRAP:**
 ```
 Church Confessor, Right Arm destroyed (12 Primary Weapon cards = SCRAP)
 
-Hand: [SCRAP] [SCRAP] [SCRAP] [Desperate Lunge] [Brace for Impact] [Emergency Vent]
+Hand: [SCRAP] [SCRAP] [SCRAP] [SCRAP] [Desperate Lunge] [Emergency Vent]
 
 Action Phase:
-1. Play SCRAP card (0 SP) → Cannibalize → Draw 1 (get "Rally Cry")
-2. Play SCRAP card (0 SP) → Cannibalize → Draw 1 (get "Feint")
-3. Play SCRAP card (0 SP) → Cannibalize → Draw 1 (get another SCRAP, discard it)
-4. Play "Feint" (1 SP) → +1 damage next attack
-5. Move 2 hexes (2 SP)
-6. Play "Bash" with Left Arm (1 SP) → Attack for 2 damage + 1 (Feint) = 3 damage
+1. Salvage (0 SP) → Discard 2 SCRAP → Draw 1 (get "Rally Cry")
+2. Salvage (0 SP) → Discard 2 SCRAP → Draw 1 (get "Feint")
+3. Play "Feint" (1 SP) → +1 damage next attack
+4. Move 2 hexes (2 SP)
+5. Play "Desperate Lunge" with Left Arm (2 SP) → Attack for 3 damage + 1 (Feint) = 4 damage
 
-Total: Cycled 3 SCRAP cards for free, used 4 SP for actions
+Total: Salvaged 4 SCRAP → 2 cards for free, used 5 SP for actions
 ```
 
 ---
@@ -693,9 +693,8 @@ Total: Cycled 3 SCRAP cards for free, used 4 SP for actions
 
 **Ironclad Turn:**
 - **SP: 1 (was 4, now 1 after wounds)**
-- Hand: [SCRAP] [SCRAP] [SCRAP] [Advance] [Emergency Vent] [Survey Field]
-- Plays SCRAP card (0 SP) → Cannibalize → Draw (gets "Bash")
-- Plays SCRAP card (0 SP) → Cannibalize → Draw (gets another SCRAP)
+- Hand: [SCRAP] [SCRAP] [SCRAP] [SCRAP] [Advance] [Emergency Vent]
+- Salvage (0 SP) → Discard 2 SCRAP → Draw (gets "Bash")
 - Plays "Bash" with Left Arm (1 SP): Attack for 2 damage, push 1 hex
 - Rolls hit for 2 damage
 - Passes (0 SP)
@@ -960,13 +959,13 @@ Total: Cycled 3 SCRAP cards for free, used 4 SP for actions
 1. **Component HP totals:** Increase if combats too fast, decrease if too slow
 2. **AP layer thickness:** Increase AP = longer safe phase, decrease = faster exposure
 3. **Pilot Exposure threshold:** Move earlier (lower HP) = more brutal, later = safer
-4. **SCRAP Cannibalize cost:** Currently 0 SP (free), could charge 1 SP if too strong
+4. **SCRAP Salvage cost:** Currently 2 SCRAP → 1 card (0 SP), could charge 1 SP if still too strong
 5. **Pilot Wound deck size:** Currently 10 cards, increase to 12-15 if pilots die too fast
 
 **Known power interactions:**
 - Church "Blood Offering" self-harm → Risks Component Damage → Can self-expose pilot
 - Dwarven "Rune Strike" Armor-Piercing → Bypasses AP, hits structure directly → Very strong against fresh components
-- Ossuarium "Soul Harvest" → Recovers cards from discard → Can recover SCRAP cards and re-cannibalize
+- Ossuarium "Soul Harvest" → Recovers cards from discard → Can recover SCRAP cards and re-Salvage (expensive!)
 
 ---
 

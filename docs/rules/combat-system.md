@@ -313,11 +313,11 @@ Wait, this creates duplication issues. Let me revise:
 
 | Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone |
 |-----------|----------|---------|----------------|---------------------|
-| **Head** | 6 HP | 0-2 dmg | 3-4 dmg | 5-6 dmg |
+| **Head** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
 | **Right Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
 | **Left Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
 | **Chassis** | 10 HP | 0-4 dmg | 5-6 dmg | 7-10 dmg |
-| **Legs** | 8 HP | 0-3 dmg | 4-8 dmg | NEVER |
+| **Legs** | 10 HP | 0-4 dmg | 5-10 dmg | NEVER |
 
 **Zone Effects:**
 - **AP Zone**: Armor absorbs damage, no penalties

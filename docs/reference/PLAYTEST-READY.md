@@ -1,10 +1,18 @@
 # PLAYTEST PACKAGE: READY FOR TABLE PLAY
 
-**Date**: 2025-10-12
-**Version**: 2.0 (Equipment System Update)
+**Date**: 2025-10-18
+**Version**: 2.1 (Balance Update - October 2025)
 **Status**: ✅ COMPLETE
 **Estimated Setup Time**: 15 minutes
 **Estimated Play Time**: 45-60 minutes (first game)
+
+**Recent Balance Changes (v2.1 - October 17, 2025):**
+- Component HP normalization: Head 6→8 HP, Legs 8→10 HP
+- Salvage cost increased: 1 SCRAP→1 card changed to 2 SCRAP→1 card
+- Overspending cap reduced: 2× max SP → 1.5× max SP
+- Variable Draw Phase: Played cards ÷ 2 (min 2, max 5) instead of fixed 3
+- Defense Dice block rate: 33% → 50%
+- Heat Strain penalties harshened for high heat thresholds
 
 ---
 
