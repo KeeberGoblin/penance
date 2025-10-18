@@ -262,13 +262,15 @@ body::before {
 }
 
 .nav-link::before {
-    content: 'ü';
-    font-family: 'Wingdings', 'Webdings', sans-serif;
+    content: '›';
+    font-family: 'Libre Baskerville', 'Crimson Pro', Georgia, serif;
     position: absolute;
     left: 0.25rem;
     opacity: 0;
     transition: opacity 0.3s ease;
     color: var(--dark-red);
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .nav-link:hover {
