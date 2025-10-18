@@ -210,18 +210,114 @@ CHURCH_CARDS = [
 ]
 
 
+def load_cards_from_database(faction_name: str) -> List[Dict]:
+    """Load cards from complete-card-data.json for a specific faction."""
+    import json
+    import os
+
+    db_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'cards', 'complete-card-data.json')
+
+    if not os.path.exists(db_path):
+        print(f"⚠️  Card database not found at: {db_path}")
+        print("   Using sample cards instead.")
+        return CHURCH_CARDS
+
+    with open(db_path, 'r') as f:
+        data = json.load(f)
+
+    # Map faction names to database keys
+    faction_map = {
+        'church': 'church',
+        'dwarves': 'dwarves',
+        'elves': 'elves',
+        'ossuarium': 'ossuarium',
+        'wyrd': 'wyrd-conclave',
+        'emergent': 'emergent',
+        'nomads': 'nomads',
+        'exchange': 'exchange',
+        'crucible': 'crucible',
+        'vestige': 'vestige-bloodlines'
+    }
+
+    faction_key = faction_map.get(faction_name.lower())
+    if not faction_key:
+        print(f"⚠️  Unknown faction: {faction_name}")
+        print(f"   Available: {', '.join(faction_map.keys())}")
+        return CHURCH_CARDS
+
+    # Database has factions at root level, not under "factions" key
+    faction_cards = data.get(faction_key, [])
+
+    if not faction_cards:
+        print(f"⚠️  No cards found for faction: {faction_name}")
+        print(f"   Available keys in database: {', '.join([k for k in data.keys() if k != '_meta'])}")
+        return CHURCH_CARDS
+
+    # Convert database format to TTS format
+    tts_cards = []
+    for card in faction_cards:
+        tts_card = {
+            'name': card.get('name', 'Unknown'),
+            'type': card.get('type', 'utility'),
+            'cost': card.get('cost', 0),
+            'initiative': f"[{card.get('cost', 0)}]",
+            'range': card.get('range', 'Self'),
+            'effect': card.get('effect', ''),
+            'damage': card.get('damage'),
+            'keywords': card.get('keywords', []),
+            'quote': ''  # Database doesn't have quotes
+        }
+        tts_cards.append(tts_card)
+
+    return tts_cards
+
+
 if __name__ == '__main__':
     import sys
+    import argparse
 
-    # Generate example sheet
-    svg_content = create_deck_sheet(CHURCH_CARDS, sheet_number=1)
+    parser = argparse.ArgumentParser(description='Generate TTS deck sheets from Penance card data')
+    parser.add_argument('--faction', type=str, default='church',
+                       help='Faction name (church, dwarves, elves, ossuarium, etc.)')
+    parser.add_argument('--database', action='store_true',
+                       help='Load cards from complete-card-data.json instead of sample data')
+    parser.add_argument('--output', type=str, default=None,
+                       help='Output filename (default: {faction}-sample-sheet.svg)')
 
-    with open('/workspaces/penance/tools/church-sample-sheet.svg', 'w') as f:
-        f.write(svg_content)
+    args = parser.parse_args()
 
-    print("✅ Generated: church-sample-sheet.svg")
-    print(f"   Dimensions: {SHEET_WIDTH}×{SHEET_HEIGHT}px")
-    print(f"   Cards: {len(CHURCH_CARDS)}/{CARDS_PER_SHEET}")
+    # Load cards
+    if args.database:
+        print(f"📖 Loading {args.faction} cards from database...")
+        cards = load_cards_from_database(args.faction)
+        print(f"   Found {len(cards)} cards")
+    else:
+        print("📝 Using sample cards (add --database to use complete-card-data.json)")
+        cards = CHURCH_CARDS
+
+    # Generate sheets (10 cards per sheet)
+    num_sheets = (len(cards) + CARDS_PER_SHEET - 1) // CARDS_PER_SHEET
+
+    for sheet_num in range(num_sheets):
+        start_idx = sheet_num * CARDS_PER_SHEET
+        end_idx = min(start_idx + CARDS_PER_SHEET, len(cards))
+        sheet_cards = cards[start_idx:end_idx]
+
+        svg_content = create_deck_sheet(sheet_cards, sheet_number=sheet_num + 1)
+
+        if args.output:
+            filename = args.output.replace('.svg', f'-sheet{sheet_num + 1}.svg')
+        else:
+            filename = f'/workspaces/penance/tools/{args.faction}-sample-sheet{sheet_num + 1 if num_sheets > 1 else ""}.svg'
+
+        with open(filename, 'w') as f:
+            f.write(svg_content)
+
+        print(f"✅ Generated: {filename}")
+        print(f"   Dimensions: {SHEET_WIDTH}×{SHEET_HEIGHT}px")
+        print(f"   Cards: {len(sheet_cards)}/{CARDS_PER_SHEET}")
+
+    print(f"\n📊 Total: {len(cards)} cards across {num_sheets} sheet(s)")
     print("\nTo convert to PNG for TTS:")
     print("   1. Open in Inkscape or browser")
     print("   2. Export as PNG at exact dimensions")
