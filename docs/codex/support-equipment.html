@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENANCE: Support Units & Equipment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Additional styles for support unit browser */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --parchment-dark: #1a1410;
+            --leather-brown: #2b1f17;
+            --blood-red: #4a0e0e;
+            --dark-red: #6b1a1a;
+            --blackish-red: #2d0a0a;
+            --bone-white: #d4c5b0;
+            --aged-gold: #b8956a;
+            --shadow-black: #0a0604;
+        }
+
+        body {
+            background-color: var(--parchment-dark);
+            background-image: linear-gradient(to bottom, var(--leather-brown) 0%, var(--parchment-dark) 50%, var(--shadow-black) 100%);
+            background-attachment: fixed;
+            color: var(--bone-white);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(to bottom, var(--blackish-red), var(--blood-red));
+            border-bottom: 3px double var(--dark-red);
+            padding: 2rem 3rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+        }
+
+        .header-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--bone-white);
+            text-shadow: 2px 2px 4px var(--shadow-black);
+        }
+
+        .header-stats {
+            color: var(--aged-gold);
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .main-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            border: 2px solid var(--blood-red);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .filter-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.1rem;
+            color: var(--aged-gold);
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--dark-red);
+            padding-bottom: 0.5rem;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            padding: 0.3rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .filter-option:hover {
+            background: rgba(107, 26, 26, 0.3);
+        }
+
+        .filter-option input {
+            margin-right: 0.5rem;
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .unit-card {
+            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            border: 2px solid var(--dark-red);
+            border-radius: 8px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(107, 26, 26, 0.6);
+            border-color: var(--aged-gold);
+        }
+
+        .unit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .unit-name {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.3rem;
+            color: var(--aged-gold);
+        }
+
+        .unit-faction {
+            font-size: 0.8rem;
+            color: var(--bone-white);
+            background: var(--blood-red);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+        }
+
+        .unit-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: rgba(26, 20, 16, 0.5);
+            border-radius: 4px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--aged-gold);
+            text-transform: uppercase;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--bone-white);
+        }
+
+        .unit-theme {
+            font-style: italic;
+            color: var(--aged-gold);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .behavior-deck {
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .unit-card.expanded .behavior-deck {
+            display: block;
+        }
+
+        .behavior-card {
+            background: linear-gradient(135deg, var(--blackish-red), var(--blood-red));
+            border: 1px solid var(--dark-red);
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+        }
+
+        .behavior-name {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.1rem;
+            color: var(--aged-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .behavior-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+            color: var(--bone-white);
+        }
+
+        .behavior-effect {
+            color: var(--bone-white);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .behavior-flavor {
+            font-style: italic;
+            color: var(--aged-gold);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            border-top: 1px solid var(--dark-red);
+            padding-top: 0.5rem;
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab {
+            font-family: 'Cinzel Decorative', serif;
+            padding: 0.75rem 1.5rem;
+            background: var(--leather-brown);
+            border: 2px solid var(--blood-red);
+            color: var(--bone-white);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            background: var(--blood-red);
+            border-color: var(--aged-gold);
+            color: var(--aged-gold);
+        }
+
+        .tab:hover {
+            background: var(--dark-red);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0 1rem;
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--bone-white);
+        }
+
+        .expand-hint {
+            text-align: center;
+            color: var(--aged-gold);
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+
+        .unit-card:not(.expanded) .expand-hint::after {
+            content: " ▼ Click to expand ▼";
+        }
+
+        .unit-card.expanded .expand-hint::after {
+            content: " ▲ Click to collapse ▲";
+        }
+
+        .equipment-card {
+            background: linear-gradient(to bottom, var(--leather-brown), var(--parchment-dark));
+            border: 2px solid var(--aged-gold);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .equipment-name {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.3rem;
+            color: var(--aged-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .equipment-type {
+            font-size: 0.8rem;
+            color: var(--bone-white);
+            background: var(--blood-red);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1 class="header-title">SUPPORT UNITS & EQUIPMENT</h1>
+            <div class="header-stats">
+                <div><strong id="total-units-count">40+</strong> Support Units</div>
+                <div><strong>10</strong> Factions</div>
+                <div><strong>46</strong> Equipment Items</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="filter-section">
+                <div class="filter-title">Category</div>
+                <label class="filter-option">
+                    <input type="radio" name="category" value="all" checked>
+                    <span>All</span>
+                </label>
+                <label class="filter-option">
+                    <input type="radio" name="category" value="support-units">
+                    <span>Support Units</span>
+                </label>
+                <label class="filter-option">
+                    <input type="radio" name="category" value="equipment">
+                    <span>Equipment</span>
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">Faction</div>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="all" checked>
+                    <span>All Factions</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="church">
+                    <span>Church of Absolution</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="crucible">
+                    <span>Crucible Pacts</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="dwarves">
+                    <span>Dwarven Forge-Guilds</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="elves">
+                    <span>Elven Verdant Covenant</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="emergent">
+                    <span>Emergent Syndicate</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="exchange">
+                    <span>Soulstone Exchange</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="nomads">
+                    <span>Nomad Collective</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="ossuarium">
+                    <span>The Ossuarium</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="vestige-bloodlines">
+                    <span>Vestige Bloodlines</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="faction-filter" value="wyrd">
+                    <span>Wyrd Conclave</span>
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">Equipment Slots</div>
+                <label class="filter-option">
+                    <input type="checkbox" class="slot-filter" value="1" checked>
+                    <span>1 Slot</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="slot-filter" value="2" checked>
+                    <span>2 Slots</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="slot-filter" value="3" checked>
+                    <span>3 Slots</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" class="slot-filter" value="4" checked>
+                    <span>4+ Slots</span>
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <a href="../index.html" class="back-link">← Back to Codex</a>
+            </div>
+        </aside>
+
+        <main>
+            <div class="tab-container">
+                <div class="tab active" data-tab="support-units">Support Units</div>
+                <div class="tab" data-tab="equipment">Equipment Cards</div>
+            </div>
+
+            <div id="support-units-content" class="units-grid">
+                <!-- Support units loading from JSON -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--aged-gold); font-family: 'Cinzel', serif;">
+                    Loading support units from database...
+                </div>
+                <div class="unit-card" data-faction="church" data-slots="2" style="display: none;">
+                    <div class="unit-header">
+                        <div class="unit-name">Flagellant Pack</div>
+                        <div class="unit-faction">Church</div>
+                    </div>
+                    <div class="unit-stats">
+                        <div class="stat">
+                            <div class="stat-label">HP</div>
+                            <div class="stat-value">6</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Move</div>
+                            <div class="stat-value">4</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Def</div>
+                            <div class="stat-value">0</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Slots</div>
+                            <div class="stat-value">2</div>
+                        </div>
+                    </div>
+                    <div class="unit-theme">Self-harming zealots who grow stronger as they suffer</div>
+                    <div class="expand-hint"></div>
+                    <div class="behavior-deck">
+                        <h3 style="font-family: 'Cinzel Decorative', serif; color: var(--aged-gold); margin: 1rem 0;">Behavior Deck (6 Cards)</h3>
+
+                        <div class="behavior-card">
+                            <div class="behavior-name">SELF-FLAGELLATION</div>
+                            <div class="behavior-meta">
+                                <span><strong>Type:</strong> Utility / Self-Harm</span>
+                                <span><strong>Priority:</strong> High</span>
+                            </div>
+                            <div class="behavior-effect">- Flagellants deal 2 damage to themselves
+- Gain +2 damage to next attack
+- Draw 1 extra Behavior card next turn (frenzy building)</div>
+                            <div class="behavior-flavor">"Pain is the path. Suffering is redemption."</div>
+                        </div>
+
+                        <div class="behavior-card">
+                            <div class="behavior-name">FRENZIED ASSAULT</div>
+                            <div class="behavior-meta">
+                                <span><strong>Type:</strong> Attack / Reckless</span>
+                                <span><strong>Priority:</strong> Critical (HP ≤ 3)</span>
+                            </div>
+                            <div class="behavior-effect">- Move full speed (4 hexes) toward nearest enemy
+- Attack for 6 damage (empowered by pain)
+- Ignore Defense on this attack
+- Flagellants take 1 damage after attacking (self-destructive)</div>
+                            <div class="behavior-flavor">"In their final moments, they are closest to absolution."</div>
+                        </div>
+
+                        <div class="behavior-card">
+                            <div class="behavior-name">BLEEDING STRIKE</div>
+                            <div class="behavior-meta">
+                                <span><strong>Type:</strong> Attack</span>
+                                <span><strong>Priority:</strong> Medium</span>
+                            </div>
+                            <div class="behavior-effect">- Move toward nearest enemy within 5 hexes
+- If adjacent, attack for 3 damage
+- Target gains 1 Bleed counter
+- If Flagellants have lost HP this turn, attack deals +2 damage (5 total)</div>
+                            <div class="behavior-flavor">"Share the suffering. Make them understand."</div>
+                        </div>
+
+                        <div class="behavior-card">
+                            <div class="behavior-name">PRAYER OF AGONY</div>
+                            <div class="behavior-meta">
+                                <span><strong>Type:</strong> Support / Self-Harm</span>
+                                <span><strong>Priority:</strong> Medium</span>
+                            </div>
+                            <div class="behavior-effect">- Flagellants deal 2 damage to themselves
+- Choose 1 friendly Casket within 4 hexes
+- That Casket recovers 3 cards from discard (your pain heals them)
+- Flagellants gain +1 damage to all attacks until end of round</div>
+                            <div class="behavior-flavor">"I suffer so you may be cleansed."</div>
+                        </div>
+
+                        <div class="behavior-card">
+                            <div class="behavior-name">BLOOD FOR BLOOD</div>
+                            <div class="behavior-meta">
+                                <span><strong>Type:</strong> Reactive / Counterattack</span>
+                                <span><strong>Priority:</strong> Reactive (when damaged)</span>
+                            </div>
+                            <div class="behavior-effect">- When Flagellants are damaged, immediately move 2 hexes toward attacker
+- If adjacent after movement, attack for 4 damage
+- Flagellants gain Frenzy token (+1 damage to all future attacks, stacks)</div>
+                            <div class="behavior-flavor">"Every wound brings me closer to the divine."</div>
+                        </div>
+
+                        <div class="behavior-card">
+                            <div class="behavior-name">MARTYRDOM CHARGE</div>
+                            <div class="behavior-meta">
+                                <span><strong>Type:</strong> Attack / Suicide</span>
+                                <span><strong>Priority:</strong> Critical (HP ≤ 2)</span>
+                            </div>
+                            <div class="behavior-effect">- Move full speed toward nearest enemy
+- If adjacent, deal 8 damage to that enemy
+- Flagellants are immediately destroyed (suicidal explosion)
+- All adjacent enemies take 3 splash damage</div>
+                            <div class="behavior-flavor">"Through death, I find absolution!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More units will be added dynamically -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--aged-gold); font-style: italic;">
+                    <p>Additional support units loading... This is a demonstration showing the Church Flagellant Pack.</p>
+                    <p>Full implementation will load all 40+ support units from faction files.</p>
+                </div>
+            </div>
+
+            <div id="equipment-content" class="units-grid" style="display: none;">
+                <!-- Equipment cards will be loaded here -->
+                <div class="equipment-card">
+                    <div class="equipment-name">Example Equipment</div>
+                    <div class="equipment-type">Weapon - Primary</div>
+                    <div class="behavior-effect">Equipment database will be loaded from complete-card-data.json</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const tabName = tab.dataset.tab;
+                document.getElementById('support-units-content').style.display = tabName === 'support-units' ? 'grid' : 'none';
+                document.getElementById('equipment-content').style.display = tabName === 'equipment' ? 'grid' : 'none';
+            });
+        });
+
+        // Unit card expand/collapse
+        document.querySelectorAll('.unit-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('expanded');
+            });
+        });
+
+        // Filter functionality
+        const factionFilters = document.querySelectorAll('.faction-filter');
+        const slotFilters = document.querySelectorAll('.slot-filter');
+        const categoryFilters = document.querySelectorAll('input[name="category"]');
+
+        function applyFilters() {
+            const selectedFactions = Array.from(factionFilters)
+                .filter(f => f.checked && f.value !== 'all')
+                .map(f => f.value);
+
+            const selectedSlots = Array.from(slotFilters)
+                .filter(f => f.checked)
+                .map(f => f.value);
+
+            const showAll = document.querySelector('.faction-filter[value="all"]').checked;
+            const category = document.querySelector('input[name="category"]:checked').value;
+
+            document.querySelectorAll('.unit-card').forEach(card => {
+                const cardFaction = card.dataset.faction;
+                const cardSlots = card.dataset.slots;
+
+                const factionMatch = showAll || selectedFactions.includes(cardFaction);
+                const slotMatch = selectedSlots.includes(cardSlots) || selectedSlots.includes('4') && parseInt(cardSlots) >= 4;
+                const categoryMatch = category === 'all' || category === 'support-units';
+
+                card.style.display = (factionMatch && slotMatch && categoryMatch) ? 'block' : 'none';
+            });
+        }
+
+        factionFilters.forEach(filter => {
+            filter.addEventListener('change', () => {
+                if (filter.value === 'all') {
+                    factionFilters.forEach(f => {
+                        if (f.value !== 'all') f.checked = false;
+                    });
+                } else {
+                    document.querySelector('.faction-filter[value="all"]').checked = false;
+                }
+                applyFilters();
+            });
+        });
+
+        slotFilters.forEach(filter => filter.addEventListener('change', applyFilters));
+        categoryFilters.forEach(filter => filter.addEventListener('change', applyFilters));
+
+        // Load support unit data from JSON
+        async function loadSupportUnits() {
+            try {
+                console.log('Loading support units from JSON...');
+                let response;
+                try {
+                    response = await fetch('../cards/complete-card-data.json');
+                } catch (e) {
+                    console.log('First path failed, trying alternative...');
+                    response = await fetch('../../docs/cards/complete-card-data.json');
+                }
+                const data = await response.json();
+
+                const supportUnits = data.support_units || [];
+                const equipmentCards = data.equipment || [];
+
+                console.log(`Loaded ${supportUnits.length} support units`);
+                console.log(`Loaded ${equipmentCards.length} equipment cards`);
+
+                // Render support units
+                renderSupportUnits(supportUnits);
+
+                // Render equipment cards
+                renderEquipment(equipmentCards);
+
+                // Initialize filters after loading
+                applyFilters();
+            } catch (error) {
+                console.error('Error loading card data:', error);
+                // Show error in UI
+                document.getElementById('support-units-content').innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #d4433d;">
+                        Error loading support units: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        function renderSupportUnits(units) {
+            const container = document.getElementById('support-units-content');
+            container.innerHTML = ''; // Clear demo content
+
+            units.forEach(unit => {
+                const card = document.createElement('div');
+                card.className = 'unit-card';
+                card.dataset.faction = unit.faction;
+                card.dataset.slots = unit.equipmentSlots || 0;
+
+                // Unit header
+                const header = document.createElement('div');
+                header.className = 'unit-header';
+                header.innerHTML = `
+                    <div class="unit-name">${unit.name}</div>
+                    <div class="unit-faction">${capitalize(unit.faction)}</div>
+                `;
+                card.appendChild(header);
+
+                // Unit stats
+                const stats = document.createElement('div');
+                stats.className = 'unit-stats';
+                stats.innerHTML = `
+                    <div class="stat">
+                        <div class="stat-label">HP</div>
+                        <div class="stat-value">${unit.hp || '?'}</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Move</div>
+                        <div class="stat-value">${unit.movement || '?'}</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Defense</div>
+                        <div class="stat-value">${unit.defense || 0}</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Slots</div>
+                        <div class="stat-value">${unit.equipmentSlots || 0}</div>
+                    </div>
+                `;
+                card.appendChild(stats);
+
+                // Theme
+                if (unit.theme) {
+                    const theme = document.createElement('div');
+                    theme.className = 'unit-theme';
+                    theme.textContent = unit.theme;
+                    card.appendChild(theme);
+                }
+
+                // Behavior deck
+                if (unit.behaviorCards && unit.behaviorCards.length > 0) {
+                    const deck = document.createElement('div');
+                    deck.className = 'behavior-deck';
+                    deck.innerHTML = `<h3>Behavior Deck (${unit.behaviorCards.length} Cards)</h3>`;
+
+                    unit.behaviorCards.forEach(behaviorCard => {
+                        const behavior = document.createElement('div');
+                        behavior.className = 'behavior-card';
+                        behavior.innerHTML = `
+                            <div class="behavior-name">${behaviorCard.name || 'Unknown Card'}</div>
+                            <div class="behavior-meta">
+                                ${behaviorCard.type ? `<span><strong>Type:</strong> ${behaviorCard.type}</span>` : ''}
+                                ${behaviorCard.priority ? `<span><strong>Priority:</strong> ${behaviorCard.priority}</span>` : ''}
+                            </div>
+                            ${behaviorCard.effect ? `<div class="behavior-effect">${formatEffect(behaviorCard.effect)}</div>` : ''}
+                            ${behaviorCard.flavor ? `<div class="behavior-flavor">"${behaviorCard.flavor}"</div>` : ''}
+                        `;
+                        deck.appendChild(behavior);
+                    });
+
+                    card.appendChild(deck);
+                }
+
+                // Add click handler for expansion
+                card.addEventListener('click', () => {
+                    card.classList.toggle('expanded');
+                });
+
+                container.appendChild(card);
+            });
+        }
+
+        function renderEquipment(equipment) {
+            const container = document.getElementById('equipment-content');
+            container.innerHTML = ''; // Clear demo content
+
+            equipment.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'equipment-card';
+
+                card.innerHTML = `
+                    <div class="unit-header">
+                        <div class="unit-name">${item.name}</div>
+                        <div class="unit-faction">${item.category || 'Universal'}</div>
+                    </div>
+                    <div class="equipment-type">${item.type || 'Equipment'}</div>
+                    <div class="behavior-effect">${item.effect || item.description || 'No description available'}</div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function capitalize(str) {
+            if (!str) return '';
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        function formatEffect(effect) {
+            if (!effect) return '';
+            // Convert newlines to <br> for display
+            return effect.replace(/\n/g, '<br>').replace(/- /g, '• ');
+        }
+
+        // Load data on page load
+        loadSupportUnits();
+    </script>
+</body>
+</html>
