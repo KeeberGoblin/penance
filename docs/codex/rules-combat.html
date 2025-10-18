@@ -507,10 +507,10 @@
 
         <p>Pilots take damage separately from Casket in these situations:</p>
         <ol>
-            <li><strong>Capsule Breach</strong> (enemy specifically targets capsule, rare)</li>
-            <li><strong>Neural Feedback</strong> (when total Component Damage reaches 5, 10, 15, etc. - triggers once per threshold)</li>
-            <li><strong>Thread Snap</strong> (when Hand Threads break from damage)</li>
-            <li><strong>Taint Overload</strong> (when Taint reaches 10)</li>
+            <li><strong>Chamber Breach</strong> (Chassis enters Pilot Exposure Zone, 7+ Component Damage)</li>
+            <li><strong>Component Exposure</strong> (Head/Arms at 6+ Component Damage, see Component Damage System)</li>
+            <li><strong>Thread Snap</strong> (when Neural Threads sever from combat damage - see below)</li>
+            <li><strong>Soulstone Core Rupture</strong> (when Taint reaches 21+ or Core is critically damaged)</li>
             <li><strong>Casket Destruction</strong> (when Casket HP deck runs out, pilot must save)</li>
         </ol>
 
@@ -544,6 +544,78 @@
             <li><strong>PTSD</strong>: Cannot attack enemies from behind (triggers panic)</li>
             <li><strong>Dissociation</strong>: At start of each turn, roll 1d6. On 1-2, lose 1 SP this turn (pilot zones out)</li>
         </ol>
+
+        <h3>Thread Snap Mechanic</h3>
+
+        <p><strong>Neural Threads</strong> are the bio-mechanical puppet strings drilled through the pilot's fingertips. When threads sever from combat damage, the pilot suffers excruciating nerve shock and loses control of corresponding casket functions.</p>
+
+        <h4>When Thread Snap Occurs:</h4>
+        <ul>
+            <li><strong>Component Exposure Zone:</strong> When Head, Right Arm, or Left Arm reach Pilot Exposure (6+ Component Damage), roll 1d6. On 5-6, one thread controlling that component snaps.</li>
+            <li><strong>Chassis Breach:</strong> When Chassis reaches 10+ Component Damage, roll 1d6. On 4-6, 1d3 random threads snap.</li>
+            <li><strong>Critical Hits:</strong> Some attack cards or critical effects can cause Thread Snap directly.</li>
+            <li><strong>Overheating:</strong> If Heat reaches maximum (10+), roll 1d6 each turn. On 6, one random thread melts/frays.</li>
+        </ul>
+
+        <h4>Immediate Effects When Thread Snaps:</h4>
+        <ol>
+            <li><strong>Pilot takes +1 Wound</strong> (excruciating nerve shock)</li>
+            <li><strong>Grit Check (DC 15):</strong> On failure, pilot loses 1 turn to pain (skips next activation)</li>
+            <li><strong>Function Loss:</strong> Corresponding casket function disabled until field-repaired or mission ends</li>
+            <li><strong>Blood Loss:</strong> Thread stump bleeds from fingertip (descriptive, no additional game effect)</li>
+        </ol>
+
+        <h4>Which Function Is Lost (by Thread):</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Thread Location</th>
+                    <th>Function Disabled</th>
+                    <th>Game Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Right Thumb</td>
+                    <td>Right hand grip</td>
+                    <td>Cannot use Primary Weapon cards (weapon drops)</td>
+                </tr>
+                <tr>
+                    <td>Right Index</td>
+                    <td>Right arm articulation</td>
+                    <td>-2 to all ranged attack rolls</td>
+                </tr>
+                <tr>
+                    <td>Right Middle</td>
+                    <td>Right leg control</td>
+                    <td>Movement costs +1 SP per hex</td>
+                </tr>
+                <tr>
+                    <td>Left Thumb</td>
+                    <td>Left hand grip</td>
+                    <td>Cannot use Shield/Secondary Equipment cards</td>
+                </tr>
+                <tr>
+                    <td>Left Index</td>
+                    <td>Left arm articulation</td>
+                    <td>-1 to Defense rolls</td>
+                </tr>
+                <tr>
+                    <td>Head Control (Pinkies)</td>
+                    <td>Head/torso rotation</td>
+                    <td>Cannot attack targets in rear arc</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Field Repair (Emergency Fix):</h4>
+        <p><strong>Requirements:</strong> Ally with Repair skill (or pilot if out of combat), 1 full turn, DC 12 Repair check</p>
+        <p><strong>Success:</strong> Thread is functional but fragile (-1 to checks using that thread, will snap again if casket takes 5+ damage in one hit)</p>
+        <p><strong>Failure:</strong> Thread remains severed until settlement (requires surgical replacement, 50 Credits, 1 week downtime)</p>
+
+        <div class="manuscript-quote">
+            "The thread snapped. I felt my finger rip apart from inside—like someone yanked the bone out through my nail. The casket's arm went limp. My scream echoed inside the coffin, and no one could hear me."
+        </div>
 
         <h3>Pilot Death</h3>
 
