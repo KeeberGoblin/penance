@@ -11,7 +11,7 @@
 **Elven Verdant Covenant** - Surgical precision and nature magic
 - **Philosophy**: "We are the pruning blade. We remove the diseased so the garden may thrive."
 - **Playstyle**: Bleed damage-over-time, mobility, hit-and-run, surgical strikes
-- **Signature Mechanic**: Bleed stacks (enemies take damage each turn, multiple applications stack)
+- **Signature Mechanic**: Bleed stacks (enemies take damage each turn, multiple applications stack, max 12 Bleed counters per target)
 
 ---
 

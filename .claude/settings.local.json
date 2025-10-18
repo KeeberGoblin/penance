@@ -13,7 +13,8 @@
       "Bash(tail:*)",
       "Bash(do if [ -f \"$dir/deck-equipment-system.md\" ])",
       "Bash(then basename \"$dir\")",
-      "Bash(gh pr close:*)"
+      "Bash(gh pr close:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "3.2",
-    "lastUpdated": "2025-10-17",
-    "description": "Complete Penance card database v3.2 - All 10 factions included (added Wyrd Conclave)"
+    "version": "3.3",
+    "lastUpdated": "2025-10-18",
+    "description": "Complete Penance card database v3.3 - All 10 factions (Ossuarium now has 10 faction cards)"
   },
   "universal": [
     {
@@ -573,6 +573,72 @@
         "passive",
         "synergy",
         "healing"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "grave-pact",
+      "name": "Grave Pact",
+      "type": "utility",
+      "cost": 3,
+      "range": "Self",
+      "effect": "Discard 3 cards. For each card discarded this way, deal 2 damage to target enemy within 6 hexes (total 6 damage). Recover 3 cards at end of your next turn.",
+      "damage": "6",
+      "keywords": [
+        "utility",
+        "sacrifice",
+        "delayed-heal",
+        "ranged"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "death-mark",
+      "name": "Death Mark",
+      "type": "debuff",
+      "cost": 2,
+      "range": "8 hexes",
+      "effect": "Mark target enemy. While marked, whenever you damage that enemy, recover 1 additional card. Lasts until enemy dies or until you mark a different target.",
+      "keywords": [
+        "debuff",
+        "mark",
+        "lifesteal",
+        "ranged"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "reanimate",
+      "name": "Reanimate",
+      "type": "summon",
+      "cost": 4,
+      "range": "3 hexes",
+      "effect": "Place a Skeletal Minion token within 3 hexes. It has 3 HP, 3 Movement, deals 2 damage melee. Minion acts immediately after your turn. Lasts until destroyed.",
+      "keywords": [
+        "summon",
+        "minion",
+        "skeleton",
+        "necromancy"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "siphon-essence",
+      "name": "Siphon Essence",
+      "type": "attack",
+      "cost": 2,
+      "range": "4 hexes",
+      "effect": "Deal 2 damage. Recover cards equal to half the damage dealt (rounded up). Can target at range unlike most lifesteal.",
+      "damage": "2",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "ranged",
+        "drain"
       ],
       "cardCount": 1,
       "cardType": "faction"
