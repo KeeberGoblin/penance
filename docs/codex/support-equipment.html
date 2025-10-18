@@ -600,14 +600,22 @@
             document.querySelectorAll('.unit-card').forEach(card => {
                 const cardFaction = card.dataset.faction;
                 const cardSlots = card.dataset.slots;
+                const cardCategory = card.dataset.category;
+                const isEquipment = cardCategory === 'Weapon' || cardCategory === 'Shield' || cardCategory === 'Equipment' || !cardSlots;
 
                 // Faction match: show all if "all" is checked, or if no factions selected, or if card's faction is selected
                 const factionMatch = showAll || selectedFactions.length === 0 || selectedFactions.includes(cardFaction);
 
-                // Slot match: show all if no slots selected, or if card's slot is selected, or if "4+" is selected and card has 4+ slots
-                const slotMatch = selectedSlots.length === 0 || selectedSlots.includes(cardSlots) || (selectedSlots.includes('4') && parseInt(cardSlots) >= 4);
+                // Slot match: equipment doesn't use slots, so only filter support units by slots
+                const slotMatch = isEquipment || selectedSlots.length === 0 || selectedSlots.includes(cardSlots) || (selectedSlots.includes('4') && parseInt(cardSlots) >= 4);
 
-                const categoryMatch = category === 'all' || category === 'support-units';
+                // Category match: show if category is 'all', or if it matches the card type
+                let categoryMatch = category === 'all';
+                if (category === 'support-units') {
+                    categoryMatch = !isEquipment;
+                } else if (category === 'equipment') {
+                    categoryMatch = isEquipment;
+                }
 
                 card.style.display = (factionMatch && slotMatch && categoryMatch) ? 'block' : 'none';
             });
