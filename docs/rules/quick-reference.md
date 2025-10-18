@@ -30,24 +30,32 @@
 
 ## DAMAGE & HP
 
-### Deck = HP
-- **30-card deck** = 30 HP
-- Damage dealt = discard that many cards from top of deck
-- **0 cards = Death**
+### The 3-Pile System
+1. **HP Draw Deck** (26-50 cards) - Active deck
+2. **Discard Pile** - Played cards → Reshuffles
+3. **Damage Graveyard** - Damaged cards → Gone forever
 
-### Component Damage
-When damaged, if **3+ cards of same type** discarded:
-- **Primary Weapon** destroyed → lose all Primary Weapon cards from hand
-- **Right Arm** → lose Primary Weapon cards
-- **Left Arm** → lose Secondary Equipment cards
-- **Legs** → movement costs +1 SP per hex
-- **Head** → -1 to ranged attacks
-- **Chassis** → permanent -1 SP maximum
+### Taking Damage
+- **Play a card** → Goes to **Discard Pile**
+- **Take damage** → Cards go to **Damage Graveyard** (never returns)
+- **Major Wound (5+ damage)** → Add 1 DAMAGED card to Discard Pile
+
+### DAMAGED Cards (Persistent Curse)
+- **Persist in hand** (not discarded at end of round)
+- Take up 1 card slot (count toward 6-card hand limit)
+- **0 SP Action to Remove (choose one):**
+  - **Sacrifice** (to Discard Pile): Roll Damage Die, cycles back later
+  - **Purge** (to Damage Graveyard): Roll Damage Die, gone forever
+- **When discarded by damage:** Roll Damage Die (cascading failure)
+
+**Damage Die (1d6):**
+- 1: Gain 1 Heat | 2: -1 SP next turn | 3: Discard 1 card next turn
+- 4: +1 Component Damage next hit | 5: +1 Pilot Wound | 6: Gain 1 SP!
 
 ### Reshuffling
-- When deck empty, reshuffle discard pile
-- **Add 1 "Damage" card** (dead draw, no effect)
-- After 3-4 reshuffles, deck is ~30% useless (death spiral)
+- When HP Draw Deck empty: Reshuffle **Discard Pile** into new deck
+- **Damage Graveyard stays separate** (permanent loss)
+- DAMAGED cards from Discard Pile enter your deck
 
 ---
 

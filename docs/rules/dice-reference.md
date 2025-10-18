@@ -8,11 +8,12 @@
 
 ## Overview
 
-Penance uses **3 types of custom d6 dice** to add brutal randomness to combat:
+Penance uses **4 types of custom d6 dice** to add brutal randomness to combat:
 
 1. **Attack Dice** (2d6) - Roll to-hit, determines if attack lands
 2. **Defense Dice** (Xd6) - Roll per damage point, chance to block/mitigate
 3. **Suffering Dice** (1d6) - Church faction & event self-harm mechanics
+4. **Damage Die** (1d6) - DAMAGED card effects, wound penalties
 
 **Design Philosophy**:
 - GKR-style to-hit rolls (2d6 target numbers)
@@ -613,6 +614,73 @@ X = Your Casket
 2. **Roll 1 Suffering Die**
 3. **Apply effect** (discard cards, gain damage bonus)
 4. **Make next attack** (with bonus if applicable)
+
+---
+
+## 4. Damage Die (1d6)
+
+### When to Roll
+
+**Roll Damage Die when a DAMAGED card is removed:**
+
+1. **Sacrifice Action** (0 SP): Discard DAMAGED to Discard Pile → Roll Damage Die
+2. **Purge Action** (0 SP): Discard DAMAGED to Damage Graveyard → Roll Damage Die
+3. **Discarded by Damage**: DAMAGED card discarded when taking damage → Roll Damage Die (cascading failure)
+
+### Die Face Results
+
+| Face | Symbol | Result | Effect |
+|------|--------|--------|--------|
+| 1 | 🔥 | **Minor Strain** | Gain 1 Heat |
+| 2 | ⚠️ | **System Glitch** | -1 SP at start of next turn |
+| 3 | 💔 | **Internal Bleeding** | Discard 1 card (to Damage Graveyard) at start of next turn |
+| 4 | 🛡️ | **Structural Weakness** | Next attack against you: +1 Component Damage |
+| 5 | 💀 | **Critical Malfunction** | +1 Pilot Wound immediately |
+| 6 | ⚡ | **Adrenaline Surge** | Gain 1 SP immediately (the lucky outcome!) |
+
+---
+
+### Strategic Use
+
+**When to Sacrifice vs Purge:**
+
+**Sacrifice (to Discard Pile):**
+- Wound comes back after reshuffle
+- Use when: Early game, plenty of HP, need hand space temporarily
+- Risk: DAMAGED card cycles back into deck in 3-5 turns
+
+**Purge (to Damage Graveyard):**
+- Wound removed permanently
+- Use when: Late game, low HP, want to reduce death spiral
+- Benefit: One less dead draw in your deck forever
+
+**When to Keep:**
+- Hoping to avoid damage until end of combat
+- Hand isn't clogged yet (only 1-2 DAMAGED cards)
+- Waiting for opportune moment (low Heat, high HP)
+- Gambling on rolling Adrenaline Surge when you need SP
+
+---
+
+### Example Scenarios
+
+**Scenario 1: Early Sacrifice**
+- Turn 2, drew DAMAGED card, still at 26/30 HP
+- Player: "I'll Sacrifice it now" → Roll Damage Die → Get "Minor Strain" (+1 Heat)
+- DAMAGED goes to Discard Pile → Will reshuffle in ~4 turns
+- Hand freed up, can draw useful cards
+
+**Scenario 2: Late Purge**
+- Turn 8, down to 12 HP, drew DAMAGED card
+- Player: "I'm Purging this permanently" → Roll Damage Die → Get "System Glitch" (-1 SP next turn)
+- DAMAGED goes to Damage Graveyard → Gone forever
+- Reduces death spiral, worth the -1 SP penalty
+
+**Scenario 3: Cascading Failure**
+- Turn 5, have DAMAGED in hand, decide to keep it
+- Take 4 damage, one discarded card is DAMAGED → Roll Damage Die
+- Roll: "Critical Malfunction" (+1 Pilot Wound)
+- The wound you ignored just caused a Pilot injury!
 
 ---
 

@@ -137,17 +137,19 @@
 - Draw one at a time (order matters for deck-out situations)
 
 **3.2 Reshuffle Trigger**
-- If deck runs out while drawing:
- 1. Shuffle your discard pile into a new deck
- 2. **Add 1 "Damage" card** to the deck (permanent)
+- If HP Draw Deck runs out while drawing:
+ 1. Shuffle your **Discard Pile** into a new HP Draw Deck
+ 2. **Damage Graveyard stays separate** (those cards are gone forever)
  3. Continue drawing normally
-- **Damage cards**: Blank cards that do nothing when played (death spiral mechanic)
+- **No penalty for reshuffling** - DAMAGED cards only come from Major Wounds (5+ damage attacks)
+- Any DAMAGED cards in your Discard Pile will now be in your HP Draw Deck
 
 **3.3 Deck Empty = Defeated**
-- If you need to draw but deck AND discard are both empty:
+- If you need to draw but HP Draw Deck AND Discard Pile are both empty:
  - Your Casket is **defeated** (structural failure)
  - Pilot must roll on Survival table (see Campaign rules)
  - In Arena: You lose the match
+- **Note**: Damage Graveyard doesn't count - those cards are permanently lost
 
 ---
 
@@ -159,14 +161,30 @@
 - Resolve any "at end of your turn" effects
 - Example: "Gain 1 Heat at end of turn"
 
-**4.2 Discard Down**
-- If hand size exceeds 6: Discard down to 6 cards
-- Choose which cards to discard
-- (Rare, usually only happens if cards say "Draw 2 cards")
-
-**4.3 Announce Done**
+**4.2 Announce Done**
 - Say "Turn complete" or "I pass"
 - Next player begins their turn
+
+---
+
+## End of Round
+
+**After all players have taken their turns, the round ends.**
+
+### END OF ROUND: Discard Hand
+
+**All players simultaneously:**
+1. Discard entire hand to **Discard Pile**
+2. **EXCEPTION**: **DAMAGED cards persist in hand** (not discarded)
+3. Keep any DAMAGED cards in front of you (visible to all players)
+
+**Optional Relics/Abilities:**
+- Some relics allow you to "hold your hand" instead of discarding
+- Example: *"Tactical Mind" - Don't discard hand at end of round, draw 3 cards instead (cannot exceed 6 card hand limit)*
+
+**Next Round:**
+- Roll initiative for turn order
+- Players draw up to 6 cards (accounting for DAMAGED cards already in hand)
 
 ---
 

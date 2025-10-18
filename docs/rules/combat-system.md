@@ -21,9 +21,91 @@ When **Pilot Wound Deck runs out** → Pilot dies (Casket becomes inert)
 
 ## 1. Casket HP Deck (Variable Size)
 
+### The 3-Pile System (CRITICAL CONCEPT)
+
+**Your Casket uses THREE separate card piles during battle:**
+
+1. **HP Draw Deck** (26-50 cards) - Your active deck, represents structural integrity
+2. **Discard Pile** - Cards you've **played/used** during your turn (attacks, movement, abilities)
+3. **Damage Graveyard** - Cards **destroyed by taking damage** (permanent loss, gone forever)
+
+**Key Distinction:**
+- **Play a card** (attack, defend, move) → Goes to **Discard Pile** → Will reshuffle when draw deck empty
+- **Take damage** (enemy hits you) → Cards go to **Damage Graveyard** → **NEVER comes back** (death spiral)
+- Some factions can interact with Damage Graveyard (Ossuarium resurrect, Nomads scavenge, etc.)
+
+**Example:**
+- You play "Faithful Thrust" (2 SP attack) → Card goes to **Discard Pile**
+- Enemy hits you for 5 damage → You discard 5 cards from deck/hand to **Damage Graveyard** (gone forever)
+- Later, your HP Draw Deck is empty → Reshuffle **Discard Pile** into new deck (Damage Graveyard stays separate)
+
+---
+
+### Major Wounds & DAMAGED Cards
+
+**When you take 5+ damage in a single attack:**
+- This is a **Major Wound**
+- Add 1 **DAMAGED card** to your **Discard Pile** immediately
+- That DAMAGED card will enter your HP Draw Deck on your next reshuffle
+- DAMAGED cards represent lingering injuries
+
+**DAMAGED Card Text:**
+> **"DAMAGED"**
+>
+> *This card persists in your hand (not discarded at end of round). Takes up 1 card slot.*
+>
+> **0 SP Action - Remove this card (choose one):**
+> - **Sacrifice** (to Discard Pile): Roll Damage Die → Card will reshuffle back into deck later
+> - **Purge** (to Damage Graveyard): Roll Damage Die → Card removed permanently
+>
+> *When discarded by damage: Roll 1 Damage Die (cascading failure).*
+
+**Damage Die (1d6) Results:**
+
+| Roll | Result | Effect |
+|------|--------|--------|
+| **1** | **Minor Strain** | Gain 1 Heat |
+| **2** | **System Glitch** | -1 SP at start of next turn |
+| **3** | **Internal Bleeding** | Discard 1 card at start of next turn |
+| **4** | **Structural Weakness** | Next attack against you: +1 Component Damage |
+| **5** | **Critical Malfunction** | +1 Pilot Wound |
+| **6** | **Adrenaline Surge** | Gain 1 SP immediately (rare good outcome!) |
+
+**Strategic Impact:**
+- **DAMAGED cards persist in hand** like a curse, taking up valuable card slots
+- **Tactical choice**: Keep it (clogs hand), Sacrifice it (comes back later), or Purge it (roll die but gone forever)
+- Drawing DAMAGED early = more control over when to deal with it
+- Getting hit while DAMAGED cards are in deck = cascading failures
+- After 3-4 Major Wounds in your hand simultaneously = crippling hand pressure
+
+**Example Flow:**
+1. **Round 1, Turn 3**: Church takes 7 damage from Dwarf (Major Wound!)
+   - Discard 7 cards to **Damage Graveyard** (gone forever)
+   - Add 1 **DAMAGED card** to **Discard Pile**
+   - **End of Round 1**: Discard hand to Discard Pile (no DAMAGED in hand yet)
+
+2. **Round 2, Turn 1**: Church's HP Draw Deck runs out during draw phase
+   - Reshuffle **Discard Pile** into new HP Draw Deck
+   - Draws 6 cards, one is the **DAMAGED card**
+   - Hand: [Faithful Thrust] [Blood Offering] [DAMAGED] [Brace] [Feint] [Rally]
+
+3. **Round 2, Turn 3**: Church plays 3 cards, DAMAGED card stays in hand
+   - **End of Round 2**: Discard 2 useful cards to Discard Pile
+   - **DAMAGED card persists in hand** (curse!)
+
+4. **Round 3, Turn 1**: Church draws 4 cards (already has 1 DAMAGED in hand)
+   - Hand: [DAMAGED] + 4 new cards = 5 cards total
+   - **Decision time**: "I'll Purge this wound now"
+   - Church uses 0 SP action: **Purge DAMAGED** → Roll Damage Die
+   - Roll: **2 (System Glitch)** → -1 SP next turn
+   - DAMAGED card goes to **Damage Graveyard** (gone forever!)
+   - Hand now freed up, Church draws 1 more card to reach 6
+
+---
+
 ### Deck Composition (GKR-Style + v2.0 Modular Equipment)
 
-Your deck represents your Casket's HP. Every card you discard = damage taken.
+Your HP Draw Deck represents your Casket's structural integrity.
 
 **v2.0 Variable Deck System** (26-50 cards depending on equipment):
 - **10 Universal Cards** (mandatory, everyone has these)
@@ -277,17 +359,21 @@ Wait, this creates duplication issues. Let me revise:
 
 ---
 
-### Step 5: Apply Damage (GKR-Style Choice)
+### Step 5: Apply Damage (Damage Graveyard)
 
-**Defender chooses how to discard cards**:
+**Defender chooses how to discard cards to Damage Graveyard**:
 
 - **From Hand**: Lose tactical options but control what's lost
 - **From Deck**: Keep hand intact but risk losing key cards randomly
 - **Mixed**: Discard some from hand, some from deck
 
-**Example**: Take 5 damage → Discard 3 from hand + 2 from deck top
+**Example**: Take 5 damage → Discard 3 from hand + 2 from deck top to **Damage Graveyard**
 
 **Strategic Depth**: Do you burn your hand to avoid Component Damage? Or keep cards and risk it?
+
+**Major Wound Check:**
+- If damage taken ≥ 5 in this single attack → Add 1 **DAMAGED card** to your **Discard Pile** immediately
+- If you discarded any DAMAGED cards from your hand/deck during this damage → Roll Damage Die for each
 
 ---
 
@@ -377,21 +463,25 @@ Wait, this creates duplication issues. Let me revise:
 
 ## 4. Deck Depletion (Running Out of HP)
 
-**When your deck runs out mid-turn**:
-- Continue taking damage by discarding from **discard pile**
-- If discard pile is empty, you're **Defeated**
+**When your HP Draw Deck runs out mid-turn while taking damage**:
+- Continue taking damage by discarding from **Discard Pile** to **Damage Graveyard**
+- If Discard Pile is also empty, you're **Defeated** (structural collapse)
 
-**When you would draw a card but deck is empty**:
-- **Reshuffle Trigger** (like GKR, but with KDM twist)
-- Shuffle discard pile into new deck
-- **Add 1 "Damage" card** to the deck (permanent degradation)
+**When you would draw a card but HP Draw Deck is empty**:
+- **Reshuffle Trigger**
+- Shuffle your **Discard Pile** into a new HP Draw Deck
+- **Damage Graveyard stays separate** (those cards are gone forever)
 - Draw normally
+- **NOTE**: You do NOT add DAMAGED cards on reshuffle - only when taking Major Wounds (5+ damage)
 
-**Damage Cards** (KDM-Style):
-- Dead draws (do nothing when played)
-- Dilute your deck over time
-- Make it harder to draw useful cards
-- After 3-4 reshuffles, deck is 30% Damage cards → death spiral
+**Death Spiral Mechanics**:
+- Every card in **Damage Graveyard** = permanent HP loss
+- DAMAGED cards in your deck = dead draws + cascading penalties
+- Factions can interact with Damage Graveyard (resurrect, scavenge, etc.)
+- After 20 damage taken + 3 Major Wounds, you might have:
+  - 20 cards in Damage Graveyard (gone forever)
+  - 3 DAMAGED cards in your remaining deck
+  - Death spiral is inevitable but manageable
 
 ---
 
