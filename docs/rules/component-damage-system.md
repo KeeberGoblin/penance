@@ -331,8 +331,9 @@ Caskets have **dual-layer HP tracking**:
    - Head destroyed → +1 Wound (neural feedback)
 
 4. **Neural Feedback** (Cumulative Strain)
-   - When **total Component Damage across ALL components ≥ 15** → +1 Wound
+   - When **total Component Damage across ALL components reaches 5+** → +1 Wound (triggers once per threshold)
    - Check at end of each attack that adds Component Damage
+   - **Clarification**: This triggers once when you first reach 5 total Component Damage, then again at 10, 15, etc.
 
 5. **Casket HP Deck Empty**
    - Deck + Discard both empty → Pilot rolls save (1d6)
