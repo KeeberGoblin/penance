@@ -230,6 +230,21 @@ A towering figure in pitch-black full plate armor, wielding a massive two-handed
 
 ---
 
+#### DEATH MARCH (Default)
+**Type**: Movement / Passive
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Move 3 hexes toward nearest enemy or objective
+- Generate 1 Soul Counter during movement (passive soul absorption)
+- Necrotic Aura active (1 damage to adjacent enemies per turn)
+- Maintain threatening presence (enemies within 3 hexes are intimidated)
+- Ready to activate Unholy Resilience if attacked
+
+**Flavor**: "The dead march on. Eternal. Unstoppable."
+
+---
+
 ### Command Response
 - **RALLY**: Move up to 3 hexes. Gain 1 Soul Counter (empowered by direct command).
 - **ATTACK**: Deathblow on target for 8 damage, ignore 3 Defense. If kill, gain 2 Soul Counters.
