@@ -58,7 +58,7 @@ Each faction has its own method of **Soul Sacrifice** — permanent bodily modif
 
 ### Procedure
 - **Amputation**: All four limbs removed at elbow/knee
-- **Augmentation**: Stumps engraved with runic circuits (Forge-Runes channel soulstone energy directly)
+- **Augmentation**: Stumps engraved with runic circuits (Forge-Runes channel Soulstone energy directly)
 - **Recovery**: 8-12 weeks (extensive rune-carving)
 - **Result**: Pilot is limbless torso with glowing runic stumps, uses hydraulic prosthetics outside Casket
 
@@ -145,7 +145,7 @@ Each faction has its own method of **Soul Sacrifice** — permanent bodily modif
 - **Frequency**: Rare (dwarven elites only, 1 in 200)
 
 ### Ossuarium "Skull Pilot" (Total Reduction)
-- **Sacrifice**: EVERYTHING except skull (spine removed, brain sustained by soulstone directly)
+- **Sacrifice**: EVERYTHING except skull (spine removed, brain sustained by Soulstone directly)
 - **Additional Benefits**: +3 SP Max (total +4), immune to ALL Pilot Damage, can Soul Harvest twice per turn
 - **Costs**: Permanently fused to capsule (cannot be extracted alive), if Casket destroyed, pilot dies instantly
 - **Frequency**: Very rare (final form for Ossuarium veterans, 1 in 300)

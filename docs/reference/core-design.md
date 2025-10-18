@@ -12,7 +12,7 @@
 3. [Casket Weight Classes](#casket-weight-classes)
 4. [Racial Casket Variants](#racial-casket-variants)
 5. [Soul-Point Action Economy](#soul-point-action-economy)
-6. [Soulstone Power System](#soulstone-power-system)
+6. [Soulstone Power System](#Soulstone-power-system)
 7. [Game Modes](#game-modes)
 8. [Mission Deck System](#mission-deck-system)
 9. [Monster AI System](#monster-ai-system)

@@ -104,7 +104,7 @@
 **The First Soul-Binding** (Day 6):
 - Dr. Bonelord Thresh (formerly Dr. Marcus Thresher, mechanical engineer)
 - Trapped in collapsing research facility, discovers corpse can power machinery via "soul resonance"
-- Binds deceased colleague's soul to experimental exosuit (first Casket)
+- Binds his deceased wife Elena's soul to experimental exosuit (first Casket)
 - **Founding moment of the Ossuarium**
 
 ---

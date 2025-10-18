@@ -7,7 +7,7 @@
 
 ## Overview: Three-Layer Defense
 
-**Lore Context:** Caskets are mechanical armored frames powered by soulstone energy. Pilots are living humans (usually desperate, dying, or half-dead volunteers) who have undergone soul-binding. The pilot is suspended in neural fluid inside a containment chamber (the capsule) within the Casket's chassis, arms crossed like a mummy. Ten neural threads pierce through their fingertips, connecting to the Casket's control nodes. The pilot manipulates the Casket like a puppeteer controlling a marionette—from inside. They are NOT autonomous machines - living pilots control every movement through the neural thread interface.
+**Lore Context:** Caskets are mechanical armored frames powered by Soulstone energy. Pilots are living humans (usually desperate, dying, or half-dead volunteers) who have undergone soul-binding. The pilot is suspended in neural fluid inside a containment chamber (the capsule) within the Casket's chassis, arms crossed like a mummy. Ten neural threads pierce through their fingertips, connecting to the Casket's control nodes. The pilot manipulates the Casket like a puppeteer controlling a marionette—from inside. They are NOT autonomous machines - living pilots control every movement through the neural thread interface.
 
 Caskets have **dual-layer HP tracking**:
 
@@ -263,7 +263,7 @@ Caskets have **dual-layer HP tracking**:
   - **-2 SP maximum** (5 SP → 3 SP) - neural thread damage
   - Movement costs **+1 SP per 2 hexes** - frame integrity failing
   - **+1 Pilot Wound per Component Damage taken**
-  - **+1 Heat per turn** (soulstone containment breach)
+  - **+1 Heat per turn** (Soulstone containment breach)
 
 **Destroyed (10+ damage):**
 - Catastrophic structural failure
