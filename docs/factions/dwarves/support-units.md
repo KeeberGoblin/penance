@@ -411,4 +411,6 @@ Each unit offers distinct tactical approach while maintaining Dwarven identity: 
 
 **END OF DOCUMENT**
 
-*"Stone endures. Iron never breaks. The Forge remembers."* — Dwarven Proverb
+---
+
+[← Back to Dwarven Faction](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)

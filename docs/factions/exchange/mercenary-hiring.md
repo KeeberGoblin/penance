@@ -373,4 +373,4 @@ A: Depends. Contract Enforcement buffs them. Other abilities (like Monopoly Cont
 
 ---
 
-**[← Previous: Credit Economy](credit-economy.md)** | **[Next: Ledger Orthodox vs Rational →](ledger-orthodox-vs-rational.md)**
+**[← Previous: Credit Economy](credit-economy.md)** | **[Back to Exchange](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next: Ledger Orthodox vs Rational →](ledger-orthodox-vs-rational.md)**

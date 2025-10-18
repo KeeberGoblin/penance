@@ -151,4 +151,4 @@ Serrak leader remains **mystery**—discovery could be major campaign reveal.
 
 ---
 
-**[← Previous Bloodline: Corvath](bloodline-corvath.md)** | **[Back to Main Faction](deck-equipment-system.md)**
+**[← Previous Bloodline: Corvath](bloodline-corvath.md)** | **[Back to Vestige Bloodlines](deck-equipment-system.md)** | **[All Factions](../index.md)**

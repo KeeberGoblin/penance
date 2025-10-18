@@ -540,3 +540,7 @@ Outcome: Elf shatters under pain, cannot tough it out
 **END OF DOCUMENT - v3.0 ENHANCED**
 
 *"We remember the world before the Engine. We remember purity. Taint is anathema. We will not endure."*
+
+---
+
+[← Back to Factions Index](../index.md) | [View All Faction Files](../)

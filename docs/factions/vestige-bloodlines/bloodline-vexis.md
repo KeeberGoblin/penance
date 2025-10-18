@@ -149,4 +149,4 @@ If she joins Syndicate, Vexis bloodline effectively ends (absorbed into collecti
 
 ---
 
-**[← Previous Bloodline: Urtok](bloodline-urtok.md)** | **[Next Bloodline: Corvath →](bloodline-corvath.md)**
+**[← Previous Bloodline: Urtok](bloodline-urtok.md)** | **[Back to Vestige Bloodlines](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next Bloodline: Corvath →](bloodline-corvath.md)**

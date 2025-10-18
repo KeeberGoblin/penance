@@ -336,4 +336,4 @@ A: Yes. Reactive cards (Insurance Policy, Defense Contract) can be played during
 
 ---
 
-**[← Back to Main Faction](deck-equipment-system.md)** | **[Next: Mercenary Hiring →](mercenary-hiring.md)**
+**[← Back to Exchange](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next: Mercenary Hiring →](mercenary-hiring.md)**

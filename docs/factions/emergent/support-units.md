@@ -1,471 +1,554 @@
 # Emergent Syndicate - Support Units
-## Penance: Hive-Mind, Swarm Intelligence, and Unity
+## Penance: Absolution Through Steel
 
-**Version**: 3.0 Equipment System (Asymmetric)
-**Date**: October 16, 2025
+**Version**: 2.0 Equipment System
+**Status**: ✅ **COMPLETE** - Full Framework with Behavior Decks
+**Date**: October 17, 2025
 
-Emergent Syndicate fields networked drones, hive-swarms, and synchronized units. Each unit embodies collective consciousness: shared mind, coordinated action, emergent intelligence.
+The Emergent Syndicate deploys bio-engineered support organisms that evolve, adapt, and coordinate through hive-mind intelligence.
 
 ---
 
 ## EMERGENT SUPPORT UNITS OVERVIEW
 
-**Faction-Specific Units** (Choose 1):
-1. Drone Swarm (2 Equipment Slots)
-2. Synapse Node (2 Equipment Slots)
-3. Assimilation Unit (3 Equipment Slots)
+**Starting Units** (Available immediately):
+1. **Drone Swarm** - Flying harassment and reconnaissance
+2. **Molt Guardian** - Defensive tank with regeneration
+3. **Adaptation Form** - Metamorphing utility unit
 
-**Neutral Mercenary Units** (Hireable by Any Faction):
-- Neural Jammer (2 Equipment Slots, 45 Credits)
-- Hive Infiltrator (3 Equipment Slots, 70 Credits)
+**Unlockable Units** (Require campaign progression):
+4. **Hive Spawn** - Reproducing bio-mass (Unlock: Complete 3 missions)
+5. **Evolution Catalyst** - Support buffer (Unlock: Build Bio-Lab)
+6. **Apex Predator** - Ultimate hunter organism (Unlock: Defeat "The First Emergent" boss)
 
-**Note**: Emergent units share vision and buffs when networked (within 5 hexes of each other).
+**Limit**: Choose 1-3 support units (based on Casket Equipment Slots available)
+
+**Design Philosophy**: Emergent units reflect metamorphosis mechanics. Units transform, molt, coordinate through hive-mind, and adapt to threats mid-battle.
 
 ---
 
-## 1. DRONE SWARM
-**Category**: Infantry (Swarm/Scout)
-**HP**: 8 | **Movement**: 5 | **Defense**: 0
+## 1. DRONE SWARM ⭐ STARTER UNIT
+**Category**: Scout / Harasser
+**HP**: 6 (Swarm) | **Movement**: 8 (Flying) | **Defense**: 0
+**Equipment Slots**: 1
+**Theme**: Flying arthropod swarm that scouts, harasses, and spreads pheromones
+
+### Visual Description
+A cloud of 50+ beetle-sized drones, each with iridescent chitinous wings and compound eyes. They move as one, reforming after attacks. Emit faint chemical trails (visible as colored mist).
+
+### Core Mechanics
+- **Flying**: Ignore terrain, can move over enemies
+- **Swarm**: Can occupy same hex as friendly units
+- **Pheromone Markers**: Mark targets for Syndicate units (+1 damage vs marked)
+- **Scout Vision**: Reveal hidden enemies within 8 hexes
+- **Regenerate**: If reduced to 0 HP, roll 1d6. On 4+, Swarm survives with 3 HP (swarm disperses and reforms)
+
+### Behavior Deck (6 Cards)
+
+#### 🔍 RECONNAISSANCE SWEEP
+**Type**: Movement / Scout
+**Priority**: High (when no enemies are marked)
+
+**Effect**:
+- Move up to 8 hexes (flying)
+- Reveal all hidden enemies within 6 hexes
+- Mark 1 enemy (place pheromone marker)
+- Syndicate units have +1 damage vs marked enemy this round
+
+**Flavor**: "The swarm sees all. The hive knows all."
+
+---
+
+#### ⚔️ HARASSMENT STRIKE
+**Type**: Attack / Distraction
+**Priority**: Medium (when adjacent to enemy)
+
+**Effect**:
+- Attack closest enemy for 2 damage
+- Target has -1 to all actions next turn (distracted by buzzing)
+- Generate 1 Metamorph token for closest Syndicate Casket
+- Swarm moves 4 hexes away after attack (hit-and-run)
+
+**Flavor**: "A thousand stings. A thousand distractions."
+
+---
+
+#### 🌫️ PHEROMONE CLOUD
+**Type**: Buff / Area Control
+**Priority**: High (when 2+ allies within 4 hexes)
+
+**Effect**:
+- Create 3-hex radius pheromone cloud (colored mist)
+- Allied Syndicate units in cloud gain +1 SP this turn
+- Enemies in cloud have -1 Defense (disoriented)
+- Cloud lasts 2 turns
+
+**Flavor**: "Chemical commands guide the collective."
+
+---
+
+#### 🔄 DISPERSE AND REFORM
+**Type**: Defense / Mobility
+**Priority**: Critical (when HP ≤ 3 or taking AOE damage)
+
+**Effect**:
+- Swarm becomes immune to damage this turn (fully dispersed)
+- Cannot attack or act (reforming)
+- Move up to 8 hexes to safe location
+- Next turn, gain +3 HP (swarm reconstitutes)
+
+**Flavor**: "You cannot kill the swarm. We are everywhere."
+
+---
+
+#### 📡 HIVE-MIND RELAY
+**Type**: Support / Coordination
+**Priority**: Medium (when ally within 6 hexes takes damage)
+
+**Effect**:
+- Target allied Syndicate Casket within 6 hexes
+- They draw 2 cards (hive intelligence shared)
+- They gain 1 Metamorph token
+- Swarm generates 1 Heat (communication strain)
+
+**Flavor**: "Distance is illusion. The hive is one."
+
+---
+
+#### 🎯 COORDINATED STRIKE
+**Type**: Attack / Synergy
+**Priority**: High (when ally is attacking marked target)
+
+**Effect**:
+- If allied Syndicate unit attacks pheromone-marked enemy this turn:
+  - Swarm joins attack for +3 damage
+  - Refresh pheromone marker (lasts 2 more turns)
+- Otherwise: Move toward nearest enemy
+
+**Flavor**: "We strike as one. We kill as one."
+
+---
+
+### Strategic Use
+- **Early Game**: Scout for hidden enemies, mark priority targets
+- **Mid Game**: Generate Metamorph tokens for Casket, maintain pheromone clouds
+- **Late Game**: Coordinate strikes with Casket, disperse to survive AOE
+
+---
+
+## 2. MOLT GUARDIAN ⭐ STARTER UNIT
+**Category**: Tank / Regenerator
+**HP**: 18 | **Movement**: 3 | **Defense**: 3
 **Equipment Slots**: 2
-**Theme**: Hundreds of insect-sized networked drones acting as single organism
+**Theme**: Heavily armored arthropod that molts to heal and gain armor layers
 
 ### Visual Description
-A cloud of metallic insects - each the size of a hornet, with gossamer wings and sensor arrays. They move in impossible synchronization, forming shapes mid-air: arrows, hands, faces. When they attack, the swarm becomes a whirling razor tornado. Individual drones are fragile. The swarm is lethal.
+Massive beetle-like creature (10 feet tall) with layered chitin plates. Each molt sheds old exoskeleton, revealing glossy new armor beneath. Six legs, massive mandibles, compound eyes glow amber.
 
-### Behavior Deck (4 Cards)
+### Core Mechanics
+- **Layered Exoskeleton**: Each molt grants +1 Defense (max +3)
+- **Molt Healing**: When molting, recover 5 HP and remove all status effects
+- **Taunt**: Enemies within 3 hexes must attack Guardian (unless ranged)
+- **Slow but Steady**: Movement 3, but ignores difficult terrain
+- **Metamorph Generation**: Generates 1 Metamorph token per turn for nearest Syndicate Casket
 
----
+### Behavior Deck (6 Cards)
 
-#### COORDINATED STRIKE
-**Type**: Attack / Swarm
-**Priority**: High
-
-**Effect**:
-- Swarm divides into attack formations
-- Attack up to 3 different enemies for 3 damage each
-- If all 3 targets are within 2 hexes of each other, deal +1 damage to each (coordinated assault)
-- Swarm cannot be counterattacked (too dispersed)
-
-**Flavor**: "One thousand cuts. One shared purpose."
-
----
-
-#### SCOUT NETWORK
-**Type**: Utility / Reconnaissance
-**Priority**: Medium
+#### 🛡️ DEFENSIVE MOLT
+**Type**: Reactive / Healing
+**Priority**: Critical (when HP ≤ 10)
 
 **Effect**:
-- Drones spread across battlefield (8-hex range)
-- Reveal all hidden enemies
-- Reveal 1 card from each enemy hand within range
-- All Syndicate allies within 5 hexes of Swarm share vision (hive-sight)
+- Molt exoskeleton (visual: old shell cracks and falls away)
+- Recover 5 HP immediately
+- Gain +1 Defense permanently (max Defense 6)
+- Remove all debuffs/status effects (bleed, poison, etc.)
+- Cannot move this turn (molting is exhausting)
 
-**Flavor**: "We are everywhere. We see everything."
+**Flavor**: "Shed weakness. Embrace evolution."
 
 ---
 
-#### ADAPTIVE FORMATION
-**Type**: Utility / Shapeshifting
-**Priority**: Always Available
+#### 💪 BULWARK STANCE
+**Type**: Defense / Taunt
+**Priority**: High (when allies within 3 hexes)
 
 **Effect**:
-- Swarm reconfigures into chosen form:
- - **Blade Form**: +3 damage, can attack single target for 8 damage
- - **Shield Form**: +4 Defense, blocks LOS for allies
- - **Scout Form**: +3 movement, can move 8 hexes
-- Form lasts until Swarm changes again
+- Enter defensive stance (cannot move)
+- Gain +2 Defense this round (total Defense 5-8)
+- All enemies within 3 hexes must attack Guardian (taunt)
+- Allied Syndicate units within 3 hexes gain +1 Defense
+- Generate 2 Metamorph tokens for nearest Casket
 
-**Flavor**: "We are liquid. We are air. We are death."
+**Flavor**: "I am the wall. The hive shelters behind me."
 
 ---
 
-#### REPAIR PROTOCOL
-**Type**: Utility / Healing
-**Priority**: Critical (when networked ally within 3 hexes has <12 HP)
+#### 🦀 MANDIBLE CRUSH
+**Type**: Attack / Control
+**Priority**: Medium (when adjacent to enemy)
 
 **Effect**:
-- Swarm disperses to repair damaged ally
-- Heal target 4 HP
-- Remove 1 status effect from target
-- Swarm loses 2 HP (drones cannibalized for parts)
+- Move up to 3 hexes toward nearest enemy
+- If adjacent, attack for 6 damage (massive mandibles)
+- Target is grappled (cannot move next turn)
+- Guardian gains 1 Metamorph token
 
-**Flavor**: "Individual sacrifice. Collective survival."
-
----
-
-### Command Response
-- **RALLY**: Move up to 5 hexes in Sc out Form. Reveal all enemies within 6 hexes.
-- **ATTACK**: Form Blade, attack target for 8 damage. Reform into Scout after.
-- **DEFEND**: Form Shield. +4 Defense, block LOS for allies behind Swarm.
-- **HOLD**: Maintain current formation. If Scout Form, gather intelligence (reveal 3 enemy cards).
-
-### Special Ability: HIVE NETWORK
-**Passive**: When within 5 hexes of other Syndicate units, Drone Swarm shares:
-- Vision (see what allies see)
-- Buffs (gain +1 damage if any ally has damage buff)
-- Warnings (cannot be surprised)
-
-### Tactical Use
-- Flexible scout/attacker
-- Benefits from Syndicate network
-- Can split attacks across multiple targets
-- Fragile if focused
+**Flavor**: "My jaws do not release. Ever."
 
 ---
 
-## 2. SYNAPSE NODE
-**Category**: Support (Buffer/Coordinator)
-**HP**: 10 | **Movement**: 3 | **Defense**: 2
+#### 🔄 RAPID REGENERATION
+**Type**: Healing / Passive
+**Priority**: Low (start of Guardian's turn, if HP < max)
+
+**Effect**:
+- Recover 2 HP at start of turn (natural regeneration)
+- If Guardian has molted 3+ times, recover 4 HP instead
+- Generate 1 Metamorph token for nearest Casket
+- If at max HP, move toward nearest enemy instead
+
+**Flavor**: "We heal faster than you damage. Futile."
+
+---
+
+#### 🌊 PHEROMONE SHIELD
+**Type**: Buff / Area Support
+**Priority**: Medium (when 2+ allies within 4 hexes)
+
+**Effect**:
+- Emit protective pheromones (3-hex radius)
+- All Syndicate units in area gain +2 Defense
+- Enemies in area have -1 to hit (pheromone interference)
+- Lasts 1 round
+
+**Flavor**: "The collective protects its own."
+
+---
+
+#### ⚡ BERSERKER MOLT
+**Type**: Attack / Transformation
+**Priority**: Critical (when HP ≤ 6 or ally destroyed)
+
+**Effect**:
+- Emergency molt (discard all armor, become vulnerable)
+- Lose all Defense bonuses (Defense becomes 0)
+- Gain +3 Movement and +4 damage to all attacks
+- Attack twice this turn if able
+- Lasts until end of round, then recover 1 Defense
+
+**Flavor**: "In desperation, the guardian becomes the predator."
+
+---
+
+### Strategic Use
+- **Tank Role**: Draw enemy fire, protect Casket with Bulwark Stance
+- **Molt Timing**: Molt when wounded (≤10 HP) to maximize healing
+- **Token Generation**: Passively generates Metamorph tokens for Casket
+- **Emergency Mode**: Berserker Molt when desperate
+
+---
+
+## 3. ADAPTATION FORM ⭐ STARTER UNIT
+**Category**: Utility / Metamorph
+**HP**: 10 | **Movement**: 5 | **Defense**: 1
 **Equipment Slots**: 2
-**Theme**: Psychic hub that coordinates nearby units into perfect synchronization
+**Theme**: Shapeshifting organism that changes role based on battlefield needs
 
 ### Visual Description
-A humanoid wrapped in neural cables and pulsing bio-circuitry. Head encased in crystal sphere filled with glowing fluid - their brain is visible, enlarged, networked. Eyes closed (they see through others' eyes). Constantly twitching, processing data from dozens of sources. Whispers commands that allies hear directly in their minds.
+Amorphous chitinous creature that visibly shifts form. Default state: humanoid arthropod. Can transform into: Assault (blade-limbed mantis), Tank (armored beetle), Scout (winged dragonfly), Support (pheromone-spraying moth).
 
-### Behavior Deck (4 Cards)
+### Core Mechanics
+- **Metamorphic Flexibility**: Can transform into 4 forms (Assault/Tank/Scout/Support)
+- **Form Duration**: Transformations last 2 turns
+- **No Cost**: Unlike Caskets, Adaptation Form transforms for free
+- **Hive Synergy**: When transforming, all Syndicate units within 4 hexes gain +1 to matching stat
+- **Token Battery**: Stores up to 3 Metamorph tokens, can transfer to Casket
 
----
+### Behavior Deck (6 Cards)
 
-#### SYNCHRONIZE
-**Type**: Buff / Network
-**Priority**: High
-
-**Effect**:
-- Node links all Syndicate units within 5 hexes
-- All linked units gain +1 to all stats (damage, Defense, movement, SP)
-- Linked units can share SP (transfer SP between units as free action)
-- Link lasts until Node moves or is disrupted
-
-**Flavor**: "We are one. Move as one. Strike as one."
-
----
-
-#### TACTICAL COORDINATION
-**Type**: Utility / Action Economy
-**Priority**: Critical
+#### 🗡️ ASSAULT FORM SHIFT
+**Type**: Transformation / Offense
+**Priority**: High (when enemies clustered or ally needs damage)
 
 **Effect**:
-- Node processes optimal combat solution
-- Choose 2 linked allies:
- - First ally immediately takes free action
- - Second ally draws 2 cards
-- Node takes 2 damage (mental strain)
-
-**Flavor**: "Calculating... optimal path achieved. Execute."
-
----
-
-#### SHARED CONSCIOUSNESS
-**Type**: Passive / Network
-**Priority**: Always Active
-
-**Effect**:
-- All Syndicate units within 5 hexes of Node share consciousness
-- If one unit sees enemy, all units see enemy
-- If one unit is attacked, all units know attacker's position
-- Cannot be flanked or surprised (collective awareness)
-
-**Flavor**: "Your thoughts are our thoughts. Your knowledge is ours."
-
----
-
-#### OVERLOAD
-**Type**: Attack / Psionic
-**Priority**: Critical (when Node HP ≤ 5)
-
-**Effect**:
-- Node unleashes psychic scream
-- Deal 6 damage to all enemies within 4 hexes
-- All affected enemies must discard 2 cards (mental disruption)
-- Node takes 3 damage (feedback loop)
-- All allies within 4 hexes gain +2 damage for 2 turns (inspired by Node's sacrifice)
-
-**Flavor**: "WE. WILL. NOT. FALL."
-
----
-
-### Command Response
-- **RALLY**: Move up to 3 hexes. Extend network range to 6 hexes for this turn.
-- **ATTACK**: Cannot attack directly (non-combatant). Instead, linked ally attacks twice.
-- **DEFEND**: Hunker down. +4 Defense. Double all buffs to linked allies (+2 to all stats instead of +1).
-- **HOLD**: Deep meditation. Recover 4 HP. All linked allies draw 1 card.
-
-### Special Ability: HIVE COORDINATOR
-**Passive**: Synapse Node is command center. While alive:
-- All Syndicate units gain +1 to Morale checks
-- All Syndicate units can act in perfect coordination (resolve actions simultaneously)
-- Network cannot be jammed by enemy abilities
-
-**Triggered**: If Node is destroyed, all linked units take 3 damage (psychic feedback) and lose network bonuses for 2 turns.
-
-### Tactical Use
-- Force multiplier (buffs entire army)
-- Enables complex tactics
-- High-priority target
-- Vulnerable if isolated
-
----
-
-## 3. ASSIMILATION UNIT
-**Category**: Heavy Support (Conversion)
-**HP**: 14 | **Movement**: 3 | **Defense**: 2
-**Equipment Slots**: 3
-**Theme**: Converts enemies into Syndicate drones via neural injection
-
-### Visual Description
-A hunched figure in bio-mechanical armor, carrying massive syringe-cannon. Their back is covered in injection ports, feeding tubes, and conversion tanks filled with glowing neural fluid. Face hidden behind breathing apparatus. They move deliberately, seeking targets for assimilation. Their voice is layered (dozens speaking as one): "Join us. Become perfect. Embrace unity."
-
-### Behavior Deck (4 Cards)
-
----
-
-#### NEURAL INJECTION
-**Type**: Attack / Conversion
-**Priority**: High
-
-**Effect**:
-- Fire neural syringe at enemy within 4 hexes
-- Deal 5 damage
-- Place "Neural Infection" status on target (1 stack)
-- At 3 stacks: Target is converted (becomes allied Syndicate Drone)
-
-**Flavor**: "Injection complete. Conversion: 33%. Resist: futile."
-
----
-
-#### FORCED ASSIMILATION
-**Type**: Utility / Conversion
-**Priority**: Critical (when enemy has 3 Neural Infection stacks)
-
-**Effect**:
-- Target with 3 stacks immediately converts
-- Becomes "Assimilated Drone" (keeps original HP/stats but obeys Syndicate)
-- Drone gains +2 to all stats (enhanced by hive-mind)
-- Drone lasts until destroyed or end of battle
-
-**Flavor**: "Welcome to the Collective. Your individuality is ended. You are improved."
-
----
-
-#### NETWORKED HEALING
-**Type**: Support / Healing
-**Priority**: Medium (when networked ally within 3 hexes has <10 HP)
-
-**Effect**:
-- Inject ally with repair nanites
-- Heal target 6 HP
-- Remove all status effects (neural override)
-- Target gains +1 Defense for 2 turns (hardened systems)
-
-**Flavor**: "We repair. We restore. We perfect."
-
----
-
-#### CONVERSION CASCADE
-**Type**: Passive / Spreading
-**Priority**: Always Active
-
-**Effect**:
-- Assimilated Drones can spread Neural Infection
-- When Drone attacks enemy, enemy gains 1 Neural Infection stack
-- If 3+ Assimilated Drones exist, Assimilation Unit gains +2 movement (hunting mode)
-
-**Flavor**: "One becomes two. Two become four. Four become legion."
-
----
-
-### Command Response
-- **RALLY**: Move up to 3 hexes toward nearest enemy with Neural Infection. Hunting priority.
-- **ATTACK**: Inject target with triple dose (3 Neural Infection stacks immediately). Target converts next turn.
-- **DEFEND**: Deploy conversion field. +3 Defense. All enemies within 2 hexes gain 1 Neural Infection stack per turn.
-- **HOLD**: Brew more neural fluid. Next Neural Injection affects 2 targets simultaneously.
-
-### Special Ability: HIVE GROWTH
-**Passive**: Assimilation Unit can convert unlimited enemies (limited only by turn economy). Assimilated Drones count as Syndicate units for network purposes.
-
-**Triggered**: If Assimilation Unit is destroyed, all Assimilated Drones revert to enemy control (network severed). They are confused (lose 1 turn).
-
-### Tactical Use
-- Army builder (converts enemies)
-- Creates snowball effect (more drones = faster conversions)
-- High-value target
-- Can turn losing battle into winning one
-
----
-
-## NEUTRAL MERCENARY UNITS (Hireable by Any Faction)
-
-### NEURAL JAMMER
-**Category**: Elite Infantry (Disruptor)
-**HP**: 9 | **Movement**: 4 | **Defense**: 1
-**Equipment Slots**: 2
-**Hire Cost**: 45 Credits
-**Theme**: Hacker who disrupts enemy communications and networks
-
-### Visual Description
-A hooded figure carrying portable EMP generator and hacking rig. Face obscured by holographic visor displaying scrolling code. They tap into enemy frequencies, jamming orders, corrupting data, spreading confusion. Former Syndicate member who went rogue (sold secrets to highest bidder).
-
-### Behavior Deck (3 Cards)
-
----
-
-#### COMMUNICATIONS JAM
-**Type**: Debuff / Disruption
-**Priority**: High
-
-**Effect**:
-- Jam all enemy communications within 5 hexes
-- Enemies cannot use Command abilities
-- Enemies cannot benefit from ally buffs
+- Transform into Assault Form (blade-limbed mantis)
+- Gain +3 damage to all attacks
+- Lose -1 Defense (vulnerable while aggressive)
+- Allied Syndicate units within 4 hexes gain +1 damage
 - Lasts 2 turns
 
+**Flavor**: "Blades emerge. The swarm hungers."
+
 ---
 
-#### EMP PULSE
-**Type**: Attack / Tech
-**Priority**: Critical
+#### 🛡️ TANK FORM SHIFT
+**Type**: Transformation / Defense
+**Priority**: High (when taking heavy damage or ally endangered)
 
 **Effect**:
-- Fire EMP blast at 3-hex area
-- All enemies in area take 4 damage
-- All tech-based units (drones, robots, Caskets) take +3 damage
-- Disables enemy equipment for 1 turn
+- Transform into Tank Form (armored beetle)
+- Gain +3 Defense (total Defense 4)
+- Movement reduced to 3
+- Allied Syndicate units within 4 hexes gain +1 Defense
+- Lasts 2 turns
+
+**Flavor**: "Chitin thickens. The collective endures."
 
 ---
 
-#### COUNTER-HACK
-**Type**: Utility / Theft
-**Priority**: Medium
+#### 🏃 SCOUT FORM SHIFT
+**Type**: Transformation / Mobility
+**Priority**: High (when need to reach objective or escape danger)
 
 **Effect**:
-- Hack into enemy systems
-- Steal 1 ability from target
-- Can use stolen ability once
-- Target cannot use that ability for 2 turns
+- Transform into Scout Form (winged dragonfly)
+- Gain +3 Movement (total Movement 8)
+- Gain Flying (ignore terrain)
+- Allied Syndicate units within 4 hexes gain +1 Movement
+- Lasts 2 turns
+
+**Flavor**: "Wings sprout. The hive disperses."
 
 ---
 
-### Special Ability: FOR HIRE
-**Passive**: Any faction can hire Neural Jammer for 45 Credits. Jammer serves loyally (but keeps all data for later resale).
+#### 💚 SUPPORT FORM SHIFT
+**Type**: Transformation / Healing
+**Priority**: Medium (when ally wounded or needs tokens)
+
+**Effect**:
+- Transform into Support Form (pheromone moth)
+- Emit healing pheromones (4-hex radius)
+- Allied Syndicate units in area recover 2 cards per turn
+- Generate 2 Metamorph tokens per turn
+- Cannot attack in this form
+- Lasts 2 turns
+
+**Flavor**: "Chemicals mend. The collective heals."
 
 ---
 
-### HIVE INFILTRATOR
-**Category**: Heavy Support (Saboteur)
-**HP**: 12 | **Movement**: 4 | **Defense**: 2
-**Equipment Slots**: 3
-**Hire Cost**: 70 Credits
-**Theme**: Ex-Syndicate assassin who infiltrates networks and corrupts from within
+#### 🔄 REVERT TO BASE
+**Type**: Utility / Reset
+**Priority**: Low (when transformation expires or no longer needed)
+
+**Effect**:
+- Return to base form (humanoid arthropod)
+- Remove all transformation effects
+- Gain 1 Metamorph token
+- Store up to 3 tokens (can transfer to Casket later)
+- Ready to transform again
+
+**Flavor**: "Form is temporary. The hive is eternal."
+
+---
+
+#### 🎯 SYNCHRONIZED STRIKE
+**Type**: Attack / Coordination
+**Priority**: Medium (when ally attacks same target)
+
+**Effect**:
+- Move toward ally's target
+- If Adaptation Form and ally both adjacent to same enemy:
+  - Both attack simultaneously for +2 damage each
+  - Generate 1 Metamorph token for ally
+- Form doesn't change (works in any transformation)
+
+**Flavor**: "Two bodies. One mind. Perfect coordination."
+
+---
+
+### Strategic Use
+- **Flexibility**: Change forms based on battlefield state
+- **Support Casket**: Use Support Form to generate tokens and healing
+- **Combat Support**: Use Assault/Tank forms to amplify Casket's strategy
+- **Mobility**: Use Scout Form to contest objectives or escape
+
+---
+
+## 4. HIVE SPAWN 🔒 UNLOCKABLE
+**Unlock Condition**: Complete 3 missions
+**Category**: Minion Factory / Swarm
+**HP**: 12 | **Movement**: 2 | **Defense**: 1
+**Equipment Slots**: 2
+**Theme**: Grotesque bio-mass that spawns smaller organisms
 
 ### Visual Description
-Looks like normal Syndicate drone until you look closer. Facial expressions slightly off. Movements too deliberate. Neural ports are fake (cosmetic implants). They're human pretending to be hive-mind. Perfect infiltrator. When they strike, it's from within the network itself.
+Pulsating sac of organic matter, resembling massive wasp nest made of chitin and flesh. Constantly birthing fist-sized larvae that scuttle away. Covered in weeping holes leaking amber fluid.
 
-### Behavior Deck (3 Cards)
+### Core Mechanics
+- **Spawn Generation**: Creates 1 Spawn Token per turn (max 6)
+- **Spawn Tokens**: Miniscule organisms (1 HP, 1 damage, Movement 4)
+- **Swarm Tactics**: Each Spawn Token adjacent to enemy = -1 Defense to that enemy
+- **Sacrifice Spawn**: Spend 3 Spawn Tokens to create 1 Metamorph Token
+- **Immobile**: Cannot move (rooted like a structure)
 
----
+### Key Abilities
+1. **Birth Swarm** (1 SP): Generate 2 Spawn Tokens immediately
+2. **Detonate Spawn** (2 SP): Sacrifice all Spawn Tokens within 6 hexes. Each deals 2 damage to nearest enemy.
+3. **Feed the Hive** (0 SP, Reactive): When enemy destroyed within 4 hexes, gain 2 Spawn Tokens
+4. **Metamorphic Sacrifice** (0 SP): Spend 3 Spawn Tokens → 1 Metamorph Token for Casket
 
-#### NETWORK INFILTRATION
-**Type**: Utility / Stealth
-**Priority**: High
-
-**Effect**:
-- Infiltrator joins enemy network (if enemy uses networked units)
-- Appears as ally to enemies for 2 turns
-- Can sabotage network (deal 3 damage to all networked enemies)
-- Reveal all enemy cards
-
----
-
-#### TROJAN STRIKE
-**Type**: Attack / Sabotage
-**Priority**: Critical
-
-**Effect**:
-- While infiltrated, attack key target from within
-- Deal 10 damage, ignore Defense
-- Target's allies cannot assist (think Infiltrator is ally)
-- After attack, cover blown (becomes hostile)
+### Behavior Pattern
+1. Generate Spawn Tokens each turn (passive)
+2. Send Spawn toward enemies (reduce their Defense)
+3. Detonate Spawn when enemies clustered
+4. Sacrifice excess Spawn for Metamorph Tokens
 
 ---
 
-#### VIRAL UPLOAD
-**Type**: Utility / Corruption
-**Priority**: Medium
+## 5. EVOLUTION CATALYST 🔒 UNLOCKABLE
+**Unlock Condition**: Build Bio-Lab in settlement
+**Category**: Support / Buffer
+**HP**: 8 | **Movement**: 4 | **Defense**: 2
+**Equipment Slots**: 2
+**Theme**: Pheromone emitter that accelerates allied evolution
 
-**Effect**:
-- Upload virus into enemy network
-- All networked enemies lose 2 SP per turn for 3 turns
-- All networked enemies have -1 to all stats
-- Virus spreads (affects new units entering network)
+### Visual Description
+Elegant moth-like creature (human-sized) with four translucent wings. Emits visible pheromone clouds (rainbow-colored mist). Antennae constantly twitching, sampling air chemistry.
 
----
+### Core Mechanics
+- **Pheromone Aura**: All Syndicate units within 6 hexes have +1 to all stats
+- **Accelerated Evolution**: Allied units gain Metamorph tokens 50% faster
+- **Debuff Immunity**: Syndicate units in aura immune to status effects (poison, bleed, etc.)
+- **Catalyst Buff**: When ally transforms, they gain +1 additional transformation benefit
 
-### Special Ability: HIRED SABOTEUR
-**Passive**: Any faction can hire Hive Infiltrator for 70 Credits. Infiltrator specializes in disrupting networked enemies (especially effective vs Syndicate itself).
+### Key Abilities
+1. **Forced Evolution** (3 Metamorph Tokens): Target ally gains ALL 3 transformation forms simultaneously (Assault + Tank + Scout)
+2. **Molt Cascade** (2 SP): All Syndicate units within 6 hexes recover 3 cards
+3. **Pheromone Overload** (4 SP): Enemies within 6 hexes take 3 damage and are confused (skip next turn)
+4. **Transfer Tokens** (0 SP): Move Metamorph tokens between Syndicate units
 
----
-
-## ASYMMETRIC DESIGN NOTES
-
-### Why Only 3 Faction Units + 2 Neutral?
-Syndicate doctrine is "collective strength." They have:
-- **3 Core Units**: Swarms, coordinators, converters
-- **2 Neutral Units**: Available to all factions (ex-Syndicate mercenaries)
-
-### Network Mechanics
-All Syndicate units benefit from being near each other (5-hex network range). This encourages:
-- Grouping units
-- Protecting Synapse Node
-- Creating overlapping networks
+### Behavior Pattern
+1. Stay near Casket (maximize aura benefit)
+2. Use Forced Evolution when Casket needs power spike
+3. Molt Cascade when allies wounded
+4. Pheromone Overload when surrounded
 
 ---
 
-## DECK BUILDING EXAMPLES
+## 6. APEX PREDATOR 🔒 UNLOCKABLE
+**Unlock Condition**: Defeat "The First Emergent" boss
+**Category**: Elite Hunter / Assassin
+**HP**: 25 | **Movement**: 6 | **Defense**: 3
+**Equipment Slots**: 3
+**Theme**: Perfect evolution - the ultimate arthropod killing machine
 
-### Example: Syndicate Scout Casket with Drone Swarm
+### Visual Description
+Nightmarish fusion of mantis, spider, and beetle. 12 feet tall, eight blade-limbs, compound eyes with 360° vision, chitinous armor plates shimmer with iridescent colors. Moves with predatory grace despite massive size.
 
-**Total Deck Construction**:
-- 10 Universal Core
-- 6 Syndicate Faction Core
-- 6 Neural Rifle (weapon, 1 slot)
-- **Drone Swarm** (2 slots)
-- 2 Syndicate Tactics
+### Core Mechanics
+- **Apex Evolution**: Permanently has ALL transformation benefits (Assault + Tank + Scout + Support)
+  - +3 damage (Assault)
+  - +2 Defense (Tank)
+  - +2 Movement (Scout)
+  - Generates 2 Metamorph tokens/turn (Support)
+- **Instinct Kill**: If target below 50% HP, deal double damage (execution)
+- **Perfect Molt**: Molt once per battle (recover 10 HP, gain +1 Defense permanently)
+- **Hive Apex**: All Syndicate units within 8 hexes have +2 to all stats
+- **Regeneration**: Recover 3 HP at start of each turn
 
-**Total**: 24 cards, 1 Drone Swarm
+### Key Abilities
+1. **Primal Strike** (4 SP): Attack for 10 damage, ignore Defense
+2. **Metamorphic Fury** (5 Metamorph Tokens): Make 4 attacks this turn
+3. **Apex Roar** (3 SP): All enemies within 6 hexes are Feared (skip next turn)
+4. **Evolutionary Leap** (2 SP): Teleport up to 8 hexes, attack immediately
 
-**Playstyle**: Scout + support swarm. Share vision, coordinate strikes, adapt formations.
+### Behavior Pattern
+1. Hunt weakest enemy (Instinct Kill triggers)
+2. Use Metamorphic Fury when multiple enemies wounded
+3. Apex Roar when surrounded
+4. Perfect Molt when critically wounded (≤10 HP)
 
-### Example: Syndicate Heavy Casket with Synapse Node + Assimilation Unit
+---
 
-**Total Deck Construction**:
-- 10 Universal Core
-- 6 Syndicate Faction Core
-- **Synapse Node** (2 slots)
-- **Assimilation Unit** (3 slots)
-- 2 Syndicate Tactics
+## STRATEGIC BUILDS
 
-**Total**: 18 cards, 2 support units
+### Swarm Tactics (Mass Minions)
+- **Units**: Drone Swarm + Hive Spawn
+- **Strategy**: Flood battlefield with Spawn Tokens and Drones, overwhelm with numbers
+- **Strength**: Many targets (enemies can't focus fire), constant pressure
+- **Weakness**: Vulnerable to AOE attacks
 
-**Playstyle**: Network fortress. Node coordinates, Assimilator converts, Casket commands. Build hive army.
+### Tank & Spank (Immortal Guardian)
+- **Units**: Molt Guardian + Evolution Catalyst
+- **Strategy**: Guardian holds line with molts, Catalyst provides buffs and healing
+- **Strength**: Extremely durable, hard to kill Guardian
+- **Weakness**: Slow, struggles vs kiting enemies
+
+### Flexible Response (Swiss Army Knife)
+- **Units**: Adaptation Form + Drone Swarm
+- **Strategy**: Adapt to any situation, transform as needed, scout with Drones
+- **Strength**: Answers any threat, very versatile
+- **Weakness**: Jack-of-all-trades (not specialized)
+
+### Elite Power Spike (Apex Rush)
+- **Units**: Apex Predator (solo)
+- **Strategy**: Rush enemy with overwhelming force, execute wounded targets
+- **Strength**: Unstoppable killing machine, terrifying 1v1
+- **Weakness**: Expensive (3 equipment slots), single point of failure
+
+---
+
+## PROGRESSION SYSTEM
+
+### Early Campaign (Missions 1-5)
+- **Available**: Drone Swarm, Molt Guardian, Adaptation Form
+- **Focus**: Learn metamorphosis timing, coordinate hive actions
+- **Playstyle**: Defensive with support from Guardian, scout with Drones
+
+### Mid Campaign (Missions 6-15)
+- **Unlock**: Hive Spawn (mission 3), Evolution Catalyst (Bio-Lab built)
+- **Focus**: Swarm tactics with Spawn, buff stacking with Catalyst
+- **Playstyle**: Aggressive swarm or support buffing
+
+### Late Campaign (Missions 16+)
+- **Unlock**: Apex Predator (after boss)
+- **Focus**: Deploy ultimate hunter or maintain swarm
+- **Playstyle**: Choose between Apex solo or coordinated multi-unit swarm
 
 ---
 
 ## FACTION SYNERGIES
 
-### Network Buffs + All Units
-- Synapse Node provides +1 to all stats
-- Drone Swarm provides vision
-- Assimilation Unit provides converted drones
-- All units amplify each other
-
-### Conversion + Hive Growth
-- Syndicate Casket weakens enemies
-- Assimilation Unit converts weakened targets
-- Converted units join network
-- Exponential growth
+| Allied Faction | Synergy | Anti-Synergy |
+|----------------|---------|--------------|
+| **Church** | Molt Guardian tanks while Church self-harms | Metamorph tokens don't synergize with Blood Offering |
+| **Dwarves** | Both defensive, Guardian + Shield Wall = fortress | Both slow, lack mobility |
+| **Ossuarium** | Drone Swarm scouts for undead thralls | None significant |
+| **Elves** | Evolution Catalyst buffs Elven archers | None |
+| **Vestige** | Apex Predator + Pack Hunters = savage melee | None |
+| **Crucible** | Hive-mind coordination + Honor Duels = tactical depth | None |
+| **Exchange** | Can hire Emergent units with Credits (mercenaries) | None |
 
 ---
 
-**END OF DOCUMENT**
+## DESIGN PHILOSOPHY
 
-*"Join us. Become perfect. Individual thought is error. Collective consciousness is truth."* — Syndicate Doctrine
+### Identity: Chosen Evolution
+- **Not victims**: Emergent chose transformation (unlike Vestige/Blighted)
+- **Scientific**: Controlled mutation, not chaotic corruption
+- **Collective**: Hive-mind coordination, not individual heroics
+- **Adaptive**: Change forms mid-battle, answer any threat
+
+### Gameplay Pattern
+- **Token Economy**: Generate and spend Metamorph tokens
+- **Transformation**: Change forms based on battlefield needs
+- **Coordination**: Buff allies, debuff enemies with pheromones
+- **Swarm**: Multiple small units vs single large units
+
+### Counterplay
+- **AOE Attacks**: Punish clustering (Drone Swarm, Hive Spawn vulnerable)
+- **Burst Damage**: Kill before they molt/transform
+- **Debuff Immunity Negation**: Target non-Syndicate units
+- **Isolation**: Separate from hive (reduce token generation)
+
+---
+
+**"We are many. We are one. We are the inevitable evolution."**
+
+*Support units document version 1.0 (COMPLETE) - Emergent Syndicate*
+
+---
+
+[← Back to Emergent](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)

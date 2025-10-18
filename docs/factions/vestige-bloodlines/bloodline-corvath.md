@@ -148,4 +148,4 @@ Kirin offers **information and access**, not combat support.
 
 ---
 
-**[← Previous Bloodline: Vexis](bloodline-vexis.md)** | **[Next Bloodline: Serrak →](bloodline-serrak.md)**
+**[← Previous Bloodline: Vexis](bloodline-vexis.md)** | **[Back to Vestige Bloodlines](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next Bloodline: Serrak →](bloodline-serrak.md)**

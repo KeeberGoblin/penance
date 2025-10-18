@@ -1,479 +1,583 @@
 # Crucible Packs - Support Units
-## Penance: Volcanic Honor, Ancestral Spirits, and Trial by Fire
+## Penance: Absolution Through Steel
 
-**Version**: 3.0 Equipment System (Asymmetric)
-**Date**: October 16, 2025
+**Version**: 2.0 Equipment System
+**Status**: ✅ **COMPLETE** - Full Framework with Behavior Decks
+**Date**: October 17, 2025
 
-Crucible Packs field ancestral warriors, volcanic beasts, and honor-bound duelists. Each unit embodies volcanic culture: honor through combat, strength through fire, glory through death.
+The Crucible Packs field tribal warriors bound by honor, wielding ancestral weapons forged in volcanic fire.
 
 ---
 
 ## CRUCIBLE SUPPORT UNITS OVERVIEW
 
-**Faction-Specific Units** (Choose 1):
-1. Ashbound Warriors (2 Equipment Slots)
-2. Lava Hound (2 Equipment Slots)
-3. Ancestor Shrine (3 Equipment Slots)
+**Starting Units** (Available immediately):
+1. **Honor Guard** - Defensive duelist who protects allies
+2. **Forge Apprentice** - Support smith who generates Forge tokens
+3. **Tribal Hunter** - Scout/skirmisher with tracking abilities
 
-**Neutral Mercenary Units** (Hireable by Any Faction):
-- Volcanic Gladiator (2 Equipment Slots, 50 Credits)
-- Fire Speaker (3 Equipment Slots, 65 Credits)
+**Unlockable Units** (Require campaign progression):
+4. **Duelist Champion** - Elite 1v1 fighter (Unlock: Win 5 Honor Duels)
+5. **Forge Master** - Tactical commander (Unlock: Forge 3 Ancestral Weapons)
+6. **Ancestral Spirit** - Legendary ghost warrior (Unlock: Defeat Ashen-King Torrak)
 
-**Note**: Crucible units gain bonuses in high-Heat environments and near lava terrain.
+**Limit**: Choose 1-3 support units (based on Casket Equipment Slots available)
+
+**Design Philosophy**: Crucible units emphasize honor duels, Forge token economy, ancestral legacy, and volcanic terrain control. They thrive in fire, respect strength, and punish cowardice.
 
 ---
 
-## 1. ASHBOUND WARRIORS
-**Category**: Infantry (Elite Melee)
-**HP**: 10 | **Movement**: 4 | **Defense**: 2
+## 1. HONOR GUARD ⭐ STARTER UNIT
+**Category**: Defender / Duelist
+**HP**: 12 | **Movement**: 4 | **Defense**: 3
 **Equipment Slots**: 2
-**Theme**: Honor-bound infantry who fight with obsidian blades and volcanic fury
+**Theme**: Sworn protector who intercepts attacks and fights duels on behalf of allies
 
 ### Visual Description
-Four warriors in volcanic glass armor - black obsidian plates etched with flame patterns. Faces tattooed with ancestral markings. They wield paired obsidian blades that glow with inner heat. Cloaks made from ashfall fabric. They move in lockstep formation, chanting war songs. Every strike is ritualized. Every kill is dedicated to ancestors.
+Warrior in ancestral plate armor (passed down 6 generations), carrying tower shield emblazoned with Pack symbol (volcanic hammer). Face scarred from ritual trials. Wears ash-braided hair as honor cord.
 
-### Behavior Deck (4 Cards)
+### Core Mechanics
+- **Bodyguard**: Can intercept attacks targeting allies within 3 hexes
+- **Duelist Training**: Can accept Honor Duels on behalf of allies
+- **Shield Wall**: Adjacent allies gain +1 Defense
+- **Forge Generation**: Gains 1 Forge token when protecting ally from damage
+- **Unbreakable**: When reduced to 0 HP, survive with 1 HP once per battle (honor won't permit fall)
 
----
+### Behavior Deck (6 Cards)
 
-#### HONOR DUEL
-**Type**: Attack / Single Combat
-**Priority**: High
-
-**Effect**:
-- Warriors challenge 1 enemy to formal duel
-- Move adjacent to target
-- Attack for 7 damage
-- If target attacks back, Warriors gain +2 Defense (honorable combat)
-- If target flees, Warriors gain +3 damage next turn (righteous fury at cowardice)
-
-**Flavor**: "Face me with honor, or die with shame."
-
----
-
-#### VOLCANIC FURY
-**Type**: Attack / Burst
-**Priority**: Critical (when Warriors have 5+ Heat)
+#### 🛡️ PROTECTIVE STANCE
+**Type**: Reactive / Defense
+**Priority**: Critical (when ally within 3 hexes takes damage)
 
 **Effect**:
-- Warriors channel volcanic heat into strikes
-- Attack all adjacent enemies for 6 damage each
-- Set all hit targets on fire (2 damage/turn for 2 turns)
-- Warriors lose 3 Heat (vented into attacks)
+- Intercept attack targeting ally within 3 hexes
+- Honor Guard takes damage instead of ally
+- Reduce damage by 2 (minimum 1, shield absorbs)
+- Gain 1 Forge token (honor in protection)
+- Move 3 hexes toward ally if needed
 
-**Flavor**: "The mountain's rage flows through us!"
+**Flavor**: "No harm shall reach those under my shield."
 
 ---
 
-#### SHIELD WALL OF ASH
-**Type**: Defense / Formation
-**Priority**: Medium (when allied Casket within 3 hexes)
+#### ⚔️ CHALLENGE ACCEPTED
+**Type**: Duel / Attack
+**Priority**: High (when ally threatened or Honor Duel issued)
 
 **Effect**:
-- Warriors form defensive formation around Casket
-- Warriors and Casket gain +3 Defense
-- Any enemy attacking through formation takes 2 damage (obsidian shards)
-- Warriors cannot move while in formation
+- Can accept Honor Duel on behalf of ally (take their place)
+- If in active duel: Attack for 5 damage
+- If duel victory: Gain 2 Forge tokens + draw 2 cards
+- If enemy refuses to duel Guard: Enemy gains Coward's Mark
 
-**Flavor**: "We are the shield of our people. We do not break."
+**Flavor**: "Your quarrel is with me now."
 
 ---
 
-#### ANCESTRAL BLESSING
-**Type**: Utility / Ritual
-**Priority**: Medium
+#### 🏰 SHIELD WALL FORMATION
+**Type**: Buff / Area Defense
+**Priority**: High (when 2+ allies within 3 hexes)
 
 **Effect**:
-- Warriors perform quick prayer to ancestors
-- Choose 1:
- - Gain +2 damage for 2 turns (ancestor's strength)
- - Heal 4 HP (ancestor's resilience)
- - Gain +2 Defense for 2 turns (ancestor's protection)
-- Draw 1 card (ancestral guidance)
+- Plant shield (cannot move this turn)
+- All allies within 3 hexes gain +2 Defense
+- Honor Guard gains +1 Defense (total Defense 4)
+- Enemies attacking allies within area take 2 damage (shield spikes)
+- Generate 1 Forge token
 
-**Flavor**: "Ancestors, grant us your strength in this trial."
-
----
-
-### Command Response
-- **RALLY**: Move up to 4 hexes toward nearest enemy. Chanting war songs.
-- **ATTACK**: Attack target with Honor Duel (7 damage, +2 Defense if counterattacked).
-- **DEFEND**: Form Shield Wall. +4 Defense. Protect adjacent allies.
-- **HOLD**: Pray to ancestors. Heal 3 HP, draw 1 card.
-
-### Special Ability: HONOR BOUND
-**Passive**: Ashbound Warriors cannot retreat from combat. They cannot abandon allies. They fight until victory or death (cultural mandate).
-
-**Triggered**: If Warriors kill enemy in honorable 1v1 duel, gain permanent +1 damage for rest of battle (proven in combat).
-
-### Tactical Use
-- Reliable melee infantry
-- Benefits from Heat mechanics
-- Cannot retreat (commitment)
-- Scales with honorable kills
+**Flavor**: "Behind this shield, we fear nothing."
 
 ---
 
-## 2. LAVA HOUND
-**Category**: Cavalry (Beast/Fast Attack)
-**HP**: 12 | **Movement**: 6 | **Defense**: 1
+#### 🔥 LAVA STANCE
+**Type**: Utility / Positioning
+**Priority**: Medium (when lava terrain within 4 hexes)
+
+**Effect**:
+- Move up to 4 hexes toward lava terrain
+- If ending in lava: Gain 2 Forge tokens (instead of 1)
+- Take no damage from lava (honor tempers flesh)
+- Next attack deals +2 damage (volcanic fury)
+
+**Flavor**: "Fire tests us. We do not burn."
+
+---
+
+#### 💢 RETRIBUTION STRIKE
+**Type**: Attack / Revenge
+**Priority**: High (when ally was damaged this round)
+
+**Effect**:
+- Move toward enemy who damaged ally (up to 4 hexes)
+- Attack for 6 damage
+- If ally was reduced to ≤50% HP: Deal 8 damage instead
+- Gain 1 Forge token per ally protected this battle
+
+**Flavor**: "You hurt mine. Now face the consequences."
+
+---
+
+#### 🏆 LAST STAND
+**Type**: Reactive / Survival
+**Priority**: Critical (when Honor Guard HP ≤ 4)
+
+**Effect**:
+- Trigger Unbreakable (survive at 1 HP, once per battle)
+- Gain +3 damage to all attacks for 2 turns
+- Cannot move (rooted to spot, "here I stand")
+- Allies within 3 hexes gain +1 damage (inspired by courage)
+- Generate 2 Forge tokens
+
+**Flavor**: "I fall only when my brothers are safe."
+
+---
+
+### Strategic Use
+- **Bodyguard Role**: Intercept high-damage attacks targeting fragile allies
+- **Duel Proxy**: Accept duels on behalf of allies who can't win
+- **Shield Wall**: Create defensive zone for Casket to operate safely
+- **Token Battery**: Generates Forge tokens by protecting allies
+
+---
+
+## 2. FORGE APPRENTICE ⭐ STARTER UNIT
+**Category**: Support / Crafter
+**HP**: 8 | **Movement**: 5 | **Defense**: 1
 **Equipment Slots**: 2
-**Theme**: Volcanic beast - molten rock and fury in canine form
+**Theme**: Young smith who tends mobile forge, generates tokens, buffs weapons
 
 ### Visual Description
-A massive hound made of living magma and obsidian. Size of a horse. Skin is cracked stone glowing with inner fire. Eyes are burning coals. Constantly dripping lava from jaws. Howl sounds like volcanic eruption. Bonded to single Crucible rider - armored warrior who controls beast through psychic link. Beast is loyal, aggressive, and burns everything it touches.
+Young warrior (late teens) carrying portable forge (backpack-sized brazier burning with volcanic coal). Wears leather apron over light armor. Carries smith's hammer and tongs. Face smudged with ash, eyes bright with devotion.
 
-### Behavior Deck (4 Cards)
+### Core Mechanics
+- **Mobile Forge**: Generates 2 Forge tokens per turn when standing in lava (1 otherwise)
+- **Weapon Blessing**: Can spend 1 Forge token to give ally +1 damage for 1 turn
+- **Repair**: Can spend 2 Forge tokens to restore 3 cards to ally
+- **Lava Creation**: Can spend 3 Forge tokens to create 1 lava terrain hex
+- **Fragile**: Low HP and Defense (must be protected)
 
----
+### Behavior Deck (6 Cards)
 
-#### MOLTEN CHARGE
-**Type**: Attack / Charge
-**Priority**: High
-
-**Effect**:
-- Hound charges at full speed (6 hexes) toward enemy
-- Attack for 8 damage
-- Set target on fire (3 damage/turn for 2 turns)
-- Leave trail of burning hexes (difficult terrain, 1 damage to cross)
-
-**Flavor**: "RAAAAWWWRRRR!" *volcanic eruption sound*
-
----
-
-#### LAVA BREATH
-**Type**: Attack / Area
-**Priority**: Medium (when 2+ enemies within 3 hexes)
+#### 🔨 FORGE TENDING
+**Type**: Utility / Token Generation
+**Priority**: High (start of turn, if not in lava)
 
 **Effect**:
-- Hound exhales gout of molten rock
-- Attack all enemies in 3-hex cone for 5 damage
-- Create lava pool in affected hexes (3 damage/turn to stand in, lasts 3 turns)
-- Hound gains 2 Heat (internal temperature rising)
+- Move toward nearest lava terrain (up to 5 hexes)
+- If in lava: Generate 2 Forge tokens (mobile forge ignites)
+- If not in lava: Generate 1 Forge token (embers suffice)
+- Allied Crucible within 3 hexes gain 1 Forge token
 
-**Flavor**: "The beast carries the volcano's fury within."
+**Flavor**: "The forge never sleeps. Neither do I."
 
 ---
 
-#### VOLCANIC REGENERATION
-**Type**: Healing / Passive
-**Priority**: Always Active
+#### ⚡ EMBER BLESSING
+**Type**: Buff / Support
+**Priority**: High (when ally about to attack)
 
 **Effect**:
-- Hound regenerates 2 HP per turn when standing in lava/fire terrain
-- Hound regenerates 1 HP per turn when Heat ≥ 5
-- Cannot be harmed by fire damage (immune)
-- Actually heals from fire damage (+2 HP per fire damage taken)
+- Target allied Crucible Casket within 4 hexes
+- Spend 1 Forge token
+- Ally's next attack deals +2 damage (weapon blessed with fire)
+- If ally in lava: +3 damage instead
+- Ally's weapon glows with volcanic heat (visual)
 
-**Flavor**: "Fire does not harm. Fire sustains."
+**Flavor**: "May the First Forge guide your strike."
 
 ---
 
-#### LOYALTY UNTO DEATH
-**Type**: Reactive / Sacrifice
-**Priority**: Reactive (triggers when Crucible Casket would take fatal damage)
+#### 🔧 FIELD REPAIR
+**Type**: Healing / Support
+**Priority**: Medium (when ally HP ≤ 50%)
 
 **Effect**:
-- Hound leaps in front of attack
-- Intercept damage meant for Casket (Hound takes damage instead)
-- If this kills Hound, explode in volcanic fury (8 damage to all enemies within 3 hexes)
-- Rider mourns (Crucible Casket gains +3 damage for rest of battle, fueled by grief)
+- Target allied Crucible Casket within 3 hexes
+- Spend 2 Forge tokens
+- Ally recovers 4 cards (emergency repairs)
+- Remove 1 debuff from ally (burn away impurity)
+- Apprentice cannot act again this turn (exhausted)
 
-**Flavor**: "My beast. My friend. My brother. I will avenge you."
-
----
-
-### Command Response
-- **RALLY**: Move up to 6 hexes at breakneck speed. Howling war cry.
-- **ATTACK**: Molten Charge at target (8 damage, set on fire, burning trail).
-- **DEFEND**: Cannot defend (beast knows only attack). Automatically uses Lava Breath instead.
-- **HOLD**: Bask in heat. Recover 4 HP if Heat ≥ 3.
-
-### Special Ability: BONDED BEAST
-**Passive**: Lava Hound is psychically bonded to Crucible Casket. While within 5 hexes of Casket:
-- Hound gains +1 to all stats
-- Hound can sense what Casket sees
-- Cannot be mind-controlled or turned
-
-**Triggered**: If Crucible Casket destroyed, Hound goes berserk (attacks nearest unit, friend or foe) for 3 turns, then flees.
-
-### Tactical Use
-- Fast attack cavalry
-- Benefits from Heat/fire terrain
-- Can sacrifice for Casket
-- Devastating charge unit
+**Flavor**: "Hold still. I can fix this."
 
 ---
 
-## 3. ANCESTOR SHRINE
-**Category**: Heavy Support (Totem/Buff)
-**HP**: 16 | **Movement**: 1 | **Defense**: 3
+#### 🌋 CREATE LAVA TERRAIN
+**Type**: Utility / Terrain Control
+**Priority**: Medium (when no lava within 4 hexes)
+
+**Effect**:
+- Spend 3 Forge tokens
+- Create 1 lava terrain hex within 3 hexes (volcanic eruption)
+- Enemies in hex take 3 damage immediately
+- Lava hex lasts 3 turns
+- Apprentice generates 1 Heat
+
+**Flavor**: "The mountain answers the forge."
+
+---
+
+#### 🏃 EVASIVE MANEUVERS
+**Type**: Movement / Survival
+**Priority**: Critical (when enemy within 2 hexes or Apprentice HP ≤ 4)
+
+**Effect**:
+- Move up to 5 hexes away from nearest enemy
+- Cannot be targeted by reactions during movement (too fast)
+- If ending adjacent to ally: Hide behind them (cannot be targeted until Apprentice moves)
+- Drop 1 lava flask (create 1 lava hex at starting position)
+
+**Flavor**: "I am smith, not warrior! Protect me!"
+
+---
+
+#### 🔥 FORGE OVERLOAD
+**Type**: Attack / Desperation
+**Priority**: Low (when ally destroyed or Apprentice cornered)
+
+**Effect**:
+- Spend all Forge tokens (minimum 3 required)
+- Deal 2 damage per token spent to all enemies within 3 hexes
+- Create lava terrain at Apprentice's location
+- Apprentice takes 2 damage (forge overheats)
+- Forge goes dormant (no token generation next turn)
+
+**Flavor**: "If I fall, I take you with me!"
+
+---
+
+### Strategic Use
+- **Token Economy**: Primary Forge token generator for team
+- **Buff Bot**: Use Ember Blessing to amplify Casket attacks
+- **Terrain Control**: Create lava hexes for positioning
+- **Fragile**: Must be protected (dies easily to focused fire)
+
+---
+
+## 3. TRIBAL HUNTER ⭐ STARTER UNIT
+**Category**: Scout / Skirmisher
+**HP**: 10 | **Movement**: 6 | **Defense**: 1
+**Equipment Slots**: 2
+**Theme**: Fast-moving tracker who harasses, scouts, and marks targets
+
+### Visual Description
+Lean warrior in light leather armor, carrying volcanic glass spear and throwing axes. Face painted with ash tribal markings. Moves with predatory grace, constantly scanning environment. Wears trophy teeth from hunted prey.
+
+### Core Mechanics
+- **Tracking**: Can mark 1 enemy per turn (Hunter's Mark = +1 damage from all Crucible)
+- **Hit-and-Run**: Can move before AND after attacking (split movement)
+- **Scout Vision**: Reveals hidden enemies within 8 hexes
+- **Pack Tactics**: Deals +1 damage for each ally adjacent to same target
+- **Outnumbered Bonus**: Gains +1 damage for each enemy within 6 hexes (desperate strength)
+
+### Behavior Deck (6 Cards)
+
+#### 🎯 HUNTER'S MARK
+**Type**: Utility / Mark
+**Priority**: High (when priority target identified)
+
+**Effect**:
+- Mark 1 visible enemy within 8 hexes (Hunter's Mark)
+- All Crucible units deal +1 damage to marked enemy
+- Mark lasts until enemy dies or Hunter marks new target
+- Reveal hidden enemies within 8 hexes
+- Move up to 3 hexes
+
+**Flavor**: "I see you. The pack sees you. Run."
+
+---
+
+#### 🏹 HARASSING STRIKE
+**Type**: Attack / Mobility
+**Priority**: High (when opportunity for hit-and-run)
+
+**Effect**:
+- Move up to 3 hexes toward enemy
+- Throw volcanic axe for 3 damage (range 4 hexes)
+- Move up to 3 hexes away from enemy (hit-and-run)
+- If enemy is marked: Deal 4 damage instead
+- Cannot be targeted by reactions during movement
+
+**Flavor**: "Strike fast. Vanish faster."
+
+---
+
+#### 🐺 PACK COORDINATION
+**Type**: Attack / Synergy
+**Priority**: High (when ally adjacent to enemy)
+
+**Effect**:
+- Move toward enemy adjacent to ally (up to 6 hexes)
+- If Hunter and ally both adjacent to same enemy:
+  - Hunter attacks for 5 damage (volcanic spear)
+  - Ally gains +2 damage on their next attack (coordinated strike)
+- Generate 1 Forge token (honor in coordination)
+
+**Flavor**: "The pack hunts as one."
+
+---
+
+#### 🔍 SCOUTING RUN
+**Type**: Movement / Information
+**Priority**: Medium (when battlefield unexplored or objectives present)
+
+**Effect**:
+- Move up to 8 hexes (running)
+- Reveal all hidden enemies, traps, objectives within 6 hexes
+- Mark 1 enemy encountered
+- Can move through enemy-occupied hexes (too fast to intercept)
+- Report to Casket: Casket draws 1 card (intel value)
+
+**Flavor**: "The terrain is mine. I know every path."
+
+---
+
+#### 💪 DESPERATE FURY
+**Type**: Attack / Buff
+**Priority**: High (when outnumbered: 2+ enemies within 6 hexes)
+
+**Effect**:
+- Gain +1 damage per enemy within 6 hexes (max +3)
+- Attack nearest enemy for 4 + bonus damage
+- If enemy is marked: Deal additional +2 damage
+- Move 3 hexes after attack (retreat or reposition)
+
+**Flavor**: "Cornered prey is deadliest. I am no prey."
+
+---
+
+#### 🔥 VOLCANIC AMBUSH
+**Type**: Attack / Terrain
+**Priority**: Medium (when lava terrain nearby or enemy isolated)
+
+**Effect**:
+- If standing in lava: Leap out to attack enemy within 4 hexes (8 damage)
+- If not in lava: Move to lava hex (up to 6 hexes), prepare ambush
+- Marked enemies take +3 damage from ambush
+- Create 1 lava hex at landing spot (volcanic splash)
+- Hunter takes 1 damage (lava exposure, worth it)
+
+**Flavor**: "From fire I strike. To ash you return."
+
+---
+
+### Strategic Use
+- **Marking**: Mark priority targets (heaviest enemy, support units)
+- **Hit-and-Run**: Harass enemies, never get pinned down
+- **Scouting**: Reveal objectives, hidden enemies, traps
+- **Pack Synergy**: Coordinate with Casket for bonus damage
+
+---
+
+## 4. DUELIST CHAMPION 🔒 UNLOCKABLE
+**Unlock Condition**: Win 5 Honor Duels in campaign
+**Category**: Elite 1v1 Fighter
+**HP**: 15 | **Movement**: 5 | **Defense**: 2
+**Equipment Slots**: 2
+**Theme**: Undefeated duelist who lives for single combat
+
+### Visual Description
+Scarred veteran covered in duel marks (23 scars, one per duel won). Dual-wields ancestral blades (curved volcanic steel, glowing with heat). Moves with predatory confidence. Eyes cold, assessing every opponent.
+
+### Core Mechanics
+- **Duel Master**: Automatically wins initiative in Honor Duels
+- **Executioner**: Deals double damage to enemies below 50% HP
+- **Riposte**: When attacked in duel, counterattack for 3 damage
+- **Coward Slayer**: Deals +4 damage to enemies with Coward's Mark
+- **Victory Rush**: Killing enemy in duel recovers 5 HP + 3 Forge tokens
+
+### Key Abilities
+1. **Force Duel** (2 SP): Challenge enemy, they cannot refuse (overrides Coward's Mark)
+2. **Dual Strike** (3 SP): Attack twice in same turn (4 damage each)
+3. **Perfect Parry** (0 SP, Reactive): Negate 1 attack completely, counterattack for 5 damage
+4. **Blood Price** (5 Forge tokens): Execute enemy below 50% HP instantly (no defense, guaranteed kill)
+
+### Behavior Pattern
+1. Challenge strongest enemy to Honor Duel
+2. Use Dual Strike for burst damage
+3. Perfect Parry when enemy attacks
+4. Blood Price to finish wounded enemies
+5. Victory Rush snowballs into next duel
+
+---
+
+## 5. FORGE MASTER 🔒 UNLOCKABLE
+**Unlock Condition**: Forge 3 Ancestral Weapons in campaign
+**Category**: Tactical Commander / Support
+**HP**: 12 | **Movement**: 4 | **Defense**: 3
 **Equipment Slots**: 3
-**Theme**: Mobile shrine carrying ancestral spirits who bless warriors
+**Theme**: Master smith who commands battlefield through forge mastery
 
 ### Visual Description
-A towering stone totem - fifteen feet tall, carved with faces of ancient heroes. Carried by six shrine-bearers on iron frame. Volcanic crystals embedded in stone glow with spiritual energy. Incense smoke rises constantly. Around totem, ghostly images flicker - ancestors watching battle. They whisper tactics, grant blessings, judge worthiness of warriors.
+Grizzled elder (60+ years old) carrying massive forge-hammer (head size of anvil). Wears ancestral plate armor adorned with Forge tokens (ceremonial). Gray beard braided with volcanic glass beads. Presence commands respect.
 
-### Behavior Deck (4 Cards)
+### Core Mechanics
+- **Forge Authority**: Generates 3 Forge tokens per turn (master's blessing)
+- **Mass Blessing**: Can distribute Forge tokens to all Crucible units within 6 hexes
+- **Ancestral Weapon Mastery**: Crucible units with Ancestral Weapons gain +1 to all stats
+- **Volcanic Command**: Can create 2 lava hexes per turn (no cost)
+- **Inspire**: Allies within 6 hexes have +1 to all actions
 
----
+### Key Abilities
+1. **Forge of War** (4 Forge tokens): All Crucible units gain +2 damage for 2 turns
+2. **Ancestral Summon** (6 Forge tokens): Summon spectral ancestor warrior (10 HP, 5 damage, lasts 3 turns)
+3. **Volcanic Eruption** (8 Forge tokens): Create 5 lava hexes in area, 6 damage to enemies (ultimate)
+4. **Master's Wisdom** (0 SP): All Crucible units draw 1 card (once per round)
 
-#### ANCESTRAL BLESSING
-**Type**: Buff / Spiritual
-**Priority**: High
-
-**Effect**:
-- Ancestors bless all Crucible units within 5 hexes
-- All blessed units gain +2 damage
-- All blessed units gain +1 Defense
-- All blessed units gain +1 Heat generation (fired up)
-- Blessings last 2 turns
-
-**Flavor**: "The ancestors watch. Fight with honor. Earn their favor."
-
----
-
-#### SPIRIT GUARDIANS
-**Type**: Defense / Summon
-**Priority**: Medium
-
-**Effect**:
-- Shrine summons 2 Ancestral Spirits (ghostly warriors)
-- **Spirits**: 6 HP, 4 movement, 0 Defense, 4 damage attack, immune to physical damage
-- Spirits last 3 turns or until destroyed
-- Spirits protect Shrine (intercept attacks on Shrine)
-
-**Flavor**: "Ancestors, walk with us once more."
+### Behavior Pattern
+1. Generate and distribute Forge tokens
+2. Position near Casket (maximize Inspire aura)
+3. Create lava terrain for positioning
+4. Use Forge of War when engaging enemies
+5. Volcanic Eruption as finisher
 
 ---
 
-#### JUDGMENT OF THE FALLEN
-**Type**: Utility / Resurrection
-**Priority**: Critical (when allied unit destroyed this turn)
-
-**Effect**:
-- Ancestors judge fallen warrior's honor
-- If warrior died fighting (not fleeing): Resurrect with 6 HP
-- If warrior died protecting ally: Resurrect with 8 HP and +2 damage
-- If warrior died fleeing: No resurrection (dishonored)
-- Can only resurrect once per battle
-
-**Flavor**: "You died with honor. Rise. Fight again."
-
----
-
-#### VOLCANIC WRATH
-**Type**: Attack / Divine
-**Priority**: Critical (when Shrine HP ≤ 8)
-
-**Effect**:
-- Ancestors unleash volcanic fury
-- Deal 7 damage to all enemies within 4 hexes
-- Set all hit enemies on fire (3 damage/turn for 2 turns)
-- Create lava pools in 4 random hexes near Shrine
-- Shrine takes 3 damage (strain from channeling)
-
-**Flavor**: "YOU DARE DEFILE THIS SHRINE?! BURN!"
-
----
-
-### Command Response
-- **RALLY**: Move 1 hex (extremely slow). Bless all allies within 5 hexes.
-- **ATTACK**: Cannot attack directly (spiritual entity). Summon 2 Ancestral Spirits instead.
-- **DEFEND**: Shrine glows with protective energy. +5 Defense. Allies within 3 hexes gain +2 Defense.
-- **HOLD**: Deep prayer. Recover 5 HP. Next Ancestral Blessing affects 8-hex radius instead of 5.
-
-### Special Ability: SACRED GROUND
-**Passive**: Shrine creates 4-hex aura of sacred ground:
-- Allies in aura gain +1 to Morale checks
-- Allies in aura regenerate 1 HP per turn
-- Enemies in aura lose 1 SP per turn (spiritual pressure)
-
-**Cultural Weight**: If Shrine is destroyed, all Crucible units lose 3 HP (psychic shock) and have -1 to all stats for 2 turns (dishonored).
-
-### Tactical Use
-- Force multiplier (massive buffs)
-- Can resurrect fallen
-- Slow but tanky
-- Cultural centerpiece (inspires or demoralizes)
-
----
-
-## NEUTRAL MERCENARY UNITS (Hireable by Any Faction)
-
-### VOLCANIC GLADIATOR
-**Category**: Elite Infantry (Duelist)
-**HP**: 11 | **Movement**: 4 | **Defense**: 2
-**Equipment Slots**: 2
-**Hire Cost**: 50 Credits
-**Theme**: Arena champion who fights for glory and payment
-
-### Visual Description
-Scarred warrior wearing minimal armor - just obsidian greaves and gauntlets. Torso covered in burn scars from lava trials. Wields massive two-handed obsidian sword. Face hidden behind ceremonial mask carved with flame patterns. Former Crucible warrior who left Packs to seek fortune. Still fights with honor... for the right price.
-
-### Behavior Deck (3 Cards)
-
----
-
-#### TRIAL BY COMBAT
-**Type**: Attack / Duel
-**Priority**: High
-
-**Effect**:
-- Challenge 1 enemy to single combat
-- Attack for 9 damage
-- Both combatants gain +2 damage vs each other (escalating duel)
-- Duel continues until one falls (cannot disengage without dishonor)
-
----
-
-#### VOLCANIC STRIKE
-**Type**: Attack / Heat
-**Priority**: Critical (when Gladiator has 5+ Heat)
-
-**Effect**:
-- Superheated sword strike
-- Attack for 12 damage, ignore Defense
-- Set target on fire (3 damage/turn)
-- Gladiator vents all Heat (returns to 0)
-
----
-
-#### GLADIATOR'S HONOR
-**Type**: Passive / Code
-**Priority**: Always Active
-
-**Effect**:
-- Gladiator fights honorably (will not attack fleeing enemies)
-- If employer orders dishonorable action: Gladiator refuses (50% chance deserts)
-- If Gladiator defeats enemy in fair duel: Gain +1 permanent damage
-
----
-
-### Special Ability: HIRED CHAMPION
-**Passive**: Any faction can hire Volcanic Gladiator for 50 Credits. Gladiator fights professionally but maintains honor code (won't commit atrocities).
-
----
-
-### FIRE SPEAKER
-**Category**: Heavy Support (Shaman/Mage)
-**HP**: 9 | **Movement**: 3 | **Defense**: 1
+## 6. ANCESTRAL SPIRIT 🔒 UNLOCKABLE
+**Unlock Condition**: Defeat Ashen-King Torrak in Honor Duel
+**Category**: Legendary Ghost Warrior
+**HP**: 20 | **Movement**: 6 (Flying) | **Defense**: 4
 **Equipment Slots**: 3
-**Hire Cost**: 65 Credits
-**Theme**: Volcanic mage who channels fire magic and speaks to ancestors
+**Theme**: Spirit of ancient Crucible hero, returned to aid worthy descendants
 
 ### Visual Description
-Robed figure covered in ritual tattoos that glow when casting spells. Staff topped with volcanic crystal. Face painted with ash. They speak in tongues - ancient language of fire. Can summon flames, read omens in smoke, commune with volcano spirits. Exiled from Crucible for heresy (questioned traditional combat, preferred magic).
+Translucent warrior wreathed in volcanic flame and ash. Wears ghostly plate armor from pre-Sundering era. Wields spectral forge-hammer crackling with lightning. Eyes burn with amber fire. Moves without touching ground (floating).
 
-### Behavior Deck (3 Cards)
+### Core Mechanics
+- **Incorporeal**: Takes 50% damage from all sources (ghost form)
+- **Phase Walk**: Can move through enemies and terrain (Flying, ignore everything)
+- **Ancestral Wrath**: All attacks deal fire damage (ignores armor, affects components)
+- **Undying**: When reduced to 0 HP, return to ancestral realm (can be re-summoned after 3 turns)
+- **Legacy Aura**: All Crucible units within 8 hexes have +2 to all stats (ancestors watch over us)
 
----
+### Key Abilities
+1. **Hammer of Ages** (4 SP): Attack for 8 fire damage, create 2 lava hexes at impact
+2. **Ancestral Judgment** (6 Forge tokens): Enemy with Coward's Mark takes 12 damage and is Feared (skip 2 turns)
+3. **Spirit Walk** (2 SP): Teleport up to 8 hexes, pass through enemies (deal 2 damage to each)
+4. **Call of the Forge** (Ultimate, once per battle): All dead Crucible units return for 1 turn (spectral forms, 50% HP, fight alongside Spirit)
 
-#### FIREBALL
-**Type**: Attack / Magic
-**Priority**: High
-
-**Effect**:
-- Hurl sphere of volcanic fire at target (6-hex range)
-- Deal 7 damage to target
-- Deal 3 splash damage to all adjacent enemies
-- Create fire terrain in impact hex (2 damage/turn to stand in)
-
----
-
-#### LAVA FIELD
-**Type**: Utility / Terrain
-**Priority**: Medium
-
-**Effect**:
-- Summon lava from beneath ground
-- Create 5 hexes of lava terrain (choose locations within 4 hexes)
-- Lava deals 4 damage/turn to enemies standing in it
-- Allies immune (protected by Fire Speaker's magic)
-- Lasts 4 turns
+### Behavior Pattern
+1. Hunt enemies with Coward's Mark (Ancestral Judgment)
+2. Phase Walk through enemy lines (disruptive)
+3. Hammer of Ages for terrain control
+4. Call of the Forge when desperate (resurrect fallen)
+5. Tank damage with Incorporeal (50% reduction)
 
 ---
 
-#### ANCESTRAL GUIDANCE
-**Type**: Utility / Divination
-**Priority**: Medium
+## STRATEGIC BUILDS
 
-**Effect**:
-- Commune with ancestors/spirits
-- Reveal all enemy positions (even hidden)
-- Reveal 2 cards from each enemy hand
-- All allies gain +1 SP next turn (tactical advantage)
+### Honor Guard Fortress (Defensive)
+- **Units**: Honor Guard + Forge Apprentice
+- **Strategy**: Guard protects Apprentice, Apprentice generates tokens, Guard uses tokens for defense
+- **Strength**: Extreme durability, constant token generation, synergistic
+- **Weakness**: Low offensive pressure, struggles vs kiting
 
----
+### Duelist Rush (Aggressive)
+- **Units**: Duelist Champion + Tribal Hunter
+- **Strategy**: Hunter marks targets, Champion forces duels, executes wounded
+- **Strength**: Extreme single-target damage, mark synergy, snowballs victories
+- **Weakness**: Vulnerable to AOE, weak vs multiple threats
 
-### Special Ability: HIRED MAGE
-**Passive**: Any faction can hire Fire Speaker for 65 Credits. Fire Speaker provides magical support (rare in Penance's tech-focused world).
+### Forge Economy (Token Battery)
+- **Units**: Forge Apprentice + Forge Master
+- **Strategy**: Generate massive Forge tokens (5 per turn), fund expensive abilities
+- **Strength**: Infinite resources, powerful abilities always available
+- **Weakness**: Low combat power, needs protection
 
----
-
-## ASYMMETRIC DESIGN NOTES
-
-### Why Only 3 Faction Units + 2 Neutral?
-Crucible doctrine is "honor through personal combat." They have:
-- **3 Core Units**: Honor infantry, bonded beasts, ancestral shrines
-- **2 Neutral Units**: Available to all factions (exiled Crucible warriors)
-
-### Heat Synergy
-All Crucible units benefit from Heat mechanics:
-- Ashbound Warriors: Channel Heat into attacks
-- Lava Hound: Regenerates from Heat
-- Ancestor Shrine: Generates Heat aura
+### Ancestral Legacy (Endgame)
+- **Units**: Ancestral Spirit + Honor Guard
+- **Strategy**: Spirit leads offense, Guard defends, Legacy Aura buffs Casket
+- **Strength**: Unstoppable combination, +2 all stats to Casket, incorporeal tank
+- **Weakness**: Expensive (6 equipment slots), overkill vs weak enemies
 
 ---
 
-## DECK BUILDING EXAMPLES
+## PROGRESSION SYSTEM
 
-### Example: Crucible Scout Casket with Lava Hound
+### Early Campaign (Missions 1-5)
+- **Available**: Honor Guard, Forge Apprentice, Tribal Hunter
+- **Focus**: Learn Honor Duel mechanics, Forge token economy, marking targets
+- **Playstyle**: Defensive with Honor Guard, token generation with Apprentice, scouting with Hunter
 
-**Total Deck Construction**:
-- 10 Universal Core
-- 6 Crucible Faction Core
-- 6 Obsidian Blade (weapon, 1 slot)
-- **Lava Hound** (2 slots)
-- 2 Crucible Tactics
+### Mid Campaign (Missions 6-15)
+- **Unlock**: Duelist Champion (after 5 duel wins)
+- **Unlock**: Forge Master (after forging 3 Ancestral Weapons)
+- **Focus**: Specialized dueling or token economy
+- **Playstyle**: Aggressive duelist or support-heavy token spam
 
-**Total**: 24 cards, 1 Lava Hound
-
-**Playstyle**: Mounted warrior. Casket rides Hound. Both units charge together. Maximum aggression.
-
-### Example: Crucible Fortress Casket with Ancestor Shrine
-
-**Total Deck Construction**:
-- 10 Universal Core
-- 6 Crucible Faction Core
-- **Ancestor Shrine** (3 slots)
-- 2 Crucible Tactics
-
-**Total**: 18 cards, 1 Ancestor Shrine
-
-**Playstyle**: Spiritual fortress. Shrine blesses, Casket fights with ancestor's favor. Slow but blessed.
+### Late Campaign (Missions 16+)
+- **Unlock**: Ancestral Spirit (after defeating Torrak)
+- **Focus**: Deploy legendary unit, maximum power level
+- **Playstyle**: Ancestral Spirit dominates battlefield, Casket supports
 
 ---
 
 ## FACTION SYNERGIES
 
-### Honor Code + Ashbound Warriors
-- Crucible Casket gains bonuses from honorable combat
-- Warriors enforce honor duels
-- Both units benefit from kill-stacking
-
-### Heat Generation + Lava Hound
-- Crucible generates Heat constantly
-- Hound heals from Heat
-- Both units channel volcanic fury
-
-### Ancestral Blessings + All Units
-- Shrine buffs all Crucible units
-- All units fight harder near Shrine
-- Cultural cohesion = tactical advantage
+| Allied Faction | Synergy | Anti-Synergy |
+|----------------|---------|--------------|
+| **Church** | Honor Guard protects self-harming Church pilots | Compete for melee range |
+| **Dwarves** | Both defensive, Shield Wall + Bulwark = fortress | Both slow, lack mobility |
+| **Ossuarium** | Tribal Hunter scouts for undead thralls | Honor code conflicts with necromancy |
+| **Elves** | Forge Master creates lava, Elves avoid (no synergy) | Lava burns forests (Elves hate) |
+| **Vestige** | Both pack-focused, Pack Tactics stack | None |
+| **Emergent** | Tribal Hunter marks, Emergent swarm focuses | None |
+| **Exchange** | Can hire Crucible mercenaries with Credits | None |
+| **Nomads** | Both nomadic, mutual respect, Honor Guard + Nomad scouts = intelligence network | None |
 
 ---
 
-**END OF DOCUMENT**
+## DESIGN PHILOSOPHY
 
-*"Honor through fire. Strength through trial. Glory through death. The ancestors watch. Do not disappoint them."* — Crucible Proverb
+### Identity: Honor Through Fire
+- **Honor Code**: Duels are sacred, cowardice is unforgivable
+- **Forge Worship**: Fire is holy, lava terrain empowers
+- **Ancestral Legacy**: Weapons and warriors persist beyond death
+- **Pack Structure**: Fight together, protect each other, honor lineage
+
+### Gameplay Pattern
+- **Forge Token Economy**: Generate tokens in lava, spend for powerful effects
+- **Honor Duels**: Challenge enemies, punish cowards
+- **Volcanic Terrain**: Create and control lava hexes
+- **Ancestral Equipment**: Permanent upgrades across missions
+
+### Counterplay
+- **Refuse Duels**: Accept Coward's Mark, avoid 1v1 combat
+- **Kill Token Generators**: Focus Forge Apprentice, Forge Master
+- **Kiting**: Avoid melee range, use ranged attacks
+- **AOE Damage**: Punish clustering around lava terrain
+- **Destroy Lava Terrain**: Remove Forge token sources
+
+---
+
+## DESIGN NOTES
+
+**Balance Targets**:
+- Starter units: ~65% power of Casket (supportive, reliable)
+- Unlockable units: ~75% power of Casket (specialized, powerful)
+- Elite unit (Ancestral Spirit): ~85% power of Casket (legendary, game-changing)
+
+**Core Fantasy**: "Honorable warriors who worship fire, forge legendary weapons, and never break oaths."
+
+**Unique Mechanics**:
+- **Honor Duel System**: Units can accept duels on behalf of Casket
+- **Forge Token Sharing**: Units generate tokens for entire team
+- **Ancestral Spirit**: Undying unit that returns after death
+- **Coward's Mark Punishment**: Units specifically counter dishonorable enemies
+
+**Next Steps**:
+1. Playtest Honor Duel mechanics with support units
+2. Balance Forge token generation (ensure not overpowered)
+3. Test Ancestral Spirit survivability (50% damage reduction might be too strong)
+4. Create visual reference cards for Tabletop Simulator
+
+---
+
+**"Fire conquers all. Honor binds us. Steel defines us."**
+
+*Support units document version 1.0 (COMPLETE) - Crucible Packs*
+
+---
+
+[← Back to Crucible](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)

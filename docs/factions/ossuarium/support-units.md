@@ -476,4 +476,6 @@ Each unit offers distinct tactical approach while maintaining Ossuarium identity
 
 **END OF DOCUMENT**
 
-*"Death is not the end. It is merely a change of employer."* — Ossuarium Proverb
+---
+
+[← Back to Ossuarium Faction](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)

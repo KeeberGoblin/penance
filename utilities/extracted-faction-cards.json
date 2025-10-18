@@ -1,0 +1,742 @@
+{
+  "crucible": [
+    {
+      "id": "living-forge",
+      "name": "Living Forge",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: At the start of your turn, if you are standing in Lava Terrain (or within 1 hex of fire), gain 1 Forge token. **Bonus:** Gain 2 Forge tokens instead if you are standing directly in lava. Fire sustains us.",
+      "keywords": [
+        "passive",
+        "resource-generation",
+        "forge-token",
+        "terrain-synergy",
+        "crucible"
+      ],
+      "lore": "The volcano provides. We do not fear the flame.",
+      "cardCount": 1
+    },
+    {
+      "id": "honor-duel",
+      "name": "Honor Duel",
+      "cardType": "faction",
+      "type": "Gambit",
+      "cost": 2,
+      "range": "6 hexes",
+      "effect": "Challenge 1 visible enemy to Honor Duel. For 1 round, only you and target enemy can attack each other (all other units are ignored). If you kill target, gain 3 Forge tokens and recover 3 cards. If target refuses duel, they gain \"Coward's Mark\" (all Crucible attacks against them deal +2 damage permanently this mission). Binding challenge.",
+      "keywords": [
+        "gambit",
+        "duel",
+        "1v1",
+        "forge-generation",
+        "mark",
+        "crucible"
+      ],
+      "lore": "Face me. Or be branded craven.",
+      "cardCount": 1
+    },
+    {
+      "id": "volcanic-tremor",
+      "name": "Volcanic Tremor",
+      "cardType": "faction",
+      "type": "Utility",
+      "cost": "2 Forge tokens",
+      "range": "4 hexes (area)",
+      "effect": "Create earthquake. All enemies in area take 2 damage and are knocked down (skip movement next turn). Create 1 Lava Terrain hex at center of area (remains for 3 turns). Summon the volcano's wrath.",
+      "keywords": [
+        "utility",
+        "area-damage",
+        "knockdown",
+        "terrain-creation",
+        "forge-cost",
+        "crucible"
+      ],
+      "lore": "The earth answers our call.",
+      "cardCount": 1
+    },
+    {
+      "id": "ancestral-iron",
+      "name": "Ancestral Iron",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: At the end of each mission, you may spend 5 Forge tokens to forge 1 Ancestral Weapon (choose: +1 damage permanently to all attacks, OR +1 Defense permanently, OR +1 movement permanently). Ancestral Weapons persist across missions (permanent upgrades). Can have up to 3 Ancestral Weapons total. Legacy of fire.",
+      "keywords": [
+        "passive",
+        "forge-cost",
+        "permanent-upgrade",
+        "cross-mission",
+        "legendary",
+        "crucible"
+      ],
+      "lore": "What we forge endures. Our steel outlives us.",
+      "cardCount": 1
+    },
+    {
+      "id": "pack-fury",
+      "name": "Pack Fury",
+      "cardType": "faction",
+      "type": "Buff",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of round, gain +1 damage to all attacks for each enemy within 6 hexes (max +3 damage). Outnumbered, never outfought. Desperate strength.",
+      "keywords": [
+        "buff",
+        "damage-scaling",
+        "outnumbered-bonus",
+        "crucible-spirit",
+        "crucible"
+      ],
+      "lore": "The cornered beast is deadliest.",
+      "cardCount": 1
+    },
+    {
+      "id": "magma-veins",
+      "name": "Magma Veins",
+      "cardType": "faction",
+      "type": "Utility",
+      "cost": "3 Forge tokens",
+      "range": "8 hexes",
+      "effect": "Teleport to any Lava Terrain hex within 8 hexes. Draw 2 cards. Generate 1 Heat. Ride the underground rivers.",
+      "keywords": [
+        "utility",
+        "teleport",
+        "card-draw",
+        "lava-synergy",
+        "forge-cost",
+        "crucible"
+      ],
+      "lore": "We walk the forge-paths. Fire is our road.",
+      "cardCount": 1
+    },
+    {
+      "id": "forge-blessing",
+      "name": "Forge Blessing",
+      "cardType": "faction",
+      "type": "Reactive",
+      "cost": "1 Forge token",
+      "range": "Self",
+      "effect": "Play when you take damage. Reduce damage by 3 (minimum 1). If standing in lava, reduce by 5 instead. The forge shields us.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "forge-cost",
+        "lava-synergy",
+        "crucible"
+      ],
+      "lore": "Fire hardens steel. Pain hardens us.",
+      "cardCount": 1
+    },
+    {
+      "id": "cowards-brand",
+      "name": "Coward's Brand",
+      "cardType": "faction",
+      "type": "Attack-Mark",
+      "cost": 2,
+      "range": "6 hexes",
+      "effect": "Deal 3 damage. If target has \"Coward's Mark\" (from refusing Honor Duel), deal 6 damage instead and they cannot use defense cards this turn. Punish dishonor.",
+      "keywords": [
+        "attack",
+        "ranged",
+        "mark-synergy",
+        "honor-punishment",
+        "crucible"
+      ],
+      "lore": "Cowards die twice. First in spirit, then in flesh.",
+      "cardCount": 1
+    },
+    {
+      "id": "emberforged-strike",
+      "name": "Emberforged Strike",
+      "cardType": "faction",
+      "type": "Attack",
+      "cost": 3,
+      "range": "Melee (1 hex)",
+      "effect": "Deal 5 damage. Spend 2 Forge tokens to deal 7 damage and set target on fire (2 damage at start of their next turn). Molten fury.",
+      "keywords": [
+        "attack",
+        "melee",
+        "forge-synergy",
+        "burn",
+        "high-damage",
+        "crucible"
+      ],
+      "lore": "Our steel burns with the forge's rage.",
+      "cardCount": 1
+    },
+    {
+      "id": "last-stand",
+      "name": "Last Stand",
+      "cardType": "faction",
+      "type": "Reactive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Play when your deck reaches 5 cards or fewer. Until end of round, gain +3 damage to all attacks and +2 Defense. Cannot retreat (movement locked to 0). Die where you stand. Once per mission.",
+      "keywords": [
+        "reactive",
+        "buff",
+        "low-hp",
+        "limit",
+        "desperate-glory",
+        "crucible"
+      ],
+      "lore": "Here I stand. Here I fall. But never do I run.",
+      "cardCount": 1
+    }
+  ],
+  "emergent": [
+    {
+      "id": "hive-mind-link",
+      "name": "Hive-Mind Link",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: When an allied Emergent Syndicate Casket within 4 hexes plays a card, you may spend 1 Metamorph token to copy that card's effect (reduced effectiveness: half damage/healing). The hive thinks as one.",
+      "keywords": [
+        "passive",
+        "hive-mind",
+        "synergy",
+        "metamorph-cost",
+        "emergent"
+      ],
+      "lore": "Individual thoughts merge into collective purpose.",
+      "cardCount": 1
+    },
+    {
+      "id": "metamorphic-adaptation",
+      "name": "Metamorphic Adaptation",
+      "cardType": "faction",
+      "type": "Utility",
+      "cost": "2 Metamorph tokens",
+      "range": "Self",
+      "effect": "Transform into one of three forms until end of round. Choose: [1] Assault Form (+2 damage to all attacks, -1 Defense), [2] Tank Form (+3 Defense, -1 movement), [3] Scout Form (+2 movement, ignore terrain). Transformations are cumulative if you have multiple Metamorph tokens.",
+      "keywords": [
+        "utility",
+        "transformation",
+        "metamorph-cost",
+        "versatile",
+        "emergent"
+      ],
+      "lore": "Our bodies are tools. We reshape them as needed.",
+      "cardCount": 1
+    },
+    {
+      "id": "exoskeleton-molt",
+      "name": "Exoskeleton Molt",
+      "cardType": "faction",
+      "type": "Reactive",
+      "cost": "1 Metamorph token",
+      "range": "Self",
+      "effect": "Play when you take damage. Reduce damage by 3 (minimum 1). Recover 2 cards from discard pile (shedding damaged tissue). Generate 1 Heat. Once per round.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "healing",
+        "metamorph-cost",
+        "molt",
+        "emergent"
+      ],
+      "lore": "Shed the damaged shell. Emerge stronger.",
+      "cardCount": 1
+    },
+    {
+      "id": "pheromone-command",
+      "name": "Pheromone Command",
+      "cardType": "faction",
+      "type": "Buff",
+      "cost": 2,
+      "range": "5 hexes (area)",
+      "effect": "Release pheromone cloud (visible colored mist). All allied Emergent Syndicate Caskets within range gain +1 damage and +1 SP this turn. Enemies within range have -1 to hit (confused by pheromones).",
+      "keywords": [
+        "buff",
+        "area-effect",
+        "ally",
+        "debuff",
+        "pheromone",
+        "emergent"
+      ],
+      "lore": "Chemical signals guide the swarm.",
+      "cardCount": 1
+    },
+    {
+      "id": "segmented-strike",
+      "name": "Segmented Strike",
+      "cardType": "faction",
+      "type": "Attack",
+      "cost": 3,
+      "range": "Melee (1 hex)",
+      "effect": "Deal 4 damage with primary limbs. If you have 2+ Metamorph tokens, make a second attack with additional arthropod limbs for 2 damage. Multi-limb advantage.",
+      "keywords": [
+        "attack",
+        "melee",
+        "multi-hit",
+        "metamorph-synergy",
+        "emergent"
+      ],
+      "lore": "Four arms strike where two would fail.",
+      "cardCount": 1
+    },
+    {
+      "id": "swarm-intelligence",
+      "name": "Swarm Intelligence",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: Gain +1 Metamorph token at the start of each round. If 3+ allied Emergent Syndicate Caskets are within 4 hexes, gain +2 tokens instead. The collective grows stronger.",
+      "keywords": [
+        "passive",
+        "resource-generation",
+        "metamorph",
+        "ally-scaling",
+        "emergent"
+      ],
+      "lore": "Proximity breeds power. Unity breeds evolution.",
+      "cardCount": 1
+    },
+    {
+      "id": "chrysalis-rebirth",
+      "name": "Chrysalis Rebirth",
+      "cardType": "faction",
+      "type": "Reactive",
+      "cost": "5 Metamorph tokens",
+      "range": "Self",
+      "effect": "When your deck reaches 5 cards or fewer, spend 5 Metamorph tokens to enter Chrysalis state for 1 turn (cannot act). Next turn, recover 10 cards from discard pile, remove all Heat, gain +2 Defense permanently this mission. Metamorphosis completes. Once per mission.",
+      "keywords": [
+        "reactive",
+        "resurrection",
+        "metamorph-cost",
+        "limit",
+        "healing",
+        "emergent"
+      ],
+      "lore": "We do not die. We transform.",
+      "cardCount": 1
+    },
+    {
+      "id": "compound-vision",
+      "name": "Compound Vision",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: You can see in 360° (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.",
+      "keywords": [
+        "passive",
+        "defensive",
+        "vision",
+        "anti-flank",
+        "emergent"
+      ],
+      "lore": "We see all angles. Ambush is impossible.",
+      "cardCount": 1
+    },
+    {
+      "id": "mandible-rend",
+      "name": "Mandible Rend",
+      "cardType": "faction",
+      "type": "Attack",
+      "cost": 2,
+      "range": "Melee (1 hex)",
+      "effect": "Deal 3 damage. Target has -1 Defense until end of their next turn (armor shredded by mandibles). If target is adjacent to another ally, deal 4 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "debuff",
+        "armor-shred",
+        "pack-tactics",
+        "emergent"
+      ],
+      "lore": "Our jaws crack steel like chitin.",
+      "cardCount": 1
+    },
+    {
+      "id": "collective-consciousness",
+      "name": "Collective Consciousness",
+      "cardType": "faction",
+      "type": "Utility",
+      "cost": 1,
+      "range": "6 hexes",
+      "effect": "Choose 1 allied Emergent Syndicate Casket within range. They immediately draw 2 cards and gain 1 Metamorph token. Share knowledge through the hive.",
+      "keywords": [
+        "utility",
+        "ally",
+        "card-draw",
+        "resource-sharing",
+        "emergent"
+      ],
+      "lore": "What one knows, all know.",
+      "cardCount": 1
+    }
+  ],
+  "exchange": [
+    {
+      "id": "war-profiteer",
+      "name": "War Profiteer",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: When ANY Casket (enemy, ally, or neutral) is destroyed within 6 hexes of you, gain 2 Credit tokens. **Bonus:** Gain 3 Credits instead if you dealt the killing blow. Profit from chaos.",
+      "keywords": [
+        "passive",
+        "resource-generation",
+        "credit",
+        "kill-trigger",
+        "exchange"
+      ],
+      "lore": "Every death is an opportunity. Every corpse a ledger entry.",
+      "cardCount": 1
+    },
+    {
+      "id": "hire-mercenary",
+      "name": "Hire Mercenary",
+      "cardType": "faction",
+      "type": "Summon",
+      "cost": "3 Credit tokens",
+      "range": "3 hexes",
+      "effect": "Summon 1 Mercenary unit (8 HP, 3 damage, fights for you until destroyed or mission ends). Mercenary appears in target hex (must be unoccupied). Can have up to 2 Mercenaries active simultaneously. Expendable soldiers.",
+      "keywords": [
+        "summon",
+        "mercenary",
+        "credit-cost",
+        "temporary-ally",
+        "exchange"
+      ],
+      "lore": "Loyalty is expensive. Disloyalty is fatal.",
+      "cardCount": 1
+    },
+    {
+      "id": "economic-leverage",
+      "name": "Economic Leverage",
+      "cardType": "faction",
+      "type": "Control",
+      "cost": 2,
+      "range": "6 hexes",
+      "effect": "Target enemy must choose: [1] Take 4 damage immediately, OR [2] Skip their next turn. Economic ultimatum.",
+      "keywords": [
+        "control",
+        "choice",
+        "denial",
+        "damage-or-skip",
+        "exchange"
+      ],
+      "lore": "Pay now or pay later. Either way, you pay.",
+      "cardCount": 1
+    },
+    {
+      "id": "market-manipulation",
+      "name": "Market Manipulation",
+      "cardType": "faction",
+      "type": "Debuff",
+      "cost": "2 Credit tokens",
+      "range": "4 hexes (area)",
+      "effect": "All enemies in area have +1 SP cost to all cards for 1 turn. Inflation hurts.",
+      "keywords": [
+        "debuff",
+        "area-effect",
+        "sp-cost-increase",
+        "economic-warfare",
+        "exchange"
+      ],
+      "lore": "We control the market. You merely survive it.",
+      "cardCount": 1
+    },
+    {
+      "id": "hostile-takeover",
+      "name": "Hostile Takeover",
+      "cardType": "faction",
+      "type": "Attack",
+      "cost": 4,
+      "range": "Melee (1 hex)",
+      "effect": "Deal 6 damage. If this kills the target, gain 4 Credit tokens and recover 2 cards from discard pile. Liquidate assets.",
+      "keywords": [
+        "attack",
+        "melee",
+        "credit-generation",
+        "lifesteal",
+        "exchange"
+      ],
+      "lore": "Their loss. Our gain.",
+      "cardCount": 1
+    },
+    {
+      "id": "insurance-policy",
+      "name": "Insurance Policy",
+      "cardType": "faction",
+      "type": "Reactive-Defense",
+      "cost": "3 Credit tokens",
+      "range": "Self",
+      "effect": "Play when you would take damage. Negate all damage from this attack. Generate 1 Heat. Once per round. Premium protection.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "credit-cost",
+        "negation",
+        "limit",
+        "exchange"
+      ],
+      "lore": "We insure everything. For a price.",
+      "cardCount": 1
+    },
+    {
+      "id": "bribe",
+      "name": "Bribe",
+      "cardType": "faction",
+      "type": "Debuff",
+      "cost": 2,
+      "range": "4 hexes",
+      "effect": "Target enemy has -2 to their next attack roll and -1 movement this turn. Spend 2 Credit tokens to extend duration to 2 turns. Corruption works.",
+      "keywords": [
+        "debuff",
+        "credit-synergy",
+        "movement-reduction",
+        "exchange"
+      ],
+      "lore": "Everyone has a price. Even honor.",
+      "cardCount": 1
+    },
+    {
+      "id": "contract-enforcement",
+      "name": "Contract Enforcement",
+      "cardType": "faction",
+      "type": "Buff",
+      "cost": 2,
+      "range": "4 hexes",
+      "effect": "All friendly Mercenary units within range gain +2 damage and +2 Defense until end of round. Spend 1 Credit token to extend duration to 2 rounds. Paid professionals perform.",
+      "keywords": [
+        "buff",
+        "mercenary-synergy",
+        "credit-synergy",
+        "exchange"
+      ],
+      "lore": "We pay well. They fight better.",
+      "cardCount": 1
+    },
+    {
+      "id": "auction-bid",
+      "name": "Auction Bid",
+      "cardType": "faction",
+      "type": "Utility",
+      "cost": "X Credit tokens",
+      "range": "Self",
+      "effect": "Draw X cards (where X = Credits spent, max 5). Spend Credits to buy card advantage.",
+      "keywords": [
+        "utility",
+        "card-draw",
+        "credit-sink",
+        "scaling",
+        "exchange"
+      ],
+      "lore": "Knowledge is power. Power is expensive.",
+      "cardCount": 1
+    },
+    {
+      "id": "golden-parachute",
+      "name": "Golden Parachute",
+      "cardType": "faction",
+      "type": "Reactive-Escape",
+      "cost": "5 Credit tokens",
+      "range": "Self",
+      "effect": "Play when your deck reaches 5 cards or fewer. Immediately recover 8 cards from discard pile, remove all Heat, gain +1 Defense permanently this mission. Once per mission. Executive bail-out.",
+      "keywords": [
+        "reactive",
+        "healing",
+        "credit-cost",
+        "limit",
+        "resurrection",
+        "exchange"
+      ],
+      "lore": "Failure is for the poor.",
+      "cardCount": 1
+    }
+  ],
+  "vestige-bloodlines": [
+    {
+      "id": "vestige-heritage",
+      "name": "Vestige Heritage",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: When ANY Casket (enemy, ally, or neutral) is destroyed within 6 hexes of you, gain 2 Biomass tokens. **Bloodline Bonus:** Gain 1 additional Biomass if killed enemy matches your primary bloodline's prey type (Fenmar = kills beasts, Urtok = kills heavy units, Vexis = kills swarms, Corvath = kills scouts, Serrak = kills wounded). The dead fuel evolution.",
+      "keywords": [
+        "passive",
+        "resource-generation",
+        "biomass",
+        "bloodline-synergy",
+        "vestige-bloodlines"
+      ],
+      "lore": "Our blood remembers. Our hunger never forgets.",
+      "cardCount": 1
+    },
+    {
+      "id": "predators-mark",
+      "name": "Predator's Mark",
+      "cardType": "faction",
+      "type": "Gambit",
+      "cost": 1,
+      "range": "6 hexes",
+      "effect": "Mark 1 visible enemy as \"Prey\". Your attacks against Prey deal +2 damage. You can track Prey through concealment/smoke. When Prey is destroyed, recover 3 cards from discard pile. Mark lasts until Prey dies or end of mission.",
+      "keywords": [
+        "gambit",
+        "mark",
+        "tracking",
+        "damage-buff",
+        "vestige-bloodlines"
+      ],
+      "lore": "I smell fear. I follow blood. I do not stop.",
+      "cardCount": 1
+    },
+    {
+      "id": "pack-instinct",
+      "name": "Pack Instinct",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: When you attack an enemy adjacent to 1+ allied Vestige Caskets, deal +1 damage. If adjacent to 2+ Vestige allies, deal +2 damage instead. **Bloodline Bonus (Fenmar):** Gain +3 damage instead if all adjacent allies are also Fenmar bloodline (pure pack). The pack hunts together.",
+      "keywords": [
+        "passive",
+        "ally",
+        "damage",
+        "flanking",
+        "bloodline-fenmar",
+        "vestige-bloodlines"
+      ],
+      "lore": "Alone we are prey. Together we are apex.",
+      "cardCount": 1
+    },
+    {
+      "id": "bloodline-shift",
+      "name": "Bloodline Shift",
+      "cardType": "faction",
+      "type": "Utility",
+      "cost": "2 Biomass tokens",
+      "range": "Self",
+      "effect": "Transform into enhanced bloodline form until end of round. Choose based on your primary bloodline:\n  - **Fenmar (Wolf)**: +2 movement, Pack Instinct bonuses doubled\n  - **Urtok (Bear)**: +3 Defense, regenerate 1 card when hit\n  - **Vexis (Chitin)**: +2 Defense, molt reaction (negate 1 attack per round)\n  - **Corvath (Raven)**: +3 movement, ignore terrain, can glide\n  - **Serrak (Serpent)**: All attacks inflict poison (2 damage next turn), +1 movement\n- Can stack multiple shifts. Bloodline evolution.",
+      "keywords": [
+        "utility",
+        "transformation",
+        "biomass",
+        "bloodline-choice",
+        "vestige-bloodlines"
+      ],
+      "lore": "Flesh is fluid. Blood is law.",
+      "cardCount": 1
+    },
+    {
+      "id": "alphas-command",
+      "name": "Alpha's Command",
+      "cardType": "faction",
+      "type": "Buff",
+      "cost": 2,
+      "range": "4 hexes",
+      "effect": "All allied Vestige Caskets within 4 hexes gain +1 damage and +1 movement until end of round. **Bloodline Bonus (Fenmar):** Fenmar allies gain +2 movement instead. The Alpha leads, the pack follows.",
+      "keywords": [
+        "buff",
+        "ally",
+        "leadership",
+        "area-effect",
+        "bloodline-fenmar",
+        "vestige-bloodlines"
+      ],
+      "lore": "I lead. You follow. We survive.",
+      "cardCount": 1
+    },
+    {
+      "id": "feral-rage",
+      "name": "Feral Rage",
+      "cardType": "faction",
+      "type": "Gambit",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Until end of your turn, your attacks deal +3 damage but you cannot use defense cards or movement cards. Gain 2 Heat. Pure aggression.",
+      "keywords": [
+        "gambit",
+        "damage-buff",
+        "restriction",
+        "heat",
+        "vestige-bloodlines"
+      ],
+      "lore": "Reason is weakness. Instinct is truth.",
+      "cardCount": 1
+    },
+    {
+      "id": "adaptive-evolution",
+      "name": "Adaptive Evolution",
+      "cardType": "faction",
+      "type": "Reactive",
+      "cost": "1 Biomass token",
+      "range": "Self",
+      "effect": "Play when you take damage. Immediately gain 1 mutation counter. Each mutation counter gives +1 to all attack damage permanently this mission (stacks infinitely). Evolution rewards survival.",
+      "keywords": [
+        "reactive",
+        "scaling",
+        "biomass",
+        "permanent-buff",
+        "vestige-bloodlines"
+      ],
+      "lore": "What doesn't kill us makes us deadlier.",
+      "cardCount": 1
+    },
+    {
+      "id": "scent-of-blood",
+      "name": "Scent of Blood",
+      "cardType": "faction",
+      "type": "Passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Passive: You deal +2 damage to enemies with 15 or fewer cards remaining in their deck. Predators finish wounded prey.",
+      "keywords": [
+        "passive",
+        "execute",
+        "conditional-damage",
+        "vestige-bloodlines"
+      ],
+      "lore": "The smell of death. The taste of victory.",
+      "cardCount": 1
+    },
+    {
+      "id": "devouring-maw",
+      "name": "Devouring Maw",
+      "cardType": "faction",
+      "type": "Attack",
+      "cost": 3,
+      "range": "Melee (1 hex)",
+      "effect": "Deal 5 damage. If this kills the target, gain 3 Biomass tokens and recover 2 cards from discard pile. Consume the fallen.",
+      "keywords": [
+        "attack",
+        "melee",
+        "biomass-generation",
+        "lifesteal",
+        "vestige-bloodlines"
+      ],
+      "lore": "Flesh sustains flesh. Their death is our strength.",
+      "cardCount": 1
+    },
+    {
+      "id": "howl-of-remembrance",
+      "name": "Howl of Remembrance",
+      "cardType": "faction",
+      "type": "Utility",
+      "cost": 1,
+      "range": "5 hexes",
+      "effect": "All allied Vestige Caskets within 5 hexes immediately move up to 2 hexes toward you. **Bloodline Bonus:** Draw 1 card for each ally that moves (remembering ancestors' tactics). Rally the bloodlines.",
+      "keywords": [
+        "utility",
+        "ally",
+        "movement",
+        "positioning",
+        "card-draw",
+        "vestige-bloodlines"
+      ],
+      "lore": "The call of the ancestor. The answer of the heir.",
+      "cardCount": 1
+    }
+  ]
+}

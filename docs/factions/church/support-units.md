@@ -386,4 +386,6 @@ Each unit offers distinct tactical approach while maintaining Church's martyrdom
 
 **END OF DOCUMENT**
 
-*"Through pain, we find purpose. Through sacrifice, we find salvation. Through death, we find absolution."* — Church Doctrine
+---
+
+[← Back to Church Faction](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)

@@ -1,6 +1,6 @@
 # Factions
 
-Nine powers struggle for control of a dying world. Each is broken. None are heroes.
+Ten powers struggle for control of a dying world. Each is broken. None are heroes.
 
 ## Playable Factions (Complete)
 
@@ -28,6 +28,42 @@ Nine powers struggle for control of a dying world. Each is broken. None are hero
 **Status**: ✅ Complete with v2.0 equipment system
 **Support Units**: [6 units](elves/support-units.md) - Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant
 
+### [Crucible Packs](crucible/deck-equipment-system.md)
+**Playstyle**: Honor duels, volcanic terrain control, ancestral weapons
+**Mechanic**: Forge tokens (generate in lava), Honor Duels (1v1 binding combat), Ancestral Iron (permanent upgrades)
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](crucible/support-units.md) - Honor Guard, Forge Apprentice, Tribal Hunter, Duelist Champion, Forge Master, Ancestral Spirit
+
+### [Soulstone Exchange](exchange/deck-equipment-system.md)
+**Playstyle**: Economic warfare, hired mercenaries, resource hoarding
+**Mechanic**: Credit economy (hire units mid-battle), Compound Interest (snowball resources), Corporate warfare
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](exchange/support-units.md) - Security Contractor, Corporate Enforcer, Debt Collector, Executive Bodyguard, Hostile Takeover Squad, Board of Directors
+
+### [Nomad Collective](nomads/deck-equipment-system.md)
+**Playstyle**: Mobility, scavenging, survival tactics
+**Mechanic**: Scrap tokens (salvage from destroyed units), Mobility focus, Adaptability
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: TBD
+
+### [Vestige Bloodlines](vestige-bloodlines/deck-equipment-system.md)
+**Playstyle**: Pack tactics, savage melee, animal bloodlines
+**Mechanic**: Bloodline mutations (wolf/bear/raven/chitin/serpent), Pack coordination, Desperate strength
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](vestige-bloodlines/support-units.md) - Fenmar Pack Hunters, Urtok Berserker, Corvath Murder, Vexis Swarmling, Serrak Assassin, Primal Alpha
+
+### [Emergent Syndicate](emergent/deck-equipment-system.md)
+**Playstyle**: Bio-engineered evolution, hive-mind coordination, transformation
+**Mechanic**: Metamorph tokens (transformation resource), Form shifting (Assault/Tank/Scout/Support), Hive intelligence
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](emergent/support-units.md) - Drone Swarm, Molt Guardian, Adaptation Form, Hive Spawn, Evolution Catalyst, Apex Predator
+
+### [The Wyrd Conclave](wyrd-conclave/deck-equipment-system.md)
+**Playstyle**: Reality distortion, bargain mechanics, illusion warfare, stolen identities
+**Mechanic**: Bargain Tokens (make deals with twisted costs), Reality manipulation (break game rules), Stolen Face (copy enemy abilities)
+**Status**: ✅ Complete with v2.0 equipment system
+**Support Units**: [6 units](wyrd-conclave/support-units.md) - Shimmer Phantom, Bargain Broker, Stolen Soldier, Mirror Legion, Temporal Echo, The Un-Thing
+
 ---
 
 ## Faction Systems
@@ -36,50 +72,16 @@ Nine powers struggle for control of a dying world. Each is broken. None are hero
 Complete faction relationship matrix. Who is at war, who is allied, who merely tolerates each other.
 
 ### [Casket Types by Faction](casket-types.md)
-36 unique Caskets across all 9 factions. Weight classes, stats, and special abilities.
+40 unique Caskets across all 10 factions. Weight classes, stats, and special abilities.
 
 ### [Faction Tactics Overview](tactics-overview.md)
 How faction-specific Tactics cards work. Choose 2 from 5 per faction.
 
 ---
 
-## Additional Playable Factions
+## All Factions Now Playable!
 
-### [The Wyrd Conclave](fae/deck-equipment-system.md)
-**Playstyle**: Reality manipulation tricksters
-**Mechanic**: Probability distortion, stolen identity, bargain mechanics
-**Status**: ✅ Playable in codex
-**Support Units**: TBD
-
-### [Nomad Collective](nomads/deck-equipment-system.md)
-**Playstyle**: Mobile survivalists
-**Mechanic**: Scavenged tech, prediction, adaptability
-**Status**: ✅ Playable in codex
-**Support Units**: TBD
-
-### [The Exchange](exchange/deck-equipment-system.md)
-**Playstyle**: Economic warfare and soul contracts
-**Mechanic**: Dual governance (Orthodox vs Rational), contract binding
-**Status**: ✅ Playable in codex
-**Support Units**: [6 units](exchange/support-units.md)
-
-### [Vestige Bloodlines](vestige-bloodlines/deck-equipment-system.md)
-**Playstyle**: Mutation-based adaptability
-**Mechanic**: Five bloodline variants, generational degradation
-**Status**: ✅ Playable in codex
-**Support Units**: TBD
-
-### [Emergent Syndicate](emergent/deck-equipment-system.md)
-**Playstyle**: Hive-mind collective
-**Mechanic**: Shared consciousness, metamorphosis forms
-**Status**: ✅ Playable in codex
-**Support Units**: TBD
-
-### [Crucible Packs](crucible/deck-equipment-system.md)
-**Playstyle**: Volcanic honor warriors
-**Mechanic**: Ancestral iron, fire worship, honor duels
-**Status**: ✅ Playable in codex
-**Support Units**: TBD
+All 10 major factions have complete deck systems, support units, and tactical frameworks. Choose your path through the dying world.
 
 ---
 

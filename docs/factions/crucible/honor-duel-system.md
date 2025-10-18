@@ -372,4 +372,4 @@ A: No. Coward's Mark persists even if you win later duels (stain is permanent).
 
 ---
 
-**[← Previous: Forge Token Mechanics](forge-token-mechanics.md)** | **[Next: Ancestral Iron →](ancestral-iron.md)**
+**[← Previous: Forge Token Mechanics](forge-token-mechanics.md)** | **[Back to Crucible](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next: Ancestral Iron →](ancestral-iron.md)**

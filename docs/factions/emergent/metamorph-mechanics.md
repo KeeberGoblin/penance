@@ -229,4 +229,4 @@
 
 ---
 
-**[← Back to Main Faction](deck-equipment-system.md)** | **[Next: Hive-Mind Coordination →](hive-mind-coordination.md)**
+**[← Back to Emergent](deck-equipment-system.md)** | **[All Factions](../index.md)** | **[Next: Hive-Mind Coordination →](hive-mind-coordination.md)**
