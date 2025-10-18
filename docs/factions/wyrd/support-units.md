@@ -215,6 +215,21 @@ A humanoid figure with smooth, featureless skin like porcelain. No face - just a
 
 ---
 
+#### SHADOW WALK (Default)
+**Type**: Movement / Stealth
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Move 4 hexes toward nearest enemy or position of tactical value
+- Maintain current disguise (remain undetected)
+- If no disguise active, move in shadows (enemies cannot target unless adjacent)
+- Ready to steal face if enemy approaches within 2 hexes
+- Scout enemy positions and report back to Casket
+
+**Flavor**: "We walk among you. You never know."
+
+---
+
 ### Command Response
 - **RALLY**: Move up to 4 hexes. If adjacent to enemy, instantly steal their face.
 - **ATTACK**: Attack target for 5 damage. If disguised as their ally, deal 8 damage.
@@ -313,6 +328,21 @@ Three humans in tattered formal clothing (suits, ball gowns, military uniforms f
 - All enemies within 3 hexes take 5 damage (death curse)
 
 **Flavor**: "Our contract is complete. Finally, we are free."
+
+---
+
+#### BOUND MARCH (Default)
+**Type**: Movement / Passive
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Move 3 hexes toward nearest threat or objective
+- Maintain Wyrd Bargain aura (allies within 3 hexes have option to reroll 1 die per turn)
+- Generate 1 Oath Counter per turn while in motion
+- Sigils glow softly, marking their bound status
+- Ready to activate Martyrdom Clause if Casket endangered
+
+**Flavor**: "We walk. We serve. We wait for the end."
 
 ---
 
