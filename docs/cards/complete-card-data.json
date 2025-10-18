@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "3.4",
+    "version": "3.5",
     "lastUpdated": "2025-10-18",
-    "description": "Complete Penance card database v3.4 - Added equipment cards for 5 factions"
+    "description": "Complete Penance card database v3.5 - All 10 factions now have 21 cards each!"
   },
   "universal": [
     {
@@ -322,6 +322,174 @@
       ],
       "cardCount": 1,
       "cardType": "faction"
+    },
+    {
+      "id": "divine-guidance",
+      "name": "Divine Guidance",
+      "type": "utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of turn, all your attacks gain +1 accuracy (reduce target number by 1). Your next attack this turn cannot miss (5+ becomes 4+, etc).",
+      "keywords": [
+        "accuracy",
+        "buff",
+        "targeting"
+      ],
+      "cardCount": 3,
+      "cardType": "equipment"
+    },
+    {
+      "id": "martyrdoms-certainty",
+      "name": "Martyrdom's Certainty",
+      "type": "utility",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Discard 1 card from deck. Your next attack cannot miss (auto-hit) but deals -2 damage.",
+      "keywords": [
+        "gambit",
+        "self-harm",
+        "auto-hit"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "zealots-focus",
+      "name": "Zealot's Focus",
+      "type": "utility",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Reroll 1 Attack Die on your next attack this turn.",
+      "keywords": [
+        "reroll",
+        "accuracy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "point-blank-execution",
+      "name": "Point-Blank Execution",
+      "type": "attack",
+      "cost": 3,
+      "range": "1 hex (adjacent only)",
+      "effect": "Deal 6 damage. This attack cannot miss. If attacking from rear arc (hex 4), deal 8 damage instead.",
+      "damage": "6",
+      "keywords": [
+        "attack",
+        "auto-hit",
+        "execute"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "confession-under-duress",
+      "name": "Confession Under Duress",
+      "type": "utility",
+      "cost": 2,
+      "range": "2 hexes",
+      "effect": "Target enemy's next attack: +2 to target number (harder for them to hit). Draw 1 card.",
+      "keywords": [
+        "debuff",
+        "utility",
+        "control"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "holy-smite",
+      "name": "Holy Smite",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 5 damage. If you've discarded cards this turn (via Blood Offering or other effects), deal 7 damage instead.",
+      "damage": "5",
+      "keywords": [
+        "attack",
+        "melee",
+        "self-harm-synergy"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "judgment-strike",
+      "name": "Judgment Strike",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 4 damage. If target has killed an ally this mission, deal 6 damage instead (vengeance).",
+      "damage": "4",
+      "keywords": [
+        "attack",
+        "melee",
+        "vengeance"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "crusaders-wrath",
+      "name": "Crusader's Wrath",
+      "type": "attack",
+      "cost": 4,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 6 damage. Ignore 2 Defense. Discard 1 card to deal +2 damage (total 8).",
+      "damage": "6",
+      "keywords": [
+        "attack",
+        "melee",
+        "self-harm"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "martyr-shield",
+      "name": "Martyr Shield",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "When an ally within 3 hexes is attacked, redirect that attack to yourself. Reduce damage by 2. Ally protection.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "ally-protection"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "penance-rune",
+      "name": "Penance Rune",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Whenever you discard cards (via Blood Offering, self-harm, etc), gain +1 accuracy on your next attack (reduce target number by 1).",
+      "keywords": [
+        "passive",
+        "self-harm-synergy",
+        "accuracy"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "faith-armor",
+      "name": "Faith Armor",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Once per turn, when you would take damage, reduce that damage by 2. Works even at 0 SP.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "damage-reduction"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
     }
   ],
   "dwarves": [
@@ -479,6 +647,183 @@
       ],
       "cardCount": 1,
       "cardType": "faction"
+    },
+    {
+      "id": "war-pick-strike",
+      "name": "War Pick Strike",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 4 damage. This attack ignores armor (armor-piercing). Basic Dwarven attack.",
+      "damage": "4",
+      "keywords": [
+        "attack",
+        "armor-piercing",
+        "melee",
+        "dwarven"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "warhammer-crush",
+      "name": "Warhammer Crush",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 5 damage. This attack ignores armor. If target is adjacent to terrain, deal 6 damage (slam into wall).",
+      "damage": "5",
+      "keywords": [
+        "attack",
+        "armor-piercing",
+        "melee",
+        "conditional"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "forge-hammer-smash",
+      "name": "Forge Hammer Smash",
+      "type": "attack",
+      "cost": 4,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 6 damage. This attack ignores armor. Generate 2 Heat. If you have 3+ Heat, deal 8 damage instead.",
+      "damage": "6",
+      "keywords": [
+        "attack",
+        "armor-piercing",
+        "heat",
+        "melee"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "battle-axe-cleave",
+      "name": "Battle Axe Cleave",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 5 damage to primary target. Deal 2 damage to one adjacent enemy (cleave). Both attacks ignore armor.",
+      "damage": "5 + 2",
+      "keywords": [
+        "attack",
+        "armor-piercing",
+        "cleave",
+        "aoe"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "earthshaker-slam",
+      "name": "Earthshaker Slam",
+      "type": "attack",
+      "cost": 5,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 8 damage. This attack ignores armor. All enemies within 2 hexes must roll Defense Dice or be knocked prone (lose 1 movement next turn).",
+      "damage": "8",
+      "keywords": [
+        "attack",
+        "armor-piercing",
+        "aoe",
+        "control"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "ancestral-rune-blade",
+      "name": "Ancestral Rune Blade",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 3 damage. This attack ignores armor. If you have 1+ Rune Counters, deal 5 damage instead.",
+      "damage": "3",
+      "keywords": [
+        "attack",
+        "armor-piercing",
+        "rune-synergy",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "forge-rune-sigil",
+      "name": "Forge-Rune Sigil",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Whenever you generate Heat, deal 1 damage to target enemy within 3 hexes. Dwarven-exclusive sigil.",
+      "keywords": [
+        "passive",
+        "heat-synergy",
+        "dwarven-exclusive"
+      ],
+      "cardCount": 3,
+      "cardType": "secondary"
+    },
+    {
+      "id": "runic-aegis",
+      "name": "Runic Aegis",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "When attacked, gain 1 Rune Counter (max 3). Reduce damage from this attack by 1. Defensive sigil.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "rune-counter"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "molten-core-plating",
+      "name": "Molten Core Plating",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "You can have up to 12 Heat before overheating (instead of 10). Heat Sink equipment.",
+      "keywords": [
+        "passive",
+        "heat-capacity",
+        "armor"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "mountain-stance",
+      "name": "Mountain Stance",
+      "type": "utility",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Until end of turn, you cannot be moved or knocked back by enemy effects. Reduce all damage taken by 2.",
+      "keywords": [
+        "utility",
+        "defense",
+        "immovable"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "grudge-mark",
+      "name": "Grudge Mark",
+      "type": "utility",
+      "cost": 2,
+      "range": "8 hexes",
+      "effect": "Mark target enemy. You deal +2 damage to marked enemy. Mark lasts until enemy dies or you mark different target. Record grudges.",
+      "keywords": [
+        "utility",
+        "mark",
+        "damage-boost"
+      ],
+      "cardCount": 1,
+      "cardType": "secondary"
     }
   ],
   "ossuarium": [
@@ -642,6 +987,183 @@
       ],
       "cardCount": 1,
       "cardType": "faction"
+    },
+    {
+      "id": "bone-scythe-swing",
+      "name": "Bone Scythe Swing",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 4 damage. Recover 2 cards from discard pile (lifesteal). Basic Ossuarium attack.",
+      "damage": "4",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "melee",
+        "ossuarium"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "death-grasp",
+      "name": "Death Grasp",
+      "type": "attack",
+      "cost": 2,
+      "range": "2 hexes",
+      "effect": "Deal 3 damage at extended range. Recover 1 card from discard pile. Ranged drain.",
+      "damage": "3",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "ranged",
+        "reach"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "soul-rend",
+      "name": "Soul Rend",
+      "type": "attack",
+      "cost": 4,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 5 damage. Recover cards equal to damage dealt (max 5). Powerful lifesteal.",
+      "damage": "5",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "vampiric",
+        "melee"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "corpse-explosion",
+      "name": "Corpse Explosion",
+      "type": "attack",
+      "cost": 3,
+      "range": "4 hexes",
+      "effect": "Deal 3 damage to target and all adjacent enemies (AoE). Recover 1 card per enemy damaged (max 4).",
+      "damage": "3 AoE",
+      "keywords": [
+        "attack",
+        "aoe",
+        "lifesteal",
+        "corpse"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "drain-life",
+      "name": "Drain Life",
+      "type": "attack",
+      "cost": 5,
+      "range": "3 hexes",
+      "effect": "Deal 6 damage at range. Recover 6 cards from discard pile (100% lifesteal). Massive drain.",
+      "damage": "6",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "vampiric",
+        "ranged"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "necrotic-touch",
+      "name": "Necrotic Touch",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 2 damage. Recover 2 cards. If this kills the target, recover 5 cards total instead.",
+      "damage": "2",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "execute",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "vampiric-rune",
+      "name": "Vampiric Rune",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Whenever you deal damage, recover +1 additional card from discard pile. Ossuarium-exclusive sigil.",
+      "keywords": [
+        "passive",
+        "lifesteal-synergy",
+        "ossuarium-exclusive"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "bone-armor",
+      "name": "Bone Armor",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "When attacked, reduce damage by 2. If you blocked 2+ damage this way, recover 1 card.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "lifesteal"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "soul-well",
+      "name": "Soul Well",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "At start of your turn, if you have 5 or fewer cards in hand, recover 1 card from discard pile. Safety net.",
+      "keywords": [
+        "passive",
+        "healing",
+        "recovery"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "death-shroud",
+      "name": "Death Shroud",
+      "type": "utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of turn, whenever you recover cards from discard pile, recover +2 additional cards. Amplifies all lifesteal.",
+      "keywords": [
+        "utility",
+        "lifesteal-synergy",
+        "buff"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "corpse-shield",
+      "name": "Corpse Shield",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "When an enemy within 3 hexes dies, gain +3 Defense until end of your next turn. Corpse empowerment.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "corpse-trigger"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
     }
   ],
   "elves": [
@@ -804,6 +1326,183 @@
       ],
       "cardCount": 1,
       "cardType": "faction"
+    },
+    {
+      "id": "thorn-blade-slash",
+      "name": "Thorn Blade Slash",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 3 damage. Apply Bleed 2 (target takes 2 damage at start of their turn). Basic Elven attack.",
+      "damage": "3",
+      "keywords": [
+        "attack",
+        "bleed",
+        "melee",
+        "elven"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "vine-whip-lash",
+      "name": "Vine Whip Lash",
+      "type": "attack",
+      "cost": 2,
+      "range": "2 hexes",
+      "effect": "Deal 2 damage. Apply Bleed 1. Extended reach attack (2 hexes).",
+      "damage": "2",
+      "keywords": [
+        "attack",
+        "bleed",
+        "reach",
+        "ranged"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "leaf-blade-flurry",
+      "name": "Leaf Blade Flurry",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee (Range 1)",
+      "effect": "Attack twice for 2 damage each (total 4 damage). Each hit applies Bleed 1. Rapid strikes.",
+      "damage": "4",
+      "keywords": [
+        "attack",
+        "bleed",
+        "multi-hit",
+        "melee"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "surgical-cut",
+      "name": "Surgical Cut",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 3 damage to specific component. Apply Bleed 2. Add +1 Component Damage if target discards that component type.",
+      "damage": "3",
+      "keywords": [
+        "attack",
+        "bleed",
+        "component-damage",
+        "precision"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "barbed-arrow-volley",
+      "name": "Barbed Arrow Volley",
+      "type": "attack",
+      "cost": 4,
+      "range": "6 hexes",
+      "effect": "Deal 3 damage at range. Apply Bleed 3. If target already has Bleed counters, apply +1 additional Bleed (max 4 total).",
+      "damage": "3",
+      "keywords": [
+        "attack",
+        "bleed",
+        "ranged",
+        "synergy"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "venom-strike",
+      "name": "Venom Strike",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 2 damage. Apply Bleed 3 (poisoned blade). Enemies with 5+ Bleed take +2 damage from this attack.",
+      "damage": "2",
+      "keywords": [
+        "attack",
+        "bleed",
+        "poison",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "toxin-mastery",
+      "name": "Toxin Mastery",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "All Bleed effects you apply deal double damage. Bleed 1 becomes Bleed 2, Bleed 2 becomes Bleed 4, etc. Elven-exclusive sigil.",
+      "keywords": [
+        "passive",
+        "bleed-synergy",
+        "elven-exclusive"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "leaf-cloak",
+      "name": "Leaf Cloak",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "When attacked, move up to 2 hexes immediately after attack resolves. Reactive dodge.",
+      "keywords": [
+        "reactive",
+        "movement",
+        "dodge"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "photosynthesis-pendant",
+      "name": "Photosynthesis Pendant",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "At start of your turn, recover 1 card from discard pile. Passive regeneration.",
+      "keywords": [
+        "passive",
+        "healing",
+        "regeneration"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "hunters-focus",
+      "name": "Hunter's Focus",
+      "type": "utility",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Your next attack this turn deals +2 damage to enemies that have Bleed counters on them. Amplifies Bleed builds.",
+      "keywords": [
+        "utility",
+        "damage-boost",
+        "bleed-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "nature-stride",
+      "name": "Nature's Stride",
+      "type": "movement",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Move up to 4 hexes. Ignore difficult terrain. Elven movement sigil.",
+      "keywords": [
+        "movement",
+        "mobility",
+        "ignore-terrain"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
     }
   ],
   "equipment": [
