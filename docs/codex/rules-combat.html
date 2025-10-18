@@ -147,7 +147,12 @@
         <ol>
             <li>Target enemy</li>
             <li>Which attack card to play (sets base damage)</li>
-            <li>Which component to target (Right Arm, Left Arm, Legs, Head, Chassis, or Random)</li>
+            <li>Which component to target (Right Arm, Left Arm, Legs, Head, Chassis, or Random)
+                <ul>
+                    <li><strong>Default</strong>: Attacker chooses specific component</li>
+                    <li><strong>If "Random" chosen</strong>: Roll 1d6 after hit is confirmed (1=Head, 2=Right Arm, 3=Left Arm, 4=Chassis, 5-6=Legs)</li>
+                </ul>
+            </li>
             <li>Range and facing</li>
         </ol>
 
@@ -363,7 +368,7 @@
 
         <p><strong>If Defense Dice showed CRITICAL symbols ([CRITICAL]):</strong></p>
         <ul>
-            <li>Add +1 Component Damage per [CRITICAL] symbol to targeted component</li>
+            <li>Add +1 Component Damage per [CRITICAL] symbol to targeted component (no cap - multiple CRITICALS stack)</li>
         </ul>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
@@ -446,9 +451,13 @@
         <ul>
             <li><strong>Reshuffle Trigger</strong></li>
             <li>Shuffle discard pile into new deck</li>
-            <li><strong>Add 1 "Damage" card</strong> to the deck (permanent degradation)</li>
+            <li><strong>Add 1 "Damage" card</strong> to the deck, shuffled in randomly (permanent degradation)</li>
             <li>Draw normally</li>
         </ul>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-top: 0.5rem;">
+            <strong>Clarification</strong>: The Damage card is shuffled into the deck randomly, not placed on top or bottom. This represents unpredictable structural degradation.
+        </p>
 
         <h3>Damage Cards (Death Spiral):</h3>
         <ul>
