@@ -265,17 +265,24 @@
             background: var(--dark-red);
         }
 
-        .back-link {
-            display: inline-block;
-            margin: 2rem 0 1rem;
-            color: var(--aged-gold);
-            text-decoration: none;
+        .btn-nav {
+            background: linear-gradient(135deg, var(--blood-red), var(--blackish-red));
+            border: 2px solid var(--aged-gold);
+            color: var(--bone-white);
+            padding: 0.75rem 1.5rem;
+            font-family: 'Cinzel Decorative', serif;
             font-size: 0.9rem;
-            transition: color 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
-        .back-link:hover {
-            color: var(--bone-white);
+        .btn-nav:hover {
+            background: linear-gradient(135deg, var(--dark-red), var(--blood-red));
+            box-shadow: 0 0 15px rgba(184, 149, 106, 0.5);
+            transform: translateY(-2px);
         }
 
         .expand-hint {
@@ -324,15 +331,15 @@
         <div class="header-content">
             <div>
                 <h1 class="header-title">SUPPORT UNITS & EQUIPMENT</h1>
-                <div style="margin-top: 0.5rem;">
-                    <a href="index.html" class="back-link" style="margin-right: 1.5rem;">← Return to Codex</a>
-                    <a href="../cards/index.html" class="back-link">Card Database →</a>
+                <div class="header-stats">
+                    <strong id="total-units-count">40+</strong> Support Units |
+                    <strong>10</strong> Factions |
+                    <strong>46</strong> Equipment Items
                 </div>
             </div>
-            <div class="header-stats">
-                <div><strong id="total-units-count">40+</strong> Support Units</div>
-                <div><strong>10</strong> Factions</div>
-                <div><strong>46</strong> Equipment Items</div>
+            <div style="display: flex; gap: 1rem;">
+                <a href="../cards/index.html" class="btn-nav">Card Database</a>
+                <a href="index.html" class="btn-nav">← Return to Codex</a>
             </div>
         </div>
     </div>
