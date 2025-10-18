@@ -829,30 +829,6 @@
     <div class="main-container">
         <!-- LEFT PANEL: CARD POOL -->
         <div class="card-pool-panel">
-            <!-- Tabs -->
-            <nav class="tabs">
-                <div class="tab active" data-tab="all">
-                    ALL <span class="tab-count" id="count-all">0</span>
-                </div>
-                <div class="tab" data-tab="universal">
-                    UNIVERSAL <span class="tab-count" id="count-universal">0</span>
-                </div>
-                <div class="tab" data-tab="church">
-                    CHURCH <span class="tab-count" id="count-church">0</span>
-                </div>
-                <div class="tab" data-tab="dwarves">
-                    DWARVES <span class="tab-count" id="count-dwarves">0</span>
-                </div>
-                <div class="tab" data-tab="ossuarium">
-                    OSSUARIUM <span class="tab-count" id="count-ossuarium">0</span>
-                </div>
-                <div class="tab" data-tab="elves">
-                    ELVES <span class="tab-count" id="count-elves">0</span>
-                </div>
-                <div class="tab" data-tab="equipment">
-                    EQUIPMENT <span class="tab-count" id="count-equipment">0</span>
-                </div>
-            </nav>
 
             <!-- Card Pool Content -->
             <div class="card-pool-content">
@@ -861,6 +837,48 @@
                     <div class="filter-section">
                         <label for="search-input" class="filter-title">Search</label>
                         <input type="text" id="search-input" class="search-box" placeholder="Card name, effect...">
+                    </div>
+
+                    <div class="filter-section">
+                        <div class="filter-title">Faction</div>
+                        <div class="filter-checkbox-group">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="universal" data-filter="faction"> Universal
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="church" data-filter="faction"> Church of Absolution
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="dwarves" data-filter="faction"> Dwarven Forge-Guilds
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="elves" data-filter="faction"> Verdant Covenant
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="ossuarium" data-filter="faction"> The Ossuarium
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="wyrd-conclave" data-filter="faction"> Wyrd Conclave
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="nomads" data-filter="faction"> Nomad Collective
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="crucible" data-filter="faction"> Crucible Packs
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="emergent" data-filter="faction"> Emergent Syndicate
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="vestige-bloodlines" data-filter="faction"> Vestige Bloodlines
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="exchange" data-filter="faction"> The Exchange
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="equipment" data-filter="faction"> Equipment
+                            </label>
+                        </div>
                     </div>
 
                     <div class="filter-section">
@@ -905,7 +923,7 @@
                         </div>
                     </div>
 
-                    <div class="filter-section hidden" id="equipment-slot-section">
+                    <div class="filter-section" id="equipment-slot-section">
                         <div class="filter-title">Equipment Slot</div>
                         <div class="filter-checkbox-group">
                             <label class="filter-checkbox">
@@ -994,7 +1012,6 @@
         let allCards = [];
         let filteredCards = [];
         let deck = {}; // { cardId: count }
-        let currentTab = 'all';
         let deckName = 'MY DECK';
 
         // ===========================
@@ -1013,7 +1030,7 @@
                 });
 
                 // Faction cards
-                ['church', 'dwarves', 'ossuarium', 'elves'].forEach(faction => {
+                ['church', 'dwarves', 'ossuarium', 'elves', 'wyrd-conclave', 'nomads', 'crucible', 'emergent', 'vestige-bloodlines', 'exchange'].forEach(faction => {
                     if (data[faction]) {
                         data[faction].forEach(card => {
                             allCards.push({ ...card, faction: faction });
@@ -1153,9 +1170,11 @@
         function applyFilters() {
             let cards = [...allCards];
 
-            // Filter by tab
-            if (currentTab !== 'all') {
-                cards = cards.filter(card => card.faction === currentTab);
+            // Filter by faction
+            const factionFilters = Array.from(document.querySelectorAll('[data-filter="faction"]:checked'))
+                .map(cb => cb.value);
+            if (factionFilters.length > 0) {
+                cards = cards.filter(card => factionFilters.includes(card.faction));
             }
 
             // Filter by search
@@ -1190,12 +1209,10 @@
             }
 
             // Filter by equipment slot
-            if (currentTab === 'equipment') {
-                const slotFilters = Array.from(document.querySelectorAll('[data-filter="slot"]:checked'))
-                    .map(cb => cb.value);
-                if (slotFilters.length > 0) {
-                    cards = cards.filter(card => slotFilters.includes(card.slot));
-                }
+            const slotFilters = Array.from(document.querySelectorAll('[data-filter="slot"]:checked'))
+                .map(cb => cb.value);
+            if (slotFilters.length > 0) {
+                cards = cards.filter(card => slotFilters.includes(card.slot));
             }
 
             filteredCards = cards;
@@ -1514,24 +1531,6 @@
         // ===========================
         document.addEventListener('DOMContentLoaded', () => {
             loadCardData();
-
-            // Tab switching
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    currentTab = tab.dataset.tab;
-
-                    // Show/hide equipment slot filter
-                    if (currentTab === 'equipment') {
-                        document.getElementById('equipment-slot-section').classList.remove('hidden');
-                    } else {
-                        document.getElementById('equipment-slot-section').classList.add('hidden');
-                    }
-
-                    applyFilters();
-                });
-            });
 
             // Search (debounced)
             let searchTimeout;
