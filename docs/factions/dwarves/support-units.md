@@ -103,6 +103,20 @@ Five stocky dwarven warriors in heavy plate armor, each carrying a tower shield 
 
 ---
 
+#### DEFENSIVE MARCH (Default)
+**Type**: Movement / Positioning
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Move 2 hexes toward nearest objective or friendly unit
+- Maintain Ironwall Formation if other Dwarven units nearby (+1 Defense)
+- Leave Runic Cover token in vacated hex (provides cover for allies)
+- Ready to form Shield Wall if enemies approach within 4 hexes
+
+**Flavor**: "Steady. Unbreakable. Dwarven."
+
+---
+
 ### Command Response
 - **RALLY**: Move up to 2 hexes. Leave cover token in vacated hex.
 - **ATTACK**: Shield bash for 5 damage, push 2 hexes. Guard holds ground.
@@ -202,6 +216,20 @@ A wheeled platform carrying a massive cannon, crewed by three dwarven engineers.
 - Create 1 Cover token adjacent (blocks LOS, 5 HP)
 
 **Flavor**: "Dig in. We hold this position."
+
+---
+
+#### REPOSITION ARTILLERY (Default)
+**Type**: Movement / Setup
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Move 2 hexes toward optimal firing position (high ground, clear LOS)
+- Vent 1 Heat during movement (crews work on cooling systems)
+- If ending turn on elevation, gain +1 range to next Bombardment
+- Ready to deploy barricades if threats approach
+
+**Flavor**: "Move the gun. Find the angle. Fire when ready."
 
 ---
 
@@ -307,6 +335,21 @@ A humanoid construct of carved granite, standing 12 feet tall. Glowing runes are
 - Cannot be stopped by terrain (walks through obstacles)
 
 **Flavor**: *Inevitable. Unstoppable. Stone.*
+
+---
+
+#### RUNIC PATROL (Default)
+**Type**: Movement / Passive
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Move 3 hexes toward center of battlefield or nearest objective
+- Generate 1 Rune Counter during movement
+- Maintain zone control presence (enemies within 2 hexes are intimidated)
+- Ready to activate Stone Skin if attacked
+- Passive Rune Aura active (+1 Defense to nearby Dwarven units)
+
+**Flavor**: *Patient. Ancient. Eternal.*
 
 ---
 
