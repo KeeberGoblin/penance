@@ -91,6 +91,34 @@ Five nomads wearing mismatched armor scavenged from a dozen factions. Tool belts
 
 ---
 
+#### DESPERATE SALVAGE
+**Type**: Survival / Resource
+**Priority**: Critical (when Crew has 0 Scrap Tokens AND ally needs healing)
+
+**Effect**:
+- Crew scavenges their own equipment for parts
+- Crew takes 3 damage (self-harm for resources)
+- Gain 2 Scrap Tokens immediately
+- Can immediately use Field Repairs if ally within range
+
+**Flavor**: "We'll rip the parts from our own backs if we have to."
+
+---
+
+#### SCRAP HOARD (Default)
+**Type**: Passive / Movement
+**Priority**: Low (when no urgent needs)
+
+**Effect**:
+- Crew moves 4 hexes toward nearest unclaimed wreckage or debris
+- If no wreckage exists, move toward nearest ally (stay in support range)
+- Automatically collect 1 Scrap Token if ending turn adjacent to wreckage
+- Maintain readiness for Field Repairs or Salvage
+
+**Flavor**: "Always collecting. Always prepared."
+
+---
+
 ### Command Response
 - **RALLY**: Move up to 4 hexes toward nearest wreckage. Gain 1 Scrap Token if wreckage within 2 hexes.
 - **ATTACK**: Cannot attack without Scrap. If 3+ Scrap, spend 3 to attack target for 6 damage.
@@ -176,6 +204,34 @@ Three nomads on jerry-rigged motorcycles - engines cobbled from Casket reactors,
 - Draw 1 card (intelligence gathered)
 
 **Flavor**: "Eyes everywhere. Know everything."
+
+---
+
+#### MOMENTUM STRIKE
+**Type**: Attack / Burst Damage
+**Priority**: High (when Outriders have moved 10+ hexes this turn)
+
+**Effect**:
+- Trigger Maximum Mobility bonus (moved 10+ hexes)
+- Attack nearest enemy for 7 damage (4 base + 3 momentum bonus)
+- After attack, move 3 additional hexes (disengage)
+- Gain +1 permanent movement for rest of battle if this kills target
+
+**Flavor**: "Pure kinetic fury. Can't stop, won't stop!"
+
+---
+
+#### DEFENSIVE CIRCLE (Default)
+**Type**: Movement / Patrol
+**Priority**: Low (when no high-priority actions available)
+
+**Effect**:
+- Outriders circle friendly Casket or objective at 5-hex radius
+- Movement: 7 hexes in circular pattern
+- Ready to intercept any approaching enemies
+- Attack any enemy entering 3-hex radius for 4 damage (reaction)
+
+**Flavor**: "Always moving. Always watching. Always ready."
 
 ---
 
@@ -267,6 +323,34 @@ A towering mechanical walker - twenty feet tall, six hydraulic legs, cobbled tog
 - Ally gains +2 Defense while adjacent to Walker (protected by hull)
 
 **Flavor**: "Get in! We're leaving!"
+
+---
+
+#### DEPLOY CARGO
+**Type**: Utility / Summoning
+**Priority**: High (when Walker has 2+ Cargo Tokens AND needs reinforcements)
+
+**Effect**:
+- Walker spends 2 Cargo Tokens
+- Summon 3 Nomad Infantry at adjacent hexes
+- Nomad Infantry: 5 HP, 3 movement, 1 Defense, 3 damage attack
+- Infantry last for 3 turns, then return to Walker (cargo reclaimed)
+
+**Flavor**: "Everyone fights! No passengers!"
+
+---
+
+#### STEADY ADVANCE (Default)
+**Type**: Movement / Support
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Walker moves 2 hexes toward nearest ally or objective
+- Maintain Mobile Supply Base aura (allies within adjacent hexes gain bonuses)
+- Automatically heal 2 HP to self (self-repair systems activate during movement)
+- Ready to deploy supplies or provide covering fire next turn
+
+**Flavor**: "Slow and steady. We'll get there."
 
 ---
 
