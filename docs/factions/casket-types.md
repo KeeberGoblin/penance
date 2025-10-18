@@ -678,7 +678,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 
 ---
 
-## 3. The Outrider (Heavy)
+## 3. The Wayfarer (Heavy)
 
 **Weight**: 1,500 lbs
 **Soul Points**: 3 SP
