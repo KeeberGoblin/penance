@@ -33,6 +33,12 @@
             --dwarves-gradient: linear-gradient(135deg, #8b7355, #4a3f2f);
             --ossuarium-gradient: linear-gradient(135deg, #1a3d1a, #0d1f0d);
             --elves-gradient: linear-gradient(135deg, #2d5a2d, #1a3d1a);
+            --wyrd-conclave-gradient: linear-gradient(135deg, #4a1a5a, #2a0845);
+            --nomads-gradient: linear-gradient(135deg, #5a4a2a, #3a2a1a);
+            --crucible-gradient: linear-gradient(135deg, #5a2a1a, #3a1a0a);
+            --emergent-gradient: linear-gradient(135deg, #3a4a2a, #1a2a1a);
+            --vestige-bloodlines-gradient: linear-gradient(135deg, #6a1a2a, #4a0a1a);
+            --exchange-gradient: linear-gradient(135deg, #2a3a4a, #1a2a3a);
             --equipment-gradient: linear-gradient(135deg, #5a4a3a, #3a2a1a);
         }
 
@@ -411,6 +417,12 @@
         .card-tile.dwarves::before { background: var(--dwarves-gradient); }
         .card-tile.ossuarium::before { background: var(--ossuarium-gradient); }
         .card-tile.elves::before { background: var(--elves-gradient); }
+        .card-tile.wyrd-conclave::before { background: var(--wyrd-conclave-gradient); }
+        .card-tile.nomads::before { background: var(--nomads-gradient); }
+        .card-tile.crucible::before { background: var(--crucible-gradient); }
+        .card-tile.emergent::before { background: var(--emergent-gradient); }
+        .card-tile.vestige-bloodlines::before { background: var(--vestige-bloodlines-gradient); }
+        .card-tile.exchange::before { background: var(--exchange-gradient); }
         .card-tile.equipment::before { background: var(--equipment-gradient); }
 
         .card-tile:hover {
@@ -869,6 +881,24 @@
             <div class="tab" data-tab="elves">
                 ELVES <span class="tab-count" id="count-elves">0</span>
             </div>
+            <div class="tab" data-tab="wyrd-conclave">
+                WYRD CONCLAVE <span class="tab-count" id="count-wyrd-conclave">0</span>
+            </div>
+            <div class="tab" data-tab="nomads">
+                NOMADS <span class="tab-count" id="count-nomads">0</span>
+            </div>
+            <div class="tab" data-tab="crucible">
+                CRUCIBLE <span class="tab-count" id="count-crucible">0</span>
+            </div>
+            <div class="tab" data-tab="emergent">
+                EMERGENT <span class="tab-count" id="count-emergent">0</span>
+            </div>
+            <div class="tab" data-tab="vestige-bloodlines">
+                VESTIGE <span class="tab-count" id="count-vestige-bloodlines">0</span>
+            </div>
+            <div class="tab" data-tab="exchange">
+                EXCHANGE <span class="tab-count" id="count-exchange">0</span>
+            </div>
             <div class="tab" data-tab="equipment">
                 EQUIPMENT <span class="tab-count" id="count-equipment">0</span>
             </div>
@@ -1062,10 +1092,12 @@
                 });
 
                 // Faction cards
-                ['church', 'dwarves', 'ossuarium', 'elves'].forEach(faction => {
-                    data[faction].forEach(card => {
-                        allCards.push({ ...card, faction: faction, source: 'faction' });
-                    });
+                ['church', 'dwarves', 'ossuarium', 'elves', 'wyrd-conclave', 'nomads', 'crucible', 'emergent', 'vestige-bloodlines', 'exchange'].forEach(faction => {
+                    if (data[faction]) {
+                        data[faction].forEach(card => {
+                            allCards.push({ ...card, faction: faction, source: 'faction' });
+                        });
+                    }
                 });
                 
                 <!-- Equipment cards (flatten equipment structure) - tolerant to multiple JSON shapes -->
