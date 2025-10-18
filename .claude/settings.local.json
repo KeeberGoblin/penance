@@ -12,7 +12,8 @@
       "Bash(wc:*)",
       "Bash(tail:*)",
       "Bash(do if [ -f \"$dir/deck-equipment-system.md\" ])",
-      "Bash(then basename \"$dir\")"
+      "Bash(then basename \"$dir\")",
+      "Bash(gh pr close:*)"
     ],
     "deny": [],
     "ask": []
