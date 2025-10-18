@@ -157,9 +157,9 @@
                 </tr>
                 <tr>
                     <td>12-13</td>
-                    <td><strong>Soulstone Shard</strong></td>
-                    <td>Small fragment. 5 shards = 1 Soulstone Fragment (75 Credits)</td>
-                    <td>15 Credits</td>
+                    <td><strong>T1 Soulstone Shard</strong></td>
+                    <td>Thumbnail-sized fragment. +5 Energy when refined (+1 Taint)</td>
+                    <td>20 Credits</td>
                 </tr>
                 <tr>
                     <td>14</td>
@@ -224,8 +224,8 @@
             <tbody>
                 <tr>
                     <td>1-2</td>
-                    <td><strong>Soulstone Fragment</strong></td>
-                    <td>Full fragment (used for crafting Relic gear)</td>
+                    <td><strong>T2 Soulstone Fragment</strong></td>
+                    <td>Fist-sized fragment. +15 Energy when refined (+2 Taint)</td>
                     <td>75 Credits</td>
                 </tr>
                 <tr>
@@ -463,6 +463,105 @@
             <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
         </div>
 
+        <h2>Soulstone Drops by Mission Type</h2>
+
+        <p class="manuscript-text">
+            Soulstone Shards are the primary method for restoring Casket Energy between missions. Different mission types yield different Soulstone tiers.
+        </p>
+
+        <table class="stat-table">
+            <thead>
+                <tr>
+                    <th>Mission Type</th>
+                    <th>Soulstone Drop Rate</th>
+                    <th>Typical Tier</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Easy Patrol</strong></td>
+                    <td>1d3 T1 Shards (guaranteed)</td>
+                    <td>T1 (5 Energy each)</td>
+                </tr>
+                <tr>
+                    <td><strong>Medium Skirmish</strong></td>
+                    <td>1d3 T1 Shards + 1d2 T2 Fragments</td>
+                    <td>Mix T1/T2</td>
+                </tr>
+                <tr>
+                    <td><strong>Hard Combat</strong></td>
+                    <td>2d3 T2 Fragments + 1 T3 Crystal (50% chance)</td>
+                    <td>T2-T3</td>
+                </tr>
+                <tr>
+                    <td><strong>Boss Fight</strong></td>
+                    <td>1 T3 Crystal (guaranteed) + 1d3 T2 Fragments</td>
+                    <td>T3 (40 Energy)</td>
+                </tr>
+                <tr>
+                    <td><strong>Engine Core Mission</strong></td>
+                    <td>1d3 T3 Crystals + 1 T4 Core (10% chance)</td>
+                    <td>T3-T4</td>
+                </tr>
+                <tr>
+                    <td><strong>Versus Caskets (NPC Pilots)</strong></td>
+                    <td>Loot their T3/T4 Soulstone Core (roll 1d6: 1-4 = T3, 5-6 = T4)</td>
+                    <td>T3-T4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box">
+            <p class="manuscript-text"><strong>Energy Management Note:</strong> Most missions consume 10-30 Energy from Casket cores. A single T3 Crystal (+40 Energy, +3 Taint) can sustain 1-2 missions. T4 Core replacements are rare and expensive but reset Taint to 0.</p>
+        </div>
+
+        <h3>Soulstone Scarcity by Region</h3>
+
+        <table class="stat-table">
+            <thead>
+                <tr>
+                    <th>Region</th>
+                    <th>Soulstone Availability</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sibarian Wastes (Engine Zone)</strong></td>
+                    <td>Very High (2x normal drops)</td>
+                    <td>Void energy saturates area, souls crystalize naturally</td>
+                </tr>
+                <tr>
+                    <td><strong>Ossuarium Territory</strong></td>
+                    <td>High (1.5x normal drops)</td>
+                    <td>Necromancers actively harvest souls, abundant battlefield corpses</td>
+                </tr>
+                <tr>
+                    <td><strong>Neutral Ruins</strong></td>
+                    <td>Standard (1x normal drops)</td>
+                    <td>Average soul density from pre-Sundering deaths</td>
+                </tr>
+                <tr>
+                    <td><strong>Church Territory</strong></td>
+                    <td>Low (0.5x normal drops)</td>
+                    <td>Church burns Soulstones in purification rituals, considers soul-harvesting immoral</td>
+                </tr>
+                <tr>
+                    <td><strong>Elven Verdant Covenant Lands</strong></td>
+                    <td>Very Low (0.25x normal drops)</td>
+                    <td>Elves refuse to bind souls, actively return wandering souls to "the Root"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="manuscript-text" style="color: #d4af37; font-style: italic; margin-top: 1rem;">
+            <strong>Campaign Implication:</strong> Choosing mission locations affects Soulstone availability. Fighting in Church/Elven territory rewards fewer Soulstones, forcing difficult Taint management choices.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+        </div>
+
         <h2>Specialized Loot Tables</h2>
 
         <h3>Abomination Loot (1d10)</h3>
@@ -554,8 +653,8 @@
                 </tr>
                 <tr>
                     <td>9</td>
-                    <td><strong>Soulstone Core</strong></td>
-                    <td>Their Casket's Soulstone (1d3 Fragments when refined)</td>
+                    <td><strong>T3 Soulstone Crystal</strong></td>
+                    <td>Grapefruit-sized. +40 Energy when refined (+3 Taint). Looted from their destroyed Casket.</td>
                     <td>Rare</td>
                 </tr>
                 <tr>
@@ -593,7 +692,7 @@
                 <tr>
                     <td>3-4</td>
                     <td><strong>Soulstone Cluster</strong></td>
-                    <td>1d3 Soulstone Fragments</td>
+                    <td>1d3 T2 Soulstone Fragments</td>
                     <td>Uncommon</td>
                 </tr>
                 <tr>

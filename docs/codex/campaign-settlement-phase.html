@@ -244,8 +244,12 @@
             <li><strong>Mission Credits:</strong> Add to settlement treasury.</li>
             <li><strong>Equipment Cards:</strong> Add to settlement equipment pool (can be assigned to pilots in Step 4).</li>
             <li><strong>Relics/Unique Items:</strong> Add to settlement vault. Players discuss who should equip them.</li>
-            <li><strong>Soulstone Fragments:</strong> Add to settlement resource pool (consumable, removes Taint).</li>
+            <li><strong>Soulstone Shards (T1-T4):</strong> Add to settlement resource pool. Used for Soulstone refinement (restores Casket Energy but adds Taint). See Forge refinement action.</li>
         </ol>
+
+        <p class="manuscript-text" style="color: #d4af37; font-style: italic;">
+            <strong>Note:</strong> Soulstone Shards are acquired from mission loot tables. See <strong>campaign-loot-tables.html</strong> for drop rates by mission type.
+        </p>
 
         <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
@@ -467,7 +471,56 @@
             <li><strong>Craft Equipment:</strong> Spend Credits + Scrap to build equipment cards. See crafting costs below.</li>
             <li><strong>Repair Equipment:</strong> Restore destroyed equipment for 50% of crafting cost.</li>
             <li><strong>Upgrade Equipment:</strong> Spend Credits + Scrap to improve existing equipment (+1 damage, +1 Defense, etc.). Cost: 100 Credits + 2 Scrap.</li>
+            <li><strong>Refine Soulstone:</strong> Consume Soulstone Shards to restore Casket Energy. See table below for costs and Taint gained.</li>
+            <li><strong>Repair Neural Threads:</strong> Permanently repair severed neural threads. Cost: 50 Credits per thread + 1 week downtime. Requires skilled technician (DC 12 Repair check).</li>
         </ul>
+
+        <h4>Soulstone Refinement Costs</h4>
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Shard Tier</th>
+                    <th>Energy Restored</th>
+                    <th>Taint Gained</th>
+                    <th>Time Required</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>T1 Shard</strong></td>
+                    <td>+5 Energy</td>
+                    <td>+1 Taint</td>
+                    <td>1 day</td>
+                    <td>1 T1 Shard (consumed)</td>
+                </tr>
+                <tr>
+                    <td><strong>T2 Fragment</strong></td>
+                    <td>+15 Energy</td>
+                    <td>+2 Taint</td>
+                    <td>3 days</td>
+                    <td>1 T2 Fragment (consumed)</td>
+                </tr>
+                <tr>
+                    <td><strong>T3 Crystal</strong></td>
+                    <td>+40 Energy</td>
+                    <td>+3 Taint</td>
+                    <td>1 week</td>
+                    <td>1 T3 Crystal (consumed)</td>
+                </tr>
+                <tr>
+                    <td><strong>T4 Core Replacement</strong></td>
+                    <td>Full restore (100 Energy)</td>
+                    <td>Resets Taint to 0</td>
+                    <td>2 weeks</td>
+                    <td>1 T4 Core + 100 Credits</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="manuscript-text" style="color: #d4af37; font-style: italic;">
+            <strong>Warning:</strong> Soul cannibalism (consuming Soulstone Shards) accumulates Taint. At 10 Taint, pilot becomes Corrupted. Use sparingly.
+        </p>
 
         <table class="manuscript-table">
             <thead>
