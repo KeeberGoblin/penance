@@ -65,10 +65,19 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ## Core Mechanics
 
-### Deck-as-HP System
-- **Your 30-card deck IS your HP** - Damage = discard from deck
-- Deck empty → Reshuffle + add 1 **Damage card** (blank dead draw)
-- Multiple reshuffles → Death spiral of useless cards
+### The 3-Pile System
+- **HP Draw Deck** (26-50 cards) - Your active deck = structural integrity
+- **Discard Pile** - Cards you play → Reshuffles when draw deck empty
+- **Damage Graveyard** - Cards destroyed by damage → **Gone forever** (death spiral)
+- **Key**: Playing cards ≠ taking damage. Played cards come back, damaged cards don't.
+
+### DAMAGED Cards (Persistent Wounds)
+- **Major Wounds (5+ damage)** → Add 1 DAMAGED card to Discard Pile
+- DAMAGED cards **persist in hand** across rounds (curse-like)
+- Take up card slots, can be removed via 0 SP action:
+  - **Sacrifice** (to Discard Pile): Roll Damage Die, cycles back later
+  - **Purge** (to Damage Graveyard): Roll Damage Die, gone forever
+- **Damage Die**: 1d6 with effects (Heat, -SP, Component Damage, Pilot Wound, or lucky +SP!)
 
 ### Component Damage (Kingdom Death-inspired)
 - **5 Components**: Head (8 HP), Torso (10 HP), Arms (8 HP each), Legs (10 HP)
