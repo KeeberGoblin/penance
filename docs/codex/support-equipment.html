@@ -573,13 +573,6 @@
             });
         });
 
-        // Unit card expand/collapse
-        document.querySelectorAll('.unit-card').forEach(card => {
-            card.addEventListener('click', () => {
-                card.classList.toggle('expanded');
-            });
-        });
-
         // Filter functionality
         const factionFilters = document.querySelectorAll('.faction-filter');
         const slotFilters = document.querySelectorAll('.slot-filter');
@@ -755,7 +748,8 @@
                 }
 
                 // Add click handler for expansion
-                card.addEventListener('click', () => {
+                card.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     card.classList.toggle('expanded');
                 });
 
@@ -836,7 +830,8 @@
                 }
 
                 // Add click handler for expansion
-                card.addEventListener('click', () => {
+                card.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     card.classList.toggle('expanded');
                 });
 
