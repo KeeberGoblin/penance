@@ -209,6 +209,21 @@ Four elven mystics in living wooden robes, their feet rooted to the ground. Vine
 
 ---
 
+#### VERDANT GROWTH (Default)
+**Type**: Passive / Terrain Control
+**Priority**: Low (when no urgent actions needed)
+
+**Effect**:
+- Remain rooted in current position
+- Expand Verdant Zone by 1 hex each turn (passive growth)
+- Generate 1 Bloom Counter per turn while rooted
+- Maintain terrain control (Forest Terrain, Thorn Walls, healing aura)
+- Ready to Uproot if threatened
+
+**Flavor**: "The forest spreads. Slowly. Inevitably."
+
+---
+
 ### Command Response
 - **RALLY**: Rootweavers **Uproot** (become mobile, lose terrain powers) and move up to 2 hexes, then can **Root** again next turn.
 - **ATTACK**: Rootweavers create Thorn Eruption in 4-hex radius, dealing 4 damage to all enemies and creating Thorn Walls.
