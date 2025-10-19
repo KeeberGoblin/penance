@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Proposal: A-Tier Parity (October 19, 2025)</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="index.html" target="_parent">CODEX</a> / BALANCE PROPOSAL
+        </div>
+
+        <h1>Balance Proposal: A-Tier Parity</h1>
+        <p style="font-style: italic; opacity: 0.8;">October 19, 2025 - Bringing all 10 factions to competitive A-B tier status</p>
+
+        <div style="background: var(--blood-red); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2rem 0;">
+            <h2>Executive Summary</h2>
+            <p><strong>Goal:</strong> Balance all 10 factions to 45-55% win rate (±5% variance acceptable)</p>
+            <p><strong>Current State:</strong> S-tier (Elves), A-tier (Ossuarium, Dwarves), B-tier (Church), C-tier (Exchange, Nomads, Crucible), D-tier (Wyrd, Bloodlines, Emergent)</p>
+            <p><strong>Target State:</strong> All factions A-tier competitive</p>
+            <p><strong>Test Plan:</strong> 120-200 game simulation campaign over 4 weeks</p>
+        </div>
+
+        <h2>Current Tier List (Pre-Balance)</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>Faction</th>
+                    <th>Core Issue</th>
+                    <th>Win Rate Estimate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(255, 215, 0, 0.1);">
+                    <td><strong>S-Tier</strong></td>
+                    <td>Elven Verdant Covenant</td>
+                    <td>Infinite Bleed stacking (capped 10), 3 cards/round regen, extreme mobility</td>
+                    <td>60-70%</td>
+                </tr>
+                <tr style="background: rgba(100, 200, 100, 0.1);">
+                    <td rowspan="2"><strong>A-Tier</strong></td>
+                    <td>The Ossuarium</td>
+                    <td>Triple resurrection, excessive lifesteal</td>
+                    <td>55-65%</td>
+                </tr>
+                <tr style="background: rgba(100, 200, 100, 0.1);">
+                    <td>Dwarven Forge-Guilds</td>
+                    <td>32 HP + Rune -3 = too tanky, slow TTK</td>
+                    <td>55-60%</td>
+                </tr>
+                <tr style="background: rgba(200, 200, 100, 0.1);">
+                    <td><strong>B-Tier</strong></td>
+                    <td>Church of Absolution</td>
+                    <td>Recently buffed, needs minor tweaks</td>
+                    <td>45-55% (baseline)</td>
+                </tr>
+                <tr style="background: rgba(255, 150, 100, 0.1);">
+                    <td rowspan="3"><strong>C-Tier</strong></td>
+                    <td>The Exchange</td>
+                    <td>Slow healing (1 HP per 5 damage), weak scaling</td>
+                    <td>35-45%</td>
+                </tr>
+                <tr style="background: rgba(255, 150, 100, 0.1);">
+                    <td>Nomad Collective</td>
+                    <td>High mobility but no sustain/defense</td>
+                    <td>35-45%</td>
+                </tr>
+                <tr style="background: rgba(255, 150, 100, 0.1);">
+                    <td>Crucible Pacts</td>
+                    <td>Requires damage to activate (risky)</td>
+                    <td>35-45%</td>
+                </tr>
+                <tr style="background: rgba(255, 100, 100, 0.1);">
+                    <td rowspan="3"><strong>D-Tier</strong></td>
+                    <td>The Wyrd Conclave</td>
+                    <td>Untested, complex mechanics</td>
+                    <td>30-40%</td>
+                </tr>
+                <tr style="background: rgba(255, 100, 100, 0.1);">
+                    <td>Vestige Bloodlines</td>
+                    <td>Extinction Clock (suicide timer)</td>
+                    <td>25-35%</td>
+                </tr>
+                <tr style="background: rgba(255, 100, 100, 0.1);">
+                    <td>Emergent Syndicate</td>
+                    <td>Untested swarm mechanics</td>
+                    <td>30-40%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Phase 1: S/A-Tier Nerfs (Week 1)</h2>
+
+        <h3>Elven Verdant Covenant (S → A)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> TTK 5.0 turns (too fast), regenerates 36% HP per game (3 cards × 12 turns)</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>Bleed cap: 10 → 8 stacks</strong> (prevents turn 9+ runaway scaling)</li>
+                <li><strong>Leaf Dance: 3 hexes → 2 hexes</strong> (Move 3 + Attack + Move 3 → Move 2 + Attack + Move 2)</li>
+                <li><strong>Remove Photosynthesis</strong> (passive 1 card/round regen), keep Verdant Regeneration (2 cards/round active)</li>
+                <li><strong>Arcing Shot damage: 3d6 → 2d6</strong> (AoE damage reduction)</li>
+                <li><strong>Thorn Armor: Reflect 2 → Reflect 1</strong> (defensive scaling)</li>
+            </ul>
+            <p><strong>Math:</strong> Bleed damage turn 8 = 8 stacks × 2 damage = 16 damage (vs 20 at cap 10). TTK 5.0 → 6.0 turns (+20%). Regen 36% → 24% (-36% survivability).</p>
+            <p><strong>Playstyle:</strong> Still mobile assassin with Bleed stacking, but capped earlier and less regeneration.</p>
+        </div>
+
+        <h3>The Ossuarium (A → A, Less Oppressive)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> 3 resurrection mechanics + 100% lifesteal = impossible to kill</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>Phylactery resurrection: 5 HP → 3 HP</strong> (one less turn to re-kill)</li>
+                <li><strong>Soul Harvest lifesteal: 100% → 50%</strong> (4 damage = 2 cards back, not 4)</li>
+                <li><strong>Remove "Phylactery Relic" equipment</strong> (no second Phylactery)</li>
+                <li><strong>Corpse Fuel: 5 cards → 4 cards</strong> (on kill recovery)</li>
+            </ul>
+            <p><strong>Math:</strong> Soul Harvest efficiency 100% → 50% (-50% TTK). Phylactery 5 HP → 3 HP (1 less turn). Total survivability -20%.</p>
+            <p><strong>Playstyle:</strong> Still vampire lifesteal, but kill-able with focused fire.</p>
+        </div>
+
+        <h3>Dwarven Forge-Guilds (A → A, Faster TTK)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> 32 HP + Rune -3 = takes 11.4 turns to kill (too tanky)</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>Base HP: 32 → 30</strong> (same as all factions)</li>
+                <li><strong>Rune of Protection cap: -3 → -2 damage</strong> (max 2 stacks)</li>
+                <li><strong>Clan Vengeance: +2 → +1 damage per Component Damage</strong></li>
+                <li><strong>Armor-Piercing: All attacks → Rune-enhanced attacks only</strong> (must have 1+ Rune counter)</li>
+                <li><strong>BUFF: +1 base damage on all attacks</strong> (to compensate for armor-piercing nerf)</li>
+            </ul>
+            <p><strong>Math:</strong> Effective HP with Runes: 42 → 34 (-19%). TTK 11.4 → 6.6 turns (-42%). Offensive output +15% (base damage buff).</p>
+            <p><strong>Playstyle:</strong> Still tanky defender, but killable. Faster kills offset by less survivability.</p>
+        </div>
+
+        <h2>Phase 2: C-Tier Buffs (Week 2)</h2>
+
+        <h3>The Exchange (C → A)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> War Profiteer heals 1 HP/5 damage (20% efficiency) = 6 HP total heal. Too weak.</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>War Profiteer (The Ledger): 1 HP per 5 damage → 1 HP per 3 damage</strong> (33% healing, +50%)</li>
+                <li><strong>Compounding Interest: +1 damage/turn → +2 damage/turn</strong> (vs same target, ×2 scaling)</li>
+                <li><strong>Soul Drain count: ×5 → ×7 in deck</strong> (more consistency)</li>
+                <li><strong>Contract Breach: 3d6 → 4d6 damage</strong> (burst capability)</li>
+            </ul>
+            <p><strong>Math:</strong> Healing 6 HP → 10 HP (+67%). Compounding Interest turn 5 = +10 damage (vs +5). TTK 8.8 → 4.3 turns (-51%).</p>
+            <p><strong>Playstyle:</strong> Economic warfare with healing sustain and focus-fire scaling.</p>
+        </div>
+
+        <h3>Nomad Collective (C → A)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> 7 Move but no defensive/sustain mechanics = dies too fast</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>Keep 7 Move</strong> (fastest faction identity)</li>
+                <li><strong>Ghost Step: 1 token → 3 tokens per mission</strong> (teleport 4 hexes, ignore terrain/LOS)</li>
+                <li><strong>Opportunist: +1 damage → +3 damage</strong> (vs enemies with 1+ Damage cards)</li>
+                <li><strong>Scrapper: 1 Scrap → 3 Scrap on Component Damage</strong> (economy boost)</li>
+                <li><strong>NEW: "Evasive Maneuvers"</strong> - Once per turn, move 2 hexes after being attacked (×3 in deck)</li>
+            </ul>
+            <p><strong>Math:</strong> Ghost Step 3× = 3 free repositions per game. Opportunist +3 = 50% damage boost (mid/late). Survivability +14% (Evasive Maneuvers). TTK 6.0 → 5.2 turns (-13%).</p>
+            <p><strong>Playstyle:</strong> Ultra-mobile guerrilla fighter, hardest faction to pin down.</p>
+        </div>
+
+        <h3>Crucible Pacts (C → A)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> Requires taking damage to activate mechanics (Blood Rage), too risky</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>Living Forge: 1 Forge token/turn → 2 Forge tokens/turn</strong> (faster economy)</li>
+                <li><strong>Blood Rage: +1 damage per 5 HP lost → +2 damage per 5 HP lost</strong> (×2 scaling)</li>
+                <li><strong>Volcanic Terrain: 1d6 damage → 2d6 damage</strong> (environment hazard)</li>
+                <li><strong>Honor Duel: +2 damage → +4 damage</strong> (when 1v1, no allies within 5 hexes)</li>
+                <li><strong>BUFF: 30 HP → 32 HP base</strong> (compensates for Blood Rage self-harm)</li>
+            </ul>
+            <p><strong>Math:</strong> Blood Rage at 15 HP lost = +6 damage (vs +3). Living Forge turn 5 = 10 tokens (vs 5). TTK 7.2 → 4.2 turns (-42%). Survivability 30 → 32 HP (+6.7%).</p>
+            <p><strong>Playstyle:</strong> Fire duelist who gets stronger when wounded, volcanic battlefield control.</p>
+        </div>
+
+        <h2>Phase 3: D-Tier Buffs (Week 3)</h2>
+
+        <h3>The Wyrd Conclave (D → A)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> Untested, complex mechanics, likely underpowered</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>Bargain mechanic: 1 per mission → 2 per turn</strong> (steal abilities: 2 SP + discard 1 card)</li>
+                <li><strong>Between Moments: 1 Wyrd token → 3 Wyrd tokens</strong> (stored for later phases)</li>
+                <li><strong>Reality Bending: 2d6 → 3d6 damage</strong> (ignores Defense, costs 2 Wyrd tokens)</li>
+                <li><strong>Stolen Faces: +1 Defense → +2 Defense</strong> (when using stolen ability)</li>
+                <li><strong>NEW: "Illusory Double"</strong> - Create decoy at your location, becomes real if attacked (×2 in deck, costs 1 Wyrd token)</li>
+            </ul>
+            <p><strong>Math:</strong> Bargain 2/turn = steal 24 abilities per game (action economy advantage). Reality Bending 3d6 = 10.5 avg damage (ignores defense). Survivability +31% (Stolen Faces +2 Defense, Illusory Double). TTK 7.0 → 3.7 turns (-47%).</p>
+            <p><strong>Playstyle:</strong> Reality-warping trickster, steals enemy abilities, creates illusions.</p>
+        </div>
+
+        <h3>Vestige Bloodlines (D → A)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> Extinction Clock (suicide timer) makes faction unplayable long-term</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>Biomass generation: 1/turn → 2/turn</strong> (faster mutations)</li>
+                <li><strong>Pack Tactics (Wolf Form): +1 damage → +2 damage per ally</strong></li>
+                <li><strong>Titan's Endurance (Bear Form): +5 HP → +8 HP</strong></li>
+                <li><strong>Adaptive Mutations: 2 forms → 5 forms available</strong> (Wolf, Bear, Serpent, Bat, Mantis)</li>
+                <li><strong>REMOVE: Extinction Clock</strong> (no more suicide timer - faction is now sustainable)</li>
+            </ul>
+            <p><strong>Math:</strong> Biomass 2/turn = 24 biomass total (12 turns). Pack Tactics with 2 allies = +4 damage. Titan's Endurance +8 HP. Removal of Extinction Clock = infinite survivability. TTK 8.2 → 6.2 turns (-25%). Survivability +52% (no suicide timer).</p>
+            <p><strong>Playstyle:</strong> Mutation specialists with pack tactics, sustainable evolution.</p>
+        </div>
+
+        <h3>Emergent Syndicate (D → A)</h3>
+        <div class="stat-block">
+            <p><strong>Problem:</strong> Untested swarm mechanics, likely weak individual units</p>
+            <p><strong>Changes:</strong></p>
+            <ul>
+                <li><strong>Metamorph generation: 1/turn → 2/turn</strong> (faster form changes)</li>
+                <li><strong>Assault Form: 2d6 damage → 3d6 damage</strong></li>
+                <li><strong>Tank Form: +2 Defense → +3 Defense</strong></li>
+                <li><strong>Hive-Mind Coordination: +1 accuracy → +2 accuracy per ally</strong> (within 3 hexes)</li>
+                <li><strong>Swarm Tactics: 1d6 damage → 2d6 damage</strong> (when 2+ allies attack same target)</li>
+            </ul>
+            <p><strong>Math:</strong> Metamorph 2/turn = 24 total (form flexibility). Assault Form 3d6 = 10.5 avg damage. Hive-Mind with 2 allies = +4 accuracy (near auto-hit). TTK 7.2 → 4.8 turns (-34%). Survivability +9% (Tank Form +3 Defense).</p>
+            <p><strong>Playstyle:</strong> Form-shifting hive-mind with coordinated swarm tactics.</p>
+        </div>
+
+        <h2>Church of Absolution (B-Tier Tweaks)</h2>
+
+        <div class="stat-block">
+            <p><strong>Status:</strong> Recently buffed (Blood Offering 2 HP → 1 HP), now B-tier viable</p>
+            <p><strong>Minor Adjustments:</strong></p>
+            <ul>
+                <li><strong>Righteous Fury: Infinite scaling → Cap at +3 damage</strong> (prevents infinite scaling, still strong)</li>
+                <li><strong>BUFF: 30 HP → 32 HP base</strong> (compensates for self-harm, matches Dwarves/Crucible)</li>
+            </ul>
+            <p><strong>Math:</strong> Righteous Fury turn 10 = +3 damage (vs potentially +10 infinite). HP 30 → 32 (+6.7%). Win rate should remain 45-55%.</p>
+            <p><strong>Playstyle:</strong> Aggressive martyrdom with capped scaling (prevents late-game runaway).</p>
+        </div>
+
+        <h2>Expected Post-Balance Tier List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Archetype</th>
+                    <th>TTK Change</th>
+                    <th>Survivability Change</th>
+                    <th>Target Win Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Church of Absolution</td>
+                    <td>Burst Martyr</td>
+                    <td>Baseline</td>
+                    <td>+6.7% HP</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>Dwarven Forge-Guilds</td>
+                    <td>Fortress Tank</td>
+                    <td>+72% (slower kills)</td>
+                    <td>-53% (less tanky)</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>Elven Verdant Covenant</td>
+                    <td>Bleed Assassin</td>
+                    <td>+20%</td>
+                    <td>-36%</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>The Ossuarium</td>
+                    <td>Lifesteal Vampire</td>
+                    <td>-50% (nerf)</td>
+                    <td>-20%</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>The Exchange</td>
+                    <td>Economic Warfare</td>
+                    <td>-51%</td>
+                    <td>+67% healing</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>Nomad Collective</td>
+                    <td>Ultra-Mobile</td>
+                    <td>-13%</td>
+                    <td>+14%</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>Crucible Pacts</td>
+                    <td>Fire Duelist</td>
+                    <td>-42%</td>
+                    <td>+6.7%</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>The Wyrd Conclave</td>
+                    <td>Reality Bender</td>
+                    <td>-47%</td>
+                    <td>+31%</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>Vestige Bloodlines</td>
+                    <td>Mutation Pack</td>
+                    <td>-25%</td>
+                    <td>+52% (no suicide)</td>
+                    <td>45-55%</td>
+                </tr>
+                <tr>
+                    <td>Emergent Syndicate</td>
+                    <td>Hive Swarm</td>
+                    <td>-34%</td>
+                    <td>+9%</td>
+                    <td>45-55%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Test Plan (4-Week Campaign)</h2>
+
+        <div class="stat-block">
+            <h3>Week 1: S/A-Tier Nerfs</h3>
+            <ul>
+                <li>Apply Elves, Ossuarium, Dwarves nerfs</li>
+                <li>30 games: Each S-tier faction vs Church (10 games each)</li>
+                <li><strong>Success Criteria:</strong> 40-60% win rate for all S-tier factions</li>
+                <li><strong>Rollback Trigger:</strong> If win rate <35% or >65%, revert 50% of nerfs</li>
+            </ul>
+
+            <h3>Week 2: C-Tier Buffs</h3>
+            <ul>
+                <li>Apply Exchange, Nomads, Crucible buffs</li>
+                <li>30 games: Each C-tier faction vs Church (10 games each)</li>
+                <li><strong>Success Criteria:</strong> 40-60% win rate for all C-tier factions</li>
+                <li><strong>Rollback Trigger:</strong> If win rate <35%, apply +25% additional buffs</li>
+            </ul>
+
+            <h3>Week 3: D-Tier Buffs</h3>
+            <ul>
+                <li>Apply Wyrd, Bloodlines, Emergent buffs</li>
+                <li>30 games: Each D-tier faction vs Church (10 games each)</li>
+                <li><strong>Success Criteria:</strong> 40-60% win rate for all D-tier factions</li>
+                <li><strong>Rollback Trigger:</strong> If win rate <35%, redesign faction mechanics</li>
+            </ul>
+
+            <h3>Week 4: Cross-Faction Testing</h3>
+            <ul>
+                <li>90 games: Round-robin tournament (10 factions × 9 matchups)</li>
+                <li><strong>Success Criteria:</strong> All factions 40-60% overall win rate, no matchup >60%</li>
+                <li><strong>Hotfix Protocol:</strong> Apply ±10% adjustments to outliers</li>
+            </ul>
+        </div>
+
+        <h2>Implementation Priority</h2>
+
+        <ol>
+            <li><strong>Critical (Apply Immediately):</strong> Elves Bleed cap 8, Ossuarium Soul Harvest 50%, Dwarves 30 HP</li>
+            <li><strong>High (Week 1):</strong> Exchange War Profiteer buff, Nomads Ghost Step 3×, Crucible Living Forge ×2</li>
+            <li><strong>Medium (Week 2):</strong> Wyrd Bargain 2/turn, Bloodlines remove Extinction Clock, Emergent Metamorph 2/turn</li>
+            <li><strong>Low (Week 3):</strong> Church Righteous Fury cap +3, minor numerical tweaks</li>
+        </ol>
+
+        <div style="background: var(--shadow-black); border: 3px double var(--dark-red); padding: 2rem; margin: 3rem 0; font-style: italic;">
+            <p style="text-align: center; margin: 0;" class="no-drop-cap">
+                "Balance is not equality. It is the razor's edge between inevitable death and glorious victory."
+            </p>
+            <p style="text-align: center; margin-top: 0.5rem; margin-bottom: 0; opacity: 0.7;">
+                — Bonelord Thresh, The Ledger of Souls
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,222 +1,310 @@
-<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" style="background: #2a2520;">
   <defs>
-    <style>
-      .hex { stroke: #4a4a4a; stroke-width: 2; }
-      .hex-plain { fill: #d4c5b0; }
-      .hex-forest { fill: #3d5a3d; }
-      .hex-rubble { fill: #6b5d54; }
-      .hex-water { fill: #4a6b7c; }
-      .hex-elev1 { fill: #9d8b7a; }
-      .hex-elev2 { fill: #7a6858; }
-      .hex-text { font-family: 'Courier New', monospace; font-size: 10px; fill: #ffffff; text-anchor: middle; }
-      .legend-text { font-family: Arial, sans-serif; font-size: 14px; fill: #2a2a2a; }
-      .legend-box { stroke: #2a2a2a; stroke-width: 1; }
-      .title { font-family: 'Cinzel Decorative', serif; font-size: 24px; fill: #4a0e0e; font-weight: bold; }
-    </style>
-    <polygon id="hexagon" points="30,0 60,17.32 60,51.96 30,69.28 0,51.96 0,17.32" />
+    <!-- Hex pattern definition -->
+    <polygon id="hex" points="30,0 60,17.32 60,51.96 30,69.28 0,51.96 0,17.32" />
+
+    <!-- Terrain patterns -->
+    <pattern id="forest" patternUnits="userSpaceOnUse" width="60" height="69.28">
+      <rect width="60" height="69.28" fill="#1a3d1a"/>
+      <circle cx="15" cy="17" r="3" fill="#2d5a2d" opacity="0.7"/>
+      <circle cx="35" cy="25" r="4" fill="#2d5a2d" opacity="0.7"/>
+      <circle cx="45" cy="45" r="3" fill="#2d5a2d" opacity="0.7"/>
+      <circle cx="20" cy="50" r="4" fill="#2d5a2d" opacity="0.7"/>
+    </pattern>
+
+    <pattern id="rubble" patternUnits="userSpaceOnUse" width="60" height="69.28">
+      <rect width="60" height="69.28" fill="#3d3428"/>
+      <rect x="10" y="10" width="8" height="6" fill="#5a4d3a" opacity="0.8"/>
+      <rect x="35" y="15" width="6" height="8" fill="#5a4d3a" opacity="0.8"/>
+      <rect x="15" y="40" width="10" height="7" fill="#5a4d3a" opacity="0.8"/>
+      <rect x="40" y="45" width="7" height="5" fill="#5a4d3a" opacity="0.8"/>
+    </pattern>
+
+    <pattern id="water" patternUnits="userSpaceOnUse" width="60" height="69.28">
+      <rect width="60" height="69.28" fill="#1a3d5a"/>
+      <path d="M0,30 Q15,25 30,30 T60,30" stroke="#2a5a7a" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <path d="M0,45 Q15,40 30,45 T60,45" stroke="#2a5a7a" stroke-width="1.5" fill="none" opacity="0.6"/>
+    </pattern>
+
+    <pattern id="elevation1" patternUnits="userSpaceOnUse" width="60" height="69.28">
+      <rect width="60" height="69.28" fill="#4a3d2a"/>
+      <line x1="0" y1="20" x2="60" y2="20" stroke="#3d3020" stroke-width="1" opacity="0.5"/>
+      <line x1="0" y1="40" x2="60" y2="40" stroke="#3d3020" stroke-width="1" opacity="0.5"/>
+      <line x1="0" y1="60" x2="60" y2="60" stroke="#3d3020" stroke-width="1" opacity="0.5"/>
+    </pattern>
+
+    <pattern id="elevation2" patternUnits="userSpaceOnUse" width="60" height="69.28">
+      <rect width="60" height="69.28" fill="#5a4d3a"/>
+      <line x1="0" y1="15" x2="60" y2="15" stroke="#4a3d2a" stroke-width="1.5" opacity="0.6"/>
+      <line x1="0" y1="30" x2="60" y2="30" stroke="#4a3d2a" stroke-width="1.5" opacity="0.6"/>
+      <line x1="0" y1="45" x2="60" y2="45" stroke="#4a3d2a" stroke-width="1.5" opacity="0.6"/>
+      <line x1="0" y1="60" x2="60" y2="60" stroke="#4a3d2a" stroke-width="1.5" opacity="0.6"/>
+    </pattern>
+
+    <!-- Deployment zone highlights -->
+    <pattern id="church-deploy" patternUnits="userSpaceOnUse" width="60" height="69.28">
+      <rect width="60" height="69.28" fill="#3d2a1a" opacity="0.7"/>
+      <path d="M30,10 L35,25 L50,25 L38,35 L42,50 L30,40 L18,50 L22,35 L10,25 L25,25 Z"
+            fill="#8B4513" opacity="0.3"/>
+    </pattern>
+
+    <pattern id="dwarf-deploy" patternUnits="userSpaceOnUse" width="60" height="69.28">
+      <rect width="60" height="69.28" fill="#2a2a3d" opacity="0.7"/>
+      <rect x="20" y="20" width="20" height="30" fill="#4a5a7a" opacity="0.3"/>
+      <rect x="15" y="15" width="30" height="5" fill="#4a5a7a" opacity="0.3"/>
+    </pattern>
   </defs>
 
   <!-- Title -->
-  <text x="400" y="30" class="title" text-anchor="middle">THE PROVING GROUNDS</text>
-  <text x="400" y="50" class="legend-text" text-anchor="middle" style="font-size: 12px; font-style: italic;">12×12 Hex Battlefield</text>
+  <text x="600" y="35" font-family="serif" font-size="28" font-weight="bold"
+        fill="#d4af37" text-anchor="middle">THE PROVING GROUNDS</text>
+  <text x="600" y="60" font-family="serif" font-size="14" fill="#a0a0a0" text-anchor="middle">
+    12×12 Hex Tactical Map - Scenario #1
+  </text>
 
-  <!-- Hex Grid (12x12) -->
-  <!-- Row 1 -->
-  <use href="#hexagon" class="hex hex-plain" x="50" y="80" />
-  <use href="#hexagon" class="hex hex-plain" x="110" y="80" />
-  <use href="#hexagon" class="hex hex-forest" x="170" y="80" />
-  <use href="#hexagon" class="hex hex-forest" x="230" y="80" />
-  <use href="#hexagon" class="hex hex-plain" x="290" y="80" />
-  <use href="#hexagon" class="hex hex-plain" x="350" y="80" />
-  <use href="#hexagon" class="hex hex-plain" x="410" y="80" />
-  <use href="#hexagon" class="hex hex-plain" x="470" y="80" />
-  <use href="#hexagon" class="hex hex-forest" x="530" y="80" />
-  <use href="#hexagon" class="hex hex-forest" x="590" y="80" />
-  <use href="#hexagon" class="hex hex-plain" x="650" y="80" />
-  <use href="#hexagon" class="hex hex-plain" x="710" y="80" />
+  <!-- Hex grid (12 columns × 12 rows) -->
+  <g id="hexGrid" transform="translate(100, 100)">
+    <!-- Row 1 -->
+    <use href="#hex" x="0" y="0" fill="url(#church-deploy)" stroke="#8B4513" stroke-width="2"/>
+    <use href="#hex" x="90" y="0" fill="url(#church-deploy)" stroke="#8B4513" stroke-width="2"/>
+    <use href="#hex" x="180" y="0" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="270" y="0" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="360" y="0" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="450" y="0" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="540" y="0" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="630" y="0" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="720" y="0" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="810" y="0" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="900" y="0" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="990" y="0" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 2 -->
-  <use href="#hexagon" class="hex hex-plain" x="80" y="114.64" />
-  <use href="#hexagon" class="hex hex-water" x="140" y="114.64" />
-  <use href="#hexagon" class="hex hex-water" x="200" y="114.64" />
-  <use href="#hexagon" class="hex hex-water" x="260" y="114.64" />
-  <use href="#hexagon" class="hex hex-rubble" x="320" y="114.64" />
-  <use href="#hexagon" class="hex hex-rubble" x="380" y="114.64" />
-  <use href="#hexagon" class="hex hex-rubble" x="440" y="114.64" />
-  <use href="#hexagon" class="hex hex-rubble" x="500" y="114.64" />
-  <use href="#hexagon" class="hex hex-water" x="560" y="114.64" />
-  <use href="#hexagon" class="hex hex-water" x="620" y="114.64" />
-  <use href="#hexagon" class="hex hex-water" x="680" y="114.64" />
-  <use href="#hexagon" class="hex hex-plain" x="740" y="114.64" />
+    <!-- Row 2 -->
+    <use href="#hex" x="45" y="52" fill="url(#church-deploy)" stroke="#8B4513" stroke-width="2"/>
+    <use href="#hex" x="135" y="52" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="225" y="52" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="315" y="52" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="405" y="52" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="495" y="52" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="585" y="52" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="675" y="52" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="765" y="52" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="855" y="52" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="945" y="52" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="1035" y="52" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 3 -->
-  <use href="#hexagon" class="hex hex-plain" x="50" y="149.28" />
-  <use href="#hexagon" class="hex hex-water" x="110" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="170" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="230" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="290" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="350" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="410" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="470" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="530" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="590" y="149.28" />
-  <use href="#hexagon" class="hex hex-water" x="650" y="149.28" />
-  <use href="#hexagon" class="hex hex-plain" x="710" y="149.28" />
+    <!-- Row 3 -->
+    <use href="#hex" x="0" y="104" fill="url(#church-deploy)" stroke="#8B4513" stroke-width="2"/>
+    <use href="#hex" x="90" y="104" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="180" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="270" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="360" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="450" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="540" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="630" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="720" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="810" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="900" y="104" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="990" y="104" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 4 -->
-  <use href="#hexagon" class="hex hex-plain" x="80" y="183.92" />
-  <use href="#hexagon" class="hex hex-water" x="140" y="183.92" />
-  <use href="#hexagon" class="hex hex-elev1" x="200" y="183.92" />
-  <text x="230" y="225" class="hex-text">E1</text>
-  <use href="#hexagon" class="hex hex-elev1" x="260" y="183.92" />
-  <text x="290" y="225" class="hex-text">E1</text>
-  <use href="#hexagon" class="hex hex-plain" x="320" y="183.92" />
-  <use href="#hexagon" class="hex hex-forest" x="380" y="183.92" />
-  <use href="#hexagon" class="hex hex-forest" x="440" y="183.92" />
-  <use href="#hexagon" class="hex hex-plain" x="500" y="183.92" />
-  <use href="#hexagon" class="hex hex-elev1" x="560" y="183.92" />
-  <text x="590" y="225" class="hex-text">E1</text>
-  <use href="#hexagon" class="hex hex-elev1" x="620" y="183.92" />
-  <text x="650" y="225" class="hex-text">E1</text>
-  <use href="#hexagon" class="hex hex-water" x="680" y="183.92" />
-  <use href="#hexagon" class="hex hex-plain" x="740" y="183.92" />
+    <!-- Row 4 -->
+    <use href="#hex" x="45" y="156" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="135" y="156" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="225" y="156" fill="url(#elevation1)" stroke="#555" stroke-width="1"/>
+    <text x="255" y="192" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">E1</text>
+    <use href="#hex" x="315" y="156" fill="url(#elevation1)" stroke="#555" stroke-width="1"/>
+    <text x="345" y="192" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">E1</text>
+    <use href="#hex" x="405" y="156" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="495" y="156" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="585" y="156" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="675" y="156" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="765" y="156" fill="url(#elevation1)" stroke="#555" stroke-width="1"/>
+    <text x="795" y="192" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">E1</text>
+    <use href="#hex" x="855" y="156" fill="url(#elevation1)" stroke="#555" stroke-width="1"/>
+    <text x="885" y="192" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">E1</text>
+    <use href="#hex" x="945" y="156" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="1035" y="156" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 5 -->
-  <use href="#hexagon" class="hex hex-plain" x="50" y="218.56" />
-  <use href="#hexagon" class="hex hex-water" x="110" y="218.56" />
-  <use href="#hexagon" class="hex hex-water" x="170" y="218.56" />
-  <use href="#hexagon" class="hex hex-water" x="230" y="218.56" />
-  <use href="#hexagon" class="hex hex-plain" x="290" y="218.56" />
-  <use href="#hexagon" class="hex hex-plain" x="350" y="218.56" />
-  <use href="#hexagon" class="hex hex-plain" x="410" y="218.56" />
-  <use href="#hexagon" class="hex hex-plain" x="470" y="218.56" />
-  <use href="#hexagon" class="hex hex-water" x="530" y="218.56" />
-  <use href="#hexagon" class="hex hex-water" x="590" y="218.56" />
-  <use href="#hexagon" class="hex hex-water" x="650" y="218.56" />
-  <use href="#hexagon" class="hex hex-plain" x="710" y="218.56" />
+    <!-- Row 5 -->
+    <use href="#hex" x="0" y="208" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="90" y="208" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="180" y="208" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="270" y="208" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="360" y="208" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="450" y="208" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="540" y="208" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="630" y="208" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="720" y="208" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="810" y="208" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="900" y="208" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="990" y="208" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 6 -->
-  <use href="#hexagon" class="hex hex-plain" x="80" y="253.2" />
-  <use href="#hexagon" class="hex hex-plain" x="140" y="253.2" />
-  <use href="#hexagon" class="hex hex-plain" x="200" y="253.2" />
-  <use href="#hexagon" class="hex hex-plain" x="260" y="253.2" />
-  <use href="#hexagon" class="hex hex-rubble" x="320" y="253.2" />
-  <use href="#hexagon" class="hex hex-rubble" x="380" y="253.2" />
-  <use href="#hexagon" class="hex hex-rubble" x="440" y="253.2" />
-  <use href="#hexagon" class="hex hex-rubble" x="500" y="253.2" />
-  <use href="#hexagon" class="hex hex-plain" x="560" y="253.2" />
-  <use href="#hexagon" class="hex hex-plain" x="620" y="253.2" />
-  <use href="#hexagon" class="hex hex-plain" x="680" y="253.2" />
-  <use href="#hexagon" class="hex hex-plain" x="740" y="253.2" />
+    <!-- Row 6 -->
+    <use href="#hex" x="45" y="260" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="135" y="260" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="225" y="260" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="315" y="260" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="405" y="260" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="495" y="260" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="585" y="260" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="675" y="260" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="765" y="260" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="855" y="260" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="945" y="260" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="1035" y="260" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 7 -->
-  <use href="#hexagon" class="hex hex-plain" x="50" y="287.84" />
-  <use href="#hexagon" class="hex hex-plain" x="110" y="287.84" />
-  <use href="#hexagon" class="hex hex-plain" x="170" y="287.84" />
-  <use href="#hexagon" class="hex hex-plain" x="230" y="287.84" />
-  <use href="#hexagon" class="hex hex-rubble" x="290" y="287.84" />
-  <use href="#hexagon" class="hex hex-elev2" x="350" y="287.84" />
-  <text x="380" y="329" class="hex-text">E2</text>
-  <use href="#hexagon" class="hex hex-elev2" x="410" y="287.84" />
-  <text x="440" y="329" class="hex-text">E2</text>
-  <use href="#hexagon" class="hex hex-rubble" x="470" y="287.84" />
-  <use href="#hexagon" class="hex hex-plain" x="530" y="287.84" />
-  <use href="#hexagon" class="hex hex-plain" x="590" y="287.84" />
-  <use href="#hexagon" class="hex hex-plain" x="650" y="287.84" />
-  <use href="#hexagon" class="hex hex-plain" x="710" y="287.84" />
+    <!-- Row 7 -->
+    <use href="#hex" x="0" y="312" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="90" y="312" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="180" y="312" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="270" y="312" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="360" y="312" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="450" y="312" fill="url(#elevation2)" stroke="#555" stroke-width="1"/>
+    <text x="480" y="348" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">E2</text>
+    <use href="#hex" x="540" y="312" fill="url(#elevation2)" stroke="#555" stroke-width="1"/>
+    <text x="570" y="348" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">E2</text>
+    <use href="#hex" x="630" y="312" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="720" y="312" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="810" y="312" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="900" y="312" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="990" y="312" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 8 -->
-  <use href="#hexagon" class="hex hex-plain" x="80" y="322.48" />
-  <use href="#hexagon" class="hex hex-forest" x="140" y="322.48" />
-  <use href="#hexagon" class="hex hex-plain" x="200" y="322.48" />
-  <use href="#hexagon" class="hex hex-plain" x="260" y="322.48" />
-  <use href="#hexagon" class="hex hex-rubble" x="320" y="322.48" />
-  <use href="#hexagon" class="hex hex-elev2" x="380" y="322.48" />
-  <text x="410" y="364" class="hex-text">E2</text>
-  <use href="#hexagon" class="hex hex-elev2" x="440" y="322.48" />
-  <text x="470" y="364" class="hex-text">E2</text>
-  <use href="#hexagon" class="hex hex-rubble" x="500" y="322.48" />
-  <use href="#hexagon" class="hex hex-plain" x="560" y="322.48" />
-  <use href="#hexagon" class="hex hex-plain" x="620" y="322.48" />
-  <use href="#hexagon" class="hex hex-forest" x="680" y="322.48" />
-  <use href="#hexagon" class="hex hex-plain" x="740" y="322.48" />
+    <!-- Row 8 -->
+    <use href="#hex" x="45" y="364" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="135" y="364" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="225" y="364" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="315" y="364" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="405" y="364" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="495" y="364" fill="url(#elevation2)" stroke="#555" stroke-width="1"/>
+    <text x="525" y="400" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">E2</text>
+    <use href="#hex" x="585" y="364" fill="url(#elevation2)" stroke="#555" stroke-width="1"/>
+    <text x="615" y="400" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">E2</text>
+    <use href="#hex" x="675" y="364" fill="url(#rubble)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="765" y="364" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="855" y="364" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="945" y="364" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="1035" y="364" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 9 -->
-  <use href="#hexagon" class="hex hex-plain" x="50" y="357.12" />
-  <use href="#hexagon" class="hex hex-forest" x="110" y="357.12" />
-  <use href="#hexagon" class="hex hex-forest" x="170" y="357.12" />
-  <use href="#hexagon" class="hex hex-plain" x="230" y="357.12" />
-  <use href="#hexagon" class="hex hex-plain" x="290" y="357.12" />
-  <use href="#hexagon" class="hex hex-plain" x="350" y="357.12" />
-  <use href="#hexagon" class="hex hex-plain" x="410" y="357.12" />
-  <use href="#hexagon" class="hex hex-plain" x="470" y="357.12" />
-  <use href="#hexagon" class="hex hex-plain" x="530" y="357.12" />
-  <use href="#hexagon" class="hex hex-forest" x="590" y="357.12" />
-  <use href="#hexagon" class="hex hex-forest" x="650" y="357.12" />
-  <use href="#hexagon" class="hex hex-plain" x="710" y="357.12" />
+    <!-- Row 9 -->
+    <use href="#hex" x="0" y="416" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="90" y="416" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="180" y="416" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="270" y="416" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="360" y="416" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="450" y="416" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="540" y="416" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="630" y="416" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="720" y="416" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="810" y="416" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="900" y="416" fill="url(#forest)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="990" y="416" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 10 -->
-  <use href="#hexagon" class="hex hex-plain" x="80" y="391.76" />
-  <use href="#hexagon" class="hex hex-plain" x="140" y="391.76" />
-  <use href="#hexagon" class="hex hex-water" x="200" y="391.76" />
-  <use href="#hexagon" class="hex hex-water" x="260" y="391.76" />
-  <use href="#hexagon" class="hex hex-water" x="320" y="391.76" />
-  <use href="#hexagon" class="hex hex-water" x="380" y="391.76" />
-  <use href="#hexagon" class="hex hex-water" x="440" y="391.76" />
-  <use href="#hexagon" class="hex hex-water" x="500" y="391.76" />
-  <use href="#hexagon" class="hex hex-water" x="560" y="391.76" />
-  <use href="#hexagon" class="hex hex-water" x="620" y="391.76" />
-  <use href="#hexagon" class="hex hex-plain" x="680" y="391.76" />
-  <use href="#hexagon" class="hex hex-plain" x="740" y="391.76" />
+    <!-- Row 10 -->
+    <use href="#hex" x="45" y="468" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="135" y="468" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="225" y="468" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="315" y="468" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="405" y="468" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="495" y="468" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="585" y="468" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="675" y="468" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="765" y="468" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="855" y="468" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="945" y="468" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="1035" y="468" fill="#3d3428" stroke="#555" stroke-width="1"/>
 
-  <!-- Row 11 -->
-  <use href="#hexagon" class="hex hex-plain" x="50" y="426.4" />
-  <use href="#hexagon" class="hex hex-plain" x="110" y="426.4" />
-  <use href="#hexagon" class="hex hex-plain" x="170" y="426.4" />
-  <use href="#hexagon" class="hex hex-water" x="230" y="426.4" />
-  <use href="#hexagon" class="hex hex-water" x="290" y="426.4" />
-  <use href="#hexagon" class="hex hex-plain" x="350" y="426.4" />
-  <use href="#hexagon" class="hex hex-plain" x="410" y="426.4" />
-  <use href="#hexagon" class="hex hex-water" x="470" y="426.4" />
-  <use href="#hexagon" class="hex hex-water" x="530" y="426.4" />
-  <use href="#hexagon" class="hex hex-plain" x="590" y="426.4" />
-  <use href="#hexagon" class="hex hex-plain" x="650" y="426.4" />
-  <use href="#hexagon" class="hex hex-plain" x="710" y="426.4" />
+    <!-- Row 11 -->
+    <use href="#hex" x="0" y="520" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="90" y="520" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="180" y="520" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="270" y="520" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="360" y="520" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="450" y="520" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="540" y="520" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="630" y="520" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="720" y="520" fill="url(#water)" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="810" y="520" fill="url(#dwarf-deploy)" stroke="#4a5a7a" stroke-width="2"/>
+    <use href="#hex" x="900" y="520" fill="url(#dwarf-deploy)" stroke="#4a5a7a" stroke-width="2"/>
+    <use href="#hex" x="990" y="520" fill="url(#dwarf-deploy)" stroke="#4a5a7a" stroke-width="2"/>
 
-  <!-- Row 12 -->
-  <use href="#hexagon" class="hex hex-plain" x="80" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="140" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="200" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="260" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="320" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="380" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="440" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="500" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="560" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="620" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="680" y="461.04" />
-  <use href="#hexagon" class="hex hex-plain" x="740" y="461.04" />
+    <!-- Row 12 -->
+    <use href="#hex" x="45" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="135" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="225" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="315" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="405" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="495" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="585" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="675" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="765" y="572" fill="#3d3428" stroke="#555" stroke-width="1"/>
+    <use href="#hex" x="855" y="572" fill="url(#dwarf-deploy)" stroke="#4a5a7a" stroke-width="2"/>
+    <use href="#hex" x="945" y="572" fill="url(#dwarf-deploy)" stroke="#4a5a7a" stroke-width="2"/>
+    <use href="#hex" x="1035" y="572" fill="url(#dwarf-deploy)" stroke="#4a5a7a" stroke-width="2"/>
+  </g>
+
+  <!-- Tactical annotations -->
+  <g id="annotations">
+    <!-- Central elevation strongpoint -->
+    <circle cx="640" cy="412" r="10" fill="none" stroke="#d4af37" stroke-width="2.5" opacity="0.7"/>
+    <text x="640" y="395" font-family="serif" font-size="12" font-weight="bold" fill="#d4af37" text-anchor="middle">HIGH GROUND</text>
+
+    <!-- Water chokepoint -->
+    <path d="M150,570 L580,570" stroke="#4a9aba" stroke-width="3" opacity="0.6" stroke-dasharray="8,4"/>
+    <text x="365" y="590" font-family="serif" font-size="12" fill="#4a9aba" text-anchor="middle">Bog Crossing</text>
+
+    <!-- Deployment zone labels -->
+    <text x="235" y="165" font-family="serif" font-size="13" font-weight="bold" fill="#8B4513" text-anchor="middle">Church Deploy</text>
+    <text x="1045" y="595" font-family="serif" font-size="13" font-weight="bold" fill="#4a5a7a" text-anchor="middle">Dwarf Deploy</text>
+  </g>
 
   <!-- Legend -->
-  <g transform="translate(50, 540)">
-    <text x="0" y="0" class="legend-text" style="font-weight: bold; font-size: 16px;">TERRAIN LEGEND</text>
+  <g id="legend" transform="translate(100, 750)">
+    <rect x="0" y="0" width="1000" height="280" fill="#1a1410" stroke="#d4af37" stroke-width="2" rx="8"/>
+    <text x="500" y="30" font-family="serif" font-size="18" font-weight="bold" fill="#d4af37" text-anchor="middle">TERRAIN LEGEND</text>
 
-    <rect x="0" y="15" width="30" height="20" class="hex-plain legend-box" />
-    <text x="40" y="30" class="legend-text">Plain Ground</text>
+    <!-- Row 1 -->
+    <use href="#hex" x="20" y="50" fill="#3d3428" stroke="#555" stroke-width="1" transform="scale(0.7)"/>
+    <text x="80" y="85" font-family="serif" font-size="14" fill="#d0d0d0">Open Ground</text>
+    <text x="80" y="102" font-family="serif" font-size="11" fill="#888">No modifiers</text>
 
-    <rect x="200" y="15" width="30" height="20" class="hex-forest legend-box" />
-    <text x="240" y="30" class="legend-text">Forest (+1 Defense)</text>
+    <use href="#hex" x="220" y="50" fill="url(#forest)" stroke="#555" stroke-width="1" transform="scale(0.7)"/>
+    <text x="280" y="85" font-family="serif" font-size="14" fill="#d0d0d0">Forest</text>
+    <text x="280" y="102" font-family="serif" font-size="11" fill="#888">+1 Defense when targeted</text>
 
-    <rect x="420" y="15" width="30" height="20" class="hex-rubble legend-box" />
-    <text x="460" y="30" class="legend-text">Rubble (+1 Defense, 2 SP)</text>
+    <use href="#hex" x="420" y="50" fill="url(#rubble)" stroke="#555" stroke-width="1" transform="scale(0.7)"/>
+    <text x="480" y="85" font-family="serif" font-size="14" fill="#d0d0d0">Rubble</text>
+    <text x="480" y="102" font-family="serif" font-size="11" fill="#888">+1 Defense, costs 2 SP to enter</text>
 
-    <rect x="0" y="50" width="30" height="20" class="hex-water legend-box" />
-    <text x="40" y="65" class="legend-text">Water/Mud (-1 Heat)</text>
+    <use href="#hex" x="720" y="50" fill="url(#water)" stroke="#555" stroke-width="1" transform="scale(0.7)"/>
+    <text x="780" y="85" font-family="serif" font-size="14" fill="#d0d0d0">Water/Mud</text>
+    <text x="780" y="102" font-family="serif" font-size="11" fill="#888">-1 Heat generation</text>
 
-    <rect x="200" y="50" width="30" height="20" class="hex-elev1 legend-box" />
-    <text x="240" y="65" class="legend-text">Elevation 1 (+1 Dmg)</text>
+    <!-- Row 2 -->
+    <use href="#hex" x="20" y="140" fill="url(#elevation1)" stroke="#555" stroke-width="1" transform="scale(0.7)"/>
+    <text x="80" y="175" font-family="serif" font-size="14" fill="#d0d0d0">Elevation +1</text>
+    <text x="80" y="192" font-family="serif" font-size="11" fill="#888">+1 damage to lower targets</text>
 
-    <rect x="420" y="50" width="30" height="20" class="hex-elev2 legend-box" />
-    <text x="460" y="65" class="legend-text">Elevation 2 (+2 Dmg, +1 Range)</text>
+    <use href="#hex" x="220" y="140" fill="url(#elevation2)" stroke="#555" stroke-width="1" transform="scale(0.7)"/>
+    <text x="280" y="175" font-family="serif" font-size="14" fill="#d0d0d0">Elevation +2</text>
+    <text x="280" y="192" font-family="serif" font-size="11" fill="#888">+2 damage, +1 Range to lower</text>
+
+    <use href="#hex" x="520" y="140" fill="url(#church-deploy)" stroke="#8B4513" stroke-width="2" transform="scale(0.7)"/>
+    <text x="580" y="175" font-family="serif" font-size="14" fill="#d0d0d0">Church Deploy</text>
+    <text x="580" y="192" font-family="serif" font-size="11" fill="#888">Player starting zone (NW)</text>
+
+    <use href="#hex" x="720" y="140" fill="url(#dwarf-deploy)" stroke="#4a5a7a" stroke-width="2" transform="scale(0.7)"/>
+    <text x="780" y="175" font-family="serif" font-size="14" fill="#d0d0d0">Dwarf Deploy</text>
+    <text x="780" y="192" font-family="serif" font-size="11" fill="#888">Enemy starting zone (SE)</text>
+
+    <!-- Strategic notes -->
+    <text x="20" y="235" font-family="serif" font-size="12" font-weight="bold" fill="#d4af37">TACTICAL NOTES:</text>
+    <text x="20" y="255" font-family="serif" font-size="11" fill="#a0a0a0">• Central elevation provides commanding fire position - control it early</text>
+    <text x="20" y="272" font-family="serif" font-size="11" fill="#a0a0a0">• Water terrain creates natural chokepoint - forces engagement or flanking maneuver</text>
+  </g>
+
+  <!-- Compass rose -->
+  <g id="compass" transform="translate(1100, 150)">
+    <circle cx="0" cy="0" r="35" fill="#1a1410" stroke="#d4af37" stroke-width="2"/>
+    <polygon points="0,-25 5,-5 0,-10 -5,-5" fill="#d4af37"/>
+    <text x="0" y="-40" font-family="serif" font-size="14" font-weight="bold" fill="#d4af37" text-anchor="middle">N</text>
   </g>
 </svg>
