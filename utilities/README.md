@@ -79,12 +79,35 @@ When creating new audit reports, check for:
 - `CLAUDE.md` - Keep synchronized with latest design changes
 - `CHANGELOG.md` - Add entries for all significant changes
 - `rebuild-card-database-v3.py` - Update when card structure changes
+- `validate-card-database.py` - Run before major releases
 
 ### Archived Files
-- All audit reports older than current session → `archived-audits/`
-- Deprecated visual effects → `archived-effects/`
-- Completed todo lists → `archived-audits/`
+- **`archived-audits/2025-10-17-18/`** - 19 audit reports from Oct 17-18 (superseded by Oct 19 cleanup)
+- **`archived-scripts/`** - 7 Python extraction scripts (work complete, data in main database)
+- **`archived-effects/`** - Deprecated visual effects
+- **`archived-audits/`** - Historical audit reports (pre-Oct 17)
+
+### Recent Cleanup (October 19, 2025)
+Moved ~381K of redundant files to archives:
+- 19 completed audit reports (all issues addressed in Oct 19 cleanup)
+- 7 one-time extraction scripts (Wyrd cards, equipment, faction cards)
+- 2 extracted JSON files (data now in `docs/cards/complete-card-data.json`)
+
+### Current Utilities Directory
+```
+utilities/
+├── CLAUDE.md (26K) - AI assistant context (ACTIVE)
+├── CHANGELOG.md (7K) - Project history (ACTIVE)
+├── README.md (this file) - Utilities documentation (ACTIVE)
+├── rebuild-card-database-v3.py (17K) - Card database tool (ACTIVE)
+├── validate-card-database.py (5K) - Validation tool (ACTIVE)
+├── archived-audits/ - Historical audit reports
+│   ├── 2025-10-17-18/ - Recent audits (superseded)
+│   └── [older audits]
+├── archived-scripts/ - Completed extraction tools
+└── archived-effects/ - Deprecated visual effects
+```
 
 ---
 
-**Last Updated**: October 17, 2025
+**Last Updated**: October 19, 2025

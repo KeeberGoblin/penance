@@ -21,7 +21,18 @@
       "Bash(do)",
       "Bash(echo \"=== faction-$faction.html ===\")",
       "Bash(done)",
-      "Bash(git fetch)"
+      "Bash(git fetch)",
+      "Bash(awk '{print $9, $5}')",
+      "Bash(add-wyrd-cards-to-db.py )",
+      "Bash(card-database-audit.py )",
+      "Bash(comprehensive-card-audit.py )",
+      "Bash(extract-all-faction-cards.py )",
+      "Bash(extract-equipment-cards.py )",
+      "Bash(extract-equipment.py )",
+      "Bash(merge-faction-cards.py )",
+      "Bash(extracted-equipment-cards.json )",
+      "Bash(extracted-faction-cards.json )",
+      "Bash(archived-scripts/)"
     ],
     "deny": [],
     "ask": []

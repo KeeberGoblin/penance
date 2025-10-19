@@ -1,8 +1,8 @@
 # CLAUDE.md
 ## AI Assistant Context Document for Penance: Absolution Through Steel
 
-**Last Updated**: October 17, 2025
-**Project Status**: PLAYTEST READY (v3.0 Optional Mechanics Complete + Codex Expansion Phase 3)
+**Last Updated**: October 19, 2025
+**Project Status**: PLAYTEST READY (Balance Simulations Complete, Anomalous Bestiary Added, Mission Generation System Implemented)
 **Purpose**: Complete context for AI assistants working on Penance
 
 ---
@@ -589,6 +589,15 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 ---
 
 ## Changelog for This Document
+
+**October 19, 2025** - Balance Simulation & Anomalous Systems Complete
+- **Comprehensive Codex Cleanup**: Fixed 9 critical issues (4× "the The" duplicates, outdated faction links, balance contradictions, generic merchant references). Created CLEANUP_REPORT.md documenting all fixes.
+- **Latin Classification System**: Replaced SCP-style terms with gothic Latin (Sanctus, Poenitentia, Damnatio, Absolutio, Terminus). Thematically consistent with Church of Absolution. Legally distinct. Classification guide added to campaign-anomalous-events.html.
+- **Balance Simulations Re-Run**: Updated combat_simulator.py with new balance values (Blood Offering 2 HP → 1 HP, Bleed cap 10, Field Repair Kit 3 Scrap → 5 HP). Church viability improved dramatically (+15 HP survival, 50% less self-harm). Created balance-comparison.html showing before/after metrics.
+- **Anomalous Bestiary Created**: 7 fully-statted supernatural entities (enemies-anomalous.html). Poenitentia: Mirror Walker, Screaming Engine, Threadless. Damnatio: Void Shepherd, Casket Hive. Absolutio: Penitent Weapon. Each with unique mechanics, containment protocols, loot tables.
+- **Core Bestiary Expansion**: Added 4 faction-specific elite enemies (Exchange Enforcer, Nomad Outrider, Blighted Plague Bearer, Crucible Berserker). Now covers all 7 factions. Total: 19 core + 7 anomalous = 26 unique enemies.
+- **Mission Generation System**: NEW campaign-mission-generation.html with complete procedural encounter system. 4-step generation (Difficulty → Faction → Composition → Modifiers). HP budgets ensure balanced encounters. Enables infinite replayability with 1d6/1d12 rolls.
+- **Utilities Cleanup**: Archived 19 audit reports (Oct 17-18, now superseded), 7 extraction scripts (work complete), 2 JSON outputs. Reduced utilities/ clutter by ~381K. Only active files remain: CLAUDE.md, CHANGELOG.md, README.md, rebuild-card-database-v3.py, validate-card-database.py.
 
 **October 17, 2025** - Codex Expansion Phase 3 Complete
 - Created 10+ comprehensive lore iframe pages (Theslar Event, Caskets, Void, Climate, Factions, Settlements)
