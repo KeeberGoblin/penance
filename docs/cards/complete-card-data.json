@@ -179,7 +179,7 @@
       "type": "gambit",
       "cost": 0,
       "range": "Self",
-      "effect": "Discard 2 cards from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and -1 to target number (easier to hit).",
+      "effect": "Discard 1 card from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and -1 to target number (easier to hit). LIMIT: 1 per turn.",
       "keywords": [
         "gambit",
         "self-harm",
