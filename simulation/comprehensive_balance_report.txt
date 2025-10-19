@@ -1,0 +1,65 @@
+================================================================================
+PENANCE: Comprehensive Balance Report (10 runs)
+================================================================================
+
+
+### FACTION BALANCE (Warden vs Warden) ###
+
+Dwarves          96.7% WR (87 wins /  3 losses)
+Ossuarium        86.7% WR (78 wins / 12 losses)
+Elves            52.2% WR (47 wins / 43 losses)
+Bloodlines       46.7% WR (42 wins / 48 losses)
+Wyrd             43.3% WR (39 wins / 51 losses)
+Exchange         41.1% WR (37 wins / 53 losses)
+Nomads           40.0% WR (36 wins / 54 losses)
+Crucible         37.8% WR (34 wins / 56 losses)
+Emergent         37.8% WR (34 wins / 56 losses)
+Church           17.8% WR (16 wins / 74 losses)
+
+
+### CASKET CLASS MATCHUPS ###
+
+--- Scout vs Warden ---
+Scout          5 wins ( 50.0%)
+Warden         5 wins ( 50.0%)
+
+--- Scout vs Vanguard ---
+Scout          2 wins ( 20.0%)
+Vanguard       8 wins ( 80.0%)
+
+--- Scout vs Colossus ---
+Scout          0 wins (  0.0%)
+Colossus      10 wins (100.0%)
+
+--- Warden vs Vanguard ---
+Warden         1 wins ( 10.0%)
+Vanguard       9 wins ( 90.0%)
+
+--- Warden vs Colossus ---
+Warden        10 wins (100.0%)
+Colossus       0 wins (  0.0%)
+
+--- Vanguard vs Colossus ---
+Vanguard       2 wins ( 20.0%)
+Colossus       8 wins ( 80.0%)
+
+
+================================================================================
+BALANCE INSIGHTS
+================================================================================
+
+FACTION TIER LIST:
+  S-Tier: Dwarves (96.7% WR)
+  S-Tier: Ossuarium (86.7% WR)
+  S-Tier: Elves (52.2% WR)
+  A-Tier: Bloodlines (46.7% WR)
+  A-Tier: Wyrd (43.3% WR)
+  A-Tier: Exchange (41.1% WR)
+  B-Tier: Nomads (40.0% WR)
+  B-Tier: Crucible (37.8% WR)
+  B-Tier: Emergent (37.8% WR)
+  B-Tier: Church (17.8% WR)
+
+CLASS BALANCE OBSERVATIONS:
+  - Scout overall winrate: 23.3%
+  - Colossus beats Scout (100.0% WR) - HP advantage too strong

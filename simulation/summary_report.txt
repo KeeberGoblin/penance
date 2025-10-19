@@ -1,0 +1,48 @@
+================================================================================
+PENANCE: Simulation Summary (10 runs)
+================================================================================
+
+
+### COMBAT SCENARIOS ###
+
+--- Church vs Dwarves ---
+Church wins:    3 ( 30.0%)
+Dwarves wins:   7 ( 70.0%)
+Draws:          0 (  0.0%)
+Avg turns:    26.3
+
+--- Ossuarium vs Elves ---
+Ossuarium wins:   5 ( 50.0%)
+Elves wins:       5 ( 50.0%)
+Draws:            0 (  0.0%)
+Avg turns:      37.7
+
+--- Scout vs Fortress ---
+Scout wins:      0 (  0.0%)
+Fortress wins:  10 (100.0%)
+Draws:           0 (  0.0%)
+Avg turns:     20.4
+
+
+### CAMPAIGN STATISTICS ###
+
+Successes:   1 ( 10.0%)
+Failures:    9 ( 90.0%)
+Avg missions completed: 0.6
+Avg final HP:           2.1
+Avg final Scrap:        4.9
+
+
+================================================================================
+BALANCE INSIGHTS
+================================================================================
+
+FACTION MATCHUPS:
+  - Church appears WEAK vs Dwarves (30.0% winrate)
+  - Ossuarium vs Elves appears BALANCED (50.0% winrate)
+
+CASKET CLASS BALANCE:
+  - Fortress DOMINATES Scout (100.0% winrate)
+
+CAMPAIGN DIFFICULTY:
+  - Campaign appears TOO HARD (10.0% success rate)

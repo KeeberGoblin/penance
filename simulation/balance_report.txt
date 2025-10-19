@@ -9,87 +9,87 @@ PENANCE: Balance Analysis Report
 --- Scenario 1 ---
 Winner: Draw
 Turns: 16
-HP Remaining: 31 vs 26
+HP Remaining: 28 vs 20
 
 Combat Log:
   [Turn 0] COMBAT START: Holy Avenger vs Runeforge Titan
   [Turn 0] Holy Avenger: 30 HP (church)
   [Turn 0] Runeforge Titan: 40 HP (dwarves)
-  [Turn 1] Runeforge Titan gains 2 Rune counters (total: 2)
-  [Turn 1] Runeforge Titan attacks for 4 damage (Rune bonus: +1)
-  [Turn 2] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
-  [Turn 2] Holy Avenger attacks for 7 damage
+  [Turn 1] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
+  [Turn 1] Holy Avenger attacks for 7 damage
+  [Turn 2] Runeforge Titan gains 2 Rune counters (total: 2)
+  [Turn 2] Runeforge Titan attacks for 4 damage (Rune bonus: +1)
   [Turn 3] Runeforge Titan gains 2 Rune counters (total: 4)
   [Turn 3] Runeforge Titan attacks for 5 damage (Rune bonus: +2)
   [Turn 4] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
   [Turn 4] Holy Avenger attacks for 7 damage
-  [Turn 5] Runeforge Titan gains 2 Rune counters (total: 6)
-  [Turn 5] Runeforge Titan attacks for 6 damage (Rune bonus: +3)
-  [Turn 6] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
-  [Turn 6] Holy Avenger attacks for 7 damage
+  [Turn 5] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
+  [Turn 5] Holy Avenger attacks for 7 damage
+  [Turn 6] Runeforge Titan gains 2 Rune counters (total: 6)
+  [Turn 6] Runeforge Titan attacks for 6 damage (Rune bonus: +3)
   [Turn 7] Runeforge Titan gains 2 Rune counters (total: 8)
   [Turn 7] Runeforge Titan attacks for 7 damage (Rune bonus: +4)
   [Turn 8] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
   [Turn 8] Holy Avenger attacks for 7 damage
-  [Turn 9] Runeforge Titan gains 2 Rune counters (total: 10)
-  [Turn 9] Runeforge Titan attacks for 8 damage (Rune bonus: +5)
-  [Turn 10] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
-  [Turn 10] Holy Avenger attacks for 7 damage
+  [Turn 9] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
+  [Turn 9] Holy Avenger attacks for 7 damage
+  [Turn 10] Runeforge Titan gains 2 Rune counters (total: 10)
+  [Turn 10] Runeforge Titan attacks for 8 damage (Rune bonus: +5)
   [Turn 11] Runeforge Titan gains 2 Rune counters (total: 12)
   [Turn 11] Runeforge Titan attacks for 8 damage (Rune bonus: +5)
   [Turn 12] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
   [Turn 12] Holy Avenger attacks for 7 damage
-  [Turn 13] Runeforge Titan gains 2 Rune counters (total: 14)
-  [Turn 13] Runeforge Titan attacks for 8 damage (Rune bonus: +5)
-  [Turn 14] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
-  [Turn 14] Holy Avenger attacks for 7 damage
-  [Turn 15] Runeforge Titan gains 2 Rune counters (total: 16)
-  [Turn 15] Runeforge Titan attacks for 8 damage (Rune bonus: +5)
-  [Turn 16] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
-  [Turn 16] Holy Avenger attacks for 7 damage
+  [Turn 13] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
+  [Turn 13] Holy Avenger attacks for 7 damage
+  [Turn 14] Runeforge Titan gains 2 Rune counters (total: 14)
+  [Turn 14] Runeforge Titan attacks for 8 damage (Rune bonus: +5)
+  [Turn 15] Holy Avenger uses Blood Offering (-1 HP, +3 damage)
+  [Turn 15] Holy Avenger attacks for 7 damage
+  [Turn 16] Runeforge Titan gains 2 Rune counters (total: 16)
+  [Turn 16] Runeforge Titan attacks for 8 damage (Rune bonus: +5)
   [Turn 16] 
 === COMBAT END ===
   [Turn 16] DRAW (turn limit reached)
-  [Turn 16] Holy Avenger final HP: 31
-  [Turn 16] Runeforge Titan final HP: 26
+  [Turn 16] Holy Avenger final HP: 28
+  [Turn 16] Runeforge Titan final HP: 20
 
 --- Scenario 2 ---
 Winner: Draw
 Turns: 16
-HP Remaining: 20 vs 19
+HP Remaining: 22 vs 19
 
 Combat Log:
   [Turn 0] COMBAT START: Bone Lord vs Thornblade
   [Turn 0] Bone Lord: 30 HP (ossuarium)
   [Turn 0] Thornblade: 26 HP (elves)
-  [Turn 1] Thornblade attacks for 3 damage, applies 2 Bleed (total: 2)
-  [Turn 1] Bone Lord takes 2 Bleed damage
-  [Turn 2] Bone Lord attacks for 4 damage, lifesteals 2 HP
+  [Turn 1] Bone Lord attacks for 4 damage, lifesteals 2 HP
+  [Turn 2] Thornblade attacks for 3 damage, applies 2 Bleed (total: 2)
+  [Turn 2] Bone Lord takes 2 Bleed damage
   [Turn 3] Bone Lord attacks for 4 damage, lifesteals 2 HP
   [Turn 4] Thornblade attacks for 3 damage, applies 2 Bleed (total: 3)
   [Turn 4] Bone Lord takes 3 Bleed damage
   [Turn 5] Thornblade attacks for 3 damage, applies 2 Bleed (total: 4)
   [Turn 5] Bone Lord takes 4 Bleed damage
   [Turn 6] Bone Lord attacks for 4 damage, lifesteals 2 HP
-  [Turn 7] Bone Lord attacks for 4 damage, lifesteals 2 HP
-  [Turn 8] Thornblade attacks for 3 damage, applies 2 Bleed (total: 5)
-  [Turn 8] Bone Lord takes 5 Bleed damage
-  [Turn 9] Thornblade attacks for 3 damage, applies 2 Bleed (total: 6)
-  [Turn 9] Bone Lord takes 6 Bleed damage
-  [Turn 10] Bone Lord attacks for 4 damage, lifesteals 2 HP
+  [Turn 7] Thornblade attacks for 3 damage, applies 2 Bleed (total: 5)
+  [Turn 7] Bone Lord takes 5 Bleed damage
+  [Turn 8] Bone Lord attacks for 4 damage, lifesteals 2 HP
+  [Turn 9] Bone Lord attacks for 4 damage, lifesteals 2 HP
+  [Turn 10] Thornblade attacks for 3 damage, applies 2 Bleed (total: 6)
+  [Turn 10] Bone Lord takes 6 Bleed damage
   [Turn 11] Bone Lord attacks for 4 damage, lifesteals 2 HP
   [Turn 12] Thornblade attacks for 3 damage, applies 2 Bleed (total: 7)
   [Turn 12] Bone Lord takes 7 Bleed damage
-  [Turn 13] Thornblade attacks for 3 damage, applies 2 Bleed (total: 8)
-  [Turn 13] Bone Lord takes 8 Bleed damage
-  [Turn 14] Bone Lord attacks for 4 damage, lifesteals 2 HP
-  [Turn 15] Bone Lord attacks for 4 damage, lifesteals 2 HP
-  [Turn 16] Thornblade attacks for 3 damage, applies 2 Bleed (total: 9)
-  [Turn 16] Bone Lord takes 9 Bleed damage
+  [Turn 13] Bone Lord attacks for 4 damage, lifesteals 2 HP
+  [Turn 14] Thornblade attacks for 3 damage, applies 2 Bleed (total: 8)
+  [Turn 14] Bone Lord takes 8 Bleed damage
+  [Turn 15] Thornblade attacks for 3 damage, applies 2 Bleed (total: 9)
+  [Turn 15] Bone Lord takes 9 Bleed damage
+  [Turn 16] Bone Lord attacks for 4 damage, lifesteals 2 HP
   [Turn 16] 
 === COMBAT END ===
   [Turn 16] DRAW (turn limit reached)
-  [Turn 16] Bone Lord final HP: 20
+  [Turn 16] Bone Lord final HP: 22
   [Turn 16] Thornblade final HP: 19
 
 --- Scenario 3 ---
@@ -109,18 +109,18 @@ Combat Log:
   [Turn 3] Iron Wall takes 3 Bleed damage
   [Turn 4] Iron Wall gains 2 Rune counters (total: 4)
   [Turn 4] Iron Wall attacks for 5 damage (Rune bonus: +2)
-  [Turn 5] Swift Striker attacks for 3 damage, applies 2 Bleed (total: 4)
-  [Turn 5] Iron Wall takes 4 Bleed damage
-  [Turn 6] Iron Wall gains 2 Rune counters (total: 6)
-  [Turn 6] Iron Wall attacks for 6 damage (Rune bonus: +3)
+  [Turn 5] Iron Wall gains 2 Rune counters (total: 6)
+  [Turn 5] Iron Wall attacks for 6 damage (Rune bonus: +3)
+  [Turn 6] Swift Striker attacks for 3 damage, applies 2 Bleed (total: 4)
+  [Turn 6] Iron Wall takes 4 Bleed damage
   [Turn 7] Swift Striker attacks for 3 damage, applies 2 Bleed (total: 5)
   [Turn 7] Iron Wall takes 5 Bleed damage
   [Turn 8] Iron Wall gains 2 Rune counters (total: 8)
   [Turn 8] Iron Wall attacks for 7 damage (Rune bonus: +4)
-  [Turn 9] Swift Striker attacks for 3 damage, applies 2 Bleed (total: 6)
-  [Turn 9] Iron Wall takes 6 Bleed damage
-  [Turn 10] Iron Wall gains 2 Rune counters (total: 10)
-  [Turn 10] Iron Wall attacks for 8 damage (Rune bonus: +5)
+  [Turn 9] Iron Wall gains 2 Rune counters (total: 10)
+  [Turn 9] Iron Wall attacks for 8 damage (Rune bonus: +5)
+  [Turn 10] Swift Striker attacks for 3 damage, applies 2 Bleed (total: 6)
+  [Turn 10] Iron Wall takes 6 Bleed damage
   [Turn 11] Iron Wall gains 2 Rune counters (total: 12)
   [Turn 11] Iron Wall attacks for 8 damage (Rune bonus: +5)
   [Turn 12] Swift Striker attacks for 3 damage, applies 2 Bleed (total: 7)
@@ -146,7 +146,7 @@ Combat Log:
 --- Campaign 1 ---
 Success: False
 Missions Completed: 0
-Final HP: 31
+Final HP: 0
 Final Scrap: 5
 
 Campaign Log:
@@ -154,47 +154,33 @@ Campaign Log:
   [Mission 0] Starting HP: 30
   [Mission 0] Starting Scrap: 5
   [Mission 1] 
-=== MISSION 1: vs church ===
-  [Turn 0] COMBAT START: Penitent Crusader vs Church Enemy
+=== MISSION 1: vs ossuarium ===
+  [Turn 0] COMBAT START: Penitent Crusader vs Ossuarium Enemy
   [Turn 0] Penitent Crusader: 30 HP (church)
-  [Turn 0] Church Enemy: 30 HP (church)
-  [Turn 1] Church Enemy uses Blood Offering (-1 HP, +3 damage)
-  [Turn 1] Church Enemy attacks for 7 damage
-  [Turn 2] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
-  [Turn 2] Penitent Crusader attacks for 7 damage
+  [Turn 0] Ossuarium Enemy: 30 HP (ossuarium)
+  [Turn 1] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
+  [Turn 1] Penitent Crusader attacks for 7 damage
+  [Turn 2] Ossuarium Enemy attacks for 4 damage, lifesteals 2 HP
   [Turn 3] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
   [Turn 3] Penitent Crusader attacks for 7 damage
-  [Turn 4] Church Enemy uses Blood Offering (-1 HP, +3 damage)
-  [Turn 4] Church Enemy attacks for 7 damage
-  [Turn 5] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
-  [Turn 5] Penitent Crusader attacks for 7 damage
-  [Turn 6] Church Enemy uses Blood Offering (-1 HP, +3 damage)
-  [Turn 6] Church Enemy attacks for 7 damage
-  [Turn 7] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
-  [Turn 7] Penitent Crusader attacks for 7 damage
-  [Turn 8] Church Enemy uses Blood Offering (-1 HP, +3 damage)
-  [Turn 8] Church Enemy attacks for 7 damage
-  [Turn 9] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
-  [Turn 9] Penitent Crusader attacks for 7 damage
-  [Turn 10] Church Enemy uses Blood Offering (-1 HP, +3 damage)
-  [Turn 10] Church Enemy attacks for 7 damage
+  [Turn 4] Ossuarium Enemy attacks for 4 damage, lifesteals 2 HP
+  [Turn 5] Ossuarium Enemy attacks for 4 damage, lifesteals 2 HP
+  [Turn 6] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
+  [Turn 6] Penitent Crusader attacks for 7 damage
+  [Turn 7] Ossuarium Enemy attacks for 4 damage, lifesteals 2 HP
+  [Turn 8] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
+  [Turn 8] Penitent Crusader attacks for 7 damage
+  [Turn 9] Ossuarium Enemy attacks for 4 damage, lifesteals 2 HP
+  [Turn 10] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
+  [Turn 10] Penitent Crusader attacks for 7 damage
   [Turn 11] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
   [Turn 11] Penitent Crusader attacks for 7 damage
-  [Turn 12] Church Enemy uses Blood Offering (-1 HP, +3 damage)
-  [Turn 12] Church Enemy attacks for 7 damage
-  [Turn 13] Church Enemy uses Blood Offering (-1 HP, +3 damage)
-  [Turn 13] Church Enemy attacks for 7 damage
-  [Turn 14] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
-  [Turn 14] Penitent Crusader attacks for 7 damage
-  [Turn 15] Penitent Crusader uses Blood Offering (-1 HP, +3 damage)
-  [Turn 15] Penitent Crusader attacks for 7 damage
-  [Turn 16] Church Enemy uses Blood Offering (-1 HP, +3 damage)
-  [Turn 16] Church Enemy attacks for 7 damage
-  [Turn 16] 
+  [Turn 12] Ossuarium Enemy attacks for 4 damage, lifesteals 2 HP
+  [Turn 12] 
 === COMBAT END ===
-  [Turn 16] DRAW (turn limit reached)
-  [Turn 16] Penitent Crusader final HP: 31
-  [Turn 16] Church Enemy final HP: 31
+  [Turn 12] WINNER: Ossuarium Enemy (17 HP remaining)
+  [Turn 12] Penitent Crusader final HP: 0
+  [Turn 12] Ossuarium Enemy final HP: 17
   [Mission 1] DEFEAT! Mission failed.
   [Mission 1] 
 === CAMPAIGN FAILED ===
@@ -227,4 +213,3 @@ BALANCE OBSERVATIONS
    - Cap Bleed counters at 10
    - Add mobility options for Fortress class
    - Consider Lifesteal diminishing returns after 10 HP healed
-
