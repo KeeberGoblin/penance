@@ -577,8 +577,11 @@
                 const cardCategory = card.dataset.category;
                 const isEquipment = cardCategory === 'Weapon' || cardCategory === 'Shield' || cardCategory === 'Equipment' || cardCategory === 'Spell Equipment' || !cardSlots;
 
-                // Faction match: show all if "all" is checked, or if no factions selected, or if card's faction is selected
-                const factionMatch = showAll || selectedFactions.length === 0 || selectedFactions.includes(cardFaction);
+                // Faction match: handle multi-faction equipment (comma-separated)
+                const cardFactions = cardFaction ? cardFaction.split(',').map(f => f.trim()) : [];
+                const factionMatch = showAll || selectedFactions.length === 0 ||
+                                     selectedFactions.some(f => cardFactions.includes(f)) ||
+                                     cardFactions.includes('universal');
 
                 // Slot match: equipment doesn't use slots, so only filter support units by slots
                 const slotMatch = isEquipment || selectedSlots.length === 0 || selectedSlots.includes(cardSlots) || (selectedSlots.includes('4') && parseInt(cardSlots) >= 4);
@@ -744,7 +747,9 @@
             equipmentItems.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'unit-card'; // Use same styling as support units
-                card.dataset.faction = item.faction || 'universal';
+                // Store faction data - handle multiple factions
+                const factions = item.faction ? item.faction.toLowerCase().split(',').map(f => f.trim()) : ['universal'];
+                card.dataset.faction = factions.join(',');
                 card.dataset.category = item.category || 'Equipment';
 
                 // Equipment header
