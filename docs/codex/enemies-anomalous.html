@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomalous Bestiary - Penance Codex</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .anomaly-card {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+            border: 2px solid var(--aged-gold);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .classification-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .sanctus { background: rgba(76, 175, 80, 0.2); border: 2px solid #4CAF50; color: #4CAF50; }
+        .poenitentia { background: rgba(255, 193, 7, 0.2); border: 2px solid #FFC107; color: #FFC107; }
+        .damnatio { background: rgba(244, 67, 54, 0.2); border: 2px solid #F44336; color: #F44336; }
+        .absolutio { background: rgba(156, 39, 176, 0.2); border: 2px solid #9C27B0; color: #9C27B0; }
+        .terminus { background: rgba(0, 0, 0, 0.6); border: 2px solid #000; color: #fff; }
+
+        .stat-block {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--aged-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .containment-protocol {
+            background: rgba(139, 0, 0, 0.2);
+            border-left: 4px solid #8B0000;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .warning-box {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid #8B0000;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Anomalous Bestiary</h1>
+        <p class="subtitle">Entities That Should Not Exist</p>
+    </header>
+
+    <main>
+        <section>
+            <blockquote style="border-left: 4px solid var(--aged-gold); padding-left: 1rem; font-style: italic; color: var(--aged-gold);">
+                "We do not study these creatures to understand them. We study them to know what kills them."
+                <br>— Dr. Elias Vorn, Church Research Division
+            </blockquote>
+        </section>
+
+        <section>
+            <h2>What Are Anomalous Entities?</h2>
+            <p>
+                When the Theslar Engine tore open reality in Year 0, it did not merely create Void rifts. It created
+                <strong>breaches in causality itself</strong>. Some creatures emerged from those breaches—things that
+                violate the laws of physics, biology, and sanity.
+            </p>
+            <p>
+                Others were <strong>transformed</strong> by prolonged Void exposure, mutating beyond recognition. A few
+                are <strong>experimental failures</strong>—Soulstone research gone catastrophically wrong, creating
+                self-aware horrors that escaped containment.
+            </p>
+            <p>
+                This bestiary catalogs known anomalous entities. Threat classifications follow the Church of Absolution
+                Research Division's Latin system.
+            </p>
+        </section>
+
+        <!-- POENITENTIA TIER -->
+        <section>
+            <h2>POENITENTIA-CLASS ENTITIES</h2>
+            <p style="font-style: italic; color: #FFC107;">Unpredictable. Dangerous. Containment requires vigilance.</p>
+
+            <!-- The Mirror Walker -->
+            <div class="anomaly-card">
+                <h3>AE-007: "The Mirror Walker"</h3>
+                <span class="classification-badge poenitentia">POENITENTIA</span>
+
+                <div class="stat-block">
+                    <div class="stat">
+                        <div class="stat-label">HP</div>
+                        <div class="stat-value">24</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">SP</div>
+                        <div class="stat-value">5</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Defense</div>
+                        <div class="stat-value">2</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Movement</div>
+                        <div class="stat-value">Special</div>
+                    </div>
+                </div>
+
+                <h4>Description</h4>
+                <p>
+                    A humanoid silhouette that exists only in reflective surfaces. It cannot manifest in the physical
+                    world directly—only in mirrors, water, polished metal, or glass. When observed, it <strong>mimics
+                    the viewer's movements exactly</strong>, but with a 3-second delay.
+                </p>
+
+                <h4>Behavior</h4>
+                <p>
+                    The Mirror Walker stalks targets by traveling through reflective surfaces. It emerges only when
+                    <strong>two reflective surfaces face each other</strong> (creating infinite reflections), stepping
+                    out of the "gap" between realities.
+                </p>
+
+                <h4>Combat Abilities</h4>
+                <ul>
+                    <li><strong>Reflection Step:</strong> Teleports between any two reflective surfaces within 10 hexes. Cannot be intercepted.</li>
+                    <li><strong>Mirror Blade:</strong> 3d6 damage. Ignores Defense (strikes from impossible angles).</li>
+                    <li><strong>Shatter Echo:</strong> When damaged, breaks into 1d3 copies (each with 8 HP). Copies vanish after 3 turns or when killed.</li>
+                    <li><strong>Cannot Be Targeted Directly:</strong> Must be attacked through reflective surface (all attacks at -1 to hit).</li>
+                </ul>
+
+                <div class="containment-protocol">
+                    <h4>Containment Protocol</h4>
+                    <p>
+                        <strong>Method:</strong> Remove all reflective surfaces from area. Use matte-black paint on metal.
+                        Drain standing water. Break mirrors. In absolute darkness or complete absence of reflections, it
+                        cannot manifest.
+                    </p>
+                    <p><strong>Lethality:</strong> 12 confirmed kills (Year 402-437). 3 escapees driven permanently insane.</p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠ WARNING:</strong> Never look into a mirror if you see your reflection blink when you don't.
+                    Never speak to your reflection if it speaks first. Never turn your back on polished metal.
+                </div>
+
+                <h4>Loot</h4>
+                <ul>
+                    <li>150 Credits</li>
+                    <li>1d3 Scrap</li>
+                    <li><strong>Mirror Shard (Artifact):</strong> Can be used to teleport once per mission (5 hex range). Requires reflective surface at destination. 1/6 chance of summoning another Mirror Walker.</li>
+                </ul>
+            </div>
+
+            <!-- The Screaming Engine -->
+            <div class="anomaly-card">
+                <h3>AE-019: "The Screaming Engine"</h3>
+                <span class="classification-badge poenitentia">POENITENTIA</span>
+
+                <div class="stat-block">
+                    <div class="stat">
+                        <div class="stat-label">HP</div>
+                        <div class="stat-value">40</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">SP</div>
+                        <div class="stat-value">4</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Defense</div>
+                        <div class="stat-value">4</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Movement</div>
+                        <div class="stat-value">6 hex</div>
+                    </div>
+                </div>
+
+                <h4>Description</h4>
+                <p>
+                    A Casket chassis with no pilot—just a <strong>screaming Soulstone core</strong> that achieved
+                    sentience. The cockpit is welded shut. Inside: hydraulic fluid, corroded neural threads, and
+                    <strong>something that won't stop screaming</strong>.
+                </p>
+
+                <h4>Behavior</h4>
+                <p>
+                    Attacks anything with a functioning Soulstone, as if trying to "consume" other cores. Does not
+                    communicate. Does not negotiate. Just screams and kills.
+                </p>
+
+                <h4>Combat Abilities</h4>
+                <ul>
+                    <li><strong>Resonance Scream (AOE):</strong> All Caskets within 5 hexes: discard 2 cards (bypasses Defense). Pilots must pass Grit check or gain 1 Taint.</li>
+                    <li><strong>Hydraulic Crush:</strong> 4d6 damage. On hit: target's weapon arm is disabled for 1d3 turns.</li>
+                    <li><strong>Soulstone Absorption:</strong> If it destroys a Casket, absorbs its Soulstone. Gains +10 HP permanently (max 80 HP).</li>
+                    <li><strong>Never Stops:</strong> Cannot be stunned, immobilized, or frightened. Immune to pilot-targeting effects.</li>
+                </ul>
+
+                <div class="containment-protocol">
+                    <h4>Containment Protocol</h4>
+                    <p>
+                        <strong>Method:</strong> EMP cage (disables Soulstone temporarily). Requires constant power supply.
+                        If power fails for >10 seconds, it reactivates.
+                    </p>
+                    <p><strong>Breach History:</strong> 7 containment failures. 42 casualties (15 pilots, 27 civilians).</p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠ WARNING:</strong> If you hear screaming from an abandoned Casket, <strong>do not open the cockpit</strong>.
+                    Call Church containment teams immediately. If the screaming stops, it means it's already loose.
+                </div>
+
+                <h4>Loot</h4>
+                <ul>
+                    <li>300 Credits</li>
+                    <li>3d6 Scrap (high-quality salvage)</li>
+                    <li><strong>Corrupted Soulstone Core:</strong> Can be installed in a Casket (+2 SP permanently, but pilot gains 1 Taint per mission).</li>
+                </ul>
+            </div>
+
+            <!-- The Threadless -->
+            <div class="anomaly-card">
+                <h3>AE-031: "The Threadless"</h3>
+                <span class="classification-badge poenitentia">POENITENTIA</span>
+
+                <div class="stat-block">
+                    <div class="stat">
+                        <div class="stat-label">HP</div>
+                        <div class="stat-value">18</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">SP</div>
+                        <div class="stat-value">6</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Defense</div>
+                        <div class="stat-value">1</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Movement</div>
+                        <div class="stat-value">8 hex</div>
+                    </div>
+                </div>
+
+                <h4>Description</h4>
+                <p>
+                    A pilot who survived <strong>thread-snap</strong> but did not die. Their neural threads severed,
+                    yet their body continues functioning. No higher brain function. No soul. Just autonomic survival
+                    instincts and rage.
+                </p>
+
+                <h4>Behavior</h4>
+                <p>
+                    Hunts other pilots. Attempts to <strong>rip neural threads from living victims</strong>, as if
+                    trying to reconnect its own severed threads. Moves erratically—twitching, jerking, spider-like.
+                </p>
+
+                <h4>Combat Abilities</h4>
+                <ul>
+                    <li><strong>Thread Rip:</strong> 2d6 damage. On hit: target pilot must pass Grit check or suffer 1d6 pilot wounds (ignores Casket armor).</li>
+                    <li><strong>Uncanny Dodge:</strong> When attacked, roll 1d6. On 5-6, attack automatically misses (Threadless moves unpredictably).</li>
+                    <li><strong>No Pain Response:</strong> Continues fighting at 0 HP for 1d3 more turns before finally collapsing.</li>
+                    <li><strong>Swarm Tactics:</strong> If multiple Threadless present, they coordinate perfectly (hive mind behavior).</li>
+                </ul>
+
+                <div class="containment-protocol">
+                    <h4>Containment Protocol</h4>
+                    <p>
+                        <strong>Method:</strong> Sedation does not work (no functioning nervous system). Must be physically
+                        restrained with heavy chains. Requires 24/7 guard rotation.
+                    </p>
+                    <p><strong>Origin:</strong> Survivors of catastrophic thread-snap during emergency Casket ejections. Approximately 1 in 200 thread-snap victims becomes Threadless instead of dying.</p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠ WARNING:</strong> If you see a pilot walking without a Casket in the Wastes, <strong>do not approach</strong>.
+                    Threadless can survive for months without food or water. They feel no pain, fear, or mercy.
+                </div>
+
+                <h4>Loot</h4>
+                <ul>
+                    <li>50 Credits (salvage from pilot gear)</li>
+                    <li><strong>Severed Neural Threads:</strong> Can be studied by Research Lab (1d6 research points toward thread-safety improvements).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DAMNATIO TIER -->
+        <section>
+            <h2>DAMNATIO-CLASS ENTITIES</h2>
+            <p style="font-style: italic; color: #F44336;">Extremely dangerous. High casualty rate. Containment difficult.</p>
+
+            <!-- The Void Shepherd -->
+            <div class="anomaly-card">
+                <h3>AE-044: "The Void Shepherd"</h3>
+                <span class="classification-badge damnatio">DAMNATIO</span>
+
+                <div class="stat-block">
+                    <div class="stat">
+                        <div class="stat-label">HP</div>
+                        <div class="stat-value">60</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">SP</div>
+                        <div class="stat-value">7</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Defense</div>
+                        <div class="stat-value">3</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Movement</div>
+                        <div class="stat-value">Special</div>
+                    </div>
+                </div>
+
+                <h4>Description</h4>
+                <p>
+                    A towering humanoid figure (12 feet tall) composed of <strong>living Void energy</strong>. Its body
+                    constantly shifts—smoke, shadow, and starless night. Where it walks, reality <strong>unravels</strong>.
+                    Grass withers. Metal corrodes. Light dims. Sound becomes muffled.
+                </p>
+
+                <h4>Behavior</h4>
+                <p>
+                    The Void Shepherd does not attack immediately. It <strong>herds</strong> its prey—driving targets
+                    toward a specific location (usually a Void rift). Those who resist are destroyed. Those who comply
+                    are consumed by the rift.
+                </p>
+
+                <h4>Combat Abilities</h4>
+                <ul>
+                    <li><strong>Void Touch:</strong> 5d6 damage. Ignores Defense. Bypasses armor. Target must discard entire hand (not just damage cards).</li>
+                    <li><strong>Reality Erosion Aura:</strong> All terrain within 6 hexes becomes difficult terrain. All attacks (friendly and enemy) suffer -2 to hit. SP costs increased by +1.</li>
+                    <li><strong>Shepherd's Call:</strong> Once per combat: target Casket must pass Grit check or move 1d6 hexes directly toward the Void Shepherd (involuntary movement).</li>
+                    <li><strong>Dimensional Step:</strong> Teleports 10 hexes once per turn. Can teleport through walls, terrain, or obstacles.</li>
+                    <li><strong>Cannot Be Killed Permanently:</strong> When reduced to 0 HP, dissipates. Reforms at nearest Void rift in 1d6 days.</li>
+                </ul>
+
+                <div class="containment-protocol">
+                    <h4>Containment Protocol</h4>
+                    <p>
+                        <strong>Method:</strong> Cannot be contained. Can only be <strong>banished</strong> temporarily by
+                        closing the Void rift it emerged from. Requires specialized Soulstone ritual (10 hours, 5 trained
+                        mages, 70% casualty rate).
+                    </p>
+                    <p><strong>Known Instances:</strong> 4 confirmed sightings (Year 89, 201, 338, 419). Total deaths: 182 civilians, 47 pilots.</p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠ KILL ON SIGHT ORDER:</strong> Do not attempt communication. Do not attempt capture. Deploy
+                    maximum force immediately. Evacuate civilians within 5 kilometer radius. If engagement fails, <strong>nuclear
+                    option authorized</strong>.
+                </div>
+
+                <h4>Loot</h4>
+                <ul>
+                    <li>500 Credits (Church Research Division bounty)</li>
+                    <li><strong>Void Essence (1d3 vials):</strong> Extremely dangerous. Can be weaponized (see Damnatio Artifacts). Valued at 200 Credits per vial by black market.</li>
+                    <li><strong>Rift Coordinates:</strong> Location of the Void rift it came from (valuable intelligence).</li>
+                </ul>
+            </div>
+
+            <!-- The Casket Hive -->
+            <div class="anomaly-card">
+                <h3>AE-058: "The Casket Hive"</h3>
+                <span class="classification-badge damnatio">DAMNATIO</span>
+
+                <div class="stat-block">
+                    <div class="stat">
+                        <div class="stat-label">HP</div>
+                        <div class="stat-value">???</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">SP</div>
+                        <div class="stat-value">Variable</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Defense</div>
+                        <div class="stat-value">5</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Movement</div>
+                        <div class="stat-value">4 hex</div>
+                    </div>
+                </div>
+
+                <h4>Description</h4>
+                <p>
+                    A <strong>colony organism</strong> that infects abandoned Caskets. Starts as black fungal growth
+                    inside cockpits. Spreads through hydraulic systems. Eventually, the Casket <strong>reactivates on
+                    its own</strong>—piloted by the fungus itself.
+                </p>
+
+                <h4>Behavior</h4>
+                <p>
+                    Infected Caskets seek out other derelict machines and <strong>merge</strong> with them, creating
+                    larger and larger composite entities. A fully mature Hive can contain 10+ Caskets fused into a
+                    single shambling mass.
+                </p>
+
+                <h4>Combat Abilities</h4>
+                <ul>
+                    <li><strong>Multi-Limb Assault:</strong> Attacks 1d3 times per turn (one attack per fused Casket component).</li>
+                    <li><strong>Fungal Spores (AOE):</strong> All Caskets within 8 hexes: pilots must pass Grit check or suffer 1d6 pilot wounds. Contaminated Caskets show fungal growth within 1d6 days.</li>
+                    <li><strong>Adaptive Defense:</strong> After being damaged by a weapon type, gains +2 Defense against that damage type for rest of combat (learns and adapts).</li>
+                    <li><strong>Absorb Salvage:</strong> Can consume destroyed Caskets to regain HP (5 HP per Casket absorbed). Takes 1 full turn to absorb.</li>
+                    <li><strong>Hive Mind:</strong> Destroying one component does not kill the Hive. Must destroy ALL fused components (treat each as separate target with shared HP pool).</li>
+                </ul>
+
+                <div class="containment-protocol">
+                    <h4>Containment Protocol</h4>
+                    <p>
+                        <strong>Method:</strong> Incineration. Fire is the only reliable method. Chemical defoliant (Agent Crimson)
+                        effective but requires 72-hour exposure. Quarantine all salvage from infected zones for minimum 30 days.
+                    </p>
+                    <p><strong>Outbreak History:</strong> 3 major infestations (Year 127, 284, 401). Year 284 outbreak consumed entire settlement (population 800). Total quarantine enforced.</p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠ BIOHAZARD WARNING:</strong> Do not salvage Caskets from contaminated zones. Do not open
+                    sealed cockpits showing black residue. If you see fungal growth on your Casket's interior, <strong>eject
+                    immediately</strong> and report to medical quarantine.
+                </div>
+
+                <h4>Loot</h4>
+                <ul>
+                    <li>2d6 Scrap (requires decontamination, -50% value)</li>
+                    <li><strong>Fungal Sample:</strong> Can be researched (weaponizable bio-agent, highly illegal). Church offers 400 Credits for samples (to study countermeasures).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ABSOLUTIO TIER -->
+        <section>
+            <h2>ABSOLUTIO-CLASS ENTITIES</h2>
+            <p style="font-style: italic; color: #9C27B0;">Weaponized. Two-edged swords. Use grants absolution for sins.</p>
+
+            <!-- The Penitent Weapon -->
+            <div class="anomaly-card">
+                <h3>AE-077: "The Penitent Weapon"</h3>
+                <span class="classification-badge absolutio">ABSOLUTIO</span>
+
+                <div class="stat-block">
+                    <div class="stat">
+                        <div class="stat-label">HP</div>
+                        <div class="stat-value">Special</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">SP</div>
+                        <div class="stat-value">N/A</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Type</div>
+                        <div class="stat-value">Artifact</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Status</div>
+                        <div class="stat-value">Active</div>
+                    </div>
+                </div>
+
+                <h4>Description</h4>
+                <p>
+                    A Casket-mounted railgun infused with <strong>bound soul energy</strong>. The weapon contains the
+                    souls of 100 executed Church heretics, their torment weaponized. When fired, their screams are
+                    audible for miles.
+                </p>
+
+                <h4>Function</h4>
+                <p>
+                    The Church of Absolution uses this weapon against <strong>Damnatio-class threats only</strong>. Its
+                    power is immense, but the cost is steep: each shot requires the weapon to <strong>consume one year
+                    of the wielder's lifespan</strong>.
+                </p>
+
+                <h4>Combat Abilities (When Wielded)</h4>
+                <ul>
+                    <li><strong>Absolution Strike:</strong> 10d6 damage (ignores Defense, bypasses all armor, cannot be reduced). Range: 20 hexes, line-of-sight.</li>
+                    <li><strong>Soul Burn:</strong> On hit, target suffers permanent -2 Defense (soul is damaged, cannot be healed).</li>
+                    <li><strong>Cost:</strong> Wielder ages 1 year per shot. Must pass Grit check or gain 1d3 Taint. Wielder's max HP reduced by 5 permanently (lifespan drain).</li>
+                    <li><strong>Screaming Payload:</strong> All pilots within 10 hexes (friendly and enemy) must pass Grit check or be Shaken for 1d3 turns.</li>
+                </ul>
+
+                <div class="containment-protocol">
+                    <h4>Authorization Protocol</h4>
+                    <p>
+                        <strong>Usage Requires:</strong> Written authorization from 3 Church Cardinals. Target must be
+                        confirmed Damnatio or higher threat. Wielder must undergo confession and absolution ritual before
+                        and after use.
+                    </p>
+                    <p><strong>Deployment Record:</strong> Used 7 times (Year 203-437). 5 successful kills. 2 wielders died of rapid aging within 24 hours.</p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠ THEOLOGICAL HAZARD:</strong> Use of this weapon is a mortal sin. The Church grants
+                    <strong>pre-emptive absolution</strong> to wielders (hence Absolutio classification). After use,
+                    wielder must complete penance pilgrimage or be excommunicated.
+                </div>
+
+                <h4>Location</h4>
+                <p>
+                    Stored in the <strong>Black Vault</strong> beneath the Church of Absolution's central cathedral
+                    (coordinates classified). Guarded by 50 Penitent Knights at all times.
+                </p>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav style="margin-top: 3rem;">
+            <a href="enemies-bestiary.html" class="btn-nav">← Standard Bestiary</a>
+            <a href="campaign-anomalous-events.html" class="btn-nav">Anomalous Events</a>
+            <a href="index.html" class="btn-nav">Return to Codex</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>The Exchange • Where souls find their price</p>
+    </footer>
+</body>
+</html>
