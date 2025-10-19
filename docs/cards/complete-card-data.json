@@ -1,16 +1,19 @@
 {
   "_meta": {
-    "version": "4.1",
-    "lastUpdated": "2025-10-18",
-    "description": "Complete Penance card database v4.1 - All 10 factions (21 cards each) + Universal (10) + Equipment Items (20 weapons/shields/accessories, 89 cards) + Special cards (6) + Support Units (39 units, 156 behavior cards)",
+    "version": "5.0",
+    "lastUpdated": "2025-10-19",
+    "description": "Complete Penance card database v5.0 - All 10 factions (21 cards each) + Universal (10) + Equipment Items (41 weapons/shields/accessories/spells, 200 cards) + Special cards (6) + Support Units (39 units, 156 behavior cards)",
     "cardCounts": {
       "factionCards": 220,
-      "equipmentCards": 46,
+      "equipmentCards": 157,
+      "spellEquipmentCards": 111,
+      "physicalEquipmentCards": 46,
       "specialCards": 6,
       "supportUnitBehaviorCards": 156,
-      "totalCurrently": 428,
+      "totalCurrently": 539,
       "supportUnits": 39,
-      "equipmentItems": 20
+      "equipmentItems": 41,
+      "spellEquipmentItems": 21
     }
   },
   "universal": [
@@ -9651,6 +9654,988 @@
       "craftingCost": "3 Scrap",
       "faction": "universal",
       "category": "Weapon"
+    },
+    {
+      "name": "FLAME WAND",
+      "cards": [
+        {
+          "name": "Ember Bolt",
+          "effect": "Deal 2 damage, target gains 1 Heat",
+          "cost": 1,
+          "range": "Ranged 2-4",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Flame Shield",
+          "effect": "Reduce damage by 1, attacker gains 1 Heat",
+          "cost": 1,
+          "type": "Reactive"
+        },
+        {
+          "name": "Ignite",
+          "effect": "Deal 1 damage, target gains 2 Heat",
+          "cost": 2,
+          "range": "Ranged 2-3",
+          "type": "Attack",
+          "damage": 1
+        }
+      ],
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "church, wyrd-conclave, elves",
+      "category": "Spell Equipment",
+      "school": "Fire"
+    },
+    {
+      "name": "PYROMANCER'S GRIMOIRE",
+      "cards": [
+        {
+          "name": "Fireball",
+          "effect": "Deal 4 damage, gain 1 Heat",
+          "cost": 2,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Flame Wall",
+          "effect": "Create 3-hex fire wall (blocks movement, deals 2 damage to crossers), lasts 2 rounds",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Burning Hands",
+          "effect": "Deal 3 damage to all adjacent enemies, gain 1 Heat",
+          "cost": 2,
+          "range": "Melee AoE",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Heat Absorption",
+          "effect": "Remove 2 Heat, next fire spell +1 damage",
+          "cost": 1,
+          "type": "Utility"
+        },
+        {
+          "name": "Immolation",
+          "effect": "Deal 5 damage, target gains 3 Heat, you gain 2 Heat",
+          "cost": 4,
+          "range": "Ranged 2-5",
+          "type": "Attack",
+          "damage": 5
+        }
+      ],
+      "totalCards": 5,
+      "craftingCost": "4 Scrap",
+      "weight": "Medium",
+      "faction": "church, wyrd-conclave",
+      "category": "Spell Equipment",
+      "school": "Fire"
+    },
+    {
+      "name": "INFERNO STAFF",
+      "cards": [
+        {
+          "name": "Firestorm",
+          "effect": "Deal 4 damage to target + 2 damage to adjacent hexes, gain 2 Heat",
+          "cost": 4,
+          "range": "Ranged 3-6 AoE",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Phoenix Flame",
+          "effect": "Recover 3 cards from discard pile, gain 2 Heat",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Meteor Strike",
+          "effect": "Deal 6 damage, create burning terrain (1 hex), gain 3 Heat",
+          "cost": 5,
+          "range": "Ranged 4-8",
+          "type": "Attack",
+          "damage": 6
+        },
+        {
+          "name": "Flame Burst",
+          "effect": "Deal 3 damage twice (same or different targets), gain 1 Heat",
+          "cost": 2,
+          "range": "Ranged 2-5",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Molten Armor",
+          "effect": "+2 Defense until next turn, adjacent enemies take 1 damage at start of their turn",
+          "cost": 2,
+          "type": "Defense"
+        },
+        {
+          "name": "Cinder Blast",
+          "effect": "Deal 4 damage, push target 1 hex, gain 1 Heat",
+          "cost": 3,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Infernal Resurrection",
+          "effect": "When you would take fatal damage, negate it, gain 4 Heat, this card is removed from game",
+          "cost": 4,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 7,
+      "craftingCost": "6 Scrap",
+      "weight": "Heavy (2-handed)",
+      "faction": "church, wyrd-conclave",
+      "category": "Spell Equipment",
+      "school": "Fire"
+    },
+    {
+      "name": "FROST FOCUS",
+      "cards": [
+        {
+          "name": "Ice Shard",
+          "effect": "Deal 2 damage",
+          "cost": 1,
+          "range": "Ranged 2-4",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Frost Shield",
+          "effect": "Reduce damage by 1, attacker's movement costs +1 SP next turn",
+          "cost": 0,
+          "type": "Reactive"
+        },
+        {
+          "name": "Chill Touch",
+          "effect": "Deal 2 damage, target loses 1 SP next turn",
+          "cost": 1,
+          "range": "Melee",
+          "type": "Attack",
+          "damage": 2
+        }
+      ],
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "elves, dwarves, wyrd-conclave",
+      "category": "Spell Equipment",
+      "school": "Ice"
+    },
+    {
+      "name": "GLACIAL TOME",
+      "cards": [
+        {
+          "name": "Ice Lance",
+          "effect": "Deal 4 damage, target's movement costs +1 SP next turn",
+          "cost": 2,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Frozen Ground",
+          "effect": "Create 3-hex ice terrain (difficult terrain, movement costs +1 SP), lasts 3 rounds",
+          "cost": 2,
+          "type": "Utility"
+        },
+        {
+          "name": "Frost Nova",
+          "effect": "Deal 2 damage to all adjacent enemies, enemies lose 1 SP next turn",
+          "cost": 3,
+          "range": "Melee AoE",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Ice Armor",
+          "effect": "+2 Defense until next turn, first attack against you deals -2 damage",
+          "cost": 2,
+          "type": "Defense"
+        },
+        {
+          "name": "Blizzard",
+          "effect": "Deal 3 damage to target + 1 damage to all enemies within 2 hexes, all affected lose 1 SP next turn",
+          "cost": 4,
+          "range": "Ranged 4-6 AoE",
+          "type": "Attack",
+          "damage": 3
+        }
+      ],
+      "totalCards": 5,
+      "craftingCost": "4 Scrap",
+      "weight": "Medium",
+      "faction": "elves, dwarves",
+      "category": "Spell Equipment",
+      "school": "Ice"
+    },
+    {
+      "name": "WINTER'S HEART STAFF",
+      "cards": [
+        {
+          "name": "Glacial Prison",
+          "effect": "Deal 3 damage, target cannot move for 2 turns (can still attack/rotate)",
+          "cost": 4,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Avalanche",
+          "effect": "Deal 6 damage, push target 2 hexes, create difficult terrain",
+          "cost": 5,
+          "range": "Ranged 4-8",
+          "type": "Attack",
+          "damage": 6
+        },
+        {
+          "name": "Ice Wall",
+          "effect": "Create 5-hex ice wall (blocks movement and LOS), 5 HP, lasts until destroyed",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Frostbite",
+          "effect": "Deal 3 damage, ongoing: target takes 1 damage at start of their turn for 2 turns",
+          "cost": 2,
+          "range": "Ranged 2-5",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Frozen Time",
+          "effect": "Target enemy skips their next turn (save: discard 2 cards to resist)",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Shatter",
+          "effect": "If target has any slow/freeze effects, deal 7 damage, else deal 3 damage",
+          "cost": 3,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Absolute Zero",
+          "effect": "Deal 5 damage, target loses all SP next turn, remove this card from game after use",
+          "cost": 4,
+          "range": "Ranged 2-4",
+          "type": "Attack",
+          "damage": 5
+        }
+      ],
+      "totalCards": 7,
+      "craftingCost": "6 Scrap",
+      "weight": "Heavy (2-handed)",
+      "faction": "elves, dwarves",
+      "category": "Spell Equipment",
+      "school": "Ice"
+    },
+    {
+      "name": "SHOCK ROD",
+      "cards": [
+        {
+          "name": "Static Jolt",
+          "effect": "Deal 2 damage",
+          "cost": 1,
+          "range": "Ranged 2-3",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Charge",
+          "effect": "Gain 1 Heat, next lightning spell +1 damage",
+          "cost": 1,
+          "type": "Utility"
+        },
+        {
+          "name": "Arc",
+          "effect": "Deal 2 damage to target, 1 damage to adjacent enemy",
+          "cost": 2,
+          "range": "Ranged 2-4",
+          "type": "Attack",
+          "damage": 2
+        }
+      ],
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "dwarves, nomads, emergent",
+      "category": "Spell Equipment",
+      "school": "Lightning"
+    },
+    {
+      "name": "STORMCALLER'S GRIMOIRE",
+      "cards": [
+        {
+          "name": "Lightning Bolt",
+          "effect": "Deal 5 damage, Armor-Piercing",
+          "cost": 2,
+          "range": "Ranged 4-8",
+          "type": "Attack",
+          "damage": 5
+        },
+        {
+          "name": "Chain Lightning",
+          "effect": "Deal 3 damage to target, arcs to 2 additional enemies within 2 hexes (2 damage each)",
+          "cost": 3,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Thunderclap",
+          "effect": "Deal 2 damage to all adjacent enemies, push 1 hex",
+          "cost": 2,
+          "range": "Melee AoE",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Storm Shield",
+          "effect": "+1 Defense until next turn, attackers take 1 damage when they attack you",
+          "cost": 2,
+          "type": "Defense"
+        },
+        {
+          "name": "Overcharge",
+          "effect": "Gain 2 Heat, next 2 lightning spells cost -1 SP and deal +2 damage",
+          "cost": 3,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 5,
+      "craftingCost": "4 Scrap",
+      "weight": "Medium",
+      "faction": "dwarves, nomads",
+      "category": "Spell Equipment",
+      "school": "Lightning"
+    },
+    {
+      "name": "TEMPEST SCEPTER",
+      "cards": [
+        {
+          "name": "Thunderstrike",
+          "effect": "Deal 6 damage, target discards 1 random card",
+          "cost": 3,
+          "range": "Ranged 4-8",
+          "type": "Attack",
+          "damage": 6
+        },
+        {
+          "name": "Lightning Storm",
+          "effect": "Deal 3 damage to target + 3 damage to 2 random enemies within 3 hexes",
+          "cost": 4,
+          "range": "Ranged 3-6 AoE",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Call Lightning",
+          "effect": "Deal 4 damage, if target is in open terrain (no cover), deal 6 damage instead",
+          "cost": 2,
+          "range": "Ranged 4-10",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Static Field",
+          "effect": "Create 4-hex electric field (enemies entering take 2 damage), lasts 3 rounds",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Galvanize",
+          "effect": "Ally within 3 hexes gains +2 SP this turn, remove 2 Heat from them",
+          "cost": 2,
+          "type": "Utility"
+        },
+        {
+          "name": "Plasma Lance",
+          "effect": "Deal 7 damage, Armor-Piercing, create line of lightning (hits all targets in straight line)",
+          "cost": 4,
+          "range": "Ranged 5-10",
+          "type": "Attack",
+          "damage": 7
+        },
+        {
+          "name": "Storm Avatar",
+          "effect": "For 2 turns: All lightning damage you deal +2, you gain +1 Defense, gain 3 Heat, remove this card from game after use",
+          "cost": 5,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 7,
+      "craftingCost": "6 Scrap",
+      "weight": "Heavy (2-handed)",
+      "faction": "dwarves, emergent",
+      "category": "Spell Equipment",
+      "school": "Lightning"
+    },
+    {
+      "name": "BONE WAND",
+      "cards": [
+        {
+          "name": "Death Bolt",
+          "effect": "Deal 2 damage",
+          "cost": 1,
+          "range": "Ranged 2-4",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Lifesteal",
+          "effect": "Deal 2 damage, recover 1 card from discard pile",
+          "cost": 2,
+          "range": "Ranged 2-3",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Curse",
+          "effect": "Target draws 1 fewer card next turn",
+          "cost": 1,
+          "range": "Ranged 2-4",
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "ossuarium",
+      "category": "Spell Equipment",
+      "school": "Death"
+    },
+    {
+      "name": "NECROMANCER'S GRIMOIRE",
+      "cards": [
+        {
+          "name": "Soul Drain",
+          "effect": "Deal 3 damage, recover 2 cards from your discard pile",
+          "cost": 2,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Raise Dead",
+          "effect": "When enemy is destroyed, create 1 skeleton minion (5 HP, acts on your turn, melee 2 damage)",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Death's Touch",
+          "effect": "Deal 4 damage, gain 1 Taint",
+          "cost": 2,
+          "range": "Melee",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Bone Prison",
+          "effect": "Deal 2 damage, target cannot move next turn, target discards 1 card",
+          "cost": 3,
+          "range": "Ranged 2-5",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Wither",
+          "effect": "Deal 3 damage, ongoing: target takes 1 damage at start of their turn for 3 turns",
+          "cost": 3,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 3
+        }
+      ],
+      "totalCards": 5,
+      "craftingCost": "4 Scrap",
+      "weight": "Medium",
+      "faction": "ossuarium",
+      "category": "Spell Equipment",
+      "school": "Death"
+    },
+    {
+      "name": "STAFF OF THE GRAVE",
+      "cards": [
+        {
+          "name": "Death Wave",
+          "effect": "Deal 4 damage to target, 2 damage to all adjacent enemies",
+          "cost": 4,
+          "range": "Ranged 3-6 AoE",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Corpse Explosion",
+          "effect": "Target destroyed enemy explodes, deal 5 damage to all adjacent hexes",
+          "cost": 3,
+          "range": "Ranged 3-8",
+          "type": "Attack",
+          "damage": 5
+        },
+        {
+          "name": "Life Siphon",
+          "effect": "Deal 4 damage, recover 3 cards from discard pile, gain 1 Taint",
+          "cost": 3,
+          "range": "Ranged 2-5",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Plague",
+          "effect": "Deal 2 damage, ongoing: target takes 2 damage at start of their turn until they discard 3 cards total",
+          "cost": 4,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Reanimate",
+          "effect": "Recover 5 cards from your Damage Graveyard to discard pile, gain 2 Taint",
+          "cost": 4,
+          "type": "Utility"
+        },
+        {
+          "name": "Death's Grasp",
+          "effect": "Deal 5 damage, pull target 2 hexes toward you",
+          "cost": 3,
+          "range": "Ranged 2-6",
+          "type": "Attack",
+          "damage": 5
+        },
+        {
+          "name": "Lich Form",
+          "effect": "For 3 turns: You are immune to damage (but still take Damage cards), gain 3 Taint, remove this card from game after use",
+          "cost": 5,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 7,
+      "craftingCost": "6 Scrap",
+      "weight": "Heavy (2-handed)",
+      "faction": "ossuarium",
+      "category": "Spell Equipment",
+      "school": "Death"
+    },
+    {
+      "name": "LIVING BRANCH",
+      "cards": [
+        {
+          "name": "Thorn Strike",
+          "effect": "Deal 2 damage, Bleed 1",
+          "cost": 1,
+          "range": "Ranged 2-3",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Barkskin",
+          "effect": "+1 Defense until next turn",
+          "cost": 1,
+          "type": "Defense"
+        },
+        {
+          "name": "Rejuvenate",
+          "effect": "Recover 2 cards from discard pile",
+          "cost": 2,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "elves",
+      "category": "Spell Equipment",
+      "school": "Nature"
+    },
+    {
+      "name": "DRUID'S TOME",
+      "cards": [
+        {
+          "name": "Thornwhip",
+          "effect": "Deal 3 damage, Bleed 1, pull target 1 hex toward you",
+          "cost": 2,
+          "range": "Ranged 2-4",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Entangle",
+          "effect": "Deal 2 damage, target's movement costs +2 SP next turn",
+          "cost": 2,
+          "range": "Ranged 3-5",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Natural Armor",
+          "effect": "+2 Defense until next turn, recover 1 card from discard pile",
+          "cost": 2,
+          "type": "Defense"
+        },
+        {
+          "name": "Vine Wall",
+          "effect": "Create 4-hex vine wall (blocks movement, 3 HP), lasts until destroyed",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Photosynthesis",
+          "effect": "If in sunlight/open terrain, recover 3 cards from discard pile",
+          "cost": 1,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 5,
+      "craftingCost": "4 Scrap",
+      "weight": "Medium",
+      "faction": "elves",
+      "category": "Spell Equipment",
+      "school": "Nature"
+    },
+    {
+      "name": "WORLD TREE STAFF",
+      "cards": [
+        {
+          "name": "Grasping Roots",
+          "effect": "Deal 3 damage, target cannot move for 2 turns",
+          "cost": 3,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Swarm of Thorns",
+          "effect": "Deal 3 damage to target + 2 damage to adjacent enemies, all affected Bleed 1",
+          "cost": 4,
+          "range": "Ranged 2-5 AoE",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Forest's Wrath",
+          "effect": "Deal 6 damage, summon 1 treant minion (8 HP, melee 3 damage)",
+          "cost": 4,
+          "range": "Ranged 3-8",
+          "type": "Attack",
+          "damage": 6
+        },
+        {
+          "name": "Regeneration",
+          "effect": "Recover 4 cards from discard pile",
+          "cost": 2,
+          "type": "Utility"
+        },
+        {
+          "name": "Nature's Blessing",
+          "effect": "Ally within 3 hexes recovers 3 cards, gains +1 Defense until end of round",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Earthquake",
+          "effect": "Deal 4 damage to all enemies within 2 hexes, create difficult terrain",
+          "cost": 4,
+          "range": "Ranged 3-6 AoE",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Wild Growth",
+          "effect": "For 2 turns: At end of your turn, recover 2 cards from discard pile, cannot attack",
+          "cost": 3,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 7,
+      "craftingCost": "6 Scrap",
+      "weight": "Heavy (2-handed)",
+      "faction": "elves",
+      "category": "Spell Equipment",
+      "school": "Nature"
+    },
+    {
+      "name": "BLESSED TALISMAN",
+      "cards": [
+        {
+          "name": "Holy Smite",
+          "effect": "Deal 2 damage, +1 damage vs corrupted enemies",
+          "cost": 1,
+          "range": "Ranged 2-4",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Divine Shield",
+          "effect": "Reduce damage by 2",
+          "cost": 0,
+          "type": "Reactive"
+        },
+        {
+          "name": "Purify",
+          "effect": "Remove 1 Taint from self or ally within 2 hexes",
+          "cost": 2,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "church",
+      "category": "Spell Equipment",
+      "school": "Light"
+    },
+    {
+      "name": "CODEX OF LIGHT",
+      "cards": [
+        {
+          "name": "Radiant Bolt",
+          "effect": "Deal 4 damage, +2 damage vs corrupted enemies",
+          "cost": 2,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Blessing",
+          "effect": "Ally within 3 hexes gains +2 damage on next attack, recover 1 card",
+          "cost": 2,
+          "type": "Utility"
+        },
+        {
+          "name": "Consecrated Ground",
+          "effect": "Create 3-hex holy terrain (allies standing in it gain +1 Defense, remove 1 Heat at end of turn), lasts 3 rounds",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Smite Evil",
+          "effect": "Deal 3 damage, if target has 3+ Taint, deal 6 damage instead",
+          "cost": 3,
+          "range": "Ranged 2-5",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Healing Light",
+          "effect": "Ally within 3 hexes recovers 3 cards from discard pile",
+          "cost": 2,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 5,
+      "craftingCost": "4 Scrap",
+      "weight": "Medium",
+      "faction": "church",
+      "category": "Spell Equipment",
+      "school": "Light"
+    },
+    {
+      "name": "DIVINE SCEPTER",
+      "cards": [
+        {
+          "name": "Sunburst",
+          "effect": "Deal 5 damage to target + 3 damage to adjacent enemies, +2 damage vs corrupted",
+          "cost": 4,
+          "range": "Ranged 3-6 AoE",
+          "type": "Attack",
+          "damage": 5
+        },
+        {
+          "name": "Divine Intervention",
+          "effect": "Negate all damage from next attack targeting you or ally within 2 hexes",
+          "cost": 3,
+          "type": "Reactive"
+        },
+        {
+          "name": "Pillar of Light",
+          "effect": "Deal 6 damage, Armor-Piercing, purge 1 Taint from self",
+          "cost": 4,
+          "range": "Ranged 4-8",
+          "type": "Attack",
+          "damage": 6
+        },
+        {
+          "name": "Mass Healing",
+          "effect": "All allies within 3 hexes recover 2 cards from discard pile",
+          "cost": 4,
+          "type": "Utility"
+        },
+        {
+          "name": "Holy Fire",
+          "effect": "Deal 5 damage, target gains 2 Heat, you remove 1 Heat",
+          "cost": 3,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 5
+        },
+        {
+          "name": "Sanctuary",
+          "effect": "Create 2-hex sanctuary zone (enemies cannot enter, allies inside gain +3 Defense), lasts 2 rounds",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Martyrdom",
+          "effect": "When ally would die, you take all damage instead, gain +2 Defense until end of round, remove this card from game after use",
+          "cost": 0,
+          "type": "Reactive"
+        }
+      ],
+      "totalCards": 7,
+      "craftingCost": "6 Scrap",
+      "weight": "Heavy (2-handed)",
+      "faction": "church",
+      "category": "Spell Equipment",
+      "school": "Light"
+    },
+    {
+      "name": "SHADOW CATALYST",
+      "cards": [
+        {
+          "name": "Void Bolt",
+          "effect": "Deal 2 damage, ignore Defense buffs",
+          "cost": 1,
+          "range": "Ranged 2-4",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Dark Shield",
+          "effect": "Reduce damage by 1, gain 1 Taint",
+          "cost": 0,
+          "type": "Reactive"
+        },
+        {
+          "name": "Shadow Step",
+          "effect": "Teleport up to 2 hexes, gain 1 Taint",
+          "cost": 2,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "wyrd-conclave, ossuarium, emergent",
+      "category": "Spell Equipment",
+      "school": "Void"
+    },
+    {
+      "name": "VOID GRIMOIRE",
+      "cards": [
+        {
+          "name": "Reality Tear",
+          "effect": "Deal 4 damage, ignore Defense and Armor, gain 1 Taint",
+          "cost": 2,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Void Prison",
+          "effect": "Deal 2 damage, teleport target to random adjacent hex, target loses 1 SP",
+          "cost": 3,
+          "range": "Ranged 2-5",
+          "type": "Attack",
+          "damage": 2
+        },
+        {
+          "name": "Shadow Form",
+          "effect": "+2 Defense until next turn, cannot be targeted by ranged attacks, gain 1 Taint",
+          "cost": 2,
+          "type": "Defense"
+        },
+        {
+          "name": "Corruption Burst",
+          "effect": "Deal 3 damage, target gains 1 Taint, you gain 1 Taint",
+          "cost": 3,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Phase Shift",
+          "effect": "Teleport up to 3 hexes, ignore terrain, gain 1 Taint",
+          "cost": 2,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 5,
+      "craftingCost": "4 Scrap",
+      "weight": "Medium",
+      "faction": "wyrd-conclave, ossuarium, emergent",
+      "category": "Spell Equipment",
+      "school": "Void"
+    },
+    {
+      "name": "ABYSSAL STAFF",
+      "cards": [
+        {
+          "name": "Void Storm",
+          "effect": "Deal 5 damage to target + 3 damage to adjacent enemies, all affected gain 1 Taint, you gain 2 Taint",
+          "cost": 4,
+          "range": "Ranged 3-6 AoE",
+          "type": "Attack",
+          "damage": 5
+        },
+        {
+          "name": "Reality Fracture",
+          "effect": "Deal 6 damage, ignore all Defense/Armor, gain 2 Taint",
+          "cost": 3,
+          "range": "Ranged 2-6",
+          "type": "Attack",
+          "damage": 6
+        },
+        {
+          "name": "Summon Shadow",
+          "effect": "Create shadow minion (5 HP, melee 3 damage, has phase abilities), gain 1 Taint",
+          "cost": 3,
+          "type": "Utility"
+        },
+        {
+          "name": "Dimensional Rift",
+          "effect": "Teleport target enemy to any hex within 6 hexes, gain 1 Taint",
+          "cost": 4,
+          "type": "Utility"
+        },
+        {
+          "name": "Void Drain",
+          "effect": "Deal 4 damage, recover 2 cards from discard pile, target gains 1 Taint, you gain 1 Taint",
+          "cost": 3,
+          "range": "Ranged 3-6",
+          "type": "Attack",
+          "damage": 4
+        },
+        {
+          "name": "Shadow Tendrils",
+          "effect": "Deal 3 damage, pull target 2 hexes toward you, target loses 1 SP next turn",
+          "cost": 3,
+          "range": "Ranged 2-5",
+          "type": "Attack",
+          "damage": 3
+        },
+        {
+          "name": "Embrace the Void",
+          "effect": "For 2 turns: All damage you deal +3, ignore all Defense/Armor, gain 1 Taint per spell cast, remove this card from game after use",
+          "cost": 5,
+          "type": "Utility"
+        }
+      ],
+      "totalCards": 7,
+      "craftingCost": "6 Scrap",
+      "weight": "Heavy (2-handed)",
+      "faction": "wyrd-conclave, emergent",
+      "category": "Spell Equipment",
+      "school": "Void"
     }
   ]
 }

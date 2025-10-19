@@ -334,7 +334,7 @@
                 <div class="header-stats">
                     <strong id="total-units-count">40+</strong> Support Units |
                     <strong>10</strong> Factions |
-                    <strong>46</strong> Equipment Items
+                    <strong id="equipment-count">41</strong> Equipment Items
                 </div>
             </div>
             <div style="display: flex; gap: 1rem;">
@@ -433,11 +433,6 @@
         </aside>
 
         <main>
-            <div class="tab-container">
-                <div class="tab active" data-tab="support-units">Support Units</div>
-                <div class="tab" data-tab="equipment">Equipment Cards</div>
-            </div>
-
             <div id="support-units-content" class="units-grid">
                 <!-- Support units loading from JSON -->
                 <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--aged-gold); font-family: 'Cinzel', serif;">
@@ -555,31 +550,10 @@
                     <p>Full implementation will load all 40+ support units from faction files.</p>
                 </div>
             </div>
-
-            <div id="equipment-content" class="units-grid" style="display: none;">
-                <!-- Equipment cards will be loaded here -->
-                <div class="equipment-card">
-                    <div class="equipment-name">Example Equipment</div>
-                    <div class="equipment-type">Weapon - Primary</div>
-                    <div class="behavior-effect">Equipment database will be loaded from complete-card-data.json</div>
-                </div>
-            </div>
         </main>
     </div>
 
     <script>
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                const tabName = tab.dataset.tab;
-                document.getElementById('support-units-content').style.display = tabName === 'support-units' ? 'grid' : 'none';
-                document.getElementById('equipment-content').style.display = tabName === 'equipment' ? 'grid' : 'none';
-            });
-        });
-
         // Filter functionality
         const factionFilters = document.querySelectorAll('.faction-filter');
         const slotFilters = document.querySelectorAll('.slot-filter');
@@ -601,7 +575,7 @@
                 const cardFaction = card.dataset.faction;
                 const cardSlots = card.dataset.slots;
                 const cardCategory = card.dataset.category;
-                const isEquipment = cardCategory === 'Weapon' || cardCategory === 'Shield' || cardCategory === 'Equipment' || !cardSlots;
+                const isEquipment = cardCategory === 'Weapon' || cardCategory === 'Shield' || cardCategory === 'Equipment' || cardCategory === 'Spell Equipment' || !cardSlots;
 
                 // Faction match: show all if "all" is checked, or if no factions selected, or if card's faction is selected
                 const factionMatch = showAll || selectedFactions.length === 0 || selectedFactions.includes(cardFaction);
@@ -765,8 +739,7 @@
         }
 
         function renderEquipment(equipmentItems) {
-            const container = document.getElementById('equipment-content');
-            container.innerHTML = ''; // Clear demo content
+            const container = document.getElementById('support-units-content');
 
             equipmentItems.forEach(item => {
                 const card = document.createElement('div');
@@ -805,6 +778,14 @@
                     </div>
                 `;
                 card.appendChild(stats);
+
+                // Add theme/school for spell equipment
+                if (item.school) {
+                    const theme = document.createElement('div');
+                    theme.className = 'unit-theme';
+                    theme.textContent = `${item.school} School Magic`;
+                    card.appendChild(theme);
+                }
 
                 // Add expand hint
                 const expandHint = document.createElement('div');

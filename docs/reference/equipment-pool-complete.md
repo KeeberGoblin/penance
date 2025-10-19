@@ -493,14 +493,345 @@ Where X = total cards from equipped items
 
 ---
 
+## CATEGORY 5: SPELL EQUIPMENT (Weapon Slot - Magic)
+
+### Fire School (Pyromancy)
+
+#### FLAME WAND
+**Card Count**: 3 cards
+**Crafting Cost**: 2 Scrap
+**Weight**: Light
+**Faction Restrictions**: Church, Wyrd Conclave, Elves
+
+**Cards**:
+1. **Ember Bolt** (1 SP, Ranged 2-4): Deal 2 damage, target gains 1 Heat
+2. **Flame Shield** (1 SP, Reactive): Reduce damage by 1, attacker gains 1 Heat
+3. **Ignite** (2 SP, Ranged 2-3): Deal 1 damage, target gains 2 Heat
+
+---
+
+#### PYROMANCER'S GRIMOIRE
+**Card Count**: 5 cards
+**Crafting Cost**: 4 Scrap
+**Weight**: Medium
+**Faction Restrictions**: Church, Wyrd Conclave
+
+**Cards**:
+1. **Fireball** (2 SP, Ranged 3-6): Deal 4 damage, gain 1 Heat
+2. **Flame Wall** (3 SP, Utility): Create 3-hex fire wall (blocks movement, deals 2 damage to crossers), lasts 2 rounds
+3. **Burning Hands** (2 SP, Melee AoE): Deal 3 damage to all adjacent enemies, gain 1 Heat
+4. **Heat Absorption** (1 SP, Utility): Remove 2 Heat, next fire spell +1 damage
+5. **Immolation** (4 SP, Ranged 2-5): Deal 5 damage, target gains 3 Heat, you gain 2 Heat
+
+---
+
+#### INFERNO STAFF
+**Card Count**: 7 cards
+**Crafting Cost**: 6 Scrap
+**Weight**: Heavy (2-handed)
+**Faction Restrictions**: Church, Wyrd Conclave
+
+**Cards**:
+1. **Firestorm** (4 SP, Ranged 3-6 AoE): Deal 4 damage to target + 2 damage to adjacent hexes, gain 2 Heat
+2. **Phoenix Flame** (3 SP, Utility): Recover 3 cards from discard pile, gain 2 Heat
+3. **Meteor Strike** (5 SP, Ranged 4-8): Deal 6 damage, create burning terrain (1 hex), gain 3 Heat
+4. **Flame Burst** (2 SP, Ranged 2-5): Deal 3 damage twice (same or different targets), gain 1 Heat
+5. **Molten Armor** (2 SP, Defense): +2 Defense until next turn, adjacent enemies take 1 damage at start of their turn
+6. **Cinder Blast** (3 SP, Ranged 3-6): Deal 4 damage, push target 1 hex, gain 1 Heat
+7. **Infernal Resurrection** (4 SP, Utility): When you would take fatal damage, negate it, gain 4 Heat, this card is removed from game
+
+---
+
+### Ice/Frost School (Cryomancy)
+
+#### FROST FOCUS
+**Card Count**: 3 cards
+**Crafting Cost**: 2 Scrap
+**Weight**: Light
+**Faction Restrictions**: Elves, Dwarves, Wyrd Conclave
+
+**Cards**:
+1. **Ice Shard** (1 SP, Ranged 2-4): Deal 2 damage
+2. **Frost Shield** (0 SP, Reactive): Reduce damage by 1, attacker's movement costs +1 SP next turn
+3. **Chill Touch** (1 SP, Melee): Deal 2 damage, target loses 1 SP next turn
+
+---
+
+#### GLACIAL TOME
+**Card Count**: 5 cards
+**Crafting Cost**: 4 Scrap
+**Weight**: Medium
+**Faction Restrictions**: Elves, Dwarves
+
+**Cards**:
+1. **Ice Lance** (2 SP, Ranged 3-6): Deal 4 damage, target's movement costs +1 SP next turn
+2. **Frozen Ground** (2 SP, Utility): Create 3-hex ice terrain (difficult terrain, movement costs +1 SP), lasts 3 rounds
+3. **Frost Nova** (3 SP, Melee AoE): Deal 2 damage to all adjacent enemies, enemies lose 1 SP next turn
+4. **Ice Armor** (2 SP, Defense): +2 Defense until next turn, first attack against you deals -2 damage
+5. **Blizzard** (4 SP, Ranged 4-6 AoE): Deal 3 damage to target + 1 damage to all enemies within 2 hexes, all affected lose 1 SP next turn
+
+---
+
+#### WINTER'S HEART STAFF
+**Card Count**: 7 cards
+**Crafting Cost**: 6 Scrap
+**Weight**: Heavy (2-handed)
+**Faction Restrictions**: Elves, Dwarves
+
+**Cards**:
+1. **Glacial Prison** (4 SP, Ranged 3-6): Deal 3 damage, target cannot move for 2 turns (can still attack/rotate)
+2. **Avalanche** (5 SP, Ranged 4-8): Deal 6 damage, push target 2 hexes, create difficult terrain
+3. **Ice Wall** (3 SP, Utility): Create 5-hex ice wall (blocks movement and LOS), 5 HP, lasts until destroyed
+4. **Frostbite** (2 SP, Ranged 2-5): Deal 3 damage, ongoing: target takes 1 damage at start of their turn for 2 turns
+5. **Frozen Time** (3 SP, Utility): Target enemy skips their next turn (save: discard 2 cards to resist)
+6. **Shatter** (3 SP, Ranged 3-6): If target has any slow/freeze effects, deal 7 damage, else deal 3 damage
+7. **Absolute Zero** (4 SP, Ranged 2-4): Deal 5 damage, target loses all SP next turn, remove this card from game after use
+
+---
+
+### Lightning/Storm School (Electromancy)
+
+#### SHOCK ROD
+**Card Count**: 3 cards
+**Crafting Cost**: 2 Scrap
+**Weight**: Light
+**Faction Restrictions**: Dwarves, Nomads, Emergent
+
+**Cards**:
+1. **Static Jolt** (1 SP, Ranged 2-3): Deal 2 damage
+2. **Charge** (1 SP, Utility): Gain 1 Heat, next lightning spell +1 damage
+3. **Arc** (2 SP, Ranged 2-4): Deal 2 damage to target, 1 damage to adjacent enemy
+
+---
+
+#### STORMCALLER'S GRIMOIRE
+**Card Count**: 5 cards
+**Crafting Cost**: 4 Scrap
+**Weight**: Medium
+**Faction Restrictions**: Dwarves, Nomads
+
+**Cards**:
+1. **Lightning Bolt** (2 SP, Ranged 4-8): Deal 5 damage, Armor-Piercing
+2. **Chain Lightning** (3 SP, Ranged 3-6): Deal 3 damage to target, arcs to 2 additional enemies within 2 hexes (2 damage each)
+3. **Thunderclap** (2 SP, Melee AoE): Deal 2 damage to all adjacent enemies, push 1 hex
+4. **Storm Shield** (2 SP, Defense): +1 Defense until next turn, attackers take 1 damage when they attack you
+5. **Overcharge** (3 SP, Utility): Gain 2 Heat, next 2 lightning spells cost -1 SP and deal +2 damage
+
+---
+
+#### TEMPEST SCEPTER
+**Card Count**: 7 cards
+**Crafting Cost**: 6 Scrap
+**Weight**: Heavy (2-handed)
+**Faction Restrictions**: Dwarves, Emergent
+
+**Cards**:
+1. **Thunderstrike** (3 SP, Ranged 4-8): Deal 6 damage, target discards 1 random card
+2. **Lightning Storm** (4 SP, Ranged 3-6 AoE): Deal 3 damage to target + 3 damage to 2 random enemies within 3 hexes
+3. **Call Lightning** (2 SP, Ranged 4-10): Deal 4 damage, if target is in open terrain (no cover), deal 6 damage instead
+4. **Static Field** (3 SP, Utility): Create 4-hex electric field (enemies entering take 2 damage), lasts 3 rounds
+5. **Galvanize** (2 SP, Utility): Ally within 3 hexes gains +2 SP this turn, remove 2 Heat from them
+6. **Plasma Lance** (4 SP, Ranged 5-10): Deal 7 damage, Armor-Piercing, create line of lightning (hits all targets in straight line)
+7. **Storm Avatar** (5 SP, Utility): For 2 turns: All lightning damage you deal +2, you gain +1 Defense, gain 3 Heat, remove this card from game after use
+
+---
+
+### Death/Necromancy School
+
+#### BONE WAND
+**Card Count**: 3 cards
+**Crafting Cost**: 2 Scrap
+**Weight**: Light
+**Faction Restrictions**: Ossuarium only
+
+**Cards**:
+1. **Death Bolt** (1 SP, Ranged 2-4): Deal 2 damage
+2. **Lifesteal** (2 SP, Ranged 2-3): Deal 2 damage, recover 1 card from discard pile
+3. **Curse** (1 SP, Ranged 2-4): Target draws 1 fewer card next turn
+
+---
+
+#### NECROMANCER'S GRIMOIRE
+**Card Count**: 5 cards
+**Crafting Cost**: 4 Scrap
+**Weight**: Medium
+**Faction Restrictions**: Ossuarium only
+
+**Cards**:
+1. **Soul Drain** (2 SP, Ranged 3-6): Deal 3 damage, recover 2 cards from your discard pile
+2. **Raise Dead** (3 SP, Utility): When enemy is destroyed, create 1 skeleton minion (5 HP, acts on your turn, melee 2 damage)
+3. **Death's Touch** (2 SP, Melee): Deal 4 damage, gain 1 Taint
+4. **Bone Prison** (3 SP, Ranged 2-5): Deal 2 damage, target cannot move next turn, target discards 1 card
+5. **Wither** (3 SP, Ranged 3-6): Deal 3 damage, ongoing: target takes 1 damage at start of their turn for 3 turns
+
+---
+
+#### STAFF OF THE GRAVE
+**Card Count**: 7 cards
+**Crafting Cost**: 6 Scrap
+**Weight**: Heavy (2-handed)
+**Faction Restrictions**: Ossuarium only
+
+**Cards**:
+1. **Death Wave** (4 SP, Ranged 3-6 AoE): Deal 4 damage to target, 2 damage to all adjacent enemies
+2. **Corpse Explosion** (3 SP, Ranged 3-8): Target destroyed enemy explodes, deal 5 damage to all adjacent hexes
+3. **Life Siphon** (3 SP, Ranged 2-5): Deal 4 damage, recover 3 cards from discard pile, gain 1 Taint
+4. **Plague** (4 SP, Ranged 3-6): Deal 2 damage, ongoing: target takes 2 damage at start of their turn until they discard 3 cards total
+5. **Reanimate** (4 SP, Utility): Recover 5 cards from your Damage Graveyard to discard pile, gain 2 Taint
+6. **Death's Grasp** (3 SP, Ranged 2-6): Deal 5 damage, pull target 2 hexes toward you
+7. **Lich Form** (5 SP, Utility): For 3 turns: You are immune to damage (but still take Damage cards), gain 3 Taint, remove this card from game after use
+
+---
+
+### Nature/Life School
+
+#### LIVING BRANCH
+**Card Count**: 3 cards
+**Crafting Cost**: 2 Scrap
+**Weight**: Light
+**Faction Restrictions**: Elves only
+
+**Cards**:
+1. **Thorn Strike** (1 SP, Ranged 2-3): Deal 2 damage, Bleed 1
+2. **Barkskin** (1 SP, Defense): +1 Defense until next turn
+3. **Rejuvenate** (2 SP, Utility): Recover 2 cards from discard pile
+
+---
+
+#### DRUID'S TOME
+**Card Count**: 5 cards
+**Crafting Cost**: 4 Scrap
+**Weight**: Medium
+**Faction Restrictions**: Elves only
+
+**Cards**:
+1. **Thornwhip** (2 SP, Ranged 2-4): Deal 3 damage, Bleed 1, pull target 1 hex toward you
+2. **Entangle** (2 SP, Ranged 3-5): Deal 2 damage, target's movement costs +2 SP next turn
+3. **Natural Armor** (2 SP, Defense): +2 Defense until next turn, recover 1 card from discard pile
+4. **Vine Wall** (3 SP, Utility): Create 4-hex vine wall (blocks movement, 3 HP), lasts until destroyed
+5. **Photosynthesis** (1 SP, Utility): If in sunlight/open terrain, recover 3 cards from discard pile
+
+---
+
+#### WORLD TREE STAFF
+**Card Count**: 7 cards
+**Crafting Cost**: 6 Scrap
+**Weight**: Heavy (2-handed)
+**Faction Restrictions**: Elves only
+
+**Cards**:
+1. **Grasping Roots** (3 SP, Ranged 3-6): Deal 3 damage, target cannot move for 2 turns
+2. **Swarm of Thorns** (4 SP, Ranged 2-5 AoE): Deal 3 damage to target + 2 damage to adjacent enemies, all affected Bleed 1
+3. **Forest's Wrath** (4 SP, Ranged 3-8): Deal 6 damage, summon 1 treant minion (8 HP, melee 3 damage)
+4. **Regeneration** (2 SP, Utility): Recover 4 cards from discard pile
+5. **Nature's Blessing** (3 SP, Utility): Ally within 3 hexes recovers 3 cards, gains +1 Defense until end of round
+6. **Earthquake** (4 SP, Ranged 3-6 AoE): Deal 4 damage to all enemies within 2 hexes, create difficult terrain
+7. **Wild Growth** (3 SP, Utility): For 2 turns: At end of your turn, recover 2 cards from discard pile, cannot attack
+
+---
+
+### Light/Holy School
+
+#### BLESSED TALISMAN
+**Card Count**: 3 cards
+**Crafting Cost**: 2 Scrap
+**Weight**: Light
+**Faction Restrictions**: Church only
+
+**Cards**:
+1. **Holy Smite** (1 SP, Ranged 2-4): Deal 2 damage, +1 damage vs corrupted enemies
+2. **Divine Shield** (0 SP, Reactive): Reduce damage by 2
+3. **Purify** (2 SP, Utility): Remove 1 Taint from self or ally within 2 hexes
+
+---
+
+#### CODEX OF LIGHT
+**Card Count**: 5 cards
+**Crafting Cost**: 4 Scrap
+**Weight**: Medium
+**Faction Restrictions**: Church only
+
+**Cards**:
+1. **Radiant Bolt** (2 SP, Ranged 3-6): Deal 4 damage, +2 damage vs corrupted enemies
+2. **Blessing** (2 SP, Utility): Ally within 3 hexes gains +2 damage on next attack, recover 1 card
+3. **Consecrated Ground** (3 SP, Utility): Create 3-hex holy terrain (allies standing in it gain +1 Defense, remove 1 Heat at end of turn), lasts 3 rounds
+4. **Smite Evil** (3 SP, Ranged 2-5): Deal 3 damage, if target has 3+ Taint, deal 6 damage instead
+5. **Healing Light** (2 SP, Utility): Ally within 3 hexes recovers 3 cards from discard pile
+
+---
+
+#### DIVINE SCEPTER
+**Card Count**: 7 cards
+**Crafting Cost**: 6 Scrap
+**Weight**: Heavy (2-handed)
+**Faction Restrictions**: Church only
+
+**Cards**:
+1. **Sunburst** (4 SP, Ranged 3-6 AoE): Deal 5 damage to target + 3 damage to adjacent enemies, +2 damage vs corrupted
+2. **Divine Intervention** (3 SP, Reactive): Negate all damage from next attack targeting you or ally within 2 hexes
+3. **Pillar of Light** (4 SP, Ranged 4-8): Deal 6 damage, Armor-Piercing, purge 1 Taint from self
+4. **Mass Healing** (4 SP, Utility): All allies within 3 hexes recover 2 cards from discard pile
+5. **Holy Fire** (3 SP, Ranged 3-6): Deal 5 damage, target gains 2 Heat, you remove 1 Heat
+6. **Sanctuary** (3 SP, Utility): Create 2-hex sanctuary zone (enemies cannot enter, allies inside gain +3 Defense), lasts 2 rounds
+7. **Martyrdom** (0 SP, Reactive): When ally would die, you take all damage instead, gain +2 Defense until end of round, remove this card from game after use
+
+---
+
+### Void/Shadow School
+
+#### SHADOW CATALYST
+**Card Count**: 3 cards
+**Crafting Cost**: 2 Scrap
+**Weight**: Light
+**Faction Restrictions**: Wyrd Conclave, Ossuarium, Emergent
+
+**Cards**:
+1. **Void Bolt** (1 SP, Ranged 2-4): Deal 2 damage, ignore Defense buffs
+2. **Dark Shield** (0 SP, Reactive): Reduce damage by 1, gain 1 Taint
+3. **Shadow Step** (2 SP, Utility): Teleport up to 2 hexes, gain 1 Taint
+
+---
+
+#### VOID GRIMOIRE
+**Card Count**: 5 cards
+**Crafting Cost**: 4 Scrap
+**Weight**: Medium
+**Faction Restrictions**: Wyrd Conclave, Ossuarium, Emergent
+
+**Cards**:
+1. **Reality Tear** (2 SP, Ranged 3-6): Deal 4 damage, ignore Defense and Armor, gain 1 Taint
+2. **Void Prison** (3 SP, Ranged 2-5): Deal 2 damage, teleport target to random adjacent hex, target loses 1 SP
+3. **Shadow Form** (2 SP, Defense): +2 Defense until next turn, cannot be targeted by ranged attacks, gain 1 Taint
+4. **Corruption Burst** (3 SP, Ranged 3-6): Deal 3 damage, target gains 1 Taint, you gain 1 Taint
+5. **Phase Shift** (2 SP, Utility): Teleport up to 3 hexes, ignore terrain, gain 1 Taint
+
+---
+
+#### ABYSSAL STAFF
+**Card Count**: 7 cards
+**Crafting Cost**: 6 Scrap
+**Weight**: Heavy (2-handed)
+**Faction Restrictions**: Wyrd Conclave, Emergent
+
+**Cards**:
+1. **Void Storm** (4 SP, Ranged 3-6 AoE): Deal 5 damage to target + 3 damage to adjacent enemies, all affected gain 1 Taint, you gain 2 Taint
+2. **Reality Fracture** (3 SP, Ranged 2-6): Deal 6 damage, ignore all Defense/Armor, gain 2 Taint
+3. **Summon Shadow** (3 SP, Utility): Create shadow minion (5 HP, melee 3 damage, has phase abilities), gain 1 Taint
+4. **Dimensional Rift** (4 SP, Utility): Teleport target enemy to any hex within 6 hexes, gain 1 Taint
+5. **Void Drain** (3 SP, Ranged 3-6): Deal 4 damage, recover 2 cards from discard pile, target gains 1 Taint, you gain 1 Taint
+6. **Shadow Tendrils** (3 SP, Ranged 2-5): Deal 3 damage, pull target 2 hexes toward you, target loses 1 SP next turn
+7. **Embrace the Void** (5 SP, Utility): For 2 turns: All damage you deal +3, ignore all Defense/Armor, gain 1 Taint per spell cast, remove this card from game after use
+
+---
+
 ## CRAFTING COSTS SUMMARY
 
 | Tier | Equipment Type | Card Count | Scrap Cost | Examples |
 |------|---------------|------------|------------|----------|
-| **Basic** | Light weapons, shields | 2-3 cards | 2 Scrap | Dagger, Buckler |
-| **Standard** | Medium weapons, plating | 4-6 cards | 3-4 Scrap | Longsword, Crossbow, Kite Shield |
-| **Advanced** | Heavy weapons, sigils | 6-8 cards | 5-6 Scrap | Greatsword, Warhammer, Rifle |
-| **Faction** | Exclusive sigils/weapons | 3-4 cards | 5-6 Scrap | Forge-Rune, Martyr's Brand |
+| **Basic** | Light weapons, shields, light spell foci | 2-3 cards | 2 Scrap | Dagger, Buckler, Flame Wand, Frost Focus |
+| **Standard** | Medium weapons, plating, grimoires | 4-6 cards | 3-4 Scrap | Longsword, Crossbow, Kite Shield, Pyromancer's Grimoire |
+| **Advanced** | Heavy weapons, sigils, artifact staves | 6-8 cards | 5-6 Scrap | Greatsword, Warhammer, Rifle, Inferno Staff |
+| **Faction** | Exclusive sigils/weapons/spells | 3-7 cards | 5-6 Scrap | Forge-Rune, Martyr's Brand, Divine Scepter |
 
 ---
 
