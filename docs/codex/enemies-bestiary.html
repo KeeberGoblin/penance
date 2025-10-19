@@ -293,11 +293,17 @@
             <li><strong>Swarm (3-5 HP):</strong> Many weak enemies. Simple AI. Deploy 5-10 per mission.</li>
             <li><strong>Elite (15-25 HP):</strong> 1-2 per mission. Medium complexity AI. Mini-bosses.</li>
             <li><strong>Boss (30-60 HP):</strong> Mission capstone. Complex AI with phases.</li>
+            <li><strong>Anomalous:</strong> Reality-defying entities. See <a href="enemies-anomalous.html" style="color: #8B0000; text-decoration: underline;">Anomalous Bestiary</a> for Poenitentia/Damnatio/Absolutio threats.</li>
         </ul>
 
         <h3>AI System (If-Then Behavior Decks):</h3>
         <p>Enemies draw from <strong>behavior decks</strong> each turn. Cards have "If-Then" logic:</p>
         <p style="font-style: italic; padding-left: 2rem;">Example: "If enemy within 2 hexes, attack. Else, move closer."</p>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid #8B0000; padding: 1rem; margin: 1.5rem 0;">
+            <p style="margin: 0; font-weight: bold;">⚠ Looking for supernatural threats?</p>
+            <p style="margin: 0.5rem 0 0 0;">This bestiary covers <strong>natural/faction enemies</strong>. For anomalous entities (Mirror Walkers, Void Shepherds, etc.), see the <a href="enemies-anomalous.html" style="color: #ff4444;">Anomalous Bestiary</a>.</p>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
 
@@ -672,6 +678,67 @@
             <p><strong>Tactics:</strong> Mobile hit-and-run. Stacks Bleed, kites, teleports. Becomes deadly if left unchecked (Bleed stacks to max 10). Catch early or suffer.</p>
             <p><strong>Loot:</strong> 140 Credits, 2d3 Scrap, Equipment roll, 1/5 chance "Thornwood Bow" (Elven primary weapon).</p>
         </div>
+
+        <!-- New Faction Enemies -->
+        <div class="enemy-card">
+            <h3>16. Exchange Enforcer</h3>
+            <span class="enemy-type">Elite</span>
+            <div class="enemy-stats">
+                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">20</div></div>
+                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
+                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
+            </div>
+            <p><strong>AI (20 cards):</strong> Soul Drain (×5 - 3d6 + steal 1 SP), Contract Breach (×4 - double damage vs marked), Binding Clause (×3 - mark target), Debt Collector (×2 - execute low HP), Ledger Balance (×2 - swap HP with target), Foreclosure (×2 - steal equipment), Predatory Loan (×2 - forced card discard).</p>
+            <p><strong>Special:</strong> The Ledger (tracks all damage dealt, heals 1 HP per 5 damage), Compounding Interest (+1 damage per turn vs same target), Contract Enforcement (marked targets cannot flee), Soul Binding (prevent enemy healing).</p>
+            <p><strong>Tactics:</strong> Economic warfare. Marks high-value targets, drains resources. Excels at prolonged fights. Terrifying in 1v1 scenarios.</p>
+            <p><strong>Loot:</strong> 200 Credits (always), 2d6 Scrap, Equipment roll, 1/4 chance "Soul Ledger" (Exchange artifact - track enemy resources).</p>
+        </div>
+
+        <div class="enemy-card">
+            <h3>17. Nomad Outrider</h3>
+            <span class="enemy-type">Elite</span>
+            <div class="enemy-stats">
+                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">15</div></div>
+                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">7</div></div>
+                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
+                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">6</div></div>
+            </div>
+            <p><strong>AI (15 cards):</strong> Hit-and-Run (×5 - attack + retreat), Scavenging Strike (×3 - damage + steal Scrap), Wasteland Tactics (×2 - terrain advantage), Sandstorm (×2 - AOE blind), Emergency Repair (×1 - heal 5 HP), Swift Repositioning (×2 - teleport to edge of map).</p>
+            <p><strong>Special:</strong> Fastest Unit (7 Move), Scavenger King (gain 1 Scrap per kill), Desert Born (immune to terrain penalties), Hit-and-Fade (can attack then move full distance).</p>
+            <p><strong>Tactics:</strong> Never stands still. Harasses from range, steals resources, vanishes before retaliation. Chase exhausts pursuers. Best countered with traps or ranged focus.</p>
+            <p><strong>Loot:</strong> 100 Credits, 3d6 Scrap (they're carrying stolen salvage), 1/6 chance "Sandrunner Engine" (Nomad mobility upgrade).</p>
+        </div>
+
+        <div class="enemy-card">
+            <h3>18. Blighted Plague Bearer</h3>
+            <span class="enemy-type">Elite</span>
+            <div class="enemy-stats">
+                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
+                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">4</div></div>
+            </div>
+            <p><strong>AI (18 cards):</strong> Plague Touch (×6 - 2d6 + inflict Disease), Miasma Cloud (×4 - AOE Taint damage), Shambling Advance (×3 - slow unstoppable movement), Festering Wounds (×2 - prevent healing), Death Throes (×1 - explode on death), Undying Resilience (×2 - ignore fatal damage once).</p>
+            <p><strong>Special:</strong> Disease Vector (all adjacent units gain 1 Taint per turn), Toxic Aura (reduce enemy healing by 50%), Corpse Explosion (on death: 3d6 AOE damage 3 hex radius), Undead Resilience (ignore first fatal blow, revive at 5 HP).</p>
+            <p><strong>Tactics:</strong> Walking biohazard. Slow but devastating. Keep distance or suffer Taint accumulation. Kill fast or it explodes. Highly dangerous in enclosed spaces.</p>
+            <p><strong>Loot:</strong> 80 Credits, 1d3 Scrap (contaminated), 1/3 chance "Plague Vial" (bio-weapon - one-use AOE Taint attack).</p>
+        </div>
+
+        <div class="enemy-card">
+            <h3>19. Crucible Pact Berserker</h3>
+            <span class="enemy-type">Elite</span>
+            <div class="enemy-stats">
+                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
+            </div>
+            <p><strong>AI (24 cards):</strong> Rage Strike (×8 - 4d6 reckless attack), War Cry (×4 - buff allies), Cleave (×3 - hit multiple targets), Blood Frenzy (×3 - gain attack speed), Intimidate (×2 - fear AOE), Last Stand (×2 - power spike at low HP), Reckless Charge (×2 - charge ignoring damage).</p>
+            <p><strong>Special:</strong> Blood Rage (gain +1 damage per 5 HP lost, max +4), Unstoppable (cannot be stunned/immobilized), Intimidating Presence (enemies within 3 hexes: -1 to all rolls), Berserker's Last Breath (at 0 HP: take 2 more actions before dying).</p>
+            <p><strong>Tactics:</strong> Pure aggression. Gets stronger when wounded. Charges directly at strongest enemy. Ignore at your peril—will tear through backline. Focus fire before it snowballs.</p>
+            <p><strong>Loot:</strong> 160 Credits, 3d3 Scrap, Equipment roll, 1/5 chance "Pact Warblade" (Crucible primary weapon - gains damage when wielder is wounded).</p>
+        </div>
         </div>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
@@ -681,6 +748,7 @@
         <div style="background: rgba(139, 0, 0, 0.2); border: 2px solid #660000; padding: 1.5rem; margin: 2rem 0;">
             <h3 style="margin-top: 0; color: #8B0000;">Cross-References</h3>
             <ul style="margin-bottom: 0;">
+                <li><strong><a href="enemies-anomalous.html" target="_parent" style="color: #ff4444;">Anomalous Bestiary</a>:</strong> Poenitentia/Damnatio/Absolutio-class supernatural threats</li>
                 <li><strong><a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a>:</strong> Settlement Defense event uses bestiary</li>
                 <li><strong><a href="campaign-loot-tables.html" target="_parent">Loot Tables</a>:</strong> Enemy loot drops reference equipment tables</li>
                 <li><strong><a href="rules-combat.html" target="_parent">Combat Rules</a>:</strong> AI behavior cards use standard combat mechanics</li>
@@ -695,7 +763,7 @@
         </div>
 
         <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #660000; color: #8B0000; font-size: 0.9rem;">
-            <p><a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a> | <a href="campaign-loot-tables.html" target="_parent">Loot Tables</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+            <p><a href="enemies-anomalous.html" target="_parent" style="color: #ff4444;">Anomalous Bestiary</a> | <a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a> | <a href="campaign-loot-tables.html" target="_parent">Loot Tables</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
         </div>
     </div>
 
