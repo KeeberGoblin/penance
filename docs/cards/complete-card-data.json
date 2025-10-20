@@ -1,16 +1,16 @@
 {
   "_meta": {
-    "version": "5.0",
-    "lastUpdated": "2025-10-19",
-    "description": "Complete Penance card database v5.0 - All 10 factions (21 cards each) + Universal (10) + Equipment Items (41 weapons/shields/accessories/spells, 200 cards) + Special cards (6) + Support Units (39 units, 156 behavior cards)",
+    "version": "5.1",
+    "lastUpdated": "2025-10-20",
+    "description": "Complete Penance card database v5.1 - All 10 factions (21 cards each) + Universal (10) + Equipment (112 physical + 111 spell) + Special cards (6) + Support Units (39 units, 156 behavior cards)",
     "cardCounts": {
       "factionCards": 220,
-      "equipmentCards": 157,
+      "equipmentCards": 223,
       "spellEquipmentCards": 111,
-      "physicalEquipmentCards": 46,
+      "physicalEquipmentCards": 112,
       "specialCards": 6,
       "supportUnitBehaviorCards": 156,
-      "totalCurrently": 539,
+      "totalCurrently": 605,
       "supportUnits": 39,
       "equipmentItems": 41,
       "spellEquipmentItems": 21
@@ -1593,7 +1593,7 @@
       "cost": 4,
       "range": "Melee",
       "damage": 7,
-      "effect": "Deal 7 damage. +2 if target ≤15 HP.",
+      "effect": "Deal 7 damage. +2 if target \u226415 HP.",
       "keywords": [
         "attack",
         "melee",
@@ -2277,6 +2277,1183 @@
       ],
       "cardCount": 1,
       "cardType": "equipment"
+    },
+    {
+      "id": "ember-strike",
+      "name": "Ember Strike",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. If you are standing in or adjacent to lava terrain, deal 4 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "crucible",
+        "primary",
+        "fire"
+      ],
+      "cardCount": 3,
+      "cardType": "equipment"
+    },
+    {
+      "id": "volcanic-cleave",
+      "name": "Volcanic Cleave",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee",
+      "damage": 4,
+      "effect": "Deal 4 damage. Spend 1 Forge token: Deal 5 damage instead and apply Burn (2 damage next turn).",
+      "keywords": [
+        "attack",
+        "melee",
+        "crucible",
+        "primary",
+        "forge-cost",
+        "burn"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "molten-hammer",
+      "name": "Molten Hammer",
+      "type": "attack",
+      "cost": 4,
+      "range": "Melee",
+      "damage": 5,
+      "effect": "Deal 5 damage. Ignore armor. If you have 2+ Forge tokens, knockback target 1 hex.",
+      "keywords": [
+        "attack",
+        "melee",
+        "crucible",
+        "primary",
+        "armor-piercing",
+        "knockback"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "cinder-slash",
+      "name": "Cinder Slash",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. Apply Burn (target takes 2 damage at start of their next turn).",
+      "keywords": [
+        "attack",
+        "melee",
+        "crucible",
+        "primary",
+        "burn"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "forge-spear-throw",
+      "name": "Forge Spear Throw",
+      "type": "attack",
+      "cost": 3,
+      "range": "Range 3",
+      "damage": 4,
+      "effect": "Deal 4 damage at range 3. Spend 2 Forge tokens: Deal 6 damage instead.",
+      "keywords": [
+        "attack",
+        "ranged",
+        "crucible",
+        "primary",
+        "forge-cost"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "duelist-finisher",
+      "name": "Duelist's Finisher",
+      "type": "attack",
+      "cost": 5,
+      "range": "Melee",
+      "damage": 7,
+      "effect": "Deal 7 damage. If in Honor Duel, deal 9 damage instead. Spend all Forge tokens.",
+      "keywords": [
+        "attack",
+        "melee",
+        "crucible",
+        "primary",
+        "honor-duel",
+        "finisher"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "lava-forged-shield",
+      "name": "Lava-Forged Shield",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 1 Forge token.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "crucible",
+        "secondary",
+        "forge-generation"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "volcanic-ward",
+      "name": "Volcanic Ward",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). If standing in lava, reduce by 4 instead.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "crucible",
+        "secondary",
+        "terrain-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "forge-blessing",
+      "name": "Forge Blessing",
+      "type": "utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of round, reduce all incoming damage by 2. Gain 1 Forge token when activated.",
+      "keywords": [
+        "utility",
+        "defense",
+        "crucible",
+        "secondary",
+        "buff",
+        "forge-generation"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "magma-parry",
+      "name": "Magma Parry",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Melee",
+      "effect": "Play when attacked in melee. Reduce damage by 1. Deal 2 damage to attacker. Gain 1 Heat.",
+      "keywords": [
+        "reactive",
+        "counter-attack",
+        "crucible",
+        "secondary"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "emberguard",
+      "name": "Emberguard",
+      "type": "utility",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Until your next turn, enemies attacking you in melee take 1 damage after attack resolves (thorns).",
+      "keywords": [
+        "utility",
+        "defense",
+        "crucible",
+        "secondary",
+        "thorns"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "contract-blade",
+      "name": "Contract Blade",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. Gain 1 Credit token.",
+      "keywords": [
+        "attack",
+        "melee",
+        "exchange",
+        "primary",
+        "credit-generation"
+      ],
+      "cardCount": 3,
+      "cardType": "equipment"
+    },
+    {
+      "id": "mercenary-strike",
+      "name": "Mercenary Strike",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee",
+      "damage": 4,
+      "effect": "Deal 4 damage. Spend 1 Credit: Deal 5 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "exchange",
+        "primary",
+        "credit-cost"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "profit-margin",
+      "name": "Profit Margin",
+      "type": "attack",
+      "cost": 4,
+      "range": "Melee",
+      "damage": 5,
+      "effect": "Deal 5 damage. If this kills target, gain 3 Credits instead of normal kill rewards.",
+      "keywords": [
+        "attack",
+        "melee",
+        "exchange",
+        "primary",
+        "credit-generation",
+        "execute"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "calculated-assault",
+      "name": "Calculated Assault",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. Gain 1 Credit. If target is below 20 HP, gain 2 Credits instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "exchange",
+        "primary",
+        "credit-generation"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "liquidation-shot",
+      "name": "Liquidation Shot",
+      "type": "attack",
+      "cost": 3,
+      "range": "Range 4",
+      "damage": 4,
+      "effect": "Deal 4 damage at range 4. Spend 2 Credits: Ignore cover and +2 damage.",
+      "keywords": [
+        "attack",
+        "ranged",
+        "exchange",
+        "primary",
+        "credit-cost"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "hostile-takeover",
+      "name": "Hostile Takeover",
+      "type": "attack",
+      "cost": 5,
+      "range": "Melee",
+      "damage": 6,
+      "effect": "Deal 6 damage. Spend all Credits: +1 damage per Credit spent.",
+      "keywords": [
+        "attack",
+        "melee",
+        "exchange",
+        "primary",
+        "credit-cost",
+        "finisher"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "expense-report",
+      "name": "Expense Report",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 1 Credit.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "exchange",
+        "secondary",
+        "credit-generation"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "insurance-policy",
+      "name": "Insurance Policy",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Spend 2 Credits: Reduce damage by 4 (minimum 1).",
+      "keywords": [
+        "reactive",
+        "defense",
+        "exchange",
+        "secondary",
+        "credit-cost"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "golden-parachute",
+      "name": "Golden Parachute",
+      "type": "utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of round, the first time you take 5+ damage, reduce it to 3. Costs 3 Credits to activate.",
+      "keywords": [
+        "utility",
+        "defense",
+        "exchange",
+        "secondary",
+        "credit-cost",
+        "damage-cap"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "contract-breach-penalty",
+      "name": "Contract Breach Penalty",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Melee",
+      "effect": "Play when attacked in melee. Deal 2 damage to attacker. Gain 1 Credit if attacker took damage.",
+      "keywords": [
+        "reactive",
+        "counter-attack",
+        "exchange",
+        "secondary",
+        "credit-generation"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "asset-protection",
+      "name": "Asset Protection",
+      "type": "utility",
+      "cost": 1,
+      "range": "Self or Adjacent",
+      "effect": "Target ally gains +2 Defense until your next turn. Costs 1 Credit.",
+      "keywords": [
+        "utility",
+        "defense",
+        "exchange",
+        "secondary",
+        "ally",
+        "credit-cost"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "savage-claw",
+      "name": "Savage Claw",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. Gain 1 Biomass token.",
+      "keywords": [
+        "attack",
+        "melee",
+        "bloodlines",
+        "primary",
+        "biomass-generation"
+      ],
+      "cardCount": 3,
+      "cardType": "equipment"
+    },
+    {
+      "id": "rending-bite",
+      "name": "Rending Bite",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee",
+      "damage": 4,
+      "effect": "Deal 4 damage. If you have Pack Instinct active (+1 ally adjacent), deal 5 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "bloodlines",
+        "primary",
+        "pack-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "alpha-pounce",
+      "name": "Alpha's Pounce",
+      "type": "attack",
+      "cost": 4,
+      "range": "3 hexes (leap)",
+      "damage": 5,
+      "effect": "Move up to 3 hexes toward target, then deal 5 damage. Gain 1 Biomass if you moved 3 hexes.",
+      "keywords": [
+        "attack",
+        "melee",
+        "bloodlines",
+        "primary",
+        "movement",
+        "biomass-generation"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "feral-strike",
+      "name": "Feral Strike",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. Spend 1 Biomass: Deal 4 damage and apply Bleed 1.",
+      "keywords": [
+        "attack",
+        "melee",
+        "bloodlines",
+        "primary",
+        "biomass-cost",
+        "bleed"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "predator-ambush",
+      "name": "Predator's Ambush",
+      "type": "attack",
+      "cost": 3,
+      "range": "Range 2 (leap)",
+      "damage": 4,
+      "effect": "Deal 4 damage. If you moved this turn, deal 5 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "bloodlines",
+        "primary",
+        "movement-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "bloodline-fury",
+      "name": "Bloodline Fury",
+      "type": "attack",
+      "cost": 5,
+      "range": "Melee",
+      "damage": 7,
+      "effect": "Deal 7 damage. Spend all Biomass: +1 damage per Biomass spent. Gain 2 Heat.",
+      "keywords": [
+        "attack",
+        "melee",
+        "bloodlines",
+        "primary",
+        "biomass-cost",
+        "finisher"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "chitin-plating",
+      "name": "Chitin Plating",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Biomass: Reduce by 3 instead.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "bloodlines",
+        "secondary",
+        "biomass-cost"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "pack-defense",
+      "name": "Pack Defense",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 1 per adjacent ally Vestige Casket (max 3).",
+      "keywords": [
+        "reactive",
+        "defense",
+        "bloodlines",
+        "secondary",
+        "pack-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "adaptive-molt",
+      "name": "Adaptive Molt",
+      "type": "utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of round, negate the next attack that would deal 4+ damage. Costs 2 Biomass to activate.",
+      "keywords": [
+        "utility",
+        "defense",
+        "bloodlines",
+        "secondary",
+        "biomass-cost",
+        "damage-negation"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "feral-counter",
+      "name": "Feral Counter",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Melee",
+      "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Gain 1 Biomass.",
+      "keywords": [
+        "reactive",
+        "counter-attack",
+        "bloodlines",
+        "secondary",
+        "biomass-generation"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "regenerative-shell",
+      "name": "Regenerative Shell",
+      "type": "utility",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Spend 3 Biomass: Recover 2 cards from discard pile. You may only use this once per round.",
+      "keywords": [
+        "utility",
+        "healing",
+        "bloodlines",
+        "secondary",
+        "biomass-cost"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "hive-claw",
+      "name": "Hive Claw",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. If you have 2+ allied Emergent units within 3 hexes, deal 4 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "emergent",
+        "primary",
+        "hive-synergy"
+      ],
+      "cardCount": 3,
+      "cardType": "equipment"
+    },
+    {
+      "id": "metamorph-strike",
+      "name": "Metamorph Strike",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee",
+      "damage": 4,
+      "effect": "Deal 4 damage. If in Metamorph form, deal 5 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "emergent",
+        "primary",
+        "metamorph-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "coordinated-assault",
+      "name": "Coordinated Assault",
+      "type": "attack",
+      "cost": 4,
+      "range": "Melee",
+      "damage": 5,
+      "effect": "Deal 5 damage. All allied Emergent units within 3 hexes may immediately move 1 hex toward target.",
+      "keywords": [
+        "attack",
+        "melee",
+        "emergent",
+        "primary",
+        "hive-coordination",
+        "ally"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "swarm-rush",
+      "name": "Swarm Rush",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. +1 damage for each allied Emergent unit adjacent to target (max +3).",
+      "keywords": [
+        "attack",
+        "melee",
+        "emergent",
+        "primary",
+        "swarm-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "bio-spike-volley",
+      "name": "Bio-Spike Volley",
+      "type": "attack",
+      "cost": 3,
+      "range": "Range 3",
+      "damage": 4,
+      "effect": "Deal 4 damage at range 3. If in Metamorph form, can target 2 different enemies for 3 damage each instead.",
+      "keywords": [
+        "attack",
+        "ranged",
+        "emergent",
+        "primary",
+        "metamorph-synergy",
+        "multi-target"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "apex-form-strike",
+      "name": "Apex Form Strike",
+      "type": "attack",
+      "cost": 5,
+      "range": "Melee",
+      "damage": 6,
+      "effect": "Deal 6 damage. Requires Metamorph form. Deal +1 damage per allied Emergent unit within 3 hexes (max +4).",
+      "keywords": [
+        "attack",
+        "melee",
+        "emergent",
+        "primary",
+        "metamorph-required",
+        "finisher"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "carapace-shield",
+      "name": "Carapace Shield",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). If in Metamorph form, reduce by 3 instead.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "emergent",
+        "secondary",
+        "metamorph-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "hive-mind-shield",
+      "name": "Hive-Mind Shield",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 1 per allied Emergent unit within 3 hexes (max 4).",
+      "keywords": [
+        "reactive",
+        "defense",
+        "emergent",
+        "secondary",
+        "hive-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "metamorphic-barrier",
+      "name": "Metamorphic Barrier",
+      "type": "utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of round, reduce all incoming damage by 2. Must be in Metamorph form to activate.",
+      "keywords": [
+        "utility",
+        "defense",
+        "emergent",
+        "secondary",
+        "metamorph-required",
+        "buff"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "bio-reactive-armor",
+      "name": "Bio-Reactive Armor",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Melee",
+      "effect": "Play when attacked in melee. Deal 1 damage to attacker. If in Metamorph form, deal 3 damage instead.",
+      "keywords": [
+        "reactive",
+        "counter-attack",
+        "emergent",
+        "secondary",
+        "metamorph-synergy"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "swarm-dispersal",
+      "name": "Swarm Dispersal",
+      "type": "utility",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Move up to 2 hexes. Allied Emergent units within 3 hexes may also move 1 hex (coordination).",
+      "keywords": [
+        "utility",
+        "movement",
+        "emergent",
+        "secondary",
+        "ally",
+        "hive-coordination"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "distortion-blade",
+      "name": "Distortion Blade",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. This attack bypasses 1 Defense (reality distortion).",
+      "keywords": [
+        "attack",
+        "melee",
+        "wyrd",
+        "primary",
+        "defense-bypass"
+      ],
+      "cardCount": 3,
+      "cardType": "equipment"
+    },
+    {
+      "id": "void-strike",
+      "name": "Void Strike",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee",
+      "damage": 4,
+      "effect": "Deal 4 damage. Apply 1 Taint to target. Bypasses all Defense.",
+      "keywords": [
+        "attack",
+        "melee",
+        "wyrd",
+        "primary",
+        "taint",
+        "defense-bypass"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "reality-rend",
+      "name": "Reality Rend",
+      "type": "attack",
+      "cost": 4,
+      "range": "Melee",
+      "damage": 5,
+      "effect": "Deal 5 damage. Spend 2 Taint (yours or target's): Deal 7 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "wyrd",
+        "primary",
+        "taint-cost"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "warped-slash",
+      "name": "Warped Slash",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. If target has 2+ Taint, deal 5 damage instead.",
+      "keywords": [
+        "attack",
+        "melee",
+        "wyrd",
+        "primary",
+        "taint-synergy"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "taint-bolt",
+      "name": "Taint Bolt",
+      "type": "attack",
+      "cost": 3,
+      "range": "Range 4",
+      "damage": 4,
+      "effect": "Deal 4 damage at range 4. Apply 2 Taint to target. Ignores cover.",
+      "keywords": [
+        "attack",
+        "ranged",
+        "wyrd",
+        "primary",
+        "taint"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "unraveling",
+      "name": "Unraveling",
+      "type": "attack",
+      "cost": 5,
+      "range": "Melee",
+      "damage": 6,
+      "effect": "Deal 6 damage. Spend all Taint on target (yours or theirs): +2 damage per Taint spent.",
+      "keywords": [
+        "attack",
+        "melee",
+        "wyrd",
+        "primary",
+        "taint-cost",
+        "finisher"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "void-ward",
+      "name": "Void Ward",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Apply 1 Taint to yourself.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "wyrd",
+        "secondary",
+        "taint"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "reality-shift",
+      "name": "Reality Shift",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). Spend 1 Taint: Reduce by 4 instead.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "wyrd",
+        "secondary",
+        "taint-cost"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "distortion-field",
+      "name": "Distortion Field",
+      "type": "utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of round, attacks against you have -1 to hit (reality distortion). Apply 2 Taint to yourself.",
+      "keywords": [
+        "utility",
+        "defense",
+        "wyrd",
+        "secondary",
+        "taint",
+        "debuff-enemy"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "void-reflection",
+      "name": "Void Reflection",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Melee",
+      "effect": "Play when attacked in melee. Deal 2 damage to attacker. Spend 1 Taint: Deal 4 damage instead.",
+      "keywords": [
+        "reactive",
+        "counter-attack",
+        "wyrd",
+        "secondary",
+        "taint-cost"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "taint-purge",
+      "name": "Taint Purge",
+      "type": "utility",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Remove 1d3 Taint from yourself. Recover 1 card from discard pile per Taint removed.",
+      "keywords": [
+        "utility",
+        "healing",
+        "wyrd",
+        "secondary",
+        "taint-removal"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "bone-scythe-strike",
+      "name": "Bone Scythe Strike",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. When you kill an enemy with this attack, recover 1 card from discard pile.",
+      "keywords": [
+        "attack",
+        "melee",
+        "ossuarium",
+        "primary",
+        "lifesteal"
+      ],
+      "cardCount": 3,
+      "cardType": "equipment"
+    },
+    {
+      "id": "death-grip",
+      "name": "Death Grip",
+      "type": "attack",
+      "cost": 3,
+      "range": "Melee",
+      "damage": 4,
+      "effect": "Deal 4 damage. Recover 1 card from your discard pile (partial lifesteal).",
+      "keywords": [
+        "attack",
+        "melee",
+        "ossuarium",
+        "primary",
+        "lifesteal"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "soul-reaper",
+      "name": "Soul Reaper",
+      "type": "attack",
+      "cost": 4,
+      "range": "Melee",
+      "damage": 5,
+      "effect": "Deal 5 damage. If target is below 15 HP, recover 2 cards from discard pile instead of 1.",
+      "keywords": [
+        "attack",
+        "melee",
+        "ossuarium",
+        "primary",
+        "execute",
+        "lifesteal"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "corpse-harvest",
+      "name": "Corpse Harvest",
+      "type": "attack",
+      "cost": 2,
+      "range": "Melee",
+      "damage": 3,
+      "effect": "Deal 3 damage. If any Casket was destroyed this round within 6 hexes, recover 3 cards from discard pile.",
+      "keywords": [
+        "attack",
+        "melee",
+        "ossuarium",
+        "primary",
+        "death-trigger"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "drain-essence",
+      "name": "Drain Essence",
+      "type": "attack",
+      "cost": 3,
+      "range": "Range 2",
+      "damage": 3,
+      "effect": "Deal 3 damage at range 2. Recover 1 card from discard pile. Can target through allies.",
+      "keywords": [
+        "attack",
+        "ranged",
+        "ossuarium",
+        "primary",
+        "lifesteal"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "phylactery-strike",
+      "name": "Phylactery Strike",
+      "type": "attack",
+      "cost": 5,
+      "range": "Melee",
+      "damage": 6,
+      "effect": "Deal 6 damage. If this reduces target to 0 HP, gain 1 Heat. Recover 2 cards from discard pile.",
+      "keywords": [
+        "attack",
+        "melee",
+        "ossuarium",
+        "primary",
+        "finisher",
+        "lifesteal"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "bone-ward",
+      "name": "Bone Ward",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Discard this card after use.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "ossuarium",
+        "secondary"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "necrotic-shield",
+      "name": "Necrotic Shield",
+      "type": "reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). If you block 3+ damage, recover 1 card from discard pile.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "ossuarium",
+        "secondary",
+        "lifesteal"
+      ],
+      "cardCount": 2,
+      "cardType": "equipment"
+    },
+    {
+      "id": "death-shroud",
+      "name": "Death Shroud",
+      "type": "utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of your next turn, the first time you would take damage, reduce it by 2. When this blocks damage, recover 1 card from discard pile.",
+      "keywords": [
+        "utility",
+        "defense",
+        "ossuarium",
+        "secondary",
+        "buff"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "corpse-fuel-siphon",
+      "name": "Corpse Fuel Siphon",
+      "type": "utility",
+      "cost": 1,
+      "range": "Self",
+      "effect": "If a Casket was destroyed within 3 hexes this round, recover 2 cards from discard pile and draw 1 card.",
+      "keywords": [
+        "utility",
+        "ossuarium",
+        "secondary",
+        "death-trigger",
+        "lifesteal"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
+    },
+    {
+      "id": "bone-spike-counter",
+      "name": "Bone Spike Counter",
+      "type": "reactive",
+      "cost": 0,
+      "range": "Melee",
+      "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Recover 1 card from discard if you took damage.",
+      "keywords": [
+        "reactive",
+        "counter-attack",
+        "ossuarium",
+        "secondary"
+      ],
+      "cardCount": 1,
+      "cardType": "equipment"
     }
   ],
   "tactics": {
@@ -2607,7 +3784,7 @@
           "name": "FRENZIED ASSAULT",
           "id": "church-flagellant-pack-frenzied-assault",
           "type": "Attack / Reckless",
-          "priority": "Critical (when HP ≤ 3)",
+          "priority": "Critical (when HP \u2264 3)",
           "effect": "Move full speed (4 hexes) toward nearest enemy\nAttack for 6 damage (empowered by pain)\nIgnore Defense on this attack\nFlagellants take 1 damage after attacking (self-destructive)",
           "flavor": "In their final moments, they are closest to absolution."
         },
@@ -2651,7 +3828,7 @@
           "name": "MARTYRDOM CHARGE",
           "id": "church-flagellant-pack-martyrdom-charge",
           "type": "Attack / Suicide",
-          "priority": "Critical (when HP ≤ 2)",
+          "priority": "Critical (when HP \u2264 2)",
           "effect": "Move full speed toward nearest enemy\nIf adjacent, deal 8 damage to that enemy\nFlagellants are immediately destroyed (suicidal explosion)\nAll adjacent enemies take 3 splash damage",
           "flavor": "Through death, I find absolution!"
         }
@@ -2772,7 +3949,7 @@
           "name": "DEFENSIVE CIRCLE",
           "id": "church-relic-bearers-defensive-circle",
           "type": "Defense / Protective",
-          "priority": "Critical (when Relic HP ≤ 5)",
+          "priority": "Critical (when Relic HP \u2264 5)",
           "effect": "Move toward nearest cover or friendly Casket\nGain +2 Defense until end of round\nRelic Bearers cannot attack (focused on protecting artifact)\nTesla Cross still deals 1 damage to adjacent enemies each turn (passive)",
           "flavor": "Protect the sacred at all costs."
         },
@@ -2824,8 +4001,8 @@
           "supportUnit": "HONOR GUARD",
           "faction": "crucible",
           "cardType": "support-behavior",
-          "name": "️ PROTECTIVE STANCE",
-          "id": "crucible-honor-guard-️-protective-stance",
+          "name": "\ufe0f PROTECTIVE STANCE",
+          "id": "crucible-honor-guard-\ufe0f-protective-stance",
           "type": "Reactive / Defense",
           "priority": "Critical (when ally within 3 hexes takes damage)",
           "effect": "Intercept attack targeting ally within 3 hexes\nHonor Guard takes damage instead of ally\nReduce damage by 2 (minimum 1, shield absorbs)\nGain 1 Forge token (honor in protection)\nMove 3 hexes toward ally if needed",
@@ -2835,8 +4012,8 @@
           "supportUnit": "HONOR GUARD",
           "faction": "crucible",
           "cardType": "support-behavior",
-          "name": "⚔️ CHALLENGE ACCEPTED",
-          "id": "crucible-honor-guard-⚔️-challenge-accepted",
+          "name": "\u2694\ufe0f CHALLENGE ACCEPTED",
+          "id": "crucible-honor-guard-\u2694\ufe0f-challenge-accepted",
           "type": "Duel / Attack",
           "priority": "High (when ally threatened or Honor Duel issued)",
           "effect": "Can accept Honor Duel on behalf of ally (take their place)\nIf in active duel: Attack for 5 damage\nIf duel victory: Gain 2 Forge tokens + draw 2 cards\nIf enemy refuses to duel Guard: Enemy gains Coward's Mark",
@@ -2872,7 +4049,7 @@
           "id": "crucible-honor-guard-retribution-strike",
           "type": "Attack / Revenge",
           "priority": "High (when ally was damaged this round)",
-          "effect": "Move toward enemy who damaged ally (up to 4 hexes)\nAttack for 6 damage\nIf ally was reduced to ≤50% HP: Deal 8 damage instead\nGain 1 Forge token per ally protected this battle",
+          "effect": "Move toward enemy who damaged ally (up to 4 hexes)\nAttack for 6 damage\nIf ally was reduced to \u226450% HP: Deal 8 damage instead\nGain 1 Forge token per ally protected this battle",
           "flavor": "You hurt mine. Now face the consequences."
         },
         {
@@ -2882,7 +4059,7 @@
           "name": "LAST STAND",
           "id": "crucible-honor-guard-last-stand",
           "type": "Reactive / Survival",
-          "priority": "Critical (when Honor Guard HP ≤ 4)",
+          "priority": "Critical (when Honor Guard HP \u2264 4)",
           "effect": "Trigger Unbreakable (survive at 1 HP, once per battle)\nGain +3 damage to all attacks for 2 turns\nCannot move (rooted to spot, \"here I stand\")\nAllies within 3 hexes gain +1 damage (inspired by courage)\nGenerate 2 Forge tokens",
           "flavor": "I fall only when my brothers are safe."
         }
@@ -2912,8 +4089,8 @@
           "supportUnit": "FORGE APPRENTICE",
           "faction": "crucible",
           "cardType": "support-behavior",
-          "name": "⚡ EMBER BLESSING",
-          "id": "crucible-forge-apprentice-⚡-ember-blessing",
+          "name": "\u26a1 EMBER BLESSING",
+          "id": "crucible-forge-apprentice-\u26a1-ember-blessing",
           "type": "Buff / Support",
           "priority": "High (when ally about to attack)",
           "effect": "Target allied Crucible Casket within 4 hexes\nSpend 1 Forge token\nAlly's next attack deals +2 damage (weapon blessed with fire)\nIf ally in lava: +3 damage instead\nAlly's weapon glows with volcanic heat (visual)",
@@ -2926,7 +4103,7 @@
           "name": "FIELD REPAIR",
           "id": "crucible-forge-apprentice-field-repair",
           "type": "Healing / Support",
-          "priority": "Medium (when ally HP ≤ 50%)",
+          "priority": "Medium (when ally HP \u2264 50%)",
           "effect": "Target allied Crucible Casket within 3 hexes\nSpend 2 Forge tokens\nAlly recovers 4 cards (emergency repairs)\nRemove 1 debuff from ally (burn away impurity)\nApprentice cannot act again this turn (exhausted)",
           "flavor": "Hold still. I can fix this."
         },
@@ -2948,7 +4125,7 @@
           "name": "EVASIVE MANEUVERS",
           "id": "crucible-forge-apprentice-evasive-maneuvers",
           "type": "Movement / Survival",
-          "priority": "Critical (when enemy within 2 hexes or Apprentice HP ≤ 4)",
+          "priority": "Critical (when enemy within 2 hexes or Apprentice HP \u2264 4)",
           "effect": "Move up to 5 hexes away from nearest enemy\nCannot be targeted by reactions during movement (too fast)\nIf ending adjacent to ally: Hide behind them (cannot be targeted until Apprentice moves)\nDrop 1 lava flask (create 1 lava hex at starting position)",
           "flavor": "I am smith, not warrior! Protect me!"
         },
@@ -3264,7 +4441,7 @@
           "name": "STONE SKIN",
           "id": "dwarves-rune-sentinel-stone-skin",
           "type": "Defense / Healing",
-          "priority": "Critical (when Sentinel HP ≤ 7)",
+          "priority": "Critical (when Sentinel HP \u2264 7)",
           "effect": "Do not move or attack\nSentinel's body reforms and heals\nRecover 5 HP (magical reconstruction)\nGain +3 Defense until next turn\nRemove 1 Rune Counter (costs magical energy)",
           "flavor": "Cracks seal. Stone flows like water, then hardens."
         },
@@ -3276,7 +4453,7 @@
           "id": "dwarves-rune-sentinel-rune-pulse",
           "type": "Attack / Area",
           "priority": "Medium (when Sentinel has 2+ Rune Counters)",
-          "effect": "Do not move\nDischarge all stored runic energy\nDeal 3 damage × Rune Counters to all enemies within 2 hexes (max 9 damage)\nRemove all Rune Counters\nStun all affected enemies (lose 1 SP next turn)",
+          "effect": "Do not move\nDischarge all stored runic energy\nDeal 3 damage \u00d7 Rune Counters to all enemies within 2 hexes (max 9 damage)\nRemove all Rune Counters\nStun all affected enemies (lose 1 SP next turn)",
           "flavor": "RUNES DETONATE IN CHAIN REACTION"
         },
         {
@@ -3352,7 +4529,7 @@
           "name": "FADE INTO SHADOWS",
           "id": "elves-thorn-stalkers-fade-into-shadows",
           "type": "Defense / Repositioning",
-          "priority": "High (when HP ≤ 3)",
+          "priority": "High (when HP \u2264 3)",
           "effect": "Move 4 hexes away from nearest enemy\nGain **Concealed** until end of round\nIf moved into Forest terrain, heal 1 HP",
           "flavor": "We are leaves on the wind."
         },
@@ -3418,7 +4595,7 @@
           "name": "VERDANT GROWTH",
           "id": "elves-rootweaver-circle-verdant-growth",
           "type": "Healing / Support",
-          "priority": "High (when ally within 3 hexes has ≤10 HP)",
+          "priority": "High (when ally within 3 hexes has \u226410 HP)",
           "effect": "Target ally within 3 hexes heals 3 HP immediately\nCreate 2 Forest terrain hexes adjacent to Rootweavers\nVerdant Zone healing increases to 2 HP per turn (this round only)",
           "flavor": "Life finds a way, even in ruin."
         },
@@ -3440,7 +4617,7 @@
           "name": "FOREST SANCTUARY",
           "id": "elves-rootweaver-circle-forest-sanctuary",
           "type": "Defense / Fortification",
-          "priority": "High (when Rootweavers at ≤4 HP)",
+          "priority": "High (when Rootweavers at \u22644 HP)",
           "effect": "Rootweavers gain +3 Defense until next turn\nAll hexes adjacent to Rootweavers become Dense Forest (blocks line of sight)\nAllied units within 2 hexes gain **Regeneration 2**",
           "flavor": "In the deepest woods, we cannot be touched."
         },
@@ -3558,8 +4735,8 @@
           "supportUnit": "DRONE SWARM",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "⚔️ HARASSMENT STRIKE",
-          "id": "emergent-drone-swarm-⚔️-harassment-strike",
+          "name": "\u2694\ufe0f HARASSMENT STRIKE",
+          "id": "emergent-drone-swarm-\u2694\ufe0f-harassment-strike",
           "type": "Attack / Distraction",
           "priority": "Medium (when adjacent to enemy)",
           "effect": "Attack closest enemy for 2 damage\nTarget has -1 to all actions next turn (distracted by buzzing)\nGenerate 1 Metamorph token for closest Syndicate Casket\nSwarm moves 4 hexes away after attack (hit-and-run)",
@@ -3569,8 +4746,8 @@
           "supportUnit": "DRONE SWARM",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "️ PHEROMONE CLOUD",
-          "id": "emergent-drone-swarm-️-pheromone-cloud",
+          "name": "\ufe0f PHEROMONE CLOUD",
+          "id": "emergent-drone-swarm-\ufe0f-pheromone-cloud",
           "type": "Buff / Area Control",
           "priority": "High (when 2+ allies within 4 hexes)",
           "effect": "Create 3-hex radius pheromone cloud (colored mist)\nAllied Syndicate units in cloud gain +1 SP this turn\nEnemies in cloud have -1 Defense (disoriented)\nCloud lasts 2 turns",
@@ -3583,7 +4760,7 @@
           "name": "DISPERSE AND REFORM",
           "id": "emergent-drone-swarm-disperse-and-reform",
           "type": "Defense / Mobility",
-          "priority": "Critical (when HP ≤ 3 or taking AOE damage)",
+          "priority": "Critical (when HP \u2264 3 or taking AOE damage)",
           "effect": "Swarm becomes immune to damage this turn (fully dispersed)\nCannot attack or act (reforming)\nMove up to 8 hexes to safe location\nNext turn, gain +3 HP (swarm reconstitutes)",
           "flavor": "You cannot kill the swarm. We are everywhere."
         },
@@ -3624,10 +4801,10 @@
           "supportUnit": "MOLT GUARDIAN",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "️ DEFENSIVE MOLT",
-          "id": "emergent-molt-guardian-️-defensive-molt",
+          "name": "\ufe0f DEFENSIVE MOLT",
+          "id": "emergent-molt-guardian-\ufe0f-defensive-molt",
           "type": "Reactive / Healing",
-          "priority": "Critical (when HP ≤ 10)",
+          "priority": "Critical (when HP \u2264 10)",
           "effect": "Molt exoskeleton (visual: old shell cracks and falls away)\nRecover 5 HP immediately\nGain +1 Defense permanently (max Defense 6)\nRemove all debuffs/status effects (bleed, poison, etc.)\nCannot move this turn (molting is exhausting)",
           "flavor": "Shed weakness. Embrace evolution."
         },
@@ -3679,10 +4856,10 @@
           "supportUnit": "MOLT GUARDIAN",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "⚡ BERSERKER MOLT",
-          "id": "emergent-molt-guardian-⚡-berserker-molt",
+          "name": "\u26a1 BERSERKER MOLT",
+          "id": "emergent-molt-guardian-\u26a1-berserker-molt",
           "type": "Attack / Transformation",
-          "priority": "Critical (when HP ≤ 6 or ally destroyed)",
+          "priority": "Critical (when HP \u2264 6 or ally destroyed)",
           "effect": "Emergency molt (discard all armor, become vulnerable)\nLose all Defense bonuses (Defense becomes 0)\nGain +3 Movement and +4 damage to all attacks\nAttack twice this turn if able\nLasts until end of round, then recover 1 Defense",
           "flavor": "In desperation, the guardian becomes the predator."
         }
@@ -3701,8 +4878,8 @@
           "supportUnit": "ADAPTATION FORM",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "️ ASSAULT FORM SHIFT",
-          "id": "emergent-adaptation-form-️-assault-form-shift",
+          "name": "\ufe0f ASSAULT FORM SHIFT",
+          "id": "emergent-adaptation-form-\ufe0f-assault-form-shift",
           "type": "Transformation / Offense",
           "priority": "High (when enemies clustered or ally needs damage)",
           "effect": "Transform into Assault Form (blade-limbed mantis)\nGain +3 damage to all attacks\nLose -1 Defense (vulnerable while aggressive)\nAllied Syndicate units within 4 hexes gain +1 damage\nLasts 2 turns",
@@ -3712,8 +4889,8 @@
           "supportUnit": "ADAPTATION FORM",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "️ TANK FORM SHIFT",
-          "id": "emergent-adaptation-form-️-tank-form-shift",
+          "name": "\ufe0f TANK FORM SHIFT",
+          "id": "emergent-adaptation-form-\ufe0f-tank-form-shift",
           "type": "Transformation / Defense",
           "priority": "High (when taking heavy damage or ally endangered)",
           "effect": "Transform into Tank Form (armored beetle)\nGain +3 Defense (total Defense 4)\nMovement reduced to 3\nAllied Syndicate units within 4 hexes gain +1 Defense\nLasts 2 turns",
@@ -3964,7 +5141,7 @@
           "name": "SMOKE SCREEN",
           "id": "nomads-outrider-squadron-smoke-screen",
           "type": "Utility / Escape",
-          "priority": "Critical (when Outriders HP ≤ 3)",
+          "priority": "Critical (when Outriders HP \u2264 3)",
           "effect": "Outriders deploy smoke grenades\nCreate 3-hex smoke cloud (blocks LOS)\nImmediately move 5 hexes through smoke\nAll allies in smoke gain +2 Defense until smoke clears (2 turns)",
           "flavor": "Can't hit what you can't see!"
         },
@@ -4328,7 +5505,7 @@
           "id": "vestige-bloodlines-feral-pack-pack-tactics",
           "type": "Attack / Coordinated",
           "priority": "High (when 2+ Pack members alive)",
-          "effect": "Pack swarms 1 enemy from multiple angles\nDeal damage equal to (3 × number of Pack members alive) [max 21 damage if all 7 alive]\nTarget cannot counterattack (overwhelmed)\nIf Pack has 5+ members, target gains \"Bleeding\" (2 damage/turn)",
+          "effect": "Pack swarms 1 enemy from multiple angles\nDeal damage equal to (3 \u00d7 number of Pack members alive) [max 21 damage if all 7 alive]\nTarget cannot counterattack (overwhelmed)\nIf Pack has 5+ members, target gains \"Bleeding\" (2 damage/turn)",
           "flavor": "One wolf is dangerous. Seven is a massacre."
         },
         {
@@ -4415,7 +5592,7 @@
           "name": "FRENZY MODE",
           "id": "vestige-bloodlines-mutation-hulk-frenzy-mode",
           "type": "Attack / Rampage",
-          "priority": "Critical (when Hulk HP ≤ 8)",
+          "priority": "Critical (when Hulk HP \u2264 8)",
           "effect": "Hulk enters berserk state\n+4 damage to all attacks\n+2 movement\nAttack nearest unit each turn (friend or foe - cannot distinguish)\nLasts until Hulk recovers above 8 HP",
           "flavor": "RAGE. BLOOD. KILL. KILL. KILL!"
         }
@@ -4459,7 +5636,7 @@
           "name": "CONSUME OFFSPRING",
           "id": "vestige-bloodlines-broodmother-consume-offspring",
           "type": "Healing / Sacrifice",
-          "priority": "Critical (when Broodmother HP ≤ 6)",
+          "priority": "Critical (when Broodmother HP \u2264 6)",
           "effect": "Broodmother devours 1 of her own Spawn\nRecover 5 HP\nGain 1 Biomass Token\nOther Spawn become frenzied (+3 damage for 1 turn, watching their sibling die)",
           "flavor": "Come to mother, dear. You'll serve better... inside me."
         },
@@ -4494,7 +5671,7 @@
           "type": "Utility / Disruption",
           "priority": "High",
           "effect": "Pixies move up to 6 hexes toward nearest enemy\nAll enemies within 2 hexes must discard 1 random card from hand (pixies steal them mid-air)\nPixies gain 1 Wyrd Token for each card stolen (max 2 per turn)",
-          "flavor": "Give that back! That's—HEY! STOP LAUGHING!"
+          "flavor": "Give that back! That's\u2014HEY! STOP LAUGHING!"
         },
         {
           "supportUnit": "PIXIE SWARM",
@@ -4613,7 +5790,7 @@
           "name": "PANIC REVEAL",
           "id": "wyrd-changeling-infiltrator-panic-reveal",
           "type": "Utility / Fear",
-          "priority": "Critical (when Changeling HP ≤ 3)",
+          "priority": "Critical (when Changeling HP \u2264 3)",
           "effect": "Changeling drops disguise, revealing blank featureless face\nAll enemies within 3 hexes must roll Morale check (TN 5+)\nFailures: Enemy unit loses next turn (paralyzed by uncanny horror)\nChangeling recovers 3 HP (feeds on fear)",
           "flavor": "You wanted to see my real face? HERE IT IS."
         },
@@ -4668,7 +5845,7 @@
           "name": "CONTRACT CLAUSE: ENDURE",
           "id": "wyrd-oath-bound-servants-contract-clause-endure",
           "type": "Defense / Resilience",
-          "priority": "Medium (when Servants HP ≤ 6)",
+          "priority": "Medium (when Servants HP \u2264 6)",
           "effect": "Servants do not move\nGain +4 Defense until end of round\nRecover 3 HP (contract prevents true death)\nAll damage taken is reduced by 2 (minimum 1)",
           "flavor": "We cannot die. We are bound. This is our curse."
         },
@@ -5577,7 +6754,7 @@
       "type": "Passive",
       "cost": 0,
       "range": "N/A",
-      "effect": "Passive: You can see in 360° (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.",
+      "effect": "Passive: You can see in 360\u00b0 (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.",
       "keywords": [
         "passive",
         "defensive",
@@ -6997,7 +8174,7 @@
       "type": "component-damage",
       "cost": "N/A",
       "range": "N/A",
-      "effect": "Dead card from destroyed component. Cannot be played. Can be discarded for damage absorption. Can be salvaged: Discard 3 SCRAP → Draw 2 cards (0 SP, free action).",
+      "effect": "Dead card from destroyed component. Cannot be played. Can be discarded for damage absorption. Can be salvaged: Discard 3 SCRAP \u2192 Draw 2 cards (0 SP, free action).",
       "keywords": [
         "scrap",
         "component-damage",
@@ -7006,7 +8183,7 @@
       ],
       "cardCount": 0,
       "cardType": "penalty",
-      "notes": "Gained: When component destroyed, all equipment cards from that slot become SCRAP. Example: Right Arm destroyed → 12 Primary Weapon cards become SCRAP."
+      "notes": "Gained: When component destroyed, all equipment cards from that slot become SCRAP. Example: Right Arm destroyed \u2192 12 Primary Weapon cards become SCRAP."
     },
     {
       "id": "decay-card",
@@ -7100,7 +8277,7 @@
       "name": "FRENZIED ASSAULT",
       "id": "church-flagellant-pack-frenzied-assault",
       "type": "Attack / Reckless",
-      "priority": "Critical (when HP ≤ 3)",
+      "priority": "Critical (when HP \u2264 3)",
       "effect": "Move full speed (4 hexes) toward nearest enemy\nAttack for 6 damage (empowered by pain)\nIgnore Defense on this attack\nFlagellants take 1 damage after attacking (self-destructive)",
       "flavor": "In their final moments, they are closest to absolution."
     },
@@ -7144,7 +8321,7 @@
       "name": "MARTYRDOM CHARGE",
       "id": "church-flagellant-pack-martyrdom-charge",
       "type": "Attack / Suicide",
-      "priority": "Critical (when HP ≤ 2)",
+      "priority": "Critical (when HP \u2264 2)",
       "effect": "Move full speed toward nearest enemy\nIf adjacent, deal 8 damage to that enemy\nFlagellants are immediately destroyed (suicidal explosion)\nAll adjacent enemies take 3 splash damage",
       "flavor": "Through death, I find absolution!"
     },
@@ -7243,7 +8420,7 @@
       "name": "DEFENSIVE CIRCLE",
       "id": "church-relic-bearers-defensive-circle",
       "type": "Defense / Protective",
-      "priority": "Critical (when Relic HP ≤ 5)",
+      "priority": "Critical (when Relic HP \u2264 5)",
       "effect": "Move toward nearest cover or friendly Casket\nGain +2 Defense until end of round\nRelic Bearers cannot attack (focused on protecting artifact)\nTesla Cross still deals 1 damage to adjacent enemies each turn (passive)",
       "flavor": "Protect the sacred at all costs."
     },
@@ -7284,8 +8461,8 @@
       "supportUnit": "HONOR GUARD",
       "faction": "crucible",
       "cardType": "support-behavior",
-      "name": "️ PROTECTIVE STANCE",
-      "id": "crucible-honor-guard-️-protective-stance",
+      "name": "\ufe0f PROTECTIVE STANCE",
+      "id": "crucible-honor-guard-\ufe0f-protective-stance",
       "type": "Reactive / Defense",
       "priority": "Critical (when ally within 3 hexes takes damage)",
       "effect": "Intercept attack targeting ally within 3 hexes\nHonor Guard takes damage instead of ally\nReduce damage by 2 (minimum 1, shield absorbs)\nGain 1 Forge token (honor in protection)\nMove 3 hexes toward ally if needed",
@@ -7295,8 +8472,8 @@
       "supportUnit": "HONOR GUARD",
       "faction": "crucible",
       "cardType": "support-behavior",
-      "name": "⚔️ CHALLENGE ACCEPTED",
-      "id": "crucible-honor-guard-⚔️-challenge-accepted",
+      "name": "\u2694\ufe0f CHALLENGE ACCEPTED",
+      "id": "crucible-honor-guard-\u2694\ufe0f-challenge-accepted",
       "type": "Duel / Attack",
       "priority": "High (when ally threatened or Honor Duel issued)",
       "effect": "Can accept Honor Duel on behalf of ally (take their place)\nIf in active duel: Attack for 5 damage\nIf duel victory: Gain 2 Forge tokens + draw 2 cards\nIf enemy refuses to duel Guard: Enemy gains Coward's Mark",
@@ -7332,7 +8509,7 @@
       "id": "crucible-honor-guard-retribution-strike",
       "type": "Attack / Revenge",
       "priority": "High (when ally was damaged this round)",
-      "effect": "Move toward enemy who damaged ally (up to 4 hexes)\nAttack for 6 damage\nIf ally was reduced to ≤50% HP: Deal 8 damage instead\nGain 1 Forge token per ally protected this battle",
+      "effect": "Move toward enemy who damaged ally (up to 4 hexes)\nAttack for 6 damage\nIf ally was reduced to \u226450% HP: Deal 8 damage instead\nGain 1 Forge token per ally protected this battle",
       "flavor": "You hurt mine. Now face the consequences."
     },
     {
@@ -7342,7 +8519,7 @@
       "name": "LAST STAND",
       "id": "crucible-honor-guard-last-stand",
       "type": "Reactive / Survival",
-      "priority": "Critical (when Honor Guard HP ≤ 4)",
+      "priority": "Critical (when Honor Guard HP \u2264 4)",
       "effect": "Trigger Unbreakable (survive at 1 HP, once per battle)\nGain +3 damage to all attacks for 2 turns\nCannot move (rooted to spot, \"here I stand\")\nAllies within 3 hexes gain +1 damage (inspired by courage)\nGenerate 2 Forge tokens",
       "flavor": "I fall only when my brothers are safe."
     },
@@ -7361,8 +8538,8 @@
       "supportUnit": "FORGE APPRENTICE",
       "faction": "crucible",
       "cardType": "support-behavior",
-      "name": "⚡ EMBER BLESSING",
-      "id": "crucible-forge-apprentice-⚡-ember-blessing",
+      "name": "\u26a1 EMBER BLESSING",
+      "id": "crucible-forge-apprentice-\u26a1-ember-blessing",
       "type": "Buff / Support",
       "priority": "High (when ally about to attack)",
       "effect": "Target allied Crucible Casket within 4 hexes\nSpend 1 Forge token\nAlly's next attack deals +2 damage (weapon blessed with fire)\nIf ally in lava: +3 damage instead\nAlly's weapon glows with volcanic heat (visual)",
@@ -7375,7 +8552,7 @@
       "name": "FIELD REPAIR",
       "id": "crucible-forge-apprentice-field-repair",
       "type": "Healing / Support",
-      "priority": "Medium (when ally HP ≤ 50%)",
+      "priority": "Medium (when ally HP \u2264 50%)",
       "effect": "Target allied Crucible Casket within 3 hexes\nSpend 2 Forge tokens\nAlly recovers 4 cards (emergency repairs)\nRemove 1 debuff from ally (burn away impurity)\nApprentice cannot act again this turn (exhausted)",
       "flavor": "Hold still. I can fix this."
     },
@@ -7397,7 +8574,7 @@
       "name": "EVASIVE MANEUVERS",
       "id": "crucible-forge-apprentice-evasive-maneuvers",
       "type": "Movement / Survival",
-      "priority": "Critical (when enemy within 2 hexes or Apprentice HP ≤ 4)",
+      "priority": "Critical (when enemy within 2 hexes or Apprentice HP \u2264 4)",
       "effect": "Move up to 5 hexes away from nearest enemy\nCannot be targeted by reactions during movement (too fast)\nIf ending adjacent to ally: Hide behind them (cannot be targeted until Apprentice moves)\nDrop 1 lava flask (create 1 lava hex at starting position)",
       "flavor": "I am smith, not warrior! Protect me!"
     },
@@ -7639,7 +8816,7 @@
       "name": "STONE SKIN",
       "id": "dwarves-rune-sentinel-stone-skin",
       "type": "Defense / Healing",
-      "priority": "Critical (when Sentinel HP ≤ 7)",
+      "priority": "Critical (when Sentinel HP \u2264 7)",
       "effect": "Do not move or attack\nSentinel's body reforms and heals\nRecover 5 HP (magical reconstruction)\nGain +3 Defense until next turn\nRemove 1 Rune Counter (costs magical energy)",
       "flavor": "Cracks seal. Stone flows like water, then hardens."
     },
@@ -7651,7 +8828,7 @@
       "id": "dwarves-rune-sentinel-rune-pulse",
       "type": "Attack / Area",
       "priority": "Medium (when Sentinel has 2+ Rune Counters)",
-      "effect": "Do not move\nDischarge all stored runic energy\nDeal 3 damage × Rune Counters to all enemies within 2 hexes (max 9 damage)\nRemove all Rune Counters\nStun all affected enemies (lose 1 SP next turn)",
+      "effect": "Do not move\nDischarge all stored runic energy\nDeal 3 damage \u00d7 Rune Counters to all enemies within 2 hexes (max 9 damage)\nRemove all Rune Counters\nStun all affected enemies (lose 1 SP next turn)",
       "flavor": "RUNES DETONATE IN CHAIN REACTION"
     },
     {
@@ -7716,7 +8893,7 @@
       "name": "FADE INTO SHADOWS",
       "id": "elves-thorn-stalkers-fade-into-shadows",
       "type": "Defense / Repositioning",
-      "priority": "High (when HP ≤ 3)",
+      "priority": "High (when HP \u2264 3)",
       "effect": "Move 4 hexes away from nearest enemy\nGain **Concealed** until end of round\nIf moved into Forest terrain, heal 1 HP",
       "flavor": "We are leaves on the wind."
     },
@@ -7771,7 +8948,7 @@
       "name": "VERDANT GROWTH",
       "id": "elves-rootweaver-circle-verdant-growth",
       "type": "Healing / Support",
-      "priority": "High (when ally within 3 hexes has ≤10 HP)",
+      "priority": "High (when ally within 3 hexes has \u226410 HP)",
       "effect": "Target ally within 3 hexes heals 3 HP immediately\nCreate 2 Forest terrain hexes adjacent to Rootweavers\nVerdant Zone healing increases to 2 HP per turn (this round only)",
       "flavor": "Life finds a way, even in ruin."
     },
@@ -7793,7 +8970,7 @@
       "name": "FOREST SANCTUARY",
       "id": "elves-rootweaver-circle-forest-sanctuary",
       "type": "Defense / Fortification",
-      "priority": "High (when Rootweavers at ≤4 HP)",
+      "priority": "High (when Rootweavers at \u22644 HP)",
       "effect": "Rootweavers gain +3 Defense until next turn\nAll hexes adjacent to Rootweavers become Dense Forest (blocks line of sight)\nAllied units within 2 hexes gain **Regeneration 2**",
       "flavor": "In the deepest woods, we cannot be touched."
     },
@@ -7889,8 +9066,8 @@
       "supportUnit": "DRONE SWARM",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "⚔️ HARASSMENT STRIKE",
-      "id": "emergent-drone-swarm-⚔️-harassment-strike",
+      "name": "\u2694\ufe0f HARASSMENT STRIKE",
+      "id": "emergent-drone-swarm-\u2694\ufe0f-harassment-strike",
       "type": "Attack / Distraction",
       "priority": "Medium (when adjacent to enemy)",
       "effect": "Attack closest enemy for 2 damage\nTarget has -1 to all actions next turn (distracted by buzzing)\nGenerate 1 Metamorph token for closest Syndicate Casket\nSwarm moves 4 hexes away after attack (hit-and-run)",
@@ -7900,8 +9077,8 @@
       "supportUnit": "DRONE SWARM",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "️ PHEROMONE CLOUD",
-      "id": "emergent-drone-swarm-️-pheromone-cloud",
+      "name": "\ufe0f PHEROMONE CLOUD",
+      "id": "emergent-drone-swarm-\ufe0f-pheromone-cloud",
       "type": "Buff / Area Control",
       "priority": "High (when 2+ allies within 4 hexes)",
       "effect": "Create 3-hex radius pheromone cloud (colored mist)\nAllied Syndicate units in cloud gain +1 SP this turn\nEnemies in cloud have -1 Defense (disoriented)\nCloud lasts 2 turns",
@@ -7914,7 +9091,7 @@
       "name": "DISPERSE AND REFORM",
       "id": "emergent-drone-swarm-disperse-and-reform",
       "type": "Defense / Mobility",
-      "priority": "Critical (when HP ≤ 3 or taking AOE damage)",
+      "priority": "Critical (when HP \u2264 3 or taking AOE damage)",
       "effect": "Swarm becomes immune to damage this turn (fully dispersed)\nCannot attack or act (reforming)\nMove up to 8 hexes to safe location\nNext turn, gain +3 HP (swarm reconstitutes)",
       "flavor": "You cannot kill the swarm. We are everywhere."
     },
@@ -7944,10 +9121,10 @@
       "supportUnit": "MOLT GUARDIAN",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "️ DEFENSIVE MOLT",
-      "id": "emergent-molt-guardian-️-defensive-molt",
+      "name": "\ufe0f DEFENSIVE MOLT",
+      "id": "emergent-molt-guardian-\ufe0f-defensive-molt",
       "type": "Reactive / Healing",
-      "priority": "Critical (when HP ≤ 10)",
+      "priority": "Critical (when HP \u2264 10)",
       "effect": "Molt exoskeleton (visual: old shell cracks and falls away)\nRecover 5 HP immediately\nGain +1 Defense permanently (max Defense 6)\nRemove all debuffs/status effects (bleed, poison, etc.)\nCannot move this turn (molting is exhausting)",
       "flavor": "Shed weakness. Embrace evolution."
     },
@@ -7999,10 +9176,10 @@
       "supportUnit": "MOLT GUARDIAN",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "⚡ BERSERKER MOLT",
-      "id": "emergent-molt-guardian-⚡-berserker-molt",
+      "name": "\u26a1 BERSERKER MOLT",
+      "id": "emergent-molt-guardian-\u26a1-berserker-molt",
       "type": "Attack / Transformation",
-      "priority": "Critical (when HP ≤ 6 or ally destroyed)",
+      "priority": "Critical (when HP \u2264 6 or ally destroyed)",
       "effect": "Emergency molt (discard all armor, become vulnerable)\nLose all Defense bonuses (Defense becomes 0)\nGain +3 Movement and +4 damage to all attacks\nAttack twice this turn if able\nLasts until end of round, then recover 1 Defense",
       "flavor": "In desperation, the guardian becomes the predator."
     },
@@ -8010,8 +9187,8 @@
       "supportUnit": "ADAPTATION FORM",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "️ ASSAULT FORM SHIFT",
-      "id": "emergent-adaptation-form-️-assault-form-shift",
+      "name": "\ufe0f ASSAULT FORM SHIFT",
+      "id": "emergent-adaptation-form-\ufe0f-assault-form-shift",
       "type": "Transformation / Offense",
       "priority": "High (when enemies clustered or ally needs damage)",
       "effect": "Transform into Assault Form (blade-limbed mantis)\nGain +3 damage to all attacks\nLose -1 Defense (vulnerable while aggressive)\nAllied Syndicate units within 4 hexes gain +1 damage\nLasts 2 turns",
@@ -8021,8 +9198,8 @@
       "supportUnit": "ADAPTATION FORM",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "️ TANK FORM SHIFT",
-      "id": "emergent-adaptation-form-️-tank-form-shift",
+      "name": "\ufe0f TANK FORM SHIFT",
+      "id": "emergent-adaptation-form-\ufe0f-tank-form-shift",
       "type": "Transformation / Defense",
       "priority": "High (when taking heavy damage or ally endangered)",
       "effect": "Transform into Tank Form (armored beetle)\nGain +3 Defense (total Defense 4)\nMovement reduced to 3\nAllied Syndicate units within 4 hexes gain +1 Defense\nLasts 2 turns",
@@ -8167,7 +9344,7 @@
       "name": "SMOKE SCREEN",
       "id": "nomads-outrider-squadron-smoke-screen",
       "type": "Utility / Escape",
-      "priority": "Critical (when Outriders HP ≤ 3)",
+      "priority": "Critical (when Outriders HP \u2264 3)",
       "effect": "Outriders deploy smoke grenades\nCreate 3-hex smoke cloud (blocks LOS)\nImmediately move 5 hexes through smoke\nAll allies in smoke gain +2 Defense until smoke clears (2 turns)",
       "flavor": "Can't hit what you can't see!"
     },
@@ -8476,7 +9653,7 @@
       "id": "vestige-bloodlines-feral-pack-pack-tactics",
       "type": "Attack / Coordinated",
       "priority": "High (when 2+ Pack members alive)",
-      "effect": "Pack swarms 1 enemy from multiple angles\nDeal damage equal to (3 × number of Pack members alive) [max 21 damage if all 7 alive]\nTarget cannot counterattack (overwhelmed)\nIf Pack has 5+ members, target gains \"Bleeding\" (2 damage/turn)",
+      "effect": "Pack swarms 1 enemy from multiple angles\nDeal damage equal to (3 \u00d7 number of Pack members alive) [max 21 damage if all 7 alive]\nTarget cannot counterattack (overwhelmed)\nIf Pack has 5+ members, target gains \"Bleeding\" (2 damage/turn)",
       "flavor": "One wolf is dangerous. Seven is a massacre."
     },
     {
@@ -8552,7 +9729,7 @@
       "name": "FRENZY MODE",
       "id": "vestige-bloodlines-mutation-hulk-frenzy-mode",
       "type": "Attack / Rampage",
-      "priority": "Critical (when Hulk HP ≤ 8)",
+      "priority": "Critical (when Hulk HP \u2264 8)",
       "effect": "Hulk enters berserk state\n+4 damage to all attacks\n+2 movement\nAttack nearest unit each turn (friend or foe - cannot distinguish)\nLasts until Hulk recovers above 8 HP",
       "flavor": "RAGE. BLOOD. KILL. KILL. KILL!"
     },
@@ -8585,7 +9762,7 @@
       "name": "CONSUME OFFSPRING",
       "id": "vestige-bloodlines-broodmother-consume-offspring",
       "type": "Healing / Sacrifice",
-      "priority": "Critical (when Broodmother HP ≤ 6)",
+      "priority": "Critical (when Broodmother HP \u2264 6)",
       "effect": "Broodmother devours 1 of her own Spawn\nRecover 5 HP\nGain 1 Biomass Token\nOther Spawn become frenzied (+3 damage for 1 turn, watching their sibling die)",
       "flavor": "Come to mother, dear. You'll serve better... inside me."
     },
@@ -8609,7 +9786,7 @@
       "type": "Utility / Disruption",
       "priority": "High",
       "effect": "Pixies move up to 6 hexes toward nearest enemy\nAll enemies within 2 hexes must discard 1 random card from hand (pixies steal them mid-air)\nPixies gain 1 Wyrd Token for each card stolen (max 2 per turn)",
-      "flavor": "Give that back! That's—HEY! STOP LAUGHING!"
+      "flavor": "Give that back! That's\u2014HEY! STOP LAUGHING!"
     },
     {
       "supportUnit": "PIXIE SWARM",
@@ -8717,7 +9894,7 @@
       "name": "PANIC REVEAL",
       "id": "wyrd-changeling-infiltrator-panic-reveal",
       "type": "Utility / Fear",
-      "priority": "Critical (when Changeling HP ≤ 3)",
+      "priority": "Critical (when Changeling HP \u2264 3)",
       "effect": "Changeling drops disguise, revealing blank featureless face\nAll enemies within 3 hexes must roll Morale check (TN 5+)\nFailures: Enemy unit loses next turn (paralyzed by uncanny horror)\nChangeling recovers 3 HP (feeds on fear)",
       "flavor": "You wanted to see my real face? HERE IT IS."
     },
@@ -8761,7 +9938,7 @@
       "name": "CONTRACT CLAUSE: ENDURE",
       "id": "wyrd-oath-bound-servants-contract-clause-endure",
       "type": "Defense / Resilience",
-      "priority": "Medium (when Servants HP ≤ 6)",
+      "priority": "Medium (when Servants HP \u2264 6)",
       "effect": "Servants do not move\nGain +4 Defense until end of round\nRecover 3 HP (contract prevents true death)\nAll damage taken is reduced by 2 (minimum 1)",
       "flavor": "We cannot die. We are bound. This is our curse."
     },
