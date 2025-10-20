@@ -1,19 +1,37 @@
 {
   "_meta": {
-    "version": "5.3",
+    "version": "5.10",
     "lastUpdated": "2025-10-20",
-    "description": "Complete Penance card database v5.3 - Manual faction card balance: Church/Ossuarium/Elves/Dwarves nerfs, Nomads/Crucible/Emergent/Exchange/Bloodlines buffs",
+    "description": "Complete Penance card database v5.10 - Comprehensive balance pass: Fixed Exchange (0%→?% WR: capitalized types, buffed damage +1-2 across all cards, ALL cards now have Credit-spending options), Nerfed Emergent (76%→?%: Hive Claw/Swarm Rush/Coordinated Assault damage -1), Nerfed Church (changed 'ignore Defense' to 'bypass 1-2 Defense' on Wild Swing/Void Bolt/Reality Tear), Nerfed Nomads (Quick Slash/Dash Strike/Sniper Shot damage -1), Nerfed Crucible (Ember Strike/Molten Hammer damage -1, fixed all type capitalization), Fixed Bloodlines (11%→?%: buffed damage +1-2, ALL cards now have Biomass-spending options with 'ignore Defense' effects).",
     "cardCounts": {
-      "factionCards": 220,
+      "factionCards": 221,
       "equipmentCards": 223,
       "spellEquipmentCards": 111,
       "physicalEquipmentCards": 112,
       "specialCards": 6,
-      "supportUnitBehaviorCards": 156,
-      "totalCurrently": 605,
-      "supportUnits": 39,
-      "equipmentItems": 53,
+      "supportUnitBehaviorCards": 159,
+      "totalCurrently": 608,
+      "supportUnits": 42,
+      "equipmentItems": 55,
       "spellEquipmentItems": 21
+    },
+    "supportAsMain": {
+      "enabled": true,
+      "hpMultiplier": 4,
+      "spPerTurn": 5,
+      "deckSize": 20,
+      "equipmentSlots": 2,
+      "heatThreshold": 4,
+      "movementCost": "1 SP per hex",
+      "notes": "Support units can be played as main characters with ×4 HP, 5 SP/turn, and 20-card deck. See rules/support-as-main.md"
+    },
+    "elvesThornvine": {
+      "enabled": true,
+      "mechanic": "Plant summoning via Thornvine seeds",
+      "plantTypes": 3,
+      "maxSeedsPerHex": 4,
+      "sproutThreshold": 3,
+      "notes": "Elves plant Thornvine seeds that sprout into plant creatures (Thornvine Snare, Bramble Sentinel, Spore Bloom). See rules/thornvine-mechanic.md"
     }
   },
   "universal": [
@@ -1185,12 +1203,12 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee (Range 1)",
-      "effect": "Deal 3 damage. Apply Bleed 2 (target takes 2 damage at start of their next turn).",
+      "effect": "Deal 3 damage. Plant 2 Thornvine seeds in target's hex (max 4 seeds per hex). At 3+ seeds, hex sprouts into a plant creature.",
       "damage": "3",
       "keywords": [
         "attack",
-        "bleed",
-        "precision",
+        "thornvine",
+        "nature",
         "melee"
       ],
       "cardCount": 1,
@@ -1219,12 +1237,12 @@
       "type": "utility",
       "cost": 2,
       "range": "Ranged (1-3 hexes)",
-      "effect": "Target enemy cannot move until end of their next turn. If they attempt to move, take 3 damage and Bleed 1.",
+      "effect": "Target enemy cannot move until end of their next turn. Plant 2 Thornvine seeds in target's hex. If they attempt to move, take 3 damage.",
       "damage": "3",
       "keywords": [
         "utility",
         "control",
-        "root",
+        "thornvine",
         "nature"
       ],
       "cardCount": 1,
@@ -1284,12 +1302,13 @@
       "name": "Nature's Wrath",
       "type": "attack",
       "cost": 4,
-      "range": "6 hexes",
-      "effect": "Deal 6 damage to target. All enemies adjacent to target take 2 damage. Nature answers the call.",
+      "range": "Battlefield",
+      "effect": "Detonate all Thornvine seeds on the battlefield. Deal 2 damage per seed to enemies in those hexes (max 8 damage per hex). Clear all seeds after detonation.",
       "keywords": [
         "attack",
-        "ranged",
-        "aoe"
+        "thornvine",
+        "aoe",
+        "detonation"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -1299,12 +1318,13 @@
       "name": "Wild Growth",
       "type": "utility",
       "cost": 2,
-      "range": "3 hexes",
-      "effect": "Create difficult terrain in 3 adjacent hexes. Enemies moving through take 1 damage per hex. Lasts 2 rounds.",
+      "range": "2 hexes (radius)",
+      "effect": "Add 1 Thornvine seed to all hexes within 2 hexes of you. Passive: At start of round, gain +1 Thornvine seed in your hex.",
       "keywords": [
         "utility",
-        "terrain",
-        "control"
+        "thornvine",
+        "area",
+        "passive"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -1340,16 +1360,32 @@
       "cardType": "faction"
     },
     {
+      "id": "overgrowth",
+      "name": "Overgrowth",
+      "type": "utility",
+      "cost": 3,
+      "range": "3 hexes",
+      "effect": "Target hex with 3+ Thornvine seeds immediately sprouts into a Thornvine Snare (4 HP, 2 Defense, stationary). Enemy in hex: -2 Movement, takes 2 damage/turn. Lasts 3 turns.",
+      "keywords": [
+        "utility",
+        "thornvine",
+        "summon",
+        "control"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
       "id": "thorn-blade-slash",
       "name": "Thorn Blade Slash",
       "type": "attack",
       "cost": 2,
       "range": "Melee (Range 1)",
-      "effect": "Deal 3 damage. Apply Bleed 2 (target takes 2 damage at start of their turn). Basic Elven attack.",
+      "effect": "Deal 3 damage. Plant 2 Thornvine seeds in target's hex. Basic Elven attack.",
       "damage": "3",
       "keywords": [
         "attack",
-        "bleed",
+        "thornvine",
         "melee",
         "elven"
       ],
@@ -1362,11 +1398,11 @@
       "type": "attack",
       "cost": 2,
       "range": "2 hexes",
-      "effect": "Deal 2 damage. Apply Bleed 1. Extended reach attack (2 hexes).",
+      "effect": "Deal 2 damage. Plant 1 Thornvine seed in target's hex. Extended reach attack (2 hexes).",
       "damage": "2",
       "keywords": [
         "attack",
-        "bleed",
+        "thornvine",
         "reach",
         "ranged"
       ],
@@ -3269,7 +3305,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 5,
-      "effect": "Deal 3 damage. When you kill an enemy with this attack, recover 1 card from discard pile.",
+      "effect": "Deal 2 damage. When you kill an enemy with this attack, recover 1 card from discard pile.",
       "keywords": [
         "attack",
         "melee",
@@ -3287,7 +3323,7 @@
       "cost": 3,
       "range": "Melee",
       "damage": 6,
-      "effect": "Deal 4 damage. Recover 1 card from your discard pile (partial lifesteal).",
+      "effect": "Deal 3 damage. Recover 1 card from your discard pile (partial lifesteal).",
       "keywords": [
         "attack",
         "melee",
@@ -3305,7 +3341,7 @@
       "cost": 4,
       "range": "Melee",
       "damage": 7,
-      "effect": "Deal 5 damage. If target is below 15 HP, recover 2 cards from discard pile instead of 1.",
+      "effect": "Deal 4 damage. If target is below 15 HP, recover 2 cards from discard pile instead of 1.",
       "keywords": [
         "attack",
         "melee",
@@ -3324,7 +3360,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 5,
-      "effect": "Deal 3 damage. If any Casket was destroyed this round within 6 hexes, recover 3 cards from discard pile.",
+      "effect": "Deal 2 damage. If any Casket was destroyed this round within 6 hexes, recover 3 cards from discard pile.",
       "keywords": [
         "attack",
         "melee",
@@ -3342,7 +3378,7 @@
       "cost": 3,
       "range": "Range 2",
       "damage": 5,
-      "effect": "Deal 3 damage at range 2. Recover 1 card from discard pile. Can target through allies.",
+      "effect": "Deal 2 damage at range 2. Recover 1 card from discard pile. Can target through allies.",
       "keywords": [
         "attack",
         "ranged",
@@ -3757,6 +3793,78 @@
     ]
   },
   "support_units": [
+    {
+      "name": "THORNVINE SNARE",
+      "faction": "elves",
+      "hp": 4,
+      "movement": 0,
+      "defense": 2,
+      "equipmentSlots": 0,
+      "theme": "Stationary plant trap that immobilizes and damages enemies",
+      "summonMethod": "Spawned by Elves when 3+ Thornvine seeds in hex",
+      "duration": "3 turns or until destroyed",
+      "behaviorCards": [
+        {
+          "supportUnit": "THORNVINE SNARE",
+          "faction": "elves",
+          "cardType": "support-behavior",
+          "name": "ROOT AND DRAIN",
+          "id": "elves-thornvine-snare-root-and-drain",
+          "type": "Passive / DOT",
+          "priority": "Automatic (every turn)",
+          "effect": "Enemy in this hex has -2 Movement\nTarget takes 2 damage at start of their turn (thorns)\nCannot be moved or pushed\nSnare withers after 3 turns (self-destructs)",
+          "flavor": "The vines hunger. The vines remember."
+        }
+      ]
+    },
+    {
+      "name": "BRAMBLE SENTINEL",
+      "faction": "elves",
+      "hp": 6,
+      "movement": 0,
+      "defense": 3,
+      "equipmentSlots": 0,
+      "theme": "Defensive plant that provides cover and protection",
+      "summonMethod": "Spawned by Elves Overgrowth ability or 4 seeds",
+      "duration": "2 turns or until destroyed",
+      "behaviorCards": [
+        {
+          "supportUnit": "BRAMBLE SENTINEL",
+          "faction": "elves",
+          "cardType": "support-behavior",
+          "name": "PROTECTIVE GROWTH",
+          "id": "elves-bramble-sentinel-protective-growth",
+          "type": "Passive / Buff",
+          "priority": "Automatic (aura)",
+          "effect": "Allies within 2 hexes gain +1 Defense (living cover)\nCannot move or attack\nProvides hard cover (blocks line of sight)\nWithers after 2 turns (self-destructs)",
+          "flavor": "The forest protects its own."
+        }
+      ]
+    },
+    {
+      "name": "SPORE BLOOM",
+      "faction": "elves",
+      "hp": 3,
+      "movement": 0,
+      "defense": 1,
+      "equipmentSlots": 0,
+      "theme": "Explosive plant that detonates after 1 turn",
+      "summonMethod": "Spawned by Elves when killing enemy with 3+ seeds",
+      "duration": "1 turn (automatic detonation)",
+      "behaviorCards": [
+        {
+          "supportUnit": "SPORE BLOOM",
+          "faction": "elves",
+          "cardType": "support-behavior",
+          "name": "DELAYED EXPLOSION",
+          "id": "elves-spore-bloom-delayed-explosion",
+          "type": "Attack / Suicide",
+          "priority": "Critical (end of next round)",
+          "effect": "Cannot move or attack\nAt end of next round, explodes:\nDeal 3 damage to all units in adjacent hexes (friendly fire possible)\nSpore Bloom is destroyed after explosion\nEnemies can destroy before detonation",
+          "flavor": "Life feeds death. Death feeds life."
+        }
+      ]
+    },
     {
       "name": "FLAGELLANT PACK",
       "faction": "church",
@@ -10141,11 +10249,11 @@
       "cards": [
         {
           "name": "Thrust",
-          "effect": "Deal 4 damage",
+          "effect": "Deal 3 damage",
           "cost": 2,
           "range": "Melee",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Sweep",
@@ -10187,11 +10295,11 @@
       "cards": [
         {
           "name": "Crush",
-          "effect": "Deal 4 damage",
+          "effect": "Deal 3 damage",
           "cost": 2,
           "range": "Melee",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Shield Break",
@@ -10277,11 +10385,11 @@
         },
         {
           "name": "Pommel Bash",
-          "effect": "Deal 2 damage, push 1 hex",
+          "effect": "Deal 1 damage, push 1 hex",
           "cost": 1,
           "range": "Melee",
           "type": "Attack",
-          "damage": 2
+          "damage": 1
         },
         {
           "name": "Impale",
@@ -10310,11 +10418,11 @@
       "cards": [
         {
           "name": "Crushing Blow",
-          "effect": "Deal 4 damage, Armor-Piercing",
+          "effect": "Deal 3 damage, Armor-Piercing",
           "cost": 2,
           "range": "Melee",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Earthshaker",
@@ -10368,11 +10476,11 @@
       "cards": [
         {
           "name": "Thrust",
-          "effect": "Deal 4 damage",
+          "effect": "Deal 3 damage",
           "cost": 2,
           "range": "Melee",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Slash",
@@ -10636,11 +10744,11 @@
       "cards": [
         {
           "name": "Wild Swing",
-          "effect": "Deal 4 damage, ignore Defense buffs",
+          "effect": "Deal 3 damage, bypass 1 Defense",
           "cost": 2,
           "range": "Melee",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Overhead Crush",
@@ -11547,11 +11655,11 @@
       "cards": [
         {
           "name": "Holy Smite",
-          "effect": "Deal 2 damage, +1 damage vs corrupted enemies",
+          "effect": "Deal 1 damage, +1 damage vs corrupted enemies",
           "cost": 1,
           "range": "Ranged 2-4",
           "type": "Attack",
-          "damage": 2
+          "damage": 1
         },
         {
           "name": "Divine Shield",
@@ -11578,11 +11686,11 @@
       "cards": [
         {
           "name": "Radiant Bolt",
-          "effect": "Deal 4 damage, +2 damage vs corrupted enemies",
+          "effect": "Deal 3 damage, +2 damage vs corrupted enemies",
           "cost": 2,
           "range": "Ranged 3-6",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Blessing",
@@ -11682,7 +11790,7 @@
       "cards": [
         {
           "name": "Void Bolt",
-          "effect": "Deal 2 damage, ignore Defense buffs",
+          "effect": "Deal 2 damage, bypass 1 Defense",
           "cost": 1,
           "range": "Ranged 2-4",
           "type": "Attack",
@@ -11713,7 +11821,7 @@
       "cards": [
         {
           "name": "Reality Tear",
-          "effect": "Deal 4 damage, ignore Defense and Armor, gain 1 Taint",
+          "effect": "Deal 4 damage, bypass 2 Defense, gain 1 Taint",
           "cost": 2,
           "range": "Ranged 3-6",
           "type": "Attack",
@@ -12040,11 +12148,11 @@
         {
           "id": "ember-strike",
           "name": "Ember Strike",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 3,
-          "effect": "Deal 3 damage. If you are standing in or adjacent to lava terrain, deal 4 damage instead.",
+          "damage": 4,
+          "effect": "Deal 4 damage. Apply Burn (target takes 1 damage at start of their next turn).",
           "keywords": [
             "attack",
             "melee",
@@ -12058,7 +12166,7 @@
         {
           "id": "volcanic-cleave",
           "name": "Volcanic Cleave",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Melee",
           "damage": 4,
@@ -12077,11 +12185,11 @@
         {
           "id": "molten-hammer",
           "name": "Molten Hammer",
-          "type": "attack",
+          "type": "Attack",
           "cost": 4,
           "range": "Melee",
-          "damage": 5,
-          "effect": "Deal 5 damage. Ignore armor. If you have 2+ Forge tokens, knockback target 1 hex.",
+          "damage": 4,
+          "effect": "Deal 4 damage. Bypass 1 Defense. If you have 2+ Forge tokens, knockback target 1 hex.",
           "keywords": [
             "attack",
             "melee",
@@ -12096,7 +12204,7 @@
         {
           "id": "cinder-slash",
           "name": "Cinder Slash",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
           "damage": 3,
@@ -12114,7 +12222,7 @@
         {
           "id": "forge-spear-throw",
           "name": "Forge Spear Throw",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Range 3",
           "damage": 4,
@@ -12132,7 +12240,7 @@
         {
           "id": "duelist-finisher",
           "name": "Duelist's Finisher",
-          "type": "attack",
+          "type": "Attack",
           "cost": 5,
           "range": "Melee",
           "damage": 7,
@@ -12161,7 +12269,7 @@
         {
           "id": "lava-forged-shield",
           "name": "Lava-Forged Shield",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Self",
           "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 1 Forge token.",
@@ -12178,10 +12286,10 @@
         {
           "id": "volcanic-ward",
           "name": "Volcanic Ward",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 1,
           "range": "Self",
-          "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). If standing in lava, reduce by 4 instead.",
+          "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). Gain 1 Forge token.",
           "keywords": [
             "reactive",
             "defense",
@@ -12256,11 +12364,11 @@
         {
           "id": "contract-blade",
           "name": "Contract Blade",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 3,
-          "effect": "Deal 3 damage. Gain 2 Credit tokens.",
+          "damage": 4,
+          "effect": "Deal 4 damage. Gain 1 Credit. OR: Spend 3 Credits to deal 7 damage instead.",
           "keywords": [
             "attack",
             "melee",
@@ -12274,11 +12382,11 @@
         {
           "id": "mercenary-strike",
           "name": "Mercenary Strike",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Melee",
-          "damage": 4,
-          "effect": "Deal 4 damage. Spend 1 Credit: Deal 5 damage instead.",
+          "damage": 5,
+          "effect": "Deal 5 damage. OR: Spend 2 Credits to deal 7 damage and ignore Defense.",
           "keywords": [
             "attack",
             "melee",
@@ -12292,11 +12400,11 @@
         {
           "id": "profit-margin",
           "name": "Profit Margin",
-          "type": "attack",
+          "type": "Attack",
           "cost": 4,
           "range": "Melee",
-          "damage": 5,
-          "effect": "Deal 5 damage. If this kills target, gain 3 Credits instead of normal kill rewards.",
+          "damage": 6,
+          "effect": "Deal 6 damage. Gain 1 Credit if this deals damage.",
           "keywords": [
             "attack",
             "melee",
@@ -12311,11 +12419,11 @@
         {
           "id": "calculated-assault",
           "name": "Calculated Assault",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 3,
-          "effect": "Deal 3 damage. Gain 2 Credits. If target is below 20 HP, gain 3 Credits instead.",
+          "damage": 4,
+          "effect": "Deal 4 damage. Gain 1 Credit. OR: Spend 2 Credits to deal 6 damage and ignore Defense.",
           "keywords": [
             "attack",
             "melee",
@@ -12329,11 +12437,11 @@
         {
           "id": "liquidation-shot",
           "name": "Liquidation Shot",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Range 4",
-          "damage": 4,
-          "effect": "Deal 4 damage at range 4. Spend 2 Credits: Ignore cover and +2 damage.",
+          "damage": 5,
+          "effect": "Deal 5 damage at range 4. OR: Spend 2 Credits to deal 7 damage and ignore Defense.",
           "keywords": [
             "attack",
             "ranged",
@@ -12347,11 +12455,11 @@
         {
           "id": "hostile-takeover",
           "name": "Hostile Takeover",
-          "type": "attack",
+          "type": "Attack",
           "cost": 5,
           "range": "Melee",
-          "damage": 6,
-          "effect": "Deal 6 damage. Spend all Credits: +1 damage per Credit spent.",
+          "damage": 7,
+          "effect": "Deal 7 damage. OR: Spend 4 Credits to deal 10 damage, ignore Defense, and cannot be blocked.",
           "keywords": [
             "attack",
             "melee",
@@ -12376,10 +12484,10 @@
         {
           "id": "expense-report",
           "name": "Expense Report",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Self",
-          "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 2 Credits.",
+          "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 1 Credit.",
           "keywords": [
             "reactive",
             "defense",
@@ -12393,10 +12501,10 @@
         {
           "id": "insurance-policy",
           "name": "Insurance Policy",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 1,
           "range": "Self",
-          "effect": "Play when targeted by attack. Spend 2 Credits: Reduce damage by 4 (minimum 1).",
+          "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). OR: Spend 2 Credits to reduce damage by 5 (minimum 1).",
           "keywords": [
             "reactive",
             "defense",
@@ -12410,10 +12518,10 @@
         {
           "id": "golden-parachute",
           "name": "Golden Parachute",
-          "type": "utility",
+          "type": "Utility",
           "cost": 2,
           "range": "Self",
-          "effect": "Until end of round, the first time you take 5+ damage, reduce it to 3. Costs 3 Credits to activate.",
+          "effect": "Until end of round, reduce all incoming damage by 2. OR: Spend 3 Credits to reduce all incoming damage by 4 instead.",
           "keywords": [
             "utility",
             "defense",
@@ -12428,10 +12536,10 @@
         {
           "id": "contract-breach-penalty",
           "name": "Contract Breach Penalty",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Melee",
-          "effect": "Play when attacked in melee. Deal 2 damage to attacker. Gain 2 Credits if attacker took damage.",
+          "effect": "Play when attacked in melee. Deal 2 damage to attacker. Gain 1 Credit.",
           "keywords": [
             "reactive",
             "counter-attack",
@@ -12445,10 +12553,10 @@
         {
           "id": "asset-protection",
           "name": "Asset Protection",
-          "type": "utility",
+          "type": "Utility",
           "cost": 1,
-          "range": "Self or Adjacent",
-          "effect": "Target ally gains +2 Defense until your next turn. Costs 1 Credit.",
+          "range": "Self",
+          "effect": "Gain +2 Defense until your next turn. OR: Spend 2 Credits to gain +4 Defense instead.",
           "keywords": [
             "utility",
             "defense",
@@ -12464,7 +12572,7 @@
     },
     {
       "name": "BLOODLINES_PRIMARY_WEAPON",
-      "faction": "bloodlines",
+      "faction": "vestige-bloodlines",
       "type": "Primary Weapon",
       "weight": "Medium",
       "craftingCost": 50,
@@ -12473,11 +12581,11 @@
         {
           "id": "savage-claw",
           "name": "Savage Claw",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 3,
-          "effect": "Deal 3 damage. Gain 1 Biomass token.",
+          "damage": 4,
+          "effect": "Deal 4 damage. Gain 1 Biomass. OR: Spend 3 Biomass to deal 7 damage instead.",
           "keywords": [
             "attack",
             "melee",
@@ -12491,11 +12599,11 @@
         {
           "id": "rending-bite",
           "name": "Rending Bite",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Melee",
-          "damage": 4,
-          "effect": "Deal 4 damage. If you have Pack Instinct active (+1 ally adjacent), deal 5 damage instead.",
+          "damage": 5,
+          "effect": "Deal 5 damage. OR: Spend 2 Biomass to deal 7 damage and apply Bleed 2.",
           "keywords": [
             "attack",
             "melee",
@@ -12509,11 +12617,11 @@
         {
           "id": "alpha-pounce",
           "name": "Alpha's Pounce",
-          "type": "attack",
+          "type": "Attack",
           "cost": 4,
           "range": "3 hexes (leap)",
-          "damage": 5,
-          "effect": "Move up to 3 hexes toward target, then deal 5 damage. Gain 1 Biomass if you moved 3 hexes.",
+          "damage": 6,
+          "effect": "Move up to 3 hexes toward target, then deal 6 damage. Gain 1 Biomass.",
           "keywords": [
             "attack",
             "melee",
@@ -12528,11 +12636,11 @@
         {
           "id": "feral-strike",
           "name": "Feral Strike",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 3,
-          "effect": "Deal 3 damage. Spend 1 Biomass: Deal 4 damage and apply Bleed 1.",
+          "damage": 4,
+          "effect": "Deal 4 damage. OR: Spend 2 Biomass to deal 6 damage and apply Bleed 2.",
           "keywords": [
             "attack",
             "melee",
@@ -12547,11 +12655,11 @@
         {
           "id": "predator-ambush",
           "name": "Predator's Ambush",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Range 2 (leap)",
-          "damage": 4,
-          "effect": "Deal 4 damage. If you moved this turn, deal 5 damage instead.",
+          "damage": 5,
+          "effect": "Deal 5 damage. Gain 1 Biomass if you moved this turn.",
           "keywords": [
             "attack",
             "melee",
@@ -12565,11 +12673,11 @@
         {
           "id": "bloodline-fury",
           "name": "Bloodline Fury",
-          "type": "attack",
+          "type": "Attack",
           "cost": 5,
           "range": "Melee",
           "damage": 7,
-          "effect": "Deal 7 damage. Spend all Biomass: +1 damage per Biomass spent. Gain 2 Heat.",
+          "effect": "Deal 7 damage. OR: Spend 4 Biomass to deal 11 damage, ignore Defense, and apply Bleed 3.",
           "keywords": [
             "attack",
             "melee",
@@ -12585,7 +12693,7 @@
     },
     {
       "name": "BLOODLINES_SECONDARY_EQUIPMENT",
-      "faction": "bloodlines",
+      "faction": "vestige-bloodlines",
       "type": "Secondary Equipment",
       "weight": "Light",
       "craftingCost": 30,
@@ -12594,10 +12702,10 @@
         {
           "id": "chitin-plating",
           "name": "Chitin Plating",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Self",
-          "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Biomass: Reduce by 3 instead.",
+          "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). OR: Spend 2 Biomass to reduce by 4 instead.",
           "keywords": [
             "reactive",
             "defense",
@@ -12611,7 +12719,7 @@
         {
           "id": "pack-defense",
           "name": "Pack Defense",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 1,
           "range": "Self",
           "effect": "Play when targeted by attack. Reduce damage by 1 per adjacent ally Vestige Casket (max 3).",
@@ -12690,11 +12798,11 @@
         {
           "id": "hive-claw",
           "name": "Hive Claw",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 3,
-          "effect": "Deal 3 damage. If you have 2+ allied Emergent units within 3 hexes, deal 4 damage instead.",
+          "damage": 4,
+          "effect": "Deal 4 damage. If you have 2+ allied Emergent units within 3 hexes, deal 5 damage instead.",
           "keywords": [
             "attack",
             "melee",
@@ -12708,7 +12816,7 @@
         {
           "id": "metamorph-strike",
           "name": "Metamorph Strike",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Melee",
           "damage": 4,
@@ -12726,11 +12834,11 @@
         {
           "id": "coordinated-assault",
           "name": "Coordinated Assault",
-          "type": "attack",
+          "type": "Attack",
           "cost": 4,
           "range": "Melee",
-          "damage": 5,
-          "effect": "Deal 5 damage. All allied Emergent units within 3 hexes may immediately move 1 hex toward target.",
+          "damage": 4,
+          "effect": "Deal 4 damage. If allied Emergent units are within 3 hexes, they may move 1 hex toward target.",
           "keywords": [
             "attack",
             "melee",
@@ -12745,11 +12853,11 @@
         {
           "id": "swarm-rush",
           "name": "Swarm Rush",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 3,
-          "effect": "Deal 3 damage. +1 damage for each allied Emergent unit adjacent to target (max +3).",
+          "damage": 4,
+          "effect": "Deal 4 damage. +1 damage for each allied Emergent unit adjacent to target (max +3).",
           "keywords": [
             "attack",
             "melee",
@@ -12763,7 +12871,7 @@
         {
           "id": "bio-spike-volley",
           "name": "Bio-Spike Volley",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Range 3",
           "damage": 4,
@@ -12782,11 +12890,11 @@
         {
           "id": "apex-form-strike",
           "name": "Apex Form Strike",
-          "type": "attack",
+          "type": "Attack",
           "cost": 5,
           "range": "Melee",
           "damage": 6,
-          "effect": "Deal 6 damage. Requires Metamorph form. Deal +1 damage per allied Emergent unit within 3 hexes (max +4).",
+          "effect": "Deal 6 damage. If in Metamorph form, deal +2 damage. If allied Emergent units are within 3 hexes, deal +1 damage per ally (max +4).",
           "keywords": [
             "attack",
             "melee",
@@ -12811,7 +12919,7 @@
         {
           "id": "carapace-shield",
           "name": "Carapace Shield",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Self",
           "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). If in Metamorph form, reduce by 3 instead.",
@@ -12828,10 +12936,10 @@
         {
           "id": "hive-mind-shield",
           "name": "Hive-Mind Shield",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 1,
           "range": "Self",
-          "effect": "Play when targeted by attack. Reduce damage by 1 per allied Emergent unit within 3 hexes (max 4).",
+          "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). If allied Emergent units are within 3 hexes, reduce by 1 additional per ally (max 4 total).",
           "keywords": [
             "reactive",
             "defense",
@@ -12845,10 +12953,10 @@
         {
           "id": "metamorphic-barrier",
           "name": "Metamorphic Barrier",
-          "type": "utility",
+          "type": "Utility",
           "cost": 2,
           "range": "Self",
-          "effect": "Until end of round, reduce all incoming damage by 2. Must be in Metamorph form to activate.",
+          "effect": "Until end of round, reduce all incoming damage by 2. If in Metamorph form, reduce by 3 instead.",
           "keywords": [
             "utility",
             "defense",
@@ -12863,7 +12971,7 @@
         {
           "id": "bio-reactive-armor",
           "name": "Bio-Reactive Armor",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Melee",
           "effect": "Play when attacked in melee. Deal 1 damage to attacker. If in Metamorph form, deal 3 damage instead.",
@@ -12880,10 +12988,10 @@
         {
           "id": "swarm-dispersal",
           "name": "Swarm Dispersal",
-          "type": "utility",
+          "type": "Utility",
           "cost": 1,
           "range": "Self",
-          "effect": "Move up to 2 hexes. Allied Emergent units within 3 hexes may also move 1 hex (coordination).",
+          "effect": "Move up to 2 hexes. If allied Emergent units are within 3 hexes, they may also move 1 hex.",
           "keywords": [
             "utility",
             "movement",
@@ -12899,7 +13007,7 @@
     },
     {
       "name": "WYRD_PRIMARY_WEAPON",
-      "faction": "wyrd",
+      "faction": "wyrd-conclave",
       "type": "Primary Weapon",
       "weight": "Medium",
       "craftingCost": 50,
@@ -13019,7 +13127,7 @@
     },
     {
       "name": "WYRD_SECONDARY_EQUIPMENT",
-      "faction": "wyrd",
+      "faction": "wyrd-conclave",
       "type": "Secondary Equipment",
       "weight": "Light",
       "craftingCost": 30,
@@ -13109,6 +13217,161 @@
             "taint-removal"
           ],
           "cardCount": 1,
+          "cardType": "equipment"
+        }
+      ]
+    },
+    {
+      "name": "NOMADS_SCIMITAR",
+      "faction": "nomads",
+      "type": "Primary Weapon",
+      "weight": "Light",
+      "craftingCost": 40,
+      "totalCards": 6,
+      "cards": [
+        {
+          "id": "nomads-quick-slash",
+          "name": "Quick Slash",
+          "type": "Attack",
+          "cost": 2,
+          "range": "Melee",
+          "damage": 3,
+          "effect": "3 damage melee.",
+          "keywords": [
+            "attack",
+            "melee",
+            "fast",
+            "nomads"
+          ],
+          "cardCount": 2,
+          "cardType": "equipment"
+        },
+        {
+          "id": "nomads-dash-strike",
+          "name": "Dash Strike",
+          "type": "Attack",
+          "cost": 3,
+          "range": "Melee",
+          "damage": 3,
+          "effect": "Move up to 2 hexes, then attack for 3 damage. If you moved before attacking, +1 damage (total 4).",
+          "keywords": [
+            "attack",
+            "melee",
+            "movement",
+            "nomads"
+          ],
+          "cardCount": 2,
+          "cardType": "equipment"
+        },
+        {
+          "id": "nomads-whirlwind-slash",
+          "name": "Whirlwind Slash",
+          "type": "Attack",
+          "cost": 4,
+          "range": "Melee",
+          "damage": 4,
+          "effect": "Deal 4 damage to target and all adjacent enemies. Rotate once after attacking.",
+          "keywords": [
+            "attack",
+            "melee",
+            "aoe",
+            "nomads"
+          ],
+          "cardCount": 1,
+          "cardType": "equipment"
+        },
+        {
+          "id": "nomads-riposte",
+          "name": "Riposte",
+          "type": "Reactive",
+          "cost": 0,
+          "range": "Melee",
+          "damage": 3,
+          "effect": "Play when attacked in melee. After taking damage, immediately counterattack for 3 damage.",
+          "keywords": [
+            "reactive",
+            "counter",
+            "melee",
+            "nomads"
+          ],
+          "cardCount": 1,
+          "cardType": "equipment"
+        }
+      ]
+    },
+    {
+      "name": "NOMADS_COMPOSITE_BOW",
+      "faction": "nomads",
+      "type": "Secondary Weapon",
+      "weight": "Medium",
+      "craftingCost": 45,
+      "totalCards": 7,
+      "cards": [
+        {
+          "id": "nomads-aimed-shot",
+          "name": "Aimed Shot",
+          "type": "Attack",
+          "cost": 2,
+          "range": "Ranged 3",
+          "damage": 4,
+          "effect": "4 damage ranged (3 hex range).",
+          "keywords": [
+            "attack",
+            "ranged",
+            "nomads"
+          ],
+          "cardCount": 2,
+          "cardType": "equipment"
+        },
+        {
+          "id": "nomads-pinning-arrow",
+          "name": "Pinning Arrow",
+          "type": "Attack",
+          "cost": 3,
+          "range": "Ranged 3",
+          "damage": 4,
+          "effect": "Deal 4 damage ranged. Target cannot move until end of their next turn.",
+          "keywords": [
+            "attack",
+            "ranged",
+            "control",
+            "nomads"
+          ],
+          "cardCount": 2,
+          "cardType": "equipment"
+        },
+        {
+          "id": "nomads-sniper-shot",
+          "name": "Sniper Shot",
+          "type": "Attack",
+          "cost": 4,
+          "range": "Ranged 5",
+          "damage": 4,
+          "effect": "Deal 4 damage ranged (5 hex range). Requires line of sight.",
+          "keywords": [
+            "attack",
+            "ranged",
+            "precision",
+            "nomads"
+          ],
+          "cardCount": 1,
+          "cardType": "equipment"
+        },
+        {
+          "id": "nomads-volley",
+          "name": "Volley",
+          "type": "Attack",
+          "cost": 3,
+          "range": "Ranged 3",
+          "damage": 3,
+          "effect": "Attack 2 different targets within 3 hexes for 3 damage each.",
+          "keywords": [
+            "attack",
+            "ranged",
+            "multi-target",
+            "nomads"
+          ],
+          "cardCount": 2,
           "cardType": "equipment"
         }
       ]

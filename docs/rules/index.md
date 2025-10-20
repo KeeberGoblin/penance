@@ -27,6 +27,9 @@ Attack Dice, Defense Dice, and custom dice mechanics.
 ### [Support Units](support-units.md)
 AI companion rules for Penitent Squads, Sentinels, and Thralls.
 
+### [Support Units as Main Characters](support-as-main.md)
+**NEW!** Play as a support unit instead of a Casket. Underdog mode with ×4 HP, 5 SP, and 20-card deck.
+
 ### [Quick Reference](quick-reference.md)
 Printable 1-page reference sheet with all key rules.
 
