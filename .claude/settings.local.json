@@ -32,7 +32,9 @@
       "Bash(merge-faction-cards.py )",
       "Bash(extracted-equipment-cards.json )",
       "Bash(extracted-faction-cards.json )",
-      "Bash(archived-scripts/)"
+      "Bash(archived-scripts/)",
+      "Bash(timeout 180 python3 faction_balance_with_combos.py)",
+      "Bash(tee /tmp/simulation_output.txt)"
     ],
     "deny": [],
     "ask": []
