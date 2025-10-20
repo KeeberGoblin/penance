@@ -2,7 +2,7 @@
   "_meta": {
     "version": "5.1",
     "lastUpdated": "2025-10-20",
-    "description": "Complete Penance card database v5.1 - All 10 factions (21 cards each) + Universal (10) + Equipment (112 physical + 111 spell) + Special cards (6) + Support Units (39 units, 156 behavior cards)",
+    "description": "Complete Penance card database v5.1 - New physical equipment for 6 factions (baseline, no balance changes)",
     "cardCounts": {
       "factionCards": 220,
       "equipmentCards": 223,
@@ -1541,7 +1541,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 5,
+      "damage": 4,
       "effect": "Deal 5 damage, ignore 1 Defense.",
       "keywords": [
         "attack",
@@ -1575,7 +1575,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 6,
+      "damage": 5,
       "effect": "Attack twice for 3 damage each.",
       "keywords": [
         "attack",
@@ -1592,7 +1592,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 7,
+      "damage": 6,
       "effect": "Deal 7 damage. +2 if target \u226415 HP.",
       "keywords": [
         "attack",
@@ -1609,7 +1609,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 3,
+      "damage": 4,
       "effect": "3 damage to 2 adjacent targets.",
       "keywords": [
         "attack",
@@ -1626,7 +1626,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 5,
+      "damage": 4,
       "effect": "Deal 5 damage, move 1 hex after.",
       "keywords": [
         "attack",
@@ -1643,7 +1643,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 6,
+      "damage": 5,
       "effect": "6 damage. Discard 1 card for +2 damage.",
       "keywords": [
         "attack",
@@ -1676,7 +1676,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 2,
+      "damage": 4,
       "effect": "2 damage, push 1 hex.",
       "keywords": [
         "attack",
@@ -1740,7 +1740,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 6,
+      "damage": 5,
       "effect": "6 damage, ignore 1 Defense.",
       "keywords": [
         "attack",
@@ -1757,7 +1757,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 5,
+      "damage": 4,
       "effect": "5 damage AoE to 3 adjacent hexes.",
       "keywords": [
         "attack",
@@ -1775,7 +1775,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 5,
+      "damage": 4,
       "effect": "5 damage. Destroy 1 Component on Crit.",
       "keywords": [
         "attack",
@@ -1792,7 +1792,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 7,
+      "damage": 6,
       "effect": "7 damage. Add 1 Rune counter.",
       "keywords": [
         "attack",
@@ -1826,7 +1826,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 8,
+      "damage": 7,
       "effect": "8 damage. Can't move after.",
       "keywords": [
         "attack",
@@ -2103,7 +2103,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 4,
       "effect": "3 damage melee.",
       "keywords": [
         "attack",
@@ -2120,7 +2120,7 @@
       "type": "attack",
       "cost": 2,
       "range": "4 hexes",
-      "damage": 3,
+      "damage": 4,
       "effect": "3 damage ranged.",
       "keywords": [
         "attack",
@@ -2137,7 +2137,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 4,
+      "damage": 5,
       "effect": "4 damage, move 2 hexes after.",
       "keywords": [
         "attack",
@@ -2154,7 +2154,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 5,
+      "damage": 6,
       "effect": "5 damage if target moved this turn.",
       "keywords": [
         "attack",
@@ -2171,7 +2171,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee+4hex",
-      "damage": 6,
+      "damage": 7,
       "effect": "3 melee + 3 ranged.",
       "keywords": [
         "attack",
@@ -2187,7 +2187,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 6,
+      "damage": 7,
       "effect": "6 damage. Discard 1, move 1 hex.",
       "keywords": [
         "attack",
@@ -2235,7 +2235,7 @@
       "type": "attack",
       "cost": 2,
       "range": "4 hexes",
-      "damage": 2,
+      "damage": 3,
       "effect": "2 damage, target -1 next attack.",
       "keywords": [
         "attack",
@@ -2302,7 +2302,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 4,
+      "damage": 5,
       "effect": "Deal 4 damage. Spend 1 Forge token: Deal 5 damage instead and apply Burn (2 damage next turn).",
       "keywords": [
         "attack",
@@ -2358,7 +2358,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Range 3",
-      "damage": 4,
+      "damage": 5,
       "effect": "Deal 4 damage at range 3. Spend 2 Forge tokens: Deal 6 damage instead.",
       "keywords": [
         "attack",
@@ -2677,7 +2677,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 6,
       "effect": "Deal 3 damage. Gain 1 Biomass token.",
       "keywords": [
         "attack",
@@ -2695,7 +2695,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 4,
+      "damage": 6,
       "effect": "Deal 4 damage. If you have Pack Instinct active (+1 ally adjacent), deal 5 damage instead.",
       "keywords": [
         "attack",
@@ -2713,7 +2713,7 @@
       "type": "attack",
       "cost": 4,
       "range": "3 hexes (leap)",
-      "damage": 5,
+      "damage": 7,
       "effect": "Move up to 3 hexes toward target, then deal 5 damage. Gain 1 Biomass if you moved 3 hexes.",
       "keywords": [
         "attack",
@@ -2732,7 +2732,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 6,
       "effect": "Deal 3 damage. Spend 1 Biomass: Deal 4 damage and apply Bleed 1.",
       "keywords": [
         "attack",
@@ -2751,7 +2751,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Range 2 (leap)",
-      "damage": 4,
+      "damage": 6,
       "effect": "Deal 4 damage. If you moved this turn, deal 5 damage instead.",
       "keywords": [
         "attack",
@@ -2769,7 +2769,7 @@
       "type": "attack",
       "cost": 5,
       "range": "Melee",
-      "damage": 7,
+      "damage": 9,
       "effect": "Deal 7 damage. Spend all Biomass: +1 damage per Biomass spent. Gain 2 Heat.",
       "keywords": [
         "attack",
@@ -2874,7 +2874,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 7,
       "effect": "Deal 3 damage. If you have 2+ allied Emergent units within 3 hexes, deal 4 damage instead.",
       "keywords": [
         "attack",
@@ -2892,7 +2892,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 4,
+      "damage": 8,
       "effect": "Deal 4 damage. If in Metamorph form, deal 5 damage instead.",
       "keywords": [
         "attack",
@@ -2910,7 +2910,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 5,
+      "damage": 9,
       "effect": "Deal 5 damage. All allied Emergent units within 3 hexes may immediately move 1 hex toward target.",
       "keywords": [
         "attack",
@@ -2929,7 +2929,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 7,
       "effect": "Deal 3 damage. +1 damage for each allied Emergent unit adjacent to target (max +3).",
       "keywords": [
         "attack",
@@ -2947,7 +2947,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Range 3",
-      "damage": 4,
+      "damage": 8,
       "effect": "Deal 4 damage at range 3. If in Metamorph form, can target 2 different enemies for 3 damage each instead.",
       "keywords": [
         "attack",
@@ -2966,8 +2966,8 @@
       "type": "attack",
       "cost": 5,
       "range": "Melee",
-      "damage": 6,
-      "effect": "Deal 6 damage. Requires Metamorph form. Deal +1 damage per allied Emergent unit within 3 hexes (max +4).",
+      "damage": 10,
+      "effect": "Deal 6 damage. If in Metamorph form, +1 damage. Deal +1 damage per allied Emergent unit within 3 hexes (max +4).",
       "keywords": [
         "attack",
         "melee",
@@ -3072,7 +3072,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 7,
       "effect": "Deal 3 damage. This attack bypasses 1 Defense (reality distortion).",
       "keywords": [
         "attack",
@@ -3090,7 +3090,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 4,
+      "damage": 8,
       "effect": "Deal 4 damage. Apply 1 Taint to target. Bypasses all Defense.",
       "keywords": [
         "attack",
@@ -3109,7 +3109,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 5,
+      "damage": 9,
       "effect": "Deal 5 damage. Spend 2 Taint (yours or target's): Deal 7 damage instead.",
       "keywords": [
         "attack",
@@ -3127,7 +3127,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 7,
       "effect": "Deal 3 damage. If target has 2+ Taint, deal 5 damage instead.",
       "keywords": [
         "attack",
@@ -3145,7 +3145,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Range 4",
-      "damage": 4,
+      "damage": 8,
       "effect": "Deal 4 damage at range 4. Apply 2 Taint to target. Ignores cover.",
       "keywords": [
         "attack",
@@ -3163,7 +3163,7 @@
       "type": "attack",
       "cost": 5,
       "range": "Melee",
-      "damage": 6,
+      "damage": 10,
       "effect": "Deal 6 damage. Spend all Taint on target (yours or theirs): +2 damage per Taint spent.",
       "keywords": [
         "attack",
@@ -3268,7 +3268,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 5,
       "effect": "Deal 3 damage. When you kill an enemy with this attack, recover 1 card from discard pile.",
       "keywords": [
         "attack",
@@ -3286,7 +3286,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 4,
+      "damage": 6,
       "effect": "Deal 4 damage. Recover 1 card from your discard pile (partial lifesteal).",
       "keywords": [
         "attack",
@@ -3304,7 +3304,7 @@
       "type": "attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 5,
+      "damage": 7,
       "effect": "Deal 5 damage. If target is below 15 HP, recover 2 cards from discard pile instead of 1.",
       "keywords": [
         "attack",
@@ -3323,7 +3323,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 5,
       "effect": "Deal 3 damage. If any Casket was destroyed this round within 6 hexes, recover 3 cards from discard pile.",
       "keywords": [
         "attack",
@@ -3341,7 +3341,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Range 2",
-      "damage": 3,
+      "damage": 5,
       "effect": "Deal 3 damage at range 2. Recover 1 card from discard pile. Can target through allies.",
       "keywords": [
         "attack",
@@ -3359,7 +3359,7 @@
       "type": "attack",
       "cost": 5,
       "range": "Melee",
-      "damage": 6,
+      "damage": 8,
       "effect": "Deal 6 damage. If this reduces target to 0 HP, gain 1 Heat. Recover 2 cards from discard pile.",
       "keywords": [
         "attack",

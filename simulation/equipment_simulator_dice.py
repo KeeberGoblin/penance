@@ -1,0 +1,573 @@
+#!/usr/bin/env python3
+"""
+Penance Equipment-Randomized Combat Simulator WITH DICE MECHANICS
+Models realistic combat with custom attack/defense dice system
+"""
+
+import random
+import json
+from collections import deque
+from dataclasses import dataclass, field
+from typing import Deque, Dict, List, Optional, Tuple
+from enum import Enum
+
+# ============================================================================
+# CUSTOM DICE SYSTEM
+# ============================================================================
+
+class AttackDie:
+    """
+    Custom Attack Die (d6 with special faces)
+    Face values: 1, 2, 3, 4, 5, 0 (JAM)
+    """
+    FACES = [1, 2, 3, 4, 5, 0]  # 0 = JAM face
+
+    @staticmethod
+    def roll() -> int:
+        """Roll one attack die, return value (0-5)"""
+        return random.choice(AttackDie.FACES)
+
+    @staticmethod
+    def roll_2d6() -> Tuple[int, int, int]:
+        """
+        Roll 2 attack dice, return (die1, die2, total)
+        Returns individual die values and sum
+        """
+        die1 = AttackDie.roll()
+        die2 = AttackDie.roll()
+        total = die1 + die2
+        return (die1, die2, total)
+
+class DefenseDie:
+    """
+    Custom Defense Die (d6 with special effects)
+    Faces: SHIELD, ABSORB, FLESH_WOUND, CRITICAL, PIERCE, HEAT
+    """
+    SHIELD = "shield"          # Block 1 damage
+    ABSORB = "absorb"          # Block 1 damage
+    FLESH_WOUND = "wound"      # Take damage (no effect)
+    CRITICAL = "critical"      # Take damage + 1 Component Damage
+    PIERCE = "pierce"          # Take damage, disable reactive cards
+    HEAT = "heat"              # Take damage + 1 Heat
+
+    FACES = [SHIELD, ABSORB, FLESH_WOUND, CRITICAL, PIERCE, HEAT]
+
+    @staticmethod
+    def roll() -> str:
+        """Roll one defense die, return result symbol"""
+        return random.choice(DefenseDie.FACES)
+
+    @staticmethod
+    def roll_multiple(count: int) -> Dict[str, int]:
+        """
+        Roll X defense dice, return count of each symbol
+        """
+        results = {
+            DefenseDie.SHIELD: 0,
+            DefenseDie.ABSORB: 0,
+            DefenseDie.FLESH_WOUND: 0,
+            DefenseDie.CRITICAL: 0,
+            DefenseDie.PIERCE: 0,
+            DefenseDie.HEAT: 0
+        }
+
+        for _ in range(count):
+            result = DefenseDie.roll()
+            results[result] += 1
+
+        return results
+
+# ============================================================================
+# ATTACK RESULT ENUM
+# ============================================================================
+
+class AttackResult(Enum):
+    """Attack roll result types"""
+    CATASTROPHIC_FAILURE = "catastrophic"  # Double JAM (total 2)
+    MISS = "miss"                          # Below target number
+    HIT = "hit"                            # 5-6 total
+    STRONG_HIT = "strong"                  # 7-8 total (+1 damage)
+    CRITICAL_HIT = "critical"              # 9 total (+2 damage, bypass 1 Defense die)
+    EXECUTION = "execution"                # Double 5 (total 10, destroy component)
+
+# ============================================================================
+# LOAD CARD DATABASE
+# ============================================================================
+
+def load_card_database():
+    """Load complete card database from JSON"""
+    with open('../docs/cards/complete-card-data.json', 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+# ============================================================================
+# EQUIPMENT CARD CLASS
+# ============================================================================
+
+@dataclass
+class EquipmentCard:
+    """Represents an equipment card (attack, defense, utility)"""
+    name: str
+    type: str  # Attack, Reactive, Utility
+    cost: int  # SP cost
+    effect: str
+    damage: int = 0  # Damage dealt (if attack)
+    defense: int = 0  # Damage reduced (if reactive)
+    range: str = "Melee"
+    equipment_name: str = ""  # Parent equipment (DAGGER, SWORD, etc.)
+    cannot_miss: bool = False  # Church "cannot miss" mechanic
+
+    def __repr__(self):
+        return f"{self.name} ({self.type}, {self.cost} SP, {self.damage} dmg)"
+
+# ============================================================================
+# CASKET CLASSES
+# ============================================================================
+
+class CasketClass(Enum):
+    """Casket class definitions with point costs"""
+    SCOUT = ("Scout", 6, 28, 1)           # Fast, fragile, cheap
+    WARDEN = ("Warden", 5, 34, 2)         # Balanced, standard
+    VANGUARD = ("Vanguard", 4, 40, 3)     # Slow, tanky, expensive
+    COLOSSUS = ("Colossus", 4, 50, 4)     # Boss unit
+
+    @property
+    def sp_max(self):
+        return self.value[1]
+
+    @property
+    def deck_size(self):
+        return self.value[2]
+
+    @property
+    def point_cost(self):
+        return self.value[3]
+
+# ============================================================================
+# CASKET CLASS
+# ============================================================================
+
+@dataclass
+class Casket:
+    """Represents a Casket with equipment-based deck and dice mechanics"""
+    name: str
+    faction: str
+    casket_class: CasketClass = CasketClass.WARDEN
+
+    # Card-based HP system
+    deck: Deque = field(default_factory=deque)
+    hand: Deque = field(default_factory=deque)
+    discard: Deque = field(default_factory=deque)
+
+    # SP and Heat
+    sp: int = 5
+    sp_max: int = 5
+    heat: int = 0
+
+    # Positioning (range in hexes)
+    range: int = 2  # Start at 2 hexes away
+    moved_this_turn: bool = False
+
+    # Equipment cards in deck
+    equipment_cards: List[EquipmentCard] = field(default_factory=list)
+
+    # Dice mechanics tracking
+    weapon_jammed: bool = False  # Catastrophic failure state
+    component_damage: int = 0    # Critical hits accumulate
+
+    def __post_init__(self):
+        """Initialize SP based on casket class"""
+        self.sp = self.casket_class.sp_max
+        self.sp_max = self.casket_class.sp_max
+
+    @property
+    def hp(self):
+        """HP = cards remaining in deck"""
+        return len(self.deck)
+
+    @property
+    def is_alive(self):
+        """Casket is alive if deck has cards"""
+        return len(self.deck) > 0
+
+    def draw_cards(self, count: int):
+        """Draw X cards from deck to hand"""
+        for _ in range(count):
+            if self.deck:
+                self.hand.append(self.deck.popleft())
+            elif self.discard:
+                # Reshuffle discard into deck
+                discard_list = list(self.discard)
+                random.shuffle(discard_list)
+                self.deck = deque(discard_list)
+                self.discard.clear()
+
+                # Try again
+                if self.deck:
+                    self.hand.append(self.deck.popleft())
+
+    def take_damage(self, damage: int, defense_results: Dict[str, int]) -> int:
+        """
+        Take damage with defense dice mechanics
+        Returns actual damage taken (after blocks)
+        """
+        if damage <= 0:
+            return 0
+
+        # Count blocks from defense dice
+        blocks = defense_results[DefenseDie.SHIELD] + defense_results[DefenseDie.ABSORB]
+        final_damage = max(0, damage - blocks)
+
+        # Apply component damage from CRITICAL symbols
+        self.component_damage += defense_results[DefenseDie.CRITICAL]
+
+        # Apply heat from HEAT symbols
+        self.heat += defense_results[DefenseDie.HEAT]
+
+        # Discard cards equal to final damage
+        for _ in range(final_damage):
+            if self.deck:
+                self.deck.popleft()  # Damage goes to graveyard (permanent loss)
+            elif self.discard:
+                # If deck empty, take from discard
+                self.discard.popleft()
+
+        return final_damage
+
+# ============================================================================
+# DECK BUILDER
+# ============================================================================
+
+class DeckBuilder:
+    """Builds decks from card database with equipment randomization"""
+
+    def __init__(self, card_db: Dict):
+        self.card_db = card_db
+
+    def build_random_deck(self, faction: str, casket_class: CasketClass = CasketClass.WARDEN) -> Casket:
+        """
+        Build a deck with randomized equipment selection
+        Faction cards are fixed, equipment is randomized from equipment_items pool
+        """
+        casket = Casket(
+            name=f"{faction.capitalize()} {casket_class.name}",
+            faction=faction,
+            casket_class=casket_class
+        )
+
+        # Find faction-specific equipment items (primary + secondary weapons)
+        faction_key = faction.lower().replace(' ', '-')
+        equipment_items = [item for item in self.card_db.get('equipment_items', [])
+                          if item.get('faction', '').lower() == faction_key]
+
+        # Randomly select equipment items for this deck
+        for item in equipment_items:
+            equipment_name = item['name']
+            item_cards = item.get('cards', [])
+
+            # Cards are stored inline in equipment_items (not as IDs)
+            for card_data in item_cards:
+                if not isinstance(card_data, dict):
+                    continue
+
+                # Check for "cannot miss" mechanic (Church cards)
+                cannot_miss = 'cannot miss' in card_data.get('effect', '').lower()
+
+                # Create equipment card object
+                eq_card = EquipmentCard(
+                    name=card_data['name'],
+                    type=card_data.get('type', 'Attack'),
+                    cost=card_data.get('cost', 0),
+                    effect=card_data.get('effect', ''),
+                    damage=card_data.get('damage', 0),
+                    defense=card_data.get('defense', 0),
+                    range=card_data.get('range', 'Melee'),
+                    equipment_name=equipment_name,
+                    cannot_miss=cannot_miss
+                )
+
+                # Add card to deck (default 1 copy)
+                card_count = card_data.get('cardCount', 1)
+                for _ in range(card_count):
+                    casket.equipment_cards.append(eq_card)
+                    casket.deck.append(eq_card)
+
+        # Add generic HP cards to reach deck size
+        target_deck_size = casket_class.deck_size
+        while len(casket.deck) < target_deck_size:
+            casket.deck.append(f"GenericCard-{len(casket.deck)}")
+
+        # Shuffle deck
+        deck_list = list(casket.deck)
+        random.shuffle(deck_list)
+        casket.deck = deque(deck_list)
+
+        return casket
+
+# ============================================================================
+# COMBAT SIMULATOR WITH DICE
+# ============================================================================
+
+class DiceCombatSimulator:
+    """Simulates combat with full dice mechanics"""
+
+    def __init__(self, casket1: Casket, casket2: Casket, verbose: bool = False):
+        self.casket1 = casket1
+        self.casket2 = casket2
+        self.verbose = verbose
+        self.turn = 0
+
+        # Statistics tracking
+        self.attack_rolls = []  # Track all attack roll results
+        self.defense_rolls = []  # Track all defense roll results
+
+    def log(self, message: str):
+        if self.verbose:
+            print(message)
+
+    def calculate_to_hit_target(self, attacker: Casket, defender: Casket) -> int:
+        """
+        Calculate to-hit target number (base 5+)
+        Simplified: Only range modifier for simulation
+        """
+        base_target = 5
+
+        # Range modifier (0-3 hexes = short, 4+ = medium)
+        if attacker.range <= 3:
+            range_mod = 0  # Short range
+        elif attacker.range <= 6:
+            range_mod = 1  # Medium range
+        else:
+            range_mod = 2  # Long range
+
+        return base_target + range_mod
+
+    def roll_attack(self, attacker: Casket, attack_card: EquipmentCard, target_number: int) -> Tuple[AttackResult, int]:
+        """
+        Roll attack dice and determine result
+        Returns (result_type, bonus_damage)
+        """
+        # Church "cannot miss" cards auto-hit
+        if attack_card.cannot_miss:
+            self.log(f"  [CANNOT MISS] Auto-hit (Church mechanic)")
+            return (AttackResult.HIT, 0)
+
+        # Roll 2 attack dice
+        die1, die2, total = AttackDie.roll_2d6()
+        self.log(f"  Attack roll: [{die1}] + [{die2}] = {total} (need {target_number}+)")
+
+        # Track roll
+        self.attack_rolls.append(total)
+
+        # Check for special results
+        if die1 == 0 and die2 == 0:
+            # Double JAM = Catastrophic Failure
+            self.log(f"  💥 CATASTROPHIC FAILURE (double JAM)!")
+            return (AttackResult.CATASTROPHIC_FAILURE, 0)
+
+        if die1 == 5 and die2 == 5:
+            # Double 5 = Execution
+            self.log(f"  ⚔️ EXECUTION (double DEATH BLOW)!")
+            return (AttackResult.EXECUTION, 0)
+
+        # Check if hit
+        if total < target_number:
+            self.log(f"  ❌ MISS (rolled {total}, needed {target_number}+)")
+            return (AttackResult.MISS, 0)
+
+        # Determine hit quality
+        if total == 9:
+            self.log(f"  💀 CRITICAL HIT (+2 damage, bypass 1 Defense die)")
+            return (AttackResult.CRITICAL_HIT, 2)
+        elif total >= 7:
+            self.log(f"  ⚡ STRONG HIT (+1 damage)")
+            return (AttackResult.STRONG_HIT, 1)
+        else:
+            self.log(f"  ✓ HIT")
+            return (AttackResult.HIT, 0)
+
+    def roll_defense(self, damage: int, critical_hit: bool = False) -> Dict[str, int]:
+        """
+        Roll defense dice (1 per damage point)
+        Critical hits bypass 1 defense die
+        """
+        dice_count = max(1, damage - (1 if critical_hit else 0))
+        results = DefenseDie.roll_multiple(dice_count)
+
+        # Log defense results
+        blocks = results[DefenseDie.SHIELD] + results[DefenseDie.ABSORB]
+        crits = results[DefenseDie.CRITICAL]
+        heat = results[DefenseDie.HEAT]
+
+        self.log(f"  Defense: {dice_count} dice → {blocks} blocks, {crits} crits, {heat} heat")
+
+        return results
+
+    def run_combat(self, max_turns: int = 50) -> Dict:
+        """Run combat simulation with dice mechanics"""
+        self.log(f"\n=== COMBAT START: {self.casket1.name} vs {self.casket2.name} ===")
+
+        while self.turn < max_turns and self.casket1.is_alive and self.casket2.is_alive:
+            self.turn += 1
+            self.log(f"\n--- Turn {self.turn} ---")
+
+            # Player 1 turn
+            self.execute_turn(self.casket1, self.casket2)
+            if not self.casket2.is_alive:
+                break
+
+            # Player 2 turn
+            self.execute_turn(self.casket2, self.casket1)
+            if not self.casket1.is_alive:
+                break
+
+        # Determine winner
+        if not self.casket1.is_alive:
+            winner = self.casket2.name
+        elif not self.casket2.is_alive:
+            winner = self.casket1.name
+        else:
+            # Timeout - HP tiebreaker
+            winner = self.casket1.name if self.casket1.hp >= self.casket2.hp else self.casket2.name
+
+        self.log(f"\n=== COMBAT END: {winner} wins! ===")
+
+        return {
+            'winner': winner,
+            'turns': self.turn,
+            'casket1_hp': self.casket1.hp,
+            'casket2_hp': self.casket2.hp,
+            'attack_rolls': self.attack_rolls.copy()
+        }
+
+    def execute_turn(self, attacker: Casket, defender: Casket):
+        """Execute one player's turn with dice mechanics"""
+        # Regenerate 2 SP per turn (banking mechanic)
+        attacker.sp = min(attacker.sp + 2, attacker.sp_max)
+        attacker.moved_this_turn = False
+
+        # Clear weapon jam status (lasts 1 turn)
+        if attacker.weapon_jammed:
+            attacker.weapon_jammed = False
+            self.log(f"{attacker.name} clears weapon jam")
+
+        # Draw cards
+        attacker.draw_cards(3)
+
+        # Movement logic (simplified - move if out of range and have melee cards)
+        if attacker.range > 0:
+            melee_cards = [c for c in attacker.hand if isinstance(c, EquipmentCard)
+                          and c.type == "Attack" and c.range == "Melee"]
+            ranged_cards = [c for c in attacker.hand if isinstance(c, EquipmentCard)
+                           and c.type == "Attack" and c.range == "Ranged"]
+
+            should_move = (melee_cards and not ranged_cards) or (melee_cards and attacker.sp >= 4)
+
+            if should_move:
+                move_cost = min(attacker.range, max(1, attacker.sp - 2))
+                if move_cost > 0:
+                    attacker.sp -= move_cost
+                    attacker.range -= move_cost
+                    attacker.moved_this_turn = True
+                    self.log(f"{attacker.name} moves {move_cost} hexes (→ {attacker.range} hexes, {attacker.sp} SP)")
+
+        # Select best attack card
+        attack_card = self.select_attack_card(attacker)
+
+        if attack_card:
+            # Check range compatibility
+            can_attack = (attack_card.range == "Ranged" or attacker.range == 0)
+
+            if can_attack:
+                # Calculate to-hit target
+                target_number = self.calculate_to_hit_target(attacker, defender)
+
+                # Pay SP cost
+                attacker.sp -= attack_card.cost
+
+                # Roll attack
+                attack_result, bonus_damage = self.roll_attack(attacker, attack_card, target_number)
+
+                # Handle attack results
+                if attack_result == AttackResult.CATASTROPHIC_FAILURE:
+                    # Weapon jams
+                    attacker.weapon_jammed = True
+                    attacker.heat += 2
+                    self.log(f"{attacker.name} weapon JAMS! (+2 Heat, next attack -2 damage)")
+
+                elif attack_result == AttackResult.EXECUTION:
+                    # Auto-destroy component, bypass all defense
+                    defender.component_damage = 999  # Mark as destroyed
+                    damage = attack_card.damage + bonus_damage
+                    defender.take_damage(damage, {symbol: 0 for symbol in DefenseDie.FACES})
+                    self.log(f"{attacker.name} EXECUTES with {attack_card.name}! Component destroyed, {damage} damage ({defender.name}: {defender.hp} HP)")
+
+                elif attack_result != AttackResult.MISS:
+                    # Hit - calculate damage
+                    base_damage = attack_card.damage
+                    total_damage = base_damage + bonus_damage
+
+                    # Apply weapon jam penalty
+                    if attacker.weapon_jammed:
+                        total_damage = max(1, total_damage - 2)
+                        self.log(f"  [JAMMED] Damage reduced by 2")
+
+                    # Roll defense dice
+                    is_critical = (attack_result == AttackResult.CRITICAL_HIT)
+                    defense_results = self.roll_defense(total_damage, is_critical)
+
+                    # Apply damage
+                    actual_damage = defender.take_damage(total_damage, defense_results)
+                    self.log(f"{attacker.name} attacks with {attack_card.name} for {actual_damage}/{total_damage} damage ({defender.name}: {defender.hp} HP)")
+
+                else:
+                    # Miss - no effect
+                    self.log(f"{attacker.name} misses with {attack_card.name}")
+
+            else:
+                self.log(f"{attacker.name} out of range, banking {attacker.sp} SP")
+        else:
+            self.log(f"{attacker.name} has no valid attacks, banking {attacker.sp} SP")
+
+    def select_attack_card(self, casket: Casket) -> Optional[EquipmentCard]:
+        """Select best single attack card from hand (highest damage, affordable)"""
+        attack_cards = [c for c in casket.hand if isinstance(c, EquipmentCard) and c.type == "Attack"]
+
+        if not attack_cards:
+            return None
+
+        # Select highest damage attack that we can afford
+        valid_attacks = [c for c in attack_cards if c.cost <= casket.sp]
+        if not valid_attacks:
+            return None
+
+        return max(valid_attacks, key=lambda c: c.damage)
+
+# ============================================================================
+# MAIN EXECUTION
+# ============================================================================
+
+if __name__ == "__main__":
+    print("=" * 80)
+    print("PENANCE DICE-BASED COMBAT SIMULATOR")
+    print("=" * 80)
+
+    # Load card database
+    card_db = load_card_database()
+    builder = DeckBuilder(card_db)
+
+    # Build two test caskets
+    church_casket = builder.build_random_deck("church", CasketClass.WARDEN)
+    wyrd_casket = builder.build_random_deck("wyrd-conclave", CasketClass.WARDEN)
+
+    # Run combat with verbose output
+    simulator = DiceCombatSimulator(church_casket, wyrd_casket, verbose=True)
+    result = simulator.run_combat()
+
+    print("\n" + "=" * 80)
+    print("COMBAT RESULT")
+    print("=" * 80)
+    print(f"Winner: {result['winner']}")
+    print(f"Turns: {result['turns']}")
+    print(f"{church_casket.name}: {result['casket1_hp']} HP")
+    print(f"{wyrd_casket.name}: {result['casket2_hp']} HP")
+    print(f"\nAttack rolls: {result['attack_rolls']}")
