@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "5.2",
+    "version": "5.3",
     "lastUpdated": "2025-10-20",
-    "description": "Complete Penance card database v5.2 - Balance fixes: Church nerfs, Elf bleed on-attack",
+    "description": "Complete Penance card database v5.3 - Manual faction card balance: Church/Ossuarium/Elves/Dwarves nerfs, Nomads/Crucible/Emergent/Exchange/Bloodlines buffs",
     "cardCounts": {
       "factionCards": 220,
       "equipmentCards": 223,
@@ -182,7 +182,7 @@
       "type": "gambit",
       "cost": 0,
       "range": "Self",
-      "effect": "Discard 1 card from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and -1 to target number (easier to hit). LIMIT: 1 per turn.",
+      "effect": "Discard 1 card from top of your deck (self-harm). Your next attack this turn: +2 damage, ignores 1 Defense, and -1 to target number (easier to hit). LIMIT: 1 per turn.",
       "keywords": [
         "gambit",
         "self-harm",
@@ -261,7 +261,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee (1 hex)",
-      "effect": "Deal 5 damage. This attack cannot miss. If target has killed an ally this mission, deal 7 damage instead.",
+      "effect": "Deal 5 damage. Roll with Advantage (3d6, take 2 highest). If target has killed an ally this mission, deal 7 damage instead.",
       "damage": "5-7",
       "keywords": [
         "attack",
@@ -1006,7 +1006,7 @@
       "type": "attack",
       "cost": 3,
       "range": "Melee (Range 1)",
-      "effect": "Deal 4 damage. Recover 2 cards from discard pile (lifesteal). Basic Ossuarium attack.",
+      "effect": "Deal 4 damage. Recover 1 card from discard pile (lifesteal). Basic Ossuarium attack.",
       "damage": "4",
       "keywords": [
         "attack",
@@ -1091,7 +1091,7 @@
       "type": "attack",
       "cost": 2,
       "range": "Melee (Range 1)",
-      "effect": "Deal 2 damage. Recover 2 cards. If this kills the target, recover 5 cards total instead.",
+      "effect": "Deal 2 damage. Recover 1 card. If this kills the target, recover 5 cards total instead.",
       "damage": "2",
       "keywords": [
         "attack",
@@ -1741,7 +1741,7 @@
       "cost": 3,
       "range": "Melee",
       "damage": 5,
-      "effect": "6 damage, ignore 1 Defense.",
+      "effect": "5 damage, ignore 1 Defense.",
       "keywords": [
         "attack",
         "melee",
@@ -1758,7 +1758,7 @@
       "cost": 4,
       "range": "Melee",
       "damage": 4,
-      "effect": "5 damage AoE to 3 adjacent hexes.",
+      "effect": "4 damage AoE to 3 adjacent hexes.",
       "keywords": [
         "attack",
         "melee",
@@ -1776,7 +1776,7 @@
       "cost": 3,
       "range": "Melee",
       "damage": 4,
-      "effect": "5 damage. Destroy 1 Component on Crit.",
+      "effect": "4 damage. Destroy 1 Component on Crit.",
       "keywords": [
         "attack",
         "melee",
@@ -1793,7 +1793,7 @@
       "cost": 4,
       "range": "Melee",
       "damage": 6,
-      "effect": "7 damage. Add 1 Rune counter.",
+      "effect": "6 damage. Add 1 Rune counter.",
       "keywords": [
         "attack",
         "melee",
@@ -1827,7 +1827,7 @@
       "cost": 4,
       "range": "Melee",
       "damage": 7,
-      "effect": "8 damage. Can't move after.",
+      "effect": "7 damage. Can't move after.",
       "keywords": [
         "attack",
         "melee",
@@ -1923,7 +1923,7 @@
       "cost": 2,
       "range": "6 hexes",
       "damage": 4,
-      "effect": "4 damage ranged.",
+      "effect": "3 damage ranged.",
       "keywords": [
         "attack",
         "ranged",
@@ -1940,7 +1940,7 @@
       "cost": 3,
       "range": "8 hexes",
       "damage": 5,
-      "effect": "5 damage, ignore 1 Defense.",
+      "effect": "4 damage, ignore 1 Defense.",
       "keywords": [
         "attack",
         "ranged",
@@ -1974,7 +1974,7 @@
       "cost": 4,
       "range": "10 hexes",
       "damage": 7,
-      "effect": "7 damage, -1 to hit (harder).",
+      "effect": "6 damage, -1 to hit (harder).",
       "keywords": [
         "attack",
         "ranged",
@@ -1991,7 +1991,7 @@
       "cost": 3,
       "range": "6 hexes",
       "damage": 3,
-      "effect": "3 damage, root 1 turn.",
+      "effect": "2 damage, root 1 turn.",
       "keywords": [
         "attack",
         "ranged",
@@ -2008,7 +2008,7 @@
       "cost": 5,
       "range": "6 hexes",
       "damage": 4,
-      "effect": "4 damage to 3 targets.",
+      "effect": "3 damage to 3 targets.",
       "keywords": [
         "attack",
         "ranged",
@@ -2104,7 +2104,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 4,
-      "effect": "3 damage melee.",
+      "effect": "6 damage melee.",
       "keywords": [
         "attack",
         "melee",
@@ -2121,7 +2121,7 @@
       "cost": 2,
       "range": "4 hexes",
       "damage": 4,
-      "effect": "3 damage ranged.",
+      "effect": "6 damage ranged.",
       "keywords": [
         "attack",
         "ranged",
@@ -2138,7 +2138,7 @@
       "cost": 3,
       "range": "Melee",
       "damage": 5,
-      "effect": "4 damage, move 2 hexes after.",
+      "effect": "7 damage, move 2 hexes after.",
       "keywords": [
         "attack",
         "melee",
@@ -2155,7 +2155,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 6,
-      "effect": "5 damage if target moved this turn.",
+      "effect": "8 damage if target moved this turn.",
       "keywords": [
         "attack",
         "melee",
@@ -2172,7 +2172,7 @@
       "cost": 4,
       "range": "Melee+4hex",
       "damage": 7,
-      "effect": "3 melee + 3 ranged.",
+      "effect": "6 melee + 6 ranged.",
       "keywords": [
         "attack",
         "nomads",
@@ -2188,7 +2188,7 @@
       "cost": 3,
       "range": "Melee",
       "damage": 7,
-      "effect": "6 damage. Discard 1, move 1 hex.",
+      "effect": "9 damage. Discard 1, move 1 hex.",
       "keywords": [
         "attack",
         "melee",
@@ -2285,7 +2285,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 3,
-      "effect": "Deal 3 damage. If you are standing in or adjacent to lava terrain, deal 4 damage instead.",
+      "effect": "Deal 5 damage. If you are standing in or adjacent to lava terrain, deal 6 damage instead.",
       "keywords": [
         "attack",
         "melee",
@@ -2303,7 +2303,7 @@
       "cost": 3,
       "range": "Melee",
       "damage": 5,
-      "effect": "Deal 4 damage. Spend 1 Forge token: Deal 5 damage instead and apply Burn (2 damage next turn).",
+      "effect": "Deal 6 damage. Spend 1 Forge token: Deal 7 damage instead and apply Burn (2 damage next turn).",
       "keywords": [
         "attack",
         "melee",
@@ -2322,7 +2322,7 @@
       "cost": 4,
       "range": "Melee",
       "damage": 5,
-      "effect": "Deal 5 damage. Ignore armor. If you have 2+ Forge tokens, knockback target 1 hex.",
+      "effect": "Deal 7 damage. Ignore armor. If you have 2+ Forge tokens, knockback target 1 hex.",
       "keywords": [
         "attack",
         "melee",
@@ -2341,7 +2341,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 3,
-      "effect": "Deal 3 damage. Apply Burn (target takes 2 damage at start of their next turn).",
+      "effect": "Deal 5 damage. Apply Burn (target takes 2 damage at start of their next turn).",
       "keywords": [
         "attack",
         "melee",
@@ -2359,7 +2359,7 @@
       "cost": 3,
       "range": "Range 3",
       "damage": 5,
-      "effect": "Deal 4 damage at range 3. Spend 2 Forge tokens: Deal 6 damage instead.",
+      "effect": "Deal 6 damage at range 3. Spend 2 Forge tokens: Deal 8 damage instead.",
       "keywords": [
         "attack",
         "ranged",
@@ -2377,7 +2377,7 @@
       "cost": 5,
       "range": "Melee",
       "damage": 7,
-      "effect": "Deal 7 damage. If in Honor Duel, deal 9 damage instead. Spend all Forge tokens.",
+      "effect": "Deal 9 damage. If in Honor Duel, deal 11 damage instead. Spend all Forge tokens.",
       "keywords": [
         "attack",
         "melee",
@@ -2481,7 +2481,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 3,
-      "effect": "Deal 3 damage. Gain 1 Credit token.",
+      "effect": "Deal 3 damage. Gain 2 Credit tokens.",
       "keywords": [
         "attack",
         "melee",
@@ -2536,7 +2536,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 3,
-      "effect": "Deal 3 damage. Gain 1 Credit. If target is below 20 HP, gain 2 Credits instead.",
+      "effect": "Deal 3 damage. Gain 2 Credits. If target is below 20 HP, gain 3 Credits instead.",
       "keywords": [
         "attack",
         "melee",
@@ -2590,7 +2590,7 @@
       "type": "reactive",
       "cost": 0,
       "range": "Self",
-      "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 1 Credit.",
+      "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 2 Credits.",
       "keywords": [
         "reactive",
         "defense",
@@ -2642,7 +2642,7 @@
       "type": "reactive",
       "cost": 0,
       "range": "Melee",
-      "effect": "Play when attacked in melee. Deal 2 damage to attacker. Gain 1 Credit if attacker took damage.",
+      "effect": "Play when attacked in melee. Deal 2 damage to attacker. Gain 2 Credits if attacker took damage.",
       "keywords": [
         "reactive",
         "counter-attack",
@@ -2678,7 +2678,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 6,
-      "effect": "Deal 3 damage. Gain 1 Biomass token.",
+      "effect": "Deal 3 damage. Gain 2 Biomass tokens.",
       "keywords": [
         "attack",
         "melee",
@@ -2714,7 +2714,7 @@
       "cost": 4,
       "range": "3 hexes (leap)",
       "damage": 7,
-      "effect": "Move up to 3 hexes toward target, then deal 5 damage. Gain 1 Biomass if you moved 3 hexes.",
+      "effect": "Move up to 3 hexes toward target, then deal 5 damage. Gain 2 Biomass if you moved 3 hexes.",
       "keywords": [
         "attack",
         "melee",
@@ -2840,7 +2840,7 @@
       "type": "reactive",
       "cost": 0,
       "range": "Melee",
-      "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Gain 1 Biomass.",
+      "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Gain 2 Biomass.",
       "keywords": [
         "reactive",
         "counter-attack",
@@ -2875,7 +2875,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 7,
-      "effect": "Deal 3 damage. If you have 2+ allied Emergent units within 3 hexes, deal 4 damage instead.",
+      "effect": "Deal 5 damage. If you have 2+ allied Emergent units within 3 hexes, deal 6 damage instead.",
       "keywords": [
         "attack",
         "melee",
@@ -2893,7 +2893,7 @@
       "cost": 3,
       "range": "Melee",
       "damage": 8,
-      "effect": "Deal 4 damage. If in Metamorph form, deal 5 damage instead.",
+      "effect": "Deal 6 damage. If in Metamorph form, deal 7 damage instead.",
       "keywords": [
         "attack",
         "melee",
@@ -2911,7 +2911,7 @@
       "cost": 4,
       "range": "Melee",
       "damage": 9,
-      "effect": "Deal 5 damage. All allied Emergent units within 3 hexes may immediately move 1 hex toward target.",
+      "effect": "Deal 7 damage. All allied Emergent units within 3 hexes may immediately move 1 hex toward target.",
       "keywords": [
         "attack",
         "melee",
@@ -2930,7 +2930,7 @@
       "cost": 2,
       "range": "Melee",
       "damage": 7,
-      "effect": "Deal 3 damage. +1 damage for each allied Emergent unit adjacent to target (max +3).",
+      "effect": "Deal 5 damage. +1 damage for each allied Emergent unit adjacent to target (max +3).",
       "keywords": [
         "attack",
         "melee",
@@ -2948,7 +2948,7 @@
       "cost": 3,
       "range": "Range 3",
       "damage": 8,
-      "effect": "Deal 4 damage at range 3. If in Metamorph form, can target 2 different enemies for 3 damage each instead.",
+      "effect": "Deal 6 damage at range 3. If in Metamorph form, can target 2 different enemies for 5 damage each instead.",
       "keywords": [
         "attack",
         "ranged",
@@ -2967,7 +2967,7 @@
       "cost": 5,
       "range": "Melee",
       "damage": 10,
-      "effect": "Deal 6 damage. If in Metamorph form, +1 damage. Deal +1 damage per allied Emergent unit within 3 hexes (max +4).",
+      "effect": "Deal 8 damage. If in Metamorph form, +1 damage. Deal +1 damage per allied Emergent unit within 3 hexes (max +4).",
       "keywords": [
         "attack",
         "melee",
@@ -7802,7 +7802,7 @@
       "type": "utility",
       "cost": "4 Bargain tokens",
       "range": "Self",
-      "effect": "Rewind time. Return to start of your turn (restore SP, return hand to state at turn start, undo all actions). Any damage dealt or taken this turn is undone. May only be used once per mission. Temporal violation.",
+      "effect": "Rewind time. Return to start of your turn (restore SP, return hand to state at turn start, undo all actions). Any damage dealt or taken this turn is undone. May only be used once per mission. Temporal violation. Deal 3 damage to the attacker who triggered this.",
       "keywords": [
         "utility",
         "time-manipulation",
@@ -7812,7 +7812,8 @@
       ],
       "lore": "That didn't happen. Try again.",
       "cardCount": 1,
-      "cardType": "faction"
+      "cardType": "faction",
+      "damage": 3
     },
     {
       "id": "impossible-geometry",
@@ -7838,7 +7839,7 @@
       "type": "gambit",
       "cost": "2 SP",
       "range": "8 hexes",
-      "effect": "Offer bargain to enemy: \"Take 5 damage now, OR give me 3 Bargain tokens and take no damage.\" Enemy chooses. If they give tokens, you gain 3 Bargain tokens. If they refuse, deal 5 damage and gain \"Bargain Breaker\" mark on them (+2 damage from all Wyrd attacks permanently). Contracts bind.",
+      "effect": "Deal 5 damage. Enemy may discard 2 cards from hand to reduce damage to 2.",
       "keywords": [
         "gambit",
         "choice",
@@ -7848,7 +7849,8 @@
       ],
       "lore": "Choose. Pain now, or debt forever?",
       "cardCount": 1,
-      "cardType": "faction"
+      "cardType": "faction",
+      "damage": 5
     },
     {
       "id": "mirror-self",
@@ -12258,7 +12260,7 @@
           "cost": 2,
           "range": "Melee",
           "damage": 3,
-          "effect": "Deal 3 damage. Gain 1 Credit token.",
+          "effect": "Deal 3 damage. Gain 2 Credit tokens.",
           "keywords": [
             "attack",
             "melee",
@@ -12313,7 +12315,7 @@
           "cost": 2,
           "range": "Melee",
           "damage": 3,
-          "effect": "Deal 3 damage. Gain 1 Credit. If target is below 20 HP, gain 2 Credits instead.",
+          "effect": "Deal 3 damage. Gain 2 Credits. If target is below 20 HP, gain 3 Credits instead.",
           "keywords": [
             "attack",
             "melee",
@@ -12377,7 +12379,7 @@
           "type": "reactive",
           "cost": 0,
           "range": "Self",
-          "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 1 Credit.",
+          "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 2 Credits.",
           "keywords": [
             "reactive",
             "defense",
@@ -12429,7 +12431,7 @@
           "type": "reactive",
           "cost": 0,
           "range": "Melee",
-          "effect": "Play when attacked in melee. Deal 2 damage to attacker. Gain 1 Credit if attacker took damage.",
+          "effect": "Play when attacked in melee. Deal 2 damage to attacker. Gain 2 Credits if attacker took damage.",
           "keywords": [
             "reactive",
             "counter-attack",
@@ -12647,7 +12649,7 @@
           "type": "reactive",
           "cost": 0,
           "range": "Melee",
-          "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Gain 1 Biomass.",
+          "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Gain 2 Biomass.",
           "keywords": [
             "reactive",
             "counter-attack",
