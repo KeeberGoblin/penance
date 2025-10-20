@@ -58,18 +58,8 @@
       "Bash(tee /tmp/v5.13_simulation.txt)",
       "Bash(jq '.universal | .[] | {name: .name, type: .type}' complete-card-data.json)",
       "Bash(tee /tmp/v5.14_simulation.txt)",
-      "Bash(jq:*)",
-      "Bash(tee:*)",
-      "Read(//tmp/**)",
-      "Bash(python:*)",
-      "Bash(find:*)",
-      "Bash(for file in docs/factions/exchange/support-units.md docs/cards/README.md docs/factions/wyrd-conclave/deck-equipment-system.md)",
-      "Bash(then)",
-      "Bash(echo:*)",
-      "Bash(fi)",
-      "Bash(for:*)",
-      "Bash(git reset:*)",
-      "Bash(cat:*)"
+      "Bash(timeout 600 python3 faction_balance_MULTIUNIT.py)",
+      "Bash(tee /tmp/v5.15a_final.txt)"
     ],
     "deny": [],
     "ask": []

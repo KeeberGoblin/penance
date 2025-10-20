@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "5.15b",
+    "version": "5.13",
     "lastUpdated": "2025-10-20",
-    "description": "Complete Penance card database v5.15b - PHASE 1 BALANCE FIXES: (1) Dwarves 31%→44% WR: Replaced 11 non-functional cards with combat-viable alternatives. (2) Bloodlines 76%→target 65% WR: Increased Biomass costs +1 (Bloodline Shift 2→3, Adaptive Evolution 1→2). Next: Ossuarium lifesteal nerf, Nomads defensive buff. MultiUnitCombatSimulator now uses full dice mechanics (Attack/Defense dice, Heat, Component Damage, Bleed tracking). Previous v5.13: Church structural rebalance.",
+    "description": "Complete Penance card database v5.13 - STRUCTURAL REBALANCE: Moved 6 Church weapons to universal pool (Mace, Greatsword, Warhammer, Halberd, Chain Whip, Flail = 37 cards). Church now has 19 faction-specific cards (Tower Shield, Blessed Talisman, Codex of Light, Divine Scepter) matching other factions. This addresses the root cause: Church had 56 cards vs 13-18 for others, creating 3-4× card pool advantage. All factions now have equal access to heavy weapons.",
     "cardCounts": {
       "factionCards": 221,
       "equipmentCards": 223,
@@ -556,17 +556,16 @@
       "cardType": "faction"
     },
     {
-      "id": "runic-armor",
-      "name": "Runic Armor",
-      "type": "reactive-defense",
+      "id": "rune-of-protection",
+      "name": "Rune of Protection",
+      "type": "buff",
       "cost": 2,
       "range": "Self",
-      "effect": "Block 3 damage from next attack. You gain +1 to all defense rolls until end of turn.",
-      "defense": 3,
+      "effect": "Gain 1 Rune Counter. While you have Rune Counters, reduce all damage by 1 per counter (max 3 counters). Duration: Until end of mission or destroyed.",
       "keywords": [
-        "reactive-defense",
-        "dwarven",
-        "defense-boost"
+        "buff",
+        "rune",
+        "defense"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -588,17 +587,17 @@
       "cardType": "faction"
     },
     {
-      "id": "thundering-blow",
-      "name": "Thundering Blow",
+      "id": "earthshaker",
+      "name": "Earthshaker",
       "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
-      "effect": "Deal 7 damage. If you have 2+ Component Damage, deal 9 damage instead. Dwarven fury channeled through pain.",
-      "damage": "7-9",
+      "effect": "Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.",
+      "damage": "5 + 2 AoE",
       "keywords": [
         "attack",
-        "component-synergy",
-        "dwarven",
+        "aoe",
+        "push",
         "melee"
       ],
       "cardCount": 1,
@@ -635,34 +634,31 @@
       "cardType": "faction"
     },
     {
-      "id": "stone-skin",
-      "name": "Stone Skin",
-      "type": "reactive-defense",
-      "cost": 1,
+      "id": "mountain-stance",
+      "name": "Mountain Stance",
+      "type": "Defense",
+      "cost": 2,
       "range": "Self",
-      "effect": "Reduce damage from next attack by 2. Gain 1 Heat. Dwarven skin hardens like stone under pressure.",
-      "defense": 2,
-      "heat": "+1",
+      "effect": "Gain +3 Defense until your next turn. You cannot move while in Mountain Stance. Immovable as stone.",
       "keywords": [
-        "reactive-defense",
-        "dwarven",
-        "heat"
+        "defense",
+        "immobile",
+        "buff"
       ],
       "cardCount": 1,
       "cardType": "faction"
     },
     {
-      "id": "ancestral-wrath",
-      "name": "Ancestral Wrath",
+      "id": "grudge-bearer",
+      "name": "Grudge Bearer",
       "type": "passive",
       "cost": 0,
       "range": "Self",
-      "effect": "Passive: When you take Component Damage, your next attack deals +3 damage. This bonus is consumed after one attack. Ancestors fuel your vengeance.",
+      "effect": "Passive: Mark enemies who damage you. Attacks against marked enemies deal +2 damage. The grudge is eternal.",
       "keywords": [
         "passive",
-        "component-synergy",
-        "damage-boost",
-        "dwarven"
+        "vengeance",
+        "damage"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -700,18 +696,18 @@
       "cardType": "primary"
     },
     {
-      "id": "molten-hammer",
-      "name": "Molten Hammer",
+      "id": "warhammer-crush",
+      "name": "Warhammer Crush",
       "type": "Attack",
-      "cost": 2,
+      "cost": 3,
       "range": "Melee (Range 1)",
-      "effect": "Deal 5 damage plus your current Heat (max +2 damage). Forge-heated strike.",
-      "damage": "5-7",
+      "effect": "Deal 5 damage. This attack ignores armor. If target is adjacent to terrain, deal 6 damage (slam into wall).",
+      "damage": "5",
       "keywords": [
         "attack",
-        "heat-synergy",
+        "armor-piercing",
         "melee",
-        "dwarven"
+        "conditional"
       ],
       "cardCount": 3,
       "cardType": "primary"
@@ -734,52 +730,52 @@
       "cardType": "primary"
     },
     {
-      "id": "runic-strike",
-      "name": "Runic Strike",
+      "id": "battle-axe-cleave",
+      "name": "Battle Axe Cleave",
       "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
-      "effect": "Deal 6 damage. Gain 1 Heat. Ancient Dwarven combat technique.",
-      "damage": "6",
-      "heat": "+1",
+      "effect": "Deal 5 damage to primary target. Deal 2 damage to one adjacent enemy (cleave). Both attacks ignore armor.",
+      "damage": "5 + 2",
       "keywords": [
         "attack",
-        "heat",
-        "dwarven",
-        "melee"
+        "armor-piercing",
+        "cleave",
+        "aoe"
       ],
       "cardCount": 2,
       "cardType": "primary"
     },
     {
-      "id": "iron-wall",
-      "name": "Iron Wall",
-      "type": "reactive-defense",
-      "cost": 0,
-      "range": "Self",
-      "effect": "Block 2 damage when you would take Component Damage. This does not prevent the Component Damage itself. Dwarven resilience.",
-      "defense": 2,
+      "id": "earthshaker-slam",
+      "name": "Earthshaker Slam",
+      "type": "Attack",
+      "cost": 5,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 8 damage. This attack ignores armor. All enemies within 2 hexes must roll Defense Dice or be knocked prone (lose 1 movement next turn).",
+      "damage": "8",
       "keywords": [
-        "reactive-defense",
-        "component-protection",
-        "dwarven",
-        "free"
+        "attack",
+        "armor-piercing",
+        "aoe",
+        "control"
       ],
       "cardCount": 1,
       "cardType": "primary"
     },
     {
-      "id": "dwarven-bulwark",
-      "name": "Dwarven Bulwark",
-      "type": "passive",
-      "cost": 0,
-      "range": "Self",
-      "effect": "Passive: Reduce all damage you take by 1. This stacks with Component Damage resistance. Dwarven fortitude.",
+      "id": "ancestral-rune-blade",
+      "name": "Ancestral Rune Blade",
+      "type": "Attack",
+      "cost": 2,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 3 damage. This attack ignores armor. If you have 1+ Rune Counters, deal 5 damage instead.",
+      "damage": "3",
       "keywords": [
-        "passive",
-        "damage-reduction",
-        "defensive",
-        "dwarven"
+        "attack",
+        "armor-piercing",
+        "rune-synergy",
+        "melee"
       ],
       "cardCount": 1,
       "cardType": "primary"
@@ -800,18 +796,16 @@
       "cardType": "secondary"
     },
     {
-      "id": "heat-vent",
-      "name": "Heat Vent",
-      "type": "Utility",
-      "cost": 0,
+      "id": "runic-aegis",
+      "name": "Runic Aegis",
+      "type": "Reactive",
+      "cost": 1,
       "range": "Self",
-      "effect": "Remove up to 3 Heat. Draw 1 card. Forge safety mechanism.",
-      "heat": "-3",
+      "effect": "When attacked, gain 1 Rune Counter (max 3). Reduce damage from this attack by 1. Defensive sigil.",
       "keywords": [
-        "utility",
-        "heat-management",
-        "card-draw",
-        "dwarven"
+        "reactive",
+        "defense",
+        "rune-counter"
       ],
       "cardCount": 2,
       "cardType": "secondary"
@@ -832,34 +826,31 @@
       "cardType": "secondary"
     },
     {
-      "id": "forge-blessing",
-      "name": "Forge Blessing",
+      "id": "mountain-stance",
+      "name": "Mountain Stance",
       "type": "Utility",
       "cost": 1,
       "range": "Self",
-      "effect": "Your next attack deals +2 damage. Gain 1 Heat. The forge empowers your strike.",
-      "heat": "+1",
+      "effect": "Until end of turn, you cannot be moved or knocked back by enemy effects. Reduce all damage taken by 2.",
       "keywords": [
         "utility",
-        "damage-boost",
-        "heat",
-        "dwarven"
+        "defense",
+        "immovable"
       ],
       "cardCount": 2,
       "cardType": "secondary"
     },
     {
-      "id": "shield-mastery",
-      "name": "Shield Mastery",
+      "id": "grudge-mark",
+      "name": "Grudge Mark",
       "type": "Utility",
-      "cost": 1,
-      "range": "Self",
-      "effect": "Gain +2 Defense until your next turn. Dwarven shield training.",
+      "cost": 2,
+      "range": "8 hexes",
+      "effect": "Mark target enemy. You deal +2 damage to marked enemy. Mark lasts until enemy dies or you mark different target. Record grudges.",
       "keywords": [
         "utility",
-        "defense",
-        "buff",
-        "dwarven"
+        "mark",
+        "damage-boost"
       ],
       "cardCount": 1,
       "cardType": "secondary"
@@ -872,7 +863,7 @@
       "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
-      "effect": "Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 3 cards).",
+      "effect": "Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 4 cards).",
       "damage": "4",
       "keywords": [
         "attack",
@@ -889,7 +880,7 @@
       "type": "Utility",
       "cost": 2,
       "range": "3 hexes",
-      "effect": "When an enemy Casket is destroyed within 3 hexes, immediately recover 3 cards from your discard pile and shuffle into deck.",
+      "effect": "When an enemy Casket is destroyed within 3 hexes, immediately recover 5 cards from your discard pile and shuffle into deck.",
       "keywords": [
         "utility",
         "death-trigger",
@@ -905,7 +896,7 @@
       "type": "passive",
       "cost": 0,
       "range": "N/A",
-      "effect": "The first time each mission you would be reduced to 0 HP, instead set HP to 3 (recover 3 cards from discard pile). This is automatic and costs nothing.",
+      "effect": "The first time each mission you would be reduced to 0 HP, instead set HP to 5 (recover 5 cards from discard pile). This is automatic and costs nothing.",
       "keywords": [
         "passive",
         "resurrection",
@@ -920,7 +911,7 @@
       "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
-      "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 3 cards).",
+      "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 4 cards).",
       "damage": "3 + 2 AoE",
       "keywords": [
         "attack",
@@ -952,7 +943,7 @@
       "type": "passive",
       "cost": 0,
       "range": "N/A",
-      "effect": "Whenever you recover 3+ cards from discard pile (via any effect), recover +1 additional card. Amplifies large heals only.",
+      "effect": "Whenever you recover cards from discard pile (via any effect), recover +1 additional card.",
       "keywords": [
         "passive",
         "synergy",
@@ -967,7 +958,7 @@
       "type": "Utility",
       "cost": 3,
       "range": "Self",
-      "effect": "Discard 3 cards. For each card discarded this way, deal 2 damage to target enemy within 6 hexes (total 6 damage). Recover 2 cards at end of your next turn.",
+      "effect": "Discard 3 cards. For each card discarded this way, deal 2 damage to target enemy within 6 hexes (total 6 damage). Recover 3 cards at end of your next turn.",
       "damage": "6",
       "keywords": [
         "utility",
@@ -1067,7 +1058,7 @@
       "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
-      "effect": "Deal 5 damage. Recover cards equal to damage dealt (max 3). Powerful lifesteal.",
+      "effect": "Deal 5 damage. Recover cards equal to damage dealt (max 5). Powerful lifesteal.",
       "damage": "5",
       "keywords": [
         "attack",
@@ -1084,7 +1075,7 @@
       "type": "Attack",
       "cost": 3,
       "range": "4 hexes",
-      "effect": "Deal 3 damage to target and all adjacent enemies (AoE). Recover 1 card per enemy damaged (max 3).",
+      "effect": "Deal 3 damage to target and all adjacent enemies (AoE). Recover 1 card per enemy damaged (max 4).",
       "damage": "3 AoE",
       "keywords": [
         "attack",
@@ -1101,7 +1092,7 @@
       "type": "Attack",
       "cost": 5,
       "range": "3 hexes",
-      "effect": "Deal 6 damage at range. Recover 4 cards from discard pile (67% lifesteal). Massive drain.",
+      "effect": "Deal 6 damage at range. Recover 6 cards from discard pile (100% lifesteal). Massive drain.",
       "damage": "6",
       "keywords": [
         "attack",
@@ -1118,7 +1109,7 @@
       "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
-      "effect": "Deal 2 damage. Recover 1 card. If this kills the target, recover 3 cards total instead.",
+      "effect": "Deal 2 damage. Recover 1 card. If this kills the target, recover 5 cards total instead.",
       "damage": "2",
       "keywords": [
         "attack",
@@ -1135,12 +1126,11 @@
       "type": "passive",
       "cost": 0,
       "range": "N/A",
-      "effect": "Whenever you deal 5+ damage with a single attack, recover +1 additional card from discard pile. High-damage bonus only.",
+      "effect": "Whenever you deal damage, recover +1 additional card from discard pile. Ossuarium-exclusive sigil.",
       "keywords": [
         "passive",
         "lifesteal-synergy",
-        "ossuarium-exclusive",
-        "conditional"
+        "ossuarium-exclusive"
       ],
       "cardCount": 2,
       "cardType": "secondary"
@@ -1181,7 +1171,7 @@
       "type": "Utility",
       "cost": 2,
       "range": "Self",
-      "effect": "Until end of turn, whenever you recover cards from discard pile, recover +1 additional card. Amplifies all lifesteal.",
+      "effect": "Until end of turn, whenever you recover cards from discard pile, recover +2 additional cards. Amplifies all lifesteal.",
       "keywords": [
         "utility",
         "lifesteal-synergy",
@@ -7561,7 +7551,7 @@
       "name": "Bloodline Shift",
       "cardType": "faction",
       "type": "Utility",
-      "cost": "3 Biomass tokens",
+      "cost": "2 Biomass tokens",
       "range": "Self",
       "effect": "Transform into enhanced bloodline form until end of round. Choose based on your primary bloodline:\n  - **Fenmar (Wolf)**: +2 movement, Pack Instinct bonuses doubled\n  - **Urtok (Bear)**: +3 Defense, regenerate 1 card when hit\n  - **Vexis (Chitin)**: +2 Defense, molt reaction (negate 1 attack per round)\n  - **Corvath (Raven)**: +3 movement, ignore terrain, can glide\n  - **Serrak (Serpent)**: All attacks inflict poison (2 damage next turn), +1 movement\n- Can stack multiple shifts. Bloodline evolution.",
       "keywords": [
@@ -7616,7 +7606,7 @@
       "name": "Adaptive Evolution",
       "cardType": "faction",
       "type": "Reactive",
-      "cost": "2 Biomass tokens",
+      "cost": "1 Biomass token",
       "range": "Self",
       "effect": "Play when you take damage. Immediately gain 1 mutation counter. Each mutation counter gives +1 to all attack damage permanently this mission (stacks infinitely). Evolution rewards survival.",
       "keywords": [

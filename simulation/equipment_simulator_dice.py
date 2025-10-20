@@ -1130,6 +1130,293 @@ class DiceCombatSimulator:
         return max(valid_attacks, key=lambda c: c.damage)
 
 # ============================================================================
+# MULTI-UNIT COMBAT SIMULATOR
+# ============================================================================
+
+class MultiUnitCombatSimulator:
+    """Simulates combat between two armies with focus fire targeting"""
+
+    def __init__(self, army1: Army, army2: Army, verbose: bool = False):
+        self.army1 = army1
+        self.army2 = army2
+        self.verbose = verbose
+        self.turn = 0
+
+    def log(self, message: str):
+        """Print message if verbose mode enabled"""
+        if self.verbose:
+            print(message)
+
+    def get_strongest_target(self, army: Army):
+        """Get strongest target (prioritize Caskets, then Supports, prefer highest HP)"""
+        # Prioritize Caskets over Supports
+        alive_caskets = [c for c in army.caskets if c.is_alive]
+        if alive_caskets:
+            # Return casket with most HP
+            return max(alive_caskets, key=lambda c: c.hp)
+
+        # Fall back to Support units
+        alive_supports = [s for s in army.support_units if s.is_alive]
+        if alive_supports:
+            return max(alive_supports, key=lambda s: s.hp)
+
+        return None
+
+    def execute_unit_attack(self, attacker, defender):
+        """Execute a single unit's attack (Casket or Support)"""
+        if isinstance(attacker, Casket):
+            # Casket attack uses full combat system
+            if isinstance(defender, Casket):
+                # Casket vs Casket - use DiceCombatSimulator's execute_turn logic
+                return self.casket_attacks_casket(attacker, defender)
+            elif isinstance(defender, SupportUnit):
+                # Casket vs Support - simplified attack
+                return self.casket_attacks_support(attacker, defender)
+
+        elif isinstance(attacker, SupportUnit):
+            # Support units attack (simplified - just deal 2 damage)
+            if isinstance(defender, Casket):
+                damage = defender.take_damage(2, {symbol: 0 for symbol in DefenseDie.FACES})
+                self.log(f"  {attacker.name} attacks {defender.name} for {damage} damage ({defender.hp} HP)")
+                return damage
+            elif isinstance(defender, SupportUnit):
+                defender.take_damage(2)
+                self.log(f"  {attacker.name} attacks {defender.name} for 2 damage ({defender.hp} HP)")
+                return 2
+
+        return 0
+
+    def casket_attacks_casket(self, attacker: Casket, defender: Casket):
+        """Casket attacks another Casket using FULL dice mechanics"""
+        # Ensure hand is full (draw to 5 cards)
+        cards_to_draw = 5 - len(attacker.hand)
+        if cards_to_draw > 0:
+            # Reshuffle discard if deck empty
+            if len(attacker.deck) == 0 and len(attacker.discard) > 0:
+                discard_list = list(attacker.discard)
+                random.shuffle(discard_list)
+                attacker.deck.extend(discard_list)
+                attacker.discard.clear()
+
+            # Draw cards
+            for _ in range(min(cards_to_draw, len(attacker.deck))):
+                if attacker.deck:
+                    attacker.hand.append(attacker.deck.popleft())
+
+        # Select attack card
+        attack_cards = []
+        for c in attacker.hand:
+            if isinstance(c, EquipmentCard) and c.type == "Attack":
+                attack_cards.append(c)
+            elif isinstance(c, FactionCard) and (c.type.lower() == "attack" or c.damage > 0):
+                attack_cards.append(c)
+
+        if not attack_cards:
+            return 0
+
+        # Get highest damage attack that we can afford
+        valid_attacks = [c for c in attack_cards if c.cost <= attacker.sp]
+        if not valid_attacks:
+            return 0
+
+        attack_card = max(valid_attacks, key=lambda c: c.damage)
+
+        # Pay SP cost
+        attacker.sp -= attack_card.cost
+
+        # Apply "on attack" effects (Bleed, Forge, Heat generation)
+        effect_lower = attack_card.effect.lower() if hasattr(attack_card, 'effect') else ""
+
+        # Elves: Apply bleed on ATTACK
+        if 'bleed' in effect_lower:
+            bleed_amount = 2 if 'bleed 2' in effect_lower else 1
+            defender.bleed_stacks = min(defender.bleed_stacks + bleed_amount, 4)
+            self.log(f"    → Applied {bleed_amount} Bleed to {defender.name} ({defender.bleed_stacks}/4 stacks)")
+
+        # Crucible: Gain Forge on ATTACK
+        if 'forge' in effect_lower and 'gain' in effect_lower:
+            attacker.forge_tokens = min(attacker.forge_tokens + 1, 5)
+            self.log(f"    → Gained 1 Forge ({attacker.forge_tokens}/5 tokens)")
+
+        # Dwarves: Generate Heat on ATTACK
+        if hasattr(attack_card, 'heat') and attack_card.heat > 0:
+            attacker.heat += attack_card.heat
+            self.log(f"    → Generated {attack_card.heat} Heat ({attacker.heat} total)")
+
+        # Roll attack dice
+        target_number = 5  # Standard to-hit target
+        die1, die2, total = AttackDie.roll_2d6()
+
+        # Check for special results
+        if die1 == 0 and die2 == 0:
+            # Catastrophic Failure (double JAM)
+            attacker.weapon_jammed = True
+            attacker.heat += 2
+            self.log(f"    {attacker.name} JAMS with {attack_card.name}! (+2 Heat)")
+            attacker.hand.remove(attack_card)
+            attacker.discard.append(attack_card)
+            return 0
+
+        elif die1 == 5 and die2 == 5:
+            # Execution (double DEATH BLOW)
+            defender.component_damage = 999
+            damage = attack_card.damage
+            defender.take_damage(damage, {symbol: 0 for symbol in DefenseDie.FACES})
+            self.log(f"    {attacker.name} EXECUTES {defender.name} with {attack_card.name}! {damage} damage (component destroyed)")
+            attacker.hand.remove(attack_card)
+            attacker.discard.append(attack_card)
+            return damage
+
+        elif total < target_number:
+            # Miss
+            self.log(f"    {attacker.name} misses {defender.name} with {attack_card.name} ([{die1}]+[{die2}]={total} < {target_number})")
+            attacker.hand.remove(attack_card)
+            attacker.discard.append(attack_card)
+            return 0
+
+        # Hit - calculate damage and bonus
+        base_damage = attack_card.damage
+        bonus_damage = 0
+        is_critical = False
+
+        if total >= 9:
+            # Critical Hit (9+)
+            bonus_damage = 2
+            is_critical = True
+        elif total >= 7:
+            # Strong Hit (7-8)
+            bonus_damage = 1
+
+        # Apply weapon jam penalty
+        if attacker.weapon_jammed:
+            bonus_damage -= 2
+            attacker.weapon_jammed = False
+
+        total_damage = base_damage + bonus_damage
+
+        # Roll defense dice
+        dice_count = max(1, total_damage - (1 if is_critical else 0))
+        defense_results = DefenseDie.roll_multiple(dice_count)
+
+        # Apply damage
+        actual_damage = defender.take_damage(total_damage, defense_results)
+
+        blocks = defense_results[DefenseDie.SHIELD] + defense_results[DefenseDie.ABSORB]
+        self.log(f"    {attacker.name} attacks {defender.name} with {attack_card.name}: [{die1}]+[{die2}]={total} → {actual_damage}/{total_damage} dmg ({blocks} blocked, {defender.hp} HP)")
+
+        # Discard attack card
+        attacker.hand.remove(attack_card)
+        attacker.discard.append(attack_card)
+
+        return actual_damage
+
+    def casket_attacks_support(self, attacker: Casket, defender: SupportUnit):
+        """Casket attacks Support Unit (simplified)"""
+        # Support units have no deck, just take flat damage
+        # Use average attack damage (4 damage)
+        damage = 4
+        defender.take_damage(damage)
+        self.log(f"  {attacker.name} attacks {defender.name} for {damage} damage ({defender.hp} HP)")
+        return damage
+
+    def run_battle(self, max_turns: int = 30) -> dict:
+        """
+        Run full multi-unit battle until one army is defeated
+
+        Args:
+            max_turns: Maximum turns before declaring winner by HP remaining (default 30)
+        """
+        self.log(f"\n=== MULTI-UNIT BATTLE: {self.army1.faction} vs {self.army2.faction} ===\n")
+
+        while not self.army1.is_defeated and not self.army2.is_defeated and self.turn < max_turns:
+            self.turn += 1
+            self.log(f"--- Turn {self.turn} ---")
+
+            # Army 1 activates all units
+            for unit in list(self.army1.active_units):  # Copy list to avoid modification during iteration
+                if self.army2.is_defeated:
+                    break
+
+                # Process Casket mechanics
+                if isinstance(unit, Casket):
+                    # Apply bleed damage at turn start
+                    if unit.bleed_stacks > 0:
+                        bleed_damage = unit.bleed_stacks
+                        for _ in range(bleed_damage):
+                            if unit.deck:
+                                unit.deck.popleft()
+                        self.log(f"  {unit.name} takes {bleed_damage} bleed damage ({unit.bleed_stacks} stacks, {unit.hp} HP)")
+
+                    # Clear weapon jam (lasts 1 turn)
+                    if unit.weapon_jammed:
+                        unit.weapon_jammed = False
+                        self.log(f"  {unit.name} clears weapon jam")
+
+                    # Regenerate SP (+2 per turn, up to max)
+                    unit.sp = min(unit.sp + 2, unit.sp_max)
+
+                # Find target (focus fire on strongest)
+                target = self.get_strongest_target(self.army2)
+                if target:
+                    self.execute_unit_attack(unit, target)
+
+            # Check if army2 defeated
+            if self.army2.is_defeated:
+                break
+
+            # Army 2 activates all units
+            for unit in list(self.army2.active_units):
+                if self.army1.is_defeated:
+                    break
+
+                # Process Casket mechanics
+                if isinstance(unit, Casket):
+                    # Apply bleed damage at turn start
+                    if unit.bleed_stacks > 0:
+                        bleed_damage = unit.bleed_stacks
+                        for _ in range(bleed_damage):
+                            if unit.deck:
+                                unit.deck.popleft()
+                        self.log(f"  {unit.name} takes {bleed_damage} bleed damage ({unit.bleed_stacks} stacks, {unit.hp} HP)")
+
+                    # Clear weapon jam (lasts 1 turn)
+                    if unit.weapon_jammed:
+                        unit.weapon_jammed = False
+                        self.log(f"  {unit.name} clears weapon jam")
+
+                    # Regenerate SP (+2 per turn, up to max)
+                    unit.sp = min(unit.sp + 2, unit.sp_max)
+
+                # Find target (focus fire on strongest)
+                target = self.get_strongest_target(self.army1)
+                if target:
+                    self.execute_unit_attack(unit, target)
+
+        # Determine winner
+        if self.army1.is_defeated:
+            winner = self.army2.faction
+            self.log(f"\n=== BATTLE END: {winner} wins! (Army 1 defeated) ===\n")
+        elif self.army2.is_defeated:
+            winner = self.army1.faction
+            self.log(f"\n=== BATTLE END: {winner} wins! (Army 2 defeated) ===\n")
+        else:
+            # Timeout - determine by remaining HP
+            army1_hp = sum(c.hp for c in self.army1.caskets if c.is_alive)
+            army2_hp = sum(c.hp for c in self.army2.caskets if c.is_alive)
+            winner = self.army1.faction if army1_hp > army2_hp else self.army2.faction
+            self.log(f"\n=== BATTLE TIMEOUT ({self.turn} turns): {winner} wins by HP! ===\n")
+            self.log(f"  {self.army1.faction}: {army1_hp} HP remaining")
+            self.log(f"  {self.army2.faction}: {army2_hp} HP remaining")
+
+        return {
+            'winner': winner,
+            'turns': self.turn,
+            'army1_units_remaining': len(self.army1.active_units),
+            'army2_units_remaining': len(self.army2.active_units),
+            'timeout': self.turn >= max_turns and not (self.army1.is_defeated or self.army2.is_defeated)
+        }
+
+# ============================================================================
 # MAIN EXECUTION
 # ============================================================================
 
