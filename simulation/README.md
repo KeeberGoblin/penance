@@ -37,6 +37,23 @@ This runs 225 battles (10 factions × 9 matchups × 5 runs) and outputs:
 
 **Runtime:** ~3 minutes for 225 battles
 
+### NEW: Test Point-Based Army Builder (v5.14b)
+```bash
+# Test random army generation at different difficulty levels
+python3 test_army_builder.py
+
+# Test faction balance with varied army compositions (simplified)
+python3 faction_balance_ARMIES.py
+```
+
+This demonstrates the point-based army builder system:
+- Random army generation within point budgets (4-12 points)
+- Difficulty presets (Easy/Medium/Hard/Boss/Campaign)
+- Support unit integration (0.5 points each)
+- Varied compositions (Scout swarms, Colossus boss, mixed armies)
+
+**See:** [/docs/ARMY-BUILDER-SYSTEM.md](/docs/ARMY-BUILDER-SYSTEM.md) for details
+
 ---
 
 ## Files

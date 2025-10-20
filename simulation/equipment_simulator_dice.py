@@ -146,10 +146,10 @@ class FactionCard:
 
 class CasketClass(Enum):
     """Casket class definitions with point costs"""
-    SCOUT = ("Scout", 6, 22, 1)           # Fast, fragile, cheap (-20% HP: 28→22)
-    WARDEN = ("Warden", 5, 28, 2)         # Balanced, standard (-20% HP: 34→28)
-    VANGUARD = ("Vanguard", 4, 34, 3)     # Slow, tanky, expensive (-20% HP: 40→34)
-    COLOSSUS = ("Colossus", 4, 44, 4)     # Boss unit (-20% HP: 50→44)
+    SCOUT = ("Scout", 6, 22, 2)           # Fast, fragile, cheap (-20% HP: 28→22)
+    WARDEN = ("Warden", 5, 28, 3)         # Balanced, standard (-20% HP: 34→28)
+    VANGUARD = ("Vanguard", 4, 34, 4)     # Slow, tanky, expensive (-20% HP: 40→34)
+    COLOSSUS = ("Colossus", 4, 44, 5)     # Boss unit (-20% HP: 50→44)
 
     @property
     def sp_max(self):
@@ -261,6 +261,172 @@ class Casket:
                 self.discard.popleft()
 
         return final_damage
+
+# ============================================================================
+# SUPPORT UNIT (SIMPLIFIED FOR SIMULATION)
+# ============================================================================
+
+@dataclass
+class SupportUnit:
+    """Simplified support unit for point-based armies"""
+    name: str
+    faction: str
+    hp: int = 10  # Support units have fixed HP
+    point_cost: float = 1.0  # 1 point each
+
+    @property
+    def is_alive(self):
+        return self.hp > 0
+
+    def take_damage(self, amount: int):
+        """Support units take flat damage (no deck system)"""
+        self.hp = max(0, self.hp - amount)
+
+# ============================================================================
+# ARMY CLASS
+# ============================================================================
+
+@dataclass
+class Army:
+    """Represents an army of multiple Caskets and Support Units"""
+    faction: str
+    caskets: List[Casket] = field(default_factory=list)
+    support_units: List[SupportUnit] = field(default_factory=list)
+
+    @property
+    def total_points(self) -> float:
+        """Calculate total point cost of army"""
+        casket_points = sum(c.casket_class.point_cost for c in self.caskets)
+        support_points = sum(s.point_cost for s in self.support_units)
+        return casket_points + support_points
+
+    @property
+    def is_defeated(self) -> bool:
+        """Army is defeated if all units are dead"""
+        caskets_alive = any(c.is_alive for c in self.caskets)
+        supports_alive = any(s.is_alive for s in self.support_units)
+        return not (caskets_alive or supports_alive)
+
+    @property
+    def active_units(self) -> List:
+        """Get all alive units"""
+        alive = []
+        alive.extend([c for c in self.caskets if c.is_alive])
+        alive.extend([s for s in self.support_units if s.is_alive])
+        return alive
+
+# ============================================================================
+# DIFFICULTY PRESETS
+# ============================================================================
+
+class Difficulty(Enum):
+    """Difficulty levels with point budgets"""
+    EASY = ("Easy", 4)          # 2 Scouts OR 1 Warden + 1 Support OR 4 Supports (no Colossus)
+    MEDIUM = ("Medium", 6)       # 2 Wardens OR 1 Warden + Scout + Support OR 3 Scouts
+    HARD = ("Hard", 8)           # 2 Vanguards OR 4 Scouts OR 1 Colossus + Warden
+    BOSS = ("Boss", 12)          # 2 Colossi + Warden OR 4 Wardens OR 6 Scouts
+    CAMPAIGN = ("Campaign", 10)  # 2 Colossus OR 1 Colossus + Vanguard + Support OR 5 Scouts
+
+    @property
+    def point_budget(self):
+        return self.value[1]
+
+# ============================================================================
+# POINT-BASED ARMY BUILDER
+# ============================================================================
+
+class PointBudgetArmyBuilder:
+    """Builds armies within point budget with random composition"""
+
+    def __init__(self, deck_builder: 'DeckBuilder'):
+        self.deck_builder = deck_builder
+
+    def build_random_army(
+        self,
+        faction: str,
+        point_budget: float,
+        allow_supports: bool = True,
+        support_ratio: float = 0.3  # Max 30% of points on supports
+    ) -> Army:
+        """
+        Build random army within point budget
+
+        Args:
+            faction: Faction name
+            point_budget: Total points to spend
+            allow_supports: Include support units
+            support_ratio: Max % of budget for supports (0.0-1.0)
+
+        Returns:
+            Army with random composition
+        """
+        army = Army(faction=faction)
+        remaining_points = point_budget
+
+        # Determine support budget
+        support_budget = 0
+        if allow_supports and support_ratio > 0:
+            support_budget = point_budget * support_ratio
+            # Spend some points on supports first (0-100% of support budget)
+            support_spend = random.uniform(0, support_budget)
+            num_supports = int(support_spend / 1.0)  # 1 point per support
+
+            for i in range(num_supports):
+                support = SupportUnit(
+                    name=f"{faction.capitalize()} Support {i+1}",
+                    faction=faction
+                )
+                army.support_units.append(support)
+                remaining_points -= 1.0
+
+        # Spend remaining points on Caskets
+        casket_classes = [
+            CasketClass.COLOSSUS,   # 5 points
+            CasketClass.VANGUARD,   # 4 points
+            CasketClass.WARDEN,     # 3 points
+            CasketClass.SCOUT       # 2 points
+        ]
+
+        while remaining_points >= 2:
+            # Try to buy affordable caskets
+            affordable = [c for c in casket_classes if c.point_cost <= remaining_points]
+
+            if not affordable:
+                break
+
+            # Randomly choose from affordable options
+            chosen_class = random.choice(affordable)
+
+            # Build casket with complete deck
+            casket = self.deck_builder.build_random_deck(faction, chosen_class)
+            army.caskets.append(casket)
+            remaining_points -= chosen_class.point_cost
+
+        return army
+
+    def build_specific_army(
+        self,
+        faction: str,
+        composition: List[CasketClass],
+        num_supports: int = 0
+    ) -> Army:
+        """Build army with specific composition"""
+        army = Army(faction=faction)
+
+        # Add Caskets
+        for i, casket_class in enumerate(composition):
+            casket = self.deck_builder.build_random_deck(faction, casket_class)
+            army.caskets.append(casket)
+
+        # Add Support Units
+        for i in range(num_supports):
+            support = SupportUnit(
+                name=f"{faction.capitalize()} Support {i+1}",
+                faction=faction
+            )
+            army.support_units.append(support)
+
+        return army
 
 # ============================================================================
 # DECK BUILDER
