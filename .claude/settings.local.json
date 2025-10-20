@@ -37,7 +37,10 @@
       "Bash(tee /tmp/simulation_output.txt)",
       "Bash(tee -a /tmp/simulation_output.txt)",
       "Bash(timeout 180 python3 faction_balance_DICE.py)",
-      "Bash(tee /tmp/dice_simulation_output.txt)"
+      "Bash(tee /tmp/dice_simulation_output.txt)",
+      "Bash(tee /tmp/phase1_simulation_output.txt)",
+      "Bash(tee /tmp/phase2_simulation_output.txt)",
+      "Bash(tee /tmp/phase2_v2_simulation_output.txt)"
     ],
     "deny": [],
     "ask": []

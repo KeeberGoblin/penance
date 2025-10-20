@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "5.1",
+    "version": "5.2",
     "lastUpdated": "2025-10-20",
-    "description": "Complete Penance card database v5.1 - New physical equipment for 6 factions (baseline, no balance changes)",
+    "description": "Complete Penance card database v5.2 - Balance fixes: Church nerfs, Elf bleed on-attack",
     "cardCounts": {
       "factionCards": 220,
       "equipmentCards": 223,

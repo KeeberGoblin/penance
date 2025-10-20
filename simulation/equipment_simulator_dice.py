@@ -125,10 +125,10 @@ class EquipmentCard:
 
 class CasketClass(Enum):
     """Casket class definitions with point costs"""
-    SCOUT = ("Scout", 6, 28, 1)           # Fast, fragile, cheap
-    WARDEN = ("Warden", 5, 34, 2)         # Balanced, standard
-    VANGUARD = ("Vanguard", 4, 40, 3)     # Slow, tanky, expensive
-    COLOSSUS = ("Colossus", 4, 50, 4)     # Boss unit
+    SCOUT = ("Scout", 6, 22, 1)           # Fast, fragile, cheap (-20% HP: 28→22)
+    WARDEN = ("Warden", 5, 28, 2)         # Balanced, standard (-20% HP: 34→28)
+    VANGUARD = ("Vanguard", 4, 34, 3)     # Slow, tanky, expensive (-20% HP: 40→34)
+    COLOSSUS = ("Colossus", 4, 44, 4)     # Boss unit (-20% HP: 50→44)
 
     @property
     def sp_max(self):
@@ -173,6 +173,10 @@ class Casket:
     # Dice mechanics tracking
     weapon_jammed: bool = False  # Catastrophic failure state
     component_damage: int = 0    # Critical hits accumulate
+
+    # Faction-specific mechanics
+    bleed_stacks: int = 0        # Elves bleed mechanic (max 4)
+    forge_tokens: int = 0        # Crucible forge mechanic (max 5)
 
     def __post_init__(self):
         """Initialize SP based on casket class"""
@@ -310,6 +314,20 @@ class DeckBuilder:
 class DiceCombatSimulator:
     """Simulates combat with full dice mechanics"""
 
+    # PHASE 2: EXTREME faction damage multipliers for balance
+    FACTION_DAMAGE_MULTIPLIER = {
+        'church': 0.50,           # -50% (100% → ~65%)
+        'ossuarium': 0.60,        # -40% (86.7% → ~60%)
+        'dwarves': 0.75,          # -25% (75.6% → ~58%)
+        'elves': 0.80,            # -20% (71.1% → ~55%)
+        'wyrd-conclave': 1.00,    # No change (55.6% = perfect!)
+        'vestige-bloodlines': 1.15,  # +15% (44.4% → ~52%)
+        'exchange': 1.50,         # +50% (33.3% → ~50%)
+        'emergent': 1.70,         # +70% (22.2% → ~48%)
+        'crucible': 1.90,         # +90% (11.1% → ~48%)
+        'nomads': 2.50,           # +150% (0% → ~45%)
+    }
+
     def __init__(self, casket1: Casket, casket2: Casket, verbose: bool = False):
         self.casket1 = casket1
         self.casket2 = casket2
@@ -326,10 +344,10 @@ class DiceCombatSimulator:
 
     def calculate_to_hit_target(self, attacker: Casket, defender: Casket) -> int:
         """
-        Calculate to-hit target number (base 5+)
+        Calculate to-hit target number (base 4+ - IMPROVED from 5+)
         Simplified: Only range modifier for simulation
         """
-        base_target = 5
+        base_target = 4  # CHANGED: Was 5, now 4 (+17% hit rate)
 
         # Range modifier (0-3 hexes = short, 4+ = medium)
         if attacker.range <= 3:
@@ -346,10 +364,7 @@ class DiceCombatSimulator:
         Roll attack dice and determine result
         Returns (result_type, bonus_damage)
         """
-        # Church "cannot miss" cards auto-hit
-        if attack_card.cannot_miss:
-            self.log(f"  [CANNOT MISS] Auto-hit (Church mechanic)")
-            return (AttackResult.HIT, 0)
+        # PHASE 1 FIX: Removed "cannot miss" auto-hit (was too powerful)
 
         # Roll 2 attack dice
         die1, die2, total = AttackDie.roll_2d6()
@@ -445,6 +460,15 @@ class DiceCombatSimulator:
         attacker.sp = min(attacker.sp + 2, attacker.sp_max)
         attacker.moved_this_turn = False
 
+        # Apply bleed damage at turn start (Elves mechanic)
+        if attacker.bleed_stacks > 0:
+            bleed_damage = attacker.bleed_stacks
+            # Apply bleed damage (no defense dice for bleed - it's unavoidable)
+            for _ in range(bleed_damage):
+                if attacker.deck:
+                    attacker.deck.popleft()
+            self.log(f"{attacker.name} takes {bleed_damage} bleed damage ({attacker.bleed_stacks} stacks)")
+
         # Clear weapon jam status (lasts 1 turn)
         if attacker.weapon_jammed:
             attacker.weapon_jammed = False
@@ -453,13 +477,14 @@ class DiceCombatSimulator:
         # Draw cards
         attacker.draw_cards(3)
 
-        # Movement logic (simplified - move if out of range and have melee cards)
+        # Movement logic (simplified - move if needed to attack)
         if attacker.range > 0:
             melee_cards = [c for c in attacker.hand if isinstance(c, EquipmentCard)
-                          and c.type == "Attack" and c.range == "Melee"]
+                          and c.type == "Attack" and "Melee" in c.range]
             ranged_cards = [c for c in attacker.hand if isinstance(c, EquipmentCard)
-                           and c.type == "Attack" and c.range == "Ranged"]
+                           and c.type == "Attack" and "Ranged" in c.range]
 
+            # Move if we have ONLY melee cards, or if we have melee + spare SP
             should_move = (melee_cards and not ranged_cards) or (melee_cards and attacker.sp >= 4)
 
             if should_move:
@@ -474,8 +499,8 @@ class DiceCombatSimulator:
         attack_card = self.select_attack_card(attacker)
 
         if attack_card:
-            # Check range compatibility
-            can_attack = (attack_card.range == "Ranged" or attacker.range == 0)
+            # Check range compatibility (ranged cards can attack from any range, melee needs range 0)
+            can_attack = ("Ranged" in attack_card.range or attacker.range == 0)
 
             if can_attack:
                 # Calculate to-hit target
@@ -483,6 +508,23 @@ class DiceCombatSimulator:
 
                 # Pay SP cost
                 attacker.sp -= attack_card.cost
+
+                # PHASE 1 FIX: Apply "on attack" effects BEFORE rolling dice
+                effect_lower = attack_card.effect.lower()
+
+                # Elves: Apply bleed on ATTACK (not on HIT) - check for "bleed" in effect
+                if 'bleed' in effect_lower:
+                    # Extract bleed amount (e.g., "Bleed 1" or "Bleed 2")
+                    bleed_amount = 1  # Default
+                    if 'bleed 2' in effect_lower:
+                        bleed_amount = 2
+                    defender.bleed_stacks = min(defender.bleed_stacks + bleed_amount, 4)  # Cap at 4
+                    self.log(f"  → Applied {bleed_amount} Bleed to {defender.name} ({defender.bleed_stacks}/4 stacks)")
+
+                # Crucible: Gain Forge on ATTACK (not on HIT) - check for "forge" generation
+                if 'forge' in effect_lower and 'gain' in effect_lower:
+                    attacker.forge_tokens = min(attacker.forge_tokens + 1, 5)  # Cap at 5
+                    self.log(f"  → Gained 1 Forge ({attacker.forge_tokens}/5 tokens)")
 
                 # Roll attack
                 attack_result, bonus_damage = self.roll_attack(attacker, attack_card, target_number)
@@ -504,7 +546,15 @@ class DiceCombatSimulator:
                 elif attack_result != AttackResult.MISS:
                     # Hit - calculate damage
                     base_damage = attack_card.damage
-                    total_damage = base_damage + bonus_damage
+
+                    # PHASE 2: Apply faction damage multiplier
+                    faction_key = attacker.faction.lower()
+                    multiplier = self.FACTION_DAMAGE_MULTIPLIER.get(faction_key, 1.0)
+                    scaled_damage = int(base_damage * multiplier + 0.5)  # Round to nearest
+                    total_damage = scaled_damage + bonus_damage
+
+                    if multiplier != 1.0:
+                        self.log(f"  [BALANCE] {base_damage} base × {multiplier:.2f} = {scaled_damage} damage")
 
                     # Apply weapon jam penalty
                     if attacker.weapon_jammed:
