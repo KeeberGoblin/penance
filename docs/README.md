@@ -78,6 +78,17 @@ Design documents and creator tools
 - [Tabletop Simulator Guide](reference/tabletop-simulator-guide.md)
 - [3D Printable System](reference/3d-printable-system.md)
 
+### [Simulation](../simulation/)
+Combat simulator and balance testing tools
+- [Combat Simulator (v5.14)](../simulation/README.md) - Complete deck combat with dice mechanics
+- [V5.14 Implementation Results](V5.14-COMPLETE-DECK-IMPLEMENTATION.md) - Latest balance analysis
+- **Features:**
+  - Custom 2d6 attack dice + 1d6 defense dice system
+  - Resource economy tracking (Credits, Biomass, Faith, Forge, Bleed)
+  - All 10 factions with complete deck system (faction + universal + equipment cards)
+  - 225-battle test suite (~3 minutes runtime)
+- **Current Status:** 1/10 factions balanced (45-55% WR range)
+
 ---
 
 ## Interactive Sites

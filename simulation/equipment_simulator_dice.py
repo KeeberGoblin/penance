@@ -120,6 +120,27 @@ class EquipmentCard:
         return f"{self.name} ({self.type}, {self.cost} SP, {self.damage} dmg)"
 
 # ============================================================================
+# FACTION CARD CLASS
+# ============================================================================
+
+@dataclass
+class FactionCard:
+    """Represents a faction-specific or universal card (gambit, passive, movement, etc.)"""
+    name: str
+    type: str  # gambit, passive, movement, reactive-defense, utility, etc.
+    cost: int  # SP cost
+    effect: str
+    range: str = "Self"
+    damage: int = 0  # Damage dealt (if applicable)
+    defense: int = 0  # Damage reduced (if applicable)
+    heat: int = 0  # Heat generated (if applicable)
+    card_type: str = "faction"  # "faction" or "core" (universal)
+    keywords: List[str] = field(default_factory=list)
+
+    def __repr__(self):
+        return f"{self.name} ({self.type}, {self.cost} SP)"
+
+# ============================================================================
 # CASKET CLASSES
 # ============================================================================
 
@@ -169,6 +190,10 @@ class Casket:
 
     # Equipment cards in deck
     equipment_cards: List[EquipmentCard] = field(default_factory=list)
+
+    # Faction and universal cards in deck
+    faction_cards: List[FactionCard] = field(default_factory=list)
+    universal_cards: List[FactionCard] = field(default_factory=list)
 
     # Dice mechanics tracking
     weapon_jammed: bool = False  # Catastrophic failure state
@@ -247,10 +272,27 @@ class DeckBuilder:
     def __init__(self, card_db: Dict):
         self.card_db = card_db
 
+    @staticmethod
+    def parse_int_value(value, default=0) -> int:
+        """Parse integer value from various formats (int, str, null)"""
+        if value is None:
+            return default
+        if isinstance(value, int):
+            return value
+        if isinstance(value, str):
+            # Extract numeric part from strings like "0 SP", "2 Heat", etc.
+            import re
+            match = re.search(r'-?\d+', value)
+            if match:
+                return int(match.group())
+        return default
+
     def build_random_deck(self, faction: str, casket_class: CasketClass = CasketClass.WARDEN) -> Casket:
         """
-        Build a deck with randomized equipment selection
-        Faction cards are fixed, equipment is randomized from equipment_items pool
+        Build a deck with complete card system:
+        - 6 faction cards (randomly chosen from 21 available)
+        - 10 universal cards (all included)
+        - 2 equipment items (randomly chosen from available pool)
         """
         casket = Casket(
             name=f"{faction.capitalize()} {casket_class.name}",
@@ -258,8 +300,87 @@ class DeckBuilder:
             casket_class=casket_class
         )
 
-        # Find faction-specific equipment items (primary + secondary weapons)
         faction_key = faction.lower().replace(' ', '-')
+
+        # ============================================================
+        # STEP 1: Load 6 random faction cards from faction's card pool
+        # ============================================================
+        faction_cards_pool = self.card_db.get(faction_key, [])
+        if faction_cards_pool and len(faction_cards_pool) >= 6:
+            # Randomly select 6 faction cards (simulates strategic choice)
+            selected_faction_cards = random.sample(faction_cards_pool, 6)
+
+            for card_data in selected_faction_cards:
+                # Parse heat value (can be "+1", "-1d3", etc.)
+                heat_value = 0
+                heat_raw = card_data.get('heat', 0)
+                if isinstance(heat_raw, str):
+                    # Simple numeric heat like "+1" or "-2"
+                    heat_clean = heat_raw.replace('+', '')
+                    if heat_clean.lstrip('-').isdigit():
+                        heat_value = int(heat_clean)
+                    # Complex heat like "-1d3" - just use 0 for now
+                elif isinstance(heat_raw, int):
+                    heat_value = heat_raw
+
+                faction_card = FactionCard(
+                    name=card_data['name'],
+                    type=card_data.get('type', 'gambit'),
+                    cost=self.parse_int_value(card_data.get('cost'), 0),
+                    effect=card_data.get('effect', ''),
+                    range=card_data.get('range', 'Self'),
+                    damage=self.parse_int_value(card_data.get('damage'), 0),
+                    defense=self.parse_int_value(card_data.get('defense'), 0),
+                    heat=heat_value,
+                    card_type='faction',
+                    keywords=card_data.get('keywords', [])
+                )
+
+                # Add multiple copies if specified
+                card_count = card_data.get('cardCount', 1)
+                for _ in range(card_count):
+                    casket.faction_cards.append(faction_card)
+                    casket.deck.append(faction_card)
+
+        # ============================================================
+        # STEP 2: Load all 10 universal cards
+        # ============================================================
+        universal_cards_pool = self.card_db.get('universal', [])
+        for card_data in universal_cards_pool:
+            # Parse heat value (can be "+1", "-1d3", etc.)
+            heat_value = 0
+            heat_raw = card_data.get('heat', 0)
+            if isinstance(heat_raw, str):
+                # Simple numeric heat like "+1" or "-2"
+                heat_clean = heat_raw.replace('+', '')
+                if heat_clean.lstrip('-').isdigit():
+                    heat_value = int(heat_clean)
+                # Complex heat like "-1d3" - just use 0 for now
+            elif isinstance(heat_raw, int):
+                heat_value = heat_raw
+
+            universal_card = FactionCard(
+                name=card_data['name'],
+                type=card_data.get('type', 'movement'),
+                cost=self.parse_int_value(card_data.get('cost'), 0),
+                effect=card_data.get('effect', ''),
+                range=card_data.get('range', 'Self'),
+                damage=self.parse_int_value(card_data.get('damage'), 0),
+                defense=self.parse_int_value(card_data.get('defense'), 0),
+                heat=heat_value,
+                card_type='core',
+                keywords=card_data.get('keywords', [])
+            )
+
+            # Add multiple copies if specified
+            card_count = card_data.get('cardCount', 1)
+            for _ in range(card_count):
+                casket.universal_cards.append(universal_card)
+                casket.deck.append(universal_card)
+
+        # ============================================================
+        # STEP 3: Load equipment items (existing logic)
+        # ============================================================
         equipment_items = [item for item in self.card_db.get('equipment_items', [])
                           if item.get('faction', '').lower() == faction_key]
 
@@ -578,9 +699,20 @@ class DiceCombatSimulator:
         else:
             self.log(f"{attacker.name} has no valid attacks, banking {attacker.sp} SP")
 
-    def select_attack_card(self, casket: Casket) -> Optional[EquipmentCard]:
-        """Select best single attack card from hand (highest damage, affordable)"""
-        attack_cards = [c for c in casket.hand if isinstance(c, EquipmentCard) and c.type == "Attack"]
+    def select_attack_card(self, casket: Casket):
+        """
+        Select best single attack card from hand (highest damage, affordable)
+        Supports both EquipmentCard (type="Attack") and FactionCard (type="attack" or has damage)
+        """
+        attack_cards = []
+
+        for c in casket.hand:
+            # Check if it's an EquipmentCard with type "Attack"
+            if isinstance(c, EquipmentCard) and c.type == "Attack":
+                attack_cards.append(c)
+            # Check if it's a FactionCard with type "attack" or has damage > 0
+            elif isinstance(c, FactionCard) and (c.type.lower() == "attack" or c.damage > 0):
+                attack_cards.append(c)
 
         if not attack_cards:
             return None

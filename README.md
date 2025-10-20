@@ -237,6 +237,14 @@ Each faction has **21 unique cards** and a completely different playstyle:
 - [PDF Generator](tools/generate-pdfs.py) - Create professional rulebooks
 - [TTS Import Guide](tools/TTS-IMPORT-GUIDE.md) - Setup instructions
 
+### Combat Simulator (v5.14)
+- **[Faction Balance Simulator](/simulation/)** - Complete deck combat testing with dice mechanics
+- Test all 10 factions with accurate win rate calculations
+- Custom 2d6 attack dice + 1d6 defense dice system
+- Resource economy tracking (Credits, Biomass, Faith, Forge, Bleed)
+- **Current Balance:** 1/10 factions in target 45-55% WR range
+- **Usage:** `cd simulation && python3 faction_balance_DICE.py`
+
 ---
 
 ## Design Philosophy

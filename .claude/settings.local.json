@@ -46,7 +46,18 @@
       "Bash(tee /tmp/v5.9_simulation.txt)",
       "Bash(jq '.equipment_items[] | select(.faction == \"\"\"\"church\"\"\"\") | {name: .name, cards: [.cards[] | select(.damage >= 5) | {name: .name, damage: .damage, cost: .cost}]}' complete-card-data.json)",
       "Bash(jq '.equipment_items[] | select(.faction == \"\"nomads\"\") | {name: .name, cards: [.cards[] | {name: .name, damage: .damage, cost: .cost}]}' complete-card-data.json)",
-      "Bash(jq '.equipment_items[] | select(.faction == \"\"crucible\"\") | {name: .name, cards: [.cards[] | select(.damage) | {name: .name, damage: .damage, cost: .cost}]}' complete-card-data.json)"
+      "Bash(jq '.equipment_items[] | select(.faction == \"\"crucible\"\") | {name: .name, cards: [.cards[] | select(.damage) | {name: .name, damage: .damage, cost: .cost}]}' complete-card-data.json)",
+      "Bash(jq '.equipment_items[] | select(.faction == \"\"wyrd-conclave\"\") | {name: .name, cards: [.cards[] | {name: .name, type: .type}]}' complete-card-data.json)",
+      "Bash(jq -r '.equipment_items[] | .faction as $faction | .name as $item | .cards[] | select(.type | test(\"\"\"\"^[a-z]\"\"\"\")) | \"\"\"\"\\($faction) | \\($item) | \\(.name) | type: \\(.type)\"\"\"\"' complete-card-data.json)",
+      "Bash(tee /tmp/v5.11_simulation.txt)",
+      "Bash(jq '.equipment_items | length' complete-card-data.json)",
+      "Bash(jq -r '.equipment_items[].faction' complete-card-data.json)",
+      "Bash(jq '.equipment_items[] | select(.faction == \"\"\"\"church\"\"\"\") | {name: .name, cards: [.cards[] | select(.damage >= 6) | {name: .name, damage: .damage, cost: .cost, effect: .effect}]}' complete-card-data.json)",
+      "Bash(jq '.equipment_items[] | select(.faction == \"\"church\"\") | {name: .name, cards: [.cards[] | select(.damage >= 5) | {name: .name, damage: .damage, cost: .cost}]}' complete-card-data.json)",
+      "Bash(tee /tmp/v5.12_simulation.txt)",
+      "Bash(tee /tmp/v5.13_simulation.txt)",
+      "Bash(jq '.universal | .[] | {name: .name, type: .type}' complete-card-data.json)",
+      "Bash(tee /tmp/v5.14_simulation.txt)"
     ],
     "deny": [],
     "ask": []

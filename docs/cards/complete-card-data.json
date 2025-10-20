@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "5.10",
+    "version": "5.13",
     "lastUpdated": "2025-10-20",
-    "description": "Complete Penance card database v5.10 - Comprehensive balance pass: Fixed Exchange (0%→?% WR: capitalized types, buffed damage +1-2 across all cards, ALL cards now have Credit-spending options), Nerfed Emergent (76%→?%: Hive Claw/Swarm Rush/Coordinated Assault damage -1), Nerfed Church (changed 'ignore Defense' to 'bypass 1-2 Defense' on Wild Swing/Void Bolt/Reality Tear), Nerfed Nomads (Quick Slash/Dash Strike/Sniper Shot damage -1), Nerfed Crucible (Ember Strike/Molten Hammer damage -1, fixed all type capitalization), Fixed Bloodlines (11%→?%: buffed damage +1-2, ALL cards now have Biomass-spending options with 'ignore Defense' effects).",
+    "description": "Complete Penance card database v5.13 - STRUCTURAL REBALANCE: Moved 6 Church weapons to universal pool (Mace, Greatsword, Warhammer, Halberd, Chain Whip, Flail = 37 cards). Church now has 19 faction-specific cards (Tower Shield, Blessed Talisman, Codex of Light, Divine Scepter) matching other factions. This addresses the root cause: Church had 56 cards vs 13-18 for others, creating 3-4× card pool advantage. All factions now have equal access to heavy weapons.",
     "cardCounts": {
       "factionCards": 221,
       "equipmentCards": 223,
@@ -83,7 +83,7 @@
     {
       "id": "unyielding-bulwark",
       "name": "Unyielding Bulwark",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Discard this card after use.",
@@ -99,7 +99,7 @@
     {
       "id": "second-skin",
       "name": "Second Skin",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 1 (minimum 1). Discard this card after use.",
@@ -115,7 +115,7 @@
     {
       "id": "breathe-the-core",
       "name": "Breathe the Core",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Remove 1d3 Heat tokens.",
@@ -131,7 +131,7 @@
     {
       "id": "field-suture",
       "name": "Field Suture",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self or Adjacent",
       "effect": "Remove 1 Damage card from target's discard pile from the game. Can target self or adjacent ally.",
@@ -147,7 +147,7 @@
     {
       "id": "souls-recall",
       "name": "Soul's Recall",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Draw 2 cards.",
@@ -163,7 +163,7 @@
     {
       "id": "tattered-hope",
       "name": "Tattered Hope",
-      "type": "utility",
+      "type": "Utility",
       "cost": 0,
       "range": "Self",
       "effect": "Discard your entire hand. Draw 3 cards. Use when desperate or hand is bad.",
@@ -179,7 +179,7 @@
     {
       "id": "guardians-defiance",
       "name": "Guardian's Defiance",
-      "type": "defense",
+      "type": "Defense",
       "cost": 1,
       "range": "Self",
       "effect": "+2 Defense until your next turn. You may cover adjacent ally (redirect 1 attack to yourself).",
@@ -244,7 +244,7 @@
     {
       "id": "consecrated-ground",
       "name": "Consecrated Ground",
-      "type": "utility",
+      "type": "Utility",
       "cost": 3,
       "range": "3-hex radius",
       "effect": "Create a 3-hex radius healing zone centered on you until end of round. Allied Caskets in this zone recover 2 cards from discard pile at start of their turn.",
@@ -260,7 +260,7 @@
     {
       "id": "last-rites",
       "name": "Last Rites",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "3 hexes",
       "effect": "When an allied Casket within 3 hexes is destroyed (deck reaches 0), immediately recover 5 cards from your discard pile and draw 2 cards.",
@@ -276,7 +276,7 @@
     {
       "id": "righteous-wrath",
       "name": "Righteous Wrath",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 5 damage. Roll with Advantage (3d6, take 2 highest). If target has killed an ally this mission, deal 7 damage instead.",
@@ -324,7 +324,7 @@
     {
       "id": "absolution",
       "name": "Absolution",
-      "type": "utility",
+      "type": "Utility",
       "cost": 3,
       "range": "Self",
       "effect": "Remove 3 Heat. Recover 3 cards from discard pile to deck (shuffle). Absolve your sins.",
@@ -340,7 +340,7 @@
     {
       "id": "chains-of-penance",
       "name": "Chains of Penance",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "4 hexes",
       "effect": "Deal 4 damage. Target cannot move until end of their next turn. Discard 1 card from your deck (self-harm).",
@@ -356,7 +356,7 @@
     {
       "id": "divine-guidance",
       "name": "Divine Guidance",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Until end of turn, all your attacks gain +1 accuracy (reduce target number by 1). Your next attack this turn cannot miss (5+ becomes 4+, etc).",
@@ -371,7 +371,7 @@
     {
       "id": "martyrdoms-certainty",
       "name": "Martyrdom's Certainty",
-      "type": "utility",
+      "type": "Utility",
       "cost": 0,
       "range": "Self",
       "effect": "Discard 1 card from deck. Your next attack cannot miss (auto-hit) but deals -2 damage.",
@@ -386,7 +386,7 @@
     {
       "id": "zealots-focus",
       "name": "Zealot's Focus",
-      "type": "utility",
+      "type": "Utility",
       "cost": 0,
       "range": "Self",
       "effect": "Reroll 1 Attack Die on your next attack this turn.",
@@ -400,7 +400,7 @@
     {
       "id": "point-blank-execution",
       "name": "Point-Blank Execution",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "1 hex (adjacent only)",
       "effect": "Deal 6 damage. This attack cannot miss. If attacking from rear arc (hex 4), deal 8 damage instead.",
@@ -416,7 +416,7 @@
     {
       "id": "confession-under-duress",
       "name": "Confession Under Duress",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "2 hexes",
       "effect": "Target enemy's next attack: +2 to target number (harder for them to hit). Draw 1 card.",
@@ -431,7 +431,7 @@
     {
       "id": "holy-smite",
       "name": "Holy Smite",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Deal 5 damage. If you've discarded cards this turn (via Blood Offering or other effects), deal 7 damage instead.",
@@ -447,7 +447,7 @@
     {
       "id": "judgment-strike",
       "name": "Judgment Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage. If target has killed an ally this mission, deal 6 damage instead (vengeance).",
@@ -463,7 +463,7 @@
     {
       "id": "crusaders-wrath",
       "name": "Crusader's Wrath",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
       "effect": "Deal 6 damage. Ignore 2 Defense. Discard 1 card to deal +2 damage (total 8).",
@@ -479,7 +479,7 @@
     {
       "id": "martyr-shield",
       "name": "Martyr Shield",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "When an ally within 3 hexes is attacked, redirect that attack to yourself. Reduce damage by 2. Ally protection.",
@@ -509,7 +509,7 @@
     {
       "id": "faith-armor",
       "name": "Faith Armor",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "Once per turn, when you would take damage, reduce that damage by 2. Works even at 0 SP.",
@@ -526,7 +526,7 @@
     {
       "id": "crushing-blow",
       "name": "Crushing Blow",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage. ARMOR PIERCING (ignore all Defense buffs and armor).",
@@ -542,7 +542,7 @@
     {
       "id": "forge-fury",
       "name": "Forge Fury",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage + 1 damage per Heat you currently have (max +6). Remove all Heat after attack resolves.",
@@ -589,7 +589,7 @@
     {
       "id": "earthshaker",
       "name": "Earthshaker",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
       "effect": "Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.",
@@ -636,7 +636,7 @@
     {
       "id": "mountain-stance",
       "name": "Mountain Stance",
-      "type": "defense",
+      "type": "Defense",
       "cost": 2,
       "range": "Self",
       "effect": "Gain +3 Defense until your next turn. You cannot move while in Mountain Stance. Immovable as stone.",
@@ -666,7 +666,7 @@
     {
       "id": "ancestor-ward",
       "name": "Ancestor Ward",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "When you would take lethal damage (deck would reach 0), prevent up to 5 damage. Once per mission. The ancestors protect.",
@@ -681,7 +681,7 @@
     {
       "id": "war-pick-strike",
       "name": "War Pick Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage. This attack ignores armor (armor-piercing). Basic Dwarven attack.",
@@ -698,7 +698,7 @@
     {
       "id": "warhammer-crush",
       "name": "Warhammer Crush",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Deal 5 damage. This attack ignores armor. If target is adjacent to terrain, deal 6 damage (slam into wall).",
@@ -715,7 +715,7 @@
     {
       "id": "forge-hammer-smash",
       "name": "Forge Hammer Smash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
       "effect": "Deal 6 damage. This attack ignores armor. Generate 2 Heat. If you have 3+ Heat, deal 8 damage instead.",
@@ -732,7 +732,7 @@
     {
       "id": "battle-axe-cleave",
       "name": "Battle Axe Cleave",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Deal 5 damage to primary target. Deal 2 damage to one adjacent enemy (cleave). Both attacks ignore armor.",
@@ -749,7 +749,7 @@
     {
       "id": "earthshaker-slam",
       "name": "Earthshaker Slam",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "Melee (Range 1)",
       "effect": "Deal 8 damage. This attack ignores armor. All enemies within 2 hexes must roll Defense Dice or be knocked prone (lose 1 movement next turn).",
@@ -766,7 +766,7 @@
     {
       "id": "ancestral-rune-blade",
       "name": "Ancestral Rune Blade",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage. This attack ignores armor. If you have 1+ Rune Counters, deal 5 damage instead.",
@@ -798,7 +798,7 @@
     {
       "id": "runic-aegis",
       "name": "Runic Aegis",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "When attacked, gain 1 Rune Counter (max 3). Reduce damage from this attack by 1. Defensive sigil.",
@@ -828,7 +828,7 @@
     {
       "id": "mountain-stance",
       "name": "Mountain Stance",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Until end of turn, you cannot be moved or knocked back by enemy effects. Reduce all damage taken by 2.",
@@ -843,7 +843,7 @@
     {
       "id": "grudge-mark",
       "name": "Grudge Mark",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "8 hexes",
       "effect": "Mark target enemy. You deal +2 damage to marked enemy. Mark lasts until enemy dies or you mark different target. Record grudges.",
@@ -860,7 +860,7 @@
     {
       "id": "soul-harvest",
       "name": "Soul Harvest",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 4 cards).",
@@ -877,7 +877,7 @@
     {
       "id": "corpse-fuel",
       "name": "Corpse Fuel",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "3 hexes",
       "effect": "When an enemy Casket is destroyed within 3 hexes, immediately recover 5 cards from your discard pile and shuffle into deck.",
@@ -908,7 +908,7 @@
     {
       "id": "bone-scythe-reap",
       "name": "Bone Scythe Reap",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 4 cards).",
@@ -955,7 +955,7 @@
     {
       "id": "grave-pact",
       "name": "Grave Pact",
-      "type": "utility",
+      "type": "Utility",
       "cost": 3,
       "range": "Self",
       "effect": "Discard 3 cards. For each card discarded this way, deal 2 damage to target enemy within 6 hexes (total 6 damage). Recover 3 cards at end of your next turn.",
@@ -1004,7 +1004,7 @@
     {
       "id": "siphon-essence",
       "name": "Siphon Essence",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "4 hexes",
       "effect": "Deal 2 damage. Recover cards equal to half the damage dealt (rounded up). Can target at range unlike most lifesteal.",
@@ -1021,7 +1021,7 @@
     {
       "id": "bone-scythe-swing",
       "name": "Bone Scythe Swing",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage. Recover 1 card from discard pile (lifesteal). Basic Ossuarium attack.",
@@ -1038,7 +1038,7 @@
     {
       "id": "death-grasp",
       "name": "Death Grasp",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "2 hexes",
       "effect": "Deal 3 damage at extended range. Recover 1 card from discard pile. Ranged drain.",
@@ -1055,7 +1055,7 @@
     {
       "id": "soul-rend",
       "name": "Soul Rend",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
       "effect": "Deal 5 damage. Recover cards equal to damage dealt (max 5). Powerful lifesteal.",
@@ -1072,7 +1072,7 @@
     {
       "id": "corpse-explosion",
       "name": "Corpse Explosion",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "4 hexes",
       "effect": "Deal 3 damage to target and all adjacent enemies (AoE). Recover 1 card per enemy damaged (max 4).",
@@ -1089,7 +1089,7 @@
     {
       "id": "drain-life",
       "name": "Drain Life",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "3 hexes",
       "effect": "Deal 6 damage at range. Recover 6 cards from discard pile (100% lifesteal). Massive drain.",
@@ -1106,7 +1106,7 @@
     {
       "id": "necrotic-touch",
       "name": "Necrotic Touch",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
       "effect": "Deal 2 damage. Recover 1 card. If this kills the target, recover 5 cards total instead.",
@@ -1138,7 +1138,7 @@
     {
       "id": "bone-armor",
       "name": "Bone Armor",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "When attacked, reduce damage by 2. If you blocked 2+ damage this way, recover 1 card.",
@@ -1168,7 +1168,7 @@
     {
       "id": "death-shroud",
       "name": "Death Shroud",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Until end of turn, whenever you recover cards from discard pile, recover +2 additional cards. Amplifies all lifesteal.",
@@ -1183,7 +1183,7 @@
     {
       "id": "corpse-shield",
       "name": "Corpse Shield",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "When an enemy within 3 hexes dies, gain +3 Defense until end of your next turn. Corpse empowerment.",
@@ -1200,7 +1200,7 @@
     {
       "id": "thorn-strike",
       "name": "Thorn Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage. Plant 2 Thornvine seeds in target's hex (max 4 seeds per hex). At 3+ seeds, hex sprouts into a plant creature.",
@@ -1217,7 +1217,7 @@
     {
       "id": "pruning-cut",
       "name": "Pruning Cut",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Deal 4 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). If target discards cards from that component type, deal +2 Component Damage.",
@@ -1234,7 +1234,7 @@
     {
       "id": "root-bind",
       "name": "Root Bind",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Ranged (1-3 hexes)",
       "effect": "Target enemy cannot move until end of their next turn. Plant 2 Thornvine seeds in target's hex. If they attempt to move, take 3 damage.",
@@ -1300,7 +1300,7 @@
     {
       "id": "natures-wrath",
       "name": "Nature's Wrath",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Battlefield",
       "effect": "Detonate all Thornvine seeds on the battlefield. Deal 2 damage per seed to enemies in those hexes (max 8 damage per hex). Clear all seeds after detonation.",
@@ -1316,7 +1316,7 @@
     {
       "id": "wild-growth",
       "name": "Wild Growth",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "2 hexes (radius)",
       "effect": "Add 1 Thornvine seed to all hexes within 2 hexes of you. Passive: At start of round, gain +1 Thornvine seed in your hex.",
@@ -1362,7 +1362,7 @@
     {
       "id": "overgrowth",
       "name": "Overgrowth",
-      "type": "utility",
+      "type": "Utility",
       "cost": 3,
       "range": "3 hexes",
       "effect": "Target hex with 3+ Thornvine seeds immediately sprouts into a Thornvine Snare (4 HP, 2 Defense, stationary). Enemy in hex: -2 Movement, takes 2 damage/turn. Lasts 3 turns.",
@@ -1378,7 +1378,7 @@
     {
       "id": "thorn-blade-slash",
       "name": "Thorn Blade Slash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage. Plant 2 Thornvine seeds in target's hex. Basic Elven attack.",
@@ -1395,7 +1395,7 @@
     {
       "id": "vine-whip-lash",
       "name": "Vine Whip Lash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "2 hexes",
       "effect": "Deal 2 damage. Plant 1 Thornvine seed in target's hex. Extended reach attack (2 hexes).",
@@ -1412,7 +1412,7 @@
     {
       "id": "leaf-blade-flurry",
       "name": "Leaf Blade Flurry",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Attack twice for 2 damage each (total 4 damage). Each hit applies Bleed 1. Rapid strikes.",
@@ -1429,7 +1429,7 @@
     {
       "id": "surgical-cut",
       "name": "Surgical Cut",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
       "effect": "Deal 3 damage to specific component. Apply Bleed 2. Add +1 Component Damage if target discards that component type.",
@@ -1446,7 +1446,7 @@
     {
       "id": "barbed-arrow-volley",
       "name": "Barbed Arrow Volley",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "6 hexes",
       "effect": "Deal 3 damage at range. Apply Bleed 3. If target already has Bleed counters, apply +1 additional Bleed (max 4 total).",
@@ -1463,7 +1463,7 @@
     {
       "id": "venom-strike",
       "name": "Venom Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (Range 1)",
       "effect": "Deal 2 damage. Apply Bleed 3 (poisoned blade). Enemies with 5+ Bleed take +2 damage from this attack.",
@@ -1495,7 +1495,7 @@
     {
       "id": "leaf-cloak",
       "name": "Leaf Cloak",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "When attacked, move up to 2 hexes immediately after attack resolves. Reactive dodge.",
@@ -1525,7 +1525,7 @@
     {
       "id": "hunters-focus",
       "name": "Hunter's Focus",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Your next attack this turn deals +2 damage to enemies that have Bleed counters on them. Amplifies Bleed builds.",
@@ -1557,7 +1557,7 @@
     {
       "id": "faithful-thrust",
       "name": "Faithful Thrust",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 4,
@@ -1574,7 +1574,7 @@
     {
       "id": "cleaving-strike",
       "name": "Cleaving Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 4,
@@ -1591,7 +1591,7 @@
     {
       "id": "righteous-slash",
       "name": "Righteous Slash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 4,
@@ -1608,7 +1608,7 @@
     {
       "id": "twin-cuts",
       "name": "Twin Cuts",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 5,
@@ -1625,11 +1625,11 @@
     {
       "id": "execution-blow",
       "name": "Execution Blow",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 6,
-      "effect": "Deal 7 damage. +2 if target \u226415 HP.",
+      "effect": "Deal 7 damage. +2 if target ≤15 HP.",
       "keywords": [
         "attack",
         "melee",
@@ -1642,7 +1642,7 @@
     {
       "id": "flurry-of-faith",
       "name": "Flurry of Faith",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 4,
@@ -1659,7 +1659,7 @@
     {
       "id": "blade-dance",
       "name": "Blade Dance",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 4,
@@ -1676,7 +1676,7 @@
     {
       "id": "penitents-wrath",
       "name": "Penitent's Wrath",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 5,
@@ -1693,7 +1693,7 @@
     {
       "id": "buckler-block",
       "name": "Buckler Block",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Self",
       "effect": "Reactive: Reduce damage by 1, draw 1 card.",
@@ -1709,7 +1709,7 @@
     {
       "id": "shield-bash",
       "name": "Shield Bash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 4,
@@ -1726,7 +1726,7 @@
     {
       "id": "defensive-stance",
       "name": "Defensive Stance",
-      "type": "defense",
+      "type": "Defense",
       "cost": 1,
       "range": "Self",
       "effect": "+2 Defense until next turn.",
@@ -1741,7 +1741,7 @@
     {
       "id": "deflect",
       "name": "Deflect",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Self",
       "effect": "Reactive: Redirect 3 damage to attacker.",
@@ -1757,7 +1757,7 @@
     {
       "id": "interpose",
       "name": "Interpose",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Adjacent",
       "effect": "Reactive: Take ally's damage.",
@@ -1773,7 +1773,7 @@
     {
       "id": "hammer-strike",
       "name": "Hammer Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 5,
@@ -1790,7 +1790,7 @@
     {
       "id": "ground-slam",
       "name": "Ground Slam",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 4,
@@ -1808,7 +1808,7 @@
     {
       "id": "crushing-blow-dmg",
       "name": "Crushing Blow",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 4,
@@ -1825,7 +1825,7 @@
     {
       "id": "runic-smash",
       "name": "Runic Smash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 6,
@@ -1842,7 +1842,7 @@
     {
       "id": "earthquake",
       "name": "Earthquake",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "Self",
       "damage": 4,
@@ -1859,7 +1859,7 @@
     {
       "id": "anvil-breaker",
       "name": "Anvil Breaker",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 7,
@@ -1876,7 +1876,7 @@
     {
       "id": "tower-block",
       "name": "Tower Block",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Self",
       "effect": "Reactive: Reduce damage by 3.",
@@ -1892,7 +1892,7 @@
     {
       "id": "shield-wall",
       "name": "Shield Wall",
-      "type": "defense",
+      "type": "Defense",
       "cost": 1,
       "range": "Self",
       "effect": "+3 Defense until next turn.",
@@ -1907,7 +1907,7 @@
     {
       "id": "fortify",
       "name": "Fortify",
-      "type": "defense",
+      "type": "Defense",
       "cost": 2,
       "range": "Self",
       "effect": "+2 Defense, immobile, lasts 2 turns.",
@@ -1922,7 +1922,7 @@
     {
       "id": "shield-slam",
       "name": "Shield Slam",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 4,
@@ -1939,7 +1939,7 @@
     {
       "id": "bulwark",
       "name": "Bulwark",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Self+Ally",
       "effect": "Reactive: -2 damage to you and ally.",
@@ -1955,7 +1955,7 @@
     {
       "id": "aimed-shot",
       "name": "Aimed Shot",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "6 hexes",
       "damage": 4,
@@ -1972,7 +1972,7 @@
     {
       "id": "piercing-arrow",
       "name": "Piercing Arrow",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "8 hexes",
       "damage": 5,
@@ -1989,7 +1989,7 @@
     {
       "id": "rapid-fire",
       "name": "Rapid Fire",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "4 hexes",
       "damage": 6,
@@ -2006,7 +2006,7 @@
     {
       "id": "sniper-shot",
       "name": "Sniper Shot",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "10 hexes",
       "damage": 7,
@@ -2023,7 +2023,7 @@
     {
       "id": "entangling-arrow",
       "name": "Entangling Arrow",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "6 hexes",
       "damage": 3,
@@ -2040,7 +2040,7 @@
     {
       "id": "volley",
       "name": "Volley",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "6 hexes",
       "damage": 4,
@@ -2057,7 +2057,7 @@
     {
       "id": "barkskin",
       "name": "Barkskin",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Self",
       "effect": "Reactive: +2 Defense vs next attack.",
@@ -2073,7 +2073,7 @@
     {
       "id": "root-grasp",
       "name": "Root Grasp",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "4 hexes",
       "effect": "Target can't move 1 turn.",
@@ -2089,7 +2089,7 @@
     {
       "id": "regenerate",
       "name": "Regenerate",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Recover 3 cards from discard.",
@@ -2105,7 +2105,7 @@
     {
       "id": "thorn-barrier",
       "name": "Thorn Barrier",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Deal 2 damage to next attacker.",
@@ -2121,7 +2121,7 @@
     {
       "id": "camouflage",
       "name": "Camouflage",
-      "type": "defense",
+      "type": "Defense",
       "cost": 1,
       "range": "Self",
       "effect": "+2 Defense vs ranged, 1 turn.",
@@ -2136,7 +2136,7 @@
     {
       "id": "quick-slash",
       "name": "Quick Slash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 4,
@@ -2153,7 +2153,7 @@
     {
       "id": "pistol-shot",
       "name": "Pistol Shot",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "4 hexes",
       "damage": 4,
@@ -2170,7 +2170,7 @@
     {
       "id": "hit-and-run",
       "name": "Hit and Run",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 5,
@@ -2187,7 +2187,7 @@
     {
       "id": "opportunist-strike",
       "name": "Opportunist Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 6,
@@ -2204,7 +2204,7 @@
     {
       "id": "dual-wield",
       "name": "Dual Wield",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee+4hex",
       "damage": 7,
@@ -2220,7 +2220,7 @@
     {
       "id": "desperate-gambit-atk",
       "name": "Desperate Gambit",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 7,
@@ -2237,7 +2237,7 @@
     {
       "id": "smoke-bomb",
       "name": "Smoke Bomb",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Create smoke hex, blocks LOS.",
@@ -2268,7 +2268,7 @@
     {
       "id": "flash-grenade",
       "name": "Flash Grenade",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "4 hexes",
       "damage": 3,
@@ -2285,7 +2285,7 @@
     {
       "id": "adaptive-armor",
       "name": "Adaptive Armor",
-      "type": "defense",
+      "type": "Defense",
       "cost": 0,
       "range": "Self",
       "effect": "Reactive: +1 Defense, move 1 hex.",
@@ -2301,7 +2301,7 @@
     {
       "id": "scavenge",
       "name": "Scavenge",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Draw 2, discard 1.",
@@ -2317,7 +2317,7 @@
     {
       "id": "ember-strike",
       "name": "Ember Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 3,
@@ -2335,7 +2335,7 @@
     {
       "id": "volcanic-cleave",
       "name": "Volcanic Cleave",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 5,
@@ -2354,7 +2354,7 @@
     {
       "id": "molten-hammer",
       "name": "Molten Hammer",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 5,
@@ -2373,7 +2373,7 @@
     {
       "id": "cinder-slash",
       "name": "Cinder Slash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 3,
@@ -2391,7 +2391,7 @@
     {
       "id": "forge-spear-throw",
       "name": "Forge Spear Throw",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Range 3",
       "damage": 5,
@@ -2409,7 +2409,7 @@
     {
       "id": "duelist-finisher",
       "name": "Duelist's Finisher",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "Melee",
       "damage": 7,
@@ -2428,7 +2428,7 @@
     {
       "id": "lava-forged-shield",
       "name": "Lava-Forged Shield",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 1 Forge token.",
@@ -2445,7 +2445,7 @@
     {
       "id": "volcanic-ward",
       "name": "Volcanic Ward",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). If standing in lava, reduce by 4 instead.",
@@ -2462,7 +2462,7 @@
     {
       "id": "forge-blessing",
       "name": "Forge Blessing",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Until end of round, reduce all incoming damage by 2. Gain 1 Forge token when activated.",
@@ -2480,7 +2480,7 @@
     {
       "id": "magma-parry",
       "name": "Magma Parry",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Melee",
       "effect": "Play when attacked in melee. Reduce damage by 1. Deal 2 damage to attacker. Gain 1 Heat.",
@@ -2496,7 +2496,7 @@
     {
       "id": "emberguard",
       "name": "Emberguard",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Until your next turn, enemies attacking you in melee take 1 damage after attack resolves (thorns).",
@@ -2513,7 +2513,7 @@
     {
       "id": "contract-blade",
       "name": "Contract Blade",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 3,
@@ -2531,7 +2531,7 @@
     {
       "id": "mercenary-strike",
       "name": "Mercenary Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 4,
@@ -2549,7 +2549,7 @@
     {
       "id": "profit-margin",
       "name": "Profit Margin",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 5,
@@ -2568,7 +2568,7 @@
     {
       "id": "calculated-assault",
       "name": "Calculated Assault",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 3,
@@ -2586,7 +2586,7 @@
     {
       "id": "liquidation-shot",
       "name": "Liquidation Shot",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Range 4",
       "damage": 4,
@@ -2604,7 +2604,7 @@
     {
       "id": "hostile-takeover",
       "name": "Hostile Takeover",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "Melee",
       "damage": 6,
@@ -2623,7 +2623,7 @@
     {
       "id": "expense-report",
       "name": "Expense Report",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Gain 2 Credits.",
@@ -2640,7 +2640,7 @@
     {
       "id": "insurance-policy",
       "name": "Insurance Policy",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "Play when targeted by attack. Spend 2 Credits: Reduce damage by 4 (minimum 1).",
@@ -2657,7 +2657,7 @@
     {
       "id": "golden-parachute",
       "name": "Golden Parachute",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Until end of round, the first time you take 5+ damage, reduce it to 3. Costs 3 Credits to activate.",
@@ -2675,7 +2675,7 @@
     {
       "id": "contract-breach-penalty",
       "name": "Contract Breach Penalty",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Melee",
       "effect": "Play when attacked in melee. Deal 2 damage to attacker. Gain 2 Credits if attacker took damage.",
@@ -2692,7 +2692,7 @@
     {
       "id": "asset-protection",
       "name": "Asset Protection",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self or Adjacent",
       "effect": "Target ally gains +2 Defense until your next turn. Costs 1 Credit.",
@@ -2710,7 +2710,7 @@
     {
       "id": "savage-claw",
       "name": "Savage Claw",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 6,
@@ -2728,7 +2728,7 @@
     {
       "id": "rending-bite",
       "name": "Rending Bite",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 6,
@@ -2746,7 +2746,7 @@
     {
       "id": "alpha-pounce",
       "name": "Alpha's Pounce",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "3 hexes (leap)",
       "damage": 7,
@@ -2765,7 +2765,7 @@
     {
       "id": "feral-strike",
       "name": "Feral Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 6,
@@ -2784,7 +2784,7 @@
     {
       "id": "predator-ambush",
       "name": "Predator's Ambush",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Range 2 (leap)",
       "damage": 6,
@@ -2802,7 +2802,7 @@
     {
       "id": "bloodline-fury",
       "name": "Bloodline Fury",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "Melee",
       "damage": 9,
@@ -2821,7 +2821,7 @@
     {
       "id": "chitin-plating",
       "name": "Chitin Plating",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Biomass: Reduce by 3 instead.",
@@ -2838,7 +2838,7 @@
     {
       "id": "pack-defense",
       "name": "Pack Defense",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 1 per adjacent ally Vestige Casket (max 3).",
@@ -2855,7 +2855,7 @@
     {
       "id": "adaptive-molt",
       "name": "Adaptive Molt",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Until end of round, negate the next attack that would deal 4+ damage. Costs 2 Biomass to activate.",
@@ -2873,7 +2873,7 @@
     {
       "id": "feral-counter",
       "name": "Feral Counter",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Melee",
       "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Gain 2 Biomass.",
@@ -2890,7 +2890,7 @@
     {
       "id": "regenerative-shell",
       "name": "Regenerative Shell",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Spend 3 Biomass: Recover 2 cards from discard pile. You may only use this once per round.",
@@ -2907,7 +2907,7 @@
     {
       "id": "hive-claw",
       "name": "Hive Claw",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 7,
@@ -2925,7 +2925,7 @@
     {
       "id": "metamorph-strike",
       "name": "Metamorph Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 8,
@@ -2943,7 +2943,7 @@
     {
       "id": "coordinated-assault",
       "name": "Coordinated Assault",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 9,
@@ -2962,7 +2962,7 @@
     {
       "id": "swarm-rush",
       "name": "Swarm Rush",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 7,
@@ -2980,7 +2980,7 @@
     {
       "id": "bio-spike-volley",
       "name": "Bio-Spike Volley",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Range 3",
       "damage": 8,
@@ -2999,7 +2999,7 @@
     {
       "id": "apex-form-strike",
       "name": "Apex Form Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "Melee",
       "damage": 10,
@@ -3018,7 +3018,7 @@
     {
       "id": "carapace-shield",
       "name": "Carapace Shield",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). If in Metamorph form, reduce by 3 instead.",
@@ -3035,7 +3035,7 @@
     {
       "id": "hive-mind-shield",
       "name": "Hive-Mind Shield",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 1 per allied Emergent unit within 3 hexes (max 4).",
@@ -3052,7 +3052,7 @@
     {
       "id": "metamorphic-barrier",
       "name": "Metamorphic Barrier",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Until end of round, reduce all incoming damage by 2. Must be in Metamorph form to activate.",
@@ -3070,7 +3070,7 @@
     {
       "id": "bio-reactive-armor",
       "name": "Bio-Reactive Armor",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Melee",
       "effect": "Play when attacked in melee. Deal 1 damage to attacker. If in Metamorph form, deal 3 damage instead.",
@@ -3087,7 +3087,7 @@
     {
       "id": "swarm-dispersal",
       "name": "Swarm Dispersal",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Move up to 2 hexes. Allied Emergent units within 3 hexes may also move 1 hex (coordination).",
@@ -3105,7 +3105,7 @@
     {
       "id": "distortion-blade",
       "name": "Distortion Blade",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 7,
@@ -3123,7 +3123,7 @@
     {
       "id": "void-strike",
       "name": "Void Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 8,
@@ -3142,7 +3142,7 @@
     {
       "id": "reality-rend",
       "name": "Reality Rend",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 9,
@@ -3160,7 +3160,7 @@
     {
       "id": "warped-slash",
       "name": "Warped Slash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 7,
@@ -3178,7 +3178,7 @@
     {
       "id": "taint-bolt",
       "name": "Taint Bolt",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Range 4",
       "damage": 8,
@@ -3196,7 +3196,7 @@
     {
       "id": "unraveling",
       "name": "Unraveling",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "Melee",
       "damage": 10,
@@ -3215,7 +3215,7 @@
     {
       "id": "void-ward",
       "name": "Void Ward",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Apply 1 Taint to yourself.",
@@ -3232,7 +3232,7 @@
     {
       "id": "reality-shift",
       "name": "Reality Shift",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). Spend 1 Taint: Reduce by 4 instead.",
@@ -3249,7 +3249,7 @@
     {
       "id": "distortion-field",
       "name": "Distortion Field",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Until end of round, attacks against you have -1 to hit (reality distortion). Apply 2 Taint to yourself.",
@@ -3267,7 +3267,7 @@
     {
       "id": "void-reflection",
       "name": "Void Reflection",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Melee",
       "effect": "Play when attacked in melee. Deal 2 damage to attacker. Spend 1 Taint: Deal 4 damage instead.",
@@ -3284,7 +3284,7 @@
     {
       "id": "taint-purge",
       "name": "Taint Purge",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Remove 1d3 Taint from yourself. Recover 1 card from discard pile per Taint removed.",
@@ -3301,7 +3301,7 @@
     {
       "id": "bone-scythe-strike",
       "name": "Bone Scythe Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 5,
@@ -3319,7 +3319,7 @@
     {
       "id": "death-grip",
       "name": "Death Grip",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "damage": 6,
@@ -3337,7 +3337,7 @@
     {
       "id": "soul-reaper",
       "name": "Soul Reaper",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee",
       "damage": 7,
@@ -3356,7 +3356,7 @@
     {
       "id": "corpse-harvest",
       "name": "Corpse Harvest",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee",
       "damage": 5,
@@ -3374,7 +3374,7 @@
     {
       "id": "drain-essence",
       "name": "Drain Essence",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Range 2",
       "damage": 5,
@@ -3392,7 +3392,7 @@
     {
       "id": "phylactery-strike",
       "name": "Phylactery Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 5,
       "range": "Melee",
       "damage": 8,
@@ -3411,7 +3411,7 @@
     {
       "id": "bone-ward",
       "name": "Bone Ward",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Discard this card after use.",
@@ -3427,7 +3427,7 @@
     {
       "id": "necrotic-shield",
       "name": "Necrotic Shield",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 1,
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). If you block 3+ damage, recover 1 card from discard pile.",
@@ -3444,7 +3444,7 @@
     {
       "id": "death-shroud",
       "name": "Death Shroud",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Until end of your next turn, the first time you would take damage, reduce it by 2. When this blocks damage, recover 1 card from discard pile.",
@@ -3461,7 +3461,7 @@
     {
       "id": "corpse-fuel-siphon",
       "name": "Corpse Fuel Siphon",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "If a Casket was destroyed within 3 hexes this round, recover 2 cards from discard pile and draw 1 card.",
@@ -3478,7 +3478,7 @@
     {
       "id": "bone-spike-counter",
       "name": "Bone Spike Counter",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Melee",
       "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Recover 1 card from discard if you took damage.",
@@ -3621,7 +3621,7 @@
         "id": "force-reroll",
         "name": "Force Reroll",
         "cardType": "v3_optional",
-        "type": "reactive",
+        "type": "Reactive",
         "cost": 0,
         "range": "Target",
         "effect": "Spend 2 enemy Taint Markers: Force target to reroll up to 2 successful Defense Dice.",
@@ -3655,7 +3655,7 @@
         "id": "taint-overload",
         "name": "Taint Overload",
         "cardType": "v3_optional",
-        "type": "attack",
+        "type": "Attack",
         "cost": 0,
         "range": "Target",
         "effect": "Spend 5 enemy Taint Markers: Target immediately flips 1 Pilot Wound card (neural feedback).",
@@ -3707,7 +3707,7 @@
         "id": "regeneration-purges-taint",
         "name": "Regeneration Purge",
         "cardType": "v3_optional",
-        "type": "utility",
+        "type": "Utility",
         "cost": 2,
         "range": "Self",
         "effect": "Recover 2 cards from discard pile. Remove 1 Taint Marker.",
@@ -3743,7 +3743,7 @@
         "id": "grit-your-teeth",
         "name": "Grit Your Teeth",
         "cardType": "v3_optional",
-        "type": "reactive",
+        "type": "Reactive",
         "cost": 0,
         "range": "Self",
         "effect": "When you take Pilot Damage: Add +2 to your Grit Check roll for this damage only.",
@@ -3776,7 +3776,7 @@
         "id": "stone-endurance-boost",
         "name": "Stone Endurance Boost",
         "cardType": "v3_optional",
-        "type": "utility",
+        "type": "Utility",
         "cost": 1,
         "range": "Self",
         "effect": "Until end of mission: +1 to all Grit Checks (not just vs Severe Injuries). Gain 1 Heat.",
@@ -3892,7 +3892,7 @@
           "name": "FRENZIED ASSAULT",
           "id": "church-flagellant-pack-frenzied-assault",
           "type": "Attack / Reckless",
-          "priority": "Critical (when HP \u2264 3)",
+          "priority": "Critical (when HP ≤ 3)",
           "effect": "Move full speed (4 hexes) toward nearest enemy\nAttack for 6 damage (empowered by pain)\nIgnore Defense on this attack\nFlagellants take 1 damage after attacking (self-destructive)",
           "flavor": "In their final moments, they are closest to absolution."
         },
@@ -3936,7 +3936,7 @@
           "name": "MARTYRDOM CHARGE",
           "id": "church-flagellant-pack-martyrdom-charge",
           "type": "Attack / Suicide",
-          "priority": "Critical (when HP \u2264 2)",
+          "priority": "Critical (when HP ≤ 2)",
           "effect": "Move full speed toward nearest enemy\nIf adjacent, deal 8 damage to that enemy\nFlagellants are immediately destroyed (suicidal explosion)\nAll adjacent enemies take 3 splash damage",
           "flavor": "Through death, I find absolution!"
         }
@@ -4057,7 +4057,7 @@
           "name": "DEFENSIVE CIRCLE",
           "id": "church-relic-bearers-defensive-circle",
           "type": "Defense / Protective",
-          "priority": "Critical (when Relic HP \u2264 5)",
+          "priority": "Critical (when Relic HP ≤ 5)",
           "effect": "Move toward nearest cover or friendly Casket\nGain +2 Defense until end of round\nRelic Bearers cannot attack (focused on protecting artifact)\nTesla Cross still deals 1 damage to adjacent enemies each turn (passive)",
           "flavor": "Protect the sacred at all costs."
         },
@@ -4109,8 +4109,8 @@
           "supportUnit": "HONOR GUARD",
           "faction": "crucible",
           "cardType": "support-behavior",
-          "name": "\ufe0f PROTECTIVE STANCE",
-          "id": "crucible-honor-guard-\ufe0f-protective-stance",
+          "name": "️ PROTECTIVE STANCE",
+          "id": "crucible-honor-guard-️-protective-stance",
           "type": "Reactive / Defense",
           "priority": "Critical (when ally within 3 hexes takes damage)",
           "effect": "Intercept attack targeting ally within 3 hexes\nHonor Guard takes damage instead of ally\nReduce damage by 2 (minimum 1, shield absorbs)\nGain 1 Forge token (honor in protection)\nMove 3 hexes toward ally if needed",
@@ -4120,8 +4120,8 @@
           "supportUnit": "HONOR GUARD",
           "faction": "crucible",
           "cardType": "support-behavior",
-          "name": "\u2694\ufe0f CHALLENGE ACCEPTED",
-          "id": "crucible-honor-guard-\u2694\ufe0f-challenge-accepted",
+          "name": "⚔️ CHALLENGE ACCEPTED",
+          "id": "crucible-honor-guard-⚔️-challenge-accepted",
           "type": "Duel / Attack",
           "priority": "High (when ally threatened or Honor Duel issued)",
           "effect": "Can accept Honor Duel on behalf of ally (take their place)\nIf in active duel: Attack for 5 damage\nIf duel victory: Gain 2 Forge tokens + draw 2 cards\nIf enemy refuses to duel Guard: Enemy gains Coward's Mark",
@@ -4157,7 +4157,7 @@
           "id": "crucible-honor-guard-retribution-strike",
           "type": "Attack / Revenge",
           "priority": "High (when ally was damaged this round)",
-          "effect": "Move toward enemy who damaged ally (up to 4 hexes)\nAttack for 6 damage\nIf ally was reduced to \u226450% HP: Deal 8 damage instead\nGain 1 Forge token per ally protected this battle",
+          "effect": "Move toward enemy who damaged ally (up to 4 hexes)\nAttack for 6 damage\nIf ally was reduced to ≤50% HP: Deal 8 damage instead\nGain 1 Forge token per ally protected this battle",
           "flavor": "You hurt mine. Now face the consequences."
         },
         {
@@ -4167,7 +4167,7 @@
           "name": "LAST STAND",
           "id": "crucible-honor-guard-last-stand",
           "type": "Reactive / Survival",
-          "priority": "Critical (when Honor Guard HP \u2264 4)",
+          "priority": "Critical (when Honor Guard HP ≤ 4)",
           "effect": "Trigger Unbreakable (survive at 1 HP, once per battle)\nGain +3 damage to all attacks for 2 turns\nCannot move (rooted to spot, \"here I stand\")\nAllies within 3 hexes gain +1 damage (inspired by courage)\nGenerate 2 Forge tokens",
           "flavor": "I fall only when my brothers are safe."
         }
@@ -4197,8 +4197,8 @@
           "supportUnit": "FORGE APPRENTICE",
           "faction": "crucible",
           "cardType": "support-behavior",
-          "name": "\u26a1 EMBER BLESSING",
-          "id": "crucible-forge-apprentice-\u26a1-ember-blessing",
+          "name": "⚡ EMBER BLESSING",
+          "id": "crucible-forge-apprentice-⚡-ember-blessing",
           "type": "Buff / Support",
           "priority": "High (when ally about to attack)",
           "effect": "Target allied Crucible Casket within 4 hexes\nSpend 1 Forge token\nAlly's next attack deals +2 damage (weapon blessed with fire)\nIf ally in lava: +3 damage instead\nAlly's weapon glows with volcanic heat (visual)",
@@ -4211,7 +4211,7 @@
           "name": "FIELD REPAIR",
           "id": "crucible-forge-apprentice-field-repair",
           "type": "Healing / Support",
-          "priority": "Medium (when ally HP \u2264 50%)",
+          "priority": "Medium (when ally HP ≤ 50%)",
           "effect": "Target allied Crucible Casket within 3 hexes\nSpend 2 Forge tokens\nAlly recovers 4 cards (emergency repairs)\nRemove 1 debuff from ally (burn away impurity)\nApprentice cannot act again this turn (exhausted)",
           "flavor": "Hold still. I can fix this."
         },
@@ -4233,7 +4233,7 @@
           "name": "EVASIVE MANEUVERS",
           "id": "crucible-forge-apprentice-evasive-maneuvers",
           "type": "Movement / Survival",
-          "priority": "Critical (when enemy within 2 hexes or Apprentice HP \u2264 4)",
+          "priority": "Critical (when enemy within 2 hexes or Apprentice HP ≤ 4)",
           "effect": "Move up to 5 hexes away from nearest enemy\nCannot be targeted by reactions during movement (too fast)\nIf ending adjacent to ally: Hide behind them (cannot be targeted until Apprentice moves)\nDrop 1 lava flask (create 1 lava hex at starting position)",
           "flavor": "I am smith, not warrior! Protect me!"
         },
@@ -4549,7 +4549,7 @@
           "name": "STONE SKIN",
           "id": "dwarves-rune-sentinel-stone-skin",
           "type": "Defense / Healing",
-          "priority": "Critical (when Sentinel HP \u2264 7)",
+          "priority": "Critical (when Sentinel HP ≤ 7)",
           "effect": "Do not move or attack\nSentinel's body reforms and heals\nRecover 5 HP (magical reconstruction)\nGain +3 Defense until next turn\nRemove 1 Rune Counter (costs magical energy)",
           "flavor": "Cracks seal. Stone flows like water, then hardens."
         },
@@ -4561,7 +4561,7 @@
           "id": "dwarves-rune-sentinel-rune-pulse",
           "type": "Attack / Area",
           "priority": "Medium (when Sentinel has 2+ Rune Counters)",
-          "effect": "Do not move\nDischarge all stored runic energy\nDeal 3 damage \u00d7 Rune Counters to all enemies within 2 hexes (max 9 damage)\nRemove all Rune Counters\nStun all affected enemies (lose 1 SP next turn)",
+          "effect": "Do not move\nDischarge all stored runic energy\nDeal 3 damage × Rune Counters to all enemies within 2 hexes (max 9 damage)\nRemove all Rune Counters\nStun all affected enemies (lose 1 SP next turn)",
           "flavor": "RUNES DETONATE IN CHAIN REACTION"
         },
         {
@@ -4637,7 +4637,7 @@
           "name": "FADE INTO SHADOWS",
           "id": "elves-thorn-stalkers-fade-into-shadows",
           "type": "Defense / Repositioning",
-          "priority": "High (when HP \u2264 3)",
+          "priority": "High (when HP ≤ 3)",
           "effect": "Move 4 hexes away from nearest enemy\nGain **Concealed** until end of round\nIf moved into Forest terrain, heal 1 HP",
           "flavor": "We are leaves on the wind."
         },
@@ -4703,7 +4703,7 @@
           "name": "VERDANT GROWTH",
           "id": "elves-rootweaver-circle-verdant-growth",
           "type": "Healing / Support",
-          "priority": "High (when ally within 3 hexes has \u226410 HP)",
+          "priority": "High (when ally within 3 hexes has ≤10 HP)",
           "effect": "Target ally within 3 hexes heals 3 HP immediately\nCreate 2 Forest terrain hexes adjacent to Rootweavers\nVerdant Zone healing increases to 2 HP per turn (this round only)",
           "flavor": "Life finds a way, even in ruin."
         },
@@ -4725,7 +4725,7 @@
           "name": "FOREST SANCTUARY",
           "id": "elves-rootweaver-circle-forest-sanctuary",
           "type": "Defense / Fortification",
-          "priority": "High (when Rootweavers at \u22644 HP)",
+          "priority": "High (when Rootweavers at ≤4 HP)",
           "effect": "Rootweavers gain +3 Defense until next turn\nAll hexes adjacent to Rootweavers become Dense Forest (blocks line of sight)\nAllied units within 2 hexes gain **Regeneration 2**",
           "flavor": "In the deepest woods, we cannot be touched."
         },
@@ -4843,8 +4843,8 @@
           "supportUnit": "DRONE SWARM",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "\u2694\ufe0f HARASSMENT STRIKE",
-          "id": "emergent-drone-swarm-\u2694\ufe0f-harassment-strike",
+          "name": "⚔️ HARASSMENT STRIKE",
+          "id": "emergent-drone-swarm-⚔️-harassment-strike",
           "type": "Attack / Distraction",
           "priority": "Medium (when adjacent to enemy)",
           "effect": "Attack closest enemy for 2 damage\nTarget has -1 to all actions next turn (distracted by buzzing)\nGenerate 1 Metamorph token for closest Syndicate Casket\nSwarm moves 4 hexes away after attack (hit-and-run)",
@@ -4854,8 +4854,8 @@
           "supportUnit": "DRONE SWARM",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "\ufe0f PHEROMONE CLOUD",
-          "id": "emergent-drone-swarm-\ufe0f-pheromone-cloud",
+          "name": "️ PHEROMONE CLOUD",
+          "id": "emergent-drone-swarm-️-pheromone-cloud",
           "type": "Buff / Area Control",
           "priority": "High (when 2+ allies within 4 hexes)",
           "effect": "Create 3-hex radius pheromone cloud (colored mist)\nAllied Syndicate units in cloud gain +1 SP this turn\nEnemies in cloud have -1 Defense (disoriented)\nCloud lasts 2 turns",
@@ -4868,7 +4868,7 @@
           "name": "DISPERSE AND REFORM",
           "id": "emergent-drone-swarm-disperse-and-reform",
           "type": "Defense / Mobility",
-          "priority": "Critical (when HP \u2264 3 or taking AOE damage)",
+          "priority": "Critical (when HP ≤ 3 or taking AOE damage)",
           "effect": "Swarm becomes immune to damage this turn (fully dispersed)\nCannot attack or act (reforming)\nMove up to 8 hexes to safe location\nNext turn, gain +3 HP (swarm reconstitutes)",
           "flavor": "You cannot kill the swarm. We are everywhere."
         },
@@ -4909,10 +4909,10 @@
           "supportUnit": "MOLT GUARDIAN",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "\ufe0f DEFENSIVE MOLT",
-          "id": "emergent-molt-guardian-\ufe0f-defensive-molt",
+          "name": "️ DEFENSIVE MOLT",
+          "id": "emergent-molt-guardian-️-defensive-molt",
           "type": "Reactive / Healing",
-          "priority": "Critical (when HP \u2264 10)",
+          "priority": "Critical (when HP ≤ 10)",
           "effect": "Molt exoskeleton (visual: old shell cracks and falls away)\nRecover 5 HP immediately\nGain +1 Defense permanently (max Defense 6)\nRemove all debuffs/status effects (bleed, poison, etc.)\nCannot move this turn (molting is exhausting)",
           "flavor": "Shed weakness. Embrace evolution."
         },
@@ -4964,10 +4964,10 @@
           "supportUnit": "MOLT GUARDIAN",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "\u26a1 BERSERKER MOLT",
-          "id": "emergent-molt-guardian-\u26a1-berserker-molt",
+          "name": "⚡ BERSERKER MOLT",
+          "id": "emergent-molt-guardian-⚡-berserker-molt",
           "type": "Attack / Transformation",
-          "priority": "Critical (when HP \u2264 6 or ally destroyed)",
+          "priority": "Critical (when HP ≤ 6 or ally destroyed)",
           "effect": "Emergency molt (discard all armor, become vulnerable)\nLose all Defense bonuses (Defense becomes 0)\nGain +3 Movement and +4 damage to all attacks\nAttack twice this turn if able\nLasts until end of round, then recover 1 Defense",
           "flavor": "In desperation, the guardian becomes the predator."
         }
@@ -4986,8 +4986,8 @@
           "supportUnit": "ADAPTATION FORM",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "\ufe0f ASSAULT FORM SHIFT",
-          "id": "emergent-adaptation-form-\ufe0f-assault-form-shift",
+          "name": "️ ASSAULT FORM SHIFT",
+          "id": "emergent-adaptation-form-️-assault-form-shift",
           "type": "Transformation / Offense",
           "priority": "High (when enemies clustered or ally needs damage)",
           "effect": "Transform into Assault Form (blade-limbed mantis)\nGain +3 damage to all attacks\nLose -1 Defense (vulnerable while aggressive)\nAllied Syndicate units within 4 hexes gain +1 damage\nLasts 2 turns",
@@ -4997,8 +4997,8 @@
           "supportUnit": "ADAPTATION FORM",
           "faction": "emergent",
           "cardType": "support-behavior",
-          "name": "\ufe0f TANK FORM SHIFT",
-          "id": "emergent-adaptation-form-\ufe0f-tank-form-shift",
+          "name": "️ TANK FORM SHIFT",
+          "id": "emergent-adaptation-form-️-tank-form-shift",
           "type": "Transformation / Defense",
           "priority": "High (when taking heavy damage or ally endangered)",
           "effect": "Transform into Tank Form (armored beetle)\nGain +3 Defense (total Defense 4)\nMovement reduced to 3\nAllied Syndicate units within 4 hexes gain +1 Defense\nLasts 2 turns",
@@ -5249,7 +5249,7 @@
           "name": "SMOKE SCREEN",
           "id": "nomads-outrider-squadron-smoke-screen",
           "type": "Utility / Escape",
-          "priority": "Critical (when Outriders HP \u2264 3)",
+          "priority": "Critical (when Outriders HP ≤ 3)",
           "effect": "Outriders deploy smoke grenades\nCreate 3-hex smoke cloud (blocks LOS)\nImmediately move 5 hexes through smoke\nAll allies in smoke gain +2 Defense until smoke clears (2 turns)",
           "flavor": "Can't hit what you can't see!"
         },
@@ -5613,7 +5613,7 @@
           "id": "vestige-bloodlines-feral-pack-pack-tactics",
           "type": "Attack / Coordinated",
           "priority": "High (when 2+ Pack members alive)",
-          "effect": "Pack swarms 1 enemy from multiple angles\nDeal damage equal to (3 \u00d7 number of Pack members alive) [max 21 damage if all 7 alive]\nTarget cannot counterattack (overwhelmed)\nIf Pack has 5+ members, target gains \"Bleeding\" (2 damage/turn)",
+          "effect": "Pack swarms 1 enemy from multiple angles\nDeal damage equal to (3 × number of Pack members alive) [max 21 damage if all 7 alive]\nTarget cannot counterattack (overwhelmed)\nIf Pack has 5+ members, target gains \"Bleeding\" (2 damage/turn)",
           "flavor": "One wolf is dangerous. Seven is a massacre."
         },
         {
@@ -5700,7 +5700,7 @@
           "name": "FRENZY MODE",
           "id": "vestige-bloodlines-mutation-hulk-frenzy-mode",
           "type": "Attack / Rampage",
-          "priority": "Critical (when Hulk HP \u2264 8)",
+          "priority": "Critical (when Hulk HP ≤ 8)",
           "effect": "Hulk enters berserk state\n+4 damage to all attacks\n+2 movement\nAttack nearest unit each turn (friend or foe - cannot distinguish)\nLasts until Hulk recovers above 8 HP",
           "flavor": "RAGE. BLOOD. KILL. KILL. KILL!"
         }
@@ -5744,7 +5744,7 @@
           "name": "CONSUME OFFSPRING",
           "id": "vestige-bloodlines-broodmother-consume-offspring",
           "type": "Healing / Sacrifice",
-          "priority": "Critical (when Broodmother HP \u2264 6)",
+          "priority": "Critical (when Broodmother HP ≤ 6)",
           "effect": "Broodmother devours 1 of her own Spawn\nRecover 5 HP\nGain 1 Biomass Token\nOther Spawn become frenzied (+3 damage for 1 turn, watching their sibling die)",
           "flavor": "Come to mother, dear. You'll serve better... inside me."
         },
@@ -5779,7 +5779,7 @@
           "type": "Utility / Disruption",
           "priority": "High",
           "effect": "Pixies move up to 6 hexes toward nearest enemy\nAll enemies within 2 hexes must discard 1 random card from hand (pixies steal them mid-air)\nPixies gain 1 Wyrd Token for each card stolen (max 2 per turn)",
-          "flavor": "Give that back! That's\u2014HEY! STOP LAUGHING!"
+          "flavor": "Give that back! That's—HEY! STOP LAUGHING!"
         },
         {
           "supportUnit": "PIXIE SWARM",
@@ -5898,7 +5898,7 @@
           "name": "PANIC REVEAL",
           "id": "wyrd-changeling-infiltrator-panic-reveal",
           "type": "Utility / Fear",
-          "priority": "Critical (when Changeling HP \u2264 3)",
+          "priority": "Critical (when Changeling HP ≤ 3)",
           "effect": "Changeling drops disguise, revealing blank featureless face\nAll enemies within 3 hexes must roll Morale check (TN 5+)\nFailures: Enemy unit loses next turn (paralyzed by uncanny horror)\nChangeling recovers 3 HP (feeds on fear)",
           "flavor": "You wanted to see my real face? HERE IT IS."
         },
@@ -5953,7 +5953,7 @@
           "name": "CONTRACT CLAUSE: ENDURE",
           "id": "wyrd-oath-bound-servants-contract-clause-endure",
           "type": "Defense / Resilience",
-          "priority": "Medium (when Servants HP \u2264 6)",
+          "priority": "Medium (when Servants HP ≤ 6)",
           "effect": "Servants do not move\nGain +4 Defense until end of round\nRecover 3 HP (contract prevents true death)\nAll damage taken is reduced by 2 (minimum 1)",
           "flavor": "We cannot die. We are bound. This is our curse."
         },
@@ -6027,7 +6027,7 @@
     {
       "id": "scavengers-cunning",
       "name": "Scavenger's Cunning",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Draw 3 cards, then discard 2 cards of your choice. Dig for what you need.",
@@ -6042,7 +6042,7 @@
     {
       "id": "smoke-and-mirrors",
       "name": "Smoke and Mirrors",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Create smoke in your current hex. Blocks LOS. Move 2 hexes (does not break stealth). Vanish.",
@@ -6102,7 +6102,7 @@
     {
       "id": "scrapper",
       "name": "Scrapper",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": 0,
       "range": "Self",
       "effect": "When you destroy an enemy Casket, immediately draw 2 cards and recover 2 cards from discard. Salvage the wreckage.",
@@ -6117,7 +6117,7 @@
     {
       "id": "feint-and-strike",
       "name": "Feint and Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee",
       "effect": "Deal 5 damage. After attacking, move 1 hex. Quick, precise, gone.",
@@ -6132,7 +6132,7 @@
     {
       "id": "winds-of-change",
       "name": "Winds of Change",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Shuffle your discard pile back into your deck. Reset. Adapt. Survive.",
@@ -6146,7 +6146,7 @@
     {
       "id": "quick-slash",
       "name": "Quick Slash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 3 damage. Fast, efficient, reliable.",
@@ -6163,7 +6163,7 @@
     {
       "id": "pistol-shot",
       "name": "Pistol Shot",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "4 hexes",
       "effect": "Deal 3 damage at range. Keep your distance.",
@@ -6180,7 +6180,7 @@
     {
       "id": "hit-and-run",
       "name": "Hit and Run",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 4 damage. After attack resolves, move up to 2 hexes.",
@@ -6198,7 +6198,7 @@
     {
       "id": "opportunist-strike",
       "name": "Opportunist Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 5 damage if target moved during their last turn. Otherwise deals 3 damage.",
@@ -6216,7 +6216,7 @@
     {
       "id": "dual-wield",
       "name": "Dual Wield",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee + 4 hexes",
       "effect": "Make two attacks: 3 damage melee to adjacent target, then 3 damage ranged to target within 4 hexes. Can target same enemy twice.",
@@ -6235,7 +6235,7 @@
     {
       "id": "reckless-slash",
       "name": "Reckless Slash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 6 damage. Discard 1 card. Move up to 1 hex after attack.",
@@ -6254,7 +6254,7 @@
     {
       "id": "smoke-bomb",
       "name": "Smoke Bomb",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "3 hexes",
       "effect": "Target hex becomes smoke terrain (blocks line of sight). Lasts until end of round.",
@@ -6271,7 +6271,7 @@
     {
       "id": "grappling-hook",
       "name": "Grappling Hook",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Move up to 3 hexes in straight line, ignoring all terrain and obstacles. Cannot move through enemies.",
@@ -6287,7 +6287,7 @@
     {
       "id": "flash-grenade",
       "name": "Flash Grenade",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "4 hexes",
       "effect": "Deal 2 damage. Target has -1 to their next attack roll.",
@@ -6305,7 +6305,7 @@
     {
       "id": "adaptive-armor",
       "name": "Adaptive Armor",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": "0 SP (Reactive)",
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 1 (minimum 1). After damage resolves, move 1 hex in any direction.",
@@ -6322,7 +6322,7 @@
     {
       "id": "scavenge",
       "name": "Scavenge",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Draw 2 cards, then discard 1 card. Sort through the wreckage.",
@@ -6527,7 +6527,7 @@
     {
       "id": "hammer-strike",
       "name": "Hammer Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 3 damage. If standing in lava, deal 4 damage instead.",
@@ -6545,7 +6545,7 @@
     {
       "id": "volcanic-slash",
       "name": "Volcanic Slash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 4 damage. If you have 3+ Forge tokens, deal 5 damage instead.",
@@ -6563,7 +6563,7 @@
     {
       "id": "lava-leap",
       "name": "Lava Leap",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "3 hexes",
       "effect": "Move up to 3 hexes toward target (must end adjacent), then deal 4 damage. If you move through lava, deal 5 damage instead.",
@@ -6582,7 +6582,7 @@
     {
       "id": "forge-fury",
       "name": "Forge-Fury",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (1 hex)",
       "effect": "Deal 6 damage. Gain 1 Heat. Spend 2 Forge tokens to deal 8 damage instead. Uncontrolled power.",
@@ -6601,7 +6601,7 @@
     {
       "id": "ashen-kings-wrath",
       "name": "Ashen King's Wrath",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 6 damage. If outnumbered (2+ enemies within 6 hexes), deal 8 damage instead. Desperate strength.",
@@ -6620,7 +6620,7 @@
     {
       "id": "component-sunder",
       "name": "Component Sunder",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 5 damage to specific component (choose: Right Arm, Left Arm, Legs, Head, Chassis). Spend 2 Forge tokens to deal 7 damage instead. Precision destruction.",
@@ -6639,7 +6639,7 @@
     {
       "id": "lava-flask",
       "name": "Lava Flask",
-      "type": "attack",
+      "type": "Attack",
       "cost": 1,
       "range": "4 hexes",
       "effect": "Throw flask of lava. Deal 2 damage and create 1 Lava Terrain hex at target location (lasts 2 turns). Portable volcano.",
@@ -6657,7 +6657,7 @@
     {
       "id": "ember-shield",
       "name": "Ember Shield",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": "0 SP (Reactive)",
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Forge token to reduce by 4 instead. Molten defense.",
@@ -6674,7 +6674,7 @@
     {
       "id": "ash-cloak",
       "name": "Ash Cloak",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Draw 2 cards. If standing in lava, draw 3 cards instead. Ash obscures, fire reveals.",
@@ -6691,7 +6691,7 @@
     {
       "id": "forge-call",
       "name": "Forge Call",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self",
       "effect": "Gain 2 Forge tokens immediately. Generate 1 Heat. Summon the forge's blessing.",
@@ -6708,7 +6708,7 @@
     {
       "id": "duelists-stance",
       "name": "Duelist's Stance",
-      "type": "attack",
+      "type": "Attack",
       "cost": 1,
       "range": "Self",
       "effect": "Until end of turn, your melee attacks deal +2 damage but you take +1 damage from all sources. High-risk aggression.",
@@ -6862,7 +6862,7 @@
       "type": "Passive",
       "cost": 0,
       "range": "N/A",
-      "effect": "Passive: You can see in 360\u00b0 (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.",
+      "effect": "Passive: You can see in 360° (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.",
       "keywords": [
         "passive",
         "defensive",
@@ -6913,7 +6913,7 @@
     {
       "id": "mantis-strikes",
       "name": "Mantis Strikes",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 3 damage with blade-like mantis limbs. Basic melee attack.",
@@ -6930,7 +6930,7 @@
     {
       "id": "chitin-claws",
       "name": "Chitin Claws",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 4 damage. If you have Assault Form active (from Metamorphic Adaptation), deal 5 damage instead.",
@@ -6948,7 +6948,7 @@
     {
       "id": "segmented-lash",
       "name": "Segmented Lash",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "2 hexes",
       "effect": "Deal 3 damage at extended range (segmented limb extends). Can hit targets 2 hexes away.",
@@ -6966,7 +6966,7 @@
     {
       "id": "multi-limb-barrage",
       "name": "Multi-Limb Barrage",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (1 hex)",
       "effect": "Attack three times with different limbs for 2 damage each (total 6). Can split damage among up to 3 adjacent targets. Arthropod advantage.",
@@ -6985,7 +6985,7 @@
     {
       "id": "arthropod-fury",
       "name": "Arthropod Fury",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 6 damage. Spend 1 Metamorph token to deal 8 damage instead. Evolutionary power.",
@@ -7004,7 +7004,7 @@
     {
       "id": "precision-strikes",
       "name": "Precision Strikes",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 5 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). Compound eyes guide surgical strikes.",
@@ -7023,7 +7023,7 @@
     {
       "id": "pheromone-glands",
       "name": "Pheromone Glands",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "3 hexes (cone)",
       "effect": "Release confusion pheromones. All enemies in cone have -1 to their next attack roll. Chemical warfare.",
@@ -7041,7 +7041,7 @@
     {
       "id": "reactive-carapace",
       "name": "Reactive Carapace",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": "0 SP (Reactive)",
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Metamorph token to reduce by 4 instead. Hardened exoskeleton.",
@@ -7058,7 +7058,7 @@
     {
       "id": "antenna-sense",
       "name": "Antenna Sense",
-      "type": "utility",
+      "type": "Utility",
       "cost": 0,
       "range": "Self",
       "effect": "Draw 2 cards. If you have 3+ Metamorph tokens, draw 3 cards instead. Enhanced sensory input.",
@@ -7075,7 +7075,7 @@
     {
       "id": "metamorph-serum",
       "name": "Metamorph Serum",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "Self or Adjacent",
       "effect": "Target gains 2 Metamorph tokens immediately. Can target self or adjacent Emergent Syndicate ally. Accelerate transformation.",
@@ -7093,7 +7093,7 @@
     {
       "id": "hivemind-beacon",
       "name": "Hivemind Beacon",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "6 hexes",
       "effect": "Choose 1 allied Emergent Syndicate Casket within range. They immediately move up to 2 hexes toward you. Rally the collective.",
@@ -7293,7 +7293,7 @@
     {
       "id": "ledger-strike",
       "name": "Ledger Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 3 damage. If you have 3+ Credit tokens, deal 4 damage instead (wealth empowers).",
@@ -7311,7 +7311,7 @@
     {
       "id": "coin-throw",
       "name": "Coin Throw",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "4 hexes",
       "effect": "Deal 2 damage at range. Spend 1 Credit token to deal 4 damage instead (premium ammunition).",
@@ -7329,7 +7329,7 @@
     {
       "id": "hostile-acquisition",
       "name": "Hostile Acquisition",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 5 damage. If target is adjacent to your Mercenary, deal 7 damage instead (coordinated assault).",
@@ -7347,7 +7347,7 @@
     {
       "id": "buyout-strike",
       "name": "Buyout Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (1 hex)",
       "effect": "Deal 6 damage. If this kills the target, immediately summon 1 Mercenary (no Credit cost). Acquire their contracts.",
@@ -7366,7 +7366,7 @@
     {
       "id": "executive-order",
       "name": "Executive Order",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "6 hexes",
       "effect": "Deal 4 damage. Target has -2 SP next turn (economic pressure). Authority in action.",
@@ -7385,7 +7385,7 @@
     {
       "id": "liquidation",
       "name": "Liquidation",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 5 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). Spend 2 Credit tokens to deal 7 damage instead. Precision destruction.",
@@ -7404,7 +7404,7 @@
     {
       "id": "market-forecast",
       "name": "Market Forecast",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Look at top 3 cards of your deck. Rearrange them in any order. Spend 1 Credit token to draw 1 additional card. Insider trading.",
@@ -7422,7 +7422,7 @@
     {
       "id": "defense-contract",
       "name": "Defense Contract",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": "0 SP (Reactive)",
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Credit token to reduce by 4 instead. Paid protection.",
@@ -7439,7 +7439,7 @@
     {
       "id": "corporate-espionage",
       "name": "Corporate Espionage",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "6 hexes",
       "effect": "Look at target enemy's hand (see all their cards). Spend 2 Credit tokens to steal 1 card from their hand and add it to yours. Information warfare.",
@@ -7457,7 +7457,7 @@
     {
       "id": "war-bonds",
       "name": "War Bonds",
-      "type": "utility",
+      "type": "Utility",
       "cost": 1,
       "range": "Self",
       "effect": "Gain 3 Credit tokens immediately. Generate 1 Heat. Investment with interest.",
@@ -7474,7 +7474,7 @@
     {
       "id": "mercenary-contract",
       "name": "Mercenary Contract",
-      "type": "utility",
+      "type": "Utility",
       "cost": 2,
       "range": "4 hexes",
       "effect": "Target friendly Mercenary immediately moves up to 3 hexes and makes a 3-damage attack. Control your assets.",
@@ -7676,7 +7676,7 @@
     {
       "id": "savage-strike",
       "name": "Savage Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 3 damage. Basic melee attack with mutated limbs.",
@@ -7693,7 +7693,7 @@
     {
       "id": "rending-claws",
       "name": "Rending Claws",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "Melee (1 hex)",
       "effect": "Deal 4 damage. If you have Pack Instinct active, deal 5 damage instead.",
@@ -7711,7 +7711,7 @@
     {
       "id": "leaping-pounce",
       "name": "Leaping Pounce",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "3 hexes",
       "effect": "Move up to 3 hexes in straight line toward target, then deal 4 damage. Predatory lunge.",
@@ -7729,7 +7729,7 @@
     {
       "id": "frenzy",
       "name": "Frenzy",
-      "type": "attack",
+      "type": "Attack",
       "cost": 4,
       "range": "Melee (1 hex)",
       "effect": "Attack twice for 3 damage each against same target. Gain 1 Heat. Uncontrolled aggression.",
@@ -7747,7 +7747,7 @@
     {
       "id": "alphas-bite",
       "name": "Alpha's Bite",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 6 damage. If you have 2+ allied Vestige Caskets adjacent, deal 8 damage instead. Pack leader's fury.",
@@ -7765,7 +7765,7 @@
     {
       "id": "bloodthirsty-rend",
       "name": "Bloodthirsty Rend",
-      "type": "attack",
+      "type": "Attack",
       "cost": 3,
       "range": "Melee (1 hex)",
       "effect": "Deal 5 damage. If this kills the target, immediately make another attack against adjacent enemy for 3 damage. Chain kills.",
@@ -7783,7 +7783,7 @@
     {
       "id": "regenerative-flesh",
       "name": "Regenerative Flesh",
-      "type": "utility",
+      "type": "Utility",
       "cost": 0,
       "range": "Self",
       "effect": "Recover 2 cards from your discard pile. Spend Biomass to heal wounds.",
@@ -7800,7 +7800,7 @@
     {
       "id": "venomous-spit",
       "name": "Venomous Spit",
-      "type": "attack",
+      "type": "Attack",
       "cost": 2,
       "range": "4 hexes",
       "effect": "Deal 2 damage. Target takes 2 additional damage at start of their next turn (poison). Toxic adaptation.",
@@ -7818,7 +7818,7 @@
     {
       "id": "reactive-scales",
       "name": "Reactive Scales",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": "0 SP (Reactive)",
       "range": "Self",
       "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Biomass token to reduce by 3 instead. Hardened hide.",
@@ -7835,7 +7835,7 @@
     {
       "id": "primal-roar",
       "name": "Primal Roar",
-      "type": "attack",
+      "type": "Attack",
       "cost": 1,
       "range": "4 hexes",
       "effect": "Target enemy has -1 to their next attack roll. All Vestige allies within 4 hexes gain +1 damage on their next attack. Intimidation and inspiration.",
@@ -7853,7 +7853,7 @@
     {
       "id": "tracking-scent",
       "name": "Tracking Scent",
-      "type": "utility",
+      "type": "Utility",
       "cost": 0,
       "range": "Self",
       "effect": "Draw 2 cards. If you have a Prey marked, draw 3 cards instead. Enhanced senses guide the hunt.",
@@ -7907,7 +7907,7 @@
     {
       "id": "reality-fracture",
       "name": "Reality Fracture",
-      "type": "utility",
+      "type": "Utility",
       "cost": "4 Bargain tokens",
       "range": "Self",
       "effect": "Rewind time. Return to start of your turn (restore SP, return hand to state at turn start, undo all actions). Any damage dealt or taken this turn is undone. May only be used once per mission. Temporal violation. Deal 3 damage to the attacker who triggered this.",
@@ -7963,7 +7963,7 @@
     {
       "id": "mirror-self",
       "name": "Mirror Self",
-      "type": "utility",
+      "type": "Utility",
       "cost": "5 Bargain tokens",
       "range": "Self",
       "effect": "Create illusory duplicate of yourself at your current location. Duplicate has 1 HP, acts on your turn, can move and attack (deals 0 damage, but enemies don't know it's fake). Lasts until destroyed or 3 turns. Enemies cannot tell which is real (you control both). Deception layered.",
@@ -7981,7 +7981,7 @@
     {
       "id": "price-paid",
       "name": "Price Paid",
-      "type": "reactive",
+      "type": "Reactive",
       "cost": "0 SP (but costs Bargain tokens retroactively)",
       "range": "Self",
       "effect": "Play when you would die (deck reaches 0). Instead, spend ALL Bargain tokens you have. For each token spent, recover 3 cards from discard pile. If you have 0 tokens, you die normally. Survival has a cost. Always.",
@@ -7999,7 +7999,7 @@
     {
       "id": "shimmer-step",
       "name": "Shimmer Step",
-      "type": "attack",
+      "type": "Attack",
       "cost": "2 SP",
       "range": "Teleport up to 8 hexes, then attack adjacent enemy",
       "effect": "Teleport to any hex within 8 hexes (ignore terrain, enemies, obstacles). If adjacent to enemy after teleport, deal 4 damage. Spend 2 Bargain tokens to attack twice (teleport, attack, teleport again, attack again). Impossible positioning.",
@@ -8054,7 +8054,7 @@
     {
       "id": "shimmer-strike",
       "name": "Shimmer Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": "2 SP",
       "range": "Melee (1 hex)",
       "damage": "3",
@@ -8073,7 +8073,7 @@
     {
       "id": "phase-cut",
       "name": "Phase Cut",
-      "type": "attack",
+      "type": "Attack",
       "cost": "2 SP",
       "range": "Melee (1 hex)",
       "damage": "4",
@@ -8092,7 +8092,7 @@
     {
       "id": "mirage-assault",
       "name": "Mirage Assault",
-      "type": "attack",
+      "type": "Attack",
       "cost": "3 SP",
       "range": "3 hexes",
       "damage": "3",
@@ -8111,7 +8111,7 @@
     {
       "id": "paradox-blade",
       "name": "Paradox Blade",
-      "type": "attack",
+      "type": "Attack",
       "cost": "4 SP",
       "range": "Melee (1 hex)",
       "damage": "6",
@@ -8131,7 +8131,7 @@
     {
       "id": "stolen-strength",
       "name": "Stolen Strength",
-      "type": "attack",
+      "type": "Attack",
       "cost": "3 SP",
       "range": "Melee (1 hex)",
       "damage": "5",
@@ -8150,7 +8150,7 @@
     {
       "id": "incomprehensible-strike",
       "name": "Incomprehensible Strike",
-      "type": "attack",
+      "type": "Attack",
       "cost": "3 SP",
       "range": "Choose: Melee OR Ranged 6",
       "damage": "4",
@@ -8169,7 +8169,7 @@
     {
       "id": "fae-mirror",
       "name": "Fae Mirror",
-      "type": "utility",
+      "type": "Utility",
       "cost": "1 SP",
       "range": "Self",
       "effect": "Create 1 Mirror Self illusion at your location (see Faction Card \"Mirror Self\"). Illusion lasts 2 turns or until destroyed. Spend 1 Bargain token to create 2 illusions instead. Multiply confusion.",
@@ -8187,7 +8187,7 @@
     {
       "id": "bargain-siphon",
       "name": "Bargain Siphon",
-      "type": "utility",
+      "type": "Utility",
       "cost": "0 SP (Reactive)",
       "range": "Self",
       "effect": "Play when enemy attacks you. Offer bargain: \"Miss this attack, give me 2 Bargain tokens.\" Enemy chooses. If they give tokens, attack misses. If they refuse, attack hits normally. Extortion mid-combat.",
@@ -8205,7 +8205,7 @@
     {
       "id": "shimmer-veil",
       "name": "Shimmer Veil",
-      "type": "utility",
+      "type": "Utility",
       "cost": "2 SP",
       "range": "Self",
       "effect": "Become invisible (cannot be targeted by attacks) until your next turn. You may still move and attack (but attacking breaks invisibility). Spend 1 Bargain token to stay invisible even after attacking. Unseen predator.",
@@ -8223,7 +8223,7 @@
     {
       "id": "reality-shard",
       "name": "Reality Shard",
-      "type": "attack",
+      "type": "Attack",
       "cost": "2 SP",
       "range": "4 hexes",
       "effect": "Throw shard of broken reality. Deal 2 damage. Create \"Distortion hex\" at impact location (lasts 3 turns). Distortion hexes: Enemies standing in them have -1 to all actions. Allies ignore effect. Warped space.",
@@ -8242,7 +8242,7 @@
     {
       "id": "temporal-loop",
       "name": "Temporal Loop",
-      "type": "utility",
+      "type": "Utility",
       "cost": "3 SP",
       "range": "Self",
       "effect": "Next damage you take this turn is stored in temporal loop. At start of your next turn, choose 1 enemy within 6 hexes - they take that stored damage instead. Redirect pain through time.",
@@ -8284,7 +8284,7 @@
       "type": "component-damage",
       "cost": "N/A",
       "range": "N/A",
-      "effect": "Dead card from destroyed component. Cannot be played. Can be discarded for damage absorption. Can be salvaged: Discard 3 SCRAP \u2192 Draw 2 cards (0 SP, free action).",
+      "effect": "Dead card from destroyed component. Cannot be played. Can be discarded for damage absorption. Can be salvaged: Discard 3 SCRAP → Draw 2 cards (0 SP, free action).",
       "keywords": [
         "scrap",
         "component-damage",
@@ -8293,7 +8293,7 @@
       ],
       "cardCount": 0,
       "cardType": "penalty",
-      "notes": "Gained: When component destroyed, all equipment cards from that slot become SCRAP. Example: Right Arm destroyed \u2192 12 Primary Weapon cards become SCRAP."
+      "notes": "Gained: When component destroyed, all equipment cards from that slot become SCRAP. Example: Right Arm destroyed → 12 Primary Weapon cards become SCRAP."
     },
     {
       "id": "decay-card",
@@ -8387,7 +8387,7 @@
       "name": "FRENZIED ASSAULT",
       "id": "church-flagellant-pack-frenzied-assault",
       "type": "Attack / Reckless",
-      "priority": "Critical (when HP \u2264 3)",
+      "priority": "Critical (when HP ≤ 3)",
       "effect": "Move full speed (4 hexes) toward nearest enemy\nAttack for 6 damage (empowered by pain)\nIgnore Defense on this attack\nFlagellants take 1 damage after attacking (self-destructive)",
       "flavor": "In their final moments, they are closest to absolution."
     },
@@ -8431,7 +8431,7 @@
       "name": "MARTYRDOM CHARGE",
       "id": "church-flagellant-pack-martyrdom-charge",
       "type": "Attack / Suicide",
-      "priority": "Critical (when HP \u2264 2)",
+      "priority": "Critical (when HP ≤ 2)",
       "effect": "Move full speed toward nearest enemy\nIf adjacent, deal 8 damage to that enemy\nFlagellants are immediately destroyed (suicidal explosion)\nAll adjacent enemies take 3 splash damage",
       "flavor": "Through death, I find absolution!"
     },
@@ -8530,7 +8530,7 @@
       "name": "DEFENSIVE CIRCLE",
       "id": "church-relic-bearers-defensive-circle",
       "type": "Defense / Protective",
-      "priority": "Critical (when Relic HP \u2264 5)",
+      "priority": "Critical (when Relic HP ≤ 5)",
       "effect": "Move toward nearest cover or friendly Casket\nGain +2 Defense until end of round\nRelic Bearers cannot attack (focused on protecting artifact)\nTesla Cross still deals 1 damage to adjacent enemies each turn (passive)",
       "flavor": "Protect the sacred at all costs."
     },
@@ -8571,8 +8571,8 @@
       "supportUnit": "HONOR GUARD",
       "faction": "crucible",
       "cardType": "support-behavior",
-      "name": "\ufe0f PROTECTIVE STANCE",
-      "id": "crucible-honor-guard-\ufe0f-protective-stance",
+      "name": "️ PROTECTIVE STANCE",
+      "id": "crucible-honor-guard-️-protective-stance",
       "type": "Reactive / Defense",
       "priority": "Critical (when ally within 3 hexes takes damage)",
       "effect": "Intercept attack targeting ally within 3 hexes\nHonor Guard takes damage instead of ally\nReduce damage by 2 (minimum 1, shield absorbs)\nGain 1 Forge token (honor in protection)\nMove 3 hexes toward ally if needed",
@@ -8582,8 +8582,8 @@
       "supportUnit": "HONOR GUARD",
       "faction": "crucible",
       "cardType": "support-behavior",
-      "name": "\u2694\ufe0f CHALLENGE ACCEPTED",
-      "id": "crucible-honor-guard-\u2694\ufe0f-challenge-accepted",
+      "name": "⚔️ CHALLENGE ACCEPTED",
+      "id": "crucible-honor-guard-⚔️-challenge-accepted",
       "type": "Duel / Attack",
       "priority": "High (when ally threatened or Honor Duel issued)",
       "effect": "Can accept Honor Duel on behalf of ally (take their place)\nIf in active duel: Attack for 5 damage\nIf duel victory: Gain 2 Forge tokens + draw 2 cards\nIf enemy refuses to duel Guard: Enemy gains Coward's Mark",
@@ -8619,7 +8619,7 @@
       "id": "crucible-honor-guard-retribution-strike",
       "type": "Attack / Revenge",
       "priority": "High (when ally was damaged this round)",
-      "effect": "Move toward enemy who damaged ally (up to 4 hexes)\nAttack for 6 damage\nIf ally was reduced to \u226450% HP: Deal 8 damage instead\nGain 1 Forge token per ally protected this battle",
+      "effect": "Move toward enemy who damaged ally (up to 4 hexes)\nAttack for 6 damage\nIf ally was reduced to ≤50% HP: Deal 8 damage instead\nGain 1 Forge token per ally protected this battle",
       "flavor": "You hurt mine. Now face the consequences."
     },
     {
@@ -8629,7 +8629,7 @@
       "name": "LAST STAND",
       "id": "crucible-honor-guard-last-stand",
       "type": "Reactive / Survival",
-      "priority": "Critical (when Honor Guard HP \u2264 4)",
+      "priority": "Critical (when Honor Guard HP ≤ 4)",
       "effect": "Trigger Unbreakable (survive at 1 HP, once per battle)\nGain +3 damage to all attacks for 2 turns\nCannot move (rooted to spot, \"here I stand\")\nAllies within 3 hexes gain +1 damage (inspired by courage)\nGenerate 2 Forge tokens",
       "flavor": "I fall only when my brothers are safe."
     },
@@ -8648,8 +8648,8 @@
       "supportUnit": "FORGE APPRENTICE",
       "faction": "crucible",
       "cardType": "support-behavior",
-      "name": "\u26a1 EMBER BLESSING",
-      "id": "crucible-forge-apprentice-\u26a1-ember-blessing",
+      "name": "⚡ EMBER BLESSING",
+      "id": "crucible-forge-apprentice-⚡-ember-blessing",
       "type": "Buff / Support",
       "priority": "High (when ally about to attack)",
       "effect": "Target allied Crucible Casket within 4 hexes\nSpend 1 Forge token\nAlly's next attack deals +2 damage (weapon blessed with fire)\nIf ally in lava: +3 damage instead\nAlly's weapon glows with volcanic heat (visual)",
@@ -8662,7 +8662,7 @@
       "name": "FIELD REPAIR",
       "id": "crucible-forge-apprentice-field-repair",
       "type": "Healing / Support",
-      "priority": "Medium (when ally HP \u2264 50%)",
+      "priority": "Medium (when ally HP ≤ 50%)",
       "effect": "Target allied Crucible Casket within 3 hexes\nSpend 2 Forge tokens\nAlly recovers 4 cards (emergency repairs)\nRemove 1 debuff from ally (burn away impurity)\nApprentice cannot act again this turn (exhausted)",
       "flavor": "Hold still. I can fix this."
     },
@@ -8684,7 +8684,7 @@
       "name": "EVASIVE MANEUVERS",
       "id": "crucible-forge-apprentice-evasive-maneuvers",
       "type": "Movement / Survival",
-      "priority": "Critical (when enemy within 2 hexes or Apprentice HP \u2264 4)",
+      "priority": "Critical (when enemy within 2 hexes or Apprentice HP ≤ 4)",
       "effect": "Move up to 5 hexes away from nearest enemy\nCannot be targeted by reactions during movement (too fast)\nIf ending adjacent to ally: Hide behind them (cannot be targeted until Apprentice moves)\nDrop 1 lava flask (create 1 lava hex at starting position)",
       "flavor": "I am smith, not warrior! Protect me!"
     },
@@ -8926,7 +8926,7 @@
       "name": "STONE SKIN",
       "id": "dwarves-rune-sentinel-stone-skin",
       "type": "Defense / Healing",
-      "priority": "Critical (when Sentinel HP \u2264 7)",
+      "priority": "Critical (when Sentinel HP ≤ 7)",
       "effect": "Do not move or attack\nSentinel's body reforms and heals\nRecover 5 HP (magical reconstruction)\nGain +3 Defense until next turn\nRemove 1 Rune Counter (costs magical energy)",
       "flavor": "Cracks seal. Stone flows like water, then hardens."
     },
@@ -8938,7 +8938,7 @@
       "id": "dwarves-rune-sentinel-rune-pulse",
       "type": "Attack / Area",
       "priority": "Medium (when Sentinel has 2+ Rune Counters)",
-      "effect": "Do not move\nDischarge all stored runic energy\nDeal 3 damage \u00d7 Rune Counters to all enemies within 2 hexes (max 9 damage)\nRemove all Rune Counters\nStun all affected enemies (lose 1 SP next turn)",
+      "effect": "Do not move\nDischarge all stored runic energy\nDeal 3 damage × Rune Counters to all enemies within 2 hexes (max 9 damage)\nRemove all Rune Counters\nStun all affected enemies (lose 1 SP next turn)",
       "flavor": "RUNES DETONATE IN CHAIN REACTION"
     },
     {
@@ -9003,7 +9003,7 @@
       "name": "FADE INTO SHADOWS",
       "id": "elves-thorn-stalkers-fade-into-shadows",
       "type": "Defense / Repositioning",
-      "priority": "High (when HP \u2264 3)",
+      "priority": "High (when HP ≤ 3)",
       "effect": "Move 4 hexes away from nearest enemy\nGain **Concealed** until end of round\nIf moved into Forest terrain, heal 1 HP",
       "flavor": "We are leaves on the wind."
     },
@@ -9058,7 +9058,7 @@
       "name": "VERDANT GROWTH",
       "id": "elves-rootweaver-circle-verdant-growth",
       "type": "Healing / Support",
-      "priority": "High (when ally within 3 hexes has \u226410 HP)",
+      "priority": "High (when ally within 3 hexes has ≤10 HP)",
       "effect": "Target ally within 3 hexes heals 3 HP immediately\nCreate 2 Forest terrain hexes adjacent to Rootweavers\nVerdant Zone healing increases to 2 HP per turn (this round only)",
       "flavor": "Life finds a way, even in ruin."
     },
@@ -9080,7 +9080,7 @@
       "name": "FOREST SANCTUARY",
       "id": "elves-rootweaver-circle-forest-sanctuary",
       "type": "Defense / Fortification",
-      "priority": "High (when Rootweavers at \u22644 HP)",
+      "priority": "High (when Rootweavers at ≤4 HP)",
       "effect": "Rootweavers gain +3 Defense until next turn\nAll hexes adjacent to Rootweavers become Dense Forest (blocks line of sight)\nAllied units within 2 hexes gain **Regeneration 2**",
       "flavor": "In the deepest woods, we cannot be touched."
     },
@@ -9176,8 +9176,8 @@
       "supportUnit": "DRONE SWARM",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "\u2694\ufe0f HARASSMENT STRIKE",
-      "id": "emergent-drone-swarm-\u2694\ufe0f-harassment-strike",
+      "name": "⚔️ HARASSMENT STRIKE",
+      "id": "emergent-drone-swarm-⚔️-harassment-strike",
       "type": "Attack / Distraction",
       "priority": "Medium (when adjacent to enemy)",
       "effect": "Attack closest enemy for 2 damage\nTarget has -1 to all actions next turn (distracted by buzzing)\nGenerate 1 Metamorph token for closest Syndicate Casket\nSwarm moves 4 hexes away after attack (hit-and-run)",
@@ -9187,8 +9187,8 @@
       "supportUnit": "DRONE SWARM",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "\ufe0f PHEROMONE CLOUD",
-      "id": "emergent-drone-swarm-\ufe0f-pheromone-cloud",
+      "name": "️ PHEROMONE CLOUD",
+      "id": "emergent-drone-swarm-️-pheromone-cloud",
       "type": "Buff / Area Control",
       "priority": "High (when 2+ allies within 4 hexes)",
       "effect": "Create 3-hex radius pheromone cloud (colored mist)\nAllied Syndicate units in cloud gain +1 SP this turn\nEnemies in cloud have -1 Defense (disoriented)\nCloud lasts 2 turns",
@@ -9201,7 +9201,7 @@
       "name": "DISPERSE AND REFORM",
       "id": "emergent-drone-swarm-disperse-and-reform",
       "type": "Defense / Mobility",
-      "priority": "Critical (when HP \u2264 3 or taking AOE damage)",
+      "priority": "Critical (when HP ≤ 3 or taking AOE damage)",
       "effect": "Swarm becomes immune to damage this turn (fully dispersed)\nCannot attack or act (reforming)\nMove up to 8 hexes to safe location\nNext turn, gain +3 HP (swarm reconstitutes)",
       "flavor": "You cannot kill the swarm. We are everywhere."
     },
@@ -9231,10 +9231,10 @@
       "supportUnit": "MOLT GUARDIAN",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "\ufe0f DEFENSIVE MOLT",
-      "id": "emergent-molt-guardian-\ufe0f-defensive-molt",
+      "name": "️ DEFENSIVE MOLT",
+      "id": "emergent-molt-guardian-️-defensive-molt",
       "type": "Reactive / Healing",
-      "priority": "Critical (when HP \u2264 10)",
+      "priority": "Critical (when HP ≤ 10)",
       "effect": "Molt exoskeleton (visual: old shell cracks and falls away)\nRecover 5 HP immediately\nGain +1 Defense permanently (max Defense 6)\nRemove all debuffs/status effects (bleed, poison, etc.)\nCannot move this turn (molting is exhausting)",
       "flavor": "Shed weakness. Embrace evolution."
     },
@@ -9286,10 +9286,10 @@
       "supportUnit": "MOLT GUARDIAN",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "\u26a1 BERSERKER MOLT",
-      "id": "emergent-molt-guardian-\u26a1-berserker-molt",
+      "name": "⚡ BERSERKER MOLT",
+      "id": "emergent-molt-guardian-⚡-berserker-molt",
       "type": "Attack / Transformation",
-      "priority": "Critical (when HP \u2264 6 or ally destroyed)",
+      "priority": "Critical (when HP ≤ 6 or ally destroyed)",
       "effect": "Emergency molt (discard all armor, become vulnerable)\nLose all Defense bonuses (Defense becomes 0)\nGain +3 Movement and +4 damage to all attacks\nAttack twice this turn if able\nLasts until end of round, then recover 1 Defense",
       "flavor": "In desperation, the guardian becomes the predator."
     },
@@ -9297,8 +9297,8 @@
       "supportUnit": "ADAPTATION FORM",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "\ufe0f ASSAULT FORM SHIFT",
-      "id": "emergent-adaptation-form-\ufe0f-assault-form-shift",
+      "name": "️ ASSAULT FORM SHIFT",
+      "id": "emergent-adaptation-form-️-assault-form-shift",
       "type": "Transformation / Offense",
       "priority": "High (when enemies clustered or ally needs damage)",
       "effect": "Transform into Assault Form (blade-limbed mantis)\nGain +3 damage to all attacks\nLose -1 Defense (vulnerable while aggressive)\nAllied Syndicate units within 4 hexes gain +1 damage\nLasts 2 turns",
@@ -9308,8 +9308,8 @@
       "supportUnit": "ADAPTATION FORM",
       "faction": "emergent",
       "cardType": "support-behavior",
-      "name": "\ufe0f TANK FORM SHIFT",
-      "id": "emergent-adaptation-form-\ufe0f-tank-form-shift",
+      "name": "️ TANK FORM SHIFT",
+      "id": "emergent-adaptation-form-️-tank-form-shift",
       "type": "Transformation / Defense",
       "priority": "High (when taking heavy damage or ally endangered)",
       "effect": "Transform into Tank Form (armored beetle)\nGain +3 Defense (total Defense 4)\nMovement reduced to 3\nAllied Syndicate units within 4 hexes gain +1 Defense\nLasts 2 turns",
@@ -9454,7 +9454,7 @@
       "name": "SMOKE SCREEN",
       "id": "nomads-outrider-squadron-smoke-screen",
       "type": "Utility / Escape",
-      "priority": "Critical (when Outriders HP \u2264 3)",
+      "priority": "Critical (when Outriders HP ≤ 3)",
       "effect": "Outriders deploy smoke grenades\nCreate 3-hex smoke cloud (blocks LOS)\nImmediately move 5 hexes through smoke\nAll allies in smoke gain +2 Defense until smoke clears (2 turns)",
       "flavor": "Can't hit what you can't see!"
     },
@@ -9763,7 +9763,7 @@
       "id": "vestige-bloodlines-feral-pack-pack-tactics",
       "type": "Attack / Coordinated",
       "priority": "High (when 2+ Pack members alive)",
-      "effect": "Pack swarms 1 enemy from multiple angles\nDeal damage equal to (3 \u00d7 number of Pack members alive) [max 21 damage if all 7 alive]\nTarget cannot counterattack (overwhelmed)\nIf Pack has 5+ members, target gains \"Bleeding\" (2 damage/turn)",
+      "effect": "Pack swarms 1 enemy from multiple angles\nDeal damage equal to (3 × number of Pack members alive) [max 21 damage if all 7 alive]\nTarget cannot counterattack (overwhelmed)\nIf Pack has 5+ members, target gains \"Bleeding\" (2 damage/turn)",
       "flavor": "One wolf is dangerous. Seven is a massacre."
     },
     {
@@ -9839,7 +9839,7 @@
       "name": "FRENZY MODE",
       "id": "vestige-bloodlines-mutation-hulk-frenzy-mode",
       "type": "Attack / Rampage",
-      "priority": "Critical (when Hulk HP \u2264 8)",
+      "priority": "Critical (when Hulk HP ≤ 8)",
       "effect": "Hulk enters berserk state\n+4 damage to all attacks\n+2 movement\nAttack nearest unit each turn (friend or foe - cannot distinguish)\nLasts until Hulk recovers above 8 HP",
       "flavor": "RAGE. BLOOD. KILL. KILL. KILL!"
     },
@@ -9872,7 +9872,7 @@
       "name": "CONSUME OFFSPRING",
       "id": "vestige-bloodlines-broodmother-consume-offspring",
       "type": "Healing / Sacrifice",
-      "priority": "Critical (when Broodmother HP \u2264 6)",
+      "priority": "Critical (when Broodmother HP ≤ 6)",
       "effect": "Broodmother devours 1 of her own Spawn\nRecover 5 HP\nGain 1 Biomass Token\nOther Spawn become frenzied (+3 damage for 1 turn, watching their sibling die)",
       "flavor": "Come to mother, dear. You'll serve better... inside me."
     },
@@ -9896,7 +9896,7 @@
       "type": "Utility / Disruption",
       "priority": "High",
       "effect": "Pixies move up to 6 hexes toward nearest enemy\nAll enemies within 2 hexes must discard 1 random card from hand (pixies steal them mid-air)\nPixies gain 1 Wyrd Token for each card stolen (max 2 per turn)",
-      "flavor": "Give that back! That's\u2014HEY! STOP LAUGHING!"
+      "flavor": "Give that back! That's—HEY! STOP LAUGHING!"
     },
     {
       "supportUnit": "PIXIE SWARM",
@@ -10004,7 +10004,7 @@
       "name": "PANIC REVEAL",
       "id": "wyrd-changeling-infiltrator-panic-reveal",
       "type": "Utility / Fear",
-      "priority": "Critical (when Changeling HP \u2264 3)",
+      "priority": "Critical (when Changeling HP ≤ 3)",
       "effect": "Changeling drops disguise, revealing blank featureless face\nAll enemies within 3 hexes must roll Morale check (TN 5+)\nFailures: Enemy unit loses next turn (paralyzed by uncanny horror)\nChangeling recovers 3 HP (feeds on fear)",
       "flavor": "You wanted to see my real face? HERE IT IS."
     },
@@ -10048,7 +10048,7 @@
       "name": "CONTRACT CLAUSE: ENDURE",
       "id": "wyrd-oath-bound-servants-contract-clause-endure",
       "type": "Defense / Resilience",
-      "priority": "Medium (when Servants HP \u2264 6)",
+      "priority": "Medium (when Servants HP ≤ 6)",
       "effect": "Servants do not move\nGain +4 Defense until end of round\nRecover 3 HP (contract prevents true death)\nAll damage taken is reduced by 2 (minimum 1)",
       "flavor": "We cannot die. We are bound. This is our curse."
     },
@@ -10337,7 +10337,7 @@
       "totalCards": 5,
       "craftingCost": "4 Scrap",
       "weight": "Medium",
-      "faction": "church",
+      "faction": "universal",
       "category": "Weapon"
     },
     {
@@ -10345,19 +10345,19 @@
       "cards": [
         {
           "name": "Cleave",
-          "effect": "Deal 5 damage to primary target, 3 damage to adjacent enemies",
+          "effect": "Deal 4 damage to primary target, 2 damage to adjacent enemies",
           "cost": 3,
           "range": "Melee",
           "type": "Attack",
-          "damage": 5
+          "damage": 4
         },
         {
           "name": "Overhead Smash",
-          "effect": "Deal 7 damage",
+          "effect": "Deal 5 damage",
           "cost": 4,
           "range": "Melee",
           "type": "Attack",
-          "damage": 7
+          "damage": 5
         },
         {
           "name": "Spinning Slash",
@@ -10369,15 +10369,15 @@
         },
         {
           "name": "Execute",
-          "effect": "Deal 8 damage if target has 10 HP or less",
+          "effect": "Deal 6 damage if target has 10 HP or less",
           "cost": 5,
           "range": "Melee",
           "type": "Attack",
-          "damage": 8
+          "damage": 6
         },
         {
           "name": "Guard Break",
-          "effect": "Deal 4 damage, ignore all Defense buffs",
+          "effect": "Deal 4 damage, bypass 1 Defense",
           "cost": 3,
           "range": "Melee",
           "type": "Attack",
@@ -10393,11 +10393,11 @@
         },
         {
           "name": "Impale",
-          "effect": "Deal 6 damage, target cannot move next turn",
+          "effect": "Deal 5 damage, target cannot move next turn",
           "cost": 4,
           "range": "Melee",
           "type": "Attack",
-          "damage": 6
+          "damage": 5
         },
         {
           "name": "Defensive Sweep",
@@ -10410,7 +10410,7 @@
       "totalCards": 8,
       "craftingCost": "6 Scrap",
       "weight": "Heavy (2-handed, blocks Shield slot)",
-      "faction": "church",
+      "faction": "universal",
       "category": "Weapon"
     },
     {
@@ -10426,11 +10426,11 @@
         },
         {
           "name": "Earthshaker",
-          "effect": "Deal 5 damage to primary, 2 damage + push to adjacent enemies",
+          "effect": "Deal 4 damage to primary, 2 damage + push to adjacent enemies",
           "cost": 4,
           "range": "Melee",
           "type": "Attack",
-          "damage": 5
+          "damage": 4
         },
         {
           "name": "Backswing",
@@ -10468,7 +10468,7 @@
       "totalCards": 6,
       "craftingCost": "5 Scrap",
       "weight": "Heavy",
-      "faction": "church",
+      "faction": "universal",
       "category": "Weapon"
     },
     {
@@ -10484,11 +10484,11 @@
         },
         {
           "name": "Slash",
-          "effect": "Deal 5 damage",
+          "effect": "Deal 4 damage",
           "cost": 3,
           "range": "Melee",
           "type": "Attack",
-          "damage": 5
+          "damage": 4
         },
         {
           "name": "Hook",
@@ -10508,11 +10508,11 @@
         },
         {
           "name": "Overhead Chop",
-          "effect": "Deal 7 damage",
+          "effect": "Deal 5 damage",
           "cost": 4,
           "range": "Melee",
           "type": "Attack",
-          "damage": 7
+          "damage": 5
         },
         {
           "name": "Defensive Sweep",
@@ -10523,17 +10523,17 @@
         },
         {
           "name": "Impale",
-          "effect": "Deal 8 damage, Armor-Piercing",
+          "effect": "Deal 6 damage, bypass 1 Defense",
           "cost": 5,
           "range": "Melee",
           "type": "Attack",
-          "damage": 8
+          "damage": 6
         }
       ],
       "totalCards": 7,
       "craftingCost": "5 Scrap",
       "weight": "Heavy (2-handed)",
-      "faction": "church",
+      "faction": "universal",
       "category": "Weapon"
     },
     {
@@ -10736,7 +10736,7 @@
       "totalCards": 6,
       "craftingCost": "5 Scrap",
       "weight": "Medium",
-      "faction": "church",
+      "faction": "universal",
       "category": "Weapon"
     },
     {
@@ -10752,11 +10752,11 @@
         },
         {
           "name": "Overhead Crush",
-          "effect": "Deal 5 damage, gain 1 Heat",
+          "effect": "Deal 4 damage, gain 1 Heat",
           "cost": 3,
           "range": "Melee",
           "type": "Attack",
-          "damage": 5
+          "damage": 4
         },
         {
           "name": "Chain Wrap",
@@ -10768,11 +10768,11 @@
         },
         {
           "name": "Momentum Strike",
-          "effect": "Deal 6 damage, gain 2 Heat",
+          "effect": "Deal 5 damage, gain 2 Heat",
           "cost": 4,
           "range": "Melee",
           "type": "Attack",
-          "damage": 6
+          "damage": 5
         },
         {
           "name": "Defensive Spin",
@@ -10784,7 +10784,7 @@
       "totalCards": 5,
       "craftingCost": "4 Scrap",
       "weight": "Medium",
-      "faction": "church",
+      "faction": "universal",
       "category": "Weapon"
     },
     {
@@ -11731,11 +11731,11 @@
       "cards": [
         {
           "name": "Sunburst",
-          "effect": "Deal 5 damage to target + 3 damage to adjacent enemies, +2 damage vs corrupted",
+          "effect": "Deal 4 damage to target + 2 damage to adjacent enemies, +2 damage vs corrupted",
           "cost": 4,
           "range": "Ranged 3-6 AoE",
           "type": "Attack",
-          "damage": 5
+          "damage": 4
         },
         {
           "name": "Divine Intervention",
@@ -11745,11 +11745,11 @@
         },
         {
           "name": "Pillar of Light",
-          "effect": "Deal 6 damage, Armor-Piercing, purge 1 Taint from self",
+          "effect": "Deal 5 damage, bypass 1 Defense, purge 1 Taint from self",
           "cost": 4,
           "range": "Ranged 4-8",
           "type": "Attack",
-          "damage": 6
+          "damage": 5
         },
         {
           "name": "Mass Healing",
@@ -11759,11 +11759,11 @@
         },
         {
           "name": "Holy Fire",
-          "effect": "Deal 5 damage, target gains 2 Heat, you remove 1 Heat",
+          "effect": "Deal 4 damage, target gains 2 Heat, you remove 1 Heat",
           "cost": 3,
           "range": "Ranged 3-6",
           "type": "Attack",
-          "damage": 5
+          "damage": 4
         },
         {
           "name": "Sanctuary",
@@ -11935,7 +11935,7 @@
         {
           "id": "bone-scythe-strike",
           "name": "Bone Scythe Strike",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
           "damage": 3,
@@ -11953,7 +11953,7 @@
         {
           "id": "death-grip",
           "name": "Death Grip",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Melee",
           "damage": 4,
@@ -11971,7 +11971,7 @@
         {
           "id": "soul-reaper",
           "name": "Soul Reaper",
-          "type": "attack",
+          "type": "Attack",
           "cost": 4,
           "range": "Melee",
           "damage": 5,
@@ -11990,7 +11990,7 @@
         {
           "id": "corpse-harvest",
           "name": "Corpse Harvest",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
           "damage": 3,
@@ -12008,7 +12008,7 @@
         {
           "id": "drain-essence",
           "name": "Drain Essence",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Range 2",
           "damage": 3,
@@ -12026,7 +12026,7 @@
         {
           "id": "phylactery-strike",
           "name": "Phylactery Strike",
-          "type": "attack",
+          "type": "Attack",
           "cost": 5,
           "range": "Melee",
           "damage": 6,
@@ -12055,7 +12055,7 @@
         {
           "id": "bone-ward",
           "name": "Bone Ward",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Self",
           "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Discard this card after use.",
@@ -12071,7 +12071,7 @@
         {
           "id": "necrotic-shield",
           "name": "Necrotic Shield",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 1,
           "range": "Self",
           "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). If you block 3+ damage, recover 1 card from discard pile.",
@@ -12088,7 +12088,7 @@
         {
           "id": "death-shroud",
           "name": "Death Shroud",
-          "type": "utility",
+          "type": "Utility",
           "cost": 2,
           "range": "Self",
           "effect": "Until end of your next turn, the first time you would take damage, reduce it by 2. When this blocks damage, recover 1 card from discard pile.",
@@ -12105,7 +12105,7 @@
         {
           "id": "corpse-fuel-siphon",
           "name": "Corpse Fuel Siphon",
-          "type": "utility",
+          "type": "Utility",
           "cost": 1,
           "range": "Self",
           "effect": "If a Casket was destroyed within 3 hexes this round, recover 2 cards from discard pile and draw 1 card.",
@@ -12122,7 +12122,7 @@
         {
           "id": "bone-spike-counter",
           "name": "Bone Spike Counter",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Melee",
           "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Recover 1 card from discard if you took damage.",
@@ -12303,7 +12303,7 @@
         {
           "id": "forge-blessing",
           "name": "Forge Blessing",
-          "type": "utility",
+          "type": "Utility",
           "cost": 2,
           "range": "Self",
           "effect": "Until end of round, reduce all incoming damage by 2. Gain 1 Forge token when activated.",
@@ -12321,7 +12321,7 @@
         {
           "id": "magma-parry",
           "name": "Magma Parry",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Melee",
           "effect": "Play when attacked in melee. Reduce damage by 1. Deal 2 damage to attacker. Gain 1 Heat.",
@@ -12337,7 +12337,7 @@
         {
           "id": "emberguard",
           "name": "Emberguard",
-          "type": "utility",
+          "type": "Utility",
           "cost": 1,
           "range": "Self",
           "effect": "Until your next turn, enemies attacking you in melee take 1 damage after attack resolves (thorns).",
@@ -12736,7 +12736,7 @@
         {
           "id": "adaptive-molt",
           "name": "Adaptive Molt",
-          "type": "utility",
+          "type": "Utility",
           "cost": 2,
           "range": "Self",
           "effect": "Until end of round, negate the next attack that would deal 4+ damage. Costs 2 Biomass to activate.",
@@ -12754,7 +12754,7 @@
         {
           "id": "feral-counter",
           "name": "Feral Counter",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Melee",
           "effect": "Play when attacked in melee. Deal 2 damage to attacker after attack resolves. Gain 2 Biomass.",
@@ -12771,7 +12771,7 @@
         {
           "id": "regenerative-shell",
           "name": "Regenerative Shell",
-          "type": "utility",
+          "type": "Utility",
           "cost": 1,
           "range": "Self",
           "effect": "Spend 3 Biomass: Recover 2 cards from discard pile. You may only use this once per round.",
@@ -13016,7 +13016,7 @@
         {
           "id": "distortion-blade",
           "name": "Distortion Blade",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
           "damage": 3,
@@ -13034,7 +13034,7 @@
         {
           "id": "void-strike",
           "name": "Void Strike",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Melee",
           "damage": 4,
@@ -13053,7 +13053,7 @@
         {
           "id": "reality-rend",
           "name": "Reality Rend",
-          "type": "attack",
+          "type": "Attack",
           "cost": 4,
           "range": "Melee",
           "damage": 5,
@@ -13071,7 +13071,7 @@
         {
           "id": "warped-slash",
           "name": "Warped Slash",
-          "type": "attack",
+          "type": "Attack",
           "cost": 2,
           "range": "Melee",
           "damage": 3,
@@ -13089,7 +13089,7 @@
         {
           "id": "taint-bolt",
           "name": "Taint Bolt",
-          "type": "attack",
+          "type": "Attack",
           "cost": 3,
           "range": "Range 4",
           "damage": 4,
@@ -13107,7 +13107,7 @@
         {
           "id": "unraveling",
           "name": "Unraveling",
-          "type": "attack",
+          "type": "Attack",
           "cost": 5,
           "range": "Melee",
           "damage": 6,
@@ -13136,7 +13136,7 @@
         {
           "id": "void-ward",
           "name": "Void Ward",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Self",
           "effect": "Play when targeted by attack. Reduce damage by 2 (minimum 1). Apply 1 Taint to yourself.",
@@ -13153,7 +13153,7 @@
         {
           "id": "reality-shift",
           "name": "Reality Shift",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 1,
           "range": "Self",
           "effect": "Play when targeted by attack. Reduce damage by 3 (minimum 1). Spend 1 Taint: Reduce by 4 instead.",
@@ -13170,7 +13170,7 @@
         {
           "id": "distortion-field",
           "name": "Distortion Field",
-          "type": "utility",
+          "type": "Utility",
           "cost": 2,
           "range": "Self",
           "effect": "Until end of round, attacks against you have -1 to hit (reality distortion). Apply 2 Taint to yourself.",
@@ -13188,7 +13188,7 @@
         {
           "id": "void-reflection",
           "name": "Void Reflection",
-          "type": "reactive",
+          "type": "Reactive",
           "cost": 0,
           "range": "Melee",
           "effect": "Play when attacked in melee. Deal 2 damage to attacker. Spend 1 Taint: Deal 4 damage instead.",
@@ -13205,7 +13205,7 @@
         {
           "id": "taint-purge",
           "name": "Taint Purge",
-          "type": "utility",
+          "type": "Utility",
           "cost": 1,
           "range": "Self",
           "effect": "Remove 1d3 Taint from yourself. Recover 1 card from discard pile per Taint removed.",
