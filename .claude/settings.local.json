@@ -62,7 +62,13 @@
       "Bash(tee:*)",
       "Read(//tmp/**)",
       "Bash(python:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(for file in docs/factions/exchange/support-units.md docs/cards/README.md docs/factions/wyrd-conclave/deck-equipment-system.md)",
+      "Bash(then)",
+      "Bash(echo:*)",
+      "Bash(fi)",
+      "Bash(for:*)",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": []
