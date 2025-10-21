@@ -68,7 +68,8 @@
       "Bash(echo:*)",
       "Bash(fi)",
       "Bash(for:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
