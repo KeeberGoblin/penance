@@ -184,7 +184,7 @@
             <li>Effect: Gain 1 Rune Counter, +1 Heat</li>
             <li>SP Remaining: 3/5</li>
             <li>Heat: 0 → 1</li>
-            <li><strong>Rune Counters: 0 → 1</strong> (reduce all damage by 1)</li>
+            <li><strong>Rune Counters: 0 → 1</strong> (reduce all damage by 4)</li>
         </ul>
 
         <p><strong>Action 2: Move</strong> (2 SP)</p>
@@ -225,7 +225,7 @@
             <li>Alice's turn begins</li>
         </ul>
 
-        <p><strong>Bob's End State:</strong> Position: (10,10) - Rubble (+1 Defense from terrain) | HP: 32/32 | SP: 0/5 | Heat: 1 | Hand: 6 cards | <strong>Rune Counters: 1</strong> (damage reduction -1)</p>
+        <p><strong>Bob's End State:</strong> Position: (10,10) - Rubble (+1 Defense from terrain) | HP: 32/32 | SP: 0/5 | Heat: 1 | Hand: 6 cards | <strong>Rune Counters: 1</strong> (damage reduction -4)</p>
 
         <div class="divider"></div>
 
@@ -273,9 +273,9 @@
             </li>
             <li><strong>Defense Modifiers:</strong>
                 <ul>
-                    <li>Bob's Rune Counters: -1 damage</li>
+                    <li>Bob's Rune Counters: -4 damage</li>
                     <li>Bob's terrain (Rubble): +1 Defense (reduces damage by 1)</li>
-                    <li><strong>Total reduction: -2 damage</strong></li>
+                    <li><strong>Total reduction: -5 damage</strong></li>
                 </ul>
             </li>
             <li><strong>Final Damage: 2 - 2 = 0 damage</strong> (minimum 1)</li>
@@ -337,7 +337,7 @@
             <li>Effect: Gain 2 Rune Counters, +2 Heat</li>
             <li>SP Remaining: 2/5</li>
             <li>Heat: 1 → 3</li>
-            <li><strong>Rune Counters: 1 → 3</strong> (reduce all damage by 3)</li>
+            <li><strong>Rune Counters: 1 → 3</strong> (reduce all damage by 12 total: 3 counters × 4 damage each)</li>
         </ul>
 
         <p><strong>Action 2: Play Shield Wall</strong> (2 SP)</p>
@@ -345,7 +345,7 @@
             <li>Cost: 2 SP</li>
             <li>Effect: +3 Defense until next turn, cannot attack while active</li>
             <li>SP Remaining: 0/5</li>
-            <li><strong>Defense: +3 (Shield Wall) + 1 (Rubble) + 3 (Rune Counters) = +7 total damage reduction</strong></li>
+            <li><strong>Defense: +3 (Shield Wall) + 1 (Rubble) + 12 (Rune Counters: 3 × 4) = +16 total damage reduction</strong></li>
         </ul>
 
         <div class="quote-box">
@@ -369,7 +369,7 @@
 
         <p><strong>Bob's End State:</strong> Position: (10,10) - Rubble | HP: 31/32 (took 1 damage) | SP: 0/5 | Heat: 3 | Hand: 6 cards | <strong>Rune Counters: 3</strong> | <strong>Shield Wall active:</strong> +3 Defense, cannot attack</p>
 
-        <p><strong>Total Damage Reduction:</strong> 3 (Rune) + 3 (Shield Wall) + 1 (Rubble) = <strong>-7 damage</strong></p>
+        <p><strong>Total Damage Reduction:</strong> 12 (Rune: 3 counters × 4) + 3 (Shield Wall) + 1 (Rubble) = <strong>-16 damage</strong></p>
 
         <div class="divider"></div>
 
@@ -463,14 +463,16 @@
 
         <p><strong>Step 5: Apply Defense Modifiers:</strong></p>
         <ul>
-            <li>Bob's Rune Counters: -3 damage</li>
+            <li>Bob's Rune Counters: -12 damage (3 counters × 4)</li>
             <li>Bob's Shield Wall: -3 damage</li>
             <li>Bob's terrain (Rubble): -1 damage (but Critical Hit bypasses 1 Defense)</li>
-            <li><strong>Total reduction:</strong> -7 damage + 1 (Critical bypass) = <strong>-6 damage</strong></li>
-            <li><strong>Blood Offering:</strong> Ignore 1 additional Armor = -5 instead of -6</li>
+            <li><strong>Total reduction:</strong> -16 damage + 1 (Critical bypass) = <strong>-15 damage</strong></li>
+            <li><strong>Blood Offering:</strong> Ignore 1 additional Armor = -14 instead of -15</li>
         </ul>
 
-        <p><strong>Final Damage: 7 - 5 = 2 damage</strong></p>
+        <p><strong>Final Damage: 7 - 14 = 0 damage (minimum 1)</strong></p>
+
+        <p><strong>Bob takes 1 damage (minimum damage rule)</strong></p>
 
         <p><strong>Bob chooses to discard</strong> (2 cards: chooses 1 from hand + 1 from deck):</p>
         <ul>
@@ -855,7 +857,7 @@
 
         <h3>4. Rune Counters Delay but Don't Prevent Death</h3>
         <ul>
-            <li>Bob's 3 Rune Counters reduced every attack by 3</li>
+            <li>Bob's 3 Rune Counters reduced every attack by 12 (4 damage per counter)</li>
             <li>However, Blood Offering "ignore 1 Armor" countered this partially</li>
             <li><strong>Takeaway:</strong> Damage reduction is strong but not invincible</li>
         </ul>

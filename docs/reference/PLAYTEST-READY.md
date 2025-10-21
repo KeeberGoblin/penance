@@ -1,18 +1,19 @@
 # PLAYTEST PACKAGE: READY FOR TABLE PLAY
 
-**Date**: 2025-10-18
-**Version**: 2.1 (Balance Update - October 2025)
-**Status**: ✅ COMPLETE
+**Date**: 2025-10-21
+**Version**: v5.29-FINAL (Production Balance)
+**Status**: ✅ COMPLETE - 10 FACTIONS BALANCED
 **Estimated Setup Time**: 15 minutes
 **Estimated Play Time**: 45-60 minutes (first game)
 
-**Recent Balance Changes (v2.1 - October 17, 2025):**
-- Component HP normalization: Head 6→8 HP, Legs 8→10 HP
-- Salvage cost increased: 1 SCRAP→1 card changed to 2 SCRAP→1 card
-- Overspending cap reduced: 2× max SP → 1.5× max SP
-- Variable Draw Phase: Played cards ÷ 2 (min 2, max 5) instead of fixed 3
-- Defense Dice block rate: 33% → 50%
-- Heat Strain penalties harshened for high heat thresholds
+**Recent Balance Changes (v5.29-FINAL - October 21, 2025):**
+- **7 out of 10 factions** in competitive range (44-58% win rate)
+- **Ossuarium v5.23**: Lifesteal completely removed → Taint warfare system
+- **Church v5.27**: 5x discard bonuses (was 3x, boosted from 22.2% WR)
+- **Dwarves v5.25**: Rune counters buffed to 4 damage/counter (was 3, max 3 counters)
+- **Bloodlines v5.17**: Biomass nerfed to 1 per kill (was 2, reduced from 82% WR)
+- **Exchange v5.17**: Credit generation nerfed to 1 per 2 attacks (was every attack, 78% WR)
+- **Elves v5.29**: Photosynthesis removed, Bleed capped at 8, Leaf Dance reduced to 2 hexes
 
 ---
 
@@ -44,16 +45,18 @@ This package contains everything needed for your first playtest of **Penance: Ab
    - Deck Size: 28-52 cards (variable equipment)
 
 3. **[The Ossuarium](../factions/ossuarium/deck-equipment-system.md)**
-   - Playstyle: Lifesteal vampire, resurrections
-   - Core Mechanic: Soul Harvest (lifesteal triggers)
-   - Scaling: Decay cards instead of Damage cards
+   - Playstyle: Taint corruption warfare, skeletal minion summoning, resurrection
+   - Core Mechanic: Decay Aura (enemies within 3 hexes gain +1 Taint/turn), Phylactery (resurrect once)
+   - Scaling: Taint penalties destroy enemy decks (Heat + card destruction), Decay cards instead of Damage cards
    - Deck Size: 26-50 cards (variable equipment)
+   - **v5.23 UPDATE**: Lifesteal completely removed. Now wins through Taint attrition, not sustain.
 
 4. **[Elven Verdant Covenant](../factions/elves/deck-equipment-system.md)**
    - Playstyle: Hit-and-run assassin
-   - Core Mechanic: Bleed stacking (infinite scaling)
-   - Scaling: +1 damage per Bleed counter (no cap)
+   - Core Mechanic: Bleed stacking (capped at 8 stacks)
+   - Scaling: +1 damage per Bleed counter (max 8)
    - Deck Size: 26-50 cards (variable equipment)
+   - **v5.29 UPDATE**: Photosynthesis removed, Bleed capped at 8, Leaf Dance nerfed to 2 hexes
 
 ### Equipment System
 **[Equipment Pool](equipment-pool-complete.md)** - 60+ craftable/lootable items:

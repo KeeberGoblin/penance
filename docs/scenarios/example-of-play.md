@@ -141,7 +141,7 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - Effect: Gain 1 Rune Counter, +1 Heat
 - SP Remaining: 3/5
 - Heat: 0 → 1
-- **Rune Counters: 0 → 1** (reduce all damage by 1)
+- **Rune Counters: 0 → 1** (reduce all damage by 4)
 
 **Action 2: Move** (2 SP)
 - Cost: 2 SP (Rubble is difficult terrain)
@@ -175,7 +175,7 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - SP: 0/5
 - Heat: 1
 - Hand: 6 cards
-- **Rune Counters: 1** (damage reduction -1)
+- **Rune Counters: 1** (damage reduction -4)
 
 ---
 
@@ -211,10 +211,10 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
  - Facing: Alice is in Bob's FRONT arc (+0 dmg)
  - **Total damage: 2**
 4. **Defense Modifiers**:
- - Bob's Rune Counters: -1 damage
+ - Bob's Rune Counters: -4 damage
  - Bob's terrain (Rubble): +1 Defense (reduces damage by 1)
- - **Total reduction: -2 damage**
-5. **Final Damage: 2 - 2 = 0 damage** (minimum 1)
+ - **Total reduction: -5 damage**
+5. **Final Damage: 2 - 5 = 0 damage** (minimum 1)
 
 **Minimum Damage Rule**: All attacks deal at least 1 damage
 
@@ -262,13 +262,13 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - Effect: Gain 2 Rune Counters, +2 Heat
 - SP Remaining: 2/5
 - Heat: 1 → 3
-- **Rune Counters: 1 → 3** (reduce all damage by 3)
+- **Rune Counters: 1 → 3** (reduce all damage by 12 total: 3 counters × 4 damage each)
 
 **Action 2: Play Shield Wall** (2 SP)
 - Cost: 2 SP
 - Effect: +3 Defense until next turn, cannot attack while active
 - SP Remaining: 0/5
-- **Defense: +3 (Shield Wall) + 1 (Rubble) + 3 (Rune Counters) = +7 total damage reduction**
+- **Defense: +3 (Shield Wall) + 1 (Rubble) + 12 (Rune Counters: 3 × 4) = +16 total damage reduction**
 
 **Bob's Thoughts**: *"I'm a fortress. Alice's attacks will barely touch me. Next turn I'll counter-attack."*
 
@@ -288,11 +288,11 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - HP: 31/32 (took 1 damage)
 - SP: 0/5
 - Heat: 3
-- Hand: 6 cards
-- **Rune Counters: 3**
-- **Shield Wall active**: +3 Defense, cannot attack
+- Hand: 4 cards (discarded 2 Primary Weapons from Right Arm destruction)
+- **Rune Counters: 3** (12 damage reduction total)
+- **Right Arm: DESTROYED** (cannot use Primary Weapon cards)
 
-**Total Damage Reduction**: 3 (Rune) + 3 (Shield Wall) + 1 (Rubble) = **-7 damage**
+**Total Damage Reduction**: 12 (Rune: 3 counters × 4) + 3 (Shield Wall) + 1 (Rubble) = **-16 damage**
 
 ---
 
@@ -304,7 +304,7 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 
 ### PHASE 2: ACTION PHASE
 
-**Alice's Thoughts**: *"Bob has SEVEN damage reduction. My strongest attack won't scratch him. I need Blood Offering (+3 dmg, ignore 1 Armor) + rear arc (+2 dmg) to break through."*
+**Alice's Thoughts**: *"Bob has SIXTEEN damage reduction. My strongest attack won't scratch him. I need Blood Offering (+3 dmg, ignore 1 Armor) + rear arc (+2 dmg) to break through."*
 
 **Action 1: Play Blood Offering** (0 SP)
 - Cost: 0 SP
@@ -365,22 +365,18 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - **Reduced damage**: 12 - 5 = **7 damage**
 
 **Step 5: Apply Defense Modifiers**:
-- Bob's Rune Counters: -3 damage
+- Bob's Rune Counters: -12 damage (3 counters × 4)
 - Bob's Shield Wall: -3 damage
 - Bob's terrain (Rubble): -1 damage (but Critical Hit bypasses 1 Defense)
-- **Total reduction**: -7 damage + 1 (Critical bypass) = **-6 damage**
-- **Blood Offering**: Ignore 1 additional Armor = -5 instead of -6
+- **Total reduction**: -16 damage + 1 (Critical bypass) = **-15 damage**
+- **Blood Offering**: Ignore 1 additional Armor = -14 instead of -15
 
-**Final Damage: 7 - 5 = 2 damage**
+**Final Damage: 7 - 14 = 0 damage** (minimum 1)
 
-**Bob chooses to discard** (2 cards: chooses 1 from hand + 1 from deck):
-- From hand: Advance (Secondary - Siege Shield)
-- From deck: Crushing Blow (Primary Weapon)
+**Bob takes 1 damage (minimum damage rule)**
 
-**Bob's Discarded Cards**:
-1. Advance (Secondary - Siege Shield)
-2. Crushing Blow (Primary Weapon - Runic Warhammer) ← COMPONENT DAMAGE
-3. Emergency Vent (Universal)
+**Bob's Discarded Card**:
+1. Crushing Blow (Primary Weapon - Runic Warhammer) ← COMPONENT DAMAGE
 
 **Component Damage Check**:
 - 1 Primary Weapon card discarded = +1 Component Damage
@@ -403,7 +399,7 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 
 **Bob's Reaction**: "My Right Arm is destroyed on Turn 3! I can't use Runic Warhammer attacks anymore. This is catastrophic."
 
-**Bob's Thoughts**: *"That Blood Offering combo is dangerous. If she lands two more hits like that, my Right Arm is destroyed."*
+**Bob's Thoughts**: *"That Blood Offering combo broke through 16 damage reduction! Even with max Rune Counters, she still destroyed my Right Arm."*
 
 - Blood Offering buff consumed (used on this attack)
 - SP Remaining: 0/5
@@ -521,20 +517,18 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
  - Facing: Front arc (+0)
  - **Total: 5 damage**
 2. **Defense Modifiers**:
- - Bob's Rune Counters: -3
- - **Total reduction: -3**
-3. **Final Damage: 5 - 3 = 2 damage**
+ - Bob's Rune Counters: -12 (3 counters × 4)
+ - **Total reduction: -12**
+3. **Final Damage: 5 - 12 = 0 damage** (minimum 1)
 
-**Bob takes 2 damage**: Discard top 2 cards
+**Bob takes 1 damage** (minimum damage rule): Discard top 1 card
 
-**Bob's Discarded Cards**:
+**Bob's Discarded Card**:
 1. Survey the Field (Universal)
-2. Rune of Protection (Primary Weapon) ← COMPONENT DAMAGE
 
-**Component Damage Check**: 1 Primary Weapon card discarded
-- **Component Damage: +1** (Right Arm)
-- Bob's Right Arm: 1 → 2 Component Damage
-- **(Needs 3 for destruction)**
+**Component Damage Check**: 0 Primary Weapon cards discarded
+- **No Component Damage**
+- Bob's Right Arm: Already destroyed (3/3)
 
 - SP Remaining: 0/5
 
@@ -547,7 +541,7 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - Position: (9,8)
 - HP: 28/30
 - Heat: 2
-- Right Arm Component Damage dealt to Bob: 2/3
+- Bob's Right Arm: Already destroyed
 
 ---
 
@@ -560,51 +554,23 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 ### PHASE 2: ACTION PHASE
 
 **Bob's Current State**:
-- HP: 26/32 (took 2 more damage)
-- Right Arm Component Damage: 2/3 (ONE MORE HIT = DESTROYED)
+- HP: 30/32 (took 1 more damage)
+- Right Arm Component Damage: 3/3 (ALREADY DESTROYED - cannot use Primary Weapons)
 - Alice adjacent at (9,8)
 
-**Bob's Thoughts**: *"My Right Arm is at 2/3 Component Damage. If Alice lands one more solid hit with Primary Weapon cards in the discard, I lose all my attacks. I need to destroy HER Right Arm first! Crushing Blow deals 4 damage (armor-piercing). If I can force her to discard 2+ Primary Weapon cards, I can cripple her offense."*
+**Bob's Thoughts**: *"My Right Arm is already destroyed. I can't use Primary Weapon attacks anymore. I need to rely on Secondary Equipment and Universal cards to survive."*
 
-**Action 1: Play Crushing Blow** (2 SP)
+**Action 1: Cannot Attack**
+- Bob's Right Arm is destroyed
+- All Primary Weapon cards were discarded when Right Arm was destroyed
+- Bob has no attack cards available in hand
+
+**Bob's Thoughts**: *"I have no attacks left. I'll focus on defense and try to survive."*
+
+**Action 2: Play Shield Wall** (2 SP)
 - Cost: 2 SP
-- Target: Alice at (9,8)
-- Range: Melee ✓
-- **ATTACK DECLARED**
-
-**COMBAT RESOLUTION**:
-
-1. **Calculate Damage**:
- - Base damage: 4
- - **ARMOR PIERCING**: Ignore all defense buffs
- - Facing: Side arc (+1 dmg)
- - **Total: 5 damage**
-2. **Defense Modifiers**:
- - **ARMOR PIERCING** ignores all defenses
- - **Final: 5 damage**
-
-**Alice takes 5 damage**: Discard top 5 cards from deck
-
-**Alice's Discarded Cards**:
-1. Retreat (Universal)
-2. Faithful Thrust (Primary Weapon) ← COMPONENT DAMAGE
-3. Quick Shot (Secondary)
-4. Righteous Cleave (Primary Weapon) ← COMPONENT DAMAGE
-5. Overextend (Universal)
-
-**Component Damage Check**: 2 Primary Weapon cards discarded
-- **Component Damage: +2** (Right Arm)
-- Alice's Right Arm: 0 → 2 Component Damage
-- **(Needs 3 for destruction)**
-
-**Alice's Thoughts**: *"2/3 Component Damage to my Right Arm! Bob's playing the same game. Next big hit could destroy my Primary Weapon."*
-
+- Effect: +3 Defense until next turn
 - SP Remaining: 3/5
-
-**Action 2: Play Earthshaker** (4 SP)
-- Cost: 4 SP
-- **ERROR**: Only 3 SP remaining
-- **Cannot play**
 
 **Bob passes turn**
 
@@ -617,11 +583,11 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 
 **Bob's End State**:
 - Position: (10,8)
-- HP: 26/32
+- HP: 30/32
 - SP: 3/5
 - Heat: 3
-- Rune Counters: 3
-- Right Arm Component Damage: 2/3
+- Rune Counters: 3 (12 damage reduction)
+- Right Arm: DESTROYED (cannot attack)
 
 ---
 
@@ -634,18 +600,18 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 ### PHASE 2: ACTION PHASE
 
 **Alice's Current State**:
-- HP: 23/30 (28 - 5 damage = 23 cards)
-- Right Arm Component Damage: 2/3
-- Bob's Right Arm Component Damage: 2/3
+- HP: 28/30
+- Right Arm Component Damage: 0/3 (intact)
+- Bob's Right Arm: ALREADY DESTROYED
 
-**Alice's Thoughts**: *"Both of us are at 2/3 Component Damage. Whoever lands the next big hit wins. I have Divine Judgment (6-8 dmg execute). If I can force Bob to discard 3+ cards with at least 1 Primary Weapon, his Right Arm is destroyed and he can't fight back."*
+**Alice's Thoughts**: *"Bob's Right Arm is already destroyed. He can't attack anymore. I just need to chip away at his remaining HP. Divine Judgment will finish this."*
 
 **Action 1: Play Divine Judgment** (4 SP)
 - Cost: 4 SP
 - Target: Bob at (10,8)
 - Range: Melee (1 hex) ✓
 - Effect: Deal 6 damage (or 8 if target ≤10 HP)
-- Bob's HP: 26/32 (>10 HP) → 6 damage
+- Bob's HP: 30/32 (>10 HP) → 6 damage
 - **ATTACK DECLARED**
 
 **COMBAT RESOLUTION**:
@@ -655,39 +621,24 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
  - Facing: Front arc (+0)
  - **Total: 6 damage**
 2. **Defense Modifiers**:
- - Bob's Rune Counters: -3
- - **Total reduction: -3**
-3. **Final Damage: 6 - 3 = 3 damage**
+ - Bob's Rune Counters: -12 (3 counters × 4)
+ - **Total reduction: -12**
+3. **Final Damage: 6 - 12 = 0 damage** (minimum 1)
 
-**Bob takes 3 damage**: Discard top 3 cards
+**Bob takes 1 damage** (minimum damage rule): Discard top 1 card
 
-**Bob's Discarded Cards**:
-1. Earthshaker (Primary Weapon) ← COMPONENT DAMAGE
-2. Shield Wall (Secondary)
-3. Desperate Lunge (Universal)
+**Bob's Discarded Card**:
+1. Shield Wall (Secondary)
 
-**Component Damage Check**: 1 Primary Weapon card discarded
-- **Component Damage: +1** (Right Arm)
-- Bob's Right Arm: 2 → **3 Component Damage**
-- **3 COMPONENT DAMAGE = RIGHT ARM DESTROYED**
+**Component Damage Check**: 0 Primary Weapon cards discarded
+- **No Component Damage**
+- Bob's Right Arm: Already destroyed (3/3)
 
-**RIGHT ARM DESTRUCTION EFFECT**:
-- Bob must **discard all Primary Weapon cards from hand immediately**
-- Bob's hand contains:
- - Crushing Blow (Primary) → DISCARD
- - Forge Fury (Primary) → DISCARD
- - Hammerfall (Primary) → DISCARD
- - Iron Bulwark (Secondary - keep)
- - Unbreakable (Primary) → DISCARD
- - Advance (Secondary - keep)
-
-**Bob discards 4 Primary Weapon cards from hand**
-
-**Bob's Thoughts**: *"My Right Arm is destroyed. I can't use any Runic Warhammer attacks. I'm defenseless. This is over."*
+**Bob's Thoughts**: *"My Rune Counters are protecting me even without attacks. But I can't win this - I have no offense."*
 
 - SP Remaining: 1/5
 
-**Alice's Thoughts**: *"YES! Bob can't attack anymore. I just need to chip away the remaining 23 HP over the next few turns."*
+**Alice's Thoughts**: *"Bob's Rune Counters make him nearly invincible defensively, but he can't attack. This will be a slow grind."*
 
 **Action 2: Play Brace for Impact** (0 SP, Reactive)
 - Hold for Bob's turn (if he can attack)
@@ -702,28 +653,28 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 
 **Alice's End State**:
 - Position: (9,8)
-- HP: 23/30
-- Right Arm Component Damage: 2/3
+- HP: 28/30
+- Right Arm: Intact
 
 ---
 
 ## OUTCOME PROJECTION
 
 **Current State**:
-- **Alice**: 23/30 HP, 2/3 Right Arm Component Damage, full offense
-- **Bob**: 23/32 HP, **Right Arm Destroyed** (no Primary Weapons), pure defense
+- **Alice**: 28/30 HP, Right Arm intact, full offense
+- **Bob**: 29/32 HP, **Right Arm Destroyed** (no Primary Weapons), 12 damage reduction from Rune Counters
 
 **Next 5-8 Turns**:
 1. Bob can only play Universal cards (movement, Heat management) and Secondary Equipment (Siege Shield)
-2. Bob will turtle with Shield Wall, but cannot deal damage back
-3. Alice will chain attacks (Quick Shot, Faithful Thrust if she draws more)
-4. Bob's deck will reshuffle first, adding 1 Damage card
-5. Alice systematically reduces Bob to 0 HP
+2. Bob's 12 damage reduction from Rune Counters means Alice can only deal minimum damage (1 per attack)
+3. Alice needs to land 29 attacks to kill Bob (at 1 damage each)
+4. Bob will eventually reshuffle, adding Damage cards, which accelerates his death
+5. Alice wins through slow attrition, but it takes many turns
 
 **Victor**: **Alice (Church of Absolution)**
-**Victory Method**: Component destruction (Right Arm) → inability to counter-attack → slow attrition death
+**Victory Method**: Component destruction (Right Arm) → Bob loses offense → slow minimum-damage grind
 
-**Estimated Turns to Victory**: Turn 10-12
+**Estimated Turns to Victory**: Turn 15-20 (very slow due to Rune Counter defense)
 
 ---
 
@@ -744,10 +695,11 @@ This walkthrough demonstrates 5 complete turns of gameplay, showing:
 - Alice's Turn 3 rear attack dealt 9 damage (before mitigation)
 - **Takeaway**: Positioning for rear arc is worth spending SP
 
-### 4. Rune Counters Delay but Don't Prevent Death
-- Bob's 3 Rune Counters reduced every attack by 3
-- However, Blood Offering "ignore 1 Armor" countered this partially
-- **Takeaway**: Damage reduction is strong but not invincible
+### 4. Rune Counters Are Extremely Powerful
+- Bob's 3 Rune Counters reduced every attack by 12 (4 damage per counter)
+- This reduced all of Alice's attacks to minimum damage (1) after Turn 3
+- However, losing the Right Arm meant Bob had no way to win
+- **Takeaway**: Pure defense without offense is a slow death, not victory
 
 ### 5. SP Economy: Safe Zone vs Danger Zone
 - Neither player entered Danger Zone (Heat Strain checks)

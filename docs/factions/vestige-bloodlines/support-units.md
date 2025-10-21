@@ -1,283 +1,474 @@
 # Vestige Bloodlines - Support Units
-## Penance: Absolution Through Steel
+## Penance: Mutants, Predators, and Evolution's Children
 
-**Version**: 2.0 Equipment System
-**Status**: 🚧 **DESIGN IN PROGRESS**
-**Date**: October 17, 2025
+**Version**: 3.0 Equipment System (Asymmetric)
+**Date**: October 16, 2025
 
-The Vestige Bloodlines fight with mutated kin and transformed beasts. Each bloodline provides unique support units reflecting their animalistic heritage.
+Vestige Bloodlines field mutated hunters, feral packs, and evolutionary experiments. Each unit embodies mutation philosophy: adapt, hunt, consume, evolve.
 
 ---
 
 ## VESTIGE SUPPORT UNITS OVERVIEW
 
-**Starting Units** (Available immediately):
-1. Fenmar Pack Hunters (Wolf-blooded scouts)
-2. Urtok Berserker (Bear-kin bruiser)
-3. Corvath Murder (Raven swarm)
+**Faction-Specific Units** (Choose 1):
+1. Feral Pack (2 Equipment Slots)
+2. Mutation Hulk (2 Equipment Slots)
+3. Broodmother (3 Equipment Slots)
 
-**Unlockable Units** (Require campaign progression):
-4. Vexis Swarmling (Chitin warriors)
-5. Serrak Assassin (Serpent striker)
-6. Primal Alpha (Ultimate bloodline champion)
+**Neutral Mercenary Units** (Hireable by Any Faction):
+- Mutant Berserker (2 Equipment Slots, 40 Credits + 1 Biomass)
+- Adaptive Predator (3 Equipment Slots, 60 Credits + 2 Biomass)
 
-**Limit**: Choose 1-3 support units (based on Casket Equipment Slots available)
-
-**Design Philosophy**: Vestige units emphasize pack tactics, animal instincts, and savage melee combat. They lack ranged options but excel at hit-and-run tactics and coordinated strikes.
+**Note**: Vestige uses Biomass currency (harvested from corpses) in addition to Credits.
 
 ---
 
-## 1. FENMAR PACK HUNTERS ⭐ STARTER UNIT
-**Category**: Scout / Flanker
-**HP**: 8 | **Movement**: 6 | **Defense**: 1
+## 1. FERAL PACK
+**Category**: Infantry (Fast Attack/Swarm)
+**HP**: 9 | **Movement**: 6 | **Defense**: 0
 **Equipment Slots**: 2
-**Theme**: Fast-moving wolf-kin who hunt in coordinated packs
+**Theme**: Pack of mutated wolf-things that hunt in coordinated strikes
 
 ### Visual Description
-Lean figures with lupine features—elongated faces, pointed ears, fur-covered limbs. They move on all fours, eyes glowing amber in low light. Wear minimal armor (leather straps) for maximum mobility.
+Seven twisted canines - too large, too intelligent, too aggressive. Matted fur covers chitinous plates. Eyes glow with unnatural hunger. They move as one organism - surrounding prey, cutting off escape, coordinating kills with eerie precision. They communicate in howls that sound almost like words. Almost.
 
-### Core Mechanics
-- **Pack Tactics**: +1 damage for each friendly unit adjacent to same target
-- **Keen Senses**: Can detect hidden enemies within 6 hexes
-- **Swift Hunt**: Move before AND after attacking (split movement)
-- **Blood Trail**: Can track wounded enemies (move toward lowest HP target)
-
-### Behavior Pattern
-1. Prioritize flanking positions
-2. Focus fire on wounded targets
-3. Disengage if taking heavy damage (survival instinct)
-4. Howl to buff nearby Vestige units (+1 move)
+### Behavior Deck (4 Cards)
 
 ---
 
-## 2. URTOK BERSERKER ⭐ STARTER UNIT
-**Category**: Heavy Infantry / Tank
-**HP**: 15 | **Movement**: 3 | **Defense**: 2
+#### PACK TACTICS
+**Type**: Attack / Coordinated
+**Priority**: High (when 2+ Pack members alive)
+
+**Effect**:
+- Pack swarms 1 enemy from multiple angles
+- Deal damage equal to (3 × number of Pack members alive) [max 21 damage if all 7 alive]
+- Target cannot counterattack (overwhelmed)
+- If Pack has 5+ members, target gains "Bleeding" (2 damage/turn)
+
+**Flavor**: "One wolf is dangerous. Seven is a massacre."
+
+---
+
+#### HUNTER'S PURSUIT
+**Type**: Movement / Chase
+**Priority**: Critical (when prey within 8 hexes and fleeing)
+
+**Effect**:
+- Pack moves up to 8 hexes toward fleeing enemy
+- Ignore difficult terrain (they leap, climb, burrow)
+- If Pack catches prey (ends adjacent), automatically attack for 7 damage
+- Pack gains +1 movement permanently this battle (bloodlust)
+
+**Flavor**: "RUN. IT MAKES IT MORE FUN."
+
+---
+
+#### FEAST ON CORPSES
+**Type**: Utility / Healing
+**Priority**: Critical (when destroyed enemy within 2 hexes)
+
+**Effect**:
+- Pack devours corpse
+- Recover 5 HP
+- Gain 1 Biomass Token
+- If Pack was below 5 HP, revive 1 dead Pack member (resurgence from feast)
+
+**Flavor**: "Meat. Fresh. Still warm. FEED."
+
+---
+
+#### HOWL OF THE HUNT
+**Type**: Buff / Rally
+**Priority**: Medium
+
+**Effect**:
+- Pack howls in unison (terrifying coordination)
+- All Vestige allies within 5 hexes gain +2 damage next turn
+- All enemies within 5 hexes must roll Morale (TN 5+, failures: -1 SP next turn)
+- Pack gains +1 movement for 2 turns (rally cry)
+
+**Flavor**: "The pack calls. The hunt begins."
+
+---
+
+### Command Response
+- **RALLY**: Move up to 6 hexes toward nearest wounded enemy. Smell blood.
+- **ATTACK**: Attack with Pack Tactics (damage based on Pack size). Coordinated strike.
+- **DEFEND**: Pack refuses (predators don't cower). Execute Hunter's Pursuit instead.
+- **HOLD**: Circle prey. +2 Defense, attack any enemy trying to leave 3-hex radius.
+
+### Special Ability: PACK STRENGTH
+**Passive**: Pack deals damage based on how many members are alive:
+- 7 members: +6 damage bonus
+- 5-6 members: +4 damage bonus
+- 3-4 members: +2 damage bonus
+- 1-2 members: No bonus (pack broken)
+
+**Triggered**: When Pack kills enemy, roll 1d6. On 5-6, revive 1 dead Pack member from corpse (evolution/consumption).
+
+### Tactical Use
+- Scaling swarm damage
+- Fast pursuit unit
+- Self-healing via corpse consumption
+- Vulnerable to AOE (kills Pack members)
+
+---
+
+## 2. MUTATION HULK
+**Category**: Elite Infantry (Brute/Tank)
+**HP**: 16 | **Movement**: 3 | **Defense**: 2
 **Equipment Slots**: 2
-**Theme**: Massive bear-kin who absorb damage and retaliate
+**Theme**: Massive mutant that evolves mid-battle by absorbing damage
 
 ### Visual Description
-Towering figure (9-10 feet tall) with thick bear-like musculature, clawed hands, heavy stone armor plates. Slow but inexorable, like a walking avalanche.
+A ten-foot-tall monstrosity - humanoid shape, but wrong in every detail. Four arms (two muscled, two vestigial). Bone plates jutting from skin. Tumorous growths pulsing with Soulstone energy. Face half-human, half-insectoid. It breathes heavily, constantly mutating. Spikes grow from its back. Extra eyes open on its shoulders. It is still evolving.
 
-### Core Mechanics
-- **Unyielding**: Reduce all damage by 2 (minimum 1)
-- **Hibernate**: If HP ≤ 5, spend turn to recover 5 HP (once per battle)
-- **Earthquake Slam**: AOE attack (2-hex radius) for 4 damage, push enemies 1 hex
-- **Provoke**: Enemies within 3 hexes must attack Urtok (taunt mechanic)
-
-### Behavior Pattern
-1. Advance toward heaviest enemy concentration
-2. Use Earthquake Slam when 2+ enemies adjacent
-3. Hibernate if critically wounded and no immediate threats
-4. Prioritize protecting Vestige Caskets (bodyguard)
+### Behavior Deck (4 Cards)
 
 ---
 
-## 3. CORVATH MURDER ⭐ STARTER UNIT
-**Category**: Skirmisher / Harassment
-**HP**: 4 (Swarm) | **Movement**: 8 (Flying) | **Defense**: 0
-**Equipment Slots**: 1
-**Theme**: Swarm of intelligent ravens that peck, distract, and scout
+#### HULK SMASH
+**Type**: Attack / Brutality
+**Priority**: High
+
+**Effect**:
+- Hulk charges forward up to 3 hexes
+- Attack with all four arms for 8 damage
+- If target has <10 HP after attack, grab them (immobilized)
+- Next turn, automatically deal 5 damage to grabbed target (crushing)
+
+**Flavor**: "SMASH. CRUSH. BREAK. EAT."
+
+---
+
+#### ADAPTIVE EVOLUTION
+**Type**: Utility / Mutation
+**Priority**: Always Active
+
+**Effect**:
+- Every time Hulk takes damage, roll 1d6:
+ - 1-2: Grow bone armor (+1 Defense permanently)
+ - 3-4: Mutate claws (+1 damage permanently)
+ - 5-6: Sprout tentacles (+1 reach, can attack 2-hex range)
+- Max +3 to any single stat
+- Hulk becomes more dangerous as battle progresses
+
+**Flavor**: "What doesn't kill me makes me... *stranger*."
+
+---
+
+#### REGENERATION
+**Type**: Healing / Passive
+**Priority**: Constant
+
+**Effect**:
+- At start of each turn, Hulk recovers 2 HP
+- If Hulk has eaten corpse this battle, recover 4 HP instead
+- If Hulk drops below 5 HP, regeneration increases to 5 HP/turn (desperation mode)
+
+**Flavor**: "Wounds close. Bones knit. Pain... irrelevant."
+
+---
+
+#### FRENZY MODE
+**Type**: Attack / Rampage
+**Priority**: Critical (when Hulk HP ≤ 8)
+
+**Effect**:
+- Hulk enters berserk state
+- +4 damage to all attacks
+- +2 movement
+- Attack nearest unit each turn (friend or foe - cannot distinguish)
+- Lasts until Hulk recovers above 8 HP
+
+**Flavor**: "RAGE. BLOOD. KILL. KILL. KILL!"
+
+---
+
+### Command Response
+- **RALLY**: Move up to 3 hexes. Mutate randomly (roll 1d6, gain corresponding evolution).
+- **ATTACK**: Attack for 10 damage. If Hulk has 3+ mutations, deal 13 damage.
+- **DEFEND**: Grow bone armor. +4 Defense until next turn. Permanently gain +1 Defense.
+- **HOLD**: Regenerate aggressively. Recover 6 HP immediately.
+
+### Special Ability: EVOLUTIONARY ADVANTAGE
+**Passive**: Hulk gains permanent stat increases from Adaptive Evolution. Each mutation stacks. By late battle, Hulk can have +3 Defense, +3 damage, +1 reach.
+
+**Triggered**: If Hulk survives battle, keep 50% of mutations for next mission (evolution persists).
+
+### Tactical Use
+- Tanky brute that grows stronger
+- Self-healing regeneration
+- Can turn on allies if Frenzied (risk)
+- Incredible late-game scaling
+
+---
+
+## 3. BROODMOTHER
+**Category**: Heavy Support (Summoner/Spawner)
+**HP**: 12 | **Movement**: 2 | **Defense**: 2
+**Equipment Slots**: 3
+**Theme**: Grotesque birthing chamber that spawns mutant offspring mid-battle
 
 ### Visual Description
-Not a single unit but a swarm of 30-40 ravens with gleaming black feathers and unsettling intelligence. They move as one, reforming after attacks.
+A bloated, sessile creature - barely humanoid anymore. Lower body fused into fleshy sac covered in pulsing egg sacs. Upper body still vaguely female, but with six arms and mandibles. She breathes wetly, constantly gestating. Every few minutes, an egg sac ruptures and a newborn mutant crawls out - already hungry, already aggressive. She coos to her children in a language that predates words.
 
-### Core Mechanics
-- **Swarm**: Can occupy same hex as friendly units
-- **Flying**: Ignore terrain, can move over enemies
-- **Distraction**: Enemies adjacent to Murder have -1 to attacks (pecking eyes)
-- **Memory**: Mark 1 enemy per turn—Vestige units get +1 damage vs marked target
-- **Scatter**: If reduced to 0 HP, roll 1d6. On 4+, Murder survives with 1 HP (swarm disperses)
-
-### Behavior Pattern
-1. Scout ahead (reveal hidden enemies, map objectives)
-2. Harass ranged enemies (reduce their accuracy)
-3. Mark priority targets for Vestige Caskets
-4. Scatter if taking AOE damage
+### Behavior Deck (4 Cards)
 
 ---
 
-## 4. VEXIS SWARMLING 🔒 UNLOCKABLE
-**Unlock Condition**: Complete "Molting Grounds" scenario
-**Category**: Infantry / Swarm
-**HP**: 6 | **Movement**: 5 | **Defense**: 1
-**Theme**: Chitin-armored humanoids that molt and multiply
+#### SPAWN BROOD
+**Type**: Utility / Summon
+**Priority**: High
 
-### Core Mechanics
-- **Molt**: When reduced to 0 HP, leave behind "Chitin Shell" (terrain that grants +2 Defense to allies in hex)
-- **Swarm Tactics**: For each other Swarmling alive, +1 HP (max +3)
-- **Acid Spit**: Ranged attack (5 hexes) for 3 damage, target gets -1 Defense until end of round
-- **Rapid Evolution**: After 3 attacks, gain +1 to all stats (evolves mid-battle)
+**Effect**:
+- Broodmother births 1d3 Mutant Spawn
+- **Mutant Spawn**: 4 HP, 4 movement, 0 Defense, 3 damage attack
+- Spawn last until destroyed or end of battle
+- Max 6 Spawn on battlefield at once
+- Spawn obey Broodmother's commands
 
----
-
-## 5. SERRAK ASSASSIN 🔒 UNLOCKABLE
-**Unlock Condition**: Hire Serrak contract (5 Soulstones)
-**Category**: Stealth / Single-Target Eliminator
-**HP**: 7 | **Movement**: 5 | **Defense**: 0
-**Theme**: Serpent-scaled assassin who strikes from shadows
-
-### Core Mechanics
-- **Stealth**: Invisible until first attack (cannot be targeted)
-- **Poison**: All attacks inflict 2 Poison counters (1 damage per counter at end of target's turn)
-- **Back Stab**: If attacking from behind, deal double damage
-- **Escape Artist**: Can move through enemy-occupied hexes without triggering reactions
-- **One Contract**: Designate 1 enemy at start—Assassin focuses that target until destroyed
+**Flavor**: "My children. My beautiful children. HUNT."
 
 ---
 
-## 6. PRIMAL ALPHA 🔒 UNLOCKABLE
-**Unlock Condition**: Defeat "The First Cursed" boss
-**Category**: Elite / Legendary Beast
-**HP**: 20 | **Movement**: 5 | **Defense**: 2
-**Theme**: Massive hybrid beast embodying all five bloodlines
+#### BROOD FURY
+**Type**: Buff / Swarm
+**Priority**: High (when 3+ Spawn on battlefield)
+
+**Effect**:
+- Broodmother shrieks command to offspring
+- All Spawn gain +2 damage and +1 movement for 2 turns
+- If Spawn are adjacent to each other, they gain +1 damage each (pack tactics)
+- Broodmother takes 2 damage (strain from psychic command)
+
+**Flavor**: "FEAST, MY CHILDREN! MAKE MOTHER PROUD!"
+
+---
+
+#### CONSUME OFFSPRING
+**Type**: Healing / Sacrifice
+**Priority**: Critical (when Broodmother HP ≤ 6)
+
+**Effect**:
+- Broodmother devours 1 of her own Spawn
+- Recover 5 HP
+- Gain 1 Biomass Token
+- Other Spawn become frenzied (+3 damage for 1 turn, watching their sibling die)
+
+**Flavor**: "Come to mother, dear. You'll serve better... inside me."
+
+---
+
+#### EVOLUTIONARY DIRECTIVE
+**Type**: Utility / Adaptation
+**Priority**: Medium
+
+**Effect**:
+- Broodmother commands Spawn to evolve
+- Choose 1 adaptation for all Spawn:
+ - **Claws**: +2 damage
+ - **Carapace**: +1 Defense
+ - **Legs**: +2 movement
+- Adaptation lasts rest of battle
+- Only 1 adaptation can be active at a time
+
+**Flavor**: "Adapt, children. Survive. EVOLVE."
+
+---
+
+### Command Response
+- **RALLY**: Spawn 2 Mutant Spawn immediately (emergency birthing).
+- **ATTACK**: All Spawn attack nearest enemy. Each Spawn deals 4 damage.
+- **DEFEND**: Broodmother turtles (curls into protective ball). +4 Defense, cannot spawn while defending.
+- **HOLD**: Gestate rapidly. Next Spawn Brood summons 1d6 Spawn instead of 1d3.
+
+### Special Ability: ENDLESS HORDE
+**Passive**: Broodmother can spawn unlimited Spawn over course of battle (limited only by turn economy and 6-Spawn max).
+
+**Triggered**: If Broodmother is destroyed, all Spawn immediately go berserk (attack nearest unit, friend or foe) for 3 turns, then flee.
+
+### Tactical Use
+- Summoner/spawner engine
+- Creates disposable army
+- Can sacrifice own Spawn for healing
+- Vulnerable if focused (priority target)
+
+---
+
+## NEUTRAL MERCENARY UNITS (Hireable by Any Faction)
+
+### MUTANT BERSERKER
+**Category**: Elite Infantry (Berserker)
+**HP**: 12 | **Movement**: 4 | **Defense**: 0
+**Equipment Slots**: 2
+**Hire Cost**: 40 Credits + 1 Biomass Token
+**Theme**: Drugged-up mutant that charges into combat with suicidal fury
 
 ### Visual Description
-A towering chimera: wolf's head, bear's torso, raven's wings (vestigial), chitin plates on limbs, serpent's tail. 12 feet tall, covered in scars and Taint-mutated growths. Eyes burn with primal fury.
+A muscled humanoid covered in ritual scars and injected with combat stimulants. Eyes bloodshot, pupils dilated. Foam at mouth. Clutches massive two-handed axe. Wearing tattered Vestige war-paint. Screaming constantly - incoherent rage. They don't fight to win. They fight to die gloriously.
 
-### Core Mechanics
-- **Hybrid Fury**: Can use ANY bloodline ability once per turn
-  - Fenmar: Pack Coordination (+2 damage to all Vestige units within 6 hexes)
-  - Urtok: Earthquake Slam (4 damage, 2-hex AOE)
-  - Corvath: Aerial Dive (move 8 hexes, ignore terrain)
-  - Vexis: Acid Spray (cone attack, 6 damage, -1 Defense)
-  - Serrak: Stealth Strike (become invisible until next attack)
-- **Primal Rage**: When reduced to ≤10 HP, gain +2 Movement, +2 Damage, ignore reactions
-- **Alpha Howl**: 1/battle, all friendly units gain +2 to all stats for 1 round
-- **Regeneration**: Recover 2 HP at start of each turn
-
-### Behavior Pattern
-1. Engage toughest enemy (highest HP)
-2. Use Hybrid Fury tactically (situation-dependent)
-3. Alpha Howl when 3+ friendlies nearby
-4. Primal Rage triggers desperate offensive
+### Behavior Deck (3 Cards)
 
 ---
 
-## STRATEGIC CHOICES
+#### DEATH OR GLORY
+**Type**: Attack / Charge
+**Priority**: Always
 
-### Aggressive Build (Alpha Strike)
-- **Units**: Fenmar Pack Hunters + Serrak Assassin
-- **Strategy**: Fast flanking, focus fire wounded targets, assassinate priority enemies
-- **Weakness**: Fragile, collapses if caught in AOE
-
-### Defensive Build (Endurance)
-- **Units**: Urtok Berserker + Vexis Swarmling
-- **Strategy**: Tank with Urtok, swarm enemies, create Chitin Shell terrain for Defense bonuses
-- **Weakness**: Slow, struggles vs kiting enemies
-
-### Balanced Build (Versatility)
-- **Units**: Corvath Murder + Fenmar Pack Hunters + Urtok Berserker
-- **Strategy**: Scout with Corvath, flank with Fenmar, tank with Urtok
-- **Weakness**: Equipment slot heavy (requires 3 slots)
-
-### Elite Build (Endgame)
-- **Units**: Primal Alpha (solo)
-- **Strategy**: Unleash the ultimate Vestige champion
-- **Weakness**: Single point of failure, expensive to field
+**Effect**:
+- Berserker charges toward nearest enemy (4 hexes)
+- Attack for 10 damage
+- Take 3 damage from overexertion
+- Cannot retreat or defend (only knows how to attack)
 
 ---
 
-## PROGRESSION SYSTEM
+#### PAIN IS FUEL
+**Type**: Passive / Scaling
+**Priority**: Always Active
 
-### Early Campaign (Missions 1-5)
-- **Available**: Fenmar, Urtok, Corvath only
-- **Focus**: Learn pack tactics, coordinate with Casket
-- **Playstyle**: Swarm and overwhelm
-
-### Mid Campaign (Missions 6-15)
-- **Unlock**: Vexis Swarmling (after Molting Grounds)
-- **Unlock**: Serrak Assassin (hire with 5 Soulstones)
-- **Focus**: Specialized roles (tank, assassin, swarm)
-- **Playstyle**: Tactical diversity
-
-### Late Campaign (Missions 16+)
-- **Unlock**: Primal Alpha (after boss fight)
-- **Focus**: Elite single unit vs multiple weaker units
-- **Playstyle**: Choose between swarm or champion
+**Effect**:
+- Every time Berserker takes damage, gain +1 damage permanently
+- At <5 HP: +2 movement (adrenaline)
+- At <3 HP: Attacks deal double damage (death throes)
 
 ---
 
-## DECK BUILDING WITH SUPPORT UNITS
+#### GLORIOUS END
+**Type**: Attack / Suicide
+**Priority**: Critical (when HP ≤ 2)
 
-### Synergy: Vestige Bloodlines Deck + Support Units
+**Effect**:
+- Berserker explodes in final charge
+- Attack all enemies within 2 hexes for 12 damage each
+- Berserker is destroyed (suicide attack)
+- Allies within 4 hexes gain +2 damage next turn (inspired by sacrifice)
 
-**Example 1: Pack Hunter Build**
-- **Deck**: Focus on mobility cards (Lunge, Dash, Retreat)
-- **Support**: Fenmar Pack Hunters (coordinate flanks)
-- **Tactics**: Hit-and-run, surround enemies, use Pack Tactics bonus
+---
 
-**Example 2: Tank Build**
-- **Deck**: Focus on defensive cards (Brace, Regeneration)
-- **Support**: Urtok Berserker (draw enemy fire)
-- **Tactics**: Urtok tanks while Casket flanks, Hibernate when critical
+### Special Ability: HIRED RAGE
+**Passive**: Any faction can hire Mutant Berserker for 40 Credits + 1 Biomass. Berserker fights until death (cannot retreat, cannot be healed by normal means).
 
-**Example 3: Stealth Build**
-- **Deck**: Focus on assassination cards (Back Stab, Poison)
-- **Support**: Serrak Assassin (eliminate priority target)
-- **Tactics**: Coordinate simultaneous strikes on same target
+---
+
+### ADAPTIVE PREDATOR
+**Category**: Heavy Support (Hunter/Assassin)
+**HP**: 14 | **Movement**: 5 | **Defense**: 2
+**Equipment Slots**: 3
+**Hire Cost**: 60 Credits + 2 Biomass Tokens
+**Theme**: Intelligent mutant that hunts high-value targets
+
+### Visual Description
+A sleek, reptilian humanoid - scales instead of skin, digitigrade legs, prehensile tail. Face is angular, alien. Eyes track targets with predatory focus. Moves with surgical precision. Wears bandolier of throwing knives and carries rifle. This is not mindless mutation - this is evolution with purpose.
+
+### Behavior Deck (3 Cards)
+
+---
+
+#### MARK PREY
+**Type**: Utility / Debuff
+**Priority**: High
+
+**Effect**:
+- Predator designates 1 high-value enemy (highest HP or most dangerous)
+- Marked target takes +3 damage from Predator
+- Predator gains +1 movement when moving toward Marked target
+- Can smell target through walls (ignore LOS requirements)
+
+---
+
+#### AMBUSH STRIKE
+**Type**: Attack / Stealth
+**Priority**: Critical (when attacking from rear arc or cover)
+
+**Effect**:
+- Attack Marked target from stealth
+- Deal 12 damage, ignore Defense
+- If this kills target, Predator goes back into stealth (cannot be targeted next turn)
+- Gain 1 Biomass Token from corpse
+
+---
+
+#### ADAPTIVE CAMOUFLAGE
+**Type**: Utility / Stealth
+**Priority**: Medium
+
+**Effect**:
+- Predator shifts skin color to match environment
+- Cannot be targeted by ranged attacks
+- +3 Defense vs melee attacks
+- Lasts until Predator attacks or moves more than 2 hexes
+
+---
+
+### Special Ability: HIRED HUNTER
+**Passive**: Any faction can hire Adaptive Predator for 60 Credits + 2 Biomass. Predator serves loyally until contract ends (mission complete) or payment fails.
+
+---
+
+## ASYMMETRIC DESIGN NOTES
+
+### Why Only 3 Faction Units + 2 Neutral?
+Vestige doctrine is "evolve or die." They have:
+- **3 Core Units**: Pack hunters, evolutionary tanks, spawners
+- **2 Neutral Units**: Available to all factions, but require Biomass (Vestige currency)
+
+### Faction Advantage
+Vestige generates Biomass easily (harvest from corpses), making Neutral Mercenaries more accessible to them than other factions.
+
+---
+
+## DECK BUILDING EXAMPLES
+
+### Example: Vestige Scout Casket with Feral Pack
+
+**Total Deck Construction**:
+- 10 Universal Core
+- 6 Vestige Faction Core
+- 6 Twin Claws (weapon, 1 slot)
+- **Feral Pack** (2 slots)
+- 2 Vestige Tactics
+
+**Total**: 24 cards, 1 Feral Pack
+
+**Playstyle**: Speed hunting. Casket + Pack move at 5-6 movement. Coordinate kills, feast on corpses.
+
+### Example: Vestige Heavy Casket with Broodmother + Mutant Berserker
+
+**Total Deck Construction**:
+- 10 Universal Core
+- 6 Vestige Faction Core
+- **Broodmother** (3 slots)
+- **Mutant Berserker** (hired, 2 slots - paid 40 Credits + 1 Biomass)
+- 2 Vestige Tactics
+
+**Total**: 18 cards, 2 support units (Broodmother + Berserker)
+
+**Playstyle**: Swarm army. Broodmother spawns Mutants, Berserker charges, Casket coordinates.
 
 ---
 
 ## FACTION SYNERGIES
 
-| Allied Faction | Synergy | Anti-Synergy |
-|----------------|---------|--------------|
-| **Church** | Fenmar can flank while Church tanks | Compete for melee range |
-| **Dwarves** | Urtok Berserker holds line with Shield Wall | Both slow, lack mobility |
-| **Ossuarium** | Serrak Assassin eliminates threats to undead swarm | None significant |
-| **Elves** | Corvath Murder scouts for Elven snipers | None |
-| **Crucible** | Primal Alpha + Crucible duelist = unstoppable | Compete for honor kills |
-| **Exchange** | Hire Serrak Assassin with Credits | None |
-| **Emergent** | Pack tactics + Hive-Mind coordination | None |
+### Corpse Consumption + Feral Pack
+- Vestige Casket gains bonuses from kills
+- Feral Pack heals from corpses
+- Both units benefit from battlefield carnage
+
+### Mutation + Mutation Hulk
+- Vestige pilots mutate over campaign
+- Hulk mutates mid-battle
+- Both embody evolutionary theme
+
+### Biomass Economy + Broodmother
+- Broodmother spawns units that die and provide Biomass
+- Vestige uses Biomass to hire more mercenaries
+- Self-sustaining economy
 
 ---
 
-## DESIGN PHILOSOPHY
+**END OF DOCUMENT**
 
-### Bloodline Identity
-- **Fenmar**: Speed, pack tactics, flanking
-- **Urtok**: Durability, area control, tanking
-- **Corvath**: Intelligence, scouting, harassment
-- **Vexis**: Adaptation, terrain control, swarm
-- **Serrak**: Lethality, stealth, elimination
-
-### Power Curve
-- **Starter units**: Reliable, straightforward (4-5 abilities)
-- **Unlockable units**: Specialized, powerful (5-6 abilities)
-- **Elite unit**: Game-changing, legendary (8+ abilities)
-
-### Counterplay
-- **Fenmar**: AOE attacks, area denial (punish clustering)
-- **Urtok**: Armor piercing, % damage (bypass Defense)
-- **Corvath**: AOE attacks (destroy swarm instantly)
-- **Vexis**: Burst damage (kill before evolution stacks)
-- **Serrak**: Reveal abilities, group tactics (no isolated targets)
-- **Primal Alpha**: Focus fire, debuffs, kiting (avoid melee)
-
----
-
-## DESIGN NOTES
-
-**Status**: This document is a design framework. Full behavior decks (6 cards per unit) are pending development.
-
-**Balance Targets**:
-- Starter units: ~60% power of Casket (supportive role)
-- Unlockable units: ~70% power of Casket (tactical advantage)
-- Elite unit: ~90% power of Casket (legitimate threat)
-
-**Next Steps**:
-1. Develop complete behavior decks for each unit (6 cards each)
-2. Playtest pack tactics mechanics (ensure +1 damage per ally isn't overpowered)
-3. Balance Primal Alpha (ensure it's strong but not game-breaking)
-4. Create visual reference cards for Tabletop Simulator
-
----
-
-**"We are the cursed. We are the forgotten. But we endure. In fang and claw, we survive."**
-
-*Support units document version 1.0 (Framework) - Vestige Bloodlines*
-
----
-
-[← Back to Vestige Bloodlines](deck-equipment-system.md) | [All Factions](../index.md) | [Rules: Support Units](../../rules/support-units.md)
+*"We adapt. We evolve. We consume. And we grow stronger."* — Vestige Alpha Proverb

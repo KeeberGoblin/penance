@@ -30,11 +30,19 @@ Open `QUICKSTART.md` and read through the core rules. Focus on:
 - Component Damage tracking
 
 ### STEP 2: Pick Pre-Built Decks (2 minutes)
-Each player chooses one deck from `/decks/`:
+Each player chooses one deck from `/decks/` (4 starter factions):
 - **Church Confessor** - Aggressive martyr, self-harm for burst
 - **Dwarven Ironclad** - Tank, armor stacking, sustained damage
-- **Elven Warden** - Mobile skirmisher, range + control
+- **Elven Warden** - Mobile skirmisher, Bleed stacking (capped at 8)
 - **Nomad Outrider** - Ultra-mobile striker, hit-and-run
+
+**Additional Factions** (v5.29-FINAL - see FACTION-DECKBUILDING.md):
+- **Ossuarium** - Taint corruption, skeletal minions, resurrection
+- **Wyrd Conclave** - Reality manipulation, teleportation, bargains
+- **The Exchange** - Economic warfare, mercenary summoning
+- **Vestige Bloodlines** - Mutation warfare, biomass harvesting
+- **Emergent Collective** - Hive mind (requires 2+ players)
+- **Crucible Pacts** - Forge worship, honor duels
 
 Print or use digital reference.
 
@@ -153,16 +161,17 @@ If you don't have a hex map:
 
 ---
 
-## KNOWN ISSUES (Alpha v1.0)
+## KNOWN ISSUES (v5.29-FINAL)
 
-This is an early alpha. Known issues:
+This is production-ready balance. Remaining issues:
 
-- ❗ **Balance:** Church may be overtuned (Blood Offering too strong?)
+- ✅ **Balance:** 7/10 factions competitive (Church fixed in v5.27, Ossuarium fixed in v5.23)
+- ⚠️ **Outliers:** Elves (62.2% WR), Crucible (42.2%), Emergent (37.8%) still outside range
 - ❗ **Complexity:** Component Damage tracking can be fiddly
-- ❗ **Pacing:** Games might run long first time (45+ min)
+- ❗ **Pacing:** Games run 30-45 min for experienced players, 45-60 first time
 - ❗ **Dice:** Custom dice not required but help a lot
 
-**Your feedback helps us fix these!**
+**Your feedback helps us improve!**
 
 ---
 
@@ -197,18 +206,20 @@ A: No, this is arena combat only. Full game includes campaign, settlements, pilo
 1. **Custom Decks** - Build your own 30-card loadouts (see full rules)
 2. **Campaign Mode** - Settlements, pilot progression, loot (see `docs/codex/`)
 3. **More Scenarios** - Reliquary Ruins, Boss Fights (see `docs/codex/scenarios.html`)
-4. **Other Factions** - 5 more factions beyond the starter 4
+4. **Other Factions** - 6 more factions beyond the starter 4 (10 total in v5.29-FINAL!)
+5. **v5.29-FINAL Balance** - 7/10 factions competitive (44-58% win rate)
 
 ### Want More Rules?
 Full codex available at: `docs/codex/content-home.html`
 
 Includes:
-- Complete equipment system (50+ cards)
+- Complete equipment system (60+ cards)
 - Campaign rules (Kingdom Death-style progression)
-- 9 factions with unique mechanics
+- **10 factions with unique mechanics** (v5.29-FINAL balanced)
 - Boss encounters and scenarios
 - Loot tables and crafting
 - Settlement building
+- **v5.29-FINAL Balance**: 7/10 factions in competitive range
 
 ---
 
@@ -217,7 +228,8 @@ Includes:
 **Penance: Absolution Through Steel**
 - Design: (Your name/team)
 - Playtest Kit: Claude Code assisted
-- Alpha Version: 1.0 (2025-10-14)
+- Version: v5.29-FINAL (2025-10-21)
+- Balance: 7/10 factions competitive (44-58% WR)
 
 **Special Thanks:**
 - Tactical mech combat games for deck-as-HP inspiration

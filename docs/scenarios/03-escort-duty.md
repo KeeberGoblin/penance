@@ -179,7 +179,7 @@ A vital supply caravan must reach the settlement before nightfall. The Defender 
 - **Elven Verdant Covenant**: Mobile, can reposition quickly to intercept
 
 **Good Attacker Choices**:
-- **The Ossuarium**: Lifesteal and attrition, can outlast the Defender
+- **The Ossuarium**: Taint corruption and Phylactery resurrection, can outlast the Defender
 - **Church of Absolution**: Burst damage, can kill the Caravan quickly
 - **Dwarven Forge-Guilds**: Armor-piercing, ignores Caravan's armor
 

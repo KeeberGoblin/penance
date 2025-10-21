@@ -246,7 +246,7 @@ The Defender follows a simple AI patrol pattern:
 
 **Good Saboteur Choices**:
 - **Elven Verdant Covenant**: High mobility, can plant and escape quickly
-- **The Ossuarium**: Lifesteal survives shockwave damage
+- **The Ossuarium**: Phylactery resurrection survives shockwave damage
 - **Church of Absolution**: Burst damage if caught (can fight way out)
 
 **Good Defender Choices**:

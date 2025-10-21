@@ -153,7 +153,7 @@ Use tokens or dice to track how many turns each player has controlled the Spire:
 ### Faction Synergies
 
 **Strong on Spire**:
-- **The Ossuarium**: Lifesteal offsets corruption damage
+- **The Ossuarium**: Phylactery resurrection and Taint warfare offset corruption damage
 - **Church of Absolution**: Already uses Taint for martyr mechanics
 - **Dwarven Forge-Guilds**: High armor reduces incoming damage
 

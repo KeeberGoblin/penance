@@ -4,6 +4,13 @@
 **Date**: October 12, 2025
 **Status**: PLAYTEST READY (v2.0 Equipment System)
 
+⚠️ **HISTORICAL DOCUMENT**: This assessment describes pre-v5.23 mechanics (before lifesteal removal). For current v5.29-FINAL mechanics, see [PLAYTEST-READY.md](PLAYTEST-READY.md) or [docs/BALANCE-FINAL-V5.29.md](../BALANCE-FINAL-V5.29.md).
+
+**Major Changes Since This Document**:
+- v5.23: Ossuarium lifesteal completely removed → Taint warfare
+- v5.29: 10 factions balanced (7/10 in 44-58% WR range)
+- v5.29: Elves Photosynthesis removed, Bleed capped at 8
+
 ---
 
 ## Executive Summary
