@@ -8,7 +8,7 @@
 
 ## Overview
 
-This bestiary contains **15 core enemies** for campaign missions, settlement defense events, and random encounters. Enemies use **player-like mechanics** (HP deck, SP economy) but with **simplified AI behavior cards** inspired by Kingdom Death: Monster.
+This bestiary contains **15 core enemies** for campaign missions, settlement defense events, and random encounters. Enemies use **player-like mechanics** (HP deck, SP economy) but with **simplified AI behavior cards** (draw a card, execute its instructions).
 
 **Enemy Categories**:
 - **Swarm (3-5 HP)**: Many weak enemies. Simple AI.
@@ -684,7 +684,7 @@ Loot (on death): Credits, Scrap, Equipment rolls
 **Why If-Then AI?**
 - Predictable but dynamic (players can anticipate but not control)
 - Scales with complexity (simple enemies = simple logic, bosses = complex)
-- KDM inspiration (behavior decks create narrative moments)
+- Behavior decks create narrative moments (lucky/unlucky draws affect outcomes)
 - GM-friendly (no complex flowcharts, just read card and execute)
 
 **Balance Notes**:
