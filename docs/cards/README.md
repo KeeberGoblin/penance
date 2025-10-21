@@ -57,7 +57,7 @@ Complete card database and interactive tools for Penance: Absolution Through Ste
 - ✅ Emergent Syndicate (10 cards)
 - ✅ Nomad Collective (10 cards)
 - ✅ The Ossuarium (6 cards)
-- ✅ Soulstone Exchange (10 cards)
+- ✅ The Exchange (10 cards)
 - ✅ Vestige Bloodlines (10 cards)
 - ✅ The Wyrd Conclave (21 cards) ⭐ NEW
 

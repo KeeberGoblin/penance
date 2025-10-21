@@ -70,7 +70,7 @@ When Theslar activated **The Engine** (then called the "Theslar Engine" by scien
 
 **Year 150-250: The Factional Wars**
 - Major power blocs emerge and consolidate
-- Church of Absolution splits in the Great Schism (Year 134)
+- Church of Absolution consolidates doctrine after internal reforms (Year 134)
 - The Exchange formalizes (Year 156) as neutral trade network between warring factions
 - Dwarven forge-cities become industrial powerhouses
 - The Ossuarium establishes permanent necropolis territories (Year 78)

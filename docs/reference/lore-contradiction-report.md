@@ -26,7 +26,7 @@ After analyzing 27+ lore files (8,000+ lines of narrative content), the **Penanc
 
 **Fix**: Global search/replace to ensure all files use "The Exchange"
 
-**Status**: ⚠️ **PARTIALLY FIXED** (most files updated, stragglers remain)
+**Status**: ✅ **FIXED (October 21, 2025)** - All references updated globally across 9 files (factions/index.md, exchange/support-units.md, cards/README.md, wyrd-conclave/deck-equipment-system.md, codex HTML files)
 
 ---
 
@@ -47,7 +47,7 @@ After analyzing 27+ lore files (8,000+ lines of narrative content), the **Penanc
 - OR remove the line (treat Church as unified faction)
 - OR clarify it was a minor internal reform, not a full split
 
-**Status**: ⚠️ **NEEDS CLARIFICATION**
+**Status**: ✅ **FIXED (October 21, 2025)** - Changed to "Church of Absolution consolidates doctrine after internal reforms (Year 134)" - clarified as minor reform, not full schism. Church remains unified faction.
 
 ---
 

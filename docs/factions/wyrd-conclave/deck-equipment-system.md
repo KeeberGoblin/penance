@@ -407,7 +407,7 @@ The Wyrd Conclave are Fae tricksters who weaponize reality itself. Every card re
 | **The Ossuarium** | +1 Cordial | Both exist "between" states, shared outsider status |
 | **Nomad Collective** | 0 Neutral | Fae occasionally trick Nomads for amusement |
 | **Crucible Packs** | -1 Distrustful | Crucible honor code incompatible with Fae trickery |
-| **Soulstone Exchange** | +1 Friendly | Mutual respect for contracts (even if Fae exploit loopholes) |
+| **The Exchange** | +1 Friendly | Mutual respect for contracts (even if Fae exploit loopholes) |
 | **Vestige Bloodlines** | 0 Neutral | Fae find Vestige mutations fascinating (study subjects) |
 | **Emergent Syndicate** | +1 Cordial | Both manipulate biology/reality, respect for transformation |
 

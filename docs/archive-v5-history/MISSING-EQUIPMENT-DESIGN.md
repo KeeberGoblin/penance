@@ -2,7 +2,12 @@
 
 **Date:** October 20, 2025
 **Target Database Version:** 5.7 (proposed)
-**Status:** Design Document (Implementation Pending)
+**Status:** ✅ IMPLEMENTED (Archived - Historical Design Document)
+
+**Update (October 21, 2025):** This design has been fully implemented in complete-card-data.json. All three factions now have equipment items:
+- Nomads: NOMADS_SCIMITAR, NOMADS_COMPOSITE_BOW
+- Vestige-Bloodlines: BLOODLINES_PRIMARY_WEAPON, BLOODLINES_SECONDARY_EQUIPMENT
+- Wyrd-Conclave: WYRD_PRIMARY_WEAPON, WYRD_SECONDARY_EQUIPMENT
 
 ---
 

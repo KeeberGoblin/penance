@@ -1,11 +1,11 @@
-# Soulstone Exchange - Support Units
+# The Exchange - Support Units
 ## Penance: Absolution Through Steel
 
 **Version**: 2.2 Casket System
 **Status**: ✅ **COMPLETE** - All 6 units with full behavior decks
 **Date**: October 18, 2025
 
-The Soulstone Exchange fields hired mercenaries, security contractors, and corporate enforcers. Unlike other factions' support units, Exchange units must be **purchased with Credits**.
+The The Exchange fields hired mercenaries, security contractors, and corporate enforcers. Unlike other factions' support units, Exchange units must be **purchased with Credits**.
 
 ---
 
@@ -453,7 +453,7 @@ Not a combat unit—a luxurious hover-platform carrying 5 executives in suits. T
 
 **"In the Exchange, loyalty is measured in Credits. And Credits can buy anything."**
 
-*Support units document version 2.0 (Complete) - Soulstone Exchange*
+*Support units document version 2.0 (Complete) - The Exchange*
 
 ---
 

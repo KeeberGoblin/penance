@@ -55,7 +55,7 @@ The faction HTML files use **current faction names** (as of October 2025):
 | `faction-elves.html` | Elven Verdant Covenant | `docs/factions/elves/` |
 | `faction-blighted.html` | Vestige Bloodlines | `docs/factions/vestige-bloodlines/` |
 | `faction-chitinous.html` | Emergent Syndicate | `docs/factions/emergent/` |
-| `faction-merchants.html` | Soulstone Exchange | `docs/factions/exchange/` |
+| `faction-merchants.html` | The Exchange | `docs/factions/exchange/` |
 | `faction-nomads.html` | Nomad Collective | `docs/factions/nomads/` |
 | `faction-fae.html` | Wyrd Conclave | *(Not yet implemented)* |
 

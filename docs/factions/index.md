@@ -17,9 +17,9 @@ Ten powers struggle for control of a dying world. Each is broken. None are heroe
 **Support Units**: [6 units](dwarves/support-units.md) - Shield Wall, Artillery, Rune Sentinel, Siege Crawler, Ancestor Golem, Dreadnought
 
 ### [The Ossuarium](ossuarium/deck-equipment-system.md)
-**Playstyle**: Lifesteal vampire with resurrections
-**Mechanic**: Soul Harvest triggers, Decay cards, death rewards, thrall summoning
-**Status**: ✅ Complete with v2.0 equipment system
+**Playstyle**: Taint corruption necromancer with resurrections
+**Mechanic**: Decay Aura (spread Taint), Phylactery (resurrection), Skeletal Thralls, attrition warfare
+**Status**: ✅ Complete with v5.29-FINAL (v2.0 equipment system + Taint warfare)
 **Support Units**: [6 units](ossuarium/support-units.md) - Bone Thralls, Grave Knight, Fleshcrafter, Bone Colossus, Lich, Death's Herald
 
 ### [Elven Verdant Covenant](elves/deck-equipment-system.md)
@@ -34,7 +34,7 @@ Ten powers struggle for control of a dying world. Each is broken. None are heroe
 **Status**: ✅ Complete with v2.0 equipment system
 **Support Units**: [6 units](crucible/support-units.md) - Honor Guard, Forge Apprentice, Tribal Hunter, Duelist Champion, Forge Master, Ancestral Spirit
 
-### [Soulstone Exchange](exchange/deck-equipment-system.md)
+### [The Exchange](exchange/deck-equipment-system.md)
 **Playstyle**: Economic warfare, hired mercenaries, resource hoarding
 **Mechanic**: Credit economy (hire units mid-battle), Compound Interest (snowball resources), Corporate warfare
 **Status**: ✅ Complete with v2.0 equipment system
