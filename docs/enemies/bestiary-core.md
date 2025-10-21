@@ -291,9 +291,9 @@ Loot (on death): Credits, Scrap, Equipment rolls
 - **"Phase Strike" (×4)**:
   - Teleport up to 6 hexes (ignores terrain/obstacles).
   - If teleport adjacent to enemy, attack for 3d6 damage + 1 Taint to target.
-- **"Drain Life" (×3)**:
+- **"Taint Drain" (×3)**:
   - Attack for 2d6 damage.
-  - Recover 2 cards from discard (lifesteal).
+  - If target has 3+ Taint, recover 2 cards from discard (feeding on corruption).
   - Target gains 1 Taint.
 - **"Void Shift" (×2)**:
   - Move 8 hexes (teleport).
@@ -420,13 +420,13 @@ Loot (on death): Credits, Scrap, Equipment rolls
 
 **Phases**:
 - **Phase 1 (50-35 HP)**: Summons undead minions
-- **Phase 2 (34-15 HP)**: Lifesteal attacks
+- **Phase 2 (34-15 HP)**: Taint corruption attacks
 - **Phase 3 (14-0 HP)**: Resurrection + AOE corruption
 
 **Behavior Deck (50 cards - Phase 1)**:
-- **"Soul Harvest" (×12)**:
-  - Attack for 5d6 damage.
-  - If kill is successful, recover 3 cards from discard (lifesteal).
+- **"Corruption Strike" (×12)**:
+  - Attack for 5d6 damage + 2 Taint.
+  - If kill is successful, recover 3 cards from discard (feeding on death).
   - Add 1 "Decay" card to Thresh's deck (Ossuarium mechanic).
 - **"Raise Dead" (×8)**:
   - Summon 3 Bone Thralls (5 HP each) adjacent to Thresh.
@@ -441,16 +441,16 @@ Loot (on death): Credits, Scrap, Equipment rolls
 - **"Defend" (×4)**: Gain +2 Defense this turn.
 
 **Phase 2 Additions (34-15 HP)** - Add these 8 cards:
-- **"Vampiric Strike" (×4)**:
-  - Attack for 6d6 damage.
-  - Recover 3 cards from discard (lifesteal).
+- **"Necrotic Surge" (×4)**:
+  - Attack for 6d6 damage + 3 Taint.
+  - If target has 5+ Taint, recover 3 cards from discard (feeding on corruption).
   - Target gains "Bleeding" (lose 1 card per turn for 3 turns).
 - **"Mass Raise Dead" (×2)**:
   - Summon 6 Bone Thralls adjacent to Thresh.
   - All Thralls gain +1 damage for rest of combat (empowered undead).
-- **"Siphon Life" (×2)**:
-  - Ranged AOE (4-hex radius): All enemies take 3d6 damage.
-  - Thresh recovers 1 card per enemy hit (mass lifesteal).
+- **"Corruption Pulse" (×2)**:
+  - Ranged AOE (4-hex radius): All enemies take 3d6 damage + 2 Taint.
+  - Thresh recovers 1 card per enemy with 5+ Taint affected.
 
 **Phase 3 Additions (14-0 HP)** - Add these 7 cards:
 - **"Resurrection" (×1)**:
@@ -470,7 +470,7 @@ Loot (on death): Credits, Scrap, Equipment rolls
 - **The Ledger**: When Thresh kills an enemy, write their name in The Ledger. Gain +1 damage permanently per name (stacks infinitely).
 - **Undying**: When killed, has 50% chance to resurrect at 10 HP (roll 1d6, 4+ = resurrect). Can only trigger once.
 
-**Tactics**: Thresh summons waves of undead, lifesteals constantly, gets stronger with every kill. Focus fire to burn through HP fast. Kill Bone Thralls to deny corpses. Deploy as Ossuarium faction boss.
+**Tactics**: Thresh summons waves of undead, spreads Taint corruption, feeds on highly corrupted enemies (5+ Taint), gets stronger with every kill. Focus fire to burn through HP fast. Kill Bone Thralls to deny corpses. Deploy as Ossuarium faction boss.
 
 **Loot**: 600 Credits, 10d6 Scrap, roll 4 times on Equipment Table, guaranteed Legendary: "The Ledger (Relic)" - Write enemy name after kill, gain +1 damage permanently. Max 10 names. Cursed item (gain 1 Taint per name).
 
