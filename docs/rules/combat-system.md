@@ -1,4 +1,4 @@
-# Combat & Damage System (GKR + KDM Hybrid)
+# Combat & Damage System
 ## Penance: Absolution Through Steel
 
 **Version**: 2.0 Base Rules (October 10, 2025)
@@ -8,7 +8,7 @@
 
 ## Core Concept: Dual-Layer Damage
 
-Inspired by **GKR: Heavy Hitters** (deck-as-HP) + **Kingdom Death: Monster** (brutal consequences)
+Dual-layer damage system combining deck-as-HP mechanics with brutal permanent consequences
 
 **Two Separate Systems**:
 1. **Casket HP Deck** (26-50 cards, varies by [Casket Class](casket-classes.md) and equipment loadout) - Your mech's structural integrity
@@ -103,7 +103,7 @@ When **Pilot Wound Deck runs out** → Pilot dies (Casket becomes inert)
 
 ---
 
-### Deck Composition (GKR-Style + v2.0 Modular Equipment)
+### Deck Composition (v2.0 Modular Equipment)
 
 Your HP Draw Deck represents your Casket's structural integrity.
 
@@ -192,7 +192,7 @@ Choose ONE of the following equipment sets (each adds 6 cards):
 
 ### Faction Tactic Cards (2 Cards)
 
-**Choose 2 from 5 available before each battle** (GKR-style deck customization).
+**Choose 2 from 5 available before each battle** (customizable tactical loadout).
 
 **Example: Church of Absolution Tactics**
 
@@ -603,7 +603,7 @@ This represents pilot physical/mental state inside the capsule.
 
 ### SP by Frame Type
 
-Following GKR's energy economy, but adapted to Penance's weight classes:
+SP (Soulstone Points) varies by Casket weight class:
 
 | Casket Type | SP Maximum | Deck Size Range | Philosophy |
 |-------------|------------|-----------------|------------|
@@ -635,7 +635,7 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 
 ### Heat System (Limits SP)
 
-**Heat replaces GKR's "Energy drain" mechanic.**
+**Heat represents Engine strain and limits your SP effectiveness.**
 
 **Heat Zones**:
 - **Safe Zone** (0-4 Heat): No penalties
@@ -736,26 +736,26 @@ Following GKR's energy economy, but adapted to Penance's weight classes:
 
 ---
 
-## 11. Differences from Standard Deck-Builders
+## 11. Core Design Features
 
-### Like GKR:
-- ✅ Deck = HP (discard cards when damaged)
-- ✅ Energy/SP refresh each turn
+### Deck-as-HP System:
+- ✅ Your deck represents HP (discard cards when damaged)
+- ✅ SP (Soulstone Points) refresh each turn
 - ✅ Primary vs Secondary weapon split
 - ✅ Pre-built decks (no mid-game deck-building)
-- ✅ Hand size fixed at 6
+- ✅ Fixed hand size of 6 cards
 
-### Like KDM:
-- ✅ Component damage tracking (arms, legs, head destroyed)
-- ✅ Permanent injuries (Pilot Wound deck)
+### Brutal Consequences:
+- ✅ Component damage tracking (arms, legs, head can be destroyed)
+- ✅ Permanent pilot injuries (Pilot Wound deck)
 - ✅ Death spiral (Damage cards added to deck on reshuffle)
-- ✅ Brutal consequences (losing Primary Weapon cards = component damage)
+- ✅ Losing Primary Weapon cards = permanent component damage
 
-### Unique to Penance:
-- Heat system (risk/reward pushing into Danger Zone)
-- Pilot Wound deck (separate from Casket HP)
-- Neural Thread damage (pilot takes damage when components destroyed)
-- Asymmetric factions (Primary Weapon cards completely different per faction)
+### Unique Mechanics:
+- **Heat System**: Risk/reward pushing into Danger Zone for extra power
+- **Dual-Layer Damage**: Separate Casket HP and Pilot Wound systems
+- **Neural Thread Damage**: Pilot takes damage when components are destroyed
+- **Asymmetric Factions**: Each faction has completely different Primary Weapon cards and abilities
 
 ---
 

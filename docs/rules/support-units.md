@@ -4,7 +4,7 @@
 **Version**: 3.0 (Pilot Grit Integration)
 **Date**: October 14, 2025
 
-Support units are AI-controlled allies that accompany your Casket into battle. Similar to GKR's pilot/robot dynamic, these units follow simple behavior cards and can be influenced by your Casket's command abilities.
+Support units are AI-controlled allies that accompany your Casket into battle. These units follow simple behavior cards and can be influenced by your Casket's command abilities.
 
 > **v3.0 OPTIONAL**: Support units gain +1 Morale when commanded by pilots with **Grit 2+**. Veterans inspire confidence. High-Grit pilots' Rally and Command actions are more effective (see [pilot-grit-system.md](../campaigns/pilot-grit-system.md) for details).
 
@@ -554,13 +554,7 @@ You choose **Option B**: Spend 1 SP to Rally squad to enemy's rear arc.
 
 ## DESIGN NOTES
 
-### Inspiration
-- **GKR: Heavy Hitters** - Pilot/robot relationship, AI behaviors
-- **Warhammer 40K** - Squad support units, command abilities
-- **BattleTech** - Battle Armor support, combined arms
-- **Gloomhaven** - AI behavior decks, summon mechanics
-
-### Why This Works for Penance
+### Why This System Works
 1. **Action Economy**: Gives players more board presence without overwhelming control complexity
 2. **Faction Identity**: Each faction's support units reflect their theme (Church = zealots, Dwarves = artillery/golems, Ossuarium = undead thralls)
 3. **Strategic Depth**: Choosing equipment vs support unit is meaningful

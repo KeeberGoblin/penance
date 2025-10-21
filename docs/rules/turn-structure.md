@@ -57,7 +57,7 @@
  - undergone Flesh Bargain pilots: +1 SP max
  - Certain Scars/Wounds
 
-**1.1b Overspending SP (GKR-Style Push System)**
+**1.1b Overspending SP (Push System)**
 - You can spend UP TO DOUBLE your SP maximum per turn
 - **Every SP beyond your maximum costs 1 card** (discard from hand or deck)
 - **Example**: Scout (6 SP) can spend up to 12 SP total

@@ -10,7 +10,7 @@ Core game mechanics and systems for Penance: Absolution Through Steel.
 Complete turn sequence, SP economy, Heat management, and action resolution.
 
 ### [Combat System](combat-system.md)
-Deck-as-HP mechanics, component damage, death spiral, and GKR+KDM hybrid system.
+Deck-as-HP mechanics, component damage, death spiral, and dual-layer damage system.
 
 ### [Deck Construction](deck-construction.md)
 How to build your 30-card deck: Universal Core + Primary Weapon + Secondary Equipment + Tactics.
