@@ -199,7 +199,19 @@
             </tr>
         </table>
 
-        <h4>Deck Composition:</h4>
+        <div class="warning-box" style="background: rgba(139, 69, 0, 0.2); border: 2px solid #8b4513; padding: 1rem; margin: 1rem 0;">
+            <p><strong>⚠️ 1v1 DECK OPTIMIZATION NOTE:</strong></p>
+            <p>The default deck below contains <strong>4 cards designed for team play</strong> that are useless or suboptimal in 1v1:</p>
+            <ul>
+                <li><strong>Martyrdom Protocol</strong> - Redirects damage from allies (no allies in 1v1)</li>
+                <li><strong>Last Rites</strong> - Triggers when ally destroyed (no allies in 1v1)</li>
+                <li><strong>Consecrated Ground</strong> - Healing zone primarily for allies</li>
+                <li><strong>Sacred Wound</strong> - Buffs all allies (no allies in 1v1)</li>
+            </ul>
+            <p><strong>For 1v1 play, use the "Optimized for 1v1" variant below instead.</strong></p>
+        </div>
+
+        <h4>Deck Composition (Default - Includes Team Cards):</h4>
 
         <p class="manuscript-text"><strong>Universal Core (10 cards - Mandatory):</strong></p>
         <ul class="manuscript-list">
@@ -214,11 +226,11 @@
         <p class="manuscript-text"><strong>Church Faction Core (6 cards - Mandatory):</strong></p>
         <ul class="manuscript-list">
             <li>Blood Offering ×1 (0 SP, Discard 2 cards, next attack +3 damage, ignore 1 Defense)</li>
-            <li>Martyrdom Protocol ×1 (0 SP Reactive, Redirect damage from ally to yourself)</li>
+            <li><span style="color: #888;">Martyrdom Protocol ×1 (0 SP Reactive, Redirect damage from ally to yourself) <strong>[USELESS IN 1v1]</strong></span></li>
             <li>Righteous Fury ×1 (Passive, +1 damage per enemy killed - permanent)</li>
             <li>Divine Judgment ×1 (4 SP, Deal 8 damage, ignore 1 Defense)</li>
-            <li>Consecrated Ground ×1 (3 SP, Create 3-hex healing zone)</li>
-            <li>Last Rites ×1 (0 SP Reactive, When ally destroyed, recover 5 cards)</li>
+            <li><span style="color: #888;">Consecrated Ground ×1 (3 SP, Create 3-hex healing zone) <strong>[WEAK IN 1v1]</strong></span></li>
+            <li><span style="color: #888;">Last Rites ×1 (0 SP Reactive, When ally destroyed, recover 5 cards) <strong>[USELESS IN 1v1]</strong></span></li>
         </ul>
 
         <p class="manuscript-text"><strong>Equipment - Longsword (6 cards):</strong></p>
@@ -239,7 +251,7 @@
         <p class="manuscript-text"><strong>Equipment - Martyr's Brand Sigil (3 cards, Church-Exclusive):</strong></p>
         <ul class="manuscript-list">
             <li>Martyr's Blessing ×1 (Passive, When you use Blood Offering, gain +1 Defense until next turn)</li>
-            <li>Sacred Wound ×1 (2 SP, Discard 1 card, all allies gain +1 damage this turn)</li>
+            <li><span style="color: #888;">Sacred Wound ×1 (2 SP, Discard 1 card, all allies gain +1 damage this turn) <strong>[USELESS IN 1v1]</strong></span></li>
             <li>Zealot's Fervor ×1 (Passive, When below 15 HP, all attacks deal +1 damage)</li>
         </ul>
 
@@ -251,6 +263,46 @@
 
         <div class="manuscript-quote">
             <strong>Strategy:</strong> Blood Offering turn 1 for alpha strike. Longsword provides reliable melee attacks. Buckler Shield gives reactive defense without slowing movement. Martyr's Brand rewards self-harm with defensive buffs. Trade HP aggressively for positioning and damage. Fast deck cycling (29 cards) enables aggressive reshuffles. High-risk, high-reward martyrdom.
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+        </div>
+
+        <h3>Church: "Martyr's Fury" - OPTIMIZED FOR 1v1</h3>
+
+        <div class="success-box" style="background: rgba(0, 100, 0, 0.2); border: 2px solid #228b22; padding: 1rem; margin: 1rem 0;">
+            <p><strong>✓ 1v1 Optimized Variant</strong></p>
+            <p>This version replaces all team-based cards with 1v1-optimized alternatives. Same deck size (29 cards), but every card is useful.</p>
+        </div>
+
+        <h4>Card Replacements for 1v1:</h4>
+
+        <p class="manuscript-text"><strong>Church Faction Core Changes:</strong></p>
+        <ul class="manuscript-list">
+            <li><strong>REMOVE:</strong> Martyrdom Protocol → <strong>ADD:</strong> Smite (2 SP, Deal 5 damage)</li>
+            <li><strong>REMOVE:</strong> Last Rites → <strong>ADD:</strong> Holy Retribution (1 SP Reactive, When damaged, deal 2 damage to attacker)</li>
+            <li><strong>REMOVE:</strong> Consecrated Ground → <strong>ADD:</strong> Zealot Strike (3 SP, Deal 6 damage, +2 if below 15 HP)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment Changes:</strong></p>
+        <ul class="manuscript-list">
+            <li><strong>REMOVE:</strong> Sacred Wound (Martyr's Brand) → <strong>ADD:</strong> Martyr's Resolve (1 SP, Discard 1 card, +2 Defense until next turn)</li>
+        </ul>
+
+        <h4>Complete Optimized Deck (29 cards):</h4>
+
+        <ul class="manuscript-list">
+            <li><strong>Universal Core:</strong> 10 cards (unchanged)</li>
+            <li><strong>Church Faction Core:</strong> Blood Offering, <strong>Smite</strong>, Righteous Fury, Divine Judgment, <strong>Zealot Strike</strong>, <strong>Holy Retribution</strong></li>
+            <li><strong>Longsword:</strong> 6 cards (unchanged)</li>
+            <li><strong>Buckler Shield:</strong> 2 cards (unchanged)</li>
+            <li><strong>Martyr's Brand:</strong> Martyr's Blessing, <strong>Martyr's Resolve</strong>, Zealot's Fervor</li>
+            <li><strong>Tactics:</strong> 2 cards (unchanged)</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            <strong>Optimized Strategy:</strong> Every card now contributes to 1v1 combat. More damage options (Smite, Zealot Strike), better reactive defense (Holy Retribution, Martyr's Resolve). Maintains aggressive martyr playstyle without dead cards. Total of 7 direct damage cards (up from 5). Superior action economy and threat density.
         </div>
 
         <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
@@ -276,7 +328,17 @@
             </tr>
         </table>
 
-        <h4>Deck Composition:</h4>
+        <div class="warning-box" style="background: rgba(139, 69, 0, 0.2); border: 2px solid #8b4513; padding: 1rem; margin: 1rem 0;">
+            <p><strong>⚠️ 1v1 DECK OPTIMIZATION NOTE:</strong></p>
+            <p>The default deck contains <strong>2 cards with reduced efficiency in 1v1</strong>:</p>
+            <ul>
+                <li><strong>Earthshaker</strong> - AOE designed for multiple enemies (3 SP for 3 damage, inefficient vs single target)</li>
+                <li><strong>Crushing Sweep</strong> - Secondary damage to adjacent enemy wasted in 1v1</li>
+            </ul>
+            <p><strong>For optimized 1v1 play, see the variant below.</strong></p>
+        </div>
+
+        <h4>Deck Composition (Default):</h4>
 
         <p class="manuscript-text"><strong>Universal Core (12 cards - includes +2 from Stone Endurance):</strong></p>
         <ul class="manuscript-list">
@@ -294,7 +356,7 @@
             <li>Forge-Ward ×1 (0 SP Reactive, Gain +2 Defense, generate 1 Rune Counter)</li>
             <li>Rune Counter System ×1 (Passive, Reduce damage by 1 per Rune Counter, max 5)</li>
             <li>Stone Endurance ×1 (Passive, +2 Universal Core cards, +2 max HP)</li>
-            <li>Earthshaker ×1 (3 SP, Melee AOE, Deal 3 damage to all adjacent, push 1 hex)</li>
+            <li><span style="color: #888;">Earthshaker ×1 (3 SP, Melee AOE, Deal 3 damage to all adjacent, push 1 hex) <strong>[INEFFICIENT IN 1v1]</strong></span></li>
             <li>Unbreakable ×1 (1 SP Reactive, Reduce damage by 3)</li>
         </ul>
 
@@ -304,7 +366,7 @@
             <li>Overhead Smash ×1 (3 SP, Melee, Deal 7 damage, +1 Heat)</li>
             <li>Hammer Block ×1 (1 SP Reactive, Reduce damage by 2, next attack +2 damage)</li>
             <li>Pommel Bash ×1 (1 SP, Melee, Deal 3 damage, target loses 1 SP next turn)</li>
-            <li>Crushing Sweep ×1 (2 SP, Melee, Deal 4 damage + 2 damage to 1 adjacent enemy)</li>
+            <li><span style="color: #888;">Crushing Sweep ×1 (2 SP, Melee, Deal 4 damage + 2 damage to 1 adjacent enemy) <strong>[PARTIAL WASTE IN 1v1]</strong></span></li>
         </ul>
 
         <p class="manuscript-text"><strong>Equipment - Tower Shield (4 cards):</strong></p>
@@ -330,6 +392,44 @@
 
         <div class="manuscript-quote">
             <strong>Strategy:</strong> Stack Rune Counters for massive damage reduction (-5 max with Rune of Endurance). Use Tower Shield + Rune Counters for extreme durability (-7 total damage reduction). Runic Warhammer ignores all Defense (counters Church buffs). 33 HP deck (Stone Endurance) provides superior longevity. Slower SP economy (4 SP) but incredible tankiness. Outlast opponent through attrition and death spiral.
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
+        </div>
+
+        <h3>Dwarves: "Immovable Wall" - OPTIMIZED FOR 1v1</h3>
+
+        <div class="success-box" style="background: rgba(0, 100, 0, 0.2); border: 2px solid #228b22; padding: 1rem; margin: 1rem 0;">
+            <p><strong>✓ 1v1 Optimized Variant</strong></p>
+            <p>This version replaces inefficient AOE cards with superior single-target options. Same 33-card deck, better damage efficiency.</p>
+        </div>
+
+        <h4>Card Replacements for 1v1:</h4>
+
+        <p class="manuscript-text"><strong>Dwarven Faction Core Changes:</strong></p>
+        <ul class="manuscript-list">
+            <li><strong>REMOVE:</strong> Earthshaker (3 SP, 3 damage AOE) → <strong>ADD:</strong> Runic Strike (3 SP, Deal 6 damage, generate 1 Rune Counter)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment Changes:</strong></p>
+        <ul class="manuscript-list">
+            <li><strong>REMOVE:</strong> Crushing Sweep (2 SP, 4+2 split damage) → <strong>ADD:</strong> Armor Break (2 SP, Deal 4 damage, target loses 1 Defense until next turn)</li>
+        </ul>
+
+        <h4>Complete Optimized Deck (33 cards):</h4>
+
+        <ul class="manuscript-list">
+            <li><strong>Universal Core:</strong> 12 cards (unchanged)</li>
+            <li><strong>Dwarven Faction Core:</strong> Runic Warhammer, Forge-Ward, Rune Counter System, Stone Endurance, <strong>Runic Strike</strong>, Unbreakable</li>
+            <li><strong>Warhammer:</strong> Hammer Strike ×2, Overhead Smash, Hammer Block, Pommel Bash, <strong>Armor Break</strong></li>
+            <li><strong>Tower Shield:</strong> 4 cards (unchanged)</li>
+            <li><strong>Forge-Rune Sigil:</strong> 3 cards (unchanged)</li>
+            <li><strong>Tactics:</strong> 2 cards (unchanged)</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            <strong>Optimized Strategy:</strong> More efficient damage output (6 damage + Rune Counter from Runic Strike vs 3 damage from Earthshaker). Armor Break provides debuffing utility that stacks with Runic Warhammer's armor piercing. Superior SP efficiency in 1v1 duels. Maintains extreme tankiness while improving offensive threat.
         </div>
 
         <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
