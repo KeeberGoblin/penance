@@ -35,7 +35,7 @@ Printable 1-page reference sheet with all key rules.
 
 ---
 
-## Version 3.0 Optional Rules (Trench Crusade-Inspired)
+## Version 3.0 Optional Rules (Advanced Mechanics)
 
 **New in v3.0**: Three advanced mechanics systems for enhanced tactical depth.
 

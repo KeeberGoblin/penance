@@ -370,7 +370,7 @@ X = Your Casket
 | +1 | **Disadvantage** (3d6 take 2 lowest) |
 | +2 or worse | **Critical Disadvantage** (4d6 take 2 lowest) |
 
-**Design Philosophy**: Dice Pool system creates more dramatic swings (big crits, big failures) while maintaining same average hit chances. Inspired by Trench Crusade's Blood Marker system.
+**Design Philosophy**: Dice Pool system creates more dramatic swings (big crits, big failures) while maintaining same average hit chances through variable dice pools.
 
 ---
 

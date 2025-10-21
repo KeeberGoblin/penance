@@ -1,14 +1,14 @@
 # Dice Pool Advantage System
 ## Penance: Absolution Through Steel
 
-**Version**: 3.0 (Trench Crusade-Inspired Enhancement)
+**Version**: 3.0 (Dice Pool Enhancement)
 **Last Updated**: October 14, 2025
 
 ---
 
 ## Overview
 
-This system replaces static to-hit modifiers with a **dice pool mechanic** inspired by Trench Crusade's modifier system. Instead of adding +1 or +2 to your target number, you roll extra dice and take the highest or lowest results.
+This system replaces static to-hit modifiers with a **dice pool mechanic**. Instead of adding +1 or +2 to your target number, you roll extra dice and take the highest or lowest results.
 
 **Why This Is Better**:
 - More dramatic swings (chance of rolling double criticals increases)
@@ -351,15 +351,6 @@ Result: Hit!
 3. **Intuitive**: "I have advantage" is easier to understand than "need 7+ instead of 5+"
 4. **Compatible**: Works with existing Attack Dice symbols ( etc.)
 5. **Rewards Skill**: Perfect setups (Critical Advantage) = triple EXECUTION chance
-
-### Trench Crusade Inspiration
-
-Trench Crusade uses this system with standard d6s:
-- Base: 2d6, need 7+
-- +1: 3d6, take 2 highest
-- -1: 3d6, take 2 lowest
-
-We've adapted it to work with Penance's custom Attack Dice (with symbols) and added Critical Advantage/Disadvantage for more extreme situations.
 
 ---
 

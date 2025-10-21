@@ -1,14 +1,14 @@
 # Pilot Grit System
 ## Penance: Absolution Through Steel
 
-**Version**: 3.0 (Trench Crusade Resilience-Inspired)
+**Version**: 3.0 (Campaign Progression Mechanic)
 **Last Updated**: October 14, 2025
 
 ---
 
 ## Overview
 
-Inspired by Trench Crusade's resilience mechanics, the **Pilot Grit** system represents a pilot's mental toughness, pain tolerance, and ability to shrug off injuries through sheer willpower. Veterans develop an iron resolve that lets them "tough it out" when lesser pilots would break.
+The **Pilot Grit** system represents a pilot's mental toughness, pain tolerance, and ability to shrug off injuries through sheer willpower. Veterans develop an iron resolve that lets them "tough it out" when lesser pilots would break.
 
 **Core Concept**:
 - Pilots have a **Grit stat** (0-3, increases with experience)
@@ -356,18 +356,15 @@ EFFECTIVE GRIT VS SEVERE: 3 (2 + 1 Dwarven bonus)
 1. **Campaign Progression**: Veterans feel mechanically superior (not just narrative)
 2. **Risk/Reward**: Rookies are fragile but cheap, veterans are tough but irreplaceable
 3. **Faction Flavor**: Church embraces pain, Dwarves endure, Elves shatter, Ossuarium transcend
-4. **Trench Crusade Inspiration**: Blood Marker shaking creates similar "tough it out" moments
+4. **Tactical Depth**: Reactive rolls create "tough it out" moments of resilience
 
-### Differences from Trench Crusade
+### Design Details
 
-**Trench Crusade**:
-- Models can spend actions to shake off Blood Markers (active choice)
-- Binary: Either marked or not
-
-**Penance Grit**:
-- Passive stat that grows with experience (not active choice)
-- Rolled reactively when damage occurs
+**Grit Mechanics**:
+- Passive stat that grows with experience (earned through missions)
+- Rolled reactively when pilot damage occurs (no action cost)
 - Threshold-based: Different results at 4, 6, 8 (gradations of success)
+- Scales with veteran progression (0 for rookies → 3 for elite pilots)
 
 ---
 
