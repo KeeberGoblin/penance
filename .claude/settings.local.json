@@ -61,7 +61,8 @@
       "Bash(jq:*)",
       "Bash(tee:*)",
       "Read(//tmp/**)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

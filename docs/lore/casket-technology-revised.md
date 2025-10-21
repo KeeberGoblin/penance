@@ -34,7 +34,7 @@ A Casket is a **hybrid system**:
 ### 1. The Living Pilot (The Operator)
 
 **Who They Are:**
-- Volunteers who undergo the Soul Sacrifice ritual
+- Volunteers who undergo the Flesh Bargain ritual
 - Strapped into the casket core with arms crossed (mummy position)
 - Kneeling or seated (legs removed in some factions to save space)
 - Conscious, awake, aware during all operations
@@ -56,7 +56,7 @@ A Casket is a **hybrid system**:
   - Can speak via radio (voice echoes inside casket)
   - Hear battle sounds directly (no audio dampening)
 
-**The Soul Sacrifice:**
+**The Flesh Bargain:**
 - To fit inside the cramped casket interior, many pilots undergo **leg removal**
 - Church: "The Shortening" (legs amputated at hip)
 - Dwarves: "Compact Form" (all four limbs removed, runic stumps)
@@ -299,7 +299,7 @@ Yes, but with difficulty:
 - **[Soul-Binding Mechanics](lore-soul-binding.md)**: How souls are captured and bound to Soulstones
 - **[Soulstone Power System](lore-soulstone-system.md)**: Energy mechanics, refinement, Taint corruption
 - **[Neural Thread Interface](lore-neural-threads.md)**: Technical details of puppet control system
-- **[Soul Sacrifice Rituals](campaign-soul-sacrifice.md)**: Leg removal, flesh reduction, faction variants
+- **[Flesh Bargain Rituals](campaign-flesh-bargains.md)**: Leg removal, flesh reduction, faction variants
 - **[Casket Weight Classes](rules-casket-classes.md)**: Gameplay mechanics for different casket types
 
 ---

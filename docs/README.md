@@ -66,7 +66,7 @@ World-building, history, and narrative
 Long-term progression systems
 - [Settlements](campaigns/settlements.md) - Base building between missions
 - [Pilot Progression](campaigns/pilot-progression.md) - Scars, traits, death
-- [Leg Skimming](campaigns/leg-skimming.md) - Sacrifice HP for power
+- [Flesh Bargain](campaigns/flesh-bargain.md) - Sacrifice HP for power
 - [Loot Tables](campaigns/loot-tables.md) - Post-mission rewards
 
 ### [Reference](reference/)

@@ -384,7 +384,7 @@ While the **10-thread standard** is universal, factions customize the **routing 
 
 - **[Casket Technology Overview](casket-technology-revised.md)**: How pilots and Caskets work together
 - **[Soulstone Power System](soulstone-system.md)**: Energy mechanics, Taint, Core burnout
-- **[Soul Sacrifice Rituals](campaign-soul-sacrifice.md)**: Leg removal, Compact Form, faction variants
+- **[Flesh Bargain Rituals](campaign-flesh-bargains.md)**: Leg removal, Compact Form, faction variants
 - **[Pilot Grit System](campaign-pilot-grit.md)**: Willpower checks for Thread Snap trauma
 - **[Combat Rules](rules-combat.md)**: Thread Snap mechanics in battle
 

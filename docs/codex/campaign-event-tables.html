@@ -5,6 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Tables (Settlement Events)</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Collapsible event styling */
+        .event-dropdown {
+            background: linear-gradient(to bottom, rgba(139, 105, 20, 0.1), rgba(139, 105, 20, 0.05));
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .event-dropdown summary {
+            cursor: pointer;
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #d4af37;
+            background: rgba(139, 105, 20, 0.2);
+            list-style: none;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .event-dropdown summary:hover {
+            background: rgba(139, 105, 20, 0.3);
+        }
+
+        .event-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .event-dropdown summary::before {
+            content: '▶ ';
+            display: inline-block;
+            transition: transform 0.2s;
+            margin-right: 0.5rem;
+        }
+
+        .event-dropdown[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .event-content {
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .event-type {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(139, 0, 0, 0.2);
+            border: 1px solid #8b0000;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-type.catastrophic {
+            background: rgba(139, 0, 0, 0.4);
+            border-color: #ff0000;
+            color: #ff4444;
+            animation: pulse 2s infinite;
+        }
+
+        .event-type.legendary {
+            background: rgba(212, 175, 55, 0.3);
+            border-color: #d4af37;
+            color: #ffd700;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.5); }
+            50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.8); }
+        }
+    </style>
 </head>
 <body>
     <div class="content">
@@ -60,21 +142,25 @@
         <h2>DEPARTURE EVENT TABLE (2d6)</h2>
         <p class="manuscript-text">Roll 2d6. Read the dice individually (3+4 = 34, not 7). Doubles are catastrophic.</p>
 
-        <div class="building-card">
-            <h3>11 - THE OFFERING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Sacrifice</p>
-            <p class="manuscript-text">One pilot must make a <strong>Blood Offering</strong> before deployment:</p>
-            <ul class="manuscript-list">
-                <li><strong>Option A:</strong> Discard top 5 cards from HP deck before mission starts (start at 25 HP)</li>
-                <li><strong>Option B:</strong> Roll on Minor Injury table, suffer 1 Wound immediately</li>
-                <li><strong>Effect:</strong> If sacrifice is made, all pilots gain +1 SP maximum this mission</li>
-            </ul>
-            <p class="narrative">The Church demands penance. The settlement shrine glows with Soulstone light, hungry for sacrifice.</p>
-        </div>
+        <details class="event-dropdown">
+            <summary>11 - THE OFFERING</summary>
+            <div class="event-content">
+                <span class="event-type">Sacrifice</span>
+                <p class="manuscript-text">One pilot must make a <strong>Blood Offering</strong> before deployment:</p>
+                <ul class="manuscript-list">
+                    <li><strong>Option A:</strong> Discard top 5 cards from HP deck before mission starts (start at 25 HP)</li>
+                    <li><strong>Option B:</strong> Roll on Minor Injury table, suffer 1 Wound immediately</li>
+                    <li><strong>Effect:</strong> If sacrifice is made, all pilots gain +1 SP maximum this mission</li>
+                </ul>
+                <p class="narrative">The Church demands penance. The settlement shrine glows with Soulstone light, hungry for sacrifice.</p>
+            </div>
+        </details>
 
-        <div class="building-card">
-            <h3>12 - OMEN OF RUIN</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Curse</p>
+        <details class="event-dropdown">
+            <summary>12 - OMEN OF RUIN</summary>
+            <div class="event-content">
+                <span class="event-type">Curse</span>
+
             <p class="manuscript-text">All pilots suffer <strong>Bad Luck</strong> this mission:</p>
             <ul class="manuscript-list">
                 <li>Reroll any natural 6 rolled on attacks (keep second result, even if worse)</li>
@@ -82,11 +168,14 @@
                 <li>Heat generation +1 per action</li>
             </ul>
             <p class="narrative">Black crows circle the settlement. The Soulstones pulse erratically. Something is wrong.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>13 - EQUIPMENT MALFUNCTION</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Gear Failure</p>
+        <details class="event-dropdown">
+            <summary>13 - EQUIPMENT MALFUNCTION</summary>
+            <div class="event-content">
+                <span class="event-type">Gear Failure</span>
+
             <p class="manuscript-text">Roll 1d6 per pilot:</p>
             <ul class="manuscript-list">
                 <li><strong>1-2:</strong> Primary Weapon jams (costs +1 SP to use all mission)</li>
@@ -94,21 +183,27 @@
                 <li><strong>5-6:</strong> Plating/Sigil offline (remove 1 random Accessory card from deck this mission)</li>
             </ul>
             <p class="narrative">Pre-mission checks reveal structural flaws. No time to repair—deploy anyway.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>14 - SUPPLIES SHORTAGE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Resource Drain</p>
+        <details class="event-dropdown">
+            <summary>14 - SUPPLIES SHORTAGE</summary>
+            <div class="event-content">
+                <span class="event-type">Resource Drain</span>
+
             <p class="manuscript-text">Settlement loses <strong>2 Scrap</strong> OR <strong>1d6 Credits</strong>:</p>
             <ul class="manuscript-list">
                 <li>If cannot pay, pilots deploy without healing (do not recover cards between missions)</li>
             </ul>
             <p class="narrative">The workshop reports inventory theft. Traders demand payment. The quartermaster looks nervous.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>15 - LAST MINUTE BRIEFING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Information</p>
+        <details class="event-dropdown">
+            <summary>15 - LAST MINUTE BRIEFING</summary>
+            <div class="event-content">
+                <span class="event-type">Information</span>
+
             <p class="manuscript-text">Gain <strong>Intelligence</strong> about the mission:</p>
             <ul class="manuscript-list">
                 <li>Reveal 1 random enemy card type (Abomination, NPC, etc.)</li>
@@ -116,18 +211,24 @@
                 <li>+1 Initiative this mission</li>
             </ul>
             <p class="narrative">A scout returns wounded but with valuable intel. You know what you're walking into.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>16 - NOTHING SPECIAL</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Neutral</p>
+        <details class="event-dropdown">
+            <summary>16 - NOTHING SPECIAL</summary>
+            <div class="event-content">
+                <span class="event-type">Neutral</span>
+
             <p class="manuscript-text">No event. Proceed to mission normally.</p>
             <p class="narrative">The morning is quiet. The Caskets stand ready. Just another day in hell.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>21 - RALLY CRY</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Morale Boost</p>
+        <details class="event-dropdown">
+            <summary>21 - RALLY CRY</summary>
+            <div class="event-content">
+                <span class="event-type">Morale Boost</span>
+
             <p class="manuscript-text">All pilots start mission with <strong>+1 SP maximum</strong>:</p>
             <ul class="manuscript-list">
                 <li>Scout (6 → 7 SP)</li>
@@ -136,11 +237,14 @@
                 <li>Fortress (3 → 4 SP)</li>
             </ul>
             <p class="narrative">A rousing speech. A shared prayer. A moment of hope. It won't last, but it's something.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>22 - THE BETRAYAL</h3>
-            <p class="manuscript-text"><strong>Type:</strong> CATASTROPHIC</p>
+        <details class="event-dropdown">
+            <summary>22 - THE BETRAYAL</summary>
+            <div class="event-content">
+                <span class="event-type catastrophic">CATASTROPHIC</span>
+
             <p class="manuscript-text"><strong>One pilot is a traitor:</strong></p>
             <ul class="manuscript-list">
                 <li>Randomly select 1 pilot (roll die or draw cards)</li>
@@ -155,33 +259,42 @@
             </ul>
             <p class="narrative">One of your own has been whispering to the dark. Their eyes glow faintly. They smile too much. The others don't trust them.</p>
             <p class="manuscript-text"><strong>Brutal Consequence:</strong> If forgiven, the traitor may sabotage future missions (GM rolls secretly each mission - on 1-2, traitor causes critical failure at worst moment).</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>23 - FORGE BLESSING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Crafting Bonus</p>
+        <details class="event-dropdown">
+            <summary>23 - FORGE BLESSING</summary>
+            <div class="event-content">
+                <span class="event-type">Crafting Bonus</span>
+
             <p class="manuscript-text"><strong>Free Craft:</strong></p>
             <ul class="manuscript-list">
                 <li>Gain 1 random piece of equipment (roll on Common Loot Table)</li>
                 <li>OR reduce next crafting cost by 50% (round down)</li>
             </ul>
             <p class="narrative">The Forge-Priest blesses the workshop. Sparks fly in holy patterns. The Soulstones sing.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>24 - SCRAP WINDFALL</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Resource Gain</p>
+        <details class="event-dropdown">
+            <summary>24 - SCRAP WINDFALL</summary>
+            <div class="event-content">
+                <span class="event-type">Resource Gain</span>
+
             <p class="manuscript-text">Settlement gains <strong>3 Scrap</strong> immediately:</p>
             <ul class="manuscript-list">
                 <li>Can be used to craft before deployment</li>
                 <li>Or saved for later</li>
             </ul>
             <p class="narrative">Salvage teams return early with unexpected haul. The workshop is well-stocked.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>25 - TAINT SPIKE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Corruption Event</p>
+        <details class="event-dropdown">
+            <summary>25 - TAINT SPIKE</summary>
+            <div class="event-content">
+                <span class="event-type">Corruption Event</span>
+
             <p class="manuscript-text">All pilots with <strong>5+ Taint</strong> roll 1d6:</p>
             <ul class="manuscript-list">
                 <li><strong>1-2:</strong> Gain 1 additional Taint</li>
@@ -189,11 +302,14 @@
                 <li><strong>5-6:</strong> Resist corruption, remove 1 Taint</li>
             </ul>
             <p class="narrative">The Void pulses. Those already touched feel it most.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>26 - REINFORCEMENTS ARRIVE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Ally NPC</p>
+        <details class="event-dropdown">
+            <summary>26 - REINFORCEMENTS ARRIVE</summary>
+            <div class="event-content">
+                <span class="event-type">Ally NPC</span>
+
             <p class="manuscript-text">A <strong>wandering NPC pilot</strong> offers to join the mission:</p>
             <ul class="manuscript-list">
                 <li>Roll on Faction NPC table (random)</li>
@@ -201,11 +317,14 @@
                 <li>If NPC survives, they may offer to teach Signature Card</li>
             </ul>
             <p class="narrative">A stranger approaches. Their Casket bears the scars of a hundred battles. They owe you nothing, but they'll fight alongside you—once.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>31 - DIVINE VISION</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Omen</p>
+        <details class="event-dropdown">
+            <summary>31 - DIVINE VISION</summary>
+            <div class="event-content">
+                <span class="event-type">Omen</span>
+
             <p class="manuscript-text">One pilot has a <strong>prophetic dream:</strong></p>
             <ul class="manuscript-list">
                 <li>Gain knowledge of 1 future event (GM provides cryptic hint)</li>
@@ -213,11 +332,14 @@
                 <li>Example: "One of you will not return."</li>
             </ul>
             <p class="narrative">The pilot wakes screaming. They saw something—a fracture in time, a glimpse of what's to come. But dreams are never clear.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>32 - VOID RIFT WARNING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Environmental Hazard</p>
+        <details class="event-dropdown">
+            <summary>32 - VOID RIFT WARNING</summary>
+            <div class="event-content">
+                <span class="event-type">Environmental Hazard</span>
+
             <p class="manuscript-text">Mission will have <strong>increased Void activity:</strong></p>
             <ul class="manuscript-list">
                 <li>+2 Abominations spawn</li>
@@ -225,11 +347,14 @@
                 <li>Void Rifts appear randomly (roll each round)</li>
             </ul>
             <p class="narrative">Scouts report reality distortions near the mission site. The air tastes like metal and fear.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>33 - THE FRACTURE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> CATASTROPHIC REALITY BREAK</p>
+        <details class="event-dropdown">
+            <summary>33 - THE FRACTURE</summary>
+            <div class="event-content">
+                <span class="event-type catastrophic">CATASTROPHIC REALITY BREAK</span>
+
             <p class="manuscript-text"><strong>Settlement is hit by Void Rift:</strong></p>
             <p class="manuscript-text">Roll 1d6:</p>
             <ul class="manuscript-list">
@@ -243,11 +368,14 @@
                 <li><strong>Deploy Anyway:</strong> Settlement defends itself (roll 2d6, on 5 or less, settlement takes critical damage)</li>
             </ul>
             <p class="narrative">The sky tears open. The Void screams. Reality bleeds. Your home is under attack.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>34 - MERCHANT VISIT</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Trade Opportunity</p>
+        <details class="event-dropdown">
+            <summary>34 - MERCHANT VISIT</summary>
+            <div class="event-content">
+                <span class="event-type">Trade Opportunity</span>
+
             <p class="manuscript-text">A <strong>Merchant Guild caravan</strong> arrives:</p>
             <ul class="manuscript-list">
                 <li>Can purchase equipment at <strong>standard price</strong> (no markup)</li>
@@ -255,55 +383,70 @@
                 <li>Limited stock: 3 random items (roll on Universal Equipment table)</li>
             </ul>
             <p class="narrative">Wagons arrive flying guild banners. They have goods. You have need. Commerce in the apocalypse.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>35 - TRAINING MONTAGE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Skill Improvement</p>
+        <details class="event-dropdown">
+            <summary>35 - TRAINING MONTAGE</summary>
+            <div class="event-content">
+                <span class="event-type">Skill Improvement</span>
+
             <p class="manuscript-text">All pilots gain <strong>temporary expertise:</strong></p>
             <ul class="manuscript-list">
                 <li>Choose 1 card type (Attack, Defense, Utility)</li>
                 <li>All cards of that type cost -1 SP this mission (minimum 1)</li>
             </ul>
             <p class="narrative">The night before deployment, you drill. You practice. You prepare. Tomorrow, it pays off.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>36 - LAST STAND ORDERS</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Desperate Mission</p>
+        <details class="event-dropdown">
+            <summary>36 - LAST STAND ORDERS</summary>
+            <div class="event-content">
+                <span class="event-type">Desperate Mission</span>
+
             <p class="manuscript-text"><strong>Mission difficulty increases</strong> (GM adds +1 enemy or hazard):</p>
             <ul class="manuscript-list">
                 <li><strong>Reward:</strong> Mission rewards doubled (2x Scrap, 2x Credits)</li>
                 <li><strong>Risk:</strong> Failure means settlement loses 2 Morale</li>
             </ul>
             <p class="narrative">Command sends urgent orders. This mission matters. Failure is not acceptable.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>41 - CASKET MALFUNCTION</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Technical Failure</p>
+        <details class="event-dropdown">
+            <summary>41 - CASKET MALFUNCTION</summary>
+            <div class="event-content">
+                <span class="event-type">Technical Failure</span>
+
             <p class="manuscript-text">One pilot's Casket suffers <strong>critical fault:</strong></p>
             <ul class="manuscript-list">
                 <li><strong>Option A:</strong> Deploy anyway, start mission with 5 Heat</li>
                 <li><strong>Option B:</strong> Stay behind (miss mission), Casket is repaired</li>
             </ul>
             <p class="narrative">Warning lights flash red. Hydraulics leak. The Soulstone core flickers. This machine is dying.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>42 - VOID EXPOSURE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Corruption</p>
+        <details class="event-dropdown">
+            <summary>42 - VOID EXPOSURE</summary>
+            <div class="event-content">
+                <span class="event-type">Corruption</span>
+
             <p class="manuscript-text">All pilots gain <strong>1 Taint:</strong></p>
             <ul class="manuscript-list">
                 <li>Sleeping near Soulstone storage has consequences</li>
                 <li>Roll on Taint Mutation table if any pilot reaches 10 Taint</li>
             </ul>
             <p class="narrative">You wake with black veins crawling up your arms. The air tastes wrong. You're changing.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>43 - SETTLEMENT FESTIVAL</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Morale Event</p>
+        <details class="event-dropdown">
+            <summary>43 - SETTLEMENT FESTIVAL</summary>
+            <div class="event-content">
+                <span class="event-type">Morale Event</span>
+
             <p class="manuscript-text">Settlement holds celebration:</p>
             <ul class="manuscript-list">
                 <li>All pilots remove <strong>1 Wound</strong> (if any)</li>
@@ -311,11 +454,14 @@
                 <li>Gain <strong>1d6 Credits</strong> from festivities</li>
             </ul>
             <p class="narrative">Music. Dancing. For one night, the world isn't ending. Tomorrow can wait.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>44 - THE RECKONING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> CATASTROPHIC DEBT</p>
+        <details class="event-dropdown">
+            <summary>44 - THE RECKONING</summary>
+            <div class="event-content">
+                <span class="event-type catastrophic">CATASTROPHIC DEBT</span>
+
             <p class="manuscript-text"><strong>The past comes calling:</strong></p>
             <ul class="manuscript-list">
                 <li>If settlement has <strong>any negative relationship with a faction</strong>, that faction sends <strong>enforcers</strong></li>
@@ -328,11 +474,14 @@
                 </li>
             </ul>
             <p class="narrative">They've come to collect. Old debts. Old grudges. They don't care about your excuses.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>45 - FORGE-PRIEST BLESSING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Crafting Miracle</p>
+        <details class="event-dropdown">
+            <summary>45 - FORGE-PRIEST BLESSING</summary>
+            <div class="event-content">
+                <span class="event-type">Crafting Miracle</span>
+
             <p class="manuscript-text"><strong>One piece of equipment is enhanced:</strong></p>
             <ul class="manuscript-list">
                 <li>Choose 1 equipment in any pilot's deck</li>
@@ -340,11 +489,14 @@
                 <li>Example: Longsword (6 cards) → Longsword (7 cards, gains 2nd "Slash")</li>
             </ul>
             <p class="narrative">The Forge-Priest inscribes holy runes. The weapon hums with power. It is more than it was.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>46 - DESPERATE RECRUITMENT</h3>
-            <p class="manuscript-text"><strong>Type:</strong> New Pilot</p>
+        <details class="event-dropdown">
+            <summary>46 - DESPERATE RECRUITMENT</summary>
+            <div class="event-content">
+                <span class="event-type">New Pilot</span>
+
             <p class="manuscript-text">Settlement recruits <strong>1 new pilot:</strong></p>
             <ul class="manuscript-list">
                 <li>Starts at Level 0 (no Scars, no experience)</li>
@@ -352,33 +504,42 @@
                 <li>Cannot deploy this mission (needs training)</li>
             </ul>
             <p class="narrative">A volunteer steps forward. Young. Untested. Desperate. They want to pilot. You remember when you were like them.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>51 - ABOMINATION SIGHTING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Early Warning</p>
+        <details class="event-dropdown">
+            <summary>51 - ABOMINATION SIGHTING</summary>
+            <div class="event-content">
+                <span class="event-type">Early Warning</span>
+
             <p class="manuscript-text">Scouts report <strong>Abomination migration:</strong></p>
             <ul class="manuscript-list">
                 <li>Mission will have +1 Abomination encounter</li>
                 <li>Gain <strong>+1 Scrap</strong> if mission succeeds (bonus salvage)</li>
             </ul>
             <p class="narrative">Tracks. Slime trails. Claw marks. Something big passed through recently.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>52 - SUPPLY DROP</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Logistics</p>
+        <details class="event-dropdown">
+            <summary>52 - SUPPLY DROP</summary>
+            <div class="event-content">
+                <span class="event-type">Logistics</span>
+
             <p class="manuscript-text">Settlement receives <strong>supply cache:</strong></p>
             <ul class="manuscript-list">
                 <li>Gain 2 Scrap + 1d6 Credits</li>
                 <li>OR 1 random Common equipment</li>
             </ul>
             <p class="narrative">A Church convoy passes through. They share supplies. Charity in the wasteland.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>53 - PILOT RIVALRY</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Social Event</p>
+        <details class="event-dropdown">
+            <summary>53 - PILOT RIVALRY</summary>
+            <div class="event-content">
+                <span class="event-type">Social Event</span>
+
             <p class="manuscript-text">Two pilots <strong>argue before deployment:</strong></p>
             <p class="manuscript-text">Roll 1d6:</p>
             <ul class="manuscript-list">
@@ -387,11 +548,14 @@
                 <li><strong>5-6:</strong> Resolved peacefully, both gain +1 Morale</li>
             </ul>
             <p class="narrative">Tempers flare. Old grudges surface. The pressure is getting to everyone.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>54 - ELVEN OMEN</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Nature Warning</p>
+        <details class="event-dropdown">
+            <summary>54 - ELVEN OMEN</summary>
+            <div class="event-content">
+                <span class="event-type">Nature Warning</span>
+
             <p class="manuscript-text">An elf scout delivers <strong>cryptic warning:</strong></p>
             <ul class="manuscript-list">
                 <li>"The roots are bleeding."</li>
@@ -400,11 +564,14 @@
             </ul>
             <p class="manuscript-text"><strong>Effect:</strong> GM secretly notes 1 dangerous encounter this mission</p>
             <p class="narrative">The elf speaks, then vanishes into mist. Their words linger like a curse.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>55 - THE ASCENSION</h3>
-            <p class="manuscript-text"><strong>Type:</strong> LEGENDARY EVENT</p>
+        <details class="event-dropdown">
+            <summary>55 - THE ASCENSION</summary>
+            <div class="event-content">
+                <span class="event-type legendary">LEGENDARY EVENT</span>
+
             <p class="manuscript-text"><strong>One pilot achieves transcendence:</strong></p>
             <ul class="manuscript-list">
                 <li>Choose 1 pilot with <strong>5+ Scars</strong></li>
@@ -412,11 +579,14 @@
                     <br>OR continue piloting with <strong>Veteran Status</strong>: +1 SP maximum permanently, immune to Fear</li>
             </ul>
             <p class="narrative">Something changes. They've seen too much death, survived too many battles. They're no longer just a pilot—they're a legend.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>56 - RESONANCE PULSE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Environmental Event</p>
+        <details class="event-dropdown">
+            <summary>56 - RESONANCE PULSE</summary>
+            <div class="event-content">
+                <span class="event-type">Environmental Event</span>
+
             <p class="manuscript-text"><strong>Sibarian Wastes pulse:</strong></p>
             <ul class="manuscript-list">
                 <li>All Soulstones in settlement glow brighter</li>
@@ -424,66 +594,84 @@
                 <li>All attacks this mission deal +1 damage (Soulstone empowerment)</li>
             </ul>
             <p class="narrative">The Engine pulses. Power floods the world. Your weapons hum with terrible energy.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>61 - NIGHTMARES</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Psychological</p>
+        <details class="event-dropdown">
+            <summary>61 - NIGHTMARES</summary>
+            <div class="event-content">
+                <span class="event-type">Psychological</span>
+
             <p class="manuscript-text">All pilots suffer <strong>disturbing dreams:</strong></p>
             <ul class="manuscript-list">
                 <li>Start mission with -1 Morale</li>
                 <li>First attack each pilot makes this mission has -1 damage</li>
             </ul>
             <p class="narrative">You didn't sleep. When you did, you saw things—eyes in the dark, voices in the static. The Void whispers.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>62 - WORKSHOP FIRE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Disaster</p>
+        <details class="event-dropdown">
+            <summary>62 - WORKSHOP FIRE</summary>
+            <div class="event-content">
+                <span class="event-type">Disaster</span>
+
             <p class="manuscript-text"><strong>Fire breaks out in workshop:</strong></p>
             <ul class="manuscript-list">
                 <li>Lose 2 Scrap</li>
                 <li>One random pilot loses 1 random equipment card (destroyed in fire)</li>
             </ul>
             <p class="narrative">Sparks. Screaming. The smell of burning metal and flesh. You save what you can.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>63 - DWARVEN TRADERS</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Trade</p>
+        <details class="event-dropdown">
+            <summary>63 - DWARVEN TRADERS</summary>
+            <div class="event-content">
+                <span class="event-type">Trade</span>
+
             <p class="manuscript-text"><strong>Dwarven caravan</strong> offers deals:</p>
             <ul class="manuscript-list">
                 <li>Can buy equipment at <strong>+50% markup</strong> (expensive, but quality)</li>
                 <li>Can commission custom gear (pay 2x Scrap, choose exactly what you want)</li>
             </ul>
             <p class="narrative">Dwarves never give discounts. But their work never fails.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>64 - TAINT PURGE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Healing</p>
+        <details class="event-dropdown">
+            <summary>64 - TAINT PURGE</summary>
+            <div class="event-content">
+                <span class="event-type">Healing</span>
+
             <p class="manuscript-text">Settlement <strong>Inquisitor performs cleansing:</strong></p>
             <ul class="manuscript-list">
                 <li>All pilots may remove up to 2 Taint</li>
                 <li><strong>Cost:</strong> 1 Wound per 2 Taint removed (painful procedure)</li>
             </ul>
             <p class="narrative">The Inquisitor's methods are brutal but effective. The corruption burns away. So does part of you.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>65 - SETTLEMENT EXPANSION</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Growth</p>
+        <details class="event-dropdown">
+            <summary>65 - SETTLEMENT EXPANSION</summary>
+            <div class="event-content">
+                <span class="event-type">Growth</span>
+
             <p class="manuscript-text">Settlement can <strong>build 1 new structure:</strong></p>
             <ul class="manuscript-list">
                 <li>At 50% cost (half Scrap/Credits required)</li>
                 <li>Must decide now (offer expires after this mission)</li>
             </ul>
             <p class="narrative">Materials are available. Labor is willing. The settlement can grow—if you invest.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>66 - THE END TIMES</h3>
-            <p class="manuscript-text"><strong>Type:</strong> ULTIMATE CATASTROPHE</p>
+        <details class="event-dropdown">
+            <summary>66 - THE END TIMES</summary>
+            <div class="event-content">
+                <span class="event-type">ULTIMATE CATASTROPHE</span>
+
             <p class="manuscript-text"><strong>Reality is collapsing</strong></p>
 
             <p class="manuscript-text">Roll 1d6 to determine catastrophe type:</p>
@@ -535,7 +723,8 @@
             </ul>
 
             <p class="narrative">The sky cracks. The world screams. This is the moment you've feared. The end has come.</p>
-        </div>
+                    </div>
+        </details>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
@@ -544,9 +733,11 @@
         <h2>ARRIVAL EVENT TABLE (2d6)</h2>
         <p class="manuscript-text">Roll 2d6 after returning from successful mission. Read dice individually.</p>
 
-        <div class="building-card">
-            <h3>11 - HERO'S WELCOME</h3>
-            <p class="manuscript-text"><strong>Type:</strong> LEGENDARY CELEBRATION</p>
+        <details class="event-dropdown">
+            <summary>11 - HERO'S WELCOME</summary>
+            <div class="event-content">
+                <span class="event-type legendary">LEGENDARY CELEBRATION</span>
+
             <p class="manuscript-text"><strong>Settlement erupts in celebration:</strong></p>
             <ul class="manuscript-list">
                 <li>All pilots remove <strong>ALL Wounds</strong></li>
@@ -555,69 +746,90 @@
                 <li><strong>One pilot gains Veteran Status</strong> (choose who)</li>
             </ul>
             <p class="narrative">They sing your names. They carve your deeds into stone. Today, you are legends.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>12 - SPOILS OF WAR</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Bonus Loot</p>
+        <details class="event-dropdown">
+            <summary>12 - SPOILS OF WAR</summary>
+            <div class="event-content">
+                <span class="event-type">Bonus Loot</span>
+
             <p class="manuscript-text">Roll <strong>twice</strong> on Loot Table:</p>
             <ul class="manuscript-list">
                 <li>Keep both results</li>
                 <li>If doubles, gain Rare loot instead</li>
             </ul>
             <p class="narrative">The battlefield was rich with salvage. You return laden with treasure.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>13 - FORGE-GUILD GIFT</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Equipment Reward</p>
+        <details class="event-dropdown">
+            <summary>13 - FORGE-GUILD GIFT</summary>
+            <div class="event-content">
+                <span class="event-type">Equipment Reward</span>
+
             <p class="manuscript-text"><strong>Forge-Guild sends gift:</strong></p>
             <ul class="manuscript-list">
                 <li>1 random Medium weapon (free)</li>
                 <li>OR 3 Scrap</li>
             </ul>
             <p class="narrative">A dwarf emissary arrives. "Your victory honors the Forge. Accept this token."</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>14 - NOTHING SPECIAL</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Neutral</p>
+        <details class="event-dropdown">
+            <summary>14 - NOTHING SPECIAL</summary>
+            <div class="event-content">
+                <span class="event-type">Neutral</span>
+
             <p class="manuscript-text">Standard return. Proceed to Settlement Phase normally.</p>
             <p class="narrative">You survived. That's enough.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>15 - MEDICAL TREATMENT</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Healing</p>
+        <details class="event-dropdown">
+            <summary>15 - MEDICAL TREATMENT</summary>
+            <div class="event-content">
+                <span class="event-type">Healing</span>
+
             <p class="manuscript-text">Settlement Infirmary provides <strong>free healing:</strong></p>
             <ul class="manuscript-list">
                 <li>All pilots remove 1 Wound</li>
                 <li>All pilots recover to full HP (reset deck to 30 cards)</li>
             </ul>
             <p class="narrative">The doctors work through the night. You wake feeling almost whole.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>16 - SETTLEMENT GROWTH</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Progress</p>
+        <details class="event-dropdown">
+            <summary>16 - SETTLEMENT GROWTH</summary>
+            <div class="event-content">
+                <span class="event-type">Progress</span>
+
             <p class="manuscript-text">Settlement gains <strong>+1 Morale</strong> and <strong>1d6 Credits:</strong></p>
             <ul class="manuscript-list">
                 <li>People are hopeful</li>
                 <li>Commerce improves</li>
             </ul>
             <p class="narrative">Merchants set up stalls. Children play in the streets. Life continues.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>21 - SCAVENGER'S LUCK</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Bonus Salvage</p>
+        <details class="event-dropdown">
+            <summary>21 - SCAVENGER'S LUCK</summary>
+            <div class="event-content">
+                <span class="event-type">Bonus Salvage</span>
+
             <p class="manuscript-text">Gain <strong>2 Scrap</strong> from battlefield salvage.</p>
             <p class="narrative">You stripped the wrecks clean. Every bolt. Every wire. Waste nothing.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>22 - THE PLAGUE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> CATASTROPHIC DISEASE</p>
+        <details class="event-dropdown">
+            <summary>22 - THE PLAGUE</summary>
+            <div class="event-content">
+                <span class="event-type catastrophic">CATASTROPHIC DISEASE</span>
+
             <p class="manuscript-text"><strong>Disease spreads through settlement:</strong></p>
             <p class="manuscript-text">All pilots roll 1d6:</p>
             <ul class="manuscript-list">
@@ -629,33 +841,42 @@
                 <li>Settlement loses <strong>2 Morale</strong></li>
             </ul>
             <p class="narrative">It starts with coughing. Then fever. Then screaming. The plague doesn't care about your victories.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>23 - MERCHANT DEMAND</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Trade Pressure</p>
+        <details class="event-dropdown">
+            <summary>23 - MERCHANT DEMAND</summary>
+            <div class="event-content">
+                <span class="event-type">Trade Pressure</span>
+
             <p class="manuscript-text">Merchant Guild demands <strong>payment:</strong></p>
             <ul class="manuscript-list">
                 <li>Pay 5 Credits OR 3 Scrap</li>
                 <li>If cannot pay, lose access to Merchant trades for 2 missions</li>
             </ul>
             <p class="narrative">"You bought on credit. Now pay up, or we walk."</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>24 - TAINT SPREAD</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Corruption</p>
+        <details class="event-dropdown">
+            <summary>24 - TAINT SPREAD</summary>
+            <div class="event-content">
+                <span class="event-type">Corruption</span>
+
             <p class="manuscript-text">All pilots gain <strong>1 Taint:</strong></p>
             <ul class="manuscript-list">
                 <li>Battlefield exposure catches up</li>
                 <li>Roll on Mutation table if any pilot reaches 10 Taint</li>
             </ul>
             <p class="narrative">The black veins crawl further up your arms. You try not to look.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>25 - SETTLEMENT RAID</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Enemy Attack</p>
+        <details class="event-dropdown">
+            <summary>25 - SETTLEMENT RAID</summary>
+            <div class="event-content">
+                <span class="event-type">Enemy Attack</span>
+
             <p class="manuscript-text">Settlement was <strong>raided while you were gone:</strong></p>
             <ul class="manuscript-list">
                 <li>Lose 1d6 Scrap</li>
@@ -663,44 +884,56 @@
                 <li>Roll 1d6: On 1, one civilian killed (settlement gains Fear)</li>
             </ul>
             <p class="narrative">You return to burning homes. They came while you were away.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>26 - PILOT PROMOTION</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Experience Gain</p>
+        <details class="event-dropdown">
+            <summary>26 - PILOT PROMOTION</summary>
+            <div class="event-content">
+                <span class="event-type">Experience Gain</span>
+
             <p class="manuscript-text">One pilot gains <strong>bonus experience:</strong></p>
             <ul class="manuscript-list">
                 <li>Choose 1 Scar from Combat Scars table (positive effect)</li>
                 <li>OR gain +1 SP maximum permanently</li>
             </ul>
             <p class="narrative">Something clicked out there. You're better now. Sharper. Deadlier.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>31 - RIVAL FACTION CONTACT</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Political Event</p>
+        <details class="event-dropdown">
+            <summary>31 - RIVAL FACTION CONTACT</summary>
+            <div class="event-content">
+                <span class="event-type">Political Event</span>
+
             <p class="manuscript-text">A <strong>rival faction</strong> sends emissary:</p>
             <ul class="manuscript-list">
                 <li>Offers alliance (gain +1 Faction Relationship)</li>
                 <li>OR demands tribute (pay 3 Scrap or gain -1 Faction Relationship)</li>
             </ul>
             <p class="narrative">Politics. Even in the apocalypse, there are games to play.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>32 - VOID RIFT NEARBY</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Environmental Hazard</p>
+        <details class="event-dropdown">
+            <summary>32 - VOID RIFT NEARBY</summary>
+            <div class="event-content">
+                <span class="event-type">Environmental Hazard</span>
+
             <p class="manuscript-text">A <strong>Void Rift opens near settlement:</strong></p>
             <ul class="manuscript-list">
                 <li>Settlement takes 1d6 damage per mission until rift is sealed</li>
                 <li>Can deploy mission to seal rift (dangerous, high reward)</li>
             </ul>
             <p class="narrative">The sky tears open a mile away. The Void bleeds through. You have days, maybe less.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>33 - THE REVELATION</h3>
-            <p class="manuscript-text"><strong>Type:</strong> CATASTROPHIC SECRET</p>
+        <details class="event-dropdown">
+            <summary>33 - THE REVELATION</summary>
+            <div class="event-content">
+                <span class="event-type catastrophic">CATASTROPHIC SECRET</span>
+
             <p class="manuscript-text"><strong>A terrible truth is revealed</strong></p>
 
             <p class="manuscript-text">Roll 1d6:</p>
@@ -714,29 +947,38 @@
             </ul>
 
             <p class="narrative">The truth comes out. You wish it hadn't.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>34 - FORGE BLESSING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Crafting Bonus</p>
+        <details class="event-dropdown">
+            <summary>34 - FORGE BLESSING</summary>
+            <div class="event-content">
+                <span class="event-type">Crafting Bonus</span>
+
             <p class="manuscript-text">Next crafting action costs <strong>50% less Scrap</strong>.</p>
             <p class="narrative">The Forge-Priest smiles. "The ancestors favor you."</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>35 - TRAINING OPPORTUNITY</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Skill Development</p>
+        <details class="event-dropdown">
+            <summary>35 - TRAINING OPPORTUNITY</summary>
+            <div class="event-content">
+                <span class="event-type">Skill Development</span>
+
             <p class="manuscript-text">All pilots may <strong>learn 1 new Tactic Card:</strong></p>
             <ul class="manuscript-list">
                 <li>Choose from any faction's Tactics pool</li>
                 <li>Replaces existing Tactic</li>
             </ul>
             <p class="narrative">A veteran offers to teach new techniques. You practice late into the night.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>36 - SETTLEMENT FESTIVAL</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Morale Event</p>
+        <details class="event-dropdown">
+            <summary>36 - SETTLEMENT FESTIVAL</summary>
+            <div class="event-content">
+                <span class="event-type">Morale Event</span>
+
             <p class="manuscript-text">Settlement celebrates your return:</p>
             <ul class="manuscript-list">
                 <li>All pilots remove 1 Wound</li>
@@ -744,43 +986,55 @@
                 <li>Gain 1d6 Credits</li>
             </ul>
             <p class="narrative">Feasting. Music. Gratitude. For tonight, the war is forgotten.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>41 - NPC ENCOUNTER</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Iconic NPC</p>
+        <details class="event-dropdown">
+            <summary>41 - NPC ENCOUNTER</summary>
+            <div class="event-content">
+                <span class="event-type">Iconic NPC</span>
+
             <p class="manuscript-text">An <strong>Iconic NPC</strong> arrives at settlement:</p>
             <ul class="manuscript-list">
                 <li>Roll on NPC table (or GM chooses)</li>
                 <li>NPC offers side mission (Signature Card reward if completed)</li>
             </ul>
             <p class="narrative">A legend walks through your gates. They have a proposition.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>42 - EQUIPMENT UPGRADE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Crafting Opportunity</p>
+        <details class="event-dropdown">
+            <summary>42 - EQUIPMENT UPGRADE</summary>
+            <div class="event-content">
+                <span class="event-type">Crafting Opportunity</span>
+
             <p class="manuscript-text">Workshop can <strong>enhance 1 equipment:</strong></p>
             <ul class="manuscript-list">
                 <li>Add +1 card to any equipment (duplicate existing card)</li>
                 <li>Costs 2 Scrap</li>
             </ul>
             <p class="narrative">"I can make this better. Give me time and materials."</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>43 - SCRAP SHORTAGE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Resource Drain</p>
+        <details class="event-dropdown">
+            <summary>43 - SCRAP SHORTAGE</summary>
+            <div class="event-content">
+                <span class="event-type">Resource Drain</span>
+
             <p class="manuscript-text">Settlement loses <strong>2 Scrap:</strong></p>
             <ul class="manuscript-list">
                 <li>Maintenance costs, repairs, theft</li>
             </ul>
             <p class="narrative">The quartermaster reports losses. Someone has to pay.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>44 - THE RECKONING (Arrival Version)</h3>
-            <p class="manuscript-text"><strong>Type:</strong> CATASTROPHIC CONSEQUENCES</p>
+        <details class="event-dropdown">
+            <summary>44 - THE RECKONING (Arrival Version)</summary>
+            <div class="event-content">
+                <span class="event-type catastrophic">CATASTROPHIC CONSEQUENCES</span>
+
             <p class="manuscript-text"><strong>The mission had hidden costs</strong></p>
 
             <p class="manuscript-text">Roll 1d6:</p>
@@ -794,29 +1048,38 @@
             </ul>
 
             <p class="narrative">Victory has a price. You're only now realizing how much.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>45 - LEGENDARY LOOT</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Rare Reward</p>
+        <details class="event-dropdown">
+            <summary>45 - LEGENDARY LOOT</summary>
+            <div class="event-content">
+                <span class="event-type">Rare Reward</span>
+
             <p class="manuscript-text">Roll on <strong>Rare Loot Table</strong> (or Legendary if mission was vs Boss)</p>
             <p class="narrative">Amid the wreckage, you find something extraordinary.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>46 - SETTLEMENT SABOTAGE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Betrayal</p>
+        <details class="event-dropdown">
+            <summary>46 - SETTLEMENT SABOTAGE</summary>
+            <div class="event-content">
+                <span class="event-type">Betrayal</span>
+
             <p class="manuscript-text">Someone <strong>sabotaged the workshop:</strong></p>
             <ul class="manuscript-list">
                 <li>1 random building takes damage (roll 1d6 damage)</li>
                 <li>Investigation possible (costs 1 mission to track down culprit)</li>
             </ul>
             <p class="narrative">Explosions in the night. Someone wanted this place to burn.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>51 - CALM BEFORE STORM</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Ominous Peace</p>
+        <details class="event-dropdown">
+            <summary>51 - CALM BEFORE STORM</summary>
+            <div class="event-content">
+                <span class="event-type">Ominous Peace</span>
+
             <p class="manuscript-text"><strong>Everything is too quiet:</strong></p>
             <ul class="manuscript-list">
                 <li>All pilots recover fully (remove all Wounds, restore HP)</li>
@@ -824,40 +1087,52 @@
                 <li><strong>Hidden Effect:</strong> Next Departure Event is rerolled twice, take worse result</li>
             </ul>
             <p class="narrative">The world holds its breath. Something is coming.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>52 - FORGE-GUILD CONTRACT</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Economic Opportunity</p>
+        <details class="event-dropdown">
+            <summary>52 - FORGE-GUILD CONTRACT</summary>
+            <div class="event-content">
+                <span class="event-type">Economic Opportunity</span>
+
             <p class="manuscript-text">Dwarves offer <strong>contract:</strong></p>
             <ul class="manuscript-list">
                 <li>Deploy 3 missions for them (specific objectives)</li>
                 <li>Reward: 10 Scrap + 1 Legendary equipment</li>
             </ul>
             <p class="narrative">"We have work. You need resources. Mutual benefit."</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>53 - PILOT BREAKDOWN</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Psychological Trauma</p>
+        <details class="event-dropdown">
+            <summary>53 - PILOT BREAKDOWN</summary>
+            <div class="event-content">
+                <span class="event-type">Psychological Trauma</span>
+
             <p class="manuscript-text">One random pilot suffers <strong>mental break:</strong></p>
             <ul class="manuscript-list">
                 <li>Roll on Trauma table, gain 1 Trauma Wound</li>
                 <li>Cannot deploy next mission (needs recovery)</li>
             </ul>
             <p class="narrative">They haven't spoken since you returned. They sit in the dark, staring at nothing.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>54 - SETTLEMENT EXPANSION OFFER</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Growth Opportunity</p>
+        <details class="event-dropdown">
+            <summary>54 - SETTLEMENT EXPANSION OFFER</summary>
+            <div class="event-content">
+                <span class="event-type">Growth Opportunity</span>
+
             <p class="manuscript-text">Can build <strong>1 new building</strong> at standard cost.</p>
             <p class="narrative">Materials are available. The settlement can grow.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>55 - THE AWAKENING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> LEGENDARY TRANSFORMATION</p>
+        <details class="event-dropdown">
+            <summary>55 - THE AWAKENING</summary>
+            <div class="event-content">
+                <span class="event-type legendary">LEGENDARY TRANSFORMATION</span>
+
             <p class="manuscript-text"><strong>One pilot transcends limits</strong></p>
 
             <p class="manuscript-text">Choose 1 pilot with 5+ Scars:</p>
@@ -873,11 +1148,14 @@
             </ul>
 
             <p class="narrative">They've seen the abyss. They've survived the impossible. They are no longer human—they are legend incarnate.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>56 - VOID EXPOSURE AFTERMATH</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Corruption Fallout</p>
+        <details class="event-dropdown">
+            <summary>56 - VOID EXPOSURE AFTERMATH</summary>
+            <div class="event-content">
+                <span class="event-type">Corruption Fallout</span>
+
             <p class="manuscript-text">All pilots who gained Taint this mission roll 1d6:</p>
             <ul class="manuscript-list">
                 <li><strong>1-2:</strong> Gain +1 additional Taint</li>
@@ -885,66 +1163,84 @@
                 <li><strong>5-6:</strong> Body fights back, remove 1 Taint</li>
             </ul>
             <p class="narrative">The corruption festers. Some resist. Others don't.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>61 - INFIRMARY OVERFLOW</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Medical Crisis</p>
+        <details class="event-dropdown">
+            <summary>61 - INFIRMARY OVERFLOW</summary>
+            <div class="event-content">
+                <span class="event-type">Medical Crisis</span>
+
             <p class="manuscript-text"><strong>Too many wounded:</strong></p>
             <ul class="manuscript-list">
                 <li>Can only heal 1 pilot this Settlement Phase (choose who)</li>
                 <li>Others must wait (keep Wounds)</li>
             </ul>
             <p class="narrative">Not enough doctors. Not enough supplies. Triage is a cruel mathematics.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>62 - SETTLEMENT MORALE DROP</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Social Decline</p>
+        <details class="event-dropdown">
+            <summary>62 - SETTLEMENT MORALE DROP</summary>
+            <div class="event-content">
+                <span class="event-type">Social Decline</span>
+
             <p class="manuscript-text">Settlement loses <strong>2 Morale:</strong></p>
             <ul class="manuscript-list">
                 <li>War weariness sets in</li>
                 <li>People are losing hope</li>
             </ul>
             <p class="narrative">The civilians avoid your eyes. They've stopped believing you can save them.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>63 - MERCHANT BOON</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Economic Windfall</p>
+        <details class="event-dropdown">
+            <summary>63 - MERCHANT BOON</summary>
+            <div class="event-content">
+                <span class="event-type">Economic Windfall</span>
+
             <p class="manuscript-text">Merchant Guild rewards your success:</p>
             <ul class="manuscript-list">
                 <li>Gain 1d6 x 2 Credits</li>
                 <li>Gain 1 random Common equipment</li>
             </ul>
             <p class="narrative">"Your victory improves trade routes. Here's your share."</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>64 - TAINT PURIFICATION</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Healing Miracle</p>
+        <details class="event-dropdown">
+            <summary>64 - TAINT PURIFICATION</summary>
+            <div class="event-content">
+                <span class="event-type">Healing Miracle</span>
+
             <p class="manuscript-text">Church Inquisitor offers <strong>free Taint removal:</strong></p>
             <ul class="manuscript-list">
                 <li>All pilots may remove up to 3 Taint (no cost)</li>
                 <li><strong>Catch:</strong> Must swear loyalty to Church (affects faction relationships)</li>
             </ul>
             <p class="narrative">"The Church cleanses. But loyalty is expected."</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>65 - SETTLEMENT ATTACK WARNING</h3>
-            <p class="manuscript-text"><strong>Type:</strong> Intel</p>
+        <details class="event-dropdown">
+            <summary>65 - SETTLEMENT ATTACK WARNING</summary>
+            <div class="event-content">
+                <span class="event-type">Intel</span>
+
             <p class="manuscript-text">Scouts report <strong>enemy force approaching:</strong></p>
             <ul class="manuscript-list">
                 <li>Next mission will be <strong>Settlement Defense</strong> (mandatory)</li>
                 <li>Can prepare defenses (spend Scrap to improve Settlement HP)</li>
             </ul>
             <p class="narrative">They're coming. You have time to prepare, but not much.</p>
-        </div>
+                    </div>
+        </details>
 
-        <div class="building-card">
-            <h3>66 - THE MIRACLE</h3>
-            <p class="manuscript-text"><strong>Type:</strong> ULTIMATE BLESSING</p>
+        <details class="event-dropdown">
+            <summary>66 - THE MIRACLE</summary>
+            <div class="event-content">
+                <span class="event-type">ULTIMATE BLESSING</span>
+
             <p class="manuscript-text"><strong>Divine intervention (or luck beyond measure)</strong></p>
 
             <p class="manuscript-text">Choose 1:</p>
@@ -957,7 +1253,8 @@
             </ul>
 
             <p class="narrative">You don't know why. You don't know how. But today, the universe smiled. Don't question it. Just accept.</p>
-        </div>
+                    </div>
+        </details>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>

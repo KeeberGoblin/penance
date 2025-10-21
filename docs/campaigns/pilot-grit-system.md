@@ -144,9 +144,9 @@ OUTCOME: Veteran pilot REFUSES to die. Casket is wrecked but pilot unblemished. 
 
 ---
 
-### Leg-Skimming Grit Bonus
+### Flesh Bargain Grit Bonus
 
-**If pilot has Leg-Skimmed** (permanent soul sacrifice):
+**If pilot has undergone Flesh Bargain** (permanent flesh bargain):
 - **+1 Grit permanently** (traded soul for willpower)
 - Stacks with mission/injury progression
 - Max Grit still 3 (but easier to reach)
@@ -254,7 +254,7 @@ TRAUMA WOUNDS: 0
 GRIT CALCULATION:
 Base Grit (12 missions): 2
 Severe Injuries (2): +0 (doesn't boost Grit)
-Leg-Skimmed: +0 (not skimmed)
+undergone Flesh Bargain: +0 (not skimmed)
 Trauma Penalty: +0 (no trauma)
 Faction Bonus: +1 to Grit Checks vs Severe Injuries only
 
@@ -284,7 +284,7 @@ EFFECTIVE GRIT VS SEVERE: 3 (2 + 1 Dwarven bonus)
 
 ---
 
-### Leg-Skimming for Grit
+### Flesh Bargain for Grit
 
 **Trade soul for survivability**:
 - Leg-Skim early (gain +1 Grit immediately)
@@ -385,7 +385,7 @@ A: Yes. If you take 3 Pilot Damage (e.g., Capsule Breach + Neural Feedback + Thr
 **Q: Can Grit reduce Minor Injuries to nothing?**
 A: No. Shrug It Off (6-7) and Iron Will (8+) prevent Wound flip entirely. Tough It Out (4-5) only reduces Severe → Minor. Minors stay Minor.
 
-**Q: What if I have Grit 3 + Leg-Skimmed +1 Grit bonus?**
+**Q: What if I have Grit 3 + undergone Flesh Bargain +1 Grit bonus?**
 A: Max Grit is still 3. Bonuses help you REACH 3 faster, but don't exceed cap. (Unless GM houserules "Legendary Grit 4.")
 
 **Q: Do Trauma penalties stack?**
@@ -427,7 +427,7 @@ A: No. Grit only applies to PILOT damage (Wound cards). Casket damage (discardin
 - 5 Severe Injuries survived: Grit 3
 
 **BONUSES:**
-- Leg-Skimmed: +1 Grit (permanent)
+- undergone Flesh Bargain: +1 Grit (permanent)
 - Church Faction: +1 Starting Grit
 
 **PENALTIES:**

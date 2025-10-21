@@ -84,7 +84,7 @@ This package contains everything needed for your first playtest of **Penance: Ab
 ### Campaign Systems (Optional)
 - **[Event Tables](../campaigns/event-tables-kdm-style.md)** - 132 KDM-style 2d6 events
 - **[Anomalous Events](../campaigns/anomalous-events-scp-style.md)** - 100 SCP-style artifacts
-- **[Leg-Skimming](../campaigns/leg-skimming.md)** - Permanent sacrifice for power
+- **[Flesh Bargain](../campaigns/flesh-bargain.md)** - Permanent sacrifice for power
 - **[Settlements](../campaigns/settlements.md)** - Base building between missions
 - **[Pilot Progression](../campaigns/pilot-progression.md)** - Scars, traits, death
 

@@ -402,7 +402,7 @@ X = Your Casket
 - **Penance Rituals** (settlement event)
 - **Taint Purging** (when Taint reaches 8+)
 - **Soul Bargains** (desperate deals with Bonelord Thresh)
-- **Leg-Skimming** (voluntary soul sacrifice)
+- **Flesh Bargain** (voluntary flesh bargain)
 
 ---
 

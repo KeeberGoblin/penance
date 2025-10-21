@@ -624,7 +624,7 @@ Mission 1: Tutorial (vs easy AI)
 ### 4. Use What Exists
 - You have 437 years of lore
 - You have 36 Casket designs
-- You have puppeteer capsules + leg-skimming
+- You have puppeteer capsules + flesh-bargain
 - **Use this identity in every card**
 
 ### 5. Mechanics Reinforce Theme

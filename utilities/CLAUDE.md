@@ -180,7 +180,7 @@ Strain failures: Lose SP, take damage, component malfunctions
 - **Elves**: -1 Grit (fragile, easily traumatized)
 - **Ossuarium**: Immune to Grit (already undead)
 
-**Campaign Integration**: Soul Sacrifice grants +1 Grit permanently, Support Units gain +1 Morale when commanded by Grit 2+ pilots
+**Campaign Integration**: Flesh Bargain grants +1 Grit permanently, Support Units gain +1 Morale when commanded by Grit 2+ pilots
 
 ---
 
@@ -203,7 +203,7 @@ Strain failures: Lose SP, take damage, component malfunctions
 2. **Income**: Building income, upkeep costs
 3. **Event Roll**: d100 settlement event table
 4. **Settlement Actions**: Build, craft, trade
-5. **Pilot Care**: Medical treatment, injuries, Soul Sacrifice (optional)
+5. **Pilot Care**: Medical treatment, injuries, Flesh Bargain (optional)
 6. **Preparation**: Assign pilots, build decks, depart
 
 ### Core Bestiary
@@ -285,7 +285,7 @@ penance/
 │ │
 │ ├── campaigns/ # Long-term progression
 │ │ ├── pilot-generation-tables.md, settlement-phase-procedure.md
-│ │ ├── pilot-grit-system.md (v3.0), soul-sacrifice-variants.md
+│ │ ├── pilot-grit-system.md (v3.0), flesh-bargain-variants.md
 │ │ ├── event-tables-kdm-style.md, anomalous-events-scp-style.md
 │ │ └── loot-tables.md
 │ │
@@ -621,12 +621,12 @@ Reshuffles Add: 1 Damage card per reshuffle (death spiral)
 - Core Bestiary (15 enemies, KDM-style If-Then AI)
 - Settlement Phase Procedure (6 steps)
 - 3 new Codex HTML pages (pilot generation, bestiary, settlement phase)
-- Fixed terminology: "leg-skimming" → "Soul Sacrifice" (faction-specific variants)
+- Fixed terminology: "flesh-bargain" → "Flesh Bargain" (faction-specific variants)
 - Fixed deck formula contradictions (30-card fixed → 26-50 variable)
 
 **October 13, 2025** - The Codex Expansion
 - Codex renamed to "The Codex" (thematic consistency)
-- Campaign pages created (6 files: settlements, pilot progression, leg-skimming, events, anomalous, loot)
+- Campaign pages created (6 files: settlements, pilot progression, flesh-bargain, events, anomalous, loot)
 - Scenario pages created (4 files: all internal iframe pages)
 - Emoticon removal (95+ instances replaced with text labels)
 - Navigation reorganized (10 → 8 sections)

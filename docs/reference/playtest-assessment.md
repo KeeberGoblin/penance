@@ -641,7 +641,7 @@ You can now shuffle cards and play a complete game.
 
 ---
 
-**Final Thought (Updated October 12, 2025)**: You've built an incredible world, faction system, and progression mechanics. The core identity (puppeteer capsules, leg-skimming, asymmetric factions, body horror) is exceptional.
+**Final Thought (Updated October 12, 2025)**: You've built an incredible world, faction system, and progression mechanics. The core identity (puppeteer capsules, flesh-bargain, asymmetric factions, body horror) is exceptional.
 
 **The tactical crunch is now complete**. The turn-by-turn, card-by-card combat system is fully documented with 4 playable factions, 60+ equipment items, and complete rules.
 

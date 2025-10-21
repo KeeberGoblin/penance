@@ -1,4 +1,4 @@
-# Leg Skimming: The Veteran's Sacrifice
+# Flesh Bargain: The Veteran's Sacrifice
 ## Penance: Casket Control System Extension
 
 **Version**: 1.0
@@ -10,7 +10,7 @@
 
 **"To make room for the machine, we remove what we no longer need."**
 
-Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or "Taking the Compact") — surgical amputation of the legs at the upper thigh, just below the hip socket. This allows:
+Veteran pilots undergo **Flesh Bargain** (also called "Shortening," "The Cut," or "Taking the Compact") — surgical amputation of the legs at the upper thigh, just below the hip socket. This allows:
 - **Smaller capsule volume** (shorter pilot = less fluid needed)
 - **More space for augmentation ports** (direct neural interfaces beyond just fingers)
 - **Reduced metabolic needs** (less body mass = less oxygen, slower exhaustion)
@@ -312,7 +312,7 @@ Veteran pilots undergo **Leg Skimming** (also called "Shortening," "The Cut," or
 >
 > I can make you better.
 >
-> Leg Skimming. I've done it 200 times. Three-week recovery, then you're back in the capsule with +1 SP, longer deployments, better heat management.
+> Flesh Bargain. I've done it 200 times. Three-week recovery, then you're back in the capsule with +1 SP, longer deployments, better heat management.
 >
 > Cost: 50 Credits, 1 Medical Supply. And your legs, obviously.
 >

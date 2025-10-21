@@ -54,7 +54,7 @@
  - Fortress Caskets: 3 SP
 - Modified by:
  - Chassis destroyed: -1 SP max
- - Leg-Skimmed pilots: +1 SP max
+ - undergone Flesh Bargain pilots: +1 SP max
  - Certain Scars/Wounds
 
 **1.1b Overspending SP (GKR-Style Push System)**

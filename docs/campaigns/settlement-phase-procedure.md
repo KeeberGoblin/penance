@@ -178,7 +178,7 @@ You pay the cost. Market is built. You can now use Trade actions this phase.
 
 ## STEP 5: PILOT CARE
 
-**Manage pilot health, progression, and Soul Sacrifice choices.**
+**Manage pilot health, progression, and Flesh Bargain choices.**
 
 ### 5.1 Injury Recovery
 - **Automatic Healing**: All pilots recover 1 Minor Injury at end of phase (free)
@@ -196,8 +196,8 @@ You pay the cost. Market is built. You can now use Trade actions this phase.
   - 3 Severe Injuries → Grit 2
   - 5 Severe Injuries → Grit 3
 
-### 5.3 Soul Sacrifice Offers
-**After mission 5, 10, or 15**, faction specialists offer Soul Sacrifice procedures:
+### 5.3 Flesh Bargain Offers
+**After mission 5, 10, or 15**, faction specialists offer Flesh Bargain procedures:
 
 **Offer Triggers**:
 - **Mission 5**: First offer (Church = Shortening, Dwarves = Compact Form, etc.)
@@ -205,7 +205,7 @@ You pay the cost. Market is built. You can now use Trade actions this phase.
 - **Mission 15**: Third offer (last chance for standard sacrifice)
 - **Mission 20+**: Extreme variants unlock (Living Martyr, Skull Pilot, etc.)
 
-**Procedure** (see [soul-sacrifice-variants.md](soul-sacrifice-variants.md)):
+**Procedure** (see [flesh-bargain-variants.md](flesh-bargain-variants.md)):
 1. Pilot chooses to undergo sacrifice (or declines)
 2. Pay surgery cost (80-200 Credits, 2-5 Medical Supplies)
 3. Pilot enters recovery (4-12 weeks downtime, cannot deploy)
@@ -297,7 +297,7 @@ GM describes:
 │ STEP 5: PILOT CARE                                      │
 │  • Auto-heal 1 Minor Injury per pilot                   │
 │  • Check Grit progression thresholds                    │
-│  • Soul Sacrifice offers (if mission 5/10/15/20+)       │
+│  • Flesh Bargain offers (if mission 5/10/15/20+)       │
 │  • Update relationships (optional)                      │
 └─────────────────┬───────────────────────────────────────┘
                   │
@@ -368,7 +368,7 @@ GM describes:
 ### Step 5: Pilot Care
 - **Auto-Healing**: Both pilots recover 1 Minor Injury (Gareth already healed his, Thrain recovers Bruised Ribs)
 - **Grit Progression**: Gareth has 6 missions survived → Gains Grit 1 (Seasoned)
-- **Soul Sacrifice**: Gareth qualifies (6 missions), but you decline the offer
+- **Flesh Bargain**: Gareth qualifies (6 missions), but you decline the offer
 
 ---
 
@@ -467,7 +467,7 @@ Track these across multiple settlement phases:
 
 ### Why Settlement Phase Matters
 1. **Strategic Depth**: Not just "fight missions" - resource management, long-term planning
-2. **Narrative Beats**: Downtime creates character moments (injuries, relationships, Soul Sacrifice choices)
+2. **Narrative Beats**: Downtime creates character moments (injuries, relationships, Flesh Bargain choices)
 3. **Campaign Tension**: Instability Clock ticks, events force reactions, missions have consequences
 4. **Kingdom Death Inspiration**: Scarcity, tough choices, meaningful upgrades
 

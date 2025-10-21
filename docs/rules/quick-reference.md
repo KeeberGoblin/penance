@@ -287,7 +287,7 @@
 - Permanent upgrade (persists across missions)
 - Max 3 Ancestral Weapons total
 
-### Leg-Skimming (Campaign)
+### Flesh Bargain (Campaign)
 - Sacrifice pilot legs permanently
 - Gain permanent SP boost (+1 SP per turn)
 - Cannot undo (irreversible)

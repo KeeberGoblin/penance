@@ -18,7 +18,7 @@ How your pilot changes over time
 - **Taint Levels**: Corruption from Abominations
 - **Death & Legacy**: What happens when your pilot dies
 
-### [Leg Skimming System](leg-skimming.md)
+### [Flesh Bargain System](flesh-bargain.md)
 The dark heart of Penance: sacrifice your body for power
 - Permanent HP reduction for deck upgrades
 - Each leg = -3 HP, unlock better cards

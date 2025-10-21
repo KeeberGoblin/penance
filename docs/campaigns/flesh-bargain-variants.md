@@ -1,7 +1,7 @@
-# Soul Sacrifice: Faction-Specific Variants
+# Flesh Bargain: Faction-Specific Variants
 ## Penance: Campaign Progression System
 
-**Version**: 3.0 (Replaces Generic "Leg-Skimming")
+**Version**: 3.0 (Replaces Generic "Flesh Bargain")
 **Last Updated**: October 14, 2025
 
 ---
@@ -10,7 +10,7 @@
 
 **"To make room for the machine, we give up what we cannot bear to lose."**
 
-Each faction has its own method of **Soul Sacrifice** — permanent bodily modification to enhance capsule connection. The Church removes legs. The Dwarves shed flesh for metal. The Ossuarium discards rotting meat. The Elves graft with nature. Each sacrifice is unique, reflecting cultural values and physiology.
+Each faction has its own method of **Flesh Bargain** — permanent bodily modification to enhance capsule connection. The Church removes legs. The Dwarves shed flesh for metal. The Ossuarium discards rotting meat. The Elves graft with nature. Each sacrifice is unique, reflecting cultural values and physiology.
 
 **Universal Benefits** (all variants grant these):
 - +1 SP Maximum
