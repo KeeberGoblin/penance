@@ -57,7 +57,11 @@
       "Bash(tee /tmp/v5.12_simulation.txt)",
       "Bash(tee /tmp/v5.13_simulation.txt)",
       "Bash(jq '.universal | .[] | {name: .name, type: .type}' complete-card-data.json)",
-      "Bash(tee /tmp/v5.14_simulation.txt)"
+      "Bash(tee /tmp/v5.14_simulation.txt)",
+      "Bash(jq:*)",
+      "Bash(tee:*)",
+      "Read(//tmp/**)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

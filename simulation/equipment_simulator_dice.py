@@ -177,7 +177,8 @@ class Casket:
     # Card-based HP system
     deck: Deque = field(default_factory=deque)
     hand: Deque = field(default_factory=deque)
-    discard: Deque = field(default_factory=deque)
+    discard: Deque = field(default_factory=deque)  # V5.20: Played cards (can reshuffle)
+    damage_pile: Deque = field(default_factory=deque)  # V5.21: Destroyed cards (permanent loss)
 
     # SP and Heat
     sp: int = 5
@@ -202,6 +203,12 @@ class Casket:
     # Faction-specific mechanics
     bleed_stacks: int = 0        # Elves bleed mechanic (max 4)
     forge_tokens: int = 0        # Crucible forge mechanic (max 5)
+    biomass_tokens: int = 0      # Bloodlines biomass mechanic (max 10)
+    credit_tokens: int = 0       # Exchange credits mechanic (max 10)
+    credit_attack_count: int = 0  # V5.17: Track attacks for credit generation (1 per 2 attacks)
+    rune_counters: int = 0       # Dwarves rune counters (max 3)
+    discards_this_turn: int = 0  # Church self-harm tracking
+    taint_tokens: int = 0        # V5.18: Ossuarium taint from lifesteal (max 10)
 
     def __post_init__(self):
         """Initialize SP based on casket class"""
@@ -234,6 +241,23 @@ class Casket:
                 if self.deck:
                     self.hand.append(self.deck.popleft())
 
+    def recover_cards(self, count: int, source: str = "lifesteal") -> int:
+        """
+        Recover cards from discard pile to deck
+        V5.22: Taint generation moved to lifesteal code (1.5x multiplier)
+        Returns actual cards recovered
+        """
+        cards_recovered = 0
+        for _ in range(count):
+            if self.discard:
+                card = self.discard.pop()
+                self.deck.append(card)
+                cards_recovered += 1
+
+        # V5.22: Taint generation now handled in lifesteal code (not here)
+
+        return cards_recovered
+
     def take_damage(self, damage: int, defense_results: Dict[str, int]) -> int:
         """
         Take damage with defense dice mechanics
@@ -244,6 +268,19 @@ class Casket:
 
         # Count blocks from defense dice
         blocks = defense_results[DefenseDie.SHIELD] + defense_results[DefenseDie.ABSORB]
+
+        # Dwarves: Rune Counters reduce damage
+        # V5.25: Buffed from 3 → 4 damage per counter (Dwarves still struggling at 28.9% WR)
+        if self.rune_counters > 0:
+            remaining_damage = damage - blocks
+            if remaining_damage > 0:
+                # Each rune counter reduces 4 damage (V5.25 buff)
+                rune_reduction = min(self.rune_counters * 4, remaining_damage)
+                blocks += rune_reduction
+                # Consume counters based on actual reduction (1 counter per 4 damage blocked)
+                counters_consumed = min(self.rune_counters, (rune_reduction + 3) // 4)
+                self.rune_counters -= counters_consumed
+
         final_damage = max(0, damage - blocks)
 
         # Apply component damage from CRITICAL symbols
@@ -252,13 +289,15 @@ class Casket:
         # Apply heat from HEAT symbols
         self.heat += defense_results[DefenseDie.HEAT]
 
-        # Discard cards equal to final damage
+        # V5.21: Move damaged cards to damage_pile (permanent loss)
         for _ in range(final_damage):
             if self.deck:
-                self.deck.popleft()  # Damage goes to graveyard (permanent loss)
+                card = self.deck.popleft()
+                self.damage_pile.append(card)  # Destroyed cards go to damage_pile
             elif self.discard:
-                # If deck empty, take from discard
-                self.discard.popleft()
+                # If deck empty, take from discard and destroy
+                card = self.discard.popleft()
+                self.damage_pile.append(card)
 
         return final_damage
 
@@ -601,18 +640,18 @@ class DeckBuilder:
 class DiceCombatSimulator:
     """Simulates combat with full dice mechanics"""
 
-    # PHASE 2: EXTREME faction damage multipliers for balance
+    # v5.15: REMOVED artificial damage multipliers - testing real mechanics
     FACTION_DAMAGE_MULTIPLIER = {
-        'church': 0.50,           # -50% (100% → ~65%)
-        'ossuarium': 0.60,        # -40% (86.7% → ~60%)
-        'dwarves': 0.75,          # -25% (75.6% → ~58%)
-        'elves': 0.80,            # -20% (71.1% → ~55%)
-        'wyrd-conclave': 1.00,    # No change (55.6% = perfect!)
-        'vestige-bloodlines': 1.15,  # +15% (44.4% → ~52%)
-        'exchange': 1.50,         # +50% (33.3% → ~50%)
-        'emergent': 1.70,         # +70% (22.2% → ~48%)
-        'crucible': 1.90,         # +90% (11.1% → ~48%)
-        'nomads': 2.50,           # +150% (0% → ~45%)
+        'church': 1.00,
+        'ossuarium': 1.00,
+        'dwarves': 1.00,
+        'elves': 1.00,
+        'wyrd-conclave': 1.00,
+        'vestige-bloodlines': 1.00,
+        'exchange': 1.00,
+        'emergent': 1.00,
+        'crucible': 1.00,
+        'nomads': 1.00,
     }
 
     def __init__(self, casket1: Casket, casket2: Casket, verbose: bool = False):
@@ -629,12 +668,55 @@ class DiceCombatSimulator:
         if self.verbose:
             print(message)
 
+    def parse_resource_effect(self, effect: str, resource_type: str) -> Dict:
+        """
+        Parse resource-related effects from card text
+        Returns dict with 'generate', 'spend', and 'bonus' values
+        """
+        import re
+        effect_lower = effect.lower()
+        result = {'generate': 0, 'spend': 0, 'bonus': 0}
+
+        # Check for generation (e.g., "Gain 1 Forge", "Generate 2 Credits")
+        gen_patterns = [
+            rf'gain (\d+) {resource_type}',
+            rf'generate (\d+) {resource_type}',
+            rf'\+(\d+) {resource_type}'
+        ]
+        for pattern in gen_patterns:
+            match = re.search(pattern, effect_lower)
+            if match:
+                result['generate'] = int(match.group(1))
+                break
+
+        # Check for spending (e.g., "Spend 2 Forge", "Cost: 3 Biomass")
+        spend_patterns = [
+            rf'spend (\d+) {resource_type}',
+            rf'cost: (\d+) {resource_type}',
+            rf'pay (\d+) {resource_type}'
+        ]
+        for pattern in spend_patterns:
+            match = re.search(pattern, effect_lower)
+            if match:
+                result['spend'] = int(match.group(1))
+                break
+
+        # Check for bonus effects when spending
+        if result['spend'] > 0:
+            # Look for damage bonus (e.g., "+2 damage", "7 damage")
+            dmg_match = re.search(r'(\+?\d+) damage', effect_lower)
+            if dmg_match:
+                result['bonus'] = int(dmg_match.group(1).replace('+', ''))
+
+        return result
+
     def calculate_to_hit_target(self, attacker: Casket, defender: Casket) -> int:
         """
-        Calculate to-hit target number (base 4+ - IMPROVED from 5+)
+        Calculate to-hit target number (base 5+ - ORIGINAL DESIGN)
+        V5.26: REVERTED from 4 to 5 (original 58% hit rate, not 72%)
         Simplified: Only range modifier for simulation
         """
-        base_target = 4  # CHANGED: Was 5, now 4 (+17% hit rate)
+        base_target = 5  # V5.26: REVERTED to original (agents found base 4 was causing 24% power inflation)
 
         # Range modifier (0-3 hexes = short, 4+ = medium)
         if attacker.range <= 3:
@@ -746,15 +828,48 @@ class DiceCombatSimulator:
         # Regenerate 2 SP per turn (banking mechanic)
         attacker.sp = min(attacker.sp + 2, attacker.sp_max)
         attacker.moved_this_turn = False
+        attacker.discards_this_turn = 0  # Reset discard counter
 
         # Apply bleed damage at turn start (Elves mechanic)
         if attacker.bleed_stacks > 0:
             bleed_damage = attacker.bleed_stacks
-            # Apply bleed damage (no defense dice for bleed - it's unavoidable)
+            # V5.21: Apply bleed damage (no defense dice for bleed - it's unavoidable)
             for _ in range(bleed_damage):
                 if attacker.deck:
-                    attacker.deck.popleft()
+                    card = attacker.deck.popleft()
+                    attacker.damage_pile.append(card)  # Bleed destroys cards permanently
             self.log(f"{attacker.name} takes {bleed_damage} bleed damage ({attacker.bleed_stacks} stacks)")
+
+        # V5.25: Apply Taint penalties at turn start (Ossuarium mechanic)
+        # REVERTED to v5.23 levels (v5.24 was too harsh and made balance worse)
+        if attacker.taint_tokens > 0:
+            heat_penalty = 0
+            damage_penalty = 0
+
+            if attacker.taint_tokens >= 8:
+                heat_penalty = 2
+                damage_penalty = 2  # V5.25: Back to v5.23 levels (was 4 in v5.24)
+            elif attacker.taint_tokens >= 5:
+                heat_penalty = 2
+                damage_penalty = 1  # V5.25: Back to v5.23 levels (was 3 in v5.24)
+            elif attacker.taint_tokens >= 3:
+                heat_penalty = 1
+                damage_penalty = 1  # V5.25: Back to v5.23 levels (was 2 in v5.24)
+            else:  # 1-2 Taint
+                heat_penalty = 1  # V5.25: Back to v5.23 levels
+                damage_penalty = 0  # V5.25: No damage at low Taint (was 1 in v5.24)
+
+            if heat_penalty > 0:
+                attacker.heat += heat_penalty
+                self.log(f"{attacker.name} suffers Taint corruption: +{heat_penalty} Heat ({attacker.taint_tokens}/10 Taint)")
+
+            if damage_penalty > 0 and attacker.deck:
+                # V5.21: Taint damage destroys cards permanently
+                for _ in range(damage_penalty):
+                    if attacker.deck:
+                        card = attacker.deck.popleft()
+                        attacker.damage_pile.append(card)  # Taint destroys cards permanently
+                self.log(f"{attacker.name} takes {damage_penalty} corruption damage from Taint!")
 
         # Clear weapon jam status (lasts 1 turn)
         if attacker.weapon_jammed:
@@ -796,22 +911,89 @@ class DiceCombatSimulator:
                 # Pay SP cost
                 attacker.sp -= attack_card.cost
 
-                # PHASE 1 FIX: Apply "on attack" effects BEFORE rolling dice
+                # Apply card effects BEFORE rolling dice
                 effect_lower = attack_card.effect.lower()
+                card_bonus_damage = 0
 
-                # Elves: Apply bleed on ATTACK (not on HIT) - check for "bleed" in effect
+                # === RESOURCE GENERATION (on attack) ===
+
+                # Elves: Apply bleed on ATTACK
                 if 'bleed' in effect_lower:
-                    # Extract bleed amount (e.g., "Bleed 1" or "Bleed 2")
-                    bleed_amount = 1  # Default
-                    if 'bleed 2' in effect_lower:
-                        bleed_amount = 2
-                    defender.bleed_stacks = min(defender.bleed_stacks + bleed_amount, 4)  # Cap at 4
+                    import re
+                    bleed_match = re.search(r'bleed (\d+)', effect_lower)
+                    bleed_amount = int(bleed_match.group(1)) if bleed_match else 1
+                    defender.bleed_stacks = min(defender.bleed_stacks + bleed_amount, 4)
                     self.log(f"  → Applied {bleed_amount} Bleed to {defender.name} ({defender.bleed_stacks}/4 stacks)")
 
-                # Crucible: Gain Forge on ATTACK (not on HIT) - check for "forge" generation
-                if 'forge' in effect_lower and 'gain' in effect_lower:
-                    attacker.forge_tokens = min(attacker.forge_tokens + 1, 5)  # Cap at 5
-                    self.log(f"  → Gained 1 Forge ({attacker.forge_tokens}/5 tokens)")
+                # Crucible: Gain Forge tokens
+                forge_effect = self.parse_resource_effect(attack_card.effect, 'forge')
+                if forge_effect['generate'] > 0:
+                    attacker.forge_tokens = min(attacker.forge_tokens + forge_effect['generate'], 5)
+                    self.log(f"  → Gained {forge_effect['generate']} Forge ({attacker.forge_tokens}/5 tokens)")
+
+                # Exchange: Gain Credits
+                # V5.17: Nerfed to gain 1 Credit per 2 attacks (was every attack at 78% WR)
+                credit_effect = self.parse_resource_effect(attack_card.effect, 'credit')
+                if credit_effect['generate'] > 0:
+                    attacker.credit_attack_count += 1
+                    if attacker.credit_attack_count >= 2:
+                        attacker.credit_tokens = min(attacker.credit_tokens + credit_effect['generate'], 10)
+                        attacker.credit_attack_count = 0  # Reset counter
+                        self.log(f"  → Gained {credit_effect['generate']} Credits (every 2 attacks, {attacker.credit_tokens}/10 tokens)")
+
+                # Dwarves: Gain Rune Counters
+                rune_effect = self.parse_resource_effect(attack_card.effect, 'rune')
+                if rune_effect['generate'] > 0:
+                    attacker.rune_counters = min(attacker.rune_counters + rune_effect['generate'], 3)
+                    self.log(f"  → Gained {rune_effect['generate']} Rune Counters ({attacker.rune_counters}/3 counters)")
+
+                # === RESOURCE SPENDING ===
+
+                # Crucible: Spend Forge tokens for bonuses
+                if forge_effect['spend'] > 0 and attacker.forge_tokens >= forge_effect['spend']:
+                    attacker.forge_tokens -= forge_effect['spend']
+                    if forge_effect['bonus'] > 0:
+                        card_bonus_damage += forge_effect['bonus']
+                    self.log(f"  → Spent {forge_effect['spend']} Forge (+{forge_effect['bonus']} damage, {attacker.forge_tokens} remaining)")
+
+                # Exchange: Spend Credits for bonuses
+                if credit_effect['spend'] > 0 and attacker.credit_tokens >= credit_effect['spend']:
+                    attacker.credit_tokens -= credit_effect['spend']
+                    if credit_effect['bonus'] > 0:
+                        card_bonus_damage += credit_effect['bonus']
+                    self.log(f"  → Spent {credit_effect['spend']} Credits (+{credit_effect['bonus']} damage, {attacker.credit_tokens} remaining)")
+
+                # Bloodlines: Spend Biomass for bonuses
+                # V5.22: Require 2x Biomass cost (nerf from 80% WR)
+                biomass_effect = self.parse_resource_effect(attack_card.effect, 'biomass')
+                if biomass_effect['spend'] > 0:
+                    actual_cost = biomass_effect['spend'] * 2  # V5.22: Double the cost
+                    if attacker.biomass_tokens >= actual_cost:
+                        attacker.biomass_tokens -= actual_cost
+                        if biomass_effect['bonus'] > 0:
+                            card_bonus_damage += biomass_effect['bonus']
+                        self.log(f"  → Spent {actual_cost} Biomass (+{biomass_effect['bonus']} damage, {attacker.biomass_tokens} remaining)")
+
+                # V5.19: Removed Taint spending bonus - penalties only now
+
+                # Church: Discard effects
+                # V5.27: 5x discard bonuses (was 3x, still too weak at 22.2% WR in v5.26)
+                if 'discard' in effect_lower:
+                    import re
+                    discard_match = re.search(r'discard (\d+)', effect_lower)
+                    if discard_match:
+                        discard_count = int(discard_match.group(1))
+                        for _ in range(discard_count):
+                            if attacker.deck:
+                                card = attacker.deck.popleft()
+                                attacker.damage_pile.append(card)  # V5.22: Discard goes to damage_pile
+                                attacker.discards_this_turn += 1
+                        # Blood Offering: Discard 1 → +2 damage (now 5x = +10)
+                        damage_bonus_match = re.search(r'\+(\d+) damage', effect_lower)
+                        if damage_bonus_match:
+                            discard_bonus = int(damage_bonus_match.group(1)) * 5  # V5.27: 5x multiplier
+                            card_bonus_damage += discard_bonus
+                            self.log(f"  → Discarded {discard_count} cards for +{discard_bonus} damage (5x bonus)")
 
                 # Roll attack
                 attack_result, bonus_damage = self.roll_attack(attacker, attack_card, target_number)
@@ -838,7 +1020,7 @@ class DiceCombatSimulator:
                     faction_key = attacker.faction.lower()
                     multiplier = self.FACTION_DAMAGE_MULTIPLIER.get(faction_key, 1.0)
                     scaled_damage = int(base_damage * multiplier + 0.5)  # Round to nearest
-                    total_damage = scaled_damage + bonus_damage
+                    total_damage = scaled_damage + bonus_damage + card_bonus_damage
 
                     if multiplier != 1.0:
                         self.log(f"  [BALANCE] {base_damage} base × {multiplier:.2f} = {scaled_damage} damage")
@@ -856,14 +1038,50 @@ class DiceCombatSimulator:
                     actual_damage = defender.take_damage(total_damage, defense_results)
                     self.log(f"{attacker.name} attacks with {attack_card.name} for {actual_damage}/{total_damage} damage ({defender.name}: {defender.hp} HP)")
 
+                    # V5.23: REMOVED LIFESTEAL - Ossuarium now only gains Taint from dealing damage
+                    # Taint accumulates and causes penalties, but NO card recovery
+                    if attacker.faction.lower() == 'ossuarium' and actual_damage > 0:
+                        # V5.23: Gain Taint from dealing damage (necromantic corruption)
+                        # Gain 1 Taint per 3 damage dealt (scales with aggression)
+                        taint_gain = (actual_damage + 2) // 3
+                        if taint_gain > 0:
+                            old_taint = attacker.taint_tokens
+                            attacker.taint_tokens = min(attacker.taint_tokens + taint_gain, 10)
+                            actual_taint_gain = attacker.taint_tokens - old_taint
+                            if actual_taint_gain > 0:
+                                self.log(f"  → Necromantic Corruption: Gained {actual_taint_gain} Taint from dealing {actual_damage} damage ({attacker.taint_tokens}/10 Taint)")
+
+                    # Bloodlines: Gain Biomass on kill (Vestige Heritage mechanic)
+                    # V5.17: Nerfed from 2 → 1 per kill (was too strong at 82% WR)
+                    if not defender.is_alive and attacker.faction.lower() == 'vestige-bloodlines':
+                        biomass_gain = 1  # V5.17: Reduced from 2
+                        attacker.biomass_tokens = min(attacker.biomass_tokens + biomass_gain, 10)
+                        self.log(f"  → {attacker.name} gained {biomass_gain} Biomass from kill ({attacker.biomass_tokens}/10 tokens)")
+
                 else:
                     # Miss - no effect
                     self.log(f"{attacker.name} misses with {attack_card.name}")
+
+                # V5.20: Move played card to discard pile (card cycling)
+                if attack_card in attacker.hand:
+                    attacker.hand.remove(attack_card)
+                    attacker.discard.append(attack_card)
 
             else:
                 self.log(f"{attacker.name} out of range, banking {attacker.sp} SP")
         else:
             self.log(f"{attacker.name} has no valid attacks, banking {attacker.sp} SP")
+
+        # V5.20: End of turn - discard entire hand (card cycling)
+        while attacker.hand:
+            card = attacker.hand.popleft()
+            attacker.discard.append(card)
+
+        # V5.18: Taint natural decay at end of turn (Ossuarium mechanic)
+        if attacker.taint_tokens > 0:
+            attacker.taint_tokens = max(0, attacker.taint_tokens - 1)
+            if attacker.taint_tokens > 0:
+                self.log(f"{attacker.name} Taint decays to {attacker.taint_tokens}/10")
 
     def select_attack_card(self, casket: Casket):
         """
