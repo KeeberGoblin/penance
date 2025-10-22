@@ -5,634 +5,261 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dwarven Forge-Guilds - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .faction-header {
+            background: linear-gradient(180deg, #8B6F47 0%, #A0845F 50%, #8B6F47 100%);
+            padding: 3rem 2rem 0 2rem;
+            margin: 0;
+            position: relative;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .faction-header img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+        }
+
+        .faction-header h1 {
+            color: #2B1810;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.2rem;
+            margin: 1.5rem 0 0 0;
+            text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8);
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        .torn-paper {
+            height: 30px;
+            background: linear-gradient(to bottom, #8B7355 0%, transparent 100%);
+            margin-top: 2rem;
+        }
+
+        .section-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .section-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid var(--dark-red);
+            padding: 0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .section-toggle {
+            background: var(--shadow-black);
+            border: none;
+            border-bottom: 2px solid var(--dark-red);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-toggle:hover {
+            background: var(--dark-red);
+        }
+
+        .section-toggle::after {
+            content: '▼';
+            transition: transform 0.3s ease;
+        }
+
+        .section-toggle.active::after {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            display: none;
+            padding: 1.5rem;
+            background: rgba(10, 6, 4, 0.5);
+            line-height: 1.6;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        .section-content p {
+            margin: 0.75rem 0;
+        }
+
+        .section-content ul {
+            margin: 0.75rem 0 0.75rem 2rem;
+        }
+
+        .section-content li {
+            margin: 0.5rem 0;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+            color: var(--dark-red);
+            opacity: 0.6;
+        }
+    </style>
 </head>
 <body>
-    <!-- Faction Header with Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
-        <div style="text-align: center;">
-            <img src="../images/ForgeG_PlaceH.png" alt="Dwarven Forge-Guilds" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
-            <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Dwarven Forge-Guilds</h1>
-        </div>
-        <!-- Torn Paper Effect -->
-        <div style="height: 30px; background: linear-gradient(to bottom, #8B7355 0%, transparent 100%); margin-top: 2rem; position: relative;">
-            <svg style="position: absolute; bottom: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#B59460"/>
-            </svg>
-        </div>
+    <div class="faction-header">
+        <img src="../images/Dwarves_PlaceH.png" alt="Dwarven Forge-Guilds">
+        <h1>Dwarven Forge-Guilds</h1>
+        <div class="torn-paper"></div>
     </div>
 
     <div class="content">
         <div class="breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
-            <a href="#factions">FACTIONS</a> /
+            <a href="lore-factions-overview.html" target="_parent">FACTIONS</a> /
             Dwarven Forge-Guilds
         </div>
 
         <div class="manuscript-quote">
-            "Steel bends. It does not break. We are steel. We do not break."
+            "Steel doesn't lie. Axes don't break. The mountain doesn't move. We will endure."
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        <div class="divider">❈</div>
+
+        <div class="section-container">
+            <!-- OVERVIEW -->
+            <div class="section-card">
+                <button class="section-toggle" onclick="toggleSection(this)">
+                    <span>Faction Overview</span>
+                </button>
+                <div class="section-content">
+                    <p><strong>Playstyle:</strong> Fortress Defender</p>
+                    <p><strong>Core Mechanic:</strong> Rune Counters (stack for defense/damage, armor-piercing)</p>
+                    <p><strong>Philosophy:</strong> Craftsmanship and tradition. The mountain endures.</p>
+                    <p><strong>Population:</strong> 3-5 million</p>
+                    <p><strong>Territory:</strong> Ironhearth (underground mountain cities)</p>
+                    <p><strong>Governance:</strong> Guild councils ruled by elected Forgemasters</p>
+                </div>
+            </div>
+
+            <!-- CASKET TYPES -->
+            <div class="section-card">
+                <button class="section-toggle" onclick="toggleSection(this)">
+                    <span>Casket Types</span>
+                </button>
+                <div class="section-content">
+                    <p><strong>The Scout (Light):</strong> Mobile sappers. 600 lbs, 5 SP, 26-30 cards.</p>
+                    <p><strong>The Warrior (Medium):</strong> Balanced defender. 1100 lbs, 7 SP, 30-38 cards.</p>
+                    <p><strong>The Sentinel (Heavy):</strong> Armored fortress. 1600 lbs, 8 SP, 35-42 cards.</p>
+                    <p><strong>The Colossus (Ultra-Heavy):</strong> Walking mountain. 2200+ lbs, 9 SP, 40-50 cards.</p>
+                </div>
+            </div>
+
+            <!-- SUPPORT UNITS -->
+            <div class="section-card">
+                <button class="section-toggle" onclick="toggleSection(this)">
+                    <span>Support Units</span>
+                </button>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Shield Wall:</strong> Defensive support, creates fortified positions</li>
+                        <li><strong>Artillery:</strong> Long-range bombardment specialist</li>
+                        <li><strong>Rune Sentinel:</strong> Applies beneficial rune effects</li>
+                        <li><strong>Siege Crawler:</strong> Demolition and fortification</li>
+                        <li><strong>Ancestor Golem:</strong> Ancient construct, powerful defender</li>
+                        <li><strong>Dreadnought:</strong> Massive walker platform</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CORE MECHANIC -->
+            <div class="section-card">
+                <button class="section-toggle" onclick="toggleSection(this)">
+                    <span>Rune Counter System</span>
+                </button>
+                <div class="section-content">
+                    <p>Dwarven Caskets use Rune Counters that stack over time. Stack defense runes for armor, damage runes for offense. The longer the Dwarf fights, the stronger they become.</p>
+                    <p><strong>Stacking Mechanic:</strong> Each turn, add 1 Rune Counter. Spend counters for effects: 1 counter = +1 Defense, 2 counters = +2 damage, 3 counters = Armor-piercing attack.</p>
+                    <p><strong>Counterplay:</strong> Enemies must finish Dwarves quickly or face exponentially increasing defenses.</p>
+                </div>
+            </div>
+
+            <!-- LORE & HISTORY -->
+            <div class="section-card">
+                <button class="section-toggle" onclick="toggleSection(this)">
+                    <span>Lore & History</span>
+                </button>
+                <div class="section-content">
+                    <p>The Dwarves survived the Sundering by retreating underground. Ironhearth, their primary settlement, was carved from solid mountain centuries before the cataclysm. When the world shattered, they sealed the gates and endured.</p>
+                    <p>Master Forgemasters learned to craft Caskets from ancient pre-Sundering schematics. Dwarven steel became legendary. Every weapon, every shield, every casket frame bears the mark of generations of craftsmanship.</p>
+                    <p>The guilds control Soulstone production, making them one of the few factions wealthy enough to maintain standing armies. Trade, tradition, and tenacity sustain them.</p>
+                </div>
+            </div>
+
+            <!-- RELATIONSHIPS -->
+            <div class="section-card">
+                <button class="section-toggle" onclick="toggleSection(this)">
+                    <span>Faction Relationships</span>
+                </button>
+                <div class="section-content">
+                    <p><strong>The Exchange:</strong> Cooperative (profit from Soulstone trade)</p>
+                    <p><strong>Church of Absolution:</strong> Neutral (respect for craftsmanship)</p>
+                    <p><strong>The Ossuarium:</strong> Suspicious (undead philosophy conflicts)</p>
+                    <p><strong>Emergent Syndicate:</strong> Pragmatic (some Dwarves volunteer for metamorphosis)</p>
+                    <p><strong>Nomad Collective:</strong> Cautious (territory disputes)</p>
+                </div>
+            </div>
+
+            <!-- PLAY STRATEGY -->
+            <div class="section-card">
+                <button class="section-toggle" onclick="toggleSection(this)">
+                    <span>Play Strategy</span>
+                </button>
+                <div class="section-content">
+                    <p><strong>Early Game:</strong> Build defensive position. Stack rune counters. Force enemy to attack fortified position.</p>
+                    <p><strong>Mid Game:</strong> Convert defense runes into armor. Use heavy weapons sparingly. Maintain high counter stacks.</p>
+                    <p><strong>Late Game:</strong> Unleash armor-piercing attacks. Dwarves grow stronger in prolonged battles.</p>
+                    <p><strong>Key Strength:</strong> Time is your ally. The longer battle lasts, the stronger you become. Win through attrition.</p>
+                </div>
+            </div>
         </div>
 
-        <h2>Faction Overview</h2>
+        <div class="divider">❈</div>
 
-        <table class="manuscript-table">
-            <tr>
-                <th>Ideology</th>
-                <td>Defensive attrition through superior engineering</td>
-            </tr>
-            <tr>
-                <th>Capital</th>
-                <td>Forge-Hold, the Ironclad Citadel beneath the Ironpeak Mountains</td>
-            </tr>
-            <tr>
-                <th>Population</th>
-                <td>~35,000 Remnants (scattered across mountain strongholds)</td>
-            </tr>
-            <tr>
-                <th>Doctrine</th>
-                <td>The fortress outlasts the siege. Stone endures. Runes protect.</td>
-            </tr>
-            <tr>
-                <th>Playstyle</th>
-                <td>Tank, armor-piercing sustained damage, rune stacking, attrition warfare</td>
-            </tr>
-            <tr>
-                <th>Complete Deck</th>
-                <td><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/factions/dwarves/deck-equipment-system.md" target="_blank">View Full Dwarven Deck (v2.0 Equipment System)</a></td>
-            </tr>
-        </table>
+        <h2 style="color: var(--aged-gold); border-bottom: 2px solid var(--dark-red); padding-bottom: 0.75rem; margin-top: 3rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+            Related Pages
+        </h2>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Species Origins</h2>
-
-        <p class="manuscript-text">
-            Dwarves are not a separate species from humanity, but rather <strong>Homo Subterra</strong> - a divergent human evolution adapted to subterranean life over approximately 40,000 years. Their physiology reflects millennia of underground existence.
-        </p>
-
-        <ul class="manuscript-list">
-            <li><strong>Physiology:</strong> Stocky build with dense bones adapted to high-pressure underground environments, enhanced low-light vision (tapetum lucidum similar to felines), resistance to toxic gases and radiation - evolutionary necessities for deep mining</li>
-            <li><strong>Lifespan:</strong> 150-200 years, roughly double that of surface humans</li>
-            <li><strong>Magic Resistance:</strong> Dwarven nervous systems are naturally less sensitive to ley lines, making them resistant to Taint and magical corruption</li>
-            <li><strong>Pre-Sundering Population:</strong> Approximately 1.5 million globally, concentrated in vast underground cities like Ironhearth, Stoneroot, and The Deeps</li>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="lore-factions-overview.html" target="_parent" style="color: var(--aged-gold); text-decoration: none;">← Back to Factions Overview</a></li>
+            <li><a href="lore-npcs.html" target="_parent" style="color: var(--aged-gold); text-decoration: none;">→ Iconic Pilots</a></li>
+            <li><a href="lore-settlements.html" target="_parent" style="color: var(--aged-gold); text-decoration: none;">→ Major Settlements</a></li>
         </ul>
 
-        <p class="manuscript-text">
-            Before the Sundering, dwarves remained hidden from most of humanity. Their cities existed entirely underground beneath mountain ranges, and while they traded with surface humans through intermediaries like The Exchange, most humans assumed they were simply reclusive human mining clans. Dwarven-forged goods were sold under human brand names, concealing their true origin.
-        </p>
-
-        <p class="manuscript-text">
-            When the Sundering struck, the dwarves survived where others perished. Already underground and shielded from the initial Pulse, their cities remained largely intact. Their master craftsmen and engineers retained pre-Cataclysm knowledge and technology that other factions lost. This made them indispensable in the post-apocalyptic world.
-        </p>
-
-        <p class="manuscript-text">
-            Post-Sundering, the Dwarven Forge-Guilds became the industrial powerhouses of the shattered world. Pragmatic and profit-minded, they sell weapons, Caskets, and runecraft to all factions - they'll trade with anyone who can pay. Their isolation and resistance to magical corruption positioned them uniquely as war-profiteers and neutral suppliers in the endless conflicts between other factions.
-        </p>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Lore & Identity</h2>
-
-        <p class="manuscript-text">
-            The Dwarven Forge-Guilds retreated underground when the Theslar Engine sundered the world. Their mountain kingdoms became fortresses of survival, where master engineers and runecrafters worked in harmony to create the most durable Caskets in existence.
-        </p>
-
-        <p class="manuscript-text">
-            Dwarven Caskets are walking fortresses—layered stone armor, interlocking plates, and ancient runes carved into every surface. Where other factions use speed or cunning, Dwarves simply outlast. Their philosophy is simple: endure long enough, and your enemy will exhaust themselves against your walls.
-        </p>
-
-        <div class="manuscript-quote">
-            "We do not rush. We do not flee. We stand. And when our enemies are spent, we advance."
-            <span class="quote-attribution">—Runemaster Thorin Ironvein</span>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Runic Thread Engineering: Precision Control</h2>
-
-        <p class="manuscript-text">
-            Dwarven Casket technology exemplifies their philosophy: <strong>precision engineering maximizes efficiency</strong>. This extends to their neural thread systems, which are the most sophisticated in existence.
-        </p>
-
-        <h3>The Compact Form Surgery</h3>
-
-        <p class="manuscript-text">
-            Dwarven pilots undergo <strong>"Compact Form"</strong>—surgical removal of <em>all four limbs</em> (arms and legs) at the shoulder and hip joints. This creates the smallest possible pilot profile, allowing for:
-        </p>
-
-        <ul class="manuscript-list">
-            <li><strong>Optimal Space Efficiency:</strong> More room for armor plating and rune-etched reinforcement inside the Casket chassis.</li>
-            <li><strong>Reduced Vulnerability:</strong> No limbs = less pilot mass exposed to shrapnel or Thread Snap trauma.</li>
-            <li><strong>Runic Stumps:</strong> Amputation sites are capped with geometrically perfect runic plates that reduce phantom pain and stabilize thread connections.</li>
-            <li><strong>Post-Surgery:</strong> Pilots are permanently dependent on assistants or mechanical lifts. Outside the Casket, they exist as torsos with heads—carried, not wheeled.</li>
-        </ul>
-
-        <div style="background: rgba(75, 14, 14, 0.1); padding: 1rem; margin: 1rem 0; border: 1px solid var(--aged-gold);">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Dwarven Pragmatism:</strong> Unlike the Church (who view amputation as sacred penance), Dwarves see Compact Form as <em>optimal resource allocation</em>. "Why keep meat we don't use? The threads do the work. The limbs were waste."
-            </p>
-        </div>
-
-        <h3>Micro-Runed Neural Threads</h3>
-
-        <p class="manuscript-text">
-            Dwarven neural threads are not standard bio-conductive fiber—they are <strong>runic masterworks</strong>:
-        </p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>Standard Threads (Other Factions)</th>
-                    <th>Dwarven Runic Threads</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Material</strong></td>
-                    <td>Bio-conductive synthetic fiber</td>
-                    <td>Runesteel-laced bio-fiber (50% stronger, heat-resistant)</td>
-                </tr>
-                <tr>
-                    <td><strong>Inscription</strong></td>
-                    <td>None</td>
-                    <td>Micro-runes etched along thread length (magnified to be visible)</td>
-                </tr>
-                <tr>
-                    <td><strong>Signal Strength</strong></td>
-                    <td>Standard (1× bioelectric conductivity)</td>
-                    <td>Enhanced (1.5× conductivity, faster response time)</td>
-                </tr>
-                <tr>
-                    <td><strong>Thread Snap Resistance</strong></td>
-                    <td>Snap on 5-6 (d6 roll)</td>
-                    <td>Snap on 6 only (runic reinforcement)</td>
-                </tr>
-                <tr>
-                    <td><strong>Installation Time</strong></td>
-                    <td>4-6 hours (standard procedure)</td>
-                    <td>6-8 hours (precision laser-guided drilling, runic anchors)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Runic Anchors in Bone</h3>
-
-        <p class="manuscript-text">
-            During thread installation, Dwarven engineers implant <strong>runic bone anchors</strong> into the pilot's finger bones (distal phalanx). These anchors:
-        </p>
-
-        <ul class="manuscript-list">
-            <li><strong>Prevent Thread Slippage:</strong> Threads are locked into place with microscopic runic clasps (thread cannot pull free under stress).</li>
-            <li><strong>Stabilize Signal Transmission:</strong> Runes on anchors amplify bioelectric signals, reducing lag between thought and movement.</li>
-            <li><strong>Reduce Phantom Pain:</strong> Anchors block erratic nerve feedback, making thread use less agonizing than other factions experience.</li>
-            <li><strong>Permanent Integration:</strong> Once installed, runic anchors <em>fuse</em> with bone over 2-3 weeks (cannot be removed without shattering the finger).</li>
-        </ul>
-
-        <h3>Geometrically Optimized Routing</h3>
-
-        <p class="manuscript-text">
-            Dwarven thread routing inside the Casket is <strong>mathematically perfect</strong>:
-        </p>
-
-        <ul class="manuscript-list">
-            <li><strong>Shortest Path Algorithms:</strong> Threads follow the geometrically shortest route from fingers to actuators (reduces signal delay by 0.3 seconds—critical in combat).</li>
-            <li><strong>No Tangling:</strong> Threads are color-coded and routed through runic guide-rails that prevent crossing or knotting.</li>
-            <li><strong>Modular Replacement:</strong> Damaged threads can be swapped in 10 minutes (standard threads require 1 hour field repair).</li>
-            <li><strong>Visual Aesthetics:</strong> Thread routing forms geometric patterns visible when Casket lid opens—Dwarves consider this "functional art."</li>
-        </ul>
-
-        <h3>The Dwarven Thread Advantage in Combat</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Situation</th>
-                    <th>Other Factions</th>
-                    <th>Dwarven Pilots</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Thread Snap on 10+ damage</strong></td>
-                    <td>5-6 on d6 (33% chance)</td>
-                    <td>6 only (17% chance, runic reinforcement)</td>
-                </tr>
-                <tr>
-                    <td><strong>Thread Repair (field)</strong></td>
-                    <td>DC 12, 1 turn, fragile after</td>
-                    <td>DC 10, 1 turn, runic threads hold better</td>
-                </tr>
-                <tr>
-                    <td><strong>Pilot checks with depleted Core</strong></td>
-                    <td>-2 penalty (standard)</td>
-                    <td>-1 penalty (runic anchors stabilize signal)</td>
-                </tr>
-                <tr>
-                    <td><strong>Compact Form mobility loss</strong></td>
-                    <td>Legs removed (wheelchairs common)</td>
-                    <td>All limbs removed (carried by assistants or lifts)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>The Cost of Perfection:</strong> Dwarven thread engineering is expensive. Runic thread installation costs <strong>200-300 Credits</strong> (3-5× standard cost). Dwarven pilots are walking investments—factions that can afford to hire them pay premium rates.
-            </p>
-        </div>
-
-        <div class="manuscript-quote">
-            "My threads are etched with the Rune of Endurance. My anchors are forged from runesteel. Every movement is calculated, every signal amplified. I am not a puppet—I am an engineer piloting precision machinery. And I do not break."
-            <span class="quote-attribution">—Runesmith-Pilot Gretta Ironhand</span>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Core Mechanic: Rune Counters</h2>
-
-        <p class="manuscript-text">
-            Dwarven Caskets generate <strong>Rune Counters</strong> through combat, which provide stacking damage reduction.
-        </p>
-
-        <ul class="manuscript-list">
-            <li><strong>Rune of Protection:</strong> Spend 2 SP to gain 1 Rune Counter. Each counter reduces all damage by 4 (max 3 counters, total max reduction 12 damage). <strong>(v5.25 Balance Update: Buffed from 3 damage to 4 damage per counter to address 28.9% win rate)</strong></li>
-            <li><strong>Runic Overcharge (Tactic):</strong> Spend 3 SP to gain 2 Rune Counters immediately. Gain 2 Heat.</li>
-            <li><strong>Stone Endurance (Tactic):</strong> Once per mission, when you reshuffle your deck, add 1 Damage card instead of 2 (slower death spiral).</li>
-            <li><strong>Armor-Piercing Attacks:</strong> Only attacks with 1+ Rune Counters and specific equipment (Crushing Blow, Warhammer, War Pick) ignore Defense. <strong>(Balance Update Oct 19: Rune-enhanced attacks required for armor-piercing)</strong></li>
-            <li><strong>Base Damage Buff:</strong> All Dwarven attacks deal +1 base damage. <strong>(Balance Update Oct 19: Compensation for armor-piercing nerf)</strong></li>
-        </ul>
-
-        <p class="manuscript-text">
-            The Dwarven playstyle revolves around stacking defensive layers (Rune Counters, shields, plating) while grinding down opponents with armor-piercing attacks. Heat management is critical—many Dwarven weapons generate significant Heat.
-        </p>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Faction Core Cards (6 Mandatory)</h2>
-
-        <h3>1. Crushing Blow</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (Melee) | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 4 damage. Armor-Piercing (ignore all Defense buffs and armor).
-        </p>
-        <p class="manuscript-text"><em>"Runes flare blue-white as the hammerhead strikes true."</em></p>
-
-        <h3>2. Forge Fury</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (Heat Conversion) | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 3 damage + 1 per Heat you currently have (max +6). Remove all Heat after attack resolves.
-        </p>
-        <p class="manuscript-text"><em>"The furnace roars. Steel becomes vengeance."</em></p>
-
-        <h3>3. Rune of Protection</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Buff (Defensive) | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Gain 1 Rune Counter. Reduce all damage by 4 per counter (max 3 counters, 12 damage max reduction). Lasts until end of mission or destroyed. <strong>(v5.25: Buffed from 3 dmg to 4 dmg per counter)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Ancient words carved in living metal."</em></p>
-
-        <h3>4. Unbreakable</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive Defense | <strong>SP Cost:</strong> 0
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> When you would take Component Damage, prevent 1 Component Damage. Gain 1 Heat.
-        </p>
-        <p class="manuscript-text"><em>"Dwarven steel bends. It does not break."</em></p>
-
-        <h3>5. Earthshaker</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (AoE + Crowd Control) | <strong>SP Cost:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.
-        </p>
-        <p class="manuscript-text"><em>"The ground cracks. The weak scatter."</em></p>
-
-        <h3>6. Clan Vengeance (Passive)</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Each time you take Component Damage, your next attack deals +1 damage. This bonus stacks (3 Component Damage = +3 damage on next attack). <strong>(Balance Update Oct 19: Reduced from +2 to +1 per Component Damage)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Every wound sharpens our fury."</em></p>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Support Units (6 Total)</h2>
-
-        <h3>Starter Units</h3>
-
-        <h4>1. Shield Wall Guard (2 slots)</h4>
-        <p class="manuscript-text">
-            <strong>HP:</strong> 12 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 4
-        </p>
-        <p class="manuscript-text">
-            Five stocky dwarven warriors with interlocking tower shields engraved with runic circuits. They form impenetrable defensive lines, creating cover and blocking line of sight. Can recover HP through runic reinforcement. Immovable defenders with +3 Defense when in Shield Wall formation.
-        </p>
-
-        <h4>2. Bombard Battery (3 slots)</h4>
-        <p class="manuscript-text">
-            <strong>HP:</strong> 8 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 2
-        </p>
-        <p class="manuscript-text">
-            Mobile artillery platform with massive cannon crewed by three dwarven engineers. Deals 8 damage at range 8, ignores 3 Defense, with 3 splash damage to adjacent hexes. Generates significant Heat. Vulnerable at close range but devastating at distance.
-        </p>
-
-        <h4>3. Rune Sentinel (3 slots)</h4>
-        <p class="manuscript-text">
-            <strong>HP:</strong> 15 | <strong>Movement:</strong> 3 | <strong>Defense:</strong> 3
-        </p>
-        <p class="manuscript-text">
-            Ancient stone golem standing 12 feet tall, animated by glowing blue-white runes. Generates Rune Counters through combat, which can enhance defensive auras, fuel Rune Pulse (AoE damage), or be spent to ignore Control effects. Regenerates HP from battlefield corpses.
-        </p>
-
-        <h3>Unlockable Units</h3>
-
-        <h4>4. Siege Crawler (4 slots) - Unlock: Complete 3 missions</h4>
-        <p class="manuscript-text">
-            <strong>HP:</strong> 18 | <strong>Movement:</strong> 1 | <strong>Defense:</strong> 4
-        </p>
-        <p class="manuscript-text">
-            Mechanical spider-tank bristling with cannons and ballistae. Can attack up to 3 different enemies per turn. Enters Siege Mode for +4 damage and +2 Defense. Extremely slow but devastating firepower. Generates 2-4 Heat per turn.
-        </p>
-
-        <h4>5. Ancestor Golem (4 slots) - Unlock: Build Forge-Shrine in settlement</h4>
-        <p class="manuscript-text">
-            <strong>HP:</strong> 20 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 5
-        </p>
-        <p class="manuscript-text">
-            Masterwork construct of black iron and mithril containing the soul of a legendary dwarf hero. Generates Glory Counters through heroic deeds. Can grant allies massive buffs (+2 damage, +2 Defense, heal 2 HP), taunt enemies, and unleash "Legacy of Stone" (fully heal all allies, deal 12 damage to all enemies within 3 hexes).
-        </p>
-
-        <h4>6. Dreadnought Titan (5 slots) - Unlock: Defeat Ironlord Thrain</h4>
-        <p class="manuscript-text">
-            <strong>HP:</strong> 25 | <strong>Movement:</strong> 1 | <strong>Defense:</strong> 6
-        </p>
-        <p class="manuscript-text">
-            Colossal walking fortress three stories tall. Massive 4-hex passive aura grants allies +2 Defense, +1 SP regeneration, and 1 HP per turn. Enemies within 3 hexes take 2 damage per turn. Can attack ALL enemies within 8 hexes simultaneously for 6 damage each (ignore 2 Defense). Defines the entire battlefield. Explodes on death for 10 damage to everything within 5 hexes.
-        </p>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Schisms & Renegade Clans</h2>
-
-        <p class="manuscript-text">
-            The Dwarven Forge-Guilds maintain strict unity through the Guild Code, but internal rifts have emerged over how to handle the Engine's corruption. These <strong>Schisms</strong> enable mirror matches—Dwarves vs Dwarves, traditionalist vs pragmatist.
-        </p>
-
-        <div style="background: linear-gradient(to bottom, rgba(212, 175, 55, 0.1), rgba(139, 105, 20, 0.05)); border: 2px solid #8b6914; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
-            <h3 style="color: #8b6914; margin-top: 0;">The Ashbound Exiles (Renegade Clan)</h3>
-
-            <p><strong>Ideology:</strong> Embrace Engine corruption. Use Tainted runes as power source.</p>
-
-            <p><strong>Schism Event:</strong> <em>The Runeforge Disaster of Year 167</em> - Runecaster Bordin Ashbeard discovered that corrupted Soulstone fragments could power runes 300% more effectively than clean ones. He began intentionally tainting runes with Engine corruption. When his workshop exploded and killed 47 dwarves, the Forge-Guilds exiled his entire clan. The Ashbound fled to the Blighted Wastes and continued their forbidden research.</p>
-
-            <p><strong>Philosophy:</strong></p>
-            <ul>
-                <li><strong>Mainstream Dwarves:</strong> "Runes must be pure. Corruption weakens the stone."</li>
-                <li><strong>The Ashbound:</strong> "Purity is weakness. The Engine's power is ours to harness."</li>
-            </ul>
-
-            <p><strong>Visual Distinction:</strong> Ashbound Caskets have blackened, cracked runes that glow sickly green instead of blue-white. Their armor is corrupted stone fused with Tainted metal. Pilots often show visible mutations (glowing eyes, stone-like skin growths).</p>
-
-            <p><strong>Tactical Differences:</strong></p>
-            <ul>
-                <li><strong>Corrupted Runes:</strong> Ashbound gain Rune Counters faster (1 SP instead of 2) but gain 1 Taint per counter</li>
-                <li><strong>Tainted Fury:</strong> Deliberately accumulate Taint to fuel offensive bursts (spend Taint for +damage)</li>
-                <li><strong>Unstable Defense:</strong> Rune Counters provide +2 reduction instead of +1, but have 50% chance to fail each use</li>
-                <li><strong>Explosive Overload:</strong> Can spend all Rune Counters + all Taint for massive AoE burst (self-destructive nova)</li>
-            </ul>
-
-            <p><strong>Why They Fight the Forge-Guilds:</strong> Ashbound believe traditional dwarves are "cowards hiding behind false purity." They want to prove corrupted runecraft is superior. When they fight, it's philosophical: "Your weakness exiled us. Our power will vindicate us."</p>
-
-            <p><strong>Gameplay Note:</strong> Use standard Dwarven deck, but aggressively stack Taint. Trade rune stability for raw power. High-variance, high-risk playstyle—devastating when it works, catastrophic when it fails.</p>
-        </div>
-
-        <div style="background: linear-gradient(to bottom, rgba(212, 175, 55, 0.1), rgba(139, 105, 20, 0.05)); border: 2px solid #8b6914; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
-            <h3 style="color: #8b6914; margin-top: 0;">The Grudgebound (Rival Clan)</h3>
-
-            <p><strong>Ideology:</strong> War is the only worthy purpose. Profit is dishonor.</p>
-
-            <p><strong>Schism Event:</strong> <em>The Merchant Betrayal of Year 294</em> - The Exchange sold defective Dwarven weapons to a Church battalion, causing 300 Penitent Knights to die in the Siege of Blackwater. When the Forge-Guilds refused to avenge them (maintaining neutrality for profits), Warmaster Hargrim split off with 2,000 warriors to form the Grudgebound—a clan that refuses all trade, fights only for honor, and keeps meticulous records of every slight.</p>
-
-            <p><strong>Philosophy:</strong></p>
-            <ul>
-                <li><strong>Mainstream Dwarves:</strong> "We sell to all sides. War is business."</li>
-                <li><strong>The Grudgebound:</strong> "Profit is cowardice. We fight for honor, not gold."</li>
-            </ul>
-
-            <p><strong>Visual Distinction:</strong> Grudgebound Caskets are engraved with thousands of names—every fallen dwarf, every unpaid debt, every insult. They wear crimson banners instead of guild colors. Pilots shave their beards into war-braids.</p>
-
-            <p><strong>Tactical Differences:</strong></p>
-            <ul>
-                <li><strong>The Ledger:</strong> Grudgebound gain +1 damage permanently for each Component Damage taken (infinite stacking revenge)</li>
-                <li><strong>Honor Duels:</strong> If Grudgebound challenges enemy pilot (declared at start), both gain +2 damage vs each other</li>
-                <li><strong>No Retreat:</strong> Cannot voluntarily move away from enemies once engaged (locked in melee, no tactical repositioning)</li>
-                <li><strong>Clan Vengeance Doubled:</strong> Component Damage gives +4 instead of +2 next attack (doubled grudge)</li>
-            </ul>
-
-            <p><strong>Why They Fight the Forge-Guilds:</strong> Grudgebound view merchants as "oath-breakers who sold dwarven honor for credits." When they fight, it's personal: "You forgot the old ways. We remember every betrayal. Our Ledger is long."</p>
-
-            <p><strong>Gameplay Note:</strong> Use standard Dwarven deck, but refuse to retreat or trade efficiently. Fight suicidally for honor. Stack Clan Vengeance infinitely. High-commitment, no-escape playstyle—win through overwhelming accumulated damage or die trying.</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Faction Relations</h2>
-
-        <table class="manuscript-table">
-            <thead>
-                <tr>
-                    <th>Faction</th>
-                    <th>Status</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Church of Absolution</td>
-                    <td>COLD</td>
-                    <td>Trade partners but mutual distrust. Forge-Guilds supply weapons.</td>
-                </tr>
-                <tr>
-                    <td>Elven Verdant Covenant</td>
-                    <td>NEUTRAL</td>
-                    <td>Ancient grudges over territory, but no active conflict.</td>
-                </tr>
-                <tr>
-                    <td>The Ossuarium</td>
-                    <td>HOSTILE</td>
-                    <td>Necromancy offends dwarven craftsmanship ethics.</td>
-                </tr>
-                <tr>
-                    <td>The Wyrd Conclave</td>
-                    <td>WAR</td>
-                    <td>Fae trickery has cost many dwarven lives. Blood debt unpaid.</td>
-                </tr>
-                <tr>
-                    <td>Nomad Collective</td>
-                    <td>FRIENDLY</td>
-                    <td>Trade routes. Nomads guide caravans through badlands.</td>
-                </tr>
-                <tr>
-                    <td>The Exchange</td>
-                    <td>ALLIED</td>
-                    <td>Primary trading partner. Economic interdependence.</td>
-                </tr>
-                <tr>
-                    <td>Vestige Bloodlines</td>
-                    <td>HOSTILE</td>
-                    <td>Mutation threatens stability. Must be contained.</td>
-                </tr>
-                <tr>
-                    <td>Chitinous Ascendancy</td>
-                    <td>WAR</td>
-                    <td>Hive-mind abominations. Existential threat.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Recommended Builds</h2>
-
-        <h3>Immovable Wall (Forge Walker - Heavy, 4 SP)</h3>
-        <ul class="manuscript-list">
-            <li><strong>Equipment:</strong> Warhammer (6 cards), Tower Shield (4 cards), Forge-Rune Sigil (3), Reinforced Plating (3), Heat Sink Sigil (2)</li>
-            <li><strong>Tactics:</strong> Stone Endurance (slower death spiral), Runic Overcharge</li>
-            <li><strong>Total Deck:</strong> 36 cards (maximum tankiness)</li>
-            <li><strong>Strategy:</strong> Stack 3 Rune Counters (Rune of Protection + Runic Overcharge). Tower Shield + Reinforced Plating = massive damage reduction. 30 HP with -12 damage per hit (3 counters × 4 damage) and slower death spiral = extreme durability. Win through attrition warfare. <strong>(v5.25: 4 dmg per counter, max 3 counters)</strong></li>
-        </ul>
-
-        <h3>Armor-Piercing Assault (Ironclad - Assault, 5 SP)</h3>
-        <ul class="manuscript-list">
-            <li><strong>Equipment:</strong> War Pick (6 cards), Kite Shield (3 cards), Forge-Rune Sigil (3), Targeting Sigil (3)</li>
-            <li><strong>Tactics:</strong> Forge Mastery (Heat to card draw), Unbreakable Spirit (resurrection)</li>
-            <li><strong>Total Deck:</strong> 33 cards (balanced aggression)</li>
-            <li><strong>Strategy:</strong> All attacks ignore armor (Crushing Blow, War Pick, faction bonus). Clan Vengeance converts damage taken into offense (+2 per Component Damage). Fast, consistent armor-piercing damage every turn.</li>
-        </ul>
-
-        <h3>Artillery Platform (Siege Engine - Fortress, 3 SP)</h3>
-        <ul class="manuscript-list">
-            <li><strong>Equipment:</strong> Siege Cannon (7 cards, 2-handed), Forge-Rune Sigil (3), Heat Sink Sigil (2), Stealth Plating (3), Repair Sigil (2)</li>
-            <li><strong>Tactics:</strong> Forge Mastery, Unbreakable Spirit</li>
-            <li><strong>Total Deck:</strong> 35 cards (artillery support)</li>
-            <li><strong>Strategy:</strong> Stay at range 4-7. Siege Shot deals 4 damage, armor-piercing. Explosive Shell hits multiple targets. Stealth Plating reduces ranged counterattack accuracy. Ultra-safe bombardment platform.</li>
-        </ul>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Strategy Notes</h2>
-
-        <p class="manuscript-text">
-            <strong>Strengths:</strong> High survivability (30 HP with slower death spiral), +1 base damage on all attacks, Rune-enhanced armor-piercing, component protection (Unbreakable delays destruction), Heat conversion mechanics (Forge Fury turns Heat into damage, Forge Mastery into card draw), attrition warfare mastery. <strong>(Balance Update Oct 19: Added +1 base damage, Rune-enhanced AP requirement)</strong>
-        </p>
-
-        <p class="manuscript-text">
-            <strong>Weaknesses:</strong> Low mobility (Heavy/Fortress Caskets move 1-2 hexes), high Heat generation (constant management required), SP-starved (Heavy and Fortress have only 3-4 SP per turn), vulnerable to ranged kiting (slow movement + melee focus), expensive equipment (Dwarven gear costs 5-6 Scrap to craft).
-        </p>
-
-        <p class="manuscript-text">
-            <strong>Early Game (Turns 1-3):</strong> Stack Rune Counters immediately (Rune of Protection + Runic Overcharge = 3 counters for 12 damage reduction). Position defensively—let enemies come to you. Manage Heat carefully with Heat Sink Sigils and venting.
-        </p>
-
-        <p class="manuscript-text">
-            <strong>Mid Game (Turns 4-6):</strong> Use Forge Fury when Heat is high (convert 5-6 Heat into 8-9 damage burst). Armor-piercing shuts down defensive opponents completely. Unbreakable prevents Component Damage (save for critical hits).
-        </p>
-
-        <p class="manuscript-text">
-            <strong>Late Game (Turns 7+):</strong> Clan Vengeance should have +4-6 damage by now (devastating). Forge Mastery for burst card draw if needed. Unbreakable Spirit is your safety net (resurrect once at 5 HP). Attrition advantage: you have more HP and damage reduction than any faction.
-        </p>
-
-        <div class="manuscript-quote">
-            "The enemy grows tired. The enemy grows desperate. We grow stronger. This is the dwarven way."
-            <span class="quote-attribution">—Ironlord Thrain, before the final siege</span>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <h2>Version 3.0 Optional Rules</h2>
-
-        <p class="manuscript-text">
-            The Dwarven Forge-Guilds have unique interactions with the three new v3.0 optional mechanics systems:
-        </p>
-
-        <h3>Dice Pool Advantage System</h3>
-        <p class="manuscript-text">
-            Dwarven pilots work normally with the Dice Pool system. Positioning and tactical superiority can grant Advantage (roll 3 Attack Dice, take 2 highest). See <a href="rules-dice-pool.html" target="_parent">Dice Pool Advantage Rules</a>.
-        </p>
-
-        <h3>Taint Exploitation System</h3>
-        <p class="manuscript-text">
-            Dwarven pilots are <strong>highly resistant to Taint</strong> due to rune-warding:
-        </p>
-        <ul class="manuscript-list">
-            <li><strong>Rune-Warded:</strong> Gain Taint at <strong>half rate</strong> (6 damage = 1 Taint instead of 2 Taint)</li>
-            <li><strong>Stone Endurance:</strong> Cannot be exploited offensively (enemies can't spend your Taint) until you reach <strong>8+ Taint</strong> (doubled threshold)</li>
-            <li><strong>Rune-Locked:</strong> Cannot spend own Taint for Desperate Power options (no access to Tainted Fury, Ignore Pain, etc.) - runes prevent corruption manipulation</li>
-            <li><strong>Philosophical Justification:</strong> "Stone does not bend. Runes do not break." Dwarven engineering resists Engine corruption through ancient protective magic</li>
-        </ul>
-        <p class="manuscript-text">
-            Dwarves treat Taint as a distant threat, not an immediate tactical concern. Their slow playstyle and rune protection make them the most Taint-resistant faction. See <a href="rules-taint-exploitation.html" target="_parent">Taint Exploitation Rules</a>.
-        </p>
-
-        <h3>Pilot Grit System</h3>
-        <p class="manuscript-text">
-            Dwarven pilots gain <strong>+1 to Grit Checks vs Severe Injuries only</strong> (Stoic Endurance):
-        </p>
-        <ul class="manuscript-list">
-            <li><strong>Starting Grit:</strong> 0 (normal) - dwarves don't start tougher, they become tougher through survival</li>
-            <li><strong>Stoic Endurance Bonus:</strong> When resisting a <strong>Severe Injury</strong>, add +1 to Grit Check roll (not Minor or Trauma)</li>
-            <li><strong>Example:</strong> Grit 2 dwarf resisting Severe Injury rolls 1d6 + 2 + 1 = 1d6+3 (50% chance to Shrug It Off instead of take injury)</li>
-            <li><strong>Philosophical Justification:</strong> "Stone does not break. Neither do we." Dwarven physical resilience makes them exceptionally resistant to permanent physical trauma</li>
-        </ul>
-        <p class="manuscript-text">
-            This bonus makes veteran dwarven pilots nearly immune to permanent physical injuries (Shattered Hand, Spinal Trauma, Ruptured Organ), though they remain vulnerable to mental Trauma (PTSD, Dissociation). See <a href="campaign-pilot-grit.html" target="_parent">Pilot Grit Rules</a>.
-        </p>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>
-        </div>
-
-        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid #d4af37;">
-            <p style="font-style: italic; color: #8b6914;">
-                <a href="faction-church.html" target="_parent" style="color: #d4af37; text-decoration: none;">← Church</a>
-                •
-                <a href="faction-elves.html" target="_parent" style="color: #d4af37; text-decoration: none;">Elves →</a>
-            </p>
+        <div style="text-align: center; margin: 3rem 0; font-size: 1.1rem; color: var(--aged-gold); font-style: italic;">
+            "The mountain endures. So shall we."
         </div>
     </div>
+
+    <script>
+        function toggleSection(button) {
+            const content = button.nextElementSibling;
+            button.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
