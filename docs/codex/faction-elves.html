@@ -5,262 +5,710 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elven Verdant Covenant - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
-    <style>
-        .faction-header {
-            background: linear-gradient(180deg, #6B7C3A 0%, #7A8F47 50%, #6B7C3A 100%);
-            padding: 3rem 2rem 0 2rem;
-            margin: 0;
-            position: relative;
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-
-        .faction-header img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-        }
-
-        .faction-header h1 {
-            color: #D4C5B0;
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 2.2rem;
-            margin: 1.5rem 0 0 0;
-            text-shadow: 1px 1px 0 rgba(0,0,0,0.8);
-            letter-spacing: 0.05em;
-            font-weight: 700;
-        }
-
-        .torn-paper {
-            height: 30px;
-            background: linear-gradient(to bottom, #8B7355 0%, transparent 100%);
-            margin-top: 2rem;
-        }
-
-        .section-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .section-card {
-            background: rgba(75, 14, 14, 0.15);
-            border-left: 4px solid var(--dark-red);
-            padding: 0;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .section-toggle {
-            background: var(--shadow-black);
-            border: none;
-            border-bottom: 2px solid var(--dark-red);
-            color: var(--aged-gold);
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            font-family: 'Cinzel', serif;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-            transition: all 0.3s ease;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .section-toggle:hover {
-            background: var(--dark-red);
-        }
-
-        .section-toggle::after {
-            content: '▼';
-            transition: transform 0.3s ease;
-        }
-
-        .section-toggle.active::after {
-            transform: rotate(180deg);
-        }
-
-        .section-content {
-            display: none;
-            padding: 1.5rem;
-            background: rgba(10, 6, 4, 0.5);
-            line-height: 1.6;
-        }
-
-        .section-content.active {
-            display: block;
-        }
-
-        .section-content p {
-            margin: 0.75rem 0;
-        }
-
-        .section-content ul {
-            margin: 0.75rem 0 0.75rem 2rem;
-        }
-
-        .section-content li {
-            margin: 0.5rem 0;
-        }
-
-        .divider {
-            text-align: center;
-            margin: 2rem 0;
-            font-size: 1.5rem;
-            color: var(--dark-red);
-            opacity: 0.6;
-        }
-    </style>
 </head>
 <body>
-    <div class="faction-header">
-        <img src="../images/Elves_PlaceH.png" alt="Elven Verdant Covenant">
-        <h1>Elven Verdant Covenant</h1>
-        <div class="torn-paper"></div>
+    <!-- Faction Header with Parchment Background -->
+    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+        <div style="text-align: center;">
+            <img src="../images/verdant2_PlaceH.png" alt="Verdant Covenant" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
+            <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Verdant Covenant</h1>
+        </div>
+        <!-- Torn Paper Effect -->
+        <div style="height: 30px; background: linear-gradient(to bottom, #8B7355 0%, transparent 100%); margin-top: 2rem; position: relative;">
+            <svg style="position: absolute; bottom: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#B59460"/>
+            </svg>
+        </div>
     </div>
 
     <div class="content">
-        <div class="breadcrumb">
-            <a href="content-home.html" target="_parent">CODEX</a> /
-            <a href="lore-factions-overview.html" target="_parent">FACTIONS</a> /
-            Elven Verdant Covenant
-        </div>
-
         <div class="manuscript-quote">
-            "The forest remembers. The thorns remember. And so shall your enemies remember the taste of their own blood."
+            "The roots remember. The forest endures. We are eternal."
         </div>
 
-        <div class="divider">❈</div>
-
-        <div class="section-container">
-            <!-- OVERVIEW -->
-            <div class="section-card">
-                <button class="section-toggle" onclick="toggleSection(this)">
-                    <span>Faction Overview</span>
-                </button>
-                <div class="section-content">
-                    <p><strong>Playstyle:</strong> Hit-and-Run Assassin</p>
-                    <p><strong>Core Mechanic:</strong> Bleed Stacking (infinite scaling, mobility, regeneration)</p>
-                    <p><strong>Philosophy:</strong> Natural supremacy. The forest was here before civilization. It will remain after.</p>
-                    <p><strong>Population:</strong> 2-4 million</p>
-                    <p><strong>Territory:</strong> The Thornwood</p>
-                    <p><strong>Governance:</strong> Circle of Elders (consensus-based)</p>
-                </div>
-            </div>
-
-            <!-- CASKET TYPES -->
-            <div class="section-card">
-                <button class="section-toggle" onclick="toggleSection(this)">
-                    <span>Casket Types</span>
-                </button>
-                <div class="section-content">
-                    <p><strong>The Stalker (Scout):</strong> Assassin scout. 550 lbs, 6 SP, 26-32 cards.</p>
-                    <p><strong>The Archer (Medium):</strong> Ranged striker. 850 lbs, 7 SP, 28-36 cards.</p>
-                    <p><strong>The Thorn-Weaver (Heavy):</strong> Bleed master. 1300 lbs, 8 SP, 32-40 cards.</p>
-                    <p><strong>The Ancient Treant (Ultra-Heavy):</strong> Living wood. 1900+ lbs, 9 SP, 35-48 cards.</p>
-                </div>
-            </div>
-
-            <!-- SUPPORT UNITS -->
-            <div class="section-card">
-                <button class="section-toggle" onclick="toggleSection(this)">
-                    <span>Support Units</span>
-                </button>
-                <div class="section-content">
-                    <ul>
-                        <li><strong>Thorn Stalkers:</strong> Mobility assassins, hit-and-fade tactics</li>
-                        <li><strong>Rootweavers:</strong> Plant-based control specialists</li>
-                        <li><strong>Archers:</strong> Ranged bleed application</li>
-                        <li><strong>Briarwood Colossus:</strong> Heavy defensive tree-construct</li>
-                        <li><strong>Assassin:</strong> Elite single-target damage</li>
-                        <li><strong>Ancient Treant:</strong> Oldest and mightiest protector</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- CORE MECHANIC -->
-            <div class="section-card">
-                <button class="section-toggle" onclick="toggleSection(this)">
-                    <span>Bleed Stacking System</span>
-                </button>
-                <div class="section-content">
-                    <p>Apply Bleed tokens to enemies. Each Bleed token deals 1 damage at end of enemy turn. Stack as many bleeds as you can—infinite scaling potential.</p>
-                    <p><strong>Bleed Application:</strong> Most Elf attacks apply 1-2 Bleed tokens. Combine multiple attacks to stack rapidly.</p>
-                    <p><strong>Regeneration:</strong> Elves heal 1 HP per turn in Thornwood territory. Mobile and self-sustaining.</p>
-                    <p><strong>Advantage:</strong> Enemies suffer cumulative damage they can't avoid. Control the pace—attack, retreat, let bleeds do the work.</p>
-                </div>
-            </div>
-
-            <!-- LORE & HISTORY -->
-            <div class="section-card">
-                <button class="section-toggle" onclick="toggleSection(this)">
-                    <span>Lore & History</span>
-                </button>
-                <div class="section-content">
-                    <p>The Thornwood was a nature preserve before the Sundering. When civilization collapsed, the forest reclaimed the land. Elves emerged from the wild—not survivors of the old world, but products of the new one.</p>
-                    <p>They use Caskets sparingly, binding their spirits into wood-grown constructs rather than industrial machines. Every casket is part-plant, part-machine. Every pilot is one with the forest.</p>
-                    <p>They do not conquer territory. They reclaim it. Land that falls to Elven control returns to nature within years. They are neither conquerors nor defenders—they are inevitability.</p>
-                </div>
-            </div>
-
-            <!-- RELATIONSHIPS -->
-            <div class="section-card">
-                <button class="section-toggle" onclick="toggleSection(this)">
-                    <span>Faction Relationships</span>
-                </button>
-                <div class="section-content">
-                    <p><strong>Nomad Collective:</strong> Cooperative (travel through Thornwood)</p>
-                    <p><strong>Wyrd Conclave:</strong> Friendly (both respect wild magic)</p>
-                    <p><strong>Church of Absolution:</strong> Hostile (expansion into Thornwood)</p>
-                    <p><strong>The Exchange:</strong> Suspicious (resource exploitation)</p>
-                    <p><strong>Emergent Syndicate:</strong> Competitive (biomass and territory)</p>
-                </div>
-            </div>
-
-            <!-- PLAY STRATEGY -->
-            <div class="section-card">
-                <button class="section-toggle" onclick="toggleSection(this)">
-                    <span>Play Strategy</span>
-                </button>
-                <div class="section-content">
-                    <p><strong>Early Game:</strong> Apply bleeds early. Mobility is key. Attack multiple targets to stack bleeds widely.</p>
-                    <p><strong>Mid Game:</strong> Maintain bleed pressure. Retreat and regenerate. Let bleeds wear enemies down.</p>
-                    <p><strong>Late Game:</strong> Stack bleeds to overwhelming levels. Enemies die to cumulative damage they couldn't prevent.</p>
-                    <p><strong>Key Strength:</strong> Infinite scaling. No upper limit to bleed stacking. Enemies who survive become weaker, not stronger.</p>
-                </div>
-            </div>
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
-        <div class="divider">❈</div>
+        <h2>Faction Overview</h2>
 
-        <h2 style="color: var(--aged-gold); border-bottom: 2px solid var(--dark-red); padding-bottom: 0.75rem; margin-top: 3rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
-            Related Pages
-        </h2>
+        <table class="manuscript-table">
+            <tr>
+                <th>Ideology</th>
+                <td>Surgical precision and nature's vengeance</td>
+            </tr>
+            <tr>
+                <th>Capital</th>
+                <td>Roothold, the Living Citadel (partially burned by Church)</td>
+            </tr>
+            <tr>
+                <th>Population</th>
+                <td>~12,000 elves (dwindling, forests dying)</td>
+            </tr>
+            <tr>
+                <th>Doctrine</th>
+                <td>The wounded do not escape. The forest remembers every wound.</td>
+            </tr>
+            <tr>
+                <th>Playstyle</th>
+                <td>Bleed damage-over-time, mobility, hit-and-run, surgical strikes, regeneration</td>
+            </tr>
+            <tr>
+                <th>Complete Deck</th>
+                <td><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/factions/elves/deck-equipment-system.md" target="_blank">View Full Elven Deck (v2.0 Equipment System)</a></td>
+            </tr>
+        </table>
 
-        <ul style="list-style: none; padding: 0;">
-            <li><a href="lore-factions-overview.html" target="_parent" style="color: var(--aged-gold); text-decoration: none;">← Back to Factions Overview</a></li>
-            <li><a href="lore-npcs.html" target="_parent" style="color: var(--aged-gold); text-decoration: none;">→ Iconic Pilots</a></li>
-            <li><a href="lore-climate.html" target="_parent" style="color: var(--aged-gold); text-decoration: none;">→ The Thornwood Territory</a></li>
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Species Origins</h2>
+
+        <p class="manuscript-text">
+            Elves are <strong>Homo Sylvanus</strong> - a divergent human evolution shaped by prolonged ley line exposure over 50,000+ years. Their physiology reflects millennia of symbiotic adaptation to forest environments and magical energies.
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Lifespan:</strong> 300-400 years, enabled by cellular regeneration enhanced by ambient ley line energy</li>
+            <li><strong>Enhanced Senses:</strong> Vision extending into infrared spectrum, hearing sensitive to subsonic frequencies, heightened awareness of environmental changes</li>
+            <li><strong>Symbiotic Biology:</strong> Incorporated chlorophyll analogs into their cells, allowing them to supplement nutrition through sunlight (though they still require traditional food)</li>
+            <li><strong>Magical Attunement:</strong> Not inherently magical, but their nervous systems are naturally aligned with ley line flows, making spellwork instinctive rather than studied</li>
+            <li><strong>Pre-Sundering Population:</strong> Only approximately 200,000 globally, compared to billions of humans</li>
         </ul>
 
-        <div style="text-align: center; margin: 3rem 0; font-size: 1.1rem; color: var(--aged-gold); font-style: italic;">
-            "The forest remembers. So shall your blood."
+        <p class="manuscript-text">
+            Before the Sundering, elves lived in profound isolation. Their enclaves existed in remote forests and mountain groves - places like Roothold and The Grove of First Light - hidden from human civilization. To surface humans, they were legends, folklore, or "lost tribes" at best. The few humans who stumbled upon elven settlements were either welcomed (rarely) or turned away with memory-wiping glamours (more commonly).
+        </p>
+
+        <p class="manuscript-text">
+            Elves viewed humans as "young, loud, and careless" - a species that burned through resources and lives without thought for consequences. The Veil Accords kept the peace: elves remained hidden, and humanity remained ignorant. This separation worked for thousands of years.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Post-Sundering Tragedy:</strong> When the Cataclysm struck, elven fertility dropped catastrophically. Void energy disrupted their symbiotic biology, severing the connection between their cells and the natural ley line flows. Elven women can no longer conceive. The species is dying out, generation by generation.
+        </p>
+
+        <p class="manuscript-text">
+            The Verdant Covenant formed from desperation - a final alliance of surviving elven enclaves trying to heal the wounded world before their species goes extinct. Every battle is fought knowing their people have perhaps 200 years left. They are the gardeners tending a dying forest, pruning away disease with surgical precision, hoping to restore balance before the final leaf falls.
+        </p>
+
+        <p class="manuscript-text">
+            This is why elves fight with such calculated ruthlessness. They have no future. They can only preserve what remains and ensure that when they are gone, something beautiful survives them.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Lore & Identity</h2>
+
+        <p class="manuscript-text">
+            Once guardians of ancient groves, the Elven Verdant Covenant watches their forests rot 437 years after the Sundering. Year 223 marked the Betrayal at Roothold—the Church burned 40% of their territory in a single night. The elves persist through stubbornness and rage, wielding nature's dying fury against those who would finish what the apocalypse started.
+        </p>
+
+        <p class="manuscript-text">
+            Elven Caskets are grown, not built. Living wood, thorns, and vines intertwine with metal frameworks. Pilots merge with their machines through organic integration—roots pierce flesh, bark encases bone. They are assassins wrapped in nature's wrath, striking from shadows and vanishing before retaliation.
+        </p>
+
+        <div class="manuscript-quote">
+            "We did not ask for this curse. We tend the dying, honor the fallen, and bleed those who trespass. Each cut is deliberate. Each poison, perfected."
+            <span class="quote-attribution">—Archdruid Sylara Thornwhisper</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Mourned Necessity: Root-Grafted Pilots</h2>
+
+        <p class="manuscript-text">
+            The Elven Verdant Covenant approaches Casket piloting with profound reluctance. Unlike the Church (who embrace suffering as penance) or Dwarves (who celebrate engineering efficiency), Elves view neural thread integration as <strong>necessary desecration</strong>—a violation of natural symbiosis forced upon them by a broken world.
+        </p>
+
+        <h3>Root-Grafting: Living Wood Prosthetics</h3>
+
+        <p class="manuscript-text">
+            Elven pilots undergo <strong>"Root-Grafting"</strong>—the surgical removal of legs, replaced with living vine prosthetics. This procedure reflects Elven philosophy: if flesh must be sacrificed, replace it with <em>growing</em> material, not dead metal.
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Amputation Site:</strong> Legs removed at mid-thigh (femur). Bone is cleanly severed, flesh trimmed to leave space for root integration.</li>
+            <li><strong>Graft Material:</strong> Living vines from the <em>Verdant Mother Tree</em> (ancient oak at the heart of Roothold). Each pilot's vines are unique—genetically matched to their biology.</li>
+            <li><strong>Rooting Process:</strong> Vines are surgically inserted into femoral stumps, where they <em>grow into bone marrow</em> over 4-6 weeks. Roots fuse with skeletal structure, creating permanent biological connection.</li>
+            <li><strong>Post-Graft Mobility:</strong> Pilots can walk using root-leg prosthetics, but at half-speed (3 hexes per turn instead of 6). Roots are strong but inflexible compared to muscle-driven legs.</li>
+        </ul>
+
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1rem; margin: 1rem 0; border: 1px solid #228B22;">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>The Living Difference:</strong> Unlike Church wheelchairs or Dwarven lifts, Elven root-legs are <em>alive</em>. They photosynthesize in sunlight, require watering, and can be "pruned" for health. Pilots describe feeling "rooted" when standing—a sense of connection to the ground beneath them.
+            </p>
+        </div>
+
+        <h3>The Neural Thread Dilemma</h3>
+
+        <p class="manuscript-text">
+            Elves philosophically oppose drilling metal threads through living flesh. Their solution: <strong>Living Thread Variants</strong>—bio-engineered vines grafted directly to pilots' nerves.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Standard Metal Threads</th>
+                    <th>Elven Living Threads</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Material</strong></td>
+                    <td>Bio-conductive synthetic fiber</td>
+                    <td>Living vine threads (bio-engineered from Mother Tree)</td>
+                </tr>
+                <tr>
+                    <td><strong>Installation</strong></td>
+                    <td>Drilled through fingertips into bone (invasive, painful)</td>
+                    <td>Grafted to nerve endings, <em>grow</em> into fingers over 4 weeks (gradual, less traumatic)</td>
+                </tr>
+                <tr>
+                    <td><strong>Appearance</strong></td>
+                    <td>Silver-white wire emerging from fingertips</td>
+                    <td>Green vine tendrils with leaves, photosynthetic glow in sunlight</td>
+                </tr>
+                <tr>
+                    <td><strong>Signal Conductivity</strong></td>
+                    <td>1× (standard)</td>
+                    <td>0.9× (slightly slower, but living tissue adapts over time)</td>
+                </tr>
+                <tr>
+                    <td><strong>Thread Snap Resistance</strong></td>
+                    <td>Snap on 5-6 (d6 roll)</td>
+                    <td>Snap on 5-6, but can regenerate if planted in soil (24 hours)</td>
+                </tr>
+                <tr>
+                    <td><strong>Maintenance</strong></td>
+                    <td>Sterile cleaning, mechanical replacement</td>
+                    <td>Sunlight exposure, watering, pruning dead leaves</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>The Grafting Ceremony</h3>
+
+        <p class="manuscript-text">
+            Unlike other factions' clinical surgeries, Elven Root-Grafting is a <strong>sacred ritual</strong>:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>The Vigil (Day 1):</strong> Pilot fasts for 24 hours in a sacred grove, meditating on sacrifice and necessity. Archdruid blesses the Mother Tree and harvests pilot-matched vines.</li>
+            <li><strong>The Severance (Day 2, Dawn):</strong> Legs are amputated with herbal anesthesia (conscious but pain-dulled). Severed legs are buried beneath Mother Tree as offering. Pilot watches ceremony, bearing witness to their loss.</li>
+            <li><strong>The Grafting (Day 2, Noon):</strong> Living vines are sutured to femoral stumps. Roots are guided into bone marrow using Elven growth-song (ritualized chant that accelerates cell division). Pilot remains conscious, feeling roots "take hold."</li>
+            <li><strong>The Rooting (Days 3-42):</strong> Pilot rests in healing chamber filled with moss and nutrient-rich soil. Roots grow 1-2cm per day, fusing with bone. Neural thread vines are grafted to fingertips during Week 2.</li>
+            <li><strong>The First Walk (Day 43):</strong> Pilot takes first steps on root-legs. Archdruid offers prayer: "You are half-tree now. May your roots find purchase. May your leaves remember sunlight."</li>
+        </ol>
+
+        <h3>Living With Root-Legs</h3>
+
+        <p class="manuscript-text">
+            Elven pilots describe their prosthetics as <strong>symbiotic partners</strong>, not replacements:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Sunlight Dependency:</strong> Root-legs require 4-6 hours of sunlight daily. Pilots who stay indoors too long experience "root rot" (fungal infection, painful decay).</li>
+            <li><strong>Seasonal Sensitivity:</strong> Roots grow faster in spring/summer (requiring frequent pruning), go dormant in winter (pilots move slower in cold climates).</li>
+            <li><strong>Emotional Resonance:</strong> Pilots report feeling the Mother Tree's "mood" through their roots—calm when the forest is healthy, anxious when danger approaches.</li>
+            <li><strong>Photosynthetic Bonus:</strong> Root-legs supplement nutrition. Pilots can survive on half-rations if exposed to full sunlight 8+ hours daily.</li>
+            <li><strong>Watering Rituals:</strong> Pilots must "water themselves" daily—pouring nutrient solution over root stumps (intimate, vulnerable act most perform in private).</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            "My legs are gone. In their place, roots from the Mother Tree. I water them each morning. They grow leaves in spring. When I stand in sunlight, I feel connected to something larger than myself. This is not prosthetics—this is symbiosis. And I mourn what I lost to gain it."
+            <span class="quote-attribution">—Rootwarden Kess, Scout-Pilot</span>
+        </div>
+
+        <h3>The Theological Tension</h3>
+
+        <p class="manuscript-text">
+            Root-Grafting creates profound tension within Elven culture:
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Perspective</th>
+                    <th>Argument</th>
+                    <th>Cultural Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Traditionalists</strong></td>
+                    <td>"We desecrate our bodies by grafting trees where flesh should be. This is unnatural."</td>
+                    <td>Refuse to pilot Caskets, view grafted pilots with pity/shame</td>
+                </tr>
+                <tr>
+                    <td><strong>Pragmatists</strong></td>
+                    <td>"Survival requires adaptation. Better living roots than dead metal."</td>
+                    <td>Accept grafting as necessary evil, honor pilots as heroes making hard choice</td>
+                </tr>
+                <tr>
+                    <td><strong>Symbiants</strong></td>
+                    <td>"We do not lose ourselves—we become more. Human AND tree. This is evolution."</td>
+                    <td>Embrace grafting, some voluntarily request additional plant integration</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid #228B22; margin: 1rem 0;">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>The Mourning Ritual:</strong> Every Root-Grafted pilot undergoes annual <em>Leaf-Fall Ceremony</em>—a ritual where they mourn their lost legs, acknowledge the Mother Tree's sacrifice, and renew their commitment to protect the dying forests. This prevents dissociation and honors the grief inherent in their transformation.
+            </p>
+        </div>
+
+        <h3>Combat Implications</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Situation</th>
+                    <th>Standard Pilots</th>
+                    <th>Root-Grafted Pilots</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Movement Speed (Outside Casket)</strong></td>
+                    <td>6 hexes per turn (normal walking)</td>
+                    <td>3 hexes per turn (roots are slow, inflexible)</td>
+                </tr>
+                <tr>
+                    <td><strong>Thread Snap (Living Threads)</strong></td>
+                    <td>Requires surgery to replace</td>
+                    <td>Can regenerate if pilot "plants" hand in soil for 24 hours (roots regrow)</td>
+                </tr>
+                <tr>
+                    <td><strong>Stealth in Forest Terrain</strong></td>
+                    <td>Standard difficulty</td>
+                    <td>+2 bonus (roots sense vibrations, leaves blend with foliage)</td>
+                </tr>
+                <tr>
+                    <td><strong>Heat Generation</strong></td>
+                    <td>Standard Heat mechanics</td>
+                    <td>-1 Heat per turn if in forest terrain (root-legs absorb excess warmth, photosynthesize)</td>
+                </tr>
+                <tr>
+                    <td><strong>Fire Damage</strong></td>
+                    <td>Standard damage</td>
+                    <td>+2 damage from fire (living wood ignites easily, psychological trauma from Roothold Betrayal)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Comparison to Other Factions</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Philosophy</th>
+                    <th>Amputation</th>
+                    <th>Pilot Agency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Church</strong></td>
+                    <td>Penance through suffering</td>
+                    <td>Embrace pain as sacred</td>
+                    <td>Willing martyrs</td>
+                </tr>
+                <tr>
+                    <td><strong>Dwarves</strong></td>
+                    <td>Efficiency through engineering</td>
+                    <td>Pragmatic optimization</td>
+                    <td>Compensated professionals</td>
+                </tr>
+                <tr>
+                    <td><strong>Ossuarium</strong></td>
+                    <td>Maximum horror as efficiency</td>
+                    <td>Cold calculation</td>
+                    <td>Contracted labor (paid upfront)</td>
+                </tr>
+                <tr>
+                    <td><strong>Elves</strong></td>
+                    <td>Mourned necessity</td>
+                    <td>Reluctant symbiosis</td>
+                    <td>Sacrificing themselves for dying world</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="manuscript-quote">
+            "The Church seeks redemption. The Dwarves seek perfection. The Ossuarium seeks efficiency. We seek nothing. We mourn. And we fight anyway."
+            <span class="quote-attribution">—Archdruid Sylara Thornwhisper</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Core Mechanic: Bleed Stacking</h2>
+
+        <p class="manuscript-text">
+            Elven Caskets apply <strong>Bleed counters</strong> that deal damage-over-time. Bleed stacks up to a maximum of 8 counters and never expires. <strong>(Balance Update Oct 19: Reduced from 10 to 8 stacks)</strong>
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Bleed Counters:</strong> Enemies take 1 damage per Bleed counter at START of their turn (before they can act).</li>
+            <li><strong>Stacking with Cap:</strong> Bleed 1 + Bleed 2 + Bleed 3 = Bleed 6 total on target. <strong>Maximum 8 Bleed stacks per target</strong> (prevents runaway scaling). <strong>(Balance Update Oct 19: Reduced from 10)</strong></li>
+            <li><strong>Never Expires:</strong> Counters last entire mission. Enemies slowly bleed to death.</li>
+            <li><strong>Faction Bonus:</strong> All Elven weapons automatically apply Bleed 1 on hit (in addition to card effects).</li>
+        </ul>
+        <p class="manuscript-text" style="font-size: 0.9rem; opacity: 0.8; font-style: italic; color: var(--aged-gold);">
+            <strong>⚖️ Balance Note:</strong> 10 Bleed counter cap prevents infinite scaling in extended fights while maintaining Elves' identity as DoT specialists.
+        </p>
+
+        <p class="manuscript-text">
+            The Elven strategy is simple: apply Bleed to all enemies, then survive while they die to damage-over-time. High mobility and regeneration allow Elves to outlast the slow death they inflict.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Faction Core Cards (6 Mandatory)</h2>
+
+        <h3>1. Thorn Strike</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Attack (Precision) | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Melee (1 hex)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Deal 3 damage. Apply Bleed 2 (target takes 2 damage at start of their next turn).
+        </p>
+        <p class="manuscript-text"><em>"The wound deepens. The poison spreads."</em></p>
+
+        <h3>2. Pruning Cut</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Attack (Component Targeting) | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Deal 4 damage to specific component (you choose: Right Arm, Left Arm, Legs, Head, Chassis). If target discards cards from that component type, deal +2 Component Damage.
+        </p>
+        <p class="manuscript-text"><em>"Cut away the rot."</em></p>
+
+        <h3>3. Root Bind</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Utility (Control) | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Ranged (1-3 hexes)
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Target enemy cannot move until end of their next turn. If they attempt to move, take 3 damage and Bleed 1.
+        </p>
+        <p class="manuscript-text"><em>"The roots hold. Struggle is futile."</em></p>
+
+        <h3>4. Photosynthesis (Passive) - REMOVED</h3>
+        <p class="manuscript-text" style="text-decoration: line-through; opacity: 0.5;">
+            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text" style="text-decoration: line-through; opacity: 0.5;">
+            <strong>Effect:</strong> At end of your turn, if you did NOT attack this turn AND did not take damage, recover 1 card from discard pile and remove 1 Heat.
+        </p>
+        <p class="manuscript-text"><strong style="color: var(--blood-red);">(Balance Update Oct 19: REMOVED - passive regeneration reduced to Verdant Regeneration only)</strong></p>
+        <p class="manuscript-text"><em>"We draw strength from stillness and sanctuary."</em></p>
+
+        <h3>5. Leaf Dance</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Movement + Attack | <strong>SP Cost:</strong> 3
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Move up to 2 hexes. You may make 1 attack during this movement (at any point). After attacking, you may continue moving. <strong>(Balance Update Oct 19: Reduced from 3 hexes to 2 hexes)</strong>
+        </p>
+        <p class="manuscript-text"><em>"Strike where they are weak. Vanish before they retaliate."</em></p>
+
+        <h3>6. Verdant Regeneration (Passive)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> At the start of each round, recover 2 cards from discard pile. <strong>(Balance Update Oct 19: Primary regeneration source after Photosynthesis removal)</strong>
+        </p>
+        <p class="manuscript-text"><em>"Life finds a way."</em></p>
+
+        <h3>7. Living Seal (Equipment Integration)</h3>
+        <p class="manuscript-text">
+            <strong>Type:</strong> Conditional Bonus | <strong>SP Cost:</strong> N/A
+        </p>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> Whenever you use other healing effects (Photosynthesis, equipment, etc.), recover +1 additional card from discard pile.
+        </p>
+        <p class="manuscript-text"><em>"Healing begets healing."</em></p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Support Units (6 Total)</h2>
+
+        <h3>Starter Units</h3>
+
+        <h4>1. Thorn Stalkers (2 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 6 | <strong>Movement:</strong> 5 | <strong>Defense:</strong> 1
+        </p>
+        <p class="manuscript-text">
+            Three lithe elven scouts wrapped in living thorns and moss. Apply 1 Bleed counter on any successful attack. Attacks deal 4 damage and apply 2 Bleed counters. After attacking, move 2 hexes away (hit-and-run). Heal 1 HP at start of turn if standing in Forest terrain. Gain Concealed when in Forest or behind Cover.
+        </p>
+
+        <h4>2. Rootweaver Circle (3 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 8 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 2
+        </p>
+        <p class="manuscript-text">
+            Four elven druids holding staffs, feet rooted to ground. Passive 3-hex Verdant Zone aura: allies heal 1 HP per turn, enemies lose 1 Movement, Elven units gain +1 Defense. Can Entangle enemies (cannot move next turn, -2 to all attacks). Create Forest terrain hexes. Thorn Eruption deals 3 damage to all enemies in zone and creates Thorn Walls (block movement, 2 damage to cross).
+        </p>
+
+        <h4>3. Verdant Archer Cadre (2 slots)</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 5 | <strong>Movement:</strong> 4 | <strong>Defense:</strong> 0
+        </p>
+        <p class="manuscript-text">
+            Four elven archers with living wood bows. Range 8 for all attacks. Coordinated Volley: When attacking same target, each archer adds +1 damage (4 archers = 18 damage total). Aimed Shot deals 4 damage + 1 Bleed. Poison Arrows deal 3 damage + 3 Bleed + target loses 1 SP next turn. Fragile (0 Defense) but devastating at range.
+        </p>
+
+        <h3>Unlockable Units</h3>
+
+        <h4>4. Briarwood Colossus (4 slots) - Unlock: Complete 3 missions</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 18 | <strong>Movement:</strong> 2 | <strong>Defense:</strong> 3
+        </p>
+        <p class="manuscript-text">
+            Massive humanoid construct woven from living briarwood and iron-hard thorns. Passive 2-hex Thorn Aura: enemies within 2 hexes take 2 damage per turn. Counts as Blocking Terrain (allies can take cover behind it for +2 Defense). Briarwood Slam deals 8 damage, knocks target back 2 hexes, applies 2 Bleed, creates Thorn Wall. Overgrowth converts 6 hexes around it into Forest terrain. Regenerates 2 HP per turn if in Forest.
+        </p>
+
+        <h4>5. Shadowleaf Assassin (3 slots) - Unlock: Build Grove Sanctuary</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 10 | <strong>Movement:</strong> 6 | <strong>Defense:</strong> 1
+        </p>
+        <p class="manuscript-text">
+            Lone elven warrior draped in living shadow-moss, form flickers and blurs. Shadow Step: Teleport up to 4 hexes to any Forest hex (once per turn). Assassinate: When attacking from behind or while Concealed, deal TRIPLE damage and apply 5 Bleed counters. Eternal Stealth: Always Concealed unless adjacent to enemy. Throat Cut deals 12 damage (Assassinate bonus) + 5 Bleed. If kill, gain Full Concealment (cannot be targeted until next attack).
+        </p>
+
+        <h4>6. Ancient Treant (5 slots) - Unlock: Defeat The Rot Lord</h4>
+        <p class="manuscript-text">
+            <strong>HP:</strong> 25 | <strong>Movement:</strong> 1 | <strong>Defense:</strong> 4
+        </p>
+        <p class="manuscript-text">
+            Towering tree brought to life, ancient beyond measure, standing 25 feet tall. Occupies 3 hexes (Large unit). Passive 5-hex Forest Heart aura: all hexes become Forest terrain, allies heal 2 HP per turn, enemies lose 1 Movement, Elven units gain +2 Defense. Immovable Object: Cannot be moved, knocked back, or displaced by any effect. Root Prison locks enemies in place (cannot move, take 3 damage per turn, must spend 3 SP to break free). Titanic Strike deals 12 damage, knocks back 4 hexes. Forest Awakening (once per battle): ALL Forest hexes within 6 hexes deal 4 damage to enemies entering, allies heal 3 HP entering, create 6 Vine Snare tokens (Entangle enemies). Regenerates 3 HP per turn (double if no enemies within 3 hexes).
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Schisms & Exiled Groves</h2>
+
+        <p class="manuscript-text">
+            The Verdant Covenant splinters over philosophical divides: preserve what remains, or weaponize nature's dying fury? These <strong>Schisms</strong> enable mirror matches—Elf vs Elf, guardian vs avenger.
+        </p>
+
+        <div style="background: linear-gradient(to bottom, rgba(139, 0, 0, 0.1), rgba(100, 0, 0, 0.05)); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
+            <h3 style="color: var(--dark-red); margin-top: 0;">The Thornblood Exiles (Renegade Grove)</h3>
+
+            <p><strong>Ideology:</strong> Nature must be weaponized, not protected. Vengeance over preservation.</p>
+
+            <p><strong>Schism Event:</strong> <em>The Roothold Massacre of Year 223</em> - When the Church burned 40% of elven forests, Elder Thornblood proposed corrupting the forest itself—turning sacred groves into carnivorous killing fields. The Verdant Covenant rejected this as "perverting what we protect." Thornblood's followers split off, embracing mutation, aggressive overgrowth, and weaponized nature.</p>
+
+            <p><strong>Philosophy:</strong></p>
+            <ul>
+                <li><strong>Mainstream Elves:</strong> "Preserve the balance. Heal the wounded world."</li>
+                <li><strong>The Thornbloods:</strong> "Balance is dead. Only wrath remains. Let the forest devour them all."</li>
+            </ul>
+
+            <p><strong>Visual Distinction:</strong> Thornblood Caskets are grotesque—bark fused with exposed muscle tissue, thorns growing through pilot flesh, bleeding vines. Their forests are hostile: man-eating plants, spore clouds, carnivorous trees.</p>
+
+            <p><strong>Tactical Differences:</strong></p>
+            <ul>
+                <li><strong>Aggressive Bleed:</strong> All attacks apply +1 Bleed (Thorn Strike becomes Bleed 3 instead of 2)</li>
+                <li><strong>No Regeneration:</strong> Cannot use Photosynthesis or Verdant Regeneration (rejected healing in favor of offense)</li>
+                <li><strong>Carnivorous Terrain:</strong> Forest hexes deal 2 damage to ALL units (including allies) but Thornbloods ignore this</li>
+                <li><strong>Berserk Fury:</strong> At 10 HP or below, gain +3 damage to all attacks (low HP = maximum aggression)</li>
+            </ul>
+
+            <p><strong>Why They Fight the Covenant:</strong> Thornbloods view guardians as "cowards clinging to a dying dream." They fight to prove vengeance is survival. "You tend the garden. We are the thorns that tear flesh from bone."</p>
+
+            <p><strong>Gameplay Note:</strong> Use standard Elven deck, but maximum aggression. No defensive play, no healing, only relentless Bleed stacking and suicide charges. Glass cannon assassins.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Faction Relations</h2>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Church of Absolution</td>
+                    <td>WAR</td>
+                    <td>Betrayal at Roothold. The Church burned their forests. Blood debt unpaid.</td>
+                </tr>
+                <tr>
+                    <td>Dwarven Forge-Guilds</td>
+                    <td>NEUTRAL</td>
+                    <td>Ancient grudges over territory, but no active conflict currently.</td>
+                </tr>
+                <tr>
+                    <td>The Ossuarium</td>
+                    <td>HOSTILE</td>
+                    <td>Undeath perverts natural order. Philosophical opposition.</td>
+                </tr>
+                <tr>
+                    <td>The Wyrd Conclave</td>
+                    <td>COLD</td>
+                    <td>Distant cousins, but Fae chaos disturbs Elven order.</td>
+                </tr>
+                <tr>
+                    <td>Nomad Collective</td>
+                    <td>FRIENDLY</td>
+                    <td>Nomads respect Elven territories. Occasional trade.</td>
+                </tr>
+                <tr>
+                    <td>The Exchange</td>
+                    <td>NEUTRAL</td>
+                    <td>Will trade for rare herbs and alchemical components.</td>
+                </tr>
+                <tr>
+                    <td>Vestige Bloodlines</td>
+                    <td>HOSTILE</td>
+                    <td>Mutation threatens forest purity. Must be quarantined.</td>
+                </tr>
+                <tr>
+                    <td>Chitinous Ascendancy</td>
+                    <td>WAR</td>
+                    <td>Hive-mind devours forests. Existential threat to nature.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Recommended Builds</h2>
+
+        <h3>Surgical Assassin (Thorn Dancer - Scout, 6 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> Thorn Blade (6 cards), Dueling Dagger (2 cards), Living Seal Sigil (3 cards)</li>
+            <li><strong>Tactics:</strong> Apex Predator (+2 damage vs Bleeding targets), Shadow Step (teleport 3 hexes after attacking)</li>
+            <li><strong>Total Deck:</strong> 29 cards (fast cycle, maximum mobility)</li>
+            <li><strong>Strategy:</strong> Leaf Dance + Shadow Step = move 6 hexes + attack + vanish. Thorn Blade applies Bleed 3-4 per hit (stacks rapidly). Living Seal doubles regeneration (2 cards per round passive). Hit-and-run guerrilla warfare.</li>
+        </ul>
+
+        <h3>Bleed Master (Rootwarden - Assault, 5 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> Thorn Whip (6 cards), Kite Shield (3 cards), Living Seal Sigil (3 cards), Targeting Sigil (3 cards)</li>
+            <li><strong>Tactics:</strong> Toxin Mastery (double all Bleed damage), Verdant Growth (summon vine walls)</li>
+            <li><strong>Total Deck:</strong> 33 cards (bleed specialist)</li>
+            <li><strong>Strategy:</strong> Stack Bleed on multiple targets (Thorn Whip has AoE). Toxin Mastery doubles Bleed damage (Bleed 2 becomes Bleed 4). Living Seal provides regeneration (2 cards per round). Enemies die to damage-over-time while you heal.</li>
+        </ul>
+
+        <h3>Nature Fortress (Ironwood Sentinel - Heavy, 4 SP)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Equipment:</strong> Longbow (4 cards), Bark Shield (3 cards), Living Seal Sigil (3 cards), Reinforced Plating (3 cards), Repair Sigil (2 cards)</li>
+            <li><strong>Tactics:</strong> Verdant Growth, Ironbark Skin (gain 1 Armor counter per round, max 3)</li>
+            <li><strong>Total Deck:</strong> 36 cards (regeneration tank)</li>
+            <li><strong>Strategy:</strong> Longbow provides safe ranged damage (Bleed from range). Living Seal + Repair Sigil + Verdant Regeneration = recover 4 cards per round (passive). Reinforced Plating + Ironbark Skin = massive damage reduction. Outlast through regeneration and area denial.</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Notes</h2>
+
+        <p class="manuscript-text">
+            <strong>Strengths:</strong> Best damage-over-time in game (Bleed stacks to 8 max), high mobility (Leaf Dance 2 hexes, Shadow Step, teleports), moderate regeneration (Verdant Regeneration 2 cards/round), surgical strikes (Pruning Cut targets specific components), area control (Root Bind, Vine Walls, Seed Pods). <strong>(Balance Update Oct 19: Bleed cap 10→8, Leaf Dance 3→2 hexes, removed Photosynthesis)</strong>
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Weaknesses:</strong> Lower burst damage (relies on damage-over-time), fragile (light armor, low HP pools on Scout builds), requires setup time (Bleed stacks need multiple turns), weak to fast aggro (if killed before Bleed activates, wasted effort), equipment restricted (cannot use heavy weapons, metal armor, firearms).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Early Game (Turns 1-3):</strong> Apply Bleed to all enemies (spread damage-over-time). Use mobility to avoid retaliation (Leaf Dance, Shadow Step). Set up Vine Walls for area control.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Mid Game (Turns 4-6):</strong> Enemies now have Bleed 3-5 (taking 3-5 damage per turn). Apex Predator adds +2 damage to attacks vs Bleeding targets. Photosynthesis triggers when you don't attack AND don't take damage (requires safety).
+        </p>
+
+        <p class="manuscript-text">
+            <strong>Late Game (Turns 7+):</strong> Enemies have maximum Bleed stacks (8 damage per turn cap). Focus on survival—they die to Bleed, you just need to not die. Verdant Regeneration keeps you alive (2 cards/round). <strong>(Balance Update Oct 19: Bleed cap reduced from 10 to 8)</strong>
+        </p>
+
+        <div class="manuscript-quote">
+            "You came to our forest seeking war. We granted you poison instead. Now you bleed. And you will continue bleeding. Until there is nothing left."
+            <span class="quote-attribution">—Archdruid Sylara Thornwhisper, after the Roothold Massacre</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Version 3.0 Optional Rules</h2>
+
+        <p class="manuscript-text">
+            The Elven Verdant Covenant has unique interactions with the three new v3.0 optional mechanics systems:
+        </p>
+
+        <h3>Dice Pool Advantage System</h3>
+        <p class="manuscript-text">
+            Elven pilots work normally with the Dice Pool system. Positioning in forest terrain and ambush tactics can grant Advantage (roll 3 Attack Dice, take 2 highest). See <a href="rules-dice-pool.html" target="_parent">Dice Pool Advantage Rules</a>.
+        </p>
+
+        <h3>Taint Exploitation System</h3>
+        <p class="manuscript-text">
+            Elven pilots are <strong>extremely vulnerable to Taint</strong> due to their connection to nature:
+        </p>
+        <ul class="manuscript-list">
+            <li><strong>Fragile Immortals:</strong> Gain Taint at <strong>double rate</strong> (3 damage = 2 Taint instead of 1 Taint) - Engine corruption burns elven souls faster</li>
+            <li><strong>Nature's Protection:</strong> Corruption Save is <strong>5+</strong> only if standing in <strong>Forest terrain</strong> (nature shields them from corruption). Otherwise 4+ (normal).</li>
+            <li><strong>Regeneration Purges Taint:</strong> When you use Regeneration cards (Verdant Regeneration, Photosynthesis, etc.), remove 1 Taint Marker</li>
+            <li><strong>Severe Corruption:</strong> If Corrupted (failed save), mutation effects are MORE severe (roll with Disadvantage on Corruption Table)</li>
+        </ul>
+        <p class="manuscript-text">
+            Elven pilots are caught between Engine corruption and nature's refuge. They accumulate Taint twice as fast as other factions but can purge it through regeneration. Standing in forests provides protection; leaving them invites corruption. See <a href="rules-taint-exploitation.html" target="_parent">Taint Exploitation Rules</a>.
+        </p>
+
+        <h3>Pilot Grit System</h3>
+        <p class="manuscript-text">
+            Elven pilots suffer <strong>-1 Grit penalty at all times</strong> (Fragile Immortals):
+        </p>
+        <ul class="manuscript-list">
+            <li><strong>Starting Grit:</strong> 0 (normal), but effective Grit -1 on all checks</li>
+            <li><strong>Eternal Penalty:</strong> Can still gain Grit through missions (5 missions = Grit 1, 10 missions = Grit 2, 20 missions = Grit 3), but ALWAYS subtract 1 from Grit Checks</li>
+            <li><strong>Maximum Effective Grit:</strong> 2 (Grit 3 - 1 penalty) - even veteran elves are more fragile than rookie humans</li>
+            <li><strong>Philosophical Justification:</strong> "We are ageless, not invincible. Pain is... unfamiliar." Elves live for centuries without injury - when they DO get hurt, they shatter emotionally</li>
+        </ul>
+        <p class="manuscript-text">
+            This makes elven pilots the most fragile faction from a Pilot Wound perspective. Even Grit 3 veterans roll effectively as Grit 2 (1d6+2). Rookie elves (Grit 0) roll at effective Grit -1, meaning they need a natural 5 or 6 to avoid Full Wound (17% chance). Protect elven pilots at all costs. See <a href="campaign-pilot-grit.html" target="_parent">Pilot Grit Rules</a>.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid var(--dark-red);">
+            <p style="font-style: italic; color: var(--bone-white);">
+                <a href="faction-dwarves.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">← Dwarves</a>
+                •
+                <a href="faction-undead.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">The Ossuarium →</a>
+            </p>
         </div>
     </div>
-
-    <script>
-        function toggleSection(button) {
-            const content = button.nextElementSibling;
-            button.classList.toggle('active');
-            content.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
