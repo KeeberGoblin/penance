@@ -3,21 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flesh Bargain - Penance Codex</title>
+    <title>Flesh Bargains & Body Modification</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
-        /* Blood Red/Crimson Campaign Aesthetic */
-        .sacrifice-accent {
-            color: #8B0000;
+        .bargain-featured-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        .sacrifice-border {
-            border-color: #660000 !important;
+
+        .bargain-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid var(--dark-red);
+            padding: 1.5rem;
+            border-radius: 2px;
         }
-        h2 {
-            color: #8B0000 !important;
+
+        .bargain-card .faction-label {
+            color: var(--aged-gold);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
         }
-        .content table th {
-            background: linear-gradient(to bottom, #660000, #440000) !important;
+
+        .bargain-card h4 {
+            margin: 0.5rem 0 0.25rem 0;
+            font-size: 1.1rem;
+            color: var(--dark-red);
+        }
+
+        .bargain-card p {
+            margin: 0.25rem 0;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .cost-badge {
+            display: inline-block;
+            background: rgba(139, 0, 0, 0.3);
+            border: 1px solid var(--aged-gold);
+            padding: 0.3rem 0.6rem;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            color: var(--aged-gold);
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-container {
+            margin: 2rem 0;
+        }
+
+        .dropdown-toggle {
+            background: var(--shadow-black);
+            border: 2px solid var(--dark-red);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .dropdown-toggle:hover {
+            background: var(--dark-red);
+        }
+
+        .dropdown-toggle.active {
+            background: var(--dark-red);
+        }
+
+        .dropdown-content {
+            display: none;
+            background: rgba(10, 6, 4, 0.5);
+            border: 1px solid var(--dark-red);
+            border-top: none;
+            max-height: 700px;
+            overflow-y: auto;
+        }
+
+        .dropdown-content.active {
+            display: block;
+        }
+
+        .bargain-item {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+        }
+
+        .bargain-item:last-child {
+            border-bottom: none;
+        }
+
+        .bargain-item-name {
+            font-weight: 700;
+            color: var(--aged-gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .bargain-item-cost {
+            font-size: 0.85rem;
+            color: var(--aged-gold);
+            opacity: 0.8;
+            margin-bottom: 0.3rem;
+        }
+
+        .bargain-item-effect {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .section-header {
+            background: linear-gradient(90deg, #8b0000 0%, #4a0000 50%, #8b0000 100%);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0 1rem 0;
+            border-left: 5px solid var(--aged-gold);
+            font-size: 1.3rem;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -26,457 +136,229 @@
         <div class="breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#campaign">CAMPAIGN</a> /
-            Flesh Bargain
+            Flesh Bargains
         </div>
-<h1>Flesh Bargain</h1>
 
-        <p style="font-style: italic; color: #8B0000; margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
-            Faction-Specific Permanent Modifications • Version 3.0 • Campaign Progression
+        <h1>Flesh Bargains & Body Modification</h1>
+        <p style="font-style: italic; color: var(--aged-gold); font-size: 1.1rem; text-align: center; margin: 1rem 0;">
+            Surgical Enhancement & Biological Pacts ★ Faction-Specific Upgrades
         </p>
 
         <div class="manuscript-quote">
-            "To make room for the machine, we give up what we cannot bear to lose."
+            "Some prices are paid in scrap and credits. Others are paid in flesh and blood. Both leave scars."
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
+        </div>
 
-        <h2>Overview</h2>
+        <h2>What Are Flesh Bargains?</h2>
 
-        <p>
-            <span style="font-size: 2.5rem; font-weight: bold; color: #8B0000; float: left; line-height: 0.85; margin-right: 0.05em; margin-top: 0.1em; font-family: 'Cinzel Decorative', serif;">E</span>ach faction has its own method of <strong>Flesh Bargain</strong> — permanent bodily modification to enhance capsule connection. The Church removes legs. The Dwarves shed flesh for metal. The Ossuarium discards rotting meat. The Elves graft with nature. Each sacrifice is unique, reflecting cultural values and physiology.
+        <p class="manuscript-text">
+            Flesh Bargains are permanent body modifications that pilots can undergo during Settlement Phase. Each faction offers unique augmentations reflecting their philosophy and capabilities. Modifications provide permanent bonuses but cost Resources, create Scarring, and may incur Taint or Trauma depending on the procedure.
         </p>
 
-        <h3>Universal Benefits (All Variants)</h3>
-        <ul>
-            <li>+1 SP Maximum</li>
-            <li>+2 Heat Capacity</li>
-            <li>+1 Deployment Duration</li>
-            <li>+1 Grit (permanent willpower bonus from trauma survived)</li>
-        </ul>
-
-        <h3>Universal Costs (All Variants)</h3>
-        <ul>
-            <li>Permanent physical disability outside Casket</li>
-            <li>Irreversible (cannot be undone)</li>
-            <li>Social stigma (faction-dependent)</li>
-            <li>4-8 weeks recovery downtime</li>
-        </ul>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Church of Absolution: THE SHORTENING</h2>
-
-        <p><strong>What's Sacrificed:</strong> Both legs (upper thigh amputation, femoral level)</p>
-
-        <h3>Procedure</h3>
-        <ul>
-            <li><strong>Amputation:</strong> Legs removed at hip socket</li>
-            <li><strong>Augmentation:</strong> Hip stumps receive 4-6 neural ports</li>
-            <li><strong>Recovery:</strong> 6-8 weeks</li>
-            <li><strong>Result:</strong> Pilot is 18-24 inches shorter, wheelchair-bound outside Casket</li>
-        </ul>
-
-        <h3>Church-Specific Benefits</h3>
-        <ul>
-            <li><strong>Martyrdom Aura</strong> (Passive): Allies within 2 hexes gain +1 to all attacks (inspired by your sacrifice)</li>
-            <li><strong>Stump Override:</strong> Once per mission, ignore one Thread Snap (stumps provide backup motor control)</li>
-            <li><strong>Righteous Fury Boost:</strong> When Shortened Church pilot is reduced to 10 HP or less, gain +2 damage to all attacks (desperation power)</li>
-            <li><strong>Sacred Burden:</strong> Can redirect 1 damage per turn from allies to self (costs 0 SP, automatic)</li>
-        </ul>
-
-        <h3>Outside Casket</h3>
-        <ul>
-            <li><strong>Wheelchair-bound</strong> (cannot walk, stand, or climb)</li>
-            <li><strong>Honored by Church</strong> (reverent title "The Shortened", priority healing, better rations)</li>
-            <li><strong>Ceremony:</strong> Public ritual after surgery (Church bells ring, 3-day celebration)</li>
-        </ul>
-
-        <div style="background: rgba(139, 0, 0, 0.2); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-            <p style="margin: 0; color: #8B0000;">"They walked on sinful legs. Now they float in grace. Their sacrifice brings us all closer to Absolution."</p>
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+        <h2>Featured Faction Bargains</h2>
+        <p style="opacity: 0.8; font-style: italic; margin-bottom: 1.5rem;">(Top 3 powerful modifications featured. Complete faction tables in dropdowns.)</p>
 
-        <h2>Dwarven Forge-Guilds: COMPACT FORM (Runic Grafting)</h2>
+        <div class="bargain-featured-container">
+            <div class="bargain-card">
+                <div class="faction-label">Church of Absolution</div>
+                <h4>Martyr's Stigmata</h4>
+                <div class="cost-badge">2 Scrap | 1 Wound</div>
+                <p><strong>Effect:</strong> Pilot's wounds glow with holy light. Gain +2 Defense. Once per mission, negate lethal damage (take 1 HP instead, gain 1 Trauma Wound). Adjacent allies gain +1 Defense.</p>
+                <p><strong>Narrative:</strong> "The sacred light marks you as saved. Or damned."</p>
+            </div>
 
-        <p><strong>What's Sacrificed:</strong> Arms and legs (all four limbs removed, replaced with runic sockets)</p>
+            <div class="bargain-card">
+                <div class="faction-label">Blighted Packs</div>
+                <h4>Carapace Grafting</h4>
+                <div class="cost-badge">3 Scrap | 2 Wounds | +3 Taint</div>
+                <p><strong>Effect:</strong> Chitinous armor plates grow beneath pilot's skin. Gain +2 Defense permanently. First damage each round reduced by 1. Cannot wear plating (incompatible armor). Pilot gains 1 Taint per mission.</p>
+                <p><strong>Narrative:</strong> "You are becoming something more. Something less. Something necessary."</p>
+            </div>
 
-        <h3>Procedure</h3>
-        <ul>
-            <li><strong>Amputation:</strong> All four limbs removed at elbow/knee</li>
-            <li><strong>Augmentation:</strong> Stumps engraved with runic circuits (Forge-Runes channel Soulstone energy directly)</li>
-            <li><strong>Recovery:</strong> 8-12 weeks (extensive rune-carving)</li>
-            <li><strong>Result:</strong> Pilot is limbless torso with glowing runic stumps, uses hydraulic prosthetics outside Casket</li>
-        </ul>
-
-        <h3>Dwarf-Specific Benefits</h3>
-        <ul>
-            <li><strong>Forge-Rune Amplification</strong> (Passive): +1 to all attack rolls (runic circuits enhance Casket response time)</li>
-            <li><strong>Overcharge Protocol:</strong> Spend 2 SP, next attack deals +3 damage and ignores 2 Defense (costs 1 Heat)</li>
-            <li><strong>Runic Stability:</strong> Cannot be knocked down, pulled, or grappled by enemies (Casket roots via rune-connection)</li>
-            <li><strong>Emergency Venting:</strong> When you would take Strain damage from Heat, instead remove 3 Heat and take no damage (once per battle)</li>
-        </ul>
-
-        <h3>Outside Casket</h3>
-        <ul>
-            <li><strong>Hydraulic Prosthetics</strong> (functional but slow: movement speed halved)</li>
-            <li><strong>Respected as Engineers</strong> (technical title "Compact Pilot", +10% salary, priority forge access)</li>
-            <li><strong>Can Build Own Prosthetics</strong> (Craft proficiency, dwarven hydraulics are best in class)</li>
-        </ul>
-
-        <div style="background: rgba(139, 0, 0, 0.2); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-            <p style="margin: 0; color: #8B0000;">"Less meat, more metal. That's progress. Why carry weight that doesn't help you fight?"</p>
+            <div class="bargain-card">
+                <div class="faction-label">Elven Verdant Covenant</div>
+                <h4>Root Network Integration</h4>
+                <div class="cost-badge">2 Scrap | 1 Wound</div>
+                <p><strong>Effect:</strong> Living roots integrate with pilot's neural system. Recover 1 card per turn if standing on Forest terrain. Can sense enemies through vegetation (see through trees). Movement in forest costs -1 SP.</p>
+                <p><strong>Narrative:</strong> "The forest is part of you now. You are part of it."</p>
+            </div>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>The Ossuarium: EFFICIENT FORM (Flesh Reduction)</h2>
-
-        <p><strong>What's Sacrificed:</strong> ALL unnecessary flesh (arms, legs, organs, skin - only skull, spine, and minimal torso remain)</p>
-
-        <h3>Procedure</h3>
-        <ul>
-            <li><strong>Reduction:</strong> Limbs removed, organs replaced with preservative fluid, skin flayed</li>
-            <li><strong>Augmentation:</strong> Spinal column directly wired to capsule, cranial ports added</li>
-            <li><strong>Recovery:</strong> 4 weeks (undead heal faster, no blood loss)</li>
-            <li><strong>Result:</strong> Pilot is floating skull + spine + minimal torso, permanently fused to capsule</li>
-        </ul>
-
-        <h3>Ossuarium-Specific Benefits</h3>
-        <ul>
-            <li><strong>Already Dead</strong> (Passive): Immune to Pilot Wound cards (when you take Pilot Damage, add 1 Decay card to HP deck instead of flipping Wound)</li>
-            <li><strong>Soul Harvest Protocol:</strong> Once per turn, spend 2 enemy Taint Markers, recover 3 cards from discard (weaponize corruption)</li>
-            <li><strong>Phylactery Connection:</strong> When your Casket is destroyed, if you have 5+ HP remaining, automatically resurrect at 5 HP (once per battle)</li>
-            <li><strong>Decay Aura Amplified:</strong> Enemies within 3 hexes gain +2 Taint per turn instead of +1 (double corruption radiation)</li>
-        </ul>
-
-        <h3>Outside Casket</h3>
-        <ul>
-            <li><strong>Cannot Leave Capsule</strong> (life support dependency, must remain in fluid or die within 1 hour)</li>
-            <li><strong>Total Dependency</strong> (dedicated attendant required 24/7, cost: 40 Credits/month)</li>
-            <li><strong>Efficient Form Respected</strong> (Ossuarium views this as peak evolution, no stigma)</li>
-        </ul>
-
-        <div style="background: rgba(139, 0, 0, 0.2); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-            <p style="margin: 0; color: #8B0000;">"Flesh is waste. Remove it. A skull piloting a Casket is perfection."</p>
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+        <div class="section-header">▼ Church of Absolution Modifications</div>
 
-        <h2>Elven Verdant Covenant: ROOT-GRAFTING (Nature Fusion)</h2>
-
-        <p><strong>What's Sacrificed:</strong> Legs (replaced with living root-limbs grafted to stumps)</p>
-
-        <h3>Procedure</h3>
-        <ul>
-            <li><strong>Amputation:</strong> Legs removed at mid-thigh</li>
-            <li><strong>Augmentation:</strong> Living tree roots grafted to stumps, roots grow INTO bone marrow</li>
-            <li><strong>Recovery:</strong> 6-8 weeks (roots must bond with body, painful process)</li>
-            <li><strong>Result:</strong> Pilot has root-limbs instead of legs (functional but slow, creeping vine movement)</li>
-        </ul>
-
-        <h3>Elven-Specific Benefits</h3>
-        <ul>
-            <li><strong>Photosynthesis Integration:</strong> Standing in Forest terrain hexes for 1 full turn, recover 2 HP and remove 1 Taint (once per turn)</li>
-            <li><strong>Root Network Sensing:</strong> Can sense enemy positions within 3 hexes if standing on natural ground (ignore Disadvantage from obscured targets)</li>
-            <li><strong>Thornwhip Strike:</strong> Once per battle, roots lash out dealing 4 damage to all enemies within 2 hexes (ignores Defense, costs 2 SP)</li>
-            <li><strong>Nature's Resilience:</strong> When you would be reduced to 0 HP, if you're in Forest terrain, remain at 1 HP instead (once per battle)</li>
-        </ul>
-
-        <h3>Outside Casket</h3>
-        <ul>
-            <li><strong>Root-Limbs Functional</strong> (can walk at half speed, creeping vine gait, silent movement)</li>
-            <li><strong>Cannot Run or Climb</strong> (roots are strong but slow, Athletics checks at Disadvantage)</li>
-            <li><strong>Mourned by Elves</strong> (sorrowful title "The Pruned", stumps carved with memorial runes, treated like funeral)</li>
-        </ul>
-
-        <div style="background: rgba(139, 0, 0, 0.2); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-            <p style="margin: 0; color: #8B0000;">"We cut away the dead wood so the tree may live. But each cut reminds us of what the Sundering took from us."</p>
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleBargainDropdown('church')">Expand Church Bargains (6 modifications) ▼</button>
+            <div class="dropdown-content" id="church-content">
+                <div class="bargain-item">
+                    <div class="bargain-item-name">1. Martyr's Stigmata</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | 1 Wound | Duration: Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Wounds glow with holy light. Gain +2 Defense. Once per mission, negate lethal damage (take 1 HP instead, gain 1 Trauma Wound). Adjacent allies gain +1 Defense.</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">2. Blessed Constitution</div>
+                    <div class="bargain-item-cost">Cost: 1 Scrap | Effect: Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Holy blessing strengthens body. Gain +5 max HP (deck size increases by 5). Recover 1 card per turn if under holy ground. Cannot benefit from necromantic healing (unholy sources).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">3. Faith Shield Matrix</div>
+                    <div class="bargain-item-cost">Cost: 3 Scrap | 2 Wounds | Effect: Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Soulstone resonates with faith. Allies within 2 hexes gain +1 Defense. First damage you or nearby allies take each round reduced by 1. Once per mission, Shield all damage to nearby allies (you take it instead).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">4. Purification Aura</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | 1 Trauma Wound | Effect: Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Unholy influences recoil from you. Remove 1 Taint per turn (passive). Enemies within 2 hexes lose 1 SP at turn start. Cannot gain Taint from nearby enemies (cleansed).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">5. Resurrection Pact</div>
+                    <div class="bargain-item-cost">Cost: 5 Scrap | 3 Wounds | 1 Taint | Effect: One-Time Use</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> If killed, automatically resurrect at 1 HP at settlement after mission. Gain 2 Trauma Wounds. Pact must be renewed before next mission (cost: 3 Scrap). Cannot be used again in same mission.</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">6. Holy Weapon Blessing</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | Renewal: 1 Scrap per mission</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> One equipped weapon becomes Holy-touched. All attacks deal +1 damage vs corrupted enemies (3+ Taint). Cannot deal damage to undamaged Holy targets (must remove curse first). Blessing lasts until end of mission.</div>
+                </div>
+            </div>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+        <div class="section-header">▼ Dwarven Clans Modifications</div>
 
-        <h2>Special Cases: Extreme Variants</h2>
-
-        <p><strong>After Mission 20+, extreme sacrifice variants unlock for desperate veterans:</strong></p>
-
-        <h3>Church "Living Martyr" (Extreme Shortening)</h3>
-        <ul>
-            <li><strong>Sacrifice:</strong> Legs + Arms (only torso, head, spine remain)</li>
-            <li><strong>Additional Benefits:</strong> +2 SP Max (total +3), Martyrdom Aura radius increased to 4 hexes, can use "Final Absolution" (explode on death for 8 damage to all enemies within 3 hexes)</li>
-            <li><strong>Costs:</strong> Cannot leave capsule (life support dependency), Morale permanently locked at 0</li>
-            <li><strong>Frequency:</strong> Extremely rare (1 in 500 Church pilots)</li>
-        </ul>
-
-        <h3>Dwarven "Rune-Core Fusion" (Full Metal)</h3>
-        <ul>
-            <li><strong>Sacrifice:</strong> All limbs + torso flesh (only skeleton + runic circuits remain)</li>
-            <li><strong>Additional Benefits:</strong> +2 Defense (permanent metal plating), immune to Heat damage, can overcharge twice per battle</li>
-            <li><strong>Costs:</strong> Cannot leave capsule, requires dedicated engineer (60 Credits/month)</li>
-            <li><strong>Frequency:</strong> Rare (dwarven elites only, 1 in 200)</li>
-        </ul>
-
-        <h3>Ossuarium "Skull Pilot" (Total Reduction)</h3>
-        <ul>
-            <li><strong>Sacrifice:</strong> EVERYTHING except skull (brain sustained by Soulstone directly)</li>
-            <li><strong>Additional Benefits:</strong> +3 SP Max (total +4), immune to ALL Pilot Damage, can Soul Harvest twice per turn</li>
-            <li><strong>Costs:</strong> Permanently fused to capsule, if Casket destroyed, pilot dies instantly</li>
-            <li><strong>Frequency:</strong> Very rare (final form, 1 in 300)</li>
-        </ul>
-
-        <h3>Elven "Dryad Form" (Full Tree Integration)</h3>
-        <ul>
-            <li><strong>Sacrifice:</strong> Legs + Arms replaced with tree limbs (entire body becomes semi-plant)</li>
-            <li><strong>Additional Benefits:</strong> Photosynthesis always active (recover 1 HP per turn in any natural terrain), Thornwhip Strike usable twice per battle, can Root Anchor (immobilize self, gain +3 Defense)</li>
-            <li><strong>Costs:</strong> Must spend 4 hours per day in sunlight (or take 1d6 damage), vulnerability to fire (+2 damage from all fire sources)</li>
-            <li><strong>Frequency:</strong> Rare (elven extremists only, 1 in 250)</li>
-        </ul>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Campaign Integration: The Offer</h2>
-
-        <p><strong>After Mission 5, 10, 15</strong>, faction specialists offer Flesh Bargain procedures:</p>
-
-        <div style="background: rgba(139, 0, 0, 0.3); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0;">
-            <p style="margin: 0;"><strong>FIRST OFFER (Mission 5):</strong></p>
-            <p style="margin: 0.5rem 0;">
-                "You've survived five drops. That's more than most. You're good at this.<br><br>
-                I can make you better.<br><br>
-                [Faction-specific sacrifice name]. I've done it [number] times. [Recovery time] recovery, then you're back in the capsule stronger, faster, tougher.<br><br>
-                Cost: [Credits/Resources]. And [body part], obviously.<br><br>
-                Think about it. Other pilots will tell you it's worth it. Some will tell you it ruined them.<br><br>
-                Your choice. [Faction-specific pressure]."
-            </p>
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleBargainDropdown('dwarves')">Expand Dwarven Bargains (6 modifications) ▼</button>
+            <div class="dropdown-content" id="dwarves-content">
+                <div class="bargain-item">
+                    <div class="bargain-item-name">1. Ironclad Plating</div>
+                    <div class="bargain-item-cost">Cost: 3 Scrap | 2 Wounds</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Dwarf-forged metal plates integrate with skeleton. Gain +1 permanent Defense. First damage each round reduced by 1. Cannot use light armor (incompatible).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">2. Runic Infusion</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | Effect: Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Ancient dwarven runes etch into bones. Gain +2 maximum Rune Counters (can stack up to 7 instead of 5). Rune regeneration +1 per turn. All rune abilities gain +1 damage.</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">3. Forge Heart</div>
+                    <div class="bargain-item-cost">Cost: 4 Scrap | 2 Wounds | +1 Taint</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Heart becomes miniature forge. Gain +2 Heat capacity (max 10 Heat). When Heat 5+, all attacks deal +1 damage. Can transfer Heat to Soulstone (consume 2 Heat to recover 1 card).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">4. Stoneblood</div>
+                    <div class="bargain-item-cost">Cost: 3 Scrap | 1 Wound | Duration: 5 Missions</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Dwarf blood hardens into stone. Regenerate 1 HP per turn if standing on stone/metal terrain. All physical attacks against you require +1 to hit (thick hide). Movement through rubble doesn't cost extra SP.</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">5. Ancestor's Blessing</div>
+                    <div class="bargain-item-cost">Cost: 5 Scrap | 3 Wounds</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Dwarf ancestors grant power. Once per mission, reroll all failed attacks (use new results). Gain +1 to all Defense saves. Cannot use fae artifacts (ancestral pact prevents it).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">6. Underground Resonance</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Attune to underground vibrations. See enemies through rock (4 hex range). Movement underground costs -1 SP. Detect unstable tunnels (avoid collapses). Cannot be surprised underground.</div>
+                </div>
+            </div>
         </div>
 
-        <div style="background: rgba(139, 0, 0, 0.3); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0;">
-            <p style="margin: 0;"><strong>SECOND OFFER (Mission 10, if declined):</strong></p>
-            <p style="margin: 0.5rem 0;">
-                "Still have those [body parts]? Most pilots don't by now. The offer stands."
-            </p>
+        <div class="section-header">▼ Elven Verdant Covenant Modifications</div>
+
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleBargainDropdown('elves')">Expand Elven Bargains (6 modifications) ▼</button>
+            <div class="dropdown-content" id="elves-content">
+                <div class="bargain-item">
+                    <div class="bargain-item-name">1. Root Network Integration</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | 1 Wound</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Living roots integrate with nerves. Recover 1 card/turn on forest terrain. See through vegetation (4 hex range). Forest movement costs -1 SP. Regrow limbs overnight (heal 1 Wound per rest).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">2. Leaf Dance Mastery</div>
+                    <div class="bargain-item-cost">Cost: 3 Scrap | Effect: Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Move and attack seamlessly. All attacks during movement gain +1 damage. Can move after attacking (instead of before). Difficult terrain doesn't penalize movement.</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">3. Bleed Infusion</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | 1 Wound | +2 Taint</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Toxins run through veins. All attacks apply +1 Bleed (base 1 becomes 2). Bleed damage +1 per tick. Enemies can become poisoned (5+ Bleed = 1 damage per turn). Immunity to poison yourself.</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">4. Photosynthesis Core</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Derive power from sunlight. On outdoor missions, recover +1 card/turn (instead of passive 1). In darkness, all attacks -1 damage. Cannot operate underground efficiently.</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">5. Verdant Immortality</div>
+                    <div class="bargain-item-cost">Cost: 5 Scrap | 2 Wounds | Duration: Permanent</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Become timeless like the forest. Cannot die from age. Gain +2 maximum HP. Slow regeneration (1 HP/mission if at 50% HP or below). Connection to nature prevents disease.</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">6. Thorn Manifestation</div>
+                    <div class="bargain-item-cost">Cost: 3 Scrap | 1 Wound</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Thorns grow from skin as weapon. Melee attackers take 1 damage (reflect). Gain built-in attack: thorns (2d6, no equipment cost). Cannot equip shields (thorn growth prevents it).</div>
+                </div>
+            </div>
         </div>
 
-        <div style="background: rgba(139, 0, 0, 0.3); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0;">
-            <p style="margin: 0;"><strong>THIRD OFFER (Mission 15, final offer):</strong></p>
-            <p style="margin: 0.5rem 0;">
-                "Last time I'll ask. If you haven't done it by now, you probably never will. But if you change your mind, I'll be here."
-            </p>
+        <div class="section-header">▼ Ossuarium (Undead) Modifications</div>
+
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleBargainDropdown('ossuarium')">Expand Ossuarium Bargains (6 modifications) ▼</button>
+            <div class="dropdown-content" id="ossuarium-content">
+                <div class="bargain-item">
+                    <div class="bargain-item-name">1. Carapace Grafting</div>
+                    <div class="bargain-item-cost">Cost: 3 Scrap | 2 Wounds | +3 Taint</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Chitinous armor grows beneath skin. Gain +2 permanent Defense. First damage/round reduced by 1. Cannot wear plating. Gain 1 Taint/mission passively. Exoskeleton regrows (recover 1 card/turn in dark).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">2. Undead Regeneration</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | 1 Wound | +2 Taint</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Body constantly regenerates. Recover 1 card/turn automatically. If severed, limbs regrow in 1 mission. Cannot be permanently crippled. Decays slightly each mission (appearance worsens).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">3. Plague Touch</div>
+                    <div class="bargain-item-cost">Cost: 3 Scrap | +4 Taint</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Carry contagion. All attacks apply disease (target cannot recover HP next turn). Enemies touching you gain 1 Taint. Undead allies near you gain +1 damage. Eventually spreads to settlements (risk).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">4. Bone Armor Casting</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | 1 Wound</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Bones harden into armored plating. Gain +1 Defense. Reduce all damage by 1 (minimum 1). Can cast bones as projectiles (ranged attack, 2d6, recovers after mission). Equipment takes longer to destroy (double HP).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">5. Soulbound Anchor</div>
+                    <div class="bargain-item-cost">Cost: 4 Scrap | 2 Wounds | +5 Taint</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Soul chained to body permanently. Cannot be killed (if destroyed, resurrect at 1 HP after mission). Gain 1 Taint per mission. Other pilots see you as undead (roleplay implications). Cannot be raised as thrall (already bound).</div>
+                </div>
+                <div class="bargain-item">
+                    <div class="bargain-item-name">6. Decay Mastery</div>
+                    <div class="bargain-item-cost">Cost: 2 Scrap | +1 Taint</div>
+                    <div class="bargain-item-effect"><strong>Effect:</strong> Control decay process. Accelerate decomposition (leave behind corruption zones that damage enemies). Slow decay (preserve self, reduce Taint gain). Spread rot (enemies standing on your decay zones take 1 damage/turn).</div>
+                </div>
+            </div>
         </div>
 
-        <div style="background: rgba(139, 0, 0, 0.3); border-left: 6px solid #660000; padding: 1.5rem; margin: 1.5rem 0;">
-            <p style="margin: 0;"><strong>EXTREME VARIANTS UNLOCK (Mission 20+):</strong></p>
-            <p style="margin: 0.5rem 0;">
-                "You want to go further? I can do that. But there's no coming back from this one."
-            </p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Resource Costs</h2>
-
-        <h3>Standard Sacrifice (All Factions)</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Surgery</td>
-                    <td>80 Credits, 2 Medical Supplies</td>
-                </tr>
-                <tr>
-                    <td>Recovery Downtime</td>
-                    <td>4-8 weeks (cannot deploy)</td>
-                </tr>
-                <tr>
-                    <td>Monthly Maintenance</td>
-                    <td>8 Credits, 1 Medical Supply</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Advanced Variants (Extreme Forms)</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Extreme Sacrifice Surgery</td>
-                    <td>200 Credits, 5 Medical Supplies</td>
-                </tr>
-                <tr>
-                    <td>Recovery Downtime</td>
-                    <td>8-12 weeks</td>
-                </tr>
-                <tr>
-                    <td>Dedicated Attendant (monthly)</td>
-                    <td>40 Credits (required for life support)</td>
-                </tr>
-                <tr>
-                    <td>Monthly Maintenance</td>
-                    <td>15 Credits, 2 Medical Supplies</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Faction Pressure & Cultural Responses</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Faction</th>
-                    <th>Pressure</th>
-                    <th>Cultural View</th>
-                    <th>% Who Choose</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Church</strong></td>
-                    <td>High</td>
-                    <td>Honored martyrdom, celebrated publicly</td>
-                    <td>65% (by Mission 10)</td>
-                </tr>
-                <tr>
-                    <td><strong>Dwarves</strong></td>
-                    <td>Moderate</td>
-                    <td>Practical upgrade, engineering respect</td>
-                    <td>50% (by Mission 12)</td>
-                </tr>
-                <tr>
-                    <td><strong>Ossuarium</strong></td>
-                    <td>Extreme</td>
-                    <td>Obvious choice, expected by Mission 3</td>
-                    <td>85% (by Mission 5)</td>
-                </tr>
-                <tr>
-                    <td><strong>Elves</strong></td>
-                    <td>None</td>
-                    <td>Tragic necessity, mourned but supported</td>
-                    <td>25% (rarely chosen)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Morale Effects</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>Morale Change</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Another pilot chooses same sacrifice</td>
-                    <td>+1 (peer validation)</td>
-                </tr>
-                <tr>
-                    <td>Sacrificed pilot dies in mission</td>
-                    <td>-2 (doubt, fear)</td>
-                </tr>
-                <tr>
-                    <td>Non-sacrificed pilot mocks them</td>
-                    <td>-1 (humiliation)</td>
-                </tr>
-                <tr>
-                    <td>Romantic partner accepts them</td>
-                    <td>+2 (love, acceptance)</td>
-                </tr>
-                <tr>
-                    <td>Settlement lacks accessibility</td>
-                    <td>-3 (constant pain, isolation)</td>
-                </tr>
-                <tr>
-                    <td>Settlement has Pilot Sanctuary (Tier 4)</td>
-                    <td>+3 (luxury care, dedicated attendants)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p style="font-style: italic; margin-top: 1rem;"><strong>Extreme Sacrifice Morale:</strong> Permanently locked at 0 (broken but functional). Can still deploy, but no joy remains.</p>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Narrative Moments</h2>
-
-        <h3>Church Shortening Ceremony</h3>
-
-        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-            <p style="margin: 0;">You wake in the Infirmary, legs gone. The drugs wear off. Phantom toes wiggle. Phantom calves itch.</p>
-            <p style="margin: 0.5rem 0;">Outside, Church bells ring. The Confessor enters, carrying your severed legs wrapped in white silk.</p>
-            <p style="margin: 0.5rem 0;">"You have given flesh to the cause. Your legs will be burned in the Pyre of Absolution. Their ashes will nourish the gardens. Your sacrifice feeds the faithful."</p>
-            <p style="margin: 0.5rem 0;">Three days of celebration follow. Strangers bring you gifts—food, wine, soft blankets. Veterans kneel before you, stumps gleaming with fresh oil.</p>
-            <p style="margin: 0.5rem 0;">You're one of The Shortened now. Honored. Pitied. Revered. Broken.</p>
-        </div>
-
-        <h3>Dwarven Compact Form Ritual</h3>
-
-        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-            <p style="margin: 0;">The Forge-Master carves runes into your stumps with a white-hot chisel. You scream. He does not stop.</p>
-            <p style="margin: 0.5rem 0;">"Pain makes the runes stronger," he says. "Scream louder. Let the metal hear your suffering."</p>
-            <p style="margin: 0.5rem 0;">When he's done, your stumps glow faintly blue—Forge-Runes etched bone-deep. You can FEEL the Casket now, even from across the room. The connection hums through your marrow.</p>
-            <p style="margin: 0.5rem 0;">The Forge-Master hands you hydraulic prosthetics—gold-trimmed, shock-absorbing, perfectly weighted.</p>
-            <p style="margin: 0.5rem 0;">"Welcome to Compact Form, pilot. You're 40% more efficient now. Congratulations on your upgrade."</p>
-        </div>
-
-        <h3>Ossuarium Flesh Reduction</h3>
-
-        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-            <p style="margin: 0;">They peel your skin off in strips. You watch from above—detached, floating, already dead.</p>
-            <p style="margin: 0.5rem 0;">Your arms fall away. Your legs are discarded. Your organs are scooped out and replaced with preservative gel. Your skull is polished clean.</p>
-            <p style="margin: 0.5rem 0;">When they lower you back into the capsule, you realize: You cannot leave. Not ever. This is your coffin now.</p>
-            <p style="margin: 0.5rem 0;">But you don't care. You're already dead. This is just... tidier.</p>
-        </div>
-
-        <h3>Elven Root-Grafting</h3>
-
-        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-            <p style="margin: 0;">The roots burrow into your stumps like worms into soil. You feel them threading through bone, wrapping around marrow, drinking your blood.</p>
-            <p style="margin: 0.5rem 0;">The Archdruid sings in Old Tongue. The roots respond—growing, twisting, fusing. By the third day, they've reached your spine.</p>
-            <p style="margin: 0.5rem 0;">By the seventh day, you can move them. Slowly. Like learning to walk again, but as a tree.</p>
-            <p style="margin: 0.5rem 0;">Other elves look at you with sorrow. They carve memorial runes into your root-limbs—names of forests that burned in the Sundering.</p>
-            <p style="margin: 0.5rem 0;">You are The Pruned. A living reminder of what was lost.</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Integration with Other v3.0 Systems</h2>
-
-        <div style="background: rgba(139, 0, 0, 0.3); border: 2px solid #660000; padding: 1.5rem; margin: 2rem 0;">
-            <h3 style="margin-top: 0; color: #8B0000;">Cross-References</h3>
-            <ul style="margin-bottom: 0;">
-                <li><strong><a href="campaign-pilot-grit.html" target="_parent">Pilot Grit System</a>:</strong> Flesh Bargain grants +1 Grit permanently</li>
-                <li><strong><a href="rules-taint-exploitation.html" target="_parent">Taint Exploitation</a>:</strong> Some sacrifices grant Taint resistance</li>
-                <li><strong><a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a>:</strong> Sacrifice offers trigger at missions 5/10/15</li>
-                <li><strong><a href="campaign-settlements.html" target="_parent">Settlements</a>:</strong> Accessibility buildings affect sacrificed pilot morale</li>
-            </ul>
-        </div>
-
-        <div style="background: var(--shadow-black); border: 3px double #660000; padding: 2rem; margin: 3rem 0; font-style: italic;">
-            <p style="text-align: center; margin: 0; color: #8B0000;" class="no-drop-cap">
-                "We give up what we cannot bear to lose. And somehow, we survive."
-            </p>
-        </div>
-
-        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #660000; color: #8B0000; font-size: 0.9rem;">
-            <p><a href="campaign-pilot-grit.html" target="_parent">Pilot Grit</a> | <a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">✦</span>
         </div>
     </div>
+
+    <script>
+        function toggleBargainDropdown(id) {
+            const content = document.getElementById(id + '-content');
+            const button = event.target;
+            content.classList.toggle('active');
+            button.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
