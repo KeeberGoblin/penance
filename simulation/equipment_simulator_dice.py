@@ -204,6 +204,7 @@ class Casket:
     bleed_stacks: int = 0        # Elves bleed mechanic (max 4)
     forge_tokens: int = 0        # Crucible forge mechanic (max 5)
     biomass_tokens: int = 0      # Bloodlines biomass mechanic (max 10)
+    mutation_strain: int = 0     # V5.30: Bloodlines mutation strain tracker (max 29, 30+ = transformation loss)
     credit_tokens: int = 0       # Exchange credits mechanic (max 10)
     credit_attack_count: int = 0  # V5.17: Track attacks for credit generation (1 per 2 attacks)
     rune_counters: int = 0       # Dwarves rune counters (max 3)
@@ -964,15 +965,30 @@ class DiceCombatSimulator:
                     self.log(f"  → Spent {credit_effect['spend']} Credits (+{credit_effect['bonus']} damage, {attacker.credit_tokens} remaining)")
 
                 # Bloodlines: Spend Biomass for bonuses
-                # V5.22: Require 2x Biomass cost (nerf from 80% WR)
+                # V5.30: Added Mutation Strain cap (30+ = transformation loss)
                 biomass_effect = self.parse_resource_effect(attack_card.effect, 'biomass')
                 if biomass_effect['spend'] > 0:
-                    actual_cost = biomass_effect['spend'] * 2  # V5.22: Double the cost
+                    # Check Mutation Strain cap (30+ = instant loss)
+                    if attacker.mutation_strain >= 30:
+                        self.log(f"  → {attacker.name} TRANSFORMED! Mutation Strain reached 30+ (instant loss)")
+                        attacker.deck.clear()  # Instant death by deck depletion
+                        return
+
+                    # V5.30: Use normal cost, but add to Mutation Strain
+                    actual_cost = biomass_effect['spend']
                     if attacker.biomass_tokens >= actual_cost:
                         attacker.biomass_tokens -= actual_cost
+                        attacker.mutation_strain += actual_cost  # V5.30: Track cumulative strain
                         if biomass_effect['bonus'] > 0:
                             card_bonus_damage += biomass_effect['bonus']
-                        self.log(f"  → Spent {actual_cost} Biomass (+{biomass_effect['bonus']} damage, {attacker.biomass_tokens} remaining)")
+                        self.log(f"  → Spent {actual_cost} Biomass (+{biomass_effect['bonus']} damage, {attacker.biomass_tokens} remaining, Strain: {attacker.mutation_strain}/29)")
+
+                        # V5.30: Apply Mutation Strain penalties
+                        if attacker.mutation_strain >= 20:
+                            self.log(f"  → FERAL (Strain 20-29): Must attack each turn, no Reactive defenses")
+                        elif attacker.mutation_strain >= 10:
+                            self.log(f"  → UNSTABLE (Strain 10-19): +1 Heat on all attacks")
+                            # Heat penalty applied during attack resolution
 
                 # V5.19: Removed Taint spending bonus - penalties only now
 
@@ -1037,6 +1053,11 @@ class DiceCombatSimulator:
                     # Apply damage
                     actual_damage = defender.take_damage(total_damage, defense_results)
                     self.log(f"{attacker.name} attacks with {attack_card.name} for {actual_damage}/{total_damage} damage ({defender.name}: {defender.hp} HP)")
+
+                    # V5.30: Mutation Strain heat penalty (Unstable status)
+                    if attacker.faction.lower() == 'vestige-bloodlines' and attacker.mutation_strain >= 10:
+                        attacker.heat += 1
+                        self.log(f"  → Unstable Mutations: +1 Heat (Strain: {attacker.mutation_strain}/29)")
 
                     # V5.23: REMOVED LIFESTEAL - Ossuarium now only gains Taint from dealing damage
                     # Taint accumulates and causes penalties, but NO card recovery
