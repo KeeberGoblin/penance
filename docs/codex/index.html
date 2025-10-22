@@ -148,7 +148,7 @@
             z-index: 10000;
             transition: left 0.3s ease;
             overflow: hidden;
-            padding-top: 5rem;
+            padding-top: 6rem;
             padding-bottom: 0;
             box-sizing: border-box;
             display: flex;
@@ -220,14 +220,14 @@
             clip-path: polygon(
                 0 0,
                 100% 0,
-                100% 100%,
-                60% 100%,
-                50% calc(100% + 25px),
-                40% 100%,
-                0 100%
+                100% calc(100% - 5px),
+                60% calc(100% - 5px),
+                50% 100%,
+                40% calc(100% - 5px),
+                0 calc(100% - 5px)
             );
-            padding-bottom: 25px;
-            margin-bottom: -25px; /* Overlap with next ribbon */
+            height: 60px;
+            margin-bottom: -5px; /* Slight overlap */
         }
 
         /* Second bookmark ribbon at bottom of sidebar */
@@ -236,7 +236,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            min-height: 50px;
+            height: 80px;
             background: linear-gradient(to bottom,
                 var(--blood-red) 0%,
                 var(--dark-red) 100%
@@ -252,13 +252,12 @@
             clip-path: polygon(
                 0 0,
                 100% 0,
-                100% 100%,
-                60% 100%,
-                50% calc(100% + 30px),
-                40% 100%,
-                0 100%
+                100% 75%,
+                60% 75%,
+                50% 100%,
+                40% 75%,
+                0 75%
             );
-            padding-bottom: 30px;
         }
 
         .sidebar-bookmark::after {
