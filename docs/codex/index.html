@@ -138,6 +138,87 @@
             transform: scale(0.95);
         }
 
+        /* Desktop Sidebar Toggle Button */
+        .desktop-sidebar-toggle {
+            position: absolute;
+            top: 50%;
+            right: -15px;
+            transform: translateY(-50%);
+            z-index: 100;
+            background: var(--blood-red);
+            border: 2px solid var(--dark-red);
+            color: var(--bone-white);
+            padding: 1rem 0.5rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+            font-family: 'Cinzel Decorative', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .desktop-sidebar-toggle:hover {
+            background: var(--dark-red);
+            right: -17px;
+        }
+
+        .desktop-sidebar-toggle:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .toggle-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            letter-spacing: 0.1em;
+        }
+
+        .toggle-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* Collapsed sidebar state */
+        .sidebar.collapsed {
+            margin-left: -280px;
+            transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sidebar {
+            transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .sidebar.collapsed .desktop-sidebar-toggle {
+            right: -43px;
+            border-radius: 4px;
+            box-shadow: 4px 0 12px rgba(0, 0, 0, 0.9);
+        }
+
+        .sidebar.collapsed .toggle-arrow {
+            transform: rotate(180deg);
+        }
+
+        .sidebar.collapsed .desktop-sidebar-toggle:hover {
+            right: -45px;
+            box-shadow: 6px 0 16px rgba(0, 0, 0, 0.95);
+        }
+
+        /* Ensure container doesn't overflow */
+        .container {
+            overflow: visible;
+        }
+
+        /* Hide desktop toggle on mobile */
+        @media (max-width: 968px) {
+            .desktop-sidebar-toggle {
+                display: none;
+            }
+        }
+
         /* Mobile menu overlay */
         @media (max-width: 968px) {
             .mobile-menu-toggle {
@@ -227,6 +308,12 @@
     <div class="container">
         <!-- Sidebar -->
         <nav class="sidebar">
+            <!-- Desktop Toggle Button -->
+            <button class="desktop-sidebar-toggle" onclick="toggleDesktopSidebar()" title="Toggle Navigation">
+                <span class="toggle-arrow">◀</span>
+                <span class="toggle-text">HIDE</span>
+            </button>
+
             <!-- 0. HOME - Quick return to index -->
             <div class="nav-section">
                 <a class="nav-link" style="font-weight: 700; color: var(--aged-gold); border-left-color: var(--dark-red);" onclick="loadContent('content-home.html', event)">CODEX HOME</a>
@@ -374,6 +461,20 @@
     </div>
 
     <script>
+        function toggleDesktopSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const toggleText = document.querySelector('.toggle-text');
+
+            sidebar.classList.toggle('collapsed');
+
+            // Update button text
+            if (sidebar.classList.contains('collapsed')) {
+                toggleText.textContent = 'SHOW';
+            } else {
+                toggleText.textContent = 'HIDE';
+            }
+        }
+
         function toggleMobileMenu() {
             const sidebar = document.querySelector('.sidebar');
             const backdrop = document.querySelector('.menu-backdrop');
