@@ -8,7 +8,16 @@
 </head>
 <body>
     <!-- Faction Header with Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+    <div style="background: 
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(90, 70, 50, 0.08) 1px,
+      rgba(90, 70, 50, 0.08) 2px
+    ),
+    linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
             <img src="../images/bloodlines_PlaceH.png" alt="Vestige Bloodlines" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
             <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Vestige Bloodlines</h1>
@@ -227,95 +236,151 @@
 
         <h2>Faction Core Cards (6 Mandatory, Choose from 10)</h2>
 
-        <h3>1. Vestige Heritage</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: When any enemy Casket dies within 3 hexes, gain 1 Biomass token (max 10). Biomass can be spent on Bloodline Shift and Adaptive Evolution. Harvesting requires kills - no passive generation. <strong>(v5.17: Nerfed from 2 Biomass per kill to 1 Biomass per kill to address 82% win rate)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Our blood remembers. Our hunger never forgets."</em></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 1</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Vestige Heritage</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: When any enemy Casket dies within 3 hexes, gain 1 Biomass token (max 10). Biomass can be spent on Bloodline Shift and Adaptive Evolution. Harvesting requires kills - no passive generation.
+                </p>                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (v5.17: Nerfed from 2 Biomass per kill to 1 Biomass per kill to address 82% win rate)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Our blood remembers. Our hunger never forgets."
+                </p>
+            </div>
 
-        <h3>2. Predator's Mark</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Gambit | <strong>SP Cost:</strong> 1 | <strong>Range:</strong> 6 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Mark 1 visible enemy as "Prey". Your attacks against Prey deal +2 damage. Track Prey through concealment. When Prey dies, recover 3 cards. Mark lasts until Prey dies or mission ends.
-        </p>
-        <p class="manuscript-text"><em>"I smell fear. I follow blood. I do not stop."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 2</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Predator's Mark</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Gambit | <strong>SP:</strong> 1 | <strong>Range:</strong> 6 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Mark 1 visible enemy as "Prey". Your attacks against Prey deal +2 damage. Track Prey through concealment. When Prey dies, recover 3 cards. Mark lasts until Prey dies or mission ends.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "I smell fear. I follow blood. I do not stop."
+                </p>
+            </div>
 
-        <h3>3. Pack Instinct</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: When you attack an enemy adjacent to 1+ Vestige allies, deal +2 damage. If adjacent to 2+ Vestige allies, deal +4 damage instead. Fenmar Bonus: Gain +6 damage if all adjacent allies are also Fenmar bloodline (pure pack). <strong>(Balance Update Oct 19: Doubled from +1/+2/+3 to +2/+4/+6 damage)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Alone we are prey. Together we are apex."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 3</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Pack Instinct</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: When you attack an enemy adjacent to 1+ Vestige allies, deal +2 damage. If adjacent to 2+ Vestige allies, deal +4 damage instead. Fenmar Bonus: Gain +6 damage if all adjacent allies are also Fenmar bloodline (pure pack).
+                </p>                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Doubled from +1/+2/+3 to +2/+4/+6 damage)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Alone we are prey. Together we are apex."
+                </p>
+            </div>
 
-        <h3>4. Bloodline Shift</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 2 Biomass tokens | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Transform into enhanced bloodline form until end of round. Choose based on primary bloodline: Fenmar (+2 movement, Pack bonuses doubled), Urtok (+3 Defense, regenerate 1 card when hit), Vexis (+2 Defense, molt reaction once), Corvath (+3 movement, ignore terrain, glide), Serrak (all attacks inflict poison 2 damage, +1 movement). Add +2 to Mutation Strain track. <strong style="color: var(--blood-red);">Warning: Multiple shifts risk Casket suppression failure.</strong>
-        </p>
-        <p class="manuscript-text"><em>"Flesh is fluid. Blood is law. But the cage has limits."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 4</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Bloodline Shift</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> 2 Biomass | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Transform into enhanced bloodline form until end of round. Choose based on primary bloodline: Fenmar (+2 movement, Pack bonuses doubled), Urtok (+3 Defense, regenerate 1 card when hit), Vexis (+2 Defense, molt reaction once), Corvath (+3 movement, ignore terrain, glide), Serrak (all attacks inflict poison 2 damage, +1 movement). Add +2 to Mutation Strain track. <strong style="color: var(--blood-red);">Warning: Multiple shifts risk Casket suppression failure.</strong>
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Flesh is fluid. Blood is law. But the cage has limits."
+                </p>
+            </div>
 
-        <h3>5. Alpha's Command</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Buff | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> 4 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> All allied Vestige Caskets within 4 hexes gain +1 damage and +1 movement until end of round. Fenmar Bonus: Fenmar allies gain +2 movement instead.
-        </p>
-        <p class="manuscript-text"><em>"I lead. You follow. We survive."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 5</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Alpha's Command</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Buff | <strong>SP:</strong> 2 | <strong>Range:</strong> 4 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> All allied Vestige Caskets within 4 hexes gain +1 damage and +1 movement until end of round. Fenmar Bonus: Fenmar allies gain +2 movement instead.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "I lead. You follow. We survive."
+                </p>
+            </div>
 
-        <h3>6. Feral Rage</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Gambit | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Until end of your turn, your attacks deal +3 damage but you cannot use defense or movement cards. Gain 2 Heat. Pure aggression.
-        </p>
-        <p class="manuscript-text"><em>"Reason is weakness. Instinct is truth."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 6</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Feral Rage</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Gambit | <strong>SP:</strong> 0 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Until end of your turn, your attacks deal +3 damage but you cannot use defense or movement cards. Gain 2 Heat. Pure aggression.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Reason is weakness. Instinct is truth."
+                </p>
+            </div>
 
-        <h3>7. Adaptive Evolution</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive | <strong>SP Cost:</strong> 1 Biomass token | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Play when you take damage. Gain 1 mutation counter (+1 damage to all attacks permanently this mission, stacks infinitely). Add +1 to Mutation Strain track. <strong style="color: var(--blood-red);">Warning: Spending too much Biomass risks losing control.</strong>
-        </p>
-        <p class="manuscript-text"><em>"What doesn't kill us makes us deadlier. But also... less human."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 7</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Adaptive Evolution</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive | <strong>SP:</strong> 1 Biomass | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Play when you take damage. Gain 1 mutation counter (+1 damage to all attacks permanently this mission, stacks infinitely). Add +1 to Mutation Strain track. <strong style="color: var(--blood-red);">Warning: Spending too much Biomass risks losing control.</strong>
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "What doesn't kill us makes us deadlier. But also... less human."
+                </p>
+            </div>
 
-        <h3>8. Scent of Blood</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: You deal +2 damage to enemies with 15 or fewer cards remaining. Predators finish wounded prey.
-        </p>
-        <p class="manuscript-text"><em>"The smell of death. The taste of victory."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 8</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Scent of Blood</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: You deal +2 damage to enemies with 15 or fewer cards remaining. Predators finish wounded prey.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The smell of death. The taste of victory."
+                </p>
+            </div>
 
-        <h3>9. Devouring Maw</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 5 damage. If this kills the target, gain 3 Biomass tokens and recover 2 cards from discard pile. Consume the fallen.
-        </p>
-        <p class="manuscript-text"><em>"Flesh sustains flesh. Their death is our strength."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 9</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Devouring Maw</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack | <strong>SP:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 5 damage. If this kills the target, gain 3 Biomass tokens and recover 2 cards from discard pile. Consume the fallen.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Flesh sustains flesh. Their death is our strength."
+                </p>
+            </div>
 
-        <h3>10. Howl of Remembrance</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 1 | <strong>Range:</strong> 5 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> All allied Vestige Caskets within 5 hexes immediately move up to 2 hexes toward you. Bloodline Bonus: Draw 1 card for each ally that moves (remembering ancestors' tactics). Rally the bloodlines.
-        </p>
-        <p class="manuscript-text"><em>"The call of the ancestor. The answer of the heir."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 10</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Howl of Remembrance</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> 1 | <strong>Range:</strong> 5 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> All allied Vestige Caskets within 5 hexes immediately move up to 2 hexes toward you. Bloodline Bonus: Draw 1 card for each ally that moves (remembering ancestors' tactics). Rally the bloodlines.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The call of the ancestor. The answer of the heir."
+                </p>
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>

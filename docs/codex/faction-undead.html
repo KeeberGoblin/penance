@@ -8,7 +8,16 @@
 </head>
 <body>
     <!-- Faction Header with Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+    <div style="background: 
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(90, 70, 50, 0.08) 1px,
+      rgba(90, 70, 50, 0.08) 2px
+    ),
+    linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
             <img src="../images/ossuarium_PlaceH.png" alt="The Ossuarium" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
             <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">The Ossuarium</h1>
@@ -344,63 +353,94 @@
 
         <h2>Faction Core Cards (6 Mandatory)</h2>
 
-        <h3>1. Soul Harvest</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (Lifesteal) | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 4 damage. Recover 3 cards from your discard pile (75% lifesteal).
-        </p>
-        <p class="manuscript-text"><em>"Their life becomes yours. This is the calculus of necromancy."</em></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 1</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Soul Harvest</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack (Lifesteal) | <strong>SP:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 4 damage. Recover 3 cards from your discard pile (75% lifesteal).
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Their life becomes yours. This is the calculus of necromancy."
+                </p>
+            </div>
 
-        <h3>2. Corpse Fuel</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility (Death Trigger) | <strong>SP Cost:</strong> 2
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> When an enemy Casket is destroyed within 3 hexes, immediately recover 5 cards from your discard pile and shuffle into deck.
-        </p>
-        <p class="manuscript-text"><em>"Waste nothing. The dead still serve."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 2</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Corpse Fuel</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility (Death Trigger) | <strong>SP:</strong> 2
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> When an enemy Casket is destroyed within 3 hexes, immediately recover 5 cards from your discard pile and shuffle into deck.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Waste nothing. The dead still serve."
+                </p>
+            </div>
 
-        <h3>3. Phylactery (Passive)</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> The first time each mission you would be reduced to 0 HP, instead set HP to 5 (recover 5 cards from discard pile). This is automatic and costs nothing.
-        </p>
-        <p class="manuscript-text"><em>"I have prepared for death. Many times."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 3</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Phylactery (Passive)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive Ability | <strong>SP:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> The first time each mission you would be reduced to 0 HP, instead set HP to 5 (recover 5 cards from discard pile). This is automatic and costs nothing.
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    Note: Phylactery Relic equipment (second resurrection) is campaign-only and not available in casual or arena play.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "I have prepared for death. Many times."
+                </p>
+            </div>
 
-        <p class="manuscript-text" style="margin-top: 1rem;">
-            <strong>Note:</strong> Phylactery Relic equipment (second resurrection) is <strong>campaign-only</strong> and not available in casual or arena play.
-        </p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 4</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Bone Scythe Reap</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack (AoE Drain) | <strong>SP:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 4 cards).
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The scythe thirsts."
+                </p>
+            </div>
 
-        <h3>4. Bone Scythe Reap</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (AoE Drain) | <strong>SP Cost:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 4 cards).
-        </p>
-        <p class="manuscript-text"><em>"The scythe thirsts."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 5</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Deathless Advance</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Movement + Buff | <strong>SP:</strong> 2
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Move up to 3 hexes. Until end of your turn, you cannot take more than 5 damage from any single attack (damage cap).
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The dead do not fear pain."
+                </p>
+            </div>
 
-        <h3>5. Deathless Advance</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Movement + Buff | <strong>SP Cost:</strong> 2
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Move up to 3 hexes. Until end of your turn, you cannot take more than 5 damage from any single attack (damage cap).
-        </p>
-        <p class="manuscript-text"><em>"The dead do not fear pain."</em></p>
-
-        <h3>6. Necrotic Surge (Passive)</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Whenever you recover cards from discard pile (via any effect), recover +1 additional card.
-        </p>
-        <p class="manuscript-text"><em>"Death feeds on itself, growing stronger."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 6</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Necrotic Surge (Passive)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive Ability | <strong>SP:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Whenever you recover cards from discard pile (via any effect), recover +1 additional card.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Death feeds on itself, growing stronger."
+                </p>
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #4B0082;">&#10047;</span>

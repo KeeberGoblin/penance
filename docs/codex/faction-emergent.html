@@ -8,7 +8,16 @@
 </head>
 <body>
     <!-- Faction Header with Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+    <div style="background: 
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(90, 70, 50, 0.08) 1px,
+      rgba(90, 70, 50, 0.08) 2px
+    ),
+    linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
             <img src="../images/syndicate_PlaceH.png" alt="Emergent Syndicate" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
             <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Emergent Syndicate</h1>
@@ -144,104 +153,173 @@
 
         <h2>Faction Core Cards (6 Mandatory, Choose from 10)</h2>
 
-        <h3>1. Hive-Mind Link</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: When an allied Emergent Syndicate Casket within 4 hexes plays a card, you may spend 1 Metamorph token to copy that card's effect (75% effectiveness for damage/healing). The hive thinks as one. <strong>(Balance Update Oct 19: Increased from 50% to 75% effectiveness)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Individual thoughts merge into collective purpose."</em></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 1</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Hive-Mind Link</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: When an allied Emergent Syndicate Casket within 4 hexes plays a card, you may spend 1 Metamorph token to copy that card's effect (75% effectiveness for damage/healing). The hive thinks as one.
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Increased from 50% to 75% effectiveness)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Individual thoughts merge into collective purpose."
+                </p>
+            </div>
 
-        <h3>2. Metamorphic Adaptation</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 2 Metamorph tokens | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Transform into one of three forms until end of round: Assault Form (+3 damage to all attacks, -1 Defense), Tank Form (+4 Defense, -1 movement), Scout Form (+3 movement, ignore terrain). Transformations are cumulative if you have multiple tokens. <strong>(Balance Update Oct 19: Buffed all forms - Assault +2→+3 damage, Tank +3→+4 Defense, Scout +2→+3 movement)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Our bodies are tools. We reshape them as needed."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 2</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Metamorphic Adaptation</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> 2 Metamorph | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Transform into one of three forms until end of round: Assault Form (+3 damage to all attacks, -1 Defense), Tank Form (+4 Defense, -1 movement), Scout Form (+3 movement, ignore terrain). Transformations are cumulative if you have multiple tokens.
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Buffed all forms - Assault +2→+3 damage, Tank +3→+4 Defense, Scout +2→+3 movement)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Our bodies are tools. We reshape them as needed."
+                </p>
+            </div>
 
-        <h3>3. Exoskeleton Molt</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive | <strong>SP Cost:</strong> 1 Metamorph token | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Play when you take damage. Reduce damage by 3 (minimum 1). Recover 2 cards from discard pile (shedding damaged tissue). Generate 1 Heat. Once per round.
-        </p>
-        <p class="manuscript-text"><em>"Shed the damaged shell. Emerge stronger."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 3</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Exoskeleton Molt</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive | <strong>SP:</strong> 1 Metamorph | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Play when you take damage. Reduce damage by 3 (minimum 1). Recover 2 cards from discard pile (shedding damaged tissue). Generate 1 Heat. Once per round.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Shed the damaged shell. Emerge stronger."
+                </p>
+            </div>
 
-        <h3>4. Pheromone Command</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Buff | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> 5 hexes (area)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Release pheromone cloud (visible colored mist). All allied Emergent Syndicate Caskets within range gain +1 damage and +1 SP this turn. Enemies within range have -1 to hit (confused by pheromones).
-        </p>
-        <p class="manuscript-text"><em>"Chemical signals guide the swarm."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 4</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Pheromone Command</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Buff | <strong>SP:</strong> 2 | <strong>Range:</strong> 5 hexes (area)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Release pheromone cloud (visible colored mist). All allied Emergent Syndicate Caskets within range gain +1 damage and +1 SP this turn. Enemies within range have -1 to hit (confused by pheromones).
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Chemical signals guide the swarm."
+                </p>
+            </div>
 
-        <h3>5. Segmented Strike</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 4 damage with primary limbs. If you have 2+ Metamorph tokens, make a second attack with additional arthropod limbs for 2 damage. Multi-limb advantage.
-        </p>
-        <p class="manuscript-text"><em>"Four arms strike where two would fail."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 5</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Segmented Strike</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack | <strong>SP:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 4 damage with primary limbs. If you have 2+ Metamorph tokens, make a second attack with additional arthropod limbs for 2 damage. Multi-limb advantage.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Four arms strike where two would fail."
+                </p>
+            </div>
 
-        <h3>6. Swarm Intelligence</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: Gain +2 Metamorph tokens at the start of each round. If 3+ allied Emergent Syndicate Caskets are within 4 hexes, gain +4 tokens instead. The collective grows stronger. <strong>(Balance Update Oct 19: Doubled from +1/+2 to +2/+4 Metamorph generation)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Proximity breeds power. Unity breeds evolution."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 6</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Swarm Intelligence</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: Gain +2 Metamorph tokens at the start of each round. If 3+ allied Emergent Syndicate Caskets are within 4 hexes, gain +4 tokens instead. The collective grows stronger.
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Doubled from +1/+2 to +2/+4 Metamorph generation)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Proximity breeds power. Unity breeds evolution."
+                </p>
+            </div>
 
-        <h3>7. Chrysalis Rebirth</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive | <strong>SP Cost:</strong> 5 Metamorph tokens | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> When your deck reaches 5 cards or fewer, spend 5 Metamorph tokens to enter Chrysalis state for 1 turn (cannot act). Next turn, recover 10 cards from discard pile, remove all Heat, gain +2 Defense permanently this mission. Once per mission.
-        </p>
-        <p class="manuscript-text"><em>"We do not die. We transform."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 7</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Chrysalis Rebirth</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive | <strong>SP:</strong> 5 Metamorph | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> When your deck reaches 5 cards or fewer, spend 5 Metamorph tokens to enter Chrysalis state for 1 turn (cannot act). Next turn, recover 10 cards from discard pile, remove all Heat, gain +2 Defense permanently this mission. Once per mission.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "We do not die. We transform."
+                </p>
+            </div>
 
-        <h3>8. Compound Vision</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: You can see in 360° (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.
-        </p>
-        <p class="manuscript-text"><em>"We see all angles. Ambush is impossible."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 8</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Compound Vision</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: You can see in 360° (cannot be flanked). Attacks against you from behind do not gain bonuses. Your compound eyes miss nothing.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "We see all angles. Ambush is impossible."
+                </p>
+            </div>
 
-        <h3>9. Mandible Rend</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 3 damage. Target has -1 Defense until end of their next turn (armor shredded by mandibles). If target is adjacent to another ally, deal 4 damage instead.
-        </p>
-        <p class="manuscript-text"><em>"Our jaws crack steel like chitin."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 9</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Mandible Rend</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack | <strong>SP:</strong> 2 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 3 damage. Target has -1 Defense until end of their next turn (armor shredded by mandibles). If target is adjacent to another ally, deal 4 damage instead.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Our jaws crack steel like chitin."
+                </p>
+            </div>
 
-        <h3>10. Collective Consciousness</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 1 | <strong>Range:</strong> 6 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Choose 1 allied Emergent Syndicate Casket within range. They immediately draw 2 cards and gain 1 Metamorph token. Share knowledge through the hive.
-        </p>
-        <p class="manuscript-text"><em>"What one knows, all know."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 10</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Collective Consciousness</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> 1 | <strong>Range:</strong> 6 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Choose 1 allied Emergent Syndicate Casket within range. They immediately draw 2 cards and gain 1 Metamorph token. Share knowledge through the hive.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "What one knows, all know."
+                </p>
+            </div>
 
-        <h3>11. Swarm Tactics (×5 in deck) - NEW</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> 3 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 2d6 damage (7 avg) to target. If 2+ Emergent allies are within 4 hexes, deal 3d6 damage (10.5 avg) instead. Coordinated swarm strike. <strong>(Balance Update Oct 19: NEW CARD - increased from 1d6/2d6 to 2d6/3d6 damage)</strong>
-        </p>
-        <p class="manuscript-text"><em>"We strike as one organism. Resistance is futile."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 11</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Swarm Tactics (×5 in deck)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack | <strong>SP:</strong> 2 | <strong>Range:</strong> 3 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 2d6 damage (7 avg) to target. If 2+ Emergent allies are within 4 hexes, deal 3d6 damage (10.5 avg) instead. Coordinated swarm strike.
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: NEW CARD - increased from 1d6/2d6 to 2d6/3d6 damage)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "We strike as one organism. Resistance is futile."
+                </p>
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>

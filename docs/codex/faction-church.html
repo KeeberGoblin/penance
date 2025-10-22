@@ -8,7 +8,16 @@
 </head>
 <body>
     <!-- Faction Header with Darker Aged Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+    <div style="background: 
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(90, 70, 50, 0.08) 1px,
+      rgba(90, 70, 50, 0.08) 2px
+    ),
+    linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
             <img src="../images/Church2_PlaceH.png" alt="Church of Absolution" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
             <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Church of Absolution</h1>
@@ -214,62 +223,94 @@
 
         <h2>Faction Core Cards (6 Mandatory)</h2>
 
-        <h3>1. Blood Offering</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Gambit (Self-Harm) | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Discard 1 card from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and -1 to target number (easier to hit). <strong>LIMIT: You can only play 1 Blood Offering per turn.</strong>
-        </p>
-        <p class="manuscript-text" style="font-size: 0.9rem; opacity: 0.8; font-style: italic; color: var(--aged-gold);">
-            <strong>⚖️ Balance Note:</strong> Reduced from "discard 2 cards" to "discard 1 card" to improve campaign viability without removing high-risk playstyle.
-        </p>
-        <p class="manuscript-text"><em>"Pain purifies. Blood absolves. Sacrifice ensures the strike."</em></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 1</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Blood Offering</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Gambit | <strong>SP:</strong> 0 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Discard 1 card from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and -1 to target number (easier to hit). <strong>LIMIT: You can only play 1 Blood Offering per turn.</strong>
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.8; color: var(--aged-gold);">
+                    <strong>⚖️ Balance Note:</strong> Reduced from "discard 2 cards" to "discard 1 card" to improve campaign viability without removing high-risk playstyle.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Pain purifies. Blood absolves. Sacrifice ensures the strike."
+                </p>
+            </div>
 
-        <h3>2. Martyrdom Protocol</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive Defense | <strong>SP Cost:</strong> 0
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> When an ally within 2 hexes would take damage, redirect that damage to yourself instead. Gain 1 Heat.
-        </p>
-        <p class="manuscript-text"><em>"I will bear your sins."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 2</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Martyrdom Protocol</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive Defense | <strong>SP:</strong> 0
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> When an ally within 2 hexes would take damage, redirect that damage to yourself instead. Gain 1 Heat.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "I will bear your sins."
+                </p>
+            </div>
 
-        <h3>3. Righteous Fury (Passive)</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Each time an allied Casket is destroyed this mission, gain +1 damage to all attacks permanently. <strong>Maximum +3 damage from this effect.</strong> <strong>(Balance Update Oct 19: Capped at +3 - previously infinite)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Their sacrifice will not be wasted."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 3</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Righteous Fury (Passive)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive Ability | <strong>SP:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Each time an allied Casket is destroyed this mission, gain +1 damage to all attacks permanently. <strong>Maximum +3 damage from this effect.</strong> <strong>(Balance Update Oct 19: Capped at +3 - previously infinite)</strong>
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Their sacrifice will not be wasted."
+                </p>
+            </div>
 
-        <h3>4. Divine Judgment</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (Execute) | <strong>SP Cost:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 8 damage, ignore 1 Defense. On Miss: Recover 2 SP and gain "Judgment Delayed" (+3 damage to next attack).
-        </p>
-        <p class="manuscript-text"><em>"Judgment delayed is judgment magnified."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 4</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Divine Judgment</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack (Execute) | <strong>SP:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 8 damage, ignore 1 Defense. On Miss: Recover 2 SP and gain "Judgment Delayed" (+3 damage to next attack).
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Judgment delayed is judgment magnified."
+                </p>
+            </div>
 
-        <h3>5. Consecrated Ground</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility (Zone) | <strong>SP Cost:</strong> 3
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Create 3-hex radius healing zone centered on you until end of round. Allied Caskets in zone recover 2 cards from discard at start of their turn.
-        </p>
-        <p class="manuscript-text"><em>"Stand in the light. Be redeemed."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 5</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Consecrated Ground</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility (Zone) | <strong>SP:</strong> 3
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Create 3-hex radius healing zone centered on you until end of round. Allied Caskets in zone recover 2 cards from discard at start of their turn.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Stand in the light. Be redeemed."
+                </p>
+            </div>
 
-        <h3>6. Last Rites</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive (Death Trigger) | <strong>SP Cost:</strong> 0
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> When an allied Casket within 3 hexes is destroyed (deck reaches 0), immediately recover 5 cards from discard and draw 2 cards.
-        </p>
-        <p class="manuscript-text"><em>"Their souls empower mine."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 6</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Last Rites</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive (Death Trigger) | <strong>SP:</strong> 0
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> When an allied Casket within 3 hexes is destroyed (deck reaches 0), immediately recover 5 cards from discard and draw 2 cards.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Their souls empower mine."
+                </p>
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>

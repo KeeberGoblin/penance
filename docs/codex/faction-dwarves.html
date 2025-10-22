@@ -8,7 +8,16 @@
 </head>
 <body>
     <!-- Faction Header with Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+    <div style="background: 
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(90, 70, 50, 0.08) 1px,
+      rgba(90, 70, 50, 0.08) 2px
+    ),
+    linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
             <img src="../images/ForgeG_PlaceH.png" alt="Dwarven Forge-Guilds" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
             <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Dwarven Forge-Guilds</h1>
@@ -282,59 +291,91 @@
 
         <h2>Faction Core Cards (6 Mandatory)</h2>
 
-        <h3>1. Crushing Blow</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (Melee) | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 4 damage. Armor-Piercing (ignore all Defense buffs and armor).
-        </p>
-        <p class="manuscript-text"><em>"Runes flare blue-white as the hammerhead strikes true."</em></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 1</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Crushing Blow</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack (Melee) | <strong>SP:</strong> 2 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 4 damage. Armor-Piercing (ignore all Defense buffs and armor).
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Runes flare blue-white as the hammerhead strikes true."
+                </p>
+            </div>
 
-        <h3>2. Forge Fury</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (Heat Conversion) | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 3 damage + 1 per Heat you currently have (max +6). Remove all Heat after attack resolves.
-        </p>
-        <p class="manuscript-text"><em>"The furnace roars. Steel becomes vengeance."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 2</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Forge Fury</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack (Heat Conversion) | <strong>SP:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 3 damage + 1 per Heat you currently have (max +6). Remove all Heat after attack resolves.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The furnace roars. Steel becomes vengeance."
+                </p>
+            </div>
 
-        <h3>3. Rune of Protection</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Buff (Defensive) | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Gain 1 Rune Counter. Reduce all damage by 1 per counter (max 2). Lasts until end of mission or destroyed. <strong>(Balance Update Oct 19: Max reduced from 3 to 2)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Ancient words carved in living metal."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 3</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Rune of Protection</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Buff (Defensive) | <strong>SP:</strong> 2 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Gain 1 Rune Counter. Reduce all damage by 1 per counter (max 2). Lasts until end of mission or destroyed. <strong>(Balance Update Oct 19: Max reduced from 3 to 2)</strong>
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Ancient words carved in living metal."
+                </p>
+            </div>
 
-        <h3>4. Unbreakable</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive Defense | <strong>SP Cost:</strong> 0
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> When you would take Component Damage, prevent 1 Component Damage. Gain 1 Heat.
-        </p>
-        <p class="manuscript-text"><em>"Dwarven steel bends. It does not break."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 4</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Unbreakable</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive Defense | <strong>SP:</strong> 0
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> When you would take Component Damage, prevent 1 Component Damage. Gain 1 Heat.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Dwarven steel bends. It does not break."
+                </p>
+            </div>
 
-        <h3>5. Earthshaker</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (AoE + Crowd Control) | <strong>SP Cost:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.
-        </p>
-        <p class="manuscript-text"><em>"The ground cracks. The weak scatter."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 5</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Earthshaker</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack (AoE + Crowd Control) | <strong>SP:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The ground cracks. The weak scatter."
+                </p>
+            </div>
 
-        <h3>6. Clan Vengeance (Passive)</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive Ability | <strong>SP Cost:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Each time you take Component Damage, your next attack deals +1 damage. This bonus stacks (3 Component Damage = +3 damage on next attack). <strong>(Balance Update Oct 19: Reduced from +2 to +1 per Component Damage)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Every wound sharpens our fury."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 6</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Clan Vengeance (Passive)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive Ability | <strong>SP:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Each time you take Component Damage, your next attack deals +1 damage. This bonus stacks (3 Component Damage = +3 damage on next attack). <strong>(Balance Update Oct 19: Reduced from +2 to +1 per Component Damage)</strong>
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Every wound sharpens our fury."
+                </p>
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #d4af37;">&#10047;</span>

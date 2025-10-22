@@ -8,7 +8,16 @@
 </head>
 <body>
     <!-- Faction Header with Darker Aged Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+    <div style="background: 
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(90, 70, 50, 0.08) 1px,
+      rgba(90, 70, 50, 0.08) 2px
+    ),
+    linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
             <img src="../images/CruciblePact_PlaceH.png" alt="Crucible Packs" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
             <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Crucible Packs</h1>
@@ -178,96 +187,151 @@
 
         <h2>Faction Core Cards (6 Mandatory, Choose from 10)</h2>
 
-        <h3>1. Living Forge</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: At start of your turn, if standing within 1 hex of fire, gain 1 Forge token. Gain 2 Forge tokens if standing directly in lava. Fire sustains us.
-        </p>
-        <p class="manuscript-text"><em>"The volcano provides. We do not fear the flame."</em></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 1</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Living Forge</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: At start of your turn, if standing within 1 hex of fire, gain 1 Forge token. Gain 2 Forge tokens if standing directly in lava. Fire sustains us.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The volcano provides. We do not fear the flame."
+                </p>
+            </div>
 
-        <h3>2. Honor Duel</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Gambit | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> 6 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Challenge 1 visible enemy to Honor Duel. For 1 round, only you and target can attack each other. If you kill target, gain 3 Forge tokens and recover 3 cards. If target refuses duel, they gain "Coward's Mark" (all Crucible attacks against them deal +2 damage permanently).
-        </p>
-        <p class="manuscript-text"><em>"Face me. Or be branded craven."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 2</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Honor Duel</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Gambit | <strong>SP:</strong> 2 | <strong>Range:</strong> 6 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Challenge 1 visible enemy to Honor Duel. For 1 round, only you and target can attack each other. If you kill target, gain 3 Forge tokens and recover 3 cards. If target refuses duel, they gain "Coward's Mark" (all Crucible attacks against them deal +2 damage permanently).
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Face me. Or be branded craven."
+                </p>
+            </div>
 
-        <h3>3. Volcanic Tremor</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 2 Forge tokens | <strong>Range:</strong> 4 hexes (area)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Create earthquake. All enemies in area take 2 damage and are knocked down (skip movement next turn). Create 1 Lava Terrain hex at center (lasts 3 turns). Summon the volcano's wrath.
-        </p>
-        <p class="manuscript-text"><em>"The earth answers our call."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 3</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Volcanic Tremor</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> 2 Forge tokens | <strong>Range:</strong> 4 hexes (area)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Create earthquake. All enemies in area take 2 damage and are knocked down (skip movement next turn). Create 1 Lava Terrain hex at center (lasts 3 turns). Summon the volcano's wrath.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The earth answers our call."
+                </p>
+            </div>
 
-        <h3>4. Ancestral Iron</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: At end of each mission, spend 5 Forge tokens to forge 1 Ancestral Weapon (choose: +1 damage permanently to all attacks, OR +1 Defense permanently, OR +1 movement permanently). Ancestral Weapons persist across missions. Max 3 total. Legacy of fire.
-        </p>
-        <p class="manuscript-text"><em>"What we forge endures. Our steel outlives us."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 4</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Ancestral Iron</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: At end of each mission, spend 5 Forge tokens to forge 1 Ancestral Weapon (choose: +1 damage permanently to all attacks, OR +1 Defense permanently, OR +1 movement permanently). Ancestral Weapons persist across missions. Max 3 total. Legacy of fire.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "What we forge endures. Our steel outlives us."
+                </p>
+            </div>
 
-        <h3>5. Pack Fury</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Buff | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Until end of round, gain +1 damage to all attacks for each enemy within 6 hexes (max +3 damage). Outnumbered, never outfought.
-        </p>
-        <p class="manuscript-text"><em>"The cornered beast is deadliest."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 5</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Pack Fury</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Buff | <strong>SP:</strong> 2 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Until end of round, gain +1 damage to all attacks for each enemy within 6 hexes (max +3 damage). Outnumbered, never outfought.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The cornered beast is deadliest."
+                </p>
+            </div>
 
-        <h3>6. Magma Veins</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 3 Forge tokens | <strong>Range:</strong> 8 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Teleport to any Lava Terrain hex within 8 hexes. Draw 2 cards. Generate 1 Heat. Ride the underground rivers.
-        </p>
-        <p class="manuscript-text"><em>"We walk the forge-paths. Fire is our road."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 6</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Magma Veins</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> 3 Forge tokens | <strong>Range:</strong> 8 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Teleport to any Lava Terrain hex within 8 hexes. Draw 2 cards. Generate 1 Heat. Ride the underground rivers.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "We walk the forge-paths. Fire is our road."
+                </p>
+            </div>
 
-        <h3>7. Forge Blessing</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive | <strong>SP Cost:</strong> 1 Forge token | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Play when you take damage. Reduce damage by 3 (minimum 1). If standing in lava, reduce by 5 instead. The forge shields us.
-        </p>
-        <p class="manuscript-text"><em>"Fire hardens steel. Pain hardens us."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 7</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Forge Blessing</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive | <strong>SP:</strong> 1 Forge token | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Play when you take damage. Reduce damage by 3 (minimum 1). If standing in lava, reduce by 5 instead. The forge shields us.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Fire hardens steel. Pain hardens us."
+                </p>
+            </div>
 
-        <h3>8. Coward's Brand</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack-Mark | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> 6 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 3 damage. If target has "Coward's Mark" (from refusing Honor Duel), deal 6 damage instead and they cannot use defense cards this turn. Punish dishonor.
-        </p>
-        <p class="manuscript-text"><em>"Cowards die twice. First in spirit, then in flesh."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 8</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Coward's Brand</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack-Mark | <strong>SP:</strong> 2 | <strong>Range:</strong> 6 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 3 damage. If target has "Coward's Mark" (from refusing Honor Duel), deal 6 damage instead and they cannot use defense cards this turn. Punish dishonor.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Cowards die twice. First in spirit, then in flesh."
+                </p>
+            </div>
 
-        <h3>9. Emberforged Strike</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 5 damage. Spend 2 Forge tokens to deal 7 damage and set target on fire (2 damage at start of their next turn). Molten fury.
-        </p>
-        <p class="manuscript-text"><em>"Our steel burns with the forge's rage."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 9</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Emberforged Strike</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack | <strong>SP:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 5 damage. Spend 2 Forge tokens to deal 7 damage and set target on fire (2 damage at start of their next turn). Molten fury.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Our steel burns with the forge's rage."
+                </p>
+            </div>
 
-        <h3>10. Last Stand</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Play when your deck reaches 5 cards or fewer. Until end of round, gain +3 damage to all attacks and +2 Defense. Cannot retreat (movement locked to 0). Die where you stand. Once per mission.
-        </p>
-        <p class="manuscript-text"><em>"Here I stand. Here I fall. But never do I run."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 10</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Last Stand</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive | <strong>SP:</strong> 0 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Play when your deck reaches 5 cards or fewer. Until end of round, gain +3 damage to all attacks and +2 Defense. Cannot retreat (movement locked to 0). Die where you stand. Once per mission.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Here I stand. Here I fall. But never do I run."
+                </p>
+            </div>
+        </div>
 
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
 
         <h2>Notable Figures</h2>
 

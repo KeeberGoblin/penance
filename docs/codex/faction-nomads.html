@@ -8,7 +8,16 @@
 </head>
 <body>
     <!-- Faction Header with Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+    <div style="background: 
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(90, 70, 50, 0.08) 1px,
+      rgba(90, 70, 50, 0.08) 2px
+    ),
+    linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
             <img src="../images/nomad_PlaceH.png" alt="Nomad Collective" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
             <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">Nomad Collective</h1>
@@ -111,104 +120,169 @@
 
         <h2>Faction Core Cards (10 Available - Players Choose 6)</h2>
 
-        <h3>1. Ghost Step (×3 tokens per mission)</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive-Movement | <strong>SP Cost:</strong> 0 (FREE ACTION) | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Play after making an attack. Teleport up to 4 hexes in any direction, ignoring terrain and line of sight. Does not cost SP. You have 3 Ghost Step tokens per mission. <strong>(Balance Update Oct 19: Increased from 1 token to 3 tokens per mission, range 2→4 hexes, now teleport instead of move)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Strike and vanish. The Nomad way."</em></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 1</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Ghost Step (×3 tokens per mission)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive-Movement | <strong>SP:</strong> 0 (FREE) | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Play after making an attack. Teleport up to 4 hexes in any direction, ignoring terrain and line of sight. Does not cost SP. You have 3 Ghost Step tokens per mission.
+                </p>                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Increased from 1 token to 3 tokens per mission, range 2→4 hexes, now teleport instead of move)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Strike and vanish. The Nomad way."
+                </p>
+            </div>
 
-        <h3>2. Survivor's Instinct</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> When your deck has 15 cards or fewer remaining, gain +1 SP per turn (total 7 SP). Desperation sharpens the mind.
-        </p>
-        <p class="manuscript-text"><em>"The closer to death, the faster we move."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 2</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Survivor's Instinct</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> When your deck has 15 cards or fewer remaining, gain +1 SP per turn (total 7 SP). Desperation sharpens the mind.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The closer to death, the faster we move."
+                </p>
+            </div>
 
-        <h3>3. Scavenger's Cunning</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 1 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Draw 3 cards, then discard 2 cards of your choice. Sift through options.
-        </p>
-        <p class="manuscript-text"><em>"One person's trash is another's lifeline."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 3</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Scavenger's Cunning</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> 1 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Draw 3 cards, then discard 2 cards of your choice. Sift through options.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "One person's trash is another's lifeline."
+                </p>
+            </div>
 
-        <h3>4. Smoke and Mirrors</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility-Movement | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Create smoke cloud in your hex (blocks line of sight until end of round). Immediately move up to 2 hexes. Enemies lose targeting.
-        </p>
-        <p class="manuscript-text"><em>"Can't hit what they can't see."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 4</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Smoke and Mirrors</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility-Movement | <strong>SP:</strong> 2 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Create smoke cloud in your hex (blocks line of sight until end of round). Immediately move up to 2 hexes. Enemies lose targeting.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Can't hit what they can't see."
+                </p>
+            </div>
 
-        <h3>5. Opportunist</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Your attacks deal +3 damage to enemies with 1+ Damage cards in their deck (punish wounded targets). <strong>(Balance Update Oct 19: Changed from +1 damage vs movers to +3 damage vs wounded enemies)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Catch them off-balance. Strike when they're exposed."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 5</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Opportunist</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Your attacks deal +3 damage to enemies with 1+ Damage cards in their deck (punish wounded targets).
+                </p>                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Changed from +1 damage vs movers to +3 damage vs wounded enemies)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Catch them off-balance. Strike when they're exposed."
+                </p>
+            </div>
 
-        <h3>6. Desperate Gamble</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Gambit | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Discard 3 cards from your hand. Your next attack this turn deals +5 damage and ignores all Defense.
-        </p>
-        <p class="manuscript-text"><em>"When cornered, burn everything to survive."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 6</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Desperate Gamble</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Gambit | <strong>SP:</strong> 0 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Discard 3 cards from your hand. Your next attack this turn deals +5 damage and ignores all Defense.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "When cornered, burn everything to survive."
+                </p>
+            </div>
 
-        <h3>7. Wolves' Pact</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Your attacks deal +1 damage when you are adjacent to 2 or more allied Caskets. The pack hunts together.
-        </p>
-        <p class="manuscript-text"><em>"Alone we survive. Together we thrive."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 7</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Wolves' Pact</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Your attacks deal +1 damage when you are adjacent to 2 or more allied Caskets. The pack hunts together.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Alone we survive. Together we thrive."
+                </p>
+            </div>
 
-        <h3>8. Scrapper</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> 3 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> When you deal Component Damage to any enemy, gain 3 Scrap. When an enemy Casket within 3 hexes is destroyed, immediately draw 2 cards and recover 2 cards from discard pile. <strong>(Balance Update Oct 19: Added 3 Scrap per Component Damage, increased from 1 Scrap)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Every wreck is a resource. Waste nothing."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 8</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Scrapper</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive | <strong>SP:</strong> 0 | <strong>Range:</strong> 3 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> When you deal Component Damage to any enemy, gain 3 Scrap. When an enemy Casket within 3 hexes is destroyed, immediately draw 2 cards and recover 2 cards from discard pile.
+                </p>                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Added 3 Scrap per Component Damage, increased from 1 Scrap)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Every wreck is a resource. Waste nothing."
+                </p>
+            </div>
 
-        <h3>9. Feint and Strike</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack-Movement | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 5 damage. After attack resolves, move up to 1 hex in any direction.
-        </p>
-        <p class="manuscript-text"><em>"Hit them where they don't expect. Be gone before they react."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 9</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Feint and Strike</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack-Movement | <strong>SP:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 5 damage. After attack resolves, move up to 1 hex in any direction.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Hit them where they don't expect. Be gone before they react."
+                </p>
+            </div>
 
-        <h3>10. Winds of Change</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Shuffle your entire discard pile back into your deck. Remove 1 Heat. Adapt or perish.
-        </p>
-        <p class="manuscript-text"><em>"The road is long. Reinvent yourself as needed."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 10</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Winds of Change</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> 2 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Shuffle your entire discard pile back into your deck. Remove 1 Heat. Adapt or perish.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "The road is long. Reinvent yourself as needed."
+                </p>
+            </div>
 
-        <h3>11. Evasive Maneuvers (×3 in deck) - NEW</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive-Movement | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Play when you are targeted by an attack (before damage is rolled). Immediately move 2 hexes in any direction. Attack may miss if you move out of range/line of sight. <strong>(Balance Update Oct 19: NEW CARD - defensive survivability)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Can't catch the wind."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 11</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Evasive Maneuvers (×3 in deck)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive-Movement | <strong>SP:</strong> 0 | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Play when you are targeted by an attack (before damage is rolled). Immediately move 2 hexes in any direction. Attack may miss if you move out of range/line of sight.
+                </p>                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: NEW CARD - defensive survivability)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Can't catch the wind."
+                </p>
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
