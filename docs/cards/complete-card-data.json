@@ -5789,7 +5789,7 @@
           "type": "Utility / Disruption",
           "priority": "High",
           "effect": "Pixies move up to 6 hexes toward nearest enemy\nAll enemies within 2 hexes must discard 1 random card from hand (pixies steal them mid-air)\nPixies gain 1 Wyrd Token for each card stolen (max 2 per turn)",
-          "flavor": "Give that back! That's—HEY! STOP LAUGHING!"
+          "flavor": "Give that back! That's...HEY! STOP LAUGHING!"
         },
         {
           "supportUnit": "PIXIE SWARM",
@@ -9906,7 +9906,7 @@
       "type": "Utility / Disruption",
       "priority": "High",
       "effect": "Pixies move up to 6 hexes toward nearest enemy\nAll enemies within 2 hexes must discard 1 random card from hand (pixies steal them mid-air)\nPixies gain 1 Wyrd Token for each card stolen (max 2 per turn)",
-      "flavor": "Give that back! That's—HEY! STOP LAUGHING!"
+      "flavor": "Give that back! That's...HEY! STOP LAUGHING!"
     },
     {
       "supportUnit": "PIXIE SWARM",
