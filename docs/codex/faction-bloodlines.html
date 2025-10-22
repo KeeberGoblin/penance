@@ -41,7 +41,7 @@
         <table class="manuscript-table">
             <tr>
                 <th>Ideology</th>
-                <td>Survival through mutation. Honor the dying. Accept extinction.</td>
+                <td>Fighting to stay human. Prisoners of their own flesh. "One more day before the beast wins."</td>
             </tr>
             <tr>
                 <th>Territory</th>
@@ -53,15 +53,19 @@
             </tr>
             <tr>
                 <th>Curse</th>
-                <td>Hereditary Void corruption. 4 generations from human to Abomination.</td>
+                <td>Hereditary Void corruption. Caskets suppress mutations, but suppression has limits.</td>
+            </tr>
+            <tr>
+                <th>Casket Dependency</th>
+                <td><strong>Critical:</strong> Neural threads suppress both mental degradation AND physical mutation. Disconnection = rapid transformation into Abomination.</td>
             </tr>
             <tr>
                 <th>Playstyle</th>
-                <td>Mutation swarm, pack tactics, biomass harvesting, bloodline synergies, aggressive snowball</td>
+                <td>Mutation swarm, pack tactics, biomass harvesting, bloodline synergies, risk/reward resource management</td>
             </tr>
             <tr>
                 <th>Complete Deck</th>
-                <td><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/factions/vestige-bloodlines/deck-equipment-system.md" target="_blank">View Full Vestige Deck (v2.0 Equipment System)</a></td>
+                <td><a href="https://github.com/KeeberGoblin/penance/blob/main/docs/factions/vestige-bloodlines/deck-equipment-system.md" target="_blank">View Full Vestige Deck (v5.30 with Mutation Strain)</a></td>
             </tr>
         </table>
 
@@ -106,7 +110,7 @@
             The largest and most cohesive bloodline. Fenmar bear lupine traits—wolf ears, tails, digitigrade legs, enhanced senses. They organize into matriarchal packs led by Alphas. Fenmar excel at coordinated pack hunting, gaining damage bonuses when fighting alongside fellow wolves. Their culture revolves around ritual hunts, communal bonds, and mourning ceremonies for those lost to mutation.
         </p>
         <p class="manuscript-text">
-            <strong>Current Leader:</strong> Matron Kael Fenmar (37, 4th generation—last stable Alpha). She refuses to reproduce, believing the curse ends with her generation.
+            <strong>Current Leader:</strong> Matron Kael Fenmar (37, 4th generation, last stable Alpha). She can disconnect from her Casket for 6 hours maximum before feral transformation begins. Her pack shares neural load via direct linking to extend coherence.
         </p>
         <p class="manuscript-text">
             <strong>Bloodline Abilities:</strong> Pack Instinct (+3 damage with pure Fenmar pack), Moonlit Fury (mobile hunt-and-strike), Alpha's Command (+2 movement to wolves)
@@ -120,7 +124,7 @@
             The most solitary bloodline. Urtok possess ursine strength—bear claws, thick fur, massive builds, incredible endurance. They are natural survivors who hoard resources and hibernate through harsh seasons. Urtok excel at tanking damage, gaining Defense bonuses and regeneration when wounded. Their philosophy is pragmatic extinction—believing peaceful fadeout is mercy.
         </p>
         <p class="manuscript-text">
-            <strong>Current Leader:</strong> Grendok Urtok "The Sleeper" (64, 3rd generation—oldest living Vestige). He is the last of his kind, having watched his mate and cubs die.
+            <strong>Current Leader:</strong> Grendok Urtok "The Sleeper" (64, 3rd generation, oldest living Vestige). He can disconnect for 12-24 hours before involuntary torpor. Once disconnected for 30 hours and suffered permanent bone density damage. "The Casket is an alarm clock that never stops ringing."
         </p>
         <p class="manuscript-text">
             <strong>Bloodline Abilities:</strong> Hibernation Trance (resurrect at low HP), Bear Tank Form (+3 Defense + regenerate), Adaptive Evolution (damage = power)
@@ -134,7 +138,7 @@
             The most alien bloodline. Vexis developed chitinous exoskeletons, compound eyes, and arthropod traits from insect DNA. They live in communal nests and practice molt ceremonies (shedding damaged shells). Vexis excel at reactive defense, molting to negate damage and heal wounds. Many consider joining the Emergent Syndicate for controlled evolution.
         </p>
         <p class="manuscript-text">
-            <strong>Current Leader:</strong> Hive-Mother Sella Vexis (22, 4th generation—shouldn't be coherent, but is). Medical miracle or horrifying mutation, she leads the last coherent Vexis generation.
+            <strong>Current Leader:</strong> Hive-Mother Sella Vexis (22, 4th generation, genetic miracle). Can disconnect for 90 minutes maximum. Sleeps inside her Casket with backup power cells. Hears "the voice in the chitin" calling her to join the Emergent Syndicate hive-mind.
         </p>
         <p class="manuscript-text">
             <strong>Bloodline Abilities:</strong> Carapace Molt (negate 5+ damage attacks), Molt reactions, Infinite mutation adaptability
@@ -148,7 +152,7 @@
             The most mobile bloodline. Corvath possess avian traits—raven-like wings (vestigial but functional), keen eyesight, hollow bones. They are nomadic traders and memory keepers who believe in omens and superstition. Corvath excel at hit-and-run tactics, gliding across battlefields and executing wounded prey.
         </p>
         <p class="manuscript-text">
-            <strong>Current Leader:</strong> Flockmaster Kirin Corvath (41, 3rd generation—merchant-diplomat). Currently negotiating with Elves for Worldheart access, seeking a cure.
+            <strong>Current Leader:</strong> Flockmaster Kirin Corvath (41, 3rd generation, merchant-diplomat). Can disconnect for 4 hours maximum. Lost 18 hours during Church ambush (Year 429), forgot his entire trade network, fingers began fusing. Casket only preserves memories made WHILE connected. His childhood before age 14 is mostly forgotten.
         </p>
         <p class="manuscript-text">
             <strong>Bloodline Abilities:</strong> Omen's Flight (glide 4 hexes + draw cards), Highest mobility, Execute specialist (Scent of Blood)
@@ -172,23 +176,49 @@
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
-        <h2>Core Mechanic: Biomass Harvesting & Bloodline Evolution</h2>
+        <h2>Core Mechanic: Biomass & Mutation Strain</h2>
 
-        <p class="manuscript-text">
-            Vestige Caskets harvest biological matter from the dead—Biomass Tokens generated from kills—to fuel mutations and trigger bloodline-specific transformations. This cursed resource represents the literal consumption of enemies to sustain evolution.
-        </p>
+        <div style="background: linear-gradient(to bottom, rgba(139, 0, 0, 0.15), rgba(100, 0, 0, 0.08)); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
+            <h3 style="color: var(--dark-red); margin-top: 0;">Critical: The Casket's Limit</h3>
+
+            <p class="manuscript-text">
+                <strong>Caskets don't just help Vestige fight. Caskets keep them human.</strong>
+            </p>
+
+            <p class="manuscript-text">
+                Neural threads suppress both mental degradation AND physical mutation. Every time you spend Biomass, you force a controlled mutation. The Casket can only suppress so much. Push too hard, and the suppression fails. You transform into an Abomination and lose.
+            </p>
+
+            <h4>Mutation Strain Track (0-30)</h4>
+            <ul class="manuscript-list">
+                <li><strong>0-9 Strain (Stable):</strong> Normal operation, no penalties</li>
+                <li><strong>10-19 Strain (Unstable):</strong> All attacks generate +1 Heat (mutations straining Casket systems)</li>
+                <li><strong>20-29 Strain (Feral):</strong> Must attack each turn if able, cannot use Reactive defense cards (beast instinct taking over)</li>
+                <li><strong>30+ Strain (Transformation):</strong> <strong style="color: var(--blood-red);">Mission ends immediately, you transform, YOU LOSE</strong></li>
+            </ul>
+
+            <p class="manuscript-text">
+                <strong>Every Biomass spent adds to Mutation Strain. Strain NEVER resets during a mission.</strong> Budget carefully. Adaptive Evolution spam will transform you. Bloodline Shift has risks. Conservative play keeps you safe. Aggressive play risks everything.
+            </p>
+        </div>
+
+        <h3>Biomass Generation & Spending</h3>
 
         <ul class="manuscript-list">
-            <li><strong>Vestige Heritage:</strong> Gain 1 Biomass when any enemy Casket dies within 3 hexes. No passive generation - harvesting requires kills. <strong>(v5.17: Nerfed from 2 Biomass per kill to 1 Biomass per kill due to 82% win rate)</strong></li>
-            <li><strong>Bloodline Shift:</strong> Spend 2 Biomass to transform into enhanced bloodline form (Fenmar = +2 movement + pack bonuses, Urtok = +3 Defense + regenerate, Vexis = +2 Defense + molt reaction, Corvath = +3 movement + glide, Serrak = poison all attacks). Access 5 total forms. <strong>(Balance Update Oct 19: Increased from 2 forms to 5 adaptive forms)</strong></li>
-            <li><strong>Pack Instinct:</strong> Gain +2 damage per adjacent Vestige ally (+4 if 2+ allies, +6 if pure Fenmar pack). The pack hunts together. <strong>(Balance Update Oct 19: Doubled from +1/+2/+3 to +2/+4/+6 damage)</strong></li>
-            <li><strong>Adaptive Evolution:</strong> Spend 1 Biomass when damaged to gain +1 permanent damage this mission (stacks infinitely). Turn suffering into power.</li>
-            <li><strong>Predator's Mark:</strong> Mark 1 enemy as Prey. Attacks against Prey deal +2 damage. Track through concealment. Recover 3 cards when Prey dies.</li>
-            <li><strong>Titan's Endurance (Passive):</strong> Base HP is 38 HP (higher than standard 30 HP). Mutated physiology grants superior vitality. <strong>(Balance Update Oct 19: Increased from 30 HP to 38 HP, +8 HP total)</strong></li>
+            <li><strong>Vestige Heritage:</strong> Gain 2 Biomass when any enemy Casket dies within 6 hexes (+1 if prey type matches). Harvesting requires kills.</li>
+            <li><strong>Bloodline Shift (2 Biomass, +2 Strain):</strong> Transform into enhanced form. Fenmar = +2 movement + pack bonuses doubled. Urtok = +3 Defense + regenerate when hit. Vexis = +2 Defense + molt reaction. Corvath = +3 movement + glide. Serrak = all attacks poison. <strong style="color: var(--blood-red);">Warning: Multiple shifts accelerate Strain</strong></li>
+            <li><strong>Adaptive Evolution (1 Biomass, +1 Strain):</strong> When damaged, gain +1 permanent damage this mission (stacks infinitely). <strong style="color: var(--blood-red);">Warning: Spam = transformation</strong></li>
+            <li><strong>Regenerative Flesh (1 Biomass, +1 Strain):</strong> Recover 2 cards from discard pile. Healing costs control.</li>
+            <li><strong>Hibernation Trance (4 Biomass, +4 Strain, Urtok only):</strong> Resurrect at low HP, recover 6 cards, gain +2 Defense permanently. Once per mission. <strong style="color: var(--blood-red);">Major Strain spike</strong></li>
+            <li><strong>Carapace Molt (2 Biomass, +2 Strain, Vexis only):</strong> Negate 5+ damage attack, recover 3 cards. Once per round.</li>
         </ul>
 
         <p class="manuscript-text">
-            Vestige pilots don't win through honor or technology—they win by harvesting the dead, mutating mid-battle, and overwhelming enemies through pack coordination and relentless aggression.
+            <strong>Typical mission budget:</strong> Conservative = 5-8 Biomass spent (0-9 Strain, safe). Aggressive = 10-15 Biomass (10-19 Strain, Unstable but manageable). Desperate = 20-25 Biomass (20-29 Strain, Feral status, win NOW or lose). <strong style="color: var(--blood-red);">Never exceed 29 Strain.</strong>
+        </p>
+
+        <p class="manuscript-text">
+            Vestige pilots don't win through honor or technology. They win by harvesting the dead, mutating mid-battle, and gambling with their humanity. Every Biomass spent brings them closer to the edge. Every transformation risks losing control. They are not monsters piloting machines. <strong>They are people using machines to stay people. And they are losing.</strong>
         </p>
 
         <div style="text-align: center; margin: 2rem 0;">
@@ -229,9 +259,9 @@
             <strong>Type:</strong> Utility | <strong>SP Cost:</strong> 2 Biomass tokens | <strong>Range:</strong> Self
         </p>
         <p class="manuscript-text">
-            <strong>Effect:</strong> Transform into enhanced bloodline form until end of round. Choose based on primary bloodline: Fenmar (+2 movement, Pack bonuses doubled), Urtok (+3 Defense, regenerate 1 card when hit), Vexis (+2 Defense, molt reaction once), Corvath (+3 movement, ignore terrain, glide), Serrak (all attacks inflict poison 2 damage, +1 movement). Stacks with multiple uses.
+            <strong>Effect:</strong> Transform into enhanced bloodline form until end of round. Choose based on primary bloodline: Fenmar (+2 movement, Pack bonuses doubled), Urtok (+3 Defense, regenerate 1 card when hit), Vexis (+2 Defense, molt reaction once), Corvath (+3 movement, ignore terrain, glide), Serrak (all attacks inflict poison 2 damage, +1 movement). Add +2 to Mutation Strain track. <strong style="color: var(--blood-red);">Warning: Multiple shifts risk Casket suppression failure.</strong>
         </p>
-        <p class="manuscript-text"><em>"Flesh is fluid. Blood is law."</em></p>
+        <p class="manuscript-text"><em>"Flesh is fluid. Blood is law. But the cage has limits."</em></p>
 
         <h3>5. Alpha's Command</h3>
         <p class="manuscript-text">
@@ -256,9 +286,9 @@
             <strong>Type:</strong> Reactive | <strong>SP Cost:</strong> 1 Biomass token | <strong>Range:</strong> Self
         </p>
         <p class="manuscript-text">
-            <strong>Effect:</strong> Play when you take damage. Immediately gain 1 mutation counter (+1 to all attacks permanently this mission, stacks infinitely). Evolution rewards survival.
+            <strong>Effect:</strong> Play when you take damage. Gain 1 mutation counter (+1 damage to all attacks permanently this mission, stacks infinitely). Add +1 to Mutation Strain track. <strong style="color: var(--blood-red);">Warning: Spending too much Biomass risks losing control.</strong>
         </p>
-        <p class="manuscript-text"><em>"What doesn't kill us makes us deadlier."</em></p>
+        <p class="manuscript-text"><em>"What doesn't kill us makes us deadlier. But also... less human."</em></p>
 
         <h3>8. Scent of Blood</h3>
         <p class="manuscript-text">
