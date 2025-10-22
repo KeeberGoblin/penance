@@ -209,7 +209,7 @@ Each finger controls specific Casket functions:
 
 ---
 
-### Merchant Guilds: The Premium Interface
+### The Exchange: The Premium Interface
 
 - Threads are **gold-plated** (shows wealth, also conducts better)
 - Fluid is **synthetic perfection** (clear, oxygenated, nutrient-rich)
@@ -220,7 +220,7 @@ Each finger controls specific Casket functions:
 
 ---
 
-### Blighted Packs: The Mutation Harness
+### Vestige Bloodlines: The Mutation Harness
 
 - Threads are **organic** (grown from pilot's own mutated tissue)
 - Fluid is **adaptive** (changes composition based on pilot's biology)
@@ -232,7 +232,7 @@ Each finger controls specific Casket functions:
 
 ---
 
-### Chitinous Ascendancy: The Hive Node
+### Emergent Syndicate: The Hive Node
 
 - Threads are **chitin-based** (insectoid exoskeleton material)
 - Fluid is **pheromone solution** (communication medium for hive mind)

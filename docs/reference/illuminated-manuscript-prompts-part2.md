@@ -148,12 +148,12 @@ plates, brass gauges, coal furnace).
 
 ---
 
-## THE SOULSTONE EXCHANGE
+## THE EXCHANGE
 
 ### Full Prompt
 
 ```
-Medieval illuminated manuscript page depicting a Soulstone Exchange Casket in the
+Medieval illuminated manuscript page depicting a The Exchange Casket in the
 style of 15th century merchant guild ledgers and banking house codices.
 
 CASKET DESIGN:

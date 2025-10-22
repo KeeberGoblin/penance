@@ -54,7 +54,7 @@ After analyzing 27+ lore files (8,000+ lines of narrative content), the **Penanc
 ### 3. **Vestige Bloodlines: Exodus Timeline Confusion**
 
 **Contradiction**:
-- `world-overview.md:77` says: "Blighted Packs emerge as distinct faction after Exodus (Year 352)"
+- `world-overview.md:77` says: "Vestige Bloodlines emerge as distinct faction after Exodus (Year 352)"
 - `vestige-bloodlines/lore-origin-story.md` confirms Exodus was Year 352
 - BUT: `lore-origin-story.md:100` says First Vestige Council formed in Year 47
 

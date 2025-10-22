@@ -82,9 +82,9 @@
 **Design-Only Factions** (mechanics designed, not yet playable):
 - The Wyrd Conclave: Teleportation/reality-bending
 - Nomadic Scrap-Takers: Salvage mid-battle
-- Merchant Guilds: Economic warfare
-- Blighted Packs: Mutation weaponization
-- Chitinous Horde: Hive mind tactics
+- The Exchange: Economic warfare
+- Vestige Bloodlines: Mutation weaponization
+- Emergent Syndicate: Hive mind tactics
 
 **Playtest Impact**: **High** (this IS the game's identity)
 

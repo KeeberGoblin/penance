@@ -232,7 +232,7 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 
 ---
 
-### Chitinous Ascendancy (Arthropod Collective)
+### Emergent Syndicate (Arthropod Collective)
 
 **Origin**: Human researchers at Sibaria, ground zero, during the Sundering.
 
