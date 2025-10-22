@@ -59,7 +59,10 @@
       "Bash(jq '.universal | .[] | {name: .name, type: .type}' complete-card-data.json)",
       "Bash(tee /tmp/v5.14_simulation.txt)",
       "Bash(timeout 600 python3 faction_balance_MULTIUNIT.py)",
-      "Bash(tee /tmp/v5.15a_final.txt)"
+      "Bash(tee /tmp/v5.15a_final.txt)",
+      "Bash(while read file)",
+      "Bash(do stat -c \"%y %n\" \"$file\")",
+      "Bash(xargs ls:*)"
     ],
     "deny": [],
     "ask": []

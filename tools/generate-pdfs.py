@@ -414,6 +414,7 @@ if __name__ == "__main__":
         "rules/deck-construction.md",
         "rules/range-and-los.md",
         "rules/dice-reference.md",
+        "rules/support-units.md",
         "reference/equipment-pool-complete.md",
         "campaigns/event-tables-kdm-style.md",
         "campaigns/anomalous-events-scp-style.md",
@@ -421,10 +422,20 @@ if __name__ == "__main__":
         "lore/chronicle.md",
         "scenarios/01-proving-grounds.md",
         "scenarios/02-reliquary-ruins.md",
+        "scenarios/03-escort-duty.md",
+        "scenarios/04-king-of-the-hill.md",
+        "scenarios/05-sabotage-mission.md",
+        "scenarios/example-of-play.md",
         "factions/church/deck-equipment-system.md",
         "factions/dwarves/deck-equipment-system.md",
         "factions/ossuarium/deck-equipment-system.md",
         "factions/elves/deck-equipment-system.md",
+        "factions/crucible/deck-equipment-system.md",
+        "factions/nomads/deck-equipment-system.md",
+        "factions/exchange/deck-equipment-system.md",
+        "factions/emergent/deck-equipment-system.md",
+        "factions/wyrd-conclave/deck-equipment-system.md",
+        "factions/vestige-bloodlines/deck-equipment-system.md",
     ]
 
     # Get script directory
