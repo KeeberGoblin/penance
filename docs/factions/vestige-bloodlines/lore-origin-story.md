@@ -112,6 +112,111 @@ Representatives from all bloodlines gathered at the ruins of Wolfhollow:
 
 ---
 
+## Year 85: The First Casket Discovery
+
+### The Breakthrough That Changed Everything
+
+A Fenmar scavenger named **Torren** discovered an abandoned pre-Sundering mining Casket in the ruins of Ironpeak. Desperate, starving, and experiencing feral episodes, he climbed inside to sleep—never expecting what would happen next.
+
+**The Miracle:**
+- Torren was 3rd generation (severe mutations, prone to violent feral episodes every few days)
+- Within minutes of neural thread connection: **His mind cleared completely**
+- For the first time in years, he could think in complete sentences
+- **More shocking**: His ongoing mutation (extra claws growing from his shoulders) **stopped progressing**
+- He stayed connected for 18 hours straight—longest coherent period in his adult life
+
+**Torren's journal (Year 85, Day 47):**
+> "I remember my mother's name. I haven't remembered that in six years. The threads... they hold me together. Not just my thoughts—my BODY. The claws stopped growing. The pain stopped. I can *think* again. I can *be* again.
+>
+> I disconnected after 18 hours. Within 3 hours, the claws resumed growing. The hunger returned. The wolf inside started winning.
+>
+> We need more of these. We need hundreds. This is the only thing standing between us and becoming the monsters they already think we are."
+
+### The Horrifying Realization
+
+**Within weeks, Vestige scholars understood the truth:**
+
+1. **Mental suppression**: Neural threads maintain coherent thought patterns
+2. **Physical suppression**: Same threads actively halt mutation progression
+3. **Temporary effect**: Disconnection = rapid mutation acceleration
+4. **Generational decline**: Younger generations need MORE Casket time for same effect
+
+**The First Disconnection Study (Year 87):**
+
+Volunteer: Mira Corvath, 2nd generation (raven-touched, age 23)
+
+- **0-12 hours disconnected**: Coherent, functional, minor discomfort
+- **12-24 hours**: Speech degrading, feathers growing on arms/torso, memory lapses
+- **24 hours (study terminated)**: Extra feather growth covering 40% of body, bones measurably lighter, could no longer write (fingers fusing)
+
+**Result**: Reconnected immediately. Feather growth stopped within minutes. Fused fingers required surgical separation.
+
+**Conclusion**: "Casket neural threads don't enhance us. They suppress what we're becoming."
+
+---
+
+## Year 90-120: The Casket Pilgrimage
+
+### The Desperate Search
+
+Word spread through Vestige communities like wildfire:
+
+**Caskets preserve minds AND bodies—not just during use, but ONLY during use.**
+
+Vestige began a massive, desperate hunt:
+- Scavenging pre-Sundering battlefields for abandoned Caskets
+- Stealing from poorly-guarded facilities
+- Trading everything they owned for "defective" units
+- Dwarven Forge-Guilds discovered a profitable disposal method: sell "broken" Caskets to Vestige (they'll take anything)
+
+**By Year 120**: ~2,000 Vestige had permanent Casket access (8% of population)
+
+### The Price of Sanity
+
+**The dependency crisis became clear:**
+
+**Those WITH Caskets:**
+- Stable mutations (frozen at current state)
+- Coherent minds (can plan, remember, communicate)
+- Functional lives (can work, fight, survive)
+- **But**: Must remain connected 18-22 hours per day minimum
+
+**Those WITHOUT Caskets:**
+- Accelerating mutations (visibly changing week-to-week)
+- Mental degradation (feral episodes increasing in frequency)
+- Shortened lifespans (body/mind collapse within 5-10 years)
+
+**Year 112 tragedy**: A Vexis settlement of 400 without Casket access. By Year 117, only 12 survivors remained. The rest transformed into Abominations or died from mutation complications.
+
+### The Generational Horror
+
+**By Year 120, the pattern was undeniable:**
+
+**4th generation children (just being born):**
+- **Cannot survive outside Caskets for more than 12 hours**
+- Pregnant mothers must remain connected throughout gestation (disconnection = fetal mutation spike = Abomination birth)
+- Infants born with mutations so severe they require immediate Casket connection
+- **First recorded case**: Infant Fenmar (Year 118) born with fully lupine head—required neural thread connection within 6 hours or would lose all human brain function
+
+**The future projection was terrifying:**
+- 5th generation (if any are born): Will require permanent connection from birth
+- 6th generation: Likely impossible to suppress—mutations faster than Casket stabilization
+- Extinction timeline: ~150 years (Year 587)
+
+### "This Is Why We Fight"
+
+**Vestige Council Declaration (Year 121):**
+
+> "We are not warriors. We are not conquerors. We are prisoners of our own flesh.
+>
+> We fight because fighting means Caskets. Caskets mean survival. Survival means one more day human.
+>
+> Not for glory. Not for honor. For the only technology that lets us stay ourselves.
+>
+> MEMORIA MORIENTES—We Are The Memory of the Dying. And we will die human, or not at all."
+
+---
+
 ## Year 100-300: Diaspora & Persecution
 
 ### Year 73: First Contact with Church

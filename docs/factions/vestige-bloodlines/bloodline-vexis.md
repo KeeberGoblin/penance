@@ -48,6 +48,95 @@
 
 ---
 
+## The Mutation Spiral
+
+### Without Caskets: The Metamorphosis
+
+**Vexis degradation timeline (4th generation like Sella):**
+
+- **0-3 hours disconnected**: Coherent but thoughts fragment ("We think... this one thinks?")
+- **3-6 hours**: Identity dissolution, refers to self as "we," "hive," "collective," unscheduled molting begins
+- **6-9 hours**: Exoskeleton sheds every 90 minutes, extra limbs begin budding from torso
+- **9-12 hours**: Cognitive collapse, hive-mind bleed, no individual thought, mandibles extend
+- **12-24 hours**: Uncontrolled metamorphosis, chitin grows over face/eyes, extra arms fully form
+- **24+ hours**: Permanent transformation into mindless Abomination, full insect form, no humanity remains
+
+### Sella's Reality
+
+**Personal testimony (Year 436, recorded by Corvath scribe):**
+
+> "This one... I... we tried. Year 434. Wanted to feel independent. Disconnected for 8 hours.
+>
+> Hour 3: This one forgot what 'I' means. Only 'we.' Only 'hive.'
+>
+> Hour 5: Molt began. Shell cracked. New shell underneath was wrong. Too hard. Too thick.
+>
+> Hour 7: Arms. Two extra arms. Growing from ribs. Could feel them pushing out. Hurt. Didn't hurt. We don't feel pain like you do.
+>
+> Hour 8: They pulled this one back. Reconnected. Arms kept growing. Had to surgically remove them. Still have scars.
+>
+> The voice in the chitin said 'welcome home.' This one will never try again.
+>
+> This one can disconnect 90 minutes maximum now. Longer than that, this one forgets 'Sella.' Only remembers 'we.'"
+
+### The Hive-Mind Temptation
+
+**Vexis feel a constant pull toward collective consciousness:**
+
+- Disconnected Vexis hear "the voice in the chitin," whispers promising unity, efficiency, perfection
+- The Emergent Syndicate actively broadcasts to disconnected Vexis, offering "controlled evolution"
+- Every molt cycle pulls them closer to full metamorphosis
+- 4th generation Vexis are naturally trending toward hive-insect patterns
+
+**What the Casket does:**
+
+1. **Maintains individual identity**: Suppresses hive-mind bleed, preserves "I" vs "we"
+2. **Regulates molt cycles**: Prevents unscheduled shedding (normally monthly, becomes hourly when disconnected)
+3. **Prevents spontaneous metamorphosis**: Stops extra limb growth, mandible extension, compound eye formation
+4. **Filters collective whispers**: Blocks Emergent Syndicate signals and instinctive hive-calling
+
+### The Sleep Problem
+
+**Vexis cannot truly sleep outside their Caskets:**
+
+- Sleep triggers molt reflex in disconnected Vexis
+- Sella has not slept in a bed since age 14 (8 years ago)
+- She sleeps inside her Casket, never fully disconnecting
+- Has backup power cells for nighttime (power loss = instant molt = death)
+
+**Sella's confession:**
+> "This one dreams of beds. Soft things. Pillows. This one will never know them. Disconnecting to sleep means waking up as something else. If waking up at all.
+>
+> The Casket is this one's bed. This one's cage. This one's coffin. All three. Forever."
+
+### Why Vexis Consider Joining Emergent Syndicate
+
+**The temptation is real:**
+
+- **Promise**: "Stop fighting the hive. Join us. Become what you're meant to be."
+- **Appeal**: No more struggling against instinct, no more painful individuality
+- **Truth**: It's not really a choice for 4th gen Vexis. It's surrender or constant suffering.
+
+**Sella's internal debate (overheard by packmates):**
+
+> "One day, this one will want to join them. And this one will not plug back in. The hive is calling. Every molt, louder. Every disconnect, clearer.
+>
+> The Syndicate offers peace. The Casket offers struggle.
+>
+> How long can this one choose struggle? How long until peace sounds better than pain?"
+
+### The 90-Minute Life
+
+**Sella's daily routine:**
+
+- **22.5 hours connected**: Piloting, eating, sleeping (all inside Casket)
+- **90 minutes disconnected** (split into 6x 15-minute sessions): Bathing, physical therapy, social interaction
+- **Emergency protocol**: Portable neural harness for disconnection (weak, uncomfortable, 3-hour max)
+
+**She hasn't been disconnected for more than 90 minutes continuously in 3 years.**
+
+---
+
 ## Notable NPC: Hive-Mother Sella Vexis
 
 ### Title

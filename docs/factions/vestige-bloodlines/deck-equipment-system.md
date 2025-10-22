@@ -10,13 +10,78 @@
 
 ## Design Philosophy
 
-The Vestige Bloodlines embody hereditary evolution through suffering. Every card reflects their philosophy:
+The Vestige Bloodlines are dying. Not slowly, but generationally—each child born more feral than their parents, each generation closer to mindless beasts. They pilot Caskets not for power, but for **survival**—the neural threads are the only thing keeping their minds human and their bodies from transforming into Abominations.
 
-- **Bloodline Identity**: Each pilot chooses a primary bloodline (Fenmar, Urtok, Vexis, Corvath, Serrak)
-- **Biomass Economy**: Kill to harvest resources, trigger transformations
-- **Pack Tactics**: Power scales with nearby Vestige allies
-- **Bloodline Synergies**: Unique bonuses based on your chosen bloodline
-- **Genetic Legacy**: Mutations passed through generations, growing stronger or more unstable
+Every card reflects their desperate struggle:
+
+- **Bloodline Identity**: Your curse is inherited—wolf, bear, insect, raven, or serpent
+- **Biomass Economy**: Feed the hunger, or lose yourself to it
+- **Pack Tactics**: Together, we remember what we were
+- **Casket Dependency**: Without the neural threads stabilizing our minds AND bodies, we are just beasts
+- **The Extinction Clock**: We have 150 years. Maybe less.
+
+**They are not monsters piloting machines. They are people using machines to stay people.**
+
+---
+
+## Why Vestige MUST Pilot Caskets
+
+### The Dual Suppression System
+
+Vestige Bloodlines discovered the horrifying truth in Year 85:
+
+**Caskets don't just help them fight. Caskets keep them human.**
+
+**Neural Thread Functions:**
+1. **Mental Stabilization**: Preserves coherent thought, prevents feral regression
+2. **Mutation Suppression**: Actively halts genetic degradation, freezes transformation
+3. **Identity Preservation**: Maintains sense of self against both mental and physical collapse
+
+**Without Caskets:**
+- **6-24 hours**: Rapid mutation acceleration—extra limbs, lost limbs, transformative changes
+- **24-48 hours**: Point of no return—irreversible metamorphosis into Abomination
+- **48+ hours**: No human consciousness remains—pure beast, must be mercy-killed
+
+### The Prison-Lifeline Paradox
+
+**They are not pilots who use Caskets. They are prisoners who need them.**
+
+- **Fenmar**: Disconnect = transform into quadrupedal wolves (lose hands, speech, humanity)
+- **Urtok**: Disconnect = hibernate forever (body petrifies into living stone)
+- **Vexis**: Disconnect = metamorphosis into mindless insects (hive-absorption)
+- **Corvath**: Disconnect = avian devolution (bones hollow until collapse, mind regresses to bird)
+- **Serrak**: Disconnect = limbless serpent (arms/legs retract, venom becomes lethal to self)
+
+### The Generational Countdown
+
+**Each generation needs MORE suppression:**
+- **1st gen**: Could disconnect for days (72+ hours)
+- **2nd gen**: Could disconnect for 48 hours
+- **3rd gen**: Can disconnect for 24 hours
+- **4th gen**: Can disconnect for 6-12 hours
+- **5th gen (predicted)**: Cannot disconnect at all—instant transformation
+
+**Current 4th generation children are born inside Caskets and may never leave.**
+
+### The Strength They Cannot Use
+
+**The cruelest irony:**
+
+Vestige mutations give them **superhuman physical capabilities:**
+- Fenmar pack coordination (tactical superiority)
+- Urtok strength (can lift 800+ lbs)
+- Vexis regeneration (molt healing)
+- Corvath mobility (gliding, enhanced senses)
+- Serrak toxicity (natural venom weapons)
+
+**But without Caskets, they cannot use any of it.**
+
+A Fenmar disconnected for 18 hours has enhanced strength, speed, senses—**and the mind of a rabid wolf**. Useless.
+
+**They are not weak pilots made strong by Caskets.**
+**They are strong beasts made functional by Caskets.**
+
+The Casket is the only thing standing between "super-soldier" and "Abomination."
 
 ---
 

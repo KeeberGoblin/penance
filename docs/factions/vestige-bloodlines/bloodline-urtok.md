@@ -48,6 +48,77 @@
 
 ---
 
+## The Torpor Curse
+
+### Without Caskets: The Hibernation Death
+
+**Urtok degradation timeline (3rd generation like Grendok):**
+
+- **0-12 hours disconnected**: Functional but lethargic, overwhelming urge to hibernate, body temperature drops
+- **12-24 hours**: Enters involuntary torpor state (coma-like sleep), fur thickens dramatically
+- **24-48 hours**: Bone density increases rapidly, skeleton becomes too heavy to move even if awakened
+- **48-72 hours**: Sleep deepens to hibernation levels, cannot be woken without extreme stimulation
+- **1 week**: Metabolism crashes completely, body enters permanent hibernation
+- **2+ weeks**: Starvation death while sleeping (body cannot wake to eat)
+
+### Grendok's Confession
+
+**Personal journal (Year 401, Age 28):**
+
+> "I disconnected once. Just once. I thought I could handle 30 hours. Prove I was stronger than the bear.
+>
+> By hour 12, I could barely keep my eyes open. By hour 20, I collapsed into torpor.
+>
+> They found me at hour 28. Took six Urtok to drag me back to my Casket. When I finally woke, my bones had grown so dense I couldn't stand. My skeleton weighed more than my entire body had before.
+>
+> Took 6 months of re-acclimation therapy to walk again. Lost 40 pounds of bone mass through experimental treatments. Still have chronic joint pain from the density spikes.
+>
+> Now I know: the Casket isn't a crutch. It's a dam. And the flood never stops. The bear wants to sleep forever. The Casket is the only thing keeping me awake. Some days, I hate it for that."
+
+### The Strength Paradox
+
+**Urtok are the physically strongest bloodline:**
+
+- Can lift 800+ lbs bare-handed (3rd gen like Grendok)
+- Bone density resists small-arms fire naturally
+- Hibernation healing can repair massive trauma in days
+- Claws can tear through Casket armor plating
+
+**But without Caskets, this strength is completely useless:**
+
+- **4th generation Urtok**: Hibernate 18-20 hours per day minimum (even with Casket support)
+- **Disconnected Urtok**: Cannot stay conscious more than 12 hours before torpor
+- **The cruel reality**: They literally starve to death while sleeping if left disconnected
+
+### The Neural Alarm Clock
+
+**What the Casket does for Urtok:**
+
+1. **Neural stimulation**: Constantly fires signals to prevent hibernation reflex
+2. **Temperature regulation**: Keeps body temperature elevated (prevents torpor trigger)
+3. **Metabolic override**: Forces active metabolism despite bear instincts
+4. **Pain management**: The constant wakefulness is agonizing - Casket manages it
+
+**Grendok's metaphor:**
+> "The Casket is an alarm clock that never stops ringing. I have been awake for 64 years. 64 years of fighting sleep. The bear knows peace. I know only waking. Every second, every minute, every hour - 'stay awake, stay awake, stay awake.'
+>
+> You ask why I speak slowly? Because every word is a battle against sleep. Every thought is me choosing to be awake. The Casket helps, but it cannot do it for me.
+>
+> Some nights, I dream of disconnecting. Just... letting go. Sleeping forever. But that would be surrender. And I am not ready to surrender. Not yet."
+
+### Why Urtok Seem Philosophical
+
+**The truth behind their contemplative nature:**
+
+- Constant battle against hibernation instinct creates meditative mindset
+- Every moment awake is a conscious choice, leading to deep appreciation of existence
+- Fighting sleep for decades creates unusual perspective on mortality and persistence
+- "The mountain endures" philosophy is literally about enduring wakefulness
+
+**It's not wisdom. It's exhaustion wearing the mask of philosophy.**
+
+---
+
 ## Notable NPC: Grendok Urtok "The Sleeper"
 
 ### Title
