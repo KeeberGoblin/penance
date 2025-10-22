@@ -163,10 +163,7 @@ body::before {
 
 /* Gothic Sidebar */
 .sidebar {
-    background: linear-gradient(to bottom,
-        rgba(43, 31, 23, 0.95),
-        rgba(26, 20, 16, 0.95)
-    );
+    background: transparent;
     border-right: 4px double var(--dark-red);
     padding: 2rem 1.5rem 3rem 1.5rem;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8);
@@ -187,8 +184,8 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: var(--leather-texture);
-    opacity: 0.3;
+    background-image: none;
+    opacity: 0;
     pointer-events: none;
     z-index: 0;
 }
