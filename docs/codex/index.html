@@ -80,7 +80,8 @@
                         transform 0.3s ease;
         }
 
-        .nav-dropdown:hover .nav-submenu {
+        .nav-dropdown:hover .nav-submenu,
+        .nav-dropdown.dropdown-open .nav-submenu {
             max-height: 500px;
             opacity: 1;
             transform: translateY(0);
@@ -106,7 +107,8 @@
             transition: transform 0.3s ease;
         }
 
-        .nav-dropdown:hover .nav-link.has-submenu::after {
+        .nav-dropdown:hover .nav-link.has-submenu::after,
+        .nav-dropdown.dropdown-open .nav-link.has-submenu::after {
             transform: rotate(180deg);
         }
 
@@ -562,6 +564,30 @@
                 event.stopPropagation();
             }
 
+            // Check if this is a dropdown parent link
+            const clickedLink = event ? event.currentTarget : null;
+            const isDropdownParent = clickedLink && clickedLink.classList.contains('has-submenu');
+            const parentDropdown = clickedLink ? clickedLink.closest('.nav-dropdown') : null;
+
+            // On mobile/touch devices, toggle dropdown instead of navigating on first click
+            if (isDropdownParent && parentDropdown) {
+                const isOpen = parentDropdown.classList.contains('dropdown-open');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
+                    if (dropdown !== parentDropdown) {
+                        dropdown.classList.remove('dropdown-open');
+                    }
+                });
+
+                // If dropdown is closed, open it and prevent navigation
+                if (!isOpen) {
+                    parentDropdown.classList.add('dropdown-open');
+                    return; // Don't navigate, just open the dropdown
+                }
+                // If dropdown is already open, allow navigation to proceed below
+            }
+
             const frame = document.getElementById('contentFrame');
             const allLinks = document.querySelectorAll('.nav-link[onclick]');
 
@@ -583,12 +609,17 @@
             sidebar.classList.remove('active');
             backdrop.classList.remove('active');
             toggleBtn.innerHTML = '☰';
+
+            // Close all dropdowns when navigating
+            document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
+                dropdown.classList.remove('dropdown-open');
+            });
         }
 
         // Set home page as active on load
         window.addEventListener('DOMContentLoaded', function() {
             // No active state on load - home content is shown by default
-            
+
             // Handle sidebar scroll indicator
             const sidebar = document.querySelector('.sidebar');
             if (sidebar) {
@@ -600,13 +631,26 @@
                         sidebar.style.setProperty('--scroll-indicator-opacity', '0.8');
                     }
                 });
-                
+
                 // Check initial scroll position
                 const isScrollable = sidebar.scrollHeight > sidebar.clientHeight;
                 if (!isScrollable) {
                     sidebar.style.setProperty('--scroll-indicator-opacity', '0');
                 }
             }
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(event) {
+                // Check if click is outside any dropdown
+                const clickedDropdown = event.target.closest('.nav-dropdown');
+
+                if (!clickedDropdown) {
+                    // Clicked outside all dropdowns - close them all
+                    document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
+                        dropdown.classList.remove('dropdown-open');
+                    });
+                }
+            });
         });
     </script>
 </body>
