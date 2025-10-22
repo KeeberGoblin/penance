@@ -154,7 +154,14 @@
             display: flex;
             flex-direction: column;
             background: transparent !important;
-            border-right: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Remove any borders from nav sections */
+        .nav-section {
+            border: none !important;
+            border-bottom: 1px solid var(--blood-red) !important;
         }
 
         .sidebar.active {
@@ -174,6 +181,8 @@
                 rgba(26, 20, 16, 0.98)
             );
             position: relative;
+            border: none;
+            box-shadow: none;
         }
 
         .nav-content::before {
@@ -215,7 +224,10 @@
                 var(--dark-red) 100%
             );
             border-top: 3px double var(--aged-gold);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8);
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8), inset 0 0 0 transparent;
             flex-shrink: 0;
             position: relative;
             clip-path: polygon(
@@ -246,7 +258,10 @@
             align-items: center;
             justify-content: center;
             border-top: 3px double var(--aged-gold);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8);
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8), inset 0 0 0 transparent;
             margin-top: auto;
             flex-shrink: 0;
             position: relative;
