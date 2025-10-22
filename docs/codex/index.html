@@ -153,11 +153,23 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            background: transparent !important;
+            background: linear-gradient(to bottom,
+                rgba(43, 31, 23, 0.98),
+                rgba(26, 20, 16, 0.98)
+            ) !important;
         }
 
         .sidebar::before {
-            display: none !important;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--leather-texture);
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .sidebar.active {
