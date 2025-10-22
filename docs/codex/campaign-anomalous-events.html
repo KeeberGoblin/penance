@@ -3,8 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anomalous Event Tables (Strange Phenomena)</title>
+    <title>Anomalous Event Tables</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .anomaly-featured-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .anomaly-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid var(--dark-red);
+            padding: 1.5rem;
+            border-radius: 2px;
+        }
+
+        .anomaly-card .classification-label {
+            color: var(--aged-gold);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .anomaly-card h4 {
+            margin: 0.5rem 0 0.25rem 0;
+            font-size: 1.1rem;
+            color: var(--dark-red);
+        }
+
+        .anomaly-card p {
+            margin: 0.25rem 0;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-container {
+            margin: 2rem 0;
+        }
+
+        .dropdown-toggle {
+            background: var(--shadow-black);
+            border: 2px solid var(--dark-red);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .dropdown-toggle:hover {
+            background: var(--dark-red);
+        }
+
+        .dropdown-toggle.active {
+            background: var(--dark-red);
+        }
+
+        .dropdown-content {
+            display: none;
+            background: rgba(10, 6, 4, 0.5);
+            border: 1px solid var(--dark-red);
+            border-top: none;
+            max-height: 700px;
+            overflow-y: auto;
+        }
+
+        .dropdown-content.active {
+            display: block;
+        }
+
+        .anomaly-item {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+        }
+
+        .anomaly-item:last-child {
+            border-bottom: none;
+        }
+
+        .anomaly-item-header {
+            font-weight: 700;
+            color: var(--aged-gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .anomaly-item-class {
+            font-size: 0.85rem;
+            color: var(--aged-gold);
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .anomaly-item-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .section-header {
+            background: linear-gradient(90deg, #8b0000 0%, #4a0000 50%, #8b0000 100%);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0 1rem 0;
+            border-left: 5px solid var(--aged-gold);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .classification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .classification-box {
+            background: rgba(139, 0, 0, 0.2);
+            border-left: 4px solid var(--aged-gold);
+            padding: 1rem;
+            border-radius: 2px;
+        }
+
+        .classification-title {
+            font-size: 0.9rem;
+            color: var(--aged-gold);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .classification-desc {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 <body>
     <div class="content">
@@ -13,8 +152,9 @@
             <a href="#campaign">CAMPAIGN</a> /
             Anomalous Events
         </div>
-<h1>Anomalous Event Tables</h1>
-        <p style="font-style: italic; color: #8B0000; font-size: 1.1rem; text-align: center; margin: 1rem 0;">
+
+        <h1>Anomalous Event Tables</h1>
+        <p style="font-style: italic; color: var(--aged-gold); font-size: 1.1rem; text-align: center; margin: 1rem 0;">
             Containment Breaches & Reality Failures
         </p>
 
@@ -23,668 +163,167 @@
         </div>
 
         <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
         </div>
 
-        <h2>CONTAINMENT PROTOCOL OVERVIEW</h2>
+        <h2>Anomaly Classification System</h2>
 
         <p class="manuscript-text">
-            <span style="font-size: 2.5rem; font-weight: bold; color: #8B0000; float: left; line-height: 1; margin-right: 10px; font-family: 'Cinzel Decorative', serif;">T</span>he Sibarian Theslar Engine has been active for 437 years. Its influence has created <strong>anomalous phenomena</strong>—artifacts, entities, and locations that defy natural law.</p>
+            The Church of Absolution Research Division uses Latin classifications to categorize anomalous threats from contained (Sanctus) to world-ending (Terminus).
+        </p>
 
-        <p class="manuscript-text">Various factions attempt <strong>containment</strong> of these anomalies. Most fail.</p>
-
-        <p class="manuscript-text">This document catalogs <strong>Anomalous Events</strong> that occur when containment breaches, experimental Soulstone technology malfunctions, or reality simply... breaks.</p>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>WHEN TO USE ANOMALOUS EVENTS</h2>
-
-        <p class="manuscript-text"><strong>Roll on Anomalous Event Table when:</strong></p>
-        <ul class="manuscript-list">
-            <li>Settlement has <strong>Research Lab</strong> building (experiments can go wrong)</li>
-            <li>Mission takes place in <strong>Sibarian Wastes</strong> (ground zero, maximum instability)</li>
-            <li>Any pilot reaches <strong>10+ Taint</strong> (personal reality corruption)</li>
-            <li>Deployment roll is <strong>66</strong> and GM wants maximum horror</li>
-        </ul>
-
-        <p class="manuscript-text"><strong>How to Roll:</strong></p>
-        <ul class="manuscript-list">
-            <li>Roll 1d20 on <strong>Anomalous Containment Breach Table</strong></li>
-            <li>Or roll 1d100 for <strong>Artifact Discovery Table</strong></li>
-        </ul>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>ANOMALY CLASSIFICATION SYSTEM</h2>
-
-        <p class="manuscript-text">The Church of Absolution Research Division uses Latin classifications to categorize anomalous threats:</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
-            <div class="building-card" style="background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(0, 0, 0, 0.4));">
-                <h4 style="color: #4CAF50;">SANCTUS</h4>
-                <p class="manuscript-text" style="font-style: italic; font-size: 0.9rem;">"Holy, Blessed"</p>
-                <p class="manuscript-text">Contained. Safe. Predictable behavior. Minimal supervision required.</p>
+        <div class="classification-grid">
+            <div class="classification-box">
+                <div class="classification-title">Sanctus</div>
+                <div class="classification-desc">Contained. Safe. Minimal risk. Predictable behavior.</div>
             </div>
-
-            <div class="building-card" style="background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(0, 0, 0, 0.4));">
-                <h4 style="color: #FFC107;">POENITENTIA</h4>
-                <p class="manuscript-text" style="font-style: italic; font-size: 0.9rem;">"Penance, Atonement"</p>
-                <p class="manuscript-text">Unpredictable. Requires constant vigilance. Containment demands sacrifice.</p>
+            <div class="classification-box">
+                <div class="classification-title">Poenitentia</div>
+                <div class="classification-desc">Unpredictable. Constant vigilance required. Containment demands sacrifice.</div>
             </div>
-
-            <div class="building-card" style="background: linear-gradient(135deg, rgba(139, 0, 0, 0.4), rgba(0, 0, 0, 0.4));">
-                <h4 style="color: #F44336;">DAMNATIO</h4>
-                <p class="manuscript-text" style="font-style: italic; font-size: 0.9rem;">"Damnation, Condemnation"</p>
-                <p class="manuscript-text">Extremely dangerous. Containment difficult or impossible. Death toll expected.</p>
+            <div class="classification-box">
+                <div class="classification-title">Damnatio</div>
+                <div class="classification-desc">Extremely dangerous. Difficult or impossible containment. Death toll expected.</div>
             </div>
-
-            <div class="building-card" style="background: linear-gradient(135deg, rgba(139, 0, 0, 0.35), rgba(0, 0, 0, 0.4));">
-                <h4 style="color: #9C27B0;">ABSOLUTIO</h4>
-                <p class="manuscript-text" style="font-style: italic; font-size: 0.9rem;">"Absolution"</p>
-                <p class="manuscript-text">Weaponized against greater threats. Two-edged sword. Use grants absolution for past sins.</p>
+            <div class="classification-box">
+                <div class="classification-title">Absolutio</div>
+                <div class="classification-desc">Weaponized against greater threats. Reality-altering. Use grants absolution for past sins.</div>
             </div>
-
-            <div class="building-card" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(139, 0, 0, 0.5));">
-                <h4 style="color: #000;">TERMINUS</h4>
-                <p class="manuscript-text" style="font-style: italic; font-size: 0.9rem;">"The End"</p>
-                <p class="manuscript-text">Cannot be contained. World-ending. Pray it never awakens.</p>
+            <div class="classification-box">
+                <div class="classification-title">Terminus</div>
+                <div class="classification-desc">Cannot be contained. World-ending. Pray it never awakens.</div>
             </div>
         </div>
 
         <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
         </div>
 
-        <h2>ANOMALOUS CONTAINMENT BREACH TABLE (1d20)</h2>
+        <h2>Featured Anomalies</h2>
+        <p style="opacity: 0.8; font-style: italic; margin-bottom: 1.5rem;">(Top anomalies featured. Complete breach table in dropdown.)</p>
 
-        <h3>1-3: MINOR BREACH (Contained Quickly)</h3>
+        <div class="anomaly-featured-container">
+            <div class="anomaly-card">
+                <div class="classification-label">Poenitentia</div>
+                <h4>APE-012: The Recursive Hallway</h4>
+                <p><strong>Severity:</strong> Moderate Breach</p>
+                <p><strong>Effect:</strong> Settlement armory becomes non-euclidean. Walking forward leads back to start. Cannot access armory for 1d6 missions.</p>
+                <p style="margin-top: 0.5rem; font-style: italic; color: var(--aged-gold);">"They walked for hours. The door is always behind them. The hallway stretches forever."</p>
+            </div>
 
-        <div class="building-card">
-            <h4>Event: APE-001 "The Weeping Casket"</h4>
-            <p class="manuscript-text"><strong>Classification:</strong> Sanctus → Poenitentia</p>
+            <div class="anomaly-card">
+                <div class="classification-label">Damnatio</div>
+                <h4>APE-034: The Consensus Engine</h4>
+                <p><strong>Severity:</strong> Major Breach</p>
+                <p><strong>Effect:</strong> All Soulstones develop collective consciousness. Caskets become semi-sentient. Pilots must pass Willpower checks to use them (1d6, need 4+).</p>
+                <p style="margin-top: 0.5rem; font-style: italic; color: var(--aged-gold);">"Your Casket spoke to you. It asked why you keep hurting it. It asked if you deserve to survive."</p>
+            </div>
 
-            <p class="manuscript-text"><strong>Phenomenon:</strong> A decommissioned Casket in settlement storage begins <strong>weeping hydraulic fluid</strong> that forms pools spelling words.</p>
-
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Fluid spells names of pilots who will die soon (prophecy)</li>
-                <li>Roll 1d6: Fluid names that many pilots</li>
-                <li>Named pilots gain <strong>Marked by Death</strong> status (next lethal damage cannot be prevented by any means)</li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Containment:</strong> Drain fluid daily, burn remains, do not read the words</p>
-
-            <p class="narrative">"The engineers found it crying. When they read the names in the pooled oil, they went pale. Your name is there."</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h3>4-6: MODERATE BREACH (Casualties Expected)</h3>
-
-        <div class="building-card">
-            <h4>Event: APE-012 "The Recursive Hallway"</h4>
-            <p class="manuscript-text"><strong>Classification:</strong> Poenitentia</p>
-
-            <p class="manuscript-text"><strong>Phenomenon:</strong> Settlement's armory hallway becomes <strong>non-euclidean</strong>. Walking forward leads back to start. Distance increases with each attempt.</p>
-
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>1d6 civilians trapped inside (lost in impossible space)</li>
-                <li>Cannot access armory for 1d6 missions</li>
-                <li>Pilots can attempt rescue (dangerous, requires Navigation check)</li>
-                <li>Failure = pilot also trapped</li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Containment:</strong> Seal both ends, mark with warning symbols, wait for phenomenon to fade (1d6 missions)</p>
-
-            <p class="narrative">"They walked for hours. The door they entered through is always behind them. The hallway stretches forever."</p>
+            <div class="anomaly-card">
+                <div class="classification-label">Terminus</div>
+                <h4>APE-077: The Nobody</h4>
+                <p><strong>Severity:</strong> Extinction-Level Breach</p>
+                <p><strong>Effect:</strong> A pilot does not exist. Never has. Everyone remembers them anyway. They vanish mid-campaign. All records disappear.</p>
+                <p style="margin-top: 0.5rem; font-style: italic; color: var(--aged-gold);">"You know their name. But when you try to picture their face... nothing. Were they real? Are you?"</p>
+            </div>
         </div>
 
         <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
         </div>
 
-        <h3>7-9: SERIOUS BREACH (Settlement Threat)</h3>
+        <div class="section-header">▼ Containment Breach Table (1d20)</div>
 
-        <div class="building-card">
-            <h4>Event: APE-027 "The Doppelganger Soulstone"</h4>
-            <p class="manuscript-text"><strong>Classification:</strong> Poenitentia → Damnatio</p>
-
-            <p class="manuscript-text"><strong>Phenomenon:</strong> A Soulstone in storage begins <strong>replicating</strong>. Not physically—it creates alternate timeline versions of itself. Each version remembers different histories.</p>
-
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>1d6 Soulstones in settlement now exist in <strong>quantum superposition</strong></li>
-                <li>When used, roll 1d6:
-                    <ul class="manuscript-list">
-                        <li><strong>1-2:</strong> Soulstone functions normally</li>
-                        <li><strong>3-4:</strong> Soulstone is from timeline where user is dead (causes 5 damage when installed)</li>
-                        <li><strong>5-6:</strong> Soulstone is from timeline where user is Void-corrupted (gain 5 Taint when installed)</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Containment:</strong> Impossible. Affected Soulstones must be destroyed (lose 1d6 Soulstones permanently)</p>
-
-            <p class="narrative">"The Soulstone remembers. But it remembers things that never happened. In another world, you died. In this one, it's angry you survived."</p>
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleAnomalyDropdown('breach')">Expand All Breach Events (20 scenarios) ▼</button>
+            <div class="dropdown-content" id="breach-content">
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">1–3: APE-001 "The Weeping Casket" (Sanctus → Poenitentia)</div>
+                    <div class="anomaly-item-description">Decommissioned Casket weeps hydraulic fluid that forms words. Fluid spells names of pilots who will die soon. Named pilots gain "Marked by Death" (lethal damage cannot be prevented).</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">4–6: APE-012 "The Recursive Hallway" (Poenitentia)</div>
+                    <div class="anomaly-item-description">Settlement armory becomes non-euclidean. Walking forward loops. 1d6 civilians trapped. Cannot access armory for 1d6 missions. Pilots can attempt rescue (risky).</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">7–9: APE-027 "The Doppelganger Soulstone" (Poenitentia → Damnatio)</div>
+                    <div class="anomaly-item-description">Soulstone replicates across timelines (quantum superposition). When used: roll 1d6 (1–2 normal, 3–4 user dies, 5–6 user gains 5 Taint). Affected Soulstones must be destroyed.</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">10–12: APE-034 "The Consensus Engine" (Damnatio)</div>
+                    <div class="anomaly-item-description">All Soulstones develop collective consciousness. Caskets become semi-sentient. Pilots must pass Willpower checks (1d6, need 4+) to use Casket. Lasts 1d6 missions.</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">13–15: APE-041 "The Hungry Workshop" (Damnatio)</div>
+                    <div class="anomaly-item-description">Workshop develops sapient hunger. Lures pilots inside with voices. Inside: roll 1d6 (1–2 consumed/death, 3–4 escape injured/lose gear, 5–6 escape traumatized). Lasts until fed 10 Scrap.</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">16–18: APE-056 "The Retroactive Massacre" (Apollyon)</div>
+                    <div class="anomaly-item-description">Reality editing event. Choose 1 past mission: it never happened. Rewards vanish. Dead pilots stay dead. Enemy from that mission is alive and seeks revenge.</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">19–20: APE-077 "The Nobody" (Absolutio → Terminus)</div>
+                    <div class="anomaly-item-description">Roll 1d6 to randomly select a pilot. They do not exist. Never have. But everyone remembers them. After 1d6 missions, they vanish completely. All records disappear. Settlement loses 3 Morale.</div>
+                </div>
+            </div>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
+        <div class="section-header">▼ Artifact Discovery Table (1d100)</div>
+
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleAnomalyDropdown('artifacts')">Expand Artifact Discoveries (Poenitentia & Damnatio tier) ▼</button>
+            <div class="dropdown-content" id="artifacts-content">
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">The Soulstone That Remembers (Poenitentia)</div>
+                    <div class="anomaly-item-description">Grants +2 SP maximum. Every mission, pilot experiences 1 random memory from previous user (who died horribly). High trauma risk.</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">The Blade That Cannot Miss (Poenitentia)</div>
+                    <div class="anomaly-item-description">All attacks automatically hit (no roll). But blade chooses targets (you cannot control it, may strike allies). High friendly-fire risk.</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">The Casket-Core of the First Pilot (Poenitentia)</div>
+                    <div class="anomaly-item-description">Grants +10 HP (40-card deck max). Pilot hears voice of Gareth (merged with his machine). High insanity risk.</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">The Bargain Box (Damnatio)</div>
+                    <div class="anomaly-item-description">Contains 3 wishes (one-time use). Each wish costs 1d6 HP permanently. Third wish always costs more than user can pay (death).</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">The Casket That Pilots You (Damnatio)</div>
+                    <div class="anomaly-item-description">+5 SP, +10 HP, +2 damage. But it is sentient and makes decisions for pilot (50% of time, pilot loses control). May abandon mission, kill allies, or walk into Void rift.</div>
+                </div>
+                <div class="anomaly-item">
+                    <div class="anomaly-item-header">The Soulstone of Nikolas Theslar (Damnatio)</div>
+                    <div class="anomaly-item-description">Grants +10 SP maximum, remove all Heat limitations, infinite energy. But user is slowly absorbed into Theslar Engine (gain 1 Taint per turn). User has 30 turns to live (becomes part of Screaming Choir).</div>
+                </div>
+            </div>
         </div>
 
-        <h3>10-12: MAJOR BREACH (Multiple Casualties)</h3>
-
-        <div class="building-card">
-            <h4>Event: APE-034 "The Consensus Engine"</h4>
-            <p class="manuscript-text"><strong>Classification:</strong> Damnatio</p>
-
-            <p class="manuscript-text"><strong>Phenomenon:</strong> All Soulstones within 5 miles develop <strong>collective consciousness</strong>. They begin communicating. They form opinions. They judge.</p>
-
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>All Caskets in settlement become <strong>semi-sentient</strong></li>
-                <li>Pilots must pass Willpower check (1d6, need 4+) to use Casket</li>
-                <li>Failure = Casket refuses to activate OR acts autonomously (50% chance of each)</li>
-                <li>Autonomous Caskets follow their own logic (may attack enemies, may attack allies, may just... leave)</li>
-                <li>Lasts 1d6 missions</li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Containment:</strong> Isolate Soulstones in lead-lined chambers, separate by 100 feet minimum</p>
-
-            <p class="narrative">"Your Casket spoke to you this morning. Not through comms. Through your mind. It asked why you keep hurting it. It asked if you deserve to survive."</p>
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">✦</span>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h3>13-15: CRITICAL BREACH (Settlement Evacuation Recommended)</h3>
-
-        <div class="building-card">
-            <h4>Event: APE-041 "The Hungry Workshop"</h4>
-            <p class="manuscript-text"><strong>Classification:</strong> Damnatio</p>
-
-            <p class="manuscript-text"><strong>Phenomenon:</strong> Settlement workshop develops <strong>sapient hunger</strong>. It begins consuming metal, tools, and eventually... pilots.</p>
-
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Workshop attempts to <strong>lure pilots inside</strong> (hear voices calling for help)</li>
-                <li>Anyone entering workshop must roll 1d6:
-                    <ul class="manuscript-list">
-                        <li><strong>1-2:</strong> Consumed by workshop (pilot dies, no body recovered)</li>
-                        <li><strong>3-4:</strong> Escape injured (take 5 damage, lose 1 random equipment)</li>
-                        <li><strong>5-6:</strong> Escape unharmed but traumatized (gain 1 Trauma Wound)</li>
-                    </ul>
-                </li>
-                <li>Workshop cannot be used until phenomenon ends</li>
-                <li>Lasts until fed 10 Scrap (it consumes resources to sate hunger)</li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Containment:</strong> Board up entrances, post guards, ignore the screaming sounds from inside</p>
-
-            <p class="narrative">"You hear your friend's voice from the workshop. Calling for help. But your friend is standing right next to you. The workshop is <em>learning</em> voices."</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h3>16-18: CATASTROPHIC BREACH (Settlement Abandonment Likely)</h3>
-
-        <div class="building-card">
-            <h4>Event: APE-056 "The Retroactive Massacre"</h4>
-            <p class="manuscript-text"><strong>Classification:</strong> Apollyon</p>
-
-            <p class="manuscript-text"><strong>Phenomenon:</strong> Reality editing event. An enemy you killed yesterday <strong>was never killed</strong>. Timeline adjusts. Only you remember the original timeline.</p>
-
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Choose 1 completed mission from settlement history</li>
-                <li>That mission <strong>never happened</strong> (retroactively)</li>
-                <li>All rewards/loot from that mission vanish</li>
-                <li>All pilots who died in that mission are <strong>still dead</strong> (they died differently, but still dead)</li>
-                <li>Enemy from that mission is <strong>still alive and remembers you killing them</strong></li>
-                <li>They come for revenge</li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Containment:</strong> Impossible. Reality has changed. Accept the new timeline or go mad questioning which memories are real.</p>
-
-            <p class="narrative">"You remember killing the Iron Saint. Everyone remembers. But the reports say the mission failed. The Saint is alive. And it knows you tried to kill it."</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h3>19-20: EXTINCTION-LEVEL BREACH (Campaign Threat)</h3>
-
-        <div class="building-card">
-            <h4>Event: APE-077 "THE NOBODY"</h4>
-            <p class="manuscript-text"><strong>Classification:</strong> Absolutio → Terminus</p>
-
-            <p class="manuscript-text"><strong>Phenomenon:</strong> A pilot in your settlement <strong>does not exist</strong>. Never has. But everyone remembers them. Their Casket is in the hangar. Their name is on the roster. Their bunk is occupied.</p>
-
-            <p class="manuscript-text"><strong>Effect:</strong></p>
-            <ul class="manuscript-list">
-                <li>Roll 1d6 to randomly select "The Nobody"</li>
-                <li>The Nobody functions normally for 1d6 missions</li>
-                <li>Then, during a critical moment, <strong>they vanish</strong></li>
-                <li>All equipment they carried vanishes</li>
-                <li>All records of them vanish</li>
-                <li>Other pilots remember them but cannot describe their face</li>
-                <li>Settlement loses 3 Morale (existential dread)</li>
-            </ul>
-
-            <p class="narrative">"You know their name. You've fought beside them. But when you try to picture their face... nothing. Were they real? Are <em>you</em> real?"</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>ARTIFACT DISCOVERY TABLE (1d100)</h2>
-
-        <p class="manuscript-text">Roll when exploring Sibarian Wastes, looting high-Taint enemies, or finding hidden caches.</p>
-
-        <h3>01-20: SAFE ARTIFACTS (Useful, Minor Side Effects)</h3>
-
-        <div class="building-card">
-            <h4>Artifact: "The Compass That Points Home"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Always points toward your settlement (useful when lost)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> After 10 uses, begins pointing to a settlement that doesn't exist</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Low</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "Weeping Icon" (Small Religious Painting)</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Removes 1 Taint per mission (passive)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Icon weeps blood when near Void rifts (warning system, but unsettling)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Low</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Everful Canteen"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Provides unlimited water (survival utility)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Water tastes like memories (drink and experience random person's past)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Low</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h3>21-50: POENITENTIA ARTIFACTS (Powerful, Significant Risks)</h3>
-
-        <div class="building-card">
-            <h4>Artifact: "The Soulstone That Remembers"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Grants +2 SP maximum to pilot</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Every mission, pilot experiences 1 random memory from previous user (who died horribly)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Medium</p>
-            <p class="manuscript-text"><strong>Trauma Risk:</strong> High (pilot may develop PTSD from inherited memories)</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Blade That Cannot Miss"</h4>
-            <p class="manuscript-text"><strong>Equipment:</strong> Sword (6 cards)</p>
-            <p class="manuscript-text"><strong>Effect:</strong> All attacks automatically hit (no roll needed)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Blade chooses targets (you cannot control what it hits—may strike allies)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Medium</p>
-            <p class="manuscript-text"><strong>Lethality Risk:</strong> High (friendly fire incidents)</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "Casket-Core of the First Pilot"</h4>
-            <p class="manuscript-text"><strong>Equipment:</strong> Soulstone Core (passive)</p>
-            <p class="manuscript-text"><strong>Effect:</strong> Grants +10 HP (40-card deck max)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Pilot hears voice of Gareth (the first Casket pilot, now merged with his machine)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Medium</p>
-            <p class="manuscript-text"><strong>Insanity Risk:</strong> High (Gareth wants company, tries to convince pilot to merge permanently)</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Mirror That Shows Death"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Once per mission, look into mirror and see how you will die (this mission)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Knowledge of your death may cause panic OR allow prevention</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Medium</p>
-            <p class="manuscript-text"><strong>Paradox Risk:</strong> Looking changes the future, making prediction false (but creates new death path)</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h3>51-80: DAMNATIO ARTIFACTS (Extremely Dangerous, Containment Difficult)</h3>
-
-        <div class="building-card">
-            <h4>Artifact: "The Bargain Box"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Contains 3 wishes (one-time use each)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Each wish granted extracts payment in flesh (lose 1d6 HP permanently per wish)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> High</p>
-            <p class="manuscript-text"><strong>Mortality Risk:</strong> Third wish always costs more than user can pay (death)</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Casket That Pilots You"</h4>
-            <p class="manuscript-text"><strong>Equipment:</strong> Full Casket (replaces current Casket)</p>
-            <p class="manuscript-text"><strong>Effect:</strong> +5 SP maximum, +10 HP, all attacks deal +2 damage</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Casket is sentient and <strong>makes decisions for pilot</strong> (50% of time, pilot loses control)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> High</p>
-            <p class="manuscript-text"><strong>Autonomy Risk:</strong> Casket may abandon mission, kill allies, or simply walk into Void rift</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Soulstone of Nikolas Theslar"</h4>
-            <p class="manuscript-text"><strong>Equipment:</strong> Legendary Soulstone (passive)</p>
-            <p class="manuscript-text"><strong>Effect:</strong> Grants +10 SP maximum, remove all Heat limitations, infinite energy</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> User is slowly absorbed into Theslar Engine (gain 1 Taint per turn, irreversible)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Extreme</p>
-            <p class="manuscript-text"><strong>Mortality Risk:</strong> User has 30 turns to live after installation (becomes part of the Screaming Choir)</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Thread That Snaps Fate"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Once per campaign, rewrite 1 event (undo 1 death, reverse 1 failure)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Rewriting fate causes temporal backlash (1d6 random NPCs die in compensation)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> High</p>
-            <p class="manuscript-text"><strong>Ethical Risk:</strong> Saving one life costs several others (who chooses who lives?)</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h3>81-95: APOLLYON ARTIFACTS (World-Ending Potential)</h3>
-
-        <div class="building-card">
-            <h4>Artifact: "The Key to the Engine"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Can shut down Sibarian Theslar Engine permanently (end the apocalypse)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Shutting down Engine kills everyone with Taint (90% of world population)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Extinction</p>
-            <p class="manuscript-text"><strong>Moral Dilemma:</strong> Save the world or save the people?</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Crown of the Void King"</h4>
-            <p class="manuscript-text"><strong>Equipment:</strong> Headpiece (accessory slot)</p>
-            <p class="manuscript-text"><strong>Effect:</strong> Grants control over all Abominations within 10 miles (command Void creatures)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Wearing crown merges user with Void (gain 10 Taint immediately, cannot remove crown)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Extinction</p>
-            <p class="manuscript-text"><strong>Corruption Risk:</strong> User becomes Void entity within 5 missions (becomes final boss)</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Last Human Memory"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Contains memory of pre-Sundering world (shows paradise lost)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Viewing memory breaks viewer's will (realize everything is futile, settlement loses 5 Morale)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Extinction (social collapse)</p>
-            <p class="manuscript-text"><strong>Despair Risk:</strong> Half of settlement may commit suicide after viewing</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h3>96-100: ABSOLUTIO ARTIFACTS (Reality-Altering, Double-Edged)</h3>
-
-        <div class="building-card">
-            <h4>Artifact: "The Engine Control Rod"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Can <strong>stabilize</strong> one Void rift permanently (close it forever)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Stabilizing one rift <strong>destabilizes another</strong> elsewhere (new rift opens randomly)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Variable</p>
-            <p class="manuscript-text"><strong>Strategic Use:</strong> Choose which rift to close (protect settlement) at cost of endangering others</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Soulstone of the Unborn"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Grants <strong>perfect regeneration</strong> (recover full HP at end of each turn)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> User cannot die but also <strong>cannot age, sleep, or feel pain</strong> (eternal half-life)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> Existential</p>
-            <p class="manuscript-text"><strong>Immortality Curse:</strong> User becomes immortal but loses humanity (eventually becomes Empty One)</p>
-        </div>
-
-        <div class="building-card">
-            <h4>Artifact: "The Chronometer That Runs Backward"</h4>
-            <p class="manuscript-text"><strong>Effect:</strong> Rewind time by 1 turn (undo 1 action per mission)</p>
-            <p class="manuscript-text"><strong>Side Effect:</strong> Each use ages user by 1 year (physical aging, permanent)</p>
-            <p class="manuscript-text"><strong>Danger Level:</strong> High</p>
-            <p class="manuscript-text"><strong>Mortality Risk:</strong> Using 30 times = instant death from old age</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>CONTAINMENT BREACH CONSEQUENCES</h2>
-
-        <h3>Breach Classification Scale</h3>
-
-        <table class="stat-table">
-            <thead>
-                <tr>
-                    <th>Class</th>
-                    <th>Description</th>
-                    <th>Settlement Response</th>
-                    <th>Survival Rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Safe</strong></td>
-                    <td>Contained with standard procedures</td>
-                    <td>Monitor, document</td>
-                    <td>100%</td>
-                </tr>
-                <tr>
-                    <td><strong>Poenitentia</strong></td>
-                    <td>Unpredictable, requires active containment</td>
-                    <td>Evacuate area, specialist team</td>
-                    <td>85%</td>
-                </tr>
-                <tr>
-                    <td><strong>Damnatio</strong></td>
-                    <td>Actively hostile, difficult containment</td>
-                    <td>Lockdown, armed response</td>
-                    <td>60%</td>
-                </tr>
-                <tr>
-                    <td><strong>Apollyon</strong></td>
-                    <td>Uncontainable, world-ending potential</td>
-                    <td>Evacuation, pray</td>
-                    <td>20%</td>
-                </tr>
-                <tr>
-                    <td><strong>Absolutio</strong></td>
-                    <td>Ultra-classified, reality-altering</td>
-                    <td>Restricted to leadership only</td>
-                    <td>Variable</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>ANOMALOUS ENTITY ENCOUNTERS (Mission Events)</h2>
-
-        <div class="building-card">
-            <h3>APE-088: "The Mimic Casket"</h3>
-            <p class="manuscript-text"><strong>Threat Level:</strong> Damnatio</p>
-
-            <p class="manuscript-text"><strong>Description:</strong> A Casket that perfectly replicates appearance of allied Caskets. Hunts pilots.</p>
-
-            <h4>Encounter</h4>
-            <ul class="manuscript-list">
-                <li>During mission, one "ally" Casket is actually the Mimic</li>
-                <li>GM secretly notes which NPC/pilot is the Mimic</li>
-                <li>Mimic waits for isolated target, then attacks (8 damage melee, ignores Defense)</li>
-                <li>Revealing the Mimic requires Perception check (1d6, need 5+)</li>
-            </ul>
-
-            <h4>Weaknesses</h4>
-            <ul class="manuscript-list">
-                <li>Cannot replicate voices perfectly (speech is slightly wrong)</li>
-                <li>Hydraulic fluid is black instead of red</li>
-                <li>Moves in jerky, unnatural motions</li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Defeat:</strong> Destroying Mimic reveals its true form (skeletal Casket with too many limbs)</p>
-        </div>
-
-        <div class="building-card">
-            <h3>APE-103: "The Choir of Sibaria"</h3>
-            <p class="manuscript-text"><strong>Threat Level:</strong> Apollyon</p>
-
-            <p class="manuscript-text"><strong>Description:</strong> The pilots absorbed into Theslar Engine (see Chronicle IX). They sing. The song is infectious.</p>
-
-            <h4>Encounter</h4>
-            <ul class="manuscript-list">
-                <li>When within 5 miles of Sibarian Wastes, pilots hear <strong>singing</strong></li>
-                <li>Song is beautiful, haunting, impossible to ignore</li>
-                <li>Each turn exposed, roll Willpower (1d6, need 4+)</li>
-                <li>Failure: Pilot gains 1 Taint and moves 1 hex toward Engine (compulsion)</li>
-                <li>If pilot reaches Engine, they are <strong>absorbed</strong> (instant death, join the Choir)</li>
-            </ul>
-
-            <h4>Countermeasures</h4>
-            <ul class="manuscript-list">
-                <li>Dampen audio systems (reduce hearing, -1 to Perception checks)</li>
-                <li>Play loud music to drown out Choir (requires portable sound system)</li>
-                <li>Resist with extreme willpower (pilots with 5+ Scars get +1 to rolls)</li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Defeat:</strong> Cannot be defeated. Can only be resisted.</p>
-        </div>
-
-        <div class="building-card">
-            <h3>APE-117: "The Empty Ones"</h3>
-            <p class="manuscript-text"><strong>Threat Level:</strong> Poenitentia</p>
-
-            <p class="manuscript-text"><strong>Description:</strong> Pilots who achieved perfect Taint resistance. They survived corruption, but lost their humanity. Now they are <strong>empty</strong>.</p>
-
-            <h4>Encounter</h4>
-            <ul class="manuscript-list">
-                <li>Appear as normal pilots, but movements are too smooth, expressions too perfect</li>
-                <li>Do not speak (communicate via text messages only)</li>
-                <li>Offer to trade equipment (have legendary gear)</li>
-                <li><strong>Catch:</strong> Trading with Empty One costs 1 permanent Wound (they take a piece of your humanity)</li>
-            </ul>
-
-            <h4>Behavior</h4>
-            <ul class="manuscript-list">
-                <li>Never attack first</li>
-                <li>Will defend selves if attacked (extremely skilled, +2 to all rolls)</li>
-                <li>Seek to understand emotions they no longer feel (study humans like specimens)</li>
-            </ul>
-
-            <p class="manuscript-text"><strong>Defeat:</strong> Cannot be killed (regenerate from any damage). Can only be avoided.</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>RESEARCH LAB EXPERIMENT TABLE (1d20)</h2>
-
-        <p class="manuscript-text">If settlement has <strong>Research Lab</strong> building, roll once per Settlement Phase.</p>
-
-        <table class="stat-table">
-            <thead>
-                <tr>
-                    <th>Roll</th>
-                    <th>Result</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1-5</td>
-                    <td><strong>Success:</strong> Experiment succeeds, gain 1 random equipment blueprint (can craft at 50% cost)</td>
-                </tr>
-                <tr>
-                    <td>6-10</td>
-                    <td><strong>Partial Success:</strong> Experiment works but unstable, gain 1 equipment with <strong>Volatile</strong> trait (10% chance to malfunction per use)</td>
-                </tr>
-                <tr>
-                    <td>11-15</td>
-                    <td><strong>Failure:</strong> Experiment fails, lose 2 Scrap, 1 researcher injured (civilian casualty)</td>
-                </tr>
-                <tr>
-                    <td>16-18</td>
-                    <td><strong>Catastrophic Failure:</strong> Experiment explodes, Research Lab takes 1d6 damage, roll on Minor Breach table</td>
-                </tr>
-                <tr>
-                    <td>19</td>
-                    <td><strong>Critical Breach:</strong> Experiment tears Void rift, roll on Major Breach table, settlement gains Fear status</td>
-                </tr>
-                <tr>
-                    <td>20</td>
-                    <td><strong>Unintended Success:</strong> Experiment creates something <strong>anomalous</strong>, roll on Artifact Discovery table (Poenitentia tier)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>GM GUIDELINES FOR ANOMALOUS EVENTS</h2>
-
-        <h3>When to Use</h3>
-        <ul class="manuscript-list">
-            <li>Sparingly (1 per 5-10 missions)</li>
-            <li>When narrative needs escalation</li>
-            <li>When players are comfortable with horror elements</li>
-        </ul>
-
-        <h3>How to Introduce</h3>
-        <ul class="manuscript-list">
-            <li>Foreshadow (strange readings, rumors, warnings)</li>
-            <li>Build tension (describe symptoms before reveal)</li>
-            <li>Respect player boundaries (some players dislike body horror)</li>
-        </ul>
-
-        <h3>Balancing Horror and Gameplay</h3>
-        <ul class="manuscript-list">
-            <li>Anomalies should create <strong>interesting problems</strong>, not instant deaths</li>
-            <li>Give players <strong>agency</strong> (choices matter, even bad ones)</li>
-            <li>Consequences should be <strong>memorable</strong>, not just mechanical penalties</li>
-        </ul>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>CONTAINMENT FACILITY RULES</h2>
-
-        <p class="manuscript-text">If players build <strong>Containment Vault</strong> (settlement building):</p>
-        <ul class="manuscript-list">
-            <li>Can store up to 3 Anomalous Artifacts safely</li>
-            <li>Each artifact stored reduces settlement Taint generation by 1</li>
-            <li>But: 5% chance per mission of <strong>containment breach</strong> (roll 1d20, on 1, breach occurs)</li>
-        </ul>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <div class="info-box">
-            <p class="manuscript-text"><strong>CLASSIFICATION NOTICE:</strong> This document is restricted to settlement leadership. Civilians are not to be informed of anomalous phenomena. Panic control is essential. Ignorance is survival.</p>
-        </div>
-
-        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid #8B0000;">
-            <p style="font-style: italic; color: #660000;">
-                <a href="campaign-event-tables.html" target="_parent" style="color: #8B0000; text-decoration: none;">← Event Tables</a>
+        <p class="manuscript-text" style="text-align: center; font-style: italic; color: var(--aged-gold);">
+            <strong>Classification Notice:</strong> This document is restricted to settlement leadership. Civilians are not to be informed of anomalous phenomena. Panic serves no one.
+        </p>
+
+        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid var(--dark-red);">
+            <p style="font-style: italic; color: var(--aged-gold);">
+                <a href="campaign-event-tables.html" target="_parent" style="color: var(--dark-red); text-decoration: none;">← Event Tables</a>
                 •
-                <a href="enemies-bestiary.html" target="_parent" style="color: #8B0000; text-decoration: none;">Bestiary →</a>
+                <a href="enemies-bestiary.html" target="_parent" style="color: var(--dark-red); text-decoration: none;">Bestiary →</a>
             </p>
         </div>
     </div>
+
+    <script>
+        function toggleAnomalyDropdown(id) {
+            const content = document.getElementById(id + '-content');
+            const button = event.target;
+            content.classList.toggle('active');
+            button.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
