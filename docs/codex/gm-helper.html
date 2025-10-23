@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM Helper - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .gm-section {
+            background: rgba(20, 20, 20, 0.6);
+            border: 2px solid var(--aged-gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .gm-section h3 {
+            color: var(--aged-gold);
+            margin-top: 0;
+            border-bottom: 1px solid var(--aged-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .generate-btn {
+            background: linear-gradient(135deg, var(--dark-red), rgba(139, 0, 0, 0.8));
+            color: var(--aged-gold);
+            border: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+        }
+
+        .generate-btn:hover {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 1), var(--dark-red));
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+
+        .result-box {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--aged-gold);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            min-height: 100px;
+            color: var(--parchment);
+        }
+
+        .result-box h4 {
+            color: var(--aged-gold);
+            margin-top: 0;
+        }
+
+        .result-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .result-box ul li {
+            padding: 0.25rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .result-box ul li:before {
+            content: "▸";
+            color: var(--dark-red);
+            position: absolute;
+            left: 0;
+        }
+
+        .dropdown-group {
+            margin: 1rem 0;
+        }
+
+        .dropdown-group label {
+            display: block;
+            color: var(--aged-gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .dropdown-group select {
+            background: rgba(10, 10, 10, 0.9);
+            color: var(--parchment);
+            border: 1px solid var(--aged-gold);
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .rarity-common { color: #c0c0c0; }
+        .rarity-uncommon { color: #4ade80; }
+        .rarity-rare { color: #60a5fa; }
+        .rarity-epic { color: #a78bfa; }
+        .rarity-legendary { color: var(--aged-gold); }
+
+        .quantity-badge {
+            display: inline-block;
+            background: rgba(139, 0, 0, 0.5);
+            border: 1px solid var(--aged-gold);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+            color: var(--aged-gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Codex Home</a> &raquo; GM Helper
+        </nav>
+
+        <h1>GM Helper</h1>
+        <p class="intro" style="color: var(--aged-gold); font-style: italic; font-size: 1.1rem;">
+            Interactive tools for Game Masters running Penance campaigns. Generate loot, events, NPCs, and encounters on the fly.
+        </p>
+
+        <!-- LOOT GENERATOR -->
+        <div class="gm-section">
+            <h3>Loot Generator</h3>
+            <p>Generate random loot appropriate for the party's current situation.</p>
+
+            <div class="dropdown-group">
+                <label for="loot-tier">Loot Tier:</label>
+                <select id="loot-tier">
+                    <option value="basic">Basic (Common enemies, scavengers)</option>
+                    <option value="moderate" selected>Moderate (Casket pilots, soldiers)</option>
+                    <option value="valuable">Valuable (Elite units, bosses)</option>
+                    <option value="treasure">Treasure (Major victories, hidden caches)</option>
+                </select>
+            </div>
+
+            <div class="dropdown-group">
+                <label for="loot-count">Number of Items:</label>
+                <select id="loot-count">
+                    <option value="1">1 Item</option>
+                    <option value="2">2 Items</option>
+                    <option value="3" selected>3 Items</option>
+                    <option value="5">5 Items</option>
+                    <option value="8">8 Items</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button class="generate-btn" onclick="generateLoot()">Generate Loot</button>
+            </div>
+
+            <div id="loot-result" class="result-box" style="display: none;">
+                <h4>Generated Loot:</h4>
+                <ul id="loot-list"></ul>
+            </div>
+        </div>
+
+        <!-- EVENT GENERATOR -->
+        <div class="gm-section">
+            <h3>Random Event Generator</h3>
+            <p>Generate unexpected events during travel, exploration, or downtime.</p>
+
+            <div class="dropdown-group">
+                <label for="event-type">Event Type:</label>
+                <select id="event-type">
+                    <option value="any" selected>Any Event</option>
+                    <option value="combat">Combat Encounter</option>
+                    <option value="social">Social Encounter</option>
+                    <option value="environmental">Environmental Hazard</option>
+                    <option value="discovery">Discovery</option>
+                    <option value="void">Void-Related</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button class="generate-btn" onclick="generateEvent()">Generate Event</button>
+            </div>
+
+            <div id="event-result" class="result-box" style="display: none;">
+                <h4>Random Event:</h4>
+                <div id="event-content"></div>
+            </div>
+        </div>
+
+        <!-- NPC GENERATOR -->
+        <div class="gm-section">
+            <h3>NPC Generator</h3>
+            <p>Generate quick NPCs with names, factions, and roles.</p>
+
+            <div class="dropdown-group">
+                <label for="npc-faction">Faction:</label>
+                <select id="npc-faction">
+                    <option value="any" selected>Random Faction</option>
+                    <option value="church">Church of Absolution</option>
+                    <option value="crucible">The Crucible</option>
+                    <option value="elves">Elven Enclaves</option>
+                    <option value="nomads">Nomadic Clans</option>
+                    <option value="undead">Undead Bloodlines</option>
+                    <option value="wyrd">Wyrd Conclave</option>
+                    <option value="fae">Fae Courts</option>
+                    <option value="exchange">The Exchange</option>
+                    <option value="ashborne">Ashborne Engines</option>
+                    <option value="independent">Independent</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button class="generate-btn" onclick="generateNPC()">Generate NPC</button>
+            </div>
+
+            <div id="npc-result" class="result-box" style="display: none;">
+                <h4>Generated NPC:</h4>
+                <div id="npc-content"></div>
+            </div>
+        </div>
+
+        <!-- ENCOUNTER GENERATOR -->
+        <div class="gm-section">
+            <h3>Combat Encounter Generator</h3>
+            <p>Generate balanced combat encounters with multiple enemies.</p>
+
+            <div class="dropdown-group">
+                <label for="encounter-difficulty">Difficulty:</label>
+                <select id="encounter-difficulty">
+                    <option value="easy">Easy (2-3 weak enemies)</option>
+                    <option value="moderate" selected>Moderate (3-4 mixed enemies)</option>
+                    <option value="hard">Hard (4-5 dangerous enemies)</option>
+                    <option value="deadly">Deadly (5-6 elite enemies + boss)</option>
+                </select>
+            </div>
+
+            <div class="dropdown-group">
+                <label for="encounter-faction">Enemy Faction:</label>
+                <select id="encounter-faction">
+                    <option value="any" selected>Random Faction</option>
+                    <option value="church">Church of Absolution</option>
+                    <option value="crucible">The Crucible</option>
+                    <option value="elves">Elven Enclaves</option>
+                    <option value="nomads">Nomadic Clans</option>
+                    <option value="undead">Undead Bloodlines</option>
+                    <option value="wyrd">Wyrd Conclave</option>
+                    <option value="fae">Fae Courts</option>
+                    <option value="exchange">The Exchange</option>
+                    <option value="ashborne">Ashborne Engines</option>
+                    <option value="void">Void Creatures</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button class="generate-btn" onclick="generateEncounter()">Generate Encounter</button>
+            </div>
+
+            <div id="encounter-result" class="result-box" style="display: none;">
+                <h4>Combat Encounter:</h4>
+                <div id="encounter-content"></div>
+            </div>
+        </div>
+
+        <!-- SETTLEMENT GENERATOR -->
+        <div class="gm-section">
+            <h3>Settlement Generator</h3>
+            <p>Generate quick settlements for exploration and travel.</p>
+
+            <div class="dropdown-group">
+                <label for="settlement-size">Settlement Size:</label>
+                <select id="settlement-size">
+                    <option value="tiny">Tiny (10-50 people)</option>
+                    <option value="small" selected>Small (50-200 people)</option>
+                    <option value="medium">Medium (200-1,000 people)</option>
+                    <option value="large">Large (1,000-5,000 people)</option>
+                    <option value="city">City (5,000+ people)</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button class="generate-btn" onclick="generateSettlement()">Generate Settlement</button>
+            </div>
+
+            <div id="settlement-result" class="result-box" style="display: none;">
+                <h4>Generated Settlement:</h4>
+                <div id="settlement-content"></div>
+            </div>
+        </div>
+
+        <!-- WEATHER & ENVIRONMENT -->
+        <div class="gm-section">
+            <h3>Weather & Environment Generator</h3>
+            <p>Generate atmospheric conditions and environmental hazards.</p>
+
+            <div class="dropdown-group">
+                <label for="env-region">Region:</label>
+                <select id="env-region">
+                    <option value="any" selected>Any Region</option>
+                    <option value="void">Near Void Rift</option>
+                    <option value="wasteland">Sibarian Wastes</option>
+                    <option value="urban">Urban Ruins</option>
+                    <option value="forest">Corrupted Forest</option>
+                    <option value="coast">Coastal</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button class="generate-btn" onclick="generateEnvironment()">Generate Environment</button>
+            </div>
+
+            <div id="environment-result" class="result-box" style="display: none;">
+                <h4>Environmental Conditions:</h4>
+                <div id="environment-content"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ============== LOOT GENERATOR ==============
+        const lootTables = {
+            basic: [
+                { name: "Scrap Metal", rarity: "common", quantity: "2d6 pieces" },
+                { name: "Rusty Blade", rarity: "common", quantity: "1" },
+                { name: "Damaged Soulstone Shard", rarity: "common", quantity: "1d3 shards" },
+                { name: "Tattered Clothing", rarity: "common", quantity: "1" },
+                { name: "Stale Rations", rarity: "common", quantity: "1d4 days" },
+                { name: "Coal Chunks", rarity: "common", quantity: "2d4 chunks" },
+                { name: "Dirty Water Flask", rarity: "common", quantity: "1" },
+                { name: "Rope (damaged)", rarity: "common", quantity: "10-20 feet" },
+                { name: "Candles", rarity: "common", quantity: "1d6 candles" },
+                { name: "Minor Healing Salve", rarity: "uncommon", quantity: "1" }
+            ],
+            moderate: [
+                { name: "Intact Soulstone Shard", rarity: "uncommon", quantity: "1d4 shards" },
+                { name: "Quality Steel Weapon", rarity: "uncommon", quantity: "1" },
+                { name: "Casket Component (damaged)", rarity: "uncommon", quantity: "1" },
+                { name: "Medical Supplies", rarity: "uncommon", quantity: "1 kit" },
+                { name: "Fine Clothing", rarity: "uncommon", quantity: "1 set" },
+                { name: "Navigation Tools", rarity: "uncommon", quantity: "1 compass" },
+                { name: "High-Quality Coal", rarity: "uncommon", quantity: "3d6 chunks" },
+                { name: "Preserved Rations", rarity: "uncommon", quantity: "1 week" },
+                { name: "Minor Equipment Card", rarity: "rare", quantity: "1 card" },
+                { name: "Alchemical Reagents", rarity: "uncommon", quantity: "1d4 vials" },
+                { name: "Soul Binding Manual (partial)", rarity: "rare", quantity: "1 book" },
+                { name: "Energy Cell (30 Energy)", rarity: "uncommon", quantity: "1" }
+            ],
+            valuable: [
+                { name: "Intact Soulstone Core", rarity: "rare", quantity: "1" },
+                { name: "Masterwork Weapon", rarity: "rare", quantity: "1" },
+                { name: "Functional Casket Component", rarity: "rare", quantity: "1" },
+                { name: "Advanced Medical Kit", rarity: "rare", quantity: "1 kit" },
+                { name: "Equipment Card (Uncommon)", rarity: "rare", quantity: "1d3 cards" },
+                { name: "Soul Binding Catalyst", rarity: "rare", quantity: "1" },
+                { name: "Energy Cell (100 Energy)", rarity: "rare", quantity: "1d2" },
+                { name: "Void-Resistant Charm", rarity: "epic", quantity: "1" },
+                { name: "Pre-Sundering Artifact", rarity: "epic", quantity: "1" },
+                { name: "Alchemical Elixir (Greater Healing)", rarity: "rare", quantity: "1d3 doses" }
+            ],
+            treasure: [
+                { name: "Pristine Soulstone Core", rarity: "epic", quantity: "1d2" },
+                { name: "Legendary Weapon", rarity: "legendary", quantity: "1" },
+                { name: "Complete Equipment Card Set", rarity: "epic", quantity: "1 set (6 cards)" },
+                { name: "Void Fragment (contained)", rarity: "legendary", quantity: "1" },
+                { name: "Pre-Sundering Technology", rarity: "legendary", quantity: "1 device" },
+                { name: "Master Soul Binding Tome", rarity: "epic", quantity: "1 book" },
+                { name: "Energy Cell (500 Energy)", rarity: "epic", quantity: "1" },
+                { name: "Ashforged Steam Core", rarity: "epic", quantity: "1" },
+                { name: "Rare Equipment Card (Epic)", rarity: "epic", quantity: "1d2 cards" },
+                { name: "Alchemical Masterwork", rarity: "legendary", quantity: "1 unique item" },
+                { name: "Ancient Currency Cache", rarity: "rare", quantity: "1000-5000 marks" }
+            ]
+        };
+
+        function rollDice(notation) {
+            const match = notation.match(/(\d+)d(\d+)([+-]\d+)?/);
+            if (!match) return parseInt(notation) || 1;
+
+            const [_, numDice, sides, modifier] = match;
+            let total = 0;
+            for (let i = 0; i < parseInt(numDice); i++) {
+                total += Math.floor(Math.random() * parseInt(sides)) + 1;
+            }
+            if (modifier) total += parseInt(modifier);
+            return total;
+        }
+
+        function generateLoot() {
+            const tier = document.getElementById('loot-tier').value;
+            const count = parseInt(document.getElementById('loot-count').value);
+            const table = lootTables[tier];
+
+            let items = [];
+            for (let i = 0; i < count; i++) {
+                const item = table[Math.floor(Math.random() * table.length)];
+                items.push(item);
+            }
+
+            const listEl = document.getElementById('loot-list');
+            listEl.innerHTML = items.map(item =>
+                `<li class="rarity-${item.rarity}">
+                    <strong>${item.name}</strong>
+                    <span class="quantity-badge">${item.quantity}</span>
+                    <span style="opacity: 0.7; font-size: 0.85rem;"> [${item.rarity}]</span>
+                </li>`
+            ).join('');
+
+            document.getElementById('loot-result').style.display = 'block';
+        }
+
+        // ============== EVENT GENERATOR ==============
+        const eventTables = {
+            combat: [
+                "Ambush! A group of raiders emerges from cover, demanding valuables.",
+                "Void creatures detected nearby. Roll Perception to spot them before they attack.",
+                "Enemy Casket patrol spotted in the distance. They haven't noticed you yet.",
+                "Feral undead shambling through the area. They're drawn to movement.",
+                "Hostile faction scouts have been tracking your party for hours.",
+                "A wounded Casket pilot challenges you to single combat to restore their honor.",
+                "Void-corrupted wildlife attacks without warning.",
+                "Bandits have set up a toll checkpoint ahead. They're armed and dangerous."
+            ],
+            social: [
+                "A merchant caravan offers to trade goods and share news from distant settlements.",
+                "A wandering soul-binder offers their services... for a steep price.",
+                "Local villagers are suspicious of outsiders. Diplomacy check to gain trust.",
+                "A faction recruiter tries to convince you to join their cause.",
+                "You encounter refugees fleeing from a recent Void incursion.",
+                "A mysterious stranger offers valuable information in exchange for a future favor.",
+                "Two rival factions are about to clash. You're caught in the middle.",
+                "A desperate parent begs you to rescue their child from nearby dangers."
+            ],
+            environmental: [
+                "Sudden Void storm. Reality warps and twists. Constitution saves or take 2d6 damage.",
+                "The ground is unstable. Dexterity saves to avoid falling into a sinkhole.",
+                "Toxic fumes rise from corrupted earth. All characters must save or become poisoned.",
+                "Flash flood from distant mountains. Find high ground or be swept away.",
+                "Extreme temperature shift. Without proper gear, take 1d6 damage per hour.",
+                "Void rift opens nearby. Strange creatures begin emerging.",
+                "Ancient machinery activates unexpectedly, creating hazardous energy fields.",
+                "Corrupted plant life releases hallucinogenic spores. Wisdom saves to resist."
+            ],
+            discovery: [
+                "Ancient ruins discovered beneath the surface. What secrets lie within?",
+                "A cache of pre-Sundering technology, surprisingly intact.",
+                "Abandoned Casket found, partially functional. Salvage or repair?",
+                "Hidden settlement of survivors, unaffiliated with major factions.",
+                "A journal from before the Sundering, describing the final days.",
+                "Functioning pre-Sundering vehicle discovered in a sealed garage.",
+                "A map leading to a rumored safe haven far from Void corruption.",
+                "Sealed vault containing experimental soul-binding equipment."
+            ],
+            void: [
+                "Reality fractures momentarily. Everyone sees glimpses of alternate timelines.",
+                "Void whispers echo in everyone's minds. Wisdom saves or be frightened.",
+                "A tear in reality shows the Void beyond. Staring into it has consequences.",
+                "Time flows strangely in this area. Minutes feel like hours, or vice versa.",
+                "Void energy surge corrupts nearby objects, making them dangerous to touch.",
+                "A Void entity appears, observing your party but not attacking... yet.",
+                "The souls bound to nearby Caskets scream in terror at approaching Void presence.",
+                "Gravity behaves erratically. Objects float, fall sideways, or become crushingly heavy."
+            ]
+        };
+
+        function generateEvent() {
+            const typeSelect = document.getElementById('event-type').value;
+            let type = typeSelect;
+
+            if (typeSelect === 'any') {
+                const types = Object.keys(eventTables);
+                type = types[Math.floor(Math.random() * types.length)];
+            }
+
+            const table = eventTables[type];
+            const event = table[Math.floor(Math.random() * table.length)];
+
+            document.getElementById('event-content').innerHTML = `
+                <p><strong style="color: var(--aged-gold);">Type:</strong> ${type.charAt(0).toUpperCase() + type.slice(1)}</p>
+                <p style="font-size: 1.1rem; line-height: 1.6;">${event}</p>
+            `;
+
+            document.getElementById('event-result').style.display = 'block';
+        }
+
+        // ============== NPC GENERATOR ==============
+        const npcData = {
+            names: {
+                church: ["Brother Matthias", "Sister Celestine", "Father Gregorius", "Confessor Thalia", "Prior Benedict", "Sister Isolde"],
+                crucible: ["Forgemaster Kane", "Technician Vera", "Engineer Dalton", "Machinist Rhea", "Smith Garrick", "Artificer Lyra"],
+                elves: ["Aelindra Starwhisper", "Thalion Moonblade", "Silaril Dawnweaver", "Elenora Nightsong", "Caladrel Windwalker", "Mirielle Starfire"],
+                nomads: ["Rashid al-Zahir", "Amira Stormrider", "Kasim Sandwalker", "Zara Duneborn", "Malik Windseeker", "Leila Starwatcher"],
+                undead: ["Lord Vaelen", "Lady Morgath", "Baron Krassus", "Countess Nyx", "Duke Mordain", "Viscountess Raven"],
+                wyrd: ["Magister Corvax", "Sage Miriam", "Scholar Aldric", "Archivist Thea", "Researcher Vale", "Mystic Orion"],
+                fae: ["Lord Oberath", "Lady Silvanthra", "Prince Fennwick", "Duchess Yvaine", "Baron Thornweave", "Countess Moonpetal"],
+                exchange: ["Factor Marius", "Broker Elena", "Trader Carrick", "Merchant Silvia", "Negotiator Ren", "Dealer Voss"],
+                ashborne: ["Captain Ironheart", "Engineer Ashton", "Pilot Coalburn", "Navigator Steamwright", "Stoker Emberforge", "Machinist Brasswick"],
+                independent: ["Wanderer Kael", "Scavenger Mira", "Drifter Jon", "Hunter Tessa", "Survivor Marcus", "Scout Ryn"]
+            },
+            roles: {
+                combat: ["Veteran Soldier", "Casket Pilot", "Mercenary", "Guard Captain", "Scout", "Duelist"],
+                social: ["Merchant", "Diplomat", "Information Broker", "Tavern Keeper", "Noble", "Mediator"],
+                technical: ["Engineer", "Soul-Binder", "Alchemist", "Mechanic", "Artificer", "Researcher"],
+                leadership: ["Faction Leader", "Settlement Mayor", "Military Commander", "Guild Master", "Council Member", "Chieftain"]
+            },
+            traits: [
+                "Scarred from Void exposure",
+                "Haunted by past mistakes",
+                "Obsessed with pre-Sundering knowledge",
+                "Deeply religious and zealous",
+                "Cynical and world-weary",
+                "Optimistic despite everything",
+                "Harbors a dark secret",
+                "Seeks redemption",
+                "Driven by revenge",
+                "Protecting someone vulnerable",
+                "Collecting rare artifacts",
+                "Fleeing from their past"
+            ]
+        };
+
+        function generateNPC() {
+            let faction = document.getElementById('npc-faction').value;
+
+            if (faction === 'any') {
+                const factions = Object.keys(npcData.names);
+                faction = factions[Math.floor(Math.random() * factions.length)];
+            }
+
+            const name = npcData.names[faction][Math.floor(Math.random() * npcData.names[faction].length)];
+
+            const roleCategories = Object.keys(npcData.roles);
+            const roleCategory = roleCategories[Math.floor(Math.random() * roleCategories.length)];
+            const role = npcData.roles[roleCategory][Math.floor(Math.random() * npcData.roles[roleCategory].length)];
+
+            const trait = npcData.traits[Math.floor(Math.random() * npcData.traits.length)];
+
+            const factionNames = {
+                church: "Church of Absolution",
+                crucible: "The Crucible",
+                elves: "Elven Enclaves",
+                nomads: "Nomadic Clans",
+                undead: "Undead Bloodlines",
+                wyrd: "Wyrd Conclave",
+                fae: "Fae Courts",
+                exchange: "The Exchange",
+                ashborne: "Ashborne Engines",
+                independent: "Independent"
+            };
+
+            document.getElementById('npc-content').innerHTML = `
+                <p><strong style="color: var(--aged-gold);">Name:</strong> ${name}</p>
+                <p><strong style="color: var(--aged-gold);">Faction:</strong> ${factionNames[faction]}</p>
+                <p><strong style="color: var(--aged-gold);">Role:</strong> ${role}</p>
+                <p><strong style="color: var(--aged-gold);">Notable Trait:</strong> ${trait}</p>
+                <p style="margin-top: 1rem; font-style: italic; opacity: 0.8;">Use this as a starting point and flesh out the NPC based on your campaign needs.</p>
+            `;
+
+            document.getElementById('npc-result').style.display = 'block';
+        }
+
+        // ============== ENCOUNTER GENERATOR ==============
+        const enemyTypes = {
+            church: ["Zealot Soldier", "Confessor", "Holy Casket Pilot", "Inquisitor", "Templar", "Battle Priest"],
+            crucible: ["Warforged Soldier", "Combat Engineer", "Heavy Casket", "Siege Operator", "Flame Trooper", "Battlesmith"],
+            elves: ["Ranger", "Mage", "Swift Casket", "Blade Dancer", "Arcane Archer", "Spellweaver"],
+            nomads: ["Desert Raider", "Sandstorm Casket", "Skirmisher", "Beast Rider", "Wind Caller", "Caravan Guard"],
+            undead: ["Revenant Soldier", "Necromancer", "Death Knight Casket", "Wraith", "Bone Construct", "Vampire Lord"],
+            wyrd: ["Battle Mage", "Arcane Construct", "Spell Casket", "Summoner", "Reality Bender", "Void Scholar"],
+            fae: ["Trickster", "Wild Casket", "Enchanter", "Bramble Guardian", "Glamour Knight", "Fae Noble"],
+            exchange: ["Elite Mercenary", "Corporate Enforcer", "Advanced Casket", "Specialist Operative", "Contract Killer", "Company Champion"],
+            ashborne: ["Steam Soldier", "Ashforged Casket", "Boiler Guard", "Coal Trooper", "Engine Pilot", "Pressure Mage"],
+            void: ["Void Spawn", "Reality Tear", "Corrupted Beast", "Void Touched Human", "Dimensional Horror", "Chaos Elemental"]
+        };
+
+        function generateEncounter() {
+            const difficulty = document.getElementById('encounter-difficulty').value;
+            let faction = document.getElementById('encounter-faction').value;
+
+            if (faction === 'any') {
+                const factions = Object.keys(enemyTypes);
+                faction = factions[Math.floor(Math.random() * factions.length)];
+            }
+
+            let enemies = [];
+            let enemyCount = 0;
+            let hasBoss = false;
+
+            switch(difficulty) {
+                case 'easy':
+                    enemyCount = 2 + Math.floor(Math.random() * 2); // 2-3
+                    break;
+                case 'moderate':
+                    enemyCount = 3 + Math.floor(Math.random() * 2); // 3-4
+                    break;
+                case 'hard':
+                    enemyCount = 4 + Math.floor(Math.random() * 2); // 4-5
+                    break;
+                case 'deadly':
+                    enemyCount = 5 + Math.floor(Math.random() * 2); // 5-6
+                    hasBoss = true;
+                    break;
+            }
+
+            const enemyList = enemyTypes[faction];
+
+            for (let i = 0; i < enemyCount; i++) {
+                const enemy = enemyList[Math.floor(Math.random() * enemyList.length)];
+                enemies.push(enemy);
+            }
+
+            let encounterHTML = `<p><strong style="color: var(--aged-gold);">Faction:</strong> ${faction.charAt(0).toUpperCase() + faction.slice(1)}</p>`;
+            encounterHTML += `<p><strong style="color: var(--aged-gold);">Difficulty:</strong> ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</p>`;
+            encounterHTML += `<h5 style="color: var(--aged-gold); margin-top: 1rem;">Enemies:</h5><ul>`;
+
+            enemies.forEach((enemy, index) => {
+                encounterHTML += `<li>${enemy} ${index === 0 && hasBoss ? '<span style="color: var(--aged-gold);">(BOSS)</span>' : ''}</li>`;
+            });
+
+            encounterHTML += `</ul>`;
+
+            // Add tactical notes
+            const tacticalNotes = [
+                "Enemies have prepared defensive positions",
+                "Ambush situation - enemies have surprise",
+                "Open battlefield with no cover",
+                "Tight quarters favor melee combat",
+                "Environmental hazards present (specify)",
+                "Enemies will call for reinforcements if not quickly defeated",
+                "One enemy tries to flee and alert others",
+                "Enemies focus fire on the most threatening target"
+            ];
+
+            const note = tacticalNotes[Math.floor(Math.random() * tacticalNotes.length)];
+            encounterHTML += `<p style="margin-top: 1rem;"><strong style="color: var(--aged-gold);">Tactical Note:</strong> ${note}</p>`;
+
+            document.getElementById('encounter-content').innerHTML = encounterHTML;
+            document.getElementById('encounter-result').style.display = 'block';
+        }
+
+        // ============== SETTLEMENT GENERATOR ==============
+        const settlementData = {
+            prefixes: ["New", "Old", "Fort", "Haven", "Sanctuary", "Refuge", "Outpost", "Camp", "Last", "Safe"],
+            roots: ["Stone", "Iron", "Ember", "Shadow", "Dawn", "Dusk", "Wind", "Storm", "Hope", "Mercy", "Grace", "Sorrow"],
+            suffixes: ["hold", "rest", "watch", "guard", "haven", "vale", "keep", "post", "town", "end"],
+            features: [
+                "Heavily fortified walls",
+                "Built into ancient ruins",
+                "Surrounded by defensive trenches",
+                "Protected by a Void-resistant barrier",
+                "Hub for traders and merchants",
+                "Known for skilled craftsmen",
+                "Has a functioning pre-Sundering facility",
+                "Ruled by a council of elders",
+                "Under military dictatorship",
+                "Democratic commune",
+                "Religious theocracy",
+                "Anarchic free settlement"
+            ],
+            problems: [
+                "Running low on food supplies",
+                "Recent Void incursion damaged defenses",
+                "Internal political conflict",
+                "Bandit raids increasing",
+                "Disease outbreak",
+                "Water source contaminated",
+                "Faction pressure to join their cause",
+                "Mysterious disappearances",
+                "Refugee crisis",
+                "Equipment shortages"
+            ]
+        };
+
+        function generateSettlement() {
+            const size = document.getElementById('settlement-size').value;
+
+            // Generate name
+            const prefix = settlementData.prefixes[Math.floor(Math.random() * settlementData.prefixes.length)];
+            const root = settlementData.roots[Math.floor(Math.random() * settlementData.roots.length)];
+            const suffix = settlementData.suffixes[Math.floor(Math.random() * settlementData.suffixes.length)];
+
+            let name = Math.random() > 0.5 ? `${prefix} ${root}${suffix}` : `${root}${suffix}`;
+
+            // Get population range
+            const populations = {
+                tiny: "10-50",
+                small: "50-200",
+                medium: "200-1,000",
+                large: "1,000-5,000",
+                city: "5,000+"
+            };
+
+            const feature = settlementData.features[Math.floor(Math.random() * settlementData.features.length)];
+            const problem = settlementData.problems[Math.floor(Math.random() * settlementData.problems.length)];
+
+            // Determine faction influence
+            const factions = ["Church of Absolution", "The Crucible", "Elven Enclaves", "Nomadic Clans", "Undead Bloodlines",
+                              "Wyrd Conclave", "Fae Courts", "The Exchange", "Ashborne Engines", "Independent"];
+            const influence = factions[Math.floor(Math.random() * factions.length)];
+
+            document.getElementById('settlement-content').innerHTML = `
+                <p><strong style="color: var(--aged-gold);">Name:</strong> ${name}</p>
+                <p><strong style="color: var(--aged-gold);">Size:</strong> ${size.charAt(0).toUpperCase() + size.slice(1)} (${populations[size]} people)</p>
+                <p><strong style="color: var(--aged-gold);">Primary Influence:</strong> ${influence}</p>
+                <p><strong style="color: var(--aged-gold);">Notable Feature:</strong> ${feature}</p>
+                <p><strong style="color: var(--aged-gold);">Current Problem:</strong> ${problem}</p>
+                <p style="margin-top: 1rem; font-style: italic; opacity: 0.8;">Expand on these details to create a unique settlement for your campaign.</p>
+            `;
+
+            document.getElementById('settlement-result').style.display = 'block';
+        }
+
+        // ============== ENVIRONMENT GENERATOR ==============
+        const environmentData = {
+            weather: {
+                any: ["Clear skies", "Overcast", "Light rain", "Heavy rain", "Fog", "Wind", "Storm approaching", "Unseasonably cold", "Unseasonably hot"],
+                void: ["Reality shimmer", "Void mist", "Temporal distortions", "Gravity fluctuations", "Color drain", "Silent zone (no sound)", "Whisper wind"],
+                wasteland: ["Sandstorm", "Dust devil", "Scorching heat", "Freezing night", "Radiation fog", "Ash fall"],
+                urban: ["Structural collapse risk", "Toxic smog", "Flooding", "Electrical hazards", "Fire spread", "Unstable ground"],
+                forest: ["Bioluminescent plants glow", "Carnivorous flora active", "Corrupted spores in air", "Unnatural silence", "Strange sounds", "Thick undergrowth"],
+                coast: ["High tide", "Storm surge", "Dense sea fog", "Contaminated water", "Strange creatures spotted", "Wreckage washing ashore"]
+            },
+            hazards: [
+                "Unstable terrain (Dexterity saves)",
+                "Toxic atmosphere (Constitution saves)",
+                "Extreme temperatures (Endurance checks)",
+                "Void contamination (Wisdom saves)",
+                "Radiation zones (Constitution saves)",
+                "Predatory wildlife",
+                "Collapsing structures",
+                "Energy anomalies"
+            ],
+            discoveries: [
+                "Abandoned camp, recently used",
+                "Signs of recent battle",
+                "Fresh tracks heading your direction",
+                "Unusual plant life or minerals",
+                "Pre-Sundering marker or sign",
+                "Evidence of Void corruption spreading",
+                "Hidden cache or stash",
+                "Safe shelter location"
+            ]
+        };
+
+        function generateEnvironment() {
+            let region = document.getElementById('env-region').value;
+
+            if (region === 'any') {
+                const regions = Object.keys(environmentData.weather).filter(r => r !== 'any');
+                region = regions[Math.floor(Math.random() * regions.length)];
+            }
+
+            const weatherOptions = environmentData.weather[region] || environmentData.weather.any;
+            const weather = weatherOptions[Math.floor(Math.random() * weatherOptions.length)];
+
+            const hazard = environmentData.hazards[Math.floor(Math.random() * environmentData.hazards.length)];
+            const discovery = environmentData.discoveries[Math.floor(Math.random() * environmentData.discoveries.length)];
+
+            // Visibility
+            const visibility = ["Excellent", "Good", "Moderate", "Poor", "Very Poor"][Math.floor(Math.random() * 5)];
+
+            document.getElementById('environment-content').innerHTML = `
+                <p><strong style="color: var(--aged-gold);">Region:</strong> ${region.charAt(0).toUpperCase() + region.slice(1)}</p>
+                <p><strong style="color: var(--aged-gold);">Weather:</strong> ${weather}</p>
+                <p><strong style="color: var(--aged-gold);">Visibility:</strong> ${visibility}</p>
+                <p><strong style="color: var(--aged-gold);">Hazard:</strong> ${hazard}</p>
+                <p><strong style="color: var(--aged-gold);">Discovery:</strong> ${discovery}</p>
+                <p style="margin-top: 1rem; font-style: italic; opacity: 0.8;">Adjust environmental effects based on party preparedness and equipment.</p>
+            `;
+
+            document.getElementById('environment-result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
