@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1500" height="5250" viewBox="0 0 1500 5250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .card-bg { fill: #000000; }
+      .card-border { fill: none; stroke: #ffffff; stroke-width: 4; }
+      .header-bg { fill: #1a1a1a; }
+      .text-title { fill: #ffffff; font-family: 'Courier New', monospace; font-size: 32px; font-weight: bold; text-transform: uppercase; }
+      .text-type { fill: #8b0000; font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; text-transform: uppercase; }
+      .text-cost { fill: #d4af37; font-family: 'Courier New', monospace; font-size: 48px; font-weight: bold; }
+      .text-body { fill: #cccccc; font-family: 'Courier New', monospace; font-size: 22px; }
+      .text-keywords { fill: #666666; font-family: 'Courier New', monospace; font-size: 16px; text-transform: uppercase; }
+      .text-flavor { fill: #666666; font-family: 'Courier New', monospace; font-size: 18px; font-style: italic; }
+      .accent-line { fill: none; stroke: #8b0000; stroke-width: 2; }
+      .accent-gold { fill: none; stroke: #d4af37; stroke-width: 3; }
+    </style>
+  </defs>
+
+  <!-- Sheet 2 -->
+
+  <g transform="translate(0, 0)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">DIVINE GUIDANCE</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">UTILITY</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">2</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[2]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> Self</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Until end of turn, all your attacks gain +1 accuracy (reduce target number by 1). Your next attack this turn cannot miss (5+ becomes 4+, etc).</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">ACCURACY • BUFF • TARGETING</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(750, 0)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">MARTYRDOM'S CERTAINTY</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">UTILITY</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">0</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[0]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> Self</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Discard 1 card from deck. Your next attack cannot miss (auto-hit) but deals -2 damage.</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">GAMBIT • SELF-HARM • AUTO-HIT</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(0, 1050)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">ZEALOT'S FOCUS</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">UTILITY</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">0</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[0]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> Self</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Reroll 1 Attack Die on your next attack this turn.</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">REROLL • ACCURACY</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(750, 1050)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">POINT-BLANK EXECUTION</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">ATTACK</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">3</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[3]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> 1 hex (adjacent only)</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Deal 6 damage. This attack cannot miss. If attacking from rear arc (hex 4), deal 8 damage instead.</p>
+<p style="margin: 10px 0; color: #8b0000;"><strong>DAMAGE:</strong> 6</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">ATTACK • AUTO-HIT • EXECUTE</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(0, 2100)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">CONFESSION UNDER DURESS</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">UTILITY</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">2</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[2]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> 2 hexes</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Target enemy's next attack: +2 to target number (harder for them to hit). Draw 1 card.</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">DEBUFF • UTILITY • CONTROL</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(750, 2100)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">HOLY SMITE</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">ATTACK</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">3</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[3]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> Melee (Range 1)</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Deal 5 damage. If you've discarded cards this turn (via Blood Offering or other effects), deal 7 damage instead.</p>
+<p style="margin: 10px 0; color: #8b0000;"><strong>DAMAGE:</strong> 5</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">ATTACK • MELEE • SELF-HARM-SYNERGY</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(0, 3150)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">JUDGMENT STRIKE</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">ATTACK</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">2</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[2]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> Melee (Range 1)</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Deal 4 damage. If target has killed an ally this mission, deal 6 damage instead (vengeance).</p>
+<p style="margin: 10px 0; color: #8b0000;"><strong>DAMAGE:</strong> 4</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">ATTACK • MELEE • VENGEANCE</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(750, 3150)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">CRUSADER'S WRATH</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">ATTACK</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">4</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[4]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> Melee (Range 1)</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Deal 6 damage. Ignore 2 Defense. Discard 1 card to deal +2 damage (total 8).</p>
+<p style="margin: 10px 0; color: #8b0000;"><strong>DAMAGE:</strong> 6</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">ATTACK • MELEE • SELF-HARM</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(0, 4200)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">MARTYR SHIELD</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">REACTIVE</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">1</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[1]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> Self</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">When an ally within 3 hexes is attacked, redirect that attack to yourself. Reduce damage by 2. Ally protection.</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">REACTIVE • DEFENSE • ALLY-PROTECTION</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+
+
+  <g transform="translate(750, 4200)">
+    <!-- Background -->
+    <rect class="card-bg" width="750" height="1050"/>
+
+    <!-- Border -->
+    <rect class="card-border" x="10" y="10" width="730" height="1030"/>
+
+    <!-- Header Section -->
+    <rect class="header-bg" x="20" y="20" width="710" height="120"/>
+    <line class="accent-gold" x1="20" y1="140" x2="730" y2="140"/>
+
+    <!-- Card Name -->
+    <text class="text-title" x="375.0" y="75" text-anchor="middle">PENANCE RUNE</text>
+
+    <!-- Card Type -->
+    <text class="text-type" x="375.0" y="120" text-anchor="middle">PASSIVE</text>
+
+    <!-- Cost Circle -->
+    <circle cx="680" cy="80" r="50" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    <text class="text-cost" x="680" y="100" text-anchor="middle">0</text>
+    <text class="text-keywords" x="680" y="125" text-anchor="middle">SP</text>
+
+    <!-- Initiative Badge -->
+    <rect x="30" y="30" width="100" height="60" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+    <text class="text-keywords" x="80" y="55" text-anchor="middle">INIT</text>
+    <text class="text-cost" x="80" y="85" text-anchor="middle" style="font-size: 32px;">[0]</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="160" x2="720" y2="160"/>
+
+    <!-- Effect Text -->
+    <foreignObject x="40" y="180" width="670" height="600">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 20px; color: #cccccc; line-height: 1.5;">
+        <p style="margin: 0 0 15px 0;"><strong style="color: #ffffff;">RANGE:</strong> N/A</p>
+        <strong style="color: #ffffff;">EFFECT:</strong>
+<p style="margin: 10px 0;">Whenever you discard cards (via Blood Offering, self-harm, etc), gain +1 accuracy on your next attack (reduce target number by 1).</p>
+      </div>
+    </foreignObject>
+
+    <!-- Keywords -->
+    <rect x="30" y="800" width="690" height="60" fill="#1a1a1a" stroke="#666666" stroke-width="2"/>
+    <text class="text-keywords" x="375.0" y="838" text-anchor="middle">PASSIVE • SELF-HARM-SYNERGY • ACCURACY</text>
+
+    <!-- Divider -->
+    <line class="accent-line" x1="30" y1="880" x2="720" y2="880"/>
+
+    <!-- Flavor Text -->
+    <foreignObject x="50" y="900" width="650" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Courier New', monospace; font-size: 17px; color: #666666; font-style: italic; text-align: center; line-height: 1.4;">
+        <p style="margin: 0;">""</p>
+      </div>
+    </foreignObject>
+
+    <!-- Footer -->
+    <text class="text-keywords" x="375.0" y="1030" text-anchor="middle" style="font-size: 14px;">PENANCE: ABSOLUTION THROUGH STEEL</text>
+  </g>
+</svg>
