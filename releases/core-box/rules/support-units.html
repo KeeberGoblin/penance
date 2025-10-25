@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Units - Penance</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#equipment">EQUIPMENT</a> /
+            Support Units
+        </div>
+<h1>Support Units</h1>
+        <p class="subtitle">AI Companions in Battle</p>
+
+        <div class="section-break"></div>
+
+        <h2>Core Concept</h2>
+
+        <p><strong>Support Units are NOT controlled directly.</strong> Instead:</p>
+        <ul>
+            <li>They have a <strong>Behavior Deck</strong> (4-6 cards) that determines their actions</li>
+            <li>Each unit type has unique behaviors and specializations</li>
+            <li>Players can influence them with <strong>Command cards</strong> and <strong>Rally actions</strong></li>
+            <li>They activate AFTER all Caskets have taken their turns</li>
+        </ul>
+
+        <div class="section-break"></div>
+
+        <h2>Support Unit Anatomy</h2>
+
+        <h3>Stats</h3>
+        <ul>
+            <li><strong>HP</strong>: 5-15 (track with tokens, NOT a deck)</li>
+            <li><strong>Movement</strong>: 2-4 hexes per turn</li>
+            <li><strong>Defense</strong>: 0-2</li>
+            <li><strong>Type</strong>: Infantry, Artillery, Scout, Engineer, Mystic</li>
+        </ul>
+
+        <h3>Behavior Deck (4-6 Cards)</h3>
+        <p>A small deck of AI behavior cards that determine what the unit does each turn. Shuffle at start of battle, draw 1 per turn, execute action.</p>
+
+        <h3>Command Response</h3>
+        <p>How the unit reacts when given a Command by a Casket.</p>
+
+        <div class="section-break"></div>
+
+        <h2>How Support Units Work</h2>
+
+        <h3>Deployment</h3>
+        <ul>
+            <li><strong>During Setup</strong>: Deploy support unit within 3 hexes of your Casket</li>
+            <li><strong>Cost</strong>: Varies by unit type (2-4 Equipment Slots when building deck)</li>
+            <li><strong>Limit</strong>: 1 support unit per Casket maximum</li>
+        </ul>
+
+        <h3>Activation</h3>
+        <ol>
+            <li><strong>All Caskets take their turns first</strong></li>
+            <li><strong>Support Unit Phase</strong>: Draw 1 Behavior card</li>
+            <li><strong>Execute Behavior</strong>: Follow card instructions (move, attack, etc.)</li>
+            <li><strong>Discard Behavior card</strong>: Reshuffles when deck empty</li>
+        </ol>
+
+        <h3>Command Actions</h3>
+        <p>Casket players can spend SP to influence support units:</p>
+        <ul>
+            <li><strong>RALLY</strong> (1 SP): Move support unit up to 3 hexes</li>
+            <li><strong>COMMAND: ATTACK</strong> (2 SP): Support unit attacks target you choose</li>
+            <li><strong>COMMAND: DEFEND</strong> (1 SP): Support unit gains +2 Defense until next turn</li>
+            <li><strong>COMMAND: HOLD</strong> (0 SP): Support unit skips its behavior this turn (stays put)</li>
+        </ul>
+
+        <div class="section-break"></div>
+
+        <h2>Support Unit Types</h2>
+
+        <h3>1. Penitent Squad (Church Infantry)</h3>
+        <p><strong>Category</strong>: Infantry Support</p>
+        <p><strong>HP</strong>: 8 | <strong>Movement</strong>: 3 | <strong>Defense</strong>: 1</p>
+        <p><strong>Equipment Slots</strong>: 2</p>
+
+        <h4>Description</h4>
+        <p>Zealous infantry squad armed with sanctified blades and fanatical devotion. They charge into melee and fight until death.</p>
+
+        <h4>Behavior Examples</h4>
+        <ul>
+            <li><strong>CHARGE FORWARD</strong>: Move toward nearest enemy. If adjacent, attack for 3 damage.</li>
+            <li><strong>SURROUND ENEMY</strong>: Move to flank nearest enemy. If flanking, attack for 4 damage.</li>
+            <li><strong>PROTECT THE CASKET</strong>: If Casket within 4 hexes is under 15 HP, move toward Casket and attack enemies near it for 3 damage.</li>
+            <li><strong>DESPERATE STRIKE</strong>: If squad HP ≤ 4, move toward nearest enemy and attack for 5 damage (suicidal charge).</li>
+        </ul>
+
+        <h4>Command Response</h4>
+        <ul>
+            <li><strong>RALLY</strong>: Move up to 3 hexes</li>
+            <li><strong>ATTACK</strong>: Attack target for 4 damage (+1 bonus for following orders)</li>
+            <li><strong>DEFEND</strong>: +2 Defense, but cannot attack next turn</li>
+            <li><strong>HOLD</strong>: Stay in place, gain +1 Defense</li>
+        </ul>
+
+        <h4>Special Ability: MARTYRDOM</h4>
+        <p>If Penitent Squad is destroyed, deal 3 damage to all adjacent enemies (explosive death).</p>
+
+        <div class="section-break"></div>
+
+        <h3>2. Ironclad Sentinel (Dwarven Artillery)</h3>
+        <p><strong>Category</strong>: Artillery Support</p>
+        <p><strong>HP</strong>: 6 | <strong>Movement</strong>: 2 | <strong>Defense</strong>: 2</p>
+        <p><strong>Equipment Slots</strong>: 3</p>
+
+        <h4>Description</h4>
+        <p>Mobile artillery platform with a shoulder-mounted siege cannon. Slow but devastating at range.</p>
+
+        <h4>Behavior Examples</h4>
+        <ul>
+            <li><strong>SIEGE BOMBARDMENT</strong>: Attack furthest visible enemy within 8 hexes for 6 damage. Ignore 2 Defense. +1 Heat to self.</li>
+            <li><strong>DEFENSIVE POSITION</strong>: If enemy within 3 hexes, move away 2 hexes. Then attack nearest enemy for 5 damage.</li>
+            <li><strong>SUPPRESSING FIRE</strong>: Attack nearest enemy within 6 hexes for 4 damage. Target cannot move next turn.</li>
+            <li><strong>RELOAD</strong>: Move 1 hex toward cover. Gain +2 Defense until next turn. Next attack deals +2 damage.</li>
+        </ul>
+
+        <h4>Command Response</h4>
+        <ul>
+            <li><strong>RALLY</strong>: Move up to 2 hexes (slow, heavy unit)</li>
+            <li><strong>ATTACK</strong>: Attack target within 8 hexes for 7 damage (heavy bombardment)</li>
+            <li><strong>DEFEND</strong>: Deploy siege shield (+3 Defense, cannot move next turn)</li>
+            <li><strong>HOLD</strong>: Anchor position, next attack deals +3 damage</li>
+        </ul>
+
+        <h4>Special Ability: EXPLOSIVE SHELLS</h4>
+        <p>When Ironclad Sentinel attacks, all enemies within 1 hex of target take 2 splash damage.</p>
+
+        <div class="section-break"></div>
+
+        <h3>3. Bone Thralls (Ossuarium Swarm)</h3>
+        <p><strong>Category</strong>: Swarm Support</p>
+        <p><strong>HP</strong>: 12 (3 HP per thrall, 4 thralls total) | <strong>Movement</strong>: 4 | <strong>Defense</strong>: 0</p>
+        <p><strong>Equipment Slots</strong>: 2</p>
+
+        <h4>Description</h4>
+        <p>Four skeletal thralls bound to your will. Individually weak, but they swarm enemies and can be resurrected.</p>
+
+        <h4>Behavior Examples</h4>
+        <ul>
+            <li><strong>SWARM ATTACK</strong>: All thralls move toward nearest enemy. Each thrall adjacent to an enemy attacks for 2 damage (up to 8 damage total).</li>
+            <li><strong>SCATTER</strong>: Each thrall moves in a different direction (spread out around nearest enemy). Attack if adjacent (2 damage per thrall).</li>
+            <li><strong>FEAST ON THE FALLEN</strong>: If enemy died this round, move toward corpse. Recover 3 HP to swarm (resurrect 1 thrall if any are dead).</li>
+            <li><strong>DEFENSIVE CIRCLE</strong>: All thralls move adjacent to Casket. Form defensive ring (+1 Defense to Casket until thralls move).</li>
+        </ul>
+
+        <h4>Command Response</h4>
+        <ul>
+            <li><strong>RALLY</strong>: Move all thralls up to 4 hexes to target location</li>
+            <li><strong>ATTACK</strong>: All thralls focus attack target (2 damage × number of thralls alive)</li>
+            <li><strong>DEFEND</strong>: Thralls form shield wall in front of Casket (block LOS, +1 Defense to Casket)</li>
+            <li><strong>HOLD</strong>: Thralls stay in place, gain +1 Defense each</li>
+        </ul>
+
+        <h4>Special Ability: RESURRECTION</h4>
+        <p>When thralls are destroyed, place corpse markers. During your Support Unit Phase, if Casket is within 4 hexes of corpse, you may spend 2 SP to resurrect 1 thrall with 3 HP.</p>
+
+        <div class="section-break"></div>
+
+        <h3>4. Verdant Stalker (Elven Scout)</h3>
+        <p><strong>Category</strong>: Scout Support</p>
+        <p><strong>HP</strong>: 6 | <strong>Movement</strong>: 5 | <strong>Defense</strong>: 1</p>
+        <p><strong>Equipment Slots</strong>: 2</p>
+
+        <h4>Description</h4>
+        <p>Elven ranger bonded with your Casket. Fast, mobile, applies Bleed stacks and scouts ahead.</p>
+
+        <h4>Behavior Examples</h4>
+        <ul>
+            <li><strong>HUNT THE WOUNDED</strong>: Move toward enemy with most Bleed counters. Attack for 3 damage + 1 damage per Bleed counter on target (max +5). Apply 1 Bleed.</li>
+            <li><strong>HIT AND RUN</strong>: Move adjacent to nearest enemy, attack for 3 damage and apply 1 Bleed, then move 3 hexes away.</li>
+            <li><strong>SNIPER SHOT</strong>: If no enemy within 3 hexes, attack furthest visible enemy within 6 hexes for 4 damage. Apply 1 Bleed.</li>
+            <li><strong>VANISH</strong>: If Stalker HP ≤ 3, move 5 hexes away from all enemies. Gain Stealth until next turn.</li>
+        </ul>
+
+        <h4>Command Response</h4>
+        <ul>
+            <li><strong>RALLY</strong>: Move up to 5 hexes (very fast)</li>
+            <li><strong>ATTACK</strong>: Attack target for 4 damage and apply 2 Bleed counters</li>
+            <li><strong>DEFEND</strong>: Gain Stealth (cannot be targeted until Stalker attacks)</li>
+            <li><strong>HOLD</strong>: Aim carefully, next attack deals +3 damage</li>
+        </ul>
+
+        <h4>Special Ability: BLEED MASTERY</h4>
+        <p>All Bleed counters applied by Verdant Stalker last 1 extra turn (ticks 3 times instead of 2).</p>
+
+        <div class="section-break"></div>
+
+        <h3>5. Forge Golem (Dwarven Tank)</h3>
+        <p><strong>Category</strong>: Tank Support</p>
+        <p><strong>HP</strong>: 15 | <strong>Movement</strong>: 2 | <strong>Defense</strong>: 3</p>
+        <p><strong>Equipment Slots</strong>: 4</p>
+
+        <h4>Description</h4>
+        <p>Massive animated construct of stone and rune-etched iron. Slow, incredibly durable, draws enemy fire.</p>
+
+        <h4>Behavior Examples</h4>
+        <ul>
+            <li><strong>TAUNT</strong>: Move toward nearest enemy. All enemies within 4 hexes must target Forge Golem next turn if able (taunt effect).</li>
+            <li><strong>CRUSHING SLAM</strong>: Attack nearest enemy for 5 damage. Ignore 2 Defense. Target is knocked back 1 hex.</li>
+            <li><strong>DEFENSIVE STANCE</strong>: If Golem HP ≤ 8, do not move. Gain +2 Defense until next turn. Counterattack any melee attacker for 3 damage.</li>
+            <li><strong>SEISMIC STOMP</strong>: Deal 3 damage to all adjacent enemies. Push them 1 hex away. +1 Heat to Golem.</li>
+        </ul>
+
+        <h4>Command Response</h4>
+        <ul>
+            <li><strong>RALLY</strong>: Move up to 2 hexes (slow but obedient)</li>
+            <li><strong>ATTACK</strong>: Attack target for 7 damage, ignore 3 Defense (massive strike)</li>
+            <li><strong>DEFEND</strong>: Golem becomes immobile, gains +4 Defense, blocks LOS</li>
+            <li><strong>HOLD</strong>: Anchor position, gain Regeneration 2 (recover 2 HP at end of turn)</li>
+        </ul>
+
+        <h4>Special Ability: RUNIC SHIELDS</h4>
+        <p>When Forge Golem takes damage, roll 1d6. On 5-6, reduce damage by 3 (magical shielding).</p>
+
+        <div class="section-break"></div>
+
+        <h3>6. Scrap Hauler (Nomad Engineer)</h3>
+        <p><strong>Category</strong>: Engineer Support</p>
+        <p><strong>HP</strong>: 10 | <strong>Movement</strong>: 3 | <strong>Defense</strong>: 1</p>
+        <p><strong>Equipment Slots</strong>: 3</p>
+
+        <h4>Description</h4>
+        <p>Salvage bot cobbled together from scrap metal. Repairs Caskets, builds cover, and scavenges resources.</p>
+
+        <h4>Behavior Examples</h4>
+        <ul>
+            <li><strong>FIELD REPAIR</strong>: Move toward nearest friendly Casket with <20 HP. If adjacent, heal 4 HP (recover 4 cards from discard).</li>
+            <li><strong>BUILD COVER</strong>: If no cover within 2 hexes, create 1 hex of cover (blocks LOS, +1 Defense). Otherwise, move toward nearest damaged Casket.</li>
+            <li><strong>SCAVENGE</strong>: Move toward nearest corpse or destroyed equipment. If adjacent, recover 1 Scrap token (usable after mission).</li>
+            <li><strong>EMERGENCY OVERRIDE</strong>: If any friendly Casket has 3+ Component Damage, move toward them. If adjacent, remove 1 Component Damage marker (field repair).</li>
+        </ul>
+
+        <h4>Command Response</h4>
+        <ul>
+            <li><strong>RALLY</strong>: Move up to 3 hexes</li>
+            <li><strong>ATTACK</strong>: Not applicable (Hauler is not combat unit, cannot be commanded to attack)</li>
+            <li><strong>DEFEND</strong>: Deploy portable shield (blocks LOS for 1 hex, +2 Defense to adjacent allies)</li>
+            <li><strong>HOLD</strong>: Fortify position, build 2 hexes of cover</li>
+        </ul>
+
+        <h4>Special Ability: SALVAGE</h4>
+        <p>When enemy is destroyed within 4 hexes of Scrap Hauler, automatically gain 1 Scrap token.</p>
+
+        <div class="section-break"></div>
+
+        <h2>Equipment Slot Costs</h2>
+
+        <p>When building your deck, support units take up Equipment Slots:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Support Unit</th>
+                    <th>Slots</th>
+                    <th>Justification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Penitent Squad</td>
+                    <td>2</td>
+                    <td>Basic infantry</td>
+                </tr>
+                <tr>
+                    <td>Ironclad Sentinel</td>
+                    <td>3</td>
+                    <td>Heavy artillery</td>
+                </tr>
+                <tr>
+                    <td>Bone Thralls</td>
+                    <td>2</td>
+                    <td>Swarm, individually weak</td>
+                </tr>
+                <tr>
+                    <td>Verdant Stalker</td>
+                    <td>2</td>
+                    <td>Fast scout</td>
+                </tr>
+                <tr>
+                    <td>Forge Golem</td>
+                    <td>4</td>
+                    <td>Massive tank</td>
+                </tr>
+                <tr>
+                    <td>Scrap Hauler</td>
+                    <td>3</td>
+                    <td>Support specialist</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Trade-off</strong>: Taking a support unit means fewer equipment cards in your deck.</p>
+
+        <p><strong>Example</strong>:</p>
+        <ul>
+            <li>Scout Casket (Light): 1 Equipment Slot - Cannot take support units</li>
+            <li>Assault Casket (Medium): 2 Equipment Slots - Can take Penitent Squad, Bone Thralls, or Verdant Stalker</li>
+            <li>Heavy Casket: 3 Equipment Slots - Can take any support except Forge Golem</li>
+            <li>Fortress Casket: 4 Equipment Slots - Can take any support unit, including Forge Golem</li>
+        </ul>
+
+        <div class="section-break"></div>
+
+        <h2>Command Cards (For Casket Decks)</h2>
+
+        <p>Players can add these to their deck to better control support units:</p>
+
+        <h3>Rally Cry (Universal)</h3>
+        <ul>
+            <li><strong>SP Cost</strong>: 1</li>
+            <li><strong>Type</strong>: Utility</li>
+            <li><strong>Range</strong>: 6 hexes</li>
+            <li><strong>Effect</strong>: Choose 1 support unit within range. Move it up to its full movement distance to any visible hex.</li>
+        </ul>
+
+        <h3>Coordinated Strike (Universal)</h3>
+        <ul>
+            <li><strong>SP Cost</strong>: 2</li>
+            <li><strong>Type</strong>: Attack, Command</li>
+            <li><strong>Effect</strong>: Your support unit and your Casket both attack the same target. Both attacks gain +2 damage.</li>
+        </ul>
+
+        <h3>Defensive Formation (Universal)</h3>
+        <ul>
+            <li><strong>SP Cost</strong>: 1</li>
+            <li><strong>Type</strong>: Utility, Command</li>
+            <li><strong>Range</strong>: 4 hexes</li>
+            <li><strong>Effect</strong>: Move support unit adjacent to you. Both you and support unit gain +2 Defense until start of next turn.</li>
+        </ul>
+
+        <h3>Emergency Recall (Universal)</h3>
+        <ul>
+            <li><strong>SP Cost</strong>: 0</li>
+            <li><strong>Type</strong>: Reactive, Command</li>
+            <li><strong>Range</strong>: 10 hexes</li>
+            <li><strong>Effect</strong>: When support unit would be destroyed, immediately teleport it adjacent to your Casket and prevent destruction (1 HP remains).</li>
+        </ul>
+
+        <div class="section-break"></div>
+
+        <h2>Balancing Support Units</h2>
+
+        <h3>Advantages</h3>
+        <ul>
+            <li>Extra actions per turn (support acts after Caskets)</li>
+            <li>Tactical flexibility (flanking, drawing fire, objectives)</li>
+            <li>Action economy (2 units acting instead of 1)</li>
+        </ul>
+
+        <h3>Disadvantages</h3>
+        <ul>
+            <li>Uses Equipment Slots (fewer weapons/equipment)</li>
+            <li>HP pool separate from deck (can be killed permanently)</li>
+            <li>AI behavior can be unpredictable</li>
+            <li>Requires SP to command effectively</li>
+        </ul>
+
+        <h3>Design Philosophy</h3>
+        <p>Support units should feel like <strong>force multipliers</strong>, not replacements for player skill. They:</p>
+        <ul>
+            <li>Provide tactical options (zoning, flanking, tanking)</li>
+            <li>Create interesting decisions (do I command them or let AI handle it?)</li>
+            <li>Have weaknesses (low HP, predictable AI, costs equipment slots)</li>
+        </ul>
+
+        <div class="section-break"></div>
+
+        <h2>Example Turn with Support Unit</h2>
+
+        <p><strong>Setup</strong>: You control a Church Casket + Penitent Squad</p>
+
+        <p><strong>Round 1</strong>:</p>
+
+        <h3>1. Casket Turn</h3>
+        <ul>
+            <li>Refresh 5 SP</li>
+            <li>Play <strong>MOVE</strong> (1 SP): Move 2 hexes toward enemy</li>
+            <li>Play <strong>BLOOD OFFERING</strong> (0 SP): Discard 2 cards, next attack +3 damage</li>
+            <li>Play <strong>FAITHFUL THRUST</strong> (2 SP): Attack enemy for 7 damage (4 base + 3 Blood Offering)</li>
+            <li>Draw 3 cards</li>
+            <li>2 SP remaining</li>
+        </ul>
+
+        <h3>2. Support Unit Phase (Penitent Squad)</h3>
+        <ul>
+            <li>Draw 1 Behavior card: <strong>CHARGE FORWARD</strong></li>
+            <li>Execute: Squad moves 3 hexes toward nearest enemy</li>
+            <li>Squad attacks for 3 damage (now adjacent)</li>
+            <li>Discard Behavior card</li>
+        </ul>
+
+        <h3>3. Decision Point</h3>
+        <p>You have 2 SP left. Do you:</p>
+        <ul>
+            <li><strong>Option A</strong>: Save SP for next turn</li>
+            <li><strong>Option B</strong>: Spend 1 SP to RALLY squad into flanking position (rear arc)</li>
+            <li><strong>Option C</strong>: Spend 2 SP to COMMAND: ATTACK for 4 damage instead of 3</li>
+        </ul>
+
+        <p>You choose <strong>Option B</strong>: Spend 1 SP to Rally squad to enemy's rear arc.</p>
+
+        <p><strong>Next Turn</strong>: Squad will naturally execute behavior from rear position (likely 4 damage due to flanking)</p>
+
+        <div class="section-break"></div>
+
+        <!-- Navigation breadcrumbs -->
+        <p style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.7; text-align: center;">
+            <a href="#" onclick="parent.loadContent('content-home.html'); return false;" style="color: var(--dark-red);">← Return to Codex Home</a>
+        </p>
+
+        <p style="font-style: italic; text-align: center; margin-top: 2rem; opacity: 0.8; font-size: 0.95rem;">
+            "Command them wisely. They fight not for glory, but for the chance at redemption."
+        </p>
+    </div>
+</body>
+</html>

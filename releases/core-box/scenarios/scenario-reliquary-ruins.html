@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliquary Ruins - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="manuscript-page">
+ <div class="breadcrumb">
+ <a href="content-home.html" target="_parent">CODEX</a> /
+ <a href="#scenarios">SCENARIOS</a> /
+ Reliquary Ruins
+ </div>
+
+        <div class="illuminated-header">
+            <span class="drop-cap">R</span>
+            <h1 class="title">eliquary Ruins</h1>
+            <p class="subtitle">"Sacred ground. Contested shrines. Control the Cathedral or die trying."</p>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Scenario Overview</h2>
+
+        <table class="manuscript-table">
+            <tr>
+                <th>Scenario Type</th>
+                <td>Arena Scenario #2: 1v1 Objective Control</td>
+            </tr>
+            <tr>
+                <th>Factions</th>
+                <td>Church of Absolution vs Dwarven Forge-Guilds</td>
+            </tr>
+            <tr>
+                <th>Map Size</th>
+                <td>14×12 hex grid</td>
+            </tr>
+            <tr>
+                <th>Estimated Playtime</th>
+                <td>60-75 minutes</td>
+            </tr>
+            <tr>
+                <th>Difficulty</th>
+                <td>Intermediate (Objective Control Tactics)</td>
+            </tr>
+            <tr>
+                <th>Victory Condition</th>
+                <td>Control 6+ points at end of Round OR reduce opponent to 0 HP OR hold Central Cathedral for 3 consecutive Rounds</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>Playtest Ready</td>
+            </tr>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Scenario Description</h2>
+
+        <p class="manuscript-text">
+            Reliquary Ruins is an objective control scenario where two Caskets battle for sacred shrines scattered across a ruined cathedral complex. Victory doesn't require killing your opponent—controlling the majority of Reliquaries is enough. This scenario emphasizes map control, mobility, and strategic positioning over pure combat prowess.
+        </p>
+
+        <p class="manuscript-text">
+            Five Reliquaries (worth 10 total control points) are scattered across the 14×12 battlefield. The Central Cathedral (R3) is the most valuable objective, sitting atop Elevation 2 with 4 hexes worth 2 total points. Players must balance offensive pressure with objective scoring, choosing when to contest enemy-held shrines versus securing their own.
+        </p>
+
+        <p class="manuscript-text">
+            This scenario teaches advanced tactics: when to contest enemy objectives vs securing your own, mobility vs durability trade-offs, high-ground advantage, and long-term planning for domination victory conditions.
+        </p>
+
+        <div style="background: #1a1a1a; border: 3px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-family: monospace; color: #d4af37; overflow-x: auto;">
+            <h3 style="color: #d4af37; text-align: center; margin-bottom: 1rem;">RELIQUARY RUINS - BATTLEFIELD MAP (14×12 Hexes)</h3>
+            <pre style="color: #8b6914; line-height: 1.4; font-size: 0.9rem;">
+    1   2   3   4   5   6   7   8   9  10  11  12  13  14
+  ┌───────────────────────────────────────────────────────┐
+1 │ .   .   .   W   W   R1  R1  W   W   .   .   .   .   .│
+  │   .   .   .   W   F   F   F   W   .   .   .   .   .  │
+2 │ .   .   F   F   W   .   .   W   F   F   .   .   .   .│
+  │   .   .   F   F   .   .   .   .   F   .   .   .   .  │
+3 │ .   F   F   .   .   P   .   P   .   .   F   F   .   .│
+  │   .   F   .   .   .   E2  E2  .   .   .   F   .   .  │
+4 │ R2  R2  F   .   .   E2  R3  R3  E2  .   .   F   R2  R2│
+  │   F   F   .   .   .   E2  E2  .   .   .   F   F   .  │
+5 │ .   F   F   .   .   P   .   P   .   .   F   F   .   .│
+  │   .   .   F   F   .   .   .   .   F   .   .   .   .  │
+6 │ .   .   F   F   W   .   .   W   F   F   .   .   .   .│
+  │   .   .   .   W   F   F   F   W   .   .   .   .   .  │
+7 │ .   .   .   W   W   R4  R4  W   W   .   .   .   .   .│
+  │   .   .   .   .   W   W   W   .   .   .   .   .   .  │
+8 │ .   .   .   .   .   F   F   .   .   .   .   .   .   .│
+  │   .   .   .   .   F   .   F   .   .   .   .   .   .  │
+9 │ .   .   .   .   F   .   .   .   F   .   .   .   .   .│
+  │   .   .   .   F   .   .   .   .   F   .   .   .   .  │
+10│ .   .   .   F   .   .   .   .   .   F   .   .   .   .│
+  │   .   .   F   .   .   .   .   .   .   F   .   .   .  │
+11│ .   .   F   .   .   .   .   .   .   .   F   .   .   .│
+  │   .   F   .   .   .   .   .   .   .   .   F   .   .  │
+12│ .   .   .   R5  R5  .   .   .   R5  R5  .   .   .   .│
+  └───────────────────────────────────────────────────────┘
+
+LEGEND:
+═══════
+R1-R5  = Reliquaries (objectives worth control points)
+E2     = Elevation 2 (Central Cathedral, high ground)
+P      = Pillars/Ruins (total cover, +2 Defense)
+F      = Forest/Overgrowth (+1 Defense, blocks LOS)
+W      = Water/Moat (difficult terrain, removes 2 Heat)
+.      = Clear Ground (open battlefield)
+
+DEPLOYMENT ZONES:
+═════════════════
+Church:  Rows 2-4, Columns 3-11 (North section)
+Dwarves: Rows 10-12, Columns 3-11 (South section)
+
+RELIQUARY POINT VALUES:
+═══════════════════════
+R1 (North):    2 hexes  = 2 points (1 per hex)
+R2 (E/W):      4 hexes  = 4 points (1 per hex)
+R3 (Center):   4 hexes  = 2 points (standing on ANY grants 2)
+R4 (South):    2 hexes  = 2 points (1 per hex)
+R5 (Far South):2 hexes  = 2 points (1 per hex)
+                         ──────────
+TOTAL:         14 hexes = 10 points available
+            </pre>
+            <p style="text-align: center; margin-top: 1rem; color: #8B0000; font-style: italic;">
+                <small>Note: Hex grid stagger pattern shown. Each row offset by 0.5 hex width.</small>
+            </p>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Reliquary Control System</h2>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Reliquary</th>
+                    <th>Location</th>
+                    <th>Hexes</th>
+                    <th>Points Available</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>R1: North Shrines</td>
+                    <td>Top of map</td>
+                    <td>2 hexes</td>
+                    <td>1 point per hex (2 total)</td>
+                </tr>
+                <tr>
+                    <td>R2: East/West Shrines</td>
+                    <td>East and west sides</td>
+                    <td>4 hexes (2 each side)</td>
+                    <td>1 point per hex (4 total)</td>
+                </tr>
+                <tr>
+                    <td>R3: Central Cathedral</td>
+                    <td>Center, Elevation 2</td>
+                    <td>4 hexes (zone)</td>
+                    <td>2 points total (standing on ANY of 4 hexes)</td>
+                </tr>
+                <tr>
+                    <td>R4: South Shrines</td>
+                    <td>South side</td>
+                    <td>2 hexes</td>
+                    <td>1 point per hex (2 total)</td>
+                </tr>
+                <tr>
+                    <td>R5: Far South Shrines</td>
+                    <td>Bottom of map</td>
+                    <td>2 hexes</td>
+                    <td>1 point per hex (2 total)</td>
+                </tr>
+                <tr>
+                    <td><strong>TOTAL</strong></td>
+                    <td colspan="2"><strong>14 hexes across 5 Reliquaries</strong></td>
+                    <td><strong>10 points available</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How Control Works</h3>
+
+        <p class="manuscript-text">At the <strong>END of each Round</strong> (both players have taken a turn):</p>
+
+        <ol>
+            <li>Check which Reliquary hexes each player is standing on</li>
+            <li>Award control points:
+                <ul class="manuscript-list">
+                    <li>R1, R2, R4, R5: <strong>1 point per hex occupied</strong></li>
+                    <li>R3 (Central Cathedral): <strong>2 points if ANY of the 4 hexes occupied</strong></li>
+                </ul>
+            </li>
+            <li>Track cumulative control points on paper or tokens</li>
+            <li><strong>Victory Check:</strong> If one player has <strong>6+ points</strong> (majority control), they win immediately</li>
+        </ol>
+
+        <p class="manuscript-text">
+            <strong>Important:</strong> If both players occupy different hexes of the same Reliquary (e.g., Church on R1-Hex1, Dwarves on R1-Hex2), <strong>NEITHER player scores points</strong> from that Reliquary. This creates "contesting" gameplay where denying opponent scoring is as valuable as scoring yourself.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Map Features & Terrain</h2>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Terrain Type</th>
+                    <th>Hexes</th>
+                    <th>Movement Cost</th>
+                    <th>Effects</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Water/Moat (W)</td>
+                    <td>14</td>
+                    <td>2 SP per hex</td>
+                    <td>Difficult terrain. Remove <strong>2 Heat</strong> at end of turn (increased from standard 1).</td>
+                </tr>
+                <tr>
+                    <td>Forest/Overgrowth (F)</td>
+                    <td>16</td>
+                    <td>1 SP per hex</td>
+                    <td>+1 Defense. Blocks LOS if 2+ forest hexes in a row.</td>
+                </tr>
+                <tr>
+                    <td>Pillar/Ruins (P)</td>
+                    <td>4</td>
+                    <td>1 SP per hex</td>
+                    <td>+2 Defense. Blocks LOS completely (total cover). Creates chokepoints.</td>
+                </tr>
+                <tr>
+                    <td>Elevation 2 (E2)</td>
+                    <td>10</td>
+                    <td>3 SP to climb</td>
+                    <td>+2 damage to attacks FROM this hex. Ignore cover. Costs 3 SP to climb from ground.</td>
+                </tr>
+                <tr>
+                    <td>Reliquaries (R1-R5)</td>
+                    <td>14 total</td>
+                    <td>1 SP per hex</td>
+                    <td>+1 Defense (R1/R2/R4/R5), +2 Defense (R3 on Elevation 2). Score points at end of Round.</td>
+                </tr>
+                <tr>
+                    <td>Clear Ground</td>
+                    <td>Rest</td>
+                    <td>1 SP per hex</td>
+                    <td>No modifiers. Standard open battlefield.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Special Terrain Rules</h3>
+
+        <h4>1. Objective Denial (Contesting)</h4>
+        <p class="manuscript-text">
+            You can <strong>contest</strong> a Reliquary by standing on it, denying opponent control. If Church is on R1-Hex1 and Dwarves are on R1-Hex2, <strong>NEITHER player scores points</strong> from R1 that round. Blocking opponent scoring is as valuable as scoring yourself, especially if you're ahead on points.
+        </p>
+
+        <h4>2. Central Cathedral High Ground</h4>
+        <p class="manuscript-text">
+            R3 (Central Cathedral) is the most valuable objective, sitting on Elevation 2 with the following benefits:
+        </p>
+        <ul class="manuscript-list">
+            <li>Worth <strong>2 points</strong> (highest value objective)</li>
+            <li>+2 damage to all attacks FROM this position</li>
+            <li>Ignore cover when attacking from R3</li>
+            <li>+2 Defense when standing on R3 (Elevation bonus + Reliquary bonus)</li>
+            <li>Costs <strong>3 SP to climb</strong> from ground level (expensive for slow Caskets!)</li>
+        </ul>
+        <p class="manuscript-text">
+            <strong>Tactical Note:</strong> Dwarven Fortress Caskets have only 3 SP per turn, meaning climbing to R3 costs their ENTIRE turn. Church Scouts (6 SP) can climb and still have 3 SP remaining for attacks. This asymmetry creates interesting strategic tension.
+        </p>
+
+        <h4>3. Pillar Cover (Chokepoints)</h4>
+        <p class="manuscript-text">
+            Pillars (P) provide <strong>total cover</strong>, creating tactical bottlenecks:
+        </p>
+        <ul class="manuscript-list">
+            <li>Cannot attack through Pillars (LOS completely blocked)</li>
+            <li>Must move around to get line of sight</li>
+            <li>+2 Defense when standing on Pillar hex</li>
+            <li>Forces close-range combat near objectives</li>
+        </ul>
+
+        <h4>4. Enhanced Heat Management</h4>
+        <p class="manuscript-text">
+            Water hexes remove <strong>2 Heat</strong> (instead of standard 1), encouraging aggressive Heat buildup. Risk/reward: spend 2 SP to enter Water, remove 2 Heat. Dwarves (high Heat generation) benefit more from this enhanced cooling.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Deployment</h2>
+
+        <h3>Deployment Zones</h3>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Zone</th>
+                    <th>Strategic Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Church of Absolution</td>
+                    <td>North section (rows 2-4, columns 3-9)</td>
+                    <td>Close to North Shrines (R1) and East/West Shrines (R2)</td>
+                </tr>
+                <tr>
+                    <td>Dwarven Forge-Guilds</td>
+                    <td>South section (rows 10-12, columns 3-9)</td>
+                    <td>Close to South Shrines (R4, R5)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Deployment Procedure</h3>
+
+        <ol>
+            <li><strong>Roll Initiative:</strong> Both players roll 1d6. Higher roll chooses who deploys first.</li>
+            <li><strong>First Player Deploys:</strong> Place Casket in any clear ground hex within their deployment zone. Choose initial facing.</li>
+            <li><strong>Second Player Deploys:</strong> Place Casket in their deployment zone. Choose initial facing.</li>
+            <li><strong>First Player Takes Round 1:</strong> The player who deployed first begins the game.</li>
+        </ol>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Pre-Built Decks</h2>
+
+        <h3>Church: "Zealot's March" (Fast Objective Runner)</h3>
+
+        <table class="manuscript-table">
+            <tr>
+                <th>Casket Class</th>
+                <td>Scout (Light Frame - 6 SP per turn)</td>
+            </tr>
+            <tr>
+                <th>Total Deck Size</th>
+                <td>28 cards (10 Universal + 6 Faction + 10 Equipment + 2 Tactics)</td>
+            </tr>
+            <tr>
+                <th>Starting HP</th>
+                <td>28 HP (1 card = 1 HP)</td>
+            </tr>
+            <tr>
+                <th>Playstyle</th>
+                <td>Fast objective runner prioritizing speed and map control over raw damage</td>
+            </tr>
+        </table>
+
+        <h4>Deck Composition:</h4>
+
+        <p class="manuscript-text"><strong>Universal Core (10 cards - Mandatory):</strong></p>
+        <ul class="manuscript-list">
+            <li>Move ×3 (1 SP, Move 2 hexes)</li>
+            <li>Sprint ×2 (2 SP, Move 4 hexes, +1 Heat)</li>
+            <li>Brace ×2 (1 SP, +2 Defense until next turn)</li>
+            <li>Disengage ×1 (1 SP, Move 2 hexes, ignore attacks of opportunity)</li>
+            <li>Focus ×1 (0 SP, Draw 1 card)</li>
+            <li>Emergency Repair ×1 (3 SP, Recover 3 cards from discard)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Church Faction Core (6 cards - Mandatory):</strong></p>
+        <ul class="manuscript-list">
+            <li>Blood Offering ×1 (0 SP, Discard 2 cards, next attack +3 damage, ignore 1 Defense)</li>
+            <li>Martyrdom Protocol ×1 (0 SP Reactive, Redirect damage from ally to yourself)</li>
+            <li>Righteous Fury ×1 (Passive, +1 damage per enemy killed - permanent)</li>
+            <li>Divine Judgment ×1 (4 SP, Deal 8 damage, ignore 1 Defense)</li>
+            <li>Consecrated Ground ×1 (3 SP, Create 3-hex healing zone)</li>
+            <li>Last Rites ×1 (0 SP Reactive, When ally destroyed, recover 5 cards)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment - Spear (5 cards):</strong></p>
+        <ul class="manuscript-list">
+            <li>Spear Thrust ×2 (2 SP, Melee 2-hex range, Deal 4 damage)</li>
+            <li>Defensive Stance ×1 (1 SP, +2 Defense, next attack from Front Arc deals +2 damage)</li>
+            <li>Piercing Strike ×1 (2 SP, Melee, Deal 3 damage, ignores 1 Defense)</li>
+            <li>Lunging Attack ×1 (3 SP, Move 1 hex + attack for 5 damage)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment - Buckler Shield (2 cards):</strong></p>
+        <ul class="manuscript-list">
+            <li>Deflect ×1 (0 SP Reactive, Reduce damage by 2)</li>
+            <li>Shield Bash ×1 (2 SP, Melee, Deal 2 damage, push target 1 hex)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment - Martyr's Brand Sigil (3 cards, Church-Exclusive):</strong></p>
+        <ul class="manuscript-list">
+            <li>Martyr's Blessing ×1 (Passive, When you use Blood Offering, gain +1 Defense until next turn)</li>
+            <li>Sacred Wound ×1 (2 SP, Discard 1 card, all allies gain +1 damage this turn)</li>
+            <li>Zealot's Fervor ×1 (Passive, When below 15 HP, all attacks deal +1 damage)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Tactics (2 cards):</strong></p>
+        <ul class="manuscript-list">
+            <li>Crusader's Vow ×1 (Passive, All attack cards cost -1 SP, minimum 1 SP)</li>
+            <li>Vanguard Rush ×1 (2 SP, Once per mission: Move 8 hexes, ignore difficult terrain)</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            <strong>Strategy:</strong> Fast objective runner (6 SP = highest mobility). Spear provides 2-hex range for objective harassment. Prioritize speed and map control over raw damage. Grab North Shrines (R1) + East/West Shrines (R2) early with Sprint + Vanguard Rush. Force Dwarves to chase. Buckler Shield provides emergency defense without slowing movement. Light deck (28 cards) cycles faster.
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h3>Dwarves: "Fortress Keeper" (Central Cathedral Holder)</h3>
+
+        <table class="manuscript-table">
+            <tr>
+                <th>Casket Class</th>
+                <td>Fortress (Ultra-Heavy Frame - 3 SP per turn)</td>
+            </tr>
+            <tr>
+                <th>Total Deck Size</th>
+                <td>35 cards (12 Universal + 6 Faction + 17 Equipment + 2 Tactics)</td>
+            </tr>
+            <tr>
+                <th>Starting HP</th>
+                <td>35 HP (includes +2 from Stone Endurance)</td>
+            </tr>
+            <tr>
+                <th>Playstyle</th>
+                <td>Ultimate fortress tank focused on holding Central Cathedral and denying Church mobility</td>
+            </tr>
+        </table>
+
+        <h4>Deck Composition:</h4>
+
+        <p class="manuscript-text"><strong>Universal Core (12 cards - includes +2 from Stone Endurance):</strong></p>
+        <ul class="manuscript-list">
+            <li>Move ×4 (1 SP, Move 2 hexes)</li>
+            <li>Sprint ×3 (2 SP, Move 4 hexes, +1 Heat)</li>
+            <li>Brace ×2 (1 SP, +2 Defense until next turn)</li>
+            <li>Disengage ×1 (1 SP, Move 2 hexes, ignore attacks of opportunity)</li>
+            <li>Focus ×1 (0 SP, Draw 1 card)</li>
+            <li>Emergency Repair ×1 (3 SP, Recover 3 cards from discard)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Dwarven Faction Core (6 cards - Mandatory):</strong></p>
+        <ul class="manuscript-list">
+            <li>Runic Warhammer ×1 (3 SP, Melee, Deal 6 damage, ARMOR PIERCING)</li>
+            <li>Forge-Ward ×1 (0 SP Reactive, Gain +2 Defense, generate 1 Rune Counter)</li>
+            <li>Rune Counter System ×1 (Passive, Reduce damage by 1 per Rune Counter, max 5)</li>
+            <li>Stone Endurance ×1 (Passive, +2 Universal Core cards, +2 max HP)</li>
+            <li>Earthshaker ×1 (3 SP, Melee AOE, Deal 3 damage to all adjacent, push 1 hex)</li>
+            <li>Unbreakable ×1 (1 SP Reactive, Reduce damage by 3)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment - Greatsword (8 cards, 2-handed):</strong></p>
+        <ul class="manuscript-list">
+            <li>Cleaving Strike ×2 (2 SP, Melee, Deal 6 damage)</li>
+            <li>Overhead Slash ×2 (3 SP, Melee, Deal 8 damage, +1 Heat)</li>
+            <li>Defensive Sweep ×1 (1 SP, Melee, Deal 3 damage, +1 Defense until next turn)</li>
+            <li>Executioner's Blow ×1 (4 SP, Melee, Deal 10 damage if target below 50% HP)</li>
+            <li>Whirlwind ×1 (3 SP, Melee AOE, Deal 4 damage to all adjacent enemies)</li>
+            <li>Guard Break ×1 (2 SP, Melee, Deal 4 damage, target loses all Defense buffs)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment - Reinforced Plating (3 cards):</strong></p>
+        <ul class="manuscript-list">
+            <li>Ablative Armor ×1 (Passive, First hit each turn deals -2 damage)</li>
+            <li>Heavy Plating ×1 (Passive, +1 Defense against all attacks)</li>
+            <li>Impact Resistance ×1 (1 SP Reactive, Reduce damage by 3, lose 1 Heat)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment - Repair Kit (3 cards):</strong></p>
+        <ul class="manuscript-list">
+            <li>Field Repair ×1 (2 SP, Recover 2 cards from discard)</li>
+            <li>Emergency Patch ×1 (1 SP Reactive, When taking 5+ damage, reduce by 2)</li>
+            <li>Jury-Rig ×1 (3 SP, Prevent adding Damage card on next reshuffle)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Equipment - Forge-Rune Sigil (3 cards, Dwarven-Exclusive):</strong></p>
+        <ul class="manuscript-list">
+            <li>Runic Regeneration ×1 (Passive, When you gain a Rune Counter, recover 1 card from discard)</li>
+            <li>Forge Heat ×1 (1 SP, Gain 2 Heat, +1 damage to next attack)</li>
+            <li>Rune of Endurance ×1 (Passive, Max Rune Counters increased from 3 to 5)</li>
+        </ul>
+
+        <p class="manuscript-text"><strong>Tactics (2 cards):</strong></p>
+        <ul class="manuscript-list">
+            <li>Stone Endurance ×1 (Passive, +2 Universal Core cards, deck starts at 35 cards)</li>
+            <li>Last Stand ×1 (Passive, When reduced below 10 HP, gain +3 damage to all attacks)</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            <strong>Strategy:</strong> Ultimate fortress tank. Only 3 SP per turn (Fortress class) = must choose actions carefully. Rush Central Cathedral (R3, 2 points) early, fortify with Rune Counters. Greatsword deals massive damage (6-10 per hit) with area denial. Reinforced Plating + Rune Counters = extreme damage reduction (-6 total). Repair Kit sustains through long games. 35 HP deck outlasts Church. Hold Cathedral, force Church to come to you, control South Shrines (R4) for 4 total points. Win through attrition and area denial.
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Victory Conditions</h2>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Victory Type</th>
+                    <th>Requirement</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Majority Control</td>
+                    <td>6+ points at end of Round</td>
+                    <td>Most common victory. 60%+ control = win.</td>
+                </tr>
+                <tr>
+                    <td>Deathmatch</td>
+                    <td>Reduce opponent to 0 HP</td>
+                    <td>Standard combat victory. Opponent's deck empty.</td>
+                </tr>
+                <tr>
+                    <td>Cathedral Dominance</td>
+                    <td>Control R3 for 3 consecutive Rounds</td>
+                    <td>Rare but thematic. Requires sustained control.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Learning Objectives</h2>
+
+        <p class="manuscript-text">This scenario teaches advanced tactical concepts:</p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Mechanic</th>
+                    <th>What You'll Learn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Objective Control</td>
+                    <td>When to contest enemy objectives vs securing your own. Denial as valuable as scoring.</td>
+                </tr>
+                <tr>
+                    <td>Map Control Priority</td>
+                    <td>Controlling space and objectives often more important than killing opponent.</td>
+                </tr>
+                <tr>
+                    <td>Mobility vs Durability</td>
+                    <td>Church's 6 SP speed vs Dwarven 3 SP tankiness creates different win paths.</td>
+                </tr>
+                <tr>
+                    <td>High-Ground Advantage</td>
+                    <td>Elevation 2 grants +2 damage and ignore cover (extremely powerful positioning).</td>
+                </tr>
+                <tr>
+                    <td>Chokepoint Usage</td>
+                    <td>Pillars create tactical bottlenecks forcing close combat near objectives.</td>
+                </tr>
+                <tr>
+                    <td>Resource Allocation</td>
+                    <td>Spend SP on movement to objectives or combat to deny opponent? Critical decisions.</td>
+                </tr>
+                <tr>
+                    <td>Long-Term Planning</td>
+                    <td>Domination victory (3-Round Cathedral hold) requires sustained control strategy.</td>
+                </tr>
+                <tr>
+                    <td>Asymmetric Playstyles</td>
+                    <td>Different factions have completely different optimal strategies for same objective.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Expected Game Flow</h2>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Rounds</th>
+                    <th>Duration</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rush Objectives</td>
+                    <td>1-2</td>
+                    <td>15-20 min</td>
+                    <td>Church rushes North/East shrines (R1, R2) with 6 SP mobility. Dwarves push toward South shrines (R4, R5) or beeline to Central Cathedral. First control points scored (3-4 points each).</td>
+                </tr>
+                <tr>
+                    <td>Cathedral Contest</td>
+                    <td>3-5</td>
+                    <td>15-20 min</td>
+                    <td>Both players push toward Central Cathedral (worth 2 points). First to claim R3 gains massive advantage (+2 damage from elevation). Combat begins on high ground.</td>
+                </tr>
+                <tr>
+                    <td>Objective Denial</td>
+                    <td>6-8</td>
+                    <td>15-20 min</td>
+                    <td>Losing player switches to contesting opponent's objectives instead of scoring. Strategic denials to prevent 6-point victory. Combat intensifies. First reshuffle likely.</td>
+                </tr>
+                <tr>
+                    <td>Endgame</td>
+                    <td>9-12</td>
+                    <td>15-20 min</td>
+                    <td>One player reaches 6+ points for majority victory OR deck death spirals force combat resolution OR Cathedral domination (3 Rounds held). Desperate all-in attacks.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="manuscript-text">
+            <strong>Expected Winner:</strong> 55/45 Church favor (higher mobility, faster objective grabbing). However, skilled Dwarf players can win by securing Central Cathedral early and holding it as an impregnable fortress, forcing Church to contest high ground at disadvantage.
+        </p>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <h2>Setup Checklist</h2>
+
+        <p class="manuscript-text">Before starting, ensure you have prepared:</p>
+
+        <h3>Materials Required:</h3>
+        <ul class="manuscript-list">
+            <li><strong>Map:</strong> Print or draw 14×12 hex map with Reliquaries marked (use SVG map from this page)</li>
+            <li><strong>Church Deck:</strong> 28 cards shuffled, draw starting hand of 6</li>
+            <li><strong>Dwarven Deck:</strong> 35 cards shuffled, draw starting hand of 6</li>
+            <li><strong>Dice:</strong>
+                <ul>
+                    <li>2 Attack Dice (custom d6 with symbols, or regular 2d6)</li>
+                    <li>10+ Defense Dice (custom d6 with symbols, or regular d6)</li>
+                    <li>2d6 for Initiative rolls</li>
+                </ul>
+            </li>
+            <li><strong>Tokens:</strong> Heat tracking, SP tracking, Rune Counters, Component Damage markers, Facing indicators, <strong>Control point markers</strong></li>
+            <li><strong>Tracking Paper:</strong> Current HP, Control points per Round, Consecutive Cathedral control, Component Damage by location</li>
+            <li><strong>Quick Reference Sheet:</strong> Reliquary point values, victory conditions, terrain effects</li>
+        </ul>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="manuscript-quote">
+            "The Cathedral has stood for 437 years. Claim it, hold it, consecrate it in blood. Let the shrines bear witness to your victory."
+            <span class="quote-attribution">—Warden of the Reliquary</span>
+        </div>
+
+        <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
+
+        <div class="manuscript-footer">
+            <p><a href="scenarios.html">Scenario Overview</a> | <a href="index.html">Return to Codex Home</a> | <a href="../index.html">Main Site</a></p>
+        </div>
+    </div>
+</body>
+</html>

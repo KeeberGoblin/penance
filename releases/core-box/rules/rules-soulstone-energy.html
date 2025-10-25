@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulstone Energy Tracking - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#rules">RULES</a> /
+            Soulstone Energy Tracking
+        </div>
+
+        <h1>Soulstone Energy Tracking</h1>
+
+        <p style="font-style: italic; color: var(--dark-red); margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
+            Campaign Resource Management • Version 3.0
+        </p>
+
+        <div class="manuscript-quote">
+            "Your Casket runs on a trapped soul. That soul needs feeding. Run out of energy, and you're walking home."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Overview</h2>
+
+        <p class="manuscript-text">
+            Every Casket is powered by a <strong>Soulstone Core</strong> containing a bound soul. This soul provides bioelectric energy to drive hydraulics, servos, and weapons. Energy depletes during missions and must be restored through <strong>Soulstone refinement</strong>.
+        </p>
+
+        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>Important:</strong> The Soulstone Core soul is <strong>not the pilot</strong>. It's a separate trapped consciousness powering the machine. The living pilot operates the casket while the dead soul fuels it.
+            </p>
+        </div>
+
+        <h3>Quick Reference</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Max Energy:</strong> 100 (full Soulstone Core)</li>
+            <li><strong>Starting Energy:</strong> 80 (most caskets)</li>
+            <li><strong>Depletion Rate:</strong> -2 to -15 per mission</li>
+            <li><strong>Restoration:</strong> Refine Soulstone Shards between missions</li>
+            <li><strong>At 0 Energy:</strong> Casket inoperable (cannot deploy)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Energy Pool Tracking</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Energy Level</th>
+                    <th>Status</th>
+                    <th>Performance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>100/100</strong></td>
+                    <td>Full</td>
+                    <td>Optimal performance, no penalties</td>
+                </tr>
+                <tr>
+                    <td><strong>60-99/100</strong></td>
+                    <td>Healthy</td>
+                    <td>Normal operation</td>
+                </tr>
+                <tr>
+                    <td><strong>20-59/100</strong></td>
+                    <td>Depleted</td>
+                    <td>-1 to all Pilot checks, +1 Heat per turn</td>
+                </tr>
+                <tr>
+                    <td><strong>1-19/100</strong></td>
+                    <td>Critical</td>
+                    <td>-2 to all Pilot checks, +2 Heat per turn, risk of shutdown</td>
+                </tr>
+                <tr>
+                    <td><strong>0/100</strong></td>
+                    <td>Empty</td>
+                    <td><strong>Casket inoperable</strong> (cannot deploy until recharged)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>Tracking Energy:</strong> Use a d100 (percentile dice) or mark Energy on your character sheet. Adjust after each mission based on activity level.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Energy Depletion (During Missions)</h2>
+
+        <h3>Per-Mission Energy Costs</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Energy Cost</th>
+                    <th>When It Applies</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Standard Deployment</strong></td>
+                    <td>-2 Energy</td>
+                    <td>Normal mission (4-6 combats, moderate activity)</td>
+                </tr>
+                <tr>
+                    <td><strong>Heavy Combat</strong></td>
+                    <td>-5 Energy</td>
+                    <td>Extended fighting (8+ combats, boss battles)</td>
+                </tr>
+                <tr>
+                    <td><strong>Overheating</strong></td>
+                    <td>-3 Energy</td>
+                    <td>Each time Heat reaches maximum during mission</td>
+                </tr>
+                <tr>
+                    <td><strong>Critical Damage</strong></td>
+                    <td>-5 Energy</td>
+                    <td>When reduced to 10 HP or less during mission</td>
+                </tr>
+                <tr>
+                    <td><strong>Emergency Overcharge</strong></td>
+                    <td>-10 to -15 Energy</td>
+                    <td>Player-activated abilities (Soulstone Surge, etc.)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Example Mission Energy Calculation</h3>
+
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1rem; margin: 1rem 0; border: 1px solid var(--dark-red);">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>Mission Start:</strong> Casket has 80/100 Energy<br>
+                <strong>Activity:</strong> Heavy combat (-5), Overheated twice (-6), Critical damage once (-5)<br>
+                <strong>Total Depletion:</strong> -16 Energy<br>
+                <strong>Mission End:</strong> 64/100 Energy (Healthy, but declining)
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Energy Restoration (Between Missions)</h2>
+
+        <h3>Soulstone Refinement Process</h3>
+
+        <p class="manuscript-text">
+            To restore Energy, pilots must <strong>refine Soulstone Shards</strong> into their Casket's Core. This process crushes smaller crystals (containing soul fragments) and feeds them to the Core soul.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Shard Tier</th>
+                    <th>Energy Restored</th>
+                    <th>Taint Gained</th>
+                    <th>Time Required</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>T1 Shard</strong></td>
+                    <td>+5 Energy</td>
+                    <td>+1 Taint</td>
+                    <td>1 day</td>
+                </tr>
+                <tr>
+                    <td><strong>T2 Fragment</strong></td>
+                    <td>+15 Energy</td>
+                    <td>+2 Taint</td>
+                    <td>2 days</td>
+                </tr>
+                <tr>
+                    <td><strong>T3 Crystal</strong></td>
+                    <td>+40 Energy</td>
+                    <td>+5 Taint</td>
+                    <td>5 days</td>
+                </tr>
+                <tr>
+                    <td><strong>T4 Core (Replacement)</strong></td>
+                    <td>+100 Energy</td>
+                    <td>+10 Taint</td>
+                    <td>2 weeks (requires soul-binding ritual)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Refinement Examples</h3>
+
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1rem; margin: 1rem 0; border: 1px solid var(--dark-red);">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>Example 1: Light Restoration</strong><br>
+                Casket at 64/100 Energy. Refine 3x T1 Shards.<br>
+                <strong>Result:</strong> +15 Energy (79/100), +3 Taint, 3 days downtime
+            </p>
+        </div>
+
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1rem; margin: 1rem 0; border: 1px solid var(--dark-red);">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>Example 2: Heavy Restoration</strong><br>
+                Casket at 15/100 Energy (Critical). Refine 1x T3 Crystal + 5x T1 Shards.<br>
+                <strong>Result:</strong> +65 Energy (80/100), +10 Taint, 10 days downtime
+            </p>
+        </div>
+
+        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>Warning:</strong> Refinement always gains Taint (Void corruption). High Taint = instability, random events, casket going rogue. Manage Taint carefully!
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Soulstone Acquisition</h2>
+
+        <h3>Mission Rewards (Primary Source)</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mission Type</th>
+                    <th>T1 Shards</th>
+                    <th>T2 Fragments</th>
+                    <th>T3 Crystals</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Standard Combat</strong></td>
+                    <td>1-2</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td><strong>Hard Combat</strong></td>
+                    <td>3-5</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td><strong>Boss Battle</strong></td>
+                    <td>5-8</td>
+                    <td>2-3</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><strong>Failed Mission</strong></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td><strong>Anomalous Event</strong></td>
+                    <td>1d6</td>
+                    <td>1d3</td>
+                    <td>1d2-1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Settlement Trading (The Exchange)</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Purchase Price</th>
+                    <th>Sell Price</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>T1 Shard</strong></td>
+                    <td>20-30 Credits</td>
+                    <td>10-15 Credits</td>
+                    <td>Common (always available)</td>
+                </tr>
+                <tr>
+                    <td><strong>T2 Fragment</strong></td>
+                    <td>60-100 Credits</td>
+                    <td>30-50 Credits</td>
+                    <td>Limited (1d6 in stock)</td>
+                </tr>
+                <tr>
+                    <td><strong>T3 Crystal</strong></td>
+                    <td>200-400 Credits</td>
+                    <td>100-200 Credits</td>
+                    <td>Rare (1d3 in stock)</td>
+                </tr>
+                <tr>
+                    <td><strong>T4 Core</strong></td>
+                    <td>1,000+ Credits</td>
+                    <td>500+ Credits</td>
+                    <td>Special order (2 weeks lead time)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Emergency Field Recharge (Mid-Mission)</h2>
+
+        <p class="manuscript-text">
+            <strong>Once per mission</strong>, a pilot can perform an emergency recharge by manually crushing a Shard inside the casket.
+        </p>
+
+        <h3>Procedure</h3>
+
+        <ol class="manuscript-list">
+            <li>Requires <strong>1 full turn</strong> (no movement, no attacks, vulnerable)</li>
+            <li>Pilot must have at least <strong>1 Shard in inventory</strong></li>
+            <li>Pilot manually crushes Shard against Soulstone Core socket</li>
+            <li>Core absorbs essence immediately (screams audibly through radio)</li>
+        </ol>
+
+        <h3>Risk Table (Roll 1d6)</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll</th>
+                    <th>Result</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1-3</strong></td>
+                    <td>Success</td>
+                    <td>Restore Energy as normal, gain Taint as normal</td>
+                </tr>
+                <tr>
+                    <td><strong>4-5</strong></td>
+                    <td>Partial Overload</td>
+                    <td>Restore Energy, <strong>+2x Taint</strong> (double corruption)</td>
+                </tr>
+                <tr>
+                    <td><strong>6</strong></td>
+                    <td>Critical Overload</td>
+                    <td>Restore Energy, <strong>+3x Taint</strong>, <strong>immediate Thread Snap</strong> (random thread severs)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>Narrative:</strong> Crystal fragments pierce pilot's hands. Blood mixes with soul essence. Core soul screams so loudly other units hear it through closed caskets. Pilot's neural threads burn from Core overload.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Core Burnout (End of Lifespan)</h2>
+
+        <p class="manuscript-text">
+            Soulstone Cores do not last forever. After <strong>500 total Energy cycled</strong> (approximately 20-50 missions), the Core begins terminal degradation.
+        </p>
+
+        <h3>Burnout Warning Signs</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Total Energy Cycled</th>
+                    <th>Symptoms</th>
+                    <th>Effects</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>0-400</strong></td>
+                    <td>Healthy</td>
+                    <td>Normal operation</td>
+                </tr>
+                <tr>
+                    <td><strong>401-450</strong></td>
+                    <td>Aging</td>
+                    <td>Energy restoration -10% efficiency</td>
+                </tr>
+                <tr>
+                    <td><strong>451-480</strong></td>
+                    <td>Declining</td>
+                    <td>Energy restoration -20% efficiency, +1 Taint per refinement</td>
+                </tr>
+                <tr>
+                    <td><strong>481-495</strong></td>
+                    <td>Failing</td>
+                    <td>Energy restoration -30% efficiency, +2 Taint per refinement, visible cracks</td>
+                </tr>
+                <tr>
+                    <td><strong>496-500</strong></td>
+                    <td>Critical</td>
+                    <td>Core pulses erratically, imminent failure</td>
+                </tr>
+                <tr>
+                    <td><strong>500+</strong></td>
+                    <td><strong>Burnout</strong></td>
+                    <td><strong>Core shatters, casket loses all power, pilot must be extracted immediately</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                <strong>Replacement Cost:</strong> New T4 Core = 1,000-1,500 Credits (requires fresh soul-binding ritual). Salvage from burned Core = 5-10 T1 Shards (grim recycling).
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Campaign Integration</h2>
+
+        <h3>Energy Management Tips</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Track Energy on character sheet:</strong> Mark current/max (e.g., 64/100)</li>
+            <li><strong>Plan refinement during downtime:</strong> Budget Shards for long campaigns</li>
+            <li><strong>Monitor Taint accumulation:</strong> Balance Energy restoration vs. corruption risk</li>
+            <li><strong>Save T3 Crystals for emergencies:</strong> Big Energy boost when critically low</li>
+            <li><strong>Watch for burnout signs:</strong> Replace Core before it fails mid-mission</li>
+        </ul>
+
+        <h3>GM Guidelines</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Award Shards as loot:</strong> Use mission reward table (Standard = 1-2 T1, Boss = 5-8 T1 + 2-3 T2 + 1 T3)</li>
+            <li><strong>Make refinement scenes meaningful:</strong> Describe Core soul screaming, faces appearing in crystal</li>
+            <li><strong>Use Energy depletion as tension:</strong> Low Energy = harder missions, force tough choices</li>
+            <li><strong>Track total Energy cycled:</strong> Warn players when approaching 400+ (Core aging)</li>
+            <li><strong>Core burnout = campaign event:</strong> Make it dramatic (crystal shatters mid-battle, pilot must be rescued)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Cross-References</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>See Also</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Soulstone Lore</strong></td>
+                    <td><a href="lore-soulstone-system.html" target="_parent">Soulstone Power System</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Taint Corruption</strong></td>
+                    <td><a href="rules-taint-exploitation.html" target="_parent">Taint Exploitation</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Loot Tables</strong></td>
+                    <td><a href="campaign-loot-tables.html" target="_parent">Campaign Loot Tables</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Settlement Phase</strong></td>
+                    <td><a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+    </div>
+</body>
+</html>

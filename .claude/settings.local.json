@@ -69,7 +69,11 @@
       "Bash(fi)",
       "Bash(for:*)",
       "Bash(git reset:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(do echo \"Checking: $file\" grep -iE \"(Trench Crusade|GKR|KDM|lifesteal|Soulstone Exchange)\" \"$file\")",
+      "Bash(do basename \"$file\")",
+      "Bash(paste:*)"
     ],
     "deny": [],
     "ask": []

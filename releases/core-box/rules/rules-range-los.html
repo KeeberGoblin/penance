@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range & Line of Sight - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#rules">RULES</a> /
+            Range & LOS
+        </div>
+<h1>Range & Line of Sight Rules</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            Hex-Based Combat • Version 2.0 • 6-Hex-Side Facing System • Shield/Weapon Positioning
+        </p>
+
+        <div class="manuscript-quote">
+            "Distance is measured in hexes. Death is measured in mistakes. Know your range. Know your angles. Miss once, and you're scrap."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Hex Grid Basics</h2>
+
+        <p>Penance uses a hex grid for movement and combat.</p>
+
+        <h3>Hex Counting</h3>
+        <ul>
+            <li><strong>Range 0</strong>: The hex you're standing in</li>
+            <li><strong>Range 1</strong>: The 6 hexes directly adjacent to you</li>
+            <li><strong>Range 2</strong>: The 12 hexes one ring out</li>
+            <li><strong>Range 3+</strong>: Continue counting outward</li>
+        </ul>
+
+        <p><strong>Do NOT count the hex you're standing in.</strong></p>
+
+        <h3>Range Diagram</h3>
+        <pre style="background: var(--shadow-black); padding: 1.5rem; border-left: 4px solid var(--dark-red); color: var(--bone-white); overflow-x: auto;">
+        [ ][ ][ ][ ][ ]
+       [ ][3][3][3][ ]
+      [ ][3][2][2][3][ ]
+     [ ][3][2][1][2][3][ ]
+    [ ][3][2][1][X][1][2][3][ ]
+     [ ][3][2][1][2][3][ ]
+      [ ][3][2][2][3][ ]
+       [ ][3][3][3][ ]
+        [ ][ ][ ][ ][ ]
+
+X = Your Casket
+1 = Range 1 (adjacent, 6 hexes)
+2 = Range 2 (12 hexes)
+3 = Range 3 (18 hexes)
+        </pre>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Range Bands (For To-Hit Modifiers)</h2>
+
+        <p>Cards specify maximum range, but to-hit modifiers apply based on distance:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Range Band</th>
+                    <th>Distance</th>
+                    <th>To-Hit Modifier</th>
+                    <th>Weapon Examples</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Short</strong></td>
+                    <td>0-3 hexes</td>
+                    <td>+0 (no penalty)</td>
+                    <td>Melee, pistols, shotguns</td>
+                </tr>
+                <tr>
+                    <td><strong>Medium</strong></td>
+                    <td>4-6 hexes</td>
+                    <td>+1 to target number</td>
+                    <td>Rifles, bows, crossbows</td>
+                </tr>
+                <tr>
+                    <td><strong>Long</strong></td>
+                    <td>7-10 hexes</td>
+                    <td>+2 to target number</td>
+                    <td>Sniper rifles, long bows</td>
+                </tr>
+                <tr>
+                    <td><strong>Extreme</strong></td>
+                    <td>11+ hexes</td>
+                    <td>+3 to target number</td>
+                    <td>Artillery, siege weapons</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How It Works:</h3>
+        <ul>
+            <li><strong>Base To-Hit</strong>: 5+ (roll 2d6 Attack Dice)</li>
+            <li><strong>Apply range modifier</strong> to target number</li>
+            <li>Example: Medium range (5 hexes) = need <strong>6+</strong> instead of 5+</li>
+        </ul>
+
+        <h3>Card Range Examples:</h3>
+        <ul>
+            <li><strong>Faithful Thrust</strong>: "Range: Melee" (1 hex only, Short range modifier +0)</li>
+            <li><strong>Quick Shot</strong> (Pistol): "Range 3" (up to 3 hexes, Short range modifier +0)</li>
+            <li><strong>Rifle Shot</strong>: "Range 8" (up to 8 hexes, Long range modifier +2 if shooting 7-8 hexes)</li>
+            <li><strong>Sniper Shot</strong>: "Range 12" (up to 12 hexes, Extreme range modifier +3 if shooting 11-12 hexes)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Line of Sight (LOS)</h2>
+
+        <p>To attack or target an enemy, you must have Line of Sight.</p>
+
+        <h3>LOS Basics</h3>
+
+        <p><strong>You have LOS if:</strong></p>
+        <ul>
+            <li>You can draw a straight line from center of your hex to center of target hex</li>
+            <li>That line does NOT pass through LOS-blocking terrain</li>
+        </ul>
+
+        <p><strong>LOS is BLOCKED by:</strong></p>
+        <ul>
+            <li><strong>Walls</strong> (solid obstacles)</li>
+            <li><strong>Large terrain</strong> (buildings, cliffs)</li>
+            <li><strong>Dense forests</strong> (specifically marked as "blocks LOS")</li>
+        </ul>
+
+        <p><strong>LOS is NOT blocked by:</strong></p>
+        <ul>
+            <li><strong>Other Caskets</strong> (you can shoot past allies/enemies)</li>
+            <li><strong>Rubble</strong> (provides cover, doesn't block)</li>
+            <li><strong>Light terrain</strong> (water, ice, clear ground)</li>
+        </ul>
+
+        <h3>LOS Diagrams</h3>
+
+        <pre style="background: var(--shadow-black); padding: 1.5rem; border-left: 4px solid var(--dark-red); color: var(--bone-white); overflow-x: auto;">
+<strong>BLOCKED LOS (Wall in the way):</strong>
+    [ ][T][ ]
+    [ ][#][ ]   # = Wall
+    [ ][A][ ]   A = Attacker, T = Target
+
+    LOS blocked! Cannot attack.
+
+<strong>CLEAR LOS (Rubble provides cover, doesn't block):</strong>
+    [ ][T][ ]
+    [ ][~][ ]   ~ = Rubble
+    [ ][A][ ]
+
+    LOS clear! Can attack, but target has +1 Defense (cover).
+
+<strong>CLEAR LOS (Can shoot past other Caskets):</strong>
+    [ ][T][ ]
+    [ ][E][ ]   E = Enemy Casket
+    [ ][A][ ]
+
+    LOS clear! Other Caskets don't block.
+        </pre>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Cover System (For To-Hit Modifiers)</h2>
+
+        <p>Cover provides defensive bonuses without blocking LOS.</p>
+
+        <h3>Cover Rules</h3>
+
+        <p><strong>If target is:</strong></p>
+        <ul>
+            <li>In or adjacent to cover terrain (forests, rubble)</li>
+            <li>AND attacker's LOS passes through/near that terrain</li>
+            <li><strong>Attacker gets +1 to target number</strong> (harder to hit)</li>
+        </ul>
+
+        <h4>Cover Terrain Types:</h4>
+        <ul>
+            <li><strong>Light Cover</strong> (forest, rubble): +1 to target number</li>
+            <li><strong>Heavy Cover</strong> (fortress walls, dense forest): +2 to target number</li>
+            <li><strong>Other Caskets</strong>: +1 to target number if enemy Casket is between you and attacker</li>
+        </ul>
+
+        <p><strong>Cover does NOT stack:</strong></p>
+        <ul>
+            <li>Use highest cover modifier only (even if multiple cover sources)</li>
+            <li>Example: Target in forest (+1) AND behind fortress wall (+2) = <strong>+2 total</strong> (highest)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Facing & Firing Arcs (6-Hex-Side System)</h2>
+
+        <p>Caskets have a facing (which direction they're pointed) AND a shield-side/weapon-side.</p>
+
+        <h3>Hex Facing (6 Directional Sides)</h3>
+
+        <p>Each Casket occupies 1 hex and faces ONE of the 6 hex sides.</p>
+
+        <pre style="background: var(--shadow-black); padding: 1.5rem; border-left: 4px solid var(--dark-red); color: var(--bone-white); overflow-x: auto;">
+<strong>Hex Sides (6 possible directions):</strong>
+         1
+      6     2
+      5     3
+         4
+
+1 = Front (primary facing)
+2 = Front-Right
+3 = Rear-Right
+4 = Rear (directly behind)
+5 = Rear-Left
+6 = Front-Left
+
+<strong>6-Hex-Side Arc System:</strong>
+         [1]          1 = FRONT (0° - 60°)
+      [6] [X] [2]     2 = FRONT-RIGHT (60° - 120°)
+      [5]   [3]       3 = REAR-RIGHT (120° - 180°)
+         [4]          4 = REAR (180° - 240°)
+                      5 = REAR-LEFT (240° - 300°)
+X = Your Casket       6 = FRONT-LEFT (300° - 360°)
+        </pre>
+
+        <h3>Rotation:</h3>
+        <ul>
+            <li><strong>Free action</strong> (once per turn)</li>
+            <li>Rotate 1 hex-side clockwise or counter-clockwise</li>
+            <li>Can rotate multiple times by spending 1 SP per additional rotation</li>
+            <li>Example: Rotate 3 hex-sides = 1 free + 2 SP</li>
+        </ul>
+
+        <h3>Shield Side & Weapon Side</h3>
+
+        <p>When building your Casket, declare which side has your shield:</p>
+
+        <h4>Shield-Side Options:</h4>
+        <ul>
+            <li><strong>Left-Shield (default)</strong>: Shield on hex-sides 5, 6, 1 (left + front)</li>
+            <li><strong>Right-Shield</strong>: Shield on hex-sides 1, 2, 3 (right + front)</li>
+            <li><strong>No Shield</strong>: No shield bonuses (if using 2-handed weapon or dual weapons)</li>
+        </ul>
+
+        <pre style="background: var(--shadow-black); padding: 1.5rem; border-left: 4px solid var(--dark-red); color: var(--bone-white); overflow-x: auto;">
+<strong>Example - Left-Shield Casket:</strong>
+    [6-Shield][X][2-Weapon]     Shield protects Left + Front
+    [5-Shield]   [3-Weapon]     Weapons on Right side
+       [4-Rear]
+        </pre>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Facing Modifiers (Detailed 6-Hex System)</h2>
+
+        <p>Attacking from different hex-sides has specific effects:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Hex Side</th>
+                    <th>Arc Name</th>
+                    <th>To-Hit Mod</th>
+                    <th>Damage Bonus</th>
+                    <th>Defender Defense</th>
+                    <th>Shield Blocks?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong> (Front)</td>
+                    <td>Front</td>
+                    <td>+0</td>
+                    <td>+0</td>
+                    <td>Full Defense</td>
+                    <td>Yes (if shield)</td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong> (Front-Right)</td>
+                    <td>Weapon Side</td>
+                    <td>+0</td>
+                    <td>+1</td>
+                    <td>-1 Defense</td>
+                    <td>No (weapon exposed)</td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong> (Rear-Right)</td>
+                    <td>Flank (Weapon)</td>
+                    <td>-1 (easier)</td>
+                    <td>+2</td>
+                    <td>-2 Defense</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong> (Rear)</td>
+                    <td>Rear</td>
+                    <td>-2 (easier)</td>
+                    <td>+3</td>
+                    <td>-3 Defense</td>
+                    <td>No (blind spot)</td>
+                </tr>
+                <tr>
+                    <td><strong>5</strong> (Rear-Left)</td>
+                    <td>Flank (Shield)</td>
+                    <td>-1 (easier)</td>
+                    <td>+2</td>
+                    <td>-2 Defense</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>6</strong> (Front-Left)</td>
+                    <td>Shield Side</td>
+                    <td>+1 (harder)</td>
+                    <td>+0</td>
+                    <td>Full Defense +1</td>
+                    <td>Yes (shield covered)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>To-Hit Modifier Explanation:</h3>
+        <ul>
+            <li><strong>Easier to hit</strong> (flanks, rear): -1 or -2 to target number (need lower roll)
+                <ul>
+                    <li>Example: Base 5+, attacking rear (hex 4) = need <strong>3+</strong> instead</li>
+                </ul>
+            </li>
+            <li><strong>Harder to hit</strong> (shield-side): +1 to target number (need higher roll)
+                <ul>
+                    <li>Example: Base 5+, attacking shield-side (hex 6) = need <strong>6+</strong> instead</li>
+                </ul>
+            </li>
+            <li><strong>Front/weapon-side</strong>: +0 to target number (standard difficulty)</li>
+        </ul>
+
+        <h3>Tactical Considerations:</h3>
+
+        <h4>Shield Side Advantage:</h4>
+        <ul>
+            <li>Attacks from <strong>shield-side hexes (6, 1)</strong> can be blocked with shield</li>
+            <li><strong>Hex-side 6 (Front-Left with left-shield)</strong> grants +1 Defense bonus</li>
+            <li>Shield-side reactive cards (Deflect, Shield Wall) work on these hexes</li>
+        </ul>
+
+        <h4>Weapon Side Vulnerability:</h4>
+        <ul>
+            <li>Attacks from <strong>weapon-side hexes (2, 3)</strong> cannot be blocked by shields</li>
+            <li><strong>Hex-side 2 (Front-Right with left-shield)</strong> gives attacker +1 damage</li>
+            <li>You cannot use shield reactive cards against these attacks</li>
+        </ul>
+
+        <h4>Rear Arc (Hex-sides 3, 4, 5):</h4>
+        <ul>
+            <li>All rear attacks gain +2 or +3 damage</li>
+            <li>Cannot use reactive defense cards from rear attacks</li>
+            <li>Must rotate to defend properly</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Facing Diagrams (6-Hex System)</h2>
+
+        <pre style="background: var(--shadow-black); padding: 1.5rem; border-left: 4px solid var(--dark-red); color: var(--bone-white); overflow-x: auto;">
+<strong>DIRECT REAR ATTACK (Hex-side 4 - Most Vulnerable):</strong>
+       [ ]
+    [ ][T][  ]   T = Target (facing DOWN ↓)
+    [A][ ][  ]   A = Attacker (hex-side 4)
+       ↓
+    Attacker at hex-side 4 (rear)
+    +3 damage, target's Defense -3
+    Target CANNOT use reactive defense cards
+
+<strong>FLANK ATTACK - WEAPON SIDE (Hex-side 2 or 3):</strong>
+       [ ]
+    [ ][T←][A]   T = Target (left-shield, facing LEFT ←)
+       [ ]       A = Attacker (hex-side 2, weapon side)
+    Attacker at hex-side 2 (front-right, weapon side)
+    +1 damage, target's Defense -1
+    Target CANNOT block with shield
+
+<strong>SHIELD SIDE ATTACK (Hex-side 6 - Best Defense):</strong>
+       [ ]
+    [A][T→][ ]   T = Target (left-shield, facing RIGHT →)
+       [ ]       A = Attacker (hex-side 6, shield side)
+    Attacker at hex-side 6 (front-left, shield side)
+    +0 damage, target's Defense FULL +1
+    Target CAN use shield reactive cards
+
+<strong>FRONT ATTACK (Hex-side 1 - Expected):</strong>
+       [A]
+    [ ][T][ ]   T = Target (facing UP ↑)
+       [ ]      A = Attacker (hex-side 1)
+       ↑
+    Attacker at hex-side 1 (front)
+    +0 damage, target's Defense FULL
+    Target can defend normally
+        </pre>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Elevation & Height</h2>
+
+        <p>Some hexes are elevated (hills, platforms, buildings).</p>
+
+        <h3>Elevation Rules (For To-Hit & Damage)</h3>
+
+        <h4>Higher Ground Advantage:</h4>
+        <p>If you are <strong>1+ levels higher</strong> than target:</p>
+        <ul>
+            <li><strong>-1 to target number</strong> (easier to hit)</li>
+            <li><strong>+1 damage</strong> to attacks (if hit)</li>
+            <li>Ignore cover (shoot over it)</li>
+        </ul>
+
+        <h4>Shooting Uphill Penalty:</h4>
+        <p>If you are <strong>1+ levels lower</strong> than target:</p>
+        <ul>
+            <li><strong>+1 to target number</strong> (harder to hit)</li>
+            <li><strong>-1 damage</strong> to attacks (if hit)</li>
+        </ul>
+
+        <h4>Levels:</h4>
+        <ul>
+            <li>Level 0: Ground level (most of map)</li>
+            <li>Level 1: Hills, platforms (+1 elevation)</li>
+            <li>Level 2: Towers, rooftops (+2 elevation)</li>
+        </ul>
+
+        <h4>Climbing:</h4>
+        <ul>
+            <li>Moving UP 1 level: Costs +1 SP (2 SP total)</li>
+            <li>Moving DOWN 1 level: Normal cost (1 SP)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Quick Reference: Range/LOS/Facing Checklist</h2>
+
+        <p><strong>Before attacking, check:</strong></p>
+
+        <ol>
+            <li>✅ <strong>In range?</strong> (Count hexes from you to target)</li>
+            <li>✅ <strong>In firing arc?</strong> (Target in front 180° of your facing?)</li>
+            <li>✅ <strong>Have LOS?</strong> (No walls blocking straight line?)</li>
+            <li>✅ <strong>Calculate To-Hit Number:</strong>
+                <ul>
+                    <li>Base: 5+</li>
+                    <li>Range modifier: Short +0, Medium +1, Long +2, Extreme +3</li>
+                    <li>Attacker movement: 0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3</li>
+                    <li>Defender movement: 0 hexes +0, 1-3 +1, 4-6 +2, 7+ +3</li>
+                    <li>Hex-side facing: Front +0, Weapon +0, Flank -1, Rear -2, Shield +1</li>
+                    <li>Cover: Light +1, Heavy +2</li>
+                    <li>Elevation: Higher -1, Lower +1</li>
+                </ul>
+            </li>
+            <li>✅ <strong>Roll 2 Attack Dice</strong> (add values, compare to target number)</li>
+            <li>✅ <strong>If hit, apply damage modifiers:</strong>
+                <ul>
+                    <li>Strong Hit (7-8): +1 damage</li>
+                    <li>Critical Hit (9): +2 damage, bypass 1 Defense</li>
+                    <li>EXECUTION (10): Auto-destroy component, bypass all Defense</li>
+                    <li>Hex-side bonus: Weapon +1, Flank +2, Rear +3</li>
+                    <li>Elevation: Higher +1, Lower -1</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Common Situations</h2>
+
+        <p><strong>Q: Can I shoot through my ally?</strong><br>
+        A: <strong>Yes.</strong> Other Caskets (ally or enemy) do NOT block LOS.</p>
+
+        <p><strong>Q: Can I shoot an enemy I can't see?</strong><br>
+        A: <strong>No.</strong> You must have LOS. Walls/dense forest block attacks.</p>
+
+        <p><strong>Q: Does rubble block LOS?</strong><br>
+        A: <strong>No.</strong> Rubble provides +1 Defense (cover), but doesn't block LOS.</p>
+
+        <p><strong>Q: Do I need LOS to move?</strong><br>
+        A: <strong>Yes.</strong> You can't move into hexes you can't see (no blind movement through walls).</p>
+
+        <p><strong>Q: Can I attack behind me without rotating?</strong><br>
+        A: <strong>No.</strong> You can only attack targets in your front 180° arc. Rotate first (free action).</p>
+
+        <p><strong>Q: If I'm surrounded, can I be attacked from all sides?</strong><br>
+        A: <strong>Yes.</strong> Enemies attack from whatever facing they're in (front/side/rear). Rear attackers get +2 damage.</p>
+
+        <p><strong>Q: I have a shield on my left arm. Which hex-sides does it protect?</strong><br>
+        A: <strong>Left-Shield protects hex-sides 5, 6, and 1</strong> (rear-left, front-left, and front). Hex-sides 2, 3, 4 are vulnerable (weapon side + rear).</p>
+
+        <p><strong>Q: Can I block an attack from my weapon-side with my shield?</strong><br>
+        A: <strong>No.</strong> Shield reactive cards (Deflect, Shield Wall, etc.) only work if the attack comes from your shield-side hexes.</p>
+
+        <p><strong>Q: I'm being attacked from hex-side 4 (direct rear). Can I use Brace for Impact?</strong><br>
+        A: <strong>No.</strong> Rear attacks (hex-sides 3, 4, 5) cannot be defended with reactive cards. You must rotate to defend.</p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Terrain Types Summary</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Terrain</th>
+                    <th>LOS</th>
+                    <th>Movement</th>
+                    <th>Cover</th>
+                    <th>Special</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Clear</strong></td>
+                    <td>Pass through</td>
+                    <td>1 SP/hex</td>
+                    <td>No</td>
+                    <td>Baseline</td>
+                </tr>
+                <tr>
+                    <td><strong>Forest</strong></td>
+                    <td>Pass through</td>
+                    <td>2 SP/hex (difficult)</td>
+                    <td>+1 Def</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td><strong>Rubble</strong></td>
+                    <td>Pass through</td>
+                    <td>2 SP/hex (difficult)</td>
+                    <td>+1 Def</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td><strong>Wall</strong></td>
+                    <td>BLOCKED</td>
+                    <td>Impassable</td>
+                    <td>N/A</td>
+                    <td>Blocks LOS</td>
+                </tr>
+                <tr>
+                    <td><strong>Water</strong></td>
+                    <td>Pass through</td>
+                    <td>1 SP/hex</td>
+                    <td>No</td>
+                    <td>Remove 2 Heat/turn</td>
+                </tr>
+                <tr>
+                    <td><strong>Elevated</strong></td>
+                    <td>Pass through</td>
+                    <td>2 SP/hex (climb up)</td>
+                    <td>No</td>
+                    <td>+1 dmg if higher</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>See Also</h2>
+
+        <p class="manuscript-text">
+            These rules work in conjunction with other core systems:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Combat System</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    To-hit calculations, Attack Dice, Defense Dice, and damage resolution
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-combat.html" target="_parent" style="color: var(--blood-red);">→ Read Combat Rules</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Dice Pool Advantage</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Flanking, rear attacks, and elevation grant Advantage (roll 3, take 2 highest)
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-dice-pool.html" target="_parent" style="color: var(--blood-red);">→ Read Dice Pool Rules</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Component Damage</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Flanking and rear attacks make it easier to destroy enemy components
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-component-damage.html" target="_parent" style="color: var(--blood-red);">→ Read Component Rules</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Turn Structure</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Movement, facing changes, and action economy within each turn
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-turn-structure.html" target="_parent" style="color: var(--blood-red);">→ Read Turn Structure</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="manuscript-quote">
+            "Distance is measured in hexes. Death is measured in mistakes. Know your range. Know your angles. Miss once, and you're scrap."
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="rules-combat.html" target="_parent">Previous: Combat System</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

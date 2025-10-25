@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Dice Pool Advantage System - Penance Codex</title>
+ <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+ <div class="content">
+ <div class="breadcrumb">
+ <a href="content-home.html" target="_parent">CODEX</a> /
+ <a href="#v3-optional">v3.0 OPTIONAL</a> /
+ Dice Pool Advantage System
+ </div>
+
+ <div style="background: rgba(139, 0, 0, 0.2); border: 3px solid var(--dark-red); padding: 1rem; text-align: center; margin-bottom: 2rem; font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: var(--aged-gold); letter-spacing: 0.15em;">
+ v3.0 OPTIONAL MECHANIC
+ </div>
+
+ <h1>Dice Pool Advantage System</h1>
+
+ <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
+ Version 3.0 • Replaces Static Modifiers with Dynamic Dice Pools
+ </p>
+
+ <div class="manuscript-quote">
+ "Three dice. Two kept. One discarded. The difference between glory and a shallow grave."
+ </div>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Overview</h2>
+
+ <p>
+ <span style="font-size: 2.5rem; font-weight: bold; color: var(--dark-red); float: left; line-height: 0.85; margin-right: 0.05em; margin-top: 0.1em; font-family: 'Cinzel Decorative', serif;">S</span>ystem replaces static to-hit modifiers with a dice pool mechanic. Instead of adding +1 or +2 to your target number, you roll extra dice and take the highest or lowest results.
+ </p>
+
+ <p>
+ This creates more dramatic swings in combat. The chance of rolling double criticals increases, making every attack feel more exciting. Rolling more dice is viscerally fun, and skilled attackers have higher critical hit chances.
+ </p>
+
+ <h3>Why This Is Better</h3>
+ <ul>
+ <li>More dramatic swings (chance of double criticals increases)</li>
+ <li>Feels more exciting (rolling more dice is fun!)</li>
+ <li>Creates more variance at extremes (skilled attackers have higher crit chances)</li>
+ <li>Compatible with existing Attack Dice system</li>
+ </ul>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Core Mechanic</h2>
+
+ <h3>Base Roll: 2 Attack Dice</h3>
+
+ <p>
+ Standard attack (no modifiers): Roll 2 Attack Dice, add both values together, and compare to target number (usually 5+).
+ </p>
+
+ <h3>Advantage: Roll 3, Take Highest 2</h3>
+
+ <p>When you have tactical ADVANTAGE:</p>
+ <ul>
+ <li>Roll 3 Attack Dice</li>
+ <li>Discard the LOWEST die</li>
+ <li>Add the 2 highest values together</li>
+ </ul>
+
+ <h4>Advantage Sources</h4>
+ <ul>
+ <li>Flanking attack (hex-sides 3, 5)</li>
+ <li>Rear attack (hex-side 4)</li>
+ <li>Higher ground (1+ elevation)</li>
+ <li>Target is Stunned/Immobilized</li>
+ <li>Aiming (spent previous turn stationary, aiming at target)</li>
+ <li>Target has 5+ Momentum Tokens</li>
+ </ul>
+
+ <div style="background: rgba(43, 31, 23, 0.6); border-left: 6px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+ <p style="margin: 0;"><strong>Example:</strong></p>
+ <p style="margin: 0.5rem 0;">You're attacking from higher ground (Advantage)</p>
+ <p style="margin: 0.5rem 0; font-family: 'Courier New', monospace; color: var(--aged-gold);">
+ Roll 3 Attack Dice: (3) + (5) + (0)<br>
+ Discard lowest (): Keep (3) + (5) = 8 total<br>
+ Result: Strong Hit! (+1 damage)
+ </p>
+ </div>
+
+ <h3>Disadvantage: Roll 3, Take Lowest 2</h3>
+
+ <p>When you have tactical DISADVANTAGE:</p>
+ <ul>
+ <li>Roll 3 Attack Dice</li>
+ <li>Discard the HIGHEST die</li>
+ <li>Add the 2 lowest values together</li>
+ </ul>
+
+ <h4>Disadvantage Sources</h4>
+ <ul>
+ <li>Heavy cover (fortress walls, dense forest)</li>
+ <li>Obscured target (smoke, darkness)</li>
+ <li>Long range (7-10 hexes)</li>
+ <li>Extreme range (11+ hexes)</li>
+ <li>Attacker moved 6+ hexes this turn</li>
+ <li>Attacker has 5+ Heat (Danger Zone)</li>
+ <li>Attacker's Primary Weapon destroyed</li>
+ </ul>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Critical Variants</h2>
+
+ <h3>Critical Advantage: Roll 4, Take Highest 2</h3>
+
+ <p>When you have MULTIPLE advantages (2+ sources):</p>
+ <ul>
+ <li>Roll 4 Attack Dice</li>
+ <li>Discard the 2 LOWEST dice</li>
+ <li>Add the 2 highest values together</li>
+ </ul>
+
+ <p><strong>Why This Matters:</strong> Dramatically increases chance of double (EXECUTION: auto-destroy component). Rewards perfect tactical positioning and creates "alpha strike" moments.</p>
+
+ <h4>Critical Advantage Examples</h4>
+ <ul>
+ <li>Rear attack (Advantage) + Higher ground (Advantage) = Critical Advantage</li>
+ <li>Flanking (Advantage) + Target Stunned (Advantage) = Critical Advantage</li>
+ <li>Aiming (Advantage) + Target has 5+ Momentum (Advantage) = Critical Advantage</li>
+ </ul>
+
+ <div style="background: rgba(43, 31, 23, 0.6); border-left: 6px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+ <p style="margin: 0;"><strong>Example:</strong></p>
+ <p style="margin: 0.5rem 0;">Attacking rear (Advantage) from higher ground (Advantage) = Critical Advantage</p>
+ <p style="margin: 0.5rem 0; font-family: 'Courier New', monospace; color: var(--aged-gold);">
+ Roll 4 Attack Dice: (3) + (5) + (5) + (4)<br>
+ Discard 2 lowest (, ): Keep (5) + (5) = 10 total<br>
+ Result: EXECUTION! Auto-destroy component, bypass all Defense!
+ </p>
+ </div>
+
+ <h3>Critical Disadvantage: Roll 4, Take Lowest 2</h3>
+
+ <p>When you have MULTIPLE disadvantages (2+ sources):</p>
+ <ul>
+ <li>Roll 4 Attack Dice</li>
+ <li>Discard the 2 HIGHEST dice</li>
+ <li>Add the 2 lowest values together</li>
+ </ul>
+
+ <p><strong>Why This Hurts:</strong> Very high chance of missing or jamming. Almost impossible to get Strong Hits or Crits. Forces you to reposition or wait for better opportunity.</p>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Advantage/Disadvantage Interactions</h2>
+
+ <h3>If You Have BOTH Advantage and Disadvantage</h3>
+
+ <p><strong>They CANCEL OUT (1-for-1):</strong></p>
+ <ul>
+ <li>1 Advantage + 1 Disadvantage = Straight Roll (2 dice, no change)</li>
+ <li>2 Advantages + 1 Disadvantage = Advantage (net +1, roll 3 take highest 2)</li>
+ <li>1 Advantage + 2 Disadvantages = Disadvantage (net -1, roll 3 take lowest 2)</li>
+ </ul>
+
+ <div style="background: rgba(43, 31, 23, 0.6); border-left: 6px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+ <p style="margin: 0;"><strong>Example:</strong></p>
+ <p style="margin: 0.5rem 0;">
+ Rear attack (Advantage) from higher ground (Advantage) but target in heavy cover (Disadvantage)<br>
+ Net: +1 Advantage (2 - 1 = 1)<br>
+ Roll 3 Attack Dice, take highest 2
+ </p>
+ </div>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Probability Analysis</h2>
+
+ <h3>Chance of Strong Hit or Better (7+)</h3>
+
+ <table>
+ <thead>
+ <tr>
+ <th>Dice Pool</th>
+ <th>Success Rate</th>
+ <th>Improvement</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Straight Roll (2d6)</td>
+ <td>~42%</td>
+ <td>Baseline</td>
+ </tr>
+ <tr>
+ <td>Advantage (3d6, take 2 highest)</td>
+ <td>~59%</td>
+ <td>+17%</td>
+ </tr>
+ <tr>
+ <td>Disadvantage (3d6, take 2 lowest)</td>
+ <td>~26%</td>
+ <td>-16%</td>
+ </tr>
+ </tbody>
+ </table>
+
+ <h3>Chance of EXECUTION (Double , value 10)</h3>
+
+ <table>
+ <thead>
+ <tr>
+ <th>Dice Pool</th>
+ <th>EXECUTION Chance</th>
+ <th>Improvement</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Straight Roll</td>
+ <td>~2.8%</td>
+ <td>Baseline</td>
+ </tr>
+ <tr>
+ <td>Advantage</td>
+ <td>~5.1%</td>
+ <td>Nearly DOUBLE</td>
+ </tr>
+ <tr>
+ <td>Critical Advantage (4d6)</td>
+ <td>~8.5%</td>
+ <td>TRIPLE the base chance!</td>
+ </tr>
+ </tbody>
+ </table>
+
+ <p style="text-align: center; font-style: italic; color: var(--aged-gold);" class="no-drop-cap">
+ This creates dramatic "god roll" moments when perfectly positioned.
+ </p>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Quick Reference Table</h2>
+
+ <table>
+ <thead>
+ <tr>
+ <th>Situation</th>
+ <th>Dice Roll</th>
+ <th>Effect</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Standard</strong></td>
+ <td>2d6, add both</td>
+ <td>Baseline</td>
+ </tr>
+ <tr>
+ <td><strong>Advantage</strong></td>
+ <td>3d6, discard lowest</td>
+ <td>+17% hit chance, +2.3% crit</td>
+ </tr>
+ <tr>
+ <td><strong>Critical Advantage</strong></td>
+ <td>4d6, discard 2 lowest</td>
+ <td>+8.5% EXECUTION chance</td>
+ </tr>
+ <tr>
+ <td><strong>Disadvantage</strong></td>
+ <td>3d6, discard highest</td>
+ <td>-16% hit chance, harder crits</td>
+ </tr>
+ <tr>
+ <td><strong>Critical Disadvantage</strong></td>
+ <td>4d6, discard 2 highest</td>
+ <td>Very likely to miss/jam</td>
+ </tr>
+ </tbody>
+ </table>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Conversion Chart</h2>
+
+ <p>Replacing old static modifiers with dice pool system:</p>
+
+ <table>
+ <thead>
+ <tr>
+ <th>Old Modifier</th>
+ <th>New Dice Pool</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>+0 (standard)</td>
+ <td>2d6, add both</td>
+ </tr>
+ <tr>
+ <td>+1 (easier to hit)</td>
+ <td>Advantage (3d6, take 2 highest)</td>
+ </tr>
+ <tr>
+ <td>+2 (much easier)</td>
+ <td>Critical Advantage (4d6, take 2 highest)</td>
+ </tr>
+ <tr>
+ <td>-1 (harder to hit)</td>
+ <td>Disadvantage (3d6, take 2 lowest)</td>
+ </tr>
+ <tr>
+ <td>-2 (much harder)</td>
+ <td>Critical Disadvantage (4d6, take 2 lowest)</td>
+ </tr>
+ </tbody>
+ </table>
+
+ <h4>Example Conversions</h4>
+ <ul>
+ <li><strong>Flanking</strong> (old: -1 to target number) → Advantage</li>
+ <li><strong>Heavy cover</strong> (old: +2 to target number) → Disadvantage</li>
+ <li><strong>Rear + Higher ground</strong> (old: -3 to target number) → Critical Advantage</li>
+ </ul>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Integration with Other v3.0 Systems</h2>
+
+ <div style="background: rgba(75, 14, 14, 0.3); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0;">
+ <h3 style="margin-top: 0; color: var(--aged-gold);">Cross-References</h3>
+ <ul style="margin-bottom: 0;">
+ <li><strong><a href="rules-taint-exploitation.html" target="_parent">Taint Exploitation</a>:</strong> "Exposed Weakness" exploit grants Advantage</li>
+ <li><strong><a href="campaign-pilot-grit.html" target="_parent">Pilot Grit</a>:</strong> Grit affects resistance rolls, not Attack Dice</li>
+ <li><strong><a href="rules-combat.html" target="_parent">Combat System</a>:</strong> Dice Pool replaces to-hit modifiers in Step 2</li>
+ </ul>
+ </div>
+
+ <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+ <h2>Designer's Notes</h2>
+
+ <h3>Why Dice Pool Over Static Modifiers?</h3>
+
+ <ol>
+ <li><strong>Feels Better:</strong> Rolling more dice is viscerally fun</li>
+ <li><strong>More Dramatic:</strong> Higher variance at extremes (perfect positioning = god rolls)</li>
+ <li><strong>Intuitive:</strong> "I have advantage" is easier to understand than "need 7+ instead of 5+"</li>
+ <li><strong>Compatible:</strong> Works with existing Attack Dice symbols ( etc.)</li>
+ <li><strong>Rewards Skill:</strong> Perfect setups (Critical Advantage) = triple EXECUTION chance</li>
+ </ol>
+
+ <div style="background: var(--shadow-black); border: 3px double var(--dark-red); padding: 2rem; margin: 3rem 0; font-style: italic;">
+ <p style="text-align: center; margin: 0; color: var(--aged-gold);" class="no-drop-cap">
+ "Roll three. Keep two. Discard one. The mathematics of mercy and murder."
+ </p>
+ </div>
+
+ <div style="text-align: center; margin: 3rem 0;">
+     <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+ </div>
+
+ <h2>See Also</h2>
+
+ <p class="manuscript-text">
+     Dice Pool Advantage works with these systems:
+ </p>
+
+ <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+     <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+         <h3 style="margin-top: 0; color: var(--aged-gold);">Range & Line of Sight</h3>
+         <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+             Flanking, rear attacks, and elevation grant Advantage
+         </p>
+         <p style="margin: 0;">
+             <a href="rules-range-los.html" target="_parent" style="color: var(--blood-red);">→ Read Range Rules</a>
+         </p>
+     </div>
+
+     <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+         <h3 style="margin-top: 0; color: var(--aged-gold);">Combat System</h3>
+         <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+             How Advantage affects Attack Dice rolls and to-hit calculations
+         </p>
+         <p style="margin: 0;">
+             <a href="rules-combat.html" target="_parent" style="color: var(--blood-red);">→ Read Combat Rules</a>
+         </p>
+     </div>
+
+     <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+         <h3 style="margin-top: 0; color: var(--aged-gold);">Taint Exploitation</h3>
+         <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+             Spend 1 Taint to gain Advantage on an attack
+         </p>
+         <p style="margin: 0;">
+             <a href="rules-taint-exploitation.html" target="_parent" style="color: var(--blood-red);">→ Read Taint Rules</a>
+         </p>
+     </div>
+
+     <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+         <h3 style="margin-top: 0; color: var(--aged-gold);">v3.0 Optional Rules</h3>
+         <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+             Full reference for Dice Pool Advantage system and other optional mechanics
+         </p>
+         <p style="margin: 0;">
+             <a href="rules-v3-optional.html" target="_parent" style="color: var(--blood-red);">→ Read Optional Rules</a>
+         </p>
+     </div>
+ </div>
+
+ <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+ <p><a href="rules-combat.html" target="_parent">Core Combat System</a> | <a href="rules-taint-exploitation.html" target="_parent">Taint Exploitation</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+ </div>
+ </div>
+</body>
+</html>

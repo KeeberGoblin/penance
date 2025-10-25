@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penance Card Anatomy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #1a1410, #0a0604);
+            color: #d4c5b0;
+            font-family: 'Crimson Pro', serif;
+            padding: 2rem;
+            margin: 0;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-family: 'Cinzel Decorative', serif;
+            color: #b8956a;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        .description {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .legend {
+            margin-top: 3rem;
+            background: rgba(26, 20, 16, 0.6);
+            border: 2px solid #6b1a1a;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .legend h2 {
+            font-family: 'Cinzel Decorative', serif;
+            color: #b8956a;
+            margin-bottom: 1rem;
+        }
+        .legend-item {
+            margin: 1rem 0;
+            padding-left: 1rem;
+        }
+        .legend-item strong {
+            color: #b8956a;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #4a0e0e, #2d0a0a);
+            border: 2px solid #b8956a;
+            color: #d4c5b0;
+            text-decoration: none;
+            font-family: 'Cinzel Decorative', serif;
+            transition: all 0.3s;
+        }
+        .back-link:hover {
+            background: linear-gradient(135deg, #6b1a1a, #4a0e0e);
+            box-shadow: 0 0 15px rgba(184, 149, 106, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="breadcrumb" style="position: fixed; top: 10px; left: 10px; background: rgba(26,20,16,0.9); padding: 0.5rem 1rem; border-radius: 4px; z-index: 1000;">
+    <a href="content-home.html" target="_parent" style="color: #d4c5b0; text-decoration: none;">CODEX</a> /
+    <a href="#rules" style="color: #d4c5b0; text-decoration: none;">RULES</a> /
+    <span style="color: #b8956a;">Card Anatomy</span>
+</div>
+
+<div class="container">
+        <h1>PENANCE: Card Anatomy</h1>
+        <p class="description">Comprehensive breakdown of Penance card design elements</p>
+
+        <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!-- Gradient for card background -->
+                <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4a0e0e;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#2d0a0a;stop-opacity:1" />
+                </linearGradient>
+
+                <!-- Gradient for faction header -->
+                <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#6b1a1a;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#4a0e0e;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#6b1a1a;stop-opacity:1" />
+                </linearGradient>
+
+                <!-- Shadow filter -->
+                <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.7"/>
+                </filter>
+            </defs>
+
+            <!-- THE CARD ITSELF -->
+            <g id="card">
+                <!-- Card border (outer) -->
+                <rect x="50" y="50" width="300" height="420" fill="none" stroke="#b8956a" stroke-width="4" rx="8"/>
+
+                <!-- Card background -->
+                <rect x="54" y="54" width="292" height="412" fill="url(#cardGradient)" rx="6"/>
+
+                <!-- Inner decorative border -->
+                <rect x="62" y="62" width="276" height="396" fill="none" stroke="#b8956a" stroke-width="1" opacity="0.4" rx="4"/>
+
+                <!-- HEADER SECTION -->
+                <rect x="62" y="62" width="276" height="50" fill="url(#headerGradient)" rx="4"/>
+
+                <!-- Card Name -->
+                <text x="200" y="92" font-family="Cinzel Decorative, serif" font-size="20" font-weight="700"
+                      fill="#d4c5b0" text-anchor="middle" filter="url(#shadow)">FAITHFUL THRUST</text>
+
+                <!-- COST ICON (top left) -->
+                <circle cx="80" cy="87" r="18" fill="#2d0a0a" stroke="#b8956a" stroke-width="2"/>
+                <text x="80" y="95" font-family="Cinzel Decorative, serif" font-size="22" font-weight="700"
+                      fill="#b8956a" text-anchor="middle">2</text>
+
+                <!-- TYPE BADGE (top right) -->
+                <rect x="280" y="72" width="50" height="30" fill="#2d0a0a" stroke="#b8956a" stroke-width="1.5" rx="3"/>
+                <text x="305" y="91" font-family="Crimson Pro, serif" font-size="10" font-weight="600"
+                      fill="#b8956a" text-anchor="middle">ATTACK</text>
+
+                <!-- DIVIDER LINE -->
+                <line x1="70" y1="118" x2="330" y2="118" stroke="#6b1a1a" stroke-width="2"/>
+
+                <!-- RANGE/STATS SECTION -->
+                <g id="stats-section">
+                    <!-- Range icon -->
+                    <rect x="75" y="128" width="100" height="30" fill="rgba(107, 26, 26, 0.3)" rx="4"/>
+                    <text x="82" y="148" font-family="Crimson Pro, serif" font-size="11" font-weight="600"
+                          fill="#b8956a">RANGE:</text>
+                    <text x="140" y="148" font-family="Crimson Pro, serif" font-size="11" font-weight="400"
+                          fill="#d4c5b0">Melee</text>
+
+                    <!-- Damage icon -->
+                    <rect x="185" y="128" width="70" height="30" fill="rgba(107, 26, 26, 0.3)" rx="4"/>
+                    <text x="192" y="148" font-family="Crimson Pro, serif" font-size="11" font-weight="600"
+                          fill="#b8956a">DMG:</text>
+                    <text x="235" y="148" font-family="Crimson Pro, serif" font-size="11" font-weight="400"
+                          fill="#d4c5b0">6</text>
+
+                    <!-- Heat icon -->
+                    <rect x="265" y="128" width="60" height="30" fill="rgba(107, 26, 26, 0.3)" rx="4"/>
+                    <text x="272" y="148" font-family="Crimson Pro, serif" font-size="11" font-weight="600"
+                          fill="#b8956a">HEAT:</text>
+                    <text x="312" y="148" font-family="Crimson Pro, serif" font-size="11" font-weight="400"
+                          fill="#d4c5b0">+1</text>
+                </g>
+
+                <!-- EFFECT TEXT SECTION -->
+                <rect x="70" y="168" width="260" height="150" fill="rgba(10, 6, 4, 0.5)" rx="4"/>
+                <text x="200" y="188" font-family="Crimson Pro, serif" font-size="13" font-weight="400"
+                      fill="#d4c5b0" text-anchor="middle">Deal 6 damage to target</text>
+                <text x="200" y="206" font-family="Crimson Pro, serif" font-size="13" font-weight="400"
+                      fill="#d4c5b0" text-anchor="middle">within melee range.</text>
+                <text x="200" y="234" font-family="Crimson Pro, serif" font-size="13" font-weight="400"
+                      fill="#d4c5b0" text-anchor="middle">If you discarded cards from</text>
+                <text x="200" y="252" font-family="Crimson Pro, serif" font-size="13" font-weight="400"
+                      fill="#d4c5b0" text-anchor="middle">self-harm this turn, this</text>
+                <text x="200" y="270" font-family="Crimson Pro, serif" font-size="13" font-weight="400"
+                      fill="#d4c5b0" text-anchor="middle">attack ignores all Defense.</text>
+
+                <!-- KEYWORDS/TAGS -->
+                <g id="keywords">
+                    <rect x="75" y="330" width="50" height="18" fill="#6b1a1a" rx="9"/>
+                    <text x="100" y="343" font-family="Crimson Pro, serif" font-size="9" font-weight="600"
+                          fill="#d4c5b0" text-anchor="middle">MELEE</text>
+
+                    <rect x="135" y="330" width="70" height="18" fill="#6b1a1a" rx="9"/>
+                    <text x="170" y="343" font-family="Crimson Pro, serif" font-size="9" font-weight="600"
+                          fill="#d4c5b0" text-anchor="middle">SELF-HARM</text>
+
+                    <rect x="215" y="330" width="50" height="18" fill="#6b1a1a" rx="9"/>
+                    <text x="240" y="343" font-family="Crimson Pro, serif" font-size="9" font-weight="600"
+                          fill="#d4c5b0" text-anchor="middle">PIERCE</text>
+                </g>
+
+                <!-- FLAVOR TEXT SECTION -->
+                <rect x="70" y="358" width="260" height="60" fill="rgba(107, 26, 26, 0.2)" rx="4"/>
+                <text x="200" y="378" font-family="Crimson Pro, serif" font-size="11" font-style="italic"
+                      fill="#b8956a" text-anchor="middle" opacity="0.9">"Pain sanctifies the blade."</text>
+                <text x="200" y="394" font-family="Crimson Pro, serif" font-size="11" font-style="italic"
+                      fill="#b8956a" text-anchor="middle" opacity="0.9">"Through suffering, we strike"</text>
+                <text x="200" y="410" font-family="Crimson Pro, serif" font-size="11" font-style="italic"
+                      fill="#b8956a" text-anchor="middle" opacity="0.9">"with divine wrath."</text>
+
+                <!-- FOOTER (Faction & Card Number) -->
+                <line x1="70" y1="428" x2="330" y2="428" stroke="#6b1a1a" stroke-width="2"/>
+
+                <text x="85" y="448" font-family="Cinzel Decorative, serif" font-size="10" font-weight="700"
+                      fill="#b8956a">CHURCH OF ABSOLUTION</text>
+
+                <text x="310" y="448" font-family="Crimson Pro, serif" font-size="10" font-weight="400"
+                      fill="#d4c5b0" text-anchor="end">3/21</text>
+            </g>
+
+            <!-- ANNOTATION ARROWS AND LABELS -->
+            <g id="annotations">
+                <!-- SP Cost annotation -->
+                <line x1="98" y1="87" x2="400" y2="87" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="400" cy="87" r="3" fill="#b8956a"/>
+                <text x="410" y="72" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a">1. SP COST</text>
+                <text x="410" y="92" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">How much Strategy Points</text>
+                <text x="410" y="108" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">this card costs to play</text>
+
+                <!-- Card Name annotation -->
+                <line x1="200" y1="62" x2="520" y2="30" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="520" cy="30" r="3" fill="#b8956a"/>
+                <text x="530" y="22" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a">2. CARD NAME</text>
+                <text x="530" y="42" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">Unique identifier for the card</text>
+
+                <!-- Type Badge annotation -->
+                <line x1="330" y1="87" x2="660" y2="130" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="660" cy="130" r="3" fill="#b8956a"/>
+                <text x="670" y="122" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a">3. CARD TYPE</text>
+                <text x="670" y="142" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">Attack / Defense / Movement /</text>
+                <text x="670" y="158" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">Utility / Gambit / Reactive</text>
+
+                <!-- Stats Section annotation -->
+                <line x1="70" y1="143" x2="30" y2="143" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="30" cy="143" r="3" fill="#b8956a"/>
+                <text x="20" y="128" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a" text-anchor="end">4. STATS BAR</text>
+                <text x="20" y="148" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0" text-anchor="end">Range, Damage,</text>
+                <text x="20" y="164" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0" text-anchor="end">Heat generation</text>
+
+                <!-- Effect Text annotation -->
+                <line x1="330" y1="218" x2="680" y2="218" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="680" cy="218" r="3" fill="#b8956a"/>
+                <text x="690" y="210" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a">5. EFFECT TEXT</text>
+                <text x="690" y="230" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">What the card does when</text>
+                <text x="690" y="246" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">played. Abilities, conditions,</text>
+                <text x="690" y="262" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">and mechanical interactions</text>
+
+                <!-- Keywords annotation -->
+                <line x1="170" y1="348" x2="30" y2="380" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="30" cy="380" r="3" fill="#b8956a"/>
+                <text x="20" y="365" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a" text-anchor="end">6. KEYWORDS</text>
+                <text x="20" y="385" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0" text-anchor="end">Searchable tags for</text>
+                <text x="20" y="401" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0" text-anchor="end">deck building & synergies</text>
+
+                <!-- Flavor Text annotation -->
+                <line x1="330" y1="388" x2="700" y2="420" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="700" cy="420" r="3" fill="#b8956a"/>
+                <text x="710" y="412" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a">7. FLAVOR TEXT</text>
+                <text x="710" y="432" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">Lore, atmosphere, world-building.</text>
+                <text x="710" y="448" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">No mechanical effect.</text>
+
+                <!-- Footer annotation -->
+                <line x1="200" y1="458" x2="500" y2="520" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="500" cy="520" r="3" fill="#b8956a"/>
+                <text x="510" y="512" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a">8. FOOTER</text>
+                <text x="510" y="532" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">Faction name & card number</text>
+                <text x="510" y="548" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0">in faction set (3 of 21)</text>
+
+                <!-- Border annotation -->
+                <line x1="50" y1="235" x2="20" y2="235" stroke="#b8956a" stroke-width="2" stroke-dasharray="5,5"/>
+                <circle cx="20" cy="235" r="3" fill="#b8956a"/>
+                <text x="10" y="220" font-family="Crimson Pro, serif" font-size="16" font-weight="700" fill="#b8956a" text-anchor="end">9. BORDER</text>
+                <text x="10" y="240" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0" text-anchor="end">Double border:</text>
+                <text x="10" y="256" font-family="Crimson Pro, serif" font-size="13" fill="#d4c5b0" text-anchor="end">Gold = standard</text>
+            </g>
+
+            <!-- TITLE -->
+            <text x="700" y="650" font-family="Cinzel Decorative, serif" font-size="28" font-weight="700"
+                  fill="#b8956a" text-anchor="middle">CARD ZONES BREAKDOWN</text>
+
+            <!-- ZONE VISUALIZATION -->
+            <g id="zones">
+                <!-- Header Zone -->
+                <rect x="450" y="680" width="200" height="40" fill="url(#headerGradient)" stroke="#b8956a" stroke-width="2"/>
+                <text x="550" y="704" font-family="Crimson Pro, serif" font-size="14" font-weight="700"
+                      fill="#d4c5b0" text-anchor="middle">HEADER ZONE</text>
+                <text x="670" y="700" font-family="Crimson Pro, serif" font-size="12" fill="#d4c5b0">Name, Cost, Type</text>
+
+                <!-- Stats Zone -->
+                <rect x="450" y="730" width="200" height="30" fill="rgba(107, 26, 26, 0.3)" stroke="#b8956a" stroke-width="2"/>
+                <text x="550" y="750" font-family="Crimson Pro, serif" font-size="14" font-weight="700"
+                      fill="#d4c5b0" text-anchor="middle">STATS ZONE</text>
+                <text x="670" y="750" font-family="Crimson Pro, serif" font-size="12" fill="#d4c5b0">Range, Damage, Heat</text>
+
+                <!-- Effect Zone -->
+                <rect x="450" y="770" width="200" height="80" fill="rgba(10, 6, 4, 0.5)" stroke="#b8956a" stroke-width="2"/>
+                <text x="550" y="814" font-family="Crimson Pro, serif" font-size="14" font-weight="700"
+                      fill="#d4c5b0" text-anchor="middle">EFFECT ZONE</text>
+                <text x="670" y="810" font-family="Crimson Pro, serif" font-size="12" fill="#d4c5b0">Mechanics & Rules Text</text>
+
+                <!-- Flavor Zone -->
+                <rect x="450" y="860" width="200" height="40" fill="rgba(107, 26, 26, 0.2)" stroke="#b8956a" stroke-width="2"/>
+                <text x="550" y="884" font-family="Crimson Pro, serif" font-size="14" font-weight="700"
+                      fill="#b8956a" text-anchor="middle" font-style="italic">FLAVOR ZONE</text>
+                <text x="670" y="880" font-family="Crimson Pro, serif" font-size="12" fill="#d4c5b0">Lore & Atmosphere</text>
+            </g>
+
+            <!-- DESIGN NOTES -->
+            <g id="design-notes">
+                <text x="1050" y="680" font-family="Cinzel Decorative, serif" font-size="20" font-weight="700" fill="#b8956a">DESIGN PRINCIPLES</text>
+
+                <text x="1050" y="710" font-family="Crimson Pro, serif" font-size="13" font-weight="700" fill="#b8956a">• Readability First</text>
+                <text x="1060" y="728" font-family="Crimson Pro, serif" font-size="11" fill="#d4c5b0">All info visible at arm's length</text>
+
+                <text x="1050" y="755" font-family="Crimson Pro, serif" font-size="13" font-weight="700" fill="#b8956a">• Gothic Aesthetic</text>
+                <text x="1060" y="773" font-family="Crimson Pro, serif" font-size="11" fill="#d4c5b0">Dark gradients, blood-red accents</text>
+
+                <text x="1050" y="800" font-family="Crimson Pro, serif" font-size="13" font-weight="700" fill="#b8956a">• Faction Identity</text>
+                <text x="1060" y="818" font-family="Crimson Pro, serif" font-size="11" fill="#d4c5b0">Header color = faction theme</text>
+
+                <text x="1050" y="845" font-family="Crimson Pro, serif" font-size="13" font-weight="700" fill="#b8956a">• Keywords = Synergy</text>
+                <text x="1060" y="863" font-family="Crimson Pro, serif" font-size="11" fill="#d4c5b0">Tags enable deck-building choices</text>
+            </g>
+        </svg>
+
+        <div class="legend">
+            <h2>Card Component Details</h2>
+
+            <div class="legend-item">
+                <strong>1. SP Cost:</strong> Strategy Points required to play this card. Ranges from 0-5. Free actions (0 SP) are powerful but limited.
+            </div>
+
+            <div class="legend-item">
+                <strong>2. Card Name:</strong> Unique identifier. Often thematic (e.g., "Faithful Thrust" for Church faction, emphasizing religious devotion).
+            </div>
+
+            <div class="legend-item">
+                <strong>3. Card Type:</strong> Primary category—Attack, Defense, Movement, Utility, Gambit (risky high-reward), or Reactive (interrupt).
+            </div>
+
+            <div class="legend-item">
+                <strong>4. Stats Bar:</strong> Quick-reference for Range (Melee/Ranged 1-6), Damage output, and Heat generation (+0 to +3).
+            </div>
+
+            <div class="legend-item">
+                <strong>5. Effect Text:</strong> Complete mechanical description. Uses keywords like "discard," "ignore Defense," "self-harm" for consistency.
+            </div>
+
+            <div class="legend-item">
+                <strong>6. Keywords:</strong> Searchable tags for deck building. Examples: MELEE, SELF-HARM, PIERCE, BLEED, REACTIVE.
+            </div>
+
+            <div class="legend-item">
+                <strong>7. Flavor Text:</strong> Italicized lore. Sets tone without affecting gameplay. Church cards emphasize suffering/redemption.
+            </div>
+
+            <div class="legend-item">
+                <strong>8. Footer:</strong> Faction name + card number in set (3/21 = 3rd card of 21 in this faction).
+            </div>
+
+            <div class="legend-item">
+                <strong>9. Border:</strong> Gold standard border. Potential variants: Silver (rare), Red (legendary), or faction-specific colors.
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.html" class="back-link">← Return to Codex</a>
+        </div>
+    </div>
+</body>
+</html>
