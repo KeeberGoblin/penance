@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM Reference - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .gm-section {
+            background: linear-gradient(135deg, rgba(75, 14, 14, 0.4), rgba(139, 0, 0, 0.3));
+            border: 3px solid var(--dark-red);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gm-section h3 {
+            color: var(--aged-gold);
+            margin-top: 0;
+            border-bottom: 2px solid var(--dark-red);
+            padding-bottom: 0.5rem;
+        }
+
+        .stat-block {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--blood-red);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .stat-block-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--aged-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-line {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 1rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+        }
+
+        .stat-label {
+            font-weight: bold;
+            color: var(--aged-gold);
+        }
+
+        .budget-table {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .budget-table th {
+            background: var(--dark-red);
+            color: var(--bone-white);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .budget-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .budget-table tr:nth-child(even) {
+            background: rgba(139, 0, 0, 0.1);
+        }
+
+        .tip-box {
+            background: rgba(218, 165, 32, 0.2);
+            border-left: 4px solid var(--aged-gold);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .tip-box::before {
+            content: '💡 GM TIP: ';
+            font-weight: bold;
+            color: var(--aged-gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#rules">RULES</a> /
+            GM Reference
+        </div>
+
+        <h1>GM COMBAT REFERENCE</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            Game Master Quick Reference • Encounter Building • Enemy Stats • Rulings Guide
+        </p>
+
+        <div class="manuscript-quote">
+            "The GM is the Engine's voice. You set the difficulty. You adjudicate the chaos. You are the iron law."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <!-- Encounter Building -->
+        <div class="gm-section">
+            <h3>📊 ENCOUNTER BUILDING (HP BUDGET SYSTEM)</h3>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Difficulty</th>
+                        <th>HP Budget</th>
+                        <th>Recommended Enemies</th>
+                        <th>Player Death Risk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Easy</strong></td>
+                        <td>30-40 HP</td>
+                        <td>3-4 weak enemies (10 HP each)</td>
+                        <td>Low (learning encounter)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium</strong></td>
+                        <td>50-70 HP</td>
+                        <td>2 elites (25 HP) + 2 mooks (10 HP)</td>
+                        <td>Moderate (balanced)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hard</strong></td>
+                        <td>80-100 HP</td>
+                        <td>1 boss (40 HP) + 3 elites (20 HP)</td>
+                        <td>High (expect casualties)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deadly</strong></td>
+                        <td>120+ HP</td>
+                        <td>2 bosses (50 HP) + 4 elites</td>
+                        <td>Very High (TPK possible)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                Multiply HP budget by 1.5× if players are veterans (10+ games). Reduce by 0.75× for first-timers.
+            </div>
+        </div>
+
+        <!-- Quick Enemy Stat Blocks -->
+        <div class="gm-section">
+            <h3>⚔️ QUICK ENEMY STAT BLOCKS</h3>
+
+            <div class="stat-block">
+                <div class="stat-block-title">MOOK (Weak Infantry)</div>
+                <div class="stat-line"><div class="stat-label">HP:</div><div>10 HP (deck size 10)</div></div>
+                <div class="stat-line"><div class="stat-label">SP:</div><div>4 SP (Medium mobility)</div></div>
+                <div class="stat-line"><div class="stat-label">Attacks:</div><div>1d6 damage, +4 to-hit</div></div>
+                <div class="stat-line"><div class="stat-label">AI:</div><div>Move toward closest PC, attack if in range</div></div>
+                <div class="stat-line"><div class="stat-label">Tactics:</div><div>Swarm tactics, cannon fodder</div></div>
+            </div>
+
+            <div class="stat-block">
+                <div class="stat-block-title">ELITE (Veteran Soldier)</div>
+                <div class="stat-line"><div class="stat-label">HP:</div><div>25 HP (deck size 25)</div></div>
+                <div class="stat-line"><div class="stat-label">SP:</div><div>5 SP (Good mobility)</div></div>
+                <div class="stat-line"><div class="stat-label">Attacks:</div><div>2d6 damage, +5 to-hit</div></div>
+                <div class="stat-line"><div class="stat-label">AI:</div><div>Prioritize wounded PCs, use cover</div></div>
+                <div class="stat-line"><div class="stat-label">Tactics:</div><div>Flanking, focus fire</div></div>
+            </div>
+
+            <div class="stat-block">
+                <div class="stat-block-title">BOSS (Commander/Champion)</div>
+                <div class="stat-line"><div class="stat-label">HP:</div><div>40-50 HP (deck size 40-50)</div></div>
+                <div class="stat-line"><div class="stat-label">SP:</div><div>6 SP (High mobility)</div></div>
+                <div class="stat-line"><div class="stat-label">Attacks:</div><div>3d6 damage, +6 to-hit, special abilities</div></div>
+                <div class="stat-line"><div class="stat-label">AI:</div><div>Tactical positioning, buff allies, focus threats</div></div>
+                <div class="stat-line"><div class="stat-label">Tactics:</div><div>2 actions/turn, command aura (+1 to ally attacks)</div></div>
+            </div>
+
+            <div class="tip-box">
+                For custom enemies: HP = difficulty × 10. SP = 3-6 depending on role. Damage = HP ÷ 5 (roughly).
+            </div>
+        </div>
+
+        <!-- AI Behavior Quick Reference -->
+        <div class="gm-section">
+            <h3>🤖 AI BEHAVIOR QUICK REFERENCE</h3>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>AI Type</th>
+                        <th>Decision Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Aggressive</strong></td>
+                        <td>1. Attack if in range → 2. Move toward nearest PC → 3. Use abilities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Defensive</strong></td>
+                        <td>1. Stay in cover → 2. Attack if flanked → 3. Retreat if HP < 50%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flanker</strong></td>
+                        <td>1. Move to rear arc → 2. Attack from behind → 3. Disengage if spotted</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Support</strong></td>
+                        <td>1. Buff allies → 2. Stay at range → 3. Heal if ally HP < 25%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Berserker</strong></td>
+                        <td>1. Charge closest PC → 2. Melee attack → 3. Ignore HP (fight to death)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                If AI behavior is ambiguous, roll 1d6: 1-3 = Priority 1, 4-5 = Priority 2, 6 = Priority 3.
+            </div>
+        </div>
+
+        <!-- Common Rulings -->
+        <div class="gm-section">
+            <h3>⚖️ COMMON RULINGS & EDGE CASES</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1rem;">
+                    <h4 style="color: var(--aged-gold); margin-top: 0;">Simultaneous Destruction</h4>
+                    <p style="font-size: 0.9rem;">
+                        <strong>Q:</strong> Both Caskets reduced to 0 HP at same time?<br>
+                        <strong>A:</strong> Active player (whose turn it is) wins ties. If same turn, initiative order decides.
+                    </p>
+                </div>
+
+                <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1rem;">
+                    <h4 style="color: var(--aged-gold); margin-top: 0;">Cover Through Allies</h4>
+                    <p style="font-size: 0.9rem;">
+                        <strong>Q:</strong> Does ally provide cover?<br>
+                        <strong>A:</strong> YES. Allies block LOS and provide partial cover (+1 to-hit). You can't shoot through them.
+                    </p>
+                </div>
+
+                <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1rem;">
+                    <h4 style="color: var(--aged-gold); margin-top: 0;">Targeting Destroyed Component</h4>
+                    <p style="font-size: 0.9rem;">
+                        <strong>Q:</strong> Can I attack destroyed component?<br>
+                        <strong>A:</strong> NO. Must target intact component. Overflow damage applies to adjacent components.
+                    </p>
+                </div>
+
+                <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1rem;">
+                    <h4 style="color: var(--aged-gold); margin-top: 0;">Reactive Cards on Own Turn</h4>
+                    <p style="font-size: 0.9rem;">
+                        <strong>Q:</strong> Can I use reactive ([...] Initiative) on my own turn?<br>
+                        <strong>A:</strong> NO. Reactive cards ONLY usable on opponent's turn as interrupts.
+                    </p>
+                </div>
+
+                <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1rem;">
+                    <h4 style="color: var(--aged-gold); margin-top: 0;">SCRAP As Damage Absorption</h4>
+                    <p style="font-size: 0.9rem;">
+                        <strong>Q:</strong> Can I discard SCRAP instead of useful cards?<br>
+                        <strong>A:</strong> YES. You choose which cards to discard for damage. Smart players dump SCRAP first.
+                    </p>
+                </div>
+
+                <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1rem;">
+                    <h4 style="color: var(--aged-gold); margin-top: 0;">Multiple Reshuffles Per Turn</h4>
+                    <p style="font-size: 0.9rem;">
+                        <strong>Q:</strong> Can I reshuffle multiple times in one turn?<br>
+                        <strong>A:</strong> YES. Each reshuffle adds 1 DAMAGE card. Late-game death spirals are real.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Difficulty Scaling -->
+        <div class="gm-section">
+            <h3>📈 DIFFICULTY SCALING MODIFIERS</h3>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>Effect</th>
+                        <th>When to Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>+10 HP Budget</strong></td>
+                        <td>Increase total enemy HP pool</td>
+                        <td>Players are steamrolling encounters</td>
+                    </tr>
+                    <tr>
+                        <td><strong>+1 Elite Enemy</strong></td>
+                        <td>Add one 25 HP elite to encounter</td>
+                        <td>Players need tactical challenge</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Boss Gets 2 Actions</strong></td>
+                        <td>Boss acts twice per round</td>
+                        <td>Solo boss too easy to focus fire</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reinforcements Wave 2</strong></td>
+                        <td>Add 20 HP of enemies on round 3</td>
+                        <td>Battle ending too fast</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Environmental Hazards</strong></td>
+                        <td>Lava (1 dmg/turn), poison gas, etc.</td>
+                        <td>Force movement and positioning</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                If players win with >60% HP remaining: increase difficulty next battle. If <20% HP remaining: reduce difficulty.
+            </div>
+        </div>
+
+        <!-- Improvised Ruling Guidelines -->
+        <div class="gm-section">
+            <h3>🎲 IMPROVISED RULING GUIDELINES</h3>
+
+            <p style="color: var(--bone-white); margin-bottom: 1rem;">
+                When rules are unclear or edge cases arise, use this framework:
+            </p>
+
+            <ol style="color: var(--bone-white);">
+                <li style="margin-bottom: 1rem;">
+                    <strong style="color: var(--aged-gold);">Check Core Rules First:</strong> Does the answer exist in Turn Structure, Combat, or Component Damage rules?
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong style="color: var(--aged-gold);">Apply "Rule of Cool":</strong> If a player's idea is creative and thematic, allow it (once). Don't let it break balance.
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong style="color: var(--aged-gold);">Default to Player Advantage:</strong> When truly ambiguous, rule in favor of the players (they're fighting the world).
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong style="color: var(--aged-gold);">Ask the Table:</strong> If unsure, poll players for consensus. Democratic rulings build trust.
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong style="color: var(--aged-gold);">Record the Ruling:</strong> Write it down. Use same ruling for consistency next time.
+                </li>
+            </ol>
+
+            <div class="tip-box">
+                When in doubt: "Make a roll. High = good for players, low = bad. Let the dice decide."
+            </div>
+        </div>
+
+        <div class="manuscript-quote">
+            "The rules are iron. Your judgment is steel. Together, you forge the story."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2 style="color: var(--dark-red);">See Also</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Core Bestiary</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Complete enemy stat blocks (26 enemies)
+                </p>
+                <p style="margin: 0;">
+                    <a href="enemies-bestiary.html" target="_parent" style="color: var(--blood-red);">→ Read Bestiary</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Mission Generation</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Procedural mission creation system
+                </p>
+                <p style="margin: 0;">
+                    <a href="campaign-mission-generation.html" target="_parent" style="color: var(--blood-red);">→ Read Mission Gen</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Player Reference Card</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    One-page player quick reference
+                </p>
+                <p style="margin: 0;">
+                    <a href="player-aid-reference-card.html" target="_parent" style="color: var(--blood-red);">→ View Player Aid</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Combat Flowchart</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Visual guide for attack resolution
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-combat-flowchart.html" target="_parent" style="color: var(--blood-red);">→ View Flowchart</a>
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Mistakes - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .mistake-card {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(75, 14, 14, 0.4));
+            border-left: 8px solid var(--blood-red);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        .mistake-number {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: var(--blood-red);
+            color: var(--bone-white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            float: left;
+        }
+
+        .mistake-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--blood-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .mistake-content {
+            margin-left: 61px;
+        }
+
+        .wrong {
+            background: rgba(139, 0, 0, 0.4);
+            border-left: 4px solid var(--blood-red);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .wrong::before {
+            content: '❌ WRONG: ';
+            font-weight: bold;
+            color: var(--blood-red);
+        }
+
+        .right {
+            background: rgba(0, 100, 0, 0.2);
+            border-left: 4px solid #4CAF50;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .right::before {
+            content: '✅ CORRECT: ';
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .why {
+            font-style: italic;
+            color: var(--aged-gold);
+            margin-top: 0.75rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--aged-gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#rules">RULES</a> /
+            Common Mistakes
+        </div>
+
+        <h1>TOP 10 RULES MISTAKES</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            Avoid These Errors • Learn From Common Confusion • Master The Rules
+        </p>
+
+        <div class="manuscript-quote">
+            "The first mistake kills you. The second guarantees it. Learn the rules. Die less often."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <!-- Mistake 1 -->
+        <div class="mistake-card">
+            <div class="mistake-number">1</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Forgetting Heat Strain Roll</div>
+                <div class="wrong">Skipping Strain roll when Heat is 5+</div>
+                <div class="right">ALWAYS roll Strain at Refresh Phase if Heat ≥ 5 (1d6 + Heat, if 10+: Meltdown)</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> Heat management is a core tension mechanic. Missing Strain rolls removes risk from high-Heat playstyles.
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 2 -->
+        <div class="mistake-card">
+            <div class="mistake-number">2</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Drawing Before Spending All SP</div>
+                <div class="wrong">Drawing cards during or before Action Phase</div>
+                <div class="right">Draw Phase comes AFTER Action Phase. You draw based on cards played THAT turn.</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> Turn order matters. Drawing early breaks the action economy and gives unfair card advantage.
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 3 -->
+        <div class="mistake-card">
+            <div class="mistake-number">3</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Moving Through Enemies</div>
+                <div class="wrong">Moving through hex occupied by enemy Casket</div>
+                <div class="right">Enemies BLOCK movement. You must go AROUND them or push through with special abilities.</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> Positioning and zoning are core tactics. Free movement through enemies negates tactical positioning.
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 4 -->
+        <div class="mistake-card">
+            <div class="mistake-number">4</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Rotation Costs SP</div>
+                <div class="wrong">Paying SP to rotate facing</div>
+                <div class="right">Rotation is FREE (once per turn, any direction, any time during Action Phase)</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> Free rotation allows tactical repositioning without burning your action economy. Use it!
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 5 -->
+        <div class="mistake-card">
+            <div class="mistake-number">5</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Defense Dice Reduce Damage</div>
+                <div class="wrong">Treating Defense Dice blocks as damage reduction (e.g., 5 damage - 2 blocks = 3 damage dealt)</div>
+                <div class="right">Defense Dice CANCEL hits completely. Each [SHIELD]/[ABSORB] blocks 1 damage.</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> This is correct! Blocks = damage reduction. If you're subtracting, you're doing it right.
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 6 -->
+        <div class="mistake-card">
+            <div class="mistake-number">6</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Damage Discards From Hand</div>
+                <div class="wrong">Discarding cards from HAND when taking damage</div>
+                <div class="right">Damage discards from DECK (or discard pile if deck empty). Hand stays the same size.</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> Deck = HP. Hand = tactical options. Keeping them separate maintains strategic depth.
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 7 -->
+        <div class="mistake-card">
+            <div class="mistake-number">7</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Forgetting Component Destruction Effects</div>
+                <div class="wrong">Destroying component but not applying permanent penalties (e.g., Head destroyed but still drawing 6 cards)</div>
+                <div class="right">Component destruction is PERMANENT: Head (-1 Draw), Arms (-2 dmg), Legs (-2 Move), Chassis (-1 SP)</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> Death spiral is core design. Component loss should hurt more and more.
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 8 -->
+        <div class="mistake-card">
+            <div class="mistake-number">8</div>
+            <div class="mistake-content">
+                <div class="mistake-title">SCRAP Cards Count As Equipment</div>
+                <div class="wrong">Trying to play SCRAP cards as if they had abilities</div>
+                <div class="right">SCRAP cards are BLANK. They do nothing when played (dead draws). Salvage 3 SCRAP → Draw 2 cards.</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> SCRAP is intentionally bad. It's the price of component destruction. Clear the SCRAP or suffer.
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 9 -->
+        <div class="mistake-card">
+            <div class="mistake-number">9</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Reshuffling Without Adding DAMAGE Card</div>
+                <div class="wrong">Reshuffling discard pile into deck without consequence</div>
+                <div class="right">Every reshuffle adds 1 DAMAGE card to deck permanently (death spiral mechanic)</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> Each reshuffle makes your deck worse. Late game becomes harder as DAMAGE cards accumulate.
+                </div>
+            </div>
+        </div>
+
+        <!-- Mistake 10 -->
+        <div class="mistake-card">
+            <div class="mistake-number">10</div>
+            <div class="mistake-content">
+                <div class="mistake-title">Not Declaring Target Component</div>
+                <div class="wrong">Rolling attack dice before declaring which component you're targeting</div>
+                <div class="right">ALWAYS declare target component BEFORE rolling. Component choice affects tactics (targeting Head vs Legs, etc.)</div>
+                <div class="why">
+                    <strong>Why this matters:</strong> Declaring targets first prevents retroactive optimization. Commit to your strategy.
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>QUICK REMINDERS</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2rem 0;">
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(139, 0, 0, 0.3);">
+                    <strong>Turn Order:</strong> Refresh → Action → Draw → End (in that order, always)
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(139, 0, 0, 0.3);">
+                    <strong>Deck Empty:</strong> Reshuffle discard + add 1 DAMAGE card
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(139, 0, 0, 0.3);">
+                    <strong>Component HP:</strong> Head 8, Arms 12, Legs 10, Chassis 6
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(139, 0, 0, 0.3);">
+                    <strong>Rotation:</strong> FREE action (once per turn)
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(139, 0, 0, 0.3);">
+                    <strong>Heat Strain:</strong> Roll at 5+ Heat (1d6 + Heat, if 10+ = Meltdown)
+                </li>
+                <li style="padding: 0.5rem 0;">
+                    <strong>Draw Formula:</strong> (Cards played ÷ 2), min 2, max 5
+                </li>
+            </ul>
+        </div>
+
+        <div class="manuscript-quote">
+            "Ten mistakes. Ten deaths. Learn them all, or die learning."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2 style="color: var(--dark-red);">See Also</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Player Reference Card</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    One-page quick reference for all core rules
+                </p>
+                <p style="margin: 0;">
+                    <a href="player-aid-reference-card.html" target="_parent" style="color: var(--blood-red);">→ View Reference Card</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Combat Flowchart</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Visual guide for attack resolution
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-combat-flowchart.html" target="_parent" style="color: var(--blood-red);">→ View Flowchart</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Turn Structure</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Complete rules for 4-phase turn system
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-turn-structure.html" target="_parent" style="color: var(--blood-red);">→ Read Turn Rules</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Quick Reference (Full)</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Complete condensed rules reference
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-quick-ref.html" target="_parent" style="color: var(--blood-red);">→ Read Quick Ref</a>
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

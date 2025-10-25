@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Flowchart - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .flowchart {
+            max-width: 900px;
+            margin: 2rem auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .flow-step {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(75, 14, 14, 0.4));
+            border: 3px solid var(--dark-red);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .flow-step::after {
+            content: '↓';
+            display: block;
+            text-align: center;
+            font-size: 2rem;
+            color: var(--blood-red);
+            margin-top: 1rem;
+        }
+
+        .flow-step:last-child::after {
+            content: '';
+        }
+
+        .flow-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--dark-red);
+            color: var(--bone-white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            float: left;
+        }
+
+        .flow-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--aged-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-content {
+            margin-left: 56px;
+            color: var(--bone-white);
+        }
+
+        .flow-branch {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            margin-left: 56px;
+        }
+
+        .branch-option {
+            background: rgba(139, 0, 0, 0.2);
+            border-left: 4px solid var(--blood-red);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .branch-title {
+            font-weight: bold;
+            color: var(--aged-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-ref-box {
+            background: var(--shadow-black);
+            border: 3px solid var(--dark-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .quick-ref-box h3 {
+            color: var(--aged-gold);
+            margin-top: 0;
+            border-bottom: 2px solid var(--dark-red);
+            padding-bottom: 0.5rem;
+        }
+
+        .modifier-table {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .modifier-table td {
+            padding: 0.5rem;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .modifier-table td:first-child {
+            color: var(--aged-gold);
+            font-weight: bold;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .flowchart {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#rules">RULES</a> /
+            Combat Flowchart
+        </div>
+
+        <h1>COMBAT RESOLUTION FLOWCHART</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            Single-Page Visual Guide • Printable Reference Sheet • Eliminate Rule Lookups
+        </p>
+
+        <div class="manuscript-quote">
+            "Declare. Calculate. Roll. Block. Discard. This is how blood is paid."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <div class="flowchart">
+            <!-- Step 1: Declare Attack -->
+            <div class="flow-step">
+                <div class="flow-number">1</div>
+                <div class="flow-title">DECLARE ATTACK</div>
+                <div class="flow-content">
+                    <p><strong>Play attack card from hand</strong></p>
+                    <ul>
+                        <li>Pay SP cost (shown on card)</li>
+                        <li>Choose target Casket</li>
+                        <li>Declare target component (Head, Arms, Legs, Chassis)</li>
+                        <li>Check range and line of sight</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 2: Calculate To-Hit Number -->
+            <div class="flow-step">
+                <div class="flow-number">2</div>
+                <div class="flow-title">CALCULATE TO-HIT NUMBER</div>
+                <div class="flow-content">
+                    <p><strong>Base: 5+ (roll 2d6 Attack Dice)</strong></p>
+                    <table class="modifier-table">
+                        <tr>
+                            <td>Cover (partial)</td>
+                            <td>+1 to-hit needed</td>
+                        </tr>
+                        <tr>
+                            <td>Cover (full)</td>
+                            <td>+2 to-hit needed</td>
+                        </tr>
+                        <tr>
+                            <td>Flanking (rear arc)</td>
+                            <td>-1 to-hit needed</td>
+                        </tr>
+                        <tr>
+                            <td>Long range</td>
+                            <td>+1 to-hit needed</td>
+                        </tr>
+                        <tr>
+                            <td>Point blank</td>
+                            <td>-1 to-hit needed</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Step 3: Roll Attack Dice -->
+            <div class="flow-step">
+                <div class="flow-number">3</div>
+                <div class="flow-title">ROLL ATTACK DICE</div>
+                <div class="flow-content">
+                    <p><strong>Roll 2d6 Attack Dice</strong> (or 3d6 if Advantage, take 2 highest)</p>
+                    <p style="margin-top: 1rem;">Add up symbols:</p>
+                    <ul>
+                        <li><strong>[HIT]</strong> = +1 to result</li>
+                        <li><strong>[CRITICAL]</strong> = +2 to result</li>
+                        <li><strong>[MISS]</strong> = +0 to result</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 4: Check Result -->
+            <div class="flow-step">
+                <div class="flow-number">4</div>
+                <div class="flow-title">CHECK ATTACK RESULT</div>
+                <div class="flow-content">
+                    <p><strong>Compare total to To-Hit Number</strong></p>
+                </div>
+                <div class="flow-branch">
+                    <div class="branch-option">
+                        <div class="branch-title">MISS (0-4)</div>
+                        <p style="font-size: 0.9rem;">No effect. Attack ends. Discard attack card.</p>
+                    </div>
+                    <div class="branch-option">
+                        <div class="branch-title">HIT (5-6)</div>
+                        <p style="font-size: 0.9rem;">Deal card damage. Defender rolls Defense Dice.</p>
+                    </div>
+                    <div class="branch-option">
+                        <div class="branch-title">STRONG HIT (7-9)</div>
+                        <p style="font-size: 0.9rem;">Deal card damage +1. Defender rolls Defense Dice.</p>
+                    </div>
+                    <div class="branch-option">
+                        <div class="branch-title">EXECUTION (10+)</div>
+                        <p style="font-size: 0.9rem;">Target component AUTO-DESTROYED. No Defense Roll.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Defender Rolls Defense Dice -->
+            <div class="flow-step">
+                <div class="flow-number">5</div>
+                <div class="flow-title">DEFENDER ROLLS DEFENSE DICE</div>
+                <div class="flow-content">
+                    <p><strong>Roll X Defense Dice</strong> (X = final damage amount)</p>
+                    <p style="margin-top: 1rem;">Count blocks:</p>
+                    <ul>
+                        <li><strong>[SHIELD]</strong> = Block 1 damage</li>
+                        <li><strong>[ABSORB]</strong> = Block 1 damage</li>
+                        <li><strong>[VULNERABLE]</strong> = No block</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Special symbols:</strong></p>
+                    <ul>
+                        <li><strong>[CRITICAL]</strong> = Attacker deals +1 damage</li>
+                        <li><strong>[PIERCE]</strong> = Ignore 1 block</li>
+                        <li><strong>[HEAT]</strong> = Attacker gains +1 Heat</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 6: Apply Final Damage -->
+            <div class="flow-step">
+                <div class="flow-number">6</div>
+                <div class="flow-title">APPLY FINAL DAMAGE</div>
+                <div class="flow-content">
+                    <p><strong>Final Damage = Original Damage - Blocks</strong></p>
+                    <p style="margin-top: 1rem;">Defender:</p>
+                    <ol>
+                        <li>Discard final damage from deck</li>
+                        <li>If deck empty, reshuffle discard + add 1 DAMAGE card</li>
+                        <li>Apply component damage to target component</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Step 7: Check Component Destruction -->
+            <div class="flow-step">
+                <div class="flow-number">7</div>
+                <div class="flow-title">CHECK COMPONENT DESTRUCTION</div>
+                <div class="flow-content">
+                    <p><strong>If component HP reaches 0:</strong></p>
+                    <ul>
+                        <li>Component is DESTROYED (permanent)</li>
+                        <li>Add 1 SCRAP card to defender's deck</li>
+                        <li>Apply component destruction effects (see below)</li>
+                        <li>Overflow damage applies to adjacent components</li>
+                    </ul>
+                </div>
+                <div class="flow-branch">
+                    <div class="branch-option">
+                        <div class="branch-title">HEAD DESTROYED</div>
+                        <p style="font-size: 0.9rem;">-1 Draw Phase cards permanently</p>
+                    </div>
+                    <div class="branch-option">
+                        <div class="branch-title">ARMS DESTROYED</div>
+                        <p style="font-size: 0.9rem;">-2 attack damage permanently</p>
+                    </div>
+                    <div class="branch-option">
+                        <div class="branch-title">LEGS DESTROYED</div>
+                        <p style="font-size: 0.9rem;">-2 Move speed permanently</p>
+                    </div>
+                    <div class="branch-option">
+                        <div class="branch-title">CHASSIS DESTROYED</div>
+                        <p style="font-size: 0.9rem;">-1 SP maximum permanently</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <!-- Quick Reference Boxes -->
+        <h2>QUICK REFERENCE TABLES</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+            <div class="quick-ref-box">
+                <h3>Attack Dice Symbols</h3>
+                <table class="modifier-table">
+                    <tr>
+                        <td>[HIT]</td>
+                        <td>+1 to result (2 per die)</td>
+                    </tr>
+                    <tr>
+                        <td>[CRITICAL]</td>
+                        <td>+2 to result (1 per die)</td>
+                    </tr>
+                    <tr>
+                        <td>[MISS]</td>
+                        <td>+0 to result (3 per die)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="quick-ref-box">
+                <h3>Defense Dice Symbols</h3>
+                <table class="modifier-table">
+                    <tr>
+                        <td>[SHIELD]</td>
+                        <td>Block 1 damage (2 per die)</td>
+                    </tr>
+                    <tr>
+                        <td>[ABSORB]</td>
+                        <td>Block 1 damage (1 per die)</td>
+                    </tr>
+                    <tr>
+                        <td>[VULNERABLE]</td>
+                        <td>No block (2 per die)</td>
+                    </tr>
+                    <tr>
+                        <td>[CRITICAL]</td>
+                        <td>+1 damage to attacker (1 per die)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="quick-ref-box">
+                <h3>Component HP by Zone</h3>
+                <table class="modifier-table">
+                    <tr>
+                        <td>Head</td>
+                        <td>8 HP (AP zone)</td>
+                    </tr>
+                    <tr>
+                        <td>Arms</td>
+                        <td>12 HP (Structure zone)</td>
+                    </tr>
+                    <tr>
+                        <td>Legs</td>
+                        <td>10 HP (Structure zone)</td>
+                    </tr>
+                    <tr>
+                        <td>Chassis</td>
+                        <td>6 HP (Exposure zone)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="quick-ref-box">
+                <h3>Hit Result Thresholds</h3>
+                <table class="modifier-table">
+                    <tr>
+                        <td>0-4</td>
+                        <td>MISS (no effect)</td>
+                    </tr>
+                    <tr>
+                        <td>5-6</td>
+                        <td>HIT (card damage)</td>
+                    </tr>
+                    <tr>
+                        <td>7-9</td>
+                        <td>STRONG HIT (+1 dmg)</td>
+                    </tr>
+                    <tr>
+                        <td>10+</td>
+                        <td>EXECUTION (auto-destroy)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Printing Tips</h3>
+            <ul>
+                <li><strong>Paper:</strong> Print on A4/Letter size, portrait orientation</li>
+                <li><strong>Laminate:</strong> Laminate for table durability</li>
+                <li><strong>Reference:</strong> Keep one copy per player during games</li>
+                <li><strong>Digital:</strong> Open this page on tablet during play</li>
+            </ul>
+        </div>
+
+        <div class="manuscript-quote">
+            "Seven steps. Seven chances to die. Learn them. Master them. Survive them."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2 style="color: var(--dark-red);">See Also</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Combat System (Full Rules)</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Complete combat rules with detailed explanations
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-combat.html" target="_parent" style="color: var(--blood-red);">→ Read Combat Rules</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Dice Reference</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Complete dice symbol tables and probabilities
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-dice.html" target="_parent" style="color: var(--blood-red);">→ Read Dice Rules</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Component Damage</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Detailed component targeting and destruction rules
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-component-damage.html" target="_parent" style="color: var(--blood-red);">→ Read Component Rules</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Player Reference Card</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Complete one-page reference for all game systems
+                </p>
+                <p style="margin: 0;">
+                    <a href="player-aid-reference-card.html" target="_parent" style="color: var(--blood-red);">→ Read Player Aid</a>
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

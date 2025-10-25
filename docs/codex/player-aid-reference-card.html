@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Reference Card - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .ref-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .ref-section {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(75, 14, 14, 0.4));
+            border: 2px solid var(--dark-red);
+            border-radius: 6px;
+            padding: 1rem;
+            break-inside: avoid;
+        }
+
+        .ref-section h3 {
+            color: var(--aged-gold);
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--dark-red);
+            padding-bottom: 0.5rem;
+        }
+
+        .ref-table {
+            width: 100%;
+            font-size: 0.85rem;
+        }
+
+        .ref-table td {
+            padding: 0.3rem 0.5rem;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+            color: var(--bone-white);
+        }
+
+        .ref-table td:first-child {
+            color: var(--aged-gold);
+            font-weight: bold;
+            width: 40%;
+        }
+
+        .ref-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .ref-list li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+            color: var(--bone-white);
+        }
+
+        .ref-list li:last-child {
+            border-bottom: none;
+        }
+
+        .ref-list strong {
+            color: var(--aged-gold);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .ref-card {
+                page-break-inside: avoid;
+            }
+            .breadcrumb {
+                display: none;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ref-card {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#rules">RULES</a> /
+            Player Reference Card
+        </div>
+
+        <h1 style="text-align: center;">PENANCE: PLAYER REFERENCE CARD</h1>
+
+        <p style="text-align: center; font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
+            One-Page Quick Reference • Print & Laminate • Keep At Table During Play
+        </p>
+
+        <div class="ref-card">
+            <!-- Turn Structure -->
+            <div class="ref-section full-width">
+                <h3>🔄 TURN STRUCTURE (4 Phases)</h3>
+                <ul class="ref-list">
+                    <li><strong>1. REFRESH:</strong> Restore SP to max. If Heat 5+: Roll Strain (1d6 + Heat)</li>
+                    <li><strong>2. ACTION:</strong> Play cards (cost SP), Move (1 SP/hex), Rotate (free, once/turn)</li>
+                    <li><strong>3. DRAW:</strong> Draw cards based on played (÷2, min 2, max 5). If deck empty: Reshuffle + add 1 DAMAGE card</li>
+                    <li><strong>4. END TURN:</strong> Resolve end-of-turn effects, next player goes</li>
+                </ul>
+            </div>
+
+            <!-- SP Costs -->
+            <div class="ref-section">
+                <h3>⚡ SP COSTS & LIMITS</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>Movement</td>
+                        <td>1 SP per hex</td>
+                    </tr>
+                    <tr>
+                        <td>Rotation</td>
+                        <td>FREE (once/turn)</td>
+                    </tr>
+                    <tr>
+                        <td>Card play</td>
+                        <td>Card cost (shown)</td>
+                    </tr>
+                    <tr>
+                        <td>Overspend limit</td>
+                        <td>Max 1.5× SP max</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--blood-red);">SP by Class</td>
+                        <td style="color: var(--blood-red);"><strong>Light: 6 | Medium: 5 | Heavy: 4 | Assault: 3</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Heat Effects -->
+            <div class="ref-section">
+                <h3>🔥 HEAT THRESHOLDS</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>0-4 Heat</td>
+                        <td>No effect</td>
+                    </tr>
+                    <tr>
+                        <td>5+ Heat</td>
+                        <td>Roll Strain at Refresh</td>
+                    </tr>
+                    <tr>
+                        <td>Strain Roll</td>
+                        <td>1d6 + Heat. If 10+: MELTDOWN</td>
+                    </tr>
+                    <tr>
+                        <td>Meltdown</td>
+                        <td>Discard (result - 10) cards</td>
+                    </tr>
+                    <tr>
+                        <td>Heat reduction</td>
+                        <td>-1 Heat per turn (passive)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Component HP -->
+            <div class="ref-section">
+                <h3>🎯 COMPONENT HP & DESTRUCTION</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>Head (AP)</td>
+                        <td>8 HP | Destroyed: -1 Draw cards</td>
+                    </tr>
+                    <tr>
+                        <td>Arms (Structure)</td>
+                        <td>12 HP | Destroyed: -2 Attack dmg</td>
+                    </tr>
+                    <tr>
+                        <td>Legs (Structure)</td>
+                        <td>10 HP | Destroyed: -2 Move speed</td>
+                    </tr>
+                    <tr>
+                        <td>Chassis (Exposure)</td>
+                        <td>6 HP | Destroyed: -1 SP max</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--blood-red);">Destruction</td>
+                        <td style="color: var(--blood-red);">Add 1 SCRAP card, PERMANENT</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Attack Resolution -->
+            <div class="ref-section">
+                <h3>⚔️ ATTACK RESOLUTION (7 Steps)</h3>
+                <ul class="ref-list" style="font-size: 0.8rem;">
+                    <li><strong>1. Declare:</strong> Play card, pay SP, choose target component</li>
+                    <li><strong>2. Calculate:</strong> Base 5+ (roll 2d6 Attack Dice) + modifiers</li>
+                    <li><strong>3. Roll:</strong> Add [HIT] +1, [CRITICAL] +2, [MISS] +0</li>
+                    <li><strong>4. Check Result:</strong> Miss (0-4), Hit (5-6), Strong (7-9), Execution (10+)</li>
+                    <li><strong>5. Defend:</strong> Roll X Defense Dice (X = damage)</li>
+                    <li><strong>6. Apply:</strong> Final dmg = original - blocks. Discard from deck.</li>
+                    <li><strong>7. Destroy:</strong> If component HP 0: Add SCRAP, apply effects</li>
+                </ul>
+            </div>
+
+            <!-- To-Hit Modifiers -->
+            <div class="ref-section">
+                <h3>🎲 TO-HIT MODIFIERS</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>Cover (partial)</td>
+                        <td>+1 to-hit needed</td>
+                    </tr>
+                    <tr>
+                        <td>Cover (full)</td>
+                        <td>+2 to-hit needed</td>
+                    </tr>
+                    <tr>
+                        <td>Flanking (rear)</td>
+                        <td>-1 to-hit needed</td>
+                    </tr>
+                    <tr>
+                        <td>Long range</td>
+                        <td>+1 to-hit needed</td>
+                    </tr>
+                    <tr>
+                        <td>Point blank</td>
+                        <td>-1 to-hit needed</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Dice Symbols -->
+            <div class="ref-section">
+                <h3>🎲 ATTACK DICE (2d6)</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>[HIT]</td>
+                        <td>+1 to result (2/die)</td>
+                    </tr>
+                    <tr>
+                        <td>[CRITICAL]</td>
+                        <td>+2 to result (1/die)</td>
+                    </tr>
+                    <tr>
+                        <td>[MISS]</td>
+                        <td>+0 to result (3/die)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="ref-section">
+                <h3>🛡️ DEFENSE DICE (Xd6)</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>[SHIELD]</td>
+                        <td>Block 1 dmg (2/die)</td>
+                    </tr>
+                    <tr>
+                        <td>[ABSORB]</td>
+                        <td>Block 1 dmg (1/die)</td>
+                    </tr>
+                    <tr>
+                        <td>[VULNERABLE]</td>
+                        <td>No block (2/die)</td>
+                    </tr>
+                    <tr>
+                        <td>[CRITICAL]</td>
+                        <td>+1 dmg to attacker (1/die)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Range & LOS -->
+            <div class="ref-section">
+                <h3>📏 RANGE & LINE OF SIGHT</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>Hex distance</td>
+                        <td>Count shortest path</td>
+                    </tr>
+                    <tr>
+                        <td>Point blank</td>
+                        <td>0-1 hexes</td>
+                    </tr>
+                    <tr>
+                        <td>Short range</td>
+                        <td>2-4 hexes</td>
+                    </tr>
+                    <tr>
+                        <td>Long range</td>
+                        <td>5+ hexes</td>
+                    </tr>
+                    <tr>
+                        <td>LOS blocked</td>
+                        <td>Terrain, enemies, allies</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- SCRAP & Salvage -->
+            <div class="ref-section">
+                <h3>♻️ SCRAP & SALVAGE</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>SCRAP source</td>
+                        <td>Component destruction</td>
+                    </tr>
+                    <tr>
+                        <td>SCRAP effect</td>
+                        <td>Dead draw (blank card)</td>
+                    </tr>
+                    <tr>
+                        <td>Salvage cost</td>
+                        <td>Discard 3 SCRAP → Draw 2</td>
+                    </tr>
+                    <tr>
+                        <td>SCRAP as HP</td>
+                        <td>Can discard to absorb dmg</td>
+                    </tr>
+                    <tr>
+                        <td>Campaign</td>
+                        <td>Craft equipment from SCRAP</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Draw Phase -->
+            <div class="ref-section">
+                <h3>🃏 DRAW PHASE FORMULA</h3>
+                <table class="ref-table">
+                    <tr>
+                        <td>Base draw</td>
+                        <td>(Cards played ÷ 2)</td>
+                    </tr>
+                    <tr>
+                        <td>Minimum</td>
+                        <td>2 cards</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum</td>
+                        <td>5 cards</td>
+                    </tr>
+                    <tr>
+                        <td>Hand limit</td>
+                        <td>No limit (keep all)</td>
+                    </tr>
+                    <tr>
+                        <td>Deck empty</td>
+                        <td>Reshuffle + 1 DAMAGE card</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Common Actions -->
+            <div class="ref-section full-width">
+                <h3>⚡ COMMON FREE ACTIONS</h3>
+                <ul class="ref-list">
+                    <li><strong>Rotate facing:</strong> FREE (once per turn, any direction)</li>
+                    <li><strong>Check range:</strong> FREE (measure distance anytime)</li>
+                    <li><strong>Declare intent:</strong> FREE (communicate tactics)</li>
+                    <li><strong>Reactive cards:</strong> Can play on opponent's turn (if [...] Initiative)</li>
+                </ul>
+            </div>
+
+            <!-- Defeat Conditions -->
+            <div class="ref-section full-width" style="background: rgba(139, 0, 0, 0.5);">
+                <h3 style="color: var(--blood-red);">💀 DEFEAT CONDITIONS</h3>
+                <ul class="ref-list">
+                    <li><strong>Deck + Discard both empty:</strong> Casket defeated (no cards = death)</li>
+                    <li><strong>All 4 components destroyed:</strong> Casket defeated (complete wreck)</li>
+                    <li><strong>Scenario objective failed:</strong> Mission failure (campaign)</li>
+                    <li><strong>Pilot killed:</strong> Thread Snap damage exceeds pilot HP (campaign)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <div style="background: rgba(139, 0, 0, 0.3); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">How to Use This Reference</h3>
+            <ul>
+                <li><strong>Print:</strong> Print on A4/Letter, landscape orientation recommended</li>
+                <li><strong>Laminate:</strong> Laminate for table durability</li>
+                <li><strong>Players:</strong> One copy per player during games</li>
+                <li><strong>Digital:</strong> Open on tablet/phone during play</li>
+                <li><strong>Eliminates:</strong> 80% of rule lookups during play</li>
+            </ul>
+        </div>
+
+        <div class="manuscript-quote">
+            "Four phases. Seven steps. Thirty cards. This is all you need to survive."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2 style="color: var(--dark-red);">See Also</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Combat Flowchart</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Visual flowchart for attack resolution
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-combat-flowchart.html" target="_parent" style="color: var(--blood-red);">→ View Flowchart</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Common Mistakes</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Top 10 rules errors and corrections
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-common-mistakes.html" target="_parent" style="color: var(--blood-red);">→ Read Mistakes Sheet</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">Quick Reference (Full)</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Complete one-page quick reference
+                </p>
+                <p style="margin: 0;">
+                    <a href="rules-quick-ref.html" target="_parent" style="color: var(--blood-red);">→ Read Quick Ref</a>
+                </p>
+            </div>
+
+            <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h3 style="margin-top: 0; color: var(--aged-gold);">GM Reference Sheet</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    Enemy stats and encounter building guide
+                </p>
+                <p style="margin: 0;">
+                    <a href="gm-reference-combat.html" target="_parent" style="color: var(--blood-red);">→ Read GM Reference</a>
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -62,7 +62,8 @@
       "Bash(tee /tmp/v5.15a_final.txt)",
       "Bash(while read file)",
       "Bash(do stat -c \"%y %n\" \"$file\")",
-      "Bash(xargs ls:*)"
+      "Bash(xargs ls:*)",
+      "Bash(xargs:*)"
     ],
     "deny": [],
     "ask": []
