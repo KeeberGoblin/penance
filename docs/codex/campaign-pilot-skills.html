@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot Skills System - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .skill-card {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(75, 14, 14, 0.3));
+            border-left: 6px solid var(--dark-red);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--aged-gold);
+        }
+
+        .skill-type {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--bone-white);
+            background: var(--blood-red);
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-description {
+            color: var(--bone-white);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-synergy {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--aged-gold);
+            opacity: 0.8;
+        }
+
+        .tier-banner {
+            background: linear-gradient(to right, var(--dark-red), transparent);
+            border-left: 8px solid var(--blood-red);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        .tier-banner h3 {
+            margin: 0;
+            color: var(--aged-gold);
+            font-size: 1.5rem;
+        }
+
+        .tier-description {
+            margin: 0.5rem 0 0 0;
+            color: var(--bone-white);
+            opacity: 0.9;
+        }
+
+        .xp-table {
+            background: rgba(10, 6, 4, 0.6);
+            border: 2px solid var(--dark-red);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .xp-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .xp-row:last-child {
+            border-bottom: none;
+        }
+
+        .xp-threshold {
+            font-weight: 700;
+            color: var(--aged-gold);
+            font-size: 1.1rem;
+        }
+
+        .xp-unlock {
+            color: var(--bone-white);
+        }
+
+        .faction-badge {
+            display: inline-block;
+            background: var(--shadow-black);
+            border: 1px solid var(--aged-gold);
+            color: var(--aged-gold);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            border-radius: 3px;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .warning-box {
+            background: rgba(139, 0, 0, 0.3);
+            border: 2px solid var(--blood-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box h4 {
+            margin-top: 0;
+            color: var(--blood-red);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#campaign">CAMPAIGN</a> /
+            Pilot Skills System
+        </div>
+
+        <h1>Pilot Skills System</h1>
+
+        <p style="font-style: italic; color: var(--aged-gold); font-size: 1.1rem; text-align: center; margin: 1rem 0;">
+            Optional Campaign Rule • Pilot Progression and Specialization
+        </p>
+
+        <div class="manuscript-quote">
+            "Every scar tells a story. Every skill, a lesson written in iron and fire."
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Overview</h2>
+
+        <p>Pilot Skills represent the accumulated combat experience, natural talent, and hard-won expertise of a Casket pilot. As pilots survive missions and grow in skill, they unlock powerful abilities that can shift the tide of battle.</p>
+
+        <div class="warning-box">
+            <h4>⚠ Optional Rule</h4>
+            <p style="margin: 0;">This system adds progression depth but increases complexity and bookkeeping. Skip this system for simpler campaigns or one-shot missions. Best used for campaigns of <strong>10+ missions</strong> where pilot development matters.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Gaining Experience</h2>
+
+        <p>Pilots earn <strong>Experience Points (XP)</strong> from completing missions:</p>
+
+        <table class="stat-table">
+            <thead>
+                <tr>
+                    <th>Mission Outcome</th>
+                    <th>Base XP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Victory</strong></td>
+                    <td>100 XP</td>
+                </tr>
+                <tr>
+                    <td><strong>Partial Victory</strong> (objectives incomplete)</td>
+                    <td>50 XP</td>
+                </tr>
+                <tr>
+                    <td><strong>Survival</strong> (fled or tactical withdrawal)</td>
+                    <td>25 XP</td>
+                </tr>
+                <tr>
+                    <td><strong>Defeat</strong></td>
+                    <td>0 XP</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Bonus XP Modifiers</h3>
+        <ul>
+            <li><strong>+25 XP:</strong> Killed 3+ enemy Caskets</li>
+            <li><strong>+25 XP:</strong> No allied Caskets destroyed</li>
+            <li><strong>+25 XP:</strong> Completed bonus objective</li>
+            <li><strong>+50 XP:</strong> Boss enemy defeated</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Unlocking Skills</h2>
+
+        <div class="xp-table">
+            <div class="xp-row">
+                <span class="xp-threshold">100 XP</span>
+                <span class="xp-unlock">Choose 1 Tier 1 skill</span>
+            </div>
+            <div class="xp-row">
+                <span class="xp-threshold">300 XP</span>
+                <span class="xp-unlock">Choose 1 Tier 2 skill</span>
+            </div>
+            <div class="xp-row">
+                <span class="xp-threshold">600 XP</span>
+                <span class="xp-unlock">Choose 1 Tier 3 skill</span>
+            </div>
+        </div>
+
+        <p><strong>Maximum:</strong> Each pilot can have up to <strong>3 skills</strong> (one from each tier).</p>
+        <p><strong>No Respec:</strong> Once chosen, skills are permanent. Choose carefully.</p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Universal Skills</h2>
+
+        <!-- TIER 1 -->
+        <div class="tier-banner">
+            <h3>Tier 1: Basic Training</h3>
+            <p class="tier-description">Small but reliable bonuses. Always useful. Unlocked at 100 XP.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Steady Hands</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                Your first attack each turn generates <strong>-1 Heat</strong>.
+            </div>
+            <div class="skill-synergy">Good for: Heat-heavy weapons, sustained fire builds</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Scrap Scrounger</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                When you use the Salvage action, gain <strong>1 extra card</strong> (3 SCRAP → 3 cards instead of 2).
+            </div>
+            <div class="skill-synergy">Good for: Prolonged battles, component damage recovery</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Combat Awareness</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>+1 to all Defense Dice results</strong> (but you don't gain additional dice).<br>
+                <em>Example: Rolling [2][3][4] becomes [3][4][5]</em>
+            </div>
+            <div class="skill-synergy">Good for: Defensive builds, survivability</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Efficient Movement</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                Moving <strong>1-2 hexes costs only 1 SP</strong> instead of 2 SP.
+            </div>
+            <div class="skill-synergy">Good for: Mobile strikers, repositioning</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Heat Sink Upgrade</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                Your <strong>Heat Strain threshold increases by 1</strong> (Strain roll at 6+ Heat instead of 5+).
+            </div>
+            <div class="skill-synergy">Good for: Energy weapon users, aggressive playstyles</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Field Triage</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                During the <strong>Refresh Phase</strong>, if you did not take damage last turn, <strong>remove 1 SCRAP card</strong> from your deck.
+            </div>
+            <div class="skill-synergy">Good for: Long missions, gradual recovery</div>
+        </div>
+
+        <!-- TIER 2 -->
+        <div class="tier-banner">
+            <h3>Tier 2: Specialized Training</h3>
+            <p class="tier-description">Moderate bonuses or conditional powerful effects. Define your playstyle. Unlocked at 300 XP.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Headhunter</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                Attacks targeting the <strong>Head component deal +2 damage</strong>.
+            </div>
+            <div class="skill-synergy">Good for: Precision builds, quick kills</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Leg Breaker</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                Attacks targeting the <strong>Legs component</strong> apply <strong>-1 Move</strong> to the target until end of next turn (stacks).
+            </div>
+            <div class="skill-synergy">Good for: Mobility denial, kiting</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Death Defiance</span>
+                <span class="skill-type">Active - Once per Mission</span>
+            </div>
+            <div class="skill-description">
+                When reduced to <strong>0 HP</strong>, survive with <strong>1 card</strong> remaining instead.
+            </div>
+            <div class="skill-synergy">Good for: High-risk aggression, desperation plays</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Component Reinforcement</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                Choose one component at mission start: <strong>It gains +4 HP permanently</strong> (for this mission only).
+            </div>
+            <div class="skill-synergy">Good for: Protecting critical components, adaptive defense</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">SP Efficiency</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                You <strong>start each turn with +1 SP</strong> (4 SP base instead of 3 SP).
+            </div>
+            <div class="skill-synergy">Good for: Action economy, combo turns</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Battlemaster</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                During the <strong>Draw Phase</strong>, draw <strong>+1 additional card</strong> (up to hand limit).
+            </div>
+            <div class="skill-synergy">Good for: Maintaining options, deck cycling</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Opportunist</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                Gain <strong>+1 SP immediately</strong> whenever you destroy an enemy component.
+            </div>
+            <div class="skill-synergy">Good for: Aggressive offense, snowball potential</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Terrain Expert</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Ignore movement penalties</strong> from difficult terrain (rubble, water, etc.).
+            </div>
+            <div class="skill-synergy">Good for: Maps with heavy terrain, mobility builds</div>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="tier-banner">
+            <h3>Tier 3: Veteran Mastery</h3>
+            <p class="tier-description">Build-defining abilities. Once-per-mission powers or dramatic passive bonuses. Unlocked at 600 XP.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Ace Pilot</span>
+                <span class="skill-type">Active - Once per Turn</span>
+            </div>
+            <div class="skill-description">
+                After <strong>moving</strong>, you may make <strong>one free 1 SP attack</strong> (does not cost SP).
+            </div>
+            <div class="skill-synergy">Good for: Hit-and-run tactics, mobile strikers</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Component Savant</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                Choose one component at mission start: <strong>It cannot be targeted by Called Shots</strong> and has <strong>+4 HP</strong>.
+            </div>
+            <div class="skill-synergy">Good for: Protecting vital systems, countering snipers</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Soulstone Overcharge</span>
+                <span class="skill-type">Active - Once per Battle</span>
+            </div>
+            <div class="skill-description">
+                Gain <strong>+3 SP this turn</strong>, but take <strong>3 Heat immediately</strong>.
+            </div>
+            <div class="skill-synergy">Good for: Finishing blows, burst damage turns</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Final Stand</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                When you have <strong>only 1 component remaining with HP</strong>, gain <strong>+3 damage</strong> and <strong>+2 Move</strong>.
+            </div>
+            <div class="skill-synergy">Good for: Death spiral acceptance, last stands</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Cornered Beast</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                When your <strong>deck has ≤10 cards</strong>, all your attacks deal <strong>+2 damage</strong>.
+            </div>
+            <div class="skill-synergy">Good for: Desperation builds, late-game power</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Guardian Angel</span>
+                <span class="skill-type">Active - Once per Mission</span>
+            </div>
+            <div class="skill-description">
+                When an <strong>allied Casket within 3 hexes</strong> would be reduced to 0 HP, <strong>they survive with 1 card</strong> instead.
+            </div>
+            <div class="skill-synergy">Good for: Cooperative play, protecting rookies</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Master Technician</span>
+                <span class="skill-type">Active - Once per Battle</span>
+            </div>
+            <div class="skill-description">
+                During the <strong>Refresh Phase</strong>, <strong>remove up to 3 SCRAP cards</strong> from your deck.
+            </div>
+            <div class="skill-synergy">Good for: Component damage recovery, deck cleanup</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Killing Blow</span>
+                <span class="skill-type">Passive</span>
+            </div>
+            <div class="skill-description">
+                When you <strong>destroy an enemy Casket</strong> (reduce to 0 HP), <strong>immediately draw 3 cards</strong>.
+            </div>
+            <div class="skill-synergy">Good for: Aggressive offense, snowball chains</div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Faction-Specific Skills</h2>
+
+        <p>Each faction has unique skills that synergize with their core mechanics. These require the pilot to be playing that faction.</p>
+
+        <!-- Church -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">⛪ Church of Absolution</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Crimson Offering<span class="faction-badge">Church</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Blood Offering</strong> costs <strong>1 HP instead of 2 HP</strong> per use.
+            </div>
+            <div class="skill-synergy">Enables more aggressive martyr playstyle without rapid self-destruction</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Martyrdom<span class="faction-badge">Church</span></span>
+                <span class="skill-type">Tier 3 - Once per Mission</span>
+            </div>
+            <div class="skill-description">
+                <strong>Sacrifice 5 HP permanently</strong> (for the mission). All attacks this turn deal <strong>+5 damage</strong> and ignore Armor.
+            </div>
+            <div class="skill-synergy">Ultimate burst damage at extreme cost - truly embodies Church sacrifice</div>
+        </div>
+
+        <!-- Dwarves -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">⚒️ Dwarven Forge-Guilds</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Rune Mastery<span class="faction-badge">Dwarves</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                Start each battle with <strong>1 Rune counter</strong> already placed.
+            </div>
+            <div class="skill-synergy">Faster ramp-up for defensive and armor-piercing strategies</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Fortress Stance<span class="faction-badge">Dwarves</span></span>
+                <span class="skill-type">Tier 3 - Once per Battle</span>
+            </div>
+            <div class="skill-description">
+                Until end of next turn: <strong>+3 to all Defense Dice</strong>, cannot move.
+            </div>
+            <div class="skill-synergy">Ultimate defensive hold - become an immovable fortress</div>
+        </div>
+
+        <!-- Ossuarium -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">💀 The Ossuarium</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Soul Harvest Efficiency<span class="faction-badge">Ossuarium</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Soul Harvest</strong> recovers <strong>1 additional card</strong> (3 cards instead of 2).
+            </div>
+            <div class="skill-synergy">Improved resource recovery synergizes with attrition playstyle</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Undying Will<span class="faction-badge">Ossuarium</span></span>
+                <span class="skill-type">Tier 3 - Once per Mission</span>
+            </div>
+            <div class="skill-description">
+                When reduced to <strong>0 HP</strong>, <strong>reshuffle your discard pile</strong> into your deck and continue fighting.
+            </div>
+            <div class="skill-synergy">Thematic resurrection - death is merely an inconvenience</div>
+        </div>
+
+        <!-- Elves -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">🌿 Elven Verdant Covenant</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Bleed Control<span class="faction-badge">Elves</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Reduce Bleed damage taken by 2</strong> (minimum 0).
+            </div>
+            <div class="skill-synergy">Counters mirror matches and prevents self-inflicted bleed penalties</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Thornvine Mastery<span class="faction-badge">Elves</span></span>
+                <span class="skill-type">Tier 3 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Bleed counters</strong> you inflict deal <strong>+1 damage per stack</strong>.
+            </div>
+            <div class="skill-synergy">Dramatically scales bleed damage - infinite scaling potential</div>
+        </div>
+
+        <!-- Wyrd -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">✨ The Wyrd Conclave</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Wyrd Manipulation<span class="faction-badge">Wyrd</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Gain 1 Wyrd Token</strong> at the start of each battle.
+            </div>
+            <div class="skill-synergy">Earlier access to reality-bending abilities</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Reality Fracture<span class="faction-badge">Wyrd</span></span>
+                <span class="skill-type">Tier 3 - Once per Battle</span>
+            </div>
+            <div class="skill-description">
+                Spend <strong>3 Wyrd Tokens</strong>: <strong>Teleport up to 5 hexes</strong> and gain <strong>+2 SP this turn</strong>.
+            </div>
+            <div class="skill-synergy">Extreme mobility and action economy burst</div>
+        </div>
+
+        <!-- Nomads -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">🏜️ Nomad Collective</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Improvisation Expert<span class="faction-badge">Nomads</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                When you <strong>loot equipment</strong> mid-mission, it costs <strong>-1 SP to equip</strong> this mission.
+            </div>
+            <div class="skill-synergy">Enhances adaptive scavenger playstyle</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Scavenger's Luck<span class="faction-badge">Nomads</span></span>
+                <span class="skill-type">Tier 3 - Passive</span>
+            </div>
+            <div class="skill-description">
+                When an <strong>enemy Casket is destroyed</strong>, roll 1d6. On <strong>5+</strong>, gain <strong>1 random equipment card</strong> to your deck.
+            </div>
+            <div class="skill-synergy">Rewards aggressive play with equipment gains</div>
+        </div>
+
+        <!-- Exchange -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">💰 The Exchange</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Credit Efficiency<span class="faction-badge">Exchange</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Gain 1 Credit Token</strong> at the start of each battle.
+            </div>
+            <div class="skill-synergy">Faster access to bribery and mercenary abilities</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Bribe Master<span class="faction-badge">Exchange</span></span>
+                <span class="skill-type">Tier 3 - Once per Mission</span>
+            </div>
+            <div class="skill-description">
+                Spend <strong>3 Credit Tokens</strong>: Target enemy <strong>skips their next activation</strong>.
+            </div>
+            <div class="skill-synergy">Ultimate control ability - money buys time</div>
+        </div>
+
+        <!-- Bloodlines -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">🧬 Vestige Bloodlines</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Biomass Surge<span class="faction-badge">Bloodlines</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Gain 1 Biomass Token</strong> whenever you destroy an enemy component.
+            </div>
+            <div class="skill-synergy">Faster mutation access through aggressive play</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Adaptive Evolution<span class="faction-badge">Bloodlines</span></span>
+                <span class="skill-type">Tier 3 - Once per Battle</span>
+            </div>
+            <div class="skill-description">
+                Spend <strong>4 Biomass Tokens</strong>: <strong>Heal one destroyed component to 4 HP</strong>.
+            </div>
+            <div class="skill-synergy">Component resurrection - counters death spiral</div>
+        </div>
+
+        <!-- Emergent -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">🦋 Emergent Syndicate</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Swarm Coordination<span class="faction-badge">Emergent</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                When you have <strong>2+ Metamorph Tokens</strong>, gain <strong>+1 to all attack rolls</strong>.
+            </div>
+            <div class="skill-synergy">Rewards token accumulation with consistent offense</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Hive Mind Link<span class="faction-badge">Emergent</span></span>
+                <span class="skill-type">Tier 3 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Allied Support Units</strong> within 3 hexes gain <strong>+1 to their behavior rolls</strong>.
+            </div>
+            <div class="skill-synergy">Enhances support unit reliability - true hive coordination</div>
+        </div>
+
+        <!-- Crucible -->
+        <h3 style="color: var(--blood-red); margin-top: 2rem;">🔥 Crucible Pacts</h3>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Forge Heart<span class="faction-badge">Crucible</span></span>
+                <span class="skill-type">Tier 2 - Passive</span>
+            </div>
+            <div class="skill-description">
+                <strong>Ignore the first 2 Heat</strong> you would gain each turn.
+            </div>
+            <div class="skill-synergy">Dramatically improves heat management for fire-based builds</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">Volcanic Fury<span class="faction-badge">Crucible</span></span>
+                <span class="skill-type">Tier 3 - Once per Battle</span>
+            </div>
+            <div class="skill-description">
+                Gain <strong>+4 Heat immediately</strong>. All attacks this turn deal <strong>damage equal to your current Heat</strong>.
+            </div>
+            <div class="skill-synergy">Ultimate burst damage scaling with heat - risk equals reward</div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Settlement Phase Training</h2>
+
+        <p>During the <strong>Settlement Phase</strong>, you may spend resources to train pilots:</p>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Training Action</h4>
+            <p><strong>Cost:</strong> 50 Credits per session</p>
+            <p><strong>Effect:</strong> Choose one pilot. They gain <strong>+50 XP</strong>.</p>
+            <p style="margin-bottom: 0;"><strong>Trade-Off:</strong> You can only perform <strong>one Settlement action per phase</strong>. Training means you cannot Repair, Recruit, or Trade this phase.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Flesh Bargain Integration</h2>
+
+        <p>The <strong>Flesh Bargain</strong> can grant skills as alternative rewards:</p>
+
+        <div style="background: rgba(75, 14, 14, 0.4); border: 2px solid var(--blood-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="color: var(--blood-red); margin-top: 0;">Example Bargain: "The Veteran's Edge"</h4>
+            <p><strong>Cost:</strong> -4 Max HP (permanent)</p>
+            <p><strong>Reward:</strong> Gain one <strong>Tier 2 skill</strong> immediately (ignore XP requirement)</p>
+            <p style="margin-bottom: 0; font-style: italic; opacity: 0.9;">GM Note: Use Flesh Bargain skill rewards sparingly. They should feel powerful but costly.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Pilot Death and Skill Loss</h2>
+
+        <p>When a pilot <strong>dies permanently</strong> (Casket destroyed, failed death save, etc.):</p>
+        <ul>
+            <li>All skills are <strong>lost</strong></li>
+            <li>No XP carries over to new recruits</li>
+            <li>Veteran pilot death should be <strong>meaningful and painful</strong></li>
+        </ul>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--aged-gold); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Optional Rule: Mentorship</h4>
+            <p style="margin-bottom: 0;">If a veteran pilot (2+ skills) dies, their <strong>highest-tier skill</strong> can be passed to one other pilot in the roster as a "legacy."</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>GM Guidelines</h2>
+
+        <h3>Balancing Skilled Pilots</h3>
+        <p>When players have skilled pilots, adjust difficulty:</p>
+        <ul>
+            <li>Increase enemy numbers by 10-20%</li>
+            <li>Give enemies 1-2 skills of their own</li>
+            <li>Add environmental hazards</li>
+            <li>Use more boss-tier enemies</li>
+        </ul>
+
+        <h3>When to Use This System</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
+            <div style="background: rgba(0, 100, 0, 0.2); border-left: 4px solid #4CAF50; padding: 1rem;">
+                <h4 style="color: #66ff66; margin-top: 0;">✓ Use When:</h4>
+                <ul style="margin-bottom: 0;">
+                    <li>Campaigns run 10+ missions</li>
+                    <li>Players want RPG progression</li>
+                    <li>Permadeath is accepted</li>
+                    <li>Faction mechanics are mastered</li>
+                </ul>
+            </div>
+            <div style="background: rgba(139, 0, 0, 0.3); border-left: 4px solid var(--blood-red); padding: 1rem;">
+                <h4 style="color: #ff6b6b; margin-top: 0;">✗ Skip When:</h4>
+                <ul style="margin-bottom: 0;">
+                    <li>Campaigns are 1-5 missions</li>
+                    <li>Players prefer tactical purity</li>
+                    <li>Minimizing bookkeeping</li>
+                    <li>Learning core rules</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Designer's Notes</h2>
+
+        <p>Pilot Skills add <strong>progression depth</strong> to campaigns, making veteran pilots feel distinct and powerful. However, they also create <strong>snowball risk</strong> (veterans get stronger while rookies stay weak) and <strong>loss aversion</strong> (players fear permadeath more).</p>
+
+        <p>Pilot skills work best when integrated with <strong>Flesh Bargain</strong> (HP-for-power trades) and <strong>Settlement Phase Training</strong> (resource management). They should feel <strong>earned through blood</strong>, not handed out freely.</p>
+
+        <div class="manuscript-quote">
+            "A pilot is forged in fire, tempered in loss, and sharpened by survival. Skills are not learned—they are carved into your soul."
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
+            <p><a href="content-home.html" target="_parent">Return to Codex Home</a></p>
+        </div>
+    </div>
+</body>
+</html>
