@@ -285,6 +285,37 @@ Gain **+4 Heat immediately**. All attacks this turn deal **damage equal to your 
 
 ---
 
+## Iconic Pilots and Their Skills
+
+The legendary pilots of Year 437 have mastered the art of warfare. Here are their skill loadouts, representing decades of brutal experience:
+
+| Pilot Name | Faction | Skills |
+|------------|---------|--------|
+| **Sister Vex** - "The Hollow Penitent" | Church of Absolution | Death Defiance, Crimson Offering, Martyrdom |
+| **Inquisitor Grayle** - "The Absolver" | Church of Absolution | Headhunter, Heat Sink Upgrade, Martyrdom |
+| **Forgemaster Durr** - "The Calculator" | Dwarven Forge-Guilds | Battlemaster, Rune Mastery, Component Savant |
+| **Ironwright Karsa** - "Rust-Eater" | Dwarven Forge-Guilds | Scrap Scrounger, Component Reinforcement, Master Technician |
+| **Bonelord Thresh** - "The Debt Collector" | The Ossuarium | Soul Harvest Efficiency, Undying Will, Master Technician |
+| **Mortis the Silencer** - "The Quiet Reaper" | The Ossuarium | Efficient Movement, Death Defiance, Soul Harvest Efficiency |
+| **Rootwarden Kess** - "The Pruner" | Elven Verdant Covenant | Terrain Expert, Efficient Movement, Component Savant |
+| **Thornwalker Sylris** - "Blood-Bloom" | Elven Verdant Covenant | Bleed Control, Thornvine Mastery, Cornered Beast |
+| **Mockingbird** - "The Many-Masked" | The Wyrd Conclave | Wyrd Manipulation, Reality Fracture, Battlemaster |
+| **The Veil-Walker** - "Sorrow's Echo" | The Wyrd Conclave | Wyrd Manipulation, Efficient Movement, Combat Awareness |
+| **"Three-Card" Morrow** - "The Drifter King" | Nomad Collective | Efficient Movement, Death Defiance, Scavenger's Luck |
+| **Wraith-Caller Yenna** - "The Dust Prophet" | Nomad Collective | Battlemaster, Opportunist, Improvisation Expert |
+| **Proctor Ilyara Voss** - "The Actuary of Ash" | The Exchange | Credit Efficiency, Bribe Master, SP Efficiency |
+| **Broker Tannis** - "The Coin-Counter" | The Exchange | Credit Efficiency, Combat Awareness, Scavenger's Luck |
+| **"Woundwright" Tallis** - "The Stitcher" | Vestige Bloodlines | Biomass Surge, Adaptive Evolution, Component Reinforcement |
+| **Apex-Strain Vor** - "The Devourer" | Vestige Bloodlines | Biomass Surge, Killing Blow, Cornered Beast |
+| **Hive-Node Zephyr** - "The Chrysalis" | Emergent Syndicate | Swarm Coordination, Efficient Movement, SP Efficiency |
+| **Swarm-Singer Krix** - "The Thousand Voice" | Emergent Syndicate | Swarm Coordination, Hive Mind Link, Opportunist |
+| **Ember-Boss Skragg** - "Ash-Tongue" | Crucible Packs | Forge Heart, Volcanic Fury, Soulstone Overcharge |
+| **Boom-Shaman Grikka** - "Cinder-Eyes" | Crucible Packs | Forge Heart, Hive Mind Link, Heat Sink Upgrade |
+
+These skill combinations reflect each pilot's unique combat philosophy, scars, and decades of experience. Use them as boss enemies with enhanced capabilities, or as inspiration for player pilot builds.
+
+---
+
 ## Settlement Phase Training
 
 During the **Settlement Phase**, you may spend resources to train pilots:
