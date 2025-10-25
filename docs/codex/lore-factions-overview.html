@@ -5,6 +5,192 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factions Overview - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .factions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .faction-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid var(--dark-red);
+            padding: 0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .faction-toggle {
+            background: var(--shadow-black);
+            border: none;
+            border-bottom: 2px solid var(--dark-red);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faction-toggle:hover {
+            background: var(--dark-red);
+            color: var(--aged-gold);
+        }
+
+        .faction-toggle::after {
+            content: '▼';
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .faction-toggle.active::after {
+            transform: rotate(180deg);
+        }
+
+        .faction-content {
+            display: none;
+            padding: 1.5rem;
+            background: rgba(10, 6, 4, 0.5);
+            border-top: 1px solid var(--dark-red);
+        }
+
+        .faction-content.active {
+            display: block;
+        }
+
+        .faction-detail {
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .faction-detail strong {
+            color: var(--aged-gold);
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+
+        .faction-detail p {
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        .faction-tier {
+            display: inline-block;
+            background: var(--dark-red);
+            color: var(--aged-gold);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 2px;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .faction-links {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(139, 0, 0, 0.2);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .faction-links a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
+
+        .faction-links a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        .faction-grid-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .summary-item {
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 2px solid var(--aged-gold);
+            padding-left: 1rem;
+        }
+
+        .summary-label {
+            color: var(--aged-gold);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .summary-value {
+            margin-top: 0.25rem;
+        }
+
+        .power-tier-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+
+        .power-tier-table th,
+        .power-tier-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--dark-red);
+        }
+
+        .power-tier-table th {
+            background: rgba(75, 14, 14, 0.3);
+            color: var(--aged-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+        }
+
+        .power-tier-table tr:hover {
+            background: rgba(75, 14, 14, 0.1);
+        }
+
+        h2 {
+            color: var(--aged-gold);
+            border-bottom: 2px solid var(--dark-red);
+            padding-bottom: 0.75rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+            color: var(--dark-red);
+            opacity: 0.6;
+        }
+    </style>
 </head>
 <body>
     <div class="content">
@@ -18,25 +204,23 @@
 
         <div class="manuscript-quote">
             "We used to be one species. Now we're ten tribes fighting over the corpse of civilization. Maybe that's progress. Maybe it's just decay."
-            <span class="quote-attribution">—Nomad Elder testimony</span>
+            <span class="quote-attribution">-Nomad Elder testimony</span>
         </div>
 
         <p class="manuscript-text">
-            When the Sundering shattered civilization, it also shattered humanity's unity. From the ruins emerged ten major factions—each with unique philosophies, resources, and survival strategies. Some seek redemption through faith. Others embrace mutation and evolution. All compete for territory, resources, and the right to define what humanity will become in the centuries ahead.
+            When the Sundering shattered civilization, it also shattered humanity's unity. From the ruins emerged ten major factions...each with unique philosophies, resources, and survival strategies. Some seek redemption through faith. Others embrace mutation and evolution. All compete for territory, resources, and the right to define what humanity will become in the centuries ahead.
         </p>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
-        </div>
+        <div class="divider">❈</div>
 
         <h2>Faction Power Structure (Year 437)</h2>
 
-        <table>
+        <table class="power-tier-table">
             <thead>
                 <tr>
-                    <th>Tier</th>
-                    <th>Factions</th>
-                    <th>Characteristics</th>
+                    <th>TIER</th>
+                    <th>FACTIONS</th>
+                    <th>CHARACTERISTICS</th>
                 </tr>
             </thead>
             <tbody>
@@ -58,676 +242,609 @@
                 <tr>
                     <td><strong>Tier 4: Outliers</strong></td>
                     <td>Crucible Packs, Draconid Remembrance</td>
-                    <td>Specialized/neutral, populations <100k, non-expansionist</td>
+                    <td>Specialized/neutral, populations &lt;100k, non-expansionist</td>
                 </tr>
             </tbody>
         </table>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Population Distribution Note</h4>
+            <p class="manuscript-text" style="margin: 0.5rem 0;">
+                The ten factions listed here represent the major organized powers of Year 437, with combined populations totaling approximately 35-53 million. However, the global post-Sundering population is estimated at <strong>200-300 million survivors</strong>. The remaining 150-250 million live outside formal faction control in:
+            </p>
+            <ul class="manuscript-list" style="margin: 0.5rem 0;">
+                <li><strong>Independent settlements</strong>: Thousands of towns and villages maintaining autonomy</li>
+                <li><strong>Tribal groups</strong>: Hunter-gatherer communities with no centralized governance</li>
+                <li><strong>Urban survivors</strong>: Residents of ruined pre-Sundering cities who reject faction allegiance</li>
+                <li><strong>Isolated enclaves</strong>: Remote populations cut off by geography or choice</li>
+            </ul>
+            <p class="manuscript-text" style="margin: 0.5rem 0 0 0;">
+                These factions are the powers that shape the world...but they do not represent all of humanity. Most survivors simply try to endure, unaligned and unaffiliated.
+            </p>
         </div>
+
+        <div class="divider">❈</div>
 
         <h2>The Ten Major Factions</h2>
 
-        <h3>1. Church of Absolution</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "The Sundering was divine punishment for humanity's hubris. Salvation comes through penance and service."
-            </p>
+        <div class="factions-container">
+            <!-- CHURCH OF ABSOLUTION -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>Church of Absolution</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 1: SUPERPOWER</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Aggressive Martyrdom</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Blood Offering (self-harm for burst damage, infinite scaling)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: Flagellants, Penitents, Relic Bearers, Aspirants, Choir, Absolution Engine</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">15-20 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">Cathedral Prime (capital)</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Redemption through suffering</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Theocratic hierarchy</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-church.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-church.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DWARVEN FORGE-GUILDS -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>Dwarven Forge-Guilds</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 2: REGIONAL POWER</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Fortress Defender</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Rune Counters (stack for defense/damage, armor-piercing)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: Shield Wall, Artillery, Rune Sentinel, Siege Crawler, Ancestor Golem, Dreadnought</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">3-5 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">Ironhearth (underground)</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Craftsmanship and tradition</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Guild councils</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-dwarves.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-dwarves.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE OSSUARIUM -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>The Ossuarium</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 1: SUPERPOWER</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Lifesteal Vampire</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Soul Harvest (lifesteal triggers, resurrections, Decay cards)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: Bone Thralls, Grave Knight, Fleshcrafter, Bone Colossus, Lich, Death's Herald</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">10-15 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">The Boneyards</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Death as evolution</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Immortal aristocracy</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-undead.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-ossuarium.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ELVEN VERDANT COVENANT -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>Elven Verdant Covenant</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 2: REGIONAL POWER</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Hit-and-Run Assassin</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Bleed Stacking (infinite scaling, mobility, regeneration)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">2-4 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">The Thornwood</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Natural supremacy</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Circle of Elders</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-elves.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-elves.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE WYRD CONCLAVE -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>The Wyrd Conclave</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 3: MINOR FACTION</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Reality Bender</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Wyrd Tokens (reality distortion, stolen faces)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: Changelings, Tricksters, Dream Weavers, Bargain Keepers, Fae Lords, Court Herald</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">500k-1 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">The Shimmerlands</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Chaos and bargains</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Fluid, unpredictable</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-fae.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-wyrd.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOMAD COLLECTIVE -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>Nomad Collective</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 3: MINOR FACTION</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Mobile Survivor</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Improvisation (salvaged equipment, movement)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>3 units: Salvage Crew, Outrider Squadron, Caravan Walker</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">1-2 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">Nomadic (no fixed base)</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Adaptability and freedom</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Clan-based</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-nomads.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-nomads.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE EXCHANGE -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>The Exchange</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 2: REGIONAL POWER</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Economic Warfare</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Credit Tokens (bribery, mercenaries, resource control)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: Enforcers, Negotiators, Mercenary Casket, Trade Caravan, Broker Network, War Profiteer</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">2-3 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">Trade hubs (distributed)</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Profit and neutrality</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Dual board (Orthodox + Rational)</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-exchange.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-exchange.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VESTIGE BLOODLINES -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>Vestige Bloodlines</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 3: MINOR FACTION</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Mutation Specialists</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Biomass Tokens (5 bloodline variants, extinction clock)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: Feral Pack, Regenerators, Titan-Strain, Void-Touched, Alpha Mutant, Hive Mother</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">1-2 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">Scattered packs</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Primal evolution</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Pack hierarchies</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-bloodlines.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-bloodlines.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EMERGENT SYNDICATE -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>Emergent Syndicate</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 3: MINOR FACTION</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Hive-Mind Collective</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Metamorph Tokens (coordinated swarm, chosen evolution)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: Swarm Drones, Metamorphs, Hive Node, Collective Mind, Swarm Nexus, Overmind</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">500k-1 million</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">The Hive</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Collective consciousness</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Hive-mind unified</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-emergent.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-emergent.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CRUCIBLE PACTS -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>Crucible Pacts</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 4: OUTLIER</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Fire Duelist Packs</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Forge Tokens (volcanic honor duels, ancestral iron)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>6 units: War Pack, Flamebearers, Iron Champions, Forge Titan, Warmaster, Crucible Engine</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">&lt;100k</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">Volcanic wastelands</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">Honor through combat</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Warrior societies</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-crucible.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-crucible.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DRACONID REMEMBRANCE -->
+            <div class="faction-card">
+                <button class="faction-toggle" onclick="toggleFaction(this)">
+                    <span>Draconid Remembrance</span>
+                </button>
+                <div class="faction-content">
+                    <div class="faction-tier">TIER 4: OUTLIER</div>
+                    
+                    <div class="faction-detail">
+                        <strong>Playstyle</strong>
+                        <p>Ancient Archivists</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Core Mechanic</strong>
+                        <p>Memory Shards (apocalypse cycles, petrified knowledge)</p>
+                    </div>
+
+                    <div class="faction-detail">
+                        <strong>Support Units</strong>
+                        <p>Not yet inscribed</p>
+                    </div>
+
+                    <div class="faction-grid-summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Population</div>
+                            <div class="summary-value">&lt;100k</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Territory</div>
+                            <div class="summary-value">The Petrified Spires</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Philosophy</div>
+                            <div class="summary-value">History repeats eternally</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Governance</div>
+                            <div class="summary-value">Ancient council</div>
+                        </div>
+                    </div>
+
+                    <div class="faction-links">
+                        <a href="faction-draconid.html" target="_parent">→ Full Faction Profile</a>
+                        <a href="lore-npc-draconid.html" target="_parent">→ Notable Pilots</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Temperate zones (former Europe/North America), fortified cathedral-cities</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~15 million (largest faction)</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Theocracy (Archbishops, Cardinals, Tech-Priests)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Tithes, tribute, Casket leasing (to non-Church forces)</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Penitent Legions (Casket pilots serving penance), Crusader infantry</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Morale (fanatical faith), numbers, established infrastructure</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Rigid dogma, slow to adapt, internal schisms</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="divider">❈</div>
 
-        <h3>2. The Ossuarium</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "Souls are labor. Death is a debt. We collect both."
-            </p>
-        </div>
+        <h2>Faction Relationships &amp; Tensions</h2>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>The Boneyards (industrial salvage complex), scattered outposts</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~12 million</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Corporate meritocracy (Council of Ledgers, Bonelord Thresh as founder)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Soul-binding contracts, Casket manufacturing/sales, Soulstone trade</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Contracted Caskets (largest fleet), mercenary infantry</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Soul-binding monopoly, industrial capacity, wealth</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Moral bankruptcy, widely hated, worker unrest</td>
-                </tr>
-            </tbody>
-        </table>
+        <p style="opacity: 0.9; line-height: 1.8;">
+            The ten factions are bound by complex webs of alliance, mutual hatred, and calculated neutrality. Wars have been fought over territory and ideology. Uneasy truces persist where mutual benefit demands cooperation. Some factions are drifting toward open conflict...others toward unexpected alliance. Your actions in the campaign will shape these relationships forever.
+        </p>
 
-        <h3>3. Dwarven Forge-Guilds</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "Quality endures. Craft perfects. We build what lasts."
-            </p>
-        </div>
+        <p style="opacity: 0.9; line-height: 1.8;">
+            <strong style="color: var(--aged-gold);">Learn More:</strong>
+            <a href="faction-relationships.html" target="_parent" style="color: var(--aged-gold); text-decoration: underline;">→ Full Relationship Matrix</a> | 
+            <a href="faction-caskets.html" target="_parent" style="color: var(--aged-gold); text-decoration: underline;">→ Casket Types by Faction</a> | 
+            <a href="faction-tactics.html" target="_parent" style="color: var(--aged-gold); text-decoration: underline;">→ Faction Tactics Cards</a>
+        </p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Underground cities (former mountain ranges), geothermal forges</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~3 million</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Guild confederation (Council of Forgemasters)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Custom Casket construction, weapons/armor smithing, engineering contracts</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Elite Caskets (quality over quantity), runic-enhanced defenses</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Superior craftsmanship, defensible terrain, self-sufficient</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Small population, slow production, isolationist tendencies</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="divider">❈</div>
 
-        <h3>4. Elven Verdant Covenant</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "Merge with nature. Heal the world. Reject the machines that broke it."
-            </p>
-        </div>
+        <h2>Choose Your Path</h2>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Preserved forests, bio-domes, controlled groves</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~2 million</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Council of Rootwardens (democratic, consensus-based)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Agriculture (best in world), bio-organic materials, symbiotic contracts</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Bio-organic Caskets (living wood, vine hydraulics), guerrilla tactics</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Food security, environmental expertise, moral high ground</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Fragile Caskets, limited territory, vulnerable to Void corruption</td>
-                </tr>
-            </tbody>
-        </table>
+        <p style="opacity: 0.9; line-height: 1.8;">
+            Each faction offers a unique playstyle, philosophy, and destiny. Whether you seek redemption through the Church, evolution through the Syndicate, profit through the Exchange, or any other path...the choice shapes not only your campaign but the fate of the world itself.
+        </p>
 
-        <h3>5. The Exchange</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "Everything has a price. Death, life, loyalty—all negotiable."
-            </p>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Vault-cities (fortified trading hubs), caravan routes</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~4 million</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Plutocracy (Council of Vaults, wealth = voting power)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Banking, Casket leasing, Soulstone trading, debt collection</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Repossessed Caskets, mercenary contracts, private security</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Wealth, trade networks, neutral ground (everyone needs them)</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>No loyalty, hated by debtors, vulnerable to economic collapse</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>6. Nomad Collective</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "Stay mobile. Stay alive. Trust the convoy."
-            </p>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>None (migratory caravans, temporary camps)</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~2 million (dispersed globally)</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Decentralized (convoy Elders, consensus democracy)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Scavenging, trade caravans, information brokering</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Jury-rigged Caskets (patchwork but functional), hit-and-run tactics</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Mobility, oral history preservation, impossible to conquer (no fixed target)</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>No territory, vulnerable in winter, limited manufacturing</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>7. Vestige Bloodlines</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "We didn't survive extinction by staying human. Evolution is survival."
-            </p>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Isolated enclaves (jungles, swamps, Void-adjacent zones)</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~1 million (mostly mutated)</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Tribal (Bloodline Patriarchs, hereditary rule)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Mutation services (controlled Void exposure), adaptive biotech</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Bio-mechanical Caskets (grafted mutations), shock troops</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Adaptive evolution, Void resistance, unpredictable abilities</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Widely feared, unstable mutations, internal power struggles</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>8. Emergent Syndicate</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "The hive thinks. The hive endures. Individual thought is obsolete."
-            </p>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Bio-organic hive structures (jungles, underground)</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~500,000 (collective consciousness, hard to count)</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Hive-mind (no leaders, collective decision-making)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Resource pooling, bio-organic manufacturing, pheromone coordination</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Swarm Caskets (hive-linked, perfect coordination), overwhelming numbers</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Perfect teamwork, no morale loss, rapid reproduction</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Creepy (universally mistrusted), hive vulnerable to disruption, no diplomacy</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>9. Wyrd Conclave (The Fae)</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "Reality is negotiable. Rules are suggestions. We dance between the cracks."
-            </p>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Void rifts, reality-warped zones (mobile, unpredictable)</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~100,000 (Stage 2-3 Void corruption, embraced)</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Anarchic (Courts of Whimsy, no fixed hierarchy)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Void artifacts, reality manipulation services, stolen goods</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Reality-warped Caskets (phase-shifting, impossible geometry), trickery</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Reality manipulation, Void mastery, unpredictable</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Insane (by human standards), unreliable, self-destructive tendencies</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>10. Crucible Packs</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "Bombs purify. Explosions cleanse. We worship the blast."
-            </p>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Ashveil Caldera (volcanic wasteland)</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~15,000 (goblinoid mutations, bomb-worshipers)</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>Cult (Blast-Prophets, ritualized hierarchy)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Explosive manufacturing, demolition contracts, scrap salvage</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>Explosive Caskets (mobile bombs, suicide tactics)</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Fearless, explosives expertise, chaotic</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Self-destructive, tiny population, universally avoided</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>11. Draconid Remembrance</h3>
-        <div style="background: rgba(75, 14, 14, 0.2); padding: 1rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                <strong>Philosophy:</strong> "We've seen this before. We'll see it again. Witness. Record. Endure."
-            </p>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Territory</strong></td>
-                    <td>Petrified groves (crystallizing giants, neutral ground)</td>
-                </tr>
-                <tr>
-                    <td><strong>Population</strong></td>
-                    <td>~50 (ancient beings, near-immortal)</td>
-                </tr>
-                <tr>
-                    <td><strong>Government</strong></td>
-                    <td>None (individual Draconids, no collective authority)</td>
-                </tr>
-                <tr>
-                    <td><strong>Economy</strong></td>
-                    <td>Knowledge trading, quest-giving, historical consultation</td>
-                </tr>
-                <tr>
-                    <td><strong>Military</strong></td>
-                    <td>None (neutral NPCs, individually powerful but non-combatant)</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Strength</strong></td>
-                    <td>Ancient knowledge, neutrality, memory crystals (historical records)</td>
-                </tr>
-                <tr>
-                    <td><strong>Key Weakness</strong></td>
-                    <td>Passive, crystallizing (literal petrification over centuries), pessimistic</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
-        </div>
-
-        <h2>Major Conflicts & Alliances</h2>
-
-        <h3>Active Wars (Year 437)</h3>
-        <ul class="manuscript-list">
-            <li><strong>Church vs. Ossuarium (Cold War):</strong> Ideological conflict (redemption vs. exploitation), proxy battles, no open war yet</li>
-            <li><strong>Elves vs. Wyrd (Border Skirmishes):</strong> Void corruption vs. environmental purification, contested forests</li>
-            <li><strong>Exchange vs. Everyone (Economic Conflict):</strong> Debt collection, repossession raids, universal resentment</li>
-        </ul>
-
-        <h3>Unlikely Alliances</h3>
-        <ul class="manuscript-list">
-            <li><strong>Church + Dwarves:</strong> Mutual defense pact (Dwarves supply weapons, Church provides manpower)</li>
-            <li><strong>Ossuarium + Exchange:</strong> Economic partnership (Ossuarium manufactures, Exchange distributes)</li>
-            <li><strong>Nomads + Everyone:</strong> Information trading (Nomads neutral, sell intelligence to highest bidder)</li>
-        </ul>
-
-        <h3>Permanent Enmities</h3>
-        <ul class="manuscript-list">
-            <li><strong>Everyone vs. Emergent Syndicate:</strong> Hive-mind terrifies factions, universally distrusted</li>
-            <li><strong>Everyone vs. Crucible Packs:</strong> Too dangerous to ally with (bombs solve nothing)</li>
-            <li><strong>Elves vs. Ossuarium:</strong> Soul-binding is abomination (Elves' core belief vs. Ossuarium's foundation)</li>
-        </ul>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
-        </div>
-
-        <h2>Faction Relations Map</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Faction A</th>
-                    <th>Faction B</th>
-                    <th>Relationship</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Church</strong></td>
-                    <td>Ossuarium</td>
-                    <td>Hostile (competing ideologies)</td>
-                </tr>
-                <tr>
-                    <td><strong>Church</strong></td>
-                    <td>Dwarves</td>
-                    <td>Allied (mutual defense)</td>
-                </tr>
-                <tr>
-                    <td><strong>Ossuarium</strong></td>
-                    <td>Exchange</td>
-                    <td>Allied (economic partnership)</td>
-                </tr>
-                <tr>
-                    <td><strong>Ossuarium</strong></td>
-                    <td>Elves</td>
-                    <td>Hostile (soul-binding vs. nature)</td>
-                </tr>
-                <tr>
-                    <td><strong>Elves</strong></td>
-                    <td>Wyrd</td>
-                    <td>Hostile (environmental vs. Void embrace)</td>
-                </tr>
-                <tr>
-                    <td><strong>Nomads</strong></td>
-                    <td>All</td>
-                    <td>Neutral (information brokers)</td>
-                </tr>
-                <tr>
-                    <td><strong>Draconids</strong></td>
-                    <td>All</td>
-                    <td>Neutral (quest-givers, historians)</td>
-                </tr>
-                <tr>
-                    <td><strong>Emergent</strong></td>
-                    <td>All</td>
-                    <td>Mistrusted (hive-mind terrifies everyone)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
-        </div>
-
-        <h2>The Future of Faction Politics</h2>
-
-        <h3>Key Questions (Year 437)</h3>
-        <ul class="manuscript-list">
-            <li><strong>Will Church and Ossuarium go to war?</strong> Cold war heats up yearly, open conflict seems inevitable</li>
-            <li><strong>Can Elves purify Void corruption?</strong> If yes, shifts power balance dramatically</li>
-            <li><strong>What happens when Exchange debt bubble bursts?</strong> Economic collapse could destabilize all factions</li>
-            <li><strong>Will Emergent Syndicate expand?</strong> Hive-mind reproduction accelerates, territory grows</li>
-            <li><strong>Are Draconids right about cycles?</strong> Do civilizations always self-destruct? Is Year 437 just delaying Year 0 Part 2?</li>
-        </ul>
-
-        <div class="manuscript-quote">
-            "We're not rebuilding civilization. We're building ten different civilizations and praying they don't destroy each other before the Void does it for us."
-            <span class="quote-attribution">—Forgemaster Durr</span>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
-        </div>
-
-        <h2>Explore Further</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Topic</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="faction-church.html" target="_parent"><strong>Church of Absolution</strong></a></td>
-                    <td>Faith, penance, and fanaticism</td>
-                </tr>
-                <tr>
-                    <td><a href="faction-ossuarium.html" target="_parent"><strong>The Ossuarium</strong></a></td>
-                    <td>Soul-binding empire and debt economy</td>
-                </tr>
-                <tr>
-                    <td><a href="faction-dwarves.html" target="_parent"><strong>Dwarven Forge-Guilds</strong></a></td>
-                    <td>Master crafters and underground cities</td>
-                </tr>
-                <tr>
-                    <td><a href="faction-elves.html" target="_parent"><strong>Elven Verdant Covenant</strong></a></td>
-                    <td>Bio-organic symbiosis and environmentalism</td>
-                </tr>
-                <tr>
-                    <td><a href="faction-exchange.html" target="_parent"><strong>The Exchange</strong></a></td>
-                    <td>Merchant-lords and debt collectors</td>
-                </tr>
-                <tr>
-                    <td><a href="faction-nomads.html" target="_parent"><strong>Nomad Collective</strong></a></td>
-                    <td>Migratory survivors and oral historians</td>
-                </tr>
-                <tr>
-                    <td><a href="lore-settlements.html" target="_parent"><strong>Major Settlements</strong></a></td>
-                    <td>Cities and strongholds across the factions</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 3rem 0;">
-            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
-        </div>
+        <p style="text-align: center; margin: 3rem 0; font-size: 1.1rem; color: var(--aged-gold); font-style: italic;">
+            "In iron we seek forgiveness. Through blood, absolution."<br>
+            <span style="opacity: 0.7; font-size: 0.95rem;">- The Creed of the Bound</span>
+        </p>
     </div>
+
+    <script>
+        function toggleFaction(button) {
+            const content = button.nextElementSibling;
+            
+            // Toggle active states
+            button.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

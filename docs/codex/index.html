@@ -80,7 +80,8 @@
                         transform 0.3s ease;
         }
 
-        .nav-dropdown:hover .nav-submenu {
+        .nav-dropdown:hover .nav-submenu,
+        .nav-dropdown.dropdown-open .nav-submenu {
             max-height: 500px;
             opacity: 1;
             transform: translateY(0);
@@ -88,7 +89,7 @@
         }
 
         .nav-submenu .nav-link {
-            font-size: 0.8rem;
+            font-size: 1.1rem;
             padding: 0.4rem 0.75rem;
             opacity: 0.85;
             transition: opacity 0.2s ease, padding-left 0.3s ease;
@@ -106,12 +107,251 @@
             transition: transform 0.3s ease;
         }
 
-        .nav-dropdown:hover .nav-link.has-submenu::after {
+        .nav-dropdown:hover .nav-link.has-submenu::after,
+        .nav-dropdown.dropdown-open .nav-link.has-submenu::after {
             transform: rotate(180deg);
+        }
+
+        /* Mobile Hamburger Menu */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10001;
+            background: var(--blood-red);
+            border: 2px solid var(--dark-red);
+            color: var(--bone-white);
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--dark-red);
+            transform: scale(1.05);
+        }
+
+        .mobile-menu-toggle:active {
+            transform: scale(0.95);
+        }
+
+        /* Desktop sidebar toggle - same overlay style as mobile */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100vh;
+            z-index: 10000;
+            transition: left 0.3s ease;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Remove any borders from nav sections */
+        .nav-section {
+            border: none !important;
+            border-bottom: 1px solid var(--blood-red) !important;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        /* Navigation content wrapper - scrollable area with background */
+        .nav-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-top: 7rem;
+            padding-bottom: 2rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--blood-red) var(--shadow-black);
+            background: linear-gradient(to bottom,
+                rgba(43, 31, 23, 0.98),
+                rgba(26, 20, 16, 0.98)
+            );
+            position: relative;
+            border: none;
+            box-shadow: none;
+        }
+
+        .nav-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--leather-texture);
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .nav-content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .nav-content::-webkit-scrollbar-track {
+            background: var(--shadow-black);
+        }
+
+        .nav-content::-webkit-scrollbar-thumb {
+            background: var(--blood-red);
+            border-radius: 2px;
+        }
+
+        .nav-content::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-red);
+        }
+
+        /* First ribbon at end of navigation content */
+        .nav-end-ribbon {
+            width: 100%;
+            min-height: 60px;
+            background: linear-gradient(to bottom,
+                var(--blood-red) 0%,
+                var(--dark-red) 100%
+            );
+            border-top: 3px double var(--aged-gold);
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8), inset 0 0 0 transparent;
+            flex-shrink: 0;
+            position: relative;
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% calc(100% - 5px),
+                60% calc(100% - 5px),
+                50% 100%,
+                40% calc(100% - 5px),
+                0 calc(100% - 5px)
+            );
+            height: 60px;
+            margin-bottom: -5px; /* Slight overlap */
+        }
+
+        /* Second bookmark ribbon at bottom of sidebar */
+        .sidebar-bookmark {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to bottom,
+                var(--blood-red) 0%,
+                var(--dark-red) 100%
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 3px double var(--aged-gold);
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8), inset 0 0 0 transparent;
+            margin-top: auto;
+            flex-shrink: 0;
+            position: relative;
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 75%,
+                60% 75%,
+                50% 100%,
+                40% 75%,
+                0 75%
+            );
+        }
+
+        .sidebar-bookmark::after {
+            content: '⸸';
+            font-size: 2rem;
+            color: var(--aged-gold);
+            opacity: 0.6;
+            z-index: 1;
+            margin-bottom: 15px;
+        }
+
+        /* Desktop Menu Toggle Button - persistent on left side */
+        .desktop-menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10001;
+            background: var(--blood-red);
+            border: 2px solid var(--dark-red);
+            color: var(--bone-white);
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .desktop-menu-toggle:hover {
+            background: var(--dark-red);
+            transform: scale(1.05);
+        }
+
+        .desktop-menu-toggle:active {
+            transform: scale(0.95);
+        }
+
+        /* Backdrop for desktop menu */
+        .menu-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+        }
+
+        .menu-backdrop.active {
+            display: block;
+        }
+
+        /* Adjust container for overlay sidebar */
+        .container {
+            grid-template-columns: 1fr;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 968px) {
+            .sidebar {
+                width: 80%;
+                max-width: 280px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Menu Toggle Button (works for both desktop and mobile) -->
+    <button class="desktop-menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <!-- Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
     <!-- Falling ash/dust particles -->
     <div class="particles">
         <div class="particle"></div>
@@ -146,6 +386,7 @@
     <div class="container">
         <!-- Sidebar -->
         <nav class="sidebar">
+            <div class="nav-content">
             <!-- 0. HOME - Quick return to index -->
             <div class="nav-section">
                 <a class="nav-link" style="font-weight: 700; color: var(--aged-gold); border-left-color: var(--dark-red);" onclick="loadContent('content-home.html', event)">CODEX HOME</a>
@@ -281,9 +522,17 @@
                 <a href="../pdfs/reference-PLAYTEST-READY.pdf" class="nav-link" download>Playtest PDF</a>
                 <a href="../cards/" class="nav-link">Card Database</a>
                 <a href="../cards/deck-builder.html" class="nav-link">Deck Builder</a>
+                <a href="../codex/gm-helper.html" class="nav-link">GM Helper Tool</a>
                 <a href="../codex/support-equipment.html" class="nav-link">Support Unit & Equipment Helper</a>
                 <a href="https://github.com/KeeberGoblin/penance" class="nav-link" target="_blank">GitHub Repository</a>
             </div>
+            </div>
+
+            <!-- First ribbon at end of navigation -->
+            <div class="nav-end-ribbon"></div>
+
+            <!-- Second bookmark ribbon at very bottom -->
+            <div class="sidebar-bookmark"></div>
         </nav>
 
         <!-- Content Frame -->
@@ -293,11 +542,51 @@
     </div>
 
     <script>
+        function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.menu-backdrop');
+            const toggleBtn = document.querySelector('.desktop-menu-toggle');
+
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+
+            // Change icon based on menu state
+            if (sidebar.classList.contains('active')) {
+                toggleBtn.innerHTML = '✕';
+            } else {
+                toggleBtn.innerHTML = '☰';
+            }
+        }
+
         function loadContent(url, event) {
             // Prevent default link behavior and stop event bubbling
             if (event) {
                 event.preventDefault();
                 event.stopPropagation();
+            }
+
+            // Check if this is a dropdown parent link
+            const clickedLink = event ? event.currentTarget : null;
+            const isDropdownParent = clickedLink && clickedLink.classList.contains('has-submenu');
+            const parentDropdown = clickedLink ? clickedLink.closest('.nav-dropdown') : null;
+
+            // On mobile/touch devices, toggle dropdown instead of navigating on first click
+            if (isDropdownParent && parentDropdown) {
+                const isOpen = parentDropdown.classList.contains('dropdown-open');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
+                    if (dropdown !== parentDropdown) {
+                        dropdown.classList.remove('dropdown-open');
+                    }
+                });
+
+                // If dropdown is closed, open it and prevent navigation
+                if (!isOpen) {
+                    parentDropdown.classList.add('dropdown-open');
+                    return; // Don't navigate, just open the dropdown
+                }
+                // If dropdown is already open, allow navigation to proceed below
             }
 
             const frame = document.getElementById('contentFrame');
@@ -313,12 +602,25 @@
 
             // Load content in iframe
             frame.src = url;
+
+            // Close menu after clicking a link
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.menu-backdrop');
+            const toggleBtn = document.querySelector('.desktop-menu-toggle');
+            sidebar.classList.remove('active');
+            backdrop.classList.remove('active');
+            toggleBtn.innerHTML = '☰';
+
+            // Close all dropdowns when navigating
+            document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
+                dropdown.classList.remove('dropdown-open');
+            });
         }
 
         // Set home page as active on load
         window.addEventListener('DOMContentLoaded', function() {
             // No active state on load - home content is shown by default
-            
+
             // Handle sidebar scroll indicator
             const sidebar = document.querySelector('.sidebar');
             if (sidebar) {
@@ -330,13 +632,26 @@
                         sidebar.style.setProperty('--scroll-indicator-opacity', '0.8');
                     }
                 });
-                
+
                 // Check initial scroll position
                 const isScrollable = sidebar.scrollHeight > sidebar.clientHeight;
                 if (!isScrollable) {
                     sidebar.style.setProperty('--scroll-indicator-opacity', '0');
                 }
             }
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(event) {
+                // Check if click is outside any dropdown
+                const clickedDropdown = event.target.closest('.nav-dropdown');
+
+                if (!clickedDropdown) {
+                    // Clicked outside all dropdowns - close them all
+                    document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
+                        dropdown.classList.remove('dropdown-open');
+                    });
+                }
+            });
         });
     </script>
 </body>

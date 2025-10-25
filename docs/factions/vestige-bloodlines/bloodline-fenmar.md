@@ -48,6 +48,65 @@
 
 ---
 
+## The Feral Problem
+
+### Without Caskets: The Transformation Timeline
+
+**Fenmar degradation (4th generation like Matron Kael):**
+
+- **0-6 hours disconnected**: Coherent but agitated, pack-instinct heightened, increased aggression
+- **6-12 hours**: Speech deteriorates into growls and snarls, extra fur growth begins, claws extend
+- **12-18 hours**: Forgets own name, recognizes only pack members by scent, jaw structure begins shifting
+- **18-24 hours**: Digitigrade legs lock into wolf stance—cannot walk upright anymore
+- **24-48 hours**: Full lupine transformation—quadrupedal, hands become paws, speech physically impossible
+- **48-72 hours**: No human consciousness remains—pure wolf, attacks anything not pack
+- **72+ hours**: Permanent feral state—must be mercy-killed, cannot be restored
+
+### Matron Kael's Burden
+
+**Personal testimony (Year 435, Vestige Council):**
+
+> "I watched my sister disconnect for 3 days once. She thought she was strong enough. Thought she could 'beat the wolf.'
+>
+> By hour 12, she couldn't say my name. By day two, her hands were paws. She tried to scream for help, but her jaw had already changed—only howls came out.
+>
+> By day three, there was no sister left. Just a wolf wearing her scars. She didn't recognize me. She attacked me.
+>
+> I had to... I was the one who...
+>
+> I can disconnect for 6 hours maximum now. Any longer, and I forget my own name. I forget I was ever human. The wolf takes everything."
+
+### The Pack-Mind Solution
+
+**Fenmar discovered that group neural synchronization extends coherence:**
+
+- **Pack-linking**: Connected Fenmar can share neural load via auxiliary ports
+- **Alpha anchoring**: Matron Kael's Casket has 6 auxiliary neural ports for direct pack-linking
+- **Shared stability**: Alpha's stronger mental patterns help stabilize weaker pack members
+- **Extended coherence**: Linked Fenmar can disconnect for up to 12 hours (double individual limit)
+
+**The tragedy:** When a pack member dies, the survivors' coherence drops proportionally. Lose too many, and the whole pack begins degrading faster.
+
+**Current pack status (Year 437):**
+- Kael's core pack: 23 members
+- 8 members can only disconnect for 4 hours (severe 4th gen)
+- 12 members can disconnect for 6 hours (stable 4th gen, like Kael)
+- 3 members can disconnect for 8 hours (late 3rd gen elders)
+
+**Kael's greatest fear:**
+> "Every pack member who dies takes a piece of all of us with them. I'm holding 23 minds together, including my own. When I die, they all go feral within days. I am not just their Alpha. I am their anchor. And I am drowning."
+
+### Why Fenmar Never Operate Alone
+
+**This is why Fenmar pack tactics aren't just strategy—they're survival:**
+
+- Solo Fenmar degrade twice as fast (no pack-mind support)
+- Isolated wolves typically go feral within 12 hours
+- Pack bonds literally preserve humanity through shared consciousness
+- "The pack hunts together" is not a motto—**it's a medical necessity**
+
+---
+
 ## Notable NPC: Matron Kael Fenmar
 
 ### Title

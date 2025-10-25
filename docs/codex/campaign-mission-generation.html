@@ -15,48 +15,241 @@
         .generation-table th {
             background: linear-gradient(to bottom, #660000, #440000);
             color: #d4af37;
-            padding: 0.75rem;
+            padding: 1rem 0.75rem;
             text-align: left;
             border: 1px solid #8b0000;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
         }
 
         .generation-table td {
-            padding: 0.75rem;
+            padding: 1rem 0.75rem;
             border: 1px solid #4a0e0e;
             background: rgba(0, 0, 0, 0.2);
+            line-height: 1.5;
         }
 
         .generation-table tr:hover {
-            background: rgba(139, 0, 0, 0.1);
+            background: rgba(139, 0, 0, 0.15);
+            transition: background 0.2s ease;
         }
 
         .difficulty-badge {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
+            padding: 0.5rem 1rem;
             border-radius: 4px;
             font-weight: bold;
             font-size: 0.85rem;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .diff-easy { background: rgba(76, 175, 80, 0.3); border: 1px solid #4CAF50; color: #4CAF50; }
-        .diff-medium { background: rgba(255, 193, 7, 0.3); border: 1px solid #FFC107; color: #FFC107; }
-        .diff-hard { background: rgba(244, 67, 54, 0.3); border: 1px solid #F44336; color: #F44336; }
-        .diff-deadly { background: rgba(0, 0, 0, 0.6); border: 1px solid #8B0000; color: #ff4444; }
+        .diff-easy { 
+            background: rgba(76, 175, 80, 0.3); 
+            border: 1px solid #4CAF50; 
+            color: #4CAF50; 
+        }
+        .diff-medium { 
+            background: rgba(255, 193, 7, 0.3); 
+            border: 1px solid #FFC107; 
+            color: #FFC107; 
+        }
+        .diff-hard { 
+            background: rgba(244, 67, 54, 0.3); 
+            border: 1px solid #F44336; 
+            color: #F44336; 
+        }
+        .diff-deadly { 
+            background: rgba(0, 0, 0, 0.6); 
+            border: 1px solid #ff4444; 
+            color: #ff4444; 
+        }
 
-        .faction-box {
-            background: rgba(139, 0, 0, 0.2);
-            border-left: 4px solid #8B0000;
-            padding: 1rem;
+        .faction-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid var(--dark-red);
+            padding: 1.5rem;
             margin: 1rem 0;
+            border-radius: 2px;
+        }
+
+        .faction-card h4 {
+            color: var(--aged-gold);
+            font-size: 1.1rem;
+            margin: 0 0 0.75rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        .faction-card p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .enemy-pool {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .enemy-type {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.75rem;
+            border-left: 2px solid var(--aged-gold);
+            padding-left: 1rem;
+        }
+
+        .enemy-type strong {
+            color: var(--aged-gold);
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
         }
 
         .example-box {
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px dashed #8b6914;
-            padding: 1rem;
-            margin: 1rem 0;
+            background: rgba(212, 197, 176, 0.1);
+            border: 2px solid var(--aged-gold);
+            border-left: 4px solid var(--aged-gold);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
             font-style: italic;
+            line-height: 1.8;
+        }
+
+        .example-box strong {
+            color: var(--aged-gold);
+            font-style: normal;
+        }
+
+        .difficulty-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .difficulty-card {
+            background: rgba(75, 14, 14, 0.2);
+            border: 2px solid var(--dark-red);
+            padding: 1.5rem;
+            border-radius: 2px;
+        }
+
+        .difficulty-card h4 {
+            color: var(--aged-gold);
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .difficulty-card p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .difficulty-label {
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-container {
+            background: rgba(212, 197, 176, 0.05);
+            border-left: 4px solid var(--aged-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .step-container h3 {
+            color: var(--aged-gold);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 1.05rem;
+        }
+
+        .flowchart-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--aged-gold);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flowchart-box ol {
+            margin: 0;
+            padding-left: 2rem;
+            line-height: 2.2;
+        }
+
+        .flowchart-box li {
+            margin: 0.5rem 0;
+        }
+
+        .flowchart-box strong {
+            color: var(--aged-gold);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+            color: var(--dark-red);
+            opacity: 0.6;
+        }
+
+        .faction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .modifier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .modifier-card {
+            background: rgba(75, 14, 14, 0.15);
+            border: 1px solid var(--dark-red);
+            border-left: 4px solid var(--aged-gold);
+            padding: 1.25rem;
+        }
+
+        .modifier-card strong {
+            color: var(--aged-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .modifier-card p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .section-header {
+            color: var(--aged-gold);
+            border-bottom: 2px solid var(--dark-red);
+            padding-bottom: 0.75rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -70,172 +263,161 @@
 
         <h1>Mission Generation Tables</h1>
 
-        <p style="font-style: italic; color: #8B0000; margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
-            Procedural Encounters for Campaign & Random Missions
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
+            Procedural Encounters for Campaign & Random Missions • Infinite Replayability
         </p>
 
         <div class="manuscript-quote">
             "Every mission is a gamble. Roll the dice, deploy your Casket, and pray the odds favor you."
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
+        <div class="divider">❈</div>
 
-        <h2>Overview: When to Generate Missions</h2>
+        <h2 class="section-header">Overview: When to Generate Missions</h2>
 
         <p class="manuscript-text">
-            <span style="font-size: 2.5rem; font-weight: bold; color: #8B0000; float: left; line-height: 0.85; margin-right: 0.05em; margin-top: 0.1em; font-family: 'Cinzel Decorative', serif;">U</span>se these tables to generate enemy compositions for:
+            Use these tables to generate enemy compositions and encounter difficulty for:
         </p>
 
         <ul class="manuscript-list">
-            <li><strong>Random Campaign Missions</strong> - Between story missions, generate side quests</li>
-            <li><strong>Settlement Defense Events</strong> - When Settlement Defense triggers (see <a href="campaign-settlement-phase.html">Settlement Phase</a>)</li>
-            <li><strong>Random Encounters</strong> - Travel encounters, wilderness patrols, scavenging runs</li>
-            <li><strong>Custom Scenarios</strong> - Build your own missions with balanced enemy groups</li>
+            <li><strong>Random Campaign Missions</strong> - Between story missions, generate side quests and patrols</li>
+            <li><strong>Settlement Defense Events</strong> - When your settlement comes under attack (see <a href="campaign-settlement-phase.html">Settlement Phase</a>)</li>
+            <li><strong>Wilderness Encounters</strong> - Random battles during travel, scavenging runs, resource gathering</li>
+            <li><strong>Custom Scenarios</strong> - Build your own balanced encounters using these tables</li>
         </ul>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
+        <div class="divider">❈</div>
+
+        <h2 class="section-header">Step 1: Determine Mission Difficulty</h2>
+
+        <p class="manuscript-text">Roll 1d6 or choose based on your pilot strength and campaign progression:</p>
+
+        <div class="difficulty-section">
+            <div class="difficulty-card">
+                <span class="difficulty-label"><span class="difficulty-badge diff-easy">1-2: EASY</span></span>
+                <h4>Introductory</h4>
+                <p><strong>Budget:</strong> 30-40 HP total</p>
+                <p><strong>Composition:</strong> Mostly Swarm units (3-5 HP each). Maximum 1 Elite.</p>
+                <p><strong>Best For:</strong> New pilots, solo campaigns, warming up.</p>
+            </div>
+
+            <div class="difficulty-card">
+                <span class="difficulty-label"><span class="difficulty-badge diff-medium">3-4: MEDIUM</span></span>
+                <h4>Standard</h4>
+                <p><strong>Budget:</strong> 50-70 HP total</p>
+                <p><strong>Composition:</strong> Mix of Swarm and Elite (15-25 HP) enemies.</p>
+                <p><strong>Best For:</strong> Regular campaign missions, balanced challenges.</p>
+            </div>
+
+            <div class="difficulty-card">
+                <span class="difficulty-label"><span class="difficulty-badge diff-hard">5: HARD</span></span>
+                <h4>Dangerous</h4>
+                <p><strong>Budget:</strong> 80-100 HP total</p>
+                <p><strong>Composition:</strong> 2-3 Elites + Swarm support, or 1 Boss (30-60 HP) with adds.</p>
+                <p><strong>Best For:</strong> Seasoned pilots, story climaxes, desperate struggles.</p>
+            </div>
+
+            <div class="difficulty-card">
+                <span class="difficulty-label"><span class="difficulty-badge diff-deadly">6: DEADLY</span></span>
+                <h4>Campaign Climax</h4>
+                <p><strong>Budget:</strong> 120+ HP total</p>
+                <p><strong>Composition:</strong> 1 Boss + 2 Elites + Swarm, or Anomalous entity.</p>
+                <p><strong>Best For:</strong> Final missions, faction wars, apocalyptic encounters.</p>
+            </div>
         </div>
 
-        <h2>Step 1: Determine Mission Difficulty</h2>
+        <div class="divider">❈</div>
 
-        <p class="manuscript-text">Roll 1d6 or choose based on player strength:</p>
+        <h2 class="section-header">Step 2: Determine Enemy Faction</h2>
 
-        <table class="generation-table">
-            <thead>
-                <tr>
-                    <th>1d6</th>
-                    <th>Difficulty</th>
-                    <th>Enemy Budget</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1-2</td>
-                    <td><span class="difficulty-badge diff-easy">Easy</span></td>
-                    <td>30-40 HP total</td>
-                    <td>Intro mission. Mostly Swarm (3-5 HP) enemies. 1 Elite max.</td>
-                </tr>
-                <tr>
-                    <td>3-4</td>
-                    <td><span class="difficulty-badge diff-medium">Medium</span></td>
-                    <td>50-70 HP total</td>
-                    <td>Standard mission. Mix of Swarm and Elite (15-25 HP) enemies.</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><span class="difficulty-badge diff-hard">Hard</span></td>
-                    <td>80-100 HP total</td>
-                    <td>Challenging. 2-3 Elites + Swarm support, or 1 Boss (30-60 HP) + adds.</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><span class="difficulty-badge diff-deadly">Deadly</span></td>
-                    <td>120+ HP total</td>
-                    <td>Campaign climax. 1 Boss + 2 Elites + Swarm, or Anomalous entity.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>Step 2: Determine Enemy Faction</h2>
-
-        <p class="manuscript-text">Roll 1d12 to determine which faction you're fighting:</p>
+        <p class="manuscript-text">Roll 1d12 to determine which faction, enemy type, or threat you're facing. Each has distinct tactics:</p>
 
         <table class="generation-table">
             <thead>
                 <tr>
                     <th>1d12</th>
-                    <th>Faction</th>
-                    <th>Tactical Style</th>
+                    <th>FACTION / ENEMY TYPE</th>
+                    <th>TACTICAL STYLE</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td><strong>Church of Absolution</strong></td>
-                    <td>Self-harm for burst damage. Martyrdom. Aggressive.</td>
+                    <td><strong>1</strong></td>
+                    <td>Church of Absolution</td>
+                    <td>Self-harm for burst damage. Martyrdom mechanics. Aggressive push.</td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td><strong>Dwarven Forge-Guilds</strong></td>
-                    <td>Rune stacking. Tank. Slow but unkillable.</td>
+                    <td><strong>2</strong></td>
+                    <td>Dwarven Forge-Guilds</td>
+                    <td>Rune stacking. Defensive tank. Slow but nearly unkillable.</td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td><strong>Elven Verdant Covenant</strong></td>
-                    <td>Bleed stacking. Hit-and-run. DoT specialists.</td>
+                    <td><strong>3</strong></td>
+                    <td>Elven Verdant Covenant</td>
+                    <td>Bleed stacking. Hit-and-run tactics. Damage-over-time specialists.</td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td><strong>The Exchange</strong></td>
-                    <td>Resource drain. Economic warfare. Anti-healing.</td>
+                    <td><strong>4</strong></td>
+                    <td>The Exchange</td>
+                    <td>Resource drain economy. Economic warfare. Anti-healing strategies.</td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td><strong>Nomad Collective</strong></td>
-                    <td>Extreme mobility. Scavengers. Hit-and-fade.</td>
+                    <td><strong>5</strong></td>
+                    <td>Nomad Collective</td>
+                    <td>Extreme mobility (7+ Move). Scavengers. Hit-and-fade evasion.</td>
                 </tr>
                 <tr>
-                    <td>6</td>
-                    <td><strong>Blighted Packs</strong></td>
-                    <td>Taint damage. Disease. Suicide bombers.</td>
+                    <td><strong>6</strong></td>
+                    <td>Vestige Bloodlines</td>
+                    <td>Taint damage infliction. Disease spreading. Suicide bombers.</td>
                 </tr>
                 <tr>
-                    <td>7</td>
-                    <td><strong>Crucible Pacts</strong></td>
-                    <td>Escalating damage when wounded. Berserkers.</td>
+                    <td><strong>7</strong></td>
+                    <td>Crucible Pacts</td>
+                    <td>Escalating damage when wounded. Berserker fury. Honorable duels.</td>
                 </tr>
                 <tr>
-                    <td>8</td>
-                    <td><strong>Tainted Creatures</strong></td>
-                    <td>Corrupted wildlife. Swarm tactics. Taint infliction.</td>
+                    <td><strong>8</strong></td>
+                    <td>Tainted Creatures</td>
+                    <td>Corrupted wildlife. Swarm tactics. Taint infliction and disease.</td>
                 </tr>
                 <tr>
-                    <td>9</td>
-                    <td><strong>Bandits/Raiders</strong></td>
-                    <td>Human enemies. Standard tactics. Salvage focus.</td>
+                    <td><strong>9</strong></td>
+                    <td>Bandits / Raiders</td>
+                    <td>Human enemies. Standard tactics. Salvage-focused looting.</td>
                 </tr>
                 <tr>
-                    <td>10</td>
-                    <td><strong>Rogue Caskets</strong></td>
-                    <td>Rival pilots. Mirror player abilities. Tactical.</td>
+                    <td><strong>10</strong></td>
+                    <td>Rogue Caskets</td>
+                    <td>Rival pilots. Mirror your faction abilities. Tactical equals.</td>
                 </tr>
                 <tr>
-                    <td>11</td>
-                    <td><strong>Automata/Constructs</strong></td>
-                    <td>Scrap Golems, Drones. Immune to Taint. Predictable.</td>
+                    <td><strong>11</strong></td>
+                    <td>Automata / Constructs</td>
+                    <td>Scrap Golems and Drones. Immune to Taint. Predictable patterns.</td>
                 </tr>
                 <tr>
-                    <td>12</td>
-                    <td><strong>Anomalous</strong></td>
-                    <td>Roll on Anomalous Entity table (see <a href="enemies-anomalous.html">Anomalous Bestiary</a>).</td>
+                    <td><strong>12</strong></td>
+                    <td>Anomalous Entity</td>
+                    <td>Reality-warping horrors. Roll on <a href="enemies-anomalous.html">Anomalous Bestiary</a>.</td>
                 </tr>
             </tbody>
         </table>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
+        <div class="divider">❈</div>
 
-        <h2>Step 3: Generate Enemy Composition</h2>
+        <h2 class="section-header">Step 3: Generate Enemy Composition</h2>
 
-        <p class="manuscript-text">Based on difficulty and faction, roll on the appropriate table:</p>
+        <p class="manuscript-text">Based on difficulty and faction, roll 1d6 on the appropriate table below. Select enemies from your chosen faction's pool to match the HP budget:</p>
 
-        <h3>EASY Missions (30-40 HP Budget)</h3>
+        <h3 style="color: var(--aged-gold); margin-top: 2rem; margin-bottom: 1rem;">EASY Missions (30-40 HP Budget)</h3>
 
         <table class="generation-table">
             <thead>
                 <tr>
                     <th>1d6</th>
-                    <th>Composition</th>
-                    <th>Total HP</th>
+                    <th>COMPOSITION</th>
+                    <th>TOTAL HP</th>
                 </tr>
             </thead>
             <tbody>
@@ -258,20 +440,20 @@
         </table>
 
         <div class="example-box">
-            <strong>Example (Church, Easy, Roll 3):</strong><br>
-            - 8× Tainted Rats (3 HP each) = 24 HP<br>
-            - 1× Church Zealot (18 HP) = 18 HP<br>
-            <strong>Total: 42 HP</strong> - Slightly over budget but manageable for 2-3 players.
+            <strong>🎲 Example (Church, Easy, Roll 3):</strong><br>
+            8× Tainted Rats (3 HP each) = 24 HP<br>
+            1× Church Zealot (18 HP) = 18 HP<br>
+            <strong style="color: var(--aged-gold);">Total: 42 HP</strong>, Slightly over budget but manageable for 2-3 pilots.
         </div>
 
-        <h3>MEDIUM Missions (50-70 HP Budget)</h3>
+        <h3 style="color: var(--aged-gold); margin-top: 2rem; margin-bottom: 1rem;">MEDIUM Missions (50-70 HP Budget)</h3>
 
         <table class="generation-table">
             <thead>
                 <tr>
                     <th>1d6</th>
-                    <th>Composition</th>
-                    <th>Total HP</th>
+                    <th>COMPOSITION</th>
+                    <th>TOTAL HP</th>
                 </tr>
             </thead>
             <tbody>
@@ -294,19 +476,19 @@
         </table>
 
         <div class="example-box">
-            <strong>Example (Nomads, Medium, Roll 5):</strong><br>
-            - 3× Nomad Outrider (15 HP each) = 45 HP<br>
-            <strong>Total: 45 HP</strong> - Three highly mobile enemies. Extreme hit-and-run tactics. Chase nightmare.
+            <strong>🎲 Example (Nomads, Medium, Roll 5):</strong><br>
+            3× Nomad Outrider (15 HP each, Move 7) = 45 HP<br>
+            <strong style="color: var(--aged-gold);">Total: 45 HP</strong>, Three highly mobile enemies. Extreme hit-and-run nightmare. Chase combat.
         </div>
 
-        <h3>HARD Missions (80-100 HP Budget)</h3>
+        <h3 style="color: var(--aged-gold); margin-top: 2rem; margin-bottom: 1rem;">HARD Missions (80-100 HP Budget)</h3>
 
         <table class="generation-table">
             <thead>
                 <tr>
                     <th>1d6</th>
-                    <th>Composition</th>
-                    <th>Total HP</th>
+                    <th>COMPOSITION</th>
+                    <th>TOTAL HP</th>
                 </tr>
             </thead>
             <tbody>
@@ -329,20 +511,20 @@
         </table>
 
         <div class="example-box">
-            <strong>Example (Blighted, Hard, Roll 6):</strong><br>
-            - 1× Tainted Leviathan (60 HP Boss) = 60 HP<br>
-            - 2× Blighted Plague Bearer (18 HP each) = 36 HP<br>
-            <strong>Total: 96 HP</strong> - Boss with two suicide bombers. AoE Taint nightmare. Keep distance or die.
+            <strong>🎲 Example (Blighted, Hard, Roll 6):</strong><br>
+            1× Tainted Leviathan (60 HP Boss) = 60 HP<br>
+            2× Blighted Plague Bearer (18 HP each) = 36 HP<br>
+            <strong style="color: var(--aged-gold);">Total: 96 HP</strong>, Boss with suicide bombers. AoE Taint nightmare. Keep your distance or burn.
         </div>
 
-        <h3>DEADLY Missions (120+ HP Budget)</h3>
+        <h3 style="color: var(--aged-gold); margin-top: 2rem; margin-bottom: 1rem;">DEADLY Missions (120+ HP Budget)</h3>
 
         <table class="generation-table">
             <thead>
                 <tr>
                     <th>1d6</th>
-                    <th>Composition</th>
-                    <th>Total HP</th>
+                    <th>COMPOSITION</th>
+                    <th>TOTAL HP</th>
                 </tr>
             </thead>
             <tbody>
@@ -370,175 +552,293 @@
         </table>
 
         <div class="example-box">
-            <strong>Example (Anomalous, Deadly, Roll 6):</strong><br>
-            - 1× The Void Shepherd (60 HP Damnatio-class) = 60 HP<br>
-            <strong>Total: 60 HP</strong> - But HP is misleading. Reality-eroding aura, dimension-stepping, cannot be permanently killed. This is a SURVIVAL mission, not a kill mission.
+            <strong>🎲 Example (Anomalous, Deadly, Roll 6):</strong><br>
+            1× The Void Shepherd (60 HP Damnatio-class)<br>
+            <strong style="color: var(--aged-gold);">Total: 60 HP</strong>, BUT HP is misleading. Reality-eroding aura. Dimension-stepping. Cannot be permanently killed. This is a SURVIVAL mission, not a kill mission.
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
+        <div class="divider">❈</div>
+
+        <h2 class="section-header">Step 4: Mission Modifiers (Optional)</h2>
+
+        <p class="manuscript-text">Roll 1d6. On a 6, add one modifier to spice up your encounter. Choose which modifier fits your narrative or roll randomly:</p>
+
+        <div class="modifier-grid">
+            <div class="modifier-card">
+                <strong>1: Reinforcements</strong>
+                <p>Enemy waves spawn over time. 1d3 additional Swarm units arrive on Turn 3, 6, and 9. Attrition warfare.</p>
+            </div>
+
+            <div class="modifier-card">
+                <strong>2: Elite Commander</strong>
+                <p>One enemy gains +1 to hit and morale bonuses. All allies gain +1 Defense while Commander lives. Kill the commander first.</p>
+            </div>
+
+            <div class="modifier-card">
+                <strong>3: Hazardous Terrain</strong>
+                <p>Taint zones, lava pits, Void rifts scatter the battlefield. Restricted movement. Environmental damage each turn.</p>
+            </div>
+
+            <div class="modifier-card">
+                <strong>4: Ambush</strong>
+                <p>Enemies deploy first. They get a surprise round (enemies act, you don't). Tactical disadvantage...turn it around.</p>
+            </div>
+
+            <div class="modifier-card">
+                <strong>5: Mixed Factions</strong>
+                <p>Enemies from 2+ different factions (roll Faction table twice). Unpredictable synergies and conflicting tactics.</p>
+            </div>
+
+            <div class="modifier-card">
+                <strong>6: Special Objective</strong>
+                <p>Killing enemies isn't enough. Rescue a civilian, hold a position for 5 turns, destroy a specific objective. Secondary goals.</p>
+            </div>
         </div>
 
-        <h2>Step 4: Add Mission Modifiers (Optional)</h2>
+        <div class="divider">❈</div>
 
-        <p class="manuscript-text">Roll 1d6. On a 6, add a modifier:</p>
+        <h2 class="section-header">Faction-Specific Enemy Pools</h2>
 
-        <table class="generation-table">
-            <thead>
-                <tr>
-                    <th>1d6</th>
-                    <th>Modifier</th>
-                    <th>Effect</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><strong>Reinforcements</strong></td>
-                    <td>Enemies spawn 1d3 additional Swarm units on Turn 3, 6, 9.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><strong>Elite Commander</strong></td>
-                    <td>All enemies gain +1 to hit while Commander alive. Kill Commander first.</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><strong>Hazardous Terrain</strong></td>
-                    <td>Taint zones, lava, Void rifts. Movement restricted. Environmental damage.</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><strong>Ambush</strong></td>
-                    <td>Enemies deploy first. Surprise round (enemies act, players don't).</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><strong>Mixed Faction</strong></td>
-                    <td>Enemies from 2 different factions (roll twice on Faction table).</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><strong>Special Objective</strong></td>
-                    <td>Can't just kill enemies. Must rescue civilian, hold position, or destroy objective.</td>
-                </tr>
-            </tbody>
-        </table>
+        <p class="manuscript-text">Once you know the faction, select enemies from these pools to match your HP budget:</p>
 
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
+        <div class="faction-grid">
+            <div class="faction-card">
+                <h4>Church of Absolution</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (3-5 HP)</strong>
+                        Corrupted Villagers, Tainted Rats
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (18 HP)</strong>
+                        Church Zealot
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (50 HP)</strong>
+                        Bonelord Thresh
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Dwarven Forge-Guilds</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (4 HP)</strong>
+                        Scrap Drones
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (22 HP)</strong>
+                        Dwarven Ironclad
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (35 HP)</strong>
+                        Scrap Golem
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Elven Verdant Covenant</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (5 HP)</strong>
+                        Tainted Wolves
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (16 HP)</strong>
+                        Elven Verdant Stalker
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (40 HP)</strong>
+                        Engine Wraith
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>The Exchange</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (4 HP)</strong>
+                        Scrap Drones (debt collection)
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (20 HP)</strong>
+                        Exchange Enforcer
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (40 HP)</strong>
+                        Rogue Casket
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Nomad Collective</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (5 HP)</strong>
+                        Tainted Wolves (desert predators)
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (15 HP, Move 7)</strong>
+                        Nomad Outrider
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (40 HP)</strong>
+                        Exiled Nomad Casket
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Vestige Bloodlines</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (5 HP)</strong>
+                        Corrupted Villagers (zombies)
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (18 HP)</strong>
+                        Blighted Plague Bearer
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (60 HP)</strong>
+                        Tainted Leviathan
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Crucible Pacts</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (10 HP)</strong>
+                        Tainted Ogres (mutated brutes)
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (24 HP)</strong>
+                        Crucible Pact Berserker
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (50 HP)</strong>
+                        Blood-Fueled Rogue Casket
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Tainted Creatures</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (3-5 HP)</strong>
+                        Tainted Rats, Tainted Wolves
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (10 HP)</strong>
+                        Tainted Ogre
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (60 HP)</strong>
+                        Tainted Leviathan
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Bandits / Raiders</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (8 HP)</strong>
+                        Bandit Raider
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (20 HP)</strong>
+                        Bandit Captain
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (40-50 HP)</strong>
+                        Rogue Casket
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Automata / Constructs</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Swarm (4 HP)</strong>
+                        Scrap Drone
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Elite (40 HP)</strong>
+                        Engine Wraith (possessed machine)
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Boss (35-40 HP)</strong>
+                        Scrap Golem or The Screaming Engine
+                    </div>
+                </div>
+            </div>
+
+            <div class="faction-card">
+                <h4>Anomalous Entities</h4>
+                <div class="enemy-pool">
+                    <div class="enemy-type">
+                        <strong>Poenitentia (Contained)</strong>
+                        The Mirror Walker, The Threadless
+                    </div>
+                    <div class="enemy-type">
+                        <strong>Damnatio (Dangerous)</strong>
+                        The Void Shepherd, The Casket Hive
+                    </div>
+                    <div class="enemy-type">
+                        <strong>See Bestiary</strong>
+                        <a href="enemies-anomalous.html">Anomalous Bestiary</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <h2>Faction-Specific Enemy Pools</h2>
+        <div class="divider">❈</div>
 
-        <p class="manuscript-text">Once you know the faction, choose enemies from these pools:</p>
+        <h2 class="section-header">Quick Reference: Mission Generation Flowchart</h2>
 
-        <div class="faction-box">
-            <h3>Church of Absolution</h3>
-            <p><strong>Swarm:</strong> Corrupted Villagers (5 HP), Tainted Rats (3 HP)</p>
-            <p><strong>Elite:</strong> Church Zealot (18 HP)</p>
-            <p><strong>Boss:</strong> Bonelord Thresh (50 HP - unique NPC)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Dwarven Forge-Guilds</h3>
-            <p><strong>Swarm:</strong> Scrap Drones (4 HP)</p>
-            <p><strong>Elite:</strong> Dwarven Ironclad (22 HP)</p>
-            <p><strong>Boss:</strong> Scrap Golem (35 HP)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Elven Verdant Covenant</h3>
-            <p><strong>Swarm:</strong> Tainted Wolves (5 HP)</p>
-            <p><strong>Elite:</strong> Elven Verdant Stalker (16 HP)</p>
-            <p><strong>Boss:</strong> Engine Wraith (40 HP - corrupted nature spirit)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>The Exchange</h3>
-            <p><strong>Swarm:</strong> Scrap Drones (4 HP - repurposed for debt collection)</p>
-            <p><strong>Elite:</strong> Exchange Enforcer (20 HP)</p>
-            <p><strong>Boss:</strong> Rogue Casket (40 HP - indentured pilot)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Nomad Collective</h3>
-            <p><strong>Swarm:</strong> Tainted Wolves (5 HP - desert predators)</p>
-            <p><strong>Elite:</strong> Nomad Outrider (15 HP, 7 Move)</p>
-            <p><strong>Boss:</strong> Rogue Casket (40 HP - exiled Nomad)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Blighted Packs</h3>
-            <p><strong>Swarm:</strong> Corrupted Villagers (5 HP - zombies)</p>
-            <p><strong>Elite:</strong> Blighted Plague Bearer (18 HP)</p>
-            <p><strong>Boss:</strong> Tainted Leviathan (60 HP - massive undead)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Crucible Pacts</h3>
-            <p><strong>Swarm:</strong> Tainted Ogre (10 HP - mutated brutes)</p>
-            <p><strong>Elite:</strong> Crucible Pact Berserker (24 HP)</p>
-            <p><strong>Boss:</strong> Rogue Casket (50 HP - blood-fueled pilot)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Tainted Creatures (Generic Wildlife)</h3>
-            <p><strong>Swarm:</strong> Tainted Rats (3 HP), Tainted Wolves (5 HP)</p>
-            <p><strong>Elite:</strong> Tainted Ogre (10 HP)</p>
-            <p><strong>Boss:</strong> Tainted Leviathan (60 HP)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Bandits/Raiders (Human)</h3>
-            <p><strong>Swarm:</strong> Bandit Raider (8 HP)</p>
-            <p><strong>Elite:</strong> Bandit Captain (20 HP)</p>
-            <p><strong>Boss:</strong> Rogue Casket (40-50 HP)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Automata/Constructs</h3>
-            <p><strong>Swarm:</strong> Scrap Drone (4 HP)</p>
-            <p><strong>Elite:</strong> Engine Wraith (40 HP - possessed machine)</p>
-            <p><strong>Boss:</strong> Scrap Golem (35 HP), The Screaming Engine (40 HP - see Anomalous Bestiary)</p>
-        </div>
-
-        <div class="faction-box">
-            <h3>Anomalous Entities</h3>
-            <p><strong>Poenitentia-Class:</strong> The Mirror Walker (24 HP), The Threadless (18 HP)</p>
-            <p><strong>Damnatio-Class:</strong> The Void Shepherd (60 HP), The Casket Hive (Variable HP)</p>
-            <p><strong>See <a href="enemies-anomalous.html">Anomalous Bestiary</a> for full stats.</strong></p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;">
-            <span style="font-size: 2rem; color: #8B0000;">&#10047;</span>
-        </div>
-
-        <h2>Quick Reference: Mission Generation Flowchart</h2>
-
-        <div style="background: rgba(0, 0, 0, 0.4); border: 2px solid #8b6914; padding: 1.5rem; margin: 2rem 0;">
-            <ol style="line-height: 2;">
-                <li><strong>Roll 1d6</strong> → Determine Difficulty (Easy/Medium/Hard/Deadly)</li>
-                <li><strong>Roll 1d12</strong> → Determine Faction</li>
-                <li><strong>Roll 1d6</strong> on Composition Table for that Difficulty</li>
-                <li><strong>Select enemies</strong> from Faction Pool to match HP budget</li>
-                <li><strong>Roll 1d6</strong> → On a 6, add Mission Modifier</li>
-                <li><strong>Deploy!</strong></li>
+        <div class="flowchart-box">
+            <ol>
+                <li><strong>Roll 1d6</strong> → Determine Difficulty (Easy = 1-2, Medium = 3-4, Hard = 5, Deadly = 6)</li>
+                <li><strong>Roll 1d12</strong> → Determine Enemy Faction</li>
+                <li><strong>Roll 1d6</strong> on appropriate Composition Table for your chosen Difficulty</li>
+                <li><strong>Select enemies</strong> from that Faction's Pool to match your HP budget</li>
+                <li><strong>Roll 1d6</strong> → On a 6, add one Mission Modifier</li>
+                <li><strong>Deploy Caskets and prepare for battle!</strong></li>
             </ol>
         </div>
 
-        <div style="background: var(--shadow-black); border: 3px double #660000; padding: 2rem; margin: 3rem 0; font-style: italic;">
-            <p style="text-align: center; margin: 0; color: #8B0000;" class="no-drop-cap">
-                "No plan survives contact with the enemy. But having a plan helps you survive contact."
+        <div class="step-container">
+            <h3>💡 Pro Tips for Mission Masters</h3>
+            <ul class="manuscript-list">
+                <li><strong>Budget flexibility:</strong> Don't need to hit budgets exactly. ±5 HP is acceptable.</li>
+                <li><strong>Faction synergies:</strong> Mix factions that have complementary tactics (Church + Blighted = aggression + taint).</li>
+                <li><strong>Narrative weight:</strong> Use modifiers to tell stories (Ambush = enemies expected you; Special Objective = rescue missions).</li>
+                <li><strong>Player scaling:</strong> Seasoned pilots? Go Hard. New players? Start Easy and escalate. No shame in adjusting.</li>
+                <li><strong>Anomalous rarity:</strong> Reserve the "Anomalous" roll (1d12 = 12) for climactic moments and campaign turning points.</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #660000; border-bottom: 3px double #660000; color: var(--aged-gold); font-size: 0.95rem;">
+            <p style="margin: 1rem 0;">
+                <a href="enemies-bestiary.html" target="_parent" style="color: var(--aged-gold); text-decoration: none; margin-right: 2rem;">→ Core Bestiary</a>
+                <a href="enemies-anomalous.html" target="_parent" style="color: var(--aged-gold); text-decoration: none; margin-right: 2rem;">→ Anomalous Bestiary</a>
+                <a href="campaign-settlement-phase.html" target="_parent" style="color: var(--aged-gold); text-decoration: none; margin-right: 2rem;">→ Settlement Phase</a>
+                <a href="content-home.html" target="_parent" style="color: var(--aged-gold); text-decoration: none;">← Return to Codex</a>
             </p>
         </div>
 
-        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #660000; color: #8B0000; font-size: 0.9rem;">
-            <p>
-                <a href="enemies-bestiary.html" target="_parent">Core Bestiary</a> |
-                <a href="enemies-anomalous.html" target="_parent" style="color: #ff4444;">Anomalous Bestiary</a> |
-                <a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a> |
-                <a href="content-home.html" target="_parent">Return to Codex Home</a>
+        <div style="background: var(--shadow-black); border: 3px double #660000; padding: 2rem; margin: 3rem 0; font-style: italic; text-align: center;">
+            <p style="margin: 0; color: var(--aged-gold);" class="no-drop-cap">
+                "No plan survives contact with the enemy. But having a plan helps you survive contact."
             </p>
         </div>
     </div>

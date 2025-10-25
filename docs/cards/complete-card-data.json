@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "5.29-FINAL",
+    "version": "5.15b",
     "lastUpdated": "2025-10-20",
-    "description": "Complete Penance card database v5.29-FINAL - ACCEPTED FINAL BALANCE: 7/10 factions in 44-58% WR range. After extensive iteration (v5.20-v5.30), this represents optimal achievable balance. Meta ecology exhibits high sensitivity to damage changes - further adjustments cause unpredictable cascades. FINAL CHANGES FROM BASELINE: Ossuarium -2 dmg, Church +2 dmg + 5x discard, Bloodlines -2 dmg, Wyrd +2 dmg. Dice mechanics: base_target=5 (58% hit rate). WR spread: 37.8%-62.2% (24.4pp).",
+    "description": "Complete Penance card database v5.15b - PHASE 1 BALANCE FIXES: (1) Dwarves 31%→44% WR: Replaced 11 non-functional cards with combat-viable alternatives. (2) Bloodlines 76%→target 65% WR: Increased Biomass costs +1 (Bloodline Shift 2→3, Adaptive Evolution 1→2). Next: Ossuarium lifesteal nerf, Nomads defensive buff. MultiUnitCombatSimulator now uses full dice mechanics (Attack/Defense dice, Heat, Component Damage, Bleed tracking). Previous v5.13: Church structural rebalance.",
     "cardCounts": {
       "factionCards": 221,
       "equipmentCards": 223,
@@ -556,16 +556,17 @@
       "cardType": "faction"
     },
     {
-      "id": "rune-of-protection",
-      "name": "Rune of Protection",
-      "type": "buff",
+      "id": "runic-armor",
+      "name": "Runic Armor",
+      "type": "reactive-defense",
       "cost": 2,
       "range": "Self",
-      "effect": "Gain 1 Rune Counter. While you have Rune Counters, reduce all damage by 1 per counter (max 3 counters). Duration: Until end of mission or destroyed.",
+      "effect": "Block 3 damage from next attack. You gain +1 to all defense rolls until end of turn.",
+      "defense": 3,
       "keywords": [
-        "buff",
-        "rune",
-        "defense"
+        "reactive-defense",
+        "dwarven",
+        "defense-boost"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -587,17 +588,17 @@
       "cardType": "faction"
     },
     {
-      "id": "earthshaker",
-      "name": "Earthshaker",
+      "id": "thundering-blow",
+      "name": "Thundering Blow",
       "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
-      "effect": "Deal 5 damage to primary target. All adjacent enemies take 2 damage and are pushed 1 hex away.",
-      "damage": "5 + 2 AoE",
+      "effect": "Deal 7 damage. If you have 2+ Component Damage, deal 9 damage instead. Dwarven fury channeled through pain.",
+      "damage": "7-9",
       "keywords": [
         "attack",
-        "aoe",
-        "push",
+        "component-synergy",
+        "dwarven",
         "melee"
       ],
       "cardCount": 1,
@@ -634,31 +635,34 @@
       "cardType": "faction"
     },
     {
-      "id": "mountain-stance",
-      "name": "Mountain Stance",
-      "type": "Defense",
-      "cost": 2,
+      "id": "stone-skin",
+      "name": "Stone Skin",
+      "type": "reactive-defense",
+      "cost": 1,
       "range": "Self",
-      "effect": "Gain +3 Defense until your next turn. You cannot move while in Mountain Stance. Immovable as stone.",
+      "effect": "Reduce damage from next attack by 2. Gain 1 Heat. Dwarven skin hardens like stone under pressure.",
+      "defense": 2,
+      "heat": "+1",
       "keywords": [
-        "defense",
-        "immobile",
-        "buff"
+        "reactive-defense",
+        "dwarven",
+        "heat"
       ],
       "cardCount": 1,
       "cardType": "faction"
     },
     {
-      "id": "grudge-bearer",
-      "name": "Grudge Bearer",
+      "id": "ancestral-wrath",
+      "name": "Ancestral Wrath",
       "type": "passive",
       "cost": 0,
       "range": "Self",
-      "effect": "Passive: Mark enemies who damage you. Attacks against marked enemies deal +2 damage. The grudge is eternal.",
+      "effect": "Passive: When you take Component Damage, your next attack deals +3 damage. This bonus is consumed after one attack. Ancestors fuel your vengeance.",
       "keywords": [
         "passive",
-        "vengeance",
-        "damage"
+        "component-synergy",
+        "damage-boost",
+        "dwarven"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -696,18 +700,18 @@
       "cardType": "primary"
     },
     {
-      "id": "warhammer-crush",
-      "name": "Warhammer Crush",
+      "id": "molten-hammer",
+      "name": "Molten Hammer",
       "type": "Attack",
-      "cost": 3,
+      "cost": 2,
       "range": "Melee (Range 1)",
-      "effect": "Deal 5 damage. This attack ignores armor. If target is adjacent to terrain, deal 6 damage (slam into wall).",
-      "damage": "5",
+      "effect": "Deal 5 damage plus your current Heat (max +2 damage). Forge-heated strike.",
+      "damage": "5-7",
       "keywords": [
         "attack",
-        "armor-piercing",
+        "heat-synergy",
         "melee",
-        "conditional"
+        "dwarven"
       ],
       "cardCount": 3,
       "cardType": "primary"
@@ -730,52 +734,52 @@
       "cardType": "primary"
     },
     {
-      "id": "battle-axe-cleave",
-      "name": "Battle Axe Cleave",
+      "id": "runic-strike",
+      "name": "Runic Strike",
       "type": "Attack",
       "cost": 3,
       "range": "Melee (Range 1)",
-      "effect": "Deal 5 damage to primary target. Deal 2 damage to one adjacent enemy (cleave). Both attacks ignore armor.",
-      "damage": "5 + 2",
+      "effect": "Deal 6 damage. Gain 1 Heat. Ancient Dwarven combat technique.",
+      "damage": "6",
+      "heat": "+1",
       "keywords": [
         "attack",
-        "armor-piercing",
-        "cleave",
-        "aoe"
+        "heat",
+        "dwarven",
+        "melee"
       ],
       "cardCount": 2,
       "cardType": "primary"
     },
     {
-      "id": "earthshaker-slam",
-      "name": "Earthshaker Slam",
-      "type": "Attack",
-      "cost": 5,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 8 damage. This attack ignores armor. All enemies within 2 hexes must roll Defense Dice or be knocked prone (lose 1 movement next turn).",
-      "damage": "8",
+      "id": "iron-wall",
+      "name": "Iron Wall",
+      "type": "reactive-defense",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Block 2 damage when you would take Component Damage. This does not prevent the Component Damage itself. Dwarven resilience.",
+      "defense": 2,
       "keywords": [
-        "attack",
-        "armor-piercing",
-        "aoe",
-        "control"
+        "reactive-defense",
+        "component-protection",
+        "dwarven",
+        "free"
       ],
       "cardCount": 1,
       "cardType": "primary"
     },
     {
-      "id": "ancestral-rune-blade",
-      "name": "Ancestral Rune Blade",
-      "type": "Attack",
-      "cost": 2,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 3 damage. This attack ignores armor. If you have 1+ Rune Counters, deal 5 damage instead.",
-      "damage": "3",
+      "id": "dwarven-bulwark",
+      "name": "Dwarven Bulwark",
+      "type": "passive",
+      "cost": 0,
+      "range": "Self",
+      "effect": "Passive: Reduce all damage you take by 1. This stacks with Component Damage resistance. Dwarven fortitude.",
       "keywords": [
-        "attack",
-        "armor-piercing",
-        "rune-synergy",
-        "melee"
+        "passive",
+        "damage-reduction",
+        "defensive",
+        "dwarven"
       ],
       "cardCount": 1,
       "cardType": "primary"
@@ -796,16 +800,18 @@
       "cardType": "secondary"
     },
     {
-      "id": "runic-aegis",
-      "name": "Runic Aegis",
-      "type": "Reactive",
-      "cost": 1,
+      "id": "heat-vent",
+      "name": "Heat Vent",
+      "type": "Utility",
+      "cost": 0,
       "range": "Self",
-      "effect": "When attacked, gain 1 Rune Counter (max 3). Reduce damage from this attack by 1. Defensive sigil.",
+      "effect": "Remove up to 3 Heat. Draw 1 card. Forge safety mechanism.",
+      "heat": "-3",
       "keywords": [
-        "reactive",
-        "defense",
-        "rune-counter"
+        "utility",
+        "heat-management",
+        "card-draw",
+        "dwarven"
       ],
       "cardCount": 2,
       "cardType": "secondary"
@@ -826,31 +832,34 @@
       "cardType": "secondary"
     },
     {
-      "id": "mountain-stance",
-      "name": "Mountain Stance",
+      "id": "forge-blessing",
+      "name": "Forge Blessing",
       "type": "Utility",
       "cost": 1,
       "range": "Self",
-      "effect": "Until end of turn, you cannot be moved or knocked back by enemy effects. Reduce all damage taken by 2.",
+      "effect": "Your next attack deals +2 damage. Gain 1 Heat. The forge empowers your strike.",
+      "heat": "+1",
       "keywords": [
         "utility",
-        "defense",
-        "immovable"
+        "damage-boost",
+        "heat",
+        "dwarven"
       ],
       "cardCount": 2,
       "cardType": "secondary"
     },
     {
-      "id": "grudge-mark",
-      "name": "Grudge Mark",
+      "id": "shield-mastery",
+      "name": "Shield Mastery",
       "type": "Utility",
-      "cost": 2,
-      "range": "8 hexes",
-      "effect": "Mark target enemy. You deal +2 damage to marked enemy. Mark lasts until enemy dies or you mark different target. Record grudges.",
+      "cost": 1,
+      "range": "Self",
+      "effect": "Gain +2 Defense until your next turn. Dwarven shield training.",
       "keywords": [
         "utility",
-        "mark",
-        "damage-boost"
+        "defense",
+        "buff",
+        "dwarven"
       ],
       "cardCount": 1,
       "cardType": "secondary"
@@ -858,17 +867,34 @@
   ],
   "ossuarium": [
     {
-      "id": "decay-aura",
-      "name": "Decay Aura",
-      "type": "passive",
-      "cost": 0,
-      "range": "3 hexes",
-      "effect": "Passive: All enemies within 3 hexes gain +1 Taint at the start of your turn. Permanent corruption that stacks infinitely. Taint causes Heat and damage penalties.",
+      "id": "soul-harvest",
+      "name": "Soul Harvest",
+      "type": "Attack",
+      "cost": 3,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 3 cards).",
+      "damage": "4",
       "keywords": [
-        "passive",
-        "taint",
-        "corruption",
-        "aura"
+        "attack",
+        "lifesteal",
+        "vampiric",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "corpse-fuel",
+      "name": "Corpse Fuel",
+      "type": "Utility",
+      "cost": 2,
+      "range": "3 hexes",
+      "effect": "When an enemy Casket is destroyed within 3 hexes, immediately recover 3 cards from your discard pile and shuffle into deck.",
+      "keywords": [
+        "utility",
+        "death-trigger",
+        "healing",
+        "corpse-exploitation"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -879,7 +905,7 @@
       "type": "passive",
       "cost": 0,
       "range": "N/A",
-      "effect": "The first time each mission you would be reduced to 0 HP, automatically resurrect at 5 HP. One free resurrection.",
+      "effect": "The first time each mission you would be reduced to 0 HP, instead set HP to 3 (recover 3 cards from discard pile). This is automatic and costs nothing.",
       "keywords": [
         "passive",
         "resurrection",
@@ -889,32 +915,18 @@
       "cardType": "faction"
     },
     {
-      "id": "raise-dead",
-      "name": "Raise Dead",
-      "type": "summon",
-      "cost": 2,
-      "range": "3 hexes",
-      "effect": "Summon 1 Skeletal Thrall (1 HP minion, 2 damage melee) within 3 hexes. Thrall acts after your turn. Lasts until destroyed. Can have multiple Thralls active.",
-      "keywords": [
-        "summon",
-        "necromancy",
-        "minion"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "bone-scythe-strike",
-      "name": "Bone Scythe Strike",
+      "id": "bone-scythe-reap",
+      "name": "Bone Scythe Reap",
       "type": "Attack",
-      "cost": 3,
+      "cost": 4,
       "range": "Melee (Range 1)",
-      "effect": "Deal 5 damage. If target has 5+ Taint, deal 7 damage instead (corrupt the tainted).",
-      "damage": "5-7",
+      "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 3 cards).",
+      "damage": "3 + 2 AoE",
       "keywords": [
         "attack",
-        "melee",
-        "taint-synergy"
+        "aoe",
+        "lifesteal",
+        "melee"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -935,67 +947,119 @@
       "cardType": "faction"
     },
     {
-      "id": "grave-chill",
-      "name": "Grave Chill",
-      "type": "Attack",
-      "cost": 3,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 4 damage. Target gains +2 Taint. Necrotic corruption spreads.",
-      "damage": "4",
-      "keywords": [
-        "attack",
-        "melee",
-        "taint"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "bone-armor",
-      "name": "Bone Armor",
-      "type": "Reactive",
+      "id": "necrotic-surge",
+      "name": "Necrotic Surge",
+      "type": "passive",
       "cost": 0,
-      "range": "Self",
-      "effect": "Play when attacked. Reduce damage by 3 (minimum 1). Skeletal plating absorbs impact.",
-      "defense": "3",
+      "range": "N/A",
+      "effect": "Whenever you recover 3+ cards from discard pile (via any effect), recover +1 additional card. Amplifies large heals only.",
       "keywords": [
-        "reactive",
-        "defense"
+        "passive",
+        "synergy",
+        "healing"
       ],
       "cardCount": 1,
       "cardType": "faction"
     },
     {
-      "id": "mass-corruption",
-      "name": "Mass Corruption",
-      "type": "Attack",
-      "cost": 4,
-      "range": "Melee (AoE 1 hex)",
-      "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. All damaged enemies gain +1 Taint.",
-      "damage": "3 + 2 AoE",
-      "keywords": [
-        "attack",
-        "aoe",
-        "taint",
-        "melee"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "command-thralls",
-      "name": "Command Thralls",
+      "id": "grave-pact",
+      "name": "Grave Pact",
       "type": "Utility",
-      "cost": 1,
-      "range": "6 hexes",
-      "effect": "All friendly Skeletal Thralls within range immediately move 3 hexes and attack (2 damage each). Coordinated undead assault.",
+      "cost": 3,
+      "range": "Self",
+      "effect": "Discard 3 cards. For each card discarded this way, deal 2 damage to target enemy within 6 hexes (total 6 damage). Recover 2 cards at end of your next turn.",
+      "damage": "6",
       "keywords": [
         "utility",
-        "minion-control",
+        "sacrifice",
+        "delayed-heal",
+        "ranged"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "death-mark",
+      "name": "Death Mark",
+      "type": "debuff",
+      "cost": 2,
+      "range": "8 hexes",
+      "effect": "Mark target enemy. While marked, whenever you damage that enemy, recover 1 additional card. Lasts until enemy dies or until you mark a different target.",
+      "keywords": [
+        "debuff",
+        "mark",
+        "lifesteal",
+        "ranged"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "reanimate",
+      "name": "Reanimate",
+      "type": "summon",
+      "cost": 4,
+      "range": "3 hexes",
+      "effect": "Place a Skeletal Minion token within 3 hexes. It has 3 HP, 3 Movement, deals 2 damage melee. Minion acts immediately after your turn. Lasts until destroyed.",
+      "keywords": [
+        "summon",
+        "minion",
+        "skeleton",
         "necromancy"
       ],
       "cardCount": 1,
       "cardType": "faction"
+    },
+    {
+      "id": "siphon-essence",
+      "name": "Siphon Essence",
+      "type": "Attack",
+      "cost": 2,
+      "range": "4 hexes",
+      "effect": "Deal 2 damage. Recover cards equal to half the damage dealt (rounded up). Can target at range unlike most lifesteal.",
+      "damage": "2",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "ranged",
+        "drain"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "bone-scythe-swing",
+      "name": "Bone Scythe Swing",
+      "type": "Attack",
+      "cost": 3,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 4 damage. Recover 1 card from discard pile (lifesteal). Basic Ossuarium attack.",
+      "damage": "4",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "melee",
+        "ossuarium"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
+    },
+    {
+      "id": "death-grasp",
+      "name": "Death Grasp",
+      "type": "Attack",
+      "cost": 2,
+      "range": "2 hexes",
+      "effect": "Deal 3 damage at extended range. Recover 1 card from discard pile. Ranged drain.",
+      "damage": "3",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "ranged",
+        "reach"
+      ],
+      "cardCount": 3,
+      "cardType": "primary"
     },
     {
       "id": "soul-rend",
@@ -1003,185 +1067,143 @@
       "type": "Attack",
       "cost": 4,
       "range": "Melee (Range 1)",
-      "effect": "Deal 6 damage. Target gains +3 Taint. Heavy corruption strike.",
-      "damage": "6",
+      "effect": "Deal 5 damage. Recover cards equal to damage dealt (max 3). Powerful lifesteal.",
+      "damage": "5",
       "keywords": [
         "attack",
-        "melee",
-        "taint"
+        "lifesteal",
+        "vampiric",
+        "melee"
       ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "death-grasp",
-      "name": "Death Grasp",
-      "type": "Attack",
-      "cost": 2,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 3 damage. Pull target 1 hex closer. Necrotic tendrils drag prey forward.",
-      "damage": "3",
-      "keywords": [
-        "attack",
-        "melee",
-        "movement"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "bone-shield",
-      "name": "Bone Shield",
-      "type": "Reactive",
-      "cost": 1,
-      "range": "Self",
-      "effect": "Play when attacked. Reduce damage by 5 (minimum 0). Gain 1 Heat. Dense skeletal plating.",
-      "defense": "5",
-      "keywords": [
-        "reactive",
-        "defense"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "thrall-sacrifice",
-      "name": "Thrall Sacrifice",
-      "type": "Utility",
-      "cost": 0,
-      "range": "6 hexes",
-      "effect": "Destroy 1 friendly Skeletal Thrall. Deal 4 damage to any enemy within 3 hexes of destroyed Thrall. Explosive bones.",
-      "keywords": [
-        "utility",
-        "sacrifice",
-        "damage"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "plague-strike",
-      "name": "Plague Strike",
-      "type": "Attack",
-      "cost": 3,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 4 damage. Target and all adjacent enemies gain +1 Taint. Disease spreads.",
-      "damage": "4",
-      "keywords": [
-        "attack",
-        "melee",
-        "taint",
-        "aoe"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "necrotic-resilience",
-      "name": "Necrotic Resilience",
-      "type": "passive",
-      "cost": 0,
-      "range": "N/A",
-      "effect": "Passive: The Ossuarium does NOT add Damage cards on reshuffle. Instead, add Decay cards (0 cost, discard to lose 1 SP this turn). Slower death spiral.",
-      "keywords": [
-        "passive",
-        "deck-modification",
-        "resilience"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "bone-spike",
-      "name": "Bone Spike",
-      "type": "Attack",
-      "cost": 2,
-      "range": "Ranged (Range 6)",
-      "effect": "Deal 3 damage at range. Rare ranged attack for Ossuarium.",
-      "damage": "3",
-      "keywords": [
-        "attack",
-        "ranged"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "death-pact",
-      "name": "Death Pact",
-      "type": "Utility",
-      "cost": 3,
-      "range": "Self",
-      "effect": "Discard 3 cards. Gain 2 Skeletal Thralls immediately. Summon minions through sacrifice.",
-      "keywords": [
-        "utility",
-        "summon",
-        "sacrifice"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "grave-march",
-      "name": "Grave March",
-      "type": "movement",
-      "cost": 1,
-      "range": "Self",
-      "effect": "Move up to 2 hexes. All Skeletal Thralls within 6 hexes move 2 hexes toward target enemy. Coordinated advance.",
-      "keywords": [
-        "movement",
-        "minion-control"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "taint-burst",
-      "name": "Taint Burst",
-      "type": "Attack",
-      "cost": 4,
-      "range": "6 hexes (AoE 2 hex radius)",
-      "effect": "All enemies in area take 2 damage and gain +2 Taint. Corruption explosion.",
-      "damage": "2 AoE",
-      "keywords": [
-        "attack",
-        "aoe",
-        "taint",
-        "ranged"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "undying-will",
-      "name": "Undying Will",
-      "type": "Utility",
-      "cost": 2,
-      "range": "Self",
-      "effect": "Draw 2 cards. Gain 1 Heat. The Ossuarium never yields.",
-      "keywords": [
-        "utility",
-        "card-draw"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
+      "cardCount": 2,
+      "cardType": "primary"
     },
     {
       "id": "corpse-explosion",
       "name": "Corpse Explosion",
       "type": "Attack",
       "cost": 3,
-      "range": "6 hexes (requires corpse)",
-      "effect": "If an enemy died this turn, deal 5 damage to all enemies within 2 hexes of corpse location. Explosive remains.",
-      "damage": "5 AoE",
+      "range": "4 hexes",
+      "effect": "Deal 3 damage to target and all adjacent enemies (AoE). Recover 1 card per enemy damaged (max 3).",
+      "damage": "3 AoE",
       "keywords": [
         "attack",
         "aoe",
-        "corpse-exploitation",
-        "conditional"
+        "lifesteal",
+        "corpse"
+      ],
+      "cardCount": 2,
+      "cardType": "primary"
+    },
+    {
+      "id": "drain-life",
+      "name": "Drain Life",
+      "type": "Attack",
+      "cost": 5,
+      "range": "3 hexes",
+      "effect": "Deal 6 damage at range. Recover 4 cards from discard pile (67% lifesteal). Massive drain.",
+      "damage": "6",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "vampiric",
+        "ranged"
       ],
       "cardCount": 1,
-      "cardType": "faction"
+      "cardType": "primary"
+    },
+    {
+      "id": "necrotic-touch",
+      "name": "Necrotic Touch",
+      "type": "Attack",
+      "cost": 2,
+      "range": "Melee (Range 1)",
+      "effect": "Deal 2 damage. Recover 1 card. If this kills the target, recover 3 cards total instead.",
+      "damage": "2",
+      "keywords": [
+        "attack",
+        "lifesteal",
+        "execute",
+        "melee"
+      ],
+      "cardCount": 1,
+      "cardType": "primary"
+    },
+    {
+      "id": "vampiric-rune",
+      "name": "Vampiric Rune",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "Whenever you deal 5+ damage with a single attack, recover +1 additional card from discard pile. High-damage bonus only.",
+      "keywords": [
+        "passive",
+        "lifesteal-synergy",
+        "ossuarium-exclusive",
+        "conditional"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "bone-armor",
+      "name": "Bone Armor",
+      "type": "Reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "When attacked, reduce damage by 2. If you blocked 2+ damage this way, recover 1 card.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "lifesteal"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "soul-well",
+      "name": "Soul Well",
+      "type": "passive",
+      "cost": 0,
+      "range": "N/A",
+      "effect": "At start of your turn, if you have 5 or fewer cards in hand, recover 1 card from discard pile. Safety net.",
+      "keywords": [
+        "passive",
+        "healing",
+        "recovery"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "death-shroud",
+      "name": "Death Shroud",
+      "type": "Utility",
+      "cost": 2,
+      "range": "Self",
+      "effect": "Until end of turn, whenever you recover cards from discard pile, recover +1 additional card. Amplifies all lifesteal.",
+      "keywords": [
+        "utility",
+        "lifesteal-synergy",
+        "buff"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
+    },
+    {
+      "id": "corpse-shield",
+      "name": "Corpse Shield",
+      "type": "Reactive",
+      "cost": 1,
+      "range": "Self",
+      "effect": "When an enemy within 3 hexes dies, gain +3 Defense until end of your next turn. Corpse empowerment.",
+      "keywords": [
+        "reactive",
+        "defense",
+        "corpse-trigger"
+      ],
+      "cardCount": 2,
+      "cardType": "secondary"
     }
   ],
   "elves": [
@@ -2127,7 +2149,7 @@
       "type": "Attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 6,
+      "damage": 4,
       "effect": "6 damage melee.",
       "keywords": [
         "attack",
@@ -2144,7 +2166,7 @@
       "type": "Attack",
       "cost": 2,
       "range": "4 hexes",
-      "damage": 6,
+      "damage": 4,
       "effect": "6 damage ranged.",
       "keywords": [
         "attack",
@@ -2161,7 +2183,7 @@
       "type": "Attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 7,
+      "damage": 5,
       "effect": "7 damage, move 2 hexes after.",
       "keywords": [
         "attack",
@@ -2178,7 +2200,7 @@
       "type": "Attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 8,
+      "damage": 6,
       "effect": "8 damage if target moved this turn.",
       "keywords": [
         "attack",
@@ -3292,7 +3314,7 @@
       "type": "Attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 5,
       "effect": "Deal 2 damage. When you kill an enemy with this attack, recover 1 card from discard pile.",
       "keywords": [
         "attack",
@@ -3310,7 +3332,7 @@
       "type": "Attack",
       "cost": 3,
       "range": "Melee",
-      "damage": 4,
+      "damage": 6,
       "effect": "Deal 3 damage. Recover 1 card from your discard pile (partial lifesteal).",
       "keywords": [
         "attack",
@@ -3328,7 +3350,7 @@
       "type": "Attack",
       "cost": 4,
       "range": "Melee",
-      "damage": 5,
+      "damage": 7,
       "effect": "Deal 4 damage. If target is below 15 HP, recover 2 cards from discard pile instead of 1.",
       "keywords": [
         "attack",
@@ -3347,7 +3369,7 @@
       "type": "Attack",
       "cost": 2,
       "range": "Melee",
-      "damage": 3,
+      "damage": 5,
       "effect": "Deal 2 damage. If any Casket was destroyed this round within 6 hexes, recover 3 cards from discard pile.",
       "keywords": [
         "attack",
@@ -5767,7 +5789,7 @@
           "type": "Utility / Disruption",
           "priority": "High",
           "effect": "Pixies move up to 6 hexes toward nearest enemy\nAll enemies within 2 hexes must discard 1 random card from hand (pixies steal them mid-air)\nPixies gain 1 Wyrd Token for each card stolen (max 2 per turn)",
-          "flavor": "Give that back! That's—HEY! STOP LAUGHING!"
+          "flavor": "Give that back! That's...HEY! STOP LAUGHING!"
         },
         {
           "supportUnit": "PIXIE SWARM",
@@ -7539,7 +7561,7 @@
       "name": "Bloodline Shift",
       "cardType": "faction",
       "type": "Utility",
-      "cost": "2 Biomass tokens",
+      "cost": "3 Biomass tokens",
       "range": "Self",
       "effect": "Transform into enhanced bloodline form until end of round. Choose based on your primary bloodline:\n  - **Fenmar (Wolf)**: +2 movement, Pack Instinct bonuses doubled\n  - **Urtok (Bear)**: +3 Defense, regenerate 1 card when hit\n  - **Vexis (Chitin)**: +2 Defense, molt reaction (negate 1 attack per round)\n  - **Corvath (Raven)**: +3 movement, ignore terrain, can glide\n  - **Serrak (Serpent)**: All attacks inflict poison (2 damage next turn), +1 movement\n- Can stack multiple shifts. Bloodline evolution.",
       "keywords": [
@@ -7594,7 +7616,7 @@
       "name": "Adaptive Evolution",
       "cardType": "faction",
       "type": "Reactive",
-      "cost": "1 Biomass token",
+      "cost": "2 Biomass tokens",
       "range": "Self",
       "effect": "Play when you take damage. Immediately gain 1 mutation counter. Each mutation counter gives +1 to all attack damage permanently this mission (stacks infinitely). Evolution rewards survival.",
       "keywords": [
@@ -9884,7 +9906,7 @@
       "type": "Utility / Disruption",
       "priority": "High",
       "effect": "Pixies move up to 6 hexes toward nearest enemy\nAll enemies within 2 hexes must discard 1 random card from hand (pixies steal them mid-air)\nPixies gain 1 Wyrd Token for each card stolen (max 2 per turn)",
-      "flavor": "Give that back! That's—HEY! STOP LAUGHING!"
+      "flavor": "Give that back! That's...HEY! STOP LAUGHING!"
     },
     {
       "supportUnit": "PIXIE SWARM",
@@ -10148,7 +10170,7 @@
           "cost": 2,
           "range": "Melee",
           "type": "Attack",
-          "damage": 6
+          "damage": 4
         },
         {
           "name": "Hook",
@@ -10156,7 +10178,7 @@
           "cost": 1,
           "range": "Melee",
           "type": "Attack",
-          "damage": 4
+          "damage": 2
         },
         {
           "name": "Throw",
@@ -10164,7 +10186,7 @@
           "cost": 2,
           "range": "Ranged 1-3",
           "type": "Attack",
-          "damage": 5
+          "damage": 3
         },
         {
           "name": "Retrieve",
@@ -10623,7 +10645,7 @@
           "cost": 3,
           "range": "Ranged 4-10",
           "type": "Attack",
-          "damage": 8
+          "damage": 6
         },
         {
           "name": "Burst Fire",
@@ -10631,7 +10653,7 @@
           "cost": 4,
           "range": "Ranged 2-6",
           "type": "Attack",
-          "damage": 5
+          "damage": 3
         },
         {
           "name": "Suppressing Fire",
@@ -10639,7 +10661,7 @@
           "cost": 2,
           "range": "Ranged 2-8",
           "type": "Attack",
-          "damage": 4
+          "damage": 2
         },
         {
           "name": "Reload",
@@ -10653,7 +10675,7 @@
           "cost": 2,
           "range": "Ranged 3-8",
           "type": "Attack",
-          "damage": 6
+          "damage": 4
         },
         {
           "name": "Hip Fire",
@@ -10661,7 +10683,7 @@
           "cost": 1,
           "range": "Ranged 1-3",
           "type": "Attack",
-          "damage": 5
+          "damage": 3
         }
       ],
       "totalCards": 6,
@@ -11364,7 +11386,7 @@
           "cost": 1,
           "range": "Ranged 2-4",
           "type": "Attack",
-          "damage": 1
+          "damage": 2
         },
         {
           "name": "Lifesteal",
@@ -11372,7 +11394,7 @@
           "cost": 2,
           "range": "Ranged 2-3",
           "type": "Attack",
-          "damage": 1
+          "damage": 2
         },
         {
           "name": "Curse",
@@ -11398,7 +11420,7 @@
           "cost": 2,
           "range": "Ranged 3-6",
           "type": "Attack",
-          "damage": 1
+          "damage": 3
         },
         {
           "name": "Raise Dead",
@@ -11412,7 +11434,7 @@
           "cost": 2,
           "range": "Melee",
           "type": "Attack",
-          "damage": 2
+          "damage": 4
         },
         {
           "name": "Bone Prison",
@@ -11420,7 +11442,7 @@
           "cost": 3,
           "range": "Ranged 2-5",
           "type": "Attack",
-          "damage": 1
+          "damage": 2
         },
         {
           "name": "Wither",
@@ -11428,7 +11450,7 @@
           "cost": 3,
           "range": "Ranged 3-6",
           "type": "Attack",
-          "damage": 1
+          "damage": 3
         }
       ],
       "totalCards": 5,
@@ -11447,7 +11469,7 @@
           "cost": 4,
           "range": "Ranged 3-6 AoE",
           "type": "Attack",
-          "damage": 2
+          "damage": 4
         },
         {
           "name": "Corpse Explosion",
@@ -11455,7 +11477,7 @@
           "cost": 3,
           "range": "Ranged 3-8",
           "type": "Attack",
-          "damage": 2
+          "damage": 5
         },
         {
           "name": "Life Siphon",
@@ -11463,7 +11485,7 @@
           "cost": 3,
           "range": "Ranged 2-5",
           "type": "Attack",
-          "damage": 2
+          "damage": 4
         },
         {
           "name": "Plague",
@@ -11471,7 +11493,7 @@
           "cost": 4,
           "range": "Ranged 3-6",
           "type": "Attack",
-          "damage": 1
+          "damage": 2
         },
         {
           "name": "Reanimate",
@@ -11485,7 +11507,7 @@
           "cost": 3,
           "range": "Ranged 2-6",
           "type": "Attack",
-          "damage": 2
+          "damage": 5
         },
         {
           "name": "Lich Form",
@@ -11510,7 +11532,7 @@
           "cost": 1,
           "range": "Ranged 2-3",
           "type": "Attack",
-          "damage": 3
+          "damage": 2
         },
         {
           "name": "Barkskin",
@@ -11541,7 +11563,7 @@
           "cost": 2,
           "range": "Ranged 2-4",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Entangle",
@@ -11549,7 +11571,7 @@
           "cost": 2,
           "range": "Ranged 3-5",
           "type": "Attack",
-          "damage": 3
+          "damage": 2
         },
         {
           "name": "Natural Armor",
@@ -11586,7 +11608,7 @@
           "cost": 3,
           "range": "Ranged 3-6",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Swarm of Thorns",
@@ -11594,7 +11616,7 @@
           "cost": 4,
           "range": "Ranged 2-5 AoE",
           "type": "Attack",
-          "damage": 4
+          "damage": 3
         },
         {
           "name": "Forest's Wrath",
@@ -11602,7 +11624,7 @@
           "cost": 4,
           "range": "Ranged 3-8",
           "type": "Attack",
-          "damage": 7
+          "damage": 6
         },
         {
           "name": "Regeneration",
@@ -11622,7 +11644,7 @@
           "cost": 4,
           "range": "Ranged 3-6 AoE",
           "type": "Attack",
-          "damage": 5
+          "damage": 4
         },
         {
           "name": "Wild Growth",
@@ -11647,7 +11669,7 @@
           "cost": 1,
           "range": "Ranged 2-4",
           "type": "Attack",
-          "damage": 4
+          "damage": 1
         },
         {
           "name": "Divine Shield",
@@ -11678,7 +11700,7 @@
           "cost": 2,
           "range": "Ranged 3-6",
           "type": "Attack",
-          "damage": 6
+          "damage": 3
         },
         {
           "name": "Blessing",
@@ -11698,7 +11720,7 @@
           "cost": 3,
           "range": "Ranged 2-5",
           "type": "Attack",
-          "damage": 6
+          "damage": 3
         },
         {
           "name": "Healing Light",
@@ -11723,7 +11745,7 @@
           "cost": 4,
           "range": "Ranged 3-6 AoE",
           "type": "Attack",
-          "damage": 7
+          "damage": 4
         },
         {
           "name": "Divine Intervention",
@@ -11737,7 +11759,7 @@
           "cost": 4,
           "range": "Ranged 4-8",
           "type": "Attack",
-          "damage": 8
+          "damage": 5
         },
         {
           "name": "Mass Healing",
@@ -11751,7 +11773,7 @@
           "cost": 3,
           "range": "Ranged 3-6",
           "type": "Attack",
-          "damage": 7
+          "damage": 4
         },
         {
           "name": "Sanctuary",
@@ -11926,7 +11948,7 @@
           "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 1,
+          "damage": 3,
           "effect": "Deal 3 damage. When you kill an enemy with this attack, recover 1 card from discard pile.",
           "keywords": [
             "attack",
@@ -11944,7 +11966,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Melee",
-          "damage": 2,
+          "damage": 4,
           "effect": "Deal 4 damage. Recover 1 card from your discard pile (partial lifesteal).",
           "keywords": [
             "attack",
@@ -11962,7 +11984,7 @@
           "type": "Attack",
           "cost": 4,
           "range": "Melee",
-          "damage": 2,
+          "damage": 5,
           "effect": "Deal 5 damage. If target is below 15 HP, recover 2 cards from discard pile instead of 1.",
           "keywords": [
             "attack",
@@ -11981,7 +12003,7 @@
           "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 1,
+          "damage": 3,
           "effect": "Deal 3 damage. If any Casket was destroyed this round within 6 hexes, recover 3 cards from discard pile.",
           "keywords": [
             "attack",
@@ -11999,7 +12021,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Range 2",
-          "damage": 1,
+          "damage": 3,
           "effect": "Deal 3 damage at range 2. Recover 1 card from discard pile. Can target through allies.",
           "keywords": [
             "attack",
@@ -12017,7 +12039,7 @@
           "type": "Attack",
           "cost": 5,
           "range": "Melee",
-          "damage": 3,
+          "damage": 6,
           "effect": "Deal 6 damage. If this reduces target to 0 HP, gain 1 Heat. Recover 2 cards from discard pile.",
           "keywords": [
             "attack",
@@ -12572,7 +12594,7 @@
           "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 1,
+          "damage": 4,
           "effect": "Deal 4 damage. Gain 1 Biomass. OR: Spend 3 Biomass to deal 7 damage instead.",
           "keywords": [
             "attack",
@@ -12590,7 +12612,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Melee",
-          "damage": 2,
+          "damage": 5,
           "effect": "Deal 5 damage. OR: Spend 2 Biomass to deal 7 damage and apply Bleed 2.",
           "keywords": [
             "attack",
@@ -12608,7 +12630,7 @@
           "type": "Attack",
           "cost": 4,
           "range": "3 hexes (leap)",
-          "damage": 3,
+          "damage": 6,
           "effect": "Move up to 3 hexes toward target, then deal 6 damage. Gain 1 Biomass.",
           "keywords": [
             "attack",
@@ -12627,7 +12649,7 @@
           "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 1,
+          "damage": 4,
           "effect": "Deal 4 damage. OR: Spend 2 Biomass to deal 6 damage and apply Bleed 2.",
           "keywords": [
             "attack",
@@ -12646,7 +12668,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Range 2 (leap)",
-          "damage": 2,
+          "damage": 5,
           "effect": "Deal 5 damage. Gain 1 Biomass if you moved this turn.",
           "keywords": [
             "attack",
@@ -12664,7 +12686,7 @@
           "type": "Attack",
           "cost": 5,
           "range": "Melee",
-          "damage": 4,
+          "damage": 7,
           "effect": "Deal 7 damage. OR: Spend 4 Biomass to deal 11 damage, ignore Defense, and apply Bleed 3.",
           "keywords": [
             "attack",
@@ -13007,7 +13029,7 @@
           "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 5,
+          "damage": 3,
           "effect": "Deal 3 damage. This attack bypasses 1 Defense (reality distortion).",
           "keywords": [
             "attack",
@@ -13025,7 +13047,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Melee",
-          "damage": 6,
+          "damage": 4,
           "effect": "Deal 4 damage. Apply 1 Taint to target. Bypasses all Defense.",
           "keywords": [
             "attack",
@@ -13044,7 +13066,7 @@
           "type": "Attack",
           "cost": 4,
           "range": "Melee",
-          "damage": 7,
+          "damage": 5,
           "effect": "Deal 5 damage. Spend 2 Taint (yours or target's): Deal 7 damage instead.",
           "keywords": [
             "attack",
@@ -13062,7 +13084,7 @@
           "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 5,
+          "damage": 3,
           "effect": "Deal 3 damage. If target has 2+ Taint, deal 5 damage instead.",
           "keywords": [
             "attack",
@@ -13080,7 +13102,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Range 4",
-          "damage": 6,
+          "damage": 4,
           "effect": "Deal 4 damage at range 4. Apply 2 Taint to target. Ignores cover.",
           "keywords": [
             "attack",
@@ -13098,7 +13120,7 @@
           "type": "Attack",
           "cost": 5,
           "range": "Melee",
-          "damage": 8,
+          "damage": 6,
           "effect": "Deal 6 damage. Spend all Taint on target (yours or theirs): +2 damage per Taint spent.",
           "keywords": [
             "attack",
@@ -13223,7 +13245,7 @@
           "type": "Attack",
           "cost": 2,
           "range": "Melee",
-          "damage": 5,
+          "damage": 3,
           "effect": "3 damage melee.",
           "keywords": [
             "attack",
@@ -13240,7 +13262,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Melee",
-          "damage": 5,
+          "damage": 3,
           "effect": "Move up to 2 hexes, then attack for 3 damage. If you moved before attacking, +1 damage (total 4).",
           "keywords": [
             "attack",
@@ -13257,7 +13279,7 @@
           "type": "Attack",
           "cost": 4,
           "range": "Melee",
-          "damage": 6,
+          "damage": 4,
           "effect": "Deal 4 damage to target and all adjacent enemies. Rotate once after attacking.",
           "keywords": [
             "attack",
@@ -13274,7 +13296,7 @@
           "type": "Reactive",
           "cost": 0,
           "range": "Melee",
-          "damage": 5,
+          "damage": 3,
           "effect": "Play when attacked in melee. After taking damage, immediately counterattack for 3 damage.",
           "keywords": [
             "reactive",
@@ -13301,7 +13323,7 @@
           "type": "Attack",
           "cost": 2,
           "range": "Ranged 3",
-          "damage": 6,
+          "damage": 4,
           "effect": "4 damage ranged (3 hex range).",
           "keywords": [
             "attack",
@@ -13317,7 +13339,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Ranged 3",
-          "damage": 6,
+          "damage": 4,
           "effect": "Deal 4 damage ranged. Target cannot move until end of their next turn.",
           "keywords": [
             "attack",
@@ -13334,7 +13356,7 @@
           "type": "Attack",
           "cost": 4,
           "range": "Ranged 5",
-          "damage": 6,
+          "damage": 4,
           "effect": "Deal 4 damage ranged (5 hex range). Requires line of sight.",
           "keywords": [
             "attack",
@@ -13351,7 +13373,7 @@
           "type": "Attack",
           "cost": 3,
           "range": "Ranged 3",
-          "damage": 5,
+          "damage": 3,
           "effect": "Attack 2 different targets within 3 hexes for 3 damage each.",
           "keywords": [
             "attack",

@@ -158,14 +158,12 @@ body::before {
     min-height: calc(100vh - 160px);
     margin: 0 20px 0 20px;
     max-height: calc(100vh - 160px);
+    overflow: visible;
 }
 
 /* Gothic Sidebar */
 .sidebar {
-    background: linear-gradient(to bottom,
-        rgba(43, 31, 23, 0.95),
-        rgba(26, 20, 16, 0.95)
-    );
+    background: transparent;
     border-right: 4px double var(--dark-red);
     padding: 2rem 1.5rem 3rem 1.5rem;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8);
@@ -186,8 +184,8 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: var(--leather-texture);
-    opacity: 0.3;
+    background-image: none;
+    opacity: 0;
     pointer-events: none;
     z-index: 0;
 }
@@ -291,7 +289,7 @@ body::before {
 
 /* Main Content Area */
 .content {
-    padding: 3rem 3rem 0 120px; /* 100px offset from left border + 20px padding, no bottom padding to prevent gap */
+    padding: 3rem 3rem 0 80px; /* 100px offset from left border + 20px padding, no bottom padding to prevent gap */
     background: linear-gradient(to bottom,
         rgba(26, 20, 16, 0.85),
         rgba(10, 6, 4, 0.9)
@@ -617,7 +615,9 @@ p.no-drop-cap::first-letter {
         max-height: none;
     }
 
-    .sidebar {
+    /* Note: Sidebar mobile styles are handled in index.html for overlay behavior */
+    /* Only apply these styles to non-overlay sidebars (e.g., in iframe pages) */
+    body:not(.has-mobile-menu) .sidebar {
         border-right: none;
         border-bottom: 4px double var(--dark-red);
         max-height: none;

@@ -5,6 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codex Home - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .recent-updates-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .update-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid var(--dark-red);
+            padding: 1.5rem;
+            border-radius: 2px;
+        }
+
+        .update-card .date {
+            color: var(--aged-gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .update-card p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .dropdown-container {
+            margin: 2rem 0;
+        }
+
+        .dropdown-toggle {
+            background: var(--shadow-black);
+            border: 2px solid var(--dark-red);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .dropdown-toggle:hover {
+            background: var(--dark-red);
+            color: var(--aged-gold);
+        }
+
+        .dropdown-toggle::after {
+            content: '▼';
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle.active::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            background: rgba(10, 6, 4, 0.5);
+            border: 1px solid var(--dark-red);
+            border-top: none;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .dropdown-content.active {
+            display: block;
+        }
+
+        .update-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+            line-height: 1.6;
+        }
+
+        .update-item:last-child {
+            border-bottom: none;
+        }
+
+        .update-item strong {
+            color: var(--aged-gold);
+        }
+
+        .update-item-date {
+            display: inline-block;
+            color: var(--aged-gold);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 0.5rem;
+            min-width: 100px;
+        }
+    </style>
 </head>
 <body>
     <div class="content">
@@ -18,7 +119,7 @@
 
         <div style="background: var(--blood-red); border-left: 8px solid var(--dark-red); padding: 2rem; margin: 2.5rem 0;">
             <h2>Playtest Ready: Version 2.0 + Campaign Systems</h2>
-            <p>The great work is complete. Ten factions stand ready for battle, their Caskets armed and their souls bound. The campaign systems await those who dare long-term play—with procedural mission generation, 26 faction enemies, 7 anomalous horrors, and the Latin classification of the damned.</p>
+            <p>The great work is complete. Ten factions stand ready for battle, their Caskets armed and their souls bound. The campaign systems await those who dare long-term play...with procedural mission generation, 26 faction enemies, 7 anomalous horrors, and the Latin classification of the damned.</p>
             <p><strong>Contents of this Grimoire:</strong></p>
             <ul style="margin-left: 2rem; margin-bottom: 1rem;">
                 <li>Setup Time: 15 minutes of preparation</li>
@@ -97,7 +198,7 @@
                 </tr>
                 <tr>
                     <td><strong>Campaign System</strong></td>
-                    <td>Pilot generation (5 tables, 320M combinations), settlement phase (6 steps), <strong>Core Bestiary (26 enemies)</strong>, <strong>Anomalous Bestiary (7 entities with Latin classification: Sanctus/Poenitentia/Damnatio/Absolutio/Terminus)</strong>, <strong>Procedural Mission Generation</strong> (HP budgets: Easy 30-40, Medium 50-70, Hard 80-100, Deadly 120+), event tables (132 + 100 anomalies), loot economy, <strong>The Scavenger's Crusade</strong> (10-mission story arc with 5 endings)</td>
+                    <td>Pilot generation (5 tables, 320M combinations), settlement phase (6 steps), Core Bestiary (26 enemies), Anomalous Bestiary (7 entities with Latin classifications)</td>
                     <td>✅ Complete</td>
                 </tr>
                 <tr>
@@ -108,34 +209,103 @@
             </tbody>
         </table>
 
-        <h2>Recent Additions to the Codex</h2>
-        <p style="opacity: 0.8; font-style: italic; margin-bottom: 1.5rem;">(Patch notes written in a state of sleep deprivation and hubris)</p>
+        <h2>Recent Updates to the Codex</h2>
+        <p style="opacity: 0.8; font-style: italic; margin-bottom: 1.5rem;">(Top 3 featured. Past updates archived below.)</p>
 
-        <ul>
-            <li><strong>2025-10-19</strong> - Balance simulation results: Church viability improved dramatically (+15 HP survival, 93% improvement), Blood Offering cost reduced (2 HP → 1 HP), Bleed capped at 10 stacks (prevents runaway scaling), Field Repair Kit added to campaign (3 Scrap for +5 HP). Church tier ranking: C → B. The self-harm faction is no longer pure suicide. Progress!</li>
-            <li><strong>2025-10-19</strong> - Created <strong>Latin Anomaly Classification System</strong> replacing SCP terminology: <strong>Sanctus</strong> (Safe), <strong>Poenitentia</strong> (Penance/Euclid), <strong>Damnatio</strong> (Damnation/Keter), <strong>Absolutio</strong> (Absolution/Thaumiel), <strong>Terminus</strong> (The End/Apollyon). Gothic horror, not Foundation bureaucracy.</li>
-            <li><strong>2025-10-19</strong> - Added <strong>Anomalous Bestiary</strong> with 7 fully-statted supernatural entities: The Mirror Walker (Poenitentia, teleporting blade), The Void Shepherd (Damnatio, reality erosion), The Casket Hive (Damnatio, fungal infection), The Penitent Weapon (Absolutio, aging railgun). Campaign enemies just got weird.</li>
-            <li><strong>2025-10-19</strong> - Expanded <strong>Core Bestiary</strong> from 22 to 26 enemies. Added Exchange Enforcer (soul drain contracts), Nomad Outrider (7 Move speed!), Blighted Plague Bearer (disease AOE), Crucible Berserker (blood rage scaling). All major factions now have elite enemies.</li>
-            <li><strong>2025-10-19</strong> - Created <strong>Procedural Mission Generation System</strong> with 4-step process: (1) Roll difficulty tier (Easy/Medium/Hard/Deadly), (2) Roll faction, (3) Generate enemy composition via HP budgets (Easy: 30-40, Medium: 50-70, Hard: 80-100, Deadly: 120+), (4) Apply mission modifiers. GMs can now generate balanced encounters on the fly.</li>
-            <li><strong>2025-10-19</strong> - Built <strong>Tactical Map Generator</strong> Python utility. Input simple text config (ROW1: PC PC FR WA OG...), output gorgeous SVG hex maps with terrain patterns, deployment zones, elevation labels, and legends. Creating scenario maps is now trivial. Creating GOOD scenario maps... still requires thought.</li>
-            <li><strong>2025-10-19</strong> - Comprehensive codex cleanup: Fixed 9 critical issues including duplicate articles ("the The"), outdated faction links (Merchants → Exchange), balance contradictions (Bleed stacking limits), and narrative inconsistencies. The manuscript is 2.7% less embarrassing.</li>
-            <li><strong>2025-10-17</strong> - Major balance overhaul: Component HP normalization (Head 6→8, Legs 8→10), Salvage efficiency (2-for-1 → 3-for-2), overspending cap reduced (2× → 1.5× max SP), variable Draw Phase (played cards ÷ 2, min 2, max 5), harshened Heat Strain penalties, Defense Dice block rate increased (33% → 50%). The math is mathing. Probably.</li>
-            <li><strong>2025-10-17</strong> - Added comprehensive Component Damage System to codex with AP zones, Structure zones, and Exposure zones. Three ways to die, one inevitable outcome.</li>
-            <li><strong>2025-10-17</strong> - Integrated Draconid lore: The Petrified Inheritors, ancient dragon-spawn with apocalyptic memory spanning 50,000 years. They remember the last three world-endings. They know this isn't the first time. They're very tired.</li>
-            <li><strong>2025-10-17</strong> - Renamed Cannibalize to Salvage and increased cost (1 SCRAP → 1 card became 2 SCRAP → 1 card). Economy balancing: now with 100% more painful decisions.</li>
-            <li><strong>2025-10-15</strong> - Fixed an issue where players couldn't find individual scenarios in the navigation. Scenarios can now be found! We promise they were there the whole time. Definitely not our fault.</li>
-            <li><strong>2025-10-14</strong> - Added 10-mission campaign arc with 5 endings. Testers report "concerningly replayable." We consider this a feature, not a bug.</li>
-            <li><strong>2025-10-14</strong> - Implemented pilot generator with 320 million combinations. Statistically, you will never meet another player with the same pilot. We're not sure if this is good design or cosmic horror.</li>
-            <li><strong>2025-10-14</strong> - Created 15 enemies with If-Then AI behavior. They will now predictably ruin your day in approximately 47 different ways.</li>
-            <li><strong>2025-10-12</strong> - Wrote complete alternate-Earth cosmology. Answered zero questions, raised 47 more. As intended.</li>
-            <li><strong>2025-10-12</strong> - Added 24 Support Units with behavior decks. They're allies! Kind of. They might shoot you. It's complicated.</li>
-            <li><strong>2025-10-12</strong> - Designed 89 weapon cards across 16 movesets. Turns out swords have a lot of opinions about how to stab things.</li>
-            <li><strong>2025-10-12</strong> - Implemented variable deck sizes (26-50 cards). "Just play 30 cards" was apparently too simple. We've learned nothing.</li>
-            <li><strong>2025-10-12</strong> - Added Ossuarium faction (vampire mechs) and Elves (bleeding everything). Balance is a lie we tell ourselves at night.</li>
-            <li><strong>2025-10-12</strong> - Created custom dice with 6 symbols each. Math teachers everywhere are weeping. We're sorry. We're not sorry.</li>
-            <li><strong>2025-10-11</strong> - Wrote 232 random event tables. Your settlement will now suffer in 232 unique and horrible ways. You're welcome.</li>
-            <li><strong>2025-10-10</strong> - Implemented deck-as-HP system where taking damage discards cards. "But what if we made EVERYTHING hurt?" —us, probably</li>
-        </ul>
+        <!-- Top 3 Updates Featured -->
+        <div class="recent-updates-container">
+            <div class="update-card">
+                <div class="date">2025-10-19</div>
+                <p><strong>Balance Simulation Results</strong><br>Church viability improved dramatically (+15 HP survival, 93% improvement), Blood Offering cost reduced (2 HP → 1 HP), Biomass generation rebalanced.</p>
+            </div>
+            <div class="update-card">
+                <div class="date">2025-10-19</div>
+                <p><strong>Latin Anomaly Classification System</strong><br>Replaced SCP terminology with proper Latin classifications: Sanctus (Safe), Poenitentia (Euclid), Damnatus (Keter), Necessitas (Thaumiel).</p>
+            </div>
+            <div class="update-card">
+                <div class="date">2025-10-19</div>
+                <p><strong>Expanded Bestiary & Procedural Missions</strong><br>Core Bestiary expanded to 26 enemies, 7 Anomalous entities added, full procedural mission generation system implemented.</p>
+            </div>
+        </div>
+
+        <!-- Past Updates Dropdown -->
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleDropdown()">📖 View Past Updates (17 more entries)</button>
+            <div class="dropdown-content" id="dropdownContent">
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-19</span>
+                    <strong>Tactical Map Generator</strong>, Built Python utility. Input simple text config (ROW1: PC PC FR WA OG...), output gorgeous SVG hex maps with terrain.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-19</span>
+                    <strong>Comprehensive Codex Cleanup</strong>, Fixed 9 critical issues including duplicate articles ("the The"), outdated faction links (Merchants → Exchange), balance inconsistencies.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-17</span>
+                    <strong>Major Balance Overhaul</strong>, Component HP normalization (Head 6→8, Legs 8→10), Salvage efficiency (2-for-1 → 3-for-2), overspending cap reduced (2× → 1.5×).
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-17</span>
+                    <strong>Component Damage System</strong>, Added comprehensive system to codex with AP zones, Structure zones, and Exposure zones. Three ways to die, one inevitable outcome.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-17</span>
+                    <strong>Integrated Draconid Lore</strong>, Added The Petrified Inheritors, ancient dragon-spawn with apocalyptic memory spanning 50,000 years. They remember the last three sundings.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-17</span>
+                    <strong>Salvage Economy Rebalance</strong>, Renamed Cannibalize to Salvage and increased cost (1 SCRAP → 1 card became 2 SCRAP → 1 card). Now with 100% more painful decisions.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-15</span>
+                    <strong>Scenario Navigation Fix</strong>, Fixed an issue where players couldn't find individual scenarios in the navigation. Scenarios can now be found! We promise they were there the whole time.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-14</span>
+                    <strong>10-Mission Campaign Arc</strong>, Added complete campaign with 5 possible endings. Testers report "concerningly replayable." We consider this a feature, not a bug.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-14</span>
+                    <strong>Pilot Generator Released</strong>, Implemented with 320 million combinations. Statistically, you will never meet another player with the same pilot. We're not sure if that's good.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-14</span>
+                    <strong>AI Behavior Decks</strong>, Created 15 enemies with If-Then AI behavior. They will now predictably ruin your day in approximately 47 different ways.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-12</span>
+                    <strong>Alternate-Earth Cosmology</strong>, Wrote complete cosmology. Answered zero questions, raised 47 more. As intended.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-12</span>
+                    <strong>Support Units System</strong>, Added 24 AI companions with behavior decks. They're allies! Kind of. They might shoot you. It's complicated.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-12</span>
+                    <strong>Weapon Move Sets</strong>, Designed 89 weapon cards across 16 movesets. Turns out swords have a lot of opinions about how to stab things.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-12</span>
+                    <strong>Variable Deck Sizes</strong>, Implemented sizes from 26-50 cards. "Just play 30 cards" was apparently too simple. We've learned nothing.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-12</span>
+                    <strong>New Factions: Ossuarium & Elves</strong>, Added vampire mechs (Ossuarium) and bleeding assassins (Elves). Balance is a lie we tell ourselves at night.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-12</span>
+                    <strong>Custom Dice System</strong>, Created custom dice with 6 symbols each. Math teachers everywhere are weeping. We're sorry. We're not sorry.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-11</span>
+                    <strong>Random Event Tables</strong>, Wrote 232 tables. Your settlement will now suffer in 232 unique and horrible ways. You're welcome.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-10</span>
+                    <strong>Deck-as-HP System</strong>, Implemented where taking damage discards cards. "But what if we made EVERYTHING hurt?" ...us, probably
+                </div>
+            </div>
+        </div>
 
         <h2>The Ten Factions of the Bound</h2>
 
@@ -163,8 +333,8 @@
                 </tr>
                 <tr>
                     <td><a href="faction-undead.html" target="_parent">The Ossuarium</a></td>
-                    <td>Lifesteal Vampire</td>
-                    <td>Soul Harvest (lifesteal triggers, resurrections, Decay cards)</td>
+                    <td>Necromantic Grinder</td>
+                    <td>Soul Harvest & Decay (card recovery, resurrections, corruption accumulation)</td>
                     <td>6 units: Bone Thralls, Grave Knight, Fleshcrafter, Bone Colossus, Lich, Death's Herald</td>
                 </tr>
                 <tr>
@@ -223,6 +393,7 @@
         <p>Digital grimoires to aid your campaign:</p>
 
         <ul>
+            <li><a href="gm-helper.html" target="_parent">GM Helper</a> - Interactive game master tools (loot tables, event generators, NPC creation, encounters, settlements, weather)</li>
             <li><a href="../tools/pilot-generator.html" target="_blank">Pilot Generator</a> - Create unique pilots with random roll or manual select modes (1 in 320 million combinations)</li>
             <li><a href="../cards/deck-builder.html" target="_blank">Deck Builder</a> - Build and customize your Casket's equipment deck</li>
             <li><a href="../cards/" target="_blank">Card Database</a> - Interactive filterable card reference with full statistics</li>
@@ -266,9 +437,19 @@
                 "In iron we seek forgiveness. Through blood, absolution."
             </p>
             <p style="text-align: center; margin-top: 0.5rem; margin-bottom: 0; opacity: 0.7;">
-                — The Creed of the Bound
+               , The Creed of the Bound
             </p>
         </div>
     </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownContent');
+            const toggle = document.querySelector('.dropdown-toggle');
+            
+            dropdown.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

@@ -48,6 +48,109 @@
 
 ---
 
+## The Memory Fracture
+
+### Without Caskets: The Forgetting
+
+**Corvath degradation timeline (3rd generation like Kirin):**
+
+- **0-8 hours disconnected**: Perfect recall degrades, recent memories blur, minor disorientation
+- **8-12 hours**: Long-term memory corruption, forgets faces/names/debts, feather growth accelerates
+- **12-16 hours**: Magpie compulsion overrides cognition, hoards obsessively, attacks anyone touching "shinies"
+- **16-20 hours**: Bones hollow rapidly, fingers begin fusing into wing structure, cannot manipulate objects
+- **20-24 hours**: Total memory wipe, no identity remains, only instinct and hoarding behavior
+- **24-48 hours**: Full avian transformation, quadrupedal stance, arms become wings, speech impossible
+- **48+ hours**: Permanent feral state, mind regresses to bird-level intelligence, cannot be restored
+
+### Flockmaster Kirin's Secret Shame
+
+**Incident Report (Year 429, Church Ambush):**
+
+> "Disconnected for 18 hours during emergency evacuation. Church destroyed my Casket's power cell. Had to wait for rescue.
+>
+> Hour 8: Forgot my trade routes. Years of contacts, gone. Tried to write them down, but couldn't remember who they were.
+>
+> Hour 12: Forgot my flock's names. My own nephew's face. He was crying, and I didn't know why.
+>
+> Hour 16: My fingers started fusing. Could feel the bones hollowing out. Tried to hold a pen. Couldn't. Tried to sign a contract. Couldn't. Everything I was, slipping away.
+>
+> Hour 17: Found a shiny button on the ground. Became convinced it was the most important thing in the world. Attacked my nephew when he tried to take it from me. He still has the scar.
+>
+> Hour 18: They rescued me. Reconnected. The memories... some came back. Not all. I spent 6 months rebuilding my trade network from fragmentary notes and guesswork.
+>
+> I counted every second. 18 hours, 43 minutes, 27 seconds. I will never forget that number. It's the only thing I can still remember perfectly."
+
+### The Merchant's Curse
+
+**Corvath are the only bloodline that deals regularly with outsiders:**
+
+- Their perfect memory makes them ideal traders, diplomats, information brokers
+- But that memory **only exists while connected to Caskets**
+- Lose Casket access = lose all knowledge = lose livelihood = starve
+
+**The dependency loop:**
+
+1. Corvath sell information/trade services to afford Casket maintenance
+2. Without Caskets, they cannot remember their trade contacts
+3. Without contacts, they cannot earn money
+4. Without money, they cannot maintain Caskets
+5. Death spiral
+
+**Kirin's greatest fear:**
+> "What if my Casket fails during a negotiation? I forget who I'm talking to. Forget what we agreed. Forget why I'm here. They'd think I'm insane. Or worse, trying to cheat them.
+>
+> My entire reputation, my entire life, depends on a machine that could fail at any moment. One power surge. One damaged neural port. And I am nothing."
+
+### The Pre-Connection Void
+
+**The cruelest aspect of Corvath memory:**
+
+- The Casket only preserves memories made WHILE connected
+- Anything that happened BEFORE their first connection is... blurry
+- Most Corvath first connected around age 10-15
+- **They don't remember their early childhood clearly**
+
+**Kirin's confession:**
+> "I remember everything from age 14 onward. Perfect recall. Every face, every word, every deal.
+>
+> But before that? Before my first Casket? It's like a dream. Fragments. My mother's voice, maybe. A brother? Or was that someone else's memory I absorbed from flock-sharing?
+>
+> Did I have a family? Children? A mate, before the Casket? The threads only preserve what happens AFTER. Everything before is... fading.
+>
+> I remember the last 27 years perfectly. I barely remember the first 14 at all.
+>
+> Some nights, I wonder who I was before the machine. But I'll never know. That person is gone."
+
+### Why Corvath Never Stop Moving
+
+**Hit-and-run tactics aren't just combat strategy, they're psychological necessity:**
+
+- Staying still means thinking about the prison
+- Constant motion distracts from the horror of dependency
+- "Never stop moving" means "never stop to question why"
+- The moment they stop, they realize they're trapped
+
+**Corvath philosophy decoded:**
+- "We remember all" = The Casket remembers, not us
+- "We forget nothing" = Because we have no choice, the machine won't let us forget
+- "The dead watch from above" = We envy them, they're finally free
+
+### The 4-Hour Limit
+
+**Kirin's current restriction:**
+
+- **Maximum disconnection time**: 4 hours
+- Used to be 8 hours (before the Year 429 incident)
+- Now paranoid, never risks more than 4
+- Splits into 8x 30-minute sessions per day for necessities
+
+**Daily schedule:**
+- 20 hours connected (piloting, eating, sleeping inside Casket)
+- 4 hours total disconnected (bathing, socializing, physical maintenance)
+- Never more than 30 minutes at once
+
+---
+
 ## Notable NPC: Flockmaster Kirin Corvath
 
 ### Title

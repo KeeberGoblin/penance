@@ -510,45 +510,168 @@
             font-size: 0.95rem;
         }
 
-        /* Factions */
-        .factions-list {
+        /* Factions - Horizontal Scrolling Panel */
+        .factions-scroll-container {
+            position: relative;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 2rem 0;
+            margin: 3rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border-ornate) var(--dark-gray);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .factions-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .factions-scroll-container::-webkit-scrollbar-track {
+            background: var(--dark-gray);
+            border-radius: 4px;
+        }
+
+        .factions-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--border-ornate);
+            border-radius: 4px;
+        }
+
+        .factions-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: var(--blood-red);
+        }
+
+        .factions-panel {
+            display: flex;
+            gap: 2rem;
+            min-width: min-content;
+            padding: 0 1rem;
+        }
+
+        .faction-card {
+            min-width: 350px;
+            max-width: 350px;
+            height: 500px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--border-ornate);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            justify-content: space-between;
         }
 
-        .faction-item {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid var(--medium-gray);
+        .faction-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, transparent 50%);
+            z-index: 0;
+            pointer-events: none;
         }
 
-        .faction-item:last-child {
-            border-bottom: none;
+        .faction-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--parchment);
+            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.5);
+            z-index: 10;
         }
 
-        .faction-name {
-            font-size: 2rem;
+        /* Faction-specific gradients */
+        .faction-card[data-faction="church"] {
+            background: linear-gradient(135deg, #8b1a1a 0%, #4a0e0e 50%, #1a0606 100%);
+        }
+
+        .faction-card[data-faction="dwarves"] {
+            background: linear-gradient(135deg, #4a3829 0%, #2b1f17 50%, #1a1410 100%);
+        }
+
+        .faction-card[data-faction="ossuarium"] {
+            background: linear-gradient(135deg, #2d1b4e 0%, #1a0f2e 50%, #0a0513 100%);
+        }
+
+        .faction-card[data-faction="elves"] {
+            background: linear-gradient(135deg, #2d4a2d 0%, #1a2e1a 50%, #0d170d 100%);
+        }
+
+        .faction-card[data-faction="wyrd"] {
+            background: linear-gradient(135deg, #4a2d4a 0%, #2e1a2e 50%, #170d17 100%);
+        }
+
+        .faction-card[data-faction="nomads"] {
+            background: linear-gradient(135deg, #6b4423 0%, #3d2517 50%, #1a1410 100%);
+        }
+
+        .faction-card[data-faction="crucible"] {
+            background: linear-gradient(135deg, #8b4513 0%, #5a2d0f 50%, #2a1507 100%);
+        }
+
+        .faction-card[data-faction="emergent"] {
+            background: linear-gradient(135deg, #1a4a4a 0%, #0f2e2e 50%, #071717 100%);
+        }
+
+        .faction-card[data-faction="bloodlines"] {
+            background: linear-gradient(135deg, #4a1a2e 0%, #2e0f1a 50%, #17070d 100%);
+        }
+
+        .faction-card[data-faction="exchange"] {
+            background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 50%, #1a1a1a 100%);
+        }
+
+        .faction-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .faction-card-name {
+            font-size: 1.75rem;
             font-weight: 700;
-            position: sticky;
-            top: 100px; /* Fixed: Added offset for sticky header */
-            height: fit-content;
+            color: var(--parchment);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 0.05em;
         }
 
-        .faction-details h4 {
-            color: var(--accent);
-            text-transform: uppercase;
+        .faction-card-playstyle {
+            color: var(--border-ornate);
             font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .faction-card-description {
+            color: var(--light-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .faction-card-mechanic {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-ornate);
+            border-radius: 4px;
+        }
+
+        .faction-card-mechanic-title {
+            color: var(--blood-red);
+            font-size: 0.75rem;
+            text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
-        .faction-details p {
-            color: var(--light-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
+        .faction-card-mechanic-text {
+            color: var(--white);
+            font-size: 0.875rem;
+            line-height: 1.4;
         }
 
         .relationship-grid {
@@ -866,15 +989,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .faction-item {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .faction-name {
-                position: static;
-            }
-
             .section {
                 padding: 4rem 1rem;
             }
@@ -888,6 +1002,30 @@
 
             .scroll-to-top::before {
                 font-size: 1.5rem;
+            }
+
+            .faction-card {
+                min-width: 300px;
+                max-width: 300px;
+                height: 450px;
+                padding: 2rem;
+            }
+
+            .faction-card-name {
+                font-size: 1.5rem;
+            }
+
+            .faction-card-description {
+                font-size: 0.875rem;
+            }
+
+            .factions-scroll-container {
+                padding: 1rem 0;
+            }
+
+            .factions-panel {
+                padding: 0 0.5rem;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -1036,76 +1174,190 @@
 
     <!-- Factions Section -->
     <section class="section section-dark" id="factions">
-        <div class="section-content">
-            <h2 class="section-header">FACTIONS</h2>
-            <p class="section-intro">Ten factions war for control of a dying world. All factions balanced through extensive playtesting (v5.29-FINAL). 7/10 factions competitive (44-58% win rate). Complete card decks, equipment systems, and unique mechanics.</p>
+        <div class="section-content-wide">
+            <h2 class="section-header-center">TEN FACTIONS OF THE BOUND</h2>
+            <p style="text-align: center; color: var(--light-gray); max-width: 900px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.6;">
+                Ten factions war for control of a dying world. Each plays completely differently with unique mechanics, equipment pools, and win conditions. Balanced through extensive playtesting (v5.29-FINAL). Scroll to explore their twisted doctrines.
+            </p>
 
-            <div class="factions-list">
-                <div class="faction-item">
-                    <div class="faction-name">CHURCH OF ABSOLUTION</div>
-                    <div class="faction-details">
-                        <h4>Playstyle</h4>
-                        <p>Aggressive martyrdom. Self-harm for burst damage. Ally protection through sacrifice. Scales with kills.</p>
+            <div class="factions-scroll-container">
+                <div class="factions-panel">
 
-                        <h4>Signature Mechanic</h4>
-                        <p><strong>Blood Offering:</strong> Discard 2 cards (self-harm) for +3 damage. <strong>Martyrdom Protocol:</strong> Redirect damage from allies to yourself. <strong>Righteous Fury:</strong> +1 damage per enemy killed (permanent).</p>
-
+                    <!-- Church of Absolution -->
+                    <div class="faction-card" data-faction="church">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">CHURCH OF ABSOLUTION</h3>
+                            <div class="faction-card-playstyle">Aggressive Martyrdom</div>
+                            <p class="faction-card-description">
+                                Self-harm for burst damage. Redirect damage from allies to yourself. Every enemy killed permanently increases your power. The more you suffer, the harder you hit.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Blood Offering</div>
+                            <div class="faction-card-mechanic-text">
+                                Discard 2 cards (self-harm) for +3 damage. Martyrdom Protocol redirects ally damage. Righteous Fury grants +1 damage per kill (permanent).
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faction-item">
-                    <div class="faction-name">DWARVEN FORGE-GUILDS</div>
-                    <div class="faction-details">
-                        <h4>Playstyle</h4>
-                        <p>Defensive attrition tank. Stack rune counters for massive damage reduction. Armor-piercing attacks. Convert Heat to damage.</p>
-
-                        <h4>Signature Mechanic</h4>
-                        <p><strong>Rune Counters:</strong> Stack up to 3 Rune Counters (each blocks 4 damage, max -12 damage reduction). <strong>Stone Endurance:</strong> 32 HP instead of 30. <strong>Clan Vengeance:</strong> +2 damage per Component Damage taken. <em>(v5.25: Buffed from 3 dmg/rune to 4 dmg/rune)</em></p>
-
+                    <!-- Dwarven Forge-Guilds -->
+                    <div class="faction-card" data-faction="dwarves">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">DWARVEN FORGE-GUILDS</h3>
+                            <div class="faction-card-playstyle">Fortress Defender</div>
+                            <p class="faction-card-description">
+                                Stack rune counters for massive damage reduction. Armor-piercing attacks ignore enemy defenses. Convert heat to devastating counterattacks. You don't lose—you outlast.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Rune Counters</div>
+                            <div class="faction-card-mechanic-text">
+                                Stack up to 3 Rune Counters (each blocks 4 damage, max -12 reduction). 32 HP base. Clan Vengeance: +2 damage per Component Damage taken.
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faction-item">
-                    <div class="faction-name">THE OSSUARIUM</div>
-                    <div class="faction-details">
-                        <h4>Playstyle</h4>
-                        <p>Taint warfare. Corrupt enemies with Decay Aura spreading permanent corruption. Phylactery resurrection and Skeletal Thrall summoning. Pure attrition through inevitable Taint accumulation.</p>
-
-                        <h4>Signature Mechanic</h4>
-                        <p><strong>Decay Aura:</strong> Enemies within 3 hexes gain +1 Taint per turn (permanent corruption). <strong>Phylactery:</strong> Automatically resurrect at 5 HP once per mission. <strong>Raise Dead:</strong> Summon skeletal Thralls. Uses Decay cards instead of Damage cards on reshuffle.</p>
-
+                    <!-- The Ossuarium -->
+                    <div class="faction-card" data-faction="ossuarium">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">THE OSSUARIUM</h3>
+                            <div class="faction-card-playstyle">Necromantic Grinder</div>
+                            <p class="faction-card-description">
+                                Corrupt enemies with Decay Aura spreading permanent Taint. Resurrect from death via Phylactery. Summon skeletal thralls. You don't need to win quickly—death is patient.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Decay Aura & Phylactery</div>
+                            <div class="faction-card-mechanic-text">
+                                Enemies within 3 hexes gain +1 Taint per turn. Auto-resurrect at 5 HP once per mission. Raise skeletal Thralls. Uses Decay cards instead of Damage.
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faction-item">
-                    <div class="faction-name">ELVEN VERDANT COVENANT</div>
-                    <div class="faction-details">
-                        <h4>Playstyle</h4>
-                        <p>Hit-and-run assassin. Stack Bleed damage-over-time (max 8 Bleed). High mobility with Leaf Dance. Passive regeneration (2 cards per round).</p>
-
-                        <h4>Signature Mechanic</h4>
-                        <p><strong>Bleed Stacking:</strong> Enemies take damage at start of their turn (max 8 Bleed). <strong>Leaf Dance:</strong> Move 2 hexes + attack + continue moving. <strong>Verdant Regeneration:</strong> Recover 2 cards per round (passive). <em>(v5.29: Photosynthesis removed, Bleed capped at 8)</em></p>
-
+                    <!-- Elven Verdant Covenant -->
+                    <div class="faction-card" data-faction="elves">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">ELVEN VERDANT COVENANT</h3>
+                            <div class="faction-card-playstyle">Hit-and-Run Assassin</div>
+                            <p class="faction-card-description">
+                                Stack bleeding wounds that never heal (max 8 Bleed). Leaf Dance to move, attack, and continue moving. Passive regeneration heals you constantly. Strike fast, bleed them dry, vanish.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Bleed Stacking</div>
+                            <div class="faction-card-mechanic-text">
+                                Enemies take damage at start of their turn (max 8 Bleed). Leaf Dance: Move 2 + attack + continue moving. Verdant Regeneration: Recover 2 cards per round.
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Wyrd Conclave -->
+                    <div class="faction-card" data-faction="wyrd">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">THE WYRD CONCLAVE</h3>
+                            <div class="faction-card-playstyle">Reality Bender</div>
+                            <p class="faction-card-description">
+                                Fae trickster magic warps reality. Steal faces and identities. Manipulate probability and twist fate. No one knows what's real anymore—including you.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Wyrd Tokens</div>
+                            <div class="faction-card-mechanic-text">
+                                Accumulate Wyrd Tokens to warp reality. Steal enemy identities with Glamour. Trickster magic creates illusions that deal real damage.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nomad Clans -->
+                    <div class="faction-card" data-faction="nomads">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">NOMAD COLLECTIVE</h3>
+                            <div class="faction-card-playstyle">Mobile Survivor</div>
+                            <p class="faction-card-description">
+                                Salvage equipment from fallen enemies. High mobility and improvised tactics. Master of adaptability—you use whatever works, scavenged from the wastes.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Improvisation</div>
+                            <div class="faction-card-mechanic-text">
+                                Salvage equipment from enemies mid-battle. Enhanced movement and positioning. Flexible loadouts adapt to any situation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Crucible Pacts -->
+                    <div class="faction-card" data-faction="crucible">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">CRUCIBLE PACTS</h3>
+                            <div class="faction-card-playstyle">Fire Duelist Packs</div>
+                            <p class="faction-card-description">
+                                Forge mastery and volcanic honor duels. Ancestral iron forged in sacred flames. Challenge enemies to single combat where only the strongest survive.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Forge Tokens</div>
+                            <div class="faction-card-mechanic-text">
+                                Accumulate Forge Tokens through combat. Duel mechanics force 1v1 honor battles. Fire-based attacks with escalating damage.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergent Syndicate -->
+                    <div class="faction-card" data-faction="emergent">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">EMERGENT SYNDICATE</h3>
+                            <div class="faction-card-playstyle">Hive-Mind Collective</div>
+                            <p class="faction-card-description">
+                                Coordinated swarm tactics through shared consciousness. Metamorph evolution adapts to threats. Many bodies, one mind. You are legion.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Metamorph Tokens</div>
+                            <div class="faction-card-mechanic-text">
+                                Hive mind coordination grants action economy. Metamorph Tokens enable chosen evolution. Swarm tactics overwhelm through numbers.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vestige Bloodlines -->
+                    <div class="faction-card" data-faction="bloodlines">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">VESTIGE BLOODLINES</h3>
+                            <div class="faction-card-playstyle">Mutation Specialists</div>
+                            <p class="faction-card-description">
+                                Five animal bloodlines offer unique mutations. Biomass Tokens fuel grotesque evolution. Racing extinction clock—adapt or die. You are humanity's last, desperate mutation.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Biomass Tokens</div>
+                            <div class="faction-card-mechanic-text">
+                                Choose from 5 bloodline variants (Wolf, Bear, Serpent, Raven, Stag). Biomass Tokens fuel mutations. Extinction clock adds time pressure.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Exchange -->
+                    <div class="faction-card" data-faction="exchange">
+                        <div class="faction-card-content">
+                            <h3 class="faction-card-name">THE EXCHANGE</h3>
+                            <div class="faction-card-playstyle">Economic Warfare</div>
+                            <p class="faction-card-description">
+                                Soul contracts and credit economy. Bribe enemies, hire mercenaries, control resources. Everything has a price—including victory. You don't fight wars. You buy them.
+                            </p>
+                        </div>
+                        <div class="faction-card-mechanic">
+                            <div class="faction-card-mechanic-title">Credit Tokens</div>
+                            <div class="faction-card-mechanic-text">
+                                Accumulate Credits through economic actions. Bribe enemies to skip turns. Hire mercenary units. Resource control mechanics.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div style="margin-top: 4rem; text-align: center; padding: 3rem; border: 2px solid var(--accent);">
-                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent);">ALL TEN FACTIONS (v5.29-FINAL)</h3>
-                <p style="color: var(--light-gray); line-height: 1.8; margin-bottom: 1rem;">
-                    Balanced through 10 balance iterations (v5.20-v5.29). Complete equipment pools, faction mechanics, and Flesh Bargain variants.
-                </p>
-                <p style="color: var(--light-gray); line-height: 1.8;">
-                    <strong style="color: var(--accent);">The Wyrd Conclave</strong> (Fae illusions, trickster magic) •
-                    <strong style="color: var(--accent);">Nomad Clans</strong> (Desert raiders, mobility specialists) •
-                    <strong style="color: var(--accent);">Crucible Pacts</strong> (Forge mastery, rune magic) •
-                    <strong style="color: var(--accent);">Emergent Collective</strong> (Hive mind, biomass evolution) •
-                    <strong style="color: var(--accent);">Vestige Bloodlines</strong> (Mutation, animal bloodlines) •
-                    <strong style="color: var(--accent);">The Exchange</strong> (Soul contracts, credit economy)
-                </p>
-                <div style="margin-top: 1.5rem;">
-                    <a href="codex/index.html" class="cta-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 0.875rem;">VIEW ALL FACTIONS IN CODEX</a>
-                </div>
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="codex/index.html" class="cta-secondary">VIEW COMPLETE FACTION CODEX</a>
             </div>
         </div>
     </section>

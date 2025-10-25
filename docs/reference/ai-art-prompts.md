@@ -330,7 +330,7 @@ Colossal mobile supply depot war machine, baroque-romanticist brutalist design, 
 
 ---
 
-## Merchant Guilds Caskets
+## The Exchange Caskets
 
 ### THE BROKER (Light)
 
@@ -376,7 +376,7 @@ Colossal mobile arms dealer war machine, baroque-romanticist brutalist design, 2
 
 ---
 
-## Blighted Packs Caskets
+## Vestige Bloodlines Caskets
 
 ### THE STALKER (Light)
 
@@ -422,7 +422,7 @@ Colossal spawning horror war machine, baroque-romanticist brutalist design, 2,20
 
 ---
 
-## Chitinous Ascendancy Caskets
+## Emergent Syndicate Caskets
 
 ### THE SKIRMISHER (Light)
 

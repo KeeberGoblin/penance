@@ -5,6 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipment & Deck Building - Penance</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .equipment-card {
+            background: linear-gradient(135deg, #1a1410 0%, #2b1f17 100%);
+            border: 2px solid #4a0e0e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .equipment-card:hover {
+            border-color: #6b1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 14, 14, 0.4);
+        }
+
+        .equipment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #4a0e0e;
+        }
+
+        .equipment-name {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.3rem;
+            color: #b8956a;
+            font-weight: 700;
+        }
+
+        .equipment-count {
+            background: #4a0e0e;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #d4c5b0;
+        }
+
+        .equipment-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .equipment-meta-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem;
+            background: rgba(42, 31, 23, 0.5);
+            border-radius: 4px;
+        }
+
+        .meta-label {
+            color: #b8956a;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            color: #d4c5b0;
+        }
+
+        .equipment-cards-list {
+            margin-top: 1rem;
+        }
+
+        .card-item {
+            background: rgba(26, 20, 16, 0.6);
+            border-left: 3px solid #6b1a1a;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .card-name {
+            font-weight: 700;
+            color: #b8956a;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .card-cost {
+            display: inline-block;
+            background: #2d0a0a;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            color: #d4c5b0;
+            margin-right: 0.5rem;
+        }
+
+        .card-type {
+            display: inline-block;
+            background: #4a0e0e;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            color: #b8956a;
+            margin-right: 0.5rem;
+        }
+
+        .card-effect {
+            color: #d4c5b0;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .filter-section {
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border: 2px solid #4a0e0e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .filter-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.2rem;
+            color: #b8956a;
+            margin-bottom: 1rem;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            background: #4a0e0e;
+            border: 2px solid #6b1a1a;
+            color: #d4c5b0;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover {
+            background: #6b1a1a;
+            border-color: #b8956a;
+        }
+
+        .filter-btn.active {
+            background: #6b1a1a;
+            border-color: #b8956a;
+            color: #b8956a;
+            font-weight: 600;
+        }
+
+        .loading-message {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.2rem;
+            color: #b8956a;
+        }
+
+        .section-header {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.8rem;
+            color: #b8956a;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #4a0e0e;
+        }
+    </style>
 </head>
 <body>
     <div class="content">
@@ -68,430 +245,36 @@
             </tbody>
         </table>
 
-        <p class="manuscript-text"><em>Note: SP pools shown in old documentation no longer apply. Equipment cards use Heat costs (0-2 Heat per card) or faction-specific resource economies.</em></p>
+        <p class="manuscript-text"><em>Note: Equipment cards use Heat costs (0-2 Heat per card) or faction-specific resource economies. All equipment data loaded from the official card database.</em></p>
 
         <div class="section-break"></div>
 
-        <h2>Weapons</h2>
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-title">Filter Equipment</div>
+            <div class="filter-options">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="Weapon">Weapons & Shields</button>
+                <button class="filter-btn" data-category="Spell Equipment">Spell Equipment</button>
+                <button class="filter-btn" data-category="other">Accessories & Sigils</button>
+            </div>
+            <div class="filter-options" style="margin-top: 1rem;">
+                <button class="filter-btn active" data-faction="all">All Factions</button>
+                <button class="filter-btn" data-faction="universal">Universal</button>
+                <button class="filter-btn" data-faction="church">Church</button>
+                <button class="filter-btn" data-faction="dwarves">Dwarves</button>
+                <button class="filter-btn" data-faction="elves">Elves</button>
+                <button class="filter-btn" data-faction="undead">Ossuarium</button>
+                <button class="filter-btn" data-faction="fae">Wyrd Conclave</button>
+                <button class="filter-btn" data-faction="nomads">Nomads</button>
+            </div>
+        </div>
 
-        <h3>Light Weapons (3-4 cards)</h3>
-
-        <h4>Dagger</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Stab</strong>: 1 SP, Melee - Deal 3 damage</li>
-            <li><strong>Deflect</strong>: 0 SP, Reactive - Reduce damage by 1</li>
-            <li><strong>Double-Strike</strong>: 2 SP, Melee - Deal 2 damage twice (two separate attacks)</li>
-        </ol>
-
-        <h4>Pistol</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 3 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Quick Shot</strong>: 1 SP, Ranged 1-4 - Deal 2 damage</li>
-            <li><strong>Point Blank</strong>: 1 SP, Melee - Deal 4 damage, gain 1 Heat</li>
-            <li><strong>Reload</strong>: 1 SP, Utility - Draw 1 card</li>
-        </ol>
-
-        <h4>Hand Axe</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 4 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Dwarves, Crucible Pacts, Nomads</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Chop</strong>: 2 SP, Melee - Deal 4 damage</li>
-            <li><strong>Hook</strong>: 1 SP, Melee - Deal 2 damage, pull enemy 1 hex toward you</li>
-            <li><strong>Throw</strong>: 2 SP, Ranged 1-3 - Deal 3 damage, discard this card</li>
-            <li><strong>Retrieve</strong>: 1 SP, Utility - Recover 1 discarded Hand Axe card from discard pile</li>
-        </ol>
-
-        <h3>Medium Weapons (5-6 cards)</h3>
-
-        <h4>Longsword</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 6 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Slash</strong>: 2 SP, Melee - Deal 4 damage</li>
-            <li><strong>Thrust</strong>: 2 SP, Melee - Deal 3 damage, +2 damage if attacking from front arc</li>
-            <li><strong>Parry</strong>: 0 SP, Reactive - Reduce damage by 2, next attack this turn +1 damage</li>
-            <li><strong>Riposte</strong>: 1 SP, Reactive - When attacked in melee, deal 3 damage to attacker</li>
-            <li><strong>Pommel Strike</strong>: 1 SP, Melee - Deal 2 damage, target loses 1 SP next turn</li>
-            <li><strong>Guard Stance</strong>: 2 SP, Defense - +2 Defense until your next turn</li>
-        </ol>
-
-        <h4>Spear</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 3 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Thrust</strong>: 2 SP, Melee - Deal 4 damage</li>
-            <li><strong>Sweep</strong>: 3 SP, Melee AoE - Deal 3 damage to up to 2 adjacent enemies</li>
-            <li><strong>Brace</strong>: 2 SP, Defense - +3 Defense vs next melee attack</li>
-            <li><strong>Javelin Throw</strong>: 3 SP, Ranged 1-5 - Deal 5 damage, discard this card</li>
-            <li><strong>Defensive Stance</strong>: 1 SP, Utility - Move up to 1 hex, +1 Defense until your next turn</li>
-        </ol>
-
-        <h4>Mace</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: Church, Dwarves, Crucible Pacts</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Crush</strong>: 2 SP, Melee - Deal 4 damage</li>
-            <li><strong>Shield Break</strong>: 3 SP, Melee - Deal 3 damage, destroy 1 Shield card in target's hand</li>
-            <li><strong>Stun Strike</strong>: 3 SP, Melee - Deal 3 damage, target loses 2 SP next turn</li>
-            <li><strong>Overhead Smash</strong>: 4 SP, Melee - Deal 6 damage, gain 1 Heat</li>
-            <li><strong>Backswing</strong>: 2 SP, Melee - Deal 3 damage to target, 2 damage to adjacent enemy</li>
-        </ol>
-
-        <h3>Heavy Weapons (6-9 cards)</h3>
-
-        <h4>Greatsword</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 8 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed, blocks Shield slot)</li>
-            <li><strong>Restrictions</strong>: Church, Elves, Nomads</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Cleave</strong>: 3 SP, Melee AoE - Deal 5 damage to primary, 3 to adjacent</li>
-            <li><strong>Overhead Smash</strong>: 4 SP, Melee - Deal 7 damage</li>
-            <li><strong>Spinning Slash</strong>: 4 SP, Melee AoE - Deal 4 damage to ALL adjacent hexes</li>
-            <li><strong>Execute</strong>: 5 SP, Melee - Deal 8 damage if target has 10 HP or less</li>
-            <li><strong>Guard Break</strong>: 3 SP, Melee - Deal 4 damage, ignore all Defense buffs</li>
-            <li><strong>Pommel Bash</strong>: 1 SP, Melee - Deal 2 damage, push 1 hex</li>
-            <li><strong>Impale</strong>: 4 SP, Melee - Deal 6 damage, target cannot move next turn</li>
-            <li><strong>Defensive Sweep</strong>: 2 SP, Defense - +1 Defense, deal 2 damage to melee attackers</li>
-        </ol>
-
-        <h4>Warhammer</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 6 cards</li>
-            <li><strong>Crafting Cost</strong>: 5 Scrap</li>
-            <li><strong>Weight</strong>: Heavy</li>
-            <li><strong>Restrictions</strong>: Church, Dwarves, Crucible Pacts</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Crushing Blow</strong>: 2 SP, Melee - Deal 4 damage, Armor-Piercing</li>
-            <li><strong>Earthshaker</strong>: 4 SP, Melee AoE - Deal 5 damage to primary, 2 damage + push to adjacent</li>
-            <li><strong>Backswing</strong>: 2 SP, Melee - Deal 3 damage twice (two targets)</li>
-            <li><strong>Forge Fury</strong>: 3 SP, Melee - Deal 3 damage + 1 per Heat you have (max +6), remove all Heat</li>
-            <li><strong>Armor Break</strong>: 3 SP, Melee - Deal 3 damage, target loses all Armor counters</li>
-            <li><strong>Slam</strong>: 3 SP, Melee - Deal 4 damage, target loses 1 SP next turn, gain 1 Heat</li>
-        </ol>
-
-        <h4>Halberd</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 7 cards</li>
-            <li><strong>Crafting Cost</strong>: 5 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed)</li>
-            <li><strong>Restrictions</strong>: Church, Crucible Pacts, Nomads</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Thrust</strong>: 2 SP, Melee - Deal 4 damage</li>
-            <li><strong>Slash</strong>: 3 SP, Melee - Deal 5 damage</li>
-            <li><strong>Hook</strong>: 2 SP, Melee - Deal 3 damage, pull enemy 2 hexes toward you</li>
-            <li><strong>Trip</strong>: 2 SP, Melee - Deal 2 damage, target cannot move next turn</li>
-            <li><strong>Overhead Chop</strong>: 4 SP, Melee - Deal 7 damage</li>
-            <li><strong>Defensive Sweep</strong>: 1 SP, Defense - Deal 2 damage to all adjacent enemies</li>
-            <li><strong>Impale</strong>: 5 SP, Melee - Deal 8 damage, Armor-Piercing</li>
-        </ol>
-
-        <h3>Ranged Weapons (4-7 cards)</h3>
-
-        <h4>Crossbow</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Aimed Shot</strong>: 2 SP, Ranged 2-6 - Deal 4 damage</li>
-            <li><strong>Quick Shot</strong>: 1 SP, Ranged 2-4 - Deal 2 damage</li>
-            <li><strong>Reload</strong>: 1 SP, Utility - Draw 1 card, remove 1 Heat</li>
-            <li><strong>Suppressing Fire</strong>: 3 SP, Ranged 2-6 - Deal 2 damage, target loses 1 SP next turn</li>
-            <li><strong>Leg Shot</strong>: 3 SP, Ranged 2-6 - Deal 3 damage, target's movement costs +1 SP next turn</li>
-        </ol>
-
-        <h4>Longbow</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 4 cards</li>
-            <li><strong>Crafting Cost</strong>: 3 Scrap</li>
-            <li><strong>Weight</strong>: Light (2-handed)</li>
-            <li><strong>Restrictions</strong>: Elves only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Rapid Fire</strong>: 1 SP, Ranged 2-5 - Deal 2 damage</li>
-            <li><strong>Aimed Shot</strong>: 3 SP, Ranged 3-8 - Deal 5 damage</li>
-            <li><strong>Volley</strong>: 4 SP, Ranged 3-6 - Deal 3 damage to up to 3 targets</li>
-            <li><strong>Pierce Shot</strong>: 3 SP, Ranged 2-6 - Deal 4 damage, Armor-Piercing, Bleed 1</li>
-        </ol>
-
-        <h4>Rifle</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 6 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Medium (2-handed)</li>
-            <li><strong>Restrictions</strong>: Dwarves, Merchants, Nomads</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Snipe</strong>: 3 SP, Ranged 4-10 - Deal 6 damage, Armor-Piercing</li>
-            <li><strong>Burst Fire</strong>: 4 SP, Ranged 2-6 - Deal 3 damage three times (same or different targets)</li>
-            <li><strong>Suppressing Fire</strong>: 2 SP, Ranged 2-8 - Deal 2 damage, target loses 1 SP</li>
-            <li><strong>Reload</strong>: 0 SP, Utility - Draw 1 card</li>
-            <li><strong>Aimed Shot</strong>: 2 SP, Ranged 3-8 - Deal 4 damage</li>
-            <li><strong>Hip Fire</strong>: 1 SP, Ranged 1-3 - Deal 3 damage, gain 1 Heat</li>
-        </ol>
-
-        <div class="section-break"></div>
-
-        <h2>Shields & Offhand Equipment</h2>
-
-        <h3>Light Shields (2-3 cards)</h3>
-
-        <h4>Buckler Shield</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 2 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Quick Deflect</strong>: 0 SP, Reactive - Reduce damage by 1</li>
-            <li><strong>Shield Bash</strong>: 1 SP, Melee - Deal 2 damage, push 1 hex</li>
-        </ol>
-
-        <h4>Dueling Dagger (Offhand)</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 2 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Elves, Wyrd Conclave, Nomads</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Parry</strong>: 0 SP, Reactive - Reduce damage by 1, next attack +1 damage</li>
-            <li><strong>Offhand Strike</strong>: 1 SP, Melee - Deal 2 damage</li>
-        </ol>
-
-        <h3>Medium Shields (3-4 cards)</h3>
-
-        <h4>Kite Shield</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 3 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Shield Block</strong>: 0 SP, Reactive - Reduce damage by 2</li>
-            <li><strong>Shield Charge</strong>: 2 SP, Melee - Move 2 hexes, deal 3 damage, push 1 hex</li>
-            <li><strong>Defensive Stance</strong>: 2 SP, Defense - +2 Defense until next turn</li>
-        </ol>
-
-        <h3>Heavy Shields (4-5 cards)</h3>
-
-        <h4>Tower Shield</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 4 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Heavy</li>
-            <li><strong>Restrictions</strong>: Church, Dwarves, Crucible Pacts</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Iron Wall</strong>: 0 SP, Reactive - Reduce damage by 3, gain 1 Heat</li>
-            <li><strong>Shield Wall</strong>: 3 SP, Defense - Allies behind you gain +2 Defense until your next turn</li>
-            <li><strong>Advance</strong>: 2 SP, Movement - Move 2 hexes, +1 Defense this turn</li>
-            <li><strong>Hunker Down</strong>: 2 SP, Defense - +3 Defense, cannot attack until next turn</li>
-        </ol>
-
-        <div class="section-break"></div>
-
-        <h2>Plating (Accessory Slot)</h2>
-
-        <h3>Ablative Plating</h3>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 3 Scrap</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Reactive Armor</strong>: 0 SP, Reactive - When damaged, reduce by 1 and remove this card</li>
-            <li><strong>Shrapnel Burst</strong>: 1 SP, Reactive - When damaged, deal 2 damage to attacker</li>
-            <li><strong>Sacrificial Layer</strong>: Passive - First damage you take each round is reduced by 1</li>
-        </ol>
-
-        <h3>Spike Plating</h3>
-        <ul>
-            <li><strong>Card Count</strong>: 2 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Restrictions</strong>: Crucible Pacts, Blighted Packs, Nomads</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Thorn Defense</strong>: Passive - Enemies in melee range take 1 damage when they attack you</li>
-            <li><strong>Charge Damage</strong>: 1 SP, Utility - Next movement: deal 2 damage to enemies you move through</li>
-        </ol>
-
-        <h3>Reinforced Plating</h3>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Damage Reduction</strong>: Passive - All damage you take is reduced by 1 (minimum 1)</li>
-            <li><strong>Fortified Hull</strong>: 2 SP, Defense - +2 Defense until end of round</li>
-            <li><strong>Emergency Bulkhead</strong>: 0 SP, Reactive - Prevent 1 Component Damage, remove this card</li>
-        </ol>
-
-        <h3>Stealth Plating</h3>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Restrictions</strong>: Elves, Wyrd Conclave, Nomads</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Sensor Dampening</strong>: Passive - Ranged attacks against you have -1 to hit</li>
-            <li><strong>Heat Signature Reduction</strong>: 1 SP, Utility - Remove 2 Heat</li>
-            <li><strong>Optical Camouflage</strong>: 3 SP, Defense - Cannot be targeted by ranged attacks until your next turn</li>
-        </ol>
-
-        <div class="section-break"></div>
-
-        <h2>Sigils (Accessory Slot)</h2>
-
-        <h3>Universal Sigils</h3>
-
-        <h4>Repair Sigil</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 2 cards</li>
-            <li><strong>Crafting Cost</strong>: 3 Scrap</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Emergency Repair</strong>: 2 SP, Utility - Recover 3 cards from discard pile</li>
-            <li><strong>Auto-Patch System</strong>: Passive - At start of your turn, if below 10 HP, recover 1 card</li>
-        </ol>
-
-        <h4>Heat Sink Sigil</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 2 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Passive Cooling</strong>: Passive - At end of your turn, remove 1 Heat</li>
-            <li><strong>Vent Boost</strong>: 1 SP, Utility - Remove 3 Heat, draw 1 card</li>
-        </ol>
-
-        <h4>Targeting Sigil</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 3 Scrap</li>
-            <li><strong>Restrictions</strong>: None (Universal)</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Aim Assist</strong>: 1 SP, Utility - Next attack this turn +2 damage</li>
-            <li><strong>Weak Point Scan</strong>: 2 SP, Utility - Look at target's hand, choose 1 card to discard</li>
-            <li><strong>Lock-On</strong>: 2 SP, Utility - Your next ranged attack ignores cover and range penalties</li>
-        </ol>
-
-        <h3>Faction-Exclusive Sigils</h3>
-
-        <h4>Martyr's Brand (Church Only)</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 5 Scrap</li>
-            <li><strong>Faction</strong>: Church of Absolution only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Redirect Damage</strong>: 0 SP, Reactive - Redirect attack targeting ally within 3 hexes to yourself</li>
-            <li><strong>Faith Shield</strong>: 2 SP, Defense - Ally within 2 hexes gains +2 Defense until your next turn</li>
-            <li><strong>Consecrated Aura</strong>: Passive - Allies within 2 hexes recover +1 card when drawing</li>
-        </ol>
-
-        <h4>Forge-Rune (Dwarves Only)</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 5 Scrap</li>
-            <li><strong>Faction</strong>: Dwarven Clans only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Heat-to-Damage</strong>: 2 SP, Utility - Your next attack deals +1 damage per 2 Heat you have</li>
-            <li><strong>Runic Overcharge</strong>: 3 SP, Utility - Gain 2 Rune Counters, gain 2 Heat</li>
-            <li><strong>Component Protection</strong>: 0 SP, Reactive - Prevent 1 Component Damage, gain 1 Heat</li>
-        </ol>
-
-        <h4>Living Seal (Elves Only)</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 5 Scrap</li>
-            <li><strong>Faction</strong>: Elven Verdant Covenant only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Regeneration</strong>: Passive - At end of your turn, recover 1 card if you did not attack this turn</li>
-            <li><strong>Thorn Aura</strong>: 2 SP, Defense - Enemies adjacent to you take 1 damage at start of their turn</li>
-            <li><strong>Root Network</strong>: 3 SP, Utility - Summon vine wall (3 hexes), blocks movement, lasts 2 rounds</li>
-        </ol>
-
-        <h4>Death Mask Relic (Ossuarium Only)</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 5 Scrap</li>
-            <li><strong>Faction</strong>: The Ossuarium only</li>
-        </ul>
-        <p><strong>Cards</strong> (v5.29-FINAL Taint warfare mechanics):</p>
-        <ol>
-            <li><strong>Amplified Decay Aura</strong>: Passive - Decay Aura gains +1 Taint (enemies within 3 hexes gain 2 Taint/turn instead of 1)</li>
-            <li><strong>Death's Grasp</strong>: 2 SP, Attack - Deal 3 damage, target gains 2 Taint</li>
-            <li><strong>Corruption Pulse</strong>: 3 SP, Utility - All enemies within 5 hexes gain 1 Taint</li>
-        </ol>
+        <!-- Equipment Grid (Dynamically Loaded) -->
+        <div class="section-header">Equipment Database</div>
+        <div id="equipment-container" class="loading-message">
+            Loading equipment from card database...
+        </div>
 
         <div class="section-break"></div>
 
@@ -528,361 +311,7 @@
 
         <div class="section-break"></div>
 
-        <h2>Spell Equipment (Weapon Slot - Magic)</h2>
-
-        <h3>Fire School (Pyromancy)</h3>
-
-        <h4>Flame Wand</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Church, Wyrd Conclave, Elves</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Ember Bolt</strong>: 1 SP, Ranged 2-4 - Deal 2 damage, target gains 1 Heat</li>
-            <li><strong>Flame Shield</strong>: 1 SP, Reactive - Reduce damage by 1, attacker gains 1 Heat</li>
-            <li><strong>Ignite</strong>: 2 SP, Ranged 2-3 - Deal 1 damage, target gains 2 Heat</li>
-        </ol>
-
-        <h4>Pyromancer's Grimoire</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: Church, Wyrd Conclave</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Fireball</strong>: 2 SP, Ranged 3-6 - Deal 4 damage, gain 1 Heat</li>
-            <li><strong>Flame Wall</strong>: 3 SP, Utility - Create 3-hex fire wall (blocks movement, deals 2 damage to crossers), lasts 2 rounds</li>
-            <li><strong>Burning Hands</strong>: 2 SP, Melee AoE - Deal 3 damage to all adjacent enemies, gain 1 Heat</li>
-            <li><strong>Heat Absorption</strong>: 1 SP, Utility - Remove 2 Heat, next fire spell +1 damage</li>
-            <li><strong>Immolation</strong>: 4 SP, Ranged 2-5 - Deal 5 damage, target gains 3 Heat, you gain 2 Heat</li>
-        </ol>
-
-        <h4>Inferno Staff</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 7 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed)</li>
-            <li><strong>Restrictions</strong>: Church, Wyrd Conclave</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Firestorm</strong>: 4 SP, Ranged 3-6 AoE - Deal 4 damage to target + 2 damage to adjacent hexes, gain 2 Heat</li>
-            <li><strong>Phoenix Flame</strong>: 3 SP, Utility - Recover 3 cards from discard pile, gain 2 Heat</li>
-            <li><strong>Meteor Strike</strong>: 5 SP, Ranged 4-8 - Deal 6 damage, create burning terrain, gain 3 Heat</li>
-            <li><strong>Flame Burst</strong>: 2 SP, Ranged 2-5 - Deal 3 damage twice, gain 1 Heat</li>
-            <li><strong>Molten Armor</strong>: 2 SP, Defense - +2 Defense until next turn, adjacent enemies take 1 damage</li>
-            <li><strong>Cinder Blast</strong>: 3 SP, Ranged 3-6 - Deal 4 damage, push 1 hex, gain 1 Heat</li>
-            <li><strong>Infernal Resurrection</strong>: 4 SP, Utility - Negate fatal damage, gain 4 Heat, remove from game</li>
-        </ol>
-
-        <h3>Ice/Frost School (Cryomancy)</h3>
-
-        <h4>Frost Focus</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Elves, Dwarves, Wyrd Conclave</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Ice Shard</strong>: 1 SP, Ranged 2-4 - Deal 2 damage</li>
-            <li><strong>Frost Shield</strong>: 0 SP, Reactive - Reduce damage by 1, attacker's movement costs +1 SP next turn</li>
-            <li><strong>Chill Touch</strong>: 1 SP, Melee - Deal 2 damage, target loses 1 SP next turn</li>
-        </ol>
-
-        <h4>Glacial Tome</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: Elves, Dwarves</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Ice Lance</strong>: 2 SP, Ranged 3-6 - Deal 4 damage, target's movement costs +1 SP next turn</li>
-            <li><strong>Frozen Ground</strong>: 2 SP, Utility - Create 3-hex ice terrain, lasts 3 rounds</li>
-            <li><strong>Frost Nova</strong>: 3 SP, Melee AoE - Deal 2 damage to all adjacent enemies, lose 1 SP next turn</li>
-            <li><strong>Ice Armor</strong>: 2 SP, Defense - +2 Defense, first attack deals -2 damage</li>
-            <li><strong>Blizzard</strong>: 4 SP, Ranged 4-6 AoE - Deal 3 damage + 1 to nearby, all lose 1 SP</li>
-        </ol>
-
-        <h4>Winter's Heart Staff</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 7 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed)</li>
-            <li><strong>Restrictions</strong>: Elves, Dwarves</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Glacial Prison</strong>: 4 SP, Ranged 3-6 - Deal 3 damage, cannot move for 2 turns</li>
-            <li><strong>Avalanche</strong>: 5 SP, Ranged 4-8 - Deal 6 damage, push 2 hexes, difficult terrain</li>
-            <li><strong>Ice Wall</strong>: 3 SP, Utility - Create 5-hex ice wall, 5 HP, blocks movement and LOS</li>
-            <li><strong>Frostbite</strong>: 2 SP, Ranged 2-5 - Deal 3 damage, ongoing 1 damage for 2 turns</li>
-            <li><strong>Frozen Time</strong>: 3 SP, Utility - Target skips next turn (save: discard 2 cards)</li>
-            <li><strong>Shatter</strong>: 3 SP, Ranged 3-6 - Deal 7 damage if frozen, else 3 damage</li>
-            <li><strong>Absolute Zero</strong>: 4 SP, Ranged 2-4 - Deal 5 damage, lose all SP, remove from game</li>
-        </ol>
-
-        <h3>Lightning/Storm School (Electromancy)</h3>
-
-        <h4>Shock Rod</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Dwarves, Nomads, Emergent</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Static Jolt</strong>: 1 SP, Ranged 2-3 - Deal 2 damage</li>
-            <li><strong>Charge</strong>: 1 SP, Utility - Gain 1 Heat, next lightning spell +1 damage</li>
-            <li><strong>Arc</strong>: 2 SP, Ranged 2-4 - Deal 2 damage + 1 to adjacent enemy</li>
-        </ol>
-
-        <h4>Stormcaller's Grimoire</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: Dwarves, Nomads</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Lightning Bolt</strong>: 2 SP, Ranged 4-8 - Deal 5 damage, Armor-Piercing</li>
-            <li><strong>Chain Lightning</strong>: 3 SP, Ranged 3-6 - Deal 3 damage, arcs to 2 enemies for 2 each</li>
-            <li><strong>Thunderclap</strong>: 2 SP, Melee AoE - Deal 2 damage to all adjacent, push 1 hex</li>
-            <li><strong>Storm Shield</strong>: 2 SP, Defense - +1 Defense, attackers take 1 damage</li>
-            <li><strong>Overcharge</strong>: 3 SP, Utility - Gain 2 Heat, next 2 lightning spells cost -1 SP, +2 damage</li>
-        </ol>
-
-        <h4>Tempest Scepter</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 7 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed)</li>
-            <li><strong>Restrictions</strong>: Dwarves, Emergent</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Thunderstrike</strong>: 3 SP, Ranged 4-8 - Deal 6 damage, target discards 1 random card</li>
-            <li><strong>Lightning Storm</strong>: 4 SP, Ranged 3-6 AoE - Deal 3 damage + 3 to 2 random nearby</li>
-            <li><strong>Call Lightning</strong>: 2 SP, Ranged 4-10 - Deal 4 damage (6 in open terrain)</li>
-            <li><strong>Static Field</strong>: 3 SP, Utility - Create 4-hex electric field, 2 damage on entry, 3 rounds</li>
-            <li><strong>Galvanize</strong>: 2 SP, Utility - Ally gains +2 SP this turn, remove 2 Heat</li>
-            <li><strong>Plasma Lance</strong>: 4 SP, Ranged 5-10 - Deal 7 damage, Armor-Piercing, line attack</li>
-            <li><strong>Storm Avatar</strong>: 5 SP, Utility - 2 turns: +2 lightning damage, +1 Defense, gain 3 Heat, remove from game</li>
-        </ol>
-
-        <h3>Death/Necromancy School</h3>
-
-        <h4>Bone Wand</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Ossuarium only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Death Bolt</strong>: 1 SP, Ranged 2-4 - Deal 2 damage</li>
-            <li><strong>Lifesteal</strong>: 2 SP, Ranged 2-3 - Deal 2 damage, recover 1 card</li>
-            <li><strong>Curse</strong>: 1 SP, Ranged 2-4 - Target draws 1 fewer card next turn</li>
-        </ol>
-
-        <h4>Necromancer's Grimoire</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: Ossuarium only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Soul Drain</strong>: 2 SP, Ranged 3-6 - Deal 3 damage, recover 2 cards</li>
-            <li><strong>Raise Dead</strong>: 3 SP, Utility - Create skeleton minion (5 HP, melee 2 damage)</li>
-            <li><strong>Death's Touch</strong>: 2 SP, Melee - Deal 4 damage, gain 1 Taint</li>
-            <li><strong>Bone Prison</strong>: 3 SP, Ranged 2-5 - Deal 2 damage, cannot move, discard 1 card</li>
-            <li><strong>Wither</strong>: 3 SP, Ranged 3-6 - Deal 3 damage, ongoing 1 damage for 3 turns</li>
-        </ol>
-
-        <h4>Staff of the Grave</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 7 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed)</li>
-            <li><strong>Restrictions</strong>: Ossuarium only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Death Wave</strong>: 4 SP, Ranged 3-6 AoE - Deal 4 damage + 2 to adjacent</li>
-            <li><strong>Corpse Explosion</strong>: 3 SP, Ranged 3-8 - Destroyed enemy explodes for 5 damage</li>
-            <li><strong>Life Siphon</strong>: 3 SP, Ranged 2-5 - Deal 4 damage, recover 3 cards, gain 1 Taint</li>
-            <li><strong>Plague</strong>: 4 SP, Ranged 3-6 - Deal 2 damage, ongoing 2 until 3 cards discarded</li>
-            <li><strong>Reanimate</strong>: 4 SP, Utility - Recover 5 cards from Damage Graveyard, gain 2 Taint</li>
-            <li><strong>Death's Grasp</strong>: 3 SP, Ranged 2-6 - Deal 5 damage, pull 2 hexes</li>
-            <li><strong>Lich Form</strong>: 5 SP, Utility - 3 turns: Immune to damage, gain 3 Taint, remove from game</li>
-        </ol>
-
-        <h3>Nature/Life School</h3>
-
-        <h4>Living Branch</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Elves only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Thorn Strike</strong>: 1 SP, Ranged 2-3 - Deal 2 damage, Bleed 1</li>
-            <li><strong>Barkskin</strong>: 1 SP, Defense - +1 Defense until next turn</li>
-            <li><strong>Rejuvenate</strong>: 2 SP, Utility - Recover 2 cards from discard pile</li>
-        </ol>
-
-        <h4>Druid's Tome</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: Elves only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Thornwhip</strong>: 2 SP, Ranged 2-4 - Deal 3 damage, Bleed 1, pull 1 hex</li>
-            <li><strong>Entangle</strong>: 2 SP, Ranged 3-5 - Deal 2 damage, movement costs +2 SP next turn</li>
-            <li><strong>Natural Armor</strong>: 2 SP, Defense - +2 Defense, recover 1 card</li>
-            <li><strong>Vine Wall</strong>: 3 SP, Utility - Create 4-hex vine wall, 3 HP, blocks movement</li>
-            <li><strong>Photosynthesis</strong>: 1 SP, Utility - If in sunlight, recover 3 cards</li>
-        </ol>
-
-        <h4>World Tree Staff</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 7 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed)</li>
-            <li><strong>Restrictions</strong>: Elves only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Grasping Roots</strong>: 3 SP, Ranged 3-6 - Deal 3 damage, cannot move for 2 turns</li>
-            <li><strong>Swarm of Thorns</strong>: 4 SP, Ranged 2-5 AoE - Deal 3 damage + 2 to adjacent, Bleed 1</li>
-            <li><strong>Forest's Wrath</strong>: 4 SP, Ranged 3-8 - Deal 6 damage, summon treant (8 HP, 3 damage)</li>
-            <li><strong>Regeneration</strong>: 2 SP, Utility - Recover 4 cards from discard pile</li>
-            <li><strong>Nature's Blessing</strong>: 3 SP, Utility - Ally recovers 3 cards, +1 Defense</li>
-            <li><strong>Earthquake</strong>: 4 SP, Ranged 3-6 AoE - Deal 4 damage to all within 2 hexes, difficult terrain</li>
-            <li><strong>Wild Growth</strong>: 3 SP, Utility - 2 turns: Recover 2 cards at end of turn, cannot attack</li>
-        </ol>
-
-        <h3>Light/Holy School</h3>
-
-        <h4>Blessed Talisman</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Church only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Holy Smite</strong>: 1 SP, Ranged 2-4 - Deal 2 damage (+1 vs corrupted)</li>
-            <li><strong>Divine Shield</strong>: 0 SP, Reactive - Reduce damage by 2</li>
-            <li><strong>Purify</strong>: 2 SP, Utility - Remove 1 Taint from self or ally within 2 hexes</li>
-        </ol>
-
-        <h4>Codex of Light</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: Church only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Radiant Bolt</strong>: 2 SP, Ranged 3-6 - Deal 4 damage (+2 vs corrupted)</li>
-            <li><strong>Blessing</strong>: 2 SP, Utility - Ally gains +2 damage next attack, recover 1 card</li>
-            <li><strong>Consecrated Ground</strong>: 3 SP, Utility - Create 3-hex holy terrain (+1 Defense, remove 1 Heat), 3 rounds</li>
-            <li><strong>Smite Evil</strong>: 3 SP, Ranged 2-5 - Deal 3 damage (6 if target has 3+ Taint)</li>
-            <li><strong>Healing Light</strong>: 2 SP, Utility - Ally recovers 3 cards from discard pile</li>
-        </ol>
-
-        <h4>Divine Scepter</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 7 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed)</li>
-            <li><strong>Restrictions</strong>: Church only</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Sunburst</strong>: 4 SP, Ranged 3-6 AoE - Deal 5 damage + 3 to adjacent (+2 vs corrupted)</li>
-            <li><strong>Divine Intervention</strong>: 3 SP, Reactive - Negate all damage from next attack</li>
-            <li><strong>Pillar of Light</strong>: 4 SP, Ranged 4-8 - Deal 6 damage, Armor-Piercing, purge 1 Taint</li>
-            <li><strong>Mass Healing</strong>: 4 SP, Utility - All allies within 3 hexes recover 2 cards</li>
-            <li><strong>Holy Fire</strong>: 3 SP, Ranged 3-6 - Deal 5 damage, target gains 2 Heat, you remove 1 Heat</li>
-            <li><strong>Sanctuary</strong>: 3 SP, Utility - Create 2-hex sanctuary (enemies can't enter, +3 Defense), 2 rounds</li>
-            <li><strong>Martyrdom</strong>: 0 SP, Reactive - Take all damage for dying ally, +2 Defense, remove from game</li>
-        </ol>
-
-        <h3>Void/Shadow School</h3>
-
-        <h4>Shadow Catalyst</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 3 cards</li>
-            <li><strong>Crafting Cost</strong>: 2 Scrap</li>
-            <li><strong>Weight</strong>: Light</li>
-            <li><strong>Restrictions</strong>: Wyrd Conclave, Ossuarium, Emergent</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Void Bolt</strong>: 1 SP, Ranged 2-4 - Deal 2 damage, ignore Defense buffs</li>
-            <li><strong>Dark Shield</strong>: 0 SP, Reactive - Reduce damage by 1, gain 1 Taint</li>
-            <li><strong>Shadow Step</strong>: 2 SP, Utility - Teleport up to 2 hexes, gain 1 Taint</li>
-        </ol>
-
-        <h4>Void Grimoire</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 5 cards</li>
-            <li><strong>Crafting Cost</strong>: 4 Scrap</li>
-            <li><strong>Weight</strong>: Medium</li>
-            <li><strong>Restrictions</strong>: Wyrd Conclave, Ossuarium, Emergent</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Reality Tear</strong>: 2 SP, Ranged 3-6 - Deal 4 damage, ignore Defense and Armor, gain 1 Taint</li>
-            <li><strong>Void Prison</strong>: 3 SP, Ranged 2-5 - Deal 2 damage, teleport to random hex, lose 1 SP</li>
-            <li><strong>Shadow Form</strong>: 2 SP, Defense - +2 Defense, can't be targeted by ranged, gain 1 Taint</li>
-            <li><strong>Corruption Burst</strong>: 3 SP, Ranged 3-6 - Deal 3 damage, target gains 1 Taint, you gain 1 Taint</li>
-            <li><strong>Phase Shift</strong>: 2 SP, Utility - Teleport up to 3 hexes, ignore terrain, gain 1 Taint</li>
-        </ol>
-
-        <h4>Abyssal Staff</h4>
-        <ul>
-            <li><strong>Card Count</strong>: 7 cards</li>
-            <li><strong>Crafting Cost</strong>: 6 Scrap</li>
-            <li><strong>Weight</strong>: Heavy (2-handed)</li>
-            <li><strong>Restrictions</strong>: Wyrd Conclave, Emergent</li>
-        </ul>
-        <p><strong>Cards</strong>:</p>
-        <ol>
-            <li><strong>Void Storm</strong>: 4 SP, Ranged 3-6 AoE - Deal 5 damage + 3 to adjacent, all gain 1 Taint, you gain 2 Taint</li>
-            <li><strong>Reality Fracture</strong>: 3 SP, Ranged 2-6 - Deal 6 damage, ignore Defense/Armor, gain 2 Taint</li>
-            <li><strong>Summon Shadow</strong>: 3 SP, Utility - Create shadow minion (5 HP, 3 damage, phase), gain 1 Taint</li>
-            <li><strong>Dimensional Rift</strong>: 4 SP, Utility - Teleport enemy to any hex within 6 hexes, gain 1 Taint</li>
-            <li><strong>Void Drain</strong>: 3 SP, Ranged 3-6 - Deal 4 damage, recover 2 cards, both gain 1 Taint</li>
-            <li><strong>Shadow Tendrils</strong>: 3 SP, Ranged 2-5 - Deal 3 damage, pull 2 hexes, lose 1 SP next turn</li>
-            <li><strong>Embrace the Void</strong>: 5 SP, Utility - 2 turns: +3 damage, ignore Defense/Armor, 1 Taint per spell, remove from game</li>
-        </ol>
-
-        <div class="section-break"></div>
-
-        <h2>Crafting Costs Summary</h2>
+        <h2>Crafting Tiers</h2>
 
         <table>
             <thead>
@@ -890,7 +319,7 @@
                     <th>Tier</th>
                     <th>Equipment Type</th>
                     <th>Card Count</th>
-                    <th>Scrap Cost</th>
+                    <th>Crafting Cost</th>
                     <th>Examples</th>
                 </tr>
             </thead>
@@ -971,7 +400,7 @@
                     <td>Transmute weapon once/mission</td>
                 </tr>
                 <tr>
-                    <td><strong>Blighted Packs</strong></td>
+                    <td><strong>Vestige Bloodlines</strong></td>
                     <td>Grafted Claws, Bio-Cannons, Carapace</td>
                     <td>Manufactured, Holy, Elven</td>
                     <td>Equipment Evolves (+1 card after 3 missions)</td>
@@ -1002,5 +431,168 @@
             "Your deck is your arsenal. Craft wisely. Fight brutally. Smelt the obsolete. Forge your legend in iron and blood."
         </p>
     </div>
+
+    <script>
+        let allEquipment = [];
+        let currentCategoryFilter = 'all';
+        let currentFactionFilter = 'all';
+
+        async function loadEquipment() {
+            try {
+                let response;
+                try {
+                    response = await fetch('../cards/complete-card-data.json');
+                } catch {
+                    response = await fetch('../../docs/cards/complete-card-data.json');
+                }
+                const data = await response.json();
+                allEquipment = data.equipment_items || [];
+
+                renderEquipment();
+                setupFilters();
+            } catch (error) {
+                console.error('Error loading equipment:', error);
+                document.getElementById('equipment-container').innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: #6b1a1a;">
+                        <p>Error loading equipment data: ${error.message}</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">Please ensure complete-card-data.json is accessible.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderEquipment() {
+            const container = document.getElementById('equipment-container');
+            const filteredEquipment = allEquipment.filter(item => {
+                let categoryMatch = false;
+                if (currentCategoryFilter === 'all') {
+                    categoryMatch = true;
+                } else if (currentCategoryFilter === 'other') {
+                    // "other" includes items with null category or "Equipment" category
+                    categoryMatch = !item.category || (item.category !== 'Weapon' && item.category !== 'Spell Equipment');
+                } else {
+                    categoryMatch = item.category === currentCategoryFilter;
+                }
+
+                const factionMatch = currentFactionFilter === 'all' ||
+                                    (item.faction && item.faction.toLowerCase().includes(currentFactionFilter));
+                return categoryMatch && factionMatch;
+            });
+
+            if (filteredEquipment.length === 0) {
+                container.innerHTML = '<div class="loading-message">No equipment matches the selected filters.</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            const grid = document.createElement('div');
+            grid.className = 'equipment-grid';
+
+            filteredEquipment.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'equipment-card';
+
+                const header = document.createElement('div');
+                header.className = 'equipment-header';
+                header.innerHTML = `
+                    <div class="equipment-name">${item.name}</div>
+                    <div class="equipment-count">${item.totalCards} cards</div>
+                `;
+                card.appendChild(header);
+
+                const meta = document.createElement('div');
+                meta.className = 'equipment-meta';
+                meta.innerHTML = `
+                    ${item.category ? `<div class="equipment-meta-item">
+                        <span class="meta-label">Type:</span>
+                        <span class="meta-value">${item.category}</span>
+                    </div>` : ''}
+                    ${item.weight ? `<div class="equipment-meta-item">
+                        <span class="meta-label">Weight:</span>
+                        <span class="meta-value">${item.weight}</span>
+                    </div>` : ''}
+                    ${item.craftingCost ? `<div class="equipment-meta-item">
+                        <span class="meta-label">Crafting:</span>
+                        <span class="meta-value">${item.craftingCost}</span>
+                    </div>` : ''}
+                    <div class="equipment-meta-item">
+                        <span class="meta-label">Faction:</span>
+                        <span class="meta-value">${capitalize(item.faction || 'universal')}</span>
+                    </div>
+                `;
+                card.appendChild(meta);
+
+                if (item.cards && item.cards.length > 0) {
+                    const cardsList = document.createElement('div');
+                    cardsList.className = 'equipment-cards-list';
+
+                    item.cards.forEach(cardData => {
+                        const cardItem = document.createElement('div');
+                        cardItem.className = 'card-item';
+
+                        const cardHeader = document.createElement('div');
+                        cardHeader.className = 'card-name';
+                        cardHeader.textContent = cardData.name;
+                        cardItem.appendChild(cardHeader);
+
+                        const cardMeta = document.createElement('div');
+                        cardMeta.innerHTML = `
+                            ${cardData.cost !== undefined ? `<span class="card-cost">Cost: ${cardData.cost}</span>` : ''}
+                            ${cardData.type ? `<span class="card-type">${cardData.type}</span>` : ''}
+                            ${cardData.range ? `<span class="card-type">${cardData.range}</span>` : ''}
+                        `;
+                        cardItem.appendChild(cardMeta);
+
+                        if (cardData.effect) {
+                            const cardEffect = document.createElement('div');
+                            cardEffect.className = 'card-effect';
+                            cardEffect.textContent = cardData.effect;
+                            cardItem.appendChild(cardEffect);
+                        }
+
+                        cardsList.appendChild(cardItem);
+                    });
+
+                    card.appendChild(cardsList);
+                }
+
+                grid.appendChild(card);
+            });
+
+            container.appendChild(grid);
+        }
+
+        function setupFilters() {
+            const categoryButtons = document.querySelectorAll('[data-category]');
+            const factionButtons = document.querySelectorAll('[data-faction]');
+
+            categoryButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentCategoryFilter = btn.dataset.category;
+                    renderEquipment();
+                });
+            });
+
+            factionButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    factionButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFactionFilter = btn.dataset.faction;
+                    renderEquipment();
+                });
+            });
+        }
+
+        function capitalize(str) {
+            return str.split(' ').map(word =>
+                word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            ).join(' ');
+        }
+
+        // Load equipment on page load
+        loadEquipment();
+    </script>
 </body>
 </html>

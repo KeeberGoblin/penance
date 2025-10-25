@@ -136,7 +136,7 @@
 
 ---
 
-## Chronicle XIV: The Chitinous Emergence
+## Chronicle XIV: The Emergent Syndicate Emergence
 ### Year 267 - Vael Marshlands
 
 **Source**: Biological survey report, Nomad Collective
@@ -145,7 +145,7 @@
 
 ---
 
-> **INCIDENT REPORT**: First Contact with Chitinous Ascendancy
+> **INCIDENT REPORT**: First Contact with Emergent Syndicate
 >
 > **Date**: Year 267, Harvest Season
 > **Location**: Vael Marshlands, Sector 12
@@ -161,13 +161,13 @@
 >
 > **Escalation**: When we retreated, they pursued. Not to attack—to *follow*. They mimicked our march formation. When we stopped, they stopped. When we made camp, they made camp 100 meters away. They were *learning* from us.
 >
-> **Current Status**: Colony has grown to est. 200-300 individuals. They've disassembled 14 abandoned Caskets and rebuilt them into arthropod-compatible combat shells. They've established a hive-city in the marsh. Merchant Guild has attempted trade negotiations. Chitinous Ascendancy responded with a single word, spelled out in arranged scrap metal:
+> **Current Status**: Colony has grown to est. 200-300 individuals. They've disassembled 14 abandoned Caskets and rebuilt them into arthropod-compatible combat shells. They've established a hive-city in the marsh. Merchant Guild has attempted trade negotiations. Emergent Syndicate responded with a single word, spelled out in arranged scrap metal:
 >
 > **"MORE."**
 >
 > ---
 >
-> **Threat Assessment**: Chitinous Ascendancy is not a species—it's an *infestation*. They reproduce rapidly (est. 30-day lifecycle). They adapt technology within days. They have no concept of individuality; "more" means "expand the hive." If left unchecked, they will dismantle all human/elf/dwarf infrastructure to build more shells.
+> **Threat Assessment**: Emergent Syndicate is not a species—it's an *infestation*. They reproduce rapidly (est. 30-day lifecycle). They adapt technology within days. They have no concept of individuality; "more" means "expand the hive." If left unchecked, they will dismantle all human/elf/dwarf infrastructure to build more shells.
 >
 > **Recommendation**: Immediate containment. Fire does not work (they adapt). Poison does not work (hive-immunity develops). Only kinetic destruction confirmed effective. Extermin—
 >
@@ -180,7 +180,7 @@
 
 ---
 
-**GM Note**: The Chitinous Ascendancy is a hive-mind that assimilates knowledge through consumption. They don't understand "personhood"—only "function." Players who encounter them must resist the urge to communicate. The hive learns from every interaction. And it's always hungry for *more*.
+**GM Note**: The Emergent Syndicate is a hive-mind that assimilates knowledge through consumption. They don't understand "personhood"—only "function." Players who encounter them must resist the urge to communicate. The hive learns from every interaction. And it's always hungry for *more*.
 
 ---
 
@@ -361,14 +361,14 @@
 1. **SCP Foundation Influence**: Containment procedures, clinical documentation, things-that-should-not-be
 2. **Cosmic Horror**: The Engine is not evil—it's *indifferent*. Humanity's suffering is a side effect
 3. **Philosophical Horror**: Identity, memory, personhood questioned (Doppelganger, Nobody, Weeping Man)
-4. **Biological Horror**: The Chitinous Ascendancy as an unstoppable hive-mind infestation
+4. **Biological Horror**: The Emergent Syndicate as an unstoppable hive-mind infestation
 5. **Hope vs. Despair**: The Soulstone Eclipse provides a counterbalance—proof that healing is theoretically possible
 
 ### Gameplay Integration
 
 - **Echo-7**: Dungeon/scenario location (station investigation)
 - **The Nobody**: Random encounter (perception-based horror)
-- **Chitinous Ascendancy**: Playable faction or enemy force
+- **Emergent Syndicate**: Playable faction or enemy force
 - **Soulstone Eclipse**: Campaign event (mechanical benefits + narrative hope)
 - **Weeping Man**: Quest hook (Church research, moral dilemma)
 - **Doppelganger**: Personal horror encounter (identity crisis)

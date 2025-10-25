@@ -8,7 +8,16 @@
 </head>
 <body>
     <!-- Faction Header with Darker Aged Parchment Background -->
-    <div style="background: linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+    <div style="background: 
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(90, 70, 50, 0.08) 1px,
+      rgba(90, 70, 50, 0.08) 2px
+    ),
+    linear-gradient(180deg, #B59460 0%, #C9A66B 50%, #B59460 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
         <div style="text-align: center;">
             <img src="../images/Exchange_PlaceH.png" alt="The Exchange" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
             <h1 style="color: #2B1810; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(212, 197, 176, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">The Exchange</h1>
@@ -28,7 +37,7 @@
             The Exchange
         </div>
         <div class="manuscript-quote">
-            "PRETIUM FACIT PACEM" — The Price Makes Peace
+            "PRETIUM FACIT PACEM", The Price Makes Peace
         </div>
 
         <div style="text-align: center; margin: 2rem 0;">
@@ -71,16 +80,16 @@
         <h2>Origins: The Concordat of Year 73</h2>
 
         <p class="manuscript-text">
-            The Exchange was forged not from conquest or faith, but from necessity. After the Sundering, the collapsed world economy descended into chaos—hyperinflation, competing currencies, and trade wars threatened to destroy what few civilizations remained. In Year 73, an unprecedented treaty united two unlikely allies: the Ledger Orthodox (a religious splinter sect) and the Rational House (secular banking consortium).
+            The Exchange was forged not from conquest or faith, but from necessity. After the Sundering, the collapsed world economy descended into chaos...hyperinflation, competing currencies, and trade wars threatened to destroy what few civilizations remained. In Year 73, an unprecedented treaty united two unlikely allies: the Ledger Orthodox (a religious splinter sect) and the Rational House (secular banking consortium).
         </p>
 
         <p class="manuscript-text">
-            Their merger created the most powerful post-apocalyptic institution: a monopoly on currency issuance backed by both divine authority and ruthless efficiency. The Exchange deals with all factions—Church crusaders, Elven druids, Dwarven smiths, even undead necromancers. No morality, no allegiances. Only contracts.
+            Their merger created the most powerful post-apocalyptic institution: a monopoly on currency issuance backed by both divine authority and ruthless efficiency. The Exchange deals with all factions...Church crusaders, Elven druids, Dwarven smiths, even undead necromancers. No morality, no allegiances. Only contracts.
         </p>
 
         <div class="manuscript-quote">
             "The Concordat won't save us. It will only postpone our collapse. But postponement is all we have."
-            <span class="quote-attribution">—Brother Matthias, First Accountant (Year 73)</span>
+            <span class="quote-attribution">-Brother Matthias, First Accountant (Year 73)</span>
         </div>
 
         <div style="text-align: center; margin: 2rem 0;">
@@ -92,26 +101,26 @@
         <h3>The Ledger Orthodox (Religious Wing)</h3>
 
         <p class="manuscript-text">
-            A splinter sect from the Church of Absolution, the Ledger Orthodox believe in "The Great Ledger"—a divine book recording every transaction, debt, and contract across all time. To them, breaking a contract is spiritual damnation. Every Credit spent is an entry in God's ledger, and at death, souls are judged by their balance.
+            A splinter sect from the Church of Absolution, the Ledger Orthodox believe in "The Great Ledger"...a divine book recording every transaction, debt, and contract across all time. To them, breaking a contract is spiritual damnation. Every Credit spent is an entry in God's ledger, and at death, souls are judged by their balance.
         </p>
 
         <ul class="manuscript-list">
             <li><strong>Beliefs:</strong> Debts are spiritual bonds. Interest is divine punishment for poor planning. Bankruptcy is spiritual failure.</li>
             <li><strong>Role:</strong> Sanctify Soulstones (bless currency), enforce moral oversight, hunt contract breakers as religious duty</li>
-            <li><strong>Leader:</strong> Brother Balthus the Reckoner — High Priest, zealous enforcer, claims "Ledger Sight" (perfect memory of every transaction)</li>
+            <li><strong>Leader:</strong> Brother Balthus the Reckoner, High Priest, zealous enforcer, claims "Ledger Sight" (perfect memory of every transaction)</li>
             <li><strong>Philosophy:</strong> "The ledger balances. Always."</li>
         </ul>
 
         <h3>The Rational House (Secular Wing)</h3>
 
         <p class="manuscript-text">
-            Pre-Sundering bankers who survived through wealth and pragmatism. They view markets as amoral—profit is neither sin nor virtue, merely efficiency. Emotions cloud judgment; cold calculation always wins. To the Rational House, faith is useful fiction that keeps borrowers honest.
+            Pre-Sundering bankers who survived through wealth and pragmatism. They view markets as amoral...profit is neither sin nor virtue, merely efficiency. Emotions cloud judgment; cold calculation always wins. To the Rational House, faith is useful fiction that keeps borrowers honest.
         </p>
 
         <ul class="manuscript-list">
             <li><strong>Beliefs:</strong> Markets self-regulate. Monopoly creates stability. Survival of the financially fittest.</li>
             <li><strong>Role:</strong> Manage operations, maintain financial infrastructure, control day-to-day business</li>
-            <li><strong>Leader:</strong> Director Ilyara Voss — CEO, master manipulator, ice-cold pragmatist with no moral compass</li>
+            <li><strong>Leader:</strong> Director Ilyara Voss, CEO, master manipulator, ice-cold pragmatist with no moral compass</li>
             <li><strong>Philosophy:</strong> "Everything has a price. Including loyalty."</li>
         </ul>
 
@@ -122,7 +131,7 @@
         <h2>Core Mechanic: Credit Economy & Mercenaries</h2>
 
         <p class="manuscript-text">
-            The Exchange fights through economic warfare. Credit Tokens—generated from kills and attacks—fuel a powerful arsenal of hired mercenaries, market manipulation, and battlefield bribery.
+            The Exchange fights through economic warfare. Credit Tokens...generated from kills and attacks...fuel a powerful arsenal of hired mercenaries, market manipulation, and battlefield bribery.
         </p>
 
         <p class="manuscript-text">
@@ -143,131 +152,210 @@
         </ul>
 
         <p class="manuscript-text">
-            Exchange pilots don't win through courage or honor—they win by controlling the battlefield economy. Generate Credits faster than enemies can spend them, summon disposable Mercenaries to overwhelm foes, and manipulate the market until victory is simply purchased.
+            Exchange pilots don't win through courage or honor...they win by controlling the battlefield economy. Generate Credits faster than enemies can spend them, summon disposable Mercenaries to overwhelm foes, and manipulate the market until victory is simply purchased.
         </p>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #DAA520;">&#10047;</span>
         </div>
 
-        <h2>Faction Core Cards (6 Mandatory, Choose from 10)</h2>
+                <h2>10 Faction Cards (Players Choose 6)</h2>
 
-        <h3>1. War Profiteer</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Passive: When any Casket (enemy, ally, or neutral) is destroyed within 6 hexes of you, gain 3 Credit tokens. Gain 5 Credits instead if you dealt the killing blow. Additionally, heal 1 HP per 3 damage you deal (33% lifesteal). <strong>(Balance Update Oct 19: Increased from 2/3 Credits to 3/5 Credits, added lifesteal healing 1 HP per 3 damage)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Every death is an opportunity. Every corpse a ledger entry."</em></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 1</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">War Profiteer</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> 0 | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Passive: When any Casket (enemy, ally, or neutral) is destroyed within 6 hexes of you, gain 3 Credit tokens. Gain 5 Credits instead if you dealt the killing blow. Additionally, heal 1 HP per 3 damage you deal (33% lifesteal).
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Increased from 2/3 Credits to 3/5 Credits, added lifesteal healing 1 HP per 3 damage)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Every death is an opportunity. Every corpse a ledger entry."
+                </p>
+            </div>
 
-        <h3>2. Hire Mercenary</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Summon | <strong>SP Cost:</strong> 3 Credit tokens | <strong>Range:</strong> 3 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Summon 1 Mercenary unit (8 HP, 3 damage) in target hex. Fights for you until destroyed or mission ends. Maximum 2 Mercenaries active simultaneously.
-        </p>
-        <p class="manuscript-text"><em>"Loyalty is expensive. Disloyalty is fatal."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 2</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Hire Mercenary</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Summon | <strong>SP:</strong> 3 Credits | <strong>Range:</strong> 3 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Summon 1 Mercenary unit (8 HP, 3 damage) in target hex. Fights for you until destroyed or mission ends. Maximum 2 Mercenaries active simultaneously.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Loyalty is expensive. Disloyalty is fatal."
+                </p>
+            </div>
 
-        <h3>3. Economic Leverage</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Control | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> 6 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Target enemy must choose: Take 4 damage immediately OR skip their next turn.
-        </p>
-        <p class="manuscript-text"><em>"Pay now or pay later. Either way, you pay."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 3</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Economic Leverage</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Control | <strong>SP:</strong> 2 | <strong>Range:</strong> 6 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Target enemy must choose: Take 4 damage immediately OR skip their next turn.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Pay now or pay later. Either way, you pay."
+                </p>
+            </div>
 
-        <h3>4. Market Manipulation</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Debuff | <strong>SP Cost:</strong> 2 Credit tokens | <strong>Range:</strong> 4 hexes (area)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> All enemies in area have +1 SP cost to all cards for 1 turn.
-        </p>
-        <p class="manuscript-text"><em>"We control the market. You merely survive it."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 4</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Market Manipulation</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Debuff | <strong>SP:</strong> 2 Credits | <strong>Range:</strong> 4 hexes (area)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> All enemies in area have +1 SP cost to all cards for 1 turn.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "We control the market. You merely survive it."
+                </p>
+            </div>
 
-        <h3>5. Hostile Takeover</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack | <strong>SP Cost:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 6 damage, ignore 1 Defense. If this kills the target, gain 4 Credit tokens and recover 2 cards from discard pile.
-        </p>
-        <p class="manuscript-text"><em>"Their loss. Our gain."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 5</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Hostile Takeover</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack | <strong>SP:</strong> 4 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 6 damage, ignore 1 Defense. If this kills the target, gain 4 Credit tokens and recover 2 cards from discard pile.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Their loss. Our gain."
+                </p>
+            </div>
 
-        <h3>6. Insurance Policy</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive Defense | <strong>SP Cost:</strong> 3 Credit tokens | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Play when you would take damage. Negate all damage from this attack. Generates 1 Heat. Once per round.
-        </p>
-        <p class="manuscript-text"><em>"We insure everything. For a price."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 6</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Insurance Policy</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive Defense | <strong>SP:</strong> 3 Credits | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Play when you would take damage. Negate all damage from this attack. Generates 1 Heat. Once per round.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "We insure everything. For a price."
+                </p>
+            </div>
 
-        <h3>7. Bribe</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Debuff | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> 4 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Target enemy has -2 to their next attack roll and -1 movement this turn. Spend 2 Credits to extend duration to 2 turns.
-        </p>
-        <p class="manuscript-text"><em>"Everyone has a price. Even honor."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 7</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Bribe</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Debuff | <strong>SP:</strong> 2 | <strong>Range:</strong> 4 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Target enemy has -2 to their next attack roll and -1 movement this turn. Spend 2 Credits to extend duration to 2 turns.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Everyone has a price. Even honor."
+                </p>
+            </div>
 
-        <h3>8. Contract Enforcement</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Buff | <strong>SP Cost:</strong> 2 | <strong>Range:</strong> 4 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> All friendly Mercenary units within range gain +2 damage and +2 Defense until end of round. Spend 1 Credit to extend duration to 2 rounds.
-        </p>
-        <p class="manuscript-text"><em>"We pay well. They fight better."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 8</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Contract Enforcement</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Buff | <strong>SP:</strong> 2 | <strong>Range:</strong> 4 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> All friendly Mercenary units within range gain +2 damage and +2 Defense until end of round. Spend 1 Credit to extend duration to 2 rounds.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "We pay well. They fight better."
+                </p>
+            </div>
 
-        <h3>9. Auction Bid</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Utility | <strong>SP Cost:</strong> X Credit tokens | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Draw X cards (where X = Credits spent, maximum 5).
-        </p>
-        <p class="manuscript-text"><em>"Knowledge is power. Power is expensive."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 9</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Auction Bid</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Utility | <strong>SP:</strong> X Credits | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Draw X cards (where X = Credits spent, maximum 5).
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Knowledge is power. Power is expensive."
+                </p>
+            </div>
 
-        <h3>10. Golden Parachute</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Reactive Escape | <strong>SP Cost:</strong> 5 Credit tokens | <strong>Range:</strong> Self
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Play when your deck reaches 5 cards or fewer. Immediately recover 8 cards from discard pile, remove all Heat, gain +1 Defense permanently this mission. Once per mission.
-        </p>
-        <p class="manuscript-text"><em>"Failure is for the poor."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 10</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Golden Parachute</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Reactive Escape | <strong>SP:</strong> 5 Credits | <strong>Range:</strong> Self
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Play when your deck reaches 5 cards or fewer. Immediately recover 8 cards from discard pile, remove all Heat, gain +1 Defense permanently this mission. Once per mission.
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Failure is for the poor."
+                </p>
+            </div>
 
-        <h3>11. Soul Drain (×7 in deck) - NEW</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack | <strong>SP Cost:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 4 damage. Gain 1 Credit token. <strong>(Balance Update Oct 19: Increased deck count from ×5 to ×7 for consistency)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Your soul has value. We'll take it."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 11</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Soul Drain (×7 in deck)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack | <strong>SP:</strong> 3 | <strong>Range:</strong> Melee (1 hex)
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 4 damage. Gain 1 Credit token.
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Increased deck count from ×5 to ×7 for consistency)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Your soul has value. We'll take it."
+                </p>
+            </div>
 
-        <h3>12. Compounding Interest (Passive) - NEW</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Passive | <strong>SP Cost:</strong> N/A | <strong>Range:</strong> N/A
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Each consecutive attack against the same target deals +2 additional damage (stacks indefinitely until you switch targets). <strong>(Balance Update Oct 19: Increased from +1 to +2 damage per turn)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Debts accumulate. Interest compounds. You will pay."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 12</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Compounding Interest (Passive)</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Passive | <strong>SP:</strong> N/A | <strong>Range:</strong> N/A
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Each consecutive attack against the same target deals +2 additional damage (stacks indefinitely until you switch targets).
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Increased from +1 to +2 damage per turn)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Debts accumulate. Interest compounds. You will pay."
+                </p>
+            </div>
 
-        <h3>13. Contract Breach - NEW</h3>
-        <p class="manuscript-text">
-            <strong>Type:</strong> Attack (Burst) | <strong>SP Cost:</strong> 4 | <strong>Range:</strong> 5 hexes
-        </p>
-        <p class="manuscript-text">
-            <strong>Effect:</strong> Deal 4d6 damage (14 average), ignore 2 Defense. If target dies, refund 2 SP. <strong>(Balance Update Oct 19: Increased from 3d6 to 4d6 damage)</strong>
-        </p>
-        <p class="manuscript-text"><em>"Terms were clear. Penalties are final."</em></p>
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; border-radius: 2px;">
+                <div style="color: var(--aged-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE CARD 13</div>
+                <h4 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; color: var(--dark-red);">Contract Breach</h4>
+                <div style="display: inline-block; background: rgba(139, 0, 0, 0.3); border: 1px solid var(--aged-gold); padding: 0.3rem 0.6rem; border-radius: 2px; font-size: 0.8rem; margin: 0.5rem 0; color: var(--aged-gold);">
+                    <strong>Type:</strong> Attack (Burst) | <strong>SP:</strong> 4 | <strong>Range:</strong> 5 hexes
+                </div>
+                <p style="margin: 0.5rem 0; line-height: 1.5; font-size: 0.95rem;">
+                    <strong>Effect:</strong> Deal 4d6 damage (14 average), ignore 2 Defense. If target dies, refund 2 SP.
+                </p>
+                <p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.7; font-style: italic; color: var(--aged-gold);">
+                    (Balance Update Oct 19: Increased from 3d6 to 4d6 damage)
+                </p>
+                <p style="margin: 0.5rem 0; font-style: italic; opacity: 0.8; font-size: 0.9rem;">
+                    "Terms were clear. Penalties are final."
+                </p>
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: #DAA520;">&#10047;</span>
@@ -276,7 +364,7 @@
         <h2>Primary Weapon: Executive's Arsenal</h2>
 
         <p class="manuscript-text">
-            The Exchange doesn't pilot crude war machines—they command Caskets equipped with precision financial instruments (that also happen to be lethal). Their weapons embody their philosophy: wealth empowers strikes, and every kill liquidates assets.
+            The Exchange doesn't pilot crude war machines...they command Caskets equipped with precision financial instruments (that also happen to be lethal). Their weapons embody their philosophy: wealth empowers strikes, and every kill liquidates assets.
         </p>
 
         <h3>Sample Cards (12 total in deck)</h3>
@@ -320,7 +408,7 @@
         <h2>Support Units (Mercenary Contracts)</h2>
 
         <p class="manuscript-text">
-            Unlike other factions, the Exchange doesn't field loyal soldiers—they hire disposable mercenaries. These units are expensive but effective, and can be sacrificed for profit when convenient.
+            Unlike other factions, the Exchange doesn't field loyal soldiers...they hire disposable mercenaries. These units are expensive but effective, and can be sacrificed for profit when convenient.
         </p>
 
         <h3>Standard Mercenary (Summonable via Hire Mercenary)</h3>
@@ -360,7 +448,7 @@
         </p>
 
         <p class="manuscript-text">
-            Ilyara Voss embodies the Rational House: emotionless, calculating, and utterly amoral. Born into a pre-Sundering banking family, she bought her way through the apocalypse and rose to become CEO of the most powerful institution in the shattered world. She wears impeccable tailored armor with no religious symbols—secular to the bone. Her cold gray eyes see people as balance sheets, and she honors contracts to the letter while exploiting every loophole.
+            Ilyara Voss embodies the Rational House: emotionless, calculating, and utterly amoral. Born into a pre-Sundering banking family, she bought her way through the apocalypse and rose to become CEO of the most powerful institution in the shattered world. She wears impeccable tailored armor with no religious symbols...secular to the bone. Her cold gray eyes see people as balance sheets, and she honors contracts to the letter while exploiting every loophole.
         </p>
 
         <p class="manuscript-text">
@@ -378,7 +466,7 @@
         </p>
 
         <p class="manuscript-text">
-            High Priest of the Ledger Orthodox, Brother Balthus believes every transaction is recorded in a literal divine book. He claims "Ledger Sight"—the ability to recall any transaction ever made with perfect accuracy. Covered in ritual scars (one per contract enforced), he is merciless toward those who break deals. Paradoxically honorable, he always honors his own contracts even when disadvantageous, and hates Director Voss for her secular corruption of sacred economics.
+            High Priest of the Ledger Orthodox, Brother Balthus believes every transaction is recorded in a literal divine book. He claims "Ledger Sight"...the ability to recall any transaction ever made with perfect accuracy. Covered in ritual scars (one per contract enforced), he is merciless toward those who break deals. Paradoxically honorable, he always honors his own contracts even when disadvantageous, and hates Director Voss for her secular corruption of sacred economics.
         </p>
 
         <p class="manuscript-text">
@@ -513,7 +601,7 @@
 
         <div class="manuscript-quote">
             "We don't fight wars. We buy outcomes. Victory is simply the most profitable result."
-            <span class="quote-attribution">—Director Ilyara Voss, Exchange Doctrine</span>
+            <span class="quote-attribution">-Director Ilyara Voss, Exchange Doctrine</span>
         </div>
 
         <div style="text-align: center; margin: 2rem 0;">
@@ -523,15 +611,15 @@
         <h2>Schisms & Renegade Houses</h2>
 
         <p class="manuscript-text">
-            The Exchange maintains ideological unity through profit motive, but internal rifts have emerged over HOW to maximize wealth. These <strong>Schisms</strong> enable mirror matches—Exchange vs Exchange, merchant vs extremist. Both sides pilot the same Caskets and use Credit economics, but their <em>business ethics</em> differ profoundly.
+            The Exchange maintains ideological unity through profit motive, but internal rifts have emerged over HOW to maximize wealth. These <strong>Schisms</strong> enable mirror matches...Exchange vs Exchange, merchant vs extremist. Both sides pilot the same Caskets and use Credit economics, but their <em>business ethics</em> differ profoundly.
         </p>
 
         <div style="background: linear-gradient(to bottom, rgba(218, 165, 32, 0.1), rgba(180, 135, 20, 0.05)); border: 2px solid #DAA520; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
             <h3 style="color: #DAA520; margin-top: 0;">The Ledger Absolutists (Renegade House)</h3>
 
-            <p><strong>Ideology:</strong> ONLY Credits matter. No morality, no alliances—pure profit calculus.</p>
+            <p><strong>Ideology:</strong> ONLY Credits matter. No morality, no alliances...pure profit calculus.</p>
 
-            <p><strong>Schism Event:</strong> <em>The Dual-Market Scandal of Year 318</em> - Broker-Prime Vallis sold weapons to BOTH sides of a brutal civil war, maximizing profits while 10,000 civilians died in the crossfire. When confronted, he presented a 40-page profit analysis proving it was "optimal market behavior." The Rational House exiled him for "destabilizing markets long-term," but the Ledger Absolutists claim "markets always rebuild—profit NOW is the only truth."</p>
+            <p><strong>Schism Event:</strong> <em>The Dual-Market Scandal of Year 318</em> - Broker-Prime Vallis sold weapons to BOTH sides of a brutal civil war, maximizing profits while 10,000 civilians died in the crossfire. When confronted, he presented a 40-page profit analysis proving it was "optimal market behavior." The Rational House exiled him for "destabilizing markets long-term," but the Ledger Absolutists claim "markets always rebuild...profit NOW is the only truth."</p>
 
             <p><strong>Philosophy:</strong></p>
             <ul>
@@ -539,7 +627,7 @@
                 <li><strong>Ledger Absolutists:</strong> "Profit NOW at any cost. Markets rebuild themselves. Morality is lost profit."</li>
             </ul>
 
-            <p><strong>Visual Distinction:</strong> Absolutist Caskets feature pure gold/silver livery with no moral symbols—only Credit counters, profit graphs, and ledger scrolls. They display wealth obsessively.</p>
+            <p><strong>Visual Distinction:</strong> Absolutist Caskets feature pure gold/silver livery with no moral symbols...only Credit counters, profit graphs, and ledger scrolls. They display wealth obsessively.</p>
 
             <p><strong>Tactical Differences:</strong></p>
             <ul>
@@ -549,7 +637,7 @@
                 <li><strong>Credit Hoarding:</strong> Bank 20+ Credits as "proof of superiority," spend only when necessary</li>
             </ul>
 
-            <p><strong>Why They Fight the Exchange:</strong> Absolutists view mainstream Exchange as "cowards hiding behind fake sustainability." When they clash, it's economic ideology: "You pretend morality improves profits. We accept truth—wealth justifies everything."</p>
+            <p><strong>Why They Fight the Exchange:</strong> Absolutists view mainstream Exchange as "cowards hiding behind fake sustainability." When they clash, it's economic ideology: "You pretend morality improves profits. We accept truth...wealth justifies everything."</p>
 
             <p><strong>Gameplay Note:</strong> Use standard Exchange deck, but roleplay extreme capitalism. Absolutists maximize Credits at ALL costs, ignore team play (flavor only), and treat warfare as pure profit opportunity.</p>
         </div>
@@ -557,9 +645,9 @@
         <div style="background: linear-gradient(to bottom, rgba(218, 165, 32, 0.1), rgba(180, 135, 20, 0.05)); border: 2px solid #DAA520; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;">
             <h3 style="color: #DAA520; margin-top: 0;">The Debt Collectors (Rival House)</h3>
 
-            <p><strong>Ideology:</strong> Credits buy violence. If you owe, we collect—in blood.</p>
+            <p><strong>Ideology:</strong> Credits buy violence. If you owe, we collect...in blood.</p>
 
-            <p><strong>Schism Event:</strong> <em>The Black Ledger Purge of Year 362</em> - Enforcer Cadre "Black Ledger" began murdering debtors who couldn't pay, treating unpaid debts as capital crimes. They hunted down 300 bankrupts and executed them publicly. The Exchange banished them for "alienating 40% of customer base" (dead clients can't generate future revenue), but the Collectors claim "fear IS a form of payment—terror stabilizes markets."</p>
+            <p><strong>Schism Event:</strong> <em>The Black Ledger Purge of Year 362</em> - Enforcer Cadre "Black Ledger" began murdering debtors who couldn't pay, treating unpaid debts as capital crimes. They hunted down 300 bankrupts and executed them publicly. The Exchange banished them for "alienating 40% of customer base" (dead clients can't generate future revenue), but the Collectors claim "fear IS a form of payment...terror stabilizes markets."</p>
 
             <p><strong>Philosophy:</strong></p>
             <ul>

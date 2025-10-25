@@ -10,13 +10,117 @@
 
 ## Design Philosophy
 
-The Vestige Bloodlines embody hereditary evolution through suffering. Every card reflects their philosophy:
+The Vestige Bloodlines are dying. Not slowly, but generationally—each child born more feral than their parents, each generation closer to mindless beasts. They pilot Caskets not for power, but for **survival**—the neural threads are the only thing keeping their minds human and their bodies from transforming into Abominations.
 
-- **Bloodline Identity**: Each pilot chooses a primary bloodline (Fenmar, Urtok, Vexis, Corvath, Serrak)
-- **Biomass Economy**: Kill to harvest resources, trigger transformations
-- **Pack Tactics**: Power scales with nearby Vestige allies
-- **Bloodline Synergies**: Unique bonuses based on your chosen bloodline
-- **Genetic Legacy**: Mutations passed through generations, growing stronger or more unstable
+Every card reflects their desperate struggle:
+
+- **Bloodline Identity**: Your curse is inherited—wolf, bear, insect, raven, or serpent
+- **Biomass Economy**: Feed the hunger, or lose yourself to it
+- **Pack Tactics**: Together, we remember what we were
+- **Casket Dependency**: Without the neural threads stabilizing our minds AND bodies, we are just beasts
+- **The Extinction Clock**: We have 150 years. Maybe less.
+
+**They are not monsters piloting machines. They are people using machines to stay people.**
+
+---
+
+## Why Vestige MUST Pilot Caskets
+
+### The Dual Suppression System
+
+Vestige Bloodlines discovered the horrifying truth in Year 85:
+
+**Caskets don't just help them fight. Caskets keep them human.**
+
+**Neural Thread Functions:**
+1. **Mental Stabilization**: Preserves coherent thought, prevents feral regression
+2. **Mutation Suppression**: Actively halts genetic degradation, freezes transformation
+3. **Identity Preservation**: Maintains sense of self against both mental and physical collapse
+
+**Without Caskets:**
+- **6-24 hours**: Rapid mutation acceleration—extra limbs, lost limbs, transformative changes
+- **24-48 hours**: Point of no return—irreversible metamorphosis into Abomination
+- **48+ hours**: No human consciousness remains—pure beast, must be mercy-killed
+
+### The Prison-Lifeline Paradox
+
+**They are not pilots who use Caskets. They are prisoners who need them.**
+
+- **Fenmar**: Disconnect = transform into quadrupedal wolves (lose hands, speech, humanity)
+- **Urtok**: Disconnect = hibernate forever (body petrifies into living stone)
+- **Vexis**: Disconnect = metamorphosis into mindless insects (hive-absorption)
+- **Corvath**: Disconnect = avian devolution (bones hollow until collapse, mind regresses to bird)
+- **Serrak**: Disconnect = limbless serpent (arms/legs retract, venom becomes lethal to self)
+
+### The Generational Countdown
+
+**Each generation needs MORE suppression:**
+- **1st gen**: Could disconnect for days (72+ hours)
+- **2nd gen**: Could disconnect for 48 hours
+- **3rd gen**: Can disconnect for 24 hours
+- **4th gen**: Can disconnect for 6-12 hours
+- **5th gen (predicted)**: Cannot disconnect at all—instant transformation
+
+**Current 4th generation children are born inside Caskets and may never leave.**
+
+### The Strength They Cannot Use
+
+**The cruelest irony:**
+
+Vestige mutations give them **superhuman physical capabilities:**
+- Fenmar pack coordination (tactical superiority)
+- Urtok strength (can lift 800+ lbs)
+- Vexis regeneration (molt healing)
+- Corvath mobility (gliding, enhanced senses)
+- Serrak toxicity (natural venom weapons)
+
+**But without Caskets, they cannot use any of it.**
+
+A Fenmar disconnected for 18 hours has enhanced strength, speed, senses—**and the mind of a rabid wolf**. Useless.
+
+**They are not weak pilots made strong by Caskets.**
+**They are strong beasts made functional by Caskets.**
+
+The Casket is the only thing standing between "super-soldier" and "Abomination."
+
+---
+
+## MUTATION STRAIN MECHANIC
+
+### The Casket's Limit
+
+**Caskets suppress mutations, but they have limits.** Every time you spend Biomass, you force a controlled mutation. Spend too much, and the suppression fails.
+
+**Tracking:**
+- **Mutation Strain Track**: Count total Biomass tokens spent this mission (cumulative, never resets)
+- Starts at 0, increases every time you spend Biomass
+- Track goes from 0 to 30+
+
+**Thresholds:**
+
+| Strain Level | Status | Effect |
+|--------------|--------|--------|
+| **0-9** | Stable | Normal operation, no penalties |
+| **10-19** | Unstable | All attacks generate +1 Heat (mutations straining Casket systems) |
+| **20-29** | Feral | Must attack each turn if able, cannot use Reactive defense cards (beast instinct taking over) |
+| **30+** | Transformation | Mission ends immediately, pilot transforms into Abomination, Casket shuts down (**LOSS CONDITION**) |
+
+**Strategic Implications:**
+- Early mission: Spend freely (0-9 Strain is safe)
+- Mid mission: Risky decisions (10+ Strain = Heat pressure builds)
+- Late mission: Desperation (20+ Strain = can't defend, pure aggression)
+- **Never exceed 29 Strain** or you lose the mission immediately
+
+**Cards that add Mutation Strain:**
+- Bloodline Shift: +2 Strain per use
+- Adaptive Evolution: +1 Strain per use
+- Regenerative Flesh: +1 Strain per use
+- Carapace Molt: +2 Strain per use
+- Hibernation Trance: +4 Strain per use
+- Reactive Scales (Biomass option): +1 Strain per use
+
+**Thematic justification:**
+> "The neural threads can only suppress so much. Every mutation you force brings you closer to the edge. Push too hard, and the Casket loses its grip. The beast wins. You transform. You lose."
 
 ---
 
@@ -56,9 +160,9 @@ The Vestige Bloodlines embody hereditary evolution through suffering. Every card
   - **Vexis (Chitin)**: +2 Defense, molt reaction (negate 1 attack per round)
   - **Corvath (Raven)**: +3 movement, ignore terrain, can glide
   - **Serrak (Serpent)**: All attacks inflict poison (2 damage next turn), +1 movement
-- Can stack multiple shifts. Bloodline evolution.
-- **Keywords**: utility, transformation, biomass, bloodline-choice
-- **Lore**: "Flesh is fluid. Blood is law."
+- Can stack multiple shifts. Add +2 to Mutation Strain track. **Warning:** Multiple shifts risk Casket suppression failure.
+- **Keywords**: utility, transformation, biomass, bloodline-choice, mutation-strain
+- **Lore**: "Flesh is fluid. Blood is law. But the cage has limits."
 
 ### 5. Alpha's Command
 - **Type**: Buff
@@ -81,9 +185,9 @@ The Vestige Bloodlines embody hereditary evolution through suffering. Every card
 - **Type**: Reactive
 - **Cost**: 1 Biomass token
 - **Range**: Self
-- **Effect**: Play when you take damage. Immediately gain 1 mutation counter. Each mutation counter gives +1 to all attack damage permanently this mission (stacks infinitely). Evolution rewards survival.
-- **Keywords**: reactive, scaling, biomass, permanent-buff
-- **Lore**: "What doesn't kill us makes us deadlier."
+- **Effect**: Play when you take damage. Gain 1 mutation counter (+1 damage to all attacks permanently this mission, stacks infinitely). Add +1 to Mutation Strain track. **Warning:** Spending too much Biomass risks losing control.
+- **Keywords**: reactive, scaling, biomass, permanent-buff, mutation-strain
+- **Lore**: "What doesn't kill us makes us deadlier. But also... less human."
 
 ### 8. Scent of Blood
 - **Type**: Passive
@@ -164,8 +268,8 @@ The Vestige Bloodlines embody hereditary evolution through suffering. Every card
 ### Regenerative Flesh (×2)
 - **Cost**: 1 Biomass token
 - **Range**: Self
-- **Effect**: Recover 2 cards from your discard pile. Spend Biomass to heal wounds.
-- **Keywords**: utility, healing, biomass, vestige, secondary
+- **Effect**: Recover 2 cards from your discard pile. Add +1 to Mutation Strain track. Spend Biomass to heal wounds.
+- **Keywords**: utility, healing, biomass, vestige, secondary, mutation-strain
 
 ### Venomous Spit (×1)
 - **Cost**: 2 SP
@@ -177,8 +281,8 @@ The Vestige Bloodlines embody hereditary evolution through suffering. Every card
 ### Reactive Scales (×1)
 - **Cost**: 0 SP (Reactive)
 - **Range**: Self
-- **Effect**: Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Biomass token to reduce by 3 instead. Hardened hide.
-- **Keywords**: reactive, defense, biomass, vestige, secondary
+- **Effect**: Play when targeted by attack. Reduce damage by 2 (minimum 1). Spend 1 Biomass token to reduce by 3 instead (adds +1 Mutation Strain). Hardened hide.
+- **Keywords**: reactive, defense, biomass, vestige, secondary, mutation-strain
 
 ### Primal Roar (×1)
 - **Cost**: 1 SP
@@ -208,18 +312,18 @@ The Vestige Bloodlines embody hereditary evolution through suffering. Every card
 - **Type**: Reactive-Defense
 - **Cost**: 4 Biomass tokens
 - **Range**: Self
-- **Effect**: When your deck reaches 8 cards or fewer, enter Hibernation (cannot act for 1 turn). Next turn, recover 6 cards, remove all Heat, gain +2 Defense permanently this mission. **Requires:** Urtok primary bloodline. Once per mission.
-- **Keywords**: bloodline-urtok, healing, defense-buff, limit
-- **Lore**: "Sleep heals all wounds. Even these."
+- **Effect**: When your deck reaches 8 cards or fewer, enter Hibernation (cannot act for 1 turn). Next turn, recover 6 cards, remove all Heat, gain +2 Defense permanently this mission. Add +4 to Mutation Strain track. **Requires:** Urtok primary bloodline. Once per mission.
+- **Keywords**: bloodline-urtok, healing, defense-buff, limit, mutation-strain
+- **Lore**: "Sleep heals all wounds. Even these. But the cost..."
 
 ### Vexis Bloodline: Carapace Molt
 - **Type**: Reactive
 - **Cost**: 2 Biomass tokens
 - **Range**: Self
-- **Effect**: Play when you take 5+ damage in a single attack. Negate all damage, recover 3 cards (shed damaged shell). Generate 1 Heat. **Requires:** Vexis primary bloodline. Once per round.
+- **Effect**: Play when you take 5+ damage in a single attack. Negate all damage, recover 3 cards (shed damaged shell). Generate 1 Heat. Add +2 to Mutation Strain track. **Requires:** Vexis primary bloodline. Once per round.
 - **Heat**: +1
-- **Keywords**: bloodline-vexis, defense, molt, healing
-- **Lore**: "The shell breaks. The flesh endures."
+- **Keywords**: bloodline-vexis, defense, molt, healing, mutation-strain
+- **Lore**: "The shell breaks. The flesh endures. But for how long?"
 
 ### Corvath Bloodline: Omen's Flight
 - **Type**: Movement-Utility
@@ -242,9 +346,9 @@ The Vestige Bloodlines embody hereditary evolution through suffering. Every card
 - **Type**: Utility
 - **Cost**: 3 Biomass tokens
 - **Range**: Self
-- **Effect**: Look at top 5 cards of your deck. Rearrange them in any order. **Bloodline Bonus:** If you have 5+ Biomass, also recover 1 card from discard pile (ancestor's wisdom). The blood remembers tactics.
-- **Keywords**: utility, deck-manipulation, biomass, card-recovery
-- **Lore**: "I have walked this path before. In another life."
+- **Effect**: Look at top 5 cards of your deck. Rearrange them in any order. **Bloodline Bonus:** If you have 5+ Biomass, also recover 1 card from discard pile (ancestor's wisdom). Add +3 to Mutation Strain track. The blood remembers tactics.
+- **Keywords**: utility, deck-manipulation, biomass, card-recovery, mutation-strain
+- **Lore**: "I have walked this path before. In another life. Before I was... this."
 
 ---
 
@@ -362,11 +466,45 @@ The Vestige Bloodlines embody hereditary evolution through suffering. Every card
 - **Team composition:** All-Fenmar team is strongest (pack synergies), but mixed bloodlines offer versatility
 - **Bloodline-specific cards:** Some cards require matching primary bloodline (marked with "Requires: [Bloodline]")
 
-### Biomass Economy
-- **Generation:** Vestige Heritage (2 Biomass per kill, +1 if prey type matches), Devouring Maw (3 on kill)
-- **Spending:** Bloodline Shift (2), Adaptive Evolution (1), Carapace Molt (2), Hibernation Trance (4)
-- **Bloodline efficiency:** Fenmar generates more through pack kills, Urtok spends more on defense, Vexis cycles fastest
-- **Optimal banking:** Keep 2-4 Biomass for emergency Bloodline Shift or Adaptive Evolution
+### Biomass Economy & Mutation Strain Management
+
+**Critical Rule: Track your Mutation Strain every mission. At 30+, you transform and lose.**
+
+**Generation:**
+- Vestige Heritage: 2 Biomass per kill (+1 if prey type matches)
+- Devouring Maw: 3 Biomass on kill
+
+**Spending (with Strain costs):**
+- Bloodline Shift: 2 Biomass, +2 Strain
+- Adaptive Evolution: 1 Biomass, +1 Strain
+- Regenerative Flesh: 1 Biomass, +1 Strain
+- Reactive Scales (Biomass option): 1 Biomass, +1 Strain
+- Carapace Molt (Vexis): 2 Biomass, +2 Strain
+- Hibernation Trance (Urtok): 4 Biomass, +4 Strain (once per mission)
+- Ancestral Memory: 3 Biomass, +3 Strain
+
+**Strain Budgeting (Critical!):**
+- **0-9 Strain (Safe Zone):** Spend freely early mission, no penalties
+- **10-19 Strain (Unstable):** +1 Heat on all attacks - plan Heat management
+- **20-29 Strain (Feral):** Must attack each turn, no Reactive defenses - finish mission FAST
+- **30+ Strain (GAME OVER):** You transform, mission ends, you lose
+
+**Typical Mission Strain Budget:**
+- Conservative play: 5-8 Biomass spent (0-9 Strain, safe)
+- Aggressive play: 10-15 Biomass spent (10-19 Strain, Unstable but manageable)
+- Desperate play: 20-25 Biomass spent (20-29 Strain, Feral - win NOW or lose)
+- **NEVER spend 30+ Biomass** in a single mission
+
+**Strategy Examples:**
+- **Urtok Tank (low Strain):** 2x Bloodline Shift (4 Strain) + 3x Regenerative Flesh (3 Strain) = 7 Strain total (safe)
+- **Adaptive Evolution Spam (high risk):** 10x Adaptive Evolution = 10 Strain (Unstable, +1 Heat pressure)
+- **Emergency Urtok Resurrection:** Hibernation Trance (4 Strain) + 2x Shift (4 Strain) + 5x Evolution (5 Strain) = 13 Strain (Unstable)
+- **Suicide Build (DO NOT DO):** Hibernation + 5x Shift + 10x Evolution = 29 Strain (Feral, one more use = transformation)
+
+**Optimal Banking:**
+- Keep 2-4 Biomass tokens available for emergencies
+- Save Strain budget for late-mission desperation plays
+- Front-load Bloodline Shifts early (before Unstable threshold)
 
 ### Pack Coordination (Fenmar-Specific)
 - **Pure Fenmar pack:** +3 damage per attack (Pack Instinct bonus)
@@ -420,9 +558,10 @@ The Vestige Bloodlines embody hereditary evolution through suffering. Every card
 
 ### Balance Considerations
 - **Biomass Economy**: Powerful but requires kills (weak if denied)
+- **Mutation Strain Cap**: Hard limit at 30 Strain prevents infinite scaling (transformation = loss)
 - **Bloodline Dependency**: Many cards require specific bloodlines (limits deck flexibility)
 - **Pack Scaling**: Strongest with Vestige allies (weaker in mixed-faction teams)
-- **Mutation Stacking**: Infinite scaling potential but slow ramp
+- **Risk vs Reward**: High damage potential balanced by transformation risk
 
 ### Unique Mechanics
 - **Bloodline Shift**: 5 unique transformations (unprecedented variety)

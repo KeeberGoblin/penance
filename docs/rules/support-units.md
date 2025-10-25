@@ -356,7 +356,7 @@ When enemy is destroyed within 4 hexes of Scrap Hauler, automatically gain 1 Scr
 
 ## 8. BLIGHTED HOUND (Beast)
 **Category**: Beast Support
-**Faction**: Blighted Packs
+**Faction**: Vestige Bloodlines
 **HP**: 10 | **Movement**: 5 | **Defense**: 0
 **Equipment Slots**: 2
 

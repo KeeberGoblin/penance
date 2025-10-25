@@ -6,260 +6,154 @@
     <title>Core Bestiary - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
-        /* Blood Red Enemy Theme */
-        h2 {
-            color: #8B0000 !important;
-        }
-        .content table th {
-            background: linear-gradient(to bottom, #660000, #440000) !important;
-        }
-
-        /* Enemy Card Styling */
-        .enemy-card {
-            background: linear-gradient(to bottom, rgba(139, 0, 0, 0.05), rgba(100, 0, 0, 0.05));
-            border: 2px solid #8b0000;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .enemy-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
-        }
-        .enemy-card h3 {
-            color: #ff4444 !important;
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid #8b0000;
-            padding-bottom: 0.3rem;
-        }
-        .enemy-type {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: #4a0e0e;
-            color: #ffd700;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            margin-bottom: 0.75rem;
-        }
-        .enemy-stats {
+        .enemy-featured-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        .stat {
-            background: rgba(139, 0, 0, 0.2);
-            padding: 0.5rem;
-            text-align: center;
-            border: 1px solid #8b0000;
-            border-radius: 4px;
-        }
-        .stat-label {
-            color: #b8956a;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-        }
-        .stat-value {
-            color: #ffd700;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        /* Enemy Grid Layout (like settlements) */
-        .enemy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
 
-        /* Behavior Card Popup Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.85);
-            animation: fadeIn 0.2s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
-            margin: 3% auto;
-            padding: 0;
-            border: 3px solid #8b0000;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 900px;
-            box-shadow: 0 8px 32px rgba(139, 0, 0, 0.6);
-            animation: slideIn 0.3s;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .modal-header {
-            background: linear-gradient(to bottom, #660000, #440000);
+        .enemy-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid var(--dark-red);
             padding: 1.5rem;
-            border-radius: 9px 9px 0 0;
-            border-bottom: 2px solid #8b0000;
-            position: relative;
+            border-radius: 2px;
         }
 
-        .modal-header h2 {
-            margin: 0;
-            color: #ffd700 !important;
-            font-size: 1.5rem;
+        .enemy-card .enemy-type-label {
+            color: var(--aged-gold);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
         }
 
-        .modal-header .enemy-type {
-            margin-top: 0.5rem;
+        .enemy-card h4 {
+            margin: 0.5rem 0 0.25rem 0;
+            font-size: 1.1rem;
+            color: var(--dark-red);
         }
 
-        .close {
-            color: #999;
-            position: absolute;
-            right: 1.5rem;
-            top: 1.5rem;
-            font-size: 2rem;
-            font-weight: bold;
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        .stat-mini {
+            background: rgba(139, 0, 0, 0.2);
+            padding: 0.4rem;
+            text-align: center;
+            border-radius: 2px;
+        }
+
+        .stat-mini-label {
+            color: var(--aged-gold);
+            font-weight: 700;
+            font-size: 0.7rem;
+        }
+
+        .stat-mini-value {
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .enemy-card p {
+            margin: 0.25rem 0;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-container {
+            margin: 2rem 0;
+        }
+
+        .dropdown-toggle {
+            background: var(--shadow-black);
+            border: 2px solid var(--dark-red);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
             cursor: pointer;
-            transition: color 0.2s;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 0.05em;
         }
 
-        .close:hover,
-        .close:focus {
-            color: #ff4444;
+        .dropdown-toggle:hover {
+            background: var(--dark-red);
         }
 
-        .modal-body {
-            padding: 2rem;
-            max-height: 70vh;
+        .dropdown-toggle.active {
+            background: var(--dark-red);
+        }
+
+        .dropdown-content {
+            display: none;
+            background: rgba(10, 6, 4, 0.5);
+            border: 1px solid var(--dark-red);
+            border-top: none;
+            max-height: 700px;
             overflow-y: auto;
         }
 
-        .behavior-deck {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+        .dropdown-content.active {
+            display: block;
         }
 
-        .behavior-card {
-            background: linear-gradient(to bottom, rgba(139, 0, 0, 0.2), rgba(100, 0, 0, 0.1));
-            border: 2px solid #660000;
-            border-radius: 8px;
-            padding: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+        .enemy-item {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
         }
 
-        .behavior-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
-            border-color: #8b0000;
+        .enemy-item:last-child {
+            border-bottom: none;
         }
 
-        .behavior-card-title {
-            color: #ff4444;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
+        .enemy-item-header {
+            font-weight: 700;
+            color: var(--aged-gold);
+            margin-bottom: 0.3rem;
         }
 
-        .behavior-card-count {
-            background: #4a0e0e;
-            color: #ffd700;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            display: inline-block;
-            margin-bottom: 0.5rem;
+        .enemy-item-type {
+            font-size: 0.8rem;
+            color: var(--aged-gold);
+            opacity: 0.8;
+            margin-bottom: 0.3rem;
         }
 
-        .behavior-card-effect {
-            color: #ccc;
+        .enemy-item-stats {
             font-size: 0.85rem;
-            line-height: 1.4;
+            margin-bottom: 0.5rem;
         }
 
-        .click-hint {
-            display: inline-block;
-            margin-left: 0.5rem;
-            padding: 0.25rem 0.5rem;
-            background: rgba(139, 0, 0, 0.3);
-            border: 1px solid #660000;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: #ff4444;
-            cursor: help;
+        .enemy-item-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
-        .enemy-card.clickable {
-            cursor: pointer;
-            position: relative;
-        }
-
-        .enemy-card.clickable::after {
-            content: "Click for AI Behavior Deck";
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(139, 0, 0, 0.8);
-            color: #ffd700;
-            padding: 0.35rem 0.65rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            opacity: 0;
-            transition: opacity 0.2s;
-            pointer-events: none;
-        }
-
-        .enemy-card.clickable:hover::after {
-            opacity: 1;
-        }
-
-        .deck-stats {
-            background: rgba(139, 0, 0, 0.2);
-            border-left: 3px solid #8b0000;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .deck-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .deck-stat-item {
-            text-align: center;
-        }
-
-        .deck-stat-label {
-            color: #b8956a;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-        }
-
-        .deck-stat-value {
-            color: #ffd700;
+        .section-header {
+            background: linear-gradient(90deg, #8b0000 0%, #4a0000 50%, #8b0000 100%);
+            color: var(--aged-gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0 1rem 0;
+            border-left: 5px solid var(--aged-gold);
+            font-size: 1.3rem;
             font-weight: bold;
-            font-size: 1.1rem;
+        }
+
+        .category-intro {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
@@ -270,818 +164,281 @@
             <a href="#campaign">CAMPAIGN</a> /
             Core Bestiary
         </div>
-<h1>Core Bestiary</h1>
 
-        <p style="font-style: italic; color: #8B0000; margin-bottom: 2rem; text-align: center;" class="no-drop-cap">
-            Brutal campaign-inspired AI System • 15 Enemies (Swarm/Elite/Boss)
+        <h1>Core Bestiary</h1>
+        <p style="font-style: italic; color: var(--dark-red); font-size: 1.1rem; text-align: center; margin: 1rem 0;">
+            Brutal Campaign-Inspired AI System ★ 19 Enemies (Swarm/Elite/Boss)
         </p>
 
         <div class="manuscript-quote">
             "Know your enemy. Study their patterns. Exploit their weaknesses. Or die trying."
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
+        </div>
 
-        <h2>Overview</h2>
+        <h2>Enemy Categories</h2>
 
-        <p>
-            <span style="font-size: 2.5rem; font-weight: bold; color: #8B0000; float: left; line-height: 0.85; margin-right: 0.05em; margin-top: 0.1em; font-family: 'Cinzel Decorative', serif;">T</span>his bestiary contains 15 core enemies for campaign missions, settlement defense events, and random encounters. Enemies use player-like mechanics (HP deck, SP economy) but with simplified AI behavior cards inspired by brutal tabletop RPGs.
+        <p class="category-intro">
+            <strong>Swarm (3–5 HP):</strong> Weak enemies deployed in large numbers (5–10 per mission). Simple AI. <strong>Elite (15–25 HP):</strong> 1–2 per mission. Medium complexity AI. Mini-bosses. <strong>Boss (30–60 HP):</strong> Mission capstone. Complex AI with phases. <strong>Anomalous:</strong> Reality-defying entities (see Anomalous Bestiary).
         </p>
 
-        <h3>Enemy Categories:</h3>
-        <ul>
-            <li><strong>Swarm (3-5 HP):</strong> Many weak enemies. Simple AI. Deploy 5-10 per mission.</li>
-            <li><strong>Elite (15-25 HP):</strong> 1-2 per mission. Medium complexity AI. Mini-bosses.</li>
-            <li><strong>Boss (30-60 HP):</strong> Mission capstone. Complex AI with phases.</li>
-            <li><strong>Anomalous:</strong> Reality-defying entities. See <a href="enemies-anomalous.html" style="color: #8B0000; text-decoration: underline;">Anomalous Bestiary</a> for Poenitentia/Damnatio/Absolutio threats.</li>
-        </ul>
-
-        <h3>AI System (If-Then Behavior Decks):</h3>
-        <p>Enemies draw from <strong>behavior decks</strong> each turn. Cards have "If-Then" logic:</p>
-        <p style="font-style: italic; padding-left: 2rem;">Example: "If enemy within 2 hexes, attack. Else, move closer."</p>
-
-        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid #8B0000; padding: 1rem; margin: 1.5rem 0;">
-            <p style="margin: 0; font-weight: bold;">⚠ Looking for supernatural threats?</p>
-            <p style="margin: 0.5rem 0 0 0;">This bestiary covers <strong>natural/faction enemies</strong>. For anomalous entities (Mirror Walkers, Void Shepherds, etc.), see the <a href="enemies-anomalous.html" style="color: #ff4444;">Anomalous Bestiary</a>.</p>
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
+        <h2>Featured Boss Enemies</h2>
+        <p style="opacity: 0.8; font-style: italic; margin-bottom: 1.5rem;">(Top 3 boss encounters featured. Complete enemy tables in dropdowns.)</p>
 
-        <h2>Swarm Enemies (3-5 HP)</h2>
-
-        <div class="enemy-grid">
-        <div class="enemy-card clickable" onclick="openBehaviorModal('tainted-rat')">
-            <h3>1. Tainted Rat Swarm</h3>
-            <span class="enemy-type">Swarm</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">2</div></div>
-            </div>
-            <p><strong>AI:</strong> Swarm Tactics (×2) - If 2+ allies nearby, attack for 1d6. Panic Scatter (×1) - Flee if below 2 HP.</p>
-            <p><strong>Special:</strong> Diseased Bite (target gains 1 Taint on failed save).</p>
-            <p><strong>Tactics:</strong> Deploy 5-10. Swarm from multiple directions. Die easily but overwhelm with numbers.</p>
-            <p><strong>Loot:</strong> 5 Credits per rat. 1/10 chance of 1 Scrap.</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal('corrupted-villager')">
-            <h3>2. Corrupted Villager</h3>
-            <span class="enemy-type">Swarm</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">5</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">3</div></div>
-            </div>
-            <p><strong>AI:</strong> Shambling Advance (×3) - Move toward enemy, attack 2d6 if adjacent. Desperate Lunge (×1) - Sprint 4 hexes, attack 3d6, take 1 self-damage. Tainted Scream (×1) - AOE fear (lose 1 SP).</p>
-            <p><strong>Special:</strong> Engine-Touched (explodes for 1d6 when killed).</p>
-            <p><strong>Tactics:</strong> Deploy 3-5. Mix with rats for chaotic combat. Scream disrupts SP economy.</p>
-            <p><strong>Loot:</strong> 10 Credits per villager.</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'scrap-drone\')">
-            <h3>3. Scrap Drone</h3>
-            <span class="enemy-type">Swarm</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">5</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">4</div></div>
-            </div>
-            <p><strong>AI:</strong> Patrol (×2) - Move randomly, attack 1d6 if enemy in 6 hexes. Self-Destruct (×1) - Explode for 3d6 if below 2 HP. Repair Protocol (×1) - Heal adjacent ally drone 1 card.</p>
-            <p><strong>Special:</strong> Flying (ignores terrain), Construct (immune Taint/Morale).</p>
-            <p><strong>Tactics:</strong> Deploy 4-6. Patrol, harass, kamikaze when low. Repair each other.</p>
-            <p><strong>Loot:</strong> 15 Credits, 1 Scrap (guaranteed).</p>
-        </div>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Elite Enemies (15-25 HP)</h2>
-
-        <div class="enemy-grid">
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal('bandit-raider')">
-            <h3>4. Bandit Raider</h3>
-            <span class="enemy-type">Elite</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">15</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">4</div></div>
-            </div>
-            <p><strong>AI (15 cards):</strong> Aggressive Strike (×5), Flank (×3), Defend (×2), Grenade Throw (×2), Retreat (×2), Rally Cry (×1).</p>
-            <p><strong>Special:</strong> Scavenger Armor (roll 1d6, on 6 reduce damage by 2).</p>
-            <p><strong>Tactics:</strong> Hit-and-run. Flank when possible, grenades at range, retreat when wounded.</p>
-            <p><strong>Loot:</strong> 50 Credits, 1d3 Scrap, Equipment roll (1d20, 15+ = loot weapon).</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'bandit-captain\')">
-            <h3>5. Bandit Captain</h3>
-            <span class="enemy-type">Elite (Leader)</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">20</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">2</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>AI (20 cards):</strong> Commanding Strike (×6 - buffs allies), Tactical Repositioning (×4), Inspire Troops (×3), Execute the Weak (×2), Desperate Gambit (×2), Tactical Retreat (×2), Smoke Grenade (×1).</p>
-            <p><strong>Special:</strong> Leader Aura (all bandits +1 Attack within 4 hexes), Combat Veteran (immune forced movement).</p>
-            <p><strong>Tactics:</strong> Buffs allies, coordinates attacks. Deploy with 3-5 Raiders. Kill Captain first.</p>
-            <p><strong>Loot:</strong> 100 Credits, 2d3 Scrap, roll twice Equipment, 1/5 chance "Captain's Insignia" (Relic).</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'tainted-ogre\')">
-            <h3>6. Tainted Ogre</h3>
-            <span class="enemy-type">Elite (Brute)</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">25</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">4</div></div>
-            </div>
-            <p><strong>AI (25 cards):</strong> Brutal Smash (×8 - 5d6 + knockback), Enraged Charge (×5), Regenerate (×3), Ground Slam (×3 - AOE), Intimidating Roar (×2), Berserk Rage (×2 - at 10 HP), Cannibalize (×1), Throw Boulder (×1).</p>
-            <p><strong>Special:</strong> Thick Hide (reduce all damage by 3), Taint Regeneration (recover 1 card per turn at 5+ Taint), Massive (occupies 2 hexes).</p>
-            <p><strong>Tactics:</strong> Slow but devastating. Charges into melee, smashes, regenerates. Focus fire before it reaches you.</p>
-            <p><strong>Loot:</strong> 150 Credits, 3d3 Scrap, Equipment roll, 1/3 chance "Tainted Ogre Hide" (crafting: +2 Armor).</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'scrap-golem\')">
-            <h3>7. Scrap Golem</h3>
-            <span class="enemy-type">Elite (Construct)</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">20</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">3</div></div>
-            </div>
-            <p><strong>AI (20 cards):</strong> Hydraulic Punch (×6 - armor-piercing), Defensive Stance (×4 - counter), Repair Subroutine (×3), Ram (×2 - trample), Overload (×2 - 7d6 burst), Summon Drones (×2), Shutdown (×1 - hibernation heal).</p>
-            <p><strong>Special:</strong> Construct (immune Taint/Morale), Heavy Armor (reduce damage by 4), Repair Protocol (recover 1 card if drones nearby).</p>
-            <p><strong>Tactics:</strong> Defensive tank. Stands ground, counters melee, repairs. Summons drones for support.</p>
-            <p><strong>Loot:</strong> 200 Credits, 5 Scrap (guaranteed), Equipment roll, 1/4 chance "Golem Core" (Relic: +1 Armor permanent).</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'engine-wraith\')">
-            <h3>8. Engine Wraith</h3>
-            <span class="enemy-type">Elite (Supernatural)</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">12</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">6</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>AI (12 cards):</strong> Phase Strike (×4 - teleport attack + Taint), Drain Life (×3 - lifesteal), Void Shift (×2 - teleport + echo), Taint Pulse (×2 - AOE Taint), Reality Anchor (×1 - immobilize).</p>
-            <p><strong>Special:</strong> Ethereal (can't be hit by melee unless it attacked you), Taint Incarnate (+1 dmg per Taint on target, max +5), Death Explosion (3 Taint to all nearby).</p>
-            <p><strong>Tactics:</strong> Teleports constantly. Drains life, spreads Taint, leaves echoes. Kill fast before Taint accumulates.</p>
-            <p><strong>Loot:</strong> 100 Credits, 0 Scrap (ethereal), Loot roll, guaranteed 1 Soulstone Fragment.</p>
-        </div>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Boss Enemies (30-60 HP)</h2>
-
-        <div class="enemy-grid">
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal('tainted-leviathan')">
-            <h3>9. Tainted Leviathan</h3>
-            <span class="enemy-type">Boss (Monster)</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">40</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">5</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>Phases:</strong> Phase 1 (40-25 HP) Basic attacks. Phase 2 (24-10 HP) Enraged (+2 dmg, +1 Move). Phase 3 (9-0 HP) Berserk (AOE, regeneration).</p>
-            <p><strong>AI Phase 1 (40 cards):</strong> Crushing Bite (×10), Tail Sweep (×6 - AOE knockback), Charge (×5 - trample), Regenerate (×4), Roar (×3 - terror), Focus Fire (×2).</p>
-            <p><strong>Phase 2 adds:</strong> Enraged Frenzy (×2 - attack twice), Taint Burst (×2 - AOE Taint + damage), Desperate Lunge (×1 - 10d6 attack).</p>
-            <p><strong>Phase 3 adds:</strong> Death Throes (×2 - AOE + massive heal), Final Stand (×2 - 12d6 execute), Apocalyptic Roar (×1 - mental attack).</p>
-            <p><strong>Special:</strong> Massive (4 hexes), Armored Hide (reduce damage by 5), Taint Regeneration, Death Explosion (8d6 + 5 Taint to all nearby).</p>
-            <p><strong>Loot:</strong> 500 Credits, 8d6 Scrap, roll 3× Equipment, guaranteed "Leviathan Fang" (Legendary weapon).</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal('rogue-casket')">
-            <h3>10. Rogue Casket (Enemy Pilot)</h3>
-            <span class="enemy-type">Boss (Rival Pilot)</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">30</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">5</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">2</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>AI:</strong> Uses full player mechanics (30-card deck, SP economy, Component Damage, Heat, reshuffles). Draws 6 cards per turn, plays best 3 based on priority logic.</p>
-            <p><strong>AI Priority:</strong> If below 10 HP → defensive cards. If in melee → Primary Weapon attacks. If 3-6 hexes → move closer or ranged. If 7+ hexes → sprint. If Heat 5+ → cooling.</p>
-            <p><strong>Special:</strong> Player Mechanics (full Casket rules), Faction Traits (random faction bonuses), Veteran Pilot (Grit 2).</p>
-            <p><strong>Tactics:</strong> Fights like player. Manages SP, uses cover, flanks, retreats when low. Most challenging non-boss enemy.</p>
-            <p><strong>Loot:</strong> 300 Credits, 4d6 Scrap, loot entire enemy deck (30 cards), roll Legendary Table.</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal('bonelord-thresh')">
-            <h3>11. Bonelord Thresh (Ossuarium Boss)</h3>
-            <span class="enemy-type">Boss (Faction Champion)</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">50</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>Phases:</strong> Phase 1 (50-35 HP) Summons undead. Phase 2 (34-15 HP) Lifesteal attacks. Phase 3 (14-0 HP) Resurrection + AOE corruption.</p>
-            <p><strong>AI Phase 1 (50 cards):</strong> Soul Harvest (×12 - lifesteal on kill), Raise Dead (×8 - summon Bone Thralls), Bone Armor (×6), Necrotic Bolt (×5 - ranged + Taint), Move (×5), Defend (×4).</p>
-            <p><strong>Phase 2 adds:</strong> Vampiric Strike (×4 - 6d6 lifesteal + Bleed), Mass Raise Dead (×2 - summon 6 empowered Thralls), Siphon Life (×2 - AOE lifesteal).</p>
-            <p><strong>Phase 3 adds:</strong> Resurrection (×1 - once per battle, return with 15 HP), Apocalyptic Harvest (×3 - 5d6 + 3 Taint AOE), The Ledger's Command (×3 - sacrifice Thralls for heal).</p>
-            <p><strong>Special:</strong> Ossuarium (Decay cards), Necromantic Aura (auto-summon Thralls from corpses), The Ledger (+1 dmg per kill, stacks infinitely), Undying (50% resurrect once at 10 HP).</p>
-            <p><strong>Loot:</strong> 600 Credits, 10d6 Scrap, roll 4× Equipment, guaranteed "The Ledger" (Legendary cursed relic).</p>
-        </div>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Subfaction Enemy Variants</h2>
-
-        <p class="manuscript-text">
-            <strong>Warhammer-style schisms create faction-specific enemies.</strong> When you fight Church Scourged, Ashbound Dwarves, or Thornblood Elves, use the base enemy stat blocks (Church Zealot, Dwarven Ironclad, etc.) but apply subfaction tactical modifiers.
-        </p>
-
-        <div class="enemy-grid">
-        <div class="enemy-card" style="border-color: #ff4444;">
-            <h3>Scourged Zealot (Church Renegade)</h3>
-            <span class="enemy-type">Elite (Scourged)</span>
-            <p><strong>Base:</strong> Church Zealot (18 HP, Armor 1, 5 SP)</p>
-            <p><strong>Subfaction Modifiers:</strong></p>
-            <ul style="font-size: 0.9rem;">
-                <li><strong>Extreme Blood Offering:</strong> Uses Blood Offering every turn, even inefficiently (prioritizes self-harm over tactics)</li>
-                <li><strong>Martyrdom Addiction:</strong> Uses Martyrdom Protocol recklessly, even when allies don't need it</li>
-                <li><strong>Reject Healing:</strong> Never uses Consecrated Ground on self (refuses "gift of torment rejection")</li>
-                <li><strong>Inverse Power:</strong> At 8 HP or below, gains +2 damage to all attacks (more wounded = more faithful)</li>
-            </ul>
-            <p><strong>Tactics:</strong> Suicidal aggression. Spams self-harm. Becomes deadly when near death. "Pain IS salvation."</p>
-            <p><strong>Loot:</strong> Same as Church Zealot + 1/10 chance "Scourged Brand" (cursed relic: +3 dmg, gain 1 Taint per turn)</p>
-        </div>
-
-        <div class="enemy-card" style="border-color: #d4af37;">
-            <h3>Ashbound Ironclad (Dwarven Renegade)</h3>
-            <span class="enemy-type">Elite (Ashbound)</span>
-            <p><strong>Base:</strong> Dwarven Ironclad (22 HP, Armor 3, 4 SP)</p>
-            <p><strong>Subfaction Modifiers:</strong></p>
-            <ul style="font-size: 0.9rem;">
-                <li><strong>Corrupted Runes:</strong> Gains Rune Counters faster (costs 1 SP instead of 2), but gains 1 Taint per Rune</li>
-                <li><strong>Unstable Defense:</strong> Rune Counters provide +2 damage reduction (not +1), but roll 1d6 each use—on 1-3, Rune fails and is lost</li>
-                <li><strong>Tainted Fury:</strong> Can spend 3 Taint to gain +3 damage for 1 turn (weaponize corruption)</li>
-                <li><strong>Explosive Overload:</strong> When below 10 HP, can spend all Runes + all Taint for massive AOE (3 hex radius, 8d6)</li>
-            </ul>
-            <p><strong>Tactics:</strong> High-risk power. Faster rune gain but unstable. Accumulates Taint, then explodes. "Purity is weakness."</p>
-            <p><strong>Loot:</strong> Same as Dwarven Ironclad + guaranteed "Corrupted Rune Shard" (Tainted crafting material)</p>
-        </div>
-
-        <div class="enemy-card" style="border-color: #228B22;">
-            <h3>Thornblood Stalker (Elven Renegade)</h3>
-            <span class="enemy-type">Elite (Thornblood)</span>
-            <p><strong>Base:</strong> Elven Verdant Stalker (16 HP, Armor 1, 5 SP)</p>
-            <p><strong>Subfaction Modifiers:</strong></p>
-            <ul style="font-size: 0.9rem;">
-                <li><strong>Aggressive Bleed:</strong> All attacks apply +1 Bleed (Thorn Strike becomes Bleed 3 instead of 2)</li>
-                <li><strong>No Regeneration:</strong> Cannot use Verdant Regeneration or Photosynthesis (rejected healing in favor of offense)</li>
-                <li><strong>Carnivorous Terrain:</strong> Forest hexes deal 2 damage to ALL units (including allies), but Thornbloods ignore this</li>
-                <li><strong>Berserk Fury:</strong> At 8 HP or below, gain +3 damage to all attacks (low HP = maximum aggression)</li>
-            </ul>
-            <p><strong>Tactics:</strong> Glass cannon assassin. Maximum Bleed stacking, no defensive play, suicide charges. "We are the thorns."</p>
-            <p><strong>Loot:</strong> Same as Elven Stalker + 1/8 chance "Thornblood Toxin" (poison crafting material)</p>
-        </div>
-
-        <div class="enemy-card" style="border-color: #8b6914;">
-            <h3>Branded Hunter (Nomad Renegade)</h3>
-            <span class="enemy-type">Elite (Branded)</span>
-            <p><strong>Base:</strong> Bandit Captain stats (20 HP, Armor 2, 5 SP) but solo hunter</p>
-            <p><strong>Subfaction Modifiers:</strong></p>
-            <ul style="font-size: 0.9rem;">
-                <li><strong>Vendetta Mark:</strong> At battle start, marks 1 player. Deal +3 damage to marked target, ignore their Defense</li>
-                <li><strong>No Retreat:</strong> Cannot sprint away or disengage while marked target alive (locked in pursuit)</li>
-                <li><strong>Blood Contract:</strong> If marked target dies, gain +2 SP permanently rest of battle</li>
-                <li><strong>Suicide Pursuit:</strong> Can spend all SP to teleport 10 hexes toward marked target (desperate chase)</li>
-            </ul>
-            <p><strong>Tactics:</strong> Single-minded assassination. Ignores everyone except marked target. High-risk tunnel vision. "Every debt. Every scar."</p>
-            <p><strong>Loot:</strong> 120 Credits, 2d3 Scrap, Equipment roll, 1/6 chance "Brand of Vengeance" (cursed mark)</p>
-        </div>
-        </div>
-
-        <div style="background: rgba(139, 0, 0, 0.2); border: 2px solid #660000; padding: 1.5rem; margin: 2rem 0;">
-            <h3 style="margin-top: 0; color: #8B0000;">Using Subfaction Enemies</h3>
-            <p><strong>When to Deploy:</strong> Campaign missions against renegade factions, mirror matches, settlement defense vs splinter groups, special "civil war" scenarios.</p>
-            <p><strong>How to Run:</strong> Use base enemy AI behavior deck, but apply subfaction tactical modifiers. Example: Scourged Zealot uses Church Zealot deck, but ALWAYS plays Blood Offering first, refuses healing cards on self.</p>
-            <p><strong>Lore Integration:</strong> "You're not fighting the Church of Absolution. You're fighting <em>The Scourged</em>—heretics who believe pain IS salvation. They fight like zealots because they <em>are</em> zealots."</p>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Mission Templates</h2>
-
-        <h3>Swarm Mission (10-15 enemies):</h3>
-        <ul>
-            <li>8× Tainted Rats</li>
-            <li>4× Corrupted Villagers</li>
-            <li>2× Scrap Drones</li>
-        </ul>
-        <p><strong>Goal:</strong> Overwhelm players with numbers. Teach target prioritization.</p>
-
-        <h3>Elite Mission (3-5 enemies):</h3>
-        <ul>
-            <li>2× Bandit Raiders</li>
-            <li>1× Bandit Captain (leader)</li>
-            <li>1× Scrap Golem (guardian)</li>
-        </ul>
-        <p><strong>Goal:</strong> Tactical combat. Coordinate to kill leader/tank.</p>
-
-        <h3>Boss Mission (1 boss + minions):</h3>
-        <ul>
-            <li>1× Tainted Leviathan</li>
-            <li>4× Tainted Rats (adds)</li>
-            <li>Spawns 2× Corrupted Villagers each Phase</li>
-        </ul>
-        <p><strong>Goal:</strong> Epic encounter. Manage boss + adds simultaneously.</p>
-
-        <h3>Settlement Defense (2d6 roll):</h3>
-
-        <table>
-            <thead>
-                <tr><th>2d6</th><th>Attack Force</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>2-4</td><td>10× Tainted Rats + 3× Corrupted Villagers</td></tr>
-                <tr><td>5-7</td><td>4× Bandit Raiders + 1× Bandit Captain</td></tr>
-                <tr><td>8-10</td><td>1× Tainted Ogre + 6× Tainted Wolves</td></tr>
-                <tr><td>11-12</td><td>1× Rogue Casket (rival faction)</td></tr>
-            </tbody>
-        </table>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Additional Enemies</h2>
-
-        <div class="enemy-grid">
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'tainted-wolf\')">
-            <h3>12. Tainted Wolf Pack</h3>
-            <span class="enemy-type">Swarm</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">5</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">6</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">3</div></div>
-            </div>
-            <p><strong>AI:</strong> Pack Tactics (×3) - If 2+ wolves nearby, attack 2d6 + bleed. Flanking Strike (×2) - Bonus damage from rear. Howl (×1) - Call reinforcements (summon 1 wolf).</p>
-            <p><strong>Special:</strong> Pack Hunter (+1 dmg per adjacent wolf, max +3), Relentless (move +2 hexes when charging), Taint-Touched (inflict 1 Taint per 3 damage).</p>
-            <p><strong>Tactics:</strong> Deploy 4-6. Surround target, flank, howl for more. Fast and deadly in packs.</p>
-            <p><strong>Loot:</strong> 10 Credits per wolf, 1/8 chance "Tainted Wolf Pelt" (crafting material).</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'church-zealot\')">
-            <h3>13. Church Zealot</h3>
-            <span class="enemy-type">Elite</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">18</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>AI (18 cards):</strong> Blood Offering + Strike (×5 - self-harm for +3 dmg), Martyrdom Protocol (×3 - protect allies), Divine Judgment (×2 - execute), Consecrated Ground (×2 - heal zone), Righteous Fury (×2 - damage buff), Desperate Attack (×2), Crusader's Charge (×2).</p>
-            <p><strong>Special:</strong> Martyr's Blessing (when below 10 HP, all attacks +2 dmg), Faith Shield (reduce first damage each turn by 2), Absolution (at death, heal all nearby Church allies 2 cards).</p>
-            <p><strong>Tactics:</strong> Aggressive self-harm for massive damage. Protects weaker allies. Becomes deadlier when wounded. Deploy with Church support units.</p>
-            <p><strong>Loot:</strong> 120 Credits, 2d3 Scrap, Equipment roll, 1/6 chance "Penitent Blade" (Church primary weapon).</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'dwarven-ironclad\')">
-            <h3>14. Dwarven Ironclad</h3>
-            <span class="enemy-type">Elite</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">22</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">4</div></div>
-            </div>
-            <p><strong>AI (22 cards):</strong> Runic Strike (×6 - armor piercing), Forge-Ward (×4 - gain Rune), Earthshaker (×3 - AOE), Defensive Stance (×3), Rune Overcharge (×2 - spend Runes for burst), Grudge Strike (×2 - +2 vs marked), Mountain Stance (×2 - immobile +3 Defense).</p>
-            <p><strong>Special:</strong> Rune Counter System (reduce damage by 1 per Rune, max 5), Ironborn (ignore 1st Component Damage per round), Stone Endurance (+5 max HP), Grudge Bearer (mark attackers, +2 dmg vs marked).</p>
-            <p><strong>Tactics:</strong> Ultimate tank. Builds Runes, stands ground, punishes attackers. Slow but nearly unkillable. Requires sustained focus fire.</p>
-            <p><strong>Loot:</strong> 180 Credits, 4d3 Scrap, Equipment roll, 1/5 chance "Runic Warhammer" (Dwarven primary weapon).</p>
-        </div>
-
-        <div class="enemy-card clickable" onclick="openBehaviorModal(\'elven-stalker\')">
-            <h3>15. Elven Verdant Stalker</h3>
-            <span class="enemy-type">Elite</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">16</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">5</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>AI (16 cards):</strong> Thorn Strike (×5 - 3d6 + Bleed 2), Piercing Arrow (×3 - ranged ignore Defense), Root Bind (×2 - immobilize), Leaf Dance (×2 - attack during movement), Sylvan Step (×1 - teleport), Verdant Regeneration (×2 - passive heal), Camouflage (×1 - stealth).</p>
-            <p><strong>Special:</strong> Bleed Master (Bleed damage stacks, max 6 per turn), Nature's Wrath (at 3+ Bleed stacks, attacks deal +2 dmg), Photosynthesis (recover 1 card per turn if not attacked), Forest Step (teleport once per turn).</p>
-            <p><strong>Tactics:</strong> Mobile hit-and-run. Stacks Bleed, kites, teleports. Becomes deadly if left unchecked (Bleed stacks to max 10). Catch early or suffer.</p>
-            <p><strong>Loot:</strong> 140 Credits, 2d3 Scrap, Equipment roll, 1/5 chance "Thornwood Bow" (Elven primary weapon).</p>
-        </div>
-
-        <!-- New Faction Enemies -->
-        <div class="enemy-card">
-            <h3>16. Exchange Enforcer</h3>
-            <span class="enemy-type">Elite</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">20</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">4</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">2</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>AI (20 cards):</strong> Soul Drain (×5 - 3d6 + steal 1 SP), Contract Breach (×4 - double damage vs marked), Binding Clause (×3 - mark target), Debt Collector (×2 - execute low HP), Ledger Balance (×2 - swap HP with target), Foreclosure (×2 - steal equipment), Predatory Loan (×2 - forced card discard).</p>
-            <p><strong>Special:</strong> The Ledger (tracks all damage dealt, heals 1 HP per 5 damage), Compounding Interest (+1 damage per turn vs same target), Contract Enforcement (marked targets cannot flee), Soul Binding (prevent enemy healing).</p>
-            <p><strong>Tactics:</strong> Economic warfare. Marks high-value targets, drains resources. Excels at prolonged fights. Terrifying in 1v1 scenarios.</p>
-            <p><strong>Loot:</strong> 200 Credits (always), 2d6 Scrap, Equipment roll, 1/4 chance "Soul Ledger" (Exchange artifact - track enemy resources).</p>
-        </div>
-
-        <div class="enemy-card">
-            <h3>17. Nomad Outrider</h3>
-            <span class="enemy-type">Elite</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">15</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">7</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">6</div></div>
-            </div>
-            <p><strong>AI (15 cards):</strong> Hit-and-Run (×5 - attack + retreat), Scavenging Strike (×3 - damage + steal Scrap), Wasteland Tactics (×2 - terrain advantage), Sandstorm (×2 - AOE blind), Emergency Repair (×1 - heal 5 HP), Swift Repositioning (×2 - teleport to edge of map).</p>
-            <p><strong>Special:</strong> Fastest Unit (7 Move), Scavenger King (gain 1 Scrap per kill), Desert Born (immune to terrain penalties), Hit-and-Fade (can attack then move full distance).</p>
-            <p><strong>Tactics:</strong> Never stands still. Harasses from range, steals resources, vanishes before retaliation. Chase exhausts pursuers. Best countered with traps or ranged focus.</p>
-            <p><strong>Loot:</strong> 100 Credits, 3d6 Scrap (they're carrying stolen salvage), 1/6 chance "Sandrunner Engine" (Nomad mobility upgrade).</p>
-        </div>
-
-        <div class="enemy-card">
-            <h3>18. Blighted Plague Bearer</h3>
-            <span class="enemy-type">Elite</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">18</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">3</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">1</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">4</div></div>
-            </div>
-            <p><strong>AI (18 cards):</strong> Plague Touch (×6 - 2d6 + inflict Disease), Miasma Cloud (×4 - AOE Taint damage), Shambling Advance (×3 - slow unstoppable movement), Festering Wounds (×2 - prevent healing), Death Throes (×1 - explode on death), Undying Resilience (×2 - ignore fatal damage once).</p>
-            <p><strong>Special:</strong> Disease Vector (all adjacent units gain 1 Taint per turn), Toxic Aura (reduce enemy healing by 50%), Corpse Explosion (on death: 3d6 AOE damage 3 hex radius), Undead Resilience (ignore first fatal blow, revive at 5 HP).</p>
-            <p><strong>Tactics:</strong> Walking biohazard. Slow but devastating. Keep distance or suffer Taint accumulation. Kill fast or it explodes. Highly dangerous in enclosed spaces.</p>
-            <p><strong>Loot:</strong> 80 Credits, 1d3 Scrap (contaminated), 1/3 chance "Plague Vial" (bio-weapon - one-use AOE Taint attack).</p>
-        </div>
-
-        <div class="enemy-card">
-            <h3>19. Crucible Pact Berserker</h3>
-            <span class="enemy-type">Elite</span>
-            <div class="enemy-stats">
-                <div class="stat"><div class="stat-label">HP</div><div class="stat-value">24</div></div>
-                <div class="stat"><div class="stat-label">Move</div><div class="stat-value">5</div></div>
-                <div class="stat"><div class="stat-label">Armor</div><div class="stat-value">2</div></div>
-                <div class="stat"><div class="stat-label">SP</div><div class="stat-value">5</div></div>
-            </div>
-            <p><strong>AI (24 cards):</strong> Rage Strike (×8 - 4d6 reckless attack), War Cry (×4 - buff allies), Cleave (×3 - hit multiple targets), Blood Frenzy (×3 - gain attack speed), Intimidate (×2 - fear AOE), Last Stand (×2 - power spike at low HP), Reckless Charge (×2 - charge ignoring damage).</p>
-            <p><strong>Special:</strong> Blood Rage (gain +1 damage per 5 HP lost, max +4), Unstoppable (cannot be stunned/immobilized), Intimidating Presence (enemies within 3 hexes: -1 to all rolls), Berserker's Last Breath (at 0 HP: take 2 more actions before dying).</p>
-            <p><strong>Tactics:</strong> Pure aggression. Gets stronger when wounded. Charges directly at strongest enemy. Ignore at your peril—will tear through backline. Focus fire before it snowballs.</p>
-            <p><strong>Loot:</strong> 160 Credits, 3d3 Scrap, Equipment roll, 1/5 chance "Pact Warblade" (Crucible primary weapon - gains damage when wielder is wounded).</p>
-        </div>
-        </div>
-
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: #8B0000;">&#10047;</span></div>
-
-        <h2>Integration with Other v3.0 Systems</h2>
-
-        <div style="background: rgba(139, 0, 0, 0.2); border: 2px solid #660000; padding: 1.5rem; margin: 2rem 0;">
-            <h3 style="margin-top: 0; color: #8B0000;">Cross-References</h3>
-            <ul style="margin-bottom: 0;">
-                <li><strong><a href="enemies-anomalous.html" target="_parent" style="color: #ff4444;">Anomalous Bestiary</a>:</strong> Poenitentia/Damnatio/Absolutio-class supernatural threats</li>
-                <li><strong><a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a>:</strong> Settlement Defense event uses bestiary</li>
-                <li><strong><a href="campaign-loot-tables.html" target="_parent">Loot Tables</a>:</strong> Enemy loot drops reference equipment tables</li>
-                <li><strong><a href="rules-combat.html" target="_parent">Combat Rules</a>:</strong> AI behavior cards use standard combat mechanics</li>
-                <li><strong><a href="rules-taint-exploitation.html" target="_parent">Taint Exploitation</a>:</strong> Many enemies inflict Taint damage</li>
-            </ul>
-        </div>
-
-        <div style="background: var(--shadow-black); border: 3px double #660000; padding: 2rem; margin: 3rem 0; font-style: italic;">
-            <p style="text-align: center; margin: 0; color: #8B0000;" class="no-drop-cap">
-                "They are not monsters. They are symptoms. The world is sick, and we are its cure."
-            </p>
-        </div>
-
-        <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double #660000; color: #8B0000; font-size: 0.9rem;">
-            <p><a href="enemies-anomalous.html" target="_parent" style="color: #ff4444;">Anomalous Bestiary</a> | <a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a> | <a href="campaign-loot-tables.html" target="_parent">Loot Tables</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
-        </div>
-    </div>
-
-    <!-- Behavior Deck Modal -->
-    <div id="behaviorModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2 id="modalEnemyName"></h2>
-                <span id="modalEnemyType" class="enemy-type"></span>
-            </div>
-            <div class="modal-body">
-                <div class="deck-stats">
-                    <h3 style="margin-top: 0; color: #ff4444;">Deck Statistics</h3>
-                    <div class="deck-stats-grid" id="deckStatsGrid"></div>
+        <div class="enemy-featured-container">
+            <div class="enemy-card">
+                <div class="enemy-type-label">Boss ★ Monster</div>
+                <h4>9. Tainted Leviathan</h4>
+                <div class="stats-row">
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">HP</div>
+                        <div class="stat-mini-value">40</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">MOVE</div>
+                        <div class="stat-mini-value">4</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">ARMOR</div>
+                        <div class="stat-mini-value">5</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">SP</div>
+                        <div class="stat-mini-value">5</div>
+                    </div>
                 </div>
-                <h3 style="color: #ff4444;">AI Behavior Deck</h3>
-                <div class="behavior-deck" id="behaviorDeck"></div>
+                <p><strong>Phases:</strong> Phase 1 (40–25 HP) Basic attacks. Phase 2 (24–10 HP) Enraged (+2 dmg). Phase 3 (9–0 HP) Berserk + regeneration.</p>
+                <p><strong>Abilities:</strong> Crushing Bite (5d6 + knockback), Tail Sweep (AOE), Charge (trample), Regenerate, Roar (terror).</p>
+                <p style="margin-top: 0.5rem; font-style: italic; color: var(--aged-gold);">Massive 4-hex creature. Must focus fire before reaching melee range.</p>
             </div>
+
+            <div class="enemy-card">
+                <div class="enemy-type-label">Boss ★ Faction Champion</div>
+                <h4>11. Bonelord Thresh</h4>
+                <div class="stats-row">
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">HP</div>
+                        <div class="stat-mini-value">50</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">MOVE</div>
+                        <div class="stat-mini-value">4</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">ARMOR</div>
+                        <div class="stat-mini-value">3</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">SP</div>
+                        <div class="stat-mini-value">5</div>
+                    </div>
+                </div>
+                <p><strong>Phases:</strong> Phase 1 Summons undead. Phase 2 Lifesteal attacks. Phase 3 Resurrection + AOE corruption.</p>
+                <p><strong>Abilities:</strong> Soul Harvest (lifesteal on kill), Raise Dead (summon minions), Vampiric Strike, Mass Raise Dead, Apocalyptic Harvest.</p>
+                <p style="margin-top: 0.5rem; font-style: italic; color: var(--aged-gold);">Ossuarium champion. Becomes stronger with each minion summoned.</p>
+            </div>
+
+            <div class="enemy-card">
+                <div class="enemy-type-label">Boss ★ Rival Pilot</div>
+                <h4>10. Rogue Casket</h4>
+                <div class="stats-row">
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">HP</div>
+                        <div class="stat-mini-value">30</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">MOVE</div>
+                        <div class="stat-mini-value">5</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">ARMOR</div>
+                        <div class="stat-mini-value">2</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="stat-mini-label">SP</div>
+                        <div class="stat-mini-value">5</div>
+                    </div>
+                </div>
+                <p><strong>Mechanics:</strong> Uses full player rules. 30-card deck, SP economy, Component Damage, Heat management.</p>
+                <p><strong>AI Priority:</strong> Below 10 HP → defensive. In melee → attack. 3–6 hexes → move/ranged. 7+ → sprint.</p>
+                <p style="margin-top: 0.5rem; font-style: italic; color: var(--aged-gold);">Enemy pilot fights exactly like players do. Veteran (Grit 2) with faction abilities.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
+        </div>
+
+        <div class="section-header">▼ Swarm Enemies (3–5 HP), Deploy 5–10 per Mission</div>
+
+        <p class="category-intro">
+            Fast, weak, and deployed in groups. Best countered with AOE attacks or focused fire. Individually harmless, but dangerous in numbers.
+        </p>
+
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleEnemyDropdown('swarm')">Expand All Swarm Enemies (5 types) ▼</button>
+            <div class="dropdown-content" id="swarm-content">
+                <div class="enemy-item">
+                    <div class="enemy-item-header">1. Tainted Rat Swarm</div>
+                    <div class="enemy-item-type">Swarm</div>
+                    <div class="enemy-item-stats">HP: 3 | MOVE: 4 | ARMOR: 0 | SP: 2</div>
+                    <div class="enemy-item-description"><strong>AI:</strong> Swarm Tactics (×2) + Panic Scatter (×1). Diseased Bite (target gains 1 Taint on failed save). Deploy 5–10. Swarm from multiple directions. Die easily but overwhelm with numbers.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">2. Corrupted Villager</div>
+                    <div class="enemy-item-type">Swarm</div>
+                    <div class="enemy-item-stats">HP: 5 | MOVE: 3 | ARMOR: 0 | SP: 3</div>
+                    <div class="enemy-item-description"><strong>AI:</strong> Shambling Advance (×3) + Desperate Lunge (×1) + Tainted Scream (×1). Engine-Touched (explodes for 1d6 when killed). Deploy 3–5. Mix with rats for chaotic combat.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">3. Scrap Drone</div>
+                    <div class="enemy-item-type">Swarm (Construct)</div>
+                    <div class="enemy-item-stats">HP: 4 | MOVE: 5 | ARMOR: 1 | SP: 4</div>
+                    <div class="enemy-item-description"><strong>AI:</strong> Patrol (×2) + Self-Destruct (×1) + Repair Protocol (×1). Flying (ignores terrain). Deploy 4–6. Patrol, harass, kamikaze when low. Repair each other.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">12. Tainted Wolf Pack</div>
+                    <div class="enemy-item-type">Swarm</div>
+                    <div class="enemy-item-stats">HP: 5 | MOVE: 6 | ARMOR: 0 | SP: 3</div>
+                    <div class="enemy-item-description"><strong>AI:</strong> Pack Tactics (×3) + Flanking Strike (×2) + Howl (×1). Pack Hunter (synergy bonuses). Deploy 4–6. Surround target, flank, howl for reinforcements.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
+        </div>
+
+        <div class="section-header">▼ Elite Enemies (15–25 HP), Deploy 1–2 per Mission</div>
+
+        <p class="category-intro">
+            Tactical threats with complex behavior decks. Often carry loot. Require focus fire or specific countermeasures. Mini-bosses that define encounters.
+        </p>
+
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleEnemyDropdown('elite')">Expand All Elite Enemies (11 types) ▼</button>
+            <div class="dropdown-content" id="elite-content">
+                <div class="enemy-item">
+                    <div class="enemy-item-header">4. Bandit Raider</div>
+                    <div class="enemy-item-type">Elite</div>
+                    <div class="enemy-item-stats">HP: 15 | MOVE: 4 | ARMOR: 1 | SP: 4</div>
+                    <div class="enemy-item-description"><strong>AI (15 cards):</strong> Aggressive Strike (×5) + Flank (×3) + Defend (×2) + Grenade Throw (×2) + Retreat (×2) + Rally Cry (×1). Scavenger Armor (1d6, on 6 reduce damage by 2). Hit-and-run tactics.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">5. Bandit Captain</div>
+                    <div class="enemy-item-type">Elite (Leader)</div>
+                    <div class="enemy-item-stats">HP: 20 | MOVE: 4 | ARMOR: 2 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>AI (20 cards):</strong> Commanding Strike (×6, buffs allies) + Tactical Repositioning (×4) + Inspire Troops (×3) + Execute the Weak (×2). Leader Aura (all bandits +1 Attack within 4 hexes). Deploy with 3–5 Raiders. Kill Captain first.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">6. Tainted Ogre</div>
+                    <div class="enemy-item-type">Elite (Brute)</div>
+                    <div class="enemy-item-stats">HP: 25 | MOVE: 3 | ARMOR: 3 | SP: 4</div>
+                    <div class="enemy-item-description"><strong>AI (25 cards):</strong> Brutal Smash (×8, 5d6 + knockback) + Enraged Charge (×5) + Regenerate (×3) + Ground Slam (×3, AOE). Thick Hide (reduce damage by 3). Taint Regeneration (recover 1 card per turn at 5+ Taint). Slow but devastating.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">7. Scrap Golem</div>
+                    <div class="enemy-item-type">Elite (Construct)</div>
+                    <div class="enemy-item-stats">HP: 20 | MOVE: 3 | ARMOR: 4 | SP: 3</div>
+                    <div class="enemy-item-description"><strong>AI (20 cards):</strong> Hydraulic Punch (×6, armor-piercing) + Defensive Stance (×4, counter) + Repair Subroutine (×3) + Ram (×2) + Overload (×2). Heavy Armor (reduce damage by 4). Defensive tank. Repair Protocol if drones nearby.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">8. Engine Wraith</div>
+                    <div class="enemy-item-type">Elite (Supernatural)</div>
+                    <div class="enemy-item-stats">HP: 12 | MOVE: 6 | ARMOR: 0 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>AI (12 cards):</strong> Phase Strike (×4, teleport attack + Taint) + Drain Life (×3, lifesteal) + Void Shift (×2, teleport echo). Ethereal (can't be hit by melee unless attacked). Kill fast before Taint accumulates.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">13. Church Zealot</div>
+                    <div class="enemy-item-type">Elite (Faction)</div>
+                    <div class="enemy-item-stats">HP: 18 | MOVE: 4 | ARMOR: 1 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>AI (18 cards):</strong> Blood Offering + Strike (×5, self-harm for +3 dmg) + Martyrdom Protocol (×3, protect allies) + Divine Judgment (×2). Martyr's Blessing (at 8 HP or below, +2 dmg). Aggressive self-harm for massive damage.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">14. Dwarven Ironclad</div>
+                    <div class="enemy-item-type">Elite (Faction)</div>
+                    <div class="enemy-item-stats">HP: 22 | MOVE: 3 | ARMOR: 3 | SP: 4</div>
+                    <div class="enemy-item-description"><strong>AI (22 cards):</strong> Runic Strike (×6, armor-piercing) + Forge-Ward (×4, gain Rune) + Earthshaker (×3, AOE) + Rune Overcharge (×2). Rune Counter System (reduce damage by 1 per Rune, max 5). Ultimate tank. Requires sustained focus fire.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">15. Elven Verdant Stalker</div>
+                    <div class="enemy-item-type">Elite (Faction)</div>
+                    <div class="enemy-item-stats">HP: 16 | MOVE: 5 | ARMOR: 1 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>AI (16 cards):</strong> Thorn Strike (×5, 3d6 + Bleed 2) + Piercing Arrow (×3, ranged, ignore Defense) + Root Bind (×2, immobilize). Bleed Master (stacks to max 10). Mobile hit-and-run. Catch early or suffer.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">16. Exchange Enforcer</div>
+                    <div class="enemy-item-type">Elite (Faction)</div>
+                    <div class="enemy-item-stats">HP: 20 | MOVE: 4 | ARMOR: 2 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>AI (20 cards):</strong> Soul Drain (×5, 3d6 + steal 1 SP) + Contract Breach (×4, double damage vs marked). The Ledger (tracks damage, heals 1 HP per 5 damage). Compounding Interest (+1 dmg per turn vs same target). Economic warfare.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">17. Nomad Outrider</div>
+                    <div class="enemy-item-type">Elite (Faction)</div>
+                    <div class="enemy-item-stats">HP: 15 | MOVE: 7 | ARMOR: 1 | SP: 6</div>
+                    <div class="enemy-item-description"><strong>AI (15 cards):</strong> Hit-and-Run (×5, attack + retreat) + Scavenging Strike (×3, damage + steal Scrap). Fastest Unit (7 Move). Desert Born (immune to terrain penalties). Chase exhausts pursuers.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">19. Crucible Pact Berserker</div>
+                    <div class="enemy-item-type">Elite (Faction)</div>
+                    <div class="enemy-item-stats">HP: 24 | MOVE: 5 | ARMOR: 2 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>AI (24 cards):</strong> Rage Strike (×8, 4d6 reckless) + War Cry (×4, buff allies) + Cleave (×3, multi-hit). Blood Rage (+1 damage per 5 HP lost). Unstoppable (cannot be stunned). Pure aggression. Gets stronger when wounded.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">✦</span>
+        </div>
+
+        <div class="section-header">▼ Boss Enemies (30–60 HP), Mission Capstone</div>
+
+        <p class="category-intro">
+            Epic encounters. Complex AI with multiple phases. Every battle is a campaign moment. Bosses carry legendary loot and define the tone of your mission.
+        </p>
+
+        <div class="dropdown-container">
+            <button class="dropdown-toggle" onclick="toggleEnemyDropdown('boss')">Expand All Boss Enemies (3 types) ▼</button>
+            <div class="dropdown-content" id="boss-content">
+                <div class="enemy-item">
+                    <div class="enemy-item-header">9. Tainted Leviathan</div>
+                    <div class="enemy-item-type">Boss (Monster)</div>
+                    <div class="enemy-item-stats">HP: 40 | MOVE: 4 | ARMOR: 5 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>Phases:</strong> Phase 1 (40–25 HP) Basic attacks. Phase 2 (24–10 HP) Enraged (+2 dmg, +1 Move). Phase 3 (9–0 HP) Berserk (AOE, regeneration). <strong>AI:</strong> Crushing Bite (×10, 5d6 + knockback) + Tail Sweep (×6, AOE) + Charge (×5) + Regenerate (×4). Massive (4 hexes). Armored Hide (reduce damage by 5). Loot: 500 Credits, 8d6 Scrap, Leviathan Fang (Legendary).</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">10. Rogue Casket (Enemy Pilot)</div>
+                    <div class="enemy-item-type">Boss (Rival Pilot)</div>
+                    <div class="enemy-item-stats">HP: 30 | MOVE: 5 | ARMOR: 2 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>Mechanics:</strong> Full player rules. 30-card deck, SP economy, Component Damage, Heat management. <strong>AI Priority:</strong> Below 10 HP → defensive. In melee → attack. 3–6 hexes → move/ranged. 7+ hexes → sprint. Fights like player. Manages SP, uses cover, flanks, retreats. Loot: 300 Credits, 4d6 Scrap, entire enemy deck (30 cards), Legendary relic.</div>
+                </div>
+                <div class="enemy-item">
+                    <div class="enemy-item-header">11. Bonelord Thresh (Ossuarium Boss)</div>
+                    <div class="enemy-item-type">Boss (Faction Champion)</div>
+                    <div class="enemy-item-stats">HP: 50 | MOVE: 4 | ARMOR: 3 | SP: 5</div>
+                    <div class="enemy-item-description"><strong>Phases:</strong> Phase 1 (50–35 HP) Summons undead. Phase 2 (34–15 HP) Lifesteal attacks. Phase 3 (14–0 HP) Resurrection + AOE corruption. <strong>AI Phase 1 (50 cards):</strong> Soul Harvest (×12, lifesteal on kill) + Raise Dead (×8, summon Bone Thralls) + Bone Armor (×6) + Necrotic Bolt (×5). <strong>Phase 2 adds:</strong> Vampiric Strike (×4) + Mass Raise Dead (×2). <strong>Phase 3 adds:</strong> Resurrection (×1, once per battle) + Apocalyptic Harvest (×3, 5d6 + 3 Taint AOE). Necromantic Aura (auto-summon Thralls from corpses). The Ledger (+1 dmg per kill). Loot: 600 Credits, 10d6 Scrap, The Ledger (Legendary cursed relic).</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">✦</span>
         </div>
     </div>
 
     <script>
-        // Enemy behavior card data
-        const enemyBehaviors = {
-            'bandit-raider': {
-                name: '4. Bandit Raider',
-                type: 'Elite',
-                deckSize: 15,
-                cards: [
-                    { name: 'Aggressive Strike', count: 5, effect: 'Move adjacent if not in melee, then attack 3d6. Priority: Always execute if in range.' },
-                    { name: 'Flank', count: 3, effect: 'If ally adjacent to target, move to opposite side and attack 4d6 (flanking bonus). Trigger: Enemy has ally nearby.' },
-                    { name: 'Defend', count: 2, effect: 'Defensive Stance. +2 Defense until next turn. Trigger: Below 8 HP or no clear attack.' },
-                    { name: 'Grenade Throw', count: 2, effect: 'Ranged attack (6 hex range). 2d6 AOE damage (1 hex radius). Trigger: 3+ enemies clustered.' },
-                    { name: 'Retreat', count: 2, effect: 'Sprint away 6 hexes. Trigger: Below 5 HP.' },
-                    { name: 'Rally Cry', count: 1, effect: 'All allies within 4 hexes gain +1 Attack this turn. Trigger: 2+ allies nearby.' }
-                ]
-            },
-            'tainted-leviathan': {
-                name: '9. Tainted Leviathan',
-                type: 'Boss (Monster)',
-                deckSize: 40,
-                phases: [
-                    { name: 'Phase 1', hp: '40-25 HP', description: 'Basic attacks, building momentum' },
-                    { name: 'Phase 2', hp: '24-10 HP', description: 'Enraged: +2 damage, +1 Move' },
-                    { name: 'Phase 3', hp: '9-0 HP', description: 'Berserk: AOE attacks, regeneration' }
-                ],
-                cards: [
-                    { name: 'Crushing Bite', count: 10, effect: '5d6 melee damage + knockback 2 hexes. Priority: Always use if adjacent to target.' },
-                    { name: 'Tail Sweep', count: 6, effect: 'AOE attack (3 hex cone behind). 4d6 + knockback. Trigger: 2+ enemies in rear arc.' },
-                    { name: 'Charge', count: 5, effect: 'Sprint up to 6 hexes in straight line. Trample all in path (3d6 each). Trigger: No enemies adjacent.' },
-                    { name: 'Regenerate', count: 4, effect: 'Recover 2 cards from discard. Trigger: Below 20 HP.' },
-                    { name: 'Roar', count: 3, effect: 'AOE fear (4 hex radius). All enemies lose 2 SP. Trigger: Start of Phase 2/3.' },
-                    { name: 'Focus Fire', count: 2, effect: 'Attack same target twice (5d6 each). Trigger: Target below 50% HP.' },
-                    { name: 'Enraged Frenzy', count: 2, effect: '[Phase 2+] Attack twice (7d6 each, +2 from Enraged). Costs 6 SP. Trigger: Phase 2+.' },
-                    { name: 'Taint Burst', count: 2, effect: '[Phase 2+] AOE (2 hex radius). 5d6 + 2 Taint to all hit. Trigger: 3+ enemies clustered.' },
-                    { name: 'Desperate Lunge', count: 1, effect: '[Phase 2+] 10d6 single-target attack. Take 3 self-damage. Trigger: Below 15 HP.' },
-                    { name: 'Death Throes', count: 2, effect: '[Phase 3 only] AOE 6d6 (3 hex radius) + heal 5 cards. Trigger: Below 10 HP.' },
-                    { name: 'Final Stand', count: 2, effect: '[Phase 3 only] 12d6 execute attack vs lowest HP target. Trigger: Below 5 HP.' },
-                    { name: 'Apocalyptic Roar', count: 1, effect: '[Phase 3 only] Mental attack. All enemies: 4d6 psychic + lose all SP. Once per battle. Trigger: Entering Phase 3.' }
-                ]
-            },
-            'tainted-rat': {
-                name: '1. Tainted Rat Swarm',
-                type: 'Swarm',
-                deckSize: 3,
-                cards: [
-                    { name: 'Swarm Tactics', count: 2, effect: 'If 2+ rat allies within 2 hexes, attack 1d6 + Diseased Bite. Else, move closer to ally rats.' },
-                    { name: 'Panic Scatter', count: 1, effect: 'If below 2 HP, sprint away 6 hexes (random direction). Cannot attack this turn.' }
-                ]
-            },
-            'corrupted-villager': {
-                name: '2. Corrupted Villager',
-                type: 'Swarm',
-                deckSize: 5,
-                cards: [
-                    { name: 'Shambling Advance', count: 3, effect: 'Move toward nearest enemy. If adjacent, attack 2d6. Simple, relentless.' },
-                    { name: 'Desperate Lunge', count: 1, effect: 'Sprint 4 hexes toward target, attack 3d6, take 1 self-damage. Trigger: Target within 6 hexes.' },
-                    { name: 'Tainted Scream', count: 1, effect: 'AOE fear (3 hex radius). All enemies lose 1 SP. Trigger: 2+ enemies nearby.' }
-                ]
-            },
-            'scrap-drone': {
-                name: '3. Scrap Drone',
-                type: 'Swarm (Construct)',
-                deckSize: 4,
-                cards: [
-                    { name: 'Patrol', count: 2, effect: 'Move randomly 3 hexes. If enemy within 6 hexes, attack 1d6 ranged. Flying (ignores terrain).' },
-                    { name: 'Self-Destruct', count: 1, effect: 'If below 2 HP, kamikaze nearest enemy. Explode for 3d6 damage (1 hex radius). Drone destroyed.' },
-                    { name: 'Repair Protocol', count: 1, effect: 'Heal adjacent ally drone 1 card. Trigger: Ally drone below 50% HP.' }
-                ]
-            },
-            'bandit-captain': {
-                name: '5. Bandit Captain',
-                type: 'Elite (Leader)',
-                deckSize: 20,
-                cards: [
-                    { name: 'Commanding Strike', count: 6, effect: 'Attack 4d6. All bandit allies within 4 hexes gain +1 damage this turn. Leadership buff.' },
-                    { name: 'Tactical Repositioning', count: 4, effect: 'Move 5 hexes. 1 ally within 4 hexes can immediately move 3 hexes (coordinated movement).' },
-                    { name: 'Inspire Troops', count: 3, effect: 'All allies within 4 hexes gain +2 Defense until Captain\'s next turn. Rally ability.' },
-                    { name: 'Execute the Weak', count: 2, effect: 'Attack enemy below 8 HP for 6d6, ignoring Defense. Execute mechanic.' },
-                    { name: 'Desperate Gambit', count: 2, effect: 'Attack 5d6, take 2 self-damage. Trigger: Below 10 HP.' },
-                    { name: 'Tactical Retreat', count: 2, effect: 'Sprint 6 hexes away. All allies within 4 hexes can move 3 hexes. Trigger: Below 8 HP.' },
-                    { name: 'Smoke Grenade', count: 1, effect: 'Create 2 hex smoke cloud. Enemies inside have -2 to ranged attacks. Lasts 2 turns.' }
-                ]
-            },
-            'tainted-ogre': {
-                name: '6. Tainted Ogre',
-                type: 'Elite (Brute)',
-                deckSize: 25,
-                cards: [
-                    { name: 'Brutal Smash', count: 8, effect: '5d6 melee damage + knockback 2 hexes. Always use if adjacent. Simple but devastating.' },
-                    { name: 'Enraged Charge', count: 5, effect: 'Sprint 5 hexes straight line, attack 6d6 if hit target. Trigger: No enemies adjacent.' },
-                    { name: 'Regenerate', count: 3, effect: 'Recover 2 cards from discard pile. Trigger: Below 15 HP or at 5+ Taint.' },
-                    { name: 'Ground Slam', count: 3, effect: 'AOE attack (2 hex radius). 4d6 damage + knockdown (lose 1 SP). Costs 3 SP.' },
-                    { name: 'Intimidating Roar', count: 2, effect: 'All enemies within 4 hexes: Willpower Save (1d6+Grit, need 5+). Fail: lose 2 SP.' },
-                    { name: 'Berserk Rage', count: 2, effect: '[At 10 HP or below] Attack twice (5d6 each). Ignore pain, pure fury.' },
-                    { name: 'Cannibalize', count: 1, effect: 'If corpse within 2 hexes, consume it. Heal 3 cards. Disturbing.' },
-                    { name: 'Throw Boulder', count: 1, effect: 'Ranged attack (8 hex range). 4d6 + knockback 3 hexes. Once per battle.' }
-                ]
-            },
-            'scrap-golem': {
-                name: '7. Scrap Golem',
-                type: 'Elite (Construct)',
-                deckSize: 20,
-                cards: [
-                    { name: 'Hydraulic Punch', count: 6, effect: '4d6 armor-piercing (ignore 2 Defense). Trigger: Enemy adjacent.' },
-                    { name: 'Defensive Stance', count: 4, effect: '+3 Defense until next turn. If attacked during this, counter for 3d6.' },
-                    { name: 'Repair Subroutine', count: 3, effect: 'Recover 2 cards from discard. If drones within 3 hexes, heal 3 cards instead.' },
-                    { name: 'Ram', count: 2, effect: 'Sprint 4 hexes straight line. Trample all in path (3d6 each + knockback).' },
-                    { name: 'Overload', count: 2, effect: 'Charge attack 7d6, take 2 self-damage. Trigger: Below 12 HP (desperation).' },
-                    { name: 'Summon Drones', count: 2, effect: 'Spawn 2 Scrap Drones adjacent to Golem. Max 4 drones on field.' },
-                    { name: 'Shutdown', count: 1, effect: 'Enter hibernation. Cannot act for 1 turn, but heal 5 cards. Emergency repair.' }
-                ]
-            },
-            'engine-wraith': {
-                name: '8. Engine Wraith',
-                type: 'Elite (Supernatural)',
-                deckSize: 12,
-                cards: [
-                    { name: 'Phase Strike', count: 4, effect: 'Teleport adjacent to target, attack 3d6 + inflict 1 Taint. Ethereal movement.' },
-                    { name: 'Drain Life', count: 3, effect: 'Attack 4d6. Heal self for half damage dealt (lifesteal). Trigger: Target below 15 HP.' },
-                    { name: 'Void Shift', count: 2, effect: 'Teleport up to 6 hexes. Leave shadow echo at departure (attacks once for 2d6, then vanishes).' },
-                    { name: 'Taint Pulse', count: 2, effect: 'AOE (3 hex radius). All enemies gain 2 Taint. No damage, pure corruption.' },
-                    { name: 'Reality Anchor', count: 1, effect: 'Target cannot move more than 3 hexes from current position for 2 turns. Dimensional bind.' }
-                ]
-            },
-            'rogue-casket': {
-                name: '10. Rogue Casket (Enemy Pilot)',
-                type: 'Boss (Rival Pilot)',
-                deckSize: 30,
-                cards: [
-                    { name: 'Primary Weapon Attack', count: 12, effect: 'Standard melee/ranged attack based on equipped weapon. Priority: Always use if in range.' },
-                    { name: 'Tactical Movement', count: 5, effect: 'Move toward optimal position: cover if taking damage, flank if advantage, close gap if ranged.' },
-                    { name: 'Defensive Stance', count: 3, effect: '+2 Defense until next turn. Trigger: Below 15 HP or taking heavy fire.' },
-                    { name: 'Equipment Use', count: 3, effect: 'Use Secondary Equipment (shield, repair kit, utility). Trigger: Situational (low HP = repair).' },
-                    { name: 'Faction Tactic', count: 2, effect: 'Activate faction-specific ability (Church: Blood Offering, Dwarves: Forge-Ward, etc).' },
-                    { name: 'Sprint', count: 2, effect: 'Move 8+ hexes. Trigger: Need to close distance or retreat from losing fight.' },
-                    { name: 'Heat Management', count: 2, effect: 'Reduce Heat by 3. Trigger: Heat at 5+.' },
-                    { name: 'Desperate Gambit', count: 1, effect: 'All-out attack. Use most powerful card + spend all SP. Trigger: Below 8 HP (win-or-die).' }
-                ]
-            },
-            'bonelord-thresh': {
-                name: '11. Bonelord Thresh',
-                type: 'Boss (Ossuarium Champion)',
-                deckSize: 50,
-                phases: [
-                    { name: 'Phase 1', hp: '50-35 HP', description: 'Summons undead minions' },
-                    { name: 'Phase 2', hp: '34-15 HP', description: 'Lifesteal attacks, mass summons' },
-                    { name: 'Phase 3', hp: '14-0 HP', description: 'Resurrection + AOE corruption' }
-                ],
-                cards: [
-                    { name: 'Soul Harvest', count: 12, effect: '4d6 attack. If target dies, heal 3 cards (lifesteal on kill). Necromantic vampirism.' },
-                    { name: 'Raise Dead', count: 8, effect: 'Summon 2 Bone Thralls (3 HP, 2d6 attack). Thralls activate after Thresh.' },
-                    { name: 'Bone Armor', count: 6, effect: '+3 Defense until next turn. Skeletal reinforcement.' },
-                    { name: 'Necrotic Bolt', count: 5, effect: 'Ranged attack (8 hex). 3d6 + inflict 1 Taint. Death magic projectile.' },
-                    { name: 'Move', count: 5, effect: 'Reposition 4 hexes. Priority: Move toward weakest enemy or away if overwhelmed.' },
-                    { name: 'Defend', count: 4, effect: '+4 Defense, cannot attack. Trigger: Below 20 HP or 3+ enemies adjacent.' },
-                    { name: 'Vampiric Strike', count: 4, effect: '[Phase 2+] Attack 6d6, heal half damage dealt. Inflict Bleed 2. Drain essence.' },
-                    { name: 'Mass Raise Dead', count: 2, effect: '[Phase 2+] Summon 6 Bone Thralls at once. Massive undead wave.' },
-                    { name: 'Siphon Life', count: 2, effect: '[Phase 2+] AOE (4 hex radius). 3d6 to all enemies, heal 1 card per enemy hit.' },
-                    { name: 'Resurrection', count: 1, effect: '[Phase 3 only] When Thresh reaches 0 HP, immediately return with 15 HP. Once per battle.' },
-                    { name: 'Apocalyptic Harvest', count: 3, effect: '[Phase 3 only] AOE (5 hex radius). 5d6 + 3 Taint to all enemies. Death wave.' },
-                    { name: 'The Ledger\'s Command', count: 3, effect: '[Phase 3 only] Sacrifice all Thralls on field. Heal 2 cards per Thrall. Desperate gambit.' }
-                ]
-            },
-            'tainted-wolf': {
-                name: '12. Tainted Wolf Pack',
-                type: 'Swarm',
-                deckSize: 6,
-                cards: [
-                    { name: 'Pack Tactics', count: 3, effect: 'If 2+ wolves within 2 hexes, attack 2d6 + Bleed 1. Else, move toward nearest wolf. Pack synergy.' },
-                    { name: 'Flanking Strike', count: 2, effect: 'If attacking from rear arc, attack 3d6 + Bleed 2. Trigger: Behind target.' },
-                    { name: 'Howl', count: 1, effect: 'Call reinforcements. Summon 1 Tainted Wolf adjacent to howler. Max 8 wolves on field.' }
-                ]
-            },
-            'church-zealot': {
-                name: '13. Church Zealot',
-                type: 'Elite (Church)',
-                deckSize: 18,
-                cards: [
-                    { name: 'Blood Offering + Strike', count: 5, effect: 'Discard 2 cards (self-harm), then attack 5d6 ignoring 1 Defense. Pain for power.' },
-                    { name: 'Martyrdom Protocol', count: 3, effect: 'When ally within 2 hexes takes damage, redirect to self. Gain 1 Heat. Protective sacrifice.' },
-                    { name: 'Divine Judgment', count: 2, effect: 'Attack 6d6, ignore 1 Defense. On Miss: recover 2 SP. Execute mechanic.' },
-                    { name: 'Consecrated Ground', count: 2, effect: 'Create 3-hex healing zone (lasts 2 turns). Allies in zone recover 1 card per turn.' },
-                    { name: 'Righteous Fury', count: 2, effect: 'Gain +2 damage to all attacks this turn. Trigger: Ally destroyed or self below 10 HP.' },
-                    { name: 'Desperate Attack', count: 2, effect: 'Attack 4d6, take 1 self-damage. Priority: Always use if adjacent.' },
-                    { name: 'Crusader\'s Charge', count: 2, effect: 'Sprint 6 hexes, attack 5d6 if reach target. Zealous assault.' }
-                ]
-            },
-            'dwarven-ironclad': {
-                name: '14. Dwarven Ironclad',
-                type: 'Elite (Dwarven)',
-                deckSize: 22,
-                cards: [
-                    { name: 'Runic Strike', count: 6, effect: '4d6 armor-piercing (ignore 2 Defense). Priority: Always use if adjacent and have SP.' },
-                    { name: 'Forge-Ward', count: 4, effect: 'Gain 1 Rune Counter (reduce next damage by 1, max 5 Runes). Defensive rune.' },
-                    { name: 'Earthshaker', count: 3, effect: 'AOE (2 hex radius). 4d6 + knockback 2 hexes. Spend 2 Runes for +2d6.' },
-                    { name: 'Defensive Stance', count: 3, effect: '+3 Defense until next turn. If attacked, mark attacker (Grudge).' },
-                    { name: 'Rune Overcharge', count: 2, effect: 'Spend all Runes (min 3). Attack 6d6 + (2d6 per Rune spent). Burst damage.' },
-                    { name: 'Grudge Strike', count: 2, effect: 'Attack marked enemy for 5d6 + 2. Vengeance attack.' },
-                    { name: 'Mountain Stance', count: 2, effect: 'Cannot move, but gain +3 Defense and +2 damage. Immovable.' }
-                ]
-            },
-            'elven-stalker': {
-                name: '15. Elven Verdant Stalker',
-                type: 'Elite (Elven)',
-                deckSize: 16,
-                cards: [
-                    { name: 'Thorn Strike', count: 5, effect: '3d6 + inflict Bleed 2 (stacks). Signature attack.' },
-                    { name: 'Piercing Arrow', count: 3, effect: 'Ranged attack (8 hex range). 3d6, ignores Defense. Precision shot.' },
-                    { name: 'Root Bind', count: 2, effect: 'Target cannot move for 2 turns. Immobilize. Trigger: Target has 2+ Bleed stacks.' },
-                    { name: 'Leaf Dance', count: 2, effect: 'Move 4 hexes AND attack 3d6 during movement. Mobile strike.' },
-                    { name: 'Sylvan Step', count: 1, effect: 'Teleport up to 5 hexes (forest terrain only). Once per battle.' },
-                    { name: 'Verdant Regeneration', count: 2, effect: 'Passive: Recover 1 card per turn if not attacked previous turn. Natural healing.' },
-                    { name: 'Camouflage', count: 1, effect: 'Next attack against Stalker has -3 to hit. Stealth. Trigger: In forest terrain.' }
-                ]
-            }
-        };
-
-        // Modal elements
-        const modal = document.getElementById('behaviorModal');
-        const modalName = document.getElementById('modalEnemyName');
-        const modalType = document.getElementById('modalEnemyType');
-        const deckStatsGrid = document.getElementById('deckStatsGrid');
-        const behaviorDeck = document.getElementById('behaviorDeck');
-        const closeBtn = document.querySelector('.close');
-
-        // Open modal function
-        function openBehaviorModal(enemyId) {
-            const enemy = enemyBehaviors[enemyId];
-            if (!enemy) return;
-
-            // Set header info
-            modalName.textContent = enemy.name;
-            modalType.textContent = enemy.type;
-
-            // Build deck stats
-            deckStatsGrid.innerHTML = `
-                <div class="deck-stat-item">
-                    <div class="deck-stat-label">Deck Size</div>
-                    <div class="deck-stat-value">${enemy.deckSize}</div>
-                </div>
-                <div class="deck-stat-item">
-                    <div class="deck-stat-label">Unique Cards</div>
-                    <div class="deck-stat-value">${enemy.cards.length}</div>
-                </div>
-                <div class="deck-stat-item">
-                    <div class="deck-stat-label">Complexity</div>
-                    <div class="deck-stat-value">${enemy.deckSize <= 5 ? 'Simple' : enemy.deckSize <= 20 ? 'Medium' : 'High'}</div>
-                </div>
-            `;
-
-            // Add phases if boss
-            if (enemy.phases) {
-                const phaseStats = enemy.phases.map((phase, i) => `
-                    <div class="deck-stat-item">
-                        <div class="deck-stat-label">${phase.name}</div>
-                        <div class="deck-stat-value" style="font-size: 0.8rem;">${phase.hp}</div>
-                    </div>
-                `).join('');
-                deckStatsGrid.innerHTML += phaseStats;
-            }
-
-            // Build behavior cards
-            behaviorDeck.innerHTML = enemy.cards.map(card => `
-                <div class="behavior-card">
-                    <div class="behavior-card-title">${card.name}</div>
-                    <div class="behavior-card-count">×${card.count} ${card.count === 1 ? 'card' : 'cards'}</div>
-                    <div class="behavior-card-effect">${card.effect}</div>
-                </div>
-            `).join('');
-
-            // Show modal
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        function toggleEnemyDropdown(id) {
+            const content = document.getElementById(id + '-content');
+            const button = event.target;
+            content.classList.toggle('active');
+            button.classList.toggle('active');
         }
-
-        // Close modal
-        function closeModal() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        closeBtn.onclick = closeModal;
-
-        // Close when clicking outside
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
-        // Close with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                closeModal();
-            }
-        });
     </script>
 </body>
 </html>
