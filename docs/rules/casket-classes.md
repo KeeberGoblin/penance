@@ -35,11 +35,11 @@ Every Casket in Penance belongs to one of four **weight classes**, each with dif
 
 | Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone |
 |-----------|----------|---------|----------------|---------------------|
-| **Head** | 6 HP | 0-2 dmg | 3-4 dmg | 5-6 dmg |
+| **Head** | 6 HP | 0-1 dmg | 2-4 dmg | 5-6 dmg |
 | **Right Arm** | 6 HP | 0-2 dmg | 3-4 dmg | 5-6 dmg |
 | **Left Arm** | 6 HP | 0-2 dmg | 3-4 dmg | 5-6 dmg |
-| **Chassis** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
-| **Legs** | 10 HP | 0-4 dmg | 5-10 dmg | NEVER |
+| **Chassis** | 8 HP | 0-2 dmg | 3-5 dmg | 6-8 dmg |
+| **Legs** | 10 HP | 0-2 dmg | 3-10 dmg | NEVER |
 
 ### Strengths
 
@@ -83,11 +83,11 @@ Every Casket in Penance belongs to one of four **weight classes**, each with dif
 
 | Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone |
 |-----------|----------|---------|----------------|---------------------|
-| **Head** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
-| **Right Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
-| **Left Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
-| **Chassis** | 10 HP | 0-4 dmg | 5-6 dmg | 7-10 dmg |
-| **Legs** | 10 HP | 0-4 dmg | 5-10 dmg | NEVER |
+| **Head** | 8 HP | 0-2 dmg | 3-5 dmg | 6-8 dmg |
+| **Right Arm** | 8 HP | 0-3 dmg | 4-6 dmg | 7-8 dmg |
+| **Left Arm** | 8 HP | 0-3 dmg | 4-6 dmg | 7-8 dmg |
+| **Chassis** | 10 HP | 0-3 dmg | 4-7 dmg | 8-10 dmg |
+| **Legs** | 10 HP | 0-3 dmg | 4-10 dmg | NEVER |
 
 ### Strengths
 
@@ -130,16 +130,16 @@ Every Casket in Penance belongs to one of four **weight classes**, each with dif
 
 | Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone |
 |-----------|----------|---------|----------------|---------------------|
-| **Head** | 10 HP | 0-4 dmg | 5-7 dmg | 8-10 dmg |
+| **Head** | 10 HP | 0-3 dmg | 4-7 dmg | 8-10 dmg |
 | **Right Arm** | 10 HP | 0-4 dmg | 5-7 dmg | 8-10 dmg |
 | **Left Arm** | 10 HP | 0-4 dmg | 5-7 dmg | 8-10 dmg |
-| **Chassis** | 12 HP | 0-5 dmg | 6-8 dmg | 9-12 dmg |
+| **Chassis** | 12 HP | 0-4 dmg | 5-9 dmg | 10-12 dmg |
 | **Legs** | 10 HP | 0-4 dmg | 5-10 dmg | NEVER |
 
 ### Strengths
 
 - **High HP (52)** = Survives long engagements, difficult to kill quickly
-- **Deep AP zones** = Takes 5-8 hits before Structure Zone penalties apply
+- **Heavy AP zones** = Takes 2 focused hits before Structure Zone penalties apply
 - **Major Wounds at 7+ damage** = Rarely accumulates DAMAGED cards
 - **2 Shield slots** = Layered defense (Tower Shield + Buckler)
 - **2 Accessory slots** = Utility/support options (Sigils, relics)
@@ -179,16 +179,16 @@ Every Casket in Penance belongs to one of four **weight classes**, each with dif
 
 | Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone |
 |-----------|----------|---------|----------------|---------------------|
-| **Head** | 12 HP | 0-5 dmg | 6-9 dmg | 10-12 dmg |
+| **Head** | 12 HP | 0-4 dmg | 5-9 dmg | 10-12 dmg |
 | **Right Arm** | 12 HP | 0-5 dmg | 6-9 dmg | 10-12 dmg |
 | **Left Arm** | 12 HP | 0-5 dmg | 6-9 dmg | 10-12 dmg |
-| **Chassis** | 14 HP | 0-6 dmg | 7-10 dmg | 11-14 dmg |
+| **Chassis** | 14 HP | 0-5 dmg | 6-11 dmg | 12-14 dmg |
 | **Legs** | 10 HP | 0-4 dmg | 5-10 dmg | NEVER |
 
 ### Strengths
 
 - **Massive HP (60)** = Unkillable in early game, requires sustained focus fire
-- **Ultra-deep AP zones** = Chassis takes 6 damage before Structure penalties!
+- **Ultra-deep AP zones** = Takes 2-3 focused attacks before Structure penalties!
 - **Major Wounds at 9+ damage** = Almost never accumulates DAMAGED cards
 - **3 Accessory slots** = Support/utility specialist (Sigils, relics, banners)
 - **Pilot extremely well-protected** = 10-12 damage to expose pilot

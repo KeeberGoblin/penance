@@ -359,17 +359,25 @@
 
         <h3>Step 6: Check for Component Damage</h3>
 
-        <p><strong>If you discarded any Primary Weapon cards:</strong></p>
+        <p><strong>Component Damage is dictated by the type of card discarded:</strong></p>
+
+        <p><strong>If you discarded any equipment cards:</strong></p>
         <ul>
-            <li>Mark 1 Component Damage per Primary Weapon card to targeted component</li>
+            <li><strong>Primary Weapon cards</strong> → +1 Component Damage per card to the targeted component</li>
+            <li><strong>Shield/Offhand cards</strong> → +1 Component Damage per card <strong>ONLY if targeting Left Arm</strong></li>
+            <li><strong>Accessory cards</strong> → No Component Damage (utility equipment)</li>
             <li>Track separately: Right Arm, Left Arm, Legs, Head, Chassis</li>
-            <li><strong>3 Component Damage = Component DESTROYED</strong></li>
         </ul>
 
         <p><strong>If Defense Dice showed CRITICAL symbols ([CRITICAL]):</strong></p>
         <ul>
-            <li>Add +1 Component Damage per [CRITICAL] symbol to targeted component (no cap - multiple CRITICALS stack)</li>
+            <li>Add +1 Component Damage per [CRITICAL] symbol to targeted component (bypasses AP layer!)</li>
+            <li>Multiple CRITICALS stack (no cap)</li>
         </ul>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-top: 1rem;">
+            <strong>v3.0 Design Note</strong>: The type of card you discard matters! This creates strategic choice: discard from hand to control what's lost (avoid discarding Primary Weapon cards), or discard from deck to preserve hand but risk random equipment cards causing component damage.
+        </p>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
@@ -389,8 +397,14 @@
         <h4>How it accumulates:</h4>
         <ol>
             <li>Attacker declares which component to target (or roll 1d6 if random)</li>
-            <li>When Primary Weapon cards are discarded from damage → 1 Component Damage per card</li>
-            <li>When Defense Dice show [CRITICAL] → +1 Component Damage</li>
+            <li>When equipment cards are discarded from damage:
+                <ul>
+                    <li><strong>Primary Weapon cards</strong> → +1 Component Damage per card to targeted component</li>
+                    <li><strong>Shield/Offhand cards</strong> → +1 Component Damage per card <strong>ONLY if targeting Left Arm</strong></li>
+                    <li><strong>Accessory cards</strong> → No Component Damage</li>
+                </ul>
+            </li>
+            <li>When Defense Dice show [CRITICAL] → +1 Component Damage (bypasses AP!)</li>
             <li><strong>Component Damage threshold varies by location</strong> (see HP values above)</li>
         </ol>
 

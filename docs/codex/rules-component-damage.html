@@ -41,7 +41,11 @@
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>Component HP Zones (Master Reference)</h2>
+        <h2>Component HP Zones (Warden Class Reference)</h2>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 1rem;">
+            <strong>NOTE:</strong> These values are for the <strong>Warden</strong> (standard) Casket class. Component HP and AP zones vary by class. See the Casket Classes page for Scout (lighter armor), Vanguard (heavy armor), and Colossus (ultra-heavy armor) variants.
+        </p>
 
         <p>Each component has <strong>three defensive layers</strong>:</p>
 
@@ -60,8 +64,8 @@
                 <tr>
                     <td><strong>Head</strong></td>
                     <td>8 HP</td>
-                    <td>0-3 dmg</td>
-                    <td>4-5 dmg</td>
+                    <td>0-2 dmg</td>
+                    <td>3-5 dmg</td>
                     <td>6-8 dmg</td>
                     <td>8+ dmg</td>
                 </tr>
@@ -69,31 +73,31 @@
                     <td><strong>Right Arm</strong></td>
                     <td>8 HP</td>
                     <td>0-3 dmg</td>
-                    <td>4-5 dmg</td>
-                    <td>6-8 dmg</td>
+                    <td>4-6 dmg</td>
+                    <td>7-8 dmg</td>
                     <td>8+ dmg</td>
                 </tr>
                 <tr>
                     <td><strong>Left Arm</strong></td>
                     <td>8 HP</td>
                     <td>0-3 dmg</td>
-                    <td>4-5 dmg</td>
-                    <td>6-8 dmg</td>
+                    <td>4-6 dmg</td>
+                    <td>7-8 dmg</td>
                     <td>8+ dmg</td>
                 </tr>
                 <tr>
                     <td><strong>Chassis</strong></td>
                     <td>10 HP</td>
-                    <td>0-4 dmg</td>
-                    <td>5-6 dmg</td>
-                    <td>7-10 dmg</td>
+                    <td>0-3 dmg</td>
+                    <td>4-7 dmg</td>
+                    <td>8-10 dmg</td>
                     <td>10+ dmg</td>
                 </tr>
                 <tr>
                     <td><strong>Legs</strong></td>
                     <td>10 HP</td>
-                    <td>0-4 dmg</td>
-                    <td>5-9 dmg</td>
+                    <td>0-3 dmg</td>
+                    <td>4-10 dmg</td>
                     <td>NEVER</td>
                     <td>10+ dmg</td>
                 </tr>
@@ -399,14 +403,20 @@
 
         <h3>Sources of Component Damage:</h3>
 
-        <h4>1. Primary Weapon/Shield Cards Discarded</h4>
-        <p>When you discard <strong>Primary Weapon</strong> or <strong>Shield</strong> cards due to damage:</p>
+        <h4>1. Equipment Cards Discarded</h4>
+        <p>When you discard equipment cards due to damage, <strong>component damage is dictated by the card type</strong>:</p>
         <ul>
-            <li>Each Primary/Shield card discarded = <strong>+1 Component Damage</strong> to targeted component</li>
+            <li><strong>Primary Weapon cards</strong> discarded = +1 Component Damage to the targeted component</li>
+            <li><strong>Shield/Offhand cards</strong> discarded = +1 Component Damage <strong>ONLY if targeting Left Arm</strong></li>
+            <li><strong>Accessory cards</strong> discarded = No Component Damage (utility equipment)</li>
             <li>You choose: discard from hand OR deck (tactical choice)</li>
-            <li>Discarding from hand = lose options but control what's lost</li>
-            <li>Discarding from deck = keep hand but risk Primary/Shield cards randomly</li>
+            <li>Discarding from hand = lose tactical options but control what's lost</li>
+            <li>Discarding from deck = keep hand but risk equipment cards randomly</li>
         </ul>
+
+        <p style="font-style: italic; color: var(--aged-gold); margin-top: 0.5rem;">
+            <strong>Why this matters</strong>: Primary Weapon cards damage any targeted component (Head, Arms, Chassis, Legs). Shield/Offhand cards only damage the Left Arm when it's the target, representing the dedicated shield mount on that limb.
+        </p>
 
         <h4>2. Defense Dice CRITICAL Symbols (⚔)</h4>
         <p>When rolling Defense Dice, <strong>CRITICAL (⚔)</strong> symbols bypass AP:</p>

@@ -379,15 +379,19 @@ Wait, this creates duplication issues. Let me revise:
 
 ### Step 6: Check for Component Damage
 
-**If you discarded any Primary Weapon equipment cards**:
-- Mark 1 Component Damage per Primary Weapon card to targeted component
+**Component Damage is dictated by the type of card discarded:**
+
+**If you discarded any equipment cards**:
+- **Primary Weapon cards** → +1 Component Damage per card to the targeted component
+- **Shield/Offhand cards** → +1 Component Damage per card **ONLY if targeting Left Arm**
+- **Accessory cards** → No Component Damage (utility equipment)
 - Track separately: Right Arm, Left Arm, Legs, Head, Chassis
-- **Component destruction threshold varies by limb** (Head 3, Arms 4, Chassis 5, Legs 6)
 
 **If Defense Dice showed CRITICAL symbols ()**:
 - Add +1 Component Damage per symbol to targeted component
+- CRITICAL symbols bypass AP layer entirely
 
-> **v2.0 NOTE**: "Primary Weapon cards" refers to your equipped weapon cards (e.g., Longsword, Greatsword, Pistol). These are the cards you discarded from your Primary Weapon slot equipment.
+> **v3.0 NOTE**: The type of card you discard matters! Primary Weapon cards damage the targeted component. Shield/Offhand cards only damage the Left Arm when it's targeted. This creates strategic choice: discard from hand to control what's lost, or from deck to preserve hand but risk random equipment cards.
 
 ## 3. Component Damage (AP/Structure/Pilot Exposure System)
 
@@ -401,11 +405,11 @@ Wait, this creates duplication issues. Let me revise:
 
 | Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone |
 |-----------|----------|---------|----------------|---------------------|
-| **Head** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
-| **Right Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
-| **Left Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg |
-| **Chassis** | 10 HP | 0-4 dmg | 5-6 dmg | 7-10 dmg |
-| **Legs** | 10 HP | 0-4 dmg | 5-10 dmg | NEVER |
+| **Head** | 8 HP | 0-2 dmg | 3-5 dmg | 6-8 dmg |
+| **Right Arm** | 8 HP | 0-3 dmg | 4-6 dmg | 7-8 dmg |
+| **Left Arm** | 8 HP | 0-3 dmg | 4-6 dmg | 7-8 dmg |
+| **Chassis** | 10 HP | 0-3 dmg | 4-7 dmg | 8-10 dmg |
+| **Legs** | 10 HP | 0-3 dmg | 4-10 dmg | NEVER |
 
 **Zone Effects:**
 - **AP Zone**: Armor absorbs damage, no penalties
@@ -420,7 +424,10 @@ Wait, this creates duplication issues. Let me revise:
    - **Random:** Roll 1d6 (1=Head, 2=L.Arm, 3=R.Arm, 4-5=Chassis, 6=Legs)
    - **Card-specified:** Some cards auto-target (e.g., "Headshot" → Head)
 
-2. When **Primary Weapon or Shield/Offhand cards** are discarded from damage → 1 Component Damage per card
+2. When equipment cards are discarded from damage:
+   - **Primary Weapon cards** → +1 Component Damage per card to targeted component
+   - **Shield/Offhand cards** → +1 Component Damage per card **ONLY if targeting Left Arm**
+   - **Accessory cards** → No Component Damage
 
 3. When Defense Dice show **CRITICAL ()** → +1 Component Damage (bypasses AP layer!)
 

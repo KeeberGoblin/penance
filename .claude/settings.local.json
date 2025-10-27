@@ -63,7 +63,8 @@
       "Bash(while read file)",
       "Bash(do stat -c \"%y %n\" \"$file\")",
       "Bash(xargs ls:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(jq:*)"
     ],
     "deny": [],
     "ask": []

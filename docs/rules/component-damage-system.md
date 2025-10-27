@@ -26,15 +26,23 @@ Caskets have **dual-layer HP tracking**:
 
 ---
 
-## Component HP Table (Master Reference)
+## Component HP Table (Warden Class Reference)
+
+> **NOTE:** These values are for the **Warden** (standard) Casket class. Component HP and AP zones vary by class:
+> - **Scout**: Lighter armor, lower HP (Head 6, Arms 6, Chassis 8, Legs 10)
+> - **Warden**: Balanced armor (shown below)
+> - **Vanguard**: Heavy armor, higher HP (Head 10, Arms 10, Chassis 12, Legs 10)
+> - **Colossus**: Ultra-heavy armor (Head 12, Arms 12, Chassis 14, Legs 10)
+>
+> See [casket-classes.md](casket-classes.md) for complete class-specific tables.
 
 | Component | Total HP | AP Zone | Structure Zone | Pilot Exposure Zone | Destroyed |
 |-----------|----------|---------|----------------|---------------------|-----------|
-| **Head** | 6 HP | 0-2 dmg | 3-4 dmg | 5-6 dmg | 6+ dmg |
-| **Right Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg | 8+ dmg |
-| **Left Arm** | 8 HP | 0-3 dmg | 4-5 dmg | 6-8 dmg | 8+ dmg |
-| **Chassis** | 10 HP | 0-4 dmg | 5-6 dmg | 7-10 dmg | 10+ dmg |
-| **Legs** | 8 HP | 0-3 dmg | 4-8 dmg | NEVER | 8+ dmg |
+| **Head** | 8 HP | 0-2 dmg | 3-5 dmg | 6-8 dmg | 8+ dmg |
+| **Right Arm** | 8 HP | 0-3 dmg | 4-6 dmg | 7-8 dmg | 8+ dmg |
+| **Left Arm** | 8 HP | 0-3 dmg | 4-6 dmg | 7-8 dmg | 8+ dmg |
+| **Chassis** | 10 HP | 0-3 dmg | 4-7 dmg | 8-10 dmg | 10+ dmg |
+| **Legs** | 10 HP | 0-3 dmg | 4-10 dmg | NEVER | 10+ dmg |
 
 **Key Insight:** Legs have no pilot exposure (capsule is in chassis, above legs)
 
