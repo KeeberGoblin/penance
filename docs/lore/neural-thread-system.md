@@ -380,6 +380,61 @@ While the **10-thread standard** is universal, factions customize the **routing 
 
 ---
 
+## Historical Origins: Theslar's Bioelectronic Breakthrough
+
+### How Neural Thread Technology Became Possible
+
+Despite the world operating at roughly **1800s technology level** (steam power, telegraph, early electricity), neural threading represents a radical technological leap. This wasn't gradual progress—it was an **accidental breakthrough** caused by Theslar's dimensional research.
+
+**Years -10 to 0: The Bioelectronic Revolution**
+
+While researching dimensional resonance for the Theslar Engine, Dr. Nikolas Theslar's team made an unexpected discovery: **Void energy could interface directly with biological nervous systems**.
+
+| Discovery | Implication |
+|-----------|-------------|
+| **Neural Resonance Enhancement** | Test subjects exposed to controlled dimensional fields showed unprecedented nerve conductivity |
+| **Bioelectric Coupling** | Void energy allowed direct nervous system → machine interfaces (bypassing conventional electronics) |
+| **Crystalline Memory Storage** | Resonance-active crystals (Soulstones) could store both electrical and "metaphysical" consciousness data |
+| **Conscious Energy Transfer** | Human consciousness could be "recorded" in Void-saturated crystal matrices |
+
+**The Critical Insight:**
+
+Conventional 1800s electronics required complex circuits, vacuum tubes, and power supplies. Theslar's bioelectronics used **Void resonance** as the transmission medium—the pilot's nervous system became the circuit, and dimensional energy carried the signal.
+
+**What This Enabled:**
+- **Neural Threads:** Direct nerve-to-machine control without conventional wiring
+- **Soulstone Binding:** Consciousness storage in crystalline matrices
+- **Casket Control Systems:** Bioelectric interfaces that only work in Void-saturated environments
+
+### The Bitter Irony
+
+These breakthroughs were **Void-dependent**. They only functioned in the presence of dimensional resonance energy.
+
+Before the Sundering, they were experimental curiosities—lab prototypes that worked in test chambers but couldn't scale globally.
+
+When the Sundering flooded the world with Void energy, conventional technology failed instantly (EMP destroyed telegraph, radio, electrical systems). But Theslar's bioelectronic systems **thrived** in the Void-saturated environment. The very disaster that destroyed civilization's infrastructure made neural threading the **only reliable control system** that still worked.
+
+**The Neural Thread System You See in Year 437:**
+- Based on 10-year-old prototype designs from Theslar's lab
+- Refined through 437 years of desperate iteration by survivors
+- Functions exclusively due to ambient Void radiation (wouldn't work pre-Sundering)
+- Represents humanity adapting to use the tools the apocalypse left behind
+
+### Why It's Still Primitive
+
+Despite its "advanced" biological interface, neural threading is **crude and brutal** because:
+
+1. **No industrial base:** Complex manufacturing died in Year 0. Threads are hand-fabricated.
+2. **Lost knowledge:** Original Theslar research notes were destroyed. Modern engineers reverse-engineer from surviving examples.
+3. **Void corruption:** Thread materials degrade over time due to Taint exposure.
+4. **No alternatives:** Conventional electronics still don't work in Void-saturated environments. This is the only option.
+
+**The Horror Remains:**
+
+Regardless of its origins, neural threading is **biological puppetry**—painful, invasive, and permanent. The fact that it emerged from a desperate scientific accident doesn't make it any less brutal.
+
+---
+
 ## Cross-References
 
 - **[Casket Technology Overview](casket-technology-revised.md)**: How pilots and Caskets work together
