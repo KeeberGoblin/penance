@@ -392,6 +392,7 @@
         }
         .nav-search-controls button:hover { background: var(--dark-red); }
         .nav-link.match { background: rgba(75,14,14,0.25); }
+    .nav-link .nav-highlight { color: var(--aged-gold); text-decoration: underline dotted; }
 
         /* Back-to-top floating action button (applies to all pages via iframe control) */
         .back-to-top-fab {
@@ -420,7 +421,7 @@
 </head>
 <body>
     <!-- Menu Toggle Button (works for both desktop and mobile) -->
-    <button class="desktop-menu-toggle" onclick="toggleMenu()">☰</button>
+    <button class="desktop-menu-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
 
     <!-- Menu Backdrop -->
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
@@ -610,7 +611,7 @@
                 <a href="../cards/deck-builder.html" class="nav-link">Deck Builder</a>
                 <a href="../codex/gm-helper.html" class="nav-link">GM Helper Tool</a>
                 <a href="../codex/support-equipment.html" class="nav-link">Support Unit & Equipment Helper</a>
-                <a href="https://github.com/KeeberGoblin/penance" class="nav-link" target="_blank">GitHub Repository</a>
+                <a href="https://github.com/KeeberGoblin/penance" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
             </div>
             </div>
 
@@ -628,7 +629,7 @@
     </div>
 
     <!-- Global Back-to-Top control (acts on iframe content) -->
-    <button class="back-to-top-fab" id="backToTopBtn" title="Back to top">^ Back to top</button>
+    <button class="back-to-top-fab" id="backToTopBtn" title="Back to top" aria-label="Back to top" role="button">^ Back to top</button>
 
     <script>
         function toggleMenu() {
@@ -642,8 +643,10 @@
             // Change icon based on menu state
             if (sidebar.classList.contains('active')) {
                 toggleBtn.innerHTML = '✕';
+                toggleBtn.setAttribute('aria-label', 'Close menu');
             } else {
                 toggleBtn.innerHTML = '☰';
+                toggleBtn.setAttribute('aria-label', 'Open menu');
             }
         }
 
@@ -736,7 +739,7 @@
             });
 
             // Convert dropdown parents to toggles and inject parent links into submenu
-            document.querySelectorAll('.nav-dropdown').forEach(dd => {
+            document.querySelectorAll('.nav-dropdown').forEach((dd, idx) => {
                 const parent = dd.querySelector('.nav-link.has-submenu');
                 const submenu = dd.querySelector('.nav-submenu');
                 if (!parent || !submenu) return;
@@ -753,6 +756,14 @@
                 // Remove navigation from parent
                 parent.removeAttribute('onclick');
 
+                // Accessibility: treat parent as a toggle button
+                parent.setAttribute('role', 'button');
+                parent.setAttribute('tabindex', '0');
+                // Ensure submenu has an id for aria-controls
+                if (!submenu.id) submenu.id = `submenu-${idx+1}`;
+                parent.setAttribute('aria-controls', submenu.id);
+                parent.setAttribute('aria-expanded', 'false');
+
                 // If first submenu item is not the parent link, inject it
                 const first = submenu.querySelector('.nav-link');
                 const label = (parent.textContent || '').trim();
@@ -763,6 +774,25 @@
                     a.addEventListener('click', (ev) => loadContent(url || '#', ev));
                     submenu.insertBefore(a, submenu.firstChild);
                 }
+
+                // Click/keyboard toggle behavior for parent links
+                function toggleDropdown(ev) {
+                    if (ev) { ev.preventDefault(); ev.stopPropagation(); }
+                    const isOpen = dd.classList.contains('dropdown-open');
+                    document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(other => {
+                        if (other !== dd) {
+                            other.classList.remove('dropdown-open');
+                            const p = other.querySelector('> .nav-link.has-submenu');
+                            if (p) p.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    dd.classList.toggle('dropdown-open', !isOpen);
+                    parent.setAttribute('aria-expanded', String(!isOpen));
+                }
+                parent.addEventListener('click', toggleDropdown);
+                parent.addEventListener('keydown', (ev) => {
+                    if (ev.key === 'Enter' || ev.key === ' ') toggleDropdown(ev);
+                });
             });
 
             // Back-to-top FAB controls scrolling of iframe content and shows on scroll
@@ -837,12 +867,31 @@
 
             function normalize(text) { return (text || '').toLowerCase().trim(); }
 
+            // Preserve original link text for reliable highlighting reset
+            const allNavLinks = Array.from(navContent.querySelectorAll('a.nav-link'));
+            allNavLinks.forEach(a => {
+                if (!a.dataset.originalText) a.dataset.originalText = (a.textContent || '').trim();
+            });
+
             function resetVisibility() {
                 // Show everything and remove highlights
                 navContent.querySelectorAll('.nav-section, .nav-dropdown, .nav-link').forEach(el => {
                     el.style.display = '';
                     el.classList.remove('match');
                 });
+                // Restore original texts (remove previous highlights)
+                allNavLinks.forEach(a => { a.innerHTML = a.dataset.originalText || a.textContent; });
+            }
+
+            function highlightMatchText(a, query) {
+                const text = a.dataset.originalText || a.textContent || '';
+                const lower = text.toLowerCase();
+                const idx = lower.indexOf(query);
+                if (idx === -1) { a.innerHTML = text; return; }
+                const before = text.slice(0, idx);
+                const hit = text.slice(idx, idx + query.length);
+                const after = text.slice(idx + query.length);
+                a.innerHTML = `${before}<span class="nav-highlight">${hit}</span>${after}`;
             }
 
             function applySearchFilter(q) {
@@ -885,7 +934,8 @@
                 // Find and show matches
                 links.forEach(a => {
                     const text = normalize(a.textContent || '');
-                    if (text.includes(query)) {
+                    if ((a.dataset.originalText || text).toLowerCase().includes(query)) {
+                        highlightMatchText(a, query);
                         showWithAncestors(a);
                     }
                 });
@@ -898,9 +948,13 @@
                     if (hasAny) {
                         dd.style.display = '';
                         dd.classList.add('dropdown-open');
+                        const parentLink = dd.querySelector('> .nav-link.has-submenu');
+                        if (parentLink) parentLink.setAttribute('aria-expanded', 'true');
                     } else {
                         dd.classList.remove('dropdown-open');
                         dd.style.display = 'none';
+                        const parentLink = dd.querySelector('> .nav-link.has-submenu');
+                        if (parentLink) parentLink.setAttribute('aria-expanded', 'false');
                     }
                 });
 
@@ -911,18 +965,30 @@
                 });
             }
 
+            // Debounce to avoid excessive DOM work on fast typing
+            function debounce(fn, wait) {
+                let t;
+                return function(...args) {
+                    clearTimeout(t);
+                    t = setTimeout(() => fn.apply(this, args), wait);
+                };
+            }
+            const debouncedSearch = debounce((val) => applySearchFilter(val), 180);
+
             // Wire events
             if (searchInput) {
-                searchInput.addEventListener('input', (e) => applySearchFilter(e.target.value));
+                searchInput.addEventListener('input', (e) => debouncedSearch(e.target.value));
             }
             if (expandAllBtn) {
                 expandAllBtn.addEventListener('click', () => {
                     document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.add('dropdown-open'));
+                    document.querySelectorAll('.nav-dropdown > .nav-link.has-submenu').forEach(p => p.setAttribute('aria-expanded', 'true'));
                 });
             }
             if (collapseAllBtn) {
                 collapseAllBtn.addEventListener('click', () => {
                     document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('dropdown-open'));
+                    document.querySelectorAll('.nav-dropdown > .nav-link.has-submenu').forEach(p => p.setAttribute('aria-expanded', 'false'));
                 });
             }
             if (clearSearchBtn) {
@@ -931,6 +997,7 @@
                     resetVisibility();
                     // Default to collapsed view after clear
                     document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('dropdown-open'));
+                    document.querySelectorAll('.nav-dropdown > .nav-link.has-submenu').forEach(p => p.setAttribute('aria-expanded', 'false'));
                 });
             }
         });
