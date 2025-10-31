@@ -6,6 +6,15 @@
     <title>Codex Home - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
+        /* Smooth scrolling with reduced-motion respect */
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+
+        /* Anchor offset so headings aren't tight to top */
+        h2, h3 { scroll-margin-top: 24px; }
+
         .recent-updates-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -104,6 +113,97 @@
             letter-spacing: 0.05em;
             margin-right: 0.5rem;
             min-width: 100px;
+        }
+
+        /* Table of Contents */
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        .toc-column {
+            background: rgba(10, 6, 4, 0.4);
+            border: 1px solid rgba(139, 0, 0, 0.25);
+            padding: 1rem 1.25rem;
+        }
+
+        .toc-column h3 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--aged-gold);
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem 0;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid var(--dark-red);
+        }
+
+        .toc-column ul {
+            margin: 0.5rem 0 0 1rem;
+            padding: 0;
+        }
+
+        .toc-column li {
+            margin: 0.25rem 0;
+            line-height: 1.4;
+        }
+
+        /* Collapsible TOC on small screens */
+        .toc-column.collapsible h3 {
+            cursor: pointer;
+            position: relative;
+        }
+        .toc-column.collapsible h3::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: var(--aged-gold);
+        }
+        .toc-column.collapsible.open h3::after {
+            content: '–';
+        }
+        @media (max-width: 800px) {
+            .toc-column.collapsible ul { display: none; }
+            .toc-column.collapsible.open ul { display: block; }
+        }
+
+        /* Mini TOC (sticky, large screens) */
+        .mini-toc {
+            display: none;
+            position: fixed;
+            right: 24px;
+            top: 120px;
+            width: 260px;
+            max-height: 70vh;
+            overflow: auto;
+            background: rgba(10, 6, 4, 0.75);
+            border: 1px solid rgba(139, 0, 0, 0.35);
+            padding: 1rem 1.25rem;
+            z-index: 10;
+        }
+        .mini-toc h3 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--aged-gold);
+            font-size: 1rem;
+            margin: 0 0 0.5rem 0;
+            border-bottom: 2px solid var(--dark-red);
+            padding-bottom: 0.35rem;
+        }
+        .mini-toc ul { margin: 0; padding-left: 1rem; }
+        .mini-toc li { margin: 0.25rem 0; }
+        .mini-toc a { color: var(--parchment); text-decoration: none; }
+        .mini-toc a:hover { color: var(--aged-gold); }
+        .mini-toc a.active { color: var(--aged-gold); font-weight: 700; }
+        @media (min-width: 1200px) {
+            .mini-toc { display: block; }
+            .content { margin-right: 300px; }
+        }
+
+        .back-to-top {
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -213,29 +313,143 @@
             </tbody>
         </table>
 
-        <h2>Recent Updates to the Codex</h2>
-        <p style="opacity: 0.8; font-style: italic; margin-bottom: 1.5rem;">(Top 3 featured. Past updates archived below.)</p>
-
-        <!-- Top 3 Updates Featured -->
-        <div class="recent-updates-container">
-            <div class="update-card">
-                <div class="date">2025-10-25</div>
-                <p><strong>Pilot Skills System (Optional Campaign Rule)</strong><br>Complete progression system with 38 skills across 3 tiers. Universal skills + faction-specific abilities. XP-based unlocks, Settlement Training, Flesh Bargain integration.</p>
+        <h2>Table of Contents</h2>
+        <div class="toc-grid" id="tocGrid">
+            <div class="toc-column">
+                <h3>Rules</h3>
+                <ul>
+                    <li><a href="rules-turn-structure.html" target="_parent">Turn Structure</a></li>
+                    <li><a href="rules-combat.html" target="_parent">Combat</a></li>
+                    <li><a href="rules-component-damage.html" target="_parent">Component Damage</a></li>
+                    <li><a href="rules-deck-construction.html" target="_parent">Deck Construction</a></li>
+                    <li><a href="rules-terrain.html" target="_parent">Terrain</a></li>
+                    <li><a href="rules-range-los.html" target="_parent">Range & Line of Sight</a></li>
+                    <li><a href="rules-scrap-cards.html" target="_parent">Scrap Cards</a></li>
+                    <li><a href="rules-soulstone-energy.html" target="_parent">Soulstone Energy</a></li>
+                    <li><a href="rules-thread-snap.html" target="_parent">Thread Snap</a></li>
+                    <li><a href="rules-dice.html" target="_parent">Dice</a></li>
+                    <li><a href="rules-dice-pool.html" target="_parent">Dice Pool Advantage</a></li>
+                    <li><a href="rules-support-as-main.html" target="_parent">Support as Main</a></li>
+                    <li><a href="rules-quick-ref.html" target="_parent">Quick Reference</a></li>
+                    <li><a href="rules-combat-flowchart.html" target="_parent">Combat Flowchart</a></li>
+                    <li><a href="rules-common-mistakes.html" target="_parent">Common Mistakes</a></li>
+                    <li><a href="rules-taint-exploitation.html" target="_parent">Taint Exploitation</a></li>
+                    <li><a href="rules-v3-optional.html" target="_parent">v3.0 Optional Mechanics</a></li>
+                </ul>
             </div>
-            <div class="update-card">
-                <div class="date">2025-10-25</div>
-                <p><strong>Combat Flowchart & Common Mistakes</strong><br>Added visual combat flowchart showing turn sequence and new Common Mistakes guide to help new players avoid frequent errors.</p>
+            <div class="toc-column">
+                <h3>Factions</h3>
+                <ul>
+                    <li><a href="faction-church.html" target="_parent">Church of Absolution</a></li>
+                    <li><a href="faction-dwarves.html" target="_parent">Dwarven Forge-Guilds</a></li>
+                    <li><a href="faction-undead.html" target="_parent">The Ossuarium</a></li>
+                    <li><a href="faction-elves.html" target="_parent">Elven Verdant Covenant</a></li>
+                    <li><a href="faction-fae.html" target="_parent">The Wyrd Conclave</a></li>
+                    <li><a href="faction-nomads.html" target="_parent">Nomad Collective</a></li>
+                    <li><a href="faction-exchange.html" target="_parent">The Exchange</a></li>
+                    <li><a href="faction-bloodlines.html" target="_parent">Vestige Bloodlines</a></li>
+                    <li><a href="faction-emergent.html" target="_parent">Emergent Syndicate</a></li>
+                    <li><a href="faction-crucible.html" target="_parent">Crucible Pacts</a></li>
+                    <li><a href="faction-draconid.html" target="_parent">Draconid Remembrance</a></li>
+                </ul>
             </div>
-            <div class="update-card">
-                <div class="date">2025-10-19</div>
-                <p><strong>Balance Simulation Results</strong><br>Church viability improved dramatically (+15 HP survival, 93% improvement), Blood Offering cost reduced (2 HP → 1 HP), Biomass generation rebalanced.</p>
+            <div class="toc-column">
+                <h3>Campaign</h3>
+                <ul>
+                    <li><a href="campaign-settlement-phase.html" target="_parent">Settlement Phase</a></li>
+                    <li><a href="campaign-settlements.html" target="_parent">Settlements</a></li>
+                    <li><a href="campaign-pilot-generation.html" target="_parent">Pilot Generation</a></li>
+                    <li><a href="campaign-pilot-progression.html" target="_parent">Pilot Progression</a></li>
+                    <li><a href="campaign-pilot-skills.html" target="_parent">Pilot Skills</a></li>
+                    <li><a href="campaign-pilot-grit.html" target="_parent">Pilot Grit</a></li>
+                    <li><a href="campaign-mission-generation.html" target="_parent">Mission Generation</a></li>
+                    <li><a href="campaign-loot-tables.html" target="_parent">Loot Tables</a></li>
+                    <li><a href="campaign-event-tables.html" target="_parent">Event Tables</a></li>
+                    <li><a href="campaign-anomalous-events.html" target="_parent">Anomalous Events</a></li>
+                    <li><a href="campaign-flesh-bargains.html" target="_parent">Flesh Bargains</a></li>
+                    <li><a href="campaign-scavengers-crusade.html" target="_parent">Scavenger's Crusade</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <h3>Scenarios</h3>
+                <ul>
+                    <li><a href="scenario-proving-grounds.html" target="_parent">The Proving Grounds</a></li>
+                    <li><a href="scenario-reliquary-ruins.html" target="_parent">Reliquary Ruins</a></li>
+                    <li><a href="scenario-king-of-the-hill.html" target="_parent">King of the Hill</a></li>
+                    <li><a href="scenario-sabotage-mission.html" target="_parent">Sabotage Mission</a></li>
+                    <li><a href="scenario-escort-duty.html" target="_parent">Escort Duty</a></li>
+                    <li><a href="scenario-example-of-play.html" target="_parent">Example of Play</a></li>
+                    <li><a href="scenario-boss-iron-saint.html" target="_parent">Boss: The Iron Saint</a></li>
+                    <li><a href="scenario-tutorial-energy-threads.html" target="_parent">Tutorial: Energy & Threads</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <h3>Enemies</h3>
+                <ul>
+                    <li><a href="enemies-bestiary.html" target="_parent">Bestiary (26)</a></li>
+                    <li><a href="enemies-anomalous.html" target="_parent">Anomalous Entities (7)</a></li>
+                </ul>
+                <h3 style="margin-top: 1rem;">Tools</h3>
+                <ul>
+                    <li><a href="gm-helper.html" target="_parent">GM Helper</a></li>
+                    <li><a href="player-aid-reference-card.html" target="_parent">Player Aid Reference</a></li>
+                    <li><a href="support-units.html" target="_parent">Support Units</a></li>
+                    <li><a href="support-equipment.html" target="_parent">Support Equipment</a></li>
+                    <li><a href="../cards/" target="_blank">Card Database</a></li>
+                    <li><a href="../cards/deck-builder.html" target="_blank">Deck Builder</a></li>
+                    <li><a href="../tools/pilot-generator.html" target="_blank">Pilot Generator</a></li>
+                    <li><a href="../pdfs/" target="_blank">PDF Downloads</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <h3>Lore</h3>
+                <ul>
+                    <li><a href="lore-chronicle.html" target="_parent">Chronicle (Timeline)</a></li>
+                    <li><a href="cosmology.html" target="_parent">Cosmology</a></li>
+                    <li><a href="lore-theslar-overview.html" target="_parent">Theslar Engine</a></li>
+                    <li><a href="lore-sundering.html" target="_parent">The Sundering</a></li>
+                    <li><a href="lore-pre-sundering.html" target="_parent">Before the Sundering</a></li>
+                    <li><a href="lore-year-zero.html" target="_parent">Year Zero</a></li>
+                    <li><a href="lore-caskets-overview.html" target="_parent">Caskets Overview</a></li>
+                    <li><a href="lore-casket-origins.html" target="_parent">Casket Origins</a></li>
+                    <li><a href="lore-casket-manufacturing.html" target="_parent">Casket Manufacturing</a></li>
+                    <li><a href="lore-ground-zero.html" target="_parent">Ground Zero</a></li>
+                    <li><a href="lore-neural-threads.html" target="_parent">Neural Threads</a></li>
+                    <li><a href="lore-engine.html" target="_parent">Engine Doctrine</a></li>
+                    <li><a href="lore-soul-binding.html" target="_parent">Soul Binding</a></li>
+                    <li><a href="lore-soulstone-system.html" target="_parent">Soulstone System</a></li>
+                    <li><a href="lore-factions-overview.html" target="_parent">Factions Overview</a></li>
+                    <li><a href="lore-npcs.html" target="_parent">Iconic NPCs</a></li>
+                    <li><a href="lore-void.html" target="_parent">The Void</a></li>
+                    <li><a href="lore-climate.html" target="_parent">Climate and Biomes</a></li>
+                    <li><a href="lore-bonelord-thresh.html" target="_parent">Bonelord Thresh</a></li>
+                    <li><a href="lore-settlements.html" target="_parent">Settlements</a></li>
+                </ul>
             </div>
         </div>
 
+        <h2>Recent Updates to the Codex</h2>
+        <p style="opacity: 0.8; font-style: italic; margin-bottom: 1.5rem;">(Top 3 most recent. Past updates archived below.)</p>
+
+        <!-- Top 3 Updates (auto-generated from Past Updates) -->
+        <div class="recent-updates-container" id="recentUpdates"></div>
+
         <!-- Past Updates Dropdown -->
         <div class="dropdown-container">
-            <button class="dropdown-toggle" onclick="toggleDropdown()">View Past Updates (19 more entries)</button>
+            <button class="dropdown-toggle" onclick="toggleDropdown()" id="updatesToggle">View Past Updates</button>
             <div class="dropdown-content" id="dropdownContent">
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-25</span>
+                    <strong>Pilot Skills System (Optional Campaign Rule)</strong>, Complete progression system with 38 skills across 3 tiers. Universal skills + faction-specific abilities. XP-based unlocks, Settlement Training, Flesh Bargain integration.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-25</span>
+                    <strong>Combat Flowchart & Common Mistakes</strong>, Added visual combat flowchart showing turn sequence and a Common Mistakes guide to help new players avoid frequent errors.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-10-19</span>
+                    <strong>Balance Simulation Results</strong>, Church viability improved dramatically (+15 HP survival, 93% improvement), Blood Offering cost reduced (2 HP → 1 HP), Biomass generation rebalanced.
+                </div>
                 <div class="update-item">
                     <span class="update-item-date">2025-10-19</span>
                     <strong>Latin Anomaly Classification System</strong>, Replaced SCP terminology with proper Latin classifications: Sanctus (Safe), Poenitentia (Euclid), Damnatus (Keter), Necessitas (Thaumiel).
@@ -455,6 +669,11 @@
     </div>
 
     <script>
+        // Top anchor for back-to-top links
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.id = document.body.id || 'top';
+        });
+
         function toggleDropdown() {
             const dropdown = document.getElementById('dropdownContent');
             const toggle = document.querySelector('.dropdown-toggle');
@@ -462,6 +681,147 @@
             dropdown.classList.toggle('active');
             toggle.classList.toggle('active');
         }
+
+        // Build the 'Recent Updates' section from the Past Updates list (top 3 most recent)
+        (function buildRecentUpdates() {
+            const dropdown = document.getElementById('dropdownContent');
+            const recentContainer = document.getElementById('recentUpdates');
+            const toggleBtn = document.getElementById('updatesToggle');
+            if (!dropdown || !recentContainer) return;
+
+            const items = Array.from(dropdown.querySelectorAll('.update-item'));
+            const parsed = items.map(el => {
+                const dateStr = (el.querySelector('.update-item-date')?.textContent || '').trim();
+                const title = (el.querySelector('strong')?.textContent || '').trim();
+                let text = el.textContent.trim();
+                // Remove date prefix
+                if (dateStr && text.startsWith(dateStr)) {
+                    text = text.slice(dateStr.length).trim();
+                }
+                // Remove title prefix
+                if (title && text.startsWith(title)) {
+                    text = text.slice(title.length).trim();
+                }
+                // Remove leading comma
+                if (text.startsWith(',')) {
+                    text = text.slice(1).trim();
+                }
+                const d = new Date(dateStr);
+                return { date: d, dateStr, title, desc: text };
+            }).filter(x => x.date && !isNaN(x.date.getTime()));
+
+            parsed.sort((a, b) => b.date - a.date);
+            const top = parsed.slice(0, 3);
+
+            // Render top 3
+            recentContainer.innerHTML = top.map(item => {
+                const safeTitle = item.title.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const safeDesc = item.desc.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                return `
+                    <div class="update-card">
+                        <div class="date">${item.dateStr}</div>
+                        <p><strong>${safeTitle}</strong><br>${safeDesc}</p>
+                    </div>
+                `;
+            }).join('');
+
+            // Update toggle label to reflect remaining count
+            if (toggleBtn) {
+                const remaining = Math.max(parsed.length - 3, 0);
+                toggleBtn.textContent = `View Past Updates (${remaining} more entries)`;
+            }
+        })();
+
+        // Build Mini TOC and Back-to-Top links, and make TOC collapsible on small screens
+        (function enhanceNavigation() {
+            const content = document.querySelector('.content');
+            if (!content) return;
+
+            // Ensure H2s have ids and add Back to top links
+            const h2s = Array.from(content.querySelectorAll('h2'));
+            const slugify = s => s.toLowerCase()
+                                   .replace(/[^a-z0-9\s\-:&]/g, '')
+                                   .trim()
+                                   .replace(/\s+/g, '-')
+                                   .replace(/-+/g, '-');
+
+            h2s.forEach(h => {
+                if (!h.id) h.id = slugify(h.textContent || 'section');
+                const back = document.createElement('a');
+                back.href = '#top';
+                back.className = 'back-to-top';
+                back.textContent = 'Back to top';
+                // Avoid duplicating if re-run
+                if (!h.nextElementSibling || !(h.nextElementSibling.classList && h.nextElementSibling.classList.contains('back-to-top'))) {
+                    h.insertAdjacentElement('afterend', back);
+                }
+            });
+
+            // Mini TOC (right side, large screens)
+            const mini = document.createElement('aside');
+            mini.className = 'mini-toc';
+            const list = h2s.map(h => `<li><a href="#${h.id}">${(h.textContent || '').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</a></li>`).join('');
+            mini.innerHTML = `<h3>On this page</h3><ul>${list}</ul>`;
+            document.body.appendChild(mini);
+
+            // Active section highlight in mini TOC (IntersectionObserver)
+            const links = Array.from(mini.querySelectorAll('a'));
+            const map = new Map();
+            links.forEach(a => {
+                const id = (a.getAttribute('href') || '').replace('#','');
+                const h = id ? document.getElementById(id) : null;
+                if (h) map.set(h, a);
+            });
+            const obs = new IntersectionObserver((entries) => {
+                // Find most visible entry near top
+                let topMost = null;
+                entries.forEach(en => {
+                    if (en.isIntersecting) {
+                        if (!topMost || en.boundingClientRect.top < topMost.boundingClientRect.top) {
+                            topMost = en;
+                        }
+                    }
+                });
+                if (topMost) {
+                    links.forEach(a => a.classList.remove('active'));
+                    const a = map.get(topMost.target);
+                    if (a) a.classList.add('active');
+                }
+            }, { rootMargin: '0px 0px -70% 0px', threshold: [0, 0.25, 0.5, 1] });
+            h2s.forEach(h => obs.observe(h));
+
+            // Collapsible TOC columns on small screens
+            const tocGrid = document.getElementById('tocGrid');
+            if (tocGrid) {
+                const cols = Array.from(tocGrid.querySelectorAll('.toc-column'));
+                cols.forEach(col => col.classList.add('collapsible'));
+
+                const applyInitial = () => {
+                    const small = window.innerWidth <= 800;
+                    cols.forEach(col => {
+                        if (small) col.classList.remove('open'); else col.classList.add('open');
+                    });
+                };
+
+                applyInitial();
+                window.addEventListener('resize', applyInitial);
+
+                cols.forEach(col => {
+                    const header = col.querySelector('h3');
+                    if (!header) return;
+                    header.addEventListener('click', () => {
+                        const small = window.innerWidth <= 800;
+                        if (small) {
+                            // Close others, open this one
+                            cols.forEach(c => { if (c !== col) c.classList.remove('open'); });
+                            col.classList.toggle('open');
+                        } else {
+                            col.classList.add('open');
+                        }
+                    });
+                });
+            }
+        })();
     </script>
 </body>
 </html>
