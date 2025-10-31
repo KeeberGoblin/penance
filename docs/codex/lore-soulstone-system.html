@@ -32,8 +32,8 @@
         </div>
 
         <!-- Background tear reveal band: shows imagery behind the parchment -->
-        <div class="tear-reveal" aria-hidden="true">
-            <div class="tear-bg" style="background-image: url('../images/soulstones/Lore_SoulstoneSketch.png');"></div>
+        <div class="tear-reveal" aria-hidden="true" style="--tear-height: clamp(240px, 38vw, 560px);">
+            <div class="tear-bg" style="background-image: url('../images/soulstones/Lore_SoulstoneSketch.png?v=20251031');"></div>
         </div>
 
         <div style="text-align: center; margin: 2rem 0;">
@@ -62,14 +62,14 @@
                     const r = el.getBoundingClientRect();
                     const center = r.top + r.height/2;
                     const offset = (center / vh) - 0.5;
-                    const px = Math.max(-10, Math.min(10, -18 * offset));
+                    const px = Math.max(-60, Math.min(60, -120 * offset));
                     el.style.setProperty('--parallax', px.toFixed(2) + 'px');
                 });
                 tears.forEach(el => {
                     const r = el.getBoundingClientRect();
                     const center = r.top + r.height/2;
                     const offset = (center / vh) - 0.5;
-                    const px = Math.max(-10, Math.min(10, -22 * offset));
+                    const px = Math.max(-120, Math.min(120, -220 * offset));
                     const bg = el.querySelector('.tear-bg');
                     if (bg) bg.style.setProperty('--tearParallax', px.toFixed(2) + 'px');
                 });

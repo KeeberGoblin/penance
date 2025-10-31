@@ -128,15 +128,15 @@ body {
 /* Background tear reveal band (shows an image “behind the page”) */
 .tear-reveal {
     position: relative;
-    height: clamp(180px, 28vw, 320px);
+    height: var(--tear-height, clamp(220px, 34vw, 520px));
     margin: 1.5rem 0 2rem 0;
     overflow: hidden;
 }
 .tear-reveal .tear-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center center;
+    background-size: var(--tear-bg-size, cover);
+    background-position: var(--tear-bg-position, center center);
     transform: translateY(var(--tearParallax, 0px));
     will-change: transform;
     transition: transform 0.06s linear;
