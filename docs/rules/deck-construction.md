@@ -2,8 +2,11 @@
 ## Penance: Absolution Through Steel
 
 **Version**: 1.0
-**Last Updated**: October 9, 2025
+**Last Updated**: October 31, 2025
 **Status**: Playtest Ready
+
+
+> Authoritative Codex reference: See the interactive Codex page for v2.0 deck construction guidance and ranges: [Codex — Deck Construction](../codex/rules-deck-construction.html)
 
 ---
 
@@ -82,7 +85,7 @@ Note: Examples below focus on equipment composition. Remember to add 2 Tactics c
 
 ### Scout Casket (Fast, Fragile, First Strike)
 
-**Total Deck Size**: 26-32 cards
+**Total Deck Size**: 26–32 cards
 
 **Starting Hand Size**: 6 cards
 
@@ -110,7 +113,7 @@ Note: Examples below focus on equipment composition. Remember to add 2 Tactics c
 
 **Philosophy**: Fast, agile, evasive. Minimal armor, maximum mobility.
 
-**Example Scout Deck** (24 cards total):
+**Example Scout Deck** (equipment-focused example; finalize to class range):
 ```
 Universal Cards (10):
 - Desperate Lunge, Warden's Pivot, Ironstrider's Rush
@@ -137,16 +140,16 @@ Relic - Jump Jets (3 cards):
 Racial - Human Vow of Wrath (1 card):
 - Righteous Fury (0 SP, +1 dmg all attacks this turn, take 1 dmg)
 
-Total: 10 + 4 + 3 + 3 + 1 = 21 cards
+Total (equipment-focused): 10 + 4 + 3 + 3 + 1 = 21 cards (add 2 Tactics + optional slots to reach 26–32)
 ```
 
 **Customization**: Swap Buckler for Dagger (4 cards), swap Jump Jets for Grappling Hook (3 cards), etc.
 
 ---
 
-### Warden Casket (Balanced, Flexible, Standard)
+### Support Casket (Balanced, Flexible, Standard)
 
-**Total Deck Size**: 30-38 cards
+**Total Deck Size**: 30–38 cards
 
 **Starting Hand Size**: 6 cards
 
@@ -175,7 +178,7 @@ Total: 10 + 4 + 3 + 3 + 1 = 21 cards
 
 **Philosophy**: Force multiplier. Buffs allies, heals, controls areas. Weaker alone.
 
-**Example Support Deck** (28 cards total):
+**Example Support Deck** (equipment-focused example; finalize to class range):
 ```
 Universal Cards (10): Standard 10
 
@@ -204,16 +207,16 @@ Relic 2 - Banner of Valor (4 cards):
 Racial - Elven Symbiosis (passive):
 - No extra cards, but remove 1 Damage card from discard at end of round
 
-Total: 10 + 4 + 3 + 3 + 4 = 24 cards
+Total (equipment-focused): 10 + 4 + 3 + 3 + 4 = 24 cards (add 2 Tactics + optional slots to reach 30–38)
 ```
 
 **Customization**: Swap Banner for Smoke Launchers (area denial), swap Mace for Spear (reach), etc.
 
 ---
 
-### Heavy (1,300-1,800 lbs)
+### Heavy (1,300–1,800 lbs)
 
-**Total Deck Size**: 32-38 cards
+**Total Deck Size**: 32–38 cards
 
 **Starting Hand Size**: 6 cards
 
@@ -278,7 +281,7 @@ Total: 10 + 4 + 5 + 3 + 3 + 3 = 28 cards
 
 ### Vanguard Casket (Heavy, Tanky, Close-Range)
 
-**Total Deck Size**: 36-46 cards
+**Total Deck Size**: 36–46 cards
 
 **Starting Hand Size**: 6 cards
 
@@ -349,7 +352,7 @@ Total: 10 + 6 + 4 + 4 + 4 + 3 = 31 cards
 
 ### Colossus Casket (Fortress, Ultra-Tank, Artillery)
 
-**Total Deck Size**: 42-50 cards
+**Total Deck Size**: 42–50 cards
 
 **Starting Hand Size**: 6 cards
 
@@ -431,9 +434,9 @@ Total: 10 + 7 + 5 + 5 + 5 + 4 = 36 cards
 
 ---
 
-### Aberrant (600-1,500 lbs Variable)
+### Aberrant (600–1,500 lbs Variable)
 
-**Total Deck Size**: 26-32 cards
+**Total Deck Size**: 26–32 cards
 
 **Starting Hand Size**: 6 cards
 
@@ -740,15 +743,15 @@ Total: 10 + 4 + 4 + 4 + 3 + 3 = 28 cards
 
 ---
 
-## Quick Reference: Deck Size Ranges
+## Quick Reference: Deck Size Ranges (v2.0)
 
 | Weight Class | Deck Size | Universal | Equipment Budget | Relic Slots |
 |--------------|-----------|-----------|------------------|-------------|
-| Scout | 22-26 | 10 | 12-16 | 1 |
-| Support | 26-32 | 10 | 16-22 | 2 |
-| Heavy | 32-38 | 10 | 22-28 | 3 |
-| Assault | 36-42 | 10 | 26-32 | 3 |
-| Aberrant | 26-32 | 10 | 16-22 | 2 |
+| Scout | 26–32 | 10 | 12–16 | 1 |
+| Support | 30–38 | 10 | 16–22 | 2 |
+| Heavy | 32–38 | 10 | 22–28 | 3 |
+| Vanguard | 36–46 | 10 | 26–32 | 3 |
+| Aberrant | 26–32 | 10 | 16–22 | 2 |
 
 ---
 

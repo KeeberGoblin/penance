@@ -22,7 +22,7 @@ Welcome to the complete documentation for **Penance: Absolution Through Steel**.
 Core game mechanics - turn structure, combat, deck building, terrain
 - [Turn Structure](rules/turn-structure.md)
 - [Combat System](rules/combat-system.md) (Deck-as-HP + Component Damage)
-- [Deck Construction](rules/deck-construction.md)
+- [Deck Construction](rules/deck-construction.md) ([Codex version](codex/rules-deck-construction.html))
 - [Range & Line of Sight](rules/range-and-los.md)
 - [Support Units](rules/support-units.md) (GKR-inspired AI companions)
 - [Terrain Rules](rules/terrain.md)
