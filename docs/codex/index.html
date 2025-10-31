@@ -417,9 +417,21 @@
             opacity: 0.9;
             pointer-events: auto;
         }
+
+        /* Accessibility: clear focus outline for keyboard users */
+        .nav-link:focus-visible,
+        .desktop-menu-toggle:focus-visible,
+        .back-to-top-fab:focus-visible,
+        .nav-search-controls button:focus-visible,
+        .nav-search input[type="text"]:focus-visible {
+            outline: 2px solid var(--aged-gold);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip to content for keyboard users -->
+    <a href="#content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.left='20px'" onblur="this.style.left='-9999px'">Skip to content</a>
     <!-- Menu Toggle Button (works for both desktop and mobile) -->
     <button class="desktop-menu-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
 
@@ -624,7 +636,7 @@
 
         <!-- Content Frame -->
         <main class="content">
-            <iframe id="contentFrame" class="content-frame" src="content-home.html"></iframe>
+            <iframe id="contentFrame" class="content-frame" src="content-home.html" title="Codex content" tabindex="-1"></iframe>
         </main>
     </div>
 
@@ -675,18 +687,19 @@
             }
 
             const frame = document.getElementById('contentFrame');
-            const allLinks = document.querySelectorAll('.nav-link[onclick]');
+            const allLinks = document.querySelectorAll('.nav-link');
 
-            // Remove active class from all clickable links
-            allLinks.forEach(link => link.classList.remove('active'));
+            // Remove active state from all links
+            allLinks.forEach(link => { link.classList.remove('active'); link.removeAttribute('aria-current'); });
 
             // Add active class to clicked link
             if (event && event.currentTarget) {
                 event.currentTarget.classList.add('active');
             }
 
-            // Load content in iframe
+            // Load content in iframe and persist selection
             frame.src = url;
+            try { localStorage.setItem('codex:last', url); } catch(e) {}
 
             // Close menu after clicking a link
             const sidebar = document.querySelector('.sidebar');
@@ -699,6 +712,8 @@
             // Close all dropdowns when navigating
             document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
                 dropdown.classList.remove('dropdown-open');
+                const p = dropdown.querySelector('> .nav-link.has-submenu');
+                if (p) p.setAttribute('aria-expanded', 'false');
             });
         }
 
@@ -771,6 +786,7 @@
                     const a = document.createElement('a');
                     a.className = 'nav-link';
                     a.textContent = label;
+                    if (url) a.dataset.url = url;
                     a.addEventListener('click', (ev) => loadContent(url || '#', ev));
                     submenu.insertBefore(a, submenu.firstChild);
                 }
@@ -856,6 +872,45 @@
                     // fallback
                     frame.contentWindow.scrollTo(0,0);
                 }
+            });
+
+            // Map all nav links to data-url for active state and restore
+            function indexNavLinks() {
+                document.querySelectorAll('a.nav-link').forEach(a => {
+                    if (a.dataset.url) return;
+                    const onclick = a.getAttribute('onclick');
+                    const m = onclick ? onclick.match(/loadContent\(['\"]([^'\"]+)['\"]/i) : null;
+                    if (m) a.dataset.url = m[1];
+                });
+            }
+            indexNavLinks();
+
+            // Helper: set active link by URL
+            function setActiveByUrl(url) {
+                const links = Array.from(document.querySelectorAll('a.nav-link'));
+                links.forEach(l => { l.classList.remove('active'); l.removeAttribute('aria-current'); });
+                const match = links.find(l => (l.dataset.url || '').replace(/#.*/, '') === (url || '').replace(/#.*/, ''));
+                if (match) {
+                    match.classList.add('active');
+                    match.setAttribute('aria-current', 'page');
+                }
+            }
+
+            // Restore last visited page on load
+            try {
+                const last = localStorage.getItem('codex:last');
+                if (last && typeof last === 'string') {
+                    document.getElementById('contentFrame').src = last;
+                    setActiveByUrl(last);
+                }
+            } catch(e) {}
+
+            // Update active state when iframe completes navigation
+            frame.addEventListener('load', () => {
+                try {
+                    const current = frame.getAttribute('src');
+                    if (current) setActiveByUrl(current);
+                } catch(e) {}
             });
 
             // Sidebar quick search: filter, expand/collapse, clear
@@ -979,6 +1034,15 @@
             if (searchInput) {
                 searchInput.addEventListener('input', (e) => debouncedSearch(e.target.value));
             }
+            // ESC collapses dropdowns and clears search
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (searchInput) searchInput.value = '';
+                    resetVisibility();
+                    document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('dropdown-open'));
+                    document.querySelectorAll('.nav-dropdown > .nav-link.has-submenu').forEach(p => p.setAttribute('aria-expanded', 'false'));
+                }
+            });
             if (expandAllBtn) {
                 expandAllBtn.addEventListener('click', () => {
                     document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.add('dropdown-open'));
