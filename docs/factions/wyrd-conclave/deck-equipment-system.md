@@ -27,7 +27,7 @@ The Wyrd Conclave are Fae tricksters who weaponize reality itself. Every card re
 
 ### Pre-Sundering Origins
 
-**The Fae Courts** (Pre-Sundering dimensional beings):
+**Pre‑Sundering fae entities** (dimensional beings):
 - Existed "between" dimensions (not fully in material world)
 - Fed on mortal creativity, emotion, and wonder
 - Made bargains with mortals (power for abstract costs)
@@ -39,7 +39,7 @@ The Wyrd Conclave are Fae tricksters who weaponize reality itself. Every card re
 
 **When Theslar activated the Engine**:
 - Void energy tore holes between dimensions
-- Fae Courts forcibly pulled into material world
+- Fae beings forcibly pulled into the material world
 - **Trapped**: Can no longer fully return to Feywild
 - **Weakened**: Lost much of their reality-warping power
 - **Changed**: Now need physical bodies (stolen from mortals)

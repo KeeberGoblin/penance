@@ -716,7 +716,7 @@ SP (Soulstone Points) varies by Casket weight class:
 
 ### Template: Church Confessor (Light Casket)
 
-**Total Deck: 30 cards**
+**Example Total Deck: 30 cards** (actual decks vary 26–50 by class and loadout under v2.0)
 
 1. **Universal Core** (10 cards) - MANDATORY
  - Desperate Lunge, Brace for Impact, Emergency Vent, Sensor Sweep, Overextend, Rally Cry, Survey the Field, Feint, Retreat, Breathe the Core

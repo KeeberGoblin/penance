@@ -15,6 +15,12 @@
 
 ## Universal Deck Construction Rules
 
+### Deck Size Formula (v2.0 Base Rules)
+
+Total Deck = 10 Universal + 6 Faction Core + X Equipment + 2 Tactics
+
+Where X depends on your class and loadout. Typical totals range from 26–50 cards (fewer cards = faster cycling, more cards = more HP/endurance).
+
 ### Mandatory Components
 
 **Every deck must contain**:
@@ -50,9 +56,9 @@
 
 ---
 
-### Deck Size Formula
+### Deck Size Details
 
-**Base Deck = 10 Universal Cards + Equipment Cards**
+**Base Deck = 10 Universal Cards + 6 Faction Core + Equipment Cards + 2 Tactics**
 
 **Equipment cards** vary by what you equip:
 - Each weapon adds 3-5 cards
@@ -63,6 +69,8 @@
 **Final deck size** depends on:
 - Weight class (determines max equipment cards)
 - Equipment choices (each piece adds cards)
+
+Note: Examples below focus on equipment composition. Remember to add 2 Tactics cards when finalizing your deck.
 
 **See weight class templates below for specifics.**
 

@@ -31,7 +31,7 @@
 ## DAMAGE & HP
 
 ### The 3-Pile System
-1. **HP Draw Deck** (26-50 cards) - Active deck
+1. **HP Draw Deck** (26–50 cards) - Active deck
 2. **Discard Pile** - Played cards → Reshuffles
 3. **Damage Graveyard** - Damaged cards → Gone forever
 
@@ -239,13 +239,13 @@
 
 ## DECK CONSTRUCTION
 
-### Standard Deck (30 cards)
+### Deck Size
 - **10 Universal Core** (always included)
 - **6 Faction Cards** (choose 6 from 10 available)
 - **12 Primary Weapon** (fixed, comes with Casket)
 - **2 Tactics** (choose 2 from 5 available)
 
-**Total**: 30 cards = 30 HP
+Decks vary by class and loadout (typically 26–50 cards). 30-card builds are common examples, but not required.
 
 ### Equipment Expansion
 - Add **Secondary Equipment** (6 cards): Shields, accessories, plating
@@ -297,7 +297,7 @@
 ## PLAYTEST CHECKLIST
 
 Before first game:
-- ☑ Print 2 decks (30 cards each)
+- ☑ Print decks for each player (26–50 cards each)
 - ☑ Print hex map (12×10 grid)
 - ☑ Tokens: SP, Heat, Forge/Blood stacks
 - ☑ D6 dice (for Strain rolls)

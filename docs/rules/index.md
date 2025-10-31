@@ -2,7 +2,8 @@
 
 Core game mechanics and systems for Penance: Absolution Through Steel.
 
-**Current Version**: 3.0 (October 2025)
+**Base Rules**: v2.0 (current)
+**Optional Mechanics**: v3.0 (October 2025)
 
 ## Core Systems (v2.0 Base Rules)
 
@@ -13,7 +14,7 @@ Complete turn sequence, SP economy, Heat management, and action resolution.
 Deck-as-HP mechanics, component damage, death spiral, and dual-layer damage system.
 
 ### [Deck Construction](deck-construction.md)
-How to build your 30-card deck: Universal Core + Primary Weapon + Secondary Equipment + Tactics.
+How to build your deck (26–50 cards): 10 Universal + 6 Faction Core + X Equipment + 2 Tactics (v2.0).
 
 ### [Range & Line of Sight](range-and-los.md)
 Hex-based movement, facing rules, range calculations, and targeting.
@@ -52,7 +53,7 @@ Campaign stat (0-3) that grows with survival. Roll 1d6 + Grit to resist Pilot Wo
 
 ## Key Concepts
 
-**Deck-as-HP**: Your 30-card deck IS your HP. Discard cards when damaged.
+**Deck-as-HP**: Your deck (typically 26–50 cards) is your HP. Discard cards when damaged.
 
 **Component Damage**: Discard 3 Primary Weapon cards from damage = component destroyed = permanent effect.
 

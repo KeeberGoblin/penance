@@ -223,7 +223,7 @@ Each faction has **5 unique tactical cards**. Before each battle, you choose **3
 
 ---
 
-# UNDEAD COURT
+# The Ossuarium
 
 **Theme**: Resurrection, life drain, thrall summoning, death as a resource
 
@@ -288,7 +288,7 @@ Each faction has **5 unique tactical cards**. Before each battle, you choose **3
 
 ---
 
-# FAE COURTS
+# Wyrd Conclave
 
 **Theme**: Illusions, teleportation, mind control, reality manipulation
 

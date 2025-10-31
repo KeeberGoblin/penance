@@ -381,7 +381,7 @@ Loot (on death): Credits, Scrap, Equipment rolls
 ### 10. ROGUE CASKET (Enemy Pilot)
 
 **Type**: Boss (Rival Pilot)
-**HP Deck**: 30 cards (10 Universal + 12 Primary + 6 Secondary + 2 Tactics)
+**HP Deck**: Example baseline 30 cards (enemy Casket decks generally mirror v2.0 player construction: 10 Universal + 6 Faction Core + Equipment + 2 Tactics, totaling ~26–50 cards by loadout)
 **Movement**: 5 hexes (Medium Casket)
 **Armor**: 2
 **SP**: 5

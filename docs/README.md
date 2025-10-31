@@ -107,7 +107,9 @@ Combat simulator and balance testing tools
 - **BattleTech** - Heat management, mech customization
 - **Grimdark Medieval Fantasy** - 437 years after the apocalypse
 
-**Core Loop**: Build 30-card deck → Fight in hex arena → Take damage = discard cards → Component destruction → Death spiral → Campaign progression
+**Core Loop**: Build your deck (26–50 cards) → Fight in hex arena → Take damage = discard cards → Component destruction → Death spiral → Campaign progression
+
+Deck formula (v2.0 base rules): 10 Universal + 6 Faction Core + X Equipment + 2 Tactics (X varies by loadout and class).
 
 ---
 

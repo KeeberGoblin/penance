@@ -1,4 +1,6 @@
 # Example of Play - First Combat Round
+
+Note: This walkthrough uses 30-card decks as a clear midpoint example. Under v2.0 base rules, actual deck sizes vary by class and loadout (typically 26–50 cards using 10 Universal + 6 Faction Core + X Equipment + 2 Tactics).
 ## Penance: Absolution Through Steel
 
 **Version**: 1.0

@@ -380,7 +380,7 @@ Each faction builds Caskets that reflect their ideology, culture, and relationsh
 
 ---
 
-# UNDEAD COURT
+# The Ossuarium
 
 **Theme**: Death is a resource. Bones are building materials. Efficiency is immortality.
 
