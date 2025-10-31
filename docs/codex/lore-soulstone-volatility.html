@@ -31,6 +31,11 @@
             <span class="quote-attribution">-Master Refiner Kael, Ossuarium Safety Protocols Manual</span>
         </div>
 
+        <!-- Background tear reveal band: shows imagery behind the parchment -->
+        <div class="tear-reveal" aria-hidden="true">
+            <div class="tear-bg" style="background-image: url('../lore/PenanceBG.png');"></div>
+        </div>
+
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
@@ -64,7 +69,8 @@
         <script>
         (function() {
             const figs = Array.from(document.querySelectorAll('.rip-parallax'));
-            if (!figs.length) return;
+            const tears = Array.from(document.querySelectorAll('.tear-reveal'));
+            if (!figs.length && !tears.length) return;
             const onScroll = () => {
                 const vh = window.innerHeight || document.documentElement.clientHeight;
                 figs.forEach(el => {
@@ -73,6 +79,14 @@
                     const offset = (center / vh) - 0.5;
                     const px = Math.max(-10, Math.min(10, -18 * offset));
                     el.style.setProperty('--parallax', px.toFixed(2) + 'px');
+                });
+                tears.forEach(el => {
+                    const r = el.getBoundingClientRect();
+                    const center = r.top + r.height/2;
+                    const offset = (center / vh) - 0.5;
+                    const px = Math.max(-10, Math.min(10, -22 * offset));
+                    const bg = el.querySelector('.tear-bg');
+                    if (bg) bg.style.setProperty('--tearParallax', px.toFixed(2) + 'px');
                 });
             };
             window.addEventListener('scroll', onScroll, { passive: true });

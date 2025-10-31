@@ -125,6 +125,55 @@ body {
     transition: transform 0.06s linear;
 }
 
+/* Background tear reveal band (shows an image “behind the page”) */
+.tear-reveal {
+    position: relative;
+    height: clamp(180px, 28vw, 320px);
+    margin: 1.5rem 0 2rem 0;
+    overflow: hidden;
+}
+.tear-reveal .tear-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center center;
+    transform: translateY(var(--tearParallax, 0px));
+    will-change: transform;
+    transition: transform 0.06s linear;
+}
+/* Top torn edge */
+.tear-reveal::before,
+.tear-reveal::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 38px;
+    z-index: 2;
+    background:
+        repeating-linear-gradient(0deg, rgba(212,197,176,0.12) 0 2px, rgba(212,197,176,0.05) 2px 4px),
+        linear-gradient(180deg, rgba(139,115,85,0.85), rgba(43,31,23,0.65));
+    box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+}
+.tear-reveal::before {
+    top: 0;
+    clip-path: polygon(
+        0% 0%, 6% 55%, 12% 25%, 18% 60%, 24% 30%, 30% 65%, 36% 35%, 42% 60%,
+        48% 28%, 54% 62%, 60% 32%, 66% 58%, 72% 30%, 78% 64%, 84% 34%, 90% 58%, 96% 38%, 100% 55%,
+        100% 100%, 0% 100%
+    );
+}
+/* Bottom torn edge */
+.tear-reveal::after {
+    bottom: 0;
+    transform: scaleY(-1);
+    clip-path: polygon(
+        0% 0%, 6% 55%, 12% 25%, 18% 60%, 24% 30%, 30% 65%, 36% 35%, 42% 60%,
+        48% 28%, 54% 62%, 60% 32%, 66% 58%, 72% 30%, 78% 64%, 84% 34%, 90% 58%, 96% 38%, 100% 55%,
+        100% 100%, 0% 100%
+    );
+}
+
 /* Decorative Page Border */
 body::before {
     content: '';
