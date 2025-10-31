@@ -185,12 +185,15 @@ body {
     padding: 0.6rem;
     margin: 1.5rem 0 2rem 0;
     box-shadow: 0 10px 24px rgba(0,0,0,0.55);
+    text-align: center;
 }
 .section-banner .banner-img {
     display: block;
-    width: 100%;
-    max-height: clamp(200px, 34vw, 520px);
-    object-fit: contain;
+    margin: 0 auto;
+    width: auto;
+    max-width: min(100%, 1100px);
+    height: auto;
+    max-height: clamp(220px, 34vw, 560px);
     background: #2b1f17;
     border: 1px solid rgba(139,0,0,0.5);
 }
