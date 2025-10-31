@@ -20,9 +20,9 @@
         <div style="background: rgba(10,6,4,0.5); border: 1px solid var(--dark-red); padding: 1rem 1.25rem; margin: 1rem 0 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0 0 0.5rem 0; color: var(--aged-gold); font-weight: 700;">See also</p>
             <ul class="manuscript-list" style="margin: 0;">
-                <li><a href="lore-soulstone-volatility.html" target="_parent"><strong>Soulstone Volatility</strong></a> — thresholds, instability states, battlefield consequences</li>
-                <li><a href="lore-soul-binding.html" target="_parent"><strong>Soul-Binding Mechanics</strong></a> — capture, imprisonment, and ethical heresies</li>
-                <li><a href="rules-soulstone-energy.html" target="_parent"><strong>Rules: Soulstone Energy System</strong></a> — gameplay for energy, refinement, and risk</li>
+                <li><a href="lore-soulstone-volatility.html" target="_parent"><strong>Soulstone Volatility</strong></a>: thresholds, instability states, battlefield consequences</li>
+                <li><a href="lore-soul-binding.html" target="_parent"><strong>Soul-Binding Mechanics</strong></a>: capture, imprisonment, and ethical heresies</li>
+                <li><a href="rules-soulstone-energy.html" target="_parent"><strong>Rules: Soulstone Energy System</strong></a>: gameplay for energy, refinement, and risk</li>
             </ul>
         </div>
 
@@ -46,19 +46,38 @@
         </p>
 
         <div class="image-grid" style="margin-top: 1.25rem;">
-            <figure class="codex-figure">
+            <figure class="codex-figure rip-parallax">
                 <img src="../images/soulstones/Lore_SoulstoneSketch.png" alt="Soulstone study sketch: lattice, facets, bound face" loading="lazy" decoding="async">
                 <figcaption>
-                    Soulstone anatomy study — facets shaped by the imprisoned consciousness; lattice under strain.
+                    Soulstone anatomy study: facets shaped by the imprisoned consciousness; lattice under strain.
                 </figcaption>
             </figure>
-            <figure class="codex-figure">
+            <figure class="codex-figure rip-parallax">
                 <img src="../images/soulstones/Lore_SoulstoneExposionSketch.png" alt="Refinement overload explosion sketch: shock wave, shrapnel, taint plume" loading="lazy" decoding="async">
                 <figcaption>
-                    Refinement overload — shock front, crystal shrapnel vectors, and the rising Taint plume.
+                    Refinement overload: shock front, crystal shrapnel vectors, and the rising Taint plume.
                 </figcaption>
             </figure>
         </div>
+        <script>
+        (function() {
+            const figs = Array.from(document.querySelectorAll('.rip-parallax'));
+            if (!figs.length) return;
+            const onScroll = () => {
+                const vh = window.innerHeight || document.documentElement.clientHeight;
+                figs.forEach(el => {
+                    const r = el.getBoundingClientRect();
+                    const center = r.top + r.height/2;
+                    const offset = (center / vh) - 0.5;
+                    const px = Math.max(-10, Math.min(10, -18 * offset));
+                    el.style.setProperty('--parallax', px.toFixed(2) + 'px');
+                });
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            onScroll();
+        })();
+        </script>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
