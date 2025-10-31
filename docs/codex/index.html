@@ -112,6 +112,19 @@
             transform: rotate(180deg);
         }
 
+        /* When open, show a divider in place of parent text and disable navigation */
+        .nav-dropdown > .nav-link.has-submenu { position: relative; }
+        .nav-dropdown.dropdown-open > .nav-link.has-submenu { color: transparent; }
+        .nav-dropdown.dropdown-open > .nav-link.has-submenu::before {
+            content: '────────────';
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--aged-gold);
+            opacity: 0.7;
+        }
+
         /* Mobile Hamburger Menu */
         .mobile-menu-toggle {
             display: none;
@@ -343,6 +356,66 @@
                 max-width: 280px;
             }
         }
+
+        /* Sidebar quick search */
+        .nav-search {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: linear-gradient(to bottom, rgba(43,31,23,0.98), rgba(26,20,16,0.98));
+            padding: 0.75rem;
+            border-bottom: 1px solid rgba(139,0,0,0.35);
+        }
+        .nav-search input[type="text"] {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            background: rgba(10,6,4,0.6);
+            border: 1px solid rgba(139,0,0,0.4);
+            color: var(--parchment);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .nav-search-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .nav-search-controls button {
+            flex: 1;
+            padding: 0.4rem 0.5rem;
+            background: var(--blood-red);
+            color: var(--bone-white);
+            border: 1px solid var(--dark-red);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .nav-search-controls button:hover { background: var(--dark-red); }
+        .nav-link.match { background: rgba(75,14,14,0.25); }
+
+        /* Back-to-top floating action button (applies to all pages via iframe control) */
+        .back-to-top-fab {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 11000;
+            background: var(--blood-red);
+            color: var(--bone-white);
+            border: 2px solid var(--dark-red);
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.2s ease;
+        }
+        .back-to-top-fab:hover { transform: translateY(-2px); }
+        .back-to-top-fab.visible {
+            opacity: 0.9;
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body>
@@ -387,6 +460,14 @@
         <!-- Sidebar -->
         <nav class="sidebar">
             <div class="nav-content">
+            <div class="nav-search">
+                <input id="navSearchInput" type="text" placeholder="Search Codex..." aria-label="Search Codex navigation" />
+                <div class="nav-search-controls">
+                    <button type="button" id="expandAllBtn">Expand All</button>
+                    <button type="button" id="collapseAllBtn">Collapse All</button>
+                    <button type="button" id="clearSearchBtn">Clear</button>
+                </div>
+            </div>
             <!-- 0. HOME - Quick return to index -->
             <div class="nav-section">
                 <a class="nav-link" style="font-weight: 700; color: var(--aged-gold); border-left-color: var(--dark-red);" onclick="loadContent('content-home.html', event)">CODEX HOME</a>
@@ -398,7 +479,7 @@
 
                 <!-- The Theslar Event submenu -->
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('lore-theslar-overview.html', event)">The Theslar Event</a>
+                    <a class="nav-link has-submenu" data-url="lore-theslar-overview.html">The Theslar Event</a>
                     <div class="nav-submenu">
                         <a class="nav-link" onclick="loadContent('lore-ground-zero.html', event)">Ground Zero (North Pole)</a>
                         <a class="nav-link" onclick="loadContent('lore-year-zero.html', event)">Year 0 Timeline</a>
@@ -409,7 +490,7 @@
 
                 <!-- Casket Technology submenu -->
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('lore-caskets-overview.html', event)">Casket Technology</a>
+                    <a class="nav-link has-submenu" data-url="lore-caskets-overview.html">Casket Technology</a>
                     <div class="nav-submenu">
                         <a class="nav-link" onclick="loadContent('lore-casket-origins.html', event)">Origins & History</a>
                         <a class="nav-link" onclick="loadContent('lore-soulstone-system.html', event)">Soulstone Power System</a>
@@ -422,7 +503,7 @@
 
                 <!-- The World submenu -->
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('cosmology.html', event)">The World</a>
+                    <a class="nav-link has-submenu" data-url="cosmology.html">The World</a>
                     <div class="nav-submenu">
                         <a class="nav-link" onclick="loadContent('lore-climate.html', event)">Climate & Geography</a>
                         <a class="nav-link" onclick="loadContent('lore-void.html', event)">The Void</a>
@@ -443,7 +524,7 @@
 
                 <!-- Component Damage submenu -->
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('rules-component-damage.html', event)">Component Damage System</a>
+                    <a class="nav-link has-submenu" data-url="rules-component-damage.html">Component Damage System</a>
                     <div class="nav-submenu">
                         <a class="nav-link" onclick="loadContent('rules-scrap-cards.html', event)">SCRAP Cards & Salvage</a>
                         <a class="nav-link" onclick="loadContent('rules-thread-snap.html', event)">Thread Snap Damage</a>
@@ -482,7 +563,7 @@
             <div class="nav-section">
                 <div class="nav-title">Scenarios</div>
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" onclick="loadContent('scenarios.html', event)">Scenario Overview</a>
+                    <a class="nav-link has-submenu" data-url="scenarios.html">Scenario Overview</a>
                     <div class="nav-submenu">
                         <a class="nav-link" onclick="loadContent('scenario-tutorial-energy-threads.html', event)">Tutorial: Energy & Threads</a>
                         <a class="nav-link" onclick="loadContent('scenario-proving-grounds.html', event)">Scenario #1: Proving Grounds</a>
@@ -546,6 +627,9 @@
         </main>
     </div>
 
+    <!-- Global Back-to-Top control (acts on iframe content) -->
+    <button class="back-to-top-fab" id="backToTopBtn" title="Back to top">^ Back to top</button>
+
     <script>
         function toggleMenu() {
             const sidebar = document.querySelector('.sidebar');
@@ -575,23 +659,16 @@
             const isDropdownParent = clickedLink && clickedLink.classList.contains('has-submenu');
             const parentDropdown = clickedLink ? clickedLink.closest('.nav-dropdown') : null;
 
-            // On mobile/touch devices, toggle dropdown instead of navigating on first click
+            // Parent links act as toggles ONLY (never navigate); navigation via submenu
             if (isDropdownParent && parentDropdown) {
                 const isOpen = parentDropdown.classList.contains('dropdown-open');
-
-                // Close all other dropdowns
+                // Close other dropdowns
                 document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
-                    if (dropdown !== parentDropdown) {
-                        dropdown.classList.remove('dropdown-open');
-                    }
+                    if (dropdown !== parentDropdown) dropdown.classList.remove('dropdown-open');
                 });
-
-                // If dropdown is closed, open it and prevent navigation
-                if (!isOpen) {
-                    parentDropdown.classList.add('dropdown-open');
-                    return; // Don't navigate, just open the dropdown
-                }
-                // If dropdown is already open, allow navigation to proceed below
+                // Toggle this one and exit (no navigation)
+                parentDropdown.classList.toggle('dropdown-open', !isOpen);
+                return;
             }
 
             const frame = document.getElementById('contentFrame');
@@ -657,6 +734,205 @@
                     });
                 }
             });
+
+            // Convert dropdown parents to toggles and inject parent links into submenu
+            document.querySelectorAll('.nav-dropdown').forEach(dd => {
+                const parent = dd.querySelector('.nav-link.has-submenu');
+                const submenu = dd.querySelector('.nav-submenu');
+                if (!parent || !submenu) return;
+
+                // Move parent destination into data-url if present on onclick
+                let url = parent.getAttribute('data-url');
+                if (!url) {
+                    const onclick = parent.getAttribute('onclick');
+                    // Try to extract 'loadContent("X"' pattern
+                    const m = onclick ? onclick.match(/loadContent\(['\"]([^'\"]+)['\"]/i) : null;
+                    if (m) url = m[1];
+                }
+                if (url) parent.setAttribute('data-url', url);
+                // Remove navigation from parent
+                parent.removeAttribute('onclick');
+
+                // If first submenu item is not the parent link, inject it
+                const first = submenu.querySelector('.nav-link');
+                const label = (parent.textContent || '').trim();
+                if (!first || (first && first.textContent.trim() !== label)) {
+                    const a = document.createElement('a');
+                    a.className = 'nav-link';
+                    a.textContent = label;
+                    a.addEventListener('click', (ev) => loadContent(url || '#', ev));
+                    submenu.insertBefore(a, submenu.firstChild);
+                }
+            });
+
+            // Back-to-top FAB controls scrolling of iframe content and shows on scroll
+            const frame = document.getElementById('contentFrame');
+            const fab = document.getElementById('backToTopBtn');
+            function updateFabVisibility() {
+                try {
+                    const y = frame.contentWindow.scrollY || frame.contentDocument.documentElement.scrollTop;
+                    if (y > 400) fab.classList.add('visible'); else fab.classList.remove('visible');
+                } catch(e) { /* cross-origin guard */ }
+            }
+            function attachScrollListener() {
+                try {
+                    frame.contentWindow.addEventListener('scroll', updateFabVisibility, { passive: true });
+                    updateFabVisibility();
+                } catch(e) { /* ignore */ }
+            }
+
+            // Inject smooth scrolling CSS and a #top anchor into iframe content
+            function injectSmoothScroll() {
+                try {
+                    const doc = frame.contentDocument;
+                    if (!doc) return;
+                    // Ensure a #top anchor exists for in-page back-to-top links
+                    if (!doc.getElementById('top')) {
+                        const topAnchor = doc.createElement('div');
+                        topAnchor.id = 'top';
+                        topAnchor.style.position = 'absolute';
+                        topAnchor.style.top = '0';
+                        topAnchor.style.left = '0';
+                        doc.body.insertBefore(topAnchor, doc.body.firstChild);
+                    }
+                    // Inject CSS only once per page load
+                    if (!doc.getElementById('injected-smooth-scroll-style')) {
+                        const style = doc.createElement('style');
+                        style.id = 'injected-smooth-scroll-style';
+                        style.textContent = `
+                            html { scroll-behavior: smooth; }
+                            /* Provide comfortable anchor offsets for headings */
+                            h1, h2, h3, h4, h5, h6 { scroll-margin-top: 72px; }
+                            /* Make any .back-to-top or anchor links feel responsive */
+                            a[href^="#"] { cursor: pointer; }
+                        `;
+                        doc.head.appendChild(style);
+                    }
+                } catch(e) { /* cross-origin guard */ }
+            }
+
+            function onFrameLoad() {
+                attachScrollListener();
+                injectSmoothScroll();
+                updateFabVisibility();
+            }
+
+            frame.addEventListener('load', onFrameLoad);
+            onFrameLoad();
+            fab.addEventListener('click', function() {
+                try {
+                    frame.contentWindow.scrollTo({ top: 0, behavior: 'smooth' });
+                } catch(e) {
+                    // fallback
+                    frame.contentWindow.scrollTo(0,0);
+                }
+            });
+
+            // Sidebar quick search: filter, expand/collapse, clear
+            const searchInput = document.getElementById('navSearchInput');
+            const expandAllBtn = document.getElementById('expandAllBtn');
+            const collapseAllBtn = document.getElementById('collapseAllBtn');
+            const clearSearchBtn = document.getElementById('clearSearchBtn');
+            const navContent = document.querySelector('.nav-content');
+
+            function normalize(text) { return (text || '').toLowerCase().trim(); }
+
+            function resetVisibility() {
+                // Show everything and remove highlights
+                navContent.querySelectorAll('.nav-section, .nav-dropdown, .nav-link').forEach(el => {
+                    el.style.display = '';
+                    el.classList.remove('match');
+                });
+            }
+
+            function applySearchFilter(q) {
+                const query = normalize(q);
+                // If empty, reset and stop
+                if (!query) {
+                    resetVisibility();
+                    // Do not force-expand/collapse here; leave as-is. Clear button will collapse.
+                    return;
+                }
+
+                // Hide all by default; selectively show matches and their ancestors
+                navContent.querySelectorAll('.nav-section, .nav-dropdown, .nav-link').forEach(el => {
+                    el.style.display = 'none';
+                    el.classList.remove('match');
+                });
+
+                // Track which sections should be visible
+                const sections = Array.from(navContent.querySelectorAll('.nav-section'));
+                const dropdowns = Array.from(navContent.querySelectorAll('.nav-dropdown'));
+                const links = Array.from(navContent.querySelectorAll('a.nav-link'));
+
+                // Helper: show element and its containing section
+                function showWithAncestors(linkEl) {
+                    linkEl.style.display = '';
+                    linkEl.classList.add('match');
+                    const dd = linkEl.closest('.nav-dropdown');
+                    if (dd) {
+                        dd.style.display = '';
+                        dd.classList.add('dropdown-open');
+                        const parentLink = dd.querySelector('.nav-link.has-submenu');
+                        if (parentLink) parentLink.style.display = '';
+                        const submenu = dd.querySelector('.nav-submenu');
+                        if (submenu) submenu.style.display = '';
+                    }
+                    const section = linkEl.closest('.nav-section');
+                    if (section) section.style.display = '';
+                }
+
+                // Find and show matches
+                links.forEach(a => {
+                    const text = normalize(a.textContent || '');
+                    if (text.includes(query)) {
+                        showWithAncestors(a);
+                    }
+                });
+
+                // Ensure dropdowns without matches are closed and hidden
+                dropdowns.forEach(dd => {
+                    const anyVisibleChild = !!dd.querySelector('.nav-submenu .nav-link.match');
+                    const parentMatched = !!dd.querySelector('> .nav-link.has-submenu.match');
+                    const hasAny = anyVisibleChild || parentMatched;
+                    if (hasAny) {
+                        dd.style.display = '';
+                        dd.classList.add('dropdown-open');
+                    } else {
+                        dd.classList.remove('dropdown-open');
+                        dd.style.display = 'none';
+                    }
+                });
+
+                // Hide any empty sections with no visible content
+                sections.forEach(sec => {
+                    const anyVisible = !!sec.querySelector('a.nav-link.match');
+                    sec.style.display = anyVisible ? '' : 'none';
+                });
+            }
+
+            // Wire events
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => applySearchFilter(e.target.value));
+            }
+            if (expandAllBtn) {
+                expandAllBtn.addEventListener('click', () => {
+                    document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.add('dropdown-open'));
+                });
+            }
+            if (collapseAllBtn) {
+                collapseAllBtn.addEventListener('click', () => {
+                    document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('dropdown-open'));
+                });
+            }
+            if (clearSearchBtn) {
+                clearSearchBtn.addEventListener('click', () => {
+                    if (searchInput) searchInput.value = '';
+                    resetVisibility();
+                    // Default to collapsed view after clear
+                    document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('dropdown-open'));
+                });
+            }
         });
     </script>
 </body>
