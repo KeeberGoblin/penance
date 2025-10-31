@@ -33,7 +33,7 @@
 
         <!-- Background tear reveal band: shows imagery behind the parchment -->
         <div class="tear-reveal" aria-hidden="true">
-            <div class="tear-bg" style="background-image: url('../lore/PenanceBG.png');"></div>
+            <div class="tear-bg" style="background-image: url('../images/soulstones/Lore_SoulstoneSketch.png');"></div>
         </div>
 
         <div style="text-align: center; margin: 2rem 0;">
@@ -52,20 +52,7 @@
             </p>
         </div>
 
-        <div class="image-grid" style="margin-top: 1.25rem;">
-            <figure class="codex-figure rip-parallax">
-                <img src="../images/soulstones/Lore_SoulstoneSketch.png" alt="Soulstone under stress: microfractures and psychic flux" loading="lazy" decoding="async">
-                <figcaption>
-                    Under stress: microfractures along contaminated planes; measurable psychic flux.
-                </figcaption>
-            </figure>
-            <figure class="codex-figure rip-parallax">
-                <img src="../images/soulstones/Lore_SoulstoneExposionSketch.png" alt="Containment failure diagram: explosive overload and cascade" loading="lazy" decoding="async">
-                <figcaption>
-                    Containment failure: explosive overload and sympathetic cascade in adjacent stones.
-                </figcaption>
-            </figure>
-        </div>
+        
         <script>
         (function() {
             const figs = Array.from(document.querySelectorAll('.rip-parallax'));
@@ -142,6 +129,10 @@
         </div>
 
         <h2>Refinement Disasters: What Goes Wrong</h2>
+        <!-- Deeper background tear reveal: explosion sketch appears when you reach this section -->
+        <div class="tear-reveal" aria-hidden="true" style="--tear-depth: 0.6; --tear-opacity: 0.9;">
+            <div class="tear-bg" style="background-image: url('../images/soulstones/Lore_SoulstoneExposionSketch.png'); background-position: center; background-size: cover;"></div>
+        </div>
 
         <h3>The Three Categories of Failure</h3>
 
