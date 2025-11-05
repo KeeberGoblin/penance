@@ -12,7 +12,7 @@
 1. **Coverage Disparity**: Not all HTML files have direct MD equivalents, and vice versa
 2. **Content Depth**: HTML files contain more detailed lore exposition and visual presentation
 3. **Balance Updates**: Recent balance changes (v5.29, Oct 2025) present in HTML may not be reflected in MD
-4. **Naming Inconsistencies**: Character name conflicts (e.g., "Bonelord Karath" vs "Bonelord Thresh")
+4. **Naming Inconsistencies**: Character name conflicts (e.g., "Bonelord Karath" vs "Bonelord Karath")
 5. **Structural Differences**: HTML files are presentation-focused; MD files are more concise and gameplay-focused
 6. **Missing Void Lore**: No standalone `void.md` file found; void content integrated into `cosmology-and-origins.md`
 
@@ -205,13 +205,13 @@
    - Explanation: "steampunk-level civilization built on ruins of mid-20th-century atomic age"
    - **MAJOR WORLDBUILDING DETAIL MISSING FROM HTML**
 
-2. **Bonelord Name**: "Bonelord Thresh" (line 183 in MD)
+2. **Bonelord Name**: "Bonelord Karath" (line 183 in MD)
 
 **ONLY IN HTML:**
 1. **Bonelord Name**: "Bonelord Karath" (no line reference as not in excerpt)
 
 **NAMING INCONSISTENCY**:
-- MD uses "Bonelord Thresh"
+- MD uses "Bonelord Karath"
 - HTML uses "Bonelord Karath"
 - **CONTRADICTION**: Different character names for same role
 
@@ -219,7 +219,7 @@
 
 1. **Ossuarium Founder**:
    - HTML: "Bonelord Karath perfected controlled undeath by Year 10"
-   - MD: "Bonelord Thresh (originally human necromancer) perfected controlled undeath by Year 10"
+   - MD: "Bonelord Karath (originally human necromancer) perfected controlled undeath by Year 10"
    - **NEEDS RESOLUTION**: Pick one canonical name
 
 2. **Technology Timeline**:
@@ -244,7 +244,7 @@
 3. **Bonelord Name**: "Bonelord Karath" in Iconic Pilots table (line 777)
 
 **ONLY IN MD:**
-1. **Bonelord Name**: "Bonelord Thresh" in Iconic Pilots table (line 298)
+1. **Bonelord Name**: "Bonelord Karath" in Iconic Pilots table (line 298)
 
 **IDENTICAL CONTENT:**
 - XP progression (100/300/600 XP thresholds)
@@ -258,7 +258,7 @@
 
 **NAMING INCONSISTENCY CONFIRMED**:
 - HTML: "Bonelord Karath - 'The Debt Collector'"
-- MD: "Bonelord Thresh - 'The Debt Collector'"
+- MD: "Bonelord Karath - 'The Debt Collector'"
 - Same title, different first name
 
 ---
@@ -387,7 +387,7 @@
 
 **Bonelord Name Conflict**:
 - **HTML Files**: "Bonelord Karath"
-- **MD Files**: "Bonelord Thresh"
+- **MD Files**: "Bonelord Karath"
 - **Frequency**: Appears in multiple files (cosmology, pilot skills, potentially others)
 
 **Impact**: Canonical lore contradiction
@@ -665,7 +665,7 @@ docs/
 
 **Questions for Review**:
 - Should we prioritize HTML or MD as source of truth for balance?
-- Is "Bonelord Karath" or "Bonelord Thresh" the canonical name?
+- Is "Bonelord Karath" or "Bonelord Karath" the canonical name?
 - Do we want all HTML files to have MD equivalents, or is split coverage acceptable?
 - Should we create automated sync tooling, or maintain manually?
 

@@ -602,7 +602,7 @@ This represents pilot physical/mental state inside the capsule.
 **Campaign Events**:
 - **Penance Rituals** (settlement events)
 - **Taint Purging** (when Taint reaches 8+)
-- **Soul Bargains** (desperate deals with Bonelord Thresh)
+- **Soul Bargains** (desperate deals with Bonelord Karath)
 
 ---
 

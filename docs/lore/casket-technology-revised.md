@@ -168,7 +168,7 @@ Construction equipment designed to lift steel beams became humanity's greatest w
 
 ## Year 0, Day 6: The First Soul-Binding
 
-**Dr. Marcus Thresher's Discovery:**
+**Dr. Marcus Karathis's Discovery:**
 - Trapped in collapsing research facility after Sundering
 - Surrounded by corpses, wearing failing exoskeleton
 - Theory: If souls are bioelectric, maybe they can power machines
@@ -183,7 +183,7 @@ Construction equipment designed to lift steel beams became humanity's greatest w
 - But they survived
 
 > *"Elena... I'm sorry. But you're still here. In a way. I can feel you in the machine. You're angry. But you're here."*
-> — Dr. Marcus Thresher, later Bonelord Thresh
+> — Dr. Marcus Karathis, later Bonelord Karath
 
 ---
 

@@ -185,7 +185,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 >
 > **Terms**: In exchange for the resurrection of debtor's son (Marik Korr, deceased age 7, cause: Plague), debtor agrees to the following:
 >
-> 1. Upon debtor's death (natural or otherwise), debtor's soul becomes property of Bonelord Thresh.
+> 1. Upon debtor's death (natural or otherwise), debtor's soul becomes property of Bonelord Karath.
 > 2. Soul may be utilized for labor, experimentation, or resale at Thresh's discretion.
 > 3. Debtor's physical remains will be repurposed as Thresh deems fit.
 > 4. Contract is binding across all planes of existence, including death, undeath, and theoretical afterlives.

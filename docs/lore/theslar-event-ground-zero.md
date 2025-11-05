@@ -102,7 +102,7 @@
 - Reality warps near detonation site (time dilation, spatial distortions)
 
 **The First Soul-Binding** (Day 6):
-- Dr. Bonelord Thresh (formerly Dr. Marcus Thresher, mechanical engineer)
+- Dr. Bonelord Karath (formerly Dr. Marcus Karathis, mechanical engineer)
 - Trapped in collapsing research facility, discovers corpse can power machinery via "soul resonance"
 - Binds his deceased wife Elena's soul to experimental exosuit (first Casket)
 - **Founding moment of the Ossuarium**
@@ -168,7 +168,7 @@
 - Some factions send expeditions to Ground Zero (seeking answers, artifacts, or penance)
 - **Church of Absolution**: Considers pilgrimage to Scar ultimate atonement (death is expected)
 - **Dwarven engineers**: Attempt to study Engine remnants (hoping to understand resonance technology)
-- **Bonelord Thresh**: Theorizes that destroying the Engine would "close the Void" (unproven)
+- **Bonelord Karath**: Theorizes that destroying the Engine would "close the Void" (unproven)
 
 **Recovered Artifacts**:
 - Theslar Engine components (extremely rare, priceless to researchers)

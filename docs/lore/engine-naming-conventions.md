@@ -45,7 +45,7 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
 ### The Ossuarium
 **"The Ledger's Opening"** or "The First Harvest"
 - See it as the beginning of their power, not a disaster
-- Bonelord Thresh opened The Ledger during the chaos
+- Bonelord Karath opened The Ledger during the chaos
 - The Engine created the conditions for soul-binding
 - Common phrases:
   - "The Opening" (when Thresh founded the Ossuarium)

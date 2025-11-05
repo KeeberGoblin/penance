@@ -178,7 +178,7 @@ These are **designed mysteries** where multiple factions have competing theories
 |------|-------|--------------|--------|
 | **Year 0** | The Sundering | All files | ✅ Consistent |
 | **Year 3** | First undead rise | world-overview, cosmology | ✅ Consistent |
-| **Year 10** | Bonelord Thresh perfects undeath | world-overview, cosmology | ✅ Consistent |
+| **Year 10** | Bonelord Karath perfects undeath | world-overview, cosmology | ✅ Consistent |
 | **Year 47** | First Vestige Council | vestige-bloodlines/lore | ✅ Consistent |
 | **Year 52** | First Casket built | chronicle.md | ✅ Consistent |
 | **Year 73** | Concordat of Coins signed | exchange/lore-concordat | ✅ Consistent |
@@ -213,7 +213,7 @@ Cross-referenced `factions/relationships.md` against faction-specific lore:
 
 ## ✅ CHARACTER/NPC CONSISTENCY
 
-### Bonelord Thresh
+### Bonelord Karath
 
 **Mentions**:
 - `world-overview.md`: Perfected undeath by Year 10, founded Ossuarium
@@ -251,7 +251,7 @@ Cross-referenced `factions/relationships.md` against faction-specific lore:
 - Sister Vex (Church) - ✅ Consistent
 - Rootwarden Kess (Elves) - ✅ Consistent
 - Forgemaster Durr (Dwarves) - ✅ Consistent
-- Bonelord Thresh (Ossuarium) - ✅ Consistent
+- Bonelord Karath (Ossuarium) - ✅ Consistent
 - Mockingbird (Fae) - ✅ Consistent
 - Three-Card Morrow (Nomads) - ✅ Consistent
 - Proctor Ilyara Voss (Exchange) - ✅ Consistent
