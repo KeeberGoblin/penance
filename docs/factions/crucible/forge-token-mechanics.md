@@ -28,7 +28,9 @@
 
 ### Primary Generation: Living Forge (Passive)
 
-**Effect**: At the start of your turn, if you are standing in Lava Terrain (or within 1 hex of fire), gain 1 Forge token. **Bonus:** Gain 2 Forge tokens instead if you are standing directly in lava.
+**Effect**: At the start of your turn, if you are standing within 1 hex of fire, gain 2 Forge tokens. **Bonus:** Gain 4 Forge tokens instead if you are standing directly in lava.
+
+**BALANCE NOTE (2025-10-19)**: Doubled from 1/2 tokens to 2/4 tokens to improve Crucible viability and reduce slow ramp-up time.
 
 **Why This Is Core**:
 - Encourages aggressive positioning (stand in lava = pain but power)
@@ -36,7 +38,7 @@
 - Snowball mechanic (tokens → create more lava → more tokens)
 
 **Optimal Play**:
-- Always position in lava if possible (2 tokens/turn vs 1 token/turn)
+- Always position in lava if possible (4 tokens/turn vs 2 tokens/turn)
 - Take the 2 damage per turn from lava (worth it for double token generation)
 - Use Volcanic Tremor or Lava Flask to create lava hexes (ensure token generation)
 
@@ -67,48 +69,48 @@
 ### Solo Crucible Pilot (Lava Positioning)
 
 **Early Game (Turns 1-3)**:
-- Living Forge: Standing in lava = 2 tokens/turn × 3 turns = 6 tokens
+- Living Forge: Standing in lava = 4 tokens/turn × 3 turns = 12 tokens
 - Forge Call: +2 tokens (if used)
-- **Total**: 6-8 Forge tokens by Turn 3
+- **Total**: 12-14 Forge tokens by Turn 3
 
 **Mid Game (Turns 4-6)**:
-- Living Forge: 2 tokens/turn × 3 turns = 6 tokens
+- Living Forge: 4 tokens/turn × 3 turns = 12 tokens
 - Honor Duel victory: +3 tokens (1 kill)
 - Volcanic Rage: +1-2 tokens (from taking damage)
-- **Total**: 10-11 tokens by Turn 6
+- **Total**: 16-17 tokens by Turn 6
 
 **Late Game (Turns 7+)**:
-- Living Forge: 2 tokens/turn × 4 turns = 8 tokens
+- Living Forge: 4 tokens/turn × 4 turns = 16 tokens
 - Honor Duel victories: +6 tokens (2 kills)
 - Volcanic Rage: +3-4 tokens
-- **Total**: 17-18 tokens by Turn 10
+- **Total**: 25-26 tokens by Turn 10
 
 ---
 
 ### Solo Crucible Pilot (No Lava Positioning)
 
 **Early Game (Turns 1-3)**:
-- Living Forge: Standing near fire (1 hex away) = 1 token/turn × 3 turns = 3 tokens
+- Living Forge: Standing near fire (1 hex away) = 2 tokens/turn × 3 turns = 6 tokens
 - Forge Call: +2 tokens
-- **Total**: 5 tokens by Turn 3 (half as much as lava positioning)
+- **Total**: 8 tokens by Turn 3 (half as much as lava positioning)
 
-**Lesson**: **Always stand in lava when possible** (2x token generation)
+**Lesson**: **Always stand in lava when possible** (2x token generation: 4 tokens/turn vs 2 tokens/turn)
 
 ---
 
 ### Team Crucible (4 Players, All Crucible)
 
 **Early Game (Turns 1-3)**:
-- All players stand in lava (each generates 2 tokens/turn)
-- Team total: 4 players × 6 tokens = 24 tokens by Turn 3
+- All players stand in lava (each generates 4 tokens/turn)
+- Team total: 4 players × 12 tokens = 48 tokens by Turn 3
 
 **Mid Game (Turns 4-6)**:
 - Team creates multiple lava zones (Volcanic Tremor, Lava Flask)
-- Team total: 40-60 tokens
+- Team total: 80-120 tokens
 
 **Late Game (Turns 7+)**:
-- Token saturation (everyone has 10+ tokens)
-- Team total: 80+ tokens (resource abundance)
+- Token saturation (everyone has 20+ tokens)
+- Team total: 160+ tokens (resource abundance)
 
 ---
 
@@ -259,7 +261,7 @@
 
 ### X Don't Stand Outside Lava
 
-**Problem**: Living Forge generates 1 token/turn (near fire) vs 2 tokens/turn (in lava)
+**Problem**: Living Forge generates 2 tokens/turn (near fire) vs 4 tokens/turn (in lava)
 **Solution**: Take the 2 damage per turn, stand in lava (double token generation worth it)
 
 ### X Don't Hoard Tokens Early
@@ -291,10 +293,10 @@
 **Setup**: Living Forge + Volcanic Tremor + Magma Veins
 
 **Execution**:
-1. Stand in lava (generate 2 tokens/turn via Living Forge)
+1. Stand in lava (generate 4 tokens/turn via Living Forge)
 2. Use Volcanic Tremor (spend 2 tokens, create new lava hex, knockdown enemies)
 3. Teleport to new lava hex via Magma Veins (3 tokens, draw 2 cards)
-4. **Result**: Constant lava positioning, infinite token generation, high mobility
+4. **Result**: Constant lava positioning, high token generation, high mobility
 
 **Value**: Self-sustaining token economy (tokens → create lava → more tokens)
 
@@ -321,7 +323,7 @@
 
 **Execution**:
 1. Use Trial by Fire (3 tokens, +3 damage, immune to fire, regen 1 card/turn)
-2. Stand in lava (no damage taken, still generate 2 tokens/turn)
+2. Stand in lava (no damage taken, still generate 4 tokens/turn)
 3. Use Pack Fury (2 SP, +3 damage if outnumbered)
 4. Use Emberforged Strike (2 tokens, 5 damage → 7 damage + burn)
 5. **Result**: 5 base + 2 (Emberforged) + 3 (Trial) + 3 (Pack Fury) = 13 damage + 2 burn = 15 total
@@ -348,7 +350,7 @@
 
 **Before Each Turn**:
 - [ ] Current Forge tokens: _____ (track total)
-- [ ] Standing in lava? (If no, move to lava for 2 tokens/turn)
+- [ ] Standing in lava? (If no, move to lava for 4 tokens/turn)
 - [ ] Tokens needed this turn: _____ (plan spending)
 - [ ] Emergency reserve (1 token for Forge Blessing)
 
