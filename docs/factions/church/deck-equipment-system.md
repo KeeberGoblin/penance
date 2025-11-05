@@ -30,13 +30,13 @@ These 6 cards define Church identity and cannot be removed or smelted.
 ### 1. BLOOD OFFERING (REVISED for Dice System - BALANCE NERF)
 **Type**: Gambit (Self-Harm)
 **SP Cost**: 0
-**Effect**: Discard 2 cards from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and **-1 to target number** (easier to hit). **LIMIT: You can only play 1 Blood Offering per turn.**
+**Effect**: Discard 1 card from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and **-1 to target number** (easier to hit). **LIMIT: You can only play 1 Blood Offering per turn.**
 **Keywords**: Gambit, Self-Harm, Buff, Accuracy
 **Flavor**: *"Pain purifies. Blood absolves. Sacrifice ensures the strike."*
 
-**DESIGN NOTE**: Added -1 to target number so that self-harm guarantees better aim. Original version could miss after sacrificing 2 cards, which felt terrible.
+**DESIGN NOTE**: Added -1 to target number so that self-harm guarantees better aim. Original version could miss after sacrificing cards, which felt terrible.
 
-**BALANCE NOTE (2025-10-16)**: Added 1-per-turn limit to prevent degenerate turn-1 alpha strikes (original allowed stacking multiple Blood Offerings: discard 6 cards, +9 damage, instant win). Limit maintains power while preventing burst cheese.
+**BALANCE NOTE (2025-10-17)**: Reduced from "discard 2 cards" to "discard 1 card" to improve campaign viability without removing high-risk playstyle. Also added 1-per-turn limit to prevent degenerate alpha strikes.
 
 ---
 
