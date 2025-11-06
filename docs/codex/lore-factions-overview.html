@@ -6,994 +6,462 @@
     <title>Factions Overview - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
-        .factions-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin: 2rem 0;
-        }
-
-        .faction-card {
-            background: rgba(10, 6, 4, 0.5);
-            border: 1px solid var(--dark-red);
-            border-top: 3px solid var(--dark-red);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-            position: relative;
+        /* Override default content padding for full-height layout */
+        .content {
+            padding: 0;
+            max-width: none;
+            height: calc(100vh - 100px);
             display: flex;
             flex-direction: column;
         }
 
-        .faction-card::before {
+        /* Header section */
+        .faction-overview-header {
+            padding: 1.5rem 2rem;
+            background: linear-gradient(180deg, rgba(75, 14, 14, 0.3), rgba(10, 6, 4, 0.5));
+            border-bottom: 2px solid var(--dark-red);
+        }
+
+        .faction-overview-header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2rem;
+            color: var(--aged-gold);
+        }
+
+        .faction-overview-header .subtitle {
+            margin: 0;
+            opacity: 0.85;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        /* Two-column layout */
+        .faction-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 0;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Left column - iframe viewer */
+        .faction-viewer {
+            background: var(--parchment);
+            border-right: 2px solid var(--dark-red);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .faction-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: var(--parchment);
+        }
+
+        /* Right column - faction list */
+        .faction-nav {
+            background: linear-gradient(180deg, rgba(26, 20, 16, 0.95), rgba(10, 6, 4, 0.98));
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .faction-nav::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 100%;
+            bottom: 0;
             background-image: var(--leather-texture);
-            opacity: 0.08;
+            opacity: 0.2;
             pointer-events: none;
-            z-index: 0;
         }
 
-        .faction-card:hover {
-            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
-            border-top-color: var(--aged-gold);
+        /* Scrollbar styling for faction nav */
+        .faction-nav::-webkit-scrollbar {
+            width: 8px;
         }
 
-        .faction-toggle {
-            background: linear-gradient(180deg, rgba(75, 14, 14, 0.3), rgba(75, 14, 14, 0.15));
-            border: none;
-            border-bottom: 1px solid rgba(139, 0, 0, 0.4);
+        .faction-nav::-webkit-scrollbar-track {
+            background: var(--shadow-black);
+        }
+
+        .faction-nav::-webkit-scrollbar-thumb {
+            background: var(--blood-red);
+            border-radius: 2px;
+        }
+
+        .faction-nav::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-red);
+        }
+
+        /* Faction nav header */
+        .faction-nav-header {
+            padding: 1.25rem 1.5rem;
+            background: rgba(75, 14, 14, 0.4);
+            border-bottom: 2px solid var(--dark-red);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .faction-nav-header h2 {
+            margin: 0;
+            font-size: 1.1rem;
             color: var(--aged-gold);
-            padding: 0.9rem 1.1rem;
-            font-size: 1rem;
-            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        /* Faction list */
+        .faction-list {
+            padding: 0.5rem;
+        }
+
+        .faction-item {
+            background: rgba(10, 6, 4, 0.6);
+            border: 1px solid var(--dark-red);
+            border-left: 3px solid var(--dark-red);
+            margin-bottom: 0.5rem;
             cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faction-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: var(--dark-red);
+            transition: width 0.3s ease;
+        }
+
+        .faction-item:hover::before {
+            width: 6px;
+        }
+
+        .faction-item:hover {
+            background: rgba(75, 14, 14, 0.4);
+            border-left-color: var(--aged-gold);
+            transform: translateX(4px);
+        }
+
+        .faction-item.active {
+            background: linear-gradient(90deg, rgba(139, 0, 0, 0.5), rgba(75, 14, 14, 0.3));
+            border-left-color: var(--aged-gold);
+            box-shadow: inset 0 0 20px rgba(139, 0, 0, 0.3);
+        }
+
+        .faction-item.active::before {
+            width: 6px;
+            background: var(--aged-gold);
+        }
+
+        .faction-button {
+            background: none;
+            border: none;
+            color: var(--aged-gold);
+            padding: 1rem 1.25rem;
             width: 100%;
             text-align: left;
-            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
             font-weight: 700;
             letter-spacing: 0.05em;
+            cursor: pointer;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            transition: color 0.3s ease;
             position: relative;
-            z-index: 1;
         }
 
-        .faction-toggle:hover {
-            background: linear-gradient(180deg, rgba(139, 0, 0, 0.4), rgba(75, 14, 14, 0.25));
+        .faction-item:hover .faction-button,
+        .faction-item.active .faction-button {
             color: var(--bone-white);
         }
 
-        .faction-toggle-icon {
-            font-size: 0.8rem;
-            transition: transform 0.3s ease;
-            opacity: 0.6;
+        .faction-tier-badge {
+            font-size: 0.65rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
-        .faction-toggle.active {
-            background: linear-gradient(180deg, rgba(139, 0, 0, 0.5), rgba(75, 14, 14, 0.3));
-            color: var(--bone-white);
-        }
-
-        .faction-toggle.active .faction-toggle-icon {
-            transform: rotate(180deg);
+        .faction-item.active .faction-tier-badge {
             opacity: 1;
+            color: var(--aged-gold);
         }
 
-        .faction-content {
-            max-height: 0;
-            overflow: hidden;
-            background: rgba(10, 6, 4, 0.3);
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            z-index: 1;
+        /* Tier dividers */
+        .tier-divider {
+            padding: 0.75rem 1.25rem;
+            background: rgba(139, 0, 0, 0.3);
+            border-top: 1px solid var(--dark-red);
+            border-bottom: 1px solid var(--dark-red);
+            margin: 0.75rem 0;
         }
 
-        .faction-content.active {
-            max-height: 700px;
+        .tier-divider h3 {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--aged-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-align: center;
+            opacity: 0.9;
         }
 
-        .faction-content-inner {
-            padding: 1.1rem;
-            opacity: 0;
-            transition: opacity 0.3s ease 0.1s;
+        /* Placeholder message */
+        .faction-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 2rem;
+            text-align: center;
         }
 
-        .faction-content.active .faction-content-inner {
-            opacity: 1;
+        .faction-placeholder-content {
+            max-width: 400px;
         }
 
-        .faction-detail {
-            margin: 1rem 0;
+        .faction-placeholder h2 {
+            color: var(--aged-gold);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .faction-placeholder p {
+            opacity: 0.8;
             line-height: 1.6;
         }
 
-        .faction-detail strong {
-            color: var(--aged-gold);
-            display: block;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.25rem;
-        }
-
-        .faction-detail p {
-            margin: 0;
-            opacity: 0.95;
-        }
-
-        .faction-tier {
-            display: inline-block;
-            background: rgba(139, 0, 0, 0.4);
-            border: 1px solid var(--dark-red);
-            color: var(--aged-gold);
-            padding: 0.3rem 0.65rem;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-        }
-
-        .faction-links {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(139, 0, 0, 0.2);
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .faction-links a {
-            color: var(--aged-gold);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: opacity 0.2s ease;
-        }
-
-        .faction-links a:hover {
-            opacity: 0.7;
-            text-decoration: underline;
-        }
-
-        .faction-grid-summary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1rem 0;
-            font-size: 0.9rem;
-        }
-
-        .summary-item {
-            padding: 0.75rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-left: 2px solid var(--aged-gold);
-            padding-left: 1rem;
-        }
-
-        .summary-label {
-            color: var(--aged-gold);
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .summary-value {
-            margin-top: 0.25rem;
-        }
-
-        .power-tier-table {
-            width: 100%;
-            margin: 2rem 0;
-            border-collapse: collapse;
-        }
-
-        .power-tier-table th,
-        .power-tier-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--dark-red);
-        }
-
-        .power-tier-table th {
-            background: rgba(75, 14, 14, 0.3);
-            color: var(--aged-gold);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.9rem;
-        }
-
-        .power-tier-table tr:hover {
-            background: rgba(75, 14, 14, 0.1);
-        }
-
-        h2 {
-            color: var(--aged-gold);
-            border-bottom: 2px solid var(--dark-red);
-            padding-bottom: 0.75rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .divider {
-            text-align: center;
-            margin: 2rem 0;
-            font-size: 1.5rem;
+        .faction-placeholder-icon {
+            font-size: 3rem;
             color: var(--dark-red);
-            opacity: 0.6;
+            opacity: 0.5;
+            margin-bottom: 1rem;
         }
 
-        /* Responsive improvements for mobile */
-        @media (max-width: 768px) {
-            .factions-container {
+        /* Mobile responsive */
+        @media (max-width: 968px) {
+            .faction-layout {
                 grid-template-columns: 1fr;
-                gap: 1rem;
             }
 
-            .faction-grid-summary {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
+            .faction-nav {
+                max-height: 300px;
+                border-right: none;
+                border-top: 2px solid var(--dark-red);
             }
 
-            .power-tier-table {
-                font-size: 0.85rem;
+            .faction-viewer {
+                border-right: none;
+                border-bottom: 2px solid var(--dark-red);
             }
+        }
 
-            .power-tier-table th,
-            .power-tier-table td {
-                padding: 0.75rem 0.5rem;
-            }
+        /* Accessibility */
+        .faction-button:focus-visible {
+            outline: 2px solid var(--aged-gold);
+            outline-offset: -2px;
         }
     </style>
 </head>
 <body>
     <div class="content">
-        <div class="breadcrumb">
-            <a href="content-home.html" target="_parent">CODEX</a> /
-            <a href="#lore">LORE</a> /
-            Factions Overview
+        <!-- Header -->
+        <div class="faction-overview-header">
+            <div class="breadcrumb">
+                <a href="content-home.html" target="_parent">CODEX</a> /
+                <a href="#lore">LORE</a> /
+                Factions Overview
+            </div>
+            <h1>The Ten Factions</h1>
+            <p class="subtitle">Select a faction to view detailed information</p>
         </div>
 
-        <h1>The Factions: Humanity's Fractured Survival</h1>
+        <!-- Two-column layout -->
+        <div class="faction-layout">
+            <!-- Left: Iframe viewer -->
+            <div class="faction-viewer">
+                <div class="faction-placeholder" id="placeholder">
+                    <div class="faction-placeholder-content">
+                        <div class="faction-placeholder-icon">⸸</div>
+                        <h2>Humanity's Fractured Survival</h2>
+                        <p>
+                            When the Sundering shattered civilization, it also shattered humanity's unity. From the ruins emerged ten major factions—each with unique philosophies, resources, and survival strategies.
+                        </p>
+                        <p style="margin-top: 1.5rem; color: var(--aged-gold); font-weight: 700;">
+                            Select a faction from the list to view their full profile →
+                        </p>
+                    </div>
+                </div>
+                <iframe id="factionFrame" class="faction-frame" style="display: none;" title="Faction details"></iframe>
+            </div>
 
-        <div class="manuscript-quote">
-            "We used to be one species. Now we're ten tribes fighting over the corpse of civilization. Maybe that's progress. Maybe it's just decay."
-            <span class="quote-attribution">-Nomad Elder testimony</span>
+            <!-- Right: Faction navigation -->
+            <div class="faction-nav">
+                <div class="faction-nav-header">
+                    <h2>Choose Your Path</h2>
+                </div>
+
+                <div class="faction-list">
+                    <!-- Tier 1: Superpowers -->
+                    <div class="tier-divider">
+                        <h3>Tier 1: Superpowers</h3>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-church.html', this)">
+                        <button class="faction-button">
+                            <span>Church of Absolution</span>
+                            <span class="faction-tier-badge">T1</span>
+                        </button>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-undead.html', this)">
+                        <button class="faction-button">
+                            <span>The Ossuarium</span>
+                            <span class="faction-tier-badge">T1</span>
+                        </button>
+                    </div>
+
+                    <!-- Tier 2: Regional Powers -->
+                    <div class="tier-divider">
+                        <h3>Tier 2: Regional Powers</h3>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-dwarves.html', this)">
+                        <button class="faction-button">
+                            <span>Dwarven Forge-Guilds</span>
+                            <span class="faction-tier-badge">T2</span>
+                        </button>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-exchange.html', this)">
+                        <button class="faction-button">
+                            <span>The Exchange</span>
+                            <span class="faction-tier-badge">T2</span>
+                        </button>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-elves.html', this)">
+                        <button class="faction-button">
+                            <span>Elven Verdant Covenant</span>
+                            <span class="faction-tier-badge">T2</span>
+                        </button>
+                    </div>
+
+                    <!-- Tier 3: Minor Factions -->
+                    <div class="tier-divider">
+                        <h3>Tier 3: Minor Factions</h3>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-nomads.html', this)">
+                        <button class="faction-button">
+                            <span>Nomad Collective</span>
+                            <span class="faction-tier-badge">T3</span>
+                        </button>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-bloodlines.html', this)">
+                        <button class="faction-button">
+                            <span>Vestige Bloodlines</span>
+                            <span class="faction-tier-badge">T3</span>
+                        </button>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-emergent.html', this)">
+                        <button class="faction-button">
+                            <span>Emergent Syndicate</span>
+                            <span class="faction-tier-badge">T3</span>
+                        </button>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-fae.html', this)">
+                        <button class="faction-button">
+                            <span>The Wyrd Conclave</span>
+                            <span class="faction-tier-badge">T3</span>
+                        </button>
+                    </div>
+
+                    <!-- Tier 4: Outliers -->
+                    <div class="tier-divider">
+                        <h3>Tier 4: Outliers</h3>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-crucible.html', this)">
+                        <button class="faction-button">
+                            <span>Crucible Packs</span>
+                            <span class="faction-tier-badge">T4</span>
+                        </button>
+                    </div>
+
+                    <div class="faction-item" onclick="loadFaction('faction-draconid.html', this)">
+                        <button class="faction-button">
+                            <span>Draconid Remembrance</span>
+                            <span class="faction-tier-badge">T4</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <p class="manuscript-text">
-            When the Sundering shattered civilization, it also shattered humanity's unity. From the ruins emerged ten major factions...each with unique philosophies, resources, and survival strategies. Some seek redemption through faith. Others embrace mutation and evolution. All compete for territory, resources, and the right to define what humanity will become in the centuries ahead.
-        </p>
-
-        <div class="divider">❈</div>
-
-        <div style="background: linear-gradient(135deg, rgba(75, 14, 14, 0.2) 0%, rgba(139, 0, 0, 0.15) 100%); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; border-radius: 4px;">
-            <h3 style="margin-top: 0; color: var(--aged-gold); text-transform: uppercase; letter-spacing: 0.1em; font-size: 1.1rem;">Quick Navigation</h3>
-            <p style="margin: 0.5rem 0; opacity: 0.95; line-height: 1.7;">
-                Click any faction name below to expand detailed information. Each faction card includes playstyle, mechanics, support units, and links to full profiles. Press <kbd style="background: rgba(0,0,0,0.3); padding: 0.2rem 0.5rem; border-radius: 2px; font-family: monospace; font-size: 0.9rem;">ESC</kbd> to close all cards.
-            </p>
-        </div>
-
-        <div class="divider">❈</div>
-
-        <h2>Faction Power Structure (Year 437)</h2>
-
-        <table class="power-tier-table">
-            <thead>
-                <tr>
-                    <th>TIER</th>
-                    <th>FACTIONS</th>
-                    <th>CHARACTERISTICS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Tier 1: Superpowers</strong></td>
-                    <td>Church of Absolution, The Ossuarium</td>
-                    <td>Control vast territories, populations 10-20 million, standing armies, industrial capacity</td>
-                </tr>
-                <tr>
-                    <td><strong>Tier 2: Regional Powers</strong></td>
-                    <td>Dwarven Forge-Guilds, The Exchange, Elven Verdant Covenant</td>
-                    <td>Control key resources/geography, populations 2-5 million, specialized capabilities</td>
-                </tr>
-                <tr>
-                    <td><strong>Tier 3: Minor Factions</strong></td>
-                    <td>Nomad Collective, Vestige Bloodlines, Emergent Syndicate, Wyrd Conclave</td>
-                    <td>Dispersed/isolated, populations 500k-2 million, guerrilla tactics or niche dominance</td>
-                </tr>
-                <tr>
-                    <td><strong>Tier 4: Outliers</strong></td>
-                    <td>Crucible Packs, Draconid Remembrance</td>
-                    <td>Specialized/neutral, populations &lt;100k, non-expansionist</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0;">
-            <h4 style="margin-top: 0; color: var(--aged-gold);">Population Distribution Note</h4>
-            <p class="manuscript-text" style="margin: 0.5rem 0;">
-                The ten factions listed here represent the major organized powers of Year 437, with combined populations totaling approximately 35-53 million. However, the global post-Sundering population is estimated at <strong>200-300 million survivors</strong>. The remaining 150-250 million live outside formal faction control in:
-            </p>
-            <ul class="manuscript-list" style="margin: 0.5rem 0;">
-                <li><strong>Independent settlements</strong>: Thousands of towns and villages maintaining autonomy</li>
-                <li><strong>Tribal groups</strong>: Hunter-gatherer communities with no centralized governance</li>
-                <li><strong>Urban survivors</strong>: Residents of ruined pre-Sundering cities who reject faction allegiance</li>
-                <li><strong>Isolated enclaves</strong>: Remote populations cut off by geography or choice</li>
-            </ul>
-            <p class="manuscript-text" style="margin: 0.5rem 0 0 0;">
-                These factions are the powers that shape the world...but they do not represent all of humanity. Most survivors simply try to endure, unaligned and unaffiliated.
-            </p>
-        </div>
-
-        <div class="divider">❈</div>
-
-        <h2>The Ten Major Factions</h2>
-
-        <div class="factions-container">
-            <!-- CHURCH OF ABSOLUTION -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>Church of Absolution</span>
-                    <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 1: SUPERPOWER</div>
-
-                        <div class="faction-detail">
-                            <strong>Playstyle</strong>
-                            <p>Aggressive Martyrdom</p>
-                        </div>
-
-                        <div class="faction-detail">
-                            <strong>Core Mechanic</strong>
-                            <p>Blood Offering (self-harm for burst damage, infinite scaling)</p>
-                        </div>
-
-                        <div class="faction-detail">
-                            <strong>Support Units</strong>
-                            <p>6 units: Flagellants, Penitents, Relic Bearers, Aspirants, Choir, Absolution Engine</p>
-                        </div>
-
-                        <div class="faction-grid-summary">
-                            <div class="summary-item">
-                                <div class="summary-label">Population</div>
-                                <div class="summary-value">15-20 million</div>
-                            </div>
-                            <div class="summary-item">
-                                <div class="summary-label">Territory</div>
-                                <div class="summary-value">Cathedral Prime (capital)</div>
-                            </div>
-                            <div class="summary-item">
-                                <div class="summary-label">Philosophy</div>
-                                <div class="summary-value">Redemption through suffering</div>
-                            </div>
-                            <div class="summary-item">
-                                <div class="summary-label">Governance</div>
-                                <div class="summary-value">Theocratic hierarchy</div>
-                            </div>
-                        </div>
-
-                        <div class="faction-links">
-                            <a href="faction-church.html" target="_parent">→ Full Faction Profile</a>
-                            <a href="lore-npc-church.html" target="_parent">→ Notable Pilots</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DWARVEN FORGE-GUILDS -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>Dwarven Forge-Guilds</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 2: REGIONAL POWER</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Fortress Defender</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Rune Counters (stack for defense/damage, armor-piercing)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: Shield Wall, Artillery, Rune Sentinel, Siege Crawler, Ancestor Golem, Dreadnought</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">3-5 million</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">Ironhearth (underground)</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Craftsmanship and tradition</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Guild councils</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-dwarves.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-dwarves.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- THE OSSUARIUM -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>The Ossuarium</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 1: SUPERPOWER</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Necromantic Grinder</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Soul Harvest (lifesteal triggers, resurrections, Decay cards)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: Bone Thralls, Grave Knight, Fleshcrafter, Bone Colossus, Lich, Death's Herald</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">10-15 million</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">The Boneyards</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Death as evolution</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Immortal aristocracy</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-undead.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-ossuarium.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ELVEN VERDANT COVENANT -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>Elven Verdant Covenant</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 2: REGIONAL POWER</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Hit-and-Run Assassin</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Bleed Stacking (infinite scaling, mobility, regeneration)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: Thorn Stalkers, Rootweavers, Archers, Briarwood Colossus, Assassin, Ancient Treant</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">2-4 million</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">The Thornwood</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Natural supremacy</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Circle of Elders</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-elves.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-elves.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- THE WYRD CONCLAVE -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>The Wyrd Conclave</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 3: MINOR FACTION</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Reality Bender</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Wyrd Tokens (reality distortion, stolen faces)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: Changelings, Tricksters, Dream Weavers, Bargain Keepers, Fae Lords, Court Herald</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">500k-1 million</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">The Shimmerlands</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Chaos and bargains</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Fluid, unpredictable</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-fae.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-wyrd.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NOMAD COLLECTIVE -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>Nomad Collective</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 3: MINOR FACTION</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Mobile Survivor</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Improvisation (salvaged equipment, movement)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>3 units: Salvage Crew, Outrider Squadron, Caravan Walker</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">1-2 million</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">Nomadic (no fixed base)</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Adaptability and freedom</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Clan-based</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-nomads.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-nomads.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- THE EXCHANGE -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>The Exchange</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 2: REGIONAL POWER</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Economic Warfare</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Credit Tokens (bribery, mercenaries, resource control)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: Enforcers, Negotiators, Mercenary Casket, Trade Caravan, Broker Network, War Profiteer</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">2-3 million</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">Trade hubs (distributed)</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Profit and neutrality</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Dual board (Orthodox + Rational)</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-exchange.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-exchange.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VESTIGE BLOODLINES -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>Vestige Bloodlines</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 3: MINOR FACTION</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Mutation Specialists</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Biomass Tokens (5 bloodline variants, extinction clock)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: Feral Pack, Regenerators, Titan-Strain, Void-Touched, Alpha Mutant, Hive Mother</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">1-2 million</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">Scattered packs</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Primal evolution</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Pack hierarchies</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-bloodlines.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-bloodlines.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- EMERGENT SYNDICATE -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>Emergent Syndicate</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 3: MINOR FACTION</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Hive-Mind Collective</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Metamorph Tokens (coordinated swarm, chosen evolution)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: Swarm Drones, Metamorphs, Hive Node, Collective Mind, Swarm Nexus, Overmind</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">500k-1 million</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">The Hive</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Collective consciousness</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Hive-mind unified</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-emergent.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-emergent.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CRUCIBLE PACTS -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>Crucible Pacts</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 4: OUTLIER</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Fire Duelist Packs</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Forge Tokens (volcanic honor duels, ancestral iron)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: War Pack, Flamebearers, Iron Champions, Forge Titan, Warmaster, Crucible Engine</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">&lt;100k</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">Volcanic wastelands</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Honor through combat</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Warrior societies</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-crucible.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-crucible.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DRACONID REMEMBRANCE -->
-            <div class="faction-card">
-                <button class="faction-toggle" onclick="toggleFaction(this)">
-                    <span>Draconid Remembrance</span>
-                <span class="faction-toggle-icon">▶</span>
-                </button>
-                <div class="faction-content">
-                    <div class="faction-content-inner">
-                        <div class="faction-tier">TIER 4: OUTLIER</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Ancient Archivists</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Memory Shards (apocalypse cycles, petrified knowledge)</p>
-                    </div>
-
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>Not yet inscribed</p>
-                    </div>
-
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">&lt;100k</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">The Petrified Spires</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">History repeats eternally</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Ancient council</div>
-                        </div>
-                    </div>
-
-                    <div class="faction-links">
-                        <a href="faction-draconid.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-draconid.html" target="_parent">→ Notable Pilots</a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="divider">❈</div>
-
-        <h2>Faction Relationships &amp; Tensions</h2>
-
-        <p style="opacity: 0.9; line-height: 1.8;">
-            The ten factions are bound by complex webs of alliance, mutual hatred, and calculated neutrality. Wars have been fought over territory and ideology. Uneasy truces persist where mutual benefit demands cooperation. Some factions are drifting toward open conflict...others toward unexpected alliance. Your actions in the campaign will shape these relationships forever.
-        </p>
-
-        <div class="divider">❈</div>
-
-        <h2>Choose Your Path</h2>
-
-        <p style="opacity: 0.9; line-height: 1.8;">
-            Each faction offers a unique playstyle, philosophy, and destiny. Whether you seek redemption through the Church, evolution through the Syndicate, profit through the Exchange, or any other path...the choice shapes not only your campaign but the fate of the world itself.
-        </p>
-
-        <p style="text-align: center; margin: 3rem 0; font-size: 1.1rem; color: var(--aged-gold); font-style: italic;">
-            "In iron we seek forgiveness. Through blood, absolution."<br>
-            <span style="opacity: 0.7; font-size: 0.95rem;">- The Creed of the Bound</span>
-        </p>
     </div>
 
     <script>
-        function toggleFaction(clickedButton) {
-            // Prevent event bubbling
-            if (event) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
+        function loadFaction(url, element) {
+            const frame = document.getElementById('factionFrame');
+            const placeholder = document.getElementById('placeholder');
 
-            const content = clickedButton.nextElementSibling;
-            const isCurrentlyActive = content.classList.contains('active');
+            // Hide placeholder, show iframe
+            placeholder.style.display = 'none';
+            frame.style.display = 'block';
 
-            // Just toggle this card (allow multiple open)
-            if (isCurrentlyActive) {
-                clickedButton.classList.remove('active');
-                content.classList.remove('active');
-                clickedButton.setAttribute('aria-expanded', 'false');
-            } else {
-                clickedButton.classList.add('active');
-                content.classList.add('active');
-                clickedButton.setAttribute('aria-expanded', 'true');
-            }
-        }
+            // Load the faction page
+            frame.src = url;
 
-        function closeAllFactions() {
-            document.querySelectorAll('.faction-card').forEach(card => {
-                const button = card.querySelector('.faction-toggle');
-                const content = card.querySelector('.faction-content');
-
-                if (button && content) {
-                    button.classList.remove('active');
-                    content.classList.remove('active');
-                    button.setAttribute('aria-expanded', 'false');
-                }
+            // Update active state
+            document.querySelectorAll('.faction-item').forEach(item => {
+                item.classList.remove('active');
             });
+            element.classList.add('active');
+
+            // Store selection
+            try {
+                localStorage.setItem('faction-overview:last', url);
+            } catch(e) {}
         }
 
-        // Close all faction cards when ESC key is pressed
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeAllFactions();
-            }
-        });
-
-        // Initialize on page load
+        // Restore last viewed faction on load
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.faction-toggle').forEach(button => {
-                button.setAttribute('role', 'button');
-                button.setAttribute('tabindex', '0');
-                button.setAttribute('aria-expanded', 'false');
+            try {
+                const last = localStorage.getItem('faction-overview:last');
+                if (last) {
+                    const matchingItem = Array.from(document.querySelectorAll('.faction-item')).find(item => {
+                        return item.getAttribute('onclick').includes(last);
+                    });
+                    if (matchingItem) {
+                        loadFaction(last, matchingItem);
+                    }
+                }
+            } catch(e) {}
 
-                // Add keyboard support (Enter and Space)
+            // Add keyboard navigation
+            document.querySelectorAll('.faction-button').forEach(button => {
                 button.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
-                        toggleFaction(button);
+                        button.click();
                     }
                 });
-            });
-
-            // Set up content div aria attributes
-            document.querySelectorAll('.faction-content').forEach((content, index) => {
-                content.id = `faction-content-${index}`;
-                const button = content.previousElementSibling;
-                if (button) {
-                    button.setAttribute('aria-controls', content.id);
-                }
             });
         });
     </script>
