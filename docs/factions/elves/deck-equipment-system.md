@@ -11,7 +11,7 @@
 **Elven Verdant Covenant** - Surgical precision and nature magic
 - **Philosophy**: "We are the pruning blade. We remove the diseased so the garden may thrive."
 - **Playstyle**: Bleed damage-over-time, mobility, hit-and-run, surgical strikes
-- **Signature Mechanic**: Bleed stacks (enemies take damage each turn, multiple applications stack, max 12 Bleed counters per target)
+- **Signature Mechanic**: Bleed stacks (enemies take damage each turn, multiple applications stack, max 8 Bleed counters per target)
 
 ---
 
@@ -57,32 +57,25 @@ Where X depends on Casket class and equipment loadout.
 
 ---
 
-### 4. PHOTOSYNTHESIS (Passive - REVISED - BALANCE NERF)
-**Type**: Passive Ability
-**SP Cost**: N/A
-**Effect**: At end of your turn, if you did NOT attack this turn AND did NOT take damage this turn, recover 1 card from discard pile and remove 1 Heat.
-**Keywords**: Passive, Healing, Patience, Nature
-**Flavor**: *"We draw strength from stillness unthreatened."*
-
-**BALANCE NOTE (2025-10-16)**: Original version triggered even when taking damage (too consistent in combat). New version requires NO DAMAGE TAKEN, making it a true defensive positioning reward.
-
----
-
-### 5. LEAF DANCE
+### 4. LEAF DANCE
 **Type**: Movement + Attack
 **SP Cost**: 3
-**Effect**: Move up to 3 hexes. You may make 1 attack during this movement (at any point). After attacking, you may continue moving.
+**Effect**: Move up to 2 hexes. You may make 1 attack during this movement (at any point). After attacking, you may continue moving.
 **Keywords**: Movement, Attack, Mobility, Hit-and-Run
 **Flavor**: *"Strike where they are weak. Vanish before they retaliate."*
 
+**BALANCE NOTE (2025-10-19)**: Reduced from 3 hexes to 2 hexes.
+
 ---
 
-### 6. VERDANT REGENERATION (Passive)
+### 5. VERDANT REGENERATION (Passive)
 **Type**: Passive Ability
 **SP Cost**: N/A
-**Effect**: At the start of each round, recover 1 card from discard pile. If you have Living Seal equipped, recover 2 cards instead.
+**Effect**: At the start of each round, recover 2 cards from discard pile.
 **Keywords**: Passive, Regeneration, Healing, Nature
 **Flavor**: *"Life finds a way."*
+
+**BALANCE NOTE (2025-10-19)**: Primary regeneration source after Photosynthesis removal.
 
 ---
 
@@ -137,10 +130,10 @@ Where X depends on Casket class and equipment loadout.
 - **Total: 29 cards** (fast cycle, maximum mobility)
 
 **Playstyle**:
-- Leaf Dance + Shadow Step = move 6 hexes + attack + vanish
+- Leaf Dance + Shadow Step = move 4 hexes + attack + vanish (2 hex move + 3 hex teleport, but not combined)
 - Thorn Blade applies Bleed 3-4 per hit (stacks rapidly)
 - Dueling Dagger provides parry defense (Reactive)
-- Living Seal doubles regeneration (2 cards per round passive)
+- Verdant Regeneration provides steady card recovery (2 cards per round)
 - Apex Predator adds +2 damage vs wounded targets
 - Hit-and-run guerrilla warfare
 
@@ -171,7 +164,7 @@ Where X depends on Casket class and equipment loadout.
 - Stack Bleed on multiple targets (Thorn Whip has AoE)
 - Toxin Mastery doubles Bleed damage (Bleed 2 becomes Bleed 4)
 - Targeting Sigil improves accuracy (Lock-On, Aim Assist)
-- Living Seal provides regeneration (2 cards per round)
+- Verdant Regeneration provides steady sustain (2 cards per round base)
 - Verdant Growth summons vine walls (area control)
 - Enemies die to damage-over-time while you heal
 
@@ -202,10 +195,9 @@ Where X depends on Casket class and equipment loadout.
 **Playstyle**:
 - Longbow provides safe ranged damage (Bleed from range)
 - Bark Shield regenerates HP (Living Armor passive)
-- Living Seal + Repair Sigil + Verdant Regeneration = recover 4 cards per round (passive)
+- Verdant Regeneration provides steady card recovery (2 cards per round)
 - Reinforced Plating + Ironbark Skin = massive damage reduction
 - Verdant Growth summons vine walls (blocks enemy movement)
-- Photosynthesis triggers often (don't attack every turn = heal)
 - Outlast through regeneration and area denial
 
 ---
@@ -378,24 +370,24 @@ Where X depends on Casket class and equipment loadout.
 **Faction**: Elves only
 
 **Cards**:
-1. **Regeneration** (Passive - REVISED): When you use a healing effect (Photosynthesis, Verdant Regeneration, Repair cards), recover +1 additional card. Does NOT grant passive card recovery per round.
+1. **Regeneration** (Passive - REVISED): When you use healing effects (Verdant Regeneration, Repair cards, healing equipment), recover +1 additional card. Does NOT grant passive card recovery per round.
 2. **Thorn Aura** (2 SP, Defense): Enemies adjacent to you take 1 damage at start of their turn (lasts 2 rounds)
 3. **Root Network** (3 SP, Utility): Summon 3-hex Vine Wall, lasts 3 rounds, you may teleport to it once
 
-**BALANCE NOTE (2025-10-16)**: Original "Regeneration" card granted +1 card per round passively (stacked with Verdant Regeneration for 2 cards/round). New version triggers conditionally when OTHER healing effects activate, preventing passive infinite sustain.
+**BALANCE NOTE (2025-10-19)**: Original "Regeneration" card granted +1 card per round passively. Revised version triggers conditionally when OTHER healing effects activate, preventing passive infinite sustain.
 
 ---
 
 ## BLEED MECHANIC (Detailed Rules - REVISED - BALANCE NERF)
 
 **Bleed Counters**:
-- Stack up to **MAX 10 Bleed counters** per target (Bleed 1 + Bleed 2 = Bleed 3 total, cannot exceed 10)
+- Stack up to **MAX 8 Bleed counters** per target (Bleed 1 + Bleed 2 = Bleed 3 total, cannot exceed 8)
 - Trigger at START of target's turn (before they can act)
 - Each counter deals 1 damage
 - Counters do NOT expire (last entire mission)
-- **NEW CAP**: Bleed damage cannot exceed 10 per turn
+- **NEW CAP**: Bleed damage cannot exceed 8 per turn
 
-**BALANCE NOTE (2025-10-16)**: Original infinite stacking was oppressive in long games (20+ Bleed stacks = automatic win). Cap of 10 maintains lethality while preventing degenerate scaling.
+**BALANCE NOTE (2025-10-19)**: Cap reduced from 10 to 8. Original infinite stacking was oppressive in long games. Cap of 8 maintains lethality while preventing degenerate scaling.
 
 **Example**:
 - Turn 1: You hit enemy for Bleed 2
@@ -413,16 +405,17 @@ Where X depends on Casket class and equipment loadout.
 
 ## FACTION STRENGTHS
 
-- Strong damage-over-time (Bleed stacks up to 10, still lethal)
+- Strong damage-over-time (Bleed stacks up to 8, still lethal)
 - High mobility (Leaf Dance, Shadow Step, teleports)
-- Good regeneration (Verdant Regeneration + conditional Photosynthesis + conditional Living Seal triggers)
+- Moderate regeneration (Verdant Regeneration 2 cards/round unconditional, conditional Living Seal triggers)
 - Surgical strikes (Pruning Cut targets specific components)
 - Area control (Root Bind, Vine Walls, Seed Pods)
 
-**BALANCE NOTE (2025-10-16)**:
-- Bleed capped at 10 stacks (no longer infinite)
-- Photosynthesis requires NO DAMAGE TAKEN (conditional trigger)
-- Living Seal NO LONGER grants passive +1 card/round (conditional on healing effects)
+**BALANCE NOTE (2025-10-19)**:
+- Bleed capped at 8 stacks (reduced from 10)
+- Photosynthesis REMOVED entirely
+- Leaf Dance reduced to 2 hexes (from 3)
+- Verdant Regeneration now primary sustain (2 cards/round unconditional)
 
 ---
 
@@ -446,12 +439,12 @@ Where X depends on Casket class and equipment loadout.
 ### Mid Game (Turns 4-6)
 - Enemies now have Bleed 3-5 (taking 3-5 damage per turn)
 - Apex Predator adds +2 damage to attacks vs Bleeding targets
-- Photosynthesis triggers (skip attacks to heal)
+- Focus on mobility to avoid retaliation
 
 ### Late Game (Turns 7+)
-- Enemies have massive Bleed stacks (5-10 damage per turn)
+- Enemies have maximum Bleed stacks (6-8 damage per turn)
 - Focus on survival (they die to Bleed, you just need to not die)
-- Verdant Regeneration keeps you alive (2 cards per round passive)
+- Verdant Regeneration keeps you alive (2 cards per round)
 
 ---
 

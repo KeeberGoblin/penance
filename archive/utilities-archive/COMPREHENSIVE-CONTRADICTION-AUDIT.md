@@ -190,7 +190,7 @@ docs/codex/faction-nomads.html
 | **Current Year** | Year 437 | cosmology.md, world-overview.md, CLAUDE.md | ✅ Consistent |
 | **Great Schism** | Year 134 | CLAUDE.md, world-overview.md | ✅ Consistent |
 | **First Casket** | Year 52 | CLAUDE.md, chronicle.md | ✅ Consistent |
-| **Bonelord Thresh** | Year 78 | CLAUDE.md, chronicle.md | ✅ Consistent |
+| **Bonelord Karath** | Year 78 | CLAUDE.md, chronicle.md | ✅ Consistent |
 | **Betrayal at Roothold** | Year 223 | CLAUDE.md, codex HTML | ✅ Consistent |
 
 ### Mechanics Consistency (All Verified)

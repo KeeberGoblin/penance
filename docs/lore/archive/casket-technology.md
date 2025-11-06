@@ -2,7 +2,7 @@
 
 **Official Designation**: Soul-Powered Autonomous Combat Chassis (SPACC)
 **Common Name**: Caskets (because they're "coffins with legs")
-**Inventor**: Dr. Bonelord Thresh (Year 0, Day 6)
+**Inventor**: Dr. Bonelord Karath (Year 0, Day 6)
 
 ---
 
@@ -51,10 +51,10 @@
 
 ## Year 0, Day 6: The First Soul-Binding
 
-### Dr. Marcus Thresher's Discovery
+### Dr. Marcus Karathis's Discovery
 
 **The Situation**:
-- Dr. Marcus Thresher (mechanical engineer, age 42)
+- Dr. Marcus Karathis (mechanical engineer, age 42)
 - Trapped in collapsing research facility (aftershock from Theslar Event)
 - Surrounded by corpses of colleagues (27 dead, including his wife Dr. Elena Thresher)
 - Wearing experimental Titan-class mining exoskeleton
@@ -75,7 +75,7 @@
 3. "Tuned" corpse's residual bioelectric field to exoskeleton's frequency
 4. **It worked**: Dead colleague's soul began powering the machine
 
-**Dr. Thresher's First Words as Bonelord Thresh**:
+**Dr. Thresher's First Words as Bonelord Karath**:
 > "Elena... I'm sorry. But you're still alive. In a way. I can feel you in the machine. You're angry. But you're *here*."
 
 ---
@@ -99,7 +99,7 @@
 3. **The Ledger**
    - Ossuarium's master record of all bound souls
    - Tracks: Original identity, binding date, current Casket assignment, "debt" owed
-   - **Bonelord Thresh's obsession**: Maintaining perfect records (guilt over using corpses)
+   - **Bonelord Karath's obsession**: Maintaining perfect records (guilt over using corpses)
 
 **The Ethics**:
 - **Ossuarium View**: Souls are willing participants (most signed contracts pre-death)
@@ -233,7 +233,7 @@
 
 **The Ossuarium** (Creators):
 - **View**: Caskets are tools, souls are fuel
-- **Bonelord Thresh**: Views soul-binding as tragic necessity (haunted by guilt)
+- **Bonelord Karath**: Views soul-binding as tragic necessity (haunted by guilt)
 - **The Ledger**: Obsessive record-keeping to honor the dead (or assuage conscience)
 
 **Church of Absolution** (Condemners):
@@ -302,7 +302,7 @@
 **Year 437 and Beyond**:
 - Soul supply dwindling (fewer deaths, more soul-binding competition)
 - Factions research alternatives (Void-powered Caskets, risky and unstable)
-- **Bonelord Thresh's Fear**: What happens when souls run out?
+- **Bonelord Karath's Fear**: What happens when souls run out?
 
 **Possible Futures**:
 1. **Soul Scarcity War**: Factions fight over corpses (dystopian cannibalism)

@@ -179,7 +179,7 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 - The Void's intrusion weakened the barrier between life and death
 - Necromantic magic, previously theoretical, became practical
 - First undead rose spontaneously in Year 3 (corpses near Void rifts reanimating due to chaotic energy)
-- **Bonelord Thresh** (originally human necromancer) perfected controlled undeath by Year 10
+- **Bonelord Karath** (originally human necromancer) perfected controlled undeath by Year 10
 
 **Types of Undead in The Ossuarium**:
 1. **Revenants** (Intact corpses, semi-intelligent) - Former humans bound by contracts

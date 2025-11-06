@@ -10,7 +10,7 @@
 ## Chronicle XI: The Ledger's First Entry
 ### Year 78, Hour 1 - The Ossuarium Awakens
 
-**Source**: Recovered soul-contract, Bonelord Thresh's personal archive
+**Source**: Recovered soul-contract, Bonelord Karath's personal archive
 **Classification**: APOLLYON
 **Credibility**: Authenticated via Soulstone resonance dating
 
@@ -18,7 +18,7 @@
 
 > **SOUL CONTRACT #000001**
 > **Date**: Year 78, Third Month, 14th Day
-> **Contractor**: Bonelord Thresh (Designation: PRIME NECROMANCER)
+> **Contractor**: Bonelord Karath (Designation: PRIME NECROMANCER)
 > **Contractee**: Helena Voss, Mother of Two
 >
 > **TERMS**:
@@ -32,7 +32,7 @@
 >
 > **SIGNATURES**:
 > [Blood thumbprint: Helena Voss]
-> [Soulstone glyph: Bonelord Thresh]
+> [Soulstone glyph: Bonelord Karath]
 >
 > **ADDENDUM (Year 125)**:
 > Helena Voss has not died. Tether remains active. She is now 93 years old. Her son died again (Year 112, combat). She is demanding a second resurrection. Contract does not permit renegotiation. She has barricaded herself in Rootmarch Sanctuary. Dispatching Bone Collectors.
@@ -44,7 +44,7 @@
 
 ---
 
-**GM Note**: The Ledger is not just a book—it's a *system*. Bonelord Thresh learned contract law through trial and error. Players who deal with The Ossuarium will face similarly predatory terms. Read the fine print.
+**GM Note**: The Ledger is not just a book—it's a *system*. Bonelord Karath learned contract law through trial and error. Players who deal with The Ossuarium will face similarly predatory terms. Read the fine print.
 
 ---
 

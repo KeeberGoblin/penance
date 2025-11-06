@@ -12,7 +12,7 @@
   - Sister Vex (Church of Absolution) - The Hollow Penitent
   - Rootwarden Kess (Verdant Covenant) - The Pruner
   - Forgemaster Durr (Forge-Guilds) - The Calculator
-  - Bonelord Thresh (Bone-Courts) - The Debt Collector
+  - Bonelord Karath (Bone-Courts) - The Debt Collector
   - Mockingbird (Twilight Courts) - The Many-Masked Bargainer
   - Each with full stat blocks, abilities, AI behaviors, and story hooks
 
