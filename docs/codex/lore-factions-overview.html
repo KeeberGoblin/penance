@@ -199,37 +199,57 @@
             background: rgba(169, 169, 169, 0.6);
         }
 
-        /* Info panel */
-        .relationship-info {
-            background: rgba(10, 6, 4, 0.8);
-            border: 1px solid var(--dark-red);
-            padding: 1.5rem;
-            margin-top: 1rem;
-            min-height: 100px;
+        /* Tooltip */
+        .faction-tooltip {
+            position: absolute;
+            background: rgba(10, 6, 4, 0.95);
+            border: 2px solid var(--aged-gold);
+            padding: 1rem;
+            min-width: 300px;
+            max-width: 400px;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        .relationship-info h3 {
+        .faction-tooltip.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .faction-tooltip h3 {
             color: var(--aged-gold);
-            margin-top: 0;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            font-family: 'Cinzel', serif;
         }
 
-        .relationship-info p {
-            margin: 0.5rem 0;
-            line-height: 1.6;
+        .faction-tooltip p {
+            margin: 0.25rem 0;
+            line-height: 1.5;
+            font-size: 0.85rem;
+        }
+
+        .faction-tooltip strong {
+            color: var(--aged-gold);
         }
 
         .relationship-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
         }
 
         .relationship-group h4 {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.25rem 0;
         }
 
         .relationship-group.allies h4 {
@@ -246,12 +266,41 @@
 
         .relationship-group ul {
             margin: 0;
-            padding-left: 1.25rem;
-            font-size: 0.9rem;
+            padding-left: 1rem;
+            font-size: 0.8rem;
         }
 
         .relationship-group li {
-            margin: 0.25rem 0;
+            margin: 0.2rem 0;
+        }
+
+        .tooltip-link {
+            display: block;
+            text-align: center;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--dark-red);
+        }
+
+        .tooltip-link a {
+            color: var(--aged-gold);
+            text-decoration: underline;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        /* Draggable cursor */
+        .web-node {
+            cursor: grab;
+        }
+
+        .web-node:active {
+            cursor: grabbing;
+        }
+
+        .web-node.dragging {
+            opacity: 0.7;
+            z-index: 20;
         }
 
         /* Power tier table */
@@ -316,6 +365,29 @@
         .web-instructions strong {
             color: var(--aged-gold);
         }
+
+        /* Reset button */
+        .web-controls {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .reset-button {
+            background: rgba(139, 0, 0, 0.3);
+            border: 1px solid var(--dark-red);
+            color: var(--aged-gold);
+            padding: 0.5rem 1rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .reset-button:hover {
+            background: rgba(139, 0, 0, 0.5);
+            border-color: var(--aged-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -379,11 +451,15 @@
 
         <div class="relationship-section">
             <div class="web-instructions">
-                <strong>Click any faction</strong> to highlight their relationships | <strong>Green</strong> = Allies | <strong>Red</strong> = Enemies | <strong>Gray</strong> = Neutral
+                <strong>Click any faction</strong> to view details | <strong>Drag nodes</strong> to reposition | <strong>Green</strong> = Allies | <strong>Red</strong> = Enemies | <strong>Gray</strong> = Neutral
+            </div>
+
+            <div class="web-controls">
+                <button class="reset-button" onclick="resetPositions()">Reset Positions</button>
             </div>
 
             <div class="relationship-web" id="relationshipWeb">
-                <!-- Nodes will be positioned by JavaScript -->
+                <!-- Nodes and tooltip will be positioned by JavaScript -->
             </div>
 
             <div class="relationship-legend">
@@ -399,11 +475,6 @@
                     <div class="legend-line neutral"></div>
                     <span>Neutral / Uneasy Peace</span>
                 </div>
-            </div>
-
-            <div class="relationship-info" id="relationshipInfo">
-                <h3>Select a faction to view relationships</h3>
-                <p>Click any faction node in the web above to see detailed relationship information.</p>
             </div>
         </div>
 
@@ -555,8 +626,8 @@
             }
         };
 
-        // Position nodes in a circle
-        const nodePositions = {
+        // Default node positions (percentage-based)
+        const defaultPositions = {
             'church': { x: 50, y: 10 },      // Top center
             'ossuarium': { x: 85, y: 25 },   // Top right
             'dwarves': { x: 90, y: 50 },     // Right
@@ -570,7 +641,28 @@
             'draconid': { x: 50, y: 50 }     // Center
         };
 
+        // Load saved positions or use defaults
+        let nodePositions = { ...defaultPositions };
+        try {
+            const saved = localStorage.getItem('factionNodePositions');
+            if (saved) {
+                nodePositions = { ...defaultPositions, ...JSON.parse(saved) };
+            }
+        } catch (e) {
+            console.warn('Failed to load saved positions:', e);
+        }
+
         let activeNode = null;
+        let dragState = {
+            isDragging: false,
+            draggedNode: null,
+            startX: 0,
+            startY: 0,
+            offsetX: 0,
+            offsetY: 0
+        };
+
+        let tooltip = null;
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
@@ -621,10 +713,28 @@
                 node.style.left = `calc(${pos.x}% - 40px)`;
                 node.style.top = `calc(${pos.y}% - 40px)`;
                 node.textContent = faction.name;
-                node.onclick = () => selectFaction(factionId);
+
+                // Add drag handlers
+                node.addEventListener('mousedown', startDrag);
+                node.addEventListener('click', (e) => {
+                    if (!dragState.isDragging) {
+                        selectFaction(factionId);
+                    }
+                });
 
                 web.appendChild(node);
             });
+
+            // Create tooltip
+            if (!tooltip) {
+                tooltip = document.createElement('div');
+                tooltip.className = 'faction-tooltip';
+                web.appendChild(tooltip);
+            }
+
+            // Add global drag handlers
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', endDrag);
         }
 
         function createConnection(x1, y1, x2, y2, type, from, to) {
@@ -670,43 +780,70 @@
                 }
             });
 
-            // Update info panel
-            const info = document.getElementById('relationshipInfo');
-            info.innerHTML = `
-                <h3>${faction.name}</h3>
-                <p><strong>Tier:</strong> ${faction.tier} | <strong>Playstyle:</strong> ${faction.playstyle}</p>
-                <p><strong>Population:</strong> ${faction.population}</p>
-                <div class="relationship-list">
-                    ${faction.allies.length > 0 ? `
-                        <div class="relationship-group allies">
-                            <h4>Allies</h4>
-                            <ul>
-                                ${faction.allies.map(id => `<li>${factions[id].name}</li>`).join('')}
-                            </ul>
-                        </div>
-                    ` : ''}
-                    ${faction.enemies.length > 0 ? `
-                        <div class="relationship-group enemies">
-                            <h4>Enemies</h4>
-                            <ul>
-                                ${faction.enemies.map(id => `<li>${factions[id].name}</li>`).join('')}
-                            </ul>
-                        </div>
-                    ` : ''}
-                    ${faction.neutral.length > 0 ? `
-                        <div class="relationship-group neutral">
-                            <h4>Neutral</h4>
-                            <ul>
-                                ${faction.neutral.slice(0, 4).map(id => `<li>${factions[id].name}</li>`).join('')}
-                                ${faction.neutral.length > 4 ? `<li>...and ${faction.neutral.length - 4} others</li>` : ''}
-                            </ul>
-                        </div>
-                    ` : ''}
-                </div>
-                <p style="margin-top: 1rem; text-align: center;">
-                    <a href="${faction.page}" target="_parent" style="color: var(--aged-gold); text-decoration: underline; font-weight: 700;">→ View Full Faction Profile</a>
-                </p>
-            `;
+            // Show tooltip near the node
+            if (tooltip && selectedNode) {
+                const web = document.getElementById('relationshipWeb');
+                const webRect = web.getBoundingClientRect();
+                const nodeRect = selectedNode.getBoundingClientRect();
+
+                tooltip.innerHTML = `
+                    <h3>${faction.name}</h3>
+                    <p><strong>Tier:</strong> ${faction.tier} | <strong>Playstyle:</strong> ${faction.playstyle}</p>
+                    <p><strong>Population:</strong> ${faction.population}</p>
+                    <div class="relationship-list">
+                        ${faction.allies.length > 0 ? `
+                            <div class="relationship-group allies">
+                                <h4>Allies</h4>
+                                <ul>
+                                    ${faction.allies.map(id => `<li>${factions[id].name}</li>`).join('')}
+                                </ul>
+                            </div>
+                        ` : ''}
+                        ${faction.enemies.length > 0 ? `
+                            <div class="relationship-group enemies">
+                                <h4>Enemies</h4>
+                                <ul>
+                                    ${faction.enemies.map(id => `<li>${factions[id].name}</li>`).join('')}
+                                </ul>
+                            </div>
+                        ` : ''}
+                        ${faction.neutral.length > 0 ? `
+                            <div class="relationship-group neutral">
+                                <h4>Neutral</h4>
+                                <ul>
+                                    ${faction.neutral.slice(0, 3).map(id => `<li>${factions[id].name}</li>`).join('')}
+                                    ${faction.neutral.length > 3 ? `<li>...and ${faction.neutral.length - 3} others</li>` : ''}
+                                </ul>
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="tooltip-link">
+                        <a href="${faction.page}" target="_parent">→ View Full Faction Profile</a>
+                    </div>
+                `;
+
+                // Position tooltip near the node (prefer right side)
+                const tooltipWidth = 350;
+                const tooltipHeight = tooltip.offsetHeight || 250;
+                const nodeX = nodeRect.left - webRect.left + nodeRect.width / 2;
+                const nodeY = nodeRect.top - webRect.top + nodeRect.height / 2;
+
+                let left = nodeX + 50;
+                let top = nodeY - tooltipHeight / 2;
+
+                // Keep tooltip within web bounds
+                if (left + tooltipWidth > webRect.width - 20) {
+                    left = nodeX - tooltipWidth - 50; // Show on left side
+                }
+                if (top < 20) top = 20;
+                if (top + tooltipHeight > webRect.height - 20) {
+                    top = webRect.height - tooltipHeight - 20;
+                }
+
+                tooltip.style.left = `${left}px`;
+                tooltip.style.top = `${top}px`;
+                tooltip.classList.add('visible');
+            }
 
             // Highlight card
             document.querySelectorAll('.faction-card').forEach(card => {
@@ -746,13 +883,183 @@
             });
         }
 
+        // Drag handlers
+        function startDrag(e) {
+            e.preventDefault();
+            const node = e.target;
+            const factionId = node.dataset.faction;
+            if (!factionId) return;
+
+            const web = document.getElementById('relationshipWeb');
+            const webRect = web.getBoundingClientRect();
+            const nodeRect = node.getBoundingClientRect();
+
+            dragState.isDragging = true;
+            dragState.draggedNode = factionId;
+            dragState.startX = e.clientX;
+            dragState.startY = e.clientY;
+            dragState.offsetX = nodeRect.left - webRect.left + nodeRect.width / 2;
+            dragState.offsetY = nodeRect.top - webRect.top + nodeRect.height / 2;
+
+            node.classList.add('dragging');
+
+            // Hide tooltip while dragging
+            if (tooltip) {
+                tooltip.classList.remove('visible');
+            }
+        }
+
+        function drag(e) {
+            if (!dragState.isDragging) return;
+
+            const web = document.getElementById('relationshipWeb');
+            const webRect = web.getBoundingClientRect();
+
+            const dx = e.clientX - dragState.startX;
+            const dy = e.clientY - dragState.startY;
+
+            const newX = dragState.offsetX + dx;
+            const newY = dragState.offsetY + dy;
+
+            // Convert to percentage
+            const percentX = (newX / webRect.width) * 100;
+            const percentY = (newY / webRect.height) * 100;
+
+            // Clamp to bounds (5% to 95% to keep within container)
+            const clampedX = Math.max(5, Math.min(95, percentX));
+            const clampedY = Math.max(5, Math.min(95, percentY));
+
+            // Update position
+            nodePositions[dragState.draggedNode] = { x: clampedX, y: clampedY };
+
+            // Update node position
+            const node = document.querySelector(`.web-node[data-faction="${dragState.draggedNode}"]`);
+            if (node) {
+                node.style.left = `calc(${clampedX}% - 40px)`;
+                node.style.top = `calc(${clampedY}% - 40px)`;
+            }
+
+            // Update all connections
+            updateConnections();
+        }
+
+        function endDrag(e) {
+            if (!dragState.isDragging) return;
+
+            const node = document.querySelector(`.web-node[data-faction="${dragState.draggedNode}"]`);
+            if (node) {
+                node.classList.remove('dragging');
+            }
+
+            // Save positions to localStorage
+            try {
+                localStorage.setItem('factionNodePositions', JSON.stringify(nodePositions));
+            } catch (e) {
+                console.warn('Failed to save positions:', e);
+            }
+
+            dragState.isDragging = false;
+            dragState.draggedNode = null;
+        }
+
+        function updateConnections() {
+            const web = document.getElementById('relationshipWeb');
+            const webRect = web.getBoundingClientRect();
+
+            // Remove old connections
+            document.querySelectorAll('.web-connection').forEach(conn => conn.remove());
+
+            // Redraw all connections
+            Object.keys(factions).forEach(factionId => {
+                const faction = factions[factionId];
+                const fromPos = nodePositions[factionId];
+                const fromX = (fromPos.x / 100) * webRect.width;
+                const fromY = (fromPos.y / 100) * webRect.height;
+
+                // Draw ally connections
+                faction.allies.forEach(allyId => {
+                    if (factions[allyId]) {
+                        const toPos = nodePositions[allyId];
+                        const toX = (toPos.x / 100) * webRect.width;
+                        const toY = (toPos.y / 100) * webRect.height;
+                        createConnection(fromX, fromY, toX, toY, 'ally', factionId, allyId);
+                    }
+                });
+
+                // Draw enemy connections
+                faction.enemies.forEach(enemyId => {
+                    if (factions[enemyId]) {
+                        const toPos = nodePositions[enemyId];
+                        const toX = (toPos.x / 100) * webRect.width;
+                        const toY = (toPos.y / 100) * webRect.height;
+                        createConnection(fromX, fromY, toX, toY, 'enemy', factionId, enemyId);
+                    }
+                });
+            });
+
+            // Reapply hidden state based on active node
+            if (activeNode) {
+                document.querySelectorAll('.web-connection').forEach(conn => {
+                    const from = conn.dataset.from;
+                    const to = conn.dataset.to;
+                    if (from !== activeNode && to !== activeNode) {
+                        conn.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        function resetPositions() {
+            nodePositions = { ...defaultPositions };
+
+            // Clear localStorage
+            try {
+                localStorage.removeItem('factionNodePositions');
+            } catch (e) {
+                console.warn('Failed to clear saved positions:', e);
+            }
+
+            // Rebuild web
+            const web = document.getElementById('relationshipWeb');
+            web.innerHTML = '';
+            tooltip = null;
+            createWeb();
+
+            // Hide tooltip
+            if (tooltip) {
+                tooltip.classList.remove('visible');
+            }
+
+            activeNode = null;
+        }
+
         // Handle window resize
         window.addEventListener('resize', () => {
             const web = document.getElementById('relationshipWeb');
             web.innerHTML = '';
+            tooltip = null;
             createWeb();
             if (activeNode) {
                 selectFaction(activeNode);
+            }
+        });
+
+        // Hide tooltip when clicking outside
+        document.addEventListener('click', (e) => {
+            if (tooltip && !e.target.closest('.web-node') && !e.target.closest('.faction-card')) {
+                tooltip.classList.remove('visible');
+                activeNode = null;
+
+                // Clear active states
+                document.querySelectorAll('.web-node').forEach(node => {
+                    node.classList.remove('active');
+                });
+                document.querySelectorAll('.web-connection').forEach(conn => {
+                    conn.classList.remove('hidden');
+                });
+                document.querySelectorAll('.faction-card').forEach(card => {
+                    card.classList.remove('active');
+                });
             }
         });
     </script>
