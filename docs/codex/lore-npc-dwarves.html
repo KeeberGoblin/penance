@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwarven Forge-Guilds - Notable NPCs - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .npc-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid #d4af37;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 2px;
+        }
+
+        .npc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .npc-name {
+            color: var(--aged-gold);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .npc-title {
+            color: #d4af37;
+            font-style: italic;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .npc-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            color: var(--aged-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        .stat-value {
+            margin-top: 0.25rem;
+            opacity: 0.95;
+        }
+
+        .npc-description {
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .npc-quote {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid #d4af37;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="lore-factions-overview.html" target="_parent">FACTIONS</a> /
+            <a href="faction-dwarves.html" target="_parent">Dwarven Forge-Guilds</a> /
+            Notable NPCs
+        </div>
+
+        <h1>Dwarven Forge-Guilds: Notable NPCs</h1>
+
+        <div class="manuscript-quote">
+            "Steel bends. It does not break. We are steel. We do not break."
+            <span class="quote-attribution">-Dwarven Forge-Oath</span>
+        </div>
+
+        <!-- Thane Grimnar Ironbeard -->
+        <div class="npc-card">
+            <div class="npc-header">
+                <h2 class="npc-name">Thane Grimnar Ironbeard</h2>
+                <span class="npc-title">High Thane of the Forge-Council</span>
+            </div>
+
+            <div class="npc-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Age</span>
+                    <span class="stat-value">187 years old</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Position</span>
+                    <span class="stat-value">Supreme Leader of Forge-Hold</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Guild</span>
+                    <span class="stat-value">Ironbeard Clan (most ancient lineage)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value">Active, Ironhearth Citadel</span>
+                </div>
+            </div>
+
+            <p class="npc-description">
+                The oldest living dwarf and leader of the Forge-Council—the assembly of guild masters that governs dwarven society. Grimnar was already a master smith before the Sundering, and he's spent the past 437 years perfecting the art of Casket construction. He personally forged the rune-inscribed armor for Ironhearth's defensive walls, work so perfect it's considered art.
+            </p>
+
+            <p class="npc-description">
+                Grimnar is traditionalist to his core—suspicious of surface-dwellers, protective of dwarven knowledge, and absolutely opposed to selling advanced weapons to "unworthy" factions. This puts him in constant conflict with younger guild masters who see profit in arms sales. He believes dwarven craftsmanship should serve dwarven interests exclusively, and that the other factions will simply destroy themselves given time.
+            </p>
+
+            <div class="npc-quote">
+                "Humans build quickly and die quickly. Elves build beautifully and fade beautifully. We build to last. That's why we'll outlast them all."
+            </div>
+
+            <p class="npc-description">
+                <strong>Personality:</strong> Stubborn, traditionalist, craftsman-perfectionist. Values quality over speed, tradition over innovation. Deeply loyal to dwarven interests but dismissive of outsiders. Believes dwarves should wait out the post-apocalyptic chaos underground while other factions destroy each other. Increasingly isolated as younger generation favors engagement with surface world.
+            </p>
+        </div>
+
+        <!-- Runemaster Thyra Stoneweaver -->
+        <div class="npc-card">
+            <div class="npc-header">
+                <h2 class="npc-name">Runemaster Thyra Stoneweaver</h2>
+                <span class="npc-title">Master of Rune-Lore, Keeper of Glyphs</span>
+            </div>
+
+            <div class="npc-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Age</span>
+                    <span class="stat-value">142 years old</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Position</span>
+                    <span class="stat-value">High Runemaster, Guild Council Member</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Runes Mastered</span>
+                    <span class="stat-value">347 unique glyphs (most of any living dwarf)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value">Active, Rune Vaults</span>
+                </div>
+            </div>
+
+            <p class="npc-description">
+                The foremost expert on runic magic—the dwarven art of inscribing protective and empowering glyphs into metal, stone, and bone. Thyra's work powers every dwarven Casket's defensive systems, allowing them to stack damage resistance infinitely as Rune Counters accumulate. She's obsessed with recovering lost pre-Sundering rune-knowledge and has explored countless dangerous ruins to find ancient glyph-stones.
+            </p>
+
+            <p class="npc-description">
+                Unlike Grimnar, Thyra favors limited cooperation with other factions—particularly the Elves, whose understanding of ley lines complements dwarven runecraft. She's developed experimental hybrid techniques combining elven magic and dwarven engineering, creating weapons that channel natural energy through runic matrices. Conservative guild masters view this as dangerous innovation.
+            </p>
+
+            <div class="npc-quote">
+                "Runes are not mere decoration. They are mathematics made manifest, physics carved into reality. Every glyph is a law of nature we've learned to rewrite."
+            </div>
+
+            <p class="npc-description">
+                <strong>Personality:</strong> Scholarly, innovative (by dwarven standards), pragmatic. Values knowledge over tradition when they conflict. Willing to work with outsiders if it advances runic understanding. Constantly clashing with Grimnar over isolationist policies. Believes dwarves' survival depends on adaptation, not just endurance.
+            </p>
+        </div>
+
+        <!-- Warmaster Broka Steelhammer -->
+        <div class="npc-card">
+            <div class="npc-header">
+                <h2 class="npc-name">Warmaster Broka Steelhammer</h2>
+                <span class="npc-title">Commander of the Iron Legion</span>
+            </div>
+
+            <div class="npc-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Age</span>
+                    <span class="stat-value">98 years old</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Position</span>
+                    <span class="stat-value">Supreme Military Commander</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Battles Defended</span>
+                    <span class="stat-value">127 siege defenses (never lost)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value">Active, Front Lines</span>
+                </div>
+            </div>
+
+            <p class="npc-description">
+                The Iron Legion's supreme commander and a living legend of defensive warfare. Broka has defended Ironhearth against 127 separate siege attempts—Church crusades, Elven raids, Bloodline pack attacks, Abomination swarms—and never lost a single battle. Her strategy is simple: make every inch of ground cost the enemy more than it's worth, then wait for them to give up.
+            </p>
+
+            <p class="npc-description">
+                Broka pilots <em>The Bulwark</em>, a Casket so heavily armored that enemies literally run out of ammunition before penetrating its defenses. She's famous for standing in kill-zones for hours, accumulating Rune Counters until she becomes functionally invincible. Her personal record: absorbing 4,783 damage in a single battle without dying. She calls it "making them waste their time."
+            </p>
+
+            <div class="npc-quote">
+                "Offense wins battles. Defense wins wars. And I've won every war I've ever fought by simply refusing to die."
+            </div>
+
+            <p class="npc-description">
+                <strong>Personality:</strong> Patient, methodical, unshakeable. Embodies dwarven defensive philosophy: endure, outlast, prevail through attrition. Has no interest in glory or conquest—only protecting dwarven holds. Dismissive of "flashy" tactics used by Church or Elves. Believes the strongest weapon is simply refusing to yield.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; opacity: 0.7;">
+            <span style="font-size: 1.5rem; color: #d4af37;">❈</span>
+        </div>
+
+        <p style="text-align: center; font-style: italic; opacity: 0.8;">
+            <a href="lore-factions-overview.html" target="_parent">← Return to Factions Overview</a>
+        </p>
+    </div>
+</body>
+</html>

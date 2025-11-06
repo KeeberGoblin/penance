@@ -19,6 +19,13 @@
             padding: 0;
             border-radius: 2px;
             overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .faction-card:hover {
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+            transform: translateY(-2px);
         }
 
         .faction-toggle {
@@ -56,14 +63,20 @@
         }
 
         .faction-content {
-            display: none;
-            padding: 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
             background: rgba(10, 6, 4, 0.5);
             border-top: 1px solid var(--dark-red);
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            opacity: 0;
         }
 
         .faction-content.active {
-            display: block;
+            max-height: 1000px;
+            padding: 1.5rem;
+            opacity: 1;
+            transition: max-height 0.5s ease-in, padding 0.5s ease-in, opacity 0.3s ease-in 0.1s;
         }
 
         .faction-detail {
@@ -96,6 +109,13 @@
             border-radius: 2px;
             margin-bottom: 1rem;
             font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tier-specific colors */
+        .faction-content:has(.faction-tier:contains("TIER 1")) .faction-tier,
+        .faction-tier:first-child {
+            background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
         }
 
         .faction-links {
@@ -190,6 +210,28 @@
             color: var(--dark-red);
             opacity: 0.6;
         }
+
+        /* Responsive improvements for mobile */
+        @media (max-width: 768px) {
+            .factions-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .faction-grid-summary {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .power-tier-table {
+                font-size: 0.85rem;
+            }
+
+            .power-tier-table th,
+            .power-tier-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -210,6 +252,15 @@
         <p class="manuscript-text">
             When the Sundering shattered civilization, it also shattered humanity's unity. From the ruins emerged ten major factions...each with unique philosophies, resources, and survival strategies. Some seek redemption through faith. Others embrace mutation and evolution. All compete for territory, resources, and the right to define what humanity will become in the centuries ahead.
         </p>
+
+        <div class="divider">❈</div>
+
+        <div style="background: linear-gradient(135deg, rgba(75, 14, 14, 0.2) 0%, rgba(139, 0, 0, 0.15) 100%); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: var(--aged-gold); text-transform: uppercase; letter-spacing: 0.1em; font-size: 1.1rem;">Quick Navigation</h3>
+            <p style="margin: 0.5rem 0; opacity: 0.95; line-height: 1.7;">
+                Click any faction name below to expand detailed information. Each faction card includes playstyle, mechanics, support units, and links to full profiles. Press <kbd style="background: rgba(0,0,0,0.3); padding: 0.2rem 0.5rem; border-radius: 2px; font-family: monospace; font-size: 0.9rem;">ESC</kbd> to close all cards.
+            </p>
+        </div>
 
         <div class="divider">❈</div>
 
@@ -376,7 +427,7 @@
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
-                        <p>Lifesteal Vampire</p>
+                        <p>Necromantic Grinder</p>
                     </div>
 
                     <div class="faction-detail">
@@ -816,13 +867,6 @@
             The ten factions are bound by complex webs of alliance, mutual hatred, and calculated neutrality. Wars have been fought over territory and ideology. Uneasy truces persist where mutual benefit demands cooperation. Some factions are drifting toward open conflict...others toward unexpected alliance. Your actions in the campaign will shape these relationships forever.
         </p>
 
-        <p style="opacity: 0.9; line-height: 1.8;">
-            <strong style="color: var(--aged-gold);">Learn More:</strong>
-            <a href="faction-relationships.html" target="_parent" style="color: var(--aged-gold); text-decoration: underline;">→ Full Relationship Matrix</a> | 
-            <a href="faction-caskets.html" target="_parent" style="color: var(--aged-gold); text-decoration: underline;">→ Casket Types by Faction</a> | 
-            <a href="faction-tactics.html" target="_parent" style="color: var(--aged-gold); text-decoration: underline;">→ Faction Tactics Cards</a>
-        </p>
-
         <div class="divider">❈</div>
 
         <h2>Choose Your Path</h2>
@@ -840,11 +884,50 @@
     <script>
         function toggleFaction(button) {
             const content = button.nextElementSibling;
-            
-            // Toggle active states
-            button.classList.toggle('active');
-            content.classList.toggle('active');
+            const isCurrentlyActive = content.classList.contains('active');
+
+            // Close all other open faction cards
+            closeAllFactions();
+
+            // Toggle the clicked faction (open if it was closed, keep closed if it was open)
+            if (!isCurrentlyActive) {
+                button.classList.add('active');
+                content.classList.add('active');
+
+                // Smooth scroll to make sure the opened card is visible
+                setTimeout(() => {
+                    button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
         }
+
+        function closeAllFactions() {
+            document.querySelectorAll('.faction-content.active').forEach(openContent => {
+                openContent.classList.remove('active');
+                openContent.previousElementSibling.classList.remove('active');
+            });
+        }
+
+        // Close all faction cards when ESC key is pressed
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeAllFactions();
+            }
+        });
+
+        // Add keyboard navigation support
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.faction-toggle').forEach(button => {
+                button.setAttribute('role', 'button');
+                button.setAttribute('aria-expanded', 'false');
+
+                // Update aria-expanded when clicked
+                button.addEventListener('click', () => {
+                    const isExpanded = button.classList.contains('active');
+                    button.setAttribute('aria-expanded', isExpanded);
+                });
+            });
+        });
     </script>
 </body>
 </html>

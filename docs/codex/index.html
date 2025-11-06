@@ -527,7 +527,25 @@
                 </div>
 
                 <a class="nav-link" onclick="loadContent('lore-chronicle.html', event)">Chronicle (437 Years)</a>
-                <a class="nav-link" onclick="loadContent('lore-npcs.html', event)">Iconic Pilots</a>
+
+                <!-- Iconic Pilots submenu -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="lore-npcs.html">Iconic Pilots</a>
+                    <div class="nav-submenu">
+                        <a class="nav-link" onclick="loadContent('lore-npcs.html', event)">All Pilots Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-church.html', event)">Church of Absolution</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-dwarves.html', event)">Dwarven Forge-Guilds</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-ossuarium.html', event)">The Ossuarium</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-elves.html', event)">Elven Verdant Covenant</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-wyrd.html', event)">The Wyrd Conclave</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-nomads.html', event)">Nomad Collective</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-exchange.html', event)">The Exchange</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-bloodlines.html', event)">Vestige Bloodlines</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-emergent.html', event)">Emergent Syndicate</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-crucible.html', event)">Crucible Packs</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-draconid.html', event)">Draconid Remembrance</a>
+                    </div>
+                </div>
             </div>
 
             <!-- 2. CORE RULES (Learn to Play) -->
@@ -618,12 +636,13 @@
             <!-- 7. RESOURCES -->
             <div class="nav-section">
                 <div class="nav-title">Resources</div>
-                <a href="../index.html" class="nav-link">Main Site</a>
+                <a href="../index.html" class="nav-link" target="_blank" rel="noopener noreferrer">Main Site</a>
+                <a href="../cards/" class="nav-link" target="_blank" rel="noopener noreferrer">Card Database</a>
+                <a href="../cards/deck-builder.html" class="nav-link" target="_blank" rel="noopener noreferrer">Deck Builder</a>
+                <a class="nav-link" onclick="loadContent('gm-helper.html', event)">GM Helper Tool</a>
+                <a class="nav-link" onclick="loadContent('support-equipment.html', event)">Support Unit & Equipment Helper</a>
                 <a href="../pdfs/reference-PLAYTEST-READY.pdf" class="nav-link" download>Playtest PDF</a>
-                <a href="../cards/" class="nav-link">Card Database</a>
-                <a href="../cards/deck-builder.html" class="nav-link">Deck Builder</a>
-                <a href="../codex/gm-helper.html" class="nav-link">GM Helper Tool</a>
-                <a href="../codex/support-equipment.html" class="nav-link">Support Unit & Equipment Helper</a>
+                <a class="nav-link" onclick="loadContent('rulebook-pdf-viewer.html', event)">Core Rulebook (PDF Style)</a>
                 <a href="https://github.com/KeeberGoblin/penance" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
             </div>
             </div>

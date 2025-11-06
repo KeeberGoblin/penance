@@ -44,7 +44,7 @@
 1. Church of Absolution (Grand Inquisitor Aldric)
 2. Dwarven Forge-Guilds (Forgemaster Durak)
 3. Verdant Covenant (Rootwarden Sylra)
-4. The Ossuarium (Bonelord Thresh)
+4. The Ossuarium (Bonelord Karath)
 5. Nomad Collective (Warlord Kess)
 6. The Exchange (Proctor Vaelan)
 7. Ledger Orthodox (Brother Matthias "The First Accountant")

@@ -401,7 +401,7 @@ X = Your Casket
 **Campaign Events**:
 - **Penance Rituals** (settlement event)
 - **Taint Purging** (when Taint reaches 8+)
-- **Soul Bargains** (desperate deals with Bonelord Thresh)
+- **Soul Bargains** (desperate deals with Bonelord Karath)
 - **Flesh Bargain** (voluntary flesh bargain)
 
 ---

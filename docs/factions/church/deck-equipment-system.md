@@ -17,26 +17,26 @@
 
 ## Deck Composition Formula
 
-**Variable Deck Size = 10 Universal Core + 6 Church Core + X Equipment + 2 Tactics**
+**Variable Deck Size = 10 Universal Core + 10 Church Core + X Equipment + 2 Tactics**
 
 Where X depends on Casket class and equipment loadout.
 
 ---
 
-## CHURCH FACTION CORE (6 Cards - Mandatory)
+## CHURCH FACTION CORE (10 Cards - Mandatory)
 
-These 6 cards define Church identity and cannot be removed or smelted.
+These 10 cards define Church identity and cannot be removed or smelted.
 
 ### 1. BLOOD OFFERING (REVISED for Dice System - BALANCE NERF)
 **Type**: Gambit (Self-Harm)
 **SP Cost**: 0
-**Effect**: Discard 2 cards from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and **-1 to target number** (easier to hit). **LIMIT: You can only play 1 Blood Offering per turn.**
+**Effect**: Discard 1 card from top of your deck (self-harm). Your next attack this turn: +3 damage, ignores 1 Defense, and **-1 to target number** (easier to hit). **LIMIT: You can only play 1 Blood Offering per turn.**
 **Keywords**: Gambit, Self-Harm, Buff, Accuracy
 **Flavor**: *"Pain purifies. Blood absolves. Sacrifice ensures the strike."*
 
-**DESIGN NOTE**: Added -1 to target number so that self-harm guarantees better aim. Original version could miss after sacrificing 2 cards, which felt terrible.
+**DESIGN NOTE**: Added -1 to target number so that self-harm guarantees better aim. Original version could miss after sacrificing cards, which felt terrible.
 
-**BALANCE NOTE (2025-10-16)**: Added 1-per-turn limit to prevent degenerate turn-1 alpha strikes (original allowed stacking multiple Blood Offerings: discard 6 cards, +9 damage, instant win). Limit maintains power while preventing burst cheese.
+**BALANCE NOTE (2025-10-17)**: Reduced from "discard 2 cards" to "discard 1 card" to improve campaign viability without removing high-risk playstyle. Also added 1-per-turn limit to prevent degenerate alpha strikes.
 
 ---
 
@@ -88,21 +88,7 @@ These 6 cards define Church identity and cannot be removed or smelted.
 
 ---
 
-## CHURCH FACTION CORE - NEW CARDS (Dice System Optimization)
-
-**NOTE**: These 7 new cards can be added to Equipment slots (treated as Sigils/Accessories) to optimize for the dice system. They are OPTIONAL additions to enhance accuracy and auto-hit capabilities.
-
-### 7. DIVINE GUIDANCE (Sigil)
-**Type**: Accuracy Buff
-**SP Cost**: 1
-**Range**: Self
-**Effect**: Your next attack this turn: **-2 to target number** (easier to hit). If it hits, apply "Blessed" status to target (all allies' attacks against this target: -1 to target number until end of round).
-**Keywords**: Accuracy, Buff, Targeting
-**Flavor**: *"The Harmony guides my hand."*
-
----
-
-### 8. MARTYRDOM'S CERTAINTY (Sigil)
+### 7. MARTYRDOM'S CERTAINTY
 **Type**: Accuracy Buff (Self-Harm)
 **SP Cost**: 0
 **Range**: Self
@@ -112,18 +98,7 @@ These 6 cards define Church identity and cannot be removed or smelted.
 
 ---
 
-### 9. ZEALOT'S FOCUS (Sigil)
-**Type**: Attack Enhancement
-**SP Cost**: 0
-**Range**: Self
-**Effect**: **Reroll 1 Attack Die** on your next attack this turn.
-**Card Count**: ×2 (2 copies)
-**Keywords**: Reroll, Accuracy
-**Flavor**: *"Failure is not an option when faith burns bright."*
-
----
-
-### 10. RIGHTEOUS WRATH (Weapon Attack)
+### 8. RIGHTEOUS WRATH
 **Type**: Attack (Auto-Hit)
 **SP Cost**: 3
 **Range**: Melee (1 hex)
@@ -133,7 +108,7 @@ These 6 cards define Church identity and cannot be removed or smelted.
 
 ---
 
-### 11. CONFESSION UNDER DURESS (Utility)
+### 9. CONFESSION UNDER DURESS
 **Type**: Debuff
 **SP Cost**: 2
 **Range**: 2 hexes
@@ -143,26 +118,13 @@ These 6 cards define Church identity and cannot be removed or smelted.
 
 ---
 
-### 12. POINT-BLANK EXECUTION (Weapon Attack)
+### 10. POINT-BLANK EXECUTION
 **Type**: Attack (Auto-Hit)
 **SP Cost**: 3
 **Range**: 1 hex (adjacent only)
 **Effect**: Deal 6 damage. **This attack cannot miss.** If attacking from rear arc (hex 4), deal 8 damage instead.
 **Keywords**: Attack, Auto-Hit, Execute
 **Flavor**: *"Muzzle pressed to steel. The Harmony demands payment."*
-
----
-
-### 13. DIVINE JUDGMENT (REVISED)
-**Type**: Attack (High-Cost, Miss Compensation)
-**SP Cost**: 4
-**Range**: Melee (1 hex)
-**Effect**: Deal 8 damage, ignore 1 Defense.
-**On Miss**: Recover 2 SP and gain "Judgment Delayed" status (+3 damage to next attack).
-**Keywords**: Attack, Execute, Miss Compensation
-**Flavor**: *"Judgment delayed is judgment magnified."*
-
-**DESIGN NOTE**: This REPLACES the original Divine Judgment (#4 above). Original dealt 6-8 damage conditionally. New version deals 8 flat with miss compensation.
 
 ---
 

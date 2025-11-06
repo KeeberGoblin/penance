@@ -11,7 +11,7 @@ The Sundering, the Theslar Engine, and the birth of the Remnants. How the world 
 Complete timeline from Year 0 (The Sundering) to Year 437 (Present Day). Major historical events across 9 factions.
 
 ### [Iconic NPCs](iconic-npcs.md)
-Five legendary Remnants: Sister Vex (Church), Rootwarden Kess (Elves), Forgemaster Durr (Dwarves), Bonelord Thresh (Undead), and Mockingbird (Fae).
+Five legendary Remnants: Sister Vex (Church), Rootwarden Kess (Elves), Forgemaster Durr (Dwarves), Bonelord Karath (Undead), and Mockingbird (Fae).
 
 ### [The Theslar Engine](theslar-engine-mechanics.md)
 The artifact that ended the world. Post-death consciousness transfer, reality fractures, and the Screaming Choir.

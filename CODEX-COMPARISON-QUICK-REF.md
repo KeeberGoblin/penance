@@ -6,6 +6,7 @@
 **Bonelord Name Inconsistency**
 - **HTML files**: "Bonelord Karath"
 - **MD files**: "Bonelord Thresh"
+- **MD files**: "Bonelord Karath"
 - **Files affected**: cosmology.html/.md, pilot-skills.html/.md, potentially more
 - **ACTION NEEDED**: Choose canonical name and update ALL files
 
