@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
         .factions-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
             margin: 2rem 0;
         }
 
         .faction-card {
-            background: linear-gradient(to right, rgba(75, 14, 14, 0.25), rgba(10, 6, 4, 0.4));
-            border: 2px solid var(--dark-red);
-            border-left: 6px solid var(--dark-red);
-            margin-bottom: 1rem;
+            background: rgba(10, 6, 4, 0.5);
+            border: 1px solid var(--dark-red);
+            border-top: 3px solid var(--dark-red);
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .faction-card::before {
@@ -29,78 +33,79 @@
             right: 0;
             height: 100%;
             background-image: var(--leather-texture);
-            opacity: 0.15;
+            opacity: 0.08;
             pointer-events: none;
             z-index: 0;
         }
 
         .faction-card:hover {
-            box-shadow: 0 6px 16px rgba(139, 0, 0, 0.5);
-            border-left-color: var(--aged-gold);
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
+            border-top-color: var(--aged-gold);
         }
 
         .faction-toggle {
-            background: transparent;
+            background: linear-gradient(180deg, rgba(75, 14, 14, 0.3), rgba(75, 14, 14, 0.15));
             border: none;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.4);
             color: var(--aged-gold);
-            padding: 1.25rem 1.75rem;
-            font-size: 1.15rem;
-            font-family: 'Cinzel Decorative', serif;
+            padding: 0.9rem 1.1rem;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
             cursor: pointer;
             width: 100%;
             text-align: left;
             transition: all 0.3s ease;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.05em;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative;
             z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .faction-toggle:hover {
+            background: linear-gradient(180deg, rgba(139, 0, 0, 0.4), rgba(75, 14, 14, 0.25));
             color: var(--bone-white);
-            padding-left: 2rem;
         }
 
         .faction-toggle-icon {
-            font-family: serif;
-            font-size: 1.4rem;
-            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            color: var(--dark-red);
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .faction-toggle.active {
+            background: linear-gradient(180deg, rgba(139, 0, 0, 0.5), rgba(75, 14, 14, 0.3));
+            color: var(--bone-white);
         }
 
         .faction-toggle.active .faction-toggle-icon {
-            transform: rotate(90deg);
-            color: var(--aged-gold);
+            transform: rotate(180deg);
+            opacity: 1;
         }
 
         .faction-content {
             max-height: 0;
             overflow: hidden;
-            background: rgba(10, 6, 4, 0.7);
-            border-top: 1px solid rgba(139, 0, 0, 0.4);
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(10, 6, 4, 0.3);
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             z-index: 1;
         }
 
         .faction-content.active {
-            max-height: 1200px;
+            max-height: 700px;
         }
 
         .faction-content-inner {
-            padding: 1.75rem;
+            padding: 1.1rem;
             opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+            transition: opacity 0.3s ease 0.1s;
         }
 
         .faction-content.active .faction-content-inner {
             opacity: 1;
-            transform: translateY(0);
         }
 
         .faction-detail {
@@ -124,22 +129,15 @@
 
         .faction-tier {
             display: inline-block;
-            background: var(--dark-red);
+            background: rgba(139, 0, 0, 0.4);
+            border: 1px solid var(--dark-red);
             color: var(--aged-gold);
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
+            padding: 0.3rem 0.65rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border-radius: 2px;
-            margin-bottom: 1rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
             font-weight: 700;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Tier-specific colors */
-        .faction-content:has(.faction-tier:contains("TIER 1")) .faction-tier,
-        .faction-tier:first-child {
-            background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
         }
 
         .faction-links {
@@ -238,16 +236,8 @@
         /* Responsive improvements for mobile */
         @media (max-width: 768px) {
             .factions-container {
-                margin: 1.5rem 0;
-            }
-
-            .faction-card {
-                margin-bottom: 0.75rem;
-            }
-
-            .faction-toggle {
-                padding: 1rem 1.25rem;
-                font-size: 1rem;
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
 
             .faction-grid-summary {
@@ -941,34 +931,23 @@
     <script>
         function toggleFaction(clickedButton) {
             // Prevent event bubbling
-            event.preventDefault();
-            event.stopPropagation();
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
 
             const content = clickedButton.nextElementSibling;
             const isCurrentlyActive = content.classList.contains('active');
 
-            // Close all faction cards first
-            document.querySelectorAll('.faction-card').forEach(card => {
-                const button = card.querySelector('.faction-toggle');
-                const contentDiv = card.querySelector('.faction-content');
-
-                if (button && contentDiv) {
-                    button.classList.remove('active');
-                    contentDiv.classList.remove('active');
-                    button.setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            // Open the clicked one if it wasn't already open
-            if (!isCurrentlyActive) {
+            // Just toggle this card (allow multiple open)
+            if (isCurrentlyActive) {
+                clickedButton.classList.remove('active');
+                content.classList.remove('active');
+                clickedButton.setAttribute('aria-expanded', 'false');
+            } else {
                 clickedButton.classList.add('active');
                 content.classList.add('active');
                 clickedButton.setAttribute('aria-expanded', 'true');
-
-                // Smooth scroll to make sure the opened card is visible
-                setTimeout(() => {
-                    clickedButton.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-                }, 300);
             }
         }
 
