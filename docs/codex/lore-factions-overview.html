@@ -6,68 +6,25 @@
     <title>Factions Overview - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
-        /* Override default content padding for full-height layout */
-        .content {
-            padding: 0;
-            max-width: none;
-            height: calc(100vh - 100px);
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Header section */
-        .faction-overview-header {
-            padding: 1.5rem 2rem;
-            background: linear-gradient(180deg, rgba(75, 14, 14, 0.3), rgba(10, 6, 4, 0.5));
-            border-bottom: 2px solid var(--dark-red);
-        }
-
-        .faction-overview-header h1 {
-            margin: 0 0 0.5rem 0;
-            font-size: 2rem;
-            color: var(--aged-gold);
-        }
-
-        .faction-overview-header .subtitle {
-            margin: 0;
-            opacity: 0.85;
-            font-style: italic;
-            font-size: 1rem;
-        }
-
-        /* Two-column layout */
-        .faction-layout {
+        /* Faction cards grid */
+        .factions-grid {
             display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 0;
-            flex: 1;
-            overflow: hidden;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
         }
 
-        /* Left column - iframe viewer */
-        .faction-viewer {
-            background: var(--parchment);
-            border-right: 2px solid var(--dark-red);
-            overflow: hidden;
+        .faction-card {
+            background: rgba(10, 6, 4, 0.7);
+            border: 1px solid var(--dark-red);
+            border-top: 3px solid var(--dark-red);
+            padding: 1rem;
+            transition: all 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
 
-        .faction-frame {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: var(--parchment);
-        }
-
-        /* Right column - faction list */
-        .faction-nav {
-            background: linear-gradient(180deg, rgba(26, 20, 16, 0.95), rgba(10, 6, 4, 0.98));
-            overflow-y: auto;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        .faction-nav::before {
+        .faction-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -75,394 +32,728 @@
             right: 0;
             bottom: 0;
             background-image: var(--leather-texture);
-            opacity: 0.2;
+            opacity: 0.1;
             pointer-events: none;
         }
 
-        /* Scrollbar styling for faction nav */
-        .faction-nav::-webkit-scrollbar {
-            width: 8px;
+        .faction-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(139, 0, 0, 0.5);
+            border-top-color: var(--aged-gold);
         }
 
-        .faction-nav::-webkit-scrollbar-track {
-            background: var(--shadow-black);
-        }
-
-        .faction-nav::-webkit-scrollbar-thumb {
-            background: var(--blood-red);
-            border-radius: 2px;
-        }
-
-        .faction-nav::-webkit-scrollbar-thumb:hover {
-            background: var(--dark-red);
-        }
-
-        /* Faction nav header */
-        .faction-nav-header {
-            padding: 1.25rem 1.5rem;
-            background: rgba(75, 14, 14, 0.4);
-            border-bottom: 2px solid var(--dark-red);
-            position: sticky;
-            top: 0;
+        .faction-card.active {
+            border: 2px solid var(--aged-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: scale(1.05);
             z-index: 10;
         }
 
-        .faction-nav-header h2 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--aged-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-align: center;
-        }
-
-        /* Faction list */
-        .faction-list {
-            padding: 0.5rem;
-        }
-
-        .faction-item {
-            background: rgba(10, 6, 4, 0.6);
-            border: 1px solid var(--dark-red);
-            border-left: 3px solid var(--dark-red);
-            margin-bottom: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .faction-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 0;
-            background: var(--dark-red);
-            transition: width 0.3s ease;
-        }
-
-        .faction-item:hover::before {
-            width: 6px;
-        }
-
-        .faction-item:hover {
-            background: rgba(75, 14, 14, 0.4);
-            border-left-color: var(--aged-gold);
-            transform: translateX(4px);
-        }
-
-        .faction-item.active {
-            background: linear-gradient(90deg, rgba(139, 0, 0, 0.5), rgba(75, 14, 14, 0.3));
-            border-left-color: var(--aged-gold);
-            box-shadow: inset 0 0 20px rgba(139, 0, 0, 0.3);
-        }
-
-        .faction-item.active::before {
-            width: 6px;
-            background: var(--aged-gold);
-        }
-
-        .faction-button {
-            background: none;
-            border: none;
-            color: var(--aged-gold);
-            padding: 1rem 1.25rem;
-            width: 100%;
-            text-align: left;
+        .faction-name {
             font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 700;
+            color: var(--aged-gold);
+            margin: 0 0 0.5rem 0;
             letter-spacing: 0.05em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: color 0.3s ease;
-            position: relative;
         }
 
-        .faction-item:hover .faction-button,
-        .faction-item.active .faction-button {
-            color: var(--bone-white);
-        }
-
-        .faction-tier-badge {
+        .faction-tier {
+            display: inline-block;
+            background: rgba(139, 0, 0, 0.4);
+            border: 1px solid var(--dark-red);
+            color: var(--aged-gold);
+            padding: 0.2rem 0.5rem;
             font-size: 0.65rem;
-            opacity: 0.7;
             text-transform: uppercase;
             letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
         }
 
-        .faction-item.active .faction-tier-badge {
-            opacity: 1;
-            color: var(--aged-gold);
-        }
-
-        /* Tier dividers */
-        .tier-divider {
-            padding: 0.75rem 1.25rem;
-            background: rgba(139, 0, 0, 0.3);
-            border-top: 1px solid var(--dark-red);
-            border-bottom: 1px solid var(--dark-red);
-            margin: 0.75rem 0;
-        }
-
-        .tier-divider h3 {
-            margin: 0;
-            font-size: 0.75rem;
-            color: var(--aged-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            text-align: center;
+        .faction-info {
+            font-size: 0.85rem;
+            line-height: 1.5;
             opacity: 0.9;
         }
 
-        /* Placeholder message */
-        .faction-placeholder {
+        .faction-info strong {
+            color: var(--aged-gold);
+            font-size: 0.75rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* Relationship Web */
+        .relationship-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(75, 14, 14, 0.2), rgba(10, 6, 4, 0.3));
+            border: 2px solid var(--dark-red);
+        }
+
+        .relationship-web {
+            position: relative;
+            height: 600px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--dark-red);
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .web-node {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(75, 14, 14, 0.9), rgba(139, 0, 0, 0.8));
+            border: 2px solid var(--dark-red);
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100%;
-            padding: 2rem;
             text-align: center;
-        }
-
-        .faction-placeholder-content {
-            max-width: 400px;
-        }
-
-        .faction-placeholder h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            font-weight: 700;
             color: var(--aged-gold);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 5;
+            padding: 0.25rem;
+            line-height: 1.2;
         }
 
-        .faction-placeholder p {
-            opacity: 0.8;
+        .web-node:hover {
+            transform: scale(1.15);
+            border-color: var(--aged-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            z-index: 10;
+        }
+
+        .web-node.active {
+            border: 3px solid var(--aged-gold);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 1), rgba(212, 175, 55, 0.3));
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+            transform: scale(1.2);
+            z-index: 15;
+        }
+
+        .web-connection {
+            position: absolute;
+            height: 2px;
+            transform-origin: left center;
+            pointer-events: none;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .web-connection.ally {
+            background: linear-gradient(90deg, rgba(34, 139, 34, 0.6), rgba(34, 139, 34, 0.3));
+            box-shadow: 0 0 4px rgba(34, 139, 34, 0.4);
+        }
+
+        .web-connection.enemy {
+            background: linear-gradient(90deg, rgba(220, 20, 60, 0.6), rgba(220, 20, 60, 0.3));
+            box-shadow: 0 0 4px rgba(220, 20, 60, 0.4);
+        }
+
+        .web-connection.neutral {
+            background: linear-gradient(90deg, rgba(169, 169, 169, 0.4), rgba(169, 169, 169, 0.2));
+        }
+
+        .web-connection.hidden {
+            opacity: 0.1;
+        }
+
+        /* Legend */
+        .relationship-legend {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .legend-line {
+            width: 40px;
+            height: 3px;
+        }
+
+        .legend-line.ally {
+            background: rgba(34, 139, 34, 0.8);
+            box-shadow: 0 0 4px rgba(34, 139, 34, 0.4);
+        }
+
+        .legend-line.enemy {
+            background: rgba(220, 20, 60, 0.8);
+            box-shadow: 0 0 4px rgba(220, 20, 60, 0.4);
+        }
+
+        .legend-line.neutral {
+            background: rgba(169, 169, 169, 0.6);
+        }
+
+        /* Info panel */
+        .relationship-info {
+            background: rgba(10, 6, 4, 0.8);
+            border: 1px solid var(--dark-red);
+            padding: 1.5rem;
+            margin-top: 1rem;
+            min-height: 100px;
+        }
+
+        .relationship-info h3 {
+            color: var(--aged-gold);
+            margin-top: 0;
+        }
+
+        .relationship-info p {
+            margin: 0.5rem 0;
             line-height: 1.6;
         }
 
-        .faction-placeholder-icon {
-            font-size: 3rem;
-            color: var(--dark-red);
-            opacity: 0.5;
-            margin-bottom: 1rem;
+        .relationship-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        /* Mobile responsive */
-        @media (max-width: 968px) {
-            .faction-layout {
+        .relationship-group h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .relationship-group.allies h4 {
+            color: rgb(34, 139, 34);
+        }
+
+        .relationship-group.enemies h4 {
+            color: rgb(220, 20, 60);
+        }
+
+        .relationship-group.neutral h4 {
+            color: rgba(169, 169, 169, 0.9);
+        }
+
+        .relationship-group ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        .relationship-group li {
+            margin: 0.25rem 0;
+        }
+
+        /* Power tier table */
+        .power-tier-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        .power-tier-table th,
+        .power-tier-table td {
+            padding: 1rem;
+            border: 1px solid var(--dark-red);
+            text-align: left;
+        }
+
+        .power-tier-table th {
+            background: rgba(75, 14, 14, 0.5);
+            color: var(--aged-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+        }
+
+        .power-tier-table td {
+            background: rgba(10, 6, 4, 0.3);
+        }
+
+        .power-tier-table strong {
+            color: var(--aged-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .relationship-web {
+                height: 400px;
+            }
+
+            .web-node {
+                width: 60px;
+                height: 60px;
+                font-size: 0.6rem;
+            }
+
+            .factions-grid {
                 grid-template-columns: 1fr;
             }
-
-            .faction-nav {
-                max-height: 300px;
-                border-right: none;
-                border-top: 2px solid var(--dark-red);
-            }
-
-            .faction-viewer {
-                border-right: none;
-                border-bottom: 2px solid var(--dark-red);
-            }
         }
 
-        /* Accessibility */
-        .faction-button:focus-visible {
-            outline: 2px solid var(--aged-gold);
-            outline-offset: -2px;
+        /* Instructions */
+        .web-instructions {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(139, 0, 0, 0.2);
+            border: 1px solid var(--dark-red);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .web-instructions strong {
+            color: var(--aged-gold);
         }
     </style>
 </head>
 <body>
     <div class="content">
-        <!-- Header -->
-        <div class="faction-overview-header">
-            <div class="breadcrumb">
-                <a href="content-home.html" target="_parent">CODEX</a> /
-                <a href="#lore">LORE</a> /
-                Factions Overview
-            </div>
-            <h1>The Ten Factions</h1>
-            <p class="subtitle">Select a faction to view detailed information</p>
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#lore">LORE</a> /
+            Factions Overview
         </div>
 
-        <!-- Two-column layout -->
-        <div class="faction-layout">
-            <!-- Left: Iframe viewer -->
-            <div class="faction-viewer">
-                <div class="faction-placeholder" id="placeholder">
-                    <div class="faction-placeholder-content">
-                        <div class="faction-placeholder-icon">⸸</div>
-                        <h2>Humanity's Fractured Survival</h2>
-                        <p>
-                            When the Sundering shattered civilization, it also shattered humanity's unity. From the ruins emerged ten major factions—each with unique philosophies, resources, and survival strategies.
-                        </p>
-                        <p style="margin-top: 1.5rem; color: var(--aged-gold); font-weight: 700;">
-                            Select a faction from the list to view their full profile →
-                        </p>
-                    </div>
-                </div>
-                <iframe id="factionFrame" class="faction-frame" style="display: none;" title="Faction details"></iframe>
+        <h1>The Factions: Humanity's Fractured Survival</h1>
+
+        <div class="manuscript-quote">
+            "We used to be one species. Now we're ten tribes fighting over the corpse of civilization. Maybe that's progress. Maybe it's just decay."
+            <span class="quote-attribution">— Nomad Elder testimony</span>
+        </div>
+
+        <p class="manuscript-text">
+            When the Sundering shattered civilization, it also shattered humanity's unity. From the ruins emerged ten major factions—each with unique philosophies, resources, and survival strategies. Some seek redemption through faith. Others embrace mutation and evolution. All compete for territory, resources, and the right to define what humanity will become in the centuries ahead.
+        </p>
+
+        <div class="divider">❈</div>
+
+        <h2>Faction Power Structure (Year 437)</h2>
+
+        <table class="power-tier-table">
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>Factions</th>
+                    <th>Characteristics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tier 1: Superpowers</strong></td>
+                    <td>Church of Absolution, The Ossuarium</td>
+                    <td>Control vast territories, populations 10-20 million, standing armies, industrial capacity</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 2: Regional Powers</strong></td>
+                    <td>Dwarven Forge-Guilds, The Exchange, Elven Verdant Covenant</td>
+                    <td>Control key resources/geography, populations 2-5 million, specialized capabilities</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 3: Minor Factions</strong></td>
+                    <td>Nomad Collective, Vestige Bloodlines, Emergent Syndicate, Wyrd Conclave</td>
+                    <td>Dispersed/isolated, populations 500k-2 million, guerrilla tactics or niche dominance</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 4: Outliers</strong></td>
+                    <td>Crucible Packs, Draconid Remembrance</td>
+                    <td>Specialized/neutral, populations &lt;100k, non-expansionist</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="divider">❈</div>
+
+        <h2>Interactive Faction Relationship Web</h2>
+
+        <div class="relationship-section">
+            <div class="web-instructions">
+                <strong>Click any faction</strong> to highlight their relationships | <strong>Green</strong> = Allies | <strong>Red</strong> = Enemies | <strong>Gray</strong> = Neutral
             </div>
 
-            <!-- Right: Faction navigation -->
-            <div class="faction-nav">
-                <div class="faction-nav-header">
-                    <h2>Choose Your Path</h2>
+            <div class="relationship-web" id="relationshipWeb">
+                <!-- Nodes will be positioned by JavaScript -->
+            </div>
+
+            <div class="relationship-legend">
+                <div class="legend-item">
+                    <div class="legend-line ally"></div>
+                    <span>Alliance / Trade Partners</span>
                 </div>
-
-                <div class="faction-list">
-                    <!-- Tier 1: Superpowers -->
-                    <div class="tier-divider">
-                        <h3>Tier 1: Superpowers</h3>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-church.html', this)">
-                        <button class="faction-button">
-                            <span>Church of Absolution</span>
-                            <span class="faction-tier-badge">T1</span>
-                        </button>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-undead.html', this)">
-                        <button class="faction-button">
-                            <span>The Ossuarium</span>
-                            <span class="faction-tier-badge">T1</span>
-                        </button>
-                    </div>
-
-                    <!-- Tier 2: Regional Powers -->
-                    <div class="tier-divider">
-                        <h3>Tier 2: Regional Powers</h3>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-dwarves.html', this)">
-                        <button class="faction-button">
-                            <span>Dwarven Forge-Guilds</span>
-                            <span class="faction-tier-badge">T2</span>
-                        </button>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-exchange.html', this)">
-                        <button class="faction-button">
-                            <span>The Exchange</span>
-                            <span class="faction-tier-badge">T2</span>
-                        </button>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-elves.html', this)">
-                        <button class="faction-button">
-                            <span>Elven Verdant Covenant</span>
-                            <span class="faction-tier-badge">T2</span>
-                        </button>
-                    </div>
-
-                    <!-- Tier 3: Minor Factions -->
-                    <div class="tier-divider">
-                        <h3>Tier 3: Minor Factions</h3>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-nomads.html', this)">
-                        <button class="faction-button">
-                            <span>Nomad Collective</span>
-                            <span class="faction-tier-badge">T3</span>
-                        </button>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-bloodlines.html', this)">
-                        <button class="faction-button">
-                            <span>Vestige Bloodlines</span>
-                            <span class="faction-tier-badge">T3</span>
-                        </button>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-emergent.html', this)">
-                        <button class="faction-button">
-                            <span>Emergent Syndicate</span>
-                            <span class="faction-tier-badge">T3</span>
-                        </button>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-fae.html', this)">
-                        <button class="faction-button">
-                            <span>The Wyrd Conclave</span>
-                            <span class="faction-tier-badge">T3</span>
-                        </button>
-                    </div>
-
-                    <!-- Tier 4: Outliers -->
-                    <div class="tier-divider">
-                        <h3>Tier 4: Outliers</h3>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-crucible.html', this)">
-                        <button class="faction-button">
-                            <span>Crucible Packs</span>
-                            <span class="faction-tier-badge">T4</span>
-                        </button>
-                    </div>
-
-                    <div class="faction-item" onclick="loadFaction('faction-draconid.html', this)">
-                        <button class="faction-button">
-                            <span>Draconid Remembrance</span>
-                            <span class="faction-tier-badge">T4</span>
-                        </button>
-                    </div>
+                <div class="legend-item">
+                    <div class="legend-line enemy"></div>
+                    <span>Active Hostility / War</span>
                 </div>
+                <div class="legend-item">
+                    <div class="legend-line neutral"></div>
+                    <span>Neutral / Uneasy Peace</span>
+                </div>
+            </div>
+
+            <div class="relationship-info" id="relationshipInfo">
+                <h3>Select a faction to view relationships</h3>
+                <p>Click any faction node in the web above to see detailed relationship information.</p>
             </div>
         </div>
+
+        <div class="divider">❈</div>
+
+        <h2>Faction Quick Reference</h2>
+
+        <div class="factions-grid" id="factionsGrid">
+            <!-- Cards will be generated by JavaScript -->
+        </div>
+
+        <div class="divider">❈</div>
+
+        <h2>Choose Your Path</h2>
+
+        <p class="manuscript-text">
+            Each faction offers a unique playstyle, philosophy, and destiny. Whether you seek redemption through the Church, evolution through the Syndicate, profit through the Exchange, or any other path...the choice shapes not only your campaign but the fate of the world itself.
+        </p>
+
+        <p style="text-align: center; margin: 3rem 0; font-size: 1.1rem; color: var(--aged-gold); font-style: italic;">
+            "In iron we seek forgiveness. Through blood, absolution."<br>
+            <span style="opacity: 0.7; font-size: 0.95rem;">— The Creed of the Bound</span>
+        </p>
     </div>
 
     <script>
-        function loadFaction(url, element) {
-            const frame = document.getElementById('factionFrame');
-            const placeholder = document.getElementById('placeholder');
+        // Faction data
+        const factions = {
+            'church': {
+                name: 'Church of Absolution',
+                tier: 'T1',
+                page: 'faction-church.html',
+                playstyle: 'Aggressive Martyrdom',
+                mechanic: 'Blood Offering',
+                population: '15-20 million',
+                allies: ['dwarves'],
+                enemies: ['ossuarium', 'wyrd'],
+                neutral: ['elves', 'exchange', 'nomads', 'bloodlines', 'emergent', 'crucible', 'draconid']
+            },
+            'ossuarium': {
+                name: 'The Ossuarium',
+                tier: 'T1',
+                page: 'faction-undead.html',
+                playstyle: 'Necromantic Grinder',
+                mechanic: 'Soul Harvest',
+                population: '10-15 million',
+                allies: ['exchange'],
+                enemies: ['church', 'elves'],
+                neutral: ['dwarves', 'wyrd', 'nomads', 'bloodlines', 'emergent', 'crucible', 'draconid']
+            },
+            'dwarves': {
+                name: 'Dwarven Forge-Guilds',
+                tier: 'T2',
+                page: 'faction-dwarves.html',
+                playstyle: 'Fortress Defender',
+                mechanic: 'Rune Counters',
+                population: '3-5 million',
+                allies: ['church', 'exchange'],
+                enemies: ['emergent'],
+                neutral: ['ossuarium', 'elves', 'wyrd', 'nomads', 'bloodlines', 'crucible', 'draconid']
+            },
+            'exchange': {
+                name: 'The Exchange',
+                tier: 'T2',
+                page: 'faction-exchange.html',
+                playstyle: 'Economic Warfare',
+                mechanic: 'Credit Tokens',
+                population: '2-5 million',
+                allies: ['ossuarium', 'dwarves', 'nomads'],
+                enemies: [],
+                neutral: ['church', 'elves', 'wyrd', 'bloodlines', 'emergent', 'crucible', 'draconid']
+            },
+            'elves': {
+                name: 'Elven Verdant Covenant',
+                tier: 'T2',
+                page: 'faction-elves.html',
+                playstyle: 'Hit-and-Run Assassin',
+                mechanic: 'Bleed Stacking',
+                population: '2-4 million',
+                allies: ['wyrd'],
+                enemies: ['ossuarium', 'bloodlines'],
+                neutral: ['church', 'dwarves', 'exchange', 'nomads', 'emergent', 'crucible', 'draconid']
+            },
+            'wyrd': {
+                name: 'The Wyrd Conclave',
+                tier: 'T3',
+                page: 'faction-fae.html',
+                playstyle: 'Reality Bender',
+                mechanic: 'Wyrd Tokens',
+                population: '500k-1 million',
+                allies: ['elves'],
+                enemies: ['church'],
+                neutral: ['ossuarium', 'dwarves', 'exchange', 'nomads', 'bloodlines', 'emergent', 'crucible', 'draconid']
+            },
+            'nomads': {
+                name: 'Nomad Collective',
+                tier: 'T3',
+                page: 'faction-nomads.html',
+                playstyle: 'Mobile Survivor',
+                mechanic: 'Improvisation',
+                population: '1-2 million',
+                allies: ['exchange'],
+                enemies: [],
+                neutral: ['church', 'ossuarium', 'dwarves', 'elves', 'wyrd', 'bloodlines', 'emergent', 'crucible', 'draconid']
+            },
+            'bloodlines': {
+                name: 'Vestige Bloodlines',
+                tier: 'T3',
+                page: 'faction-bloodlines.html',
+                playstyle: 'Mutation Specialists',
+                mechanic: 'Biomass Tokens',
+                population: '500k-1 million',
+                allies: [],
+                enemies: ['elves'],
+                neutral: ['church', 'ossuarium', 'dwarves', 'exchange', 'wyrd', 'nomads', 'emergent', 'crucible', 'draconid']
+            },
+            'emergent': {
+                name: 'Emergent Syndicate',
+                tier: 'T3',
+                page: 'faction-emergent.html',
+                playstyle: 'Hive-Mind Collective',
+                mechanic: 'Metamorph Tokens',
+                population: '1-2 million',
+                allies: [],
+                enemies: ['dwarves'],
+                neutral: ['church', 'ossuarium', 'elves', 'exchange', 'wyrd', 'nomads', 'bloodlines', 'crucible', 'draconid']
+            },
+            'crucible': {
+                name: 'Crucible Packs',
+                tier: 'T4',
+                page: 'faction-crucible.html',
+                playstyle: 'Fire Duelist',
+                mechanic: 'Forge Tokens',
+                population: '<100k',
+                allies: [],
+                enemies: [],
+                neutral: ['church', 'ossuarium', 'dwarves', 'elves', 'exchange', 'wyrd', 'nomads', 'bloodlines', 'emergent', 'draconid']
+            },
+            'draconid': {
+                name: 'Draconid Remembrance',
+                tier: 'T4',
+                page: 'faction-draconid.html',
+                playstyle: 'Ancient Archivists',
+                mechanic: 'Memory Shards',
+                population: '<50k',
+                allies: [],
+                enemies: [],
+                neutral: ['church', 'ossuarium', 'dwarves', 'elves', 'exchange', 'wyrd', 'nomads', 'bloodlines', 'emergent', 'crucible']
+            }
+        };
 
-            // Hide placeholder, show iframe
-            placeholder.style.display = 'none';
-            frame.style.display = 'block';
+        // Position nodes in a circle
+        const nodePositions = {
+            'church': { x: 50, y: 10 },      // Top center
+            'ossuarium': { x: 85, y: 25 },   // Top right
+            'dwarves': { x: 90, y: 50 },     // Right
+            'exchange': { x: 80, y: 75 },    // Bottom right
+            'elves': { x: 50, y: 90 },       // Bottom
+            'wyrd': { x: 20, y: 75 },        // Bottom left
+            'nomads': { x: 10, y: 50 },      // Left
+            'bloodlines': { x: 20, y: 25 },  // Top left
+            'emergent': { x: 35, y: 50 },    // Inner left
+            'crucible': { x: 65, y: 50 },    // Inner right
+            'draconid': { x: 50, y: 50 }     // Center
+        };
 
-            // Load the faction page
-            frame.src = url;
+        let activeNode = null;
 
-            // Update active state
-            document.querySelectorAll('.faction-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            element.classList.add('active');
-
-            // Store selection
-            try {
-                localStorage.setItem('faction-overview:last', url);
-            } catch(e) {}
-        }
-
-        // Restore last viewed faction on load
+        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            try {
-                const last = localStorage.getItem('faction-overview:last');
-                if (last) {
-                    const matchingItem = Array.from(document.querySelectorAll('.faction-item')).find(item => {
-                        return item.getAttribute('onclick').includes(last);
-                    });
-                    if (matchingItem) {
-                        loadFaction(last, matchingItem);
-                    }
-                }
-            } catch(e) {}
+            createWeb();
+            createCards();
+        });
 
-            // Add keyboard navigation
-            document.querySelectorAll('.faction-button').forEach(button => {
-                button.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        button.click();
+        function createWeb() {
+            const web = document.getElementById('relationshipWeb');
+            const rect = web.getBoundingClientRect();
+
+            // Create connections first (so they're behind nodes)
+            Object.keys(factions).forEach(factionId => {
+                const faction = factions[factionId];
+                const fromPos = nodePositions[factionId];
+                const fromX = (fromPos.x / 100) * rect.width;
+                const fromY = (fromPos.y / 100) * rect.height;
+
+                // Draw ally connections
+                faction.allies.forEach(allyId => {
+                    if (factions[allyId]) {
+                        const toPos = nodePositions[allyId];
+                        const toX = (toPos.x / 100) * rect.width;
+                        const toY = (toPos.y / 100) * rect.height;
+                        createConnection(fromX, fromY, toX, toY, 'ally', factionId, allyId);
+                    }
+                });
+
+                // Draw enemy connections
+                faction.enemies.forEach(enemyId => {
+                    if (factions[enemyId]) {
+                        const toPos = nodePositions[enemyId];
+                        const toX = (toPos.x / 100) * rect.width;
+                        const toY = (toPos.y / 100) * rect.height;
+                        createConnection(fromX, fromY, toX, toY, 'enemy', factionId, enemyId);
                     }
                 });
             });
+
+            // Create nodes
+            Object.keys(factions).forEach(factionId => {
+                const faction = factions[factionId];
+                const pos = nodePositions[factionId];
+
+                const node = document.createElement('div');
+                node.className = 'web-node';
+                node.dataset.faction = factionId;
+                node.style.left = `calc(${pos.x}% - 40px)`;
+                node.style.top = `calc(${pos.y}% - 40px)`;
+                node.textContent = faction.name;
+                node.onclick = () => selectFaction(factionId);
+
+                web.appendChild(node);
+            });
+        }
+
+        function createConnection(x1, y1, x2, y2, type, from, to) {
+            const web = document.getElementById('relationshipWeb');
+            const dx = x2 - x1;
+            const dy = y2 - y1;
+            const length = Math.sqrt(dx * dx + dy * dy);
+            const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+            const line = document.createElement('div');
+            line.className = `web-connection ${type}`;
+            line.dataset.from = from;
+            line.dataset.to = to;
+            line.style.width = `${length}px`;
+            line.style.left = `${x1}px`;
+            line.style.top = `${y1}px`;
+            line.style.transform = `rotate(${angle}deg)`;
+
+            web.appendChild(line);
+        }
+
+        function selectFaction(factionId) {
+            const faction = factions[factionId];
+            if (!faction) return;
+
+            // Update active node
+            document.querySelectorAll('.web-node').forEach(node => {
+                node.classList.remove('active');
+            });
+            const selectedNode = document.querySelector(`.web-node[data-faction="${factionId}"]`);
+            if (selectedNode) {
+                selectedNode.classList.add('active');
+            }
+
+            // Highlight relevant connections
+            document.querySelectorAll('.web-connection').forEach(conn => {
+                const from = conn.dataset.from;
+                const to = conn.dataset.to;
+                if (from === factionId || to === factionId) {
+                    conn.classList.remove('hidden');
+                } else {
+                    conn.classList.add('hidden');
+                }
+            });
+
+            // Update info panel
+            const info = document.getElementById('relationshipInfo');
+            info.innerHTML = `
+                <h3>${faction.name}</h3>
+                <p><strong>Tier:</strong> ${faction.tier} | <strong>Playstyle:</strong> ${faction.playstyle}</p>
+                <p><strong>Population:</strong> ${faction.population}</p>
+                <div class="relationship-list">
+                    ${faction.allies.length > 0 ? `
+                        <div class="relationship-group allies">
+                            <h4>Allies</h4>
+                            <ul>
+                                ${faction.allies.map(id => `<li>${factions[id].name}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${faction.enemies.length > 0 ? `
+                        <div class="relationship-group enemies">
+                            <h4>Enemies</h4>
+                            <ul>
+                                ${faction.enemies.map(id => `<li>${factions[id].name}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${faction.neutral.length > 0 ? `
+                        <div class="relationship-group neutral">
+                            <h4>Neutral</h4>
+                            <ul>
+                                ${faction.neutral.slice(0, 4).map(id => `<li>${factions[id].name}</li>`).join('')}
+                                ${faction.neutral.length > 4 ? `<li>...and ${faction.neutral.length - 4} others</li>` : ''}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </div>
+                <p style="margin-top: 1rem; text-align: center;">
+                    <a href="${faction.page}" target="_parent" style="color: var(--aged-gold); text-decoration: underline; font-weight: 700;">→ View Full Faction Profile</a>
+                </p>
+            `;
+
+            // Highlight card
+            document.querySelectorAll('.faction-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            const selectedCard = document.querySelector(`.faction-card[data-faction="${factionId}"]`);
+            if (selectedCard) {
+                selectedCard.classList.add('active');
+                selectedCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            activeNode = factionId;
+        }
+
+        function createCards() {
+            const grid = document.getElementById('factionsGrid');
+
+            Object.keys(factions).forEach(factionId => {
+                const faction = factions[factionId];
+
+                const card = document.createElement('div');
+                card.className = 'faction-card';
+                card.dataset.faction = factionId;
+                card.onclick = () => selectFaction(factionId);
+
+                card.innerHTML = `
+                    <div class="faction-tier">${faction.tier}</div>
+                    <h3 class="faction-name">${faction.name}</h3>
+                    <div class="faction-info">
+                        <strong>Playstyle:</strong> ${faction.playstyle}<br>
+                        <strong>Mechanic:</strong> ${faction.mechanic}<br>
+                        <strong>Population:</strong> ${faction.population}
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const web = document.getElementById('relationshipWeb');
+            web.innerHTML = '';
+            createWeb();
+            if (activeNode) {
+                selectFaction(activeNode);
+            }
         });
     </script>
 </body>
