@@ -659,7 +659,8 @@
             startX: 0,
             startY: 0,
             offsetX: 0,
-            offsetY: 0
+            offsetY: 0,
+            hasMoved: false
         };
 
         let tooltip = null;
@@ -717,7 +718,7 @@
                 // Add drag handlers
                 node.addEventListener('mousedown', startDrag);
                 node.addEventListener('click', (e) => {
-                    if (!dragState.isDragging) {
+                    if (!dragState.hasMoved) {
                         selectFaction(factionId);
                     }
                 });
@@ -817,9 +818,6 @@
                             </div>
                         ` : ''}
                     </div>
-                    <div class="tooltip-link">
-                        <a href="${faction.page}" target="_parent">→ View Full Faction Profile</a>
-                    </div>
                 `;
 
                 // Position tooltip near the node (prefer right side)
@@ -852,7 +850,6 @@
             const selectedCard = document.querySelector(`.faction-card[data-faction="${factionId}"]`);
             if (selectedCard) {
                 selectedCard.classList.add('active');
-                selectedCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
 
             activeNode = factionId;
@@ -867,7 +864,9 @@
                 const card = document.createElement('div');
                 card.className = 'faction-card';
                 card.dataset.faction = factionId;
-                card.onclick = () => selectFaction(factionId);
+                card.onclick = () => {
+                    window.parent.location.href = faction.page;
+                };
 
                 card.innerHTML = `
                     <div class="faction-tier">${faction.tier}</div>
@@ -900,6 +899,7 @@
             dragState.startY = e.clientY;
             dragState.offsetX = nodeRect.left - webRect.left + nodeRect.width / 2;
             dragState.offsetY = nodeRect.top - webRect.top + nodeRect.height / 2;
+            dragState.hasMoved = false;
 
             node.classList.add('dragging');
 
@@ -917,6 +917,11 @@
 
             const dx = e.clientX - dragState.startX;
             const dy = e.clientY - dragState.startY;
+
+            // Check if user has moved more than 5 pixels (indicates drag, not click)
+            if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+                dragState.hasMoved = true;
+            }
 
             const newX = dragState.offsetX + dx;
             const newY = dragState.offsetY + dy;
@@ -960,6 +965,11 @@
 
             dragState.isDragging = false;
             dragState.draggedNode = null;
+
+            // Reset hasMoved after a brief delay to allow click handler to check it
+            setTimeout(() => {
+                dragState.hasMoved = false;
+            }, 50);
         }
 
         function updateConnections() {
