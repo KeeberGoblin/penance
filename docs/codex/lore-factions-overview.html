@@ -7,76 +7,101 @@
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
         .factions-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            max-width: 900px;
+            margin: 2rem auto;
         }
 
         .faction-card {
-            background: rgba(75, 14, 14, 0.15);
-            border-left: 4px solid var(--dark-red);
-            padding: 0;
-            border-radius: 2px;
+            background: linear-gradient(to right, rgba(75, 14, 14, 0.25), rgba(10, 6, 4, 0.4));
+            border: 2px solid var(--dark-red);
+            border-left: 6px solid var(--dark-red);
+            margin-bottom: 1rem;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .faction-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: var(--leather-texture);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .faction-card:hover {
-            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
-            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(139, 0, 0, 0.5);
+            border-left-color: var(--aged-gold);
         }
 
         .faction-toggle {
-            background: var(--shadow-black);
+            background: transparent;
             border: none;
-            border-bottom: 2px solid var(--dark-red);
             color: var(--aged-gold);
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            font-family: 'Cinzel', serif;
+            padding: 1.25rem 1.75rem;
+            font-size: 1.15rem;
+            font-family: 'Cinzel Decorative', serif;
             cursor: pointer;
             width: 100%;
             text-align: left;
             transition: all 0.3s ease;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .faction-toggle:hover {
-            background: var(--dark-red);
+            color: var(--bone-white);
+            padding-left: 2rem;
+        }
+
+        .faction-toggle-icon {
+            font-family: serif;
+            font-size: 1.4rem;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            color: var(--dark-red);
+        }
+
+        .faction-toggle.active .faction-toggle-icon {
+            transform: rotate(90deg);
             color: var(--aged-gold);
-        }
-
-        .faction-toggle::after {
-            content: '▼';
-            transition: transform 0.3s ease;
-            display: inline-block;
-        }
-
-        .faction-toggle.active::after {
-            transform: rotate(180deg);
         }
 
         .faction-content {
             max-height: 0;
             overflow: hidden;
-            padding: 0 1.5rem;
-            background: rgba(10, 6, 4, 0.5);
-            border-top: 1px solid var(--dark-red);
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-            opacity: 0;
+            background: rgba(10, 6, 4, 0.7);
+            border-top: 1px solid rgba(139, 0, 0, 0.4);
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
         }
 
         .faction-content.active {
-            max-height: 1000px;
-            padding: 1.5rem;
+            max-height: 1200px;
+        }
+
+        .faction-content-inner {
+            padding: 1.75rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        .faction-content.active .faction-content-inner {
             opacity: 1;
-            transition: max-height 0.5s ease-in, padding 0.5s ease-in, opacity 0.3s ease-in 0.1s;
+            transform: translateY(0);
         }
 
         .faction-detail {
@@ -214,8 +239,16 @@
         /* Responsive improvements for mobile */
         @media (max-width: 768px) {
             .factions-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+                margin: 1.5rem 0;
+            }
+
+            .faction-card {
+                margin-bottom: 0.75rem;
+            }
+
+            .faction-toggle {
+                padding: 1rem 1.25rem;
+                font-size: 1rem;
             }
 
             .faction-grid-summary {
@@ -323,47 +356,50 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>Church of Absolution</span>
+                    <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 1: SUPERPOWER</div>
-                    
-                    <div class="faction-detail">
-                        <strong>Playstyle</strong>
-                        <p>Aggressive Martyrdom</p>
-                    </div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 1: SUPERPOWER</div>
 
-                    <div class="faction-detail">
-                        <strong>Core Mechanic</strong>
-                        <p>Blood Offering (self-harm for burst damage, infinite scaling)</p>
-                    </div>
+                        <div class="faction-detail">
+                            <strong>Playstyle</strong>
+                            <p>Aggressive Martyrdom</p>
+                        </div>
 
-                    <div class="faction-detail">
-                        <strong>Support Units</strong>
-                        <p>6 units: Flagellants, Penitents, Relic Bearers, Aspirants, Choir, Absolution Engine</p>
-                    </div>
+                        <div class="faction-detail">
+                            <strong>Core Mechanic</strong>
+                            <p>Blood Offering (self-harm for burst damage, infinite scaling)</p>
+                        </div>
 
-                    <div class="faction-grid-summary">
-                        <div class="summary-item">
-                            <div class="summary-label">Population</div>
-                            <div class="summary-value">15-20 million</div>
+                        <div class="faction-detail">
+                            <strong>Support Units</strong>
+                            <p>6 units: Flagellants, Penitents, Relic Bearers, Aspirants, Choir, Absolution Engine</p>
                         </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Territory</div>
-                            <div class="summary-value">Cathedral Prime (capital)</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Philosophy</div>
-                            <div class="summary-value">Redemption through suffering</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-label">Governance</div>
-                            <div class="summary-value">Theocratic hierarchy</div>
-                        </div>
-                    </div>
 
-                    <div class="faction-links">
-                        <a href="faction-church.html" target="_parent">→ Full Faction Profile</a>
-                        <a href="lore-npc-church.html" target="_parent">→ Notable Pilots</a>
+                        <div class="faction-grid-summary">
+                            <div class="summary-item">
+                                <div class="summary-label">Population</div>
+                                <div class="summary-value">15-20 million</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Territory</div>
+                                <div class="summary-value">Cathedral Prime (capital)</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Philosophy</div>
+                                <div class="summary-value">Redemption through suffering</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Governance</div>
+                                <div class="summary-value">Theocratic hierarchy</div>
+                            </div>
+                        </div>
+
+                        <div class="faction-links">
+                            <a href="faction-church.html" target="_parent">→ Full Faction Profile</a>
+                            <a href="lore-npc-church.html" target="_parent">→ Notable Pilots</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -372,9 +408,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>Dwarven Forge-Guilds</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 2: REGIONAL POWER</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 2: REGIONAL POWER</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -421,9 +459,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>The Ossuarium</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 1: SUPERPOWER</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 1: SUPERPOWER</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -470,9 +510,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>Elven Verdant Covenant</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 2: REGIONAL POWER</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 2: REGIONAL POWER</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -519,9 +561,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>The Wyrd Conclave</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 3: MINOR FACTION</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 3: MINOR FACTION</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -568,9 +612,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>Nomad Collective</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 3: MINOR FACTION</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 3: MINOR FACTION</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -617,9 +663,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>The Exchange</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 2: REGIONAL POWER</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 2: REGIONAL POWER</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -666,9 +714,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>Vestige Bloodlines</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 3: MINOR FACTION</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 3: MINOR FACTION</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -715,9 +765,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>Emergent Syndicate</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 3: MINOR FACTION</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 3: MINOR FACTION</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -764,9 +816,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>Crucible Pacts</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 4: OUTLIER</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 4: OUTLIER</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -813,9 +867,11 @@
             <div class="faction-card">
                 <button class="faction-toggle" onclick="toggleFaction(this)">
                     <span>Draconid Remembrance</span>
+                <span class="faction-toggle-icon">▶</span>
                 </button>
                 <div class="faction-content">
-                    <div class="faction-tier">TIER 4: OUTLIER</div>
+                    <div class="faction-content-inner">
+                        <div class="faction-tier">TIER 4: OUTLIER</div>
                     
                     <div class="faction-detail">
                         <strong>Playstyle</strong>
@@ -855,8 +911,10 @@
                         <a href="faction-draconid.html" target="_parent">→ Full Faction Profile</a>
                         <a href="lore-npc-draconid.html" target="_parent">→ Notable Pilots</a>
                     </div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         <div class="divider">❈</div>
@@ -882,29 +940,49 @@
     </div>
 
     <script>
-        function toggleFaction(button) {
-            const content = button.nextElementSibling;
+        function toggleFaction(clickedButton) {
+            // Prevent event bubbling
+            event.preventDefault();
+            event.stopPropagation();
+
+            const content = clickedButton.nextElementSibling;
             const isCurrentlyActive = content.classList.contains('active');
 
-            // Close all other open faction cards
-            closeAllFactions();
+            // Close all faction cards first
+            document.querySelectorAll('.faction-card').forEach(card => {
+                const button = card.querySelector('.faction-toggle');
+                const contentDiv = card.querySelector('.faction-content');
 
-            // Toggle the clicked faction (open if it was closed, keep closed if it was open)
+                if (button && contentDiv) {
+                    button.classList.remove('active');
+                    contentDiv.classList.remove('active');
+                    button.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Open the clicked one if it wasn't already open
             if (!isCurrentlyActive) {
-                button.classList.add('active');
+                clickedButton.classList.add('active');
                 content.classList.add('active');
+                clickedButton.setAttribute('aria-expanded', 'true');
 
                 // Smooth scroll to make sure the opened card is visible
                 setTimeout(() => {
-                    button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }, 100);
+                    clickedButton.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                }, 300);
             }
         }
 
         function closeAllFactions() {
-            document.querySelectorAll('.faction-content.active').forEach(openContent => {
-                openContent.classList.remove('active');
-                openContent.previousElementSibling.classList.remove('active');
+            document.querySelectorAll('.faction-card').forEach(card => {
+                const button = card.querySelector('.faction-toggle');
+                const content = card.querySelector('.faction-content');
+
+                if (button && content) {
+                    button.classList.remove('active');
+                    content.classList.remove('active');
+                    button.setAttribute('aria-expanded', 'false');
+                }
             });
         }
 
@@ -915,17 +993,29 @@
             }
         });
 
-        // Add keyboard navigation support
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.faction-toggle').forEach(button => {
                 button.setAttribute('role', 'button');
+                button.setAttribute('tabindex', '0');
                 button.setAttribute('aria-expanded', 'false');
 
-                // Update aria-expanded when clicked
-                button.addEventListener('click', () => {
-                    const isExpanded = button.classList.contains('active');
-                    button.setAttribute('aria-expanded', isExpanded);
+                // Add keyboard support (Enter and Space)
+                button.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleFaction(button);
+                    }
                 });
+            });
+
+            // Set up content div aria attributes
+            document.querySelectorAll('.faction-content').forEach((content, index) => {
+                content.id = `faction-content-${index}`;
+                const button = content.previousElementSibling;
+                if (button) {
+                    button.setAttribute('aria-controls', content.id);
+                }
             });
         });
     </script>
