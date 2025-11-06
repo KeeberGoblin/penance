@@ -109,14 +109,18 @@ Each faction has **21 unique cards** and a completely different playstyle:
 ### Complete Game Systems
 - **10 Playable Factions** - 21 unique cards each
 - **278 Total Cards** - 210 faction cards, 68 universal/equipment/support
+- **40+ Notable NPCs** - Unique characters with backstories for all factions
+- **28-Page PDF Rulebook** - Traditional D&D-style parchment rulebook
 - **Modular Deck Building** - 26-50 card variable decks based on equipment choices
 - **Support Units** - 60 AI companions with behavior decks (6 per faction)
 - **2 Core Scenarios** - Deathmatch + Objective Control
 - **Campaign Mode** - Settlement management, pilot progression, 15-enemy bestiary
-- **Interactive Tools** - Card database, deck builder, pilot generator
+- **Interactive Tools** - Card database, deck builder, pilot generator, PDF rulebook viewer
 
 ### Documentation
 - **[Interactive Codex](https://keebergoblin.github.io/penance/codex/)** - Complete rules in codex-style navigation
+- **[PDF-Style Core Rulebook](https://keebergoblin.github.io/penance/codex/rulebook-pdf-viewer.html)** - 28-page traditional rulebook with parchment theme
+- **[Notable NPCs](https://keebergoblin.github.io/penance/codex/)** - 40+ unique characters across all 10 factions
 - **[Card Database](https://keebergoblin.github.io/penance/cards/)** - Search/filter all 278 cards
 - **[Deck Builder](https://keebergoblin.github.io/penance/cards/deck-builder.html)** - Build custom decks
 - **[Quick Reference Sheet](docs/rules/quick-reference.md)** - 1-page printable cheat sheet
@@ -152,6 +156,30 @@ Each faction has **21 unique cards** and a completely different playstyle:
 ### Post-Game
 - [Example of Play](docs/scenarios/example-of-play.md) - 5-turn walkthrough for comparison
 - [Give Feedback](#-contributing) - Open GitHub issue with observations
+
+---
+
+## Recent Updates (November 2025)
+
+### v2.3 Complete Codex Expansion (Nov 6)
+
+**New Interactive Features:**
+- **[PDF-Style Core Rulebook](https://keebergoblin.github.io/penance/codex/rulebook-pdf-viewer.html)** - Complete 28-page D&D-style parchment rulebook with:
+  - Chapter 1: Casket Classes (Scout, Warden, Vanguard, Colossus) - 7 pages
+  - Chapter 2: Combat System (6-step attack resolution, defense dice, heat, pilot wounds) - 7 pages
+  - Chapter 3: Dice Reference (3 dice types, probabilities, modifiers) - 3 pages
+  - Chapter 4: Component Damage (3-layer AP/Structure/Exposure system) - 4 pages
+  - Chapter 5: Range & Line of Sight (hex grid, facing, terrain) - 4 pages
+- **Notable NPCs for All 10 Factions** - 40+ unique characters including:
+  - Faction leaders (The Archon, High Confessor Radovan, Chief Forgemaster Durin)
+  - Zealots, outcasts, and petrified prophets
+  - Full backstories, motivations, and relationships
+  - Integrated with faction lore and schisms
+- **Improved Navigation** - Fixed iframe sidebar breaking when clicking links
+- **Witty Changelog** - Sims patch notes-style update descriptions with developer commentary
+- **Faction Overview Uplift** - Fixed bugs, added smooth animations, ESC key support
+
+**Why This Matters**: The PDF-style rulebook provides a traditional reading experience for players who prefer linear documentation over interactive navigation. The NPC pages add depth to faction storytelling and campaign play. All 28 pages use the parchment theme exclusively (regular codex keeps dark manuscript style).
 
 ---
 
@@ -228,6 +256,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ### Web-Based Tools
 - **[Interactive Codex](https://keebergoblin.github.io/penance/codex/)** - Complete game rules and lore
+- **[PDF-Style Core Rulebook](https://keebergoblin.github.io/penance/codex/rulebook-pdf-viewer.html)** - 28-page parchment rulebook
 - **[Card Database](https://keebergoblin.github.io/penance/cards/)** - Search/filter 278 cards
 - **[Deck Builder](https://keebergoblin.github.io/penance/cards/deck-builder.html)** - Build custom decks
 - **[Pilot Generator](https://keebergoblin.github.io/penance/tools/pilot-generator.html)** - Random character creation
@@ -277,7 +306,10 @@ penance/
 │   ├── codex/                         # Interactive codex
 │   │   ├── index.html                 # Codex homepage
 │   │   ├── content-home.html          # Codex main index
+│   │   ├── rulebook-pdf-viewer.html   # 28-page PDF-style rulebook
+│   │   ├── rulebook-parchment.css     # D&D parchment theme
 │   │   ├── faction-*.html             # 10 faction pages with Schisms
+│   │   ├── lore-npc-*.html            # 10 NPC pages (40+ characters)
 │   │   └── rules-*.html               # All game rules
 │   ├── cards/
 │   │   ├── index.html                 # Card database viewer
@@ -341,6 +373,14 @@ Licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Intern
 ---
 
 ## Version History
+
+### v2.3 Complete Codex Expansion (November 6, 2025)
+- PDF-Style Core Rulebook (28 pages with D&D parchment theme)
+- Notable NPCs for all 10 factions (40+ unique characters)
+- Navigation improvements (fixed iframe sidebar breaking)
+- Witty Sims-style changelog entries
+- Faction overview page uplift (bug fixes, animations)
+- Parchment theme exclusive to PDF viewer (regular codex uses dark manuscript)
 
 ### v2.2 Revised Casket System (October 18, 2025)
 - Dual entity system (Living Pilot + Bound Soul in Soulstone Core)
