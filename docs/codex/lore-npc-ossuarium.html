@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ossuarium - Notable NPCs - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .npc-card {
+            background: rgba(75, 14, 14, 0.15);
+            border-left: 4px solid #4B0082;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 2px;
+        }
+
+        .npc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .npc-name {
+            color: var(--aged-gold);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .npc-title {
+            color: #4B0082;
+            font-style: italic;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .npc-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            color: var(--aged-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        .stat-value {
+            margin-top: 0.25rem;
+            opacity: 0.95;
+        }
+
+        .npc-description {
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .npc-quote {
+            background: rgba(75, 0, 130, 0.1);
+            border-left: 3px solid #4B0082;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="lore-factions-overview.html" target="_parent">FACTIONS</a> /
+            <a href="faction-undead.html" target="_parent">The Ossuarium</a> /
+            Notable NPCs
+        </div>
+
+        <h1>The Ossuarium: Notable NPCs</h1>
+
+        <div class="manuscript-quote">
+            "Death is not the end. It is merely... inconvenient. And we have learned to make it very convenient indeed."
+            <span class="quote-attribution">-The Ledger, Entry 1</span>
+        </div>
+
+        <!-- Bonelord Karath -->
+        <div class="npc-card">
+            <div class="npc-header">
+                <h2 class="npc-name">Bonelord Karath</h2>
+                <span class="npc-title">Founder, Supreme Lich of the Ossuarium</span>
+            </div>
+
+            <div class="npc-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Age</span>
+                    <span class="stat-value">~480 years (originally human, died Year 10, reanimated)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Position</span>
+                    <span class="stat-value">Supreme Bonelord, Master of the Ledger</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Souls Bound</span>
+                    <span class="stat-value">127,843 contracts signed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value">Active, Bone Citadel</span>
+                </div>
+            </div>
+
+            <p class="npc-description">
+                The founder of the Ossuarium and the first human to successfully achieve lichdom post-Sundering. Karath was a necromancer before the Cataclysm, but his magic was theoretical—necromancy didn't truly work until the Void disrupted the boundary between life and death. When he discovered he could actually raise the dead in Year 10, he immediately killed himself and resurrected as a lich to prove his theory.
+            </p>
+
+            <p class="npc-description">
+                Karath views undeath as the natural evolution of consciousness. He is patient, methodical, and utterly amoral—not evil, simply beyond human morality. He collects souls the way scholars collect books, meticulously cataloguing each in The Ledger. His physical form is almost skeletal, draped in tattered robes of office, with gemstone eyes that burn with cold intelligence.
+            </p>
+
+            <div class="npc-quote">
+                "We are not monsters. We are scholars with infinite tenure studying the most fascinating subject: ourselves."
+            </div>
+
+            <p class="npc-description">
+                <strong>Personality:</strong> Intellectually curious, emotionally detached, patient beyond measure. Views living beings as "pre-dead research subjects." Genuinely believes undeath is humanity's best chance for survival. Surprisingly polite in negotiations—he honors every contract to the letter, though the fine print is always lethal.
+            </p>
+        </div>
+
+        <!-- Thresh -->
+        <div class="npc-card">
+            <div class="npc-header">
+                <h2 class="npc-name">Thresh the Collector</h2>
+                <span class="npc-title">Finder of the Ledger, Soul Economist</span>
+            </div>
+
+            <div class="npc-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Age</span>
+                    <span class="stat-value">~361 years (died Year 76, voluntary lichdom)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Position</span>
+                    <span class="stat-value">Chief Soul Broker, Master of Contracts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Souls Traded</span>
+                    <span class="stat-value">89,234 active contracts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value">Active, The Ledger Vaults</span>
+                </div>
+            </div>
+
+            <p class="npc-description">
+                In Year 78, Thresh discovered <em>The Ledger</em>—an ancient tome of unknown origin that records soul contracts and enables binding magic. This discovery transformed the Ossuarium from a loose collection of undead into a sophisticated soul economy. Thresh realized souls could be traded, stored, and leveraged like currency, creating the basis for modern necromantic capitalism.
+            </p>
+
+            <p class="npc-description">
+                Thresh is the Ossuarium's most successful "recruiter," traveling to desperate settlements and offering salvation through soul contracts. His pitch is seductive: "Sign now, get what you need today. Pay after you die—which will happen anyway." He's signed thousands of contracts for food, medicine, protection, even revenge. Every signature feeds the Ossuarium's growing power.
+            </p>
+
+            <div class="npc-quote">
+                "Everyone dies eventually. I'm simply offering you the opportunity to make that inevitable death useful."
+            </div>
+
+            <p class="npc-description">
+                <strong>Personality:</strong> Charismatic salesman of damnation. Charming, persuasive, with a merchant's instinct for desperation. Never lies—but phrases every truth to obscure the terrible cost. Views himself as providing a valuable service: immediate relief in exchange for deferred payment. Genuinely believes his contracts are fair.
+            </p>
+        </div>
+
+        <!-- High Lich Morna -->
+        <div class="npc-card">
+            <div class="npc-header">
+                <h2 class="npc-name">High Lich Morna the Transcendent</h2>
+                <span class="npc-title">Prophet of Pure Undeath</span>
+            </div>
+
+            <div class="npc-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Age</span>
+                    <span class="stat-value">~93 years (died Year 344, experimental lichdom)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Position</span>
+                    <span class="stat-value">Leader of the Transcendent Faction (schism)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Followers</span>
+                    <span class="stat-value">~4,000 liches (purist movement)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value">Active, Ethereal Spires (breakaway territory)</span>
+                </div>
+            </div>
+
+            <p class="npc-description">
+                Morna is a radical visionary who sparked the Ossuarium's greatest schism in Year 348. She proposed eliminating living pilots entirely, replacing them with pure disembodied souls powering Caskets. "Why cling to rotting meat when pure soulfire is perfection?" Her Transcendent faction believes flesh—even preserved flesh—is a weakness holding back true immortality.
+            </p>
+
+            <p class="npc-description">
+                Her form is barely corporeal—a wisp of spectral energy occasionally solidifying into skeletal outline, wearing robes that seem to exist in multiple dimensions simultaneously. She speaks in layered voices (her own plus echoes of absorbed souls). Her followers undergo voluntary "True Death"—full dissolution of body, preserving only soul essence.
+            </p>
+
+            <div class="npc-quote">
+                "Flesh is failure. Bone is compromise. Only in pure essence do we achieve perfection."
+            </div>
+
+            <p class="npc-description">
+                <strong>Personality:</strong> Zealous, philosophically obsessed, views herself as evolutionary prophet. Disdainful of "flesh-clingers" (even other liches who retain skeletal forms). Genuinely believes transcending physical form is humanity's destiny. Growing more alien and incomprehensible as she sheds final vestiges of humanity.
+            </p>
+        </div>
+
+        <!-- Revenant Captain Sythel -->
+        <div class="npc-card">
+            <div class="npc-header">
+                <h2 class="npc-name">Revenant Captain Sythel</h2>
+                <span class="npc-title">Commander of the Corpse Legions</span>
+            </div>
+
+            <div class="npc-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Age</span>
+                    <span class="stat-value">~16 years undead (died Year 421, combat death)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Position</span>
+                    <span class="stat-value">Field Marshal, Southern Territories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Battles Won</span>
+                    <span class="stat-value">73 consecutive victories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value">Active, Front Lines</span>
+                </div>
+            </div>
+
+            <p class="npc-description">
+                Unlike most Ossuarium leadership (ancient liches with centuries of existence), Sythel is a relatively new undead—a former Church soldier who died in battle and was resurrected by Ossuarium necromancers. She woke in a vat of preservative fluid, her body stitched back together, and was offered a choice: serve the Ossuarium or return to true death. She chose service.
+            </p>
+
+            <p class="npc-description">
+                Sythel is pragmatic and direct—undeath hasn't made her philosophical, just efficient. She commands armies of mindless corpses with tactical brilliance, treating undead soldiers as expendable resources (because they literally are). Her revenant body is heavily damaged—one arm skeletal, half her face exposed bone, torso held together with necromantic stitching. She makes no effort to hide her decay.
+            </p>
+
+            <div class="npc-quote">
+                "I died once. It was unpleasant. I won't make the same mistake twice."
+            </div>
+
+            <p class="npc-description">
+                <strong>Personality:</strong> Blunt, tactically brilliant, emotionally numb. Views her undeath as a second chance at military glory without the weakness of fear or pain. Loyal to the Ossuarium out of pragmatism rather than belief. Some whisper she's planning to overthrow the lich council with a revenant coup—giving power to the "freshly dead" instead of ancient liches.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0; opacity: 0.7;">
+            <span style="font-size: 1.5rem; color: #4B0082;">❈</span>
+        </div>
+
+        <p style="text-align: center; font-style: italic; opacity: 0.8;">
+            <a href="lore-factions-overview.html" target="_parent">← Return to Factions Overview</a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penance: Core Rulebook</title>
+    <style>
+        /* PDF-Style Parchment Rulebook */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --parchment-light: #f4e8d8;
+            --parchment-dark: #e8d5b7;
+            --ink-dark: #2b1810;
+            --ink-medium: #4a3426;
+            --ink-accent: #8b4513;
+            --border-gold: #c9a961;
+            --shadow-brown: rgba(43, 24, 16, 0.3);
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', 'Palatino', serif;
+            background: #3a3a3a;
+            color: var(--ink-dark);
+            line-height: 1.6;
+            font-size: 14px;
+            overflow-x: hidden;
+        }
+
+        /* PDF Reader Container */
+        .pdf-reader {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation Bar */
+        .pdf-nav {
+            background: #2b2b2b;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--border-gold);
+        }
+
+        .pdf-nav h1 {
+            font-size: 1.2rem;
+            color: var(--border-gold);
+        }
+
+        .pdf-nav-buttons button {
+            background: var(--ink-accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Georgia', serif;
+        }
+
+        .pdf-nav-buttons button:hover {
+            background: var(--border-gold);
+            color: var(--ink-dark);
+        }
+
+        /* Page Container */
+        .page {
+            width: 100%;
+            min-height: 11in;
+            background: var(--parchment-light);
+            padding: 1in 1in 1.25in 1in;
+            position: relative;
+            page-break-after: always;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 69, 19, 0.02) 2px,
+                    rgba(139, 69, 19, 0.02) 4px
+                );
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+            .pdf-nav {
+                display: none;
+            }
+        }
+
+        /* Page border */
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            border: 2px solid var(--border-gold);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Page number */
+        .page-number {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: var(--ink-medium);
+            font-style: italic;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--ink-dark);
+            border-bottom: 3px double var(--border-gold);
+            padding-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--ink-dark);
+            background: linear-gradient(135deg, var(--parchment-dark) 0%, var(--parchment-light) 100%);
+            padding: 0.8rem 1.2rem;
+            border-left: 6px solid var(--border-gold);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 2px 2px 5px var(--shadow-brown);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--ink-dark);
+            border-bottom: 2px solid var(--border-gold);
+            padding-bottom: 0.3rem;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--ink-medium);
+            font-style: italic;
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+            text-align: justify;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: rgba(212, 165, 116, 0.15);
+            padding: 2rem;
+            border: 2px solid var(--border-gold);
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted var(--border-gold);
+        }
+
+        .toc a {
+            color: var(--ink-accent);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .toc a:hover {
+            color: var(--ink-dark);
+        }
+
+        .toc-dots {
+            flex: 1;
+            border-bottom: 1px dotted var(--ink-medium);
+            margin: 0 0.5rem;
+            opacity: 0.3;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1rem 0;
+            background: var(--parchment-light);
+            border: 2px solid var(--border-gold);
+            border-radius: 6px;
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+
+        thead {
+            background: linear-gradient(135deg, var(--ink-medium) 0%, var(--ink-accent) 100%);
+            color: var(--parchment-light);
+        }
+
+        th {
+            padding: 0.7rem 0.8rem;
+            text-align: left;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+        }
+
+        tbody tr:nth-child(even) {
+            background: rgba(232, 213, 183, 0.4);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Quote blocks */
+        .quote {
+            background: rgba(139, 69, 19, 0.08);
+            border-left: 5px solid var(--ink-accent);
+            border-right: 5px solid var(--ink-accent);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--ink-medium);
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 3rem;
+            color: var(--border-gold);
+            opacity: 0.3;
+        }
+
+        /* Cover page */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 11in;
+        }
+
+        .cover h1 {
+            font-size: 4rem;
+            border: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .cover .subtitle {
+            font-size: 1.5rem;
+            color: var(--ink-accent);
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+
+        .cover .ornament {
+            font-size: 3rem;
+            color: var(--border-gold);
+            margin: 2rem 0;
+        }
+
+        strong {
+            color: var(--ink-dark);
+            font-weight: bold;
+        }
+
+        /* Dividers */
+        .divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--ink-accent);
+            font-size: 1.5rem;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2b2b2b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--ink-accent);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--border-gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- PDF-style navigation bar -->
+    <div class="pdf-nav">
+        <h1>📖 Penance: Core Rulebook</h1>
+        <div class="pdf-nav-buttons">
+            <button onclick="window.print()">🖨️ Print</button>
+            <button onclick="scrollToTop()">⬆️ Top</button>
+            <button onclick="toggleTOC()">📑 Contents</button>
+        </div>
+    </div>
+
+    <!-- PDF Reader Container -->
+    <div class="pdf-reader">
+
+        <!-- COVER PAGE -->
+        <div class="page cover">
+            <div>
+                <h1>PENANCE</h1>
+                <div class="subtitle">Absolution Through Steel</div>
+                <div class="ornament">⚔</div>
+                <div class="subtitle">Core Rulebook</div>
+                <div style="margin-top: 4rem; font-size: 1rem; color: var(--ink-medium);">
+                    <p>Version 3.0</p>
+                    <p>A Tactical Mech Deckbuilding Combat Game</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLE OF CONTENTS PAGE -->
+        <div class="page" id="toc-page">
+            <div class="toc">
+                <h2 style="margin-top: 0;">Table of Contents</h2>
+
+                <ul>
+                    <li>
+                        <a href="#chapter-1">
+                            <span>Chapter 1: Casket Classes</span>
+                            <span class="toc-dots"></span>
+                            <span>3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#chapter-2">
+                            <span>Chapter 2: Combat System</span>
+                            <span class="toc-dots"></span>
+                            <span>8</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#chapter-3">
+                            <span>Chapter 3: Dice Reference</span>
+                            <span class="toc-dots"></span>
+                            <span>15</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#chapter-4">
+                            <span>Chapter 4: Component Damage</span>
+                            <span class="toc-dots"></span>
+                            <span>20</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#chapter-5">
+                            <span>Chapter 5: Range & Line of Sight</span>
+                            <span class="toc-dots"></span>
+                            <span>25</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="quote" style="margin-top: 3rem;">
+                "Your deck is your life. Every card you lose brings you closer to death. When your Primary Weapon cards are gone, you're just a broken puppet swinging fists in the dark."
+            </div>
+
+            <div class="page-number">— 2 —</div>
+        </div>
+
+        <!-- CHAPTER 1: CASKET CLASSES -->
+        <div class="page" id="chapter-1">
+            <h1>Chapter 1: Casket Classes</h1>
+
+            <p>Every Casket in Penance belongs to one of four <strong>weight classes</strong>, each with different mobility, durability, and tactical roles. Your faction determines your playstyle (Taint corruption, fire dueling, etc.), but your <strong>Casket Class</strong> determines your fundamental capabilities.</p>
+
+            <div class="divider">⚔</div>
+
+            <h2>The Four Weight Classes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Philosophy</th>
+                        <th>HP</th>
+                        <th>SP</th>
+                        <th>Movement</th>
+                        <th>Initiative</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Scout</strong></td>
+                        <td>"Strike fast, don't get hit"</td>
+                        <td>36</td>
+                        <td>6</td>
+                        <td>0.5 SP/hex</td>
+                        <td>+3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Warden</strong></td>
+                        <td>"Adaptable. Reliable."</td>
+                        <td>44</td>
+                        <td>5</td>
+                        <td>1 SP/hex</td>
+                        <td>+0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vanguard</strong></td>
+                        <td>"I don't dodge. I endure."</td>
+                        <td>52</td>
+                        <td>4</td>
+                        <td>1.5 SP/hex</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Colossus</strong></td>
+                        <td>"I am the objective."</td>
+                        <td>60</td>
+                        <td>3</td>
+                        <td>2 SP/hex</td>
+                        <td>-2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="page-number">— 3 —</div>
+        </div>
+
+        <!-- CHAPTER 1 CONTINUED: Scout Details -->
+        <div class="page">
+            <h2>Scout Casket (Fast, Fragile, First Strike)</h2>
+
+            <div class="quote">
+                "Strike fast, strike hard, don't get hit."
+            </div>
+
+            <h3>Core Stats</h3>
+
+            <table>
+                <tbody>
+                    <tr><td><strong>Total HP</strong></td><td>36 HP</td></tr>
+                    <tr><td><strong>Deck Size</strong></td><td>26-32 cards</td></tr>
+                    <tr><td><strong>SP per Turn</strong></td><td>6 SP</td></tr>
+                    <tr><td><strong>Movement Cost</strong></td><td>1 hex = 0.5 SP (12 hexes max)</td></tr>
+                    <tr><td><strong>Initiative</strong></td><td>1d6 + 3</td></tr>
+                    <tr><td><strong>Major Wound Threshold</strong></td><td>3+ damage</td></tr>
+                    <tr><td><strong>Equipment Slots</strong></td><td>2 Weapons, 0 Shields, 1 Accessory</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Strengths</h3>
+            <ul>
+                <li><strong>Highest SP (6)</strong> = Most actions per turn, can combo attacks</li>
+                <li><strong>Ultra-mobile (0.5 SP/hex)</strong> = Kiting god, can reposition constantly</li>
+                <li><strong>Always wins initiative (+3)</strong> = Acts first, dictates engagements</li>
+                <li><strong>Dual-wield weapons</strong> = Burst damage potential with 2 Primary Weapons</li>
+            </ul>
+
+            <h3>Weaknesses</h3>
+            <ul>
+                <li><strong>Lowest HP (36)</strong> = Dies to focused fire in 6-7 hits</li>
+                <li><strong>Major Wounds at 3+ damage</strong> = Accumulates DAMAGED cards rapidly</li>
+                <li><strong>Pilot exposed after 5 damage to head</strong> = Fragile cockpit protection</li>
+                <li><strong>No shields</strong> = Cannot block incoming attacks</li>
+            </ul>
+
+            <h3>Playstyle</h3>
+            <p><strong>Alpha strike, hit-and-run, flanking, assassination.</strong> Get into optimal position, deal massive damage in one turn, retreat before retaliation. Dies if caught or cornered. Best on open maps with lots of cover.</p>
+
+            <p><strong>Ideal Factions:</strong> Verdant Covenant (Elves - Bleed stacking), Nomad Collective (mobility synergy), Wyrd Conclave (reality distortion escapes)</p>
+
+            <div class="page-number">— 4 —</div>
+        </div>
+
+        <!-- Add more pages here with additional chapters -->
+        <!-- I'll create a condensed version since this is getting long -->
+
+        <!-- CHAPTER 2 PREVIEW -->
+        <div class="page" id="chapter-2">
+            <h1>Chapter 2: Combat System</h1>
+
+            <div class="quote">
+                "Your deck is your life. Every card you lose brings you closer to death."
+            </div>
+
+            <h2>Core Concept: Dual-Layer Damage</h2>
+
+            <p>Penance uses a dual-layer damage system combining deck-as-HP mechanics with brutal permanent consequences.</p>
+
+            <p><strong>Two Separate Systems:</strong></p>
+            <ol>
+                <li><strong>Casket HP Deck</strong> (26-50 cards) - Your mech's structural integrity</li>
+                <li><strong>Pilot Wound Deck</strong> (10 cards) - Your pilot's physical/mental state</li>
+            </ol>
+
+            <p>When <strong>Casket HP Deck runs out</strong> → Casket is destroyed (pilot may survive)<br>
+            When <strong>Pilot Wound Deck runs out</strong> → Pilot dies (Casket becomes inert)</p>
+
+            <div class="divider">⚔</div>
+
+            <h2>The 3-Pile System</h2>
+
+            <p><strong>Your Casket uses THREE separate card piles during battle:</strong></p>
+
+            <ol>
+                <li><strong>HP Draw Deck</strong> (26-50 cards) - Your active deck, represents structural integrity</li>
+                <li><strong>Discard Pile</strong> - Cards you've <strong>played/used</strong> during your turn (attacks, movement, abilities)</li>
+                <li><strong>Damage Graveyard</strong> - Cards <strong>destroyed by taking damage</strong> (permanent loss, gone forever)</li>
+            </ol>
+
+            <p><strong>Key Distinction:</strong></p>
+            <ul>
+                <li><strong>Play a card</strong> (attack, defend, move) → Goes to <strong>Discard Pile</strong> → Will reshuffle when draw deck empty</li>
+                <li><strong>Take damage</strong> (enemy hits you) → Cards go to <strong>Damage Graveyard</strong> → <strong>NEVER comes back</strong></li>
+            </ul>
+
+            <div class="page-number">— 8 —</div>
+        </div>
+
+        <!-- Placeholder pages for other chapters -->
+        <div class="page" id="chapter-3">
+            <h1>Chapter 3: Dice Reference</h1>
+            <p><em>Full dice mechanics and probability tables...</em></p>
+            <div class="page-number">— 15 —</div>
+        </div>
+
+        <div class="page" id="chapter-4">
+            <h1>Chapter 4: Component Damage</h1>
+            <p><em>AP/Structure/Pilot Exposure mechanics...</em></p>
+            <div class="page-number">— 20 —</div>
+        </div>
+
+        <div class="page" id="chapter-5">
+            <h1>Chapter 5: Range & Line of Sight</h1>
+            <p><em>Hex-based movement and facing rules...</em></p>
+            <div class="page-number">— 25 —</div>
+        </div>
+
+    </div>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleTOC() {
+            document.getElementById('toc-page').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
