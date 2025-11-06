@@ -165,11 +165,11 @@
 
 **Location**: Collapsed research facility, former Oregon (exact coordinates lost)
 
-**Dr. Marcus Thresher's Breakthrough** (14:00):
+**Dr. Marcus Karathis's Breakthrough** (14:00):
 - Binds deceased wife's soul to industrial exoskeleton
 - **First Casket activated** (powered by bound soul)
 - Thresher escapes rubble using wife's soul-energy
-- **Names himself**: Bonelord Thresh (guilt + power)
+- **Names himself**: Bonelord Karath (guilt + power)
 
 **Significance**:
 - Proves soul-binding is possible
@@ -226,7 +226,7 @@
 - Former friends/neighbors turn on each other
 - **Trust evaporates** (paranoia becomes survival trait)
 
-**Bonelord Thresh's Expansion**:
+**Bonelord Karath's Expansion**:
 - Thresh experiments with more soul-bindings
 - Finds 23 additional corpses, binds all of them
 - **The First Casket Platoon** (24 soul-powered exoskeletons)
@@ -271,7 +271,7 @@
 - **Nomadic lifestyle** (proto-Nomads): Keep moving, scavenge new areas
 - **Faith** (proto-Church): Religion provides hope, social cohesion
 
-**Bonelord Thresh's Ossuarium** (Day 90):
+**Bonelord Karath's Ossuarium** (Day 90):
 - Establishes first "Soul Harvesting" facility
 - Offers deal: "Sign contract, your family eats. You die, your soul powers Casket."
 - **1,200 desperate survivors sign** (first voluntary contracts)
@@ -286,7 +286,7 @@
 - Survivors realize: *The Void is learning*
 
 **The First Defender**:
-- Bonelord Thresh's Casket army defends survivor camp (500 people)
+- Bonelord Karath's Casket army defends survivor camp (500 people)
 - **Victory**: 24 Caskets kill 80+ Abominations
 - Survivors see value in Thresh's "necromancy"
 - **Church protests** but can't deny effectiveness
@@ -314,7 +314,7 @@
 **Proto-Factions Solidify**:
 - **Church of Absolution**: Grand Inquisitor Aldric unites religious survivors (12,000 members)
 - **Forge-Guilds**: Forgemaster Durak consolidates mining communities (8,000 members)
-- **Ossuarium**: Bonelord Thresh controls 3,500 Caskets + 15,000 contract-holders
+- **Ossuarium**: Bonelord Karath controls 3,500 Caskets + 15,000 contract-holders
 - **Nomad Collective**: Warlord Kess organizes wandering caravans (20,000 members)
 
 **First Inter-Faction Trade** (Day 287):

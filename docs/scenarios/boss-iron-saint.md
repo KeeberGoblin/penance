@@ -334,7 +334,7 @@ Sister Vex is defeated when her deck AND hand are empty, and she cannot reshuffl
 
 ## Variant: The Twins (4-6 Players)
 
-For larger groups, fight both Sister Vex AND Bonelord Thresh simultaneously.
+For larger groups, fight both Sister Vex AND Bonelord Karath simultaneously.
 
 - Each boss has 30-card deck
 - They share a turn (both activate after all players)

@@ -211,7 +211,7 @@ Strain failures: Lose SP, take damage, component malfunctions
 
 **15 Enemies Total**:
 - **3 Swarm (3-5 HP)**: Tainted Rat Swarm, Corrupted Villager, Scrap Drone
-- **11 Elite/Boss (15-60 HP)**: Bandit Raider, Bandit Captain, Tainted Ogre, Scrap Golem, Engine Wraith, Tainted Leviathan, Rogue Casket, Bonelord Thresh, Church Zealot, Dwarven Ironclad, Elven Verdant Stalker
+- **11 Elite/Boss (15-60 HP)**: Bandit Raider, Bandit Captain, Tainted Ogre, Scrap Golem, Engine Wraith, Tainted Leviathan, Rogue Casket, Bonelord Karath, Church Zealot, Dwarven Ironclad, Elven Verdant Stalker
 - **1 Special**: Tainted Wolf Pack (pack tactics)
 
 **KDM-Style If-Then AI**: "If X, do Y. Else, do Z" behavior cards (no GM interpretation needed)

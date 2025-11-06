@@ -215,7 +215,7 @@ He now treats everything - emotions, combat, morality - as engineering problems 
 
 ---
 
-## 4. Bonelord Thresh (The Ossuarium)
+## 4. Bonelord Karath (The Ossuarium)
 ### "The Debt Collector"
 
 **Faction**: The Ossuarium (Undead)

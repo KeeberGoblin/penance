@@ -295,7 +295,7 @@ The legendary pilots of Year 437 have mastered the art of warfare. Here are thei
 | **Inquisitor Grayle** - "The Absolver" | Church of Absolution | Headhunter, Heat Sink Upgrade, Martyrdom |
 | **Forgemaster Durr** - "The Calculator" | Dwarven Forge-Guilds | Battlemaster, Rune Mastery, Component Savant |
 | **Ironwright Karsa** - "Rust-Eater" | Dwarven Forge-Guilds | Scrap Scrounger, Component Reinforcement, Master Technician |
-| **Bonelord Thresh** - "The Debt Collector" | The Ossuarium | Soul Harvest Efficiency, Undying Will, Master Technician |
+| **Bonelord Karath** - "The Debt Collector" | The Ossuarium | Soul Harvest Efficiency, Undying Will, Master Technician |
 | **Mortis the Silencer** - "The Quiet Reaper" | The Ossuarium | Efficient Movement, Death Defiance, Soul Harvest Efficiency |
 | **Rootwarden Kess** - "The Pruner" | Elven Verdant Covenant | Terrain Expert, Efficient Movement, Component Savant |
 | **Thornwalker Sylris** - "Blood-Bloom" | Elven Verdant Covenant | Bleed Control, Thornvine Mastery, Cornered Beast |

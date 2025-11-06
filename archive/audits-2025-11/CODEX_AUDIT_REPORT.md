@@ -109,16 +109,16 @@ I found references to both names:
 
 ---
 
-### 7. Bonelord Thresh vs. Dr. Nikolas Theslar - Clarify Names
+### 7. Bonelord Karath vs. Dr. Nikolas Theslar - Clarify Names
 **Not a Contradiction**, but potentially confusing:
 
-- **Dr. Marcus Thresher** → became **Bonelord Thresh** (discovered soul-binding, Colorado facility)
+- **Dr. Marcus Karathis** → became **Bonelord Karath** (discovered soul-binding, Colorado facility)
 - **Dr. Nikolas Theslar** → died in Engine detonation (built the Engine, Arctic facility)
 
 Very similar names: Thresher/Thresh vs. Theslar
 
 **Recommendation**: Add a disambiguation note somewhere prominent (maybe in lore-bonelord-thresh.html) explicitly stating:
-> "Bonelord Thresh (Marcus Thresher) is NOT related to Dr. Nikolas Theslar (the Engine's creator). The similar names are coincidental and often confused by scholars."
+> "Bonelord Karath (Marcus Karathis) is NOT related to Dr. Nikolas Theslar (the Engine's creator). The similar names are coincidental and often confused by scholars."
 
 ---
 
