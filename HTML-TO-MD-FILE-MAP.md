@@ -287,6 +287,7 @@
 
 ### Files Needing Update
 1. `factions/elves/deck-equipment-system.md` - Balance v5.29
+2. All files with "Bonelord Thresh" → "Bonelord Karath" (or vice versa)
 2. All files with "Bonelord Karath" → "Bonelord Karath" (or vice versa)
 3. Any files referencing outdated mechanics
 
