@@ -30,6 +30,10 @@ html {
     --shadow-black: #0a0604;
     --crimson-text: #8b0000;
 
+    /* Accessible color variants for WCAG AA compliance */
+    --accessible-gold: #c9a66b; /* Lighter gold with 4.5:1+ contrast on dark backgrounds */
+    --accessible-white: #e8dcc8; /* Slightly brighter bone-white for better contrast */
+
     /* Textures */
     --leather-texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="400" height="400" filter="url(%23noise)" opacity="0.15"/></svg>');
 }
@@ -1225,3 +1229,127 @@ img {
 .particle:nth-child(18) { left: 80%; width: 2px; height: 2px; animation-duration: 15s; animation-delay: 3s; --drift: 40px; }
 .particle:nth-child(19) { left: 90%; width: 5px; height: 5px; animation-duration: 27s; animation-delay: 5s; --drift: -45px; }
 .particle:nth-child(20) { left: 8%; width: 2px; height: 2px; animation-duration: 20s; animation-delay: 2s; --drift: 25px; }
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Keyboard Navigation Focus Indicators */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--accessible-gold);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Enhanced focus for navigation links */
+.nav-link:focus-visible {
+    outline: 2px solid var(--accessible-gold);
+    outline-offset: -2px;
+    background: rgba(201, 166, 107, 0.2);
+}
+
+/* Focus for faction cards and interactive elements */
+.faction-card:focus-visible,
+.card:focus-visible {
+    outline: 3px solid var(--accessible-gold);
+    outline-offset: 3px;
+    box-shadow: 0 0 20px rgba(201, 166, 107, 0.6);
+}
+
+/* Skip to content link for keyboard users */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--dark-red);
+    color: var(--accessible-white);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+    border: 2px solid var(--accessible-gold);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Improved contrast utilities */
+.improved-contrast,
+.accessible-text {
+    color: var(--accessible-gold); /* Lighter gold for better WCAG AA compliance */
+}
+
+/* For critical text that must be readable */
+.critical-text {
+    color: var(--accessible-white);
+    font-weight: 600;
+}
+
+/* Ensure buttons meet minimum touch target size (44x44px) */
+button,
+[role="button"],
+.btn {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --aged-gold: #ffd700; /* Brighter gold */
+        --bone-white: #ffffff; /* Pure white */
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+        outline-width: 3px;
+    }
+}
+
+/* Reduced motion for users with vestibular disorders */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Hide decorative particles that animate */
+    .particle {
+        display: none;
+    }
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
