@@ -1,0 +1,129 @@
+{
+  "patch_version": "v5.24_ossuarium_nerf",
+  "target_win_rate": "48-52%",
+  "current_win_rate": "68.9%",
+  "changes": [
+    {
+      "card": "Soul Harvest",
+      "type": "nerf",
+      "change_type": "recovery_cap",
+      "old_effect": "Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 3 cards).",
+      "new_effect": "Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 2 cards). Gain 1 Taint.",
+      "reasoning": "Too efficient at 3 SP for 4 damage + 3 cards recovered. Capping at 2 and adding Taint cost."
+    },
+    {
+      "card": "Soul Rend",
+      "type": "nerf",
+      "change_type": "recovery_cap",
+      "old_effect": "Deal 5 damage. Recover cards equal to damage dealt (max 3). Powerful lifesteal.",
+      "new_effect": "Deal 5 damage. Recover cards equal to damage dealt (max 2). Gain 1 Taint.",
+      "reasoning": "4 SP for 5 damage + 3 cards is a net +1 card advantage. Reducing to 2 and adding Taint."
+    },
+    {
+      "card": "Drain Life",
+      "type": "nerf",
+      "change_type": "recovery_reduction",
+      "old_effect": "Deal 6 damage at range. Recover 4 cards from discard pile (67% lifesteal). Massive drain.",
+      "new_effect": "Deal 6 damage at range. Recover 3 cards from discard pile. Gain 2 Taint.",
+      "reasoning": "5 SP for 6 damage + 4 cards is extremely strong. Reducing to 3 cards and adding higher Taint cost."
+    },
+    {
+      "card": "Phylactery",
+      "type": "nerf",
+      "change_type": "revive_amount",
+      "old_effect": "The first time each mission you would be reduced to 0 HP, instead set HP to 3 (recover 3 cards from discard pile). This is automatic and costs nothing.",
+      "new_effect": "The first time each mission you would be reduced to 0 HP, instead set HP to 2 (recover 2 cards from discard pile). This is automatic and costs nothing.",
+      "reasoning": "Auto-revival is already extremely powerful. Reducing from 3 HP to 2 HP."
+    },
+    {
+      "card": "Necrotic Surge",
+      "type": "nerf",
+      "change_type": "trigger_threshold",
+      "old_effect": "Whenever you recover 3+ cards from discard pile (via any effect), recover +1 additional card. Amplifies large heals only.",
+      "new_effect": "Whenever you recover 4+ cards from discard pile (via any effect), recover +1 additional card. Amplifies massive heals only.",
+      "reasoning": "Triggers too frequently at 3+ cards. Many attacks naturally hit this threshold. Raising to 4+ makes it truly conditional."
+    },
+    {
+      "card": "Death Shroud",
+      "type": "nerf",
+      "change_type": "stacking_prevention",
+      "old_effect": "Until end of turn, whenever you recover cards from discard pile, recover +1 additional card. Amplifies all lifesteal.",
+      "new_effect": "Your next card recovery this turn gains +1 additional card. Does not stack with other recovery bonuses.",
+      "reasoning": "Prevents multiplicative stacking. Changes from 'all recoveries' to 'next recovery' this turn."
+    },
+    {
+      "card": "Bone Scythe Reap",
+      "type": "adjustment",
+      "change_type": "taint_cost",
+      "old_effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 3 cards).",
+      "new_effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 2 cards). Gain 1 Taint if you recovered 2+ cards.",
+      "reasoning": "AoE lifesteal can stack too much. Capping at 2 cards and adding conditional Taint."
+    },
+    {
+      "card": "Corpse Explosion",
+      "type": "adjustment",
+      "change_type": "recovery_cap",
+      "old_effect": "Deal 3 damage to target and all adjacent enemies (AoE). Recover 1 card per enemy damaged (max 3).",
+      "new_effect": "Deal 3 damage to target and all adjacent enemies (AoE). Recover 1 card per enemy damaged (max 2).",
+      "reasoning": "Consistency with other AoE lifesteal. Capping at 2 cards maximum."
+    },
+    {
+      "card": "Vampiric Rune",
+      "type": "nerf",
+      "change_type": "trigger_threshold",
+      "old_effect": "Whenever you deal 5+ damage with a single attack, recover +1 additional card from discard pile. High-damage bonus only.",
+      "new_effect": "Whenever you deal 6+ damage with a single attack, recover +1 additional card from discard pile. Extremely high-damage bonus only.",
+      "reasoning": "Triggers too often (5 damage is common). Raising to 6+ makes it truly conditional. Does not stack with other bonuses."
+    }
+  ],
+  "new_mechanic_taint_penalties": {
+    "description": "Taint accumulation from necromantic power causes corruption penalties",
+    "thresholds": [
+      {
+        "taint_level": "0-3",
+        "penalty": "None",
+        "description": "Safe levels of necromantic energy"
+      },
+      {
+        "taint_level": "4-5",
+        "penalty": "Minor corruption",
+        "effect": "No mechanical penalty, but flavor indicates strain"
+      },
+      {
+        "taint_level": "6-7",
+        "penalty": "Moderate corruption",
+        "effect": "All damage dealt -1 (minimum 1)"
+      },
+      {
+        "taint_level": "8-9",
+        "penalty": "Severe corruption",
+        "effect": "All damage dealt -2 (minimum 1), all SP costs +1"
+      },
+      {
+        "taint_level": "10",
+        "penalty": "Maximum corruption",
+        "effect": "All damage dealt -3 (minimum 1), all SP costs +1, gain 1 Heat per turn"
+      }
+    ],
+    "taint_removal": {
+      "method": "End of battle",
+      "amount": "All Taint resets to 0"
+    }
+  },
+  "expected_impact": {
+    "win_rate_reduction": "15-20%",
+    "target_win_rate": "48-53%",
+    "key_changes": [
+      "Lifesteal caps prevent infinite sustain",
+      "Taint costs create trade-offs for power",
+      "Stacking prevention stops exponential scaling",
+      "Phylactery nerf reduces comeback potential"
+    ]
+  },
+  "testing_notes": {
+    "step1": "Apply all changes to complete-card-data.json",
+    "step2": "Run faction_balance_MULTIUNIT.py",
+    "step3": "If WR still >55%, increase Taint penalties",
+    "step4": "If WR drops below 45%, reduce some caps or remove Taint costs"
+  }
+}
