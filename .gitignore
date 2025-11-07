@@ -44,3 +44,4 @@ scratchpad/
 # Documentation Builds
 docs/_build/
 docs/.doctrees/
+__pycache__/
