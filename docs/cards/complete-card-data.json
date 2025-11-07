@@ -10903,7 +10903,7 @@
       "totalCards": 2,
       "craftingCost": "3 Scrap",
       "faction": "universal",
-      "category": "Weapon"
+      "category": "Accessory"
     },
     {
       "name": "HEAT SINK SIGIL",
@@ -10923,7 +10923,7 @@
       "totalCards": 2,
       "craftingCost": "2 Scrap",
       "faction": "universal",
-      "category": "Weapon"
+      "category": "Accessory"
     },
     {
       "name": "TARGETING SIGIL",
@@ -10950,7 +10950,7 @@
       "totalCards": 3,
       "craftingCost": "3 Scrap",
       "faction": "universal",
-      "category": "Weapon"
+      "category": "Accessory"
     },
     {
       "name": "FLAME WAND",
@@ -13383,6 +13383,653 @@
           ],
           "cardCount": 2,
           "cardType": "equipment"
+        }
+      ]
+    },
+    {
+      "name": "ARMOR-PIERCING ROUNDS",
+      "category": "Ammunition",
+      "totalCards": 4,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "High-penetration ammunition for ranged weapons",
+      "cards": [
+        {
+          "name": "AP Shot",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +1 damage, Armor-Piercing. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Piercing Volley",
+          "cost": 3,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +2 damage, Armor-Piercing, hits 2 targets in line. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "AP Shot",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +1 damage, Armor-Piercing. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Hardened Core",
+          "cost": 1,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: Armor-Piercing. Discard after use.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "INCENDIARY AMMUNITION",
+      "category": "Ammunition",
+      "totalCards": 4,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Fire-based ammunition that ignites targets",
+      "cards": [
+        {
+          "name": "Flame Round",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +2 damage, target gains 2 Heat. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Inferno Shot",
+          "cost": 3,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +3 damage, target gains 3 Heat, ignites adjacent enemies for 1 damage. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Flame Round",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +2 damage, target gains 2 Heat. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Burning Trace",
+          "cost": 1,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: Target gains 3 Heat. Discard after use.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "BLESSED AMMUNITION",
+      "category": "Ammunition",
+      "totalCards": 3,
+      "craftingCost": "4 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Holy-sanctified ammunition effective against corrupted foes",
+      "cards": [
+        {
+          "name": "Consecrated Shot",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +2 damage (+4 vs corrupted), purge 1 Taint from target. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Divine Bolt",
+          "cost": 3,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +3 damage (+6 vs corrupted), purge all Taint from target, you remove 1 Taint. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Sanctified Round",
+          "cost": 1,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +1 damage (+3 vs corrupted). Discard after use.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "VOID-TIPPED BOLTS",
+      "category": "Ammunition",
+      "totalCards": 4,
+      "craftingCost": "4 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Shadow-infused ammunition that bypasses defenses",
+      "cards": [
+        {
+          "name": "Void Shot",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +2 damage, ignore Defense buffs, gain 1 Taint. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Reality Piercer",
+          "cost": 3,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +4 damage, ignore all Defense/Armor, teleport target 1 hex, gain 2 Taint. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Void Shot",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +2 damage, ignore Defense buffs, gain 1 Taint. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Shadow Tip",
+          "cost": 1,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: Ignore Defense buffs, gain 1 Taint. Discard after use.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "SHRAPNEL SHELLS",
+      "category": "Ammunition",
+      "totalCards": 3,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Explosive ammunition for area damage",
+      "cards": [
+        {
+          "name": "Scatter Shot",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: Deal damage to target and all adjacent enemies. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Fragmentation Round",
+          "cost": 3,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: +2 damage, deal 3 damage to all adjacent enemies, gain 1 Heat. Discard after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Bleed Shards",
+          "cost": 2,
+          "type": "Ammo Enhancement",
+          "effect": "Enhance your next ranged attack: Target and adjacent enemies gain Bleed 1. Discard after use.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "ALCHEMICAL GRENADES",
+      "category": "Consumable",
+      "totalCards": 3,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Volatile explosive devices",
+      "cards": [
+        {
+          "name": "Frag Grenade",
+          "cost": 2,
+          "type": "Attack",
+          "effect": "Deal 4 damage to target hex and 2 damage to all adjacent hexes. Remove this card from game after use.",
+          "range": "Ranged 2-5",
+          "damage": 4
+        },
+        {
+          "name": "Smoke Bomb",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Create 3-hex smoke cloud (blocks LOS, lasts 2 rounds). Remove this card from game after use.",
+          "range": "Ranged 2-4"
+        },
+        {
+          "name": "Concussion Blast",
+          "cost": 3,
+          "type": "Attack",
+          "effect": "Deal 3 damage to all enemies within 2 hexes, push 1 hex, targets lose 1 SP next turn. Remove this card from game after use.",
+          "range": "Ranged 2-4",
+          "damage": 3
+        }
+      ]
+    },
+    {
+      "name": "HOLY WATER VIALS",
+      "category": "Consumable",
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Blessed water in fragile glass containers",
+      "cards": [
+        {
+          "name": "Holy Water Flask",
+          "cost": 1,
+          "type": "Attack",
+          "effect": "Deal 3 damage (+5 vs corrupted), purge 2 Taint from target. Remove this card from game after use.",
+          "range": "Ranged 1-3",
+          "damage": 3
+        },
+        {
+          "name": "Purification Splash",
+          "cost": 2,
+          "type": "Utility",
+          "effect": "Remove 2 Taint from self or ally within 2 hexes, heal 2 cards from discard. Remove this card from game after use.",
+          "range": "Ranged 1-2"
+        },
+        {
+          "name": "Blessed Vial",
+          "cost": 1,
+          "type": "Attack",
+          "effect": "Deal 2 damage (+4 vs corrupted). Remove this card from game after use.",
+          "range": "Ranged 1-3",
+          "damage": 2
+        }
+      ]
+    },
+    {
+      "name": "SOUL SHARDS",
+      "category": "Consumable",
+      "totalCards": 3,
+      "craftingCost": "4 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Crystallized soul energy from the fallen",
+      "cards": [
+        {
+          "name": "Soul Infusion",
+          "cost": 2,
+          "type": "Utility",
+          "effect": "Recover 4 cards from discard pile, gain 1 Taint. Remove this card from game after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Spirit Burst",
+          "cost": 2,
+          "type": "Attack",
+          "effect": "Deal 5 damage, ignore Defense and Armor. Remove this card from game after use.",
+          "range": "Ranged 2-5",
+          "damage": 5
+        },
+        {
+          "name": "Life Drain Shard",
+          "cost": 3,
+          "type": "Attack",
+          "effect": "Deal 4 damage, recover 3 cards from discard pile. Remove this card from game after use.",
+          "range": "Ranged 2-4",
+          "damage": 4
+        }
+      ]
+    },
+    {
+      "name": "EMERGENCY REPAIR KIT",
+      "category": "Consumable",
+      "totalCards": 2,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Field maintenance supplies for critical repairs",
+      "cards": [
+        {
+          "name": "Quick Patch",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Recover 5 cards from discard pile. Remove this card from game after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Emergency Weld",
+          "cost": 2,
+          "type": "Reactive",
+          "effect": "When you would take Component Damage, prevent it. Recover 3 cards from discard. Remove this card from game after use.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "COMBAT STIMULANTS",
+      "category": "Consumable",
+      "totalCards": 3,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Chemical enhancers that boost pilot performance",
+      "cards": [
+        {
+          "name": "Adrenaline Surge",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Gain +3 SP this turn, draw 2 cards, gain 2 Heat. Remove this card from game after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Berserker Serum",
+          "cost": 2,
+          "type": "Utility",
+          "effect": "For 2 turns: All attacks +3 damage, ignore pain (first 3 damage each turn negated), gain 1 Heat per turn. Remove this card from game after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Focus Enhancer",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Draw 3 cards, your next attack +2 damage. Remove this card from game after use.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "AMMUNITION BANDOLIER",
+      "category": "Accessory",
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Tactical ammunition storage",
+      "cards": [
+        {
+          "name": "Quick Reload",
+          "cost": 0,
+          "type": "Utility",
+          "effect": "Draw 1 card, your next ranged attack costs -1 SP.",
+          "range": "Self"
+        },
+        {
+          "name": "Extra Magazine",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Draw 2 cards. If both are ranged attacks, gain +1 SP.",
+          "range": "Self"
+        },
+        {
+          "name": "Tactical Pouch",
+          "type": "Passive",
+          "effect": "Once per turn: When you use Ammo Enhancement card, draw 1 card.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "SCAVENGER'S TOOLKIT",
+      "category": "Accessory",
+      "totalCards": 3,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Collection of salvage and crafting tools",
+      "cards": [
+        {
+          "name": "Field Salvage",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "When enemy is destroyed, gain 1 Scrap token and draw 1 card.",
+          "range": "Self"
+        },
+        {
+          "name": "Improvised Repair",
+          "cost": 2,
+          "type": "Utility",
+          "effect": "Spend 1 Scrap token: Recover 3 cards from discard pile.",
+          "range": "Self"
+        },
+        {
+          "name": "Scrap Sense",
+          "type": "Passive",
+          "effect": "At start of mission, gain 1 Scrap token. When you Smelt equipment, gain +1 extra Scrap.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "ANCIENT COMPASS",
+      "category": "Relic",
+      "totalCards": 2,
+      "craftingCost": "4 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Mysterious relic that guides the bearer",
+      "cards": [
+        {
+          "name": "True Path",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Look at top 3 cards of your deck, arrange them in any order.",
+          "range": "Self"
+        },
+        {
+          "name": "Guidance",
+          "type": "Passive",
+          "effect": "At start of your turn, you may discard 1 card then draw 1 card.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "FOCUSING LENS",
+      "category": "Relic",
+      "totalCards": 3,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Optical enhancement for precision targeting",
+      "cards": [
+        {
+          "name": "Perfect Aim",
+          "cost": 2,
+          "type": "Utility",
+          "effect": "Your next ranged attack +3 damage, ignore cover, auto-hits.",
+          "range": "Self"
+        },
+        {
+          "name": "Scope Adjust",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Your next ranged attack has +2 range and +1 damage.",
+          "range": "Self"
+        },
+        {
+          "name": "Eagle Eye",
+          "type": "Passive",
+          "effect": "All ranged attacks have +1 range. When you play a ranged attack from 5+ hexes away, draw 1 card.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "REINFORCED JOINTS",
+      "category": "Accessory",
+      "totalCards": 3,
+      "craftingCost": "3 Scrap",
+      "weight": "Medium",
+      "faction": "universal",
+      "description": "Enhanced hydraulic systems for improved mobility",
+      "cards": [
+        {
+          "name": "Power Stride",
+          "cost": 2,
+          "type": "Movement",
+          "effect": "Move up to 4 hexes, ignore difficult terrain, gain 1 Heat.",
+          "range": "Self"
+        },
+        {
+          "name": "Quick Pivot",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Rotate to any facing and move 1 hex.",
+          "range": "Self"
+        },
+        {
+          "name": "Stable Footing",
+          "type": "Passive",
+          "effect": "Ignore movement penalties from terrain. When you move 3+ hexes, your next attack +1 damage.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "WARDING TALISMAN",
+      "category": "Relic",
+      "totalCards": 3,
+      "craftingCost": "4 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Mystical charm that deflects harm",
+      "cards": [
+        {
+          "name": "Protective Ward",
+          "cost": 0,
+          "type": "Reactive",
+          "effect": "Reduce damage by 2.",
+          "range": "Self"
+        },
+        {
+          "name": "Deflection Field",
+          "cost": 2,
+          "type": "Defense",
+          "effect": "+2 Defense until your next turn. When attacked, attacker takes 1 damage.",
+          "range": "Self"
+        },
+        {
+          "name": "Luck Charm",
+          "type": "Passive",
+          "effect": "Once per turn: When you would take 5+ damage from a single source, reduce it by 2.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "BLOOD VIAL CACHE",
+      "category": "Consumable",
+      "totalCards": 4,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Preserved blood for emergency transfusions",
+      "cards": [
+        {
+          "name": "Crimson Infusion",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Recover 3 cards from discard pile. Remove this card from game after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Blood Pact",
+          "cost": 2,
+          "type": "Utility",
+          "effect": "Take 2 damage, recover 6 cards from discard pile, gain +2 damage until end of turn. Remove this card from game after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Vital Essence",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Recover 2 cards from discard pile, remove 1 Heat. Remove this card from game after use.",
+          "range": "Self"
+        },
+        {
+          "name": "Emergency Transfusion",
+          "cost": 0,
+          "type": "Reactive",
+          "effect": "When you would take fatal damage, prevent it and set HP to 5 cards. Remove this card from game after use.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "RUNIC CHARGES",
+      "category": "Consumable",
+      "totalCards": 3,
+      "craftingCost": "4 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Explosive runes etched on metal discs",
+      "cards": [
+        {
+          "name": "Runic Mine",
+          "cost": 2,
+          "type": "Utility",
+          "effect": "Place mine in adjacent hex. When enemy enters, deal 6 damage. Lasts 3 rounds. Remove this card from game after use.",
+          "range": "Melee"
+        },
+        {
+          "name": "Detonation Rune",
+          "cost": 3,
+          "type": "Attack",
+          "effect": "Deal 5 damage to target and all adjacent hexes, Armor-Piercing. Remove this card from game after use.",
+          "range": "Ranged 2-4",
+          "damage": 5
+        },
+        {
+          "name": "Glyph Trap",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Next enemy that attacks you takes 4 damage. Remove this card from game after triggered.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "TACTICAL SCANNER",
+      "category": "Accessory",
+      "totalCards": 2,
+      "craftingCost": "3 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Advanced sensor array for battlefield awareness",
+      "cards": [
+        {
+          "name": "Enemy Analysis",
+          "cost": 1,
+          "type": "Utility",
+          "effect": "Look at target enemy's hand. Your next attack vs that target +2 damage.",
+          "range": "Ranged 1-6"
+        },
+        {
+          "name": "Threat Detection",
+          "type": "Passive",
+          "effect": "At start of your turn, look at top card of your deck. You may discard it. Enemies within 6 hexes cannot ambush you.",
+          "range": "Self"
+        }
+      ]
+    },
+    {
+      "name": "GRAPPLING HOOK",
+      "category": "Accessory",
+      "totalCards": 3,
+      "craftingCost": "2 Scrap",
+      "weight": "Light",
+      "faction": "universal",
+      "description": "Mechanical winch for enhanced mobility",
+      "cards": [
+        {
+          "name": "Hook Shot",
+          "cost": 2,
+          "type": "Movement",
+          "effect": "Move up to 5 hexes in straight line to target hex, ignore terrain and enemies.",
+          "range": "Self"
+        },
+        {
+          "name": "Pull Enemy",
+          "cost": 2,
+          "type": "Utility",
+          "effect": "Pull target enemy up to 3 hexes toward you. If they end adjacent, deal 2 damage.",
+          "range": "Ranged 2-5"
+        },
+        {
+          "name": "Anchor Point",
+          "cost": 1,
+          "type": "Defense",
+          "effect": "Cannot be pushed or pulled until your next turn. +1 Defense.",
+          "range": "Self"
         }
       ]
     }
