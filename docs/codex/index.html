@@ -827,6 +827,12 @@
                 }
                 parent.addEventListener('click', toggleDropdown);
 
+                // Helper function to focus first item after transition
+                function focusFirstItem(submenuElement) {
+                    const firstItem = submenuElement.querySelector('.nav-link');
+                    if (firstItem) firstItem.focus();
+                }
+
                 // Enhanced keyboard navigation with arrow keys
                 parent.addEventListener('keydown', (ev) => {
                     const isOpen = dd.classList.contains('dropdown-open');
@@ -836,11 +842,13 @@
                     if (ev.key === 'Enter' || ev.key === ' ') {
                         toggleDropdown(ev);
                         if (!isOpen && submenu) {
-                            // Focus first submenu item after opening
-                            setTimeout(() => {
-                                const firstItem = submenu.querySelector('.nav-link');
-                                if (firstItem) firstItem.focus();
-                            }, 100);
+                            // Focus first submenu item after transition completes
+                            submenu.addEventListener('transitionend', function handler(e) {
+                                if (e.propertyName === 'opacity') {
+                                    focusFirstItem(submenu);
+                                    submenu.removeEventListener('transitionend', handler);
+                                }
+                            });
                         }
                     }
 
@@ -848,10 +856,14 @@
                     else if (ev.key === 'ArrowDown' && !isOpen) {
                         ev.preventDefault();
                         toggleDropdown(ev);
-                        setTimeout(() => {
-                            const firstItem = submenu?.querySelector('.nav-link');
-                            if (firstItem) firstItem.focus();
-                        }, 100);
+                        if (submenu) {
+                            submenu.addEventListener('transitionend', function handler(e) {
+                                if (e.propertyName === 'opacity') {
+                                    focusFirstItem(submenu);
+                                    submenu.removeEventListener('transitionend', handler);
+                                }
+                            });
+                        }
                     }
 
                     // ArrowUp: Close dropdown and return focus

@@ -81,7 +81,6 @@
 
             if (isDecorative && !element.hasAttribute('aria-hidden')) {
                 element.setAttribute('aria-hidden', 'true');
-                element.setAttribute('role', 'presentation');
             }
         });
 
@@ -89,7 +88,6 @@
         document.querySelectorAll('.divider').forEach(element => {
             if (!element.hasAttribute('aria-hidden')) {
                 element.setAttribute('aria-hidden', 'true');
-                element.setAttribute('role', 'presentation');
             }
         });
     }
@@ -124,13 +122,11 @@
         const particlesContainer = document.querySelector('.particles');
         if (particlesContainer) {
             particlesContainer.setAttribute('aria-hidden', 'true');
-            particlesContainer.setAttribute('role', 'presentation');
         }
 
         // Mark individual particles
         document.querySelectorAll('.particle').forEach(particle => {
             particle.setAttribute('aria-hidden', 'true');
-            particle.setAttribute('role', 'presentation');
         });
     }
 
@@ -218,20 +214,9 @@
             const id = element.id;
             if (!id) return;
 
-            // Find associated label
-            const label = document.querySelector(`label[for="${id}"]`);
-            if (label && !element.hasAttribute('aria-label')) {
-                element.setAttribute('aria-label', label.textContent.trim());
-            }
-
             // Add aria-required for required fields
             if (element.hasAttribute('required') && !element.hasAttribute('aria-required')) {
                 element.setAttribute('aria-required', 'true');
-            }
-
-            // Add aria-invalid for validation
-            if (!element.hasAttribute('aria-invalid')) {
-                element.setAttribute('aria-invalid', 'false');
             }
         });
 
@@ -239,15 +224,15 @@
         document.querySelectorAll('button').forEach(button => {
             if (!button.hasAttribute('aria-label')) {
                 const text = button.textContent.trim();
-                // Remove emoji and clean up
+                // Remove emojis and decorative symbols and clean up
                 const cleanText = text.replace(/[⚔✦⚙🎲📜]/g, '').trim();
                 if (cleanText) {
                     button.setAttribute('aria-label', cleanText);
                 }
             }
 
-            // Ensure button type is set
-            if (!button.hasAttribute('type')) {
+            // Ensure button type is set only for buttons not inside a form
+            if (!button.hasAttribute('type') && !button.closest('form')) {
                 button.setAttribute('type', 'button');
             }
         });
@@ -262,11 +247,6 @@
             }
         });
 
-        // Mark dropdowns and collapsible sections
-        document.querySelectorAll('.dropdown-content, .collapsible-content').forEach(content => {
-            if (!content.hasAttribute('aria-live')) {
-                content.setAttribute('aria-live', 'polite');
-            }
-        });
+
     }
 })();
