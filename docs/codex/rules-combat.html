@@ -381,7 +381,220 @@
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>3. Component Damage (Permanent Consequences - REVISED THRESHOLDS)</h2>
+        <h2>3. Shove & Positioning Actions</h2>
+
+        <p>Beyond attacking and moving, pilots can manipulate the battlefield through forceful positioning. The <strong>Shove</strong> action lets you push enemies into hazards, create openings, or disrupt formations.</p>
+
+        <h3>Shove Action</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Cost</strong></td>
+                    <td>2 SP</td>
+                </tr>
+                <tr>
+                    <td><strong>Range</strong></td>
+                    <td>Adjacent (1 hex only)</td>
+                </tr>
+                <tr>
+                    <td><strong>Type</strong></td>
+                    <td>Contested Action</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Step 1: Declare Shove</h4>
+        <ul>
+            <li>Choose adjacent target Casket</li>
+            <li>Declare push direction (any of the 6 hex faces from target)</li>
+        </ul>
+
+        <h4>Step 2: Contested Roll</h4>
+        <p><strong>Both pilots roll 1d6 + Size Modifier</strong></p>
+
+        <table style="margin: 1.5rem 0;">
+            <thead>
+                <tr>
+                    <th>Weight Class</th>
+                    <th>Size Modifier</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Light</td>
+                    <td>-1</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>Heavy</td>
+                    <td>+1</td>
+                </tr>
+                <tr>
+                    <td>Giant/Boss</td>
+                    <td>+2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Step 3: Compare Results</h4>
+        <ul>
+            <li><strong>Tie or Defender Wins</strong>: Shove fails, no effect</li>
+            <li><strong>Attacker wins by 1-2</strong>: Push target <strong>1 hex</strong> in declared direction</li>
+            <li><strong>Attacker wins by 3+</strong>: Push target <strong>2 hexes</strong> in declared direction</li>
+        </ul>
+
+        <h3>Collision Effects</h3>
+
+        <p>When a shoved Casket collides with terrain or another unit, <strong>roll 1d6</strong> and apply the result based on what was hit:</p>
+
+        <h4>Collision with Wall/Obstruction</h4>
+        <table style="margin: 1.5rem 0;">
+            <thead>
+                <tr>
+                    <th>Roll (1d6)</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1-3</strong></td>
+                    <td>Wall holds firm. Unit stops at wall, takes <strong>2 damage</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>4-5</strong></td>
+                    <td>Wall cracks. Unit stops, takes <strong>1 damage</strong>. Wall becomes <strong>Light Cover</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>6</strong></td>
+                    <td>Wall collapses. Unit continues <strong>1 hex beyond</strong> wall, takes <strong>1 damage</strong>. Wall becomes <strong>Difficult Terrain</strong>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Collision with Another Unit</h4>
+        <p><strong>Roll 1d6 + Size Difference Modifier:</strong></p>
+
+        <table style="margin: 1.5rem 0;">
+            <thead>
+                <tr>
+                    <th>Size Comparison</th>
+                    <th>Modifier</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pushed unit larger than secondary</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>Same size</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>Pushed unit smaller than secondary</td>
+                    <td>-2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table style="margin: 1.5rem 0;">
+            <thead>
+                <tr>
+                    <th>Roll Result</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1-3</strong></td>
+                    <td>Secondary unit stops the push. <strong>Both units take 1 damage</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>4-5</strong></td>
+                    <td>Chain reaction! Secondary unit pushed <strong>1 hex</strong> in same direction. <strong>Both take 1 damage</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>6+</strong></td>
+                    <td>Domino effect! Secondary unit pushed <strong>2 hexes</strong> in same direction. <strong>Both take 2 damage</strong>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Collision with Hazard</h4>
+        <p>If pushed into hazard terrain (lava, pit, electrified zone), <strong>apply hazard effect immediately</strong> and stop movement.</p>
+        <ul>
+            <li><strong>Lava/Fire</strong>: Take 4 damage + 2 Heat</li>
+            <li><strong>Pit/Chasm</strong>: Fall damage (varies by depth, typically 3-6 damage)</li>
+            <li><strong>Electrified Zone</strong>: Take 3 damage, stunned (lose 1 SP next turn)</li>
+        </ul>
+
+        <h3>Tactical Examples</h3>
+
+        <div style="background: rgba(139, 0, 0, 0.15); padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--aged-gold);">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example 1: Environmental Kill</h4>
+            <p>
+                A Medium Casket (Size +0) shoves a Light enemy scout (Size -1) toward a lava pit. Both roll:
+            </p>
+            <ul>
+                <li>Attacker: [4] + 0 = <strong>4</strong></li>
+                <li>Defender: [2] - 1 = <strong>1</strong></li>
+                <li><strong>Result</strong>: Attacker wins by 3, pushes enemy <strong>2 hexes</strong> directly into lava!</li>
+                <li>Enemy takes 4 damage + 2 Heat from hazard, stops at pit</li>
+            </ul>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--aged-gold);">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example 2: Domino Chain</h4>
+            <p>
+                A Heavy Casket (Size +1) shoves a Medium enemy (Size +0) into another Medium ally. Contested roll:
+            </p>
+            <ul>
+                <li>Attacker: [5] + 1 = <strong>6</strong></li>
+                <li>Defender: [3] + 0 = <strong>3</strong></li>
+                <li><strong>Result</strong>: Attacker wins by 3, pushes enemy <strong>2 hexes</strong></li>
+                <li>Enemy collides with ally on first hex. Roll collision: [6] + 0 (same size) = <strong>6</strong></li>
+                <li><strong>Domino!</strong> Both enemy and ally pushed 2 hexes, both take 2 damage</li>
+            </ul>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--aged-gold);">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example 3: Cover Creation</h4>
+            <p>
+                A Medium Casket shoves an enemy into a stone wall. Contested roll succeeds (1 hex push). Wall collision: Roll [5]
+            </p>
+            <ul>
+                <li><strong>Result</strong>: Wall cracks! Enemy stops, takes 1 damage. Wall becomes Light Cover (+1 defense for anyone behind it)</li>
+                <li>Strategic: This creates new defensive terrain your allies can use</li>
+            </ul>
+        </div>
+
+        <h3>Optional Rule: Momentum Bonus</h3>
+
+        <p style="font-style: italic; color: var(--aged-gold);">
+            For campaigns that want more dynamic positioning combat:
+        </p>
+
+        <p><strong>If you moved 3+ hexes this turn before shoving</strong>, gain <strong>+1 to your contested roll</strong> (charging momentum).</p>
+
+        <p><strong>Example</strong>: A Medium Casket (Size +0) sprints 4 hexes toward an enemy, then uses Shove (2 SP). Roll: [3] + 0 (size) + 1 (momentum) = <strong>4 total</strong>.</p>
+
+        <p style="margin-top: 1rem; color: var(--aged-gold);">
+            <strong>Design Note:</strong> Shove is a positioning tool, not a damage dealer. At 2 SP cost and low damage output (1-2 damage from collisions), it competes with movement and attacks. Success requires good positioning, terrain awareness, and favorable size matchups.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>4. Component Damage (Permanent Consequences - REVISED THRESHOLDS)</h2>
 
         <h3>Tracking Component Damage</h3>
 
@@ -453,7 +666,7 @@
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>4. Deck Depletion (Running Out of HP)</h2>
+        <h2>5. Deck Depletion (Running Out of HP)</h2>
 
         <h3>When your deck runs out mid-turn:</h3>
         <ul>
@@ -483,7 +696,7 @@
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>5. Pilot Wound Deck (10 Cards)</h2>
+        <h2>6. Pilot Wound Deck (10 Cards)</h2>
 
         <h3>Separate from Casket HP</h3>
 
@@ -644,7 +857,7 @@
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>6. Example Combat Sequence (With Dice)</h2>
+        <h2>7. Example Combat Sequence (With Dice)</h2>
 
         <h3>Setup:</h3>
         <ul>
