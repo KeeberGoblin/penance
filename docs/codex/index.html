@@ -394,6 +394,43 @@
         .nav-link.match { background: rgba(75,14,14,0.25); }
     .nav-link .nav-highlight { color: var(--aged-gold); text-decoration: underline dotted; }
 
+        /* Font size toggle button */
+        #fontSizeBtn {
+            font-family: Georgia, serif;
+            font-weight: bold;
+            min-width: 60px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        #fontSizeBtn:hover {
+            background: var(--dark-red);
+        }
+        #fontSizeBtn::after {
+            content: attr(data-size-label);
+            display: block;
+            font-size: 0.65rem;
+            font-weight: normal;
+            opacity: 0.75;
+            margin-top: 2px;
+        }
+
+        /* Font size states for navigation links */
+        .nav-content.font-small .nav-link {
+            font-size: 0.85rem;
+            padding: 0.5rem 0.65rem;
+            line-height: 1.3;
+        }
+        .nav-content.font-normal .nav-link {
+            font-size: 1rem;
+            padding: 0.7rem 0.85rem;
+            line-height: 1.4;
+        }
+        .nav-content.font-large .nav-link {
+            font-size: 1.15rem;
+            padding: 0.8rem 1rem;
+            line-height: 1.5;
+        }
+
         /* Back-to-top floating action button (applies to all pages via iframe control) */
         .back-to-top-fab {
             position: fixed;
@@ -423,6 +460,7 @@
         .desktop-menu-toggle:focus-visible,
         .back-to-top-fab:focus-visible,
         .nav-search-controls button:focus-visible,
+        #fontSizeBtn:focus-visible,
         .nav-search input[type="text"]:focus-visible {
             outline: 2px solid var(--aged-gold);
             outline-offset: 2px;
@@ -476,6 +514,7 @@
             <div class="nav-search">
                 <input id="navSearchInput" type="text" placeholder="Search Codex..." aria-label="Search Codex navigation" />
                 <div class="nav-search-controls">
+                    <button type="button" id="fontSizeBtn" data-size-label="Normal" aria-label="Adjust navigation font size" title="Cycle through font sizes: Small, Normal, Large">A</button>
                     <button type="button" id="expandAllBtn">Expand All</button>
                     <button type="button" id="collapseAllBtn">Collapse All</button>
                     <button type="button" id="clearSearchBtn">Clear</button>
@@ -1011,7 +1050,43 @@
             const expandAllBtn = document.getElementById('expandAllBtn');
             const collapseAllBtn = document.getElementById('collapseAllBtn');
             const clearSearchBtn = document.getElementById('clearSearchBtn');
+            const fontSizeBtn = document.getElementById('fontSizeBtn');
             const navContent = document.querySelector('.nav-content');
+
+            // Font size toggle functionality
+            const fontSizes = ['small', 'normal', 'large'];
+            const fontLabels = { small: 'Small', normal: 'Normal', large: 'Large' };
+            const fontIcons = { small: 'A⁻', normal: 'A', large: 'A⁺' };
+
+            // Load saved preference or default to normal
+            let currentFontSize = localStorage.getItem('navFontSize') || 'normal';
+
+            function applyFontSize(size) {
+                // Remove all font size classes
+                fontSizes.forEach(s => navContent.classList.remove('font-' + s));
+                // Add the selected size class
+                navContent.classList.add('font-' + size);
+                // Update button display
+                if (fontSizeBtn) {
+                    fontSizeBtn.textContent = fontIcons[size];
+                    fontSizeBtn.setAttribute('data-size-label', fontLabels[size]);
+                }
+                // Save to localStorage
+                localStorage.setItem('navFontSize', size);
+                currentFontSize = size;
+            }
+
+            // Apply saved size on load
+            applyFontSize(currentFontSize);
+
+            // Toggle through sizes on click
+            if (fontSizeBtn) {
+                fontSizeBtn.addEventListener('click', () => {
+                    const currentIndex = fontSizes.indexOf(currentFontSize);
+                    const nextIndex = (currentIndex + 1) % fontSizes.length;
+                    applyFontSize(fontSizes[nextIndex]);
+                });
+            }
 
             function normalize(text) { return (text || '').toLowerCase().trim(); }
 
