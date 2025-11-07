@@ -826,8 +826,78 @@
                     parent.setAttribute('aria-expanded', String(!isOpen));
                 }
                 parent.addEventListener('click', toggleDropdown);
+
+                // Enhanced keyboard navigation with arrow keys
                 parent.addEventListener('keydown', (ev) => {
-                    if (ev.key === 'Enter' || ev.key === ' ') toggleDropdown(ev);
+                    const isOpen = dd.classList.contains('dropdown-open');
+                    const submenu = dd.querySelector('.nav-submenu');
+
+                    // Enter or Space: Toggle dropdown
+                    if (ev.key === 'Enter' || ev.key === ' ') {
+                        toggleDropdown(ev);
+                        if (!isOpen && submenu) {
+                            // Focus first submenu item after opening
+                            setTimeout(() => {
+                                const firstItem = submenu.querySelector('.nav-link');
+                                if (firstItem) firstItem.focus();
+                            }, 100);
+                        }
+                    }
+
+                    // ArrowDown: Open dropdown and focus first item
+                    else if (ev.key === 'ArrowDown' && !isOpen) {
+                        ev.preventDefault();
+                        toggleDropdown(ev);
+                        setTimeout(() => {
+                            const firstItem = submenu?.querySelector('.nav-link');
+                            if (firstItem) firstItem.focus();
+                        }, 100);
+                    }
+
+                    // ArrowUp: Close dropdown and return focus
+                    else if (ev.key === 'ArrowUp' && isOpen) {
+                        ev.preventDefault();
+                        toggleDropdown(ev);
+                    }
+
+                    // Escape: Close dropdown
+                    else if (ev.key === 'Escape' && isOpen) {
+                        ev.preventDefault();
+                        toggleDropdown(ev);
+                        parent.focus();
+                    }
+                });
+
+                // Add arrow key navigation within submenu
+                const submenuItems = dd.querySelectorAll('.nav-submenu .nav-link');
+                submenuItems.forEach((item, idx) => {
+                    item.addEventListener('keydown', (ev) => {
+                        const isOpen = dd.classList.contains('dropdown-open');
+                        if (!isOpen) return;
+
+                        // ArrowDown: Next item
+                        if (ev.key === 'ArrowDown' && idx < submenuItems.length - 1) {
+                            ev.preventDefault();
+                            submenuItems[idx + 1].focus();
+                        }
+
+                        // ArrowUp: Previous item or close menu
+                        else if (ev.key === 'ArrowUp') {
+                            ev.preventDefault();
+                            if (idx > 0) {
+                                submenuItems[idx - 1].focus();
+                            } else {
+                                parent.focus();
+                            }
+                        }
+
+                        // Escape: Close dropdown and return to parent
+                        else if (ev.key === 'Escape') {
+                            ev.preventDefault();
+                            toggleDropdown(ev);
+                            parent.focus();
+                        }
+                    });
                 });
             });
 

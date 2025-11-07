@@ -50,6 +50,18 @@
 
         // 4. Mark particles as decorative
         markDecorativeParticles();
+
+        // 5. Add table captions for accessibility
+        addTableCaptions();
+
+        // 6. Ensure headings have proper hierarchy
+        checkHeadingHierarchy();
+
+        // 7. Enhance form accessibility
+        enhanceFormAccessibility();
+
+        // 8. Add live regions for dynamic content
+        addLiveRegions();
     }
 
     function markDecorativeSymbols() {
@@ -119,6 +131,142 @@
         document.querySelectorAll('.particle').forEach(particle => {
             particle.setAttribute('aria-hidden', 'true');
             particle.setAttribute('role', 'presentation');
+        });
+    }
+
+    function addTableCaptions() {
+        // Find all tables without captions
+        document.querySelectorAll('table').forEach(table => {
+            // Skip if table already has a caption
+            if (table.querySelector('caption')) return;
+
+            // Try to infer caption from context
+            let caption = inferTableCaption(table);
+
+            if (caption) {
+                const captionElement = document.createElement('caption');
+                captionElement.textContent = caption;
+                captionElement.className = 'sr-only'; // Visually hidden but screen-reader accessible
+                table.insertBefore(captionElement, table.firstChild);
+            }
+        });
+    }
+
+    function inferTableCaption(table) {
+        // Strategy 1: Look for heading immediately before table
+        let previousElement = table.previousElementSibling;
+        while (previousElement && previousElement.textContent.trim() === '') {
+            previousElement = previousElement.previousElementSibling;
+        }
+
+        if (previousElement && /^H[2-6]$/.test(previousElement.tagName)) {
+            return previousElement.textContent.trim();
+        }
+
+        // Strategy 2: Check first header cell
+        const firstTh = table.querySelector('th');
+        if (firstTh) {
+            const headerText = firstTh.textContent.trim();
+            if (headerText.length > 0 && headerText.length < 100) {
+                return `Table: ${headerText} and related data`;
+            }
+        }
+
+        // Strategy 3: Look at parent section heading
+        const parentSection = table.closest('section, article, div');
+        if (parentSection) {
+            const sectionHeading = parentSection.querySelector('h1, h2, h3, h4');
+            if (sectionHeading) {
+                return `Table from ${sectionHeading.textContent.trim()}`;
+            }
+        }
+
+        // Strategy 4: Generic caption based on page title
+        const pageTitle = document.querySelector('h1');
+        if (pageTitle) {
+            return `Data table from ${pageTitle.textContent.trim()}`;
+        }
+
+        // Fallback
+        return 'Data table';
+    }
+
+    function checkHeadingHierarchy() {
+        // Warn in console if heading hierarchy is incorrect (skip h1 check for iframes)
+        const headings = document.querySelectorAll('h2, h3, h4, h5, h6');
+        let previousLevel = 1; // Assume h1 exists
+
+        headings.forEach((heading, index) => {
+            const currentLevel = parseInt(heading.tagName.charAt(1));
+
+            // Check if we skipped a level
+            if (currentLevel > previousLevel + 1) {
+                console.warn(
+                    `Accessibility Warning: Heading hierarchy skip detected. ` +
+                    `Found <${heading.tagName}> after <h${previousLevel}>. ` +
+                    `Text: "${heading.textContent.trim().substring(0, 50)}..."`
+                );
+            }
+
+            previousLevel = currentLevel;
+        });
+    }
+
+    function enhanceFormAccessibility() {
+        // Add ARIA attributes to form elements
+        document.querySelectorAll('select, input[type="text"], input[type="number"], textarea').forEach(element => {
+            const id = element.id;
+            if (!id) return;
+
+            // Find associated label
+            const label = document.querySelector(`label[for="${id}"]`);
+            if (label && !element.hasAttribute('aria-label')) {
+                element.setAttribute('aria-label', label.textContent.trim());
+            }
+
+            // Add aria-required for required fields
+            if (element.hasAttribute('required') && !element.hasAttribute('aria-required')) {
+                element.setAttribute('aria-required', 'true');
+            }
+
+            // Add aria-invalid for validation
+            if (!element.hasAttribute('aria-invalid')) {
+                element.setAttribute('aria-invalid', 'false');
+            }
+        });
+
+        // Enhance buttons with better labels
+        document.querySelectorAll('button').forEach(button => {
+            if (!button.hasAttribute('aria-label')) {
+                const text = button.textContent.trim();
+                // Remove emoji and clean up
+                const cleanText = text.replace(/[⚔✦⚙🎲📜]/g, '').trim();
+                if (cleanText) {
+                    button.setAttribute('aria-label', cleanText);
+                }
+            }
+
+            // Ensure button type is set
+            if (!button.hasAttribute('type')) {
+                button.setAttribute('type', 'button');
+            }
+        });
+    }
+
+    function addLiveRegions() {
+        // Mark result boxes as live regions for dynamic content announcements
+        document.querySelectorAll('.result-box, #loot-result, #event-result, #npc-result, #encounter-result, #settlement-result, #env-result').forEach(resultBox => {
+            if (!resultBox.hasAttribute('aria-live')) {
+                resultBox.setAttribute('aria-live', 'polite');
+                resultBox.setAttribute('aria-atomic', 'true');
+            }
+        });
+
+        // Mark dropdowns and collapsible sections
+        document.querySelectorAll('.dropdown-content, .collapsible-content').forEach(content => {
+            if (!content.hasAttribute('aria-live')) {
+                content.setAttribute('aria-live', 'polite');
+            }
         });
     }
 })();

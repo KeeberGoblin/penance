@@ -30,6 +30,10 @@ html {
     --shadow-black: #0a0604;
     --crimson-text: #8b0000;
 
+    /* Accessible color variants for WCAG AA compliance */
+    --accessible-gold: #c9a66b; /* Lighter gold with 4.5:1+ contrast on dark backgrounds */
+    --accessible-white: #e8dcc8; /* Slightly brighter bone-white for better contrast */
+
     /* Textures */
     --leather-texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="400" height="400" filter="url(%23noise)" opacity="0.15"/></svg>');
 }
@@ -1238,24 +1242,24 @@ select:focus-visible,
 textarea:focus-visible,
 [role="button"]:focus-visible,
 [tabindex]:focus-visible {
-    outline: 2px solid var(--aged-gold);
+    outline: 2px solid var(--accessible-gold);
     outline-offset: 2px;
     border-radius: 2px;
 }
 
 /* Enhanced focus for navigation links */
 .nav-link:focus-visible {
-    outline: 2px solid var(--aged-gold);
+    outline: 2px solid var(--accessible-gold);
     outline-offset: -2px;
-    background: rgba(212, 175, 55, 0.15);
+    background: rgba(201, 166, 107, 0.2);
 }
 
 /* Focus for faction cards and interactive elements */
 .faction-card:focus-visible,
 .card:focus-visible {
-    outline: 3px solid var(--aged-gold);
+    outline: 3px solid var(--accessible-gold);
     outline-offset: 3px;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 20px rgba(201, 166, 107, 0.6);
 }
 
 /* Skip to content link for keyboard users */
@@ -1264,20 +1268,27 @@ textarea:focus-visible,
     top: -40px;
     left: 0;
     background: var(--dark-red);
-    color: var(--bone-white);
+    color: var(--accessible-white);
     padding: 8px;
     text-decoration: none;
     z-index: 10000;
-    border: 2px solid var(--aged-gold);
+    border: 2px solid var(--accessible-gold);
 }
 
 .skip-link:focus {
     top: 0;
 }
 
-/* Improved contrast for aged-gold text on dark backgrounds */
-.improved-contrast {
-    color: #c9a66b; /* Lighter gold for better WCAG AA compliance */
+/* Improved contrast utilities */
+.improved-contrast,
+.accessible-text {
+    color: var(--accessible-gold); /* Lighter gold for better WCAG AA compliance */
+}
+
+/* For critical text that must be readable */
+.critical-text {
+    color: var(--accessible-white);
+    font-weight: 600;
 }
 
 /* Ensure buttons meet minimum touch target size (44x44px) */
