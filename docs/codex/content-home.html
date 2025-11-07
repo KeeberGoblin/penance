@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codex Home - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
-        /* Smooth scrolling with reduced-motion respect */
+        /* Page-specific styles only */
         html { scroll-behavior: smooth; }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
         }
 
-        /* Anchor offset so headings aren't tight to top */
         h2, h3 { scroll-margin-top: 24px; }
 
+        /* Recent updates specific styling */
         .recent-updates-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -43,86 +44,7 @@
             line-height: 1.6;
         }
 
-        .dropdown-container {
-            margin: 2rem 0;
-        }
-
-        .dropdown-toggle {
-            background: var(--shadow-black);
-            border: 2px solid var(--dark-red);
-            color: var(--aged-gold);
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            font-family: 'Cinzel', serif;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-            transition: all 0.3s ease;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-
-        .dropdown-toggle:hover {
-            background: var(--dark-red);
-            color: var(--aged-gold);
-        }
-
-        .dropdown-toggle::after {
-            content: '▼';
-            float: right;
-            transition: transform 0.3s ease;
-        }
-
-        .dropdown-toggle.active::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown-content {
-            display: none;
-            background: rgba(10, 6, 4, 0.5);
-            border: 1px solid var(--dark-red);
-            border-top: none;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .dropdown-content.active {
-            display: block;
-        }
-
-        .update-item {
-            padding: 1rem 1.5rem;
-            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
-            line-height: 1.6;
-        }
-
-        .update-item:last-child {
-            border-bottom: none;
-        }
-
-        .update-item strong {
-            color: var(--aged-gold);
-        }
-
-        .update-item-date {
-            display: inline-block;
-            color: var(--aged-gold);
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-right: 0.5rem;
-            min-width: 100px;
-        }
-
-        /* Table of Contents */
-        .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0 2rem 0;
-        }
-
+        /* TOC column specific overrides */
         .toc-column {
             background: rgba(10, 6, 4, 0.4);
             border: 1px solid rgba(139, 0, 0, 0.25);
@@ -168,23 +90,7 @@
             .toc-column.collapsible.open ul { display: block; }
         }
 
-        /* Mini TOC (sticky, large screens) */
         .mini-toc { display: none !important; }
-        .mini-toc h3 {
-            font-family: 'Cinzel Decorative', serif;
-            color: var(--aged-gold);
-            font-size: 1rem;
-            margin: 0 0 0.5rem 0;
-            border-bottom: 2px solid var(--dark-red);
-            padding-bottom: 0.35rem;
-        }
-        .mini-toc ul { margin: 0; padding-left: 1rem; }
-        .mini-toc li { margin: 0.25rem 0; }
-        .mini-toc a { color: var(--parchment); text-decoration: none; }
-        .mini-toc a:hover { color: var(--aged-gold); }
-        .mini-toc a.active { color: var(--aged-gold); font-weight: 700; }
-        /* No mini-TOC on desktop; global back-to-top control lives in parent frame */
-
         .back-to-top {
             font-size: 0.85rem;
             margin-left: 0.5rem;
@@ -193,10 +99,10 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="index.html" target="_parent">CODEX</a> / INDEX
-        </div>
+        </nav>
 
         <h1>The Manuscript of Penance</h1>
 
@@ -735,7 +641,7 @@
                     <div class="update-card">
                         <div class="date">${item.dateStr}</div>
                         <p><strong>${safeTitle}</strong><br>${safeDesc}</p>
-                    </div>
+                    </main>
                 `;
             }).join('');
 

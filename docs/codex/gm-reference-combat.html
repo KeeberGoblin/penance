@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GM Reference - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="campaign-tools.css">
     <style>
+        /* Page-specific: GM reference overrides */
         .gm-section {
             background: linear-gradient(135deg, rgba(75, 14, 14, 0.4), rgba(139, 0, 0, 0.3));
             border: 3px solid var(--dark-red);
             border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
         }
 
         .gm-section h3 {
-            color: var(--aged-gold);
-            margin-top: 0;
             border-bottom: 2px solid var(--dark-red);
-            padding-bottom: 0.5rem;
         }
 
         .stat-block {
@@ -86,12 +83,12 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#rules">RULES</a> /
             GM Reference
-        </div>
+        </nav>
 
         <h1>GM COMBAT REFERENCE</h1>
 
@@ -412,7 +409,7 @@
         <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
             <p><a href="content-home.html" target="_parent">Return to Codex Home</a></p>
         </div>
-    </div>
+    </main>
     <script src="codex-common.js"></script>
 </body>
 </html>
