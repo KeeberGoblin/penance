@@ -99,10 +99,10 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="index.html" target="_parent">CODEX</a> / INDEX
-        </div>
+        </nav>
 
         <h1>The Manuscript of Penance</h1>
 
@@ -641,7 +641,7 @@
                     <div class="update-card">
                         <div class="date">${item.dateStr}</div>
                         <p><strong>${safeTitle}</strong><br>${safeDesc}</p>
-                    </div>
+                    </main>
                 `;
             }).join('');
 

@@ -391,12 +391,12 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#lore">LORE</a> /
             Factions Overview
-        </div>
+        </nav>
 
         <h1>The Factions: Humanity's Fractured Survival</h1>
 
@@ -875,7 +875,7 @@
                         <strong>Playstyle:</strong> ${faction.playstyle}<br>
                         <strong>Mechanic:</strong> ${faction.mechanic}<br>
                         <strong>Population:</strong> ${faction.population}
-                    </div>
+                    </main>
                 `;
 
                 grid.appendChild(card);
