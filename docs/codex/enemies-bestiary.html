@@ -5,51 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core Bestiary - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
-        .enemy-featured-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .enemy-card {
-            background: rgba(75, 14, 14, 0.15);
-            border-left: 4px solid var(--dark-red);
-            padding: 1.5rem;
-            border-radius: 2px;
-        }
-
-        .enemy-card .enemy-type-label {
-            color: var(--aged-gold);
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-        }
-
-        .enemy-card h4 {
-            margin: 0.5rem 0 0.25rem 0;
-            font-size: 1.1rem;
-            color: var(--dark-red);
-        }
-
+        /* Page-specific: 4-column stats grid override */
         .stats-row {
-            display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0.5rem;
-            margin: 1rem 0;
-            font-size: 0.85rem;
         }
 
-        .stat-mini {
-            background: rgba(139, 0, 0, 0.2);
-            padding: 0.4rem;
-            text-align: center;
-            border-radius: 2px;
-        }
-
+        /* Page-specific: Stat mini variants */
         .stat-mini-label {
             color: var(--aged-gold);
             font-weight: 700;
@@ -62,52 +25,14 @@
             font-size: 0.95rem;
         }
 
+        /* Page-specific: Enemy card paragraph spacing */
         .enemy-card p {
             margin: 0.25rem 0;
             line-height: 1.5;
             font-size: 0.9rem;
         }
 
-        .dropdown-container {
-            margin: 2rem 0;
-        }
-
-        .dropdown-toggle {
-            background: var(--shadow-black);
-            border: 2px solid var(--dark-red);
-            color: var(--aged-gold);
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            font-family: 'Cinzel', serif;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-            transition: all 0.3s ease;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-
-        .dropdown-toggle:hover {
-            background: var(--dark-red);
-        }
-
-        .dropdown-toggle.active {
-            background: var(--dark-red);
-        }
-
-        .dropdown-content {
-            display: none;
-            background: rgba(10, 6, 4, 0.5);
-            border: 1px solid var(--dark-red);
-            border-top: none;
-            max-height: 700px;
-            overflow-y: auto;
-        }
-
-        .dropdown-content.active {
-            display: block;
-        }
-
+        /* Page-specific: Enemy item layouts in dropdowns */
         .enemy-item {
             padding: 1.2rem 1.5rem;
             border-bottom: 1px solid rgba(139, 0, 0, 0.2);
@@ -140,6 +65,7 @@
             line-height: 1.5;
         }
 
+        /* Page-specific: Section header styling */
         .section-header {
             background: linear-gradient(90deg, #8b0000 0%, #4a0000 50%, #8b0000 100%);
             color: var(--aged-gold);
@@ -150,6 +76,7 @@
             font-weight: bold;
         }
 
+        /* Page-specific: Category introduction text */
         .category-intro {
             font-size: 0.95rem;
             line-height: 1.6;

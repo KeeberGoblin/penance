@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Generation Tables - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
+        /* Page-specific: Generation table styling */
         .generation-table {
             width: 100%;
             margin: 1.5rem 0;
@@ -67,14 +69,7 @@
             color: #ff4444; 
         }
 
-        .faction-card {
-            background: rgba(75, 14, 14, 0.15);
-            border-left: 4px solid var(--dark-red);
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 2px;
-        }
-
+        /* Page-specific: Faction card heading overrides */
         .faction-card h4 {
             color: var(--aged-gold);
             font-size: 1.1rem;
@@ -134,6 +129,7 @@
             margin: 2rem 0;
         }
 
+        /* Page-specific: Difficulty card styling (variant of .card) */
         .difficulty-card {
             background: rgba(75, 14, 14, 0.2);
             border: 2px solid var(--dark-red);
@@ -219,6 +215,7 @@
             margin: 2rem 0;
         }
 
+        /* Page-specific: Modifier card styling (variant of .card) */
         .modifier-card {
             background: rgba(75, 14, 14, 0.15);
             border: 1px solid var(--dark-red);
