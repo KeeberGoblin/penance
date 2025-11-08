@@ -209,7 +209,8 @@ class Casket:
     credit_attack_count: int = 0  # V5.17: Track attacks for credit generation (1 per 2 attacks)
     rune_counters: int = 0       # Dwarves rune counters (max 3)
     discards_this_turn: int = 0  # Church self-harm tracking
-    taint_tokens: int = 0        # V5.18: Ossuarium taint from lifesteal (max 10)
+    taint_tokens: int = 0        # V5.18: Ossuarium taint from salvaging (max 10)
+    soul_shards: int = 0         # V6.0: Ossuarium Soul Shards from kills (no cap)
 
     def __post_init__(self):
         """Initialize SP based on casket class"""
@@ -301,6 +302,32 @@ class Casket:
                 self.damage_pile.append(card)
 
         return final_damage
+
+    def get_taint_damage_penalty(self) -> int:
+        """
+        V6.0: Calculate damage penalty from Taint corruption
+        Returns damage reduction amount based on current taint_tokens
+        """
+        if self.taint_tokens >= 9:
+            return 4  # Catastrophic corruption
+        elif self.taint_tokens >= 7:
+            return 3  # Critical corruption
+        elif self.taint_tokens >= 5:
+            return 2  # Major corruption
+        elif self.taint_tokens >= 3:
+            return 1  # Minor corruption
+        else:
+            return 0  # No penalty (0-2 Taint)
+
+    def get_taint_sp_penalty(self) -> int:
+        """
+        V6.0: Calculate SP cost increase from extreme Taint corruption
+        Returns SP cost increase at catastrophic Taint levels
+        """
+        if self.taint_tokens >= 9:
+            return 1  # All card costs +1 SP
+        else:
+            return 0
 
 # ============================================================================
 # SUPPORT UNIT (SIMPLIFIED FOR SIMULATION)
@@ -841,36 +868,31 @@ class DiceCombatSimulator:
                     attacker.damage_pile.append(card)  # Bleed destroys cards permanently
             self.log(f"{attacker.name} takes {bleed_damage} bleed damage ({attacker.bleed_stacks} stacks)")
 
-        # V5.25: Apply Taint penalties at turn start (Ossuarium mechanic)
-        # REVERTED to v5.23 levels (v5.24 was too harsh and made balance worse)
+        # V6.0: Apply Taint penalties at turn start (Soul Shard system - BRUTAL penalties)
+        # Taint now ONLY gained from spending Soul Shards on salvage actions
+        # No longer destroys cards - instead reduces attack damage and increases heat
         if attacker.taint_tokens > 0:
             heat_penalty = 0
-            damage_penalty = 0
 
-            if attacker.taint_tokens >= 8:
+            # Brutal Taint penalties (permanent corruption from necro-tech)
+            if attacker.taint_tokens >= 9:
                 heat_penalty = 2
-                damage_penalty = 2  # V5.25: Back to v5.23 levels (was 4 in v5.24)
+                # Damage penalty applied during attack (see line ~1048)
+                # SP cost penalty handled during card play
+                self.log(f"{attacker.name} suffers CATASTROPHIC Taint corruption: +{heat_penalty} Heat, -4 damage, +1 SP costs ({attacker.taint_tokens}/10 Taint)")
+            elif attacker.taint_tokens >= 7:
+                heat_penalty = 2
+                self.log(f"{attacker.name} suffers CRITICAL Taint corruption: +{heat_penalty} Heat, -3 damage ({attacker.taint_tokens}/10 Taint)")
             elif attacker.taint_tokens >= 5:
                 heat_penalty = 2
-                damage_penalty = 1  # V5.25: Back to v5.23 levels (was 3 in v5.24)
+                self.log(f"{attacker.name} suffers MAJOR Taint corruption: +{heat_penalty} Heat, -2 damage ({attacker.taint_tokens}/10 Taint)")
             elif attacker.taint_tokens >= 3:
                 heat_penalty = 1
-                damage_penalty = 1  # V5.25: Back to v5.23 levels (was 2 in v5.24)
-            else:  # 1-2 Taint
-                heat_penalty = 1  # V5.25: Back to v5.23 levels
-                damage_penalty = 0  # V5.25: No damage at low Taint (was 1 in v5.24)
+                self.log(f"{attacker.name} suffers MINOR Taint corruption: +{heat_penalty} Heat, -1 damage ({attacker.taint_tokens}/10 Taint)")
+            # 0-2 Taint: No penalty
 
             if heat_penalty > 0:
                 attacker.heat += heat_penalty
-                self.log(f"{attacker.name} suffers Taint corruption: +{heat_penalty} Heat ({attacker.taint_tokens}/10 Taint)")
-
-            if damage_penalty > 0 and attacker.deck:
-                # V5.21: Taint damage destroys cards permanently
-                for _ in range(damage_penalty):
-                    if attacker.deck:
-                        card = attacker.deck.popleft()
-                        attacker.damage_pile.append(card)  # Taint destroys cards permanently
-                self.log(f"{attacker.name} takes {damage_penalty} corruption damage from Taint!")
 
         # Clear weapon jam status (lasts 1 turn)
         if attacker.weapon_jammed:
@@ -879,6 +901,10 @@ class DiceCombatSimulator:
 
         # Draw cards
         attacker.draw_cards(3)
+
+        # V6.0: Ossuarium - Try to use Salvage Protocol if HP is low
+        if attacker.faction.lower() == 'ossuarium':
+            self.try_salvage_protocol(attacker)
 
         # Movement logic (simplified - move if needed to attack)
         if attacker.range > 0:
@@ -909,8 +935,11 @@ class DiceCombatSimulator:
                 # Calculate to-hit target
                 target_number = self.calculate_to_hit_target(attacker, defender)
 
-                # Pay SP cost
-                attacker.sp -= attack_card.cost
+                # Pay SP cost (V6.0: Apply Taint SP penalty for Ossuarium)
+                sp_cost = attack_card.cost
+                if attacker.faction.lower() == 'ossuarium':
+                    sp_cost += attacker.get_taint_sp_penalty()
+                attacker.sp -= sp_cost
 
                 # Apply card effects BEFORE rolling dice
                 effect_lower = attack_card.effect.lower()
@@ -1046,6 +1075,13 @@ class DiceCombatSimulator:
                         total_damage = max(1, total_damage - 2)
                         self.log(f"  [JAMMED] Damage reduced by 2")
 
+                    # V6.0: Apply Taint damage penalty (Ossuarium only)
+                    if attacker.faction.lower() == 'ossuarium':
+                        taint_penalty = attacker.get_taint_damage_penalty()
+                        if taint_penalty > 0:
+                            total_damage = max(1, total_damage - taint_penalty)
+                            self.log(f"  [TAINT] Damage reduced by {taint_penalty} (corruption)")
+
                     # Roll defense dice
                     is_critical = (attack_result == AttackResult.CRITICAL_HIT)
                     defense_results = self.roll_defense(total_damage, is_critical)
@@ -1059,18 +1095,12 @@ class DiceCombatSimulator:
                         attacker.heat += 1
                         self.log(f"  → Unstable Mutations: +1 Heat (Strain: {attacker.mutation_strain}/29)")
 
-                    # V5.23: REMOVED LIFESTEAL - Ossuarium now only gains Taint from dealing damage
-                    # Taint accumulates and causes penalties, but NO card recovery
-                    if attacker.faction.lower() == 'ossuarium' and actual_damage > 0:
-                        # V5.23: Gain Taint from dealing damage (necromantic corruption)
-                        # Gain 1 Taint per 3 damage dealt (scales with aggression)
-                        taint_gain = (actual_damage + 2) // 3
-                        if taint_gain > 0:
-                            old_taint = attacker.taint_tokens
-                            attacker.taint_tokens = min(attacker.taint_tokens + taint_gain, 10)
-                            actual_taint_gain = attacker.taint_tokens - old_taint
-                            if actual_taint_gain > 0:
-                                self.log(f"  → Necromantic Corruption: Gained {actual_taint_gain} Taint from dealing {actual_damage} damage ({attacker.taint_tokens}/10 Taint)")
+                    # V6.0: Ossuarium - Gain Soul Shards on kill (Soul Shard system)
+                    # Taint is now ONLY gained from spending Shards (salvage actions)
+                    if not defender.is_alive and attacker.faction.lower() == 'ossuarium':
+                        shards_gain = 3  # Base reward for kill
+                        attacker.soul_shards += shards_gain
+                        self.log(f"  → {attacker.name} salvaged {shards_gain} Soul Shards from kill ({attacker.soul_shards} total)")
 
                     # Bloodlines: Gain Biomass on kill (Vestige Heritage mechanic)
                     # V5.17: Nerfed from 2 → 1 per kill (was too strong at 82% WR)
@@ -1128,6 +1158,68 @@ class DiceCombatSimulator:
             return None
 
         return max(valid_attacks, key=lambda c: c.damage)
+
+    def try_salvage_protocol(self, casket: Casket) -> bool:
+        """
+        V6.0: Try to play Salvage Protocol or Emergency Rebuild cards (Ossuarium only)
+        Returns True if a salvage card was played
+        """
+        if casket.faction.lower() != 'ossuarium':
+            return False
+
+        # Look for salvage cards in hand
+        salvage_cards = []
+        for c in casket.hand:
+            if hasattr(c, 'name') and hasattr(c, 'effect'):
+                effect_lower = c.effect.lower()
+                # Detect salvage cards by effect text
+                if 'spend' in effect_lower and 'soul shard' in effect_lower and 'recover' in effect_lower:
+                    salvage_cards.append(c)
+
+        if not salvage_cards:
+            return False
+
+        # Decision logic: Use salvage if HP is low (< 50%) and we have enough Shards
+        hp_threshold = 15  # Use salvage if HP < 15 cards
+        if casket.hp >= hp_threshold:
+            return False  # HP is fine, don't salvage yet
+
+        # Find best salvage card we can afford (SP and Soul Shards)
+        for salvage_card in salvage_cards:
+            # Parse effect to get shard cost and card recovery
+            import re
+            effect_lower = salvage_card.effect.lower()
+
+            shard_match = re.search(r'spend (\d+) soul shard', effect_lower)
+            recover_match = re.search(r'recover (\d+) card', effect_lower)
+            taint_match = re.search(r'gain (\d+) taint', effect_lower)
+
+            if not (shard_match and recover_match and taint_match):
+                continue
+
+            shard_cost = int(shard_match.group(1))
+            cards_to_recover = int(recover_match.group(1))
+            taint_gain = int(taint_match.group(1))
+
+            # Check if we can afford it
+            sp_cost = salvage_card.cost
+            if casket.faction.lower() == 'ossuarium':
+                sp_cost += casket.get_taint_sp_penalty()
+
+            if casket.sp >= sp_cost and casket.soul_shards >= shard_cost:
+                # Play the salvage card
+                casket.sp -= sp_cost
+                casket.soul_shards -= shard_cost
+                cards_recovered = casket.recover_cards(cards_to_recover, source="salvage")
+                casket.taint_tokens = min(casket.taint_tokens + taint_gain, 10)
+                casket.hand.remove(salvage_card)
+                casket.discard.append(salvage_card)
+
+                self.log(f"{casket.name} plays {salvage_card.name}: Spent {shard_cost} Shards, recovered {cards_recovered} cards, gained {taint_gain} Taint ({casket.taint_tokens}/10)")
+                self.log(f"  → Soul Shards: {casket.soul_shards}, HP: {casket.hp} cards")
+                return True
+
+        return False
 
 # ============================================================================
 # MULTI-UNIT COMBAT SIMULATOR
@@ -1221,8 +1313,11 @@ class MultiUnitCombatSimulator:
 
         attack_card = max(valid_attacks, key=lambda c: c.damage)
 
-        # Pay SP cost
-        attacker.sp -= attack_card.cost
+        # Pay SP cost (V6.0: Apply Taint SP penalty for Ossuarium)
+        sp_cost = attack_card.cost
+        if attacker.faction.lower() == 'ossuarium':
+            sp_cost += attacker.get_taint_sp_penalty()
+        attacker.sp -= sp_cost
 
         # Apply "on attack" effects (Bleed, Forge, Heat generation)
         effect_lower = attack_card.effect.lower() if hasattr(attack_card, 'effect') else ""
