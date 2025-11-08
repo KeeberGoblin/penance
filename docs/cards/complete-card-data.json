@@ -871,158 +871,14 @@
       "name": "Soul Harvest",
       "type": "Attack",
       "cost": 3,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 4 damage. Recover cards equal to damage dealt from your discard pile (max 3 cards).",
-      "damage": "4",
+      "damage": 3,
+      "range": "Melee",
+      "effect": "Deal 3 damage. If this destroys an enemy, gain 3 Soul Shards.",
       "keywords": [
         "attack",
-        "lifesteal",
-        "vampiric",
-        "melee"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "corpse-fuel",
-      "name": "Corpse Fuel",
-      "type": "Utility",
-      "cost": 2,
-      "range": "3 hexes",
-      "effect": "When an enemy Casket is destroyed within 3 hexes, immediately recover 3 cards from your discard pile and shuffle into deck.",
-      "keywords": [
-        "utility",
-        "death-trigger",
-        "healing",
-        "corpse-exploitation"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "phylactery",
-      "name": "Phylactery",
-      "type": "passive",
-      "cost": 0,
-      "range": "N/A",
-      "effect": "The first time each mission you would be reduced to 0 HP, instead set HP to 3 (recover 3 cards from discard pile). This is automatic and costs nothing.",
-      "keywords": [
-        "passive",
-        "resurrection",
-        "survival"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "bone-scythe-reap",
-      "name": "Bone Scythe Reap",
-      "type": "Attack",
-      "cost": 4,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. Recover 1 card from discard pile per enemy damaged (max 3 cards).",
-      "damage": "3 + 2 AoE",
-      "keywords": [
-        "attack",
-        "aoe",
-        "lifesteal",
-        "melee"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "deathless-advance",
-      "name": "Deathless Advance",
-      "type": "movement",
-      "cost": 2,
-      "range": "Self",
-      "effect": "Move up to 3 hexes. Until end of your turn, you cannot take more than 5 damage from any single attack (damage cap).",
-      "keywords": [
-        "movement",
-        "defense",
-        "resilience"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "necrotic-surge",
-      "name": "Necrotic Surge",
-      "type": "passive",
-      "cost": 0,
-      "range": "N/A",
-      "effect": "Whenever you recover 3+ cards from discard pile (via any effect), recover +1 additional card. Amplifies large heals only.",
-      "keywords": [
-        "passive",
-        "synergy",
-        "healing"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "grave-pact",
-      "name": "Grave Pact",
-      "type": "Utility",
-      "cost": 3,
-      "range": "Self",
-      "effect": "Discard 3 cards. For each card discarded this way, deal 2 damage to target enemy within 6 hexes (total 6 damage). Recover 2 cards at end of your next turn.",
-      "damage": "6",
-      "keywords": [
-        "utility",
-        "sacrifice",
-        "delayed-heal",
-        "ranged"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "death-mark",
-      "name": "Death Mark",
-      "type": "debuff",
-      "cost": 2,
-      "range": "8 hexes",
-      "effect": "Mark target enemy. While marked, whenever you damage that enemy, recover 1 additional card. Lasts until enemy dies or until you mark a different target.",
-      "keywords": [
-        "debuff",
-        "mark",
-        "lifesteal",
-        "ranged"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "reanimate",
-      "name": "Reanimate",
-      "type": "summon",
-      "cost": 4,
-      "range": "3 hexes",
-      "effect": "Place a Skeletal Minion token within 3 hexes. It has 3 HP, 3 Movement, deals 2 damage melee. Minion acts immediately after your turn. Lasts until destroyed.",
-      "keywords": [
-        "summon",
-        "minion",
-        "skeleton",
-        "necromancy"
-      ],
-      "cardCount": 1,
-      "cardType": "faction"
-    },
-    {
-      "id": "siphon-essence",
-      "name": "Siphon Essence",
-      "type": "Attack",
-      "cost": 2,
-      "range": "4 hexes",
-      "effect": "Deal 2 damage. Recover cards equal to half the damage dealt (rounded up). Can target at range unlike most lifesteal.",
-      "damage": "2",
-      "keywords": [
-        "attack",
-        "lifesteal",
-        "ranged",
-        "drain"
+        "shard-generation",
+        "execution",
+        "ossuarium"
       ],
       "cardCount": 1,
       "cardType": "faction"
@@ -1032,178 +888,344 @@
       "name": "Bone Scythe Swing",
       "type": "Attack",
       "cost": 3,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 4 damage. Recover 1 card from discard pile (lifesteal). Basic Ossuarium attack.",
-      "damage": "4",
+      "damage": 3,
+      "range": "Melee",
+      "effect": "Deal 3 damage. Basic Ossuarium attack.",
       "keywords": [
         "attack",
-        "lifesteal",
         "melee",
         "ossuarium"
       ],
-      "cardCount": 3,
-      "cardType": "primary"
+      "cardCount": 2,
+      "cardType": "faction"
     },
     {
       "id": "death-grasp",
       "name": "Death Grasp",
       "type": "Attack",
       "cost": 2,
-      "range": "2 hexes",
-      "effect": "Deal 3 damage at extended range. Recover 1 card from discard pile. Ranged drain.",
-      "damage": "3",
+      "damage": 2,
+      "range": "Ranged 2-5",
+      "effect": "Deal 2 damage at range.",
       "keywords": [
         "attack",
-        "lifesteal",
         "ranged",
-        "reach"
-      ],
-      "cardCount": 3,
-      "cardType": "primary"
-    },
-    {
-      "id": "soul-rend",
-      "name": "Soul Rend",
-      "type": "Attack",
-      "cost": 4,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 5 damage. Recover cards equal to damage dealt (max 3). Powerful lifesteal.",
-      "damage": "5",
-      "keywords": [
-        "attack",
-        "lifesteal",
-        "vampiric",
-        "melee"
+        "ossuarium"
       ],
       "cardCount": 2,
-      "cardType": "primary"
+      "cardType": "faction"
     },
     {
-      "id": "corpse-explosion",
-      "name": "Corpse Explosion",
+      "id": "siphon-essence",
+      "name": "Siphon Essence",
       "type": "Attack",
-      "cost": 3,
-      "range": "4 hexes",
-      "effect": "Deal 3 damage to target and all adjacent enemies (AoE). Recover 1 card per enemy damaged (max 3).",
-      "damage": "3 AoE",
+      "cost": 2,
+      "damage": 2,
+      "range": "Ranged 2-4",
+      "effect": "Deal 2 damage. If this destroys an enemy, gain 2 Soul Shards.",
       "keywords": [
         "attack",
-        "aoe",
-        "lifesteal",
-        "corpse"
-      ],
-      "cardCount": 2,
-      "cardType": "primary"
-    },
-    {
-      "id": "drain-life",
-      "name": "Drain Life",
-      "type": "Attack",
-      "cost": 5,
-      "range": "3 hexes",
-      "effect": "Deal 6 damage at range. Recover 4 cards from discard pile (67% lifesteal). Massive drain.",
-      "damage": "6",
-      "keywords": [
-        "attack",
-        "lifesteal",
-        "vampiric",
-        "ranged"
+        "ranged",
+        "shard-generation",
+        "ossuarium"
       ],
       "cardCount": 1,
-      "cardType": "primary"
+      "cardType": "faction"
     },
     {
       "id": "necrotic-touch",
       "name": "Necrotic Touch",
       "type": "Attack",
       "cost": 2,
-      "range": "Melee (Range 1)",
-      "effect": "Deal 2 damage. Recover 1 card. If this kills the target, recover 3 cards total instead.",
-      "damage": "2",
+      "damage": 2,
+      "range": "Melee",
+      "effect": "Deal 2 damage. If this destroys an enemy, gain 4 Soul Shards (execution bonus).",
       "keywords": [
         "attack",
-        "lifesteal",
-        "execute",
-        "melee"
+        "execution",
+        "shard-generation",
+        "ossuarium"
       ],
       "cardCount": 1,
-      "cardType": "primary"
+      "cardType": "faction"
     },
     {
-      "id": "vampiric-rune",
-      "name": "Vampiric Rune",
-      "type": "passive",
-      "cost": 0,
-      "range": "N/A",
-      "effect": "Whenever you deal 5+ damage with a single attack, recover +1 additional card from discard pile. High-damage bonus only.",
+      "id": "soul-rend",
+      "name": "Soul Rend",
+      "type": "Attack",
+      "cost": 4,
+      "damage": 4,
+      "range": "Melee",
+      "effect": "Deal 4 damage. On kill, gain 3 Soul Shards.",
       "keywords": [
-        "passive",
-        "lifesteal-synergy",
-        "ossuarium-exclusive",
-        "conditional"
+        "attack",
+        "powerful",
+        "shard-generation",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "drain-life",
+      "name": "Drain Life",
+      "type": "Attack",
+      "cost": 5,
+      "damage": 5,
+      "range": "Ranged 2-6",
+      "effect": "Deal 5 damage at long range. On kill, gain 4 Soul Shards.",
+      "keywords": [
+        "attack",
+        "ranged",
+        "powerful",
+        "shard-generation",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "bone-scythe-reap",
+      "name": "Bone Scythe Reap",
+      "type": "Attack",
+      "cost": 4,
+      "damage": "3 primary, 2 AoE",
+      "range": "Melee AoE",
+      "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. For each enemy destroyed, gain 2 Soul Shards.",
+      "keywords": [
+        "attack",
+        "aoe",
+        "shard-generation",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "corpse-explosion",
+      "name": "Corpse Explosion",
+      "type": "Attack",
+      "cost": 3,
+      "damage": "3 AoE",
+      "range": "Ranged 2-4 AoE",
+      "effect": "Deal 3 damage to target hex and all adjacent hexes.",
+      "keywords": [
+        "attack",
+        "aoe",
+        "explosive",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "salvage-protocol",
+      "name": "Salvage Protocol",
+      "type": "Utility",
+      "cost": 1,
+      "damage": null,
+      "range": "Self",
+      "effect": "Spend 3 Soul Shards to recover 3 cards from discard pile. Gain 2 Taint.",
+      "keywords": [
+        "utility",
+        "salvage",
+        "taint",
+        "shard-spending",
+        "ossuarium"
       ],
       "cardCount": 2,
-      "cardType": "secondary"
+      "cardType": "faction"
+    },
+    {
+      "id": "emergency-rebuild",
+      "name": "Emergency Rebuild",
+      "type": "Utility",
+      "cost": 2,
+      "damage": null,
+      "range": "Self",
+      "effect": "Spend 5 Soul Shards to recover 5 cards from discard pile. Gain 3 Taint.",
+      "keywords": [
+        "utility",
+        "salvage",
+        "taint",
+        "powerful",
+        "shard-spending",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "corpse-fuel",
+      "name": "Corpse Fuel",
+      "type": "passive",
+      "cost": 0,
+      "damage": null,
+      "range": "Self",
+      "effect": "Passive: Whenever an enemy is destroyed within 3 hexes, gain 2 Soul Shards.",
+      "keywords": [
+        "passive",
+        "shard-generation",
+        "proximity",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "death-mark",
+      "name": "Death Mark",
+      "type": "debuff",
+      "cost": 2,
+      "damage": null,
+      "range": "Ranged 1-6",
+      "effect": "Mark target enemy. When the marked enemy is destroyed, gain +2 bonus Soul Shards (5 total instead of 3). Lasts until enemy dies or you mark a different target.",
+      "keywords": [
+        "debuff",
+        "mark",
+        "shard-generation",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "grave-pact",
+      "name": "Grave Pact",
+      "type": "Utility",
+      "cost": 3,
+      "damage": 6,
+      "range": "Ranged 1-6",
+      "effect": "Discard 3 cards. Deal 6 damage (2 damage per card discarded). If this destroys an enemy, gain 4 Soul Shards.",
+      "keywords": [
+        "utility",
+        "sacrifice",
+        "high-damage",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "scavenge-wreckage",
+      "name": "Scavenge Wreckage",
+      "type": "Utility",
+      "cost": 1,
+      "damage": null,
+      "range": "Ranged 1-4",
+      "effect": "Target a destroyed enemy wreck within 4 hexes. Gain 3 Soul Shards. That wreck is removed from play (cannot be scavenged again).",
+      "keywords": [
+        "utility",
+        "shard-generation",
+        "scavenge",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "reanimate",
+      "name": "Reanimate",
+      "type": "summon",
+      "cost": 4,
+      "damage": null,
+      "range": "Ranged 1-3",
+      "effect": "Spend 3 Soul Shards. Summon a Skeletal Minion within 3 hexes (3 HP, 3 Movement, 2 melee damage). Minion acts immediately after your turn.",
+      "keywords": [
+        "summon",
+        "minion",
+        "shard-spending",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "phylactery",
+      "name": "Phylactery",
+      "type": "passive",
+      "cost": 0,
+      "damage": null,
+      "range": "Self",
+      "effect": "Passive: The first time you would be reduced to 0 HP, if you have 5+ Soul Shards, automatically spend 5 Shards to recover to 3 HP. Gain 5 Taint. Once per mission only.",
+      "keywords": [
+        "passive",
+        "emergency",
+        "revival",
+        "taint",
+        "shard-spending",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "deathless-advance",
+      "name": "Deathless Advance",
+      "type": "movement",
+      "cost": 2,
+      "damage": null,
+      "range": "Self",
+      "effect": "Move up to 3 hexes. Until end of turn, you cannot take more than 5 damage from any single attack (damage cap).",
+      "keywords": [
+        "movement",
+        "defensive",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "bone-armor",
       "name": "Bone Armor",
       "type": "Reactive",
-      "cost": 1,
+      "cost": 0,
+      "damage": null,
       "range": "Self",
-      "effect": "When attacked, reduce damage by 2. If you blocked 2+ damage this way, recover 1 card.",
+      "effect": "Reactive: When attacked, reduce damage by 2.",
       "keywords": [
         "reactive",
         "defense",
-        "lifesteal"
+        "block",
+        "ossuarium"
       ],
-      "cardCount": 2,
-      "cardType": "secondary"
-    },
-    {
-      "id": "soul-well",
-      "name": "Soul Well",
-      "type": "passive",
-      "cost": 0,
-      "range": "N/A",
-      "effect": "At start of your turn, if you have 5 or fewer cards in hand, recover 1 card from discard pile. Safety net.",
-      "keywords": [
-        "passive",
-        "healing",
-        "recovery"
-      ],
-      "cardCount": 2,
-      "cardType": "secondary"
-    },
-    {
-      "id": "death-shroud",
-      "name": "Death Shroud",
-      "type": "Utility",
-      "cost": 2,
-      "range": "Self",
-      "effect": "Until end of turn, whenever you recover cards from discard pile, recover +1 additional card. Amplifies all lifesteal.",
-      "keywords": [
-        "utility",
-        "lifesteal-synergy",
-        "buff"
-      ],
-      "cardCount": 2,
-      "cardType": "secondary"
+      "cardCount": 1,
+      "cardType": "faction"
     },
     {
       "id": "corpse-shield",
       "name": "Corpse Shield",
       "type": "Reactive",
-      "cost": 1,
+      "cost": 0,
+      "damage": null,
       "range": "Self",
-      "effect": "When an enemy within 3 hexes dies, gain +3 Defense until end of your next turn. Corpse empowerment.",
+      "effect": "Passive: When an enemy within 3 hexes is destroyed, gain +3 Defense until end of your next turn.",
       "keywords": [
         "reactive",
         "defense",
-        "corpse-trigger"
+        "conditional",
+        "ossuarium"
       ],
-      "cardCount": 2,
-      "cardType": "secondary"
+      "cardCount": 1,
+      "cardType": "faction"
+    },
+    {
+      "id": "taint-purge",
+      "name": "Taint Purge",
+      "type": "Utility",
+      "cost": 3,
+      "damage": null,
+      "range": "Self",
+      "effect": "Discard 4 cards. Remove up to 4 Taint. You cannot spend Soul Shards this turn.",
+      "keywords": [
+        "utility",
+        "taint-removal",
+        "sacrifice",
+        "desperate",
+        "ossuarium"
+      ],
+      "cardCount": 1,
+      "cardType": "faction"
     }
   ],
   "elves": [

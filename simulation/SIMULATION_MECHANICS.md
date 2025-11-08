@@ -1,0 +1,264 @@
+# Penance Combat Simulation - Complete Mechanics Documentation
+
+## Overview
+
+The `equipment_simulator_dice.py` engine simulates ALL core game mechanics including:
+- Custom dice system (Attack & Defense)
+- Multi-unit army combat
+- Deck building and card management
+- Faction-specific abilities
+- Equipment system
+- Support units
+- Resource management (SP, Heat, Bleed, etc.)
+
+## Core Dice Mechanics
+
+### Attack Dice (2d6)
+- **Faces:** 1, 2, 3, 4, 5, 0 (JAM)
+- **Base Target:** 5+ to hit (58% chance)
+- **Special Results:**
+  - **Double JAM (0+0 = 0):** Catastrophic Failure - attack fails, weapon jams
+  - **Double 5 (5+5 = 10):** Execution - instant component destruction
+  - **Critical Hit (9):** +2 damage, bypass 1 defense die
+  - **Strong Hit (7-8):** +1 damage
+  - **Hit (5-6):** Normal damage
+  - **Miss (<5):** No damage
+
+### Defense Dice (1d6 per damage)
+- **Faces (6 symbols):**
+  - **SHIELD (⛨):** Block 1 damage
+  - **ABSORB (⚡):** Block 1 damage
+  - **FLESH WOUND (💢):** Take damage (no effect)
+  - **CRITICAL (💀):** Take damage + 1 Component Damage
+  - **PIERCE (🗡):** Take damage, disable reactive cards
+  - **HEAT (🔥):** Take damage + 1 Heat
+- **Block Chance:** 33% (2/6 faces)
+
+## Simulated Mechanics
+
+### 1. Deck Management
+✅ **Card Drawing:** 5-card hand at start of turn
+✅ **Discard Pile:** Used cards go to discard
+✅ **Reshuffling:** When deck empty, reshuffle discard pile
+✅ **Deck-as-HP:** Deck size = HP (cards removed = damage taken)
+✅ **Damage Pile:** Permanent card removal (cannot be recovered normally)
+
+### 2. Combat System
+✅ **Attack Resolution:**
+- Roll 2 attack dice
+- Compare to target number (5+ base, +1 per range band)
+- Apply damage modifiers (Strong Hit, Critical Hit)
+- Roll defense dice (1 per damage)
+- Calculate final damage (blocks reduce damage)
+- Remove cards to damage pile
+
+✅ **SP (Action Points):**
+- Regenerates to max each turn
+- Costs vary: 0-5 SP per card
+- Cards unplayable if insufficient SP
+
+✅ **Range Calculation:**
+- Short (0-3 hexes): 5+ to hit
+- Medium (4-6 hexes): 6+ to hit
+- Long (7+ hexes): 7+ to hit
+
+### 3. Faction-Specific Mechanics
+
+#### ⚔️ Church of Absolution
+✅ Dual-wielding (two weapon decks)
+✅ "Cannot miss" cards (removed in v5.15 - too strong)
+✅ Divine abilities and healing
+
+#### 🔨 Dwarven Forge-Guilds
+✅ **Forge Resource System:**
+- Generate Forge tokens on attacks
+- Spend Forge for bonus damage
+- Heavy damage-dealing focus
+
+#### 🌿 Elven Verdant Covenant
+✅ **Bleed Mechanic:**
+- Apply Bleed stacks on attacks (max 4)
+- 1 damage per Bleed at turn end
+- Decay: -1 Bleed per turn
+- Natural healing and regeneration
+
+#### 💀 The Ossuarium
+✅ **Lifesteal/Soul Harvest:**
+- Recover cards on dealing damage
+- Death Mark effects
+- Necromantic card recovery
+✅ **Highest WR in multi-unit (68.9%)** - potentially overpowered
+
+#### 🌙 Wyrd Conclave
+✅ Fae magic and illusions
+✅ Trickery and manipulation abilities
+✅ Strong in multi-unit (55.6% WR)
+
+#### 🧬 Vestige Bloodlines
+✅ Biological evolution mechanics
+✅ Adaptive abilities
+✅ Strong in multi-unit (62.2% WR)
+
+#### 💰 The Exchange
+✅ **Credit Economy:**
+- Generate Credits on attacks
+- Spend Credits for bonuses
+- Mercenary contract system
+✅ Balanced (51.1% WR)
+
+#### 🔥 Crucible Pacts
+✅ Demonic pact mechanics
+✅ High risk, high reward abilities
+✅ **Underpowered in multi-unit (35.6% WR)**
+
+#### ⚡ Emergent Syndicate
+✅ **Biomass System:**
+- Generate Biomass on attacks
+- Spend for mutations
+- Hive mind abilities
+✅ Balanced (53.3% WR)
+
+#### 🏜️ Nomad Collective
+✅ Scrap-based mechanics
+✅ Improvised equipment
+✅ **Underpowered in multi-unit (35.6% WR)**
+
+### 4. Multi-Unit Combat
+
+✅ **Army Composition:**
+- Point-based army building (2-5 point budget)
+- 4 Casket classes: Scout (2pts), Warden (3pts), Vanguard (4pts), Colossus (5pts)
+- Support units (1pt each)
+- Random army generation
+
+✅ **Focus Fire AI:**
+- Prioritize Caskets over Support units
+- Target highest HP enemy
+- Coordinate all units on single target
+
+✅ **Unit Activation:**
+- All units in army activate per turn
+- Caskets use full combat mechanics
+- Support units deal simplified damage (2 dmg/turn)
+
+✅ **Victory Conditions:**
+- Eliminate all enemy units
+- Timeout after 30 turns (counted as draw)
+
+### 5. Equipment System
+
+✅ **Equipment Types:**
+- Weapons (attack cards)
+- Shields (defense cards)
+- Spell Equipment (magic attacks)
+- Accessories (utility cards)
+
+✅ **Random Equipment Selection:**
+- Universal equipment pool
+- Faction-specific equipment
+- 2 equipment items per Casket (weapon + shield/accessory)
+
+✅ **Card Composition:**
+- 10 Universal Core cards
+- 6 Faction cards (randomly selected from 21 available)
+- Equipment cards (varies by items chosen)
+- Total deck size: 26-50 cards (varies by casket class)
+
+### 6. Status Effects
+
+✅ **Heat:**
+- Generated by powerful attacks
+- Penalties at high Heat levels
+- Can be vented/reduced
+
+✅ **Bleed:**
+- Stacks up to 4
+- 1 damage per stack at turn end
+- Decays by 1 per turn
+
+✅ **Component Damage:**
+- Critical defense results
+- Execution attack results
+- Permanent equipment loss
+
+### 7. Support Units
+
+✅ **Basic Support Mechanics:**
+- 5 HP each
+- 1 point cost
+- Deal 2 damage per turn (simplified)
+- Can be targeted by attacks
+- Prioritized below Caskets
+
+✅ **Army Integration:**
+- Support budget (% of total points)
+- Random number of supports (0-100% of budget)
+- Contribute to total army strength
+
+## Testing Coverage
+
+### Balance Testing
+✅ **10 Factions tested:**
+- All 10 factions implemented
+- 45 unique matchups
+- 5 runs per matchup = 225 total battles
+
+✅ **Difficulty Levels:**
+- EASY: 4 points
+- MEDIUM: 6 points
+- HARD: 8 points
+- VERY_HARD: 10 points
+- BRUTAL: 12 points
+
+### Current Balance (EASY difficulty, Multi-Unit):
+- **Overpowered:** Ossuarium (68.9%), Elves (66.7%), Vestige-bloodlines (62.2%), Wyrd (55.6%)
+- **Balanced:** Emergent (53.3%), Exchange (51.1%), Church (48.9%)
+- **Underpowered:** Nomads (35.6%), Crucible (35.6%), Dwarves (22.2%)
+
+## What's NOT Simulated
+
+❌ **Hex Grid Movement:** Simplified to range bands
+❌ **Line of Sight:** Not implemented
+❌ **Terrain Effects:** Not implemented
+❌ **Support Unit Abilities:** Simplified to 2 damage/turn
+❌ **Pilot Wounds:** Not included
+❌ **Campaign Progression:** Single battle only
+❌ **Component System:** Simplified (only catastrophic failures)
+
+## Running Simulations
+
+### Main Simulation:
+```bash
+cd simulation
+python3 faction_balance_MULTIUNIT.py
+```
+
+### Output Includes:
+- Win rates for all factions
+- Timeout statistics
+- Balance recommendations
+- Comparison to 1v1 combat
+- Overpowered/Underpowered faction identification
+
+## Files
+
+### Active:
+- `equipment_simulator_dice.py` - Core simulation engine (60KB, all mechanics)
+- `faction_balance_MULTIUNIT.py` - Multi-unit army balance testing (6.6KB)
+
+### Archived:
+- `archived_simulations/faction_balance_DICE.py` - 1v1 only testing
+- `archived_simulations/faction_balance_ARMIES.py` - Simplified power metrics
+- `archived_simulations/test_*.py` - Testing/demo scripts
+
+## Version History
+
+- **v5.15:** Removed artificial damage multipliers, testing pure mechanics
+- **v5.26:** Reverted base to-hit from 4 to 5 (corrected 24% power inflation)
+- **Current:** Multi-unit combat with focus fire, full faction mechanics
+
+---
+
+**Last Updated:** November 7, 2025
+**Engine:** equipment_simulator_dice.py
+**Test Suite:** faction_balance_MULTIUNIT.py
