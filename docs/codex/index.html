@@ -431,7 +431,7 @@
 </head>
 <body>
     <!-- Skip to content for keyboard users -->
-    <a href="#content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.left='20px'" onblur="this.style.left='-9999px'">Skip to content</a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <!-- Menu Toggle Button (works for both desktop and mobile) -->
     <button class="desktop-menu-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
 
@@ -463,15 +463,15 @@
     </div>
 
     <!-- Header -->
-    <div class="header">
+    <header class="header">
         <div class="header-title">PENANCE</div>
         <div class="header-subtitle">Codex of the Bound • Chronicle of Iron and Blood</div>
-    </div>
+    </header>
 
     <!-- Container -->
     <div class="container">
         <!-- Sidebar -->
-        <nav class="sidebar">
+        <nav class="sidebar" aria-label="Codex navigation">
             <div class="nav-content">
             <div class="nav-search">
                 <input id="navSearchInput" type="text" placeholder="Search Codex..." aria-label="Search Codex navigation" />
@@ -655,8 +655,8 @@
         </nav>
 
         <!-- Content Frame -->
-        <main class="content">
-            <iframe id="contentFrame" class="content-frame" src="content-home.html" title="Codex content" tabindex="-1"></iframe>
+        <main id="main-content" class="content" aria-label="Codex content">
+            <iframe id="contentFrame" class="content-frame" src="content-home.html" title="Codex content"></iframe>
         </main>
     </div>
 
