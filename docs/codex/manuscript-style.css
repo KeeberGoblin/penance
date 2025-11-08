@@ -776,11 +776,17 @@ p.no-drop-cap::first-letter {
     /* Better table handling on mobile */
     .content table {
         font-size: 0.85rem;
+        display: table;
+        overflow-x: auto;
+        word-break: break-word;
     }
 
     .content th,
     .content td {
         padding: 0.65rem 0.4rem;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
 
@@ -857,18 +863,22 @@ p.no-drop-cap::first-letter {
         hyphens: none;
     }
 
-    /* Stack tables on very small screens */
+    /* Stack tables on very small screens - allow wrapping */
     .content table {
         font-size: 0.75rem;
-        display: block;
+        display: table;
         overflow-x: auto;
-        white-space: nowrap;
+        table-layout: auto;
+        word-break: break-word;
     }
 
     .content th,
     .content td {
         padding: 0.45rem 0.35rem;
         font-size: 0.7rem;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     /* Adjust navigation */
@@ -1162,6 +1172,24 @@ iframe body {
 
     .illuminated-header .subtitle {
         font-size: 0.95rem;
+    }
+
+    /* Allow manuscript tables to wrap on small screens */
+    .manuscript-table {
+        font-size: 0.75rem;
+        display: table;
+        overflow-x: auto;
+        table-layout: auto;
+        word-break: break-word;
+    }
+
+    .manuscript-table th,
+    .manuscript-table td {
+        padding: 0.45rem 0.35rem;
+        font-size: 0.7rem;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
 
