@@ -1,0 +1,295 @@
+{
+  "faction": "ossuarium",
+  "version": "v6.0_soul_shard_system",
+  "mechanic": "Soul Shards - Salvage enemy wrecks for parts",
+  "cards": [
+    {
+      "name": "Soul Harvest",
+      "id": "soul-harvest",
+      "type": "Attack",
+      "cost": 3,
+      "damage": 3,
+      "range": "Melee",
+      "effect": "Deal 3 damage. If this destroys an enemy, gain 3 Soul Shards.",
+      "keywords": ["attack", "shard-generation", "execution"],
+      "cardCount": 1,
+      "design_notes": "Reduced from 4 damage to 3. No lifesteal. Rewards killing blows with Shard generation."
+    },
+    {
+      "name": "Bone Scythe Swing",
+      "id": "bone-scythe-swing",
+      "type": "Attack",
+      "cost": 3,
+      "damage": 3,
+      "range": "Melee",
+      "effect": "Deal 3 damage. Basic Ossuarium attack.",
+      "keywords": ["attack", "melee", "basic"],
+      "cardCount": 2,
+      "design_notes": "Reduced from 4 damage to 3. Removed lifesteal entirely. Just a basic attack now."
+    },
+    {
+      "name": "Death Grasp",
+      "id": "death-grasp",
+      "type": "Attack",
+      "cost": 2,
+      "damage": 2,
+      "range": "Ranged 2-5",
+      "effect": "Deal 2 damage at range.",
+      "keywords": ["attack", "ranged"],
+      "cardCount": 2,
+      "design_notes": "Reduced from 3 damage to 2. Removed lifesteal. Now just a ranged poke."
+    },
+    {
+      "name": "Siphon Essence",
+      "id": "siphon-essence",
+      "type": "Attack",
+      "cost": 2,
+      "damage": 2,
+      "range": "Ranged 2-4",
+      "effect": "Deal 2 damage. If this destroys an enemy, gain 2 Soul Shards.",
+      "keywords": ["attack", "ranged", "shard-generation"],
+      "cardCount": 1,
+      "design_notes": "Kept at 2 damage. Removed lifesteal, added Shard generation on kill."
+    },
+    {
+      "name": "Necrotic Touch",
+      "id": "necrotic-touch",
+      "type": "Attack",
+      "cost": 2,
+      "damage": 2,
+      "range": "Melee",
+      "effect": "Deal 2 damage. If this destroys an enemy, gain 4 Soul Shards (double reward).",
+      "keywords": ["attack", "execution", "shard-generation"],
+      "cardCount": 1,
+      "design_notes": "Kept at 2 damage. Execution bonus now grants extra Shards instead of healing."
+    },
+    {
+      "name": "Soul Rend",
+      "id": "soul-rend",
+      "type": "Attack",
+      "cost": 4,
+      "damage": 4,
+      "range": "Melee",
+      "effect": "Deal 4 damage. On kill, gain 3 Soul Shards.",
+      "keywords": ["attack", "powerful", "shard-generation"],
+      "cardCount": 1,
+      "design_notes": "Reduced from 5 damage to 4. Removed lifesteal, added Shard generation on kill."
+    },
+    {
+      "name": "Drain Life",
+      "id": "drain-life",
+      "type": "Attack",
+      "cost": 5,
+      "damage": 5,
+      "range": "Ranged 2-6",
+      "effect": "Deal 5 damage at long range. On kill, gain 4 Soul Shards.",
+      "keywords": ["attack", "ranged", "powerful", "shard-generation"],
+      "cardCount": 1,
+      "design_notes": "Reduced from 6 damage to 5. Removed massive lifesteal, added substantial Shard reward on kill."
+    },
+    {
+      "name": "Bone Scythe Reap",
+      "id": "bone-scythe-reap",
+      "type": "Attack",
+      "cost": 4,
+      "damage": "3 primary, 2 AoE",
+      "range": "Melee AoE",
+      "effect": "Deal 3 damage to primary target and 2 damage to all adjacent enemies. For each enemy destroyed, gain 2 Soul Shards.",
+      "keywords": ["attack", "aoe", "shard-generation"],
+      "cardCount": 1,
+      "design_notes": "Kept AoE pattern. Removed lifesteal per target, added Shard generation per kill."
+    },
+    {
+      "name": "Corpse Explosion",
+      "id": "corpse-explosion",
+      "type": "Attack",
+      "cost": 3,
+      "damage": "3 AoE",
+      "range": "Ranged 2-4 AoE",
+      "effect": "Deal 3 damage to target hex and all adjacent hexes.",
+      "keywords": ["attack", "aoe", "explosive"],
+      "cardCount": 1,
+      "design_notes": "Kept at 3 AoE damage. Removed lifesteal entirely. Just damage now."
+    },
+    {
+      "name": "Salvage Protocol",
+      "id": "salvage-protocol",
+      "type": "Utility",
+      "cost": 1,
+      "damage": null,
+      "range": "Self",
+      "effect": "Spend 3 Soul Shards to recover 3 cards. Gain 2 Taint.",
+      "keywords": ["utility", "salvage", "taint", "shard-spending"],
+      "cardCount": 2,
+      "design_notes": "NEW CARD. Core Ossuarium mechanic. Standard salvage action."
+    },
+    {
+      "name": "Emergency Rebuild",
+      "id": "emergency-rebuild",
+      "type": "Utility",
+      "cost": 2,
+      "damage": null,
+      "range": "Self",
+      "effect": "Spend 5 Soul Shards to recover 5 cards. Gain 3 Taint.",
+      "keywords": ["utility", "salvage", "taint", "powerful", "shard-spending"],
+      "cardCount": 1,
+      "design_notes": "NEW CARD. Desperate big heal. High Taint cost."
+    },
+    {
+      "name": "Corpse Fuel",
+      "id": "corpse-fuel",
+      "type": "Passive",
+      "cost": 0,
+      "damage": null,
+      "range": "Self",
+      "effect": "Passive: Whenever an enemy is destroyed within 3 hexes, gain 2 Soul Shards.",
+      "keywords": ["passive", "shard-generation", "proximity"],
+      "cardCount": 1,
+      "design_notes": "Changed from auto-heal to Shard generation. Rewards killing near you."
+    },
+    {
+      "name": "Death Mark",
+      "id": "death-mark",
+      "type": "Utility",
+      "cost": 2,
+      "damage": null,
+      "range": "Ranged 1-6",
+      "effect": "Mark target enemy. When the marked enemy is destroyed, gain +2 bonus Soul Shards. Lasts until enemy dies or you mark a different target.",
+      "keywords": ["debuff", "mark", "shard-generation"],
+      "cardCount": 1,
+      "design_notes": "Changed from recovery bonus to Shard generation bonus. Focus fire reward."
+    },
+    {
+      "name": "Grave Pact",
+      "id": "grave-pact",
+      "type": "Utility",
+      "cost": 3,
+      "damage": 6,
+      "range": "Ranged 1-6",
+      "effect": "Discard 3 cards. Deal 6 damage (2 damage per card discarded). If this destroys an enemy, gain 4 Soul Shards.",
+      "keywords": ["utility", "sacrifice", "high-damage"],
+      "cardCount": 1,
+      "design_notes": "Kept sacrifice mechanic. Removed delayed recovery, added Shard reward on kill."
+    },
+    {
+      "name": "Scavenge Wreckage",
+      "id": "scavenge-wreckage",
+      "type": "Utility",
+      "cost": 1,
+      "damage": null,
+      "range": "Ranged 1-4",
+      "effect": "Target a destroyed enemy wreck within 4 hexes. Gain 3 Soul Shards. That wreck is removed (cannot be scavenged again).",
+      "keywords": ["utility", "shard-generation", "scavenge"],
+      "cardCount": 1,
+      "design_notes": "NEW CARD. Allows scavenging wrecks post-battle for extra Shards."
+    },
+    {
+      "name": "Reanimate",
+      "id": "reanimate",
+      "type": "Summon",
+      "cost": 4,
+      "damage": null,
+      "range": "Ranged 1-3",
+      "effect": "Spend 3 Soul Shards. Summon a Skeletal Minion within 3 hexes (3 HP, 3 Movement, 2 melee damage). Minion acts after your turn.",
+      "keywords": ["summon", "minion", "shard-spending"],
+      "cardCount": 1,
+      "design_notes": "Now costs Soul Shards to summon. Creates minion from salvaged parts."
+    },
+    {
+      "name": "Phylactery",
+      "id": "phylactery",
+      "type": "Passive",
+      "cost": 0,
+      "damage": null,
+      "range": "Self",
+      "effect": "Passive: The first time you would be reduced to 0 HP, if you have 5+ Soul Shards, spend 5 Shards to recover to 3 HP. Gain 5 Taint. Once per mission.",
+      "keywords": ["passive", "emergency", "revival", "taint", "shard-spending"],
+      "cardCount": 1,
+      "design_notes": "No longer free. Requires 5 Shards and gives massive Taint penalty. Desperate last resort."
+    },
+    {
+      "name": "Deathless Advance",
+      "id": "deathless-advance",
+      "type": "Movement",
+      "cost": 2,
+      "damage": null,
+      "range": "Self",
+      "effect": "Move up to 3 hexes. Until end of turn, you cannot take more than 5 damage from any single attack (damage cap).",
+      "keywords": ["movement", "defensive"],
+      "cardCount": 1,
+      "design_notes": "Unchanged. No lifesteal component to remove. Defensive mobility option."
+    },
+    {
+      "name": "Bone Armor",
+      "id": "bone-armor",
+      "type": "Reactive",
+      "cost": 0,
+      "damage": null,
+      "range": "Self",
+      "effect": "Reactive: When attacked, reduce damage by 2.",
+      "keywords": ["reactive", "defense", "block"],
+      "cardCount": 1,
+      "design_notes": "Removed conditional lifesteal. Now just a simple damage reduction."
+    },
+    {
+      "name": "Corpse Shield",
+      "id": "corpse-shield",
+      "type": "Reactive",
+      "cost": 0,
+      "damage": null,
+      "range": "Self",
+      "effect": "Passive: When an enemy within 3 hexes is destroyed, gain +3 Defense until end of your next turn.",
+      "keywords": ["reactive", "defense", "conditional"],
+      "cardCount": 1,
+      "design_notes": "Unchanged. No lifesteal component. Defensive bonus from nearby kills."
+    },
+    {
+      "name": "Taint Purge",
+      "id": "taint-purge",
+      "type": "Utility",
+      "cost": 3,
+      "damage": null,
+      "range": "Self",
+      "effect": "Discard 4 cards. Remove up to 4 Taint. You cannot spend Soul Shards this turn.",
+      "keywords": ["utility", "taint-removal", "sacrifice", "desperate"],
+      "cardCount": 1,
+      "design_notes": "NEW CARD. Only way to remove Taint. Extremely costly - must sacrifice cards and can't salvage same turn."
+    }
+  ],
+  "removed_cards": [
+    {
+      "name": "Necrotic Surge",
+      "reason": "Multiplicative healing amplifier. No longer fits without lifesteal."
+    },
+    {
+      "name": "Vampiric Rune",
+      "reason": "Conditional healing bonus. No longer fits without lifesteal."
+    },
+    {
+      "name": "Soul Well",
+      "reason": "Free passive healing. Removes decision-making. Against design philosophy."
+    },
+    {
+      "name": "Death Shroud",
+      "reason": "Healing amplifier. No longer relevant without lifesteal."
+    }
+  ],
+  "card_summary": {
+    "total_cards": 21,
+    "attack_cards": 9,
+    "utility_cards": 6,
+    "passive_cards": 2,
+    "reactive_cards": 2,
+    "summon_cards": 1,
+    "movement_cards": 1,
+    "new_cards": 4,
+    "removed_cards": 4
+  },
+  "balance_targets": {
+    "average_damage": "2.8 dmg (down from 2.9)",
+    "average_sp_cost": "2.5 SP",
+    "shard_generation_rate": "3 Shards per kill (standard), 4-5 for executions",
+    "shard_spending_rate": "3 Shards = 3 cards + 2 Taint (standard)",
+    "expected_win_rate": "48-52%"
+  }
+}
