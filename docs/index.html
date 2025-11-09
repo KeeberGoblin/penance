@@ -26,15 +26,15 @@
             --black: #1a1410;
             --dark-gray: #2b1f17;
             --medium-gray: #4a3829;
-            --light-gray: #8b7355;
+            --light-gray: #a89070;
             --white: #d4c5b0;
-            --blood-red: #8b1a1a;
-            --blood-red-dark: #6b1414;
-            --accent: #b8956a;
+            --blood-red: #b82828;
+            --blood-red-dark: #8b1414;
+            --accent: #c9a66b;
             --parchment: #d4c5b0;
             --aged-brown: #3d2517;
             --ink-brown: #1a1410;
-            --border-ornate: #b8956a;
+            --border-ornate: #c9a66b;
             --shadow-deep: rgba(26, 20, 16, 0.9);
         }
 
@@ -540,6 +540,13 @@
             background: var(--blood-red);
         }
 
+        /* Keyboard focus indicator for scrollable containers */
+        .factions-scroll-container:focus,
+        .nav-links:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
         .factions-panel {
             display: flex;
             gap: 2rem;
@@ -987,6 +994,11 @@
             color: var(--ink-brown);
         }
 
+        .scroll-to-top:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .section {
@@ -1031,13 +1043,16 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content for keyboard users -->
+    <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;background:var(--blood-red);color:var(--white);padding:1rem;z-index:10000;" onfocus="this.style.left='20px';this.style.width='auto';this.style.height='auto'" onblur="this.style.left='-9999px';this.style.width='1px';this.style.height='1px'">Skip to main content</a>
+
     <!-- Particles.js background -->
-    <div id="particles-js"></div>
+    <div id="particles-js" aria-hidden="true"></div>
 
     <!-- Fixed Navigation Header -->
     <nav class="nav-header" aria-label="Main navigation">
         <div class="nav-title">PENANCE</div>
-        <div class="nav-links">
+        <div class="nav-links" tabindex="0" aria-label="Main navigation menu">
             <a href="#chronicle" class="nav-link">CHRONICLE</a>
             <a href="#factions" class="nav-link">FACTIONS</a>
             <a href="#playtest" class="nav-link" style="color: var(--blood-red);">PLAYTEST</a>
@@ -1048,7 +1063,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-content">
@@ -1180,7 +1195,7 @@
                 Ten factions war for control of a dying world. Each plays completely differently with unique mechanics, equipment pools, and win conditions. Balanced through extensive playtesting (v5.29-FINAL). Scroll to explore their twisted doctrines.
             </p>
 
-            <div class="factions-scroll-container">
+            <div class="factions-scroll-container" tabindex="0" role="region" aria-label="Scrollable faction cards">
                 <div class="factions-panel">
 
                     <!-- Church of Absolution -->
