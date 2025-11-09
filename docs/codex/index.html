@@ -430,10 +430,11 @@
     </style>
 </head>
 <body>
-    <!-- Skip to content for keyboard users -->
+    <!-- Skip links for keyboard users -->
     <a href="#main-content" class="skip-link">Skip to content</a>
+    <a href="#nav-search" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.left='20px';this.style.width='auto';this.style.height='auto'" onblur="this.style.left='-9999px';this.style.width='1px';this.style.height='1px'">Skip to navigation</a>
     <!-- Menu Toggle Button (works for both desktop and mobile) -->
-    <button class="desktop-menu-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+    <button class="desktop-menu-toggle" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar-nav">☰</button>
 
     <!-- Menu Backdrop -->
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
@@ -471,14 +472,14 @@
     <!-- Container -->
     <div class="container">
         <!-- Sidebar -->
-        <nav class="sidebar" aria-label="Codex navigation">
+        <nav id="sidebar-nav" class="sidebar" aria-label="Codex navigation">
             <div class="nav-content">
-            <div class="nav-search">
+            <div id="nav-search" class="nav-search">
                 <input id="navSearchInput" type="text" placeholder="Search Codex..." aria-label="Search Codex navigation" />
                 <div class="nav-search-controls">
-                    <button type="button" id="expandAllBtn">Expand All</button>
-                    <button type="button" id="collapseAllBtn">Collapse All</button>
-                    <button type="button" id="clearSearchBtn">Clear</button>
+                    <button type="button" id="expandAllBtn" aria-label="Expand all navigation sections">Expand All</button>
+                    <button type="button" id="collapseAllBtn" aria-label="Collapse all navigation sections">Collapse All</button>
+                    <button type="button" id="clearSearchBtn" aria-label="Clear search input" aria-controls="navSearchInput">Clear</button>
                 </div>
             </div>
             <!-- 0. HOME - Quick return to index -->
@@ -492,8 +493,8 @@
 
                 <!-- The Theslar Event submenu -->
                 <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" data-url="lore-theslar-overview.html">The Theslar Event</a>
-                    <div class="nav-submenu">
+                    <a class="nav-link has-submenu" data-url="lore-theslar-overview.html" aria-expanded="false" aria-controls="theslar-submenu" role="button" tabindex="0">The Theslar Event</a>
+                    <div class="nav-submenu" id="theslar-submenu">
                         <a class="nav-link" onclick="loadContent('lore-ground-zero.html', event)">Ground Zero (North Pole)</a>
                         <a class="nav-link" onclick="loadContent('lore-year-zero.html', event)">Year 0 Timeline</a>
                         <a class="nav-link" onclick="loadContent('lore-engine.html', event)">The Engine Itself</a>
@@ -672,13 +673,15 @@
             sidebar.classList.toggle('active');
             backdrop.classList.toggle('active');
 
-            // Change icon based on menu state
+            // Change icon and ARIA based on menu state
             if (sidebar.classList.contains('active')) {
                 toggleBtn.innerHTML = '✕';
                 toggleBtn.setAttribute('aria-label', 'Close menu');
+                toggleBtn.setAttribute('aria-expanded', 'true');
             } else {
                 toggleBtn.innerHTML = '☰';
                 toggleBtn.setAttribute('aria-label', 'Open menu');
+                toggleBtn.setAttribute('aria-expanded', 'false');
             }
         }
 
@@ -699,10 +702,15 @@
                 const isOpen = parentDropdown.classList.contains('dropdown-open');
                 // Close other dropdowns
                 document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
-                    if (dropdown !== parentDropdown) dropdown.classList.remove('dropdown-open');
+                    if (dropdown !== parentDropdown) {
+                        dropdown.classList.remove('dropdown-open');
+                        const submenuLink = dropdown.querySelector('.has-submenu');
+                        if (submenuLink) submenuLink.setAttribute('aria-expanded', 'false');
+                    }
                 });
                 // Toggle this one and exit (no navigation)
                 parentDropdown.classList.toggle('dropdown-open', !isOpen);
+                clickedLink.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
                 return;
             }
 
@@ -736,6 +744,18 @@
                 if (p) p.setAttribute('aria-expanded', 'false');
             });
         }
+
+        // Add keyboard support for dropdown toggles (Enter/Space)
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.has-submenu').forEach(link => {
+                link.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
 
         // Set home page as active on load
         window.addEventListener('DOMContentLoaded', function() {

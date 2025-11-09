@@ -999,6 +999,55 @@
             outline-offset: 3px;
         }
 
+        /* Enhanced button focus styles */
+        .cta-primary:focus-visible,
+        .cta-secondary:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
+            box-shadow: 0 0 0 4px rgba(201, 166, 107, 0.3);
+        }
+
+        /* Ensure all interactive elements meet 44x44px minimum touch target */
+        .nav-link,
+        button,
+        a.cta-primary,
+        a.cta-secondary,
+        .footer-link {
+            min-height: 44px;
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            /* Disable breathing animation */
+            .hero::before {
+                animation: none !important;
+                opacity: 0.15 !important;
+                transform: translate(-50%, -50%) !important;
+            }
+
+            /* Disable pattern animation */
+            .hero::after {
+                animation: none !important;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .section {
