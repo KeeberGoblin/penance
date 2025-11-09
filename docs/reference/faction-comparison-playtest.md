@@ -1,8 +1,8 @@
 # Faction Comparison for Playtesting
 ## Penance: Absolution Through Steel
 
-**Version**: 2.0
-**Last Updated**: October 11, 2025
+**Version**: 6.0
+**Last Updated**: November 9, 2025
 
 ---
 
@@ -14,7 +14,7 @@
 |---------|-----------|-------------------|------------|---------------|
 | **Church of Absolution** | Aggressive Martyr | Self-Harm for Burst | Medium | Alpha strike, kill fast |
 | **Dwarven Forge-Guilds** | Defensive Tank | Armor-Piercing + Runes | Easy | Outlast through defense |
-| **The Ossuarium** | Resource Vampire | Lifesteal + Resurrection | Medium | Sustain, grind down |
+| **The Ossuarium** | Necromantic Grinder | Soul Shard Salvage + Taint | Medium | Grind with salvage, accept corruption |
 | **Elven Verdant Covenant** | Hit-and-Run | Bleed + Mobility | Hard | Stack damage-over-time |
 
 ---
@@ -44,7 +44,7 @@
 - Heat management issues
 - Weak when isolated
 
-**Best Against**: Dwarves (burst bypasses armor), Ossuarium (kills before lifesteal activates)
+**Best Against**: Dwarves (burst bypasses armor), Ossuarium (kills before salvage value)
 **Weak Against**: Elves (mobility avoids burst), fast aggro
 
 **Playtest Focus**: Test if self-harm risk/reward is balanced, verify Martyrdom Protocol doesn't break multiplayer
@@ -84,12 +84,13 @@
 
 ### The Ossuarium
 
-**Core Identity**: "Death is merely a change in employment."
+**Core Identity**: "Death is merely salvage. Corruption is the cost."
 
 **Playstyle**:
-- Lifesteal attacks (Soul Harvest: 4 damage, recover 4 cards)
-- Corpse exploitation (Corpse Fuel: recover 5 cards per kill)
-- Triple resurrection (Phylactery + Undying Resilience + Phylactery Relic)
+- Soul Shard Salvage (gain 3 Shards per kill, spend for emergency repairs)
+- Brutal Taint corruption (permanent penalties from using necro-tech)
+- Scavenge Protocol (Salvage Protocol: 3 Shards → 3 cards, +2 Taint)
+- Resurrection via Phylactery (auto-revive once per mission at cost of Soul Shards)
 - Minion summoning (Raise Dead: summon Thralls)
 - Decay cards instead of Damage cards on reshuffle
 
@@ -97,19 +98,21 @@
 **SP Maximum**: 3-6 depending on Casket
 
 **Strengths**:
-- Best lifesteal in game
+- Resource generation from kills (Soul Shards)
+- Emergency repairs mid-combat
 - Multiple resurrections
-- Inevitable grinding
+- Grinds opponents through attrition
 
 **Weaknesses**:
-- Requires dealing damage to heal
-- Weak to burst damage
-- Decay cards slow late-game
+- Taint penalties cripple at high corruption (9-10 Taint: -4 damage, +1 SP costs)
+- Requires kills to generate Shards
+- Weak to burst damage (killed before salvage value)
+- Corruption is permanent (never decays)
 
-**Best Against**: Dwarves (lifesteal outlasts defense), Elves (Thralls block mobility)
-**Weak Against**: Church (burst kills before lifesteal), control/stuns
+**Best Against**: Dwarves (grind through armor), Elves (Thralls block mobility)
+**Weak Against**: Church (burst kills before salvage), control/stuns, denial strategies
 
-**Playtest Focus**: Test if triple resurrection is too strong, verify lifesteal isn't oppressive
+**Playtest Focus**: Test if Soul Shard economy is balanced, verify Taint penalties create meaningful risk/reward, check if salvage rate is oppressive
 
 ---
 
@@ -138,7 +141,7 @@
 - Requires setup time
 
 **Best Against**: Church (mobility avoids burst), Dwarves (Bleed bypasses armor)
-**Weak Against**: Ossuarium (lifesteal counters slow damage), fast aggro
+**Weak Against**: Ossuarium (salvage sustain counters slow damage), fast aggro
 
 **Playtest Focus**: Test if Bleed stacking is balanced, verify mobility isn't too strong
 
@@ -163,7 +166,7 @@
 ### Damage Type
 - **Church**: Burst (one big hit)
 - **Dwarves**: Sustained (consistent hits)
-- **Ossuarium**: Drain (steal HP)
+- **Ossuarium**: Attrition (grind with salvage, accept corruption)
 - **Elves**: Damage-over-Time (Bleed ticks)
 
 ---
@@ -173,8 +176,8 @@
 ### Balanced Matchups (50/50)
 
 **Church vs Ossuarium**:
-- Church burst vs Ossuarium sustain
-- Tests self-harm risk vs lifesteal reward
+- Church burst vs Ossuarium salvage sustain
+- Tests self-harm risk vs Soul Shard economy
 - Expected: 50/50 (whoever lands first strike advantage)
 
 **Dwarves vs Elves**:
@@ -192,9 +195,9 @@
 - Expected: 55/45 Church favor (burst bypasses armor)
 
 **Ossuarium vs Elves**:
-- Lifesteal vs Bleed
-- Tests damage-over-time interactions
-- Expected: 60/40 Ossuarium favor (lifesteal faster than Bleed)
+- Salvage sustain vs Bleed
+- Tests damage-over-time vs attrition grind
+- Expected: 60/40 Ossuarium favor (salvage sustain outlasts Bleed)
 
 ---
 
@@ -222,7 +225,7 @@
 
 **Recommended Matchups**:
 - Church vs Dwarves (burst vs tank)
-- Ossuarium vs Elves (lifesteal vs Bleed)
+- Ossuarium vs Elves (salvage vs Bleed)
 
 ---
 
@@ -260,9 +263,9 @@
 - 10 Universal + 6 Dwarven Core + 18 Equipment (Warhammer 6 + Tower Shield 4 + 3 Sigils 8) + 2 Tactics + 2 Stone Endurance
 - **Focus**: Maximum tankiness
 
-### Ossuarium: "Vampiric Striker" (Scout, 29 cards)
+### Ossuarium: "Salvage Grinder" (Scout, 29 cards)
 - 10 Universal + 6 Ossuarium Core + 11 Equipment (Bone Scythe 6 + Buckler 2 + Death Mark 3) + 2 Tactics
-- **Focus**: Aggressive lifesteal
+- **Focus**: Soul Shard economy, grind sustain
 
 ### Elves: "Surgical Assassin" (Scout, 29 cards)
 - 10 Universal + 6 Elven Core + 11 Equipment (Thorn Blade 6 + Dueling Dagger 2 + Living Seal 3) + 2 Tactics
@@ -283,8 +286,9 @@
 - Are Heavy Caskets too slow? (4 SP = only 2 attacks per turn)
 
 ### Ossuarium
-- Is triple resurrection too strong? (Phylactery + Undying Resilience + Relic = 3 lives)
-- Does lifesteal sustain too well? (Soul Harvest: 4 damage = 4 cards)
+- Is Soul Shard economy balanced? (3 Shards per kill, 2-5 Shards for repairs)
+- Are Taint penalties harsh enough? (9-10 Taint: -4 damage, +1 SP costs)
+- Is Salvage Protocol oppressive? (3 Shards → 3 cards mid-combat)
 - Are Thralls balanced? (1 HP, 2 damage, free meatshields)
 
 ### Elves

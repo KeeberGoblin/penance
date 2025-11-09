@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/status-PLAYTEST%20READY-red)
 ![Factions](https://img.shields.io/badge/factions-10%20Complete-green)
 ![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)
-![Version](https://img.shields.io/badge/version-2.2%20Casket%20System-orange)
+![Version](https://img.shields.io/badge/version-2.3%20Soul%20Shard%20Update-orange)
 
 ---
 
@@ -27,7 +27,7 @@ Penance is a **tactical mech combat card game** where:
 
 - **Your deck is your HP** - Damage discards cards, deck empty = death spiral
 - **Components get destroyed** - Lose your Right Arm, lose all weapon cards permanently
-- **10 asymmetric factions** - Each plays completely differently (vampires, elves, merchants, cultists)
+- **10 asymmetric factions** - Each plays completely differently (necromancers, elves, merchants, mutants)
 - **Positioning matters** - Hex combat with facing, flanking, elevation, and line of sight
 - **Brutal consequences** - Permanent pilot scars, component destruction, death
 
@@ -45,7 +45,7 @@ Each faction has **21 unique cards** and a completely different playstyle:
 |---------|-----------|-------------------|
 | **[Church of Absolution](https://keebergoblin.github.io/penance/codex/faction-church.html)** | Aggressive Martyrdom | Blood Offering (self-harm for burst damage) |
 | **[Dwarven Forge-Guilds](https://keebergoblin.github.io/penance/codex/faction-dwarves.html)** | Fortress Defender | Rune Counters (stacking defense/damage) |
-| **[The Ossuarium](https://keebergoblin.github.io/penance/codex/faction-undead.html)** | Lifesteal Vampire | Soul Harvest (resurrections, lifesteal) |
+| **[The Ossuarium](https://keebergoblin.github.io/penance/codex/faction-undead.html)** | Necromantic Grinder | Soul Shard Salvage (scavenge kills for repairs, Taint corruption) |
 | **[Verdant Covenant](https://keebergoblin.github.io/penance/codex/faction-elves.html)** | Hit-and-Run Assassin | Bleed Stacking (infinite scaling) |
 
 ### Advanced 6 Factions
@@ -161,6 +161,31 @@ Each faction has **21 unique cards** and a completely different playstyle:
 
 ## Recent Updates (November 2025)
 
+### v6.0 Soul Shard System - Ossuarium Redesign (Nov 9)
+
+**Major Ossuarium Faction Overhaul:**
+- **Removed Lifesteal/Vampire Mechanics** - Replaced with thematically appropriate mech salvage system
+- **Soul Shard Economy** - Gain 3 Soul Shards per enemy kill, spend for emergency repairs
+- **Brutal Taint Penalties** - Using Soul Shards grants permanent Taint corruption:
+  - 3-4 Taint: -1 damage, +1 Heat/turn
+  - 5-6 Taint: -2 damage, +2 Heat/turn
+  - 7-8 Taint: -3 damage, +2 Heat/turn
+  - 9-10 Taint: -4 damage, +2 Heat/turn, +1 SP cost
+- **New Cards Added**: Salvage Protocol, Emergency Rebuild, Scavenge Wreckage, Taint Purge
+- **Cards Removed**: Necrotic Surge, Vampiric Rune, Soul Well, Death Shroud
+- **Attack Damage Reduced**: 10-20% reduction across all Ossuarium attacks
+- **Balance Target**: Reduce Ossuarium from 68.9% WR → 48-52% WR
+
+**Accessibility Improvements (WCAG AAA):**
+- Enhanced color contrast (WCAG AA compliant)
+- 44×44px minimum touch targets for mobile
+- Full keyboard navigation with visible focus indicators
+- ARIA labels, aria-expanded states on all interactive elements
+- Reduced motion support for animations
+- Skip links and proper landmark structure
+
+**Why This Matters**: Lifesteal didn't make thematic sense for mechs. The new Soul Shard system fits the salvage/necro-tech theme—you scavenge parts from destroyed enemies, but using corrupted tech poisons you with permanent Taint. Creates a brutal risk/reward economy where sustain comes at a steep cost.
+
 ### v2.3 Complete Codex Expansion (Nov 6)
 
 **New Interactive Features:**
@@ -266,13 +291,13 @@ Each faction has **21 unique cards** and a completely different playstyle:
 - [PDF Generator](tools/generate-pdfs.py) - Create professional rulebooks
 - [TTS Import Guide](tools/TTS-IMPORT-GUIDE.md) - Setup instructions
 
-### Combat Simulator (v5.14)
+### Combat Simulator (v6.0)
 - **[Faction Balance Simulator](/simulation/)** - Complete deck combat testing with dice mechanics
 - Test all 10 factions with accurate win rate calculations
 - Custom 2d6 attack dice + 1d6 defense dice system
-- Resource economy tracking (Credits, Biomass, Faith, Forge, Bleed)
-- **Current Balance:** 1/10 factions in target 45-55% WR range
-- **Usage:** `cd simulation && python3 faction_balance_DICE.py`
+- Resource economy tracking (Credits, Biomass, Faith, Forge, Bleed, Soul Shards, Taint)
+- **Latest:** v6.0 Soul Shard system for Ossuarium (scavenge kills instead of lifesteal)
+- **Usage:** `cd simulation && python3 faction_balance_MULTIUNIT.py`
 
 ---
 
@@ -373,6 +398,14 @@ Licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Intern
 ---
 
 ## Version History
+
+### v6.0 Soul Shard System - Ossuarium Redesign (November 9, 2025)
+- Soul Shard economy (3 Shards per kill, spend for repairs)
+- Removed lifesteal/vampire mechanics (thematically inappropriate for mechs)
+- Brutal Taint penalties (permanent corruption from using necro-tech)
+- 4 new cards, 4 removed cards, damage reduction across Ossuarium
+- Comprehensive WCAG AAA accessibility improvements
+- Balance target: Ossuarium 68.9% → 48-52% WR
 
 ### v2.3 Complete Codex Expansion (November 6, 2025)
 - PDF-Style Core Rulebook (28 pages with D&D parchment theme)

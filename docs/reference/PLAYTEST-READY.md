@@ -1,14 +1,13 @@
 # PLAYTEST PACKAGE: READY FOR TABLE PLAY
 
-**Date**: 2025-10-21
-**Version**: v5.29-FINAL (Production Balance)
+**Date**: 2025-11-09
+**Version**: v6.0 (Soul Shard System)
 **Status**: ✅ COMPLETE - 10 FACTIONS BALANCED
 **Estimated Setup Time**: 15 minutes
 **Estimated Play Time**: 45-60 minutes (first game)
 
-**Recent Balance Changes (v5.29-FINAL - October 21, 2025):**
-- **7 out of 10 factions** in competitive range (44-58% win rate)
-- **Ossuarium v5.23**: Lifesteal completely removed → Taint warfare system
+**Recent Balance Changes (v6.0 - November 9, 2025):**
+- **Ossuarium v6.0**: Soul Shard salvage system (scavenge kills for repairs, Taint corruption from using necro-tech)
 - **Church v5.27**: 5x discard bonuses (was 3x, boosted from 22.2% WR)
 - **Dwarves v5.25**: Rune counters buffed to 4 damage/counter (was 3, max 3 counters)
 - **Bloodlines v5.17**: Biomass nerfed to 1 per kill (was 2, reduced from 82% WR)
@@ -45,11 +44,11 @@ This package contains everything needed for your first playtest of **Penance: Ab
    - Deck Size: 28-52 cards (variable equipment)
 
 3. **[The Ossuarium](../factions/ossuarium/deck-equipment-system.md)**
-   - Playstyle: Taint corruption warfare, skeletal minion summoning, resurrection
-   - Core Mechanic: Decay Aura (enemies within 3 hexes gain +1 Taint/turn), Phylactery (resurrect once)
-   - Scaling: Taint penalties destroy enemy decks (Heat + card destruction), Decay cards instead of Damage cards
+   - Playstyle: Necromantic grinder with mech salvage mechanics
+   - Core Mechanic: Soul Shard Salvage (gain 3 Shards per kill, spend for emergency repairs with Taint cost)
+   - Scaling: Brutal Taint penalties (permanent corruption: -1 to -4 damage, +SP costs at 9-10 Taint)
    - Deck Size: 26-50 cards (variable equipment)
-   - **v5.23 UPDATE**: Lifesteal completely removed. Now wins through Taint attrition, not sustain.
+   - **v6.0 UPDATE**: Soul Shard system replaces lifesteal. Scavenge parts from kills, but using necro-tech corrupts you permanently.
 
 4. **[Elven Verdant Covenant](../factions/elves/deck-equipment-system.md)**
    - Playstyle: Hit-and-run assassin
@@ -281,7 +280,7 @@ After your first playtest, answer these questions:
 ### Immediate Iteration (Same Session)
 1. **Swap Tactics**: Try different Tactic combinations (5 available, choose 2)
 2. **Swap Equipment**: Try different weapons/shields (60+ options)
-3. **Swap Factions**: Try Ossuarium (lifesteal) or Elves (bleed stacking)
+3. **Swap Factions**: Try Ossuarium (Soul Shard salvage) or Elves (bleed stacking)
 4. **Add Pilot Wounds**: Include Pilot Wound Decks for full brutality (optional)
 
 ### Future Playtests (New Sessions)
@@ -338,10 +337,10 @@ After your first playtest, answer these questions:
 ### Faction Asymmetry ✅
 - [x] Church: Aggressive self-harm for burst damage (infinite scaling)
 - [x] Dwarves: Defensive attrition with armor-piercing (rune stacking)
-- [x] Ossuarium: Lifesteal vampire with resurrections (Soul Harvest)
+- [x] Ossuarium: Necromantic salvage grinder (Soul Shard economy, Taint corruption)
 - [x] Elves: Hit-and-run assassin with infinite bleed stacking
-- [x] Contrasting playstyles (offense/defense/lifesteal/DoT)
-- [x] Unique faction mechanics (Blood Offering / Runes / Soul Harvest / Bleed)
+- [x] Contrasting playstyles (offense/defense/salvage/DoT)
+- [x] Unique faction mechanics (Blood Offering / Runes / Soul Shard Salvage / Bleed)
 
 ### Playtest Readiness ✅
 - [x] Complete rules (no "TBD" sections)
@@ -396,7 +395,8 @@ Please provide feedback via:
 - Gloomhaven (hex combat, facing modifiers)
 
 **Playtest Package Created**: 2025-10-12
-**Version**: 2.0 (Equipment System Update)
+**Last Updated**: 2025-11-09
+**Version**: 6.0 (Soul Shard System)
 
 ---
 
