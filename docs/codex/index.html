@@ -569,24 +569,8 @@
 
                 <a class="nav-link" onclick="loadContent('lore-chronicle.html', event)">Chronicle (437 Years)</a>
 
-                <!-- Iconic Pilots submenu -->
-                <div class="nav-dropdown">
-                    <a class="nav-link has-submenu" data-url="lore-npcs.html">Iconic Pilots</a>
-                    <div class="nav-submenu">
-                        <a class="nav-link" onclick="loadContent('lore-npcs.html', event)">All Pilots Overview</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-church.html', event)">Church of Absolution</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-dwarves.html', event)">Dwarven Forge-Guilds</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-ossuarium.html', event)">The Ossuarium</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-elves.html', event)">Elven Verdant Covenant</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-wyrd.html', event)">The Wyrd Conclave</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-nomads.html', event)">Nomad Collective</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-exchange.html', event)">The Exchange</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-bloodlines.html', event)">Vestige Bloodlines</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-emergent.html', event)">Emergent Syndicate</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-crucible.html', event)">Crucible Packs</a>
-                        <a class="nav-link" onclick="loadContent('lore-npc-draconid.html', event)">Draconid Remembrance</a>
-                    </div>
-                </div>
+                <!-- NPCs Overview -->
+                <a class="nav-link" onclick="loadContent('lore-npcs.html', event)">All Notable NPCs</a>
             </div>
 
             <!-- 2. CORE RULES (Learn to Play) -->
@@ -620,16 +604,96 @@
             <!-- 3. PLAYABLE FACTIONS (Choose Your Army) -->
             <div class="nav-section">
                 <div class="nav-title">Playable Factions</div>
-                <a class="nav-link" onclick="loadContent('faction-church.html', event)">Church of Absolution</a>
-                <a class="nav-link" onclick="loadContent('faction-dwarves.html', event)">Dwarven Forge-Guilds</a>
-                <a class="nav-link" onclick="loadContent('faction-undead.html', event)">The Ossuarium</a>
-                <a class="nav-link" onclick="loadContent('faction-elves.html', event)">Elven Verdant Covenant</a>
-                <a class="nav-link" onclick="loadContent('faction-nomads.html', event)">Nomad Collective</a>
-                <a class="nav-link" onclick="loadContent('faction-exchange.html', event)">The Exchange</a>
-                <a class="nav-link" onclick="loadContent('faction-bloodlines.html', event)">Vestige Bloodlines</a>
-                <a class="nav-link" onclick="loadContent('faction-emergent.html', event)">Emergent Syndicate</a>
-                <a class="nav-link" onclick="loadContent('faction-crucible.html', event)">Crucible Packs</a>
-                <a class="nav-link" onclick="loadContent('faction-fae.html', event)">The Wyrd Conclave</a>
+
+                <!-- Church of Absolution -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-church.html" aria-expanded="false" aria-controls="church-submenu" role="button" tabindex="0">Church of Absolution</a>
+                    <div class="nav-submenu" id="church-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-church.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-church.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- Dwarven Forge-Guilds -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-dwarves.html" aria-expanded="false" aria-controls="dwarves-submenu" role="button" tabindex="0">Dwarven Forge-Guilds</a>
+                    <div class="nav-submenu" id="dwarves-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-dwarves.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-dwarves.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- The Ossuarium -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-undead.html" aria-expanded="false" aria-controls="ossuarium-submenu" role="button" tabindex="0">The Ossuarium</a>
+                    <div class="nav-submenu" id="ossuarium-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-undead.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-ossuarium.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- Elven Verdant Covenant -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-elves.html" aria-expanded="false" aria-controls="elves-submenu" role="button" tabindex="0">Elven Verdant Covenant</a>
+                    <div class="nav-submenu" id="elves-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-elves.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-elves.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- Nomad Collective -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-nomads.html" aria-expanded="false" aria-controls="nomads-submenu" role="button" tabindex="0">Nomad Collective</a>
+                    <div class="nav-submenu" id="nomads-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-nomads.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-nomads.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- The Exchange -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-exchange.html" aria-expanded="false" aria-controls="exchange-submenu" role="button" tabindex="0">The Exchange</a>
+                    <div class="nav-submenu" id="exchange-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-exchange.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-exchange.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- Vestige Bloodlines -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-bloodlines.html" aria-expanded="false" aria-controls="bloodlines-submenu" role="button" tabindex="0">Vestige Bloodlines</a>
+                    <div class="nav-submenu" id="bloodlines-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-bloodlines.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-bloodlines.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- Emergent Syndicate -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-emergent.html" aria-expanded="false" aria-controls="emergent-submenu" role="button" tabindex="0">Emergent Syndicate</a>
+                    <div class="nav-submenu" id="emergent-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-emergent.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-emergent.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- Crucible Packs -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-crucible.html" aria-expanded="false" aria-controls="crucible-submenu" role="button" tabindex="0">Crucible Packs</a>
+                    <div class="nav-submenu" id="crucible-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-crucible.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-crucible.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
+
+                <!-- The Wyrd Conclave -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-fae.html" aria-expanded="false" aria-controls="wyrd-submenu" role="button" tabindex="0">The Wyrd Conclave</a>
+                    <div class="nav-submenu" id="wyrd-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-fae.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-wyrd.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
             </div>
 
             <!-- 4. SCENARIOS (Start Playing) -->
@@ -673,7 +737,15 @@
             <!-- 6. NPC-ONLY FACTIONS (Event Encounters) -->
             <div class="nav-section">
                 <div class="nav-title">NPC-Only Factions</div>
-                <a class="nav-link" onclick="loadContent('faction-draconid.html', event)">The Draconid Remembrance</a>
+
+                <!-- The Draconid Remembrance -->
+                <div class="nav-dropdown">
+                    <a class="nav-link has-submenu" data-url="faction-draconid.html" aria-expanded="false" aria-controls="draconid-submenu" role="button" tabindex="0">The Draconid Remembrance</a>
+                    <div class="nav-submenu" id="draconid-submenu">
+                        <a class="nav-link" onclick="loadContent('faction-draconid.html', event)">Faction Overview</a>
+                        <a class="nav-link" onclick="loadContent('lore-npc-draconid.html', event)">Notable NPCs</a>
+                    </div>
+                </div>
             </div>
 
 
