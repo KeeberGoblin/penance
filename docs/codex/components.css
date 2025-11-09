@@ -1,0 +1,401 @@
+/*
+ * PENANCE CODEX - SHARED COMPONENTS
+ * Common UI patterns extracted from inline styles
+ * Dropdowns, Cards, Buttons, Grids, and reusable patterns
+ */
+
+/* ========================================
+   DROPDOWN COMPONENTS
+   Used in: content-home, enemies-bestiary, lore-npcs, etc.
+   ======================================== */
+
+.dropdown-container {
+    margin: 2rem 0;
+}
+
+.dropdown-toggle {
+    background: var(--shadow-black);
+    border: 2px solid var(--dark-red);
+    color: var(--aged-gold);
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+}
+
+.dropdown-toggle:hover {
+    background: var(--dark-red);
+    color: var(--aged-gold);
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.active::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    background: rgba(10, 6, 4, 0.5);
+    border: 1px solid var(--dark-red);
+    border-top: none;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+/* ========================================
+   CARD COMPONENTS
+   Used in: enemies-bestiary, lore-npcs, equipment pages
+   ======================================== */
+
+/* Card Container Grid */
+.card-grid,
+.enemy-featured-container,
+.npc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Base Card Styling */
+.card,
+.enemy-card,
+.npc-card,
+.equipment-card {
+    background: rgba(75, 14, 14, 0.15);
+    border-left: 4px solid var(--dark-red);
+    padding: 1.5rem;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.card:hover,
+.enemy-card:hover,
+.npc-card:hover,
+.equipment-card:hover {
+    background: rgba(75, 14, 14, 0.25);
+    border-left-color: var(--aged-gold);
+}
+
+/* Card Type Labels */
+.type-label,
+.enemy-type-label,
+.npc-role-label {
+    color: var(--aged-gold);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Card Titles */
+.card h3,
+.card h4,
+.enemy-card h3,
+.enemy-card h4,
+.npc-card h3,
+.npc-card h4 {
+    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1.2rem;
+    color: var(--bone-white);
+    font-family: 'Cinzel', serif;
+}
+
+/* Stats Row */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 0.5rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+}
+
+.stat-mini {
+    background: rgba(139, 0, 0, 0.2);
+    padding: 0.4rem;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.stat-mini strong {
+    display: block;
+    color: var(--aged-gold);
+    font-size: 1.1em;
+}
+
+.stat-mini span {
+    display: block;
+    font-size: 0.8em;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   UPDATE ITEMS / LIST ITEMS
+   Used in: content-home, changelog pages
+   ======================================== */
+
+.update-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+    line-height: 1.6;
+}
+
+.update-item:last-child {
+    border-bottom: none;
+}
+
+.update-item strong {
+    color: var(--aged-gold);
+}
+
+.update-item-date {
+    display: inline-block;
+    color: var(--aged-gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+    min-width: 100px;
+}
+
+/* ========================================
+   TABLE OF CONTENTS GRID
+   Used in: content-home
+   ======================================== */
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.toc-section {
+    background: rgba(75, 14, 14, 0.15);
+    border-left: 4px solid var(--dark-red);
+    padding: 1.5rem;
+    border-radius: 2px;
+}
+
+.toc-section h3 {
+    color: var(--aged-gold);
+    margin-top: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--dark-red);
+    padding-bottom: 0.5rem;
+}
+
+.toc-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+.toc-section li {
+    margin: 0.5rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.toc-section li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--dark-red);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.toc-section a {
+    color: var(--bone-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.toc-section a:hover {
+    color: var(--aged-gold);
+    text-decoration: underline;
+}
+
+/* ========================================
+   ILLUMINATED HEADER
+   Used in: scenario pages, special lore pages
+   ======================================== */
+
+.illuminated-header {
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+    position: relative;
+}
+
+.drop-cap {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 4rem;
+    line-height: 1;
+    float: left;
+    margin: 0 0.5rem -0.2rem 0;
+    color: var(--dark-red);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.illuminated-header .title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    color: var(--aged-gold);
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    letter-spacing: 0.05em;
+}
+
+.illuminated-header .subtitle {
+    font-style: italic;
+    color: var(--aged-gold);
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   ORNAMENTAL BREAKS
+   Used in: scenario pages, lore pages
+   ======================================== */
+
+.ornamental-break {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--dark-red);
+    margin: 2rem 0;
+    letter-spacing: 1rem;
+}
+
+/* ========================================
+   SECTION CONTAINERS
+   Generic styled sections for content organization
+   ======================================== */
+
+.content-section {
+    background: rgba(75, 14, 14, 0.15);
+    border-left: 4px solid var(--dark-red);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 2px;
+}
+
+.content-section h3 {
+    color: var(--aged-gold);
+    margin-top: 0;
+    border-bottom: 1px solid var(--dark-red);
+    padding-bottom: 0.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+}
+
+.content-section p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ========================================
+   CALLOUT BOXES
+   Informational, warning, tip boxes
+   ======================================== */
+
+.callout {
+    border-left: 4px solid var(--aged-gold);
+    background: rgba(139, 115, 85, 0.1);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.callout-warning {
+    border-left-color: var(--dark-red);
+    background: rgba(139, 0, 0, 0.15);
+}
+
+.callout-info {
+    border-left-color: var(--aged-gold);
+    background: rgba(139, 115, 85, 0.1);
+}
+
+.callout h4 {
+    margin-top: 0;
+    color: var(--aged-gold);
+    font-family: 'Cinzel', serif;
+}
+
+/* ========================================
+   BUTTON GROUP
+   Generic button grouping pattern
+   ======================================== */
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .card-grid,
+    .enemy-featured-container,
+    .npc-grid,
+    .toc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .illuminated-header .title {
+        font-size: 2rem;
+    }
+
+    .drop-cap {
+        font-size: 3rem;
+    }
+
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown-toggle {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .card,
+    .enemy-card,
+    .npc-card,
+    .equipment-card {
+        padding: 1rem;
+    }
+
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loot Tables</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
         .loot-featured-container {
             display: grid;
@@ -157,12 +158,12 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#campaign">CAMPAIGN</a> /
             Loot Tables
-        </div>
+        </nav>
 
         <h1>Loot Tables</h1>
         <p style="font-style: italic; color: var(--aged-gold); font-size: 1.1rem; text-align: center; margin: 1rem 0;">
@@ -507,7 +508,7 @@
         <div style="text-align: center; margin: 3rem 0;">
             <span style="font-size: 3rem; color: var(--dark-red);">✦</span>
         </div>
-    </div>
+    </main>
 
     <script>
         function toggleDropdown(id) {

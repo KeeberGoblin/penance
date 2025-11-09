@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilot Skills System - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
         .skill-card {
             background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(75, 14, 14, 0.3));
@@ -126,12 +127,12 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#campaign">CAMPAIGN</a> /
             Pilot Skills System
-        </div>
+        </nav>
 
         <h1>Pilot Skills System</h1>
 
@@ -201,311 +202,203 @@
 
         <div class="xp-table">
             <div class="xp-row">
-                <span class="xp-threshold">100 XP</span>
-                <span class="xp-unlock">Choose 1 Tier 1 skill</span>
+                <span class="xp-threshold">200 XP</span>
+                <span class="xp-unlock">Roll 1d6 on Tier 1 table</span>
             </div>
             <div class="xp-row">
-                <span class="xp-threshold">300 XP</span>
-                <span class="xp-unlock">Choose 1 Tier 2 skill</span>
+                <span class="xp-threshold">500 XP</span>
+                <span class="xp-unlock">Roll 1d20 on Tier 2 table</span>
             </div>
             <div class="xp-row">
-                <span class="xp-threshold">600 XP</span>
-                <span class="xp-unlock">Choose 1 Tier 3 skill</span>
+                <span class="xp-threshold">1000 XP</span>
+                <span class="xp-unlock">Gain your faction's signature ability (Tier 3)</span>
             </div>
         </div>
 
         <p><strong>Maximum:</strong> Each pilot can have up to <strong>3 skills</strong> (one from each tier).</p>
-        <p><strong>No Respec:</strong> Once chosen, skills are permanent. Choose carefully.</p>
+        <p><strong>Randomization:</strong> Skills are rolled randomly - no cherry-picking! Reroll duplicates.</p>
+        <p><strong>Player Choice:</strong> Rolling 17-20 on Tier 2 grants your choice from that tier's table.</p>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>Universal Skills</h2>
+        <h2>Tier 1: Universal Basics (200 XP)</h2>
 
-        <!-- TIER 1 -->
         <div class="tier-banner">
-            <h3>Tier 1: Basic Training</h3>
-            <p class="tier-description">Small but reliable bonuses. Always useful. Unlocked at 100 XP.</p>
+            <h3>Roll 1d6 on This Table</h3>
+            <p class="tier-description">Small but reliable bonuses. Early career foundation skills.</p>
         </div>
 
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Steady Hands</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                Your first attack each turn generates <strong>-1 Heat</strong>.
-            </div>
-            <div class="skill-synergy">Good for: Heat-heavy weapons, sustained fire builds</div>
-        </div>
+        <table class="stat-table" style="margin: 2rem 0;">
+            <thead>
+                <tr>
+                    <th style="width: 60px;">Roll</th>
+                    <th style="width: 200px;">Skill Name</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>Steady Hands</td>
+                    <td>Your first attack each turn generates <strong>-1 Heat</strong>. <em>(Good for sustained fire builds)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>Scrap Scrounger</td>
+                    <td>Salvage action recovers <strong>3 cards instead of 2</strong> (3 SCRAP → 3 cards). <em>(Good for component damage recovery)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>Combat Awareness</td>
+                    <td><strong>+1 to all Defense Dice results</strong> (not additional dice). Example: [2][3][4] becomes [3][4][5]. <em>(Good for survivability)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>Efficient Movement</td>
+                    <td>Moving <strong>1-2 hexes costs only 1 SP</strong> instead of 2 SP. <em>(Good for mobile strikers)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>5</strong></td>
+                    <td>Heat Sink Upgrade</td>
+                    <td>Your <strong>Heat Strain threshold increases by 1</strong> (roll at 6+ Heat instead of 5+). <em>(Good for energy weapons)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>6</strong></td>
+                    <td>Field Triage</td>
+                    <td>During <strong>Refresh Phase</strong>, if you took no damage last turn, <strong>remove 1 SCRAP card</strong>. <em>(Good for long missions)</em></td>
+                </tr>
+            </tbody>
+        </table>
 
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Scrap Scrounger</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                When you use the Salvage action, gain <strong>1 extra card</strong> (3 SCRAP → 3 cards instead of 2).
-            </div>
-            <div class="skill-synergy">Good for: Prolonged battles, component damage recovery</div>
-        </div>
+        <p><strong>Reroll Rule:</strong> If you roll a skill you already have, reroll immediately.</p>
 
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Combat Awareness</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>+1 to all Defense Dice results</strong> (but you don't gain additional dice).<br>
-                <em>Example: Rolling [2][3][4] becomes [3][4][5]</em>
-            </div>
-            <div class="skill-synergy">Good for: Defensive builds, survivability</div>
-        </div>
+        <h2>Tier 2: Universal Specialization (500 XP)</h2>
 
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Efficient Movement</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                Moving <strong>1-2 hexes costs only 1 SP</strong> instead of 2 SP.
-            </div>
-            <div class="skill-synergy">Good for: Mobile strikers, repositioning</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Heat Sink Upgrade</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                Your <strong>Heat Strain threshold increases by 1</strong> (Strain roll at 6+ Heat instead of 5+).
-            </div>
-            <div class="skill-synergy">Good for: Energy weapon users, aggressive playstyles</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Field Triage</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                During the <strong>Refresh Phase</strong>, if you did not take damage last turn, <strong>remove 1 SCRAP card</strong> from your deck.
-            </div>
-            <div class="skill-synergy">Good for: Long missions, gradual recovery</div>
-        </div>
-
-        <!-- TIER 2 -->
         <div class="tier-banner">
-            <h3>Tier 2: Specialized Training</h3>
-            <p class="tier-description">Moderate bonuses or conditional powerful effects. Define your playstyle. Unlocked at 300 XP.</p>
+            <h3>Roll 1d20 on This Table</h3>
+            <p class="tier-description">Moderate bonuses and powerful conditional effects. Define your combat style.</p>
         </div>
 
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Headhunter</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                Attacks targeting the <strong>Head component deal +2 damage</strong>.
-            </div>
-            <div class="skill-synergy">Good for: Precision builds, quick kills</div>
-        </div>
+        <table class="stat-table" style="margin: 2rem 0;">
+            <thead>
+                <tr>
+                    <th style="width: 60px;">Roll</th>
+                    <th style="width: 180px;">Skill Name</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>Headhunter</td>
+                    <td><em>(Passive)</em> - Attacks targeting <strong>Head</strong> component deal <strong>+2 damage</strong>. <em>(Precision builds)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>Leg Breaker</td>
+                    <td><em>(Passive)</em> - Attacks targeting <strong>Legs</strong> apply <strong>-1 Move</strong> until end of next turn (stacks). <em>(Mobility denial)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>Death Defiance</td>
+                    <td><em>(Once per Mission)</em> - When reduced to <strong>0 HP</strong>, survive with <strong>1 card</strong> instead. <em>(High-risk aggression)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>Component Reinforcement</td>
+                    <td><em>(Passive)</em> - Choose 1 component at mission start: <strong>+4 HP</strong> permanently this mission. <em>(Adaptive defense)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>5</strong></td>
+                    <td>SP Efficiency</td>
+                    <td><em>(Passive)</em> - Start each turn with <strong>4 SP instead of 3</strong>. <em>(Action economy)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>6</strong></td>
+                    <td>Battlemaster</td>
+                    <td><em>(Passive)</em> - During Draw Phase, draw <strong>+1 additional card</strong> (up to hand limit). <em>(Deck cycling)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>7</strong></td>
+                    <td>Opportunist</td>
+                    <td><em>(Passive)</em> - Gain <strong>+1 SP immediately</strong> when you destroy an enemy component. <em>(Snowball potential)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>8</strong></td>
+                    <td>Terrain Expert</td>
+                    <td><em>(Passive)</em> - <strong>Ignore movement penalties</strong> from difficult terrain (rubble, water, etc.). <em>(Mobility builds)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>9</strong></td>
+                    <td>Ace Pilot</td>
+                    <td><em>(Once per Turn)</em> - After <strong>moving</strong>, make <strong>one free 1 SP attack</strong> (does not cost SP). <em>(Hit-and-run tactics)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>10</strong></td>
+                    <td>Component Savant</td>
+                    <td><em>(Passive)</em> - Choose 1 component at mission start: <strong>+4 HP</strong> and <strong>cannot be targeted by Called Shots</strong>. <em>(Countering snipers)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>11</strong></td>
+                    <td>Soulstone Overcharge</td>
+                    <td><em>(Once per Battle)</em> - Gain <strong>+3 SP this turn</strong>, but take <strong>3 Heat immediately</strong>. <em>(Finishing blows)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>12</strong></td>
+                    <td>Final Stand</td>
+                    <td><em>(Passive)</em> - When you have <strong>only 1 component with HP</strong>: <strong>+3 damage</strong> and <strong>+2 Move</strong>. <em>(Death spiral acceptance)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>13</strong></td>
+                    <td>Cornered Beast</td>
+                    <td><em>(Passive)</em> - When your <strong>deck has ≤10 cards</strong>: all attacks deal <strong>+2 damage</strong>. <em>(Desperation builds)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>14</strong></td>
+                    <td>Guardian Angel</td>
+                    <td><em>(Once per Mission)</em> - When an <strong>allied Casket within 3 hexes</strong> would be reduced to 0 HP, <strong>they survive with 1 card</strong> instead. <em>(Cooperative play)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>15</strong></td>
+                    <td>Master Technician</td>
+                    <td><em>(Once per Battle)</em> - During Refresh Phase, <strong>remove up to 3 SCRAP cards</strong> from your deck. <em>(Component recovery)</em></td>
+                </tr>
+                <tr>
+                    <td><strong>16</strong></td>
+                    <td>Killing Blow</td>
+                    <td><em>(Passive)</em> - When you <strong>destroy an enemy Casket</strong> (reduce to 0 HP), <strong>immediately draw 3 cards</strong>. <em>(Aggressive offense)</em></td>
+                </tr>
+                <tr style="background: rgba(212, 175, 55, 0.2);">
+                    <td><strong>17-20</strong></td>
+                    <td>PLAYER'S CHOICE</td>
+                    <td><strong>Choose any skill from this Tier 2 table</strong> (1-16). This represents natural talent or focused training in a specific area. Congratulations - you got lucky!</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Leg Breaker</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                Attacks targeting the <strong>Legs component</strong> apply <strong>-1 Move</strong> to the target until end of next turn (stacks).
-            </div>
-            <div class="skill-synergy">Good for: Mobility denial, kiting</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Death Defiance</span>
-                <span class="skill-type">Active - Once per Mission</span>
-            </div>
-            <div class="skill-description">
-                When reduced to <strong>0 HP</strong>, survive with <strong>1 card</strong> remaining instead.
-            </div>
-            <div class="skill-synergy">Good for: High-risk aggression, desperation plays</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Component Reinforcement</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                Choose one component at mission start: <strong>It gains +4 HP permanently</strong> (for this mission only).
-            </div>
-            <div class="skill-synergy">Good for: Protecting critical components, adaptive defense</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">SP Efficiency</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                You <strong>start each turn with +1 SP</strong> (4 SP base instead of 3 SP).
-            </div>
-            <div class="skill-synergy">Good for: Action economy, combo turns</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Battlemaster</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                During the <strong>Draw Phase</strong>, draw <strong>+1 additional card</strong> (up to hand limit).
-            </div>
-            <div class="skill-synergy">Good for: Maintaining options, deck cycling</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Opportunist</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                Gain <strong>+1 SP immediately</strong> whenever you destroy an enemy component.
-            </div>
-            <div class="skill-synergy">Good for: Aggressive offense, snowball potential</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Terrain Expert</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>Ignore movement penalties</strong> from difficult terrain (rubble, water, etc.).
-            </div>
-            <div class="skill-synergy">Good for: Maps with heavy terrain, mobility builds</div>
-        </div>
-
-        <!-- TIER 3 -->
-        <div class="tier-banner">
-            <h3>Tier 3: Veteran Mastery</h3>
-            <p class="tier-description">Build-defining abilities. Once-per-mission powers or dramatic passive bonuses. Unlocked at 600 XP.</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Ace Pilot</span>
-                <span class="skill-type">Active - Once per Turn</span>
-            </div>
-            <div class="skill-description">
-                After <strong>moving</strong>, you may make <strong>one free 1 SP attack</strong> (does not cost SP).
-            </div>
-            <div class="skill-synergy">Good for: Hit-and-run tactics, mobile strikers</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Component Savant</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                Choose one component at mission start: <strong>It cannot be targeted by Called Shots</strong> and has <strong>+4 HP</strong>.
-            </div>
-            <div class="skill-synergy">Good for: Protecting vital systems, countering snipers</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Soulstone Overcharge</span>
-                <span class="skill-type">Active - Once per Battle</span>
-            </div>
-            <div class="skill-description">
-                Gain <strong>+3 SP this turn</strong>, but take <strong>3 Heat immediately</strong>.
-            </div>
-            <div class="skill-synergy">Good for: Finishing blows, burst damage turns</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Final Stand</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                When you have <strong>only 1 component remaining with HP</strong>, gain <strong>+3 damage</strong> and <strong>+2 Move</strong>.
-            </div>
-            <div class="skill-synergy">Good for: Death spiral acceptance, last stands</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Cornered Beast</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                When your <strong>deck has ≤10 cards</strong>, all your attacks deal <strong>+2 damage</strong>.
-            </div>
-            <div class="skill-synergy">Good for: Desperation builds, late-game power</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Guardian Angel</span>
-                <span class="skill-type">Active - Once per Mission</span>
-            </div>
-            <div class="skill-description">
-                When an <strong>allied Casket within 3 hexes</strong> would be reduced to 0 HP, <strong>they survive with 1 card</strong> instead.
-            </div>
-            <div class="skill-synergy">Good for: Cooperative play, protecting rookies</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Master Technician</span>
-                <span class="skill-type">Active - Once per Battle</span>
-            </div>
-            <div class="skill-description">
-                During the <strong>Refresh Phase</strong>, <strong>remove up to 3 SCRAP cards</strong> from your deck.
-            </div>
-            <div class="skill-synergy">Good for: Component damage recovery, deck cleanup</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Killing Blow</span>
-                <span class="skill-type">Passive</span>
-            </div>
-            <div class="skill-description">
-                When you <strong>destroy an enemy Casket</strong> (reduce to 0 HP), <strong>immediately draw 3 cards</strong>.
-            </div>
-            <div class="skill-synergy">Good for: Aggressive offense, snowball chains</div>
-        </div>
+        <p><strong>Reroll Rule:</strong> If you roll a skill you already have, reroll immediately.</p>
+        <p><strong>Player Choice (17-20):</strong> Lucky roll! Choose any skill from this table that you don't already have.</p>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>Faction-Specific Skills</h2>
 
-        <p>Each faction has unique skills that synergize with their core mechanics. These require the pilot to be playing that faction.</p>
+        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+
+        <h2>Tier 3: Faction Signature Abilities (1000 XP)</h2>
+
+        <div class="tier-banner">
+            <h3>Automatic - Gain Your Faction's Mastery Skill</h3>
+            <p class="tier-description">Build-defining abilities. Veteran pilots unlock their faction's ultimate technique.</p>
+        </div>
+
+        <p style="font-size: 1.1rem; margin: 1.5rem 0;">When you reach <strong>1000 XP</strong>, you automatically gain your faction's signature ability. This represents decades of specialized training and mastery of your faction's unique combat philosophy.</p>
 
         <!-- Church -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">Church of Absolution</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Crimson Offering<span class="faction-badge">Church</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>Blood Offering</strong> costs <strong>1 HP instead of 2 HP</strong> per use.
-            </div>
-            <div class="skill-synergy">Enables more aggressive martyr playstyle without rapid self-destruction</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">Church of Absolution</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Martyrdom<span class="faction-badge">Church</span></span>
-                <span class="skill-type">Tier 3 - Once per Mission</span>
+                <span class="skill-type">Once per Mission</span>
             </div>
             <div class="skill-description">
                 <strong>Sacrifice 5 HP permanently</strong> (for the mission). All attacks this turn deal <strong>+5 damage</strong> and ignore Armor.
@@ -514,23 +407,11 @@
         </div>
 
         <!-- Dwarves -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">Dwarven Forge-Guilds</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Rune Mastery<span class="faction-badge">Dwarves</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                Start each battle with <strong>1 Rune counter</strong> already placed.
-            </div>
-            <div class="skill-synergy">Faster ramp-up for defensive and armor-piercing strategies</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">Dwarven Forge-Guilds</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Fortress Stance<span class="faction-badge">Dwarves</span></span>
-                <span class="skill-type">Tier 3 - Once per Battle</span>
+                <span class="skill-type">Once per Battle</span>
             </div>
             <div class="skill-description">
                 Until end of next turn: <strong>+3 to all Defense Dice</strong>, cannot move.
@@ -539,23 +420,11 @@
         </div>
 
         <!-- Ossuarium -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">The Ossuarium</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Soul Harvest Efficiency<span class="faction-badge">Ossuarium</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>Soul Harvest</strong> recovers <strong>1 additional card</strong> (3 cards instead of 2).
-            </div>
-            <div class="skill-synergy">Improved resource recovery synergizes with attrition playstyle</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">The Ossuarium</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Undying Will<span class="faction-badge">Ossuarium</span></span>
-                <span class="skill-type">Tier 3 - Once per Mission</span>
+                <span class="skill-type">Once per Mission</span>
             </div>
             <div class="skill-description">
                 When reduced to <strong>0 HP</strong>, <strong>reshuffle your discard pile</strong> into your deck and continue fighting.
@@ -564,23 +433,11 @@
         </div>
 
         <!-- Elves -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">Elven Verdant Covenant</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Bleed Control<span class="faction-badge">Elves</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>Reduce Bleed damage taken by 2</strong> (minimum 0).
-            </div>
-            <div class="skill-synergy">Counters mirror matches and prevents self-inflicted bleed penalties</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">Elven Verdant Covenant</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Thornvine Mastery<span class="faction-badge">Elves</span></span>
-                <span class="skill-type">Tier 3 - Passive</span>
+                <span class="skill-type">Passive</span>
             </div>
             <div class="skill-description">
                 <strong>Bleed counters</strong> you inflict deal <strong>+1 damage per stack</strong>.
@@ -589,23 +446,11 @@
         </div>
 
         <!-- Wyrd -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">The Wyrd Conclave</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Wyrd Manipulation<span class="faction-badge">Wyrd</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>Gain 1 Wyrd Token</strong> at the start of each battle.
-            </div>
-            <div class="skill-synergy">Earlier access to reality-bending abilities</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">The Wyrd Conclave</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Reality Fracture<span class="faction-badge">Wyrd</span></span>
-                <span class="skill-type">Tier 3 - Once per Battle</span>
+                <span class="skill-type">Once per Battle</span>
             </div>
             <div class="skill-description">
                 Spend <strong>3 Wyrd Tokens</strong>: <strong>Teleport up to 5 hexes</strong> and gain <strong>+2 SP this turn</strong>.
@@ -614,23 +459,11 @@
         </div>
 
         <!-- Nomads -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">Nomad Collective</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Improvisation Expert<span class="faction-badge">Nomads</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                When you <strong>loot equipment</strong> mid-mission, it costs <strong>-1 SP to equip</strong> this mission.
-            </div>
-            <div class="skill-synergy">Enhances adaptive scavenger playstyle</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">Nomad Collective</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Scavenger's Luck<span class="faction-badge">Nomads</span></span>
-                <span class="skill-type">Tier 3 - Passive</span>
+                <span class="skill-type">Passive</span>
             </div>
             <div class="skill-description">
                 When an <strong>enemy Casket is destroyed</strong>, roll 1d6. On <strong>5+</strong>, gain <strong>1 random equipment card</strong> to your deck.
@@ -639,23 +472,11 @@
         </div>
 
         <!-- Exchange -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">The Exchange</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Credit Efficiency<span class="faction-badge">Exchange</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>Gain 1 Credit Token</strong> at the start of each battle.
-            </div>
-            <div class="skill-synergy">Faster access to bribery and mercenary abilities</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">The Exchange</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Bribe Master<span class="faction-badge">Exchange</span></span>
-                <span class="skill-type">Tier 3 - Once per Mission</span>
+                <span class="skill-type">Once per Mission</span>
             </div>
             <div class="skill-description">
                 Spend <strong>3 Credit Tokens</strong>: Target enemy <strong>skips their next activation</strong>.
@@ -664,23 +485,11 @@
         </div>
 
         <!-- Bloodlines -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">Vestige Bloodlines</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Biomass Surge<span class="faction-badge">Bloodlines</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>Gain 1 Biomass Token</strong> whenever you destroy an enemy component.
-            </div>
-            <div class="skill-synergy">Faster mutation access through aggressive play</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">Vestige Bloodlines</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Adaptive Evolution<span class="faction-badge">Bloodlines</span></span>
-                <span class="skill-type">Tier 3 - Once per Battle</span>
+                <span class="skill-type">Once per Battle</span>
             </div>
             <div class="skill-description">
                 Spend <strong>4 Biomass Tokens</strong>: <strong>Heal one destroyed component to 4 HP</strong>.
@@ -689,23 +498,11 @@
         </div>
 
         <!-- Emergent -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">Emergent Syndicate</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Swarm Coordination<span class="faction-badge">Emergent</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                When you have <strong>2+ Metamorph Tokens</strong>, gain <strong>+1 to all attack rolls</strong>.
-            </div>
-            <div class="skill-synergy">Rewards token accumulation with consistent offense</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">Emergent Syndicate</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Hive Mind Link<span class="faction-badge">Emergent</span></span>
-                <span class="skill-type">Tier 3 - Passive</span>
+                <span class="skill-type">Passive</span>
             </div>
             <div class="skill-description">
                 <strong>Allied Support Units</strong> within 3 hexes gain <strong>+1 to their behavior rolls</strong>.
@@ -714,23 +511,11 @@
         </div>
 
         <!-- Crucible -->
-        <h3 style="color: var(--blood-red); margin-top: 2rem;">Crucible Pacts</h3>
-
-        <div class="skill-card">
-            <div class="skill-header">
-                <span class="skill-name">Forge Heart<span class="faction-badge">Crucible</span></span>
-                <span class="skill-type">Tier 2 - Passive</span>
-            </div>
-            <div class="skill-description">
-                <strong>Ignore the first 2 Heat</strong> you would gain each turn.
-            </div>
-            <div class="skill-synergy">Dramatically improves heat management for fire-based builds</div>
-        </div>
-
+        <h3 style="color: var(--blood-red); margin-top: 2.5rem; border-bottom: 2px solid var(--dark-red); padding-bottom: 0.5rem;">Crucible Packs</h3>
         <div class="skill-card">
             <div class="skill-header">
                 <span class="skill-name">Volcanic Fury<span class="faction-badge">Crucible</span></span>
-                <span class="skill-type">Tier 3 - Once per Battle</span>
+                <span class="skill-type">Once per Battle</span>
             </div>
             <div class="skill-description">
                 Gain <strong>+4 Heat immediately</strong>. All attacks this turn deal <strong>damage equal to your current Heat</strong>.
@@ -740,123 +525,94 @@
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
-        <h2>Iconic Pilots and Their Skills</h2>
+        <h2>Example Skill Progressions</h2>
 
-        <p>The legendary pilots of Year 437 have mastered the art of warfare. Here are their skill loadouts, representing decades of brutal experience:</p>
+        <p>Here are example pilot progressions showing how the roll system creates unique builds. Each roll shapes a distinct combat identity:</p>
 
         <table class="stat-table">
             <thead>
                 <tr>
-                    <th>Pilot Name</th>
-                    <th>Faction</th>
-                    <th>Skills</th>
+                    <th style="width: 200px;">Pilot Build</th>
+                    <th>Rolls & Progression</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Sister Vex</strong> - "The Hollow Penitent"</td>
-                    <td>Church of Absolution</td>
-                    <td>Death Defiance, Crimson Offering, Martyrdom</td>
+                    <td><strong>The Tank</strong><br><em>Church of Absolution</em></td>
+                    <td>
+                        <strong>Mission 2 (200 XP):</strong> Rolled 3 → <strong>Combat Awareness</strong> (+1 Defense Dice)<br>
+                        <strong>Mission 5 (500 XP):</strong> Rolled 4 → <strong>Component Reinforcement</strong> (+4 HP to chosen component)<br>
+                        <strong>Mission 9 (1000 XP):</strong> Automatic → <strong>Martyrdom</strong><br>
+                        <em>Build identity: Defensive survivor who becomes suicidal damage dealer when desperate</em>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Inquisitor Grayle</strong> - "The Absolver"</td>
-                    <td>Church of Absolution</td>
-                    <td>Headhunter, Heat Sink Upgrade, Martyrdom</td>
+                    <td><strong>The Sniper</strong><br><em>Dwarven Forge-Guilds</em></td>
+                    <td>
+                        <strong>Mission 2 (200 XP):</strong> Rolled 5 → <strong>Heat Sink Upgrade</strong> (+1 Heat threshold)<br>
+                        <strong>Mission 6 (500 XP):</strong> Rolled 1 → <strong>Headhunter</strong> (+2 damage to Head)<br>
+                        <strong>Mission 10 (1000 XP):</strong> Automatic → <strong>Fortress Stance</strong><br>
+                        <em>Build identity: Precision striker who locks down to become immovable fortress</em>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Forgemaster Durr</strong> - "The Calculator"</td>
-                    <td>Dwarven Forge-Guilds</td>
-                    <td>Battlemaster, Rune Mastery, Component Savant</td>
+                    <td><strong>The Immortal</strong><br><em>The Ossuarium</em></td>
+                    <td>
+                        <strong>Mission 2 (200 XP):</strong> Rolled 6 → <strong>Field Triage</strong> (remove SCRAP if no damage)<br>
+                        <strong>Mission 5 (500 XP):</strong> Rolled 3 → <strong>Death Defiance</strong> (survive at 1 card once/mission)<br>
+                        <strong>Mission 9 (1000 XP):</strong> Automatic → <strong>Undying Will</strong><br>
+                        <em>Build identity: Refuses to die through multiple layers of resurrection mechanics</em>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Ironwright Karsa</strong> - "Rust-Eater"</td>
-                    <td>Dwarven Forge-Guilds</td>
-                    <td>Scrap Scrounger, Component Reinforcement, Master Technician</td>
+                    <td><strong>The Bleed Machine</strong><br><em>Elven Verdant Covenant</em></td>
+                    <td>
+                        <strong>Mission 2 (200 XP):</strong> Rolled 4 → <strong>Efficient Movement</strong> (1-2 hex move = 1 SP)<br>
+                        <strong>Mission 6 (500 XP):</strong> Rolled 16 → <strong>Killing Blow</strong> (draw 3 on kill)<br>
+                        <strong>Mission 10 (1000 XP):</strong> Automatic → <strong>Thornvine Mastery</strong><br>
+                        <em>Build identity: Mobile kiter who stacks bleed for infinite damage scaling</em>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Bonelord Karath</strong> - "The Debt Collector"</td>
-                    <td>The Ossuarium</td>
-                    <td>Soul Harvest Efficiency, Undying Will, Master Technician</td>
+                    <td><strong>The Reality Breaker</strong><br><em>The Wyrd Conclave</em></td>
+                    <td>
+                        <strong>Mission 2 (200 XP):</strong> Rolled 2 → <strong>Scrap Scrounger</strong> (Salvage = 3 cards)<br>
+                        <strong>Mission 5 (500 XP):</strong> Rolled 19 → <strong>Player's Choice</strong> → chose <strong>Battlemaster</strong><br>
+                        <strong>Mission 9 (1000 XP):</strong> Automatic → <strong>Reality Fracture</strong><br>
+                        <em>Build identity: Card advantage engine with teleport burst turns</em>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Mortis the Silencer</strong> - "The Quiet Reaper"</td>
-                    <td>The Ossuarium</td>
-                    <td>Efficient Movement, Death Defiance, Soul Harvest Efficiency</td>
+                    <td><strong>The Loot Goblin</strong><br><em>Nomad Collective</em></td>
+                    <td>
+                        <strong>Mission 2 (200 XP):</strong> Rolled 1 → <strong>Steady Hands</strong> (-1 Heat on first attack)<br>
+                        <strong>Mission 6 (500 XP):</strong> Rolled 7 → <strong>Opportunist</strong> (+1 SP on component destroy)<br>
+                        <strong>Mission 10 (1000 XP):</strong> Automatic → <strong>Scavenger's Luck</strong><br>
+                        <em>Build identity: Aggressive offense rewarded with SP and equipment gains</em>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Rootwarden Kess</strong> - "The Pruner"</td>
-                    <td>Elven Verdant Covenant</td>
-                    <td>Terrain Expert, Efficient Movement, Component Savant</td>
+                    <td><strong>The Controller</strong><br><em>The Exchange</em></td>
+                    <td>
+                        <strong>Mission 3 (200 XP):</strong> Rolled 3 → <strong>Combat Awareness</strong> (+1 Defense Dice)<br>
+                        <strong>Mission 5 (500 XP):</strong> Rolled 5 → <strong>SP Efficiency</strong> (4 SP per turn)<br>
+                        <strong>Mission 9 (1000 XP):</strong> Automatic → <strong>Bribe Master</strong><br>
+                        <em>Build identity: Action economy specialist who skips enemy activations with Credits</em>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Thornwalker Sylris</strong> - "Blood-Bloom"</td>
-                    <td>Elven Verdant Covenant</td>
-                    <td>Bleed Control, Thornvine Mastery, Cornered Beast</td>
-                </tr>
-                <tr>
-                    <td><strong>Mockingbird</strong> - "The Many-Masked"</td>
-                    <td>The Wyrd Conclave</td>
-                    <td>Wyrd Manipulation, Reality Fracture, Battlemaster</td>
-                </tr>
-                <tr>
-                    <td><strong>The Veil-Walker</strong> - "Sorrow's Echo"</td>
-                    <td>The Wyrd Conclave</td>
-                    <td>Wyrd Manipulation, Efficient Movement, Combat Awareness</td>
-                </tr>
-                <tr>
-                    <td><strong>"Three-Card" Morrow</strong> - "The Drifter King"</td>
-                    <td>Nomad Collective</td>
-                    <td>Efficient Movement, Death Defiance, Scavenger's Luck</td>
-                </tr>
-                <tr>
-                    <td><strong>Wraith-Caller Yenna</strong> - "The Dust Prophet"</td>
-                    <td>Nomad Collective</td>
-                    <td>Battlemaster, Opportunist, Improvisation Expert</td>
-                </tr>
-                <tr>
-                    <td><strong>Proctor Ilyara Voss</strong> - "The Actuary of Ash"</td>
-                    <td>The Exchange</td>
-                    <td>Credit Efficiency, Bribe Master, SP Efficiency</td>
-                </tr>
-                <tr>
-                    <td><strong>Broker Tannis</strong> - "The Coin-Counter"</td>
-                    <td>The Exchange</td>
-                    <td>Credit Efficiency, Combat Awareness, Scavenger's Luck</td>
-                </tr>
-                <tr>
-                    <td><strong>"Woundwright" Tallis</strong> - "The Stitcher"</td>
-                    <td>Vestige Bloodlines</td>
-                    <td>Biomass Surge, Adaptive Evolution, Component Reinforcement</td>
-                </tr>
-                <tr>
-                    <td><strong>Apex-Strain Vor</strong> - "The Devourer"</td>
-                    <td>Vestige Bloodlines</td>
-                    <td>Biomass Surge, Killing Blow, Cornered Beast</td>
-                </tr>
-                <tr>
-                    <td><strong>Hive-Node Zephyr</strong> - "The Chrysalis"</td>
-                    <td>Emergent Syndicate</td>
-                    <td>Swarm Coordination, Efficient Movement, SP Efficiency</td>
-                </tr>
-                <tr>
-                    <td><strong>Swarm-Singer Krix</strong> - "The Thousand Voice"</td>
-                    <td>Emergent Syndicate</td>
-                    <td>Swarm Coordination, Hive Mind Link, Opportunist</td>
-                </tr>
-                <tr>
-                    <td><strong>Ember-Boss Skragg</strong> - "Ash-Tongue"</td>
-                    <td>Crucible Packs</td>
-                    <td>Forge Heart, Volcanic Fury, Soulstone Overcharge</td>
-                </tr>
-                <tr>
-                    <td><strong>Boom-Shaman Grikka</strong> - "Cinder-Eyes"</td>
-                    <td>Crucible Packs</td>
-                    <td>Forge Heart, Hive Mind Link, Heat Sink Upgrade</td>
+                    <td><strong>The Phoenix</strong><br><em>Vestige Bloodlines</em></td>
+                    <td>
+                        <strong>Mission 2 (200 XP):</strong> Rolled 2 → <strong>Scrap Scrounger</strong> (Salvage = 3 cards)<br>
+                        <strong>Mission 5 (500 XP):</strong> Rolled 15 → <strong>Master Technician</strong> (remove 3 SCRAP/battle)<br>
+                        <strong>Mission 8 (1000 XP):</strong> Automatic → <strong>Adaptive Evolution</strong><br>
+                        <em>Build identity: Component damage recovery specialist who resurrects destroyed parts</em>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
-        <p style="margin-top: 1.5rem; font-style: italic; opacity: 0.9;">These skill combinations reflect each pilot's unique combat philosophy, scars, and decades of experience. Use them as boss enemies with enhanced capabilities, or as inspiration for player pilot builds.</p>
+        <p style="margin-top: 1.5rem; font-style: italic; opacity: 0.9;"><strong>Key Insight:</strong> Random rolls create unexpected synergies. The Immortal wasn't planning three resurrection mechanics - the dice built that identity through chance. Embrace the chaos!</p>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
@@ -866,10 +622,12 @@
 
         <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
             <h4 style="margin-top: 0; color: var(--aged-gold);">Training Action</h4>
-            <p><strong>Cost:</strong> 50 Credits per session</p>
-            <p><strong>Effect:</strong> Choose one pilot. They gain <strong>+50 XP</strong>.</p>
+            <p><strong>Cost:</strong> 75 Credits per session</p>
+            <p><strong>Effect:</strong> Choose one pilot. They gain <strong>+100 XP</strong>.</p>
             <p style="margin-bottom: 0;"><strong>Trade-Off:</strong> You can only perform <strong>one Settlement action per phase</strong>. Training means you cannot Repair, Recruit, or Trade this phase.</p>
         </div>
+
+        <p><strong>Pacing Note:</strong> With new thresholds (200/500/1000 XP), training accelerates progression. 2 training sessions = Tier 1 skill, 5 sessions = Tier 2 skill, 10 sessions = Tier 3 faction signature. This is expensive but allows veteran pilots to catch up.</p>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
 
@@ -880,8 +638,8 @@
         <div style="background: rgba(75, 14, 14, 0.4); border: 2px solid var(--blood-red); padding: 1.5rem; margin: 1.5rem 0;">
             <h4 style="color: var(--blood-red); margin-top: 0;">Example Bargain: "The Veteran's Edge"</h4>
             <p><strong>Cost:</strong> -4 Max HP (permanent)</p>
-            <p><strong>Reward:</strong> Gain one <strong>Tier 2 skill</strong> immediately (ignore XP requirement)</p>
-            <p style="margin-bottom: 0; font-style: italic; opacity: 0.9;">GM Note: Use Flesh Bargain skill rewards sparingly. They should feel powerful but costly.</p>
+            <p><strong>Reward:</strong> Gain <strong>200 XP immediately</strong>, then roll for a Tier 1 skill (or 500 XP for Tier 2 if bargain is more costly)</p>
+            <p style="margin-bottom: 0; font-style: italic; opacity: 0.9;">GM Note: Flesh Bargains grant XP, not direct skill picks - pilots still roll! This maintains the randomization philosophy while rewarding risk-takers.</p>
         </div>
 
         <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
@@ -939,9 +697,19 @@
 
         <h2>Designer's Notes</h2>
 
-        <p>Pilot Skills add <strong>progression depth</strong> to campaigns, making veteran pilots feel distinct and powerful. However, they also create <strong>snowball risk</strong> (veterans get stronger while rookies stay weak) and <strong>loss aversion</strong> (players fear permadeath more).</p>
+        <p>Pilot Skills add <strong>progression depth</strong> to campaigns, making veteran pilots feel distinct and powerful. The <strong>roll-based system</strong> prevents meta-optimization and creates emergent builds - every pilot's journey is unique.</p>
 
-        <p>Pilot skills work best when integrated with <strong>Flesh Bargain</strong> (HP-for-power trades) and <strong>Settlement Phase Training</strong> (resource management). They should feel <strong>earned through blood</strong>, not handed out freely.</p>
+        <p><strong>Why Randomization?</strong> Penance is built on roll tables (mission generation, loot, events, pilot generation). Cherry-picking skills broke this philosophy. Random skills create:</p>
+        <ul>
+            <li><strong>Build Variety:</strong> No two pilots play the same way - rolls force adaptation</li>
+            <li><strong>Emergent Identity:</strong> "The Immortal" didn't plan three resurrection skills - the dice told that story</li>
+            <li><strong>Reduced Decision Paralysis:</strong> No agonizing over "optimal" picks - roll and adapt</li>
+            <li><strong>Thematic Consistency:</strong> Everything from enemies to loot is procedural - skills should be too</li>
+        </ul>
+
+        <p>The hybrid system (universal Tier 1/2, faction Tier 3) ensures every pilot gets their faction's signature while keeping early progression unpredictable.</p>
+
+        <p>Pilot skills work best when integrated with <strong>Flesh Bargain</strong> (HP-for-XP trades) and <strong>Settlement Phase Training</strong> (resource management). They should feel <strong>earned through blood</strong>, not handed out freely.</p>
 
         <div class="manuscript-quote">
             "A pilot is forged in fire, tempered in loss, and sharpened by survival. Skills are not learned—they are carved into your soul."
@@ -950,7 +718,7 @@
         <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
             <p><a href="content-home.html" target="_parent">Return to Codex Home</a></p>
         </div>
-    </div>
+    </main>
     <script src="codex-common.js"></script>
 </body>
 </html>

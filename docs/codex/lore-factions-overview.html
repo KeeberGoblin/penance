@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factions Overview - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
-        /* Faction cards grid */
+        /* Page-specific: Faction cards grid and interactions */
         .factions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -391,12 +392,12 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#lore">LORE</a> /
             Factions Overview
-        </div>
+        </nav>
 
         <h1>The Factions: Humanity's Fractured Survival</h1>
 
@@ -875,7 +876,7 @@
                         <strong>Playstyle:</strong> ${faction.playstyle}<br>
                         <strong>Mechanic:</strong> ${faction.mechanic}<br>
                         <strong>Population:</strong> ${faction.population}
-                    </div>
+                    </main>
                 `;
 
                 grid.appendChild(card);
