@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factions Overview - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
-        /* Faction cards grid */
+        /* Page-specific: Faction cards grid and interactions */
         .factions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -432,26 +433,12 @@
 </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#lore">LORE</a> /
             Factions Overview
-        </div>
+        </nav>
 
         <h1>The Factions: Humanity's Fractured Survival</h1>
 
@@ -930,7 +917,7 @@
                         <strong>Playstyle:</strong> ${faction.playstyle}<br>
                         <strong>Mechanic:</strong> ${faction.mechanic}<br>
                         <strong>Population:</strong> ${faction.population}
-                    </div>
+                    </main>
                 `;
 
                 grid.appendChild(card);

@@ -1,0 +1,453 @@
+/*
+ * PENANCE CODEX - CAMPAIGN & GM TOOLS
+ * Interactive components for GM helper, settlement phase, generators
+ * Buttons, result boxes, input controls, step headers
+ */
+
+/* ========================================
+   GM SECTION CONTAINERS
+   Used in: gm-helper, campaign-settlement-phase, etc.
+   ======================================== */
+
+.gm-section {
+    background: rgba(75, 14, 14, 0.15);
+    border-left: 4px solid var(--dark-red);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 2px;
+}
+
+.gm-section h3 {
+    color: var(--aged-gold);
+    margin-top: 0;
+    border-bottom: 1px solid var(--dark-red);
+    padding-bottom: 0.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+}
+
+.gm-section p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ========================================
+   GENERATE BUTTONS
+   Primary action buttons for generators
+   ======================================== */
+
+.generate-btn {
+    background: linear-gradient(135deg, var(--dark-red), rgba(139, 0, 0, 0.8));
+    color: var(--aged-gold);
+    border: 2px solid var(--aged-gold);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+}
+
+.generate-btn:hover {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 1), var(--dark-red));
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+    transform: translateY(-2px);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+.generate-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Secondary button variant */
+.generate-btn-secondary {
+    background: var(--shadow-black);
+    border: 2px solid var(--dark-red);
+    color: var(--bone-white);
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+}
+
+.generate-btn-secondary:hover {
+    background: var(--dark-red);
+    color: var(--aged-gold);
+}
+
+/* ========================================
+   RESULT BOXES
+   Output containers for generated content
+   ======================================== */
+
+.result-box {
+    background: rgba(10, 6, 4, 0.6);
+    border: 2px solid var(--dark-red);
+    border-left: 4px solid var(--aged-gold);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    min-height: 60px;
+    border-radius: 2px;
+}
+
+.result-box h4 {
+    color: var(--aged-gold);
+    margin-top: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+.result-box p {
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.result-box ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.result-box li {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.result-box strong {
+    color: var(--aged-gold);
+}
+
+/* Empty state */
+.result-box.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--aged-gold);
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* ========================================
+   STEP HEADERS
+   Used in: campaign-settlement-phase
+   ======================================== */
+
+.step-header {
+    background: linear-gradient(90deg, #8b6914 0%, #4a3707 50%, #8b6914 100%);
+    color: #ffd700;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0 1rem 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.step-number {
+    display: inline-block;
+    background: var(--shadow-black);
+    color: #ffd700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   INPUT CONTROLS
+   Form inputs, selects, textareas
+   ======================================== */
+
+.gm-input,
+.tool-input {
+    background: rgba(10, 6, 4, 0.6);
+    border: 1px solid var(--dark-red);
+    color: var(--bone-white);
+    padding: 0.65rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 2px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.gm-input:focus,
+.tool-input:focus {
+    outline: none;
+    border-color: var(--aged-gold);
+    box-shadow: 0 0 5px rgba(139, 115, 85, 0.5);
+}
+
+.gm-select,
+.tool-select {
+    background: rgba(10, 6, 4, 0.6);
+    border: 1px solid var(--dark-red);
+    color: var(--bone-white);
+    padding: 0.65rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.gm-label,
+.tool-label {
+    display: block;
+    color: var(--aged-gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+}
+
+/* ========================================
+   CONTROL GROUPS
+   Input + label combinations
+   ======================================== */
+
+.control-group {
+    margin: 1.5rem 0;
+}
+
+.control-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+/* ========================================
+   STAT DISPLAY
+   Showing generated stats/values
+   ======================================== */
+
+.stat-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.stat-box {
+    background: rgba(139, 0, 0, 0.2);
+    border: 1px solid var(--dark-red);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.stat-box-label {
+    display: block;
+    color: var(--aged-gold);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.stat-box-value {
+    display: block;
+    color: var(--bone-white);
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+}
+
+/* ========================================
+   TABLES IN TOOLS
+   Specific table styling for campaign tools
+   ======================================== */
+
+.tool-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: rgba(10, 6, 4, 0.3);
+}
+
+.tool-table thead {
+    background: var(--dark-red);
+    color: var(--aged-gold);
+}
+
+.tool-table th {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--aged-gold);
+}
+
+.tool-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.tool-table tr:hover {
+    background: rgba(139, 0, 0, 0.1);
+}
+
+/* ========================================
+   ROLL DISPLAY
+   Showing dice roll results
+   ======================================== */
+
+.roll-result {
+    background: rgba(139, 0, 0, 0.25);
+    border: 2px solid var(--dark-red);
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.roll-result-value {
+    font-size: 2.5rem;
+    color: var(--aged-gold);
+    font-weight: 700;
+    font-family: 'Cinzel Decorative', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.roll-result-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--bone-white);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ========================================
+   TABS
+   Tab navigation for multi-section tools
+   ======================================== */
+
+.tool-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin: 2rem 0 1rem 0;
+    border-bottom: 2px solid var(--dark-red);
+}
+
+.tool-tab {
+    background: var(--shadow-black);
+    border: 1px solid var(--dark-red);
+    border-bottom: none;
+    color: var(--bone-white);
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.tool-tab:hover {
+    background: var(--dark-red);
+    color: var(--aged-gold);
+}
+
+.tool-tab.active {
+    background: var(--dark-red);
+    color: var(--aged-gold);
+    border-bottom: 2px solid var(--aged-gold);
+}
+
+.tool-tab-content {
+    display: none;
+    padding: 1.5rem 0;
+}
+
+.tool-tab-content.active {
+    display: block;
+}
+
+/* ========================================
+   PROGRESS INDICATORS
+   For multi-step processes
+   ======================================== */
+
+.progress-bar {
+    background: rgba(10, 6, 4, 0.6);
+    border: 1px solid var(--dark-red);
+    height: 30px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--dark-red), var(--aged-gold));
+    height: 100%;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bone-white);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .control-row,
+    .stat-display {
+        grid-template-columns: 1fr;
+    }
+
+    .generate-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tool-tabs {
+        flex-direction: column;
+    }
+
+    .tool-tab {
+        border-bottom: 1px solid var(--dark-red);
+    }
+
+    .tool-tab.active {
+        border-bottom: 1px solid var(--aged-gold);
+    }
+}
+
+@media (max-width: 480px) {
+    .step-header {
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .roll-result-value {
+        font-size: 2rem;
+    }
+
+    .gm-section,
+    .result-box {
+        padding: 1rem;
+    }
+}

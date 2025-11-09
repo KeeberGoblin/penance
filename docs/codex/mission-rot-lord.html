@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission: Defeat The Rot Lord - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#campaign">CAMPAIGN</a> /
+            <a href="#missions">MISSIONS</a> /
+            The Rot Lord
+        </nav>
+
+        <h1>Mission: The Blighted Grove</h1>
+
+        <div style="background: rgba(139, 0, 0, 0.2); padding: 1.5rem; border-left: 4px solid var(--dark-red); margin: 2rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 1.1rem;">
+                <strong>Mission Type:</strong> Boss Encounter (Difficulty 5-6)<br>
+                <strong>Recommended Pilots:</strong> 3-4 pilots with Grit 2+<br>
+                <strong>Time Limit:</strong> Available anytime, but scales with campaign progress<br>
+                <strong>Faction:</strong> Verdant Dominion (Void-Corrupted Nature)<br>
+                <strong>Reward:</strong> Unlock <strong>Titan of the Grove</strong> support unit + 500 Credits + Verdant Dominion Reputation +3
+            </p>
+        </div>
+
+        <div class="manuscript-quote">
+            "It was the oldest tree in Glimmerwood—1,200 years old, guardian of the grove. When Void corruption reached its roots, it didn't die. It... evolved. Now it spreads blight like a plague. Nature turned against itself."
+            <span class="quote-attribution">-Rootwarden Kess, Year 398</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Mission Briefing</h2>
+
+        <p class="manuscript-text">
+            <strong>Contact:</strong> Rootwarden Kess (Verdant Dominion)<br>
+            <strong>Location:</strong> The Writhing Copse, former heart of Glimmerwood
+        </p>
+
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1.5rem; margin: 1.5rem 0;">
+            <p class="manuscript-text">
+                "Forty years ago, Void corruption reached the roots of Grandfather Oak—the oldest living tree in Glimmerwood, 1,200 years old. We tried to purge it. Failed. The oak didn't die. It mutated.
+            </p>
+            <p class="manuscript-text">
+                The entity calls itself the Rot Lord. It's 80 feet tall now, covered in tumorous growths and weeping sap black as oil. Worse—it's contagious. Every plant it touches corrupts within days. The blight spreads outward at 2 miles per year. At this rate, all of Glimmerwood dies in 50 years.
+            </p>
+            <p class="manuscript-text">
+                We've quarantined the Writhing Copse—3-mile radius around the Rot Lord, completely evacuated. We burn any infected plants that try to escape. But fire isn't enough. The oak regenerates. Cutting it down spawns corrupted saplings.
+            </p>
+            <p class="manuscript-text" style="margin: 0; font-weight: bold; color: var(--crimson-text);">
+                You must destroy the Rot Lord completely—roots, trunk, crown. Burn it to ash. Glimmerwood's survival depends on this."
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Boss: The Rot Lord</h2>
+
+        <h3>Background</h3>
+
+        <p class="manuscript-text">
+            Grandfather Oak was planted in Year -763 (Old Calendar), long before the Sundering. For over a millennium, it anchored Glimmerwood's ecosystem—its roots connected every tree, sharing nutrients and information. The elves revered it as semi-sentient, a living library of the forest's memory.
+        </p>
+
+        <p class="manuscript-text">
+            When Void radiation seeped into the groundwater (Year 398), Grandfather Oak absorbed it. Instead of dying, it adapted. The Void rewrote its biology, transforming photosynthesis into necrosynthesis—it now feeds on decay, death, and corruption. The oak developed crude sentience and a singular instinct: <strong>spread the blight</strong>.
+        </p>
+
+        <p class="manuscript-text">
+            The Rot Lord believes it's evolving nature to survive the post-Sundering world. Plants that resist Void die. Plants that embrace it thrive. To the Rot Lord, corruption isn't death—it's <em>adaptation</em>. And it will convert every tree in Glimmerwood, whether they consent or not.
+        </p>
+
+        <h3>The Rot Lord - Boss Statistics</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>HP</strong></td>
+                    <td>100 HP (Colossal Living Entity)</td>
+                </tr>
+                <tr>
+                    <td><strong>Movement</strong></td>
+                    <td>0 (immobile, but has 4-hex melee reach via roots/vines)</td>
+                </tr>
+                <tr>
+                    <td><strong>Defense</strong></td>
+                    <td>2 (tough bark, but vulnerable to fire)</td>
+                </tr>
+                <tr>
+                    <td><strong>Deck Size</strong></td>
+                    <td>60 cards (30 HP deck threshold, extremely durable)</td>
+                </tr>
+                <tr>
+                    <td><strong>Special Traits</strong></td>
+                    <td>Blight Aura, Root Network, Regeneration, Fire Vulnerability (x2 damage from fire)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Boss Abilities</h3>
+
+        <h4>Passive: Blight Aura</h4>
+        <p class="manuscript-text">
+            All units within 4 hexes of the Rot Lord gain 1 Blight Counter per turn. At 3 Blight Counters, unit is Infected (take 2 damage per turn, can spread Blight to adjacent allies if within 1 hex for full turn). Blight Counters can be removed by spending 3 SP (purification ritual) or leaving aura range for 2 full turns.
+        </p>
+        <p class="manuscript-text" style="font-style: italic; color: var(--aged-gold);">
+            <strong>Strategic Note:</strong> Rotate pilots in/out of melee range to avoid infection. Long-range attacks are safer.
+        </p>
+
+        <h4>Passive: Fire Vulnerability</h4>
+        <p class="manuscript-text">
+            The Rot Lord takes double damage from fire-based attacks. Burning effects last twice as long (e.g., 2 fire damage/turn for 6 turns instead of 3 turns).
+        </p>
+
+        <h4>Passive: Regeneration</h4>
+        <p class="manuscript-text">
+            Heal 6 HP at the start of the Rot Lord's turn. This regeneration is disabled for 1 turn per Corrupted Root destroyed (there are 4 roots, each 20 HP, scattered around battlefield).
+        </p>
+
+        <h4>Action: Grasping Vines (1 SP)</h4>
+        <p class="manuscript-text">
+            <strong>Range:</strong> 6 hexes<br>
+            <strong>Effect:</strong> Target is entangled (cannot move). Target takes 3 damage per turn while entangled. Escape requires 2 SP or ally adjacent to cut vines (1 SP). Rot Lord can maintain 3 entanglements simultaneously.
+        </p>
+
+        <h4>Action: Spore Burst (3 SP)</h4>
+        <p class="manuscript-text">
+            <strong>Range:</strong> 5-hex radius centered on Rot Lord<br>
+            <strong>Effect:</strong> Release toxic spores. All units in range take 4 damage and gain 2 Blight Counters. Spore cloud persists for 2 turns (entering cloud = 2 damage + 1 Blight Counter).
+        </p>
+
+        <h4>Action: Root Eruption (4 SP)</h4>
+        <p class="manuscript-text">
+            <strong>Range:</strong> Target any hex within 8 hexes<br>
+            <strong>Effect:</strong> Roots burst from ground in 2-hex radius. Enemies take 6 damage and are knocked prone (lose next action). Creates difficult terrain (movement costs +1 SP).
+        </p>
+
+        <h4>Phase Transition: Desperate Bloom (triggers at 50 HP)</h4>
+        <p class="manuscript-text">
+            The Rot Lord's bark splits open, revealing pulsing Void-corrupted heartwood. It gains:
+        </p>
+        <ul class="manuscript-list">
+            <li><strong>Exposed Core:</strong> Defense reduced to 1, but fire vulnerability increased to x3 damage</li>
+            <li><strong>Accelerated Blight:</strong> Aura now inflicts 2 Blight Counters per turn (instead of 1)</li>
+            <li><strong>Spawn Blightlings:</strong> Every 2 turns, spawn 2 Blightlings (10 HP, 3 damage melee, explode for 4 damage on death)</li>
+            <li><strong>Regeneration Doubled:</strong> Now heals 12 HP/turn (if roots intact)</li>
+        </ul>
+
+        <h4>Ultimate: Forest's Wrath (5 SP, below 25 HP only)</h4>
+        <p class="manuscript-text">
+            The Rot Lord calls upon all corrupted vegetation in the grove. All destroyed Corrupted Roots regrow (full 20 HP). All terrain becomes hostile (toxic undergrowth deals 2 damage per turn to anyone standing on it). Summons 6 Blightlings. Lasts 3 turns or until Rot Lord killed.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Battlefield: The Writhing Copse</h2>
+
+        <h3>Hex Map Layout (20x20 hexes)</h3>
+
+        <p class="manuscript-text">
+            Corrupted forest clearing. Dead trees ooze black sap. Ground covered in pulsing fungal growths. Air thick with toxic spores. The Rot Lord dominates the center—80-foot-tall oak twisted into grotesque parody of life.
+        </p>
+
+        <h4>Terrain Features</h4>
+
+        <ul class="manuscript-list">
+            <li><strong>The Rot Lord (Center, 5x5 hexes):</strong> Immobile boss. Occupies central area. Cannot be moved or repositioned.</li>
+            <li><strong>Corrupted Roots (4 locations, cardinal directions):</strong> 20 HP each, Defense 2. Thick roots emerging from ground. Destroying one disables Rot Lord's regeneration for 1 turn. All 4 destroyed = regeneration permanently disabled.</li>
+            <li><strong>Blighted Trees (8 scattered):</strong> Provides half-cover (+1 Defense). Can be destroyed (12 HP). When destroyed, explodes for 3 damage in 1-hex radius (toxic sap burst).</li>
+            <li><strong>Fungal Blooms (6 patches, 2x2 hexes each):</strong> Difficult terrain (movement costs +1 SP). Standing in bloom = gain 1 Blight Counter per turn.</li>
+            <li><strong>Clearfire Barrels (4 corners):</strong> Elven incendiary supplies left behind. Can be ignited and thrown (2 SP) for 8 fire damage in 2-hex radius. Single use.</li>
+        </ul>
+
+        <h3>Hazards</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Choking Miasma:</strong> Every 3 turns, toxic fog rolls in. All units must pass Grit Check (difficulty 2) or lose 1 SP and gain 1 Blight Counter.</li>
+            <li><strong>Unstable Ground:</strong> Corrupted roots undermine the terrain. Random hex each turn becomes sinkhole (unit must spend 1 SP to avoid falling, 4 damage if fall).</li>
+            <li><strong>Collapsing Grove:</strong> Below 25 HP, Rot Lord begins thrashing. Each turn, 1d3 Blighted Trees fall (random targets, 5 damage if hit).</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Enemy Composition</h2>
+
+        <h3>Support Units</h3>
+
+        <h4>Blightlings (x4, more spawn over time) - 10 HP each</h4>
+        <ul class="manuscript-list">
+            <li><strong>Movement:</strong> 5 hexes</li>
+            <li><strong>Attack:</strong> Toxic Claws (3 damage, 1 SP, inflicts 1 Blight Counter)</li>
+            <li><strong>Passive:</strong> Spore Explosion - When killed, explodes for 4 damage in 1-hex radius and inflicts 2 Blight Counters</li>
+            <li><strong>Swarm Tactics:</strong> If 3+ Blightlings adjacent to same target, all gain +2 damage</li>
+        </ul>
+
+        <h4>Thorn Crawlers (x3) - 16 HP each</h4>
+        <ul class="manuscript-list">
+            <li><strong>Movement:</strong> 4 hexes</li>
+            <li><strong>Defense:</strong> 2 (thorny carapace)</li>
+            <li><strong>Attack:</strong> Barbed Strike (4 damage, 1 SP, causes bleeding: 1 damage per turn for 3 turns)</li>
+            <li><strong>Special:</strong> Burrow (2 SP) - Submerge underground, reappear anywhere within 6 hexes next turn</li>
+            <li><strong>Enrage:</strong> Below 6 HP, gain +3 damage and +1 movement</li>
+        </ul>
+
+        <h4>Corrupted Treants (x2) - 30 HP each</h4>
+        <ul class="manuscript-list">
+            <li><strong>Movement:</strong> 2 hexes</li>
+            <li><strong>Defense:</strong> 3 (wooden armor)</li>
+            <li><strong>Attack:</strong> Crushing Limbs (6 damage, 2 SP, knocks target back 2 hexes)</li>
+            <li><strong>Special:</strong> Rooting Grasp (3 SP) - Immobilize target, target gains 2 Blight Counters per turn while held</li>
+            <li><strong>Regeneration:</strong> Heal 4 HP per turn if standing in Fungal Bloom</li>
+        </ul>
+
+        <h3>Environmental Enemies</h3>
+
+        <p class="manuscript-text">
+            <strong>Thorny Undergrowth:</strong> Certain hexes (marked at start) are living plants. Moving through them = 2 damage + entangled (costs 1 SP to escape). Can be burned with fire (permanent removal).
+        </p>
+
+        <h3>Reinforcements</h3>
+
+        <p class="manuscript-text">
+            <strong>Phase 2 Spawn (50 HP threshold):</strong> 2 Blightlings spawn every 2 turns.<br>
+            <strong>Ultimate Spawn (25 HP, Forest's Wrath):</strong> 6 Blightlings + 1 Corrupted Treant spawn immediately.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Victory Conditions</h2>
+
+        <h3>Primary Objective</h3>
+        <p class="manuscript-text">
+            <strong>Destroy the Rot Lord.</strong> Reduce it to 0 HP. It does not retreat or surrender.
+        </p>
+
+        <h3>Secondary Objectives (Optional)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Purge the Roots:</strong> Destroy all 4 Corrupted Roots before killing Rot Lord (+100 Credits, Verdant Dominion Reputation +1, permanently disables regeneration)</li>
+            <li><strong>No Infections:</strong> Complete mission without any pilot reaching 3 Blight Counters (+100 Credits, "Unblemished" achievement)</li>
+            <li><strong>Burn Everything:</strong> Use fire attacks to ignite all 8 Blighted Trees and 6 Fungal Blooms (+50 Credits, prevents blight spread post-mission)</li>
+        </ul>
+
+        <h3>Failure Conditions</h3>
+        <ul class="manuscript-list">
+            <li>All pilots reduced to 0 HP (standard)</li>
+            <li>All pilots reach 5 Blight Counters (fully corrupted, become hostile NPCs controlled by Rot Lord)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Rewards</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Reward</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Unlock: Titan of the Grove</strong></td>
+                    <td>Massive support unit (4 slots, 30 HP, Defense 3). Giant treant with healing aura, root entanglement, and forest regeneration.</td>
+                </tr>
+                <tr>
+                    <td><strong>Credits</strong></td>
+                    <td>500 base + bonuses</td>
+                </tr>
+                <tr>
+                    <td><strong>Reputation</strong></td>
+                    <td>Verdant Dominion +3</td>
+                </tr>
+                <tr>
+                    <td><strong>Equipment Drop</strong></td>
+                    <td>Thornwhip (ranged weapon, 3 cards) - Entangle enemies, inflict bleeding, pull targets closer</td>
+                </tr>
+                <tr>
+                    <td><strong>Special Reward</strong></td>
+                    <td>Rot Lord's Heartwood Shard - Can be crafted into Blight Resistance Charm (prevents Blight Counter accumulation, 1 Equipment Slot, 300 Credits to craft)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>GM Guidance</h2>
+
+        <h3>Tactical Tips for Players</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Bring Fire:</strong> Rot Lord takes x2 damage from fire (x3 after Phase 2). Fire-based equipment is essential.</li>
+            <li><strong>Destroy Roots ASAP:</strong> 6 HP/turn regeneration (12 in Phase 2) makes him nearly unkillable. Destroy all 4 roots first.</li>
+            <li><strong>Manage Blight Counters:</strong> Rotate pilots in/out of melee. Spend SP to purge counters before reaching 3 (infection threshold).</li>
+            <li><strong>Kill Blightlings From Range:</strong> They explode on death—don't be adjacent when they die.</li>
+            <li><strong>Use Clearfire Barrels:</strong> Save these for Phase 2 burst damage or root destruction (8 fire damage is massive).</li>
+            <li><strong>Control Spawns:</strong> Kill Treants fast—they heal in Fungal Blooms and root-lock pilots.</li>
+        </ul>
+
+        <h3>Narrative Moments</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Opening:</strong> As pilots approach, the Rot Lord's voice echoes through the grove—a rasping, wooden groan. "Fleshlings. The blight... is evolution. Embrace... or perish."</li>
+            <li><strong>Phase 2 (50 HP):</strong> Bark splits with wet tearing sound. Pulsing Void-black heartwood exposed. "Pain... means... growth." Spore clouds erupt.</li>
+            <li><strong>Forest's Wrath (25 HP):</strong> The entire grove convulses. Trees uproot themselves. "The forest... remembers... betrayal." Everything attacks.</li>
+            <li><strong>Near Death (10 HP):</strong> "I was... guardian. You... destroy... what I... protected..." Voice weakens, almost mournful.</li>
+            <li><strong>Death:</strong> The Rot Lord collapses, trunk splintering. Black sap floods the clearing. As it dies, surrounding blight begins withering. Silence returns to the grove.</li>
+        </ul>
+
+        <h3>Adjusting Difficulty</h3>
+
+        <p class="manuscript-text">
+            <strong>Easier (for 2 pilots or low Grit):</strong>
+        </p>
+        <ul class="manuscript-list">
+            <li>Reduce Rot Lord HP to 80</li>
+            <li>Only 2 Corrupted Roots (instead of 4)</li>
+            <li>Regeneration heals 4 HP/turn (instead of 6)</li>
+            <li>Remove 1 Corrupted Treant</li>
+            <li>Blight aura range reduced to 3 hexes</li>
+            <li>No Phase 2 Blightling spawns</li>
+        </ul>
+
+        <p class="manuscript-text">
+            <strong>Harder (for 4+ pilots or high Grit):</strong>
+        </p>
+        <ul class="manuscript-list">
+            <li>Increase Rot Lord HP to 120</li>
+            <li>6 Corrupted Roots (hexagonal formation)</li>
+            <li>Regeneration heals 8 HP/turn (16 in Phase 2)</li>
+            <li>Add 2 more Thorn Crawlers</li>
+            <li>Blight aura inflicts 2 Counters per turn from start</li>
+            <li>Forest's Wrath spawns 3 Corrupted Treants</li>
+            <li>Fire vulnerability reduced to x1.5 (instead of x2)</li>
+        </ul>
+
+        <h3>Story Integration</h3>
+
+        <p class="manuscript-text">
+            This mission works best when:
+        </p>
+        <ul class="manuscript-list">
+            <li><strong>Verdant Dominion Reputation is High:</strong> Kess trusts you to handle nature's darkest corruption</li>
+            <li><strong>Mid Campaign:</strong> Rot Lord has had decades to spread (Year 15+)</li>
+            <li><strong>Environmental Stakes:</strong> Emphasize the tragedy—this was once the sacred heart of Glimmerwood</li>
+            <li><strong>Moral Weight:</strong> The Rot Lord isn't evil. It's a victim of Void corruption defending what it thinks is right.</li>
+            <li><strong>Aftermath:</strong> Killing it doesn't reverse existing blight—elves must burn infected areas for years</li>
+            <li><strong>Philosophical Question:</strong> Was the Rot Lord right? Is corruption a form of evolution? Some elves will debate this.</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            "The Rot Lord is dead. Kess says we saved Glimmerwood. But I keep thinking about what it said—'embrace or perish.' We chose to kill evolution. What if it was the only path forward?"
+            <span class="quote-attribution">-Pilot's journal, post-mission</span>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>

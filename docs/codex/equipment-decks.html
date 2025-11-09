@@ -50,26 +50,12 @@
     </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#equipment">EQUIPMENT</a> /
             Equipment Decks (Retired)
-        </div>
+        </nav>
         <h1>Retired: Equipment & Deck Building</h1>
         <p class="subtitle">This page has been removed from the live Codex to prevent confusion.</p>
 
@@ -404,7 +390,7 @@
                     <div class="equipment-meta-item">
                         <span class="meta-label">Faction:</span>
                         <span class="meta-value">${capitalize(item.faction || 'universal')}</span>
-                    </div>
+                    </main>
                 `;
                 card.appendChild(meta);
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balance Report v5.29-FINAL - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
         .balance-updates-container {
             display: grid;
@@ -160,26 +161,12 @@
 </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#rules">RULES</a> /
             Balance Report v5.29-FINAL
-        </div>
+        </nav>
 
         <h1>Balance Report v5.29-FINAL</h1>
         <p class="manuscript-subtitle">Final Production Balance - October 21, 2025</p>
@@ -470,7 +457,7 @@
             Methodology: Complete deck system, 225 battles per version<br>
             Final Version: v5.29-FINAL
         </p>
-    </div>
+    </main>
 
     <script>
         function toggleDropdown() {

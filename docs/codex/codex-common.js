@@ -93,18 +93,9 @@
     }
 
     function addARIALandmarks() {
-        // Wrap .content div in <main> if not already wrapped
-        const contentDiv = document.querySelector('.content');
-        if (contentDiv && !contentDiv.closest('main')) {
-            contentDiv.setAttribute('role', 'main');
-        }
-
-        // Add navigation role to breadcrumbs
-        const breadcrumb = document.querySelector('.breadcrumb');
-        if (breadcrumb && breadcrumb.tagName !== 'NAV') {
-            breadcrumb.setAttribute('role', 'navigation');
-            breadcrumb.setAttribute('aria-label', 'Breadcrumb');
-        }
+        // Semantic HTML5 tags are now used directly in the HTML files
+        // No dynamic role assignment needed - <main> and <nav> tags are in the source
+        // This function is kept for backwards compatibility but does nothing
     }
 
     function enhanceBreadcrumbs() {

@@ -50,26 +50,12 @@
     </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#lore">LORE</a> /
             Chronicles
-        </div>
+        </nav>
 <h1>The Chronicles</h1>
 
         <p style="font-style: italic; color: var(--aged-gold); margin-bottom: 2rem;">
@@ -85,29 +71,33 @@
         <h2>Chronicle I: The Final Transmission</h2>
         <h3>Year 0, Hour 0 - The Sundering</h3>
 
-        <p><strong>Source</strong>: Recovered audio crystal, Sibarian Wastes Research Station<br>
-        <strong>Credibility</strong>: Authenticated by Forge-Guild archivists</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Recovered audio crystal, Sibarian Wastes Research Station<br>
+                <strong>Credibility:</strong> Authenticated by Forge-Guild archivists
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p><strong>[Static. Hissing. A voice, breathless with excitement]</strong></p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[Static. Hissing. A voice, breathless with excitement]</p>
 
-            <p>"...final checks complete. The Theslar Engine is stable at 97% efficiency. Nikolas, the board is green across all...wait. Wait, what is that reading?"</p>
+            <p style="margin-bottom: 1.5rem;">"...final checks complete. The Theslar Engine is stable at 97% efficiency. Nikolas, the board is green across all...wait. Wait, what is that reading?"</p>
 
-            <p><strong>[Pause. Papers rustling]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[Pause. Papers rustling]</p>
 
-            <p>"That can't be right. The dimensional membrane is... thinning? No, no, that's <em>expected</em>. We accounted for..."</p>
+            <p style="margin-bottom: 1.5rem;">"That can't be right. The dimensional membrane is... thinning? No, no, that's <em>expected</em>. We accounted for..."</p>
 
-            <p><strong>[A low hum builds in the background, growing louder]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[A low hum builds in the background, growing louder]</p>
 
-            <p>"Nikolas! NIKOLAS! The containment wards are failing! Shut it down! SHUT IT..."</p>
+            <p style="margin-bottom: 1.5rem;">"Nikolas! NIKOLAS! The containment wards are failing! Shut it down! SHUT IT..."</p>
 
-            <p><strong>[Sound of reality tearing. Screaming. Then silence.]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[Sound of reality tearing. Screaming. Then silence.]</p>
 
-            <p><strong>[A new voice, cold and distant, speaking in overlapping echoes]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[A new voice, cold and distant, speaking in overlapping echoes]</p>
 
-            <p>"...we see you now. We have always seen you. Thank you for opening the door."</p>
+            <p style="margin-bottom: 1.5rem;">"...we see you now. We have always seen you. Thank you for opening the door."</p>
 
-            <p><strong>[Transmission ends]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin: 0;">[Transmission ends]</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: This is the only direct account of the Sundering's first moments. The "voice" at the end is never explained. Players who research The Engine may hear this recording. It raises more questions than it answers.</p>
@@ -121,37 +111,41 @@
         <h2>Chronicle II: The Mercy of Sister Vex</h2>
         <h3>Year 94 - The Penitent Kingdoms</h3>
 
-        <p><strong>Source</strong>: Confession log, Absolon Inquisition Archives<br>
-        <strong>Credibility</strong>: Official Church record (biased)</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Confession log, Absolon Inquisition Archives<br>
+                <strong>Credibility:</strong> Official Church record (biased)
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p><strong>Inquisitor Harrow</strong>: State your name for the record.</p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--crimson-text); font-size: 1.1rem;">Inquisitor Harrow:</strong> State your name for the record.</p>
 
-            <p><strong>Accused</strong>: Mar... Marta. Marta Wren. Please, I didn't...</p>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Accused:</strong> Mar... Marta. Marta Wren. Please, I didn't...</p>
 
-            <p><strong>Inquisitor Harrow</strong>: You tested positive for Taint exposure. Level 3. The sentence is immolation.</p>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--crimson-text); font-size: 1.1rem;">Inquisitor Harrow:</strong> You tested positive for Taint exposure. Level 3. The sentence is immolation.</p>
 
-            <p><strong>Marta Wren</strong>: I have children! I haven't hurt anyone! Please, there must be...</p>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Marta Wren:</strong> I have children! I haven't hurt anyone! Please, there must be...</p>
 
-            <p><strong>[Door opens. Footsteps, slow and measured. The sound of chains dragging on stone.]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[Door opens. Footsteps, slow and measured. The sound of chains dragging on stone.]</p>
 
-            <p><strong>Sister Vex</strong>: <em>[Voice without inflection]</em> I will take this one.</p>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--muted-gold); font-size: 1.1rem;">Sister Vex:</strong> <em style="opacity: 0.8;">[Voice without inflection]</em> I will take this one.</p>
 
-            <p><strong>Inquisitor Harrow</strong>: Sister Vex, the protocol is clear. She must...</p>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--crimson-text); font-size: 1.1rem;">Inquisitor Harrow:</strong> Sister Vex, the protocol is clear. She must...</p>
 
-            <p><strong>Sister Vex</strong>: I said I will take her. Add her sin to my ledger.</p>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--muted-gold); font-size: 1.1rem;">Sister Vex:</strong> I said I will take her. Add her sin to my ledger.</p>
 
-            <p><strong>Inquisitor Harrow</strong>: ...as you wish, Hollow Penitent.</p>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--crimson-text); font-size: 1.1rem;">Inquisitor Harrow:</strong> ...as you wish, Hollow Penitent.</p>
 
-            <p><strong>Marta Wren</strong>: <em>[Sobbing]</em> Thank you. Thank you, oh blessed...</p>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Marta Wren:</strong> <em style="opacity: 0.8;">[Sobbing]</em> Thank you. Thank you, oh blessed...</p>
 
-            <p><strong>Sister Vex</strong>: Do not thank me. You will live, but your children will not know you. I have purchased you from death, and now you belong to me. You will serve in the Confessional's crew until your debt is paid.</p>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--muted-gold); font-size: 1.1rem;">Sister Vex:</strong> Do not thank me. You will live, but your children will not know you. I have purchased you from death, and now you belong to me. You will serve in the Confessional's crew until your debt is paid.</p>
 
-            <p><strong>Marta Wren</strong>: ...how long?</p>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Marta Wren:</strong> ...how long?</p>
 
-            <p><strong>Sister Vex</strong>: I do not die. Neither will you. That is my gift.</p>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--muted-gold); font-size: 1.1rem;">Sister Vex:</strong> I do not die. Neither will you. That is my gift.</p>
 
-            <p><strong>[Footsteps recede. Chains dragging. Sobbing continues, then fades.]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin: 0;">[Footsteps recede. Chains dragging. Sobbing continues, then fades.]</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: This illustrates Sister Vex's "mercy" - she saves the corrupted, but enslaves them. Her Casket's crew are all debtors, bound to her service forever. Players who ally with the Church may encounter Vex's "saved" souls - still alive, but hollow.</p>
@@ -165,29 +159,33 @@
         <h2>Chronicle III: The Pruning of Ashveil</h2>
         <h3>Year 89 - Verdant Covenant Border</h3>
 
-        <p><strong>Source</strong>: Eyewitness account, refugee testimony<br>
-        <strong>Credibility</strong>: Unverified, corroborated by Orcish scouts</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Eyewitness account, refugee testimony<br>
+                <strong>Credibility:</strong> Unverified, corroborated by Orcish scouts
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p>"We woke to screaming. Not the Abominations - we knew that sound. This was... different. Human screaming.</p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="margin-bottom: 1.3rem;">"We woke to screaming. Not the Abominations - we knew that sound. This was... different. Human screaming.</p>
 
-            <p>I ran outside and saw her - the elf, Kess, the one they call the Rootwarden. Her Casket was... wrong. Covered in vines, but they were <em>moving</em>, like they were alive.</p>
+            <p style="margin-bottom: 1.3rem;">I ran outside and saw her - the elf, Kess, the one they call the Rootwarden. Her Casket was... wrong. Covered in vines, but they were <em>moving</em>, like they were alive.</p>
 
-            <p>She was walking through the village, calm as morning mist. Every few steps, she'd stop, tilt her head like she was listening to something we couldn't hear, and then... <em>prune</em>.</p>
+            <p style="margin-bottom: 1.3rem;">She was walking through the village, calm as morning mist. Every few steps, she'd stop, tilt her head like she was listening to something we couldn't hear, and then... <em>prune</em>.</p>
 
-            <p>One swing of those thorn-blades. Farmer Gorth - gone. His wife - gone. Their daughter...</p>
+            <p style="margin-bottom: 1.3rem;">One swing of those thorn-blades. Farmer Gorth - gone. His wife - gone. Their daughter...</p>
 
-            <p>I asked her why. Why us? We'd done nothing to the Covenant!</p>
+            <p style="margin-bottom: 1.3rem;">I asked her why. Why us? We'd done nothing to the Covenant!</p>
 
-            <p>She looked at me with those amber eyes and said, 'You were diseased. The roots told me. I've cut away the infection. The soil will be healthier now.'</p>
+            <p style="margin-bottom: 1.3rem;">She looked at me with those amber eyes and said, 'You were diseased. The roots told me. I've cut away the infection. The soil will be healthier now.'</p>
 
-            <p>Then she left. Just... walked away.</p>
+            <p style="margin-bottom: 1.3rem;">Then she left. Just... walked away.</p>
 
-            <p>When we dug the graves, we found Taint-crystals growing in the dirt beneath their homes. Small ones. Barely visible.</p>
+            <p style="margin-bottom: 1.3rem;">When we dug the graves, we found Taint-crystals growing in the dirt beneath their homes. Small ones. Barely visible.</p>
 
-            <p>She was right. They were infected.</p>
+            <p style="margin-bottom: 1.3rem;">She was right. They were infected.</p>
 
-            <p>She still killed them."</p>
+            <p style="margin: 0;">She still killed them."</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: This establishes Kess as neither hero nor villain - she's a surgeon removing tumors. The moral question is: does being right make it acceptable? Players who ally with the Covenant will face similar choices.</p>
@@ -201,37 +199,41 @@
         <h2>Chronicle IV: The Abacus Miscalculation</h2>
         <h3>Year 91 - Forge-Guild Expedition</h3>
 
-        <p><strong>Source</strong>: Mission log, recovered from abandoned Casket<br>
-        <strong>Credibility</strong>: Authenticated, Forge-Guild official record</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Mission log, recovered from abandoned Casket<br>
+                <strong>Credibility:</strong> Authenticated, Forge-Guild official record
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p><strong>Mission Log, Day 7</strong><br>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Mission Log, Day 7</strong><br>
             Forgemaster Durr has calculated optimal resource extraction path. Efficiency: 94%.<br>
             Casualty projection: 2.3 fatalities (acceptable loss ratio).</p>
 
-            <p><strong>Mission Log, Day 12</strong><br>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Mission Log, Day 12</strong><br>
             Durr's calculations remain accurate. 2 fatalities so far (within parameters).<br>
             Morale is low. Crew questions Durr's methods. He has reminded them that emotions are statistically irrelevant.</p>
 
-            <p><strong>Mission Log, Day 15</strong><br>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Mission Log, Day 15</strong><br>
             Void rift encountered. Durr ordered advance despite danger.<br>
             Quote: "Probability of success is 68%. Acceptable."<br>
             3 additional casualties. Total now 5 (above projection).</p>
 
-            <p><strong>Mission Log, Day 18</strong><br>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Mission Log, Day 18</strong><br>
             Durr has revised calculations. Quote: "Initial data was insufficient. Updated casualty projection: 7.1 fatalities."<br>
             Crew demanded retreat. Durr refused. Quote: "Sunk cost fallacy. We proceed."</p>
 
-            <p><strong>Mission Log, Day 21</strong><br>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Mission Log, Day 21</strong><br>
             9 dead. Durr unapologetic. Quote: "Randomness is just insufficient data. I will improve the algorithm."</p>
 
-            <p><strong>Mission Log, Day 22</strong><br>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Mission Log, Day 22</strong><br>
             Durr was found in his Casket, recalibrating his prediction models using corpses as data points.<br>
             He measured each wound. Recorded time of death. Improved his formula.</p>
 
-            <p>We're leaving him here. Let him calculate his way out.</p>
+            <p style="margin-bottom: 1.5rem;">We're leaving him here. Let him calculate his way out.</p>
 
-            <p><strong>[End of log]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin: 0;">[End of log]</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: Durr was <em>not</em> left behind - he walked out of the Wastes three weeks later, alone, with perfected calculations. This illustrates his inhumanity. Players who work with Durr will face similar cold equations.</p>
@@ -245,41 +247,45 @@
         <h2>Chronicle V: The Ledger of Souls</h2>
         <h3>Year 78 - The Ossuarium Territory</h3>
 
-        <p><strong>Source</strong>: Recovered contract, Karath's personal archives<br>
-        <strong>Credibility</strong>: Original document (horrifyingly authentic)</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Recovered contract, Karath's personal archives<br>
+                <strong>Credibility:</strong> Original document (horrifyingly authentic)
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p style="text-align: center; margin-bottom: 1rem;"><strong>SOUL DEBT CONTRACT #4,127</strong></p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="text-align: center; margin-bottom: 2rem;"><strong style="font-size: 1.3rem; color: var(--crimson-text);">SOUL DEBT CONTRACT #4,127</strong></p>
 
-            <p><strong>Debtor</strong>: Alina Korr, Age 34, Human Female<br>
-            <strong>Date</strong>: Year 78, Third Moon, 12th Day</p>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white);">Debtor:</strong> Alina Korr, Age 34, Human Female<br>
+            <strong style="color: var(--bone-white);">Date:</strong> Year 78, Third Moon, 12th Day</p>
 
-            <p><strong>Terms</strong>: In exchange for the resurrection of debtor's son (Marik Korr, deceased age 7, cause: Plague), debtor agrees to the following:</p>
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--bone-white);">Terms:</strong> In exchange for the resurrection of debtor's son (Marik Korr, deceased age 7, cause: Plague), debtor agrees to the following:</p>
 
-            <ol>
-                <li>Upon debtor's death (natural or otherwise), debtor's soul becomes property of Bonelord Karath.</li>
-                <li>Soul may be utilized for labor, experimentation, or resale at Karath's discretion.</li>
-                <li>Debtor's physical remains will be repurposed as Thresh deems fit.</li>
-                <li>Contract is binding across all planes of existence, including death, undeath, and theoretical afterlives.</li>
+            <ol style="margin: 1rem 0 1.5rem 1.5rem; line-height: 1.6;">
+                <li style="margin-bottom: 0.5rem;">Upon debtor's death (natural or otherwise), debtor's soul becomes property of Bonelord Karath.</li>
+                <li style="margin-bottom: 0.5rem;">Soul may be utilized for labor, experimentation, or resale at Karath's discretion.</li>
+                <li style="margin-bottom: 0.5rem;">Debtor's physical remains will be repurposed as Thresh deems fit.</li>
+                <li style="margin-bottom: 0.5rem;">Contract is binding across all planes of existence, including death, undeath, and theoretical afterlives.</li>
                 <li>Debtor waives right to appeal, renegotiation, or spiritual counsel.</li>
             </ol>
 
-            <p><strong>Compensation</strong>: Resurrection of Marik Korr (one-time service).</p>
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--bone-white);">Compensation:</strong> Resurrection of Marik Korr (one-time service).</p>
 
-            <p><strong>Interest Rate</strong>: None (souls do not depreciate).</p>
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--bone-white);">Interest Rate:</strong> None (souls do not depreciate).</p>
 
-            <p><strong>Debtor's Signature</strong>: [Bloodstained thumbprint]</p>
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--bone-white);">Debtor's Signature:</strong> [Bloodstained thumbprint]</p>
 
-            <p><strong>Creditor's Signature</strong>: <em>Thresh, Collector of Debts</em></p>
+            <p style="margin-bottom: 2rem;"><strong style="color: var(--bone-white);">Creditor's Signature:</strong> <em>Thresh, Collector of Debts</em></p>
 
-            <hr style="border: 1px solid var(--dark-red); margin: 1.5rem 0;">
+            <hr style="border: 1px solid var(--dark-red); margin: 2rem 0;">
 
-            <p><strong>COLLECTION NOTICE</strong> - Year 94<br>
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--crimson-text); font-size: 1.1rem;">COLLECTION NOTICE - Year 94</strong><br>
             Debtor deceased (Age 50, natural causes).<br>
             Soul collected without incident.<br>
             Marik Korr (debtor's son) has also signed Contract #6,891 (to resurrect his mother).</p>
 
-            <p><em>Compound interest is the eighth wonder of the world.</em> - Thresh</p>
+            <p style="margin: 0; font-style: italic; opacity: 0.9;"><em>Compound interest is the eighth wonder of the world.</em> - Thresh</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: Karath's contracts are legally airtight, morally bankrupt, and perfectly enforced. This is how he built an empire. Players who make deals with Thresh will find the fine print... comprehensive.</p>
@@ -293,35 +299,39 @@
         <h2>Chronicle VI: The Bargain of Mirrors</h2>
         <h3>Year 85 - Shimmerlands Border</h3>
 
-        <p><strong>Source</strong>: Testimony of sole survivor<br>
-        <strong>Credibility</strong>: Debatable (witness is <em>different</em> now)</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Testimony of sole survivor<br>
+                <strong>Credibility:</strong> Debatable (witness is <em>different</em> now)
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p>"We were lost. Three days in the Shimmerlands, compass spinning, map useless.</p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="margin-bottom: 1.3rem;">"We were lost. Three days in the Shimmerlands, compass spinning, map useless.</p>
 
-            <p>Then <em>she</em> appeared - Mockingbird, the Fae with too many masks. She offered a deal: 'I will guide you home. In exchange, I keep one thing you no longer need.'</p>
+            <p style="margin-bottom: 1.3rem;">Then <em>she</em> appeared - Mockingbird, the Fae with too many masks. She offered a deal: 'I will guide you home. In exchange, I keep one thing you no longer need.'</p>
 
-            <p>We agreed. What choice did we have?</p>
+            <p style="margin-bottom: 1.3rem;">We agreed. What choice did we have?</p>
 
-            <p>She led us out. Took six hours. When we reached the border, she said, 'Payment time.'</p>
+            <p style="margin-bottom: 1.3rem;">She led us out. Took six hours. When we reached the border, she said, 'Payment time.'</p>
 
-            <p>She pointed at Jory. 'I'll take his shadow.'</p>
+            <p style="margin-bottom: 1.3rem;">She pointed at Jory. 'I'll take his shadow.'</p>
 
-            <p>We laughed. A <em>shadow</em>? Harmless!</p>
+            <p style="margin-bottom: 1.3rem;">We laughed. A <em>shadow</em>? Harmless!</p>
 
-            <p>Jory's shadow peeled off the ground and walked away with her.</p>
+            <p style="margin-bottom: 1.3rem;">Jory's shadow peeled off the ground and walked away with her.</p>
 
-            <p>Three days later, Jory started... fading. Literally. His edges got blurry. Colors bled out of him.</p>
+            <p style="margin-bottom: 1.3rem;">Three days later, Jory started... fading. Literally. His edges got blurry. Colors bled out of him.</p>
 
-            <p>By week's end, he was gone. Not dead. Just... not there. Like he'd been erased from a painting.</p>
+            <p style="margin-bottom: 1.3rem;">By week's end, he was gone. Not dead. Just... not there. Like he'd been erased from a painting.</p>
 
-            <p>I asked a Fae scholar what happened. She said, 'Shadows anchor you to reality. Without it, you become a possibility instead of a certainty.'</p>
+            <p style="margin-bottom: 1.3rem;">I asked a Fae scholar what happened. She said, 'Shadows anchor you to reality. Without it, you become a possibility instead of a certainty.'</p>
 
-            <p>Jory exists somewhere. In a world where we made different choices. Where we never got lost.</p>
+            <p style="margin-bottom: 1.3rem;">Jory exists somewhere. In a world where we made different choices. Where we never got lost.</p>
 
-            <p>But not here.</p>
+            <p style="margin-bottom: 1.3rem;">But not here.</p>
 
-            <p>Never here."</p>
+            <p style="margin: 0;">Never here."</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: Fae bargains <em>always</em> have hidden costs. Mockingbird doesn't lie - she just doesn't explain. Players who bargain with her will learn this the hard way.</p>
@@ -335,39 +345,43 @@
         <h2>Chronicle VII: The Dragon's Warning</h2>
         <h3>Year 52 - Dragon Peaks</h3>
 
-        <p><strong>Source</strong>: Ancient Draconid inscription, translated<br>
-        <strong>Credibility</strong>: Authenticated (text is 1,200 years old - predates the Cataclysm)</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Ancient Draconid inscription, translated<br>
+                <strong>Credibility:</strong> Authenticated (text is 1,200 years old - predates the Cataclysm)
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p style="text-align: center; margin-bottom: 1rem;"><strong>Inscription, Skyhold Archives, Section IX, Shelf 47</strong></p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="text-align: center; margin-bottom: 2rem; font-style: italic; opacity: 0.9;"><strong>Inscription, Skyhold Archives, Section IX, Shelf 47</strong></p>
 
-            <p><em>"To the inheritors of ash:</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>"To the inheritors of ash:</em></p>
 
-            <p><em>If you read this, it has happened again.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>If you read this, it has happened again.</em></p>
 
-            <p><em>The world has ended. Not for the first time. Not for the last.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>The world has ended. Not for the first time. Not for the last.</em></p>
 
-            <p><em>The cycle is thus: Mortals rise. Mortals discover power. Mortals believe they can master it. They cannot. The world burns. Survivors rebuild. The cycle begins anew.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>The cycle is thus: Mortals rise. Mortals discover power. Mortals believe they can master it. They cannot. The world burns. Survivors rebuild. The cycle begins anew.</em></p>
 
-            <p><em>This is the third ending we have witnessed.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>This is the third ending we have witnessed.</em></p>
 
-            <p><em>The first was by flood. The second by fire. This one, we suspect, will be by Void.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>The first was by flood. The second by fire. This one, we suspect, will be by Void.</em></p>
 
-            <p><em>We have tried to warn them. They do not listen. Hubris is the constant.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>We have tried to warn them. They do not listen. Hubris is the constant.</em></p>
 
-            <p><em>To those who survive: You will rebuild. You will grow strong. You will find power you do not understand. You will believe yourselves wiser than your predecessors.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>To those who survive: You will rebuild. You will grow strong. You will find power you do not understand. You will believe yourselves wiser than your predecessors.</em></p>
 
-            <p><em>You will be wrong.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>You will be wrong.</em></p>
 
-            <p><em>Do not repeat the mistakes. Do not touch the forces you cannot control.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>Do not repeat the mistakes. Do not touch the forces you cannot control.</em></p>
 
-            <p><em>We know you will anyway.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>We know you will anyway.</em></p>
 
-            <p><em>When the fourth ending comes, we will still be here, recording.</em></p>
+            <p style="margin-bottom: 1.3rem;"><em>When the fourth ending comes, we will still be here, recording.</em></p>
 
-            <p><em>We always are."</em></p>
+            <p style="margin-bottom: 1.5rem;"><em>We always are."</em></p>
 
-            <p>... Skykeeper Vyrnathrax, Year -1,148 (Old Calendar)</p>
+            <p style="margin: 0; font-style: italic; opacity: 0.8;">... Skykeeper Vyrnathrax, Year -1,148 (Old Calendar)</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: The Draconids have seen the Cataclysm <em>three times</em>. This isn't the first Engine. This isn't the first Sundering. History repeats. Players who discover this will realize: they're part of a cycle they cannot stop.</p>
@@ -381,41 +395,45 @@
         <h2>Chronicle VIII: The First Casket</h2>
         <h3>Year 52 - Penitent Kingdoms</h3>
 
-        <p><strong>Source</strong>: Engineer's diary, anonymous<br>
-        <strong>Credibility</strong>: Partial (later pages are bloodstained and illegible)</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Engineer's diary, anonymous<br>
+                <strong>Credibility:</strong> Partial (later pages are bloodstained and illegible)
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p><strong>Day 1</strong>: We've done it. The first Casket prototype stands in the workshop. Eight feet tall, iron and brass, powered by a Soulstone core.</p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Day 1:</strong> We've done it. The first Casket prototype stands in the workshop. Eight feet tall, iron and brass, powered by a Soulstone core.</p>
 
-            <p>We need a pilot. Gareth volunteered. Poor bastard. He doesn't know what he's signing up for.</p>
+            <p style="margin-bottom: 1.5rem;">We need a pilot. Gareth volunteered. Poor bastard. He doesn't know what he's signing up for.</p>
 
-            <p><strong>Day 3</strong>: First activation test. Gareth climbed inside. We sealed him in.</p>
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Day 3:</strong> First activation test. Gareth climbed inside. We sealed him in.</p>
 
-            <p>The Soulstone bonded to him immediately. He screamed for six minutes straight, then went silent.</p>
+            <p style="margin-bottom: 1rem;">The Soulstone bonded to him immediately. He screamed for six minutes straight, then went silent.</p>
 
-            <p>When we opened the Casket, his eyes were glowing. He said he could <em>feel</em> the machine. Like it was part of him.</p>
+            <p style="margin-bottom: 1rem;">When we opened the Casket, his eyes were glowing. He said he could <em>feel</em> the machine. Like it was part of him.</p>
 
-            <p>Success. Horrifying, but success.</p>
+            <p style="margin-bottom: 1.5rem;">Success. Horrifying, but success.</p>
 
-            <p><strong>Day 7</strong>: Gareth refuses to leave the Casket. Says he feels "hollow" outside it. We're monitoring his Taint levels. Rising steadily.</p>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Day 7:</strong> Gareth refuses to leave the Casket. Says he feels "hollow" outside it. We're monitoring his Taint levels. Rising steadily.</p>
 
-            <p><strong>Day 14</strong>: Gareth's wife visited. He didn't recognize her. When she touched the Casket, he screamed at her to "get away from his skin."</p>
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Day 14:</strong> Gareth's wife visited. He didn't recognize her. When she touched the Casket, he screamed at her to "get away from his skin."</p>
 
-            <p>We've created something terrible.</p>
+            <p style="margin-bottom: 1.5rem;">We've created something terrible.</p>
 
-            <p><strong>Day 21</strong>: Gareth is gone. Not dead. Just... merged. The Casket moves on its own now. We can't open it. We can't turn it off.</p>
+            <p style="margin-bottom: 1rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Day 21:</strong> Gareth is gone. Not dead. Just... merged. The Casket moves on its own now. We can't open it. We can't turn it off.</p>
 
-            <p>Sometimes, at night, I hear it walking the halls. It whispers Gareth's name.</p>
+            <p style="margin-bottom: 1rem;">Sometimes, at night, I hear it walking the halls. It whispers Gareth's name.</p>
 
-            <p>I don't think he's in there anymore.</p>
+            <p style="margin-bottom: 1rem;">I don't think he's in there anymore.</p>
 
-            <p>Or maybe he's <em>all</em> that's in there.</p>
+            <p style="margin-bottom: 1.5rem;">Or maybe he's <em>all</em> that's in there.</p>
 
-            <p><strong>Day 23</strong>: I'm destroying the prototype. I don't care what the Forge-Guild says. This is wrong.</p>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--bone-white); font-size: 1.1rem;">Day 23:</strong> I'm destroying the prototype. I don't care what the Forge-Guild says. This is wrong.</p>
 
-            <p><strong>[Final entry, written in shaky handwriting]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[Final entry, written in shaky handwriting]</p>
 
-            <p>It won't let me.</p>
+            <p style="margin: 0;">It won't let me.</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: The first Casket was a failure. Or was it? This entry implies that the danger of Casket piloting isn't just Taint - it's <em>fusion</em>. Players at high Taint might begin experiencing this.</p>
@@ -429,41 +447,45 @@
         <h2>Chronicle IX: The Screaming Choir</h2>
         <h3>Year 83 - Sibarian Wastes Expedition</h3>
 
-        <p><strong>Source</strong>: Audio log, recovered from dead scout<br>
-        <strong>Credibility</strong>: Authenticated (but deeply disturbing)</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Audio log, recovered from dead scout<br>
+                <strong>Credibility:</strong> Authenticated (but deeply disturbing)
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p><strong>[Static. Wind howling. Footsteps crunching on crystalline ground]</strong></p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[Static. Wind howling. Footsteps crunching on crystalline ground]</p>
 
-            <p>"Scout report, Day 9. We're within visual range of The Engine now. It's... God's below, it's massive. The Pulses are every six hours. We've timed our approach between them.</p>
+            <p style="margin-bottom: 1.5rem;">"Scout report, Day 9. We're within visual range of The Engine now. It's... God's below, it's massive. The Pulses are every six hours. We've timed our approach between them.</p>
 
-            <p><strong>[Pause]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[Pause]</p>
 
-            <p>Wait. Do you hear that?</p>
+            <p style="margin-bottom: 1.5rem;">Wait. Do you hear that?</p>
 
-            <p><strong>[In the background: a faint, rhythmic sound. Voices? Singing?]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[In the background: a faint, rhythmic sound. Voices? Singing?]</p>
 
-            <p>"It's... singing. The Engine is <em>singing</em>.</p>
+            <p style="margin-bottom: 1.5rem;">"It's... singing. The Engine is <em>singing</em>.</p>
 
-            <p>No. No, not The Engine. There are people inside it. I can see them through the gaps in the structure. Hundreds of them. Maybe thousands.</p>
+            <p style="margin-bottom: 1.5rem;">No. No, not The Engine. There are people inside it. I can see them through the gaps in the structure. Hundreds of them. Maybe thousands.</p>
 
-            <p>They're... they're embedded in the walls. Fused with the metal and crystal. Still alive.</p>
+            <p style="margin-bottom: 1.5rem;">They're... they're embedded in the walls. Fused with the metal and crystal. Still alive.</p>
 
-            <p>They're singing in harmony. A hymn? A prayer?</p>
+            <p style="margin-bottom: 1.5rem;">They're singing in harmony. A hymn? A Prayer?</p>
 
-            <p><strong>[The singing grows louder, clearer]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[The singing grows louder, clearer]</p>
 
-            <p>"Oh God. I recognize that voice. That's... that's Nikolas Theslar. The artificer. He's still in there. He's been in there for a hundred years.</p>
+            <p style="margin-bottom: 1.5rem;">"Oh God. I recognize that voice. That's... that's Nikolas Theslar. The artificer. He's still in there. He's been in there for a hundred years.</p>
 
-            <p>He's conducting them. The choir. He's...</p>
+            <p style="margin-bottom: 1.5rem;">He's conducting them. The choir. He's...</p>
 
-            <p><strong>[Sudden scream]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[Sudden scream]</p>
 
-            <p>"THEY'RE LOOKING AT ME! ALL OF THEM! THEY SEE..."</p>
+            <p style="margin-bottom: 1.5rem;">"THEY'RE LOOKING AT ME! ALL OF THEM! THEY SEE..."</p>
 
-            <p><strong>[The Pulse. Audio cuts out. Silence.]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin-bottom: 1.5rem;">[The Pulse. Audio cuts out. Silence.]</p>
 
-            <p><strong>[Transmission ends]</strong></p>
+            <p style="font-style: italic; opacity: 0.7; margin: 0;">[Transmission ends]</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: Theslar didn't die in the Cataclysm. He's still in The Engine, merged with it, <em>aware</em>. The "Screaming Choir" is everyone who tried to shut it down and failed. Players who reach The Engine's Core will meet them.</p>
@@ -477,53 +499,57 @@
         <h2>Chronicle X: The Truth About Soulstones</h2>
         <h3>Year 97 - Recovered Research Notes</h3>
 
-        <p><strong>Source</strong>: Anonymous researcher (suspected Forge-Guild defector)<br>
-        <strong>Credibility</strong>: Suppressed (this document is banned in all territories)</p>
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Anonymous researcher (suspected Forge-Guild defector)<br>
+                <strong>Credibility:</strong> Suppressed (this document is banned in all territories)
+            </p>
+        </div>
 
-        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--aged-gold);">
-            <p><strong>Research Log: Soulstone Origin Study</strong></p>
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--crimson-text); font-size: 1.2rem;">Research Log: Soulstone Origin Study</strong></p>
 
-            <p>I've analyzed 247 Soulstone samples from across the seven factions. Crystallography, spectral analysis, Taint-resonance mapping.</p>
+            <p style="margin-bottom: 1.5rem;">I've analyzed 247 Soulstone samples from across the seven factions. Crystallography, spectral analysis, Taint-resonance mapping.</p>
 
-            <p>The Church says they're fragments of fallen angels.<br>
+            <p style="margin-bottom: 1.3rem;">The Church says they're fragments of fallen angels.<br>
             The Elves say they're crystallized Worldheart blood.<br>
             The Dwarves say they're exotic radiation byproduct.</p>
 
-            <p>They're all wrong.</p>
+            <p style="margin-bottom: 1.3rem;">They're all wrong.</p>
 
-            <p>And they're all right.</p>
+            <p style="margin-bottom: 1.5rem;">And they're all right.</p>
 
-            <p>Soulstones aren't <em>formed</em> by the Void. They're <em>attracted</em> by sapient thought.</p>
+            <p style="margin-bottom: 1.3rem;">Soulstones aren't <em>formed</em> by the Void. They're <em>attracted</em> by sapient thought.</p>
 
-            <p>When reality bleeds Void energy, nearby conscious minds shape it. Unconsciously. Based on their beliefs.</p>
+            <p style="margin-bottom: 1.3rem;">When reality bleeds Void energy, nearby conscious minds shape it. Unconsciously. Based on their beliefs.</p>
 
-            <p>Near human settlements? The stones grow in divine patterns (because they <em>believe</em> it's divine).<br>
+            <p style="margin-bottom: 1.5rem;">Near human settlements? The stones grow in divine patterns (because they <em>believe</em> it's divine).<br>
             Near Elven groves? They grow like roots (because they <em>believe</em> it's natural).<br>
             Near dragon lairs? They incorporate fossilized dragon essence (because they <em>believe</em> the legends).</p>
 
-            <p>The Void is chaos. Raw, unformed potential.</p>
+            <p style="margin-bottom: 1.3rem;">The Void is chaos. Raw, unformed potential.</p>
 
-            <p>We're the ones giving it shape.</p>
+            <p style="margin-bottom: 1.3rem;">We're the ones giving it shape.</p>
 
-            <p>We're creating our own prisons.</p>
+            <p style="margin-bottom: 2rem;">We're creating our own prisons.</p>
 
-            <hr style="border: 1px solid var(--dark-red); margin: 1.5rem 0;">
+            <hr style="border: 1px solid var(--dark-red); margin: 2rem 0;">
 
-            <p><strong>Addendum</strong>: I've been approached by agents who want this research buried. They say "the truth would destabilize society."</p>
+            <p style="margin-bottom: 1.5rem;"><strong style="color: var(--crimson-text); font-size: 1.1rem;">Addendum:</strong> I've been approached by agents who want this research buried. They say "the truth would destabilize society."</p>
 
-            <p>They're right.</p>
+            <p style="margin-bottom: 1.3rem;">They're right.</p>
 
-            <p>If people knew that Soulstones are shaped by belief, factions would lose their ideological foundations. The Church's divine mandate? False. The Elven sacred duty? Delusion. The Dwarven objective science? Biased.</p>
+            <p style="margin-bottom: 1.3rem;">If people knew that Soulstones are shaped by belief, factions would lose their ideological foundations. The Church's divine mandate? False. The Elven sacred duty? Delusion. The Dwarven objective science? Biased.</p>
 
-            <p>Everything they fight for is built on a lie they're telling themselves.</p>
+            <p style="margin-bottom: 1.3rem;">Everything they fight for is built on a lie they're telling themselves.</p>
 
-            <p>I'm going into hiding. If you're reading this, I'm probably dead.</p>
+            <p style="margin-bottom: 1.3rem;">I'm going into hiding. If you're reading this, I'm probably dead.</p>
 
-            <p>Don't tell them the truth.</p>
+            <p style="margin-bottom: 1.3rem;">Don't tell them the truth.</p>
 
-            <p>Let them keep believing.</p>
+            <p style="margin-bottom: 1.3rem;">Let them keep believing.</p>
 
-            <p>It's kinder.</p>
+            <p style="margin: 0;">It's kinder.</p>
         </div>
 
         <p style="font-style: italic; color: var(--aged-gold);">GM Note: This is the secret truth. Players who discover this will face a choice: reveal it and shatter the world's belief systems, or stay silent and preserve the status quo. Neither is right.</p>
@@ -555,7 +581,7 @@
         <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
             <p><a href="lore-engine.html" target="_parent">Previous: The Engine</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
         </div>
-    </div>
+    </main>
     <script src="codex-common.js"></script>
 </body>
 </html>

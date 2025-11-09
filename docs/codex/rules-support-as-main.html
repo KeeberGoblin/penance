@@ -50,26 +50,12 @@
     </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#rules">RULES</a> /
             Support as Main
-        </div>
+        </nav>
         <h1>Support Units as Main Characters (Optional Mode)</h1>
         <p class="manuscript-text" style="font-style: italic; color: var(--aged-gold);">Play a support unit instead of a Casket for an underdog challenge.</p>
 
@@ -98,7 +84,7 @@
         <div class="ornamental-break">&#10047; &#10047; &#10047;</div>
 
         <p class="manuscript-text"><em>See also:</em> <a href="rules-quick-ref.html" target="_parent">Quick Reference</a>, <a href="support-units.html" target="_parent">Support Units</a></p>
-    </div>
+    </main>
     <script src="codex-common.js"></script>
 </body>
 </html>

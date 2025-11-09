@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support Units - Penance</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
         .unit-featured-container {
             display: grid;
@@ -221,26 +222,12 @@
 </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#equipment">EQUIPMENT</a> /
             Support Units
-        </div>
+        </nav>
 
         <h1>Support Units</h1>
         <p style="font-style: italic; color: var(--aged-gold); font-size: 1.1rem; text-align: center; margin: 1rem 0;">
@@ -450,7 +437,7 @@
         <p style="text-align: center; font-style: italic; color: var(--aged-gold); margin-top: 2rem;">
             Support units provide tactical flexibility at the cost of equipment slots. Command them wisely.
         </p>
-    </div>
+    </main>
 
     <script>
         function toggleUnitDropdown(id) {

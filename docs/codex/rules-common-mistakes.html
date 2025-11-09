@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Common Mistakes - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
         .mistake-card {
             background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(75, 14, 14, 0.4));
@@ -122,26 +123,12 @@
 </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#rules">RULES</a> /
             Common Mistakes
-        </div>
+        </nav>
 
         <h1>TOP 10 RULES MISTAKES</h1>
 
@@ -365,7 +352,7 @@
         <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
             <p><a href="content-home.html" target="_parent">Return to Codex Home</a></p>
         </div>
-    </div>
+    </main>
     <script src="codex-common.js"></script>
 </body>
 </html>

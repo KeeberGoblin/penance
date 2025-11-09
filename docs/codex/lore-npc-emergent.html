@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergent Syndicate - Notable NPCs - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
-        .npc-card { background: rgba(75, 14, 14, 0.15); border-left: 4px solid #4B0082; padding: 1.5rem; margin: 2rem 0; border-radius: 2px; }
+        /* Page-specific: NPC layout and faction color */
+        .npc-card { border-left-color: #4B0082; }
         .npc-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; flex-wrap: wrap; }
         .npc-name { color: var(--aged-gold); font-size: 1.5rem; font-weight: 700; margin: 0; }
         .npc-title { color: #4B0082; font-style: italic; font-size: 1rem; opacity: 0.9; }
@@ -60,27 +62,13 @@
 </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="lore-factions-overview.html" target="_parent">FACTIONS</a> /
             <a href="faction-emergent.html" target="_parent">Emergent Syndicate</a> /
             Notable NPCs
-        </div>
+        </nav>
 
         <h1>Emergent Syndicate: Notable NPCs</h1>
 
@@ -154,7 +142,7 @@
 
         <div style="text-align: center; margin: 3rem 0; opacity: 0.7;"><span style="font-size: 1.5rem; color: #4B0082;">❈</span></div>
         <p style="text-align: center; font-style: italic; opacity: 0.8;"><a href="lore-factions-overview.html" target="_parent">← Return to Factions Overview</a></p>
-    </div>
+    </main>
     <script src="codex-common.js"></script>
 </body>
 </html>

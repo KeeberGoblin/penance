@@ -5,21 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iconic Pilots - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
     <style>
-        .npc-featured-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .npc-card {
-            background: rgba(75, 14, 14, 0.15);
-            border-left: 4px solid var(--dark-red);
-            padding: 1.5rem;
-            border-radius: 2px;
-        }
-
+        /* Page-specific: NPC card variants */
         .npc-card .faction-name {
             color: var(--aged-gold);
             font-weight: 700;
@@ -55,53 +43,7 @@
             margin-top: 0.5rem;
         }
 
-        .dropdown-container {
-            margin: 2rem 0;
-        }
-
-        .dropdown-toggle {
-            background: var(--shadow-black);
-            border: 2px solid var(--dark-red);
-            color: var(--aged-gold);
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            font-family: 'Cinzel', serif;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-            transition: all 0.3s ease;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-
-        .dropdown-toggle:hover {
-            background: var(--dark-red);
-            color: var(--aged-gold);
-        }
-
-        .dropdown-toggle::after {
-            content: '▼';
-            float: right;
-            transition: transform 0.3s ease;
-        }
-
-        .dropdown-toggle.active::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown-content {
-            display: none;
-            background: rgba(10, 6, 4, 0.5);
-            border: 1px solid var(--dark-red);
-            border-top: none;
-            max-height: 600px;
-            overflow-y: auto;
-        }
-
-        .dropdown-content.active {
-            display: block;
-        }
-
+        /* Page-specific: NPC item layouts in dropdowns */
         .npc-item {
             padding: 1.2rem 1.5rem;
             border-bottom: 1px solid rgba(139, 0, 0, 0.2);
@@ -172,26 +114,12 @@
 </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="content">
-        <div class="breadcrumb">
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="content-home.html" target="_parent">CODEX</a> /
             <a href="#lore">LORE</a> /
             Iconic Pilots
-        </div>
+        </nav>
 
         <h1>Iconic Pilots: Legends of Iron and Blood</h1>
 
@@ -364,7 +292,7 @@
         <div style="text-align: center; margin: 3rem 0;">
             <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
         </div>
-    </div>
+    </main>
 
     <script>
         function toggleDropdown() {

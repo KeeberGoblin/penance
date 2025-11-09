@@ -50,26 +50,12 @@
     </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="manuscript-page">
- <div class="breadcrumb">
+    <main class="manuscript-page" role="main">
+ <nav class="breadcrumb" aria-label="Breadcrumb">
  <a href="content-home.html" target="_parent">CODEX</a> /
  <a href="#scenarios">SCENARIOS</a> /
  Overview
- </div>
+ </nav>
 
         <div class="illuminated-header">
             <span class="drop-cap">B</span>
@@ -856,7 +842,7 @@
         <div class="manuscript-footer">
             <p><a href="index.html">Return to Codex Home</a> | <a href="../index.html">Main Site</a> | <a href="../cards/">Card Database</a></p>
         </div>
-    </div>
+    </main>
     <script src="codex-common.js"></script>
 </body>
 </html>

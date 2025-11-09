@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission: Defeat Cardinal Sin - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+</head>
+<body>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#campaign">CAMPAIGN</a> /
+            <a href="#missions">MISSIONS</a> /
+            Cardinal Sin
+        </nav>
+
+        <h1>Mission: The Flagellant Heresy</h1>
+
+        <div style="background: rgba(139, 0, 0, 0.2); padding: 1.5rem; border-left: 4px solid var(--dark-red); margin: 2rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 1.1rem;">
+                <strong>Mission Type:</strong> Boss Encounter (Difficulty 5-6)<br>
+                <strong>Recommended Pilots:</strong> 3-4 pilots with Grit 2+<br>
+                <strong>Time Limit:</strong> Available anytime, but scales with campaign progress<br>
+                <strong>Faction:</strong> Church of Absolution (Heretical Schism)<br>
+                <strong>Reward:</strong> Unlock <strong>Absolution Engine</strong> support unit + 500 Credits + Church Reputation +3
+            </p>
+        </div>
+
+        <div class="manuscript-quote">
+            "Pain is not punishment—it is purification. Every lash, every burn, every broken bone brings us closer to the Engine's truth. The Church coddles sinners with mercy. I offer them salvation through suffering."
+            <span class="quote-attribution">-Cardinal Sin, former Brother Caelix, Year 89</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Mission Briefing</h2>
+
+        <p class="manuscript-text">
+            <strong>Contact:</strong> Grand Inquisitor Aldric (Church of Absolution)<br>
+            <strong>Location:</strong> The Martyrdom Spire, former Church cathedral in the Ashlands
+        </p>
+
+        <div style="background: rgba(75, 14, 14, 0.15); padding: 1.5rem; margin: 1.5rem 0;">
+            <p class="manuscript-text">
+                "We have a... situation. Brother Caelix returned from a suicide mission against Chitinous hives 48 years ago. His Casket was so damaged that piloting it causes excruciating agony—every movement is torture. Most would have retired. Caelix declared this suffering was 'the Engine's true blessing.'
+            </p>
+            <p class="manuscript-text">
+                He founded the Flagellant Order, a heretical sect believing that maximum pain—not redemption through service—brings absolution. They've grown to 2,000 followers. They ritually mutilate themselves. They burn heretics alive not as punishment, but as 'gifts of agony.'
+            </p>
+            <p class="manuscript-text">
+                Last week, Caelix proclaimed himself 'Cardinal Sin' and seized the Martyrdom Spire. He's building a torture cathedral powered by Soulstones fed with suffering. If we don't stop him, the Church will fracture into civil war.
+            </p>
+            <p class="manuscript-text" style="margin: 0; font-weight: bold; color: var(--crimson-text);">
+                Kill Cardinal Sin. Scatter his cult. Prove that mercy—not suffering—is the Church's path."
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Boss: Cardinal Sin</h2>
+
+        <h3>Background</h3>
+
+        <p class="manuscript-text">
+            Brother Caelix was a promising young Inquisitor until Year 89, when he volunteered for a suicide mission into Chitinous hive territory. He succeeded—destroying the hive—but his Casket was catastrophically damaged. The neural interface fused incorrectly with his spine, causing constant, agonizing pain.
+        </p>
+
+        <p class="manuscript-text">
+            Most pilots would have retired. Caelix interpreted the pain as divine revelation. He believed the Engine's purpose wasn't to save humanity through redemption, but to <em>perfect</em> humanity through suffering. Pain strips away sin. Agony reveals truth. Death is mercy—only eternal torment brings enlightenment.
+        </p>
+
+        <p class="manuscript-text">
+            He gathered followers—broken souls seeking meaning in trauma—and formed the Flagellant Order. They modified their Caskets to maximize pain: barbed neural interfaces, electrified cockpits, pressurized torture chambers. Every movement is agony. They call it "the Sacrament of Suffering."
+        </p>
+
+        <h3>Cardinal Sin - Boss Statistics</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>HP</strong></td>
+                    <td>70 HP (Giant-class Casket)</td>
+                </tr>
+                <tr>
+                    <td><strong>Movement</strong></td>
+                    <td>3 hexes per turn</td>
+                </tr>
+                <tr>
+                    <td><strong>Defense</strong></td>
+                    <td>3 (heavily armored, but slow)</td>
+                </tr>
+                <tr>
+                    <td><strong>Deck Size</strong></td>
+                    <td>40 cards (20 HP deck threshold)</td>
+                </tr>
+                <tr>
+                    <td><strong>Special Traits</strong></td>
+                    <td>Masochistic Fury, Chains of Torment, Heretical Aura</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Boss Abilities</h3>
+
+        <h4>Passive: Masochistic Fury</h4>
+        <p class="manuscript-text">
+            Each time Cardinal Sin takes 5+ damage in a single attack, he gains 1 Pain Counter (max 5). For each Pain Counter, he deals +2 damage on all attacks. Pain Counters never expire.
+        </p>
+        <p class="manuscript-text" style="font-style: italic; color: var(--aged-gold);">
+            <strong>Tactical Note:</strong> High burst damage makes him stronger. Chip damage is safer but slower.
+        </p>
+
+        <h4>Action: Chains of Torment (2 SP)</h4>
+        <p class="manuscript-text">
+            <strong>Range:</strong> 4 hexes<br>
+            <strong>Effect:</strong> Ensnare target with barbed chains. Target takes 4 damage immediately, then 2 damage per turn until they spend 2 SP to break free (action). Chained targets cannot move more than 2 hexes from Cardinal Sin.
+        </p>
+
+        <h4>Action: Flagellant's Wrath (3 SP, requires 3+ Pain Counters)</h4>
+        <p class="manuscript-text">
+            <strong>Range:</strong> Melee<br>
+            <strong>Effect:</strong> Consume all Pain Counters. Deal 6 damage + 4 damage per consumed counter. Heal Cardinal Sin for half damage dealt.
+        </p>
+        <p class="manuscript-text" style="font-style: italic; color: var(--crimson-text);">
+            <strong>Danger:</strong> At 5 Pain Counters, this deals 26 damage and heals him 13 HP.
+        </p>
+
+        <h4>Action: Heretical Sermon (4 SP, once per battle)</h4>
+        <p class="manuscript-text">
+            <strong>Effect:</strong> All Flagellant cultists gain +2 Defense and +3 damage for 3 turns. Cardinal Sin heals 10 HP. Shout: <em>"THROUGH PAIN, WE ARE PERFECTED!"</em>
+        </p>
+
+        <h4>Phase Transition: Martyrdom Protocol (triggers at 35 HP)</h4>
+        <p class="manuscript-text">
+            Cardinal Sin's Casket ruptures, exposing his tortured body fused to machinery. He gains:
+        </p>
+        <ul class="manuscript-list">
+            <li><strong>Exposed Core:</strong> -1 Defense (now Defense 2)</li>
+            <li><strong>Berserk Rage:</strong> +1 movement (now 4 hexes per turn)</li>
+            <li><strong>Bleeding Wounds:</strong> Takes 2 automatic damage per turn</li>
+            <li><strong>Pain Threshold Increased:</strong> Max Pain Counters increased to 8</li>
+        </ul>
+
+        <h4>Ultimate: Apotheosis of Agony (5 SP, below 20 HP only)</h4>
+        <p class="manuscript-text">
+            Cardinal Sin detonates his Casket's Soulstone core. All units within 5 hexes take 12 damage. Cardinal Sin is reduced to 1 HP but gains <strong>Undying</strong> for 2 turns (cannot be reduced below 1 HP). He fights on as a burning wreck.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Battlefield: The Martyrdom Spire</h2>
+
+        <h3>Hex Map Layout (15x15 hexes)</h3>
+
+        <p class="manuscript-text">
+            The interior of a corrupted cathedral. Stained glass windows depict scenes of torture. Pillars carved with screaming faces. Altar surrounded by torture devices.
+        </p>
+
+        <h4>Terrain Features</h4>
+
+        <ul class="manuscript-list">
+            <li><strong>Altar of Suffering (Center, 3x3 hexes):</strong> Cardinal Sin starts here. Elevated (+1 Defense to anyone on it). Flagellants gain +1 damage when adjacent to altar.</li>
+            <li><strong>Torture Pillars (6 scattered):</strong> Provide cover (+2 Defense). Can be destroyed (10 HP). When destroyed, explode for 4 damage in 2-hex radius.</li>
+            <li><strong>Burning Braziers (4 corners):</strong> Deal 2 fire damage per turn if adjacent. Can be pushed (2 SP) to create fire hazards (1-hex area, 3 damage per turn).</li>
+            <li><strong>Stained Glass Windows (perimeter):</strong> Can be shattered (ranged attack). Shattered glass creates difficult terrain (movement costs +1 SP).</li>
+            <li><strong>Flagellant Pews (rows of cover):</strong> Low cover (+1 Defense). Can be destroyed to deny enemy positioning.</li>
+        </ul>
+
+        <h3>Hazards</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Bloodstained Floor:</strong> Every 3 turns, spilled blood animates into 2 Blood Wraiths (6 HP, 2 damage melee) that attack randomly.</li>
+            <li><strong>Pain Resonance:</strong> Whenever a pilot takes 8+ damage in one turn, all enemies gain +1 SP (shared pain empowers the cult).</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Enemy Composition</h2>
+
+        <h3>Support Units</h3>
+
+        <h4>Flagellant Zealots (x6) - 12 HP each</h4>
+        <ul class="manuscript-list">
+            <li><strong>Movement:</strong> 4 hexes</li>
+            <li><strong>Attack:</strong> Barbed Flail (3 damage, 1 SP) - On hit, target bleeds for 1 damage per turn (stacks)</li>
+            <li><strong>Special:</strong> Self-Flagellation (0 SP) - Take 3 self-damage, gain +2 damage and +2 Defense next turn</li>
+            <li><strong>Fanatical:</strong> When reduced to 3 HP or less, gain +1 movement and +2 damage (death throes)</li>
+        </ul>
+
+        <h4>Penitent Torturers (x2) - 18 HP each</h4>
+        <ul class="manuscript-list">
+            <li><strong>Movement:</strong> 3 hexes</li>
+            <li><strong>Attack:</strong> Iron Maiden Grab (4 damage, 2 SP, range 2) - Grapple target, they cannot move next turn</li>
+            <li><strong>Special:</strong> Extract Confession (3 SP) - If adjacent to grappled enemy, deal 6 damage and heal 6 HP</li>
+            <li><strong>Defensive:</strong> 3 Defense</li>
+        </ul>
+
+        <h4>Choir of Agony (x1) - 15 HP</h4>
+        <ul class="manuscript-list">
+            <li><strong>Movement:</strong> 2 hexes</li>
+            <li><strong>Passive Aura:</strong> All enemies within 4 hexes take 1 psychic damage per turn (agonized hymns)</li>
+            <li><strong>Action:</strong> Crescendo of Pain (3 SP) - All pilots discard 1 card (mental assault)</li>
+            <li><strong>Support:</strong> Heal Cardinal Sin 4 HP per turn (can be interrupted by attacking Choir)</li>
+        </ul>
+
+        <h3>Reinforcements</h3>
+
+        <p class="manuscript-text">
+            <strong>Martyrs Arrive (Turn 6):</strong> 4 Flagellant Zealots enter from cathedral entrance (north side). They've set themselves on fire—deal 2 fire damage when adjacent, explode for 6 damage in 2-hex radius on death.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Victory Conditions</h2>
+
+        <h3>Primary Objective</h3>
+        <p class="manuscript-text">
+            <strong>Kill Cardinal Sin.</strong> Reduce him to 0 HP. He does not surrender.
+        </p>
+
+        <h3>Secondary Objectives (Optional)</h3>
+        <ul class="manuscript-list">
+            <li><strong>Mercy Kill:</strong> Defeat Cardinal Sin before he uses Apotheosis of Agony (+100 Credits, Church Reputation +1)</li>
+            <li><strong>No Martyrs:</strong> Prevent all reinforcements from arriving by holding the cathedral entrance (+50 Credits)</li>
+            <li><strong>Silence the Choir:</strong> Destroy the Choir of Agony before turn 5 (+50 Credits)</li>
+        </ul>
+
+        <h3>Failure Conditions</h3>
+        <ul class="manuscript-list">
+            <li>All pilots reduced to 0 HP (standard)</li>
+            <li>Cardinal Sin escapes (if reduced to 10 HP and not cornered, he flees—mission fails)</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Rewards</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Reward</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Unlock: Absolution Engine</strong></td>
+                    <td>Massive support unit (4 slots, 20 HP, Defense 3). Cathedral walker with fire aura, healing aura, and "Judgment Day" ultimate.</td>
+                </tr>
+                <tr>
+                    <td><strong>Credits</strong></td>
+                    <td>500 base + bonuses</td>
+                </tr>
+                <tr>
+                    <td><strong>Reputation</strong></td>
+                    <td>Church of Absolution +3</td>
+                </tr>
+                <tr>
+                    <td><strong>Equipment Drop</strong></td>
+                    <td>Chains of Penance (melee weapon, 3 cards) - Grapple enemies, deal bonus damage to chained targets</td>
+                </tr>
+                <tr>
+                    <td><strong>Lore Unlock</strong></td>
+                    <td>Cardinal Sin's Manifesto (readable codex entry revealing Church schism)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>GM Guidance</h2>
+
+        <h3>Tactical Tips for Players</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Control Pain Counters:</strong> Use low-damage chip attacks to avoid feeding his Masochistic Fury. Burst him down only when you can finish him.</li>
+            <li><strong>Prioritize the Choir:</strong> That 4 HP/turn healing keeps him alive. Kill the Choir early.</li>
+            <li><strong>Kite Him:</strong> He's slow (3 movement). Use ranged attacks and mobility to avoid Chains of Torment.</li>
+            <li><strong>Save Cooldowns:</strong> His Phase 2 (35 HP) and Apotheosis (20 HP) are spike damage moments. Have defensive cards ready.</li>
+            <li><strong>Use Terrain:</strong> Destroy torture pillars when he's adjacent for free damage. Push burning braziers into his path.</li>
+        </ul>
+
+        <h3>Narrative Moments</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Opening:</strong> Cardinal Sin preaches from the altar as pilots enter. "You bring mercy? Mercy is weakness. Let me show you salvation!" He flogs himself with barbed chains, drawing blood.</li>
+            <li><strong>Phase 2 (35 HP):</strong> His Casket ruptures. Wires and bones are visible. "Yes! YES! The pain is TRUTH!" He moves faster, attacks wildly.</li>
+            <li><strong>Near Death (10 HP):</strong> "I see it now... the Engine's face... it's beautiful... it's screaming..." His eyes glow crimson.</li>
+            <li><strong>Apotheosis (if triggered):</strong> "We are all fuel for the Engine! Burn with me!" Explosion rocks the cathedral.</li>
+            <li><strong>Death:</strong> "Mercy... was... an illusion..." His Casket collapses. Flagellants flee in terror.</li>
+        </ul>
+
+        <h3>Adjusting Difficulty</h3>
+
+        <p class="manuscript-text">
+            <strong>Easier (for 2 pilots or low Grit):</strong>
+        </p>
+        <ul class="manuscript-list">
+            <li>Reduce Cardinal Sin HP to 60</li>
+            <li>Remove 2 Flagellant Zealots</li>
+            <li>Choir heals only 2 HP/turn</li>
+            <li>No reinforcements</li>
+        </ul>
+
+        <p class="manuscript-text">
+            <strong>Harder (for 4+ pilots or high Grit):</strong>
+        </p>
+        <ul class="manuscript-list">
+            <li>Increase Cardinal Sin HP to 80</li>
+            <li>Add 1 Penitent Torturer</li>
+            <li>Reinforcements arrive turn 4 instead of turn 6</li>
+            <li>Pain Resonance triggers at 6+ damage (instead of 8+)</li>
+            <li>Phase 2 triggers at 50% HP (40 HP instead of 35)</li>
+        </ul>
+
+        <h3>Story Integration</h3>
+
+        <p class="manuscript-text">
+            This mission works best when:
+        </p>
+        <ul class="manuscript-list">
+            <li><strong>Church Reputation is High:</strong> Grand Inquisitor trusts you to handle this delicate internal matter</li>
+            <li><strong>Mid-to-Late Campaign:</strong> The heresy has had time to fester (Year 15+)</li>
+            <li><strong>Moral Dilemma:</strong> Some pilots might sympathize with Cardinal Sin's philosophy (pain as redemption). Let them roleplay this conflict.</li>
+            <li><strong>Aftermath:</strong> Defeating him doesn't end the Flagellant Order—scattered cells remain, now martyrs for their cause</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            "We killed Cardinal Sin today. His followers call him a martyr now. The Church calls us heroes. I think we just made the schism permanent. There are no clean victories in this world."
+            <span class="quote-attribution">-Pilot's journal, post-mission</span>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
