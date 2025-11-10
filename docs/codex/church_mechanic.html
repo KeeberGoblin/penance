@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Mechanic: Blood Offering - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-church.html" target="_parent">CHURCH</a> /
+            Blood Offering Mechanic
+        </nav>
+
+        <h1>Blood Offering: Weaponizing Suffering</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">Church of Absolution Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "Pain purifies. Blood absolves. Sacrifice ensures the strike."
+            <span class="quote-attribution">-Church Combat Doctrine, Chapter VII</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Blood Offering</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Card Effect</h3>
+            <p><strong>Type:</strong> Gambit | <strong>SP Cost:</strong> 0 | <strong>Range:</strong> Self</p>
+            <p style="margin: 1rem 0;"><strong>Effect:</strong> Discard 1 card from top of your deck (self-harm). Your next attack this turn: <strong>+3 damage</strong>, ignores <strong>1 Defense</strong>, and <strong>-1 to target number</strong> (easier to hit).</p>
+            <p style="margin: 1rem 0;"><strong>LIMIT:</strong> You can only play <strong>1 Blood Offering per turn</strong>.</p>
+            <p style="font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Balance Note: Reduced from "discard 2 cards" to "discard 1 card" to improve campaign viability.</em></p>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Blood Offering is the Church's signature high-risk, high-reward mechanic. You sacrifice your own deck (HP) to guarantee a devastating attack. Here's the step-by-step:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Play Blood Offering (0 SP)</strong> - No SP cost means you can combo it with other gambits</li>
+            <li><strong>Discard 1 card from deck</strong> - This is self-harm. Your deck IS your HP in Penance</li>
+            <li><strong>Your NEXT attack this turn</strong> - Gains all three bonuses:
+                <ul style="margin-top: 0.5rem;">
+                    <li>+3 damage (huge burst)</li>
+                    <li>Ignores 1 Defense (bypasses armor)</li>
+                    <li>-1 to target number (4+ becomes 3+, easier to hit)</li>
+                </ul>
+            </li>
+            <li><strong>Attack resolves</strong> - Apply all bonuses to your chosen attack card</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Turn</h4>
+            <p style="margin: 0.5rem 0;">Turn 1: You have 5 SP. You play:</p>
+            <ol style="margin: 0.5rem 0 0.5rem 1.5rem;">
+                <li><strong>Blood Offering (0 SP)</strong> - Discard 1 card from deck</li>
+                <li><strong>Longsword Strike (2 SP)</strong> - Base: 5 damage, 4+ to hit
+                    <ul style="margin-top: 0.25rem;">
+                        <li>With Blood Offering: <strong>8 damage</strong>, <strong>3+ to hit</strong>, <strong>ignores 1 Defense</strong></li>
+                    </ul>
+                </li>
+                <li>Remaining SP: 3 (saved for defense or positioning)</li>
+            </ol>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">You've turned a standard 5-damage attack into an 8-damage armor-piercing guaranteed hit—at the cost of 1 card from your deck.</p>
+        </div>
+
+        <h2>Companion Mechanic: Righteous Fury</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Righteous Fury (Passive):</strong> Each time an allied Casket is destroyed, gain <strong>+1 damage</strong> to all attacks permanently for the rest of the mission (<strong>max +3 damage</strong>).</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Balance Update Oct 19: Capped at +3 to prevent infinite scaling. Church also starts with 32 HP (base 30 +2) to compensate for self-harm.</em></p>
+        </div>
+
+        <p class="manuscript-text">
+            Righteous Fury rewards you for fighting alongside allies and surviving their deaths. Combined with Blood Offering, a late-game Church pilot with +3 Fury can deal absurd burst damage:
+        </p>
+
+        <p class="manuscript-text" style="margin-left: 2rem; font-style: italic; color: var(--aged-gold);">
+            Blood Offering + Longsword Strike (5 base) + Righteous Fury (+3) = <strong>11 damage</strong>, armor-piercing, 3+ to hit
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Use Blood Offering</h2>
+
+        <h3>✓ Good Times to Blood Offering</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Turn 1 Alpha Strike</strong> - Establish early pressure. Most factions can't respond to 8-damage opening</li>
+            <li><strong>Execute Targets</strong> - Combine with Divine Judgment to guarantee kills on 10 HP or less enemies</li>
+            <li><strong>Breaking Armor</strong> - Ignoring 1 Defense + high damage punches through Tower Shields and Reinforced Plating</li>
+            <li><strong>Securing Key Kills</strong> - When you MUST kill a specific target (healer, artillery, etc.), Blood Offering ensures the hit lands</li>
+            <li><strong>Combo Setup</strong> - 0 SP cost means you can Blood Offering + expensive attacks in the same turn</li>
+        </ul>
+
+        <h3>✗ Bad Times to Blood Offering</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Low HP Without Healing</strong> - Don't Blood Offering at 10 HP unless you have Consecrated Ground ready</li>
+            <li><strong>Against Weak Targets</strong> - Wasting Blood Offering on 5 HP Thralls is inefficient. Save it for threats</li>
+            <li><strong>When Already Ahead</strong> - If you're dominating, preserve your deck. Blood Offering is for desperation or alpha strikes</li>
+            <li><strong>Multiple Turns in a Row</strong> - 1 per turn limit prevents spam, but even if you could, chaining self-harm spirals into death</li>
+            <li><strong>Without Follow-Up</strong> - Blood Offering buffs your NEXT attack. If you have no attack cards, it's wasted</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Alpha Strike Opener</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Turn 1 Combo:</strong></p>
+            <p style="margin-left: 1rem;">Blood Offering (0 SP) → Longsword Cleave (3 SP) → Hit multiple enemies for 8 damage each</p>
+            <p style="margin-top: 1rem;">Why it works: You've spent 1 card and 3 SP to potentially deal 16-24 damage total (hitting 2-3 targets). Most factions can't recover from losing half their HP turn 1.</p>
+        </div>
+
+        <h3>The Martyr's Gambit</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Mid-Game Combo:</strong></p>
+            <p style="margin-left: 1rem;">Martyrdom Protocol (redirect damage to self) → Blood Offering → Divine Judgment (execute)</p>
+            <p style="margin-top: 1rem;">Why it works: You tank damage for allies (building Heat but protecting them), then execute the attacker with buffed Divine Judgment. You're low HP but the threat is dead.</p>
+        </div>
+
+        <h3>The Flagellant's Fury</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Desperation Combo:</strong></p>
+            <p style="margin-left: 1rem;">Flagellant's Zeal (discard 2 cards, gain 5 SP) → Blood Offering (discard 1 card) → Greatsword Overhead Strike (5 SP, 9 damage)</p>
+            <p style="margin-top: 1rem;">Total: Discard 3 cards, deal <strong>12 damage + Righteous Fury</strong>, ignores 1 Defense, 3+ to hit. You're probably dying next turn, but you're taking someone with you.</p>
+        </div>
+
+        <h3>The Healer's Paradox</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Recovery Combo:</strong></p>
+            <p style="margin-left: 1rem;">Blood Offering (discard 1) → Buffed Attack → Consecrated Ground (heal 3 cards)</p>
+            <p style="margin-top: 1rem;">Net result: -1 card, +3 cards = <strong>+2 cards gained</strong> while also dealing massive damage. Blood Offering isn't always a net loss if you can heal afterward.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Spamming Blood Offering Every Turn</h3>
+            <p><strong>Why it fails:</strong> 1 per turn limit exists for a reason. Even without the limit, discarding 1 card per turn with no recovery = death by turn 15-20.</p>
+            <p><strong>Fix:</strong> Use Blood Offering <em>strategically</em> (turns 1, 4, 7, 10) with Consecrated Ground recovery between uses.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Using Blood Offering Without an Attack</h3>
+            <p><strong>Why it fails:</strong> Blood Offering buffs your NEXT attack. If you don't have an attack card in hand or enough SP to play it, you've discarded a card for nothing.</p>
+            <p><strong>Fix:</strong> Always check your hand before playing Blood Offering. Make sure you have an attack ready to benefit.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Ignoring HP Management</h3>
+            <p><strong>Why it fails:</strong> Church has 32 HP (only +2 over standard). Blood Offering + Flagellant's Zeal + Martyrdom Protocol can spiral you to 0 HP in 3-4 turns without recovery.</p>
+            <p><strong>Fix:</strong> Always include Repair Sigil or Consecrated Ground in your deck. Budget 1-2 turns mid-game for healing.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Wasting Blood Offering on Overkill</h3>
+            <p><strong>Why it fails:</strong> Using Blood Offering to turn a 5-damage attack into 8 damage against a 3 HP target wastes the buff.</p>
+            <p><strong>Fix:</strong> Target high-HP enemies (15+ HP) where the +3 damage and armor-piercing matter. Use regular attacks for cleanup.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Blood Offering Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Blood Offering</strong></td>
+                    <td>Your core mechanic. More copies = more consistent access</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>High-Damage Attacks</strong></td>
+                    <td>Longsword Strike, Greatsword Overhead Strike. Blood Offering makes these lethal</td>
+                    <td>5-6 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Consecrated Ground</strong></td>
+                    <td>Recover 3 cards after self-harm. Mandatory for sustainability</td>
+                    <td>2-3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Divine Judgment</strong></td>
+                    <td>Execute low-HP targets. Combos perfectly with Blood Offering</td>
+                    <td>2 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Martyrdom Protocol</strong></td>
+                    <td>Protect allies, build Righteous Fury. Synergizes with self-harm theme</td>
+                    <td>2-3 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Aggressive Berserker</h4>
+                <p><strong>Focus:</strong> Maximum damage, minimal defense</p>
+                <p><strong>Equipment:</strong> Greatsword (7 cards), Flagellant's Zeal Sigil (3 cards), Repair Sigil (3 cards)</p>
+                <p><strong>Strategy:</strong> Blood Offering + Greatsword Cleave for AoE. Flagellant's Zeal for burst SP. Repair Sigil for recovery. Play on the edge of death, weaponize suffering.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Balanced Aggro</h4>
+                <p><strong>Focus:</strong> Damage + positioning + some defense</p>
+                <p><strong>Equipment:</strong> Longsword (7 cards), Martyr's Brand Sigil (3 cards), Light Plating (2 cards)</p>
+                <p><strong>Strategy:</strong> Blood Offering turn 1 for alpha strike. Martyr's Brand for ally protection. Longsword provides reliable melee. Fast, furious, dies gloriously.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Defensive Support</h4>
+                <p><strong>Focus:</strong> Tank for allies, heal zones, conditional damage</p>
+                <p><strong>Equipment:</strong> Mace (5 cards), Tower Shield (4 cards), Martyr's Brand (3 cards), Reinforced Plating (3 cards)</p>
+                <p><strong>Strategy:</strong> Martyrdom Protocol + Martyr's Brand = ultimate ally protector. Consecrated Ground creates healing zones. Blood Offering for burst when needed. Slow but unkillable.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Blood Offering Usage</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turn 1</strong></td>
+                    <td>✓ USE IT</td>
+                    <td>Alpha strike to establish pressure. You have 32 HP, can afford the cost</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 2-3</strong></td>
+                    <td>✗ AVOID</td>
+                    <td>Let your HP stabilize. Use regular attacks. Save Blood Offering for key moments</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 4-5</strong></td>
+                    <td>✓ CONDITIONAL</td>
+                    <td>Use if you have healing ready OR need to execute a key target</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 6-8</strong></td>
+                    <td>✓ USE IT</td>
+                    <td>Mid-game is where Blood Offering shines. Righteous Fury stacks are building. Go aggressive</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 9+</strong></td>
+                    <td>✓ DESPERATION</td>
+                    <td>Late game with max Righteous Fury (+3) = 11+ damage attacks. Use Blood Offering to close out games</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Dwarven Forge-Guilds (High Armor)</h3>
+        <p class="manuscript-text">Blood Offering ignoring 1 Defense is CRITICAL against Tower Shield + Reinforced Plating Dwarves. Without it, you're bouncing off 4-5 Defense. With it, you punch through. Always Blood Offering before attacking tanky Dwarven builds.</p>
+
+        <h3>vs. Elven Verdant Covenant (High Mobility)</h3>
+        <p class="manuscript-text">Blood Offering's -1 to target number (4+ becomes 3+) helps land hits on evasive Elves. They rely on dodging—make your attacks guaranteed. Combine with Crusader's Vow (movement + attack) to chase them down.</p>
+
+        <h3>vs. The Ossuarium (Resurrection)</h3>
+        <p class="manuscript-text">Ossuarium revives constantly. Blood Offering + Divine Judgment ensures kills STICK. Execute low-HP targets before they can resurrect. Don't waste regular attacks on Bone Thralls—Blood Offering ensures one-shot kills.</p>
+
+        <h3>vs. Vestige Bloodlines (Mutation Spam)</h3>
+        <p class="manuscript-text">Bloodlines stack mutations rapidly. Blood Offering lets you alpha-strike them before they spiral out of control. Turn 1 Blood Offering + Greatsword Cleave can cripple their early game.</p>
+
+        <h3>vs. The Wyrd Conclave (Reality Manipulation)</h3>
+        <p class="manuscript-text">Wyrd mechanics are unpredictable. Blood Offering's guaranteed +3 damage and armor-pierce can't be stolen or manipulated. It's one of the few "safe" mechanics against Fae trickery.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "We are the dead given purpose. Every wound brings us closer to salvation. Every kill is a prayer answered. This is our penance. This is our absolution."
+            <span class="quote-attribution">-Sister Vex, The Hollow Penitent</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master Blood Offering. Master the Church.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-church.html" target="_parent">Church of Absolution Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
