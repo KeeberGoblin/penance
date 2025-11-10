@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad Mechanic: Improvisation - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-nomads.html" target="_parent">NOMADS</a> /
+            Improvisation Mechanic
+        </nav>
+
+        <h1>Improvisation: Adapt, Overcome, Survive</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">Nomad Collective Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "Plans are luxuries. We have duct tape, scrap metal, and the will to survive. That's all we've ever needed."
+            <span class="quote-attribution">-Caravan Master Vex, Survivor of the Third Crossing</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Improvisation</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Flexible Multi-Use Cards</h3>
+            <p><strong>Concept:</strong> Most Nomad cards have <strong>2-3 different modes</strong>. You choose which mode to activate when playing the card.</p>
+            <p style="margin: 1rem 0;"><strong>Example - "Scrap Weapon":</strong></p>
+            <ul style="margin-top: 0.5rem;">
+                <li><strong>Mode 1 (Attack):</strong> 4 damage, 2 SP</li>
+                <li><strong>Mode 2 (Defense):</strong> +2 Defense this turn, 1 SP</li>
+                <li><strong>Mode 3 (Utility):</strong> Draw 1 card, 1 SP</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>Scavenge System:</strong> When you kill an enemy or complete objectives, gain Scrap tokens. Spend 3 Scrap to draw 1 card or reduce SP cost of next card by 1.</p>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Improvisation means Nomads are never caught without options. Every card is versatile, and Scrap economy lets you adapt on the fly. Here's how:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Multi-Mode Cards</strong> - Each Nomad card has 2-3 activation modes. Read the situation, pick the mode that helps most</li>
+            <li><strong>Scrap Generation</strong> - Kill enemies (+2 Scrap), complete objectives (+3 Scrap), survive desperate situations (+1 Scrap)</li>
+            <li><strong>Scrap Spending</strong> - Use Scrap to:
+                <ul style="margin-top: 0.5rem;">
+                    <li>Draw 1 card (3 Scrap)</li>
+                    <li>Reduce next card cost by 1 SP (3 Scrap)</li>
+                    <li>Repair 1 card (2 Scrap)</li>
+                </ul>
+            </li>
+            <li><strong>Adapt and Overcome</strong> - Never locked into one strategy. Switch modes mid-fight based on what you need</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Turn - Improvising Victory</h4>
+            <p style="margin: 0.5rem 0;">Turn 1: Play Scrap Weapon (Mode 1: Attack, 4 damage) → Kill enemy → Gain 2 Scrap</p>
+            <p style="margin: 0.5rem 0;">Turn 2: Enemy counterattacks hard → Play Scrap Weapon (Mode 2: Defense, +2 Defense)</p>
+            <p style="margin: 0.5rem 0;">Turn 3: Hand is weak → Spend 3 Scrap to Draw 1 card → Play drawn card</p>
+            <p style="margin: 0.5rem 0;">Turn 4: Need big play but low SP → Spend 3 Scrap to reduce next card cost → Play expensive attack cheaply</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">Same card solved 2 problems. Scrap economy filled the gaps. Pure versatility.</p>
+        </div>
+
+        <h2>Companion Mechanic: Survivor's Luck</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Survivor's Luck (Passive):</strong> When reduced to 10 HP or below, gain +1 Scrap per turn and all multi-mode cards cost -1 SP (min 0).</p>
+            <p style="margin-top: 1rem;"><strong>Desperate Measures (Active):</strong> Once per mission, when below 10 HP, spend all Scrap to fully heal (recover cards equal to Scrap spent, max 10).</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Nomads are strongest when cornered. Low HP activates survival mode—more Scrap, cheaper cards, clutch healing.</em></p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Use Each Mode</h2>
+
+        <h3>✓ Good Times to Switch Modes</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Aggro to Defense</strong> - Start aggressive (attack mode), switch to defense mode when HP drops below 15</li>
+            <li><strong>Defense to Utility</strong> - If safe and hand is weak, switch to utility mode (draw cards) to refresh options</li>
+            <li><strong>Utility to Aggro</strong> - Drew good cards? Switch back to attack mode and finish enemies</li>
+            <li><strong>Scrap Spending for Burst</strong> - Have 6 Scrap? Spend 3 to reduce SP cost, play expensive card, then spend 3 to draw refill</li>
+            <li><strong>Desperate Measures Timing</strong> - At 8 HP with 8 Scrap? Activate Desperate Measures (heal 8 cards = back to 16 HP). Clutch comeback</li>
+        </ul>
+
+        <h3>✗ Bad Times to Improvise</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Over-Switching</strong> - Don't use utility mode every turn. Focus on winning, not cycling cards aimlessly</li>
+            <li><strong>Hoarding Scrap</strong> - Sitting at 12 Scrap is wasted value. Spend 3-6 Scrap per mission to stay flexible</li>
+            <li><strong>Desperate Measures Too Early</strong> - Using heal at 12 HP wastes potential. Wait until 8 HP or below for maximum value</li>
+            <li><strong>Wrong Mode for Situation</strong> - Playing attack mode when you need defense is still a mistake, even with options. Read the board</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Scrap Engine</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Resource Loop:</strong></p>
+            <p style="margin-left: 1rem;">Kill enemy (+2 Scrap) → Spend 3 Scrap to draw card → Play drawn card (kill another enemy, +2 Scrap) → Repeat</p>
+            <p style="margin-top: 1rem;">Result: As long as you're killing, you're generating Scrap faster than spending it. Economy perpetuates itself.</p>
+        </div>
+
+        <h3>The Survivor's Gambit</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Intentional Low HP:</strong></p>
+            <p style="margin-left: 1rem;">Let HP drop to 9 (activate Survivor's Luck) → All cards cost -1 SP, gain +1 Scrap/turn → Play 3-4 cards per turn cheaply → Build 8+ Scrap → Desperate Measures heal back to 17 HP</p>
+            <p style="margin-top: 1rem;">You weaponize being low HP, then fully heal when ready. High-risk power spike.</p>
+        </div>
+
+        <h3>The Mode Mixer</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Versatility Chain:</strong></p>
+            <p style="margin-left: 1rem;">Turn 1: Attack mode (kill enemy) → Turn 2: Defense mode (survive burst) → Turn 3: Utility mode (draw cards) → Turn 4: Attack mode (finish fight)</p>
+            <p style="margin-top: 1rem;">You solved 3 different problems with the same cards. No dead draws, no bad hands. Always have answers.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Always Using the Same Mode</h3>
+            <p><strong>Why it fails:</strong> If you always pick attack mode, you're just a worse damage faction. Improvisation's strength is FLEXIBILITY.</p>
+            <p><strong>Fix:</strong> Read the situation each turn. Need defense? Use defense mode. Need cards? Use utility mode. Adapt constantly.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Not Spending Scrap</h3>
+            <p><strong>Why it fails:</strong> Scrap cap is 15. Sitting at cap means wasted generation. Every kill beyond 15 is lost value.</p>
+            <p><strong>Fix:</strong> Spend 3 Scrap whenever you have 9+. Use it to draw cards, reduce costs, or repair. Keep Scrap flowing.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Wasting Desperate Measures</h3>
+            <p><strong>Why it fails:</strong> Using Desperate Measures at 12 HP with 4 Scrap only heals 4 cards. That's inefficient for a once-per-mission ability.</p>
+            <p><strong>Fix:</strong> Wait until you're at 6-8 HP with 8+ Scrap. Heal 8-10 cards for massive comeback. Timing is everything.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Improvisation Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Scrap Weapon</strong></td>
+                    <td>Attack/Defense/Utility modes. Your core multi-use card</td>
+                    <td>5-6 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Makeshift Tool</strong></td>
+                    <td>Movement/Draw/Repair modes. Flexible utility</td>
+                    <td>4-5 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Desperate Measures</strong></td>
+                    <td>Spend all Scrap to heal. Clutch comeback mechanic</td>
+                    <td>1 card (once per mission)</td>
+                </tr>
+                <tr>
+                    <td><strong>Salvage</strong></td>
+                    <td>Generate Scrap from destroyed caskets/terrain. Economy booster</td>
+                    <td>2-3 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Pure Improviser</h4>
+                <p><strong>Focus:</strong> Maximum versatility, all multi-mode cards</p>
+                <p><strong>Equipment:</strong> Scrap Weapon (6 cards), Makeshift Tool (5 cards), Salvage (2 cards), Light Armor (1 card)</p>
+                <p><strong>Strategy:</strong> Switch modes every turn based on situation. Never committed, always adapting. Jack-of-all-trades mastery.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Scrap Hoarder</h4>
+                <p><strong>Focus:</strong> Generate massive Scrap, explosive late-game</p>
+                <p><strong>Equipment:</strong> Salvage (4 cards), Scrap Weapon (4 cards), Makeshift Tool (3 cards), Medium Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Bank 12+ Scrap by turn 6. Spam reduced-cost cards. Desperate Measures for 10+ card heal. Snowball through economy.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Survivor's Edge</h4>
+                <p><strong>Focus:</strong> Intentional low HP, Survivor's Luck abuse</p>
+                <p><strong>Equipment:</strong> Scrap Weapon (5 cards), Makeshift Tool (4 cards), Desperate Measures (1 card), Light Armor (1 card), Salvage (2 cards)</p>
+                <p><strong>Strategy:</strong> Drop to 9 HP intentionally (all cards -1 SP). Play 4-5 cards per turn cheaply. Build 8+ Scrap. Desperate Measures heal to full. High-risk power spike.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Improvisation Strategy</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turns 1-3</strong></td>
+                    <td>ATTACK MODE</td>
+                    <td>Generate Scrap through kills. Build economy early. Focus aggression</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 4-6</strong></td>
+                    <td>MIX MODES</td>
+                    <td>Adapt based on situation. Defense if hurt, utility if hand weak, attack if winning</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 7-9</strong></td>
+                    <td>POWER SPIKE</td>
+                    <td>Have 8-12 Scrap. Spend to reduce costs, draw cards, chain plays. Dominate through flexibility</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 10+</strong></td>
+                    <td>FINISH</td>
+                    <td>Use remaining Scrap for burst. Desperate Measures if low HP. Close out game</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church alpha strikes turn 1. Use defense mode to survive their Blood Offering. Generate Scrap from kills, then outlast them through Scrap economy. Flexibility beats one-dimensional aggression.</p>
+
+        <h3>vs. Dwarven Forge-Guilds (Resource Banking)</h3>
+        <p class="manuscript-text">Dwarves bank Rune Counters slowly. You generate Scrap faster (2 per kill). Out-economy them. Spend Scrap to draw cards and reduce costs—play more cards per turn than they can.</p>
+
+        <h3>vs. The Ossuarium (Attrition)</h3>
+        <p class="manuscript-text">Ossuarium wants long grindy games. You want flexibility. Use utility mode to cycle cards faster. Kill their Thralls for Scrap. Desperate Measures negates their attrition advantage. Speed beats grinding.</p>
+
+        <h3>vs. Vestige Bloodlines (Mutation Burst)</h3>
+        <p class="manuscript-text">Bloodlines snowball mutations. Use attack mode early to kill them before they scale. If they mutate, switch to defense mode. If desperate, Desperate Measures heal negates their burst. Adapt faster than they mutate.</p>
+
+        <h3>vs. The Wyrd Conclave (Trickery)</h3>
+        <p class="manuscript-text">Wyrd steal and manipulate. Your multi-mode cards are flexible—even if they steal one mode, you have 2 others. Generate Scrap (they can't steal resources). Consistency beats tricks.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "Rich factions plan. Poor factions scramble. We? We improvise. And improvisation, done right, beats any plan."
+            <span class="quote-attribution">-Vex the Wanderer, Nomad Philosopher</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master Improvisation. Master Survival.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-nomads.html" target="_parent">Nomad Collective Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>

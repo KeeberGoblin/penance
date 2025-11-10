@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crucible Mechanic: Forge Tokens - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-crucible.html" target="_parent">CRUCIBLE</a> /
+            Forge Token Mechanic
+        </nav>
+
+        <h1>Forge Tokens: Fire, Honor, Ancestral Iron</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">Crucible Freeborn Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "We stand in lava. We breathe fire. We forge legends. Cowards flee the heat. Warriors embrace it. Which are you?"
+            <span class="quote-attribution">-Warmaster Grimjaw, Champion of the First Forge</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Forge Tokens & Honor Duels</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Fire-Powered Resource System</h3>
+            <p><strong>Living Forge (Passive):</strong> Gain 2 Forge tokens per turn when standing near fire (+4 if standing in lava). Fire sustains us.</p>
+            <p style="margin: 1rem 0;"><strong>Base Stats:</strong> 32 HP (higher than standard 30 HP to compensate for self-harm playstyle)</p>
+            <p style="margin: 1rem 0;"><strong>Forge Token Abilities:</strong></p>
+            <ul style="margin-top: 0.5rem;">
+                <li><strong>Honor Duel (0 Forge):</strong> Challenge 1 enemy to 1v1. Kill them for 3 Forge + recover 3 cards. If they refuse, they gain Coward's Mark (+4 damage taken permanently)</li>
+                <li><strong>Volcanic Terrain (2 Forge):</strong> Create earthquake. Deal 2d6 damage to all in area, knock down, create 1 Lava Terrain hex</li>
+                <li><strong>Blood Rage (Passive):</strong> Gain +2 damage per 5 HP lost (stacks). Getting wounded makes you stronger</li>
+                <li><strong>Ancestral Iron (5 Forge):</strong> At mission end, forge 1 Ancestral Weapon (+1 damage OR +1 Defense OR +1 movement permanently, persists across missions). Max 3 total</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Balance Update Oct 19: Doubled from 1/2 to 2/4 Forge tokens. Increased Honor Duel Coward's Mark from +2 to +4 damage. Increased Volcanic Terrain from 2 damage to 2d6. Increased Blood Rage from +1 to +2 per 5 HP lost. Added +2 base HP.</em></p>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Forge Tokens represent the Crucible's connection to fire and ancestral forges. Stand in lava, challenge enemies to duels, get stronger as you're wounded. Here's the warrior cycle:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Generate Forge Tokens</strong> - Stand near fire (+2/turn) or in lava (+4/turn). Seek fire, embrace pain</li>
+            <li><strong>Honor Duels</strong> - Challenge priority targets to 1v1 combat. Win for 3 Forge + 3 cards. If they refuse, they take +4 damage permanently (Coward's Mark)</li>
+            <li><strong>Blood Rage Scaling</strong> - Take damage to activate Blood Rage. At 22 HP (8 damage taken) = +2 damage. At 17 HP (13 damage) = +4 damage. At 12 HP (18 damage) = +6 damage</li>
+            <li><strong>Volcanic Terrain</strong> - Spend 2 Forge to create lava hexes. Deal AoE damage, create more fire sources for token generation</li>
+            <li><strong>Ancestral Iron</strong> - Bank 5 Forge at mission end to forge permanent weapon (+1 to stat permanently, max 3 weapons)</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Forge Sequence</h4>
+            <p style="margin: 0.5rem 0;">Turn 1: Move to lava hex → Gain +4 Forge (now 4 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 2: Challenge boss to Honor Duel → Boss refuses (gains Coward's Mark: +4 damage taken) → Gain +4 Forge (now 8 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 3: Attack boss (take damage in retaliation, down to 27 HP) → Blood Rage activates: +2 damage → Gain +4 Forge (now 12 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 4: Spend 2 Forge on Volcanic Terrain (create earthquake, 2d6 damage to all enemies, create lava hex) → Gain +4 Forge (now 14 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 5: Take more damage (down to 22 HP, 10 damage total) → Blood Rage now +4 damage → Kill boss with Coward's Mark (+4) and Blood Rage (+4) = +8 damage total</p>
+            <p style="margin: 0.5rem 0;">Mission End: Have 12 Forge. Spend 5 to forge Ancestral Weapon (+1 damage permanently). Start next mission stronger.</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">Fire fuels power. Pain fuels rage. Honor fuels legends.</p>
+        </div>
+
+        <h2>Companion Mechanics: Pack Fury & Last Stand</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Pack Fury (Passive):</strong> Gain +1 damage per enemy within 6 hexes (max +3). Outnumbered, never outfought.</p>
+            <p style="margin-top: 1rem;"><strong>Last Stand (Passive):</strong> When deck reaches 5 cards or fewer, gain +3 damage and +2 Defense but cannot retreat. Die where you stand.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Crucible gets stronger when wounded (Blood Rage), outnumbered (Pack Fury), and desperate (Last Stand). Warriors, not survivors.</em></p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Use Forge Tokens</h2>
+
+        <h3>✓ Good Times to Use Forge Abilities</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Honor Duel on Bosses</strong> - Challenge high-HP enemies. If they refuse, they take +4 damage permanently. If they accept, you win for 3 Forge + 3 cards</li>
+            <li><strong>Volcanic Terrain (AoE Clear)</strong> - 2 Forge for 2d6 damage to all in area + lava hex. Hit 3-4 enemies for 18-24 total damage</li>
+            <li><strong>Standing in Lava</strong> - +4 Forge/turn is double the normal rate. Take 1-2 damage/turn from lava but generate Forge faster</li>
+            <li><strong>Blood Rage Scaling</strong> - Intentionally take damage to activate. At 12 HP = +6 damage. Combined with Pack Fury (+3) = +9 damage total</li>
+            <li><strong>Ancestral Iron (Campaign)</strong> - Forge 3 weapons over 6 missions (+1 damage, +1 Defense, +1 movement). Permanent scaling</li>
+        </ul>
+
+        <h3>✗ Bad Times to Use Forge</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Honor Duel on Weak Enemies</strong> - Don't challenge 10 HP Thralls. Save for bosses where Coward's Mark matters</li>
+            <li><strong>Volcanic Terrain on Single Target</strong> - 2 Forge for 2d6 damage to 1 enemy is inefficient. Use on grouped enemies</li>
+            <li><strong>Avoiding Fire</strong> - Playing defensively away from lava halves your Forge generation (+2 instead of +4). Embrace fire</li>
+            <li><strong>Not Banking for Ancestral Iron</strong> - Spending all Forge mid-mission means you can't forge weapons. Bank 5 Forge for permanent upgrades</li>
+            <li><strong>Fleeing When Low HP</strong> - Last Stand activates at 5 cards (15 HP). You gain +3 damage and +2 Defense. Don't retreat—fight harder</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Rage Berserker</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Intentional Damage Combo:</strong></p>
+            <p style="margin-left: 1rem;">Stand in lava (take 1 damage/turn, generate +4 Forge/turn) → Take enemy hits (down to 12 HP) → Blood Rage +6 damage → Pack Fury +3 damage (3 enemies nearby) → Last Stand +3 damage (at 5 cards) = +12 damage total</p>
+            <p style="margin-top: 1rem;">Result: You're at 12 HP dealing +12 damage per attack. Glass cannon perfection.</p>
+        </div>
+
+        <h3>The Honor Executioner</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Duel Spam:</strong></p>
+            <p style="margin-left: 1rem;">Turn 2: Honor Duel boss → They refuse (Coward's Mark: +4 damage) → Turn 3-5: Attack boss with Blood Rage (+4) and Coward's Mark (+4) = +8 damage per hit → Kill boss → Gain 3 Forge + 3 cards back</p>
+            <p style="margin-top: 1rem;">If they refuse, you punish them. If they accept, you kill them for rewards. Win-win.</p>
+        </div>
+
+        <h3>The Volcanic Furnace</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Lava Creation Loop:</strong></p>
+            <p style="margin-left: 1rem;">Stand in lava (+4 Forge/turn) → Volcanic Terrain (2 Forge, create more lava) → Move to new lava hex (+4 Forge/turn) → Volcanic Terrain again → Create battlefield of lava</p>
+            <p style="margin-top: 1rem;">You turn the map into your forge. Every hex is fire. Maximum Forge generation.</p>
+        </div>
+
+        <h3>The Ancestral Legacy</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Campaign Scaling:</strong></p>
+            <p style="margin-left: 1rem;">Mission 1-2: Forge Ancestral Weapon (+1 damage) <br>
+            Mission 3-4: Forge Ancestral Weapon (+1 Defense) <br>
+            Mission 5-6: Forge Ancestral Weapon (+1 movement) <br>
+            Mission 7+: You have +1/+1/+1 to damage/defense/movement permanently. Combined with Blood Rage (+6 at low HP) = +7 damage total</p>
+            <p style="margin-top: 1rem;">By late campaign, you're a legendary warrior with permanent upgrades.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Avoiding Fire</h3>
+            <p><strong>Why it fails:</strong> Standing away from fire gives +2 Forge/turn. Standing in lava gives +4 Forge/turn. You're halving your economy.</p>
+            <p><strong>Fix:</strong> Seek fire. Stand in lava. Take 1-2 damage/turn but generate double Forge. The pain is worth the power.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Not Using Honor Duels</h3>
+            <p><strong>Why it fails:</strong> Honor Duel costs 0 Forge. If enemy refuses, they take +4 damage permanently. That's free value.</p>
+            <p><strong>Fix:</strong> Challenge every boss. Either they accept (you get rewards on kill) or refuse (they take +4 damage forever). Always use it.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Ignoring Blood Rage</h3>
+            <p><strong>Why it fails:</strong> Playing defensively at full HP means no Blood Rage bonus. You're wasting your faction's scaling.</p>
+            <p><strong>Fix:</strong> Intentionally take 10-15 damage to activate Blood Rage. +4 to +6 damage is worth the HP cost. You have 32 base HP—use it.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Not Forging Ancestral Weapons</h3>
+            <p><strong>Why it fails:</strong> Ancestral Weapons are permanent upgrades that persist across missions. Ignoring them means you plateau in power.</p>
+            <p><strong>Fix:</strong> Bank 5 Forge at mission end. Forge at least 1 weapon by Mission 3. Prioritize +1 damage first.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Forge Token Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Honor Duel</strong></td>
+                    <td>0 Forge to challenge enemies. Free value, always use</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Volcanic Terrain</strong></td>
+                    <td>2 Forge for AoE damage + lava creation. Battlefield control</td>
+                    <td>2-3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Ancestral Iron</strong></td>
+                    <td>5 Forge for permanent weapon. Campaign scaling</td>
+                    <td>2 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Heavy Attacks</strong></td>
+                    <td>6-8 damage base attacks. Synergize with Blood Rage/Pack Fury scaling</td>
+                    <td>5-6 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Movement Cards</strong></td>
+                    <td>Reach lava hexes quickly. Position for Pack Fury. Mobility is power</td>
+                    <td>3 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Blood Rage Berserker</h4>
+                <p><strong>Focus:</strong> Intentional low HP, maximum damage scaling</p>
+                <p><strong>Equipment:</strong> Greatsword (7 cards), Honor Duel (3 cards), Volcanic Terrain (2 cards), Light Armor (1 card)</p>
+                <p><strong>Strategy:</strong> Stand in lava. Take damage to activate Blood Rage (+6 at 12 HP). Honor Duel bosses. Deal +10 damage per hit (Blood Rage +6, Pack Fury +3, Coward's Mark +4). Glass cannon perfection.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Volcanic Controller</h4>
+                <p><strong>Focus:</strong> Lava creation, battlefield control</p>
+                <p><strong>Equipment:</strong> Volcanic Terrain (4 cards), Honor Duel (3 cards), Standard Weapon (4 cards), Medium Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Create lava hexes with Volcanic Terrain. Stand in lava for +4 Forge/turn. Control battlefield, generate Forge rapidly. Forge 2-3 Ancestral Weapons per mission.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Ancestral Legacy Builder</h4>
+                <p><strong>Focus:</strong> Campaign-long scaling, permanent weapons</p>
+                <p><strong>Equipment:</strong> Ancestral Iron (3 cards), Honor Duel (3 cards), Greatsword (5 cards), Medium Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Bank 5 Forge at mission end. Forge Ancestral Weapons every 2 missions. By Mission 6, have +1/+1/+1 to all stats permanently. Combined with Blood Rage = legendary warrior.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Forge Strategy</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turn 1</strong></td>
+                    <td>MOVE TO LAVA</td>
+                    <td>Position in lava hex for +4 Forge/turn. Generate 4 Forge</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 2-3</strong></td>
+                    <td>HONOR DUEL</td>
+                    <td>Challenge boss. Force Coward's Mark (+4 damage) or prepare for duel rewards. Now at 8-12 Forge</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 4-6</strong></td>
+                    <td>BLOOD RAGE ACTIVATION</td>
+                    <td>Take damage (down to 22 HP for +4 damage, or 17 HP for +6). Attack with scaling bonuses</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 7-9</strong></td>
+                    <td>VOLCANIC TERRAIN</td>
+                    <td>Have 14+ Forge. Spend 2 on Volcanic Terrain (AoE + create more lava). Dominate battlefield</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 10+ / Mission End</strong></td>
+                    <td>ANCESTRAL IRON</td>
+                    <td>Bank 5 Forge. Forge Ancestral Weapon (+1 to stat permanently). Start next mission stronger</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church alpha strikes early. Take the damage—it activates Blood Rage. You have 32 HP (vs their 32). Trade damage, then win through scaling. Your +6 Blood Rage beats their exhausted deck.</p>
+
+        <h3>vs. Dwarven Forge-Guilds (High Armor)</h3>
+        <p class="manuscript-text">Dwarves are defensive tanks. Honor Duel them—if they refuse, they take +4 damage (bypasses armor conceptually). Use Blood Rage (+6) and Pack Fury (+3) to punch through their Defense. Scaling beats static armor.</p>
+
+        <h3>vs. The Ossuarium (Resurrection)</h3>
+        <p class="manuscript-text">Ossuarium resurrects constantly. Volcanic Terrain AoE clears their Thralls. Honor Duel their Bone-Lord—Coward's Mark makes them easier to kill. Your fire burns away their undead.</p>
+
+        <h3>vs. Elven Verdant Covenant (Bleed Kiting)</h3>
+        <p class="manuscript-text">Elves kite and Bleed. Stand in lava—it negates their kiting advantage (you're stationary generating Forge). Blood Rage activates from Bleed damage. They fuel your power while you burn them with Volcanic Terrain.</p>
+
+        <h3>vs. The Exchange (Economic Warfare)</h3>
+        <p class="manuscript-text">Exchange hires Mercenaries. Honor Duel their mercs—if they refuse, +4 damage makes them easy to kill. Volcanic Terrain clears groups. Your honor punishes their hired guns.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "The First Forge burns eternal. We are its children. Fire is our blood. Honor is our bone. Let cowards flee. Let warriors stand. We die where we fight, and we fight until we die."
+            <span class="quote-attribution">-Warmaster Grimjaw, Last Words</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master the Forge. Master Honor. Master Fire.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-crucible.html" target="_parent">Crucible Freeborn Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
