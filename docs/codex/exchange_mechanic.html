@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Mechanic: Credit Tokens - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="faction-exchange.html">Exchange Overview</a>
+            <span class="nav-separator">|</span>
+            <span style="opacity: 0.6;">Other Mechanics:</span>
+            <a href="church_mechanic.html">Church</a>
+            <a href="dwarves_mechanic.html">Dwarves</a>
+            <a href="ossuarium_mechanic.html">Ossuarium</a>
+            <a href="elves_mechanic.html">Elves</a>
+            <a href="nomads_mechanic.html">Nomads</a>
+            <a href="bloodlines_mechanic.html">Bloodlines</a>
+            <a href="emergent_mechanic.html">Emergent</a>
+            <a href="crucible_mechanic.html">Crucible</a>
+            <a href="wyrd_mechanic.html">Wyrd</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-exchange.html" target="_parent">EXCHANGE</a> /
+            Credit Token Mechanic
+        </nav>
+
+        <h1>Credit Tokens: Economic Warfare</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">The Exchange Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "Everything has a price. Everyone can be bought. Those who deny this are simply quoting too low."
+            <span class="quote-attribution">-Broker Silas Vane, Exchange High Council</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Credit Token Economy</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Monetary Power System</h3>
+            <p><strong>Generation:</strong> Start each mission with 10 Credits. Gain +2 Credits per turn passively. Complete contracts for bonus Credits (+5 per contract).</p>
+            <p style="margin: 1rem 0;"><strong>Maximum Storage:</strong> 50 Credits (excess Credits are lost)</p>
+            <p style="margin: 1rem 0;"><strong>Spending Options:</strong></p>
+            <ul style="margin-top: 0.5rem;">
+                <li><strong>Hire Mercenary (15 Credits):</strong> Summon allied unit (12 HP, 4 damage, lasts 3 turns)</li>
+                <li><strong>Purchase Equipment (10 Credits):</strong> Draw 3 cards, keep 1</li>
+                <li><strong>Bribe Enemy (12 Credits):</strong> Force 1 enemy to skip their next turn</li>
+                <li><strong>Bounty Contract (5 Credits):</strong> Mark 1 enemy. Deal +3 damage to marked target. If killed, gain 8 Credits back</li>
+            </ul>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Credit Tokens are pure economic warfare—you buy advantages, hire reinforcements, and bribe enemies. The more Credits you have, the more options you command. Here's the cycle:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Generate Credits</strong> - Passive +2/turn, complete contracts for +5 bonus</li>
+            <li><strong>Bank Early Game</strong> - Save 15-20 Credits by turn 4-5</li>
+            <li><strong>Strategic Spending</strong> - Use Credits to:
+                <ul style="margin-top: 0.5rem;">
+                    <li>Hire Mercenaries (extra bodies, tank damage)</li>
+                    <li>Purchase Equipment (cycle deck for perfect cards)</li>
+                    <li>Bribe Enemies (disable key threats)</li>
+                    <li>Bounty Contracts (high-value target elimination)</li>
+                </ul>
+            </li>
+            <li><strong>Credit Loop</strong> - Bounty Contracts refund Credits on kill. Spend 5, gain 8 back. Profit through efficiency.</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Credit Management</h4>
+            <p style="margin: 0.5rem 0;">Turn 1: Start with 10 Credits, +2 passive = 12 Credits</p>
+            <p style="margin: 0.5rem 0;">Turn 2: +2 passive = 14 Credits. Bank it.</p>
+            <p style="margin: 0.5rem 0;">Turn 3: +2 passive = 16 Credits. Spend 15 to Hire Mercenary (now 1 Credit, have ally)</p>
+            <p style="margin: 0.5rem 0;">Turn 4: +2 passive = 3 Credits. Complete contract (+5 bonus) = 8 Credits total</p>
+            <p style="margin: 0.5rem 0;">Turn 5: +2 passive = 10 Credits. Spend 5 on Bounty Contract (mark boss enemy)</p>
+            <p style="margin: 0.5rem 0;">Turn 6: Kill marked enemy → Gain 8 Credits refund → Now at 13 Credits. Net gain: +3</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">You profited from killing. Welcome to Exchange economics.</p>
+        </div>
+
+        <h2>Companion Mechanic: Bounty Hunter</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Bounty Hunter (Passive):</strong> When you kill an enemy with an active Bounty Contract, gain +3 Credits instead of +2. Bounties become even more profitable.</p>
+            <p style="margin-top: 1rem;"><strong>High-Value Target (Active):</strong> Once per mission, mark 1 enemy as High-Value Target (costs 0 Credits). If killed, gain 15 Credits and draw 2 cards.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Exchange gets paid to win. Kill marked targets for Credit refunds. Efficiency is profit.</em></p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Spend Credits</h2>
+
+        <h3>✓ Good Times to Spend Credits</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Turn 3-4 (Hire Mercenary)</strong> - 15 Credits for an ally that tanks 12 HP of damage is efficient</li>
+            <li><strong>Before Boss Fights (Purchase Equipment)</strong> - 10 Credits to draw 3, keep 1. Find your win condition</li>
+            <li><strong>Against Key Threats (Bribe Enemy)</strong> - 12 Credits to disable enemy healer/artillery for 1 turn. Disrupts their strategy</li>
+            <li><strong>High HP Targets (Bounty Contract)</strong> - 5 Credits for +3 damage and 8 Credit refund on kill. Always profitable</li>
+            <li><strong>High-Value Target on Bosses</strong> - Free mark, 15 Credit payout + 2 cards on kill. Massive value</li>
+        </ul>
+
+        <h3>✗ Bad Times to Spend Credits</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Early Game (Turn 1-2)</strong> - Don't spend before accumulating 15+ Credits. Be patient</li>
+            <li><strong>On Weak Enemies</strong> - Don't Bounty Contract a 10 HP Thrall. Save for real threats</li>
+            <li><strong>When Winning Easily</strong> - If already dominating, bank Credits for next mission</li>
+            <li><strong>Bribing Low-Impact Enemies</strong> - 12 Credits to disable a weak melee unit is wasteful. Bribe healers/artillery</li>
+            <li><strong>At Credit Cap (50)</strong> - You're wasting generation. Spend to make room</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Mercenary Wall</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Defensive Combo:</strong></p>
+            <p style="margin-left: 1rem;">Turn 3: Hire Mercenary (15 Credits) → Turn 5: Hire second Mercenary (15 Credits) → Position both between you and enemies</p>
+            <p style="margin-top: 1rem;">Result: Two mercenaries absorb 24 HP of damage over 3 turns. You take zero hits. Pure economic defense.</p>
+        </div>
+
+        <h3>The Bounty Loop</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Profit Combo:</strong></p>
+            <p style="margin-left: 1rem;">Bounty Contract enemy A (5 Credits) → Kill A (refund 8 Credits, net +3) → Bounty Contract enemy B (5 Credits) → Kill B (refund 8 Credits, net +3) → Repeat</p>
+            <p style="margin-top: 1rem;">You profit +3 Credits per kill. Infinite economic loop as long as you're killing. Getting paid to win.</p>
+        </div>
+
+        <h3>The High-Value Spike</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Boss Killer Combo:</strong></p>
+            <p style="margin-left: 1rem;">Mark boss as High-Value Target (0 Credits) → Bounty Contract same boss (5 Credits, +3 damage) → Kill boss (gain 15 Credits + 8 Credits refund + 2 cards = 23 Credits and 2 cards)</p>
+            <p style="margin-top: 1rem;">You spent 5 Credits, gained 23 Credits and 2 cards. 18 Credit profit plus deck cycling. Absurd value.</p>
+        </div>
+
+        <h3>The Bribe Chain</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Control Combo:</strong></p>
+            <p style="margin-left: 1rem;">Turn 5: Bribe enemy healer (12 Credits, skip their turn) → Turn 6: Kill all wounded enemies before healer can act → Turn 7: Bribe enemy artillery (12 Credits)</p>
+            <p style="margin-top: 1rem;">You disabled two key enemies for 24 Credits total. Won the fight by removing their support. Money buys control.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Spending Too Early</h3>
+            <p><strong>Why it fails:</strong> Spending 10 Credits on turn 1 leaves you with 2 Credits. You can't afford Mercenaries or Bribes for 3-4 turns.</p>
+            <p><strong>Fix:</strong> Bank until turn 3-4. Accumulate 15-20 Credits, then spend strategically. Patience builds wealth.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Not Using Bounty Contracts</h3>
+            <p><strong>Why it fails:</strong> Bounty Contracts are profit-positive. Spending 5 Credits to gain 8 back (net +3) means you're getting paid to kill.</p>
+            <p><strong>Fix:</strong> Always Bounty Contract high-value targets. It's free money and +3 damage. Use it every mission.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Hoarding Credits Without Spending</h3>
+            <p><strong>Why it fails:</strong> Sitting at 45 Credits means you're wasting +2/turn generation. Credits at cap are worthless.</p>
+            <p><strong>Fix:</strong> Spend down to 25-30 Credits periodically. Hire Mercenaries, Purchase Equipment, Bribe enemies. Use your wealth.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Wasting High-Value Target</h3>
+            <p><strong>Why it fails:</strong> Using High-Value Target on a 15 HP minion is inefficient. It's once-per-mission—save for bosses.</p>
+            <p><strong>Fix:</strong> Mark the toughest enemy (30+ HP boss). 15 Credit payout + 2 cards on kill is massive. Be strategic.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Credit Token Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Bounty Contract</strong></td>
+                    <td>5 Credits for +3 damage, refunds 8 on kill. Profit engine</td>
+                    <td>4-5 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Hire Mercenary</strong></td>
+                    <td>15 Credits for allied unit. Best defensive option</td>
+                    <td>2-3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Purchase Equipment</strong></td>
+                    <td>10 Credits to draw 3, keep 1. Deck cycling</td>
+                    <td>2 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Bribe Enemy</strong></td>
+                    <td>12 Credits to disable enemy for 1 turn. Control tool</td>
+                    <td>2 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Standard Attacks</strong></td>
+                    <td>Need damage to kill Bounty targets. Don't neglect combat</td>
+                    <td>5-6 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Bounty Hunter</h4>
+                <p><strong>Focus:</strong> Maximum Bounty Contract spam</p>
+                <p><strong>Equipment:</strong> Bounty Contract (6 cards), Standard Weapon (5 cards), Hire Mercenary (2 cards)</p>
+                <p><strong>Strategy:</strong> Bounty Contract every enemy. Kill them all. Profit +3 Credits per kill. Snowball wealth. Pure efficiency.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Mercenary Army</h4>
+                <p><strong>Focus:</strong> Hire multiple Mercenaries, swarm enemies</p>
+                <p><strong>Equipment:</strong> Hire Mercenary (5 cards), Bounty Contract (3 cards), Standard Weapon (3 cards), Light Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Bank 30 Credits. Hire 2 Mercenaries by turn 5. Swarm with 3 units total. Overwhelm through numbers.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Control Broker</h4>
+                <p><strong>Focus:</strong> Bribe enemies, Purchase Equipment, control tempo</p>
+                <p><strong>Equipment:</strong> Bribe Enemy (4 cards), Purchase Equipment (3 cards), Bounty Contract (3 cards), Standard Weapon (3 cards)</p>
+                <p><strong>Strategy:</strong> Disable key enemies with Bribes. Cycle deck with Purchase Equipment. Kill marked targets. Dictate the pace of battle.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Credit Management</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turns 1-2</strong></td>
+                    <td>BANK CREDITS</td>
+                    <td>Start with 10, gain +4 over 2 turns = 14 Credits. Don't spend yet—accumulate</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 3-4</strong></td>
+                    <td>FIRST SPEND</td>
+                    <td>Now at 16-20 Credits. Hire Mercenary (15) OR Bounty Contract (5) high-value target</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 5-7</strong></td>
+                    <td>ACTIVE ECONOMY</td>
+                    <td>Bounty Contracts refunding Credits. Hire second Mercenary if needed. Control with Bribes</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 8-10</strong></td>
+                    <td>POWER SPIKE</td>
+                    <td>Have 25-35 Credits banked. Hire Mercenaries, Bribe key threats, Purchase Equipment. Dominate</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 11+</strong></td>
+                    <td>ENDGAME</td>
+                    <td>Spend all Credits on finishing moves. Bank remainder for next mission</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church alpha strikes early. Hire Mercenary on turn 3 to tank their Blood Offering burst. Your ally absorbs 12 HP, you take zero. Economic defense wins.</p>
+
+        <h3>vs. Dwarven Forge-Guilds (High Armor)</h3>
+        <p class="manuscript-text">Dwarves have 3-4 Defense. Bounty Contract them for +3 damage (bypasses some armor). Hire Mercenaries to swarm—multiple attacks overwhelm their Defense.</p>
+
+        <h3>vs. The Ossuarium (Resurrection)</h3>
+        <p class="manuscript-text">Ossuarium resurrects constantly. Bounty Contract key targets, kill them multiple times, profit each time. Their resurrections fund your economy. Grind them into bankruptcy.</p>
+
+        <h3>vs. Elven Verdant Covenant (Bleed Kiting)</h3>
+        <p class="manuscript-text">Elves kite and Bleed. Hire Mercenaries to body-block their escapes. Bribe their fastest unit to disrupt kiting. Bounty Contract their damage dealer. Control beats mobility.</p>
+
+        <h3>vs. The Wyrd Conclave (Reality Manipulation)</h3>
+        <p class="manuscript-text">Wyrd steal and manipulate. Your Credits are YOUR resource—they can't steal tokens. Bank Credits, Hire Mercenaries (they can't steal allies), Bounty Contract for guaranteed +3 damage. Economy beats trickery.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "War is economics. Soldiers are assets. Victory is profit. Those who understand this rule the wasteland. Those who don't? They work for us."
+            <span class="quote-attribution">-Broker Silas Vane, Exchange Doctrine</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master the Economy. Master the War.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-exchange.html" target="_parent">The Exchange Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>

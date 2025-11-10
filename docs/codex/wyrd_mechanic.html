@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyrd Mechanic: Bargain Tokens - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="faction-fae.html">Wyrd Conclave Overview</a>
+            <span class="nav-separator">|</span>
+            <span style="opacity: 0.6;">Other Mechanics:</span>
+            <a href="church_mechanic.html">Church</a>
+            <a href="dwarves_mechanic.html">Dwarves</a>
+            <a href="ossuarium_mechanic.html">Ossuarium</a>
+            <a href="elves_mechanic.html">Elves</a>
+            <a href="nomads_mechanic.html">Nomads</a>
+            <a href="exchange_mechanic.html">Exchange</a>
+            <a href="bloodlines_mechanic.html">Bloodlines</a>
+            <a href="emergent_mechanic.html">Emergent</a>
+            <a href="crucible_mechanic.html">Crucible</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-fae.html" target="_parent">WYRD CONCLAVE</a> /
+            Bargain Token Mechanic
+        </nav>
+
+        <h1>Bargain Tokens: Reality Bending Deals</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">The Wyrd Conclave Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "Everything has a price. Everyone makes deals. The question isn't whether you'll bargain with the Wyrd. It's what you'll lose when you do."
+            <span class="quote-attribution">-The Masked Court, Collective Whisper</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Bargain Tokens</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Reality-Warping Resource System</h3>
+            <p><strong>Bargain Struck (Passive):</strong> Gain +2 Bargain tokens per turn passively. Making deals with reality itself.</p>
+            <p style="margin: 1rem 0;"><strong>Maximum Storage:</strong> 10 Bargain tokens (tokens persist across missions)</p>
+            <p style="margin: 1rem 0;"><strong>Bargain Token Abilities:</strong></p>
+            <ul style="margin-top: 0.5rem;">
+                <li><strong>Fae Bargain (0 tokens):</strong> Offer enemy a choice: Accept your deal (they skip turn) for +3 Bargain tokens. OR refuse and take 3 damage immediately. Lose-lose for them</li>
+                <li><strong>Reality Bending (2 tokens):</strong> Deal 3d6 damage (avg 10.5), ignore all Defense. Pure reality manipulation</li>
+                <li><strong>Stolen Face (3 tokens):</strong> Copy 1 ability from enemy casket. Use it as if it were yours. When using stolen ability, gain +2 Defense</li>
+                <li><strong>Mirror Self (5 tokens):</strong> Create perfect decoy at your location. If attacked, decoy becomes real and attacks back for 2d6 damage</li>
+                <li><strong>Between Moments (3 tokens):</strong> Store 3 Bargain tokens for use in future phases. Action economy advantage</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Balance Update Oct 19: Increased Bargain Struck from 1/turn to 2/turn. Reality Bending damage increased from 2d6 to 3d6. Stolen Face Defense bonus increased from +1 to +2. Added Between Moments and Illusory Double abilities.</em></p>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Bargain Tokens represent deals made with the Wyrd—every token is a fragment of reality bent to your will. Force enemies into lose-lose choices, steal their abilities, manipulate outcomes. Here's the trickery cycle:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Generate Bargain Tokens</strong> - +2/turn passively, +3 if enemy accepts Fae Bargain, +1 per kill with Phase Cut</li>
+            <li><strong>Fae Bargain (Lose-Lose Choice)</strong> - Offer enemy: skip turn (you gain 3 tokens) OR take 3 damage immediately. Either way, you win</li>
+            <li><strong>Reality Bending (Direct Damage)</strong> - 2 tokens for 3d6 damage, ignore all Defense. No counterplay, just numbers</li>
+            <li><strong>Stolen Face (Ability Theft)</strong> - 3 tokens to copy enemy ability. Use their strength against them. Gain +2 Defense when using stolen powers</li>
+            <li><strong>Mirror Self (Defensive Trick)</strong> - 5 tokens for decoy. If attacked, deal 2d6 damage back. Mind games</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Bargain Sequence</h4>
+            <p style="margin: 0.5rem 0;">Turn 1: Start with 0 tokens. Gain +2 passive (now 2 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 2: Gain +2 passive (now 4 total). Offer Fae Bargain to boss → Boss accepts (skips turn) → You gain 3 more tokens (now 7 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 3: Gain +2 passive (now 9 total). Enemy has powerful attack card → Spend 3 tokens on Stolen Face (copy their attack, gain +2 Defense)</p>
+            <p style="margin: 0.5rem 0;">Turn 4: Use stolen attack (deals 8 damage + you have +2 Defense this turn) → Kill enemy → Gain 1 token from Phase Cut (now 7 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 5: Spend 5 tokens on Mirror Self (create decoy) → Enemy attacks decoy → Decoy counterattacks for 2d6 damage</p>
+            <p style="margin: 0.5rem 0;">Turn 6: Gain +2 passive (now 4 total). Spend 2 tokens on Reality Bending (3d6 damage, ignore Defense) → Kill second enemy</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">You didn't play fair. You rewrote the rules. Welcome to the Wyrd.</p>
+        </div>
+
+        <h2>Companion Mechanic: Phase Cut & Illusory Double</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Phase Cut (Active):</strong> Attack that phases through reality. Teleport adjacent to target, attack for normal damage, teleport back. If kill, gain +1 Bargain token.</p>
+            <p style="margin-top: 1rem;"><strong>Illusory Double (Active, 1 token):</strong> Create decoy at your location. If attacked, decoy becomes real and attacks back for 3d6 damage. Cheaper than Mirror Self but one-time use.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Phase Cut is mobility + Bargain generation. Illusory Double is cheap defensive trick. Wyrd manipulates perception and position.</em></p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Use Bargains</h2>
+
+        <h3>✓ Good Times to Spend Bargain Tokens</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Fae Bargain on Key Turns</strong> - Force enemy to skip critical turn (setup phase, heal turn). They either lose their turn or take 3 damage</li>
+            <li><strong>Reality Bending on Tanks</strong> - 3d6 damage ignoring Defense punches through Dwarven armor. Pure damage output</li>
+            <li><strong>Stolen Face on Powerful Enemies</strong> - Copy boss's 10-damage attack. Use it against them. Gain +2 Defense while doing so</li>
+            <li><strong>Mirror Self Before Burst</strong> - Enemy telegraphing big attack? Place decoy. They hit decoy, take 2d6 back</li>
+            <li><strong>Between Moments (Banking Tokens)</strong> - Store 3 tokens for later. Use in desperate situations or end-game burst</li>
+        </ul>
+
+        <h3>✗ Bad Times to Spend Bargains</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Reality Bending on Low HP</strong> - 2 tokens for 3d6 damage on a 5 HP target is overkill. Save for threats</li>
+            <li><strong>Stolen Face on Weak Abilities</strong> - Don't spend 3 tokens to copy a 2-damage attack. Steal powerful abilities only</li>
+            <li><strong>Mirror Self When Not Threatened</strong> - 5 tokens is expensive. Don't place decoy if no danger. Waste of resources</li>
+            <li><strong>Fae Bargain on Already-Controlled Enemy</strong> - If enemy is stunned/disabled, don't waste Fae Bargain. Use on active threats</li>
+            <li><strong>At Token Cap (10)</strong> - You're wasting +2/turn generation. Spend down to 6-8 periodically</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Bargain Chain</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Forced Choice Loop:</strong></p>
+            <p style="margin-left: 1rem;">Turn 2: Fae Bargain enemy A (accepts, skips turn, you gain 3 tokens) → Turn 3: Fae Bargain enemy B (refuses, takes 3 damage) → Turn 4: Fae Bargain enemy C (accepts, skips turn, gain 3 more tokens)</p>
+            <p style="margin-top: 1rem;">Result: You forced 2 skipped turns and dealt 3 damage for 0 token cost. Gained 6 tokens total. Pure manipulation.</p>
+        </div>
+
+        <h3>The Theft Build</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Ability Steal Spam:</strong></p>
+            <p style="margin-left: 1rem;">Turn 3: Stolen Face on Church pilot (copy Blood Offering) → Use Blood Offering + stolen attack (+3 damage, +2 Defense) → Turn 5: Stolen Face on Dwarf (copy Runic Strike) → Use Runic Strike (+4 damage, ignore 2 Defense, +2 Defense from Stolen Face)</p>
+            <p style="margin-top: 1rem;">You're using everyone's best cards. Gain +2 Defense each time. You're stronger with their abilities than they are.</p>
+        </div>
+
+        <h3>The Decoy Trap</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Mirror Self Bait:</strong></p>
+            <p style="margin-left: 1rem;">Turn 5: Place Mirror Self decoy (5 tokens) → Enemy attacks decoy → Decoy counterattacks for 2d6 damage → Next turn: Place Illusory Double (1 token) → Enemy attacks again → Another 3d6 damage back</p>
+            <p style="margin-top: 1rem;">You dealt 5d6 damage (avg 17.5) by being attacked. Enemy punished for aggression.</p>
+        </div>
+
+        <h3>The Reality Spike</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Ignore-Defense Burst:</strong></p>
+            <p style="margin-left: 1rem;">Turn 6: Have 8 tokens → Reality Bending (2 tokens, 3d6 damage, ignore Defense) → Phase Cut kill for +1 token → Reality Bending again (2 tokens, 3d6 damage) → Phase Cut kill for +1 token</p>
+            <p style="margin-top: 1rem;">You dealt 6d6 damage (avg 21) ignoring all armor. Tanks are irrelevant. Reality doesn't care about Defense.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Not Using Fae Bargain</h3>
+            <p><strong>Why it fails:</strong> Fae Bargain costs 0 tokens. Enemy skips turn (you gain 3) OR takes 3 damage. It's free value every turn.</p>
+            <p><strong>Fix:</strong> Use Fae Bargain every mission, multiple times. Force choices, generate tokens. It's your economy engine.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Hoarding Tokens Without Spending</h3>
+            <p><strong>Why it fails:</strong> Sitting at 10 tokens cap wastes +2/turn generation. Bargains are meant to be spent.</p>
+            <p><strong>Fix:</strong> Spend down to 6-8 tokens periodically. Use Reality Bending (cheap at 2), Stolen Face (3), or bank with Between Moments (3).</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Stealing Weak Abilities</h3>
+            <p><strong>Why it fails:</strong> Stolen Face costs 3 tokens. Copying a 2-damage attack is wasteful.</p>
+            <p><strong>Fix:</strong> Only steal powerful abilities (6+ damage attacks, game-changing effects). Wait for the right target.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Not Using Defensive Tricks</h3>
+            <p><strong>Why it fails:</strong> Wyrd is fragile (standard 30 HP, light armor). Mirror Self and Illusory Double are your survival tools.</p>
+            <p><strong>Fix:</strong> Place decoys before enemy burst. Use Phase Cut to teleport out of danger. Survival through trickery.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Bargain Token Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Fae Bargain</strong></td>
+                    <td>0 tokens for lose-lose choice. Generate tokens, control tempo</td>
+                    <td>4-5 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Reality Bending</strong></td>
+                    <td>2 tokens for 3d6 damage, ignore Defense. Your burst damage</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Stolen Face</strong></td>
+                    <td>3 tokens to copy enemy ability, +2 Defense. Power theft</td>
+                    <td>3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Mirror Self</strong></td>
+                    <td>5 tokens for decoy. Defensive counterattack tool</td>
+                    <td>2 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Phase Cut</strong></td>
+                    <td>Teleport attack, +1 token on kill. Mobility + economy</td>
+                    <td>3-4 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Bargain Manipulator</h4>
+                <p><strong>Focus:</strong> Fae Bargain spam, forced choices</p>
+                <p><strong>Equipment:</strong> Fae Bargain (6 cards), Reality Bending (4 cards), Phase Cut (3 cards), Light Armor (1 card)</p>
+                <p><strong>Strategy:</strong> Fae Bargain every turn. Generate 6-9 tokens by turn 4. Reality Bending for burst. Phase Cut for mobility. Control through choices.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Ability Thief</h4>
+                <p><strong>Focus:</strong> Stolen Face spam, power theft</p>
+                <p><strong>Equipment:</strong> Stolen Face (5 cards), Fae Bargain (3 cards), Reality Bending (3 cards), Light Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Copy enemy's best abilities. Use them with +2 Defense bonus. You're stronger with their cards than they are. Pure theft.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Decoy Trickster</h4>
+                <p><strong>Focus:</strong> Mirror Self + Illusory Double, defensive counterplay</p>
+                <p><strong>Equipment:</strong> Mirror Self (3 cards), Illusory Double (3 cards), Fae Bargain (3 cards), Phase Cut (3 cards), Light Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Place decoys constantly. Enemy attacks = counterattack damage. Phase Cut for escapes. Survive through trickery and misdirection.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Bargain Strategy</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turn 1-2</strong></td>
+                    <td>FAE BARGAIN</td>
+                    <td>Start with 0, gain +4 over 2 turns. Use Fae Bargain for +3 more = 7 tokens by turn 2</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 3-4</strong></td>
+                    <td>STOLEN FACE</td>
+                    <td>Now at 9-10 tokens. Copy enemy's powerful ability with Stolen Face (3 tokens). Use it with +2 Defense</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 5-7</strong></td>
+                    <td>REALITY BENDING</td>
+                    <td>Spam Reality Bending (2 tokens each). 3d6 damage ignoring Defense. Kill everything with burst</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 8-10</strong></td>
+                    <td>MIRROR SELF / CLEANUP</td>
+                    <td>Place Mirror Self if threatened. Use Phase Cut for mobility. Fae Bargain remaining enemies</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 11+</strong></td>
+                    <td>ENDGAME</td>
+                    <td>Spend all tokens on Reality Bending finishers. Bank 3-5 for next mission (tokens persist)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church alpha strikes early. Use Fae Bargain to force them to skip their Blood Offering turn OR take 3 damage. Place Illusory Double before their burst. Counterattack when they hit decoy. Control beats aggression.</p>
+
+        <h3>vs. Dwarven Forge-Guilds (High Armor)</h3>
+        <p class="manuscript-text">Dwarves have 3-4 Defense. Reality Bending ignores ALL Defense (3d6 pure damage). Spam it. Their armor is irrelevant. Reality manipulation beats stone.</p>
+
+        <h3>vs. The Ossuarium (Resurrection)</h3>
+        <p class="manuscript-text">Ossuarium resurrects constantly. Steal their Tainted attacks with Stolen Face (use them with +2 Defense). Reality Bending ignores their Bone Thralls' defenses. Fae Bargain their Bone-Lord to control tempo.</p>
+
+        <h3>vs. Elven Verdant Covenant (Bleed Kiting)</h3>
+        <p class="manuscript-text">Elves kite and Bleed. Use Phase Cut to teleport adjacent, attack, teleport back. Fae Bargain to force them to skip their kiting turn. Stolen Face their Poisoned Strike (use it against them with +2 Defense). Mobility + tricks beat kiting.</p>
+
+        <h3>vs. Vestige Bloodlines (Mutation Spam)</h3>
+        <p class="manuscript-text">Bloodlines snowball mutations. Use Reality Bending early (turn 3-4) for burst before they scale. Steal their Beast Form with Stolen Face (use it with +2 Defense). Kill them before mutations spiral. Speed beats evolution.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "They think reality is fixed. They think choices matter. They think their abilities are theirs alone. Fools. Everything is negotiable. Everything is stolen. Everything bends to the Wyrd."
+            <span class="quote-attribution">-The Masked Court, Final Bargain</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master the Bargain. Master Reality Itself.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-fae.html" target="_parent">The Wyrd Conclave Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>

@@ -990,15 +990,33 @@
                 function toggleDropdown(ev) {
                     if (ev) { ev.preventDefault(); ev.stopPropagation(); }
                     const isOpen = dd.classList.contains('dropdown-open');
+                    const submenuItems = dd.querySelectorAll('.nav-submenu .nav-link');
+
+                    // Close other dropdowns and remove their items from tab order
                     document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(other => {
                         if (other !== dd) {
                             other.classList.remove('dropdown-open');
                             const p = other.querySelector('> .nav-link.has-submenu');
                             if (p) p.setAttribute('aria-expanded', 'false');
+                            // Remove submenu items from tab order
+                            other.querySelectorAll('.nav-submenu .nav-link').forEach(item => {
+                                item.setAttribute('tabindex', '-1');
+                            });
                         }
                     });
+
+                    // Toggle this dropdown
                     dd.classList.toggle('dropdown-open', !isOpen);
                     parent.setAttribute('aria-expanded', String(!isOpen));
+
+                    // Manage tab order for submenu items
+                    if (!isOpen) {
+                        // Opening: add items to tab order
+                        submenuItems.forEach(item => item.setAttribute('tabindex', '0'));
+                    } else {
+                        // Closing: remove items from tab order
+                        submenuItems.forEach(item => item.setAttribute('tabindex', '-1'));
+                    }
                 }
                 parent.addEventListener('click', toggleDropdown);
 
@@ -1086,6 +1104,10 @@
                         }
                     });
                 });
+
+                // Initialize submenu items with tabindex="-1" (removed from tab order when closed)
+                const submenuItems = dd.querySelectorAll('.nav-submenu .nav-link');
+                submenuItems.forEach(item => item.setAttribute('tabindex', '-1'));
             });
 
             // Back-to-top FAB controls scrolling of iframe content and shows on scroll

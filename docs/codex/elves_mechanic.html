@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elven Mechanic: Bleed Stacking - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="faction-elves.html">Elves Overview</a>
+            <span class="nav-separator">|</span>
+            <span style="opacity: 0.6;">Other Mechanics:</span>
+            <a href="church_mechanic.html">Church</a>
+            <a href="dwarves_mechanic.html">Dwarves</a>
+            <a href="ossuarium_mechanic.html">Ossuarium</a>
+            <a href="nomads_mechanic.html">Nomads</a>
+            <a href="exchange_mechanic.html">Exchange</a>
+            <a href="bloodlines_mechanic.html">Bloodlines</a>
+            <a href="emergent_mechanic.html">Emergent</a>
+            <a href="crucible_mechanic.html">Crucible</a>
+            <a href="wyrd_mechanic.html">Wyrd</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-elves.html" target="_parent">ELVES</a> /
+            Bleed Stacking Mechanic
+        </nav>
+
+        <h1>Bleed Stacking: Death by a Thousand Cuts</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">Elven Verdant Covenant Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "The forest does not strike once. It poisons, it wounds, it bleeds you dry over days. We are the forest. We are patient. We are inevitable."
+            <span class="quote-attribution">-Sylvari Moonshadow, Blade Dancer</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Bleed Stacking</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Damage Over Time System</h3>
+            <p><strong>Application:</strong> Many Elven attacks apply <strong>Bleed tokens</strong> to enemies. Each Bleed token deals <strong>1 damage at the start of the enemy's turn</strong>.</p>
+            <p style="margin: 1rem 0;"><strong>Stacking:</strong> Bleed tokens stack infinitely. An enemy with 5 Bleed takes 5 damage per turn automatically.</p>
+            <p style="margin: 1rem 0;"><strong>Duration:</strong> Bleed persists until the end of the mission (does not decay or expire)</p>
+            <p style="margin: 1rem 0;"><strong>Execute Synergy:</strong> Many Elven cards deal bonus damage to enemies with 3+ Bleed tokens</p>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Bleed Stacking is the Elven win condition—apply multiple Bleed tokens, kite enemies, watch them die passively. Your goal is to stack Bleeds, not burst damage. Here's the cycle:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Apply Bleed Tokens</strong> - Use cards like "Poisoned Strike" (deals damage + applies 2 Bleed) or "Thornwhip" (applies 1 Bleed, long range)</li>
+            <li><strong>Kite and Evade</strong> - Use high movement (3 hexes) and dodge cards to avoid retaliation</li>
+            <li><strong>Stack More Bleeds</strong> - Each turn, apply 1-2 more Bleed tokens to the same target
+                <ul style="margin-top: 0.5rem;">
+                    <li>Turn 1: Enemy has 2 Bleed (takes 2 damage/turn)</li>
+                    <li>Turn 2: Add 2 more Bleed (now 4 total, takes 4 damage/turn)</li>
+                    <li>Turn 3: Add 1 more Bleed (now 5 total, takes 5 damage/turn)</li>
+                </ul>
+            </li>
+            <li><strong>Execute Low HP Targets</strong> - When enemy is below 10 HP with 3+ Bleeds, use "Mercy Strike" (deals double damage to bleeding targets) for finisher</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Bleed Sequence</h4>
+            <p style="margin: 0.5rem 0;">Turn 1: Poisoned Strike (3 damage + 2 Bleed) → Enemy at 27 HP, 2 Bleed</p>
+            <p style="margin: 0.5rem 0;">Enemy Turn: Takes 2 Bleed damage → Enemy at 25 HP</p>
+            <p style="margin: 0.5rem 0;">Turn 2: Thornwhip (2 damage + 1 Bleed) → Enemy at 23 HP, 3 Bleed total</p>
+            <p style="margin: 0.5rem 0;">Enemy Turn: Takes 3 Bleed damage → Enemy at 20 HP</p>
+            <p style="margin: 0.5rem 0;">Turn 3: Kite away (don't attack) → Bleed does the work</p>
+            <p style="margin: 0.5rem 0;">Enemy Turn: Takes 3 Bleed damage → Enemy at 17 HP</p>
+            <p style="margin: 0.5rem 0;">Turns 4-10: Enemy continues bleeding 3 damage/turn. You've dealt 18 damage without attacking.</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">Patience is your weapon. Time is your ally. They die screaming.</p>
+        </div>
+
+        <h2>Companion Mechanic: Moonlight Blessing</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Moonlight Blessing (Passive):</strong> When in forest/natural terrain, gain +1 movement and +1 Defense. Elven caskets move gracefully through wilderness.</p>
+            <p style="margin-top: 1rem;"><strong>Moonlight Strike (Active, 3 SP):</strong> Teleport up to 5 hexes to any visible natural terrain hex. Gain +2 damage on next attack.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Synergy Note: Moonlight Blessing makes Elves incredibly mobile in forest maps. Use terrain to kite while Bleeds do the work.</em></p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Stack Bleeds</h2>
+
+        <h3>✓ Good Times to Stack Bleeds</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Against Tanks (High HP)</strong> - Dwarves, Church, Crucible with 30+ HP. Bleed bypasses armor and chips away at large health pools</li>
+            <li><strong>Early Game (Turns 1-4)</strong> - Apply Bleeds early, then kite. By turn 8, they've taken 20+ damage passively</li>
+            <li><strong>When You Can Kite</strong> - Bleeds require time to work. If you have mobility advantage, stack and run</li>
+            <li><strong>On Multiple Targets</strong> - Apply 2-3 Bleeds to 2-3 enemies. Everyone takes passive damage. Efficient economy</li>
+            <li><strong>Before Executing</strong> - Stack 3+ Bleeds, then finish with Mercy Strike (double damage to bleeding targets)</li>
+        </ul>
+
+        <h3>✗ Bad Times to Stack Bleeds</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Against Low HP Enemies</strong> - Don't Bleed a 10 HP Thrall. Just kill it with direct damage</li>
+            <li><strong>When Being Rushed</strong> - If enemies close distance fast, you don't have time to kite. Switch to direct damage</li>
+            <li><strong>Late Game (Turn 10+)</strong> - Missions end around turn 12-15. Bleeds need time to work. Too late to set up new stacks</li>
+            <li><strong>Against Healing Enemies</strong> - Some factions heal (Church, Ossuarium). Bleeds get outhealed. Focus burst instead</li>
+            <li><strong>When You're Cornered</strong> - Bleeds require kiting space. If trapped, switch to defensive/burst tactics</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Poison Cloud</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>AoE Bleed Combo:</strong></p>
+            <p style="margin-left: 1rem;">Thornstorm (AoE, 2 damage + 1 Bleed to all enemies in 3-hex radius) → Retreat 4 hexes → Enemies chase → Take Bleed damage every turn</p>
+            <p style="margin-top: 1rem;">Result: Hit 3-4 enemies with 1 Bleed each. Over 5 turns, that's 15-20 free damage total. Efficient action economy.</p>
+        </div>
+
+        <h3>The Execute Spike</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Finisher Combo:</strong></p>
+            <p style="margin-left: 1rem;">Stack 3+ Bleeds on enemy (down to 12 HP) → Mercy Strike (4 damage, double damage if target has 3+ Bleeds = 8 damage total) → Enemy dies from 4 damage (doubled to 8) + 3 Bleed = 11 damage</p>
+            <p style="margin-top: 1rem;">You secure the kill while enemy is still mid-HP. Mercy Strike is your win condition.</p>
+        </div>
+
+        <h3>The Moonlight Assassin</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Mobility Combo:</strong></p>
+            <p style="margin-left: 1rem;">Moonlight Strike (teleport 5 hexes, +2 damage) → Poisoned Strike (3 damage + 2 Bleed, now 5 damage) → Retreat with high movement (3 base + 1 from Moonlight Blessing = 4 hexes)</p>
+            <p style="margin-top: 1rem;">You teleport in, apply Bleeds, deal burst damage, teleport out. Enemy can't retaliate. Repeat until dead.</p>
+        </div>
+
+        <h3>The Patient Hunter</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Kiting Strategy:</strong></p>
+            <p style="margin-left: 1rem;">Apply 2 Bleeds → Kite for 2 turns (don't attack) → Apply 2 more Bleeds → Kite for 2 turns → Apply final Bleed → Execute</p>
+            <p style="margin-top: 1rem;">You minimize risk by only engaging briefly, maximizing Bleed uptime. Enemy takes 10-15 passive damage while you stay safe.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Trying to Burst Damage</h3>
+            <p><strong>Why it fails:</strong> Elves have low base damage (3-5 per attack). You're not a burst faction. Trying to out-damage Church/Dwarves wastes your kit.</p>
+            <p><strong>Fix:</strong> Embrace Bleeds. Apply 3-5 Bleed tokens over 3 turns, then kite while they die passively. Patience wins.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Standing Still After Applying Bleeds</h3>
+            <p><strong>Why it fails:</strong> Bleeds need time to work. If you stand next to the enemy, they hit you back and negate the advantage.</p>
+            <p><strong>Fix:</strong> Apply Bleeds → Retreat 3-4 hexes → Force enemies to chase (wasting their turns) → Bleeds tick while they chase.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Spreading Bleeds Too Thin</h3>
+            <p><strong>Why it fails:</strong> Applying 1 Bleed to 5 enemies means each takes 1 damage/turn. That's inefficient—5 damage total spread across 5 enemies.</p>
+            <p><strong>Fix:</strong> Focus-stack Bleeds. Apply 3-5 Bleeds to 1-2 priority targets. Kill them, then move to next target. Concentration beats diffusion.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Forgetting to Execute</h3>
+            <p><strong>Why it fails:</strong> Bleeds alone don't win. A 10 HP enemy with 3 Bleeds will take 3-4 turns to die. That's 3-4 turns they're attacking you.</p>
+            <p><strong>Fix:</strong> Once enemy is below 12 HP with 3+ Bleeds, use Mercy Strike (double damage) to finish immediately. Don't let wounded enemies linger.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Bleed Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Poisoned Strike</strong></td>
+                    <td>Primary Bleed applicator. 3 damage + 2 Bleed. Your bread and butter</td>
+                    <td>4-5 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Thornwhip</strong></td>
+                    <td>Long-range Bleed application (range 4 hexes). Safe poke</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Mercy Strike</strong></td>
+                    <td>Execute card. Double damage to bleeding targets. Mandatory finisher</td>
+                    <td>3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Moonlight Strike</strong></td>
+                    <td>Teleport + damage. Escape tool and gap-closer</td>
+                    <td>2-3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Thornstorm</strong></td>
+                    <td>AoE Bleed application. Hit 3-4 enemies at once</td>
+                    <td>2 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Pure Bleed Kiter</h4>
+                <p><strong>Focus:</strong> Maximum Bleed stacking, minimal combat</p>
+                <p><strong>Equipment:</strong> Thornwhip (6 cards), Poisoned Strike (4 cards), Moonlight Strike (3 cards), Light Armor (1 card)</p>
+                <p><strong>Strategy:</strong> Apply Bleeds from range, kite with high movement. Never engage in melee. Let Bleeds kill everything. Cowardly but effective.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Bleed Assassin</h4>
+                <p><strong>Focus:</strong> Bleed setup + Execute finisher</p>
+                <p><strong>Equipment:</strong> Poisoned Strike (4 cards), Mercy Strike (4 cards), Moonlight Strike (3 cards), Medium Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Stack 3-4 Bleeds, then Mercy Strike for double damage execute. Aggressive tempo. High risk, high reward.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">AoE Bleed Spreader</h4>
+                <p><strong>Focus:</strong> Spread Bleeds across multiple enemies</p>
+                <p><strong>Equipment:</strong> Thornstorm (4 cards), Thornwhip (3 cards), Poisoned Strike (3 cards), Moonlight Strike (2 cards), Light Armor (1 card)</p>
+                <p><strong>Strategy:</strong> Thornstorm to hit 3-4 enemies with 1 Bleed each. Apply additional Bleeds to priority targets. Everyone dies slowly. Chaos multiplier.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Bleed Strategy</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turns 1-2</strong></td>
+                    <td>APPLY BLEEDS</td>
+                    <td>Apply 2-3 Bleeds to priority targets. Set up your win condition early</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 3-4</strong></td>
+                    <td>KITE & MAINTAIN</td>
+                    <td>Retreat, apply 1-2 more Bleeds if safe. Let existing Bleeds tick for 6-8 damage total</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 5-7</strong></td>
+                    <td>EXECUTE PHASE</td>
+                    <td>Enemies now at 15-20 HP with 3-5 Bleeds. Use Mercy Strike to finish. Secure kills</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 8-10</strong></td>
+                    <td>CLEANUP</td>
+                    <td>Most enemies dead from Bleeds. Focus remaining threats with direct damage</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 11+</strong></td>
+                    <td>ENDGAME</td>
+                    <td>Too late for new Bleeds. Finish survivors with burst damage or Mercy Strikes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church relies on alpha strikes turn 1-2. Apply Bleeds then kite out of range. They burn resources early, you kill them slowly. By turn 6, they're at 10 HP from Bleeds and can't heal.</p>
+
+        <h3>vs. Dwarven Forge-Guilds (High Armor)</h3>
+        <p class="manuscript-text">Dwarves have 3-4 Defense. Your direct damage is inefficient. Bleeds bypass armor entirely. Stack 5-6 Bleeds and kite. They take 5-6 damage/turn regardless of armor. Patience beats stone.</p>
+
+        <h3>vs. The Ossuarium (Resurrection)</h3>
+        <p class="manuscript-text">Ossuarium resurrects constantly. Bleeds persist through resurrection. A resurrected Bone Thrall still has 3 Bleeds and dies again. Free kills. Farm them for easy victories.</p>
+
+        <h3>vs. Vestige Bloodlines (Mutation Spam)</h3>
+        <p class="manuscript-text">Bloodlines snowball if left unchecked. Apply Bleeds early (turn 1-2), then kite. They mutate but still take Bleed damage. Execute at 12 HP before mutations spiral out of control.</p>
+
+        <h3>vs. Emergent Syndicate (Metamorph Tokens)</h3>
+        <p class="manuscript-text">Emergent gain power through proximity. Apply Bleeds from long range (Thornwhip, 4 hexes). Kite away. They can't reach you to gain Metamorph tokens. Bleeds kill them while they chase.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "The wolf does not fight the bear. The serpent does not wrestle the ox. We are neither wolf nor serpent—we are the poison in the bloodstream. Invisible. Inevitable. Inescapable."
+            <span class="quote-attribution">-Elder Faelan, Master of the Thornveil</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master the Bleed. Master the Hunt.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-elves.html" target="_parent">Elven Verdant Covenant Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>

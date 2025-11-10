@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ossuarium Mechanic: Soul Shard Salvage - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="faction-undead.html">Ossuarium Overview</a>
+            <span class="nav-separator">|</span>
+            <span style="opacity: 0.6;">Other Mechanics:</span>
+            <a href="church_mechanic.html">Church</a>
+            <a href="dwarves_mechanic.html">Dwarves</a>
+            <a href="elves_mechanic.html">Elves</a>
+            <a href="nomads_mechanic.html">Nomads</a>
+            <a href="exchange_mechanic.html">Exchange</a>
+            <a href="bloodlines_mechanic.html">Bloodlines</a>
+            <a href="emergent_mechanic.html">Emergent</a>
+            <a href="crucible_mechanic.html">Crucible</a>
+            <a href="wyrd_mechanic.html">Wyrd</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-undead.html" target="_parent">OSSUARIUM</a> /
+            Soul Shard Salvage Mechanic
+        </nav>
+
+        <h1>Soul Shard Salvage: Necromantic Resource Economy</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">The Ossuarium Core Mechanic (v6.0)</h2>
+
+        <div class="manuscript-quote">
+            "Nothing is wasted. Nothing is lost. Every death fuels the next resurrection. We are the grinder—everything that enters becomes us."
+            <span class="quote-attribution">-Grimweaver Karreth, Bone Warden</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Soul Shard Salvage</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Passive Resource Generation</h3>
+            <p><strong>Generation:</strong> Each time an enemy is killed, collect <strong>1 Soul Shard</strong> (2 Shards if kill was made with a Tainted card)</p>
+            <p style="margin: 1rem 0;"><strong>Maximum Storage:</strong> 15 Soul Shards (excess Shards are lost)</p>
+            <p style="margin: 1rem 0;"><strong>Spending Options:</strong></p>
+            <ul style="margin-top: 0.5rem;">
+                <li><strong>Repair (3 Shards):</strong> Recover 3 cards from discard</li>
+                <li><strong>Draw Power (2 Shards):</strong> Draw 2 cards immediately</li>
+                <li><strong>Necrotic Surge (4 Shards):</strong> +3 damage to all attacks this turn</li>
+                <li><strong>Raise Thrall (5 Shards):</strong> Summon a Bone Thrall ally (8 HP, 3 damage)</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Balance Update Oct 19 (v6.0): Doubled Shard generation (+1 per kill baseline, +2 from Tainted kills). Reduced Raise Thrall cost from 7 to 5 Shards.</em></p>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Soul Shard Salvage is The Ossuarium's economy system—every kill becomes a resource. The faction's playstyle revolves around attrition: outlast your enemies, salvage their souls, use Shards to repair/buff/summon. Here's the cycle:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Kill Enemies</strong> - Each kill generates 1 Soul Shard (2 if using Tainted cards)</li>
+            <li><strong>Bank Shards</strong> - Shards persist across rounds, up to 15 maximum</li>
+            <li><strong>Spend Strategically</strong> - Use Shards to:
+                <ul style="margin-top: 0.5rem;">
+                    <li>Repair damage (3 Shards = 3 cards recovered)</li>
+                    <li>Draw more options (2 Shards = 2 cards drawn)</li>
+                    <li>Burst damage (4 Shards = +3 damage to all attacks)</li>
+                    <li>Summon allies (5 Shards = Bone Thrall)</li>
+                </ul>
+            </li>
+            <li><strong>Grinder Loop</strong> - Use Bone Thralls to generate more kills → more Shards → more Thralls. Snowball through attrition.</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Mission Arc</h4>
+            <p style="margin: 0.5rem 0;">Turns 1-3: Kill 2-3 enemies using regular attacks (3 Shards collected)</p>
+            <p style="margin: 0.5rem 0;">Turn 4: Spend 3 Shards on Repair (recover from damage taken)</p>
+            <p style="margin: 0.5rem 0;">Turns 5-7: Continue grinding enemies (now at 6-8 Shards)</p>
+            <p style="margin: 0.5rem 0;">Turn 8: Spend 5 Shards to Raise Thrall (extra body to absorb hits)</p>
+            <p style="margin: 0.5rem 0;">Turns 9+: Thrall generates kills → more Shards → Raise second Thrall</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">The longer the mission, the more overwhelming you become. You ARE the attrition.</p>
+        </div>
+
+        <h2>Companion Mechanic: Taint Corruption</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Taint Accumulation (Passive):</strong> Each time you use a Tainted card, gain +1 Taint permanently. Taint provides benefits but accumulates risk:</p>
+            <ul class="manuscript-list" style="margin-top: 0.5rem;">
+                <li><strong>At 1-3 Taint:</strong> Kills with Tainted cards generate +1 Soul Shard (2 total)</li>
+                <li><strong>At 4-6 Taint:</strong> Tainted cards gain +1 damage</li>
+                <li><strong>At 7-9 Taint:</strong> Tainted cards gain +2 damage but you take +1 damage from all attacks</li>
+                <li><strong>At 10+ Taint:</strong> Permanent corruption. You're Void-touched but incredibly powerful</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>Taint is PERMANENT</strong> - Cannot be removed, only managed. High-risk, high-reward scaling.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Spend Shards</h2>
+
+        <h3>✓ Good Times to Spend Shards</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>After Taking Heavy Damage</strong> - Repair (3 Shards) is your healing. Use liberally when below 15 HP</li>
+            <li><strong>Before Boss Fights</strong> - Raise Thrall (5 Shards) gives you an extra body to tank damage</li>
+            <li><strong>When Hand is Weak</strong> - Draw Power (2 Shards) cycles your deck for better cards</li>
+            <li><strong>For Burst Finishing Moves</strong> - Necrotic Surge (4 Shards) + multiple attacks can wipe entire enemy teams</li>
+            <li><strong>Mid-Late Game (Turn 6+)</strong> - By then you have 8-12 Shards. Spend aggressively to snowball</li>
+        </ul>
+
+        <h3>✗ Bad Times to Spend Shards</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Early Game (Turns 1-3)</strong> - You've only collected 2-4 Shards. Be patient, build reserves</li>
+            <li><strong>When Already Winning</strong> - If you're dominating and at full HP, bank Shards for next mission</li>
+            <li><strong>Spending All Shards at Once</strong> - Maintain 3-5 Shard reserve for emergencies. Don't zero yourself out</li>
+            <li><strong>Raising Thralls Without Targets</strong> - Don't summon Thralls when there are no enemies to kill. They're fragile and waste Shards if unused</li>
+            <li><strong>Repair When at Full HP</strong> - Don't waste 3 Shards on Repair if you haven't taken damage</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Grinder Loop</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Snowball Combo:</strong></p>
+            <p style="margin-left: 1rem;">Raise Thrall (5 Shards) → Thrall kills enemy (+1 Shard) → Collect Shards from your kills → Raise second Thrall (5 Shards) → Thralls generate more kills → Raise third Thrall</p>
+            <p style="margin-top: 1rem;">Result: By turn 10, you have 3 Bone Thralls tanking damage and generating Shards. You become unkillable through numbers.</p>
+        </div>
+
+        <h3>The Taint Spike</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Aggressive Combo:</strong></p>
+            <p style="margin-left: 1rem;">Accumulate 4-6 Taint (Tainted cards gain +1 damage) → Necrotic Surge (4 Shards, +3 damage) → Tainted Cleave (5 base damage + 1 Taint + 3 Surge = 9 damage AoE)</p>
+            <p style="margin-top: 1rem;">Total: 9 damage to multiple targets, generates 2 Shards per kill (Tainted bonus). You recover the Shard cost immediately.</p>
+        </div>
+
+        <h3>The Infinite Sustain</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Attrition Combo:</strong></p>
+            <p style="margin-left: 1rem;">Take damage (down to 10 HP) → Repair (3 Shards, recover 3 cards) → Continue fighting → Kill 2-3 enemies (+3 Shards) → Repair again (3 Shards)</p>
+            <p style="margin-top: 1rem;">Net result: As long as you're killing enemies, you can Repair indefinitely. You outlast everyone through economic advantage.</p>
+        </div>
+
+        <h3>The Void Gambit</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>High-Risk Combo:</strong></p>
+            <p style="margin-left: 1rem;">Intentionally accumulate 7-9 Taint (Tainted cards +2 damage, you take +1 damage) → Spam Tainted attacks for massive burst → Each kill generates 2 Shards → Use Shards to Repair constantly</p>
+            <p style="margin-top: 1rem;">You're a glass cannon who heals through killing. High Taint = high damage = more kills = more Shards = more healing. Dangerous but devastating.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Hoarding Shards Without Spending</h3>
+            <p><strong>Why it fails:</strong> Sitting at 15/15 Shards means you're wasting generation. Every kill beyond cap is lost value.</p>
+            <p><strong>Fix:</strong> Spend down to 10 Shards periodically. Use Draw Power (cheap at 2) or Raise Thralls to cycle resources.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Ignoring Taint Management</h3>
+            <p><strong>Why it fails:</strong> Taint is permanent. Hitting 7+ Taint without a plan means you're taking +1 damage from all attacks forever.</p>
+            <p><strong>Fix:</strong> Cap Taint at 4-6 unless you're building for high-risk glass cannon. Use non-Tainted cards for utility/positioning.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Raising Thralls Too Early</h3>
+            <p><strong>Why it fails:</strong> Bone Thralls are fragile (8 HP). Summoning them on turn 3 means they die to AoE before generating value.</p>
+            <p><strong>Fix:</strong> Wait until turn 6+ when you have Shard economy to replace lost Thralls. Or summon them behind your frontline for protection.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Not Killing Enough</h3>
+            <p><strong>Why it fails:</strong> Soul Shard Salvage requires KILLS, not damage. Wounding enemies without finishing them generates nothing.</p>
+            <p><strong>Fix:</strong> Focus-fire low-HP targets. Execute wounded enemies. Prioritize killing over spreading damage. Kills are your economy.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Soul Shard Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tainted Attacks</strong></td>
+                    <td>Generate 2 Shards per kill. Your primary economic engine</td>
+                    <td>4-6 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Repair Cards</strong></td>
+                    <td>Spend 3 Shards to recover 3 cards. Mandatory for sustainability</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Raise Thrall</strong></td>
+                    <td>5 Shards to summon ally. Core to Grinder Loop strategy</td>
+                    <td>2-3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Necrotic Surge</strong></td>
+                    <td>4 Shards for +3 damage to all attacks. Burst finisher</td>
+                    <td>2 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Execute Cards</strong></td>
+                    <td>Finish low-HP enemies to secure kills and Shard generation</td>
+                    <td>3 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">The Grinder</h4>
+                <p><strong>Focus:</strong> Bone Thrall spam, attrition warfare</p>
+                <p><strong>Equipment:</strong> Boneclaw (5 cards), Raise Thrall Sigil (4 cards), Repair Sigil (3 cards)</p>
+                <p><strong>Strategy:</strong> Bank Shards early, Raise 2-3 Thralls by turn 8. Use Thralls to tank damage and generate kills. Repair when wounded. Outlast through numbers. Inevitable victory.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Void-Touched Berserker</h4>
+                <p><strong>Focus:</strong> High Taint, massive damage, glass cannon</p>
+                <p><strong>Equipment:</strong> Tainted Scythe (8 cards), Necrotic Surge Sigil (3 cards), Light Plating (2 cards)</p>
+                <p><strong>Strategy:</strong> Rush to 7-9 Taint. Tainted attacks deal 7-9 damage. Necrotic Surge for burst. You take +1 damage but kill everything first. Repair constantly to sustain. Die gloriously.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Balanced Necromancer</h4>
+                <p><strong>Focus:</strong> Controlled Taint (4-6), flexible Shard spending</p>
+                <p><strong>Equipment:</strong> Tainted Blade (4 cards), Standard Sword (3 cards), Raise Thrall (2 cards), Repair (3 cards), Draw Power (2 cards)</p>
+                <p><strong>Strategy:</strong> Mix Tainted and non-Tainted cards. Maintain 4-6 Taint for +1 damage without penalty. Flexible Shard spending based on situation. Jack-of-all-trades excellence.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Shard Management</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turns 1-3</strong></td>
+                    <td>BANK SHARDS</td>
+                    <td>Kill 2-4 enemies, generate 3-6 Shards. Don't spend yet—build reserves</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 4-5</strong></td>
+                    <td>FIRST SPEND</td>
+                    <td>Use Repair (3 Shards) if wounded OR Draw Power (2 Shards) if hand is weak</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 6-8</strong></td>
+                    <td>RAISE THRALLS</td>
+                    <td>Now at 8-12 Shards. Raise first Bone Thrall (5 Shards). This is your power spike</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 9-12</strong></td>
+                    <td>SNOWBALL PHASE</td>
+                    <td>Thralls generate kills → more Shards → Raise second/third Thrall. You're unstoppable</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 13+</strong></td>
+                    <td>ENDGAME</td>
+                    <td>Spend all Shards on Necrotic Surges and finishing moves. Bank any leftover for next mission</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church relies on early kills. You outlast them. Repair (3 Shards) negates their Blood Offering burst. By turn 8, you have 2-3 Thralls and they're out of cards. Attrition wins.</p>
+
+        <h3>vs. Dwarven Forge-Guilds (High Armor)</h3>
+        <p class="manuscript-text">Dwarves are defensive tanks. Use Tainted attacks (ignore some armor) + Necrotic Surge (4 Shards) to punch through. Focus-fire one Dwarf at a time—spreading damage is inefficient.</p>
+
+        <h3>vs. Elven Verdant Covenant (High Mobility)</h3>
+        <p class="manuscript-text">Elves kite and Bleed. Use Bone Thralls to body-block their escapes. Tainted AoE attacks hit multiple Elves despite their mobility. Repair constantly to negate Bleed damage.</p>
+
+        <h3>vs. Vestige Bloodlines (Mutation Spam)</h3>
+        <p class="manuscript-text">Bloodlines snowball fast. Kill them early before mutations spiral. Use Necrotic Surge (4 Shards) on turn 4-5 for burst. Your Grinder Loop outpaces their mutation economy if you survive early game.</p>
+
+        <h3>vs. The Wyrd Conclave (Reality Manipulation)</h3>
+        <p class="manuscript-text">Wyrd steals and manipulates. Your Soul Shards are YOUR resource—they can't steal them. Bank Shards, Raise Thralls (they can't steal minions), and grind them down through attrition. Consistency beats trickery.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "Death is not the end—it is currency. Every fallen enemy becomes a resource. Every resource becomes power. We are the economy of entropy. We are The Ossuarium."
+            <span class="quote-attribution">-Bone-Lord Malakar, Master of the Grinding Halls</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master the Shards. Master Death Itself.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-undead.html" target="_parent">The Ossuarium Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>

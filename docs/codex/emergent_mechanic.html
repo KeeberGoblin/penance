@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergent Mechanic: Metamorph Tokens - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="faction-emergent.html">Emergent Overview</a>
+            <span class="nav-separator">|</span>
+            <span style="opacity: 0.6;">Other Mechanics:</span>
+            <a href="church_mechanic.html">Church</a>
+            <a href="dwarves_mechanic.html">Dwarves</a>
+            <a href="ossuarium_mechanic.html">Ossuarium</a>
+            <a href="elves_mechanic.html">Elves</a>
+            <a href="nomads_mechanic.html">Nomads</a>
+            <a href="exchange_mechanic.html">Exchange</a>
+            <a href="bloodlines_mechanic.html">Bloodlines</a>
+            <a href="crucible_mechanic.html">Crucible</a>
+            <a href="wyrd_mechanic.html">Wyrd</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-emergent.html" target="_parent">EMERGENT</a> /
+            Metamorph Token Mechanic
+        </nav>
+
+        <h1>Metamorph Tokens: Hive Mind Coordination</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">Emergent Syndicate Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "One voice. One mind. One purpose. We are not individuals—we are iterations of perfection."
+            <span class="quote-attribution">-The Consensus, Emergent Hive-Mind</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Metamorph Tokens & Hive Coordination</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Transformation Resource System</h3>
+            <p><strong>Swarm Intelligence (Passive):</strong> Gain +2 Metamorph tokens at start of each round (+4 if 3+ Emergent allies within 4 hexes). Proximity breeds power.</p>
+            <p style="margin: 1rem 0;"><strong>Maximum Storage:</strong> 15 Metamorph tokens</p>
+            <p style="margin: 1rem 0;"><strong>Transformation Forms (Spend Metamorph to activate):</strong></p>
+            <ul style="margin-top: 0.5rem;">
+                <li><strong>Assault Form (2 Metamorph):</strong> +3 damage, -1 Defense (lasts 2 turns)</li>
+                <li><strong>Tank Form (2 Metamorph):</strong> +4 Defense, -1 movement (lasts 2 turns)</li>
+                <li><strong>Scout Form (2 Metamorph):</strong> +3 movement, ignore terrain (lasts 2 turns)</li>
+                <li><strong>Hive-Mind Link (1 Metamorph):</strong> Copy ally's card at 75% effectiveness</li>
+                <li><strong>Chrysalis Rebirth (5 Metamorph):</strong> Cannot act 1 turn. Next turn: recover 10 cards, remove Heat, +2 Defense permanently (once per mission)</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Balance Update Oct 19: Doubled from +1/+2 to +2/+4 Metamorph generation. Buffed all forms. Increased Hive-Mind Link from 50% to 75% effectiveness.</em></p>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Metamorph Tokens represent the Emergent hive's collective evolution. The more allies you have nearby, the faster you generate tokens. Transform into specialized forms or link minds with allies for powerful synergies. Here's the swarm cycle:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Generate Metamorph Tokens</strong> - +2 per round solo, +4 per round if 3+ Emergent allies within 4 hexes</li>
+            <li><strong>Stay Close to Allies</strong> - Proximity is power. 4-hex range is generous—maintain formation</li>
+            <li><strong>Transform Strategically</strong> - Activate forms based on situation:
+                <ul style="margin-top: 0.5rem;">
+                    <li>Assault Form (aggressive push)</li>
+                    <li>Tank Form (defend allies)</li>
+                    <li>Scout Form (mobility/flanking)</li>
+                    <li>Hive-Mind Link (copy powerful ally cards)</li>
+                </ul>
+            </li>
+            <li><strong>Chrysalis Rebirth (Ultimate)</strong> - Once per mission, spend 5 Metamorph to go dormant 1 turn, then fully heal + permanent defense buff</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Hive Coordination</h4>
+            <p style="margin: 0.5rem 0;">Turn 1: Start with 3 Emergent allies within 4 hexes → Gain +4 Metamorph (now 4 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 2: Gain +4 Metamorph (now 8 total). Activate Assault Form (2 Metamorph) → +3 damage for 2 turns</p>
+            <p style="margin: 0.5rem 0;">Turn 3: Assault Form active. Ally plays powerful attack → Spend 1 Metamorph for Hive-Mind Link (copy at 75% effectiveness)</p>
+            <p style="margin: 0.5rem 0;">Turn 4: Assault Form expires. Gain +4 Metamorph (now 9 total). Activate Tank Form (2 Metamorph) → +4 Defense for 2 turns</p>
+            <p style="margin: 0.5rem 0;">Turns 5-6: Tank Form absorbs damage. Continue generating +4 Metamorph/turn. Bank for Chrysalis Rebirth</p>
+            <p style="margin: 0.5rem 0;">Turn 7: At 8 HP with 12 Metamorph. Activate Chrysalis Rebirth (5 Metamorph) → Dormant for 1 turn</p>
+            <p style="margin: 0.5rem 0;">Turn 8: Rebirth completes → Recover 10 cards (back to 18 HP), remove Heat, gain +2 Defense permanently</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">The hive never dies. We adapt, we transform, we endure.</p>
+        </div>
+
+        <h2>Companion Mechanic: Pheromone Command</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Pheromone Command (Active, 3 Metamorph):</strong> Release pheromone cloud. All Emergent allies within 5 hexes gain +1 damage and +1 SP. All enemies in range have -1 to hit (lasts 2 turns).</p>
+            <p style="margin-top: 1rem;"><strong>Exoskeleton Molt (Active, 1 Metamorph):</strong> When damaged, reduce damage by 3 and recover 2 cards (shedding damaged shell). Once per round.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Pheromone Command is team-wide buff. Exoskeleton Molt is emergency defense. Emergent excel in team play.</em></p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Transform</h2>
+
+        <h3>✓ Good Times to Use Metamorph Forms</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Assault Form (Aggressive Push)</strong> - When you need burst damage. +3 damage for 2 turns = 6+ bonus damage total</li>
+            <li><strong>Tank Form (Protecting Allies)</strong> - Before enemy burst. +4 Defense for 2 turns makes you unkillable bodyguard</li>
+            <li><strong>Scout Form (Flanking/Objectives)</strong> - Need to reach distant objectives quickly. +3 movement, ignore terrain</li>
+            <li><strong>Hive-Mind Link (Ally Has Powerful Card)</strong> - Ally plays 8-damage attack? Copy it at 75% (6 damage) for only 1 Metamorph. Insane value</li>
+            <li><strong>Chrysalis Rebirth (Desperate Situation)</strong> - Below 10 HP with no healing? Chrysalis for full recovery + permanent buff</li>
+        </ul>
+
+        <h3>✗ Bad Times to Transform</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Assault Form When Defensive</strong> - -1 Defense makes you fragile. Don't activate when expecting enemy burst</li>
+            <li><strong>Tank Form When Chasing</strong> - -1 movement makes kiting impossible. Don't activate against mobile enemies</li>
+            <li><strong>Scout Form in Melee</strong> - No combat bonuses. Waste of Metamorph if not repositioning</li>
+            <li><strong>Hive-Mind Link on Weak Cards</strong> - Don't copy a 2-damage attack. Save for powerful cards (6+ damage or game-changing effects)</li>
+            <li><strong>Chrysalis Too Late</strong> - Turn 12 Chrysalis means you're dormant turn 12, rebirth turn 13, mission ends turn 14. Too late</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Hive Rush</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Swarm Combo:</strong></p>
+            <p style="margin-left: 1rem;">Stay within 4 hexes of 3 allies (+4 Metamorph/turn) → Turn 2: Activate Assault Form (+3 damage) → Pheromone Command (+1 damage to all allies, -1 enemy to hit) → All 4 Emergent attack with +4 damage each = 16+ bonus damage total</p>
+            <p style="margin-top: 1rem;">Result: The hive strikes as one. Overwhelming burst through coordination.</p>
+        </div>
+
+        <h3>The Copy Engine</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Hive-Mind Abuse:</strong></p>
+            <p style="margin-left: 1rem;">Ally plays 8-damage attack → Spend 1 Metamorph for Hive-Mind Link (copy at 75% = 6 damage) → Spend 1 more Metamorph to copy again (another 6 damage) → Total: 20 damage from 2 Metamorph + ally's card</p>
+            <p style="margin-top: 1rem;">You amplified one ally card into a team wipe. The hive multiplies power.</p>
+        </div>
+
+        <h3>The Immortal Tank</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Defense Combo:</strong></p>
+            <p style="margin-left: 1rem;">Activate Tank Form (2 Metamorph, +4 Defense) → Enemy attacks for 7 damage → Use Exoskeleton Molt (1 Metamorph, reduce damage by 3, recover 2 cards) → Take 4 damage (reduced from 7) but heal 2 cards back = net 2 damage taken</p>
+            <p style="margin-top: 1rem;">You're a defensive wall. +4 Defense + damage reduction + self-heal = unkillable.</p>
+        </div>
+
+        <h3>The Phoenix Rebirth</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Comeback Mechanic:</strong></p>
+            <p style="margin-left: 1rem;">Down to 7 HP, 10 Heat → Activate Chrysalis Rebirth (5 Metamorph) → Dormant for 1 turn (allies protect you) → Next turn: Recover 10 cards (back to 17 HP), remove all Heat, gain +2 Defense permanently</p>
+            <p style="margin-top: 1rem;">You went from near-death to full HP with permanent buff. The hive never truly dies.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Playing Solo</h3>
+            <p><strong>Why it fails:</strong> Solo generation is +2/turn. With 3+ allies nearby, it's +4/turn. You're halving your economy by staying isolated.</p>
+            <p><strong>Fix:</strong> Stay within 4 hexes of allies. 4 hexes is generous—maintain hive formation. Proximity is power.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Hoarding Metamorph Without Transforming</h3>
+            <p><strong>Why it fails:</strong> Sitting at 15 Metamorph cap wastes generation. Every round beyond cap is lost value.</p>
+            <p><strong>Fix:</strong> Transform frequently. Spend 2 Metamorph on Assault/Tank/Scout Forms. Use Hive-Mind Link (1 Metamorph) to cycle resources.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Not Using Hive-Mind Link</h3>
+            <p><strong>Why it fails:</strong> Hive-Mind Link costs 1 Metamorph to copy an ally's card at 75%. That's insane value—you're getting an 8-damage card for 1 token.</p>
+            <p><strong>Fix:</strong> Always watch for powerful ally cards. Copy them with Hive-Mind Link. Amplify your team's best plays.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Wasting Chrysalis Rebirth</h3>
+            <p><strong>Why it fails:</strong> Chrysalis at 25 HP is inefficient. You heal 10 cards but you're only missing 5. Wasted healing.</p>
+            <p><strong>Fix:</strong> Use Chrysalis when below 10 HP. Maximize the 10-card recovery. Also removes Heat—use when Heat is high.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Metamorph Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Assault Form</strong></td>
+                    <td>2 Metamorph for +3 damage. Your aggressive transformation</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Tank Form</strong></td>
+                    <td>2 Metamorph for +4 Defense. Protect allies, absorb damage</td>
+                    <td>2-3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Hive-Mind Link</strong></td>
+                    <td>1 Metamorph to copy ally cards at 75%. Incredible value</td>
+                    <td>4-5 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Pheromone Command</strong></td>
+                    <td>3 Metamorph for team-wide buff. Mandatory for team play</td>
+                    <td>2 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Chrysalis Rebirth</strong></td>
+                    <td>5 Metamorph for full heal + permanent buff. Once per mission</td>
+                    <td>1 card</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Hive Coordinator</h4>
+                <p><strong>Focus:</strong> Maximize Hive-Mind Link, support allies</p>
+                <p><strong>Equipment:</strong> Hive-Mind Link (6 cards), Pheromone Command (3 cards), Tank Form (2 cards), Light Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Stay near allies. Copy their powerful cards with Hive-Mind Link. Buff team with Pheromone Command. Tank Form to protect squishies. Pure support.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Assault Swarm</h4>
+                <p><strong>Focus:</strong> Aggressive transformations, burst damage</p>
+                <p><strong>Equipment:</strong> Assault Form (5 cards), Scout Form (3 cards), Hive-Mind Link (3 cards), Light Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Assault Form for damage. Scout Form for mobility. Hive-Mind Link to copy ally burst. Fast, aggressive, overwhelming.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Phoenix Tank</h4>
+                <p><strong>Focus:</strong> Defensive transformations, Chrysalis Rebirth</p>
+                <p><strong>Equipment:</strong> Tank Form (5 cards), Exoskeleton Molt (3 cards), Chrysalis Rebirth (1 card), Pheromone Command (2 cards), Heavy Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Tank Form for defense. Exoskeleton Molt for damage reduction. Chrysalis Rebirth for full recovery. Unkillable wall.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Metamorph Strategy</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turn 1</strong></td>
+                    <td>BANK METAMORPH</td>
+                    <td>Start with 0, gain +4 (if near 3 allies) = 4 total. Wait for more</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 2-3</strong></td>
+                    <td>FIRST TRANSFORMATION</td>
+                    <td>Now at 8-12 Metamorph. Activate Assault Form (aggressive) OR Tank Form (defensive)</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 4-6</strong></td>
+                    <td>HIVE-MIND SPAM</td>
+                    <td>Use Hive-Mind Link (1 Metamorph) to copy ally cards. Cheap and effective</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 7-9</strong></td>
+                    <td>PHEROMONE COMMAND</td>
+                    <td>Have 12+ Metamorph. Buff entire team with Pheromone Command (3 Metamorph). Coordinated assault</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 10+</strong></td>
+                    <td>CHRYSALIS OR FINISH</td>
+                    <td>If low HP, Chrysalis Rebirth. Otherwise, spam transformations to close out game</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church alpha strikes early. Activate Tank Form (+4 Defense) on turn 2-3 to negate their Blood Offering burst. Use Exoskeleton Molt to reduce damage further. Defense beats burst.</p>
+
+        <h3>vs. Dwarven Forge-Guilds (High Armor)</h3>
+        <p class="manuscript-text">Dwarves are defensive tanks. Activate Assault Form (+3 damage) and use Hive-Mind Link to copy ally attacks. Swarm them with multiple +3 damage hits. Numbers beat armor.</p>
+
+        <h3>vs. The Ossuarium (Attrition)</h3>
+        <p class="manuscript-text">Ossuarium wants long grindy games. You excel at sustain—Chrysalis Rebirth heals 10 cards, Exoskeleton Molt recovers 2 cards per use. Out-sustain them through transformations.</p>
+
+        <h3>vs. Elven Verdant Covenant (Bleed Kiting)</h3>
+        <p class="manuscript-text">Elves kite and Bleed. Use Scout Form (+3 movement) to chase them down. Tank Form (+4 Defense) reduces Bleed damage. Hive-Mind Link to copy ally attacks while chasing.</p>
+
+        <h3>vs. The Exchange (Economic Warfare)</h3>
+        <p class="manuscript-text">Exchange hires Mercenaries. Stay grouped with allies (+4 Metamorph/turn). Swarm their mercs with coordinated Assault Forms. Pheromone Command buffs your team while debuffing theirs. Coordination beats mercenaries.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "Alone, we are insects. Together, we are inevitable. The hive does not negotiate. The hive does not retreat. The hive evolves, adapts, and consumes."
+            <span class="quote-attribution">-The Consensus, Final Broadcast</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master the Swarm. Master the Hive.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-emergent.html" target="_parent">Emergent Syndicate Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>

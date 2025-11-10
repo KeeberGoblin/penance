@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloodlines Mechanic: Biomass Tokens - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="faction-bloodlines.html">Bloodlines Overview</a>
+            <span class="nav-separator">|</span>
+            <span style="opacity: 0.6;">Other Mechanics:</span>
+            <a href="church_mechanic.html">Church</a>
+            <a href="dwarves_mechanic.html">Dwarves</a>
+            <a href="ossuarium_mechanic.html">Ossuarium</a>
+            <a href="elves_mechanic.html">Elves</a>
+            <a href="nomads_mechanic.html">Nomads</a>
+            <a href="exchange_mechanic.html">Exchange</a>
+            <a href="emergent_mechanic.html">Emergent</a>
+            <a href="crucible_mechanic.html">Crucible</a>
+            <a href="wyrd_mechanic.html">Wyrd</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-bloodlines.html" target="_parent">BLOODLINES</a> /
+            Biomass Token Mechanic
+        </nav>
+
+        <h1>Biomass Tokens: Mutation and Adaptation</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">Vestige Bloodlines Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "Flesh is not weakness—it is potential. Every wound teaches. Every mutation evolves. We are not broken. We are becoming."
+            <span class="quote-attribution">-Progenitor Karreth, Fleshweaver Prime</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Biomass Tokens</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Mutation Resource System</h3>
+            <p><strong>Generation:</strong> Gain +1 Biomass token when taking damage OR when killing an enemy. Pain and death fuel evolution.</p>
+            <p style="margin: 1rem 0;"><strong>Maximum Storage:</strong> 12 Biomass tokens</p>
+            <p style="margin: 1rem 0;"><strong>Mutation Options (Spend Biomass to activate):</strong></p>
+            <ul style="margin-top: 0.5rem;">
+                <li><strong>Beast Form (3 Biomass):</strong> +3 damage to all attacks, +1 movement (lasts 2 turns)</li>
+                <li><strong>Regeneration (4 Biomass):</strong> Recover 4 cards immediately</li>
+                <li><strong>Feral Rage (2 Biomass):</strong> +2 damage next attack, ignore 1 Defense</li>
+                <li><strong>Chitinous Armor (3 Biomass):</strong> +2 Defense (lasts 2 turns)</li>
+                <li><strong>Apex Predator (6 Biomass):</strong> +5 damage, +2 movement, +1 Defense (lasts 3 turns)</li>
+            </ul>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Biomass Tokens represent biological adaptation—you mutate in response to threats. The more damage you take and enemies you kill, the stronger you become. Here's the evolution cycle:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Generate Biomass</strong> - Take damage (+1 per hit) OR kill enemies (+1 per kill)</li>
+            <li><strong>Bank for Mutations</strong> - Accumulate 3-6 Biomass tokens</li>
+            <li><strong>Activate Mutations</strong> - Spend Biomass to transform:
+                <ul style="margin-top: 0.5rem;">
+                    <li>Beast Form (aggressive burst)</li>
+                    <li>Regeneration (healing)</li>
+                    <li>Feral Rage (armor-piercing spike)</li>
+                    <li>Chitinous Armor (defensive tank mode)</li>
+                    <li>Apex Predator (ultimate form, all bonuses)</li>
+                </ul>
+            </li>
+            <li><strong>Snowball Through Combat</strong> - More fighting = more Biomass = stronger mutations = win through evolution</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Mutation Sequence</h4>
+            <p style="margin: 0.5rem 0;">Turn 1: Take 5 damage from enemy attack → Gain 1 Biomass (now 1 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 2: Kill enemy → Gain 1 Biomass (now 2 total). Take 3 damage → Gain 1 Biomass (now 3 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 3: Activate Beast Form (spend 3 Biomass) → +3 damage, +1 movement for 2 turns</p>
+            <p style="margin: 0.5rem 0;">Turn 4: Attack with Beast Form (+3 damage) → Kill 2 enemies → Gain 2 Biomass (now 2 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 5: Beast Form expires. Take 4 damage → Gain 1 Biomass (now 3 total). Kill 1 enemy → Gain 1 Biomass (now 4 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 6: Activate Regeneration (spend 4 Biomass) → Heal 4 cards back to full HP</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">You turned pain into power, power into kills, kills into healing. Pure biological evolution.</p>
+        </div>
+
+        <h2>Companion Mechanic: Adaptive Evolution</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Adaptive Evolution (Passive):</strong> When you activate a mutation, gain +1 Biomass token immediately (partial refund). Encourages aggressive mutation cycling.</p>
+            <p style="margin-top: 1rem;"><strong>Primal Instinct (Passive):</strong> When reduced to 10 HP or below, gain +2 Biomass per damage taken instead of +1. Desperate situations fuel rapid evolution.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Bloodlines get stronger as they get hurt. Low HP = rapid Biomass generation = constant mutations = unkillable berserker.</em></p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Mutate</h2>
+
+        <h3>✓ Good Times to Activate Mutations</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Beast Form (Turn 4-6)</strong> - Mid-game burst. +3 damage for 2 turns = 6+ bonus damage total. Efficient</li>
+            <li><strong>Regeneration (Below 15 HP)</strong> - Don't heal at full HP. Wait until wounded, then Regenerate for maximum value</li>
+            <li><strong>Feral Rage (Finishing Blow)</strong> - 2 Biomass for +2 damage + ignore 1 Defense. Perfect for killing armored enemies</li>
+            <li><strong>Chitinous Armor (Before Boss Burst)</strong> - Activate when you see big damage incoming. +2 Defense for 2 turns</li>
+            <li><strong>Apex Predator (Turn 8+)</strong> - Ultimate form. 6 Biomass for massive bonuses. Save for late-game dominance</li>
+        </ul>
+
+        <h3>✗ Bad Times to Mutate</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Too Early (Turn 1-2)</strong> - You've only generated 1-2 Biomass. Be patient, build reserves</li>
+            <li><strong>Beast Form When No Enemies</strong> - Don't activate +3 damage if there's nothing to hit. Waste of Biomass</li>
+            <li><strong>Regeneration at Full HP</strong> - 4 Biomass to heal 0 damage is inefficient. Wait until wounded</li>
+            <li><strong>Stacking Same Mutation</strong> - Beast Form doesn't stack with itself. Don't waste Biomass re-activating</li>
+            <li><strong>Apex Predator Too Late</strong> - 6 Biomass on turn 12 when mission ends turn 13 wastes potential. Activate turn 8-10</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Berserker Spiral</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Aggressive Loop:</strong></p>
+            <p style="margin-left: 1rem;">Take damage (gain Biomass) → Activate Beast Form (+3 damage) → Kill enemies (gain more Biomass) → Activate Feral Rage (+2 damage) → Kill more enemies → Regenerate (heal) → Repeat</p>
+            <p style="margin-top: 1rem;">Result: You turn damage taken into mutations, mutations into kills, kills into Biomass, Biomass into healing. Infinite aggression loop.</p>
+        </div>
+
+        <h3>The Primal Gambit</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Intentional Low HP:</strong></p>
+            <p style="margin-left: 1rem;">Let HP drop to 9 (activate Primal Instinct: +2 Biomass per hit) → Take 3 hits (+6 Biomass) → Activate Apex Predator (6 Biomass) → Kill everything with +5 damage → Regenerate back to full HP</p>
+            <p style="margin-top: 1rem;">You weaponize being low HP, then fully heal when ready. High-risk, high-reward evolution.</p>
+        </div>
+
+        <h3>The Tank Mutation</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Defensive Combo:</strong></p>
+            <p style="margin-left: 1rem;">Activate Chitinous Armor (3 Biomass, +2 Defense for 2 turns) → Tank 2-3 hits (generating Biomass while taking reduced damage) → Regenerate (4 Biomass) → Repeat</p>
+            <p style="margin-top: 1rem;">You become unkillable. +2 Defense reduces damage, Regeneration heals what gets through. Pure sustain.</p>
+        </div>
+
+        <h3>The Adaptive Refund</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Economy Combo:</strong></p>
+            <p style="margin-left: 1rem;">Activate Beast Form (3 Biomass, but Adaptive Evolution refunds +1 = net 2 Biomass) → Kill enemies (+2 Biomass) → Net positive: spent 2, gained 2+ from kills</p>
+            <p style="margin-top: 1rem;">Adaptive Evolution makes mutations cheaper. You recover Biomass faster than you spend it.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Hoarding Biomass Without Mutating</h3>
+            <p><strong>Why it fails:</strong> Sitting at 12 Biomass cap means wasted generation. Every hit and kill beyond cap is lost value.</p>
+            <p><strong>Fix:</strong> Spend down to 6-8 Biomass periodically. Activate Beast Form, Regenerate, or Chitinous Armor. Keep Biomass flowing.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Avoiding Damage</h3>
+            <p><strong>Why it fails:</strong> Biomass generation requires taking damage OR killing. Playing too defensively slows your economy.</p>
+            <p><strong>Fix:</strong> Tank 1-2 hits early game to generate Biomass. You'll heal later with Regeneration. Embrace pain—it fuels evolution.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Wasting Apex Predator</h3>
+            <p><strong>Why it fails:</strong> Apex Predator costs 6 Biomass (half your cap). Using it turn 2 or turn 12 is inefficient.</p>
+            <p><strong>Fix:</strong> Activate Apex Predator turns 8-10. You have 3 turns to dominate before mission ends. Timing maximizes value.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Not Using Primal Instinct</h3>
+            <p><strong>Why it fails:</strong> At 9 HP, you gain +2 Biomass per hit instead of +1. That's double generation. Playing too safe wastes this.</p>
+            <p><strong>Fix:</strong> Intentionally drop to 9 HP mid-game. Tank 3 hits (+6 Biomass). Regenerate back to full. Weaponize low HP.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Biomass Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Beast Form</strong></td>
+                    <td>3 Biomass for +3 damage, +1 movement for 2 turns. Your aggressive mutation</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Regeneration</strong></td>
+                    <td>4 Biomass to heal 4 cards. Mandatory for sustain</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Feral Rage</strong></td>
+                    <td>2 Biomass for +2 damage, ignore 1 Defense. Cheap burst</td>
+                    <td>3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Apex Predator</strong></td>
+                    <td>6 Biomass for ultimate form. Late-game domination</td>
+                    <td>1-2 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Standard Attacks</strong></td>
+                    <td>Need damage to kill enemies and generate Biomass. Don't neglect combat</td>
+                    <td>4-5 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Pure Berserker</h4>
+                <p><strong>Focus:</strong> Aggressive mutations, maximum damage</p>
+                <p><strong>Equipment:</strong> Beast Form (4 cards), Feral Rage (4 cards), Regeneration (3 cards), Light Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Tank hits for Biomass. Activate Beast Form. Kill everything. Regenerate when low. Repeat. Unstoppable aggression.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Adaptive Tank</h4>
+                <p><strong>Focus:</strong> Defensive mutations, sustain through Regeneration</p>
+                <p><strong>Equipment:</strong> Chitinous Armor (4 cards), Regeneration (4 cards), Beast Form (2 cards), Medium Armor (3 cards)</p>
+                <p><strong>Strategy:</strong> Activate Chitinous Armor (+2 Defense). Tank hits with reduced damage. Regenerate constantly. Outlast through biology.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Apex Evolution</h4>
+                <p><strong>Focus:</strong> Rush to Apex Predator, dominate late-game</p>
+                <p><strong>Equipment:</strong> Apex Predator (2 cards), Beast Form (3 cards), Regeneration (3 cards), Feral Rage (2 cards), Light Armor (2 cards)</p>
+                <p><strong>Strategy:</strong> Bank 6 Biomass by turn 6-7. Activate Apex Predator. Destroy everything with +5 damage for 3 turns. Ultimate form wins.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Biomass Strategy</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turns 1-3</strong></td>
+                    <td>GENERATE BIOMASS</td>
+                    <td>Take hits, kill enemies, accumulate 3-5 Biomass. Build reserves</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 4-5</strong></td>
+                    <td>FIRST MUTATION</td>
+                    <td>Activate Beast Form (3 Biomass) OR Chitinous Armor (3 Biomass) depending on situation</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 6-8</strong></td>
+                    <td>MUTATION CYCLING</td>
+                    <td>Beast Form expires. Regenerate if wounded. Re-activate Beast Form. Keep mutating</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 9-11</strong></td>
+                    <td>APEX PREDATOR</td>
+                    <td>Have 6+ Biomass. Activate Apex Predator. Dominate for 3 turns. Close out game</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 12+</strong></td>
+                    <td>FINISH</td>
+                    <td>Spend remaining Biomass on Feral Rage finishers. Bank excess for next mission</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church alpha strikes early. Take the damage—you gain Biomass from it. Activate Chitinous Armor (+2 Defense) to reduce follow-up hits. Regenerate when low. Their burst fuels your evolution.</p>
+
+        <h3>vs. Dwarven Forge-Guilds (High Armor)</h3>
+        <p class="manuscript-text">Dwarves have 3-4 Defense. Use Feral Rage (ignore 1 Defense) or Beast Form (+3 damage) to punch through. Your mutations bypass their static defenses. Adaptation beats stone.</p>
+
+        <h3>vs. The Ossuarium (Attrition)</h3>
+        <p class="manuscript-text">Ossuarium wants long grindy games. You excel at attrition—every hit generates Biomass, every kill generates Biomass. Regenerate constantly. Out-sustain them through mutations.</p>
+
+        <h3>vs. Elven Verdant Covenant (Bleed Kiting)</h3>
+        <p class="manuscript-text">Elves kite and Bleed. Use Beast Form (+1 movement) to chase them down. Regenerate to negate Bleed damage. Your healing outpaces their DoT. Aggression beats kiting.</p>
+
+        <h3>vs. The Exchange (Economic Warfare)</h3>
+        <p class="manuscript-text">Exchange hires Mercenaries. Kill their mercs for Biomass (+1 per kill). Tank damage from them for Biomass (+1 per hit). They fund your evolution. Their economy fuels yours.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "They think we're monsters. They're wrong. Monsters don't adapt. Monsters don't evolve. Monsters die. We? We become."
+            <span class="quote-attribution">-Progenitor Karreth, Post-Ascension</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master Mutation. Master Evolution.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-bloodlines.html" target="_parent">Vestige Bloodlines Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>

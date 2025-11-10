@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwarven Mechanic: Rune Counters - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="faction-dwarves.html">Dwarves Overview</a>
+            <span class="nav-separator">|</span>
+            <span style="opacity: 0.6;">Other Mechanics:</span>
+            <a href="church_mechanic.html">Church</a>
+            <a href="ossuarium_mechanic.html">Ossuarium</a>
+            <a href="elves_mechanic.html">Elves</a>
+            <a href="nomads_mechanic.html">Nomads</a>
+            <a href="exchange_mechanic.html">Exchange</a>
+            <a href="bloodlines_mechanic.html">Bloodlines</a>
+            <a href="emergent_mechanic.html">Emergent</a>
+            <a href="crucible_mechanic.html">Crucible</a>
+            <a href="wyrd_mechanic.html">Wyrd</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="faction-dwarves.html" target="_parent">DWARVES</a> /
+            Rune Counter Mechanic
+        </nav>
+
+        <h1>Rune Counters: The Power of Stone and Fire</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">Dwarven Forge-Guilds Core Mechanic</h2>
+
+        <div class="manuscript-quote">
+            "Each rune carved, each strike landed, each victory earned. The stone remembers. The forge never forgets."
+            <span class="quote-attribution">-Master Runesmith Grimni Ironheart</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Core Mechanic: Rune Counters</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Passive Generation</h3>
+            <p><strong>Generation:</strong> Gain +1 Rune Counter each time you deal damage with an attack. Complete objectives (securing zones, protecting allies) for bonus Rune Counters.</p>
+            <p style="margin: 1rem 0;"><strong>Maximum Storage:</strong> 10 Rune Counters (excess tokens are lost)</p>
+            <p style="margin: 1rem 0;"><strong>Spending:</strong> Activate powerful runic abilities, enhance attacks, or forge permanent Ancestral Runes</p>
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p class="manuscript-text">
+            Rune Counters represent the accumulated power of Dwarven craftsmanship and combat prowess. Every successful strike charges your runes, building toward devastating abilities. Here's the step-by-step:
+        </p>
+
+        <ol class="manuscript-list">
+            <li><strong>Deal Damage</strong> - Each successful attack that deals damage generates +1 Rune Counter</li>
+            <li><strong>Accumulate Power</strong> - Rune Counters persist across rounds (max 10 stored)</li>
+            <li><strong>Spend on Abilities</strong> - Use Rune Counters to activate powerful cards:
+                <ul style="margin-top: 0.5rem;">
+                    <li>Runic Strike (2 Runes): +4 damage, ignore 2 Defense</li>
+                    <li>Stone Skin (3 Runes): +3 Defense for 2 turns</li>
+                    <li>Forge Ancestral Rune (5 Runes): Permanent +1 to damage/defense/movement</li>
+                </ul>
+            </li>
+            <li><strong>Strategic Banking</strong> - Save Runes for critical moments or spend immediately for consistent power</li>
+        </ol>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--aged-gold);">Example Turn Sequence</h4>
+            <p style="margin: 0.5rem 0;">Turn 1-2: Standard attacks build 2-3 Rune Counters</p>
+            <p style="margin: 0.5rem 0;">Turn 3: Spend 3 Runes on Stone Skin before enemy alpha strike</p>
+            <p style="margin: 0.5rem 0;">Turn 4-6: Continue attacking, banking Runes (now at 5-7 total)</p>
+            <p style="margin: 0.5rem 0;">Turn 7: Unleash Runic Strike (2 Runes) for finishing blow, leaving 5 Runes banked</p>
+            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">The longer you survive, the more powerful you become. Dwarven patience is a weapon.</p>
+        </div>
+
+        <h2>Companion Mechanic: Ancestral Runes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <p><strong>Ancestral Rune Forging (5 Runes):</strong> At mission end or during extended downtime, spend 5 Rune Counters to forge a permanent Ancestral Rune. Choose one benefit:</p>
+            <ul class="manuscript-list" style="margin-top: 0.5rem;">
+                <li><strong>Rune of Power:</strong> +1 damage to all attacks permanently</li>
+                <li><strong>Rune of Endurance:</strong> +1 Defense permanently</li>
+                <li><strong>Rune of Swiftness:</strong> +1 movement permanently</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>Maximum:</strong> 3 Ancestral Runes total (mix and match as desired)</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">⚖️ <em>Balance Note: Ancestral Runes persist across missions but cannot be changed once forged. Choose wisely—these represent your casket's legacy.</em></p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Strategy Guide: When to Spend Runes</h2>
+
+        <h3>✓ Good Times to Spend Runes</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Before Taking Heavy Fire</strong> - Stone Skin (3 Runes) turns you into an unkillable fortress</li>
+            <li><strong>Executing High-Value Targets</strong> - Runic Strike (2 Runes) guarantees kills on armored enemies</li>
+            <li><strong>Late Campaign Missions</strong> - Banking 5 Runes to forge Ancestral Runes provides permanent scaling</li>
+            <li><strong>Breaking Stalemates</strong> - Spending 4-5 Runes on consecutive powerful turns can shatter defensive lines</li>
+            <li><strong>Protecting Allies</strong> - Runic Ward (3 Runes) grants adjacent allies +2 Defense, perfect for support builds</li>
+        </ul>
+
+        <h3>✗ Bad Times to Spend Runes</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Early Turns (1-3)</strong> - You haven't banked enough Runes yet. Be patient, build your reserves</li>
+            <li><strong>Against Weak Enemies</strong> - Don't waste Runes overkilling Thralls. Save for real threats</li>
+            <li><strong>When Already Winning</strong> - If you're dominating, bank Runes for next mission or Ancestral Rune forging</li>
+            <li><strong>Without a Plan</strong> - Spending 2 Runes randomly is wasteful. Have a specific goal (survive, execute, etc.)</li>
+            <li><strong>At Max Runes (10)</strong> - If you're capped, you're wasting generation. Spend to make room</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Advanced Tactics & Combos</h2>
+
+        <h3>The Stone Fortress</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Defensive Combo:</strong></p>
+            <p style="margin-left: 1rem;">Stone Skin (3 Runes, +3 Defense for 2 turns) → Tower Shield Stance (+2 Defense, block adjacent hex) → Reinforced Plating (+1 Defense armor)</p>
+            <p style="margin-top: 1rem;">Result: 7-8 Defense total for 2 turns. Most factions deal 3-5 damage per attack. You're taking 0-1 damage per hit while counterattacking.</p>
+        </div>
+
+        <h3>The Rune-Charged Assault</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Aggressive Combo:</strong></p>
+            <p style="margin-left: 1rem;">Bank 8 Runes → Runic Strike (2 Runes, +4 damage, ignore 2 Defense) → Warhammer Overhead Smash (5 SP, 7 damage base) → Runic Strike again (2 Runes)</p>
+            <p style="margin-top: 1rem;">Total: Two attacks dealing 11 damage each (7 base + 4 bonus), ignoring 2 Defense. 22 damage total, enough to kill most caskets.</p>
+        </div>
+
+        <h3>The Ancestral Legacy Builder</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Long-Term Strategy:</strong></p>
+            <p style="margin-left: 1rem;">Mission 1-3: Forge Rune of Power (+1 damage) <br>
+            Mission 4-6: Forge Rune of Endurance (+1 Defense) <br>
+            Mission 7+: Forge Rune of Swiftness (+1 movement)</p>
+            <p style="margin-top: 1rem;">By late campaign, you have +1/+1/+1 to damage/defense/movement permanently. You're a veteran warrior with compounding advantages.</p>
+        </div>
+
+        <h3>The Shield Wall Synergy</h3>
+        <div style="background: rgba(75, 14, 14, 0.1); padding: 1.5rem; border-left: 3px solid var(--dark-red); margin: 1rem 0;">
+            <p><strong>Team Combo:</strong></p>
+            <p style="margin-left: 1rem;">Runic Ward (3 Runes, adjacent allies gain +2 Defense) → Position with 2-3 allies in line → All allies gain +2 Defense while you hold the line with Tower Shield</p>
+            <p style="margin-top: 1rem;">You become the anchor of your team's defensive line, making everyone harder to kill while generating more Runes from counterattacks.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #1: Hoarding Runes Without Spending</h3>
+            <p><strong>Why it fails:</strong> Sitting at 10/10 Runes means you're wasting generation. Each attack that would generate a Rune is lost value.</p>
+            <p><strong>Fix:</strong> Spend down to 5-7 Runes periodically. Use Stone Skin or Runic Strikes to cycle your resource pool.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #2: Spending All Runes Too Early</h3>
+            <p><strong>Why it fails:</strong> Using all 4 Runes on turn 3 leaves you with no resources for critical moments (turns 6-8).</p>
+            <p><strong>Fix:</strong> Maintain a reserve of 3-5 Runes. Only dip below 3 in emergencies or when forging Ancestral Runes.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #3: Ignoring Ancestral Rune Forging</h3>
+            <p><strong>Why it fails:</strong> Ancestral Runes are permanent upgrades that compound across missions. Ignoring them means you plateau in power.</p>
+            <p><strong>Fix:</strong> Prioritize banking 5 Runes at mission end. Forge at least 1 Ancestral Rune by Mission 5.</p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.1); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">❌ Mistake #4: Playing Too Passively</h3>
+            <p><strong>Why it fails:</strong> Rune Counters are generated by dealing damage. If you're turtling with Tower Shield without attacking, you're not building resources.</p>
+            <p><strong>Fix:</strong> Balance defense with aggression. Attack every turn (even chip damage) to keep Runes flowing.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Deck Building Tips</h2>
+
+        <h3>Essential Cards for Rune Counter Builds</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Card Type</th>
+                    <th>Why You Need It</th>
+                    <th>Recommended Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Runic Strike</strong></td>
+                    <td>Your primary Rune-spending attack. +4 damage, ignore 2 Defense</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Stone Skin</strong></td>
+                    <td>+3 Defense for 2 turns. Mandatory for surviving burst damage</td>
+                    <td>2-3 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Warhammer Attacks</strong></td>
+                    <td>Reliable damage to generate Runes. 5-7 damage base</td>
+                    <td>5-6 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Tower Shield</strong></td>
+                    <td>Defensive stability while generating Runes from counterattacks</td>
+                    <td>3-4 cards</td>
+                </tr>
+                <tr>
+                    <td><strong>Runic Ward</strong></td>
+                    <td>Support allies with +2 Defense (3 Runes). Great for team play</td>
+                    <td>2 cards</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Build Archetypes</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Stone Fortress</h4>
+                <p><strong>Focus:</strong> Maximum defense, resource banking</p>
+                <p><strong>Equipment:</strong> Tower Shield (7 cards), Reinforced Plating (3 cards), Stone Skin Sigil (3 cards)</p>
+                <p><strong>Strategy:</strong> Turtle with Tower Shield, counterattack to generate Runes, activate Stone Skin when focused. Bank 5+ Runes per mission for Ancestral Runes. Unkillable tank.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Runic Berserker</h4>
+                <p><strong>Focus:</strong> Aggressive damage, fast Rune cycling</p>
+                <p><strong>Equipment:</strong> Warhammer (7 cards), Light Plating (2 cards), Runic Strike Sigil (4 cards)</p>
+                <p><strong>Strategy:</strong> Attack every turn to generate Runes quickly. Spend 2 Runes on Runic Strike whenever available. High damage output but fragile. Feast or famine playstyle.</p>
+            </div>
+
+            <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--dark-red); padding: 1.5rem;">
+                <h4 style="margin-top: 0; color: var(--aged-gold);">Balanced Tactician</h4>
+                <p><strong>Focus:</strong> Flexible damage + defense, consistent Rune management</p>
+                <p><strong>Equipment:</strong> Warhammer (5 cards), Tower Shield (4 cards), Runic Ward Sigil (2 cards), Medium Plating (2 cards)</p>
+                <p><strong>Strategy:</strong> Alternate between aggression and defense based on situation. Use Runic Ward to support allies. Maintain 5-7 Runes as reserve. Jack-of-all-trades excellence.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Timing Guide: Turn-by-Turn</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Turn Range</th>
+                    <th>Rune Management</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Turns 1-2</strong></td>
+                    <td>BANK RUNES</td>
+                    <td>Generate 2-4 Runes through standard attacks. Don't spend yet—build your foundation</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 3</strong></td>
+                    <td>CONDITIONAL SPEND</td>
+                    <td>Use Stone Skin (3 Runes) if enemy is preparing alpha strike. Otherwise keep banking</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 4-6</strong></td>
+                    <td>ACTIVE SPENDING</td>
+                    <td>Now at 5-8 Runes. Use Runic Strikes (2 Runes) for key kills. Replenish through combat</td>
+                </tr>
+                <tr>
+                    <td><strong>Turns 7-9</strong></td>
+                    <td>POWER SPIKE</td>
+                    <td>Maximum Rune pool (8-10). Unleash multiple Runic abilities. This is your strongest phase</td>
+                </tr>
+                <tr>
+                    <td><strong>Turn 10+</strong></td>
+                    <td>ENDGAME</td>
+                    <td>Spend all Runes on finishing moves. Bank 5 Runes for Ancestral Rune if mission is won</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Matchup-Specific Tips</h2>
+
+        <h3>vs. Church of Absolution (Burst Damage)</h3>
+        <p class="manuscript-text">Church relies on Blood Offering alpha strikes. Save 3 Runes for Stone Skin on Turn 1-2 to negate their opening. Your Defense scaling counters their glass cannon aggression.</p>
+
+        <h3>vs. The Ossuarium (Resurrection)</h3>
+        <p class="manuscript-text">Ossuarium revives constantly, giving you free Rune generation. Each kill generates a Rune even if they resurrect. Farm their Bone Thralls for 5+ Runes, then use Runic Strikes to permanently execute key targets.</p>
+
+        <h3>vs. Elven Verdant Covenant (Bleed Stacking)</h3>
+        <p class="manuscript-text">Elves stack Bleed over time. Your Stone Skin (3 Runes) and Reinforced Plating negate Bleed damage. Runic Ward protects allies from Bleed stacks. Ignore their mobility—focus on defense until they run out of cards.</p>
+
+        <h3>vs. Vestige Bloodlines (Mutation Burst)</h3>
+        <p class="manuscript-text">Bloodlines snowball if unchecked. Use Runic Strikes early (turns 2-3) to kill them before mutations spiral. Don't let them reach 5+ Biomass tokens—your armor means nothing against 15-damage mutations.</p>
+
+        <h3>vs. The Wyrd Conclave (Reality Manipulation)</h3>
+        <p class="manuscript-text">Wyrd mechanics steal and manipulate. Your Rune Counters are YOUR resource—they can't steal them with Stolen Face. Bank Runes safely, then unleash when you have lethal. Consistency beats trickery.</p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "The mountain does not rush. The stone does not falter. We fight as our ancestors did—with patience, precision, and the accumulated weight of centuries. Every rune carved is a promise kept. Every victory, a legacy forged."
+            <span class="quote-attribution">-High King Thormund Stoneheart</span>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.15); border: 2px solid var(--dark-red); padding: 2rem; margin: 2rem 0; text-align: center;">
+            <h3 style="margin-top: 0; color: var(--aged-gold);">Master the Runes. Master the Mountain.</h3>
+            <p style="margin-bottom: 0;">For full faction rules, see <a href="faction-dwarves.html" target="_parent">Dwarven Forge-Guilds Overview</a></p>
+        </div>
+
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
