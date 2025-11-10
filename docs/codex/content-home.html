@@ -335,6 +335,34 @@
             <button class="dropdown-toggle" onclick="toggleDropdown()" id="updatesToggle">View Past Updates</button>
             <div class="dropdown-content" id="dropdownContent">
                 <div class="update-item">
+                    <span class="update-item-date">2025-11-10</span>
+                    <strong>Navigation Polish: Click-Only Dropdowns</strong>, Removed hover-based dropdown opening because apparently moving your mouse near a faction name shouldn't trigger an accordion concert. Dropdowns now only open on click, preventing the dreaded "hover cascade" where every menu explodes simultaneously. Also completely hid the accessibility skip link off-screen (left: -9999px) so it stops photobombing your top-left corner. Still appears on Tab focus for keyboard users. We're considerate like that.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-11-09</span>
+                    <strong>Ashborne Engines Declassified</strong>, Added the secret bonus faction to navigation with an asterisk because subtlety is dead. The Ashborne Engines—mobile predator cities that eat settlements for fuel—now have their own dropdown under "NPC-Only Factions." Features direct anchor link to Notable NPCs section because manually scrolling is for peasants. Captain Vrill Stoke quotes included free of charge.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-11-09</span>
+                    <strong>Faction Navigation Restructure</strong>, Eliminated redundant "Faction Overview" links that pointed to the same page as the parent dropdown. Now using clearer labels: "Rules & Equipment" (for the crunchy bits), "Culture & Society" (for the lore nerds), and "History & Legacy" (for ancient dragon facts). Added extended lore pages for Bloodlines, Crucible, Emergent, and Draconids. Your codex now has 47% more reading material. You're welcome.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-11-09</span>
+                    <strong>Ossuarium v6.0: Soul Shard Salvage System</strong>, Completely overhauled Ossuarium from "vampire lifesteal mechs" to "necromantic grinder with mech salvage." New mechanic: gain 3 Soul Shards per kill, spend them for emergency repairs, accumulate permanent Taint corruption for using forbidden necro-tech. Brutal penalties at 9-10 Taint (-4 damage, +1 SP costs). Updated README, playtest docs, and all 47 references to "lifesteal." The vampires are dead. Long live the scavengers.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-11-09</span>
+                    <strong>WCAG AAA Accessibility Compliance</strong>, Went full accessibility overhaul because screen readers exist and keyboard warriors deserve love. Added ARIA labels to every dropdown, 44×44px touch targets for fat-fingered mobile users, skip links that actually work, reduced motion support for the motion-sensitive, and high contrast color values that won't make your eyes bleed. Fixed scrollable content keyboard access and landmark structure. Your grandmother can now navigate the codex with a screen reader. Probably.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-11-09</span>
+                    <strong>Mobile Table Responsiveness</strong>, Tables now wrap on mobile instead of forcing horizontal scrolling like it's 1998. Changed white-space from "nowrap" (bad) to "normal" (good) with word-wrap properties at multiple breakpoints. Your faction comparison tables will no longer require microscope-level zoom on phones. Revolutionary stuff.
+                </div>
+                <div class="update-item">
+                    <span class="update-item-date">2025-11-08</span>
+                    <strong>Standalone Navigation for 93 Pages</strong>, Added navigation bars to all content pages that only appear when accessed directly (not in iframe). Uses window.self === window.top detection to avoid duplicate navigation. Sticky positioning, dark gradient background, proper "Return to Codex" links. Automation script created to apply pattern consistently. Your users will no longer be trapped in content pages like medieval peasants in a labyrinth. Progress!
+                </div>
+                <div class="update-item">
                     <span class="update-item-date">2025-11-06</span>
                     <strong>PDF-Style Core Rulebook Viewer</strong>, Created a D&D-style parchment rulebook viewer because apparently regular documentation wasn't immersive enough. Features page flipping, bookmarks, and enough medieval aesthetic to make your monitor smell like aged paper. Find it in the Resources nav under "Core Rulebook." Yes, we spent three days on fancy scrollbars. No, we're not sorry.
                 </div>
@@ -480,7 +508,7 @@
                 <tr>
                     <td><a href="faction-undead.html" target="_parent">The Ossuarium</a></td>
                     <td>Necromantic Grinder</td>
-                    <td>Soul Harvest & Decay (card recovery, resurrections, corruption accumulation)</td>
+                    <td>Soul Shard Salvage (scavenge kills for repairs, permanent Taint corruption)</td>
                     <td>6 units: Bone Thralls, Grave Knight, Fleshcrafter, Bone Colossus, Lich, Death's Herald</td>
                 </tr>
                 <tr>
@@ -529,6 +557,12 @@
                     <td><a href="faction-draconid.html" target="_parent">Draconid Remembrance</a></td>
                     <td>Ancient Archivists</td>
                     <td>Memory Shards (apocalypse cycles, petrified knowledge)</td>
+                    <td>Not yet inscribed</td>
+                </tr>
+                <tr style="opacity: 0.6;">
+                    <td><a href="faction-ashborne.html" target="_parent">Ashborne Engines *</a></td>
+                    <td>Predator Cities</td>
+                    <td>Steam Power (no Taint, fuel dependency, Municipal Darwinism)</td>
                     <td>Not yet inscribed</td>
                 </tr>
             </tbody>
