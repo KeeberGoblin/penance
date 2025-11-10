@@ -885,19 +885,33 @@
             if (!parentDropdown) return;
 
             const isOpen = parentDropdown.classList.contains('dropdown-open');
+            const submenuItems = parentDropdown.querySelectorAll('.nav-submenu .nav-link');
 
-            // Close other dropdowns
+            // Close other dropdowns and remove their items from tab order
             document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dropdown => {
                 if (dropdown !== parentDropdown) {
                     dropdown.classList.remove('dropdown-open');
                     const submenuLink = dropdown.querySelector('.has-submenu');
                     if (submenuLink) submenuLink.setAttribute('aria-expanded', 'false');
+                    // Remove submenu items from tab order
+                    dropdown.querySelectorAll('.nav-submenu .nav-link').forEach(item => {
+                        item.setAttribute('tabindex', '-1');
+                    });
                 }
             });
 
             // Toggle this dropdown
             parentDropdown.classList.toggle('dropdown-open', !isOpen);
             link.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+
+            // Manage tab order for submenu items
+            if (!isOpen) {
+                // Opening: add items to tab order
+                submenuItems.forEach(item => item.setAttribute('tabindex', '0'));
+            } else {
+                // Closing: remove items from tab order
+                submenuItems.forEach(item => item.setAttribute('tabindex', '-1'));
+            }
         }
 
         // Add keyboard support for dropdown toggles (Enter/Space)
