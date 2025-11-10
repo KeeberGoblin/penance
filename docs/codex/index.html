@@ -988,15 +988,15 @@
                 parent.setAttribute('aria-controls', submenu.id);
                 parent.setAttribute('aria-expanded', 'false');
 
-                // If first submenu item is not the parent link, inject it
+                // If first submenu item is not the parent link, inject it (only if parent has valid URL)
                 const first = submenu.querySelector('.nav-link');
                 const label = (parent.textContent || '').trim();
-                if (!first || (first && first.textContent.trim() !== label)) {
+                if (url && (!first || (first && first.textContent.trim() !== label))) {
                     const a = document.createElement('a');
                     a.className = 'nav-link';
                     a.textContent = label;
-                    if (url) a.dataset.url = url;
-                    a.addEventListener('click', (ev) => loadContent(url || '#', ev));
+                    a.dataset.url = url;
+                    a.addEventListener('click', (ev) => loadContent(url, ev));
                     submenu.insertBefore(a, submenu.firstChild);
                 }
 
