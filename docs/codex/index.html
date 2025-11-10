@@ -1089,6 +1089,10 @@
 
                 // Add arrow key navigation within submenu
                 const submenuItems = dd.querySelectorAll('.nav-submenu .nav-link');
+
+                // Initialize submenu items with tabindex="-1" (removed from tab order when closed)
+                submenuItems.forEach(item => item.setAttribute('tabindex', '-1'));
+
                 submenuItems.forEach((item, idx) => {
                     item.addEventListener('keydown', (ev) => {
                         const isOpen = dd.classList.contains('dropdown-open');
@@ -1118,10 +1122,6 @@
                         }
                     });
                 });
-
-                // Initialize submenu items with tabindex="-1" (removed from tab order when closed)
-                const submenuItems = dd.querySelectorAll('.nav-submenu .nav-link');
-                submenuItems.forEach(item => item.setAttribute('tabindex', '-1'));
             });
 
             // Back-to-top FAB controls scrolling of iframe content and shows on scroll
