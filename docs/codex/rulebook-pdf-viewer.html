@@ -448,21 +448,21 @@
                         <a href="#chapter-3">
                             <span>Chapter 3: Dice Reference</span>
                             <span class="toc-dots"></span>
-                            <span>15</span>
+                            <span>17</span>
                         </a>
                     </li>
                     <li>
                         <a href="#chapter-4">
                             <span>Chapter 4: Component Damage</span>
                             <span class="toc-dots"></span>
-                            <span>20</span>
+                            <span>22</span>
                         </a>
                     </li>
                     <li>
                         <a href="#chapter-5">
                             <span>Chapter 5: Range & Line of Sight</span>
                             <span class="toc-dots"></span>
-                            <span>25</span>
+                            <span>27</span>
                         </a>
                     </li>
                 </ul>
@@ -1246,6 +1246,166 @@
             <div class="page-number">— 14 —</div>
         </div>
 
+        <!-- CHAPTER 2 CONTINUED: Shove & Positioning -->
+        <div class="page">
+            <h2>Shove & Positioning Actions</h2>
+
+            <div class="quote">
+                "Sometimes the best weapon is gravity. Push them into the fire. Push them off the edge. Push them into each other."
+            </div>
+
+            <p>Beyond attacking and moving, pilots can manipulate the battlefield through forceful positioning. The <strong>Shove</strong> action lets you push enemies into hazards, create openings, or disrupt formations.</p>
+
+            <h3>Shove Action</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cost</strong></td>
+                        <td>2 SP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Range</strong></td>
+                        <td>Adjacent (1 hex only)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Type</strong></td>
+                        <td>Contested Action</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Resolution Steps</h3>
+
+            <h4>Step 1: Declare Shove</h4>
+            <ul>
+                <li>Choose adjacent target Casket</li>
+                <li>Declare push direction (any of 6 hex faces)</li>
+            </ul>
+
+            <h4>Step 2: Contested Roll</h4>
+            <p><strong>Both pilots roll 1d6 + Size Modifier</strong></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Weight Class</th>
+                        <th>Size Modifier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Scout (Light)</td><td>-1</td></tr>
+                    <tr><td>Warden (Medium)</td><td>+0</td></tr>
+                    <tr><td>Vanguard/Colossus (Heavy)</td><td>+1</td></tr>
+                    <tr><td>Giant/Boss</td><td>+2</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Step 3: Compare Results</h4>
+            <ul>
+                <li><strong>Tie or Defender Wins</strong>: Shove fails, no effect</li>
+                <li><strong>Attacker wins by 1-2</strong>: Push 1 hex</li>
+                <li><strong>Attacker wins by 3+</strong>: Push 2 hexes</li>
+            </ul>
+
+            <div class="page-number">— 19 —</div>
+        </div>
+
+        <!-- CHAPTER 2 CONTINUED: Collision Effects -->
+        <div class="page">
+            <h2>Collision Effects</h2>
+
+            <p>When a shoved Casket collides with terrain or another unit, <strong>roll 1d6</strong>:</p>
+
+            <h3>Wall/Obstruction Collision</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll</th>
+                        <th>Effect</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1-3</strong></td>
+                        <td>Wall holds. Unit stops, takes 2 damage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4-5</strong></td>
+                        <td>Wall cracks. Unit stops, takes 1 damage. Wall → Light Cover</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6</strong></td>
+                        <td>Wall collapses. Unit continues 1 hex beyond, takes 1 damage. Wall → Difficult Terrain</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Unit Collision (Domino Effect)</h3>
+
+            <p><strong>Roll 1d6 + Size Difference Modifier:</strong></p>
+            <ul>
+                <li>Pushed unit larger: +2</li>
+                <li>Same size: +0</li>
+                <li>Pushed unit smaller: -2</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll Result</th>
+                        <th>Effect</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1-3</strong></td>
+                        <td>Secondary stops push. Both take 1 damage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4-5</strong></td>
+                        <td>Chain reaction! Secondary pushed 1 hex. Both take 1 damage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6+</strong></td>
+                        <td>Domino effect! Secondary pushed 2 hexes. Both take 2 damage</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Hazard Collision</h3>
+            <ul>
+                <li><strong>Lava/Fire</strong>: 4 damage + 2 Heat</li>
+                <li><strong>Pit/Chasm</strong>: 3-6 damage (depth varies)</li>
+                <li><strong>Electrified Zone</strong>: 3 damage, stunned (lose 1 SP next turn)</li>
+            </ul>
+
+            <div class="divider">⚔</div>
+
+            <h3>Tactical Example: Environmental Kill</h3>
+
+            <p>Scout (Size -1) vs Warden (Size +0) near lava pit:</p>
+            <ul>
+                <li>Warden rolls: [4] + 0 = <strong>4</strong></li>
+                <li>Scout rolls: [2] - 1 = <strong>1</strong></li>
+                <li><strong>Result</strong>: Warden wins by 3, pushes Scout <strong>2 hexes into lava!</strong></li>
+                <li>Scout takes 4 damage + 2 Heat from hazard</li>
+            </ul>
+
+            <div class="quote">
+                "Shove is a positioning tool, not a damage dealer. Success requires terrain awareness and favorable size matchups."
+            </div>
+
+            <div class="page-number">— 18 —</div>
+        </div>
+
         <!-- CHAPTER 3: DICE REFERENCE -->
         <div class="page" id="chapter-3">
             <h1>Chapter 3: Dice Reference</h1>
@@ -1330,7 +1490,7 @@
                 </tbody>
             </table>
 
-            <div class="page-number">— 15 —</div>
+            <div class="page-number">— 19 —</div>
         </div>
 
         <!-- CHAPTER 3 CONTINUED: Defense Dice -->
@@ -1402,7 +1562,7 @@
                 </tbody>
             </table>
 
-            <div class="page-number">— 16 —</div>
+            <div class="page-number">— 18 —</div>
         </div>
 
         <!-- CHAPTER 3 CONTINUED: Suffering Dice -->
@@ -1472,7 +1632,7 @@
                 "The dice are the will of the Harmony. Every roll is a prayer. Every result, divine judgment."
             </div>
 
-            <div class="page-number">— 17 —</div>
+            <div class="page-number">— 19 —</div>
         </div>
 
         <!-- CHAPTER 4: COMPONENT DAMAGE -->
@@ -1550,7 +1710,7 @@
                 <strong>Note:</strong> Scout/Vanguard/Colossus classes have different HP values. See Casket Classes chapter.
             </p>
 
-            <div class="page-number">— 20 —</div>
+            <div class="page-number">— 24 —</div>
         </div>
 
         <!-- CHAPTER 4 CONTINUED: Zone Effects -->
@@ -1614,7 +1774,7 @@
                 </tbody>
             </table>
 
-            <div class="page-number">— 21 —</div>
+            <div class="page-number">— 29 —</div>
         </div>
 
         <!-- CHAPTER 4 CONTINUED: Component Destruction -->
@@ -1702,7 +1862,7 @@
                 <li><strong>EXECUTION (10)</strong> - Auto-destroy 1 Component</li>
             </ul>
 
-            <div class="page-number">— 22 —</div>
+            <div class="page-number">— 24 —</div>
         </div>
 
         <!-- CHAPTER 4 CONTINUED: Tactical Matrix -->
@@ -1773,7 +1933,7 @@
                 "The head exploded. Sensor shards pierced the viewing slit. Neural threads sparked and severed. Three Wounds in one brutal strike."
             </div>
 
-            <div class="page-number">— 23 —</div>
+            <div class="page-number">— 29 —</div>
         </div>
 
         <!-- CHAPTER 5: RANGE & LINE OF SIGHT -->
@@ -1846,7 +2006,7 @@
                 <li>Shooting at 8 hexes → Long range → +2 modifier (need 7+ instead of 5+)</li>
             </ul>
 
-            <div class="page-number">— 25 —</div>
+            <div class="page-number">— 29 —</div>
         </div>
 
         <!-- CHAPTER 5 CONTINUED: Line of Sight -->
@@ -1915,7 +2075,7 @@
                 </tbody>
             </table>
 
-            <div class="page-number">— 26 —</div>
+            <div class="page-number">— 30 —</div>
         </div>
 
         <!-- CHAPTER 5 CONTINUED: Facing Details -->
@@ -1976,7 +2136,7 @@
                 <li>Moving DOWN 1 level: Normal cost (1 SP)</li>
             </ul>
 
-            <div class="page-number">— 27 —</div>
+            <div class="page-number">— 29 —</div>
         </div>
 
         <!-- CHAPTER 5 CONTINUED: Quick Reference -->
@@ -2067,7 +2227,7 @@
                 "Distance is measured in hexes. Death is measured in mistakes."
             </div>
 
-            <div class="page-number">— 28 —</div>
+            <div class="page-number">— 30 —</div>
         </div>
 
     </div>
