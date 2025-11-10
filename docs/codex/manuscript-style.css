@@ -1293,8 +1293,11 @@ textarea:focus-visible,
 /* Skip to content link for keyboard users */
 .skip-link {
     position: absolute;
-    top: -40px;
-    left: 0;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
     background: var(--dark-red);
     color: var(--accessible-white);
     padding: 8px;
@@ -1304,7 +1307,11 @@ textarea:focus-visible,
 }
 
 .skip-link:focus {
-    top: 0;
+    left: 6px;
+    top: 6px;
+    width: auto;
+    height: auto;
+    overflow: visible;
 }
 
 /* Improved contrast utilities */
