@@ -12,7 +12,7 @@
 
 **Source**: Recovered soul-contract, Bonelord Karath's personal archive
 **Classification**: APOLLYON
-**Credibility**: Authenticated via Soulstone resonance dating
+**Credibility**: Authenticated via Soulstone saturation dating
 
 ---
 

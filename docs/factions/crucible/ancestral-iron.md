@@ -336,7 +336,7 @@
 **Duelist's Pride** (Torrak's swords):
 - Twin blades forged Year 200
 - Used in 47 duels (all victories)
-- Blades glow during duels (psionic resonance?)
+- Blades glow during duels (psionic attunement?)
 - **Current owner**: Ashen-King Torrak
 
 **Ironpeak Plate** (Lost armor):

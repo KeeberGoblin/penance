@@ -113,7 +113,7 @@ Each faction interprets the cataclysm through their own cultural, religious, or 
   - "The Market Death"
 
 **In Exchange Ledgers**:
-> "Year 0: Total economic collapse. All trade routes severed. Currency obsolete. Estimated loss: everything. Cause: Theslar prototype resonance device. Status: asset recovery ongoing for 437 years."
+> "Year 0: Total economic collapse. All trade routes severed. Currency obsolete. Estimated loss: everything. Cause: Theslar prototype dimensional device. Status: asset recovery ongoing for 437 years."
 
 ---
 

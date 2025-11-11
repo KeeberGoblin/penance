@@ -400,7 +400,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 
 > **Research Log: Soulstone Origin Study**
 >
-> I've analyzed 247 Soulstone samples from across the seven factions. Crystallography, spectral analysis, Taint-resonance mapping.
+> I've analyzed 247 Soulstone samples from across the seven factions. Crystallography, spectral analysis, Taint saturation mapping.
 >
 > The Church says they're fragments of fallen angels.
 > The Elves say they're crystallized Worldheart blood.

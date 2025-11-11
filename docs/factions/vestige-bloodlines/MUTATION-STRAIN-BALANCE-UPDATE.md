@@ -261,4 +261,4 @@ If 57.8% WR is still too high:
 ⚠️ Possible Biomass generation reduction
 ⚠️ Testing in actual gameplay (simulation can't capture all nuances)
 
-**Overall:** A successful balance update that fixes the infinite scaling problem while enhancing thematic resonance. Vestige Bloodlines are now mechanically powerful but narratively tragic - exactly as intended.
+**Overall:** A successful balance update that fixes the infinite scaling problem while enhancing thematic coherence. Vestige Bloodlines are now mechanically powerful but narratively tragic - exactly as intended.

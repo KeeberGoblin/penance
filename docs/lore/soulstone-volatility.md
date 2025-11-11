@@ -64,7 +64,7 @@ If this process is **mismanaged**, the energy discharge can:
 **Result:**
 - Cascade detonation destroyed entire refinery wing (14 dead)
 - Void contamination rendered the area uninhabitable for 6 months
-- All soulstones within 30 meters **shattered simultaneously** (sympathetic resonance)
+- All soulstones within 30 meters **shattered simultaneously** (Sympathetic Echo)
 - Surviving workers reported "hearing hundreds of voices screaming in unison"
 
 **Lesson Learned:** Refinement must **never be rushed**. One shard at a time. Always.
@@ -117,7 +117,7 @@ If this process is **mismanaged**, the energy discharge can:
 - Minimal monitoring per individual refinement
 
 **Why It Failed:**
-- **Sympathetic resonance**: Multiple souls screamed at once, amplifying each other
+- **Sympathetic Echo**: Multiple souls screamed at once, amplifying each other
 - **Cascade overload**: One failure triggered chain reaction
 - **Taint accumulation**: Concentrated Void energy overwhelmed containment
 
@@ -185,7 +185,7 @@ If this process is **mismanaged**, the energy discharge can:
 
 #### Equipment Required:
 - **Living wood containment** (roots absorb excess Void energy)
-- **Natural resonance** (Core soul placed near sacred grove)
+- **Natural attunement** (Core soul placed near sacred grove)
 - **No mechanical crushing** (fragment allowed to dissolve naturally)
 
 #### Procedure (7-30 Days Per Shard):

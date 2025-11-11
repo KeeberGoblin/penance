@@ -68,7 +68,7 @@ A Casket is a **hybrid system**:
 **What It Is:**
 - A **human soul** trapped inside the Soulstone Core (crystal mounted on casket's back)
 - One primary consciousness (usually a recently deceased person)
-- Bound via resonance chamber at moment of death
+- Bound via Soul Anchor at moment of death
 - Powers the casket's hydraulics, servos, and systems
 
 **The Ethical Nightmare:**

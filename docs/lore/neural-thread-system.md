@@ -388,18 +388,18 @@ Despite the world operating at roughly **1800s technology level** (steam power, 
 
 **Years -10 to 0: The Bioelectronic Revolution**
 
-While researching dimensional resonance for the Theslar Engine, Dr. Nikolas Theslar's team made an unexpected discovery: **Void energy could interface directly with biological nervous systems**.
+While researching Void Saturation for the Theslar Engine, Dr. Nikolas Theslar's team made an unexpected discovery: **Void energy could interface directly with biological nervous systems**.
 
 | Discovery | Implication |
 |-----------|-------------|
-| **Neural Resonance Enhancement** | Test subjects exposed to controlled dimensional fields showed unprecedented nerve conductivity |
+| **Neural Amplification** | Test subjects exposed to controlled dimensional fields showed unprecedented nerve conductivity |
 | **Bioelectric Coupling** | Void energy allowed direct nervous system → machine interfaces (bypassing conventional electronics) |
-| **Crystalline Memory Storage** | Resonance-active crystals (Soulstones) could store both electrical and "metaphysical" consciousness data |
+| **Crystalline Memory Storage** | Void-attuned crystals (Soulstones) could store both electrical and "metaphysical" consciousness data |
 | **Conscious Energy Transfer** | Human consciousness could be "recorded" in Void-saturated crystal matrices |
 
 **The Critical Insight:**
 
-Conventional 1800s electronics required complex circuits, vacuum tubes, and power supplies. Theslar's bioelectronics used **Void resonance** as the transmission medium—the pilot's nervous system became the circuit, and dimensional energy carried the signal.
+Conventional 1800s electronics required complex circuits, vacuum tubes, and power supplies. Theslar's bioelectronics used **Void Saturation** as the transmission medium—the pilot's nervous system became the circuit, and dimensional energy carried the signal.
 
 **What This Enabled:**
 - **Neural Threads:** Direct nerve-to-machine control without conventional wiring
@@ -408,7 +408,7 @@ Conventional 1800s electronics required complex circuits, vacuum tubes, and powe
 
 ### The Bitter Irony
 
-These breakthroughs were **Void-dependent**. They only functioned in the presence of dimensional resonance energy.
+These breakthroughs were **Void-dependent**. They only functioned in the presence of Void Saturation energy.
 
 Before the Sundering, they were experimental curiosities—lab prototypes that worked in test chambers but couldn't scale globally.
 

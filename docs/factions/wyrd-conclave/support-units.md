@@ -412,7 +412,7 @@ Perfect copy of your Casket, but flickering (unstable temporal existence). Speak
 
 ### Key Abilities
 1. **Temporal Duplicate** (Passive): Echo acts immediately before Casket's turn (free extra turn)
-2. **Paradox Strike** (3 SP): If Echo and Casket attack same target, deal combined damage +4 (temporal resonance)
+2. **Paradox Strike** (3 SP): If Echo and Casket attack same target, deal combined damage +4 (temporal echo)
 3. **Time Collapse** (5 Bargain tokens): Merge Echo into Casket, heal 10 HP, gain all Echo's unspent SP (absorption)
 4. **Rewind** (Ultimate, once): If Casket dies, Echo becomes "new" Casket (temporal replacement, survive death)
 
