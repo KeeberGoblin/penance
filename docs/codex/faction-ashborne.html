@@ -6,31 +6,69 @@
     <title>The Iron Doctrine - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
-        /* ASCII Art Image Effect */
+        /* Paper Fold/Crease Image Effect */
         .ascii-art-container {
             width: 100%;
             max-width: 900px;
             margin: 2rem auto;
-            overflow: hidden;
-            background: #000;
+            position: relative;
+            background: #1a1410;
             border: 2px solid var(--aged-gold);
             box-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
         }
-        .ascii-art {
-            font-family: 'Courier New', monospace;
-            font-size: 6px;
-            line-height: 6px;
-            letter-spacing: 0;
-            color: #8B4513;
-            background: #000;
-            padding: 0;
-            margin: 0;
-            white-space: pre;
-            overflow: hidden;
-            text-align: center;
+
+        .paper-image {
+            width: 100%;
+            display: block;
+            position: relative;
         }
-        #ascii-canvas {
-            display: none;
+
+        /* Paper fold overlay effect */
+        .paper-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                /* Vertical creases */
+                linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.3) 25%, transparent 25.5%, transparent 49.5%, rgba(0,0,0,0.3) 50%, transparent 50.5%, transparent 74.5%, rgba(0,0,0,0.3) 75%, transparent 75.5%),
+                /* Horizontal creases */
+                linear-gradient(0deg, transparent 0%, rgba(0,0,0,0.3) 33%, transparent 33.5%, transparent 66%, rgba(0,0,0,0.3) 66.5%, transparent 67%),
+                /* Aged paper texture */
+                repeating-linear-gradient(45deg, rgba(139,69,19,0.03) 0px, transparent 1px, transparent 2px, rgba(139,69,19,0.03) 3px);
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        /* Shadow/depth on folds */
+        .paper-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                /* Fold shadows */
+                radial-gradient(ellipse at 25% 33%, rgba(0,0,0,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 66%, rgba(0,0,0,0.2) 0%, transparent 50%);
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        .ascii-art-container::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, rgba(139,69,19,0.1) 0%, transparent 50%, rgba(139,69,19,0.1) 100%);
+            pointer-events: none;
+            z-index: 1;
         }
 
         /* Navigation bar for direct page access (not in iframe) */
@@ -97,11 +135,9 @@
             The Iron Doctrine
         </nav>
 
-        <!-- ASCII Art Image -->
+        <!-- Iron Doctrine Image with Paper Fold Effect -->
         <div class="ascii-art-container">
-            <img id="source-image" src="../images/IronDoctrine.png" alt="Iron Doctrine Train" style="display:none;">
-            <canvas id="ascii-canvas" style="display:none;"></canvas>
-            <pre class="ascii-art" id="ascii-output"></pre>
+            <img class="paper-image" src="../images/IronDoctrine.png" alt="Iron Doctrine Train">
         </div>
 
         <h1>The Iron Doctrine</h1>
@@ -795,80 +831,6 @@
             <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
         </div>
     </main>
-
-    <script>
-        // ASCII Art Image Converter
-        (function() {
-            const sourceImg = document.getElementById('source-image');
-            const canvas = document.getElementById('ascii-canvas');
-            const output = document.getElementById('ascii-output');
-            const ctx = canvas.getContext('2d');
-
-            // ASCII characters from darkest to lightest
-            const ASCII_CHARS = '@%#*+=-:. ';
-
-            function convertToAscii() {
-                if (!sourceImg.complete) {
-                    // Image not loaded yet, wait
-                    setTimeout(convertToAscii, 100);
-                    return;
-                }
-
-                try {
-                    // Scale down the image for ASCII conversion
-                    const targetWidth = 150; // ASCII characters wide
-                    const aspectRatio = sourceImg.naturalHeight / sourceImg.naturalWidth;
-                    const targetHeight = Math.floor(targetWidth * aspectRatio * 0.5); // 0.5 for character aspect ratio
-
-                    canvas.width = targetWidth;
-                    canvas.height = targetHeight;
-
-                    // Draw image to canvas
-                    ctx.drawImage(sourceImg, 0, 0, targetWidth, targetHeight);
-
-                    // Get image data
-                    const imageData = ctx.getImageData(0, 0, targetWidth, targetHeight);
-                    const pixels = imageData.data;
-
-                    // Convert to ASCII
-                    let asciiImage = '';
-                    for (let y = 0; y < targetHeight; y++) {
-                        for (let x = 0; x < targetWidth; x++) {
-                            const offset = (y * targetWidth + x) * 4;
-                            const r = pixels[offset];
-                            const g = pixels[offset + 1];
-                            const b = pixels[offset + 2];
-
-                            // Calculate brightness (grayscale)
-                            const brightness = (r + g + b) / 3;
-
-                            // Map brightness to ASCII character
-                            const charIndex = Math.floor((brightness / 255) * (ASCII_CHARS.length - 1));
-                            asciiImage += ASCII_CHARS[charIndex];
-                        }
-                        asciiImage += '\n';
-                    }
-
-                    // Display ASCII art
-                    output.textContent = asciiImage;
-                } catch (error) {
-                    output.textContent = 'Error converting image: ' + error.message;
-                    console.error('ASCII conversion error:', error);
-                }
-            }
-
-            // Start conversion when image loads
-            if (sourceImg.complete) {
-                convertToAscii();
-            } else {
-                sourceImg.addEventListener('load', convertToAscii);
-                sourceImg.addEventListener('error', function() {
-                    output.textContent = 'Error: Could not load image from ../images/IronDoctrine.png';
-                });
-            }
-        })();
-    </script>
-
     <script src="codex-common.js"></script>
 </body>
 </html>
