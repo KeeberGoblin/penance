@@ -99,7 +99,8 @@
 
         <!-- ASCII Art Image -->
         <div class="ascii-art-container">
-            <canvas id="ascii-canvas"></canvas>
+            <img id="source-image" src="../images/IronDoctrine.png" alt="Iron Doctrine Train" style="display:none;">
+            <canvas id="ascii-canvas" style="display:none;"></canvas>
             <pre class="ascii-art" id="ascii-output"></pre>
         </div>
 
@@ -798,6 +799,7 @@
     <script>
         // ASCII Art Image Converter
         (function() {
+            const sourceImg = document.getElementById('source-image');
             const canvas = document.getElementById('ascii-canvas');
             const output = document.getElementById('ascii-output');
             const ctx = canvas.getContext('2d');
@@ -805,52 +807,65 @@
             // ASCII characters from darkest to lightest
             const ASCII_CHARS = '@%#*+=-:. ';
 
-            const img = new Image();
-            img.crossOrigin = 'anonymous';
-            img.src = '../images/IronDoctrine.png';
-
-            img.onload = function() {
-                // Scale down the image for ASCII conversion
-                const targetWidth = 150; // ASCII characters wide
-                const aspectRatio = img.height / img.width;
-                const targetHeight = Math.floor(targetWidth * aspectRatio * 0.5); // 0.5 for character aspect ratio
-
-                canvas.width = targetWidth;
-                canvas.height = targetHeight;
-
-                // Draw image to canvas
-                ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-
-                // Get image data
-                const imageData = ctx.getImageData(0, 0, targetWidth, targetHeight);
-                const pixels = imageData.data;
-
-                // Convert to ASCII
-                let asciiImage = '';
-                for (let y = 0; y < targetHeight; y++) {
-                    for (let x = 0; x < targetWidth; x++) {
-                        const offset = (y * targetWidth + x) * 4;
-                        const r = pixels[offset];
-                        const g = pixels[offset + 1];
-                        const b = pixels[offset + 2];
-
-                        // Calculate brightness (grayscale)
-                        const brightness = (r + g + b) / 3;
-
-                        // Map brightness to ASCII character
-                        const charIndex = Math.floor((brightness / 255) * (ASCII_CHARS.length - 1));
-                        asciiImage += ASCII_CHARS[charIndex];
-                    }
-                    asciiImage += '\n';
+            function convertToAscii() {
+                if (!sourceImg.complete) {
+                    // Image not loaded yet, wait
+                    setTimeout(convertToAscii, 100);
+                    return;
                 }
 
-                // Display ASCII art
-                output.textContent = asciiImage;
-            };
+                try {
+                    // Scale down the image for ASCII conversion
+                    const targetWidth = 150; // ASCII characters wide
+                    const aspectRatio = sourceImg.naturalHeight / sourceImg.naturalWidth;
+                    const targetHeight = Math.floor(targetWidth * aspectRatio * 0.5); // 0.5 for character aspect ratio
 
-            img.onerror = function() {
-                output.textContent = 'Error loading image';
-            };
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
+
+                    // Draw image to canvas
+                    ctx.drawImage(sourceImg, 0, 0, targetWidth, targetHeight);
+
+                    // Get image data
+                    const imageData = ctx.getImageData(0, 0, targetWidth, targetHeight);
+                    const pixels = imageData.data;
+
+                    // Convert to ASCII
+                    let asciiImage = '';
+                    for (let y = 0; y < targetHeight; y++) {
+                        for (let x = 0; x < targetWidth; x++) {
+                            const offset = (y * targetWidth + x) * 4;
+                            const r = pixels[offset];
+                            const g = pixels[offset + 1];
+                            const b = pixels[offset + 2];
+
+                            // Calculate brightness (grayscale)
+                            const brightness = (r + g + b) / 3;
+
+                            // Map brightness to ASCII character
+                            const charIndex = Math.floor((brightness / 255) * (ASCII_CHARS.length - 1));
+                            asciiImage += ASCII_CHARS[charIndex];
+                        }
+                        asciiImage += '\n';
+                    }
+
+                    // Display ASCII art
+                    output.textContent = asciiImage;
+                } catch (error) {
+                    output.textContent = 'Error converting image: ' + error.message;
+                    console.error('ASCII conversion error:', error);
+                }
+            }
+
+            // Start conversion when image loads
+            if (sourceImg.complete) {
+                convertToAscii();
+            } else {
+                sourceImg.addEventListener('load', convertToAscii);
+                sourceImg.addEventListener('error', function() {
+                    output.textContent = 'Error: Could not load image from ../images/IronDoctrine.png';
+                });
+            }
         })();
     </script>
 
