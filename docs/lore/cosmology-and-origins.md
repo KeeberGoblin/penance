@@ -112,55 +112,165 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 
 ## The Species: Why Fantasy Creatures Exist
 
-### Humans
+### Species Demographics Overview
 
-**Origin**: Natural evolution, identical to our Earth.
+Before the Theslar Event, humanity was not one species—it was **six distinct subspecies** of *Homo sapiens*, each adapted to extreme environments over 50,000+ years of geographic isolation. What fantasy calls "dwarves" and "elves" are actually **evolutionary divergences** shaped by volcanic caverns, ancient forests, and isolated ecosystems.
 
-**Magic Sensitivity**: Rare. Approximately 1 in 10,000 humans can perceive ley lines naturally. Of those, 1 in 100 can manipulate them (mages).
-
-**Cultural Development**: Humans dominated the Old World numerically but were unaware of the full extent of non-human species. Most believed elves and dwarves were myths. **Nikolas Theslar himself was human and had no idea his experiment would affect non-human civilizations.**
-
-**Post-Sundering**: The dominant species in the Church of Absolution and the Penitent Kingdoms. They interpret the Cataclysm through a religious lens because their culture was heavily influenced by Abrahamic faiths.
+**Total Surviving Population (Year 437):** ~12.4 million
+**Pre-Sundering Global Population:** ~1.8 billion
+**Casualties from Theslar Event:** 99.3% mortality
 
 ---
 
-### Elves (Homo Sylvanus)
+### 1. Humans (Homo sapiens sapiens)
 
-**Origin**: Divergent human evolution, shaped by ley line exposure over 50,000+ years.
+**Origin**: Natural evolution, identical to our Earth. Remained in temperate surface environments with no extreme environmental pressures.
 
-**Physiology**:
-- Lifespan: 300-400 years (cellular regeneration enhanced by ambient ley line energy)
-- Enhanced senses: See into infrared spectrum, hear subsonic frequencies
-- **Symbiotic relationship with plant life**: Elven biology incorporated chlorophyll analogs (can supplement nutrition through sunlight, though they still eat)
-- Not "magical" by nature, but their bodies are naturally attuned to ley line flows
+**Physical Characteristics**:
+- **Height**: 5'4" - 6'2" (160-188 cm)
+- **Skin**: Full melanin range (pale to dark brown)
+- **Hair**: All colors, grows continuously
+- **Eyes**: Brown, blue, green, hazel
+- **Build**: Medium frame, generalist physiology
+- **Lifespan**: 60-80 years (pre-Sundering)
+
+**Magic Sensitivity**: Rare. Approximately 1 in 10,000 humans can perceive ley lines naturally. Of those, 1 in 100 can manipulate them (mages).
+
+**Population**:
+- **Pre-Sundering**: ~1.8 billion (dominant species)
+- **Year 437**: 8.2 million (68.3% of survivors)
+- **Primary Factions**: Church, Ossuarium, Exchange, Nomads
+
+**Cultural Development**: Humans dominated the Old World numerically but were unaware of the full extent of non-human species. Most believed elves and dwarves were myths. **Nikolas Theslar himself was human and had no idea his experiment would affect non-human civilizations.**
+
+**Post-Sundering**: The dominant species numerically. No biological differences between Church/Ossuarium/Exchange members - "Human" is a cultural identity, not a separate species.
+
+---
+
+### 2. Elves (Homo Sylvanus)
+
+**Origin**: ~50,000 BCE - Divergent human evolution in ancient Amazon Basin and Congo rainforests. Exposed to concentrated **ley line energy** for 50,000+ years (geomantic radiation). Developed **symbiotic relationship with fungal networks** (mycelial integration). Ley magic shaped cellular structure (chlorophyll analogs developed).
+
+**Physical Characteristics**:
+
+**Skin**:
+- **Chlorophyll-infused epidermis** (pale green to olive-green tint)
+- Semi-photosynthetic (absorb ~15% of energy needs from sunlight)
+- Bark-like texture on extremities (elbows, knees, spine)
+- **Lichen growth on shoulders/back** (symbiotic, not parasitic)
+- Wounds weep **green sap** (plant-based coagulant)
+
+**Hair**:
+- **Living plant fibers** (cellulose-based, not keratin)
+- Colors: Moss green, bark brown, autumn red (seasonal changes)
+- Hair can photosynthesize (chloroplasts in strands)
+- Can be "pruned" but regrows like vines
+- Some elves cultivate **flowering hair** (blossoms in spring)
+
+**Eyes**:
+- **Compound iris structure** (like insect eyes - thousands of micro-lenses)
+- See into infrared spectrum (detect heat signatures)
+- Eye colors: Amber, gold, deep green (plant-based pigments)
+- Vertical slit pupils (enhanced night vision)
+
+**Build**:
+- **Height**: 5'8" - 6'6" (173-198 cm) - tall and willowy
+- **Weight**: 110-150 lbs (hollow bones like birds)
+- Elongated limbs (arboreal adaptation)
+- Fingers 20% longer than baseline human (grasping branches)
+- Prehensile toes (can grip with feet)
+
+**Adaptations**:
+- **Mycorrhizal nervous system** (fungal tendrils in bloodstream connect to forest networks)
+- **Photosynthetic supplementation** (reduce food needs by 15%)
+- **Regeneration** (regrow fingers/toes over weeks via root grafting)
+- **Poison immunity** (liver processes plant toxins)
+- **Seasonal dormancy** (enter hibernation in winter)
+
+**Casket Integration**:
+- Elves undergo **"Root-Grafting"** - legs replaced with living vine prosthetics
+- Vines plug directly into Casket hydraulics (plant-machine hybrid interface)
+- Can photosynthesize energy for Casket systems (backup power)
+
+**Population**:
+- **Pre-Sundering**: ~200,000 globally
+- **Year 437**: 480,000 (4% of survivors)
+- **Primary Faction**: Verdant Covenant
+
+**Lifespan**: 300-400 years (ley line exposure + photosynthetic supplementation)
 
 **Cultural Development**:
 - Isolationist even before the Sundering
 - Built hidden forest cities (Roothold, The Grove of First Light)
 - Viewed humans as "young, loud, and careless"
-- Pre-Sundering, elves numbered only ~200,000 globally (compared to billions of humans)
+- View baseline humans as "severed from the roots"
+- Mourning rituals for trees (they feel forest die-offs)
+- Druidic practices pre-date the Sundering by 10,000 years
 
 **How They Stayed Hidden**: Elven enclaves existed in remote forests and mountains. To humans, they were legends, folklore, or "lost tribes." The few humans who stumbled upon elven settlements were either welcomed (rarely) or turned away with memory-wiping glamours (more commonly).
 
-**Post-Sundering**: Nearly extinct. Elven fertility dropped catastrophically after the Cataclysm (Void energy disrupted their symbiotic biology). Remaining elves formed the Verdant Covenant, desperately trying to heal the "wounded world" before their species dies out.
+**Post-Sundering Status**: Vulnerable. Elven fertility dropped catastrophically after the Cataclysm (Void energy disrupted their symbiotic biology). **Current Threat**: 40% of ancestral forests destroyed. Mycorrhizal networks collapsing. Elves who lose grove connection suffer **"The Withering"** (slow death). Remaining elves formed the Verdant Covenant, desperately trying to heal the "wounded world" before their species dies out.
 
 ---
 
-### Dwarves (Homo Subterra)
+### 3. Dwarves (Homo Subterra)
 
-**Origin**: Another divergent human evolution, adapted to subterranean life ~40,000 years ago.
+**Origin**: ~40,000 BCE - Divergent human evolution adapted to subterranean life. Descended into volcanic cavern systems in the Alps and Caucasus Mountains. Lived 500-2,000 meters underground for 45,000+ years. Adapted to geothermal heat, low oxygen, darkness, and volcanic gases.
+
+**Physical Characteristics**:
+
+**Skin**:
+- **Ash-gray to charcoal-black** (melanin loss + volcanic ash exposure)
+- Thick, heat-resistant dermis (3x human epidermis thickness)
+- Naturally sooty appearance from constant volcanic particulates
+- Facial **tattoos using crushed minerals** (cultural tradition to distinguish clans)
+- Tattoos glow faintly in forge-light (phosphorescent compounds)
+
+**Hair**:
+- **Completely hairless** (head, face, body)
+- Hair follicles atrophied over 40,000 years
+- Eyebrows/eyelashes vestigial or absent
+- Cultural practice: Runic scalp tattoos replace hair as identity marker
+- **Beardlessness is NOT a flaw—it's ancestral**
+
+**Eyes**:
+- **Reflective tapetum lucidum** (like cats - light-gathering)
+- Eye colors: Amber, copper, deep red (hemoglobin-rich retinas)
+- Nictitating membrane (third eyelid for volcanic ash protection)
+- Sensitive to bright light (sunglasses required on surface)
+
+**Build**:
+- **Height**: 4'2" - 4'10" (127-147 cm) - **stocky, not "short and stout"**
+- **Weight**: 180-250 lbs (denser bones from high-gravity cavern life)
+- **Bone density**: 40% denser than baseline human (silicate-calcium matrix)
+- Barrel-chested (increased lung capacity for thin air)
+- Short limbs, long torso (heat conservation)
 
 **Physiology**:
-- Stocky, dense bones (adapted to high-pressure underground environments)
-- Enhanced low-light vision (tapetum lucidum like cats)
-- Resistance to toxic gases and radiation (evolutionary necessity in deep mines)
-- Lifespan: 150-200 years
+- Dense bones (adapted to high-pressure underground environments)
+- Enhanced low-light vision (tapetum lucidum)
+- **Sulfur toxin immunity** (liver processes volcanic gases)
+- **Thermal regulation** (sweat glands excrete metallic salts, not water)
+- **Seismic sensitivity** (can detect tremors through footfalls)
+- **Enhanced grip strength** (climbing vertical mine shafts)
+- **Slow metabolism** (can survive on 800 calories/day)
+- Resistance to radiation (evolutionary necessity in deep mines)
+- Lifespan: 90-120 years (slow aging in stable environment)
 - **Not magically inclined** - dwarven nervous systems are less sensitive to ley lines, making them naturally resistant to Taint
+
+**Population**:
+- **Pre-Sundering**: ~1.5 million globally
+- **Year 437**: 1.2 million (10% of survivors)
+- **Primary Faction**: Forge-Guilds, Crucible Pacts
+
+**Cultural Identity**:
+- Facial tattoos indicate clan, rank, and craft specialization
+- Runesmith tattoos are most intricate (master craftsmen)
+- Smooth skin considered "unmarked" (childlike/unproven)
 
 **Cultural Development**:
 - Built vast underground cities (Ironhearth, Stoneroot, The Deeps)
 - Master craftsmen, metallurgists, and engineers
-- Pre-Sundering, dwarves numbered ~1.5 million globally
 - Traded with surface humans through intermediaries (The Exchange acted as go-betweens)
 
 **How They Stayed Hidden**: Dwarven cities were entirely underground. Most humans knew of dwarves as "miners in the deep mountains" but assumed they were just reclusive human clans. Dwarven-forged goods were sold under human brand names.
@@ -171,7 +281,101 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 
 ---
 
-### The Ossuarium (Undead)
+### 4. Goblinoids (Homo Infernus) - Crucible Pacts
+
+**Origin**: ~35,000 BCE - Descended into Icelandic volcanic rifts and Mediterranean sulfur caves. Exposed to extreme geothermal radiation and toxic gases for 33,000+ years. Developed extreme heat resistance and accelerated metabolism.
+
+**Physical Characteristics**:
+- **Skin**: Ash-gray to soot-black. **Ritual burn scars** cover 30-60% of body (cultural rite of passage—badges of honor)
+- **Hair**: White-gray to silver (thermal bleaching). Coarse texture. Often braided with obsidian beads
+- **Eyes**: Yellow to orange (sulfur-pigmented retinas). Reflective in firelight
+- **Height**: 3'10" - 4'8" (117-142 cm) - small but wiry
+- **Weight**: 85-120 lbs. Fast-twitch muscle fibers
+- **Teeth**: Filed teeth (cultural practice - sharpened canines)
+
+**Physiology**:
+- **Pyrokinetic thermoregulation** (body temp 102-105°F baseline)
+- **Sulfur toxin immunity** (breathe volcanic gases safely)
+- **Accelerated healing** (wounds close in 1/3 normal time)
+- **Pain suppression** (endorphin overproduction from burn scarring)
+- Hyperactive metabolism (eat 3,000+ calories/day)
+- Lifespan: 35-50 years (fast metabolism = early burnout)
+
+**Population**:
+- **Pre-Sundering**: ~350,000 globally
+- **Year 437**: 220,000 (1.8% of survivors)
+- **Primary Faction**: Crucible Pacts
+
+**Cultural Identity**: Burn scars are **badges of honor** (more scars = higher status). Fire-worship pre-dates written history. View baseline humans as "untempered" (weak, soft). Goblinoids live fast, die young - 38 years old is ancient by their standards.
+
+**Post-Sundering**: Integrated into Crucible Pacts alongside some Dwarves. Their heat resistance and volcanic adaptation make them natural forge-workers and fire-cultists.
+
+---
+
+### 5. Desert-Adapted Nomads (Homo Aquilus)
+
+**Origin**: ~30,000 BCE - Isolated in Sahara, Arabian, and Australian deserts. 29,000 years of extreme heat and water scarcity adaptation.
+
+**Physical Characteristics**:
+- **Skin**: Deep bronze to copper-brown (extreme melanin concentration). **No sweat glands** (conserve water). Reflective sheen (silicon-based outer layer deflects UV)
+- **Hair**: Black to dark brown. Coarse texture. **Dreadlocks common** (natural formation)
+- **Eyes**: **Double eyelids** (nictitating membrane for sandstorms). Brown to amber
+- **Height**: 5'6" - 6'2" (168-188 cm)
+- **Weight**: 130-170 lbs (lean, hollow bones)
+
+**Physiology**:
+- **Water conservation** (kidneys extract 99% moisture from waste)
+- **Temperature extremes** (survive 120°F days, 40°F nights)
+- **Endurance running** (can run 50+ miles/day)
+- **Sandstorm breathing** (nasal filters block particulates)
+- Long limbs (heat dissipation)
+- Lifespan: 50-70 years (harsh environment accelerates aging)
+
+**Population**:
+- **Pre-Sundering**: ~3.2 million globally
+- **Year 437**: 1.8 million (15% of survivors)
+- **Primary Faction**: Nomad Collective
+
+**Cultural Identity**: Survival-focused pragmatism. Trade networks span continents. "Home is where you survive." Genetic compatibility with baseline humans is 95%—nearly identical.
+
+**Post-Sundering**: Thriving through adaptation. Desert-adapted physiology made them natural survivors of the post-apocalyptic wasteland.
+
+---
+
+### 6. Frostborn (Homo Polaris) - **CRITICALLY ENDANGERED**
+
+**Origin**: ~25,000 BCE - Isolated in Arctic Circle (Siberia, Greenland, Northern Canada). 25,000 years of extreme cold adaptation.
+
+**Physical Characteristics**:
+- **Skin**: Alabaster white (complete melanin loss). Thick subcutaneous fat layer (4x baseline). Semi-translucent (veins visible). Blue undertone
+- **Hair**: White, platinum blonde, or ice-blue. Dense (50% more follicles)
+- **Eyes**: Pale blue, gray, or white (minimal pigmentation). Reflective tapetum lucidum
+- **Height**: 5'0" - 5'8" (152-173 cm) - compact build
+- **Weight**: 160-220 lbs (dense fat reserves)
+
+**Physiology**:
+- **Extreme cold resistance** (survive -60°F indefinitely)
+- **Brown fat thermogenesis** (generate heat without shivering)
+- **Hibernation capability** (can enter torpor for weeks)
+- **Snow-blindness immunity** (UV-resistant retinas)
+- Short limbs (heat conservation)
+- Barrel-chested (increased lung capacity)
+- Lifespan: 70-100 years
+
+**Population**:
+- **Pre-Sundering**: ~2.5 million
+- **Year 437**: ~50,000 (0.4% of survivors - **98% CASUALTIES**)
+- **Status**: Scattered (nearly extinct)
+
+**Why Near-Extinct**: Theslar Event epicenter was North Pole (their homeland). Arctic survivors fled south (heat intolerance). Genetic bottleneck (inbreeding depression). Low birth rates in temperate climates.
+
+**Prognosis**: Extinction within 200 years without intervention. Some survivors integrated into other factions or bound to Iron Doctrine trains.
+
+**Post-Sundering**: One of maybe 50,000 left alive. People stare at their albino skin like they're ghosts. Most survivors remember the Arctic before it became Ground Zero.
+
+---
+
+### 7. The Ossuarium (Undead)
 
 **Origin**: Not a species, but a **post-Sundering phenomenon**.
 
