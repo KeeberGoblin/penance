@@ -52,11 +52,11 @@ The Sundering forced these subspecies into contact for the first time in millenn
 
 ---
 
-### 2. Homo sapiens subterra (Dwarves)
+### 2. Homo Subterra (Dwarves)
 
 **Common Names**: Dwarves, Forge-Kin, The Deep Folk, Stone-Born
 
-**Evolutionary Origin**: ~50,000 BCE - ~Year -5,000
+**Evolutionary Origin**: ~40,000 BCE - ~Year -5,000
 - Descended into volcanic cavern systems in the Alps and Caucasus Mountains
 - Lived 500-2,000 meters underground for 45,000+ years
 - Adapted to geothermal heat, low oxygen, darkness, and volcanic gases
@@ -98,8 +98,9 @@ The Sundering forced these subspecies into contact for the first time in millenn
 
 **Lifespan**: 90-120 years (slow aging in stable environment)
 
-**Population** (Year 437):
-- **1.2 million** (~10% of survivors)
+**Population**:
+- **Pre-Sundering**: ~1.5 million globally
+- **Year 437**: ~1.2 million (~10% of survivors)
 - Concentrated in Forge-Guild territories (Alpine fortresses)
 
 **Cultural Identity**:
@@ -114,14 +115,15 @@ The Sundering forced these subspecies into contact for the first time in millenn
 
 ---
 
-### 3. Homo sapiens silvanus (Elves)
+### 3. Homo Sylvanus (Elves)
 
 **Common Names**: Elves, Verdant, The Rooted, Green-Kin
 
-**Evolutionary Origin**: ~40,000 BCE - ~Year -3,000
+**Evolutionary Origin**: ~50,000 BCE - ~Year -3,000
 - Isolated in ancient Amazon Basin and Congo rainforests
+- Exposed to concentrated **ley line energy** for 50,000+ years (geomantic radiation)
 - Developed **symbiotic relationship with fungal networks** (mycelial integration)
-- 37,000 years of co-evolution with forest ecosystems
+- Ley magic shaped cellular structure (chlorophyll analogs developed)
 
 **Physical Characteristics**:
 
@@ -164,7 +166,7 @@ The Sundering forced these subspecies into contact for the first time in millenn
 - Vines plug directly into Casket hydraulics (plant-machine hybrid interface)
 - Can photosynthesize energy for Casket systems (backup power)
 
-**Lifespan**: 140-200 years (slow metabolism + photosynthetic energy)
+**Lifespan**: 300-400 years (ley line exposure + photosynthetic supplementation)
 
 **Population** (Year 437):
 - **480,000** (~4% of survivors)
@@ -181,7 +183,7 @@ The Sundering forced these subspecies into contact for the first time in millenn
 
 ---
 
-### 4. Homo sapiens infernus (Crucible Goblinoids)
+### 4. Homo Infernus (Crucible Goblinoids)
 
 **Common Names**: Goblinoids, Fire-Kin, Ashborn, Scrap-Folk
 
@@ -237,7 +239,7 @@ The Sundering forced these subspecies into contact for the first time in millenn
 
 ---
 
-### 5. Homo sapiens aquilus (Nomad Desert-Adapted)
+### 5. Homo Aquilus (Nomad Desert-Adapted)
 
 **Common Names**: Desert-Kin, Sandborn, Wind-Walkers
 
@@ -290,7 +292,7 @@ The Sundering forced these subspecies into contact for the first time in millenn
 
 ---
 
-### 6. Homo sapiens polaris (Northern Ice-Adapted)
+### 6. Homo Polaris (Northern Ice-Adapted)
 
 **Common Names**: Frostborn, Pale Folk, Ice-Kin
 
@@ -383,11 +385,11 @@ The Sundering forced these subspecies into contact for the first time in millenn
 | Subspecies | Population | % of Total | Primary Factions |
 |------------|------------|-----------|------------------|
 | Homo sapiens sapiens (Humans) | 8,200,000 | 68.3% | Church, Ossuarium, Exchange, Nomads |
-| Homo sapiens aquilus (Nomads) | 1,800,000 | 15.0% | Nomad Collective |
-| Homo sapiens subterra (Dwarves) | 1,200,000 | 10.0% | Forge-Guilds, Crucible Pacts |
-| Homo sapiens silvanus (Elves) | 480,000 | 4.0% | Verdant Covenant |
-| Homo sapiens infernus (Goblinoids) | 220,000 | 1.8% | Crucible Pacts |
-| Homo sapiens polaris (Frostborn) | 50,000 | 0.4% | Scattered (nearly extinct) |
+| Homo Aquilus (Nomads) | 1,800,000 | 15.0% | Nomad Collective |
+| Homo Subterra (Dwarves) | 1,200,000 | 10.0% | Forge-Guilds, Crucible Pacts |
+| Homo Sylvanus (Elves) | 480,000 | 4.0% | Verdant Covenant |
+| Homo Infernus (Goblinoids) | 220,000 | 1.8% | Crucible Pacts |
+| Homo Polaris (Frostborn) | 50,000 | 0.4% | Scattered (nearly extinct) |
 | **Vestige Bloodlines (Void-mutated)** | 150,000 | 1.2% | Vestige Bloodlines faction |
 | **Emergent Syndicate (hive-mind)** | 100,000 | 0.8% | Emergent Syndicate |
 | **Iron Doctrine (train-bound)** | 200,000 | 1.7% | Iron Doctrine (immortal, bound to rails) |
@@ -478,13 +480,16 @@ The Sundering forced these subspecies into contact for the first time in millenn
 ```
 ~200,000 BCE: Homo sapiens emerges in Africa
 
-~50,000 BCE: Geographic isolation begins
-  ↓
-  ├─ Homo sapiens subterra (volcanic caverns)
-  ├─ Homo sapiens silvanus (rainforests)
-  ├─ Homo sapiens infernus (geothermal rifts)
-  ├─ Homo sapiens aquilus (deserts)
-  └─ Homo sapiens polaris (Arctic)
+~50,000 BCE: Elven Divergence
+  └─ Homo Sylvanus (ley line exposure in ancient forests)
+
+~40,000 BCE: Dwarven Descent
+  └─ Homo Subterra (volcanic cavern adaptation)
+
+~35,000 BCE: Geographic isolation continues
+  ├─ Homo Infernus (geothermal rifts)
+  ├─ Homo Aquilus (desert extremes)
+  └─ Homo Polaris (Arctic conditions)
 
 ~10,000 BCE: Agriculture develops (baseline humans only)
 
