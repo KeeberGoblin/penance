@@ -65,13 +65,13 @@
 - **Choice**: Die in the rubble, or try anything
 
 **The Experiment**:
-- Thresher was studying "bioelectric resonance" before Sundering
+- Thresher was studying "Neuroelectric Coupling" before Sundering
 - **Theory**: Human nervous system generates electromagnetic field (the "soul" is electrical)
 - **Hypothesis**: If souls are electrical, maybe they can power machines
 
 **The Breakthrough** (Day 6, Hour 14):
 1. Thresher connected corpse's nervous system to exoskeleton's power interface
-2. Used improvised resonance chamber (scavenged from lab equipment)
+2. Used improvised Soul Anchor (scavenged from lab equipment)
 3. "Tuned" corpse's residual bioelectric field to exoskeleton's frequency
 4. **It worked**: Dead colleague's soul began powering the machine
 
@@ -91,7 +91,7 @@
    - At death, this field persists briefly (30 seconds to 2 minutes)
    - Void energy allows this field to persist *indefinitely* (Theslar Event side-effect)
 
-2. **The Resonance Chamber**
+2. **The Soul Anchor**
    - Device that "captures" soul's electromagnetic signature
    - Binds soul to mechanical system (Casket's power core)
    - Soul's energy output powers Casket's hydraulics, servos, and systems

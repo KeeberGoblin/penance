@@ -20,7 +20,7 @@
 **Why the North Pole?**
 - Minimal magnetic interference (proximity to magnetic north pole)
 - Isolation from population centers (safety protocols)
-- Theslar believed polar conditions would "stabilize resonance frequencies"
+- Theslar believed polar conditions would "stabilize dimensional frequencies"
 - Access to deep ice core samples (ancient materials for Engine construction)
 
 ---
@@ -30,7 +30,7 @@
 ### Timeline of Catastrophe
 
 **14:15 UTC** - Final activation sequence begins
-- Dr. Nikolas Theslar initiates resonance chamber
+- Dr. Nikolas Theslar initiates amplification chamber
 - Engine reaches 40% power (within normal parameters)
 - Monitoring stations worldwide detect "anomalous readings"
 
@@ -103,7 +103,7 @@
 
 **The First Soul-Binding** (Day 6):
 - Dr. Bonelord Karath (formerly Dr. Marcus Karathis, mechanical engineer)
-- Trapped in collapsing research facility, discovers corpse can power machinery via "soul resonance"
+- Trapped in collapsing research facility, discovers corpse can power machinery via "soul discharge"
 - Binds his deceased wife Elena's soul to experimental exosuit (first Casket)
 - **Founding moment of the Ossuarium**
 
@@ -167,7 +167,7 @@
 **Suicide Missions**:
 - Some factions send expeditions to Ground Zero (seeking answers, artifacts, or penance)
 - **Church of Absolution**: Considers pilgrimage to Scar ultimate atonement (death is expected)
-- **Dwarven engineers**: Attempt to study Engine remnants (hoping to understand resonance technology)
+- **Dwarven engineers**: Attempt to study Engine remnants (hoping to understand dimensional saturation technology)
 - **Bonelord Karath**: Theorizes that destroying the Engine would "close the Void" (unproven)
 
 **Recovered Artifacts**:
@@ -182,7 +182,7 @@
 ### Scientific Perspective (Dwarven Forge-Guilds)
 
 **What Theslar Built**:
-- Resonance amplifier designed to tap "zero-point energy" (vacuum energy)
+- Dimensional amplifier designed to tap "zero-point energy" (vacuum energy)
 - Accidentally tuned to wrong frequency (resonated with Void instead of spacetime)
 - **Theory**: Void is "outside" reality, existing in quantum foam beneath spacetime
 - **Theslar's Mistake**: He punched a hole in the fabric of reality itself

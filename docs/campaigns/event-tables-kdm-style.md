@@ -412,7 +412,7 @@ An elf scout delivers **cryptic warning**:
 
 ---
 
-### 56 - RESONANCE PULSE
+### 56 - VOID SURGE
 
 **Type**: Environmental Event
 

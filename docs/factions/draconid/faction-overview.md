@@ -263,7 +263,7 @@ Drakthar appears and challenges strongest player pilot to honorable combat.
 - Refuse: Drakthar spreads word of player's cowardice (-1 Reputation with all factions)
 
 **4. The Fourth Cycle**
-Duskwind has located a "resonance point" where fourth Cataclysm could be triggered. Offers to show players.
+Duskwind has located a "Convergence Point" where fourth Cataclysm could be triggered. Offers to show players.
 - Choice: Help him trigger it (reset the cycle) OR stop him (preserve current world)
 - Consequence: Either way, Duskwind becomes major campaign antagonist or ally
 

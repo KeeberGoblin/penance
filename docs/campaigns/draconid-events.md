@@ -143,7 +143,7 @@ When a Draconid event is triggered, roll 1d20:
 
 ### 16-17: The Fourth Cycle (Late Game - Mission 7+)
 
-**Event**: Duskwind reveals his true plan. He's located a "resonance point" where the fourth Cataclysm could be artificially triggered. He believes the current world is stagnant and needs to be reset.
+**Event**: Duskwind reveals his true plan. He's located a "Convergence Point" where the fourth Cataclysm could be artificially triggered. He believes the current world is stagnant and needs to be reset.
 
 **Location**: Ancient Engine prototype ruins (pre-Theslar structure from Second Cataclysm)
 
@@ -153,13 +153,13 @@ When a Draconid event is triggered, roll 1d20:
 **Player Choices**:
 
 1. **Help Duskwind Trigger It**:
-   - Endgame: Activate the resonance point, cause controlled Cataclysm
+   - Endgame: Activate the Convergence Point, cause controlled Cataclysm
    - Consequence: World resets (ambiguous ending—unknown if it worked)
    - Reward: Duskwind's gratitude, knowledge of what comes after (uncertain)
    - Moral Weight: Billions die, but potentially save trillions in future cycles
 
 2. **Stop Duskwind**:
-   - Endgame: Assault on resonance point, fight Duskwind to prevent activation
+   - Endgame: Assault on Convergence Point, fight Duskwind to prevent activation
    - Consequence: Preserve current broken world
    - Reward: Heroes who "saved the world" (from perspective of current inhabitants)
    - Moral Weight: Condemn future generations to perpetual stagnation
