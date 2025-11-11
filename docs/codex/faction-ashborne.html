@@ -6,6 +6,33 @@
     <title>The Iron Doctrine - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
+        /* ASCII Art Image Effect */
+        .ascii-art-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            overflow: hidden;
+            background: #000;
+            border: 2px solid var(--aged-gold);
+            box-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+        }
+        .ascii-art {
+            font-family: 'Courier New', monospace;
+            font-size: 6px;
+            line-height: 6px;
+            letter-spacing: 0;
+            color: #8B4513;
+            background: #000;
+            padding: 0;
+            margin: 0;
+            white-space: pre;
+            overflow: hidden;
+            text-align: center;
+        }
+        #ascii-canvas {
+            display: none;
+        }
+
         /* Navigation bar for direct page access (not in iframe) */
         .codex-nav {
             display: none;
@@ -69,6 +96,12 @@
             <a href="#factions">FACTIONS</a> /
             The Iron Doctrine
         </nav>
+
+        <!-- ASCII Art Image -->
+        <div class="ascii-art-container">
+            <canvas id="ascii-canvas"></canvas>
+            <pre class="ascii-art" id="ascii-output"></pre>
+        </div>
 
         <h1>The Iron Doctrine</h1>
         <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">The Engine's Chosen - Bonus Secret Faction</h2>
@@ -761,6 +794,66 @@
             <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
         </div>
     </main>
+
+    <script>
+        // ASCII Art Image Converter
+        (function() {
+            const canvas = document.getElementById('ascii-canvas');
+            const output = document.getElementById('ascii-output');
+            const ctx = canvas.getContext('2d');
+
+            // ASCII characters from darkest to lightest
+            const ASCII_CHARS = '@%#*+=-:. ';
+
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.src = '../images/IronDoctrine.png';
+
+            img.onload = function() {
+                // Scale down the image for ASCII conversion
+                const targetWidth = 150; // ASCII characters wide
+                const aspectRatio = img.height / img.width;
+                const targetHeight = Math.floor(targetWidth * aspectRatio * 0.5); // 0.5 for character aspect ratio
+
+                canvas.width = targetWidth;
+                canvas.height = targetHeight;
+
+                // Draw image to canvas
+                ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+
+                // Get image data
+                const imageData = ctx.getImageData(0, 0, targetWidth, targetHeight);
+                const pixels = imageData.data;
+
+                // Convert to ASCII
+                let asciiImage = '';
+                for (let y = 0; y < targetHeight; y++) {
+                    for (let x = 0; x < targetWidth; x++) {
+                        const offset = (y * targetWidth + x) * 4;
+                        const r = pixels[offset];
+                        const g = pixels[offset + 1];
+                        const b = pixels[offset + 2];
+
+                        // Calculate brightness (grayscale)
+                        const brightness = (r + g + b) / 3;
+
+                        // Map brightness to ASCII character
+                        const charIndex = Math.floor((brightness / 255) * (ASCII_CHARS.length - 1));
+                        asciiImage += ASCII_CHARS[charIndex];
+                    }
+                    asciiImage += '\n';
+                }
+
+                // Display ASCII art
+                output.textContent = asciiImage;
+            };
+
+            img.onerror = function() {
+                output.textContent = 'Error loading image';
+            };
+        })();
+    </script>
+
     <script src="codex-common.js"></script>
 </body>
 </html>
