@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Species Demographics & Evolutionary Biology - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        /* Chart containers */
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .chart-card {
+            background: rgba(42, 31, 23, 0.3);
+            border: 2px solid var(--aged-gold);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .chart-card h3 {
+            text-align: center;
+            color: var(--aged-gold);
+            margin-top: 0;
+        }
+
+        /* Image placeholder styling */
+        .image-placeholder {
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border: 2px dashed var(--aged-gold);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--light-gray);
+            font-style: italic;
+        }
+
+        .species-card {
+            background: rgba(42, 31, 23, 0.15);
+            border-left: 4px solid var(--aged-gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .species-card h3 {
+            color: var(--aged-gold);
+            margin-top: 0;
+        }
+
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="content-home.html" target="_parent">CODEX</a> /
+            <a href="#lore">LORE</a> /
+            Species Demographics
+        </nav>
+
+        <h1>Species Demographics & Evolutionary Biology</h1>
+        <h2 style="color: var(--aged-gold); font-style: italic; margin-top: -1rem;">The Divergent Descendants of Humanity</h2>
+
+        <div class="manuscript-quote">
+            "We are all human. We simply forgot we came from the same ancestors. 50,000 years of isolation made us strangers."
+            <span class="quote-attribution">— Dr. Helena Vasquez, Pre-Sundering anthropologist (Year -42)</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Overview: Speciation Through Isolation</h2>
+
+        <p class="manuscript-text">
+            Before the Theslar Event, humanity was not one species—it was <strong>six distinct subspecies</strong> of <em>Homo sapiens</em>, each adapted to extreme environments over 50,000+ years of geographic isolation. What fantasy calls "dwarves" and "elves" are actually <strong>evolutionary divergences</strong> shaped by volcanic caverns, ancient forests, and isolated ecosystems.
+        </p>
+
+        <p class="manuscript-text">
+            The Sundering forced these subspecies into contact for the first time in millennia. They don't recognize each other as kin. They see aliens.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Population Demographics (Year 437 Post-Sundering)</h2>
+
+        <p class="manuscript-text" style="text-align: center; font-weight: 700;">
+            Total Surviving Population: ~12.4 Million
+        </p>
+
+        <p class="manuscript-text" style="text-align: center;">
+            <strong>Pre-Sundering Global Population:</strong> ~1.8 billion (1800s tech level)<br>
+            <strong>Casualties from Theslar Event:</strong> ~1.787 billion (99.3% mortality)<br>
+            <strong>437 Years of Attrition:</strong> Additional 40% population decline
+        </p>
+
+        <div class="chart-grid">
+            <div class="chart-card">
+                <h3>Population by Subspecies</h3>
+                <div class="chart-container">
+                    <canvas id="subspeciesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3>Population by Faction</h3>
+                <div class="chart-container">
+                    <canvas id="factionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>The Six Subspecies of Homo Sapiens</h2>
+
+        <div class="image-placeholder">
+            <p>[IMAGE: Comparative height chart showing all six subspecies side-by-side]</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">Homo sapiens sapiens (5'4"-6'2") | Homo Subterra (4'2"-4'10") | Homo Sylvanus (5'8"-6'6") | Homo Infernus (3'10"-4'8") | Homo Aquilus (5'6"-6'2") | Homo Polaris (5'0"-5'8")</p>
+        </div>
+
+        <!-- Homo sapiens sapiens -->
+        <div class="species-card">
+            <h3>1. Homo sapiens sapiens (Baseline Humans)</h3>
+            <p><strong>Common Names:</strong> Humans, Baseline, "The Unchanged"</p>
+            <p><strong>Population:</strong> 8.2 million (68.3% of survivors)</p>
+            <p><strong>Key Traits:</strong> Full melanin range, medium build, generalist physiology. No extreme adaptations—retained ancestral <em>Homo sapiens</em> phenotype.</p>
+            <p><strong>Lifespan:</strong> 60-80 years (pre-Sundering)</p>
+            <p><strong>Primary Factions:</strong> Church, Ossuarium, Exchange, Nomads</p>
+        </div>
+
+        <!-- Homo Subterra -->
+        <div class="species-card">
+            <h3>2. Homo Subterra (Dwarves)</h3>
+            <p><strong>Common Names:</strong> Dwarves, Forge-Kin, The Deep Folk, Stone-Born</p>
+            <p><strong>Evolutionary Origin:</strong> ~40,000 BCE - Descended into volcanic cavern systems in the Alps and Caucasus Mountains. 45,000+ years underground near geothermal heat, low oxygen, darkness, and volcanic gases.</p>
+
+            <h4 style="color: var(--aged-gold); margin-top: 1rem;">Physical Characteristics:</h4>
+            <ul class="manuscript-list">
+                <li><strong>Skin:</strong> Ash-gray to charcoal-black (melanin loss + volcanic ash exposure). Thick, heat-resistant dermis.</li>
+                <li><strong>Hair:</strong> Completely hairless (head, face, body). Hair follicles atrophied over 40,000 years.</li>
+                <li><strong>Eyes:</strong> Reflective tapetum lucidum (like cats). Amber, copper, or deep red coloration. Sensitive to bright light.</li>
+                <li><strong>Height:</strong> 4'2" - 4'10" (127-147 cm). Stocky build with barrel chest.</li>
+                <li><strong>Weight:</strong> 180-250 lbs (bone density 40% higher than baseline)</li>
+            </ul>
+
+            <h4 style="color: var(--aged-gold); margin-top: 1rem;">Cultural Identity:</h4>
+            <p class="manuscript-text">Facial tattoos using crushed minerals indicate clan, rank, and craft specialization. Runesmith tattoos are most intricate (master craftsmen). Smooth skin considered "unmarked" (childlike/unproven). Beardlessness is NOT a flaw—it's ancestral.</p>
+
+            <div class="image-placeholder">
+                <p>[IMAGE: Dwarf portrait showing ash-gray skin, runic facial tattoos, amber reflective eyes, hairless features]</p>
+            </div>
+
+            <div class="image-placeholder">
+                <p>[IMAGE: Tattoo pattern chart - clan markings, craft symbols, rank indicators]</p>
+            </div>
+
+            <p><strong>Population:</strong> Pre-Sundering: ~1.5 million | Year 437: 1.2 million (10% of survivors)</p>
+            <p><strong>Lifespan:</strong> 90-120 years</p>
+            <p><strong>Adaptations:</strong> Sulfur toxin immunity, seismic sensitivity, enhanced grip strength, slow metabolism (800 cal/day)</p>
+            <p><strong>Primary Factions:</strong> Forge-Guilds, Crucible Pacts</p>
+        </div>
+
+        <!-- Homo Sylvanus -->
+        <div class="species-card">
+            <h3>3. Homo Sylvanus (Elves)</h3>
+            <p><strong>Common Names:</strong> Elves, Verdant, The Rooted, Green-Kin</p>
+            <p><strong>Evolutionary Origin:</strong> ~50,000 BCE - Isolated in ancient Amazon Basin and Congo rainforests. Exposed to concentrated ley line energy for 50,000+ years. Developed symbiotic relationship with fungal networks (mycelial integration).</p>
+
+            <h4 style="color: var(--aged-gold); margin-top: 1rem;">Physical Characteristics:</h4>
+            <ul class="manuscript-list">
+                <li><strong>Skin:</strong> Chlorophyll-infused epidermis (pale green to olive-green tint). Semi-photosynthetic (absorb ~15% energy from sunlight). Bark-like texture on elbows, knees, spine.</li>
+                <li><strong>Hair:</strong> Living plant fibers (cellulose-based, not keratin). Colors: moss green, bark brown, autumn red. Can photosynthesize.</li>
+                <li><strong>Eyes:</strong> Compound iris structure (thousands of micro-lenses). See into infrared spectrum. Vertical slit pupils.</li>
+                <li><strong>Height:</strong> 5'8" - 6'6" (173-198 cm). Tall and willowy.</li>
+                <li><strong>Weight:</strong> 110-150 lbs (hollow bones like birds)</li>
+            </ul>
+
+            <h4 style="color: var(--aged-gold); margin-top: 1rem;">Casket Integration:</h4>
+            <p class="manuscript-text">Elves undergo <strong>"Root-Grafting"</strong> - legs replaced with living vine prosthetics that plug directly into Casket hydraulics (plant-machine hybrid interface). Can photosynthesize energy for Casket systems (backup power).</p>
+
+            <div class="image-placeholder">
+                <p>[IMAGE: Elf portrait showing green-tinted skin, bark texture on extremities, moss-green living hair, compound amber eyes]</p>
+            </div>
+
+            <div class="image-placeholder">
+                <p>[IMAGE: Root-Grafting diagram - vine prosthetics replacing legs, connecting to Casket hydraulics]</p>
+            </div>
+
+            <p><strong>Population:</strong> 480,000 (4% of survivors)</p>
+            <p><strong>Lifespan:</strong> 300-400 years (ley line exposure + photosynthetic supplementation)</p>
+            <p><strong>Adaptations:</strong> Mycorrhizal nervous system (fungal tendrils connect to forest networks), regeneration (regrow fingers/toes), poison immunity, seasonal dormancy</p>
+            <p><strong>Primary Factions:</strong> Verdant Covenant</p>
+        </div>
+
+        <!-- Homo Infernus -->
+        <div class="species-card">
+            <h3>4. Homo Infernus (Crucible Goblinoids)</h3>
+            <p><strong>Common Names:</strong> Goblinoids, Fire-Kin, Ashborn, Scrap-Folk</p>
+            <p><strong>Evolutionary Origin:</strong> ~35,000 BCE - Descended into Icelandic volcanic rifts and Mediterranean sulfur caves. 33,000+ years exposed to extreme geothermal radiation and toxic gases.</p>
+
+            <h4 style="color: var(--aged-gold); margin-top: 1rem;">Physical Characteristics:</h4>
+            <ul class="manuscript-list">
+                <li><strong>Skin:</strong> Ash-gray to soot-black. Ritual burn scars cover 30-60% of body (cultural rite of passage—badges of honor).</li>
+                <li><strong>Hair:</strong> White-gray to silver (thermal bleaching). Coarse texture. Often braided with obsidian beads.</li>
+                <li><strong>Eyes:</strong> Yellow to orange (sulfur-pigmented retinas). Reflective in firelight.</li>
+                <li><strong>Height:</strong> 3'10" - 4'8" (117-142 cm). Small but wiry.</li>
+                <li><strong>Weight:</strong> 85-120 lbs. Fast-twitch muscle fibers.</li>
+                <li><strong>Teeth:</strong> Filed teeth (cultural practice - sharpened canines)</li>
+            </ul>
+
+            <div class="image-placeholder">
+                <p>[IMAGE: Goblinoid portrait showing ash-gray skin, ritual burn scars, yellow eyes, white-gray braided hair with obsidian beads]</p>
+            </div>
+
+            <p><strong>Population:</strong> 220,000 (1.8% of survivors)</p>
+            <p><strong>Lifespan:</strong> 35-50 years (fast metabolism = early burnout)</p>
+            <p><strong>Adaptations:</strong> Pyrokinetic thermoregulation (body temp 102-105°F), sulfur toxin immunity, accelerated healing, pain suppression</p>
+            <p><strong>Cultural Identity:</strong> Burn scars are badges of honor. More scars = higher status. Fire-worship pre-dates written history.</p>
+            <p><strong>Primary Factions:</strong> Crucible Pacts</p>
+        </div>
+
+        <!-- Homo Aquilus -->
+        <div class="species-card">
+            <h3>5. Homo Aquilus (Desert-Adapted Nomads)</h3>
+            <p><strong>Common Names:</strong> Desert-Kin, Sandborn, Wind-Walkers</p>
+            <p><strong>Evolutionary Origin:</strong> ~30,000 BCE - Isolated in Sahara, Arabian, and Australian deserts. 29,000 years of extreme heat and water scarcity adaptation.</p>
+
+            <h4 style="color: var(--aged-gold); margin-top: 1rem;">Physical Characteristics:</h4>
+            <ul class="manuscript-list">
+                <li><strong>Skin:</strong> Deep bronze to copper-brown (extreme melanin concentration). No sweat glands (conserve water). Reflective sheen (silicon-based outer layer deflects UV).</li>
+                <li><strong>Hair:</strong> Black to dark brown. Coarse texture. Dreadlocks common (natural formation).</li>
+                <li><strong>Eyes:</strong> Double eyelids (nictitating membrane for sandstorms). Brown to amber.</li>
+                <li><strong>Height:</strong> 5'6" - 6'2" (168-188 cm)</li>
+                <li><strong>Weight:</strong> 130-170 lbs (lean, hollow bones)</li>
+            </ul>
+
+            <div class="image-placeholder">
+                <p>[IMAGE: Nomad portrait showing bronze skin, sand-glass tattoos (melted silica), double eyelids, natural dreadlocks]</p>
+            </div>
+
+            <p><strong>Population:</strong> 1.8 million (15% of survivors)</p>
+            <p><strong>Lifespan:</strong> 50-70 years</p>
+            <p><strong>Adaptations:</strong> Water conservation (kidneys extract 99% moisture), temperature extremes (120°F days, 40°F nights), endurance running (50+ miles/day)</p>
+            <p><strong>Primary Factions:</strong> Nomad Collective</p>
+        </div>
+
+        <!-- Homo Polaris -->
+        <div class="species-card">
+            <h3>6. Homo Polaris (Northern Ice-Adapted)</h3>
+            <p><strong>Common Names:</strong> Frostborn, Pale Folk, Ice-Kin</p>
+            <p><strong>Evolutionary Origin:</strong> ~25,000 BCE - Isolated in Arctic Circle (Siberia, Greenland, Northern Canada). 25,000 years of extreme cold adaptation.</p>
+
+            <h4 style="color: var(--aged-gold); margin-top: 1rem;">Physical Characteristics:</h4>
+            <ul class="manuscript-list">
+                <li><strong>Skin:</strong> Alabaster white (complete melanin loss). Thick subcutaneous fat layer (4x baseline). Semi-translucent (veins visible).</li>
+                <li><strong>Hair:</strong> White, platinum blonde, or ice-blue. Dense (50% more follicles).</li>
+                <li><strong>Eyes:</strong> Pale blue, gray, or white (minimal pigmentation). Reflective tapetum lucidum.</li>
+                <li><strong>Height:</strong> 5'0" - 5'8" (152-173 cm). Compact build.</li>
+                <li><strong>Weight:</strong> 160-220 lbs (dense fat reserves)</li>
+            </ul>
+
+            <div class="image-placeholder">
+                <p>[IMAGE: Frostborn portrait showing alabaster skin, ice-blue hair, pale eyes, translucent complexion with blue undertone]</p>
+            </div>
+
+            <p><strong>Population:</strong> ~50,000 (0.4% of survivors - CRITICALLY ENDANGERED)</p>
+            <p><strong>Pre-Sundering Population:</strong> ~2.5 million (98% killed in Theslar Event - epicenter was Arctic)</p>
+            <p><strong>Lifespan:</strong> 70-100 years</p>
+            <p><strong>Adaptations:</strong> Extreme cold resistance (-60°F indefinitely), brown fat thermogenesis, hibernation capability</p>
+            <p><strong>Status:</strong> Near-extinct. Most integrated into other factions or bound to Iron Doctrine trains.</p>
+            <p><strong>Prognosis:</strong> Extinction within 200 years without intervention (genetic bottleneck, inbreeding depression)</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Post-Sundering Mutations (Non-Evolutionary)</h2>
+
+        <div class="species-card">
+            <h3>Vestige Bloodlines (Void-Mutated Humans)</h3>
+            <p><strong>NOT a subspecies</strong> - recent mutations (Year 0 - Year 437). Baseline humans exposed to Void radiation. Rapid mutation over 1-5 generations.</p>
+            <p><strong>Population:</strong> ~150,000 (1.2% of survivors)</p>
+            <p><strong>Examples:</strong> Serrak (reptilian), Vexis (insectoid), Fenmar (lupine), Urtok (ursine), Corvath (avian)</p>
+        </div>
+
+        <div class="species-card">
+            <h3>Emergent Syndicate (Collective Consciousness)</h3>
+            <p><strong>NOT a subspecies</strong> - metamorphosis into hive-mind. Voluntary transformation via Chrysalis process. Chitinous exoskeletons replace human biology. Individual consciousness merges into collective.</p>
+            <p><strong>Population:</strong> ~100,000 drones + unknown hive-minds</p>
+        </div>
+
+        <div class="species-card">
+            <h3>Iron Doctrine (Train-Bound Immortals)</h3>
+            <p><strong>NOT a subspecies</strong> - accidental soul-fusion with Eternal Trains (Year 0). Immortal but bound to Pulse Rails. Cannot age, cannot die (while on rails), cannot leave trains.</p>
+            <p><strong>Population:</strong> ~200,000 (1.7% of population)</p>
+            <p><strong>Composition:</strong> Mixed subspecies (mostly baseline humans + Frostborn survivors)</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Biological Compatibility & Interbreeding</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Cross</th>
+                    <th>Fertility</th>
+                    <th>Offspring Viability</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Human × Human</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>Baseline</td>
+                </tr>
+                <tr>
+                    <td>Human × Dwarf</td>
+                    <td>60%</td>
+                    <td>80%</td>
+                    <td>Hybrid offspring common (medium height, partial heat resistance)</td>
+                </tr>
+                <tr>
+                    <td>Human × Elf</td>
+                    <td>40%</td>
+                    <td>60%</td>
+                    <td>Rare (photosynthesis trait unstable, often stillborn)</td>
+                </tr>
+                <tr>
+                    <td>Human × Goblinoid</td>
+                    <td>30%</td>
+                    <td>50%</td>
+                    <td>Very rare (metabolic incompatibility)</td>
+                </tr>
+                <tr>
+                    <td>Human × Desert-Adapted</td>
+                    <td>95%</td>
+                    <td>95%</td>
+                    <td>Nearly identical genetics</td>
+                </tr>
+                <tr>
+                    <td>Dwarf × Elf</td>
+                    <td>&lt;5%</td>
+                    <td>&lt;20%</td>
+                    <td>Biologically incompatible (volcanic vs forest adaptation)</td>
+                </tr>
+                <tr>
+                    <td>Elf × Goblinoid</td>
+                    <td>&lt;10%</td>
+                    <td>&lt;30%</td>
+                    <td>Symbiotic fungi reject goblinoid thermoregulation</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="manuscript-text" style="margin-top: 1rem;">
+            <strong>Cultural Taboos:</strong> Most factions consider interbreeding "diluting bloodlines." The Exchange allows it (pragmatic eugenics programs). Nomads practice it (survival > purity).
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Evolutionary Timeline</h2>
+
+        <pre class="manuscript-text" style="background: rgba(42, 31, 23, 0.3); padding: 1.5rem; border-left: 4px solid var(--aged-gold); overflow-x: auto;">
+~200,000 BCE: Homo sapiens emerges in Africa
+
+~50,000 BCE: Elven Divergence
+  └─ Homo Sylvanus (ley line exposure in ancient forests)
+
+~40,000 BCE: Dwarven Descent
+  └─ Homo Subterra (volcanic cavern adaptation)
+
+~35,000 BCE: Geographic isolation continues
+  ├─ Homo Infernus (geothermal rifts)
+  ├─ Homo Aquilus (desert extremes)
+  └─ Homo Polaris (Arctic conditions)
+
+~10,000 BCE: Agriculture develops (baseline humans only)
+
+~5,000 BCE: First contact between subspecies
+  - Trade routes established
+  - Subspecies recognized as "different peoples"
+  - Myth of "separate creation" begins
+
+~1,200 Years Ago: The Veil Accords
+  - Mages and non-human species sign agreement to remain hidden
+  - Memory-wiping, misinformation campaigns
+  - "Revealing magic would mean war"
+
+Year -100 to Year 0: Industrial age
+  - Subspecies integrated into global economy
+  - Dwarven engineering, Elven bio-sciences flourish
+  - Pre-Sundering world: multicultural, subspecies-diverse
+
+Year 0: Theslar Event (The Sundering)
+  - 99.3% of all subspecies killed
+  - Survivors form factions along subspecies lines
+  - Cultural identity supersedes biological identity
+
+Year 437: Present day
+  - Subspecies intermarriage rare but increasing
+  - Void mutations create NEW post-human variants
+  - Humanity's future uncertain
+        </pre>
+
+        <div class="image-placeholder">
+            <p>[IMAGE: World map showing pre-Sundering subspecies distribution]</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">Homo Sylvanus (Amazon, Congo forests) | Homo Subterra (Alps, Caucasus mountains) | Homo Infernus (Iceland, Mediterranean volcanic zones) | Homo Aquilus (Sahara, Arabia, Australia) | Homo Polaris (Arctic Circle) | Homo sapiens sapiens (everywhere else)</p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Extinction Threats</h2>
+
+        <div style="background: rgba(139, 0, 0, 0.2); border: 2px solid var(--dark-red); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Critically Endangered: Homo Polaris (Frostborn)</h3>
+            <p class="manuscript-text">
+                <strong>Pre-Sundering Population:</strong> ~2.5 million<br>
+                <strong>Year 437 Population:</strong> ~50,000 (98% decline)
+            </p>
+            <p class="manuscript-text">
+                <strong>Causes:</strong>
+            </p>
+            <ul class="manuscript-list">
+                <li>Theslar Event epicenter was North Pole (their homeland)</li>
+                <li>Arctic survivors fled south (heat intolerance)</li>
+                <li>Genetic bottleneck (inbreeding depression)</li>
+                <li>Low birth rates in temperate climates</li>
+            </ul>
+            <p class="manuscript-text">
+                <strong>Prognosis:</strong> Extinction within 200 years without intervention
+            </p>
+        </div>
+
+        <div style="background: rgba(139, 69, 19, 0.2); border: 2px solid var(--aged-gold); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Vulnerable: Homo Sylvanus (Elves)</h3>
+            <p class="manuscript-text">
+                <strong>Threat:</strong> Deforestation + Void corruption destroying sacred groves
+            </p>
+            <p class="manuscript-text">
+                <strong>Year 437 Status:</strong>
+            </p>
+            <ul class="manuscript-list">
+                <li>40% of ancestral forests destroyed</li>
+                <li>Mycorrhizal networks collapsing</li>
+                <li>Elves who lose grove connection suffer <strong>"The Withering"</strong> (slow death)</li>
+            </ul>
+            <p class="manuscript-text">
+                <strong>Prognosis:</strong> Stable if remaining forests protected
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>GM Notes: Using Subspecies in Play</h2>
+
+        <div style="background: rgba(75, 14, 14, 0.15); border-left: 4px solid var(--aged-gold); padding: 1.5rem; margin: 1.5rem 0;">
+            <h3 style="color: var(--aged-gold); margin-top: 0;">Physical Traits Are Visible</h3>
+            <ul class="manuscript-list">
+                <li>Dwarven ash-skin and tattoos are instantly recognizable</li>
+                <li>Elven green tint and bark patches mark them as "other"</li>
+                <li>Desert-Adapted bronze skin distinguishes Nomads</li>
+                <li>Goblinoid burn scars and small stature are unmistakable</li>
+            </ul>
+
+            <h3 style="color: var(--aged-gold);">Mechanical Implications</h3>
+            <ul class="manuscript-list">
+                <li><strong>Dwarves:</strong> +1 Heat Resistance, -1 Bright Light Penalty</li>
+                <li><strong>Elves:</strong> +1 Regeneration (regrow 1 card/mission in sunlight), -1 Cold Resistance</li>
+                <li><strong>Goblinoids:</strong> +1 Speed, -1 Endurance</li>
+                <li><strong>Desert-Adapted:</strong> +1 Endurance, -1 Cold Resistance</li>
+            </ul>
+
+            <h3 style="color: var(--aged-gold);">Roleplay Hooks</h3>
+            <ul class="manuscript-list">
+                <li>"You're a Dwarf. The Church doesn't trust Dwarves. They think your volcanic heritage taints you."</li>
+                <li>"As an Elf, you feel the forest screaming. Every tree felled is pain."</li>
+                <li>"Goblinoids live fast, die young. You're 38—ancient by your people's standards."</li>
+                <li>"You're Frostborn. One of maybe 50,000 left alive. People stare at your albino skin like you're a ghost."</li>
+            </ul>
+
+            <h3 style="color: var(--aged-gold);">Cross-Subspecies Tensions</h3>
+            <ul class="manuscript-list">
+                <li><strong>Dwarves vs Elves:</strong> "You worship dirt. We worship fire."</li>
+                <li><strong>Humans vs Non-Humans:</strong> "We survived without mutations. You needed crutches."</li>
+                <li><strong>All vs Vestige:</strong> "You're not evolution. You're corruption."</li>
+                <li><strong>Nomads vs Settled Factions:</strong> "You build walls. We build survival."</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>Explore Further</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="lore-pre-sundering.html" target="_parent"><strong>Pre-Sundering World</strong></a></td>
+                    <td>How subspecies lived together before The Sundering</td>
+                </tr>
+                <tr>
+                    <td><a href="lore-sundering.html" target="_parent"><strong>The Theslar Event</strong></a></td>
+                    <td>The cataclysm that killed 99% of all subspecies</td>
+                </tr>
+                <tr>
+                    <td><a href="faction-dwarves.html" target="_parent"><strong>Dwarven Forge-Guilds</strong></a></td>
+                    <td>Homo Subterra in Year 437 - culture and technology</td>
+                </tr>
+                <tr>
+                    <td><a href="faction-elves.html" target="_parent"><strong>Elven Verdant Covenant</strong></a></td>
+                    <td>Homo Sylvanus and their dying forests</td>
+                </tr>
+                <tr>
+                    <td><a href="faction-crucible.html" target="_parent"><strong>Crucible Pacts</strong></a></td>
+                    <td>Homo Infernus goblinoid fire-worshippers</td>
+                </tr>
+                <tr>
+                    <td><a href="faction-nomads.html" target="_parent"><strong>Nomad Collective</strong></a></td>
+                    <td>Homo Aquilus desert survivors</td>
+                </tr>
+                <tr>
+                    <td><a href="faction-ashborne.html" target="_parent"><strong>Iron Doctrine</strong></a></td>
+                    <td>Mixed subspecies bound to Eternal Trains (includes Frostborn refugees)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+    </main>
+
+    <script>
+        // Population by Subspecies Pie Chart
+        const subspeciesCtx = document.getElementById('subspeciesChart').getContext('2d');
+        new Chart(subspeciesCtx, {
+            type: 'pie',
+            data: {
+                labels: [
+                    'Homo sapiens sapiens (Humans)',
+                    'Homo Aquilus (Desert-Adapted)',
+                    'Homo Subterra (Dwarves)',
+                    'Homo Sylvanus (Elves)',
+                    'Homo Infernus (Goblinoids)',
+                    'Vestige Bloodlines (Mutated)',
+                    'Emergent Syndicate',
+                    'Iron Doctrine (Train-Bound)',
+                    'Homo Polaris (Frostborn)'
+                ],
+                datasets: [{
+                    data: [8200000, 1800000, 1200000, 480000, 220000, 150000, 100000, 200000, 50000],
+                    backgroundColor: [
+                        '#8B7355', // Humans - tan
+                        '#CD853F', // Nomads - bronze
+                        '#696969', // Dwarves - gray
+                        '#6B8E23', // Elves - olive green
+                        '#B22222', // Goblinoids - fire red
+                        '#8B008B', // Vestige - dark magenta
+                        '#20B2AA', // Emergent - teal
+                        '#708090', // Iron Doctrine - slate
+                        '#E0F2F7'  // Frostborn - ice blue
+                    ],
+                    borderColor: '#8B4513',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            color: '#D4C5B0',
+                            font: {
+                                size: 11
+                            },
+                            boxWidth: 15
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                let value = context.parsed;
+                                let percentage = ((value / 12400000) * 100).toFixed(1);
+                                return label + ': ' + value.toLocaleString() + ' (' + percentage + '%)';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Population by Faction Bar Chart
+        const factionCtx = document.getElementById('factionChart').getContext('2d');
+        new Chart(factionCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Church',
+                    'Nomads',
+                    'Dwarves',
+                    'Ossuarium',
+                    'Exchange',
+                    'Elves',
+                    'Crucible',
+                    'Unaffiliated',
+                    'Wyrd',
+                    'Iron Doctrine',
+                    'Vestige',
+                    'Emergent'
+                ],
+                datasets: [{
+                    label: 'Population',
+                    data: [2400000, 2100000, 1100000, 950000, 900000, 480000, 350000, 2390000, 280000, 200000, 150000, 100000],
+                    backgroundColor: '#8B4513',
+                    borderColor: '#D4C5B0',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#D4C5B0',
+                            callback: function(value) {
+                                return (value / 1000000).toFixed(1) + 'M';
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(139, 69, 19, 0.2)'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#D4C5B0'
+                        },
+                        grid: {
+                            color: 'rgba(139, 69, 19, 0.2)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return 'Population: ' + context.parsed.x.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script src="codex-common.js"></script>
+</body>
+</html>

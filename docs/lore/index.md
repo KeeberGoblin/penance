@@ -7,6 +7,9 @@ The dark medieval fantasy world of Penance, 437 years after the apocalypse.
 ### [World Overview](world-overview.md)
 The Sundering, the Theslar Engine, and the birth of the Remnants. How the world ended and what remains.
 
+### [Species Demographics & Evolutionary Biology](species-demographics.md)
+The six human subspecies: Dwarves (ash-skinned, hairless, volcanic-adapted), Elves (green-tinted, plant-integrated), Goblinoids (fire-resistant), Desert-Adapted Nomads, Frostborn (nearly extinct), and baseline Humans. Population data, evolutionary history, and 50,000 years of divergent adaptation.
+
 ### [Chronicle Entries](chronicle.md)
 Complete timeline from Year 0 (The Sundering) to Year 437 (Present Day). Major historical events across 9 factions.
 
