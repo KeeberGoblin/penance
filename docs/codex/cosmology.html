@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
         :root {
-            --void-purple: #1a0a2e;
-            --void-glow: #9d4edd;
+            --leather-dark: #2d1f15;
+            --leather-medium: #5c4033;
+            --leather-glow: #b8860b;
             --blood-red: #8b0000;
             --ancient-gold: #d4af37;
             --shadow-black: #0d0d0d;
@@ -73,11 +74,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(180deg, var(--void-purple) 0%, var(--shadow-black) 100%);
+            background: linear-gradient(180deg, var(--leather-dark) 0%, var(--shadow-black) 100%);
             overflow: hidden;
             margin: -2rem -2rem 3rem -2rem;
             padding: 4rem 2rem;
-            border-bottom: 3px solid var(--void-glow);
+            border-bottom: 3px solid var(--leather-glow);
         }
 
         .hero-section::before {
@@ -88,7 +89,7 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 50%, rgba(157, 78, 221, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
             animation: pulse-void 8s ease-in-out infinite;
         }
@@ -103,7 +104,7 @@
             font-family: 'Cinzel', serif;
             color: var(--ancient-gold);
             text-align: center;
-            text-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+            text-shadow: 0 0 20px rgba(184, 134, 11, 0.5);
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
@@ -112,7 +113,7 @@
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: var(--void-glow);
+            color: var(--leather-glow);
             text-align: center;
             font-style: italic;
             position: relative;
@@ -168,7 +169,7 @@
             top: 50%;
             width: 30%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--void-glow), transparent);
+            background: linear-gradient(90deg, transparent, var(--leather-glow), transparent);
         }
 
         .cosmic-divider::before {
@@ -181,7 +182,7 @@
 
         .cosmic-symbol {
             font-size: 2.5rem;
-            color: var(--void-glow);
+            color: var(--leather-glow);
             display: inline-block;
             animation: rotate-symbol 20s linear infinite;
         }
@@ -193,8 +194,8 @@
 
         /* Enhanced layer cards */
         .layer-card {
-            background: linear-gradient(135deg, rgba(26, 10, 46, 0.4) 0%, rgba(13, 13, 13, 0.6) 100%);
-            border: 2px solid var(--void-glow);
+            background: linear-gradient(135deg, rgba(45, 31, 21, 0.4) 0%, rgba(13, 13, 13, 0.6) 100%);
+            border: 2px solid var(--leather-glow);
             border-radius: 8px;
             padding: 2rem;
             margin: 2rem 0;
@@ -205,7 +206,7 @@
 
         .layer-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(157, 78, 221, 0.3);
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);
         }
 
         .layer-card::before {
@@ -215,7 +216,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(157, 78, 221, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -254,12 +255,12 @@
 
         .species-stat {
             display: inline-block;
-            background: rgba(157, 78, 221, 0.1);
+            background: rgba(184, 134, 11, 0.1);
             padding: 0.3rem 0.8rem;
             margin: 0.3rem;
             border-radius: 4px;
             font-size: 0.9rem;
-            border: 1px solid rgba(157, 78, 221, 0.3);
+            border: 1px solid rgba(184, 134, 11, 0.3);
         }
 
         /* Timeline table enhancement */
@@ -273,7 +274,7 @@
         }
 
         .timeline-table thead {
-            background: linear-gradient(135deg, var(--void-purple), var(--blood-red));
+            background: linear-gradient(135deg, var(--leather-dark), var(--blood-red));
         }
 
         .timeline-table th {
@@ -282,7 +283,7 @@
             color: var(--ancient-gold);
             font-family: 'Cinzel', serif;
             font-size: 1.1rem;
-            border-bottom: 2px solid var(--void-glow);
+            border-bottom: 2px solid var(--leather-glow);
         }
 
         .timeline-table tbody tr {
@@ -291,12 +292,12 @@
         }
 
         .timeline-table tbody tr:hover {
-            background: rgba(157, 78, 221, 0.1);
+            background: rgba(184, 134, 11, 0.1);
         }
 
         .timeline-table td {
             padding: 1rem;
-            border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+            border-bottom: 1px solid rgba(184, 134, 11, 0.2);
         }
 
         .timeline-table tbody tr:last-child td {
@@ -305,7 +306,7 @@
 
         /* Emphasis boxes */
         .void-callout {
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(26, 10, 46, 0.3));
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(45, 31, 21, 0.3));
             border: 2px solid var(--blood-red);
             border-radius: 8px;
             padding: 1.5rem;
@@ -315,12 +316,13 @@
         }
 
         .void-callout::before {
-            content: '⚠';
+            content: '!';
             position: absolute;
             top: 1rem;
             right: 1rem;
             font-size: 3rem;
             opacity: 0.1;
+            font-weight: bold;
             animation: pulse-warning 2s ease-in-out infinite;
         }
 
@@ -330,8 +332,8 @@
         }
 
         .gm-secret {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 10, 46, 0.6));
-            border: 3px double var(--void-glow);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(45, 31, 21, 0.6));
+            border: 3px double var(--leather-glow);
             border-radius: 8px;
             padding: 2rem;
             margin: 2rem 0;
@@ -339,21 +341,22 @@
         }
 
         .gm-secret::before {
-            content: '🔒 GM KNOWLEDGE ONLY';
+            content: '[GM KNOWLEDGE ONLY]';
             display: block;
-            color: var(--void-glow);
+            color: var(--leather-glow);
             font-family: 'Cinzel', serif;
             font-weight: bold;
             font-size: 1.2rem;
             margin-bottom: 1rem;
             text-align: center;
-            text-shadow: 0 0 10px var(--void-glow);
+            text-shadow: 0 0 10px var(--leather-glow);
+            letter-spacing: 0.1em;
         }
 
         /* Quote enhancement */
         .manuscript-quote {
-            background: linear-gradient(135deg, rgba(26, 10, 46, 0.3), rgba(13, 13, 13, 0.5));
-            border-left: 4px solid var(--void-glow);
+            background: linear-gradient(135deg, rgba(45, 31, 21, 0.3), rgba(13, 13, 13, 0.5));
+            border-left: 4px solid var(--leather-glow);
             padding: 1.5rem 2rem;
             margin: 2rem 0;
             font-style: italic;
@@ -367,7 +370,7 @@
             top: -10px;
             left: 10px;
             font-size: 4rem;
-            color: var(--void-glow);
+            color: var(--leather-glow);
             opacity: 0.3;
             font-family: Georgia, serif;
         }
@@ -383,7 +386,7 @@
 
         /* Theslar info box */
         .theslar-box {
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(26, 10, 46, 0.4));
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(45, 31, 21, 0.4));
             border: 3px solid var(--blood-red);
             border-radius: 12px;
             padding: 2rem;
@@ -409,7 +412,7 @@
 
         .theory-card {
             background: rgba(20, 20, 20, 0.6);
-            border: 2px solid rgba(157, 78, 221, 0.3);
+            border: 2px solid rgba(184, 134, 11, 0.3);
             border-radius: 8px;
             padding: 1.5rem;
             transition: all 0.3s ease;
@@ -417,8 +420,8 @@
         }
 
         .theory-card:hover {
-            border-color: var(--void-glow);
-            box-shadow: 0 5px 20px rgba(157, 78, 221, 0.3);
+            border-color: var(--leather-glow);
+            box-shadow: 0 5px 20px rgba(184, 134, 11, 0.3);
             transform: scale(1.02);
         }
 
@@ -433,11 +436,11 @@
             display: inline-block;
             width: 12px;
             height: 12px;
-            background: var(--void-glow);
+            background: var(--leather-glow);
             border-radius: 50%;
             margin: 0 0.5rem;
             animation: pulse-energy 2s ease-in-out infinite;
-            box-shadow: 0 0 10px var(--void-glow);
+            box-shadow: 0 0 10px var(--leather-glow);
         }
 
         @keyframes pulse-energy {
@@ -472,7 +475,7 @@
             top: 0;
             left: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--blood-red), var(--void-glow));
+            background: linear-gradient(90deg, var(--blood-red), var(--leather-glow));
             z-index: 9999;
             transform-origin: left;
             transition: transform 0.1s ease;
@@ -525,7 +528,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- The Three-Layered Cosmos -->
@@ -583,7 +586,7 @@
                             <td><strong>Year 0</strong></td>
                             <td><strong>THE SUNDERING</strong>—Theslar Engine tears reality apart</td>
                         </tr>
-                        <tr style="background: rgba(157, 78, 221, 0.1);">
+                        <tr style="background: rgba(184, 134, 11, 0.1);">
                             <td><strong>Year 437</strong></td>
                             <td><strong>PRESENT DAY</strong>—Nine factions war in the ruins</td>
                         </tr>
@@ -644,7 +647,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- Species Origins -->
@@ -809,7 +812,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- Nikolas Theslar -->
@@ -866,7 +869,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- The Veil Accords -->
@@ -905,7 +908,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- Metaphysics -->
@@ -1074,12 +1077,12 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- The Secret Truth -->
         <section class="gm-secret reveal-section">
-            <h2 style="color: var(--void-glow); text-align: center;">The Draconids Were Right</h2>
+            <h2 style="color: var(--leather-glow); text-align: center;">The Draconids Were Right</h2>
             <p class="manuscript-text" style="font-style: italic;">
                 The Cataclysm has happened <strong>three times total</strong> (including the current one):
             </p>
@@ -1108,7 +1111,7 @@
                         <td>Year 0</td>
                         <td>Void (Theslar's Engine)</td>
                     </tr>
-                    <tr style="background: rgba(157, 78, 221, 0.2);">
+                    <tr style="background: rgba(184, 134, 11, 0.2);">
                         <td><strong>Fourth?</strong></td>
                         <td><strong>~Year 20,000+</strong></td>
                         <td><strong>???</strong></td>
@@ -1126,7 +1129,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- Conclusion -->
@@ -1151,7 +1154,7 @@
         </section>
 
         <div style="text-align: center; margin: 4rem 0;">
-            <span style="font-size: 4rem; color: var(--void-glow);">✦</span>
+            <span style="font-size: 4rem; color: var(--leather-glow);">*</span>
         </div>
     </main>
 
