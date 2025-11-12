@@ -47,45 +47,26 @@
             margin: 0 0.25rem;
         }
 
-            /* Navigation bar for direct page access (not in iframe) */
-        .codex-nav {
-            display: none;
-            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
-            border-bottom: 2px solid var(--aged-gold);
-            padding: 0.75rem 1.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        /* Interactive scroll reveal effects */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .codex-nav-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+
+        .reveal-section.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .codex-nav a {
-            color: var(--aged-gold);
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            white-space: nowrap;
+
+        /* Void-themed animations */
+        @keyframes voidPulse {
+            0%, 100% { text-shadow: 0 0 5px rgba(139, 0, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(139, 0, 0, 0.8); }
         }
-        .codex-nav a:hover {
-            color: var(--parchment);
-        }
-        .codex-nav .nav-home {
-            color: var(--dark-red);
-            font-weight: 700;
-        }
-        .codex-nav .nav-separator {
-            color: var(--medium-brown);
-            margin: 0 0.25rem;
+
+        .void-header {
+            animation: voidPulse 3s ease-in-out infinite;
         }
 
 </style>
@@ -112,7 +93,7 @@
             The Void
         </nav>
 
-        <h1>The Void: Extradimensional Corruption</h1>
+        <h1 class="void-header">The Void: Extradimensional Corruption</h1>
 
         <div class="manuscript-quote">
             "It's not a place. It's not a thing. It's the space between realities...the nothing that exists when everything breaks. And we tore a hole straight into it."
@@ -127,6 +108,7 @@
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
+        <section class="reveal-section">
         <h2>What Is the Void?</h2>
 
         <h3>Scientific Understanding (Ossuarium Research)</h3>
@@ -174,11 +156,13 @@
         <p class="manuscript-text">
             The Wyrd believe the Void is "un-reality"...the raw potential from which all realities are born. They embrace it, shape it, dance with it. To them, the Void isn't corruption...it's liberation from physics' tyranny.
         </p>
+        </section>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
+        <section class="reveal-section">
         <h2>The Breach at Ground Zero</h2>
 
         <h3>The Primary Void Rift</h3>
@@ -226,11 +210,13 @@
                 <strong>Critical Question:</strong> Can the rift be closed? No one knows. Destroying the Engine remnants might seal it...or trigger catastrophic expansion. Every faction debates the risk. None dare attempt it.
             </p>
         </div>
+        </section>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
+        <section class="reveal-section">
         <h2>Secondary Void Rifts</h2>
 
         <h3>How They Form</h3>
@@ -276,11 +262,13 @@
             <li><strong>The Drowned Cities:</strong> Multiple 5-10 meter rifts, submerged, aquatic Abominations</li>
             <li><strong>Titan's Grave:</strong> 25 meters, industrial ruins, mechanical Abominations</li>
         </ul>
+        </section>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
+        <section class="reveal-section">
         <h2>Void Corruption Stages</h2>
 
         <h3>How Void Energy Affects Living Things</h3>
@@ -400,11 +388,13 @@
             <li><strong>Regeneration:</strong> Wounds close rapidly unless soul core destroyed</li>
             <li><strong>Corruption Aura:</strong> Living beings near Abominations suffer Stage 1 symptoms within minutes</li>
         </ul>
+        </section>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
+        <section class="reveal-section">
         <h2>How the Void Enables Soul-Binding</h2>
 
         <h3>The Connection</h3>
@@ -444,11 +434,13 @@
                 <strong>The Horrible Irony:</strong> The same force that destroyed civilization makes survival possible. Close the Void breach, and soul-binding fails. Caskets stop. Humanity loses its greatest weapon. The apocalypse that killed 90% of humanity is now the only thing keeping the survivors alive.
             </p>
         </div>
+        </section>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
+        <section class="reveal-section">
         <h2>Void Artifacts</h2>
 
         <h3>Objects Corrupted by Void Energy</h3>
@@ -487,11 +479,13 @@
                 </tr>
             </tbody>
         </table>
+        </section>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
+        <section class="reveal-section">
         <h2>Faction Perspectives on the Void</h2>
 
         <table>
@@ -540,11 +534,13 @@
             "The Void isn't our enemy. It's not our ally. It just is. Like gravity. Like death. We didn't understand it, so we broke it. And now we live in the pieces."
             <span class="quote-attribution">-Ossuarium Researcher</span>
         </div>
+        </section>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
         </div>
 
+        <section class="reveal-section">
         <h2>Can the Void Be Stopped?</h2>
 
         <h3>Theoretical Solutions</h3>
@@ -586,6 +582,7 @@
                 <strong>The Stalemate:</strong> Every faction debates closing the Void. None agree on how. And all fear the same question: If we close it, do we lose Caskets? Do we lose our only defense? So we do nothing. And the rift expands. One meter per year. Forever.
             </p>
         </div>
+        </section>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
@@ -625,5 +622,25 @@
         </div>
     </main>
     <script src="codex-common.js"></script>
+    <script>
+        // Scroll-triggered reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal sections
+        document.querySelectorAll('.reveal-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
