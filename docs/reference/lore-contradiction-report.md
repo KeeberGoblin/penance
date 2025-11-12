@@ -76,7 +76,7 @@ After analyzing 27+ lore files (8,000+ lines of narrative content), the **Penanc
 **Inconsistency**:
 - `world-overview.md:78` calls them "Chitinous Ascendancy"
 - `world-overview.md:232-248` uses "Chitinous Ascendancy" in faction philosophy section
-- `docs/factions/emergent/lore-sibarian-origin.md` consistently calls them "Emergent Syndicate"
+- `docs/factions/emergent/lore-siberian-origin.md` consistently calls them "Emergent Syndicate"
 - `cosmology-and-origins.md:203` uses "Chitinous Ascendancy"
 
 **Current Standard**: **"Emergent Syndicate"** (official faction name)
@@ -134,10 +134,10 @@ These are **designed mysteries** where multiple factions have competing theories
 
 ## ✅ MINOR INCONSISTENCIES (Low Priority)
 
-### 1. **Sibarian Research Station Survivor Count**
+### 1. **Siberian Research Station Survivor Count**
 
 **Slight Discrepancy**:
-- `emergent/lore-sibarian-origin.md:15` says: "47 researchers, 12 security, 6 support = **65 total**"
+- `emergent/lore-siberian-origin.md:15` says: "47 researchers, 12 security, 6 support = **65 total**"
 - Later in same file says "**65 survivors**" (consistent)
 - BUT `world-overview.md` doesn't give exact numbers (just mentions "researchers")
 
@@ -148,7 +148,7 @@ These are **designed mysteries** where multiple factions have competing theories
 ### 2. **Dr. Elena Vance's Age**
 
 **Math Check**:
-- `emergent/lore-sibarian-origin.md:216` says: "Age: 487 (Year 437)"
+- `emergent/lore-siberian-origin.md:216` says: "Age: 487 (Year 437)"
 - This means she was born in **Year -50** (50 years before Sundering)
 - She would have been **50 years old** when Sundering happened (Year 0)
 - Plausible age for senior researcher
@@ -238,7 +238,7 @@ Cross-referenced `factions/relationships.md` against faction-specific lore:
 ### Dr. Elena Vance & Dr. Marcus Chen
 
 **Mentions**:
-- `emergent/lore-sibarian-origin.md`: Full bios, ages, roles, personalities
+- `emergent/lore-siberian-origin.md`: Full bios, ages, roles, personalities
 - Ages: Vance (487), Chen (481) - both 1st generation Syndicate
 
 **Status**: ✅ **CONSISTENT** (only mentioned in Emergent lore, no conflicts)

@@ -10,7 +10,7 @@
 
 The Theslar Engine is **not a MacGuffin** - it's an interactive, dangerous location that players can attempt to influence, sabotage, or exploit. Inspired by Kingdom Death's sense of looming dread and asymmetric consequences, the Engine is:
 - **A ticking clock** - it grows more unstable over time
-- **A risk/reward zone** - entering the Sibarian Wastes is suicidal but lucrative
+- **A risk/reward zone** - entering the Siberian Wastes is suicidal but lucrative
 - **Factionally divisive** - each faction wants a different outcome
 - **Never fully controllable** - players can influence, but not master
 
@@ -20,7 +20,7 @@ The Theslar Engine is **not a MacGuffin** - it's an interactive, dangerous locat
 
 ### Physical Description
 
-The **Theslar Engine** is a miles-high tower of corroded brass and crystalline structures, standing in the exact center of the **Sibarian Wastes**. It pulses with a rhythmic thrum that can be felt for hundreds of miles - a heartbeat of reality-tearing energy.
+The **Theslar Engine** is a miles-high tower of corroded brass and crystalline structures, standing in the exact center of the **Siberian Wastes**. It pulses with a rhythmic thrum that can be felt for hundreds of miles - a heartbeat of reality-tearing energy.
 
 **Appearance**:
 - **Lower Levels (The Roots)**: Buried in corrupted earth, overgrown with Soulstone formations like cancerous tumors. Abominations nest here.
@@ -54,7 +54,7 @@ Each campaign session, the Instability increases by +1 naturally (the Engine is 
 | 0-5 | **Stable** - Engine is quiet. Abomination spawns are rare. Soulstones are scarce. |
 | 6-10 | **Active** - Current state. Void rifts appear regularly. Soulstone growth is steady. |
 | 11-15 | **Critical** - The Pulses occur every 3 hours. Weather near the Engine becomes erratic (storms, gravity fluctuations). |
-| 16-19 | **Cascading** - Reality begins breaking down beyond the Sibarian Wastes. Void rifts appear in civilized territories. Panic spreads. |
+| 16-19 | **Cascading** - Reality begins breaking down beyond the Siberian Wastes. Void rifts appear in civilized territories. Panic spreads. |
 | 20+ | **The Second Sundering** - Campaign failure. The Engine detonates, triggering a second Cataclysm. World ends. |
 
 ### The Doomsday Clock
@@ -69,7 +69,7 @@ If players ignore the Engine, it **will** destroy the world. The campaign has a 
 
 ### Expedition Missions
 
-Players can undertake **Sibarian Wastes Expeditions** - high-risk missions into the exclusion zone.
+Players can undertake **Siberian Wastes Expeditions** - high-risk missions into the exclusion zone.
 
 **Expedition Structure**:
 1. **Approach Phase**: Travel through corrupted terrain (2-3 encounters with Abominations)

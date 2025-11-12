@@ -24,7 +24,7 @@ For a complete explanation of **why fantasy creatures exist**, **how this relate
 
 In the height of the **Old World's Golden Age**, the great artificer-mage **Nikolas Theslar** believed he had discovered the secret to infinite energy—a method to harness the planet's own magnetic field and broadcast power wirelessly across the entire world. No more hunger, no more war over resources, no more darkness.
 
-His grand experiment was conducted at the **Sibarian Wastes Research Station**, a massive tower complex built at the convergence of ley lines. The theory was sound. The calculations were perfect.
+His grand experiment was conducted at the **Siberian Wastes Research Station**, a massive tower complex built at the convergence of ley lines. The theory was sound. The calculations were perfect.
 
 **But the world itself was not empty.**
 
@@ -33,7 +33,7 @@ When Theslar activated **The Engine** (then called the "Theslar Engine" by scien
 ### The Immediate Effects
 
 **Hour 0-6: The Pulse**
-- Electromagnetic shockwave radiates from Sibaria at the speed of light
+- Electromagnetic shockwave radiates from Siberia at the speed of light
 - All active technology—arcane or mechanical—**instantly fails**
 - Skyships plummet from the heavens
 - Artifice engines explode
@@ -77,7 +77,7 @@ When Theslar activated **The Engine** (then called the "Theslar Engine" by scien
 
 **Year 250-350: The Mutation Age**
 - Vestige Bloodlines emerge as distinct faction after Exodus (Year 352)
-- Emergent Syndicate appears from Sibarian ground zero (Year 381)
+- Emergent Syndicate appears from Siberian ground zero (Year 381)
 - Reality fractures increase in frequency and severity
 - Fae incursions become more frequent and unpredictable
 - Nomad Collective masters survival in the most hostile regions
@@ -94,7 +94,7 @@ When Theslar activated **The Engine** (then called the "Theslar Engine" by scien
 - Nine major factions locked in endless cycles of conflict
 - Casket technology is mature, sophisticated, and deadly
 - Void rifts still appear daily, spawning monsters
-- The Engine in Sibaria still pulses after 437 years, still tears reality
+- The Engine in Siberia still pulses after 437 years, still tears reality
 - Some seek to destroy it; others want to control it; most just try to survive it
 
 ---
@@ -112,7 +112,7 @@ Different factions have different interpretations of the Cataclysm:
 - Only through **Penance**—endless atonement via suffering and sacrifice—can humanity earn forgiveness
 - Casket pilots are **Penitent Knights**, bearing the weight of sin in iron shells
 - Using Soulstones is spiritually dangerous but necessary evil
-- **Goal**: Destroy the Sibarian Engine, seal the Void, restore divine favor
+- **Goal**: Destroy the Siberian Engine, seal the Void, restore divine favor
 
 **Cultural Impact**: Humans build gothic Caskets covered in prayer scrolls, chains, and religious iconography. They call their pilots "Penitents" and treat Casket combat as sacred ritual.
 
@@ -234,7 +234,7 @@ Different factions have different interpretations of the Cataclysm:
 ### Emergent Syndicate (Arthropod Collective)
 **"Evolution Demanded Sacrifice. We Answered"**
 
-- Pre-Sundering, they were **human researchers** at Sibaria, exposed to the Engine at ground zero
+- Pre-Sundering, they were **human researchers** at Siberia, exposed to the Engine at ground zero
 - Void energy fused them with **arthropod genetic templates** stored in bio-labs
 - Not mutation—**metamorphosis**. They are post-human, multi-limbed, chitinous, hive-minded
 - **Soulstones are neural bridges**, allowing individual consciousness within the collective
@@ -251,7 +251,7 @@ Different factions have different interpretations of the Cataclysm:
 
 ## Geography: The Shattered Realms
 
-### The Sibarian Wastes (The Wound)
+### The Siberian Wastes (The Wound)
 **Status**: Uninhabitable Exclusion Zone
 
 - Ground zero of the Cataclysm
@@ -391,7 +391,7 @@ Near dragon lairs? They incorporate fossilized dragon essence.
 
 - No faction can conquer the others (Caskets make total war too costly)
 - **Arena Combat** becomes proxy warfare—disputes settled by champion duels
-- **Monster Raids** from the Sibarian Wastes unite factions temporarily
+- **Monster Raids** from the Siberian Wastes unite factions temporarily
 - **Soulstone scarcity** drives conflict—everyone needs them, supply is limited
 - **The Engine** still pulses; some want it destroyed, others want it controlled
 
@@ -410,7 +410,7 @@ Near dragon lairs? They incorporate fossilized dragon essence.
 ## Storytelling Hooks for Campaigns
 
 ### Campaign Arc 1: "The Scavenger's Crusade"
-- Players are scavengers raiding the Sibarian Wastes for Soulstones
+- Players are scavengers raiding the Siberian Wastes for Soulstones
 - Each mission pushes deeper toward The Engine
 - Corruption increases; moral choices about using forbidden power
 - Climax: Reach the Engine, decide its fate
@@ -471,7 +471,7 @@ All major world-building systems have been designed:
 
 - [x] **Loot Tables** (rewards & scavenging) — **[loot-tables.md](loot-tables.md)**
   - 4 rarity tiers (Common, Uncommon, Rare, Legendary)
-  - Specialized tables (Abominations, NPC Pilots, Sibarian Wastes)
+  - Specialized tables (Abominations, NPC Pilots, Siberian Wastes)
   - Faction trade goods and crafting system
 
 ---

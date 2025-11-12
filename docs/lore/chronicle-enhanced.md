@@ -49,7 +49,7 @@
 ---
 
 ## Chronicle XII: Containment Breach Echo-7
-### Year 142 - Sibarian Research Station Alpha
+### Year 142 - Siberian Research Station Alpha
 
 **Source**: Automated distress beacon, still broadcasting
 **Classification**: KETER
@@ -59,7 +59,7 @@
 
 > **[AUTOMATED MESSAGE - LOOP 47,912]**
 >
-> "This is Sibarian Research Station Alpha. Containment breach of Anomaly Echo-7 confirmed. Repeat: CONTAINMENT BREACH.
+> "This is Siberian Research Station Alpha. Containment breach of Anomaly Echo-7 confirmed. Repeat: CONTAINMENT BREACH.
 >
 > Echo-7 has breached primary containment. Secondary wards have failed. All personnel are advised to evacuate to—
 >
@@ -203,7 +203,7 @@
 >
 > **Priest**: "...explain."
 >
-> **Confessor**: "I was scavenging in the Sibarian Wastes. Found a pre-Sundering shelter. Inside, there was a *mirror*. Not broken. Not cracked. Perfectly intact. And when I looked into it... I saw someone else. A man. Just a man. He was crying. Tears running down his face. And then... I felt his sorrow. Not my own. *His*."
+> **Confessor**: "I was scavenging in the Siberian Wastes. Found a pre-Sundering shelter. Inside, there was a *mirror*. Not broken. Not cracked. Perfectly intact. And when I looked into it... I saw someone else. A man. Just a man. He was crying. Tears running down his face. And then... I felt his sorrow. Not my own. *His*."
 >
 > **Priest**: "Did you touch the mirror?"
 >
@@ -231,7 +231,7 @@
 
 > The Weeping Man (as we've come to call him) has been crying for 3 years straight. We've collected 47 liters of liquid Soulstone. Analysis shows it's not one soul—it's *thousands*. Fragmented, dissolved, mixed together like watercolors bleeding into one another.
 >
-> We believe the mirror in the Sibarian Wastes is a "soul trap"—a pre-Sundering device meant to contain The Engine's overflow. When The Sundering happened, it absorbed everyone within a 5-mile radius. Their souls are still in there. Still conscious. Still weeping.
+> We believe the mirror in the Siberian Wastes is a "soul trap"—a pre-Sundering device meant to contain The Engine's overflow. When The Sundering happened, it absorbed everyone within a 5-mile radius. Their souls are still in there. Still conscious. Still weeping.
 >
 > The Weeping Man will cry until he's empty. Then he'll die. And another soul will surface from the mirror's depths. And another. And another.
 >
