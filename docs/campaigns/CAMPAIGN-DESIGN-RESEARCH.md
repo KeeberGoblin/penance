@@ -241,7 +241,7 @@ Mission 5: "The Prisoner"
 ## Recommended First Campaign
 
 **"The Scavenger's Crusade"** (from world-overview.md)
-- Already hooks into existing lore (Sibarian Wastes, The Engine)
+- Already hooks into existing lore (Siberian Wastes, The Engine)
 - Natural escalation (start small, end apocalyptic)
 - Multiple factions involved (Church, Dwarves, Fae, Abominations)
 - Clear moral dilemmas (use forbidden power vs stay pure)

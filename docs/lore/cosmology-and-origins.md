@@ -422,7 +422,7 @@ Before the Theslar Event, humanity was not one species—it was **six distinct s
 **Origin**: Humans mutated by Void exposure in the first 50 years post-Sundering.
 
 **How They Formed**:
-- Early survivors in Void-heavy regions (near Sibaria, along ley line ruptures) were exposed to raw chaotic energy
+- Early survivors in Void-heavy regions (near Siberia, along ley line ruptures) were exposed to raw chaotic energy
 - Void energy doesn't just corrupt - it **rewrites biology randomly**
 - First generation: Minor mutations (enhanced senses, claws, fur patches)
 - Second generation: Major mutations (human-animal hybrids - wolf-men, bear-folk, insectoid humanoids)
@@ -438,10 +438,10 @@ Before the Theslar Event, humanity was not one species—it was **six distinct s
 
 ### Emergent Syndicate (Arthropod Collective)
 
-**Origin**: Human researchers at Sibaria, ground zero, during the Sundering.
+**Origin**: Human researchers at Siberia, ground zero, during the Sundering.
 
 **How They Transformed**:
-- The Sibarian Research Station had bio-labs containing genetic samples (arthropods, arachnids, insects)
+- The Siberian Research Station had bio-labs containing genetic samples (arthropods, arachnids, insects)
 - When the Engine activated, Void energy fused the researchers with these samples
 - **Not random mutation** - this was metamorphosis. They became post-human, multi-limbed, chitinous, insectoid
 
@@ -472,7 +472,7 @@ Before the Theslar Event, humanity was not one species—it was **six distinct s
 
 **The Theslar Engine Project**:
 - Funded by a coalition of governments (human-only; non-human species were unaware of the project)
-- Built in the Sibarian Wastes at the convergence of 7 major ley lines
+- Built in the Siberian Wastes at the convergence of 7 major ley lines
 - Goal: Broadcast infinite clean energy wirelessly across the world
 - **He genuinely believed he was saving humanity** - no more fossil fuels, no more war over resources, no more poverty
 

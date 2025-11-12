@@ -1,4 +1,4 @@
-# The Sibarian Research Station - Origin of the Emergent Syndicate
+# The Siberian Research Station - Origin of the Emergent Syndicate
 
 **Location**: Ground zero of the Theslar Engine activation  
 **Date**: Year 0 (The Sundering) to Year 437 (Present Day)
@@ -7,7 +7,7 @@
 
 ## Year 0: The Sundering
 
-### Sibarian Research Station
+### Siberian Research Station
 
 **What It Was**:
 - Remote research facility 5 miles from Engine activation site
@@ -19,7 +19,7 @@
 - **Time**: Day 0, 14:37 UTC
 - **Distance from epicenter**: 5 miles (evacuation impossible in time)
 - **Dr. Theslar's final transmission**: "It's singing."
-- **Sibarian Station's final transmission**: "Void energy saturation 300%. Containment failing. We're not getting out. Recommend..." *(static)*
+- **Siberian Station's final transmission**: "Void energy saturation 300%. Containment failing. We're not getting out. Recommend..." *(static)*
 
 ---
 
@@ -39,7 +39,7 @@
 
 **Day 3**: The Arthropod Specimens
 
-**Critical Detail**: Sibarian Station housed arthropod specimens for Void resistance testing:
+**Critical Detail**: Siberian Station housed arthropod specimens for Void resistance testing:
 - **Why arthropods?** Exoskeletons = natural Void barriers (chitin resists corruption)
 - **Specimens**: Mantises, beetles, ants, spiders (15 species, 200+ specimens)
 - **Containment breach**: Void energy fused human DNA with arthropod DNA
@@ -52,7 +52,7 @@
 
 ### The Choice
 
-Unlike Vestige Bloodlines (who mutated randomly), Sibarian researchers **stayed conscious during transformation**:
+Unlike Vestige Bloodlines (who mutated randomly), Siberian researchers **stayed conscious during transformation**:
 
 **Dr. Vance's journal (Day 12)**:
 > "I can feel where the limbs are going to grow. I can *direct* it. This isn't corruption—it's evolution. We're choosing our form."
@@ -261,7 +261,7 @@ Over 50-200 years, Syndicate perfects controlled evolution:
 
 ---
 
-## Sibarian Ruins (Present Day)
+## Siberian Ruins (Present Day)
 
 ### The Station
 
@@ -289,7 +289,7 @@ Over 50-200 years, Syndicate perfects controlled evolution:
 ## Campaign Hooks
 
 ### Early Campaign
-- **"First Contact"**: Players discover Sibarian ruins, encounter Syndicate scouts
+- **"First Contact"**: Players discover Siberian ruins, encounter Syndicate scouts
 - **"The Offer"**: Syndicate offers metamorphosis to wounded player (desperate choice)
 - **"Specimen Hunt"**: Syndicate hires players to capture live arthropods (new species for integration)
 
@@ -300,7 +300,7 @@ Over 50-200 years, Syndicate perfects controlled evolution:
 
 ### Late Campaign
 - **"Join the Hive"**: Players offered metamorphosis (become Syndicate, gain powers, lose privacy)
-- **"Destroy the Station"**: Church hires players to destroy Sibarian ruins (end "abominations")
+- **"Destroy the Station"**: Church hires players to destroy Siberian ruins (end "abominations")
 - **"Synthesis"**: Negotiate compromise (regulated metamorphosis, ethical guidelines, UN-style oversight)
 
 ---

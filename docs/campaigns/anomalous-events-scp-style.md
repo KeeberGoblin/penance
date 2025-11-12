@@ -9,7 +9,7 @@
 
 ## CONTAINMENT PROTOCOL OVERVIEW
 
-The Sibarian Theslar Engine has been active for 437 years. Its influence has created **anomalous phenomena**—artifacts, entities, and locations that defy natural law.
+The Siberian Theslar Engine has been active for 437 years. Its influence has created **anomalous phenomena**—artifacts, entities, and locations that defy natural law.
 
 Various factions attempt **containment** of these anomalies. Most fail.
 
@@ -21,7 +21,7 @@ This document catalogs **Anomalous Events** that occur when containment breaches
 
 **Roll on Anomalous Event Table when:**
 - Settlement has **Research Lab** building (experiments can go wrong)
-- Mission takes place in **Sibarian Wastes** (ground zero, maximum instability)
+- Mission takes place in **Siberian Wastes** (ground zero, maximum instability)
 - Any pilot reaches **10+ Taint** (personal reality corruption)
 - Deployment roll is **66** and GM wants maximum horror
 
@@ -175,7 +175,7 @@ This document catalogs **Anomalous Events** that occur when containment breaches
 
 ## ARTIFACT DISCOVERY TABLE (1d100)
 
-Roll when exploring Sibarian Wastes, looting high-Taint enemies, or finding hidden caches.
+Roll when exploring Siberian Wastes, looting high-Taint enemies, or finding hidden caches.
 
 ### 01-20: SAFE ARTIFACTS (Useful, Minor Side Effects)
 
@@ -275,7 +275,7 @@ Roll when exploring Sibarian Wastes, looting high-Taint enemies, or finding hidd
 ### 81-95: APOLLYON ARTIFACTS (World-Ending Potential)
 
 #### Artifact: "The Key to the Engine"
-**Effect**: Can shut down Sibarian Theslar Engine permanently (end the apocalypse)
+**Effect**: Can shut down Siberian Theslar Engine permanently (end the apocalypse)
 **Side Effect**: Shutting down Engine kills everyone with Taint (90% of world population)
 **Danger Level**: Extinction
 **Moral Dilemma**: Save the world or save the people?
@@ -361,13 +361,13 @@ Roll when exploring Sibarian Wastes, looting high-Taint enemies, or finding hidd
 
 ---
 
-### SCP-PE-103: "The Choir of Sibaria"
+### SCP-PE-103: "The Choir of Siberia"
 **Threat Level**: Apollyon
 
 **Description**: The pilots absorbed into Theslar Engine (see Chronicle IX). They sing. The song is infectious.
 
 **Encounter**:
-- When within 5 miles of Sibarian Wastes, pilots hear **singing**
+- When within 5 miles of Siberian Wastes, pilots hear **singing**
 - Song is beautiful, haunting, impossible to ignore
 - Each turn exposed, roll Willpower (1d6, need 4+)
 - Failure: Pilot gains 1 Taint and moves 1 hex toward Engine (compulsion)

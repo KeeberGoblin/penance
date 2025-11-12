@@ -226,7 +226,7 @@ You pay the cost. Market is built. You can now use Trade actions this phase.
 - **Story Missions**: Advance campaign narrative
 - **Side Missions**: Optional, resource-focused
 - **Faction Missions**: Offered by rival factions (affects reputation)
-- **Engine Expeditions**: High-risk Sibarian Wastes missions (rare, high reward)
+- **Engine Expeditions**: High-risk Siberian Wastes missions (rare, high reward)
 
 **If you have The Watchtower**:
 - May **scout 1 mission** before choosing

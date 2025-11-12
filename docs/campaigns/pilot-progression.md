@@ -124,7 +124,7 @@ These events grant immediate Scars, bypassing the "every 3 missions" rule:
 | 14 | **Eldritch Insight** | **Positive**: Once per mission, force an enemy to reroll their AI card draw. You predict their moves. |
 | 15 | **Living Soulstone** | **Mixed**: Your heart is partially crystallized. You no longer need a Soulstone to pilot (saves credits), but you gain +1 Taint per settlement phase automatically. |
 | 16 | **Aberrant Physiology** | **Mixed**: Gain 1 Aberrant-class ability (choose from Aberrant racial traits), but NPCs react with fear/hostility. |
-| 17 | **Voidwalker** | **Positive**: Ignore all Void exposure penalties in Sibarian Wastes. You've adapted. |
+| 17 | **Voidwalker** | **Positive**: Ignore all Void exposure penalties in Siberian Wastes. You've adapted. |
 | 18 | **Uncorrupted Soul** | **Positive**: Max Taint +2 (can go to 12 before transforming). Your will is iron. |
 | 19 | **Beyond the Veil** | **Positive**: When you die, you may return as an Undead NPC under GM control (one-time resurrection). |
 | 20 | **Reroll** or **Choose** | The Void is fickle. Pick any Corruption Scar (except Beyond the Veil). |

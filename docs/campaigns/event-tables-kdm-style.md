@@ -416,7 +416,7 @@ An elf scout delivers **cryptic warning**:
 
 **Type**: Environmental Event
 
-**Sibarian Wastes pulse**:
+**Siberian Wastes pulse**:
 - All Soulstones in settlement glow brighter
 - All pilots start mission with **+2 Heat** (Soulstone overcharge)
 - All attacks this mission deal +1 damage (Soulstone empowerment)
@@ -519,10 +519,10 @@ Roll 1d6 to determine catastrophe type:
 - Lose 2 of 3 = settlement is conquered (campaign ends)
 
 **6 - The Calling**:
-- All pilots hear **the Voice from the Void** calling them to Sibaria
+- All pilots hear **the Voice from the Void** calling them to Siberia
 - **Choice**:
   - **Resist**: Roll Willpower (1d6, need 4+), failure = gain 3 Taint
-  - **Answer**: Must immediately travel to Sibarian Wastes (legendary mission, extremely dangerous)
+  - **Answer**: Must immediately travel to Siberian Wastes (legendary mission, extremely dangerous)
 
 **Narrative**: The sky cracks. The world screams. This is the moment you've feared. The end has come.
 

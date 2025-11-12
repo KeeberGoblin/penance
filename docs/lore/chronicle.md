@@ -21,7 +21,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 ## Chronicle I: The Final Transmission
 ### Year 0, Hour 0 - The Sundering
 
-**Source**: Recovered audio crystal, Sibarian Wastes Research Station
+**Source**: Recovered audio crystal, Siberian Wastes Research Station
 **Credibility**: Authenticated by Forge-Guild archivists
 
 ---
@@ -345,7 +345,7 @@ These Chronicle entries serve as **world-building flavor**, designed to:
 ---
 
 ## Chronicle IX: The Screaming Choir
-### Year 83 - Sibarian Wastes Expedition
+### Year 83 - Siberian Wastes Expedition
 
 **Source**: Audio log, recovered from dead scout
 **Credibility**: Authenticated (but deeply disturbing)

@@ -11,7 +11,7 @@
 When Dr. Nikolas Theslar activated the Theslar Engine, evacuation orders went out across the Old World:
 - **Major cities**: Evacuated within hours (millions saved)
 - **Rural settlements**: Evacuated within weeks (thousands saved)
-- **Remote border towns near Sibaria**: **Never got the message** (forgotten)
+- **Remote border towns near Siberia**: **Never got the message** (forgotten)
 
 ### The Left Behind
 

@@ -35,7 +35,7 @@ Drawing from Kingdom Death's settlement reward system, loot is:
 ### 4. Settlement Events (Random)
 - Certain events on the Settlement Event table grant loot (see [settlement-mechanics.md](settlement-mechanics.md))
 
-### 5. Sibarian Wastes Expeditions
+### 5. Siberian Wastes Expeditions
 - Theslar Engine missions always yield loot, but at great risk (see [theslar-engine-mechanics.md](theslar-engine-mechanics.md))
 
 ---
@@ -153,7 +153,7 @@ Drawing from Kingdom Death's settlement reward system, loot is:
 | 9 | **Soulstone Core** | Their Casket's Soulstone (1d3 Fragments when refined) | Rare |
 | 10 | **Legendary Relic** | Their signature item (e.g., Vex's chains, Thresh's ledger) | Legendary |
 
-### Sibarian Wastes Loot (1d12)
+### Siberian Wastes Loot (1d12)
 *Roll this table when scavenging The Engine exclusion zone.*
 
 | Roll | Item | Effect | Rarity |

@@ -12,7 +12,7 @@
 ## Campaign Overview
 
 ### The Hook
-Your settlement has survived for 50 years on the edge of the Sibarian Wastes, scavenging Soulstones from the ruins. But recent expeditions report strange signals emanating from deeper within the Wastes—pulsing patterns that match no known Abomination signature.
+Your settlement has survived for 50 years on the edge of the Siberian Wastes, scavenging Soulstones from the ruins. But recent expeditions report strange signals emanating from deeper within the Wastes—pulsing patterns that match no known Abomination signature.
 
 The Council has authorized a deep expedition. Your mission: reach the source of the signals, claim whatever Soulstones you find, and return alive. Simple. Except nothing in the Wastes is ever simple.
 
@@ -120,7 +120,7 @@ The captured raider, **Kess the Vulture**, agrees to talk in exchange for medica
 **Act 1 - The Hook**
 
 ### Setup
-Your expedition enters the outer Sibarian Wastes. Reality is already "soft" here—gravity fluctuates, time feels wrong, distant screams echo from nowhere.
+Your expedition enters the outer Siberian Wastes. Reality is already "soft" here—gravity fluctuates, time feels wrong, distant screams echo from nowhere.
 
 **Map**: Wasteland Ruins (16×16 hexes, difficult terrain)
 **Enemies**: 3× Scrap Drones (Swarm Construct, 4 HP), 6× Tainted Rat Swarm (3 HP each), **BOSS:** 1× Tainted Ogre (Elite, 25 HP)
@@ -442,7 +442,7 @@ To prove commitment to chosen faction, you must complete their trial:
 **Act 3 - Resolution Begins**
 
 ### Setup
-With faction choice made, you must fight through the **Inner Sibarian Wastes** to reach The Engine itself. This is the most Taint-corrupted, reality-broken region on the planet.
+With faction choice made, you must fight through the **Inner Siberian Wastes** to reach The Engine itself. This is the most Taint-corrupted, reality-broken region on the planet.
 
 **Map**: Wasteland Hellscape (18×18 hexes, extreme hazards)
 **Enemies**: 6× Tainted Wolves (Swarm, 5 HP), 3× Engine Wraiths (Elite, 12 HP), 2× Faction Enemies (depends on alliances), **BOSS:** 1× Void Behemoth (Boss, 50 HP)

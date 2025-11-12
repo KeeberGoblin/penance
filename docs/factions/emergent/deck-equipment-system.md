@@ -389,7 +389,7 @@ The Emergent Syndicate embodies chosen evolution. Every card reflects their phil
 ## CAMPAIGN INTEGRATION
 
 ### Early Campaign Hooks
-- **Quest**: "First Contact" - Investigate strange signals from Sibarian ruins
+- **Quest**: "First Contact" - Investigate strange signals from Siberian ruins
 - **Quest**: "The Offer" - Syndicate offers to "improve" player through metamorphosis
 - **Quest**: "Specimen Retrieval" - Syndicate hires players to capture live Abominations
 
@@ -400,7 +400,7 @@ The Emergent Syndicate embodies chosen evolution. Every card reflects their phil
 
 ### Late Campaign Endgame
 - **Alliance Option**: Join Syndicate (become part of hive-mind, gain metamorphosis)
-- **Destruction Option**: Destroy Sibarian facility (end forced evolution experiments)
+- **Destruction Option**: Destroy Siberian facility (end forced evolution experiments)
 - **Synthesis Option**: Negotiate compromise (regulated evolution, ethical guidelines)
 
 ---

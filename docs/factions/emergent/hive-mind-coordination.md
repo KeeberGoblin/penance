@@ -238,4 +238,4 @@ The Emergent Syndicate's greatest strength is **collective action**. Individual 
 
 ---
 
-**[← Previous: Metamorph Mechanics](metamorph-mechanics.md)** | **[Next: Sibarian Origin →](lore-sibarian-origin.md)**
+**[← Previous: Metamorph Mechanics](metamorph-mechanics.md)** | **[Next: Siberian Origin →](lore-siberian-origin.md)**
