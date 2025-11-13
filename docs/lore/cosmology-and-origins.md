@@ -376,9 +376,9 @@ Before the Theslar Event, humanity was not one species—it was **seven distinct
 
 ---
 
-### 7. Atlanteans (Homo Atlanticus) - **THE RETURNED EXILES**
+### 7. Atlanteans (Homo Atlanticus) - **THE PHASING CITY**
 
-**Origin**: ~62,000 BCE - Earth's first great civilization. Proto-human evolutionary divergence that existed simultaneously in Material Plane and Feywild. Spent 50,000 years in Feywild exile after First Cataclysm, returned Year 412 Post-Sundering. Not mythological—they are **evolved proto-humans transformed by 50,000 years of dimensional exposure**.
+**Origin**: ~62,000 BCE - Earth's first great civilization. Proto-human evolutionary divergence that existed simultaneously in Material Plane and Feywild. Have been **cyclically phasing between dimensions for 62,000 years** due to leyline surges. Not mythological—they are **evolved proto-humans transformed by repeated dimensional transitions**.
 
 **Physical Characteristics**:
 
@@ -412,7 +412,8 @@ Before the Theslar Event, humanity was not one species—it was **seven distinct
 - Coagulates instantly (crystallizes into leyline-charged scabs)
 
 **Physiology**:
-- **Functionally immortal** (no observed natural deaths in 50,000 years - Feywild time dilation)
+- **Lifespan: 120-180 years** (Fey-enhanced but still mortal - NOT immortal)
+- **Chronological vs Subjective Age**: Feywild time dilation means centuries there = millennia on Earth
 - **Near-sterile** (1 in 1,000 conceptions succeed - Feywild exposure damaged fertility)
 - **Feywild dependency** (require 6+ hours/week Feywild immersion or suffer physical degradation)
 - **Phase shifting** (can partially phase into Feywild, becoming incorporeal for 30-60 seconds)
@@ -420,7 +421,7 @@ Before the Theslar Event, humanity was not one species—it was **seven distinct
 - **Timeless perception** (experience time non-linearly, occasional precognition)
 - **Reality editing** (minor Feywild reality-bending within 10 feet - water flows uphill, light bends)
 - **Dimensional anchor** (cannot be forcibly teleported, banished, or displaced)
-- Lifespan: Functionally immortal (oldest living Atlantean is 52,000 years old, subjectively experienced 800 years)
+- High Architect Thalassar: Chronologically 62,000 years old, subjectively ~1,200 years lived
 
 **Population**:
 - **Pre-Exile (~62,000 BCE)**: ~2 million
@@ -437,22 +438,26 @@ Before the Theslar Event, humanity was not one species—it was **seven distinct
 - **Cosmic loneliness**: Everyone they knew outside Atlantis died 50,000 years ago
 - **Cultural stagnation**: Functionally immortal = no generational change, frozen civilization
 
-**How They Stayed Hidden (Pre-Sundering)**:
-They didn't. Atlantis **vanished** in -50,000 BCE. Humanity evolved after they left. Atlantean myths in human culture are genetic memory—stories passed down from pre-modern humans who witnessed the city before it disappeared.
+**The Phasing Cycle**:
+Atlantis hasn't been exiled once. It has been **phasing between Material Plane and Feywild for 62,000 years**, pulled back and forth by leyline surges. Documented returns:
+- **First Founding** (~62,000-50,000 BCE): 12,000 years in Material
+- **Second Return** (~10,000-8,000 BCE): 2,000 years (recorded as "Great Flood" myths)
+- **Third Return** (~600-300 BCE): 300 years (Plato documented them in *Timaeus* & *Critias*)
+- **Current Return** (Year 412-Present): 25 years and counting
 
-**Why They Survived First Cataclysm**:
-When leyline surge destroyed their dimensional bridge in -50,000 BCE, Atlantean architects chose to phase **entirely into the Feywild** rather than anchor to Material Plane and die in global floods. They survived... but were severed from Earth for 50,000 years.
+**Draconid Secret**: This is the **seventh** return, not the fourth. Three earlier cycles lost to history. Pattern: return → brief stability → conflict → phasing back to Feywild. Atlanteans don't remember previous returns due to temporal psychosis from dimensional transitions.
 
-**Why They Returned**:
-The Theslar Event (Year 0) supercharged Earth's leyline network. By Year 412, dormant leylines reactivated, reopening the Eye of the Sahara's 12-fold nexus. The door home had opened. Despite Earth being transformed, hostile, and Void-corrupted, they chose to return: "Because home is a promise. We promised we would return."
+**Why They Keep Returning**:
+They don't choose. Leyline surges force dimensional shifts. The Theslar Event supercharged dormant leylines, reopening the Eye of the Sahara nexus in Year 412. They returned because the gateway pulled them through, not because they wanted to come home.
 
 **Post-Sundering**:
 - **Status**: Neutral isolationists. Claim only Eye of the Sahara + 100km exclusion zone
 - **No alliances**: Refuse diplomatic relations with all factions
 - **Self-sufficient**: Feywild conjuration + leyline farming (no need for trade)
 - **Technology**: 50,000+ years ahead of post-Sundering factions (leyline engineering, dimensional anchors, memory crystals)
-- **Tragedy**: Returned home only to discover they're slowly going extinct. Terminal sterility + cultural stagnation = doomed species
-- **GM Secret**: Draconid archives reveal Atlantis has returned **three times** in history. Second return (~10,000 BCE) failed. They're trapped in temporal loop: Return → Fail → Forget → Return. Is Year 437 the cycle-breaker or another repetition?
+- **Tragedy**: They age and die like any human (120-180 years), but civilization persists across millennia. Each return, everyone they knew is dead. They're perpetual strangers in their own homeland.
+- **Population Crisis**: Terminal sterility (1 in 1,000 births) + cultural stagnation = slow extinction
+- **GM Secret**: Draconid archives reveal this is the **seventh** return. Pattern always repeats: return → brief hope → conflict → phasing. High Architect Thalassar knows this. He's lived through all seven cycles. He expects an eighth.
 
 **Unique Threat**: Not hostile, but dangerously indifferent. View post-Sundering factions as "children playing with matches." Will not intervene to save humanity from itself. If Eye of the Sahara leyline nexus fails, Atlantis phases back to Feywild permanently—taking all their knowledge with them.
 
