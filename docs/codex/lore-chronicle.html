@@ -77,23 +77,27 @@
         .timeline-date {
             position: absolute;
             top: -1.5rem;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: var(--aged-gold);
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             opacity: 0;
             animation: fade-in linear forwards;
             animation-timeline: view();
             animation-range: contain 15% contain 45%;
+            white-space: nowrap;
+            max-width: 120px;
         }
 
         .timeline-group:nth-child(odd) .timeline-date {
-            right: calc(50% + 3rem);
+            right: calc(50% + 3.5rem);
+            text-align: right;
         }
 
         .timeline-group:nth-child(even) .timeline-date {
-            left: calc(50% + 3rem);
+            left: calc(50% + 3.5rem);
+            text-align: left;
         }
 
         /* Chronicle Card Styling */
