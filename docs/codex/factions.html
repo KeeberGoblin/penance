@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factions Index - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+        .faction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .faction-card {
+            background: linear-gradient(135deg, rgba(45, 31, 21, 0.3) 0%, rgba(26, 20, 16, 0.5) 100%);
+            border: 2px solid var(--medium-brown);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .faction-card:hover {
+            border-color: var(--aged-gold);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .faction-card h2 {
+            color: var(--aged-gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faction-card .tagline {
+            font-style: italic;
+            color: var(--faded-text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .faction-card a {
+            color: var(--parchment);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .faction-card a:hover {
+            color: var(--aged-gold);
+        }
+    </style>
+</head>
+<body>
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" target="_parent">CODEX</a> /
+            Factions Index
+        </nav>
+
+        <h1>Factions: The Powers of Year 437</h1>
+
+        <div class="manuscript-quote">
+            "No faction is pure. No faction is evil. They are all survivors, doing what they must to endure. Some embrace faith, some death, some nature's wrath. All fight. All suffer. All endure."
+            <span class="quote-attribution">— Draconid Archivist</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="faction-grid">
+            <div class="faction-card">
+                <h2><a href="faction-church.html" target="_parent">Church of Absolution</a></h2>
+                <div class="tagline">Faith, penance, and redemption through suffering</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-undead.html" target="_parent">The Ossuarium</a></h2>
+                <div class="tagline">Death is not the end—necrocracy eternal</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-elves.html" target="_parent">Verdant Covenant</a></h2>
+                <div class="tagline">Bio-organic symbiosis and nature's patient wrath</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-dwarves.html" target="_parent">Forge-Guilds</a></h2>
+                <div class="tagline">War-profiteers and master crafters</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-nomads.html" target="_parent">Desert Nomads</a></h2>
+                <div class="tagline">Eternal wanderers—home is survival</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-crucible.html" target="_parent">Crucible Pacts</a></h2>
+                <div class="tagline">Demon-blooded survivors of experimentation</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-exchange.html" target="_parent">The Exchange</a></h2>
+                <div class="tagline">Neutral trade network and economic power</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-fae.html" target="_parent">Wyrd Conclave</a></h2>
+                <div class="tagline">Reality manipulation and impossible bargains</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-emergent.html" target="_parent">Emergent Syndicate</a></h2>
+                <div class="tagline">Arthropod-human hybrids, hivemind collective</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-bloodlines.html" target="_parent">Vestige Bloodlines</a></h2>
+                <div class="tagline">Stabilized Void mutations, living experiments</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-draconid.html" target="_parent">Draconid Remembrance</a></h2>
+                <div class="tagline">Dragon-blooded archivists who've seen it all before</div>
+            </div>
+
+            <div class="faction-card">
+                <h2><a href="faction-ashborne.html" target="_parent">Ashborne Remnant</a></h2>
+                <div class="tagline">Survivors of volcanic apocalypse</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "For full lore, culture, and mechanics of each faction, see their dedicated pages."
+            <span class="quote-attribution">— Codex Note</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <a href="lore-factions-overview.html" target="_parent" style="color: var(--aged-gold); text-decoration: none; font-weight: 600;">
+                → View Detailed Factions Overview
+            </a>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
