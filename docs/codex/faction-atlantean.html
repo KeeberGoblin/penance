@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Atlantean Convergence - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Navigation bar for direct page access (not in iframe) */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+        .atlantean-glow {
+            background: linear-gradient(135deg, rgba(0, 128, 128, 0.1) 0%, rgba(0, 64, 64, 0.2) 100%);
+            border-left: 4px solid #008b8b;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+    <!-- Faction Header with Parchment Background -->
+    <div style="background:
+    var(--leather-texture),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 128, 128, 0.08) 1px,
+      rgba(0, 128, 128, 0.08) 2px
+    ),
+    linear-gradient(180deg, #4A9B9B 0%, #5FB2B2 50%, #4A9B9B 100%); padding: 3rem 2rem 0 2rem; margin: 0; position: relative; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+        <div style="text-align: center;">
+            <img src="../images/atlantean_PlaceH.png" alt="The Atlantean Convergence" style="max-width: 400px; width: 100%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
+            <h1 style="color: #0A2B2B; font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; margin: 1.5rem 0 0 0; text-shadow: 1px 1px 0 rgba(95, 178, 178, 0.8), -1px -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.05em; font-weight: 700;">The Atlantean Convergence</h1>
+        </div>
+        <!-- Torn Paper Effect -->
+        <div style="height: 30px; background: linear-gradient(to bottom, #3A8B8B 0%, transparent 100%); margin-top: 2rem; position: relative;">
+            <svg style="position: absolute; bottom: 0; width: 100%; height: 30px;" viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L0,15 Q50,25 100,15 T200,15 T300,15 T400,15 T500,15 T600,15 T700,15 T800,15 T900,15 T1000,15 T1100,15 L1200,15 L1200,0 Z" fill="#4A9B9B"/>
+            </svg>
+        </div>
+    </div>
+
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" target="_parent">CODEX</a> /
+            <a href="factions.html" target="_parent">FACTIONS</a> /
+            Atlantean Convergence
+        </nav>
+
+        <div class="manuscript-quote" style="background: linear-gradient(135deg, rgba(0, 128, 128, 0.2) 0%, rgba(0, 64, 64, 0.3) 100%); padding: 1rem; border: 2px solid #008b8b;">
+            NPC-ONLY FACTION - Not Playable (Quest-Givers, Lore Source, Neutral Observers)
+        </div>
+
+        <div class="manuscript-quote">
+            "They said we were myth. Legends spoken by firelight. But we were never gone. We were simply... elsewhere. And now, the doors have reopened. We have come home to a world that forgot us. A world that no longer wants us."
+            <span class="quote-attribution">— High Architect Thalassar, First Contact Address (Year 412)</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>Faction Overview</h2>
+
+        <table class="manuscript-table">
+            <tr>
+                <th>Philosophy</th>
+                <td>"We are the Between People. Neither Material nor Fae, human nor Other. We remember what was lost. We endure in exile's shadow."</td>
+            </tr>
+            <tr>
+                <th>Territory</th>
+                <td>The Eye of the Sahara (Richat Structure, Mauritania) - 40km diameter leyline nexus</td>
+            </tr>
+            <tr>
+                <th>Population</th>
+                <td>~47,000 Atlanteans (down from 2 million pre-exile, declining due to near-sterility)</td>
+            </tr>
+            <tr>
+                <th>Capital</th>
+                <td>Atlantis - The Timeless City (dual-reality metropolis existing in Material Plane + Feywild simultaneously)</td>
+            </tr>
+            <tr>
+                <th>Role in Game</th>
+                <td>Quest-givers, leyline experts, dimensional technology, neutral observers, tragic figures</td>
+            </tr>
+            <tr>
+                <th>Availability</th>
+                <td><strong>NPC-ONLY</strong> - Isolationist faction, no alliances, can be consulted for knowledge</td>
+            </tr>
+            <tr>
+                <th>Founded</th>
+                <td>~62,000 BCE (Original civilization) / Year 412 Post-Sundering (Returned from Feywild exile)</td>
+            </tr>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>The Between People: Homo Atlanticus</h2>
+
+        <p class="manuscript-text">
+            Atlanteans are <strong>not mythological demigods</strong>. They are <strong>proto-human evolutionary divergents</strong> who spent 50,000 years in the Feywild and emerged as something profoundly Other. They are Earth's first great civilization, transformed by dimensional exile into post-human beings who exist between realities.
+        </p>
+
+        <div class="manuscript-quote">
+            "Imagine encountering a 6'6" humanoid with iridescent teal skin that shifts like oil on water, eyes of solid aquamarine with no pupils that seem to look through time itself, and hair that flows as if underwater even in still air. When they move, reality seems to hesitate around them. When they speak, you hear echoes of words they haven't said yet. They are beautiful. They are wrong. They are home after 50,000 years, and the world doesn't recognize them."
+            <span class="quote-attribution">— Visual Identity of Atlanteans</span>
+        </div>
+
+        <h3>Physical Characteristics: The Fae-Touched</h3>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Trait</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Height</strong></td>
+                    <td>6'2" - 6'8" (189-203 cm) - Elongated by Feywild exposure</td>
+                </tr>
+                <tr>
+                    <td><strong>Build</strong></td>
+                    <td>Slender, elongated limbs, graceful movement (arboreal Fae influence)</td>
+                </tr>
+                <tr>
+                    <td><strong>Skin</strong></td>
+                    <td>Iridescent, shifts between teal/blue/silver depending on light. Slightly translucent (veins visible as glowing leyline patterns)</td>
+                </tr>
+                <tr>
+                    <td><strong>Eyes</strong></td>
+                    <td>Solid color, no visible pupils (teal, aquamarine, silver). Faint inner glow. See in infrared and leyline spectra</td>
+                </tr>
+                <tr>
+                    <td><strong>Hair</strong></td>
+                    <td>Ranges from white to deep ocean blue. Flows as if underwater even in still air. Some have bioluminescent strands</td>
+                </tr>
+                <tr>
+                    <td><strong>Blood</strong></td>
+                    <td>Luminescent silver-blue (leyline-infused hemoglobin). Glows faintly when exposed to air</td>
+                </tr>
+                <tr>
+                    <td><strong>Lifespan</strong></td>
+                    <td>Functionally immortal (no observed natural deaths in 50,000 years due to Feywild time dilation)</td>
+                </tr>
+                <tr>
+                    <td><strong>Reproduction</strong></td>
+                    <td>Near-sterile (1 in 1,000 conceptions succeed). Feywild exposure damaged fertility. Species doomed to extinction in 3,000-5,000 years</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Unique Abilities: Dimensional Mastery</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>Phase Shifting:</strong> Can partially phase into the Feywild, becoming translucent/incorporeal for 30-60 seconds. Pass through walls, avoid physical attacks</li>
+            <li><strong>Leyline Sight:</strong> See leylines as glowing threads connecting locations. Navigate by leyline topology. Can detect leyline disruptions miles away</li>
+            <li><strong>Timeless Perception:</strong> Experience time non-linearly. Can "remember" events that haven't happened yet (precognition, 40% accuracy)</li>
+            <li><strong>Reality Editing:</strong> Minor Feywild reality-bending within 10 feet (water flows uphill, gravity weakens, light bends around them)</li>
+            <li><strong>Dimensional Anchor:</strong> Cannot be forcibly banished, teleported, or dimensionally displaced. Immune to Void spatial distortions</li>
+            <li><strong>Feywild Dependency:</strong> MUST immerse in Feywild energy minimum 6 hours per week or suffer physical degradation (skin cracking, leyline veins dimming, eventual death)</li>
+        </ul>
+
+        <h3>Psychological Profile: The Alien Mind</h3>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Trait</th>
+                    <th>Human Baseline</th>
+                    <th>Atlantean</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Time Perception</strong></td>
+                    <td>Linear (past → present → future)</td>
+                    <td>Non-linear (all times simultaneous, see probability branches)</td>
+                </tr>
+                <tr>
+                    <td><strong>Emotional Range</strong></td>
+                    <td>Full spectrum (joy, anger, fear, love)</td>
+                    <td>Muted, distant, as if through frosted glass. Profound melancholy baseline</td>
+                </tr>
+                <tr>
+                    <td><strong>Urgency</strong></td>
+                    <td>Deadlines matter, act quickly</td>
+                    <td>Immortal patience. "What is 100 years when we've waited 50,000?"</td>
+                </tr>
+                <tr>
+                    <td><strong>Identity</strong></td>
+                    <td>Individual self, personal boundaries</td>
+                    <td>Collective memory through leyline resonance. Privacy is foreign concept</td>
+                </tr>
+                <tr>
+                    <td><strong>Morality</strong></td>
+                    <td>Good/evil, right/wrong dichotomy</td>
+                    <td>Aesthetic judgment (harmonious/discordant, beautiful/ugly)</td>
+                </tr>
+                <tr>
+                    <td><strong>Attachment</strong></td>
+                    <td>Strong bonds to individuals</td>
+                    <td>Cosmic loneliness. Everyone they loved died 50,000 years ago</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>The Lost History: Earth's First Civilization</h2>
+
+        <h3>The Founding (~62,000 BCE)</h3>
+
+        <p class="manuscript-text">
+            Atlantis was founded at the Eye of the Sahara (Richat Structure), the most powerful <strong>twelve-fold leyline nexus</strong> on Earth. Early proto-humans discovered the site's unique properties and built a civilization that existed <em>simultaneously</em> in two realities:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Material Anchor:</strong> Physical bodies, agriculture, industry, architecture existed on Earth</li>
+            <li><strong>Feywild Resonance:</strong> Consciousness, magic, art, dreams extended into the Feywild</li>
+            <li><strong>Leyline Bridge:</strong> The twelve-fold nexus maintained a permanent dimensional gateway between both planes</li>
+        </ul>
+
+        <h3>The Dimensional Engine Architecture</h3>
+
+        <div class="atlantean-glow">
+            <p class="manuscript-text">
+                The Eye of the Sahara wasn't just a city location—it was a <strong>machine</strong>. The Atlanteans built their civilization into the geological formation itself:
+            </p>
+            <ul class="manuscript-list">
+                <li><strong>Outer Ring (40km diameter):</strong> Leyline capacitors—massive stone circles storing dimensional energy</li>
+                <li><strong>Middle Ring (25km diameter):</strong> Distribution network—channels routing power throughout the city</li>
+                <li><strong>Inner Ring (10km diameter):</strong> The City of Atlantis—crystalline spires, bio-luminescent gardens, archives, temples</li>
+                <li><strong>Central Nexus (2km diameter):</strong> The Dimensional Anchor—a 500-meter crystalline obelisk maintaining the Feywild bridge</li>
+            </ul>
+            <p class="manuscript-text">
+                This wasn't mere architecture. It was <strong>dimensional stabilization technology</strong> using Earth's natural leylines to anchor a city in dual reality.
+            </p>
+        </div>
+
+        <h3>The First Cataclysm: The Deluge (Year -50,000 BCE)</h3>
+
+        <p class="manuscript-text">
+            A catastrophic leyline surge—similar to the later Theslar Event—destabilized Earth's entire leyline network. When the surge reached the Eye of the Sahara, the <strong>twelve-fold nexus overloaded</strong>. The dimensional bridge holding Atlantis in dual-reality <em>shattered</em>.
+        </p>
+
+        <p class="manuscript-text">
+            The Atlantean architects faced an impossible choice:
+        </p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Option</th>
+                    <th>Consequence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Anchor fully to Material Plane</td>
+                    <td>City survives physically, but millions die in global floods. Lose dimensional abilities</td>
+                </tr>
+                <tr>
+                    <td>Phase entirely into Feywild</td>
+                    <td>City and population survive intact, but severed from Earth. Exile in alien dimension</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="manuscript-text">
+            They chose exile. Over three days, Atlantis <strong>phased completely into the Feywild</strong>. From Earth's perspective, the city vanished. Myths called it "sinking beneath the waves." The truth: it slipped sideways into another dimension.
+        </p>
+
+        <h3>50,000 Years in Exile: The Mutation</h3>
+
+        <p class="manuscript-text">
+            Living in the Feywild for 50,000 years fundamentally transformed the Atlanteans. They evolved from <em>Homo sapiens atlanticus</em> (enhanced humans) into <strong>Homo Atlanticus</strong> (post-human Fae-touched):
+        </p>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Before Exile (62,000 BCE)</th>
+                    <th>After Return (Year 412)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Biology</strong></td>
+                    <td>Human with minor Fae traits</td>
+                    <td>Fae-dominant with vestigial human traits</td>
+                </tr>
+                <tr>
+                    <td><strong>Fertility</strong></td>
+                    <td>Normal human birth rates</td>
+                    <td>Near-sterile (1 in 1,000 success rate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Aging</strong></td>
+                    <td>120-150 year lifespan</td>
+                    <td>Functionally immortal (time non-linear in Feywild)</td>
+                </tr>
+                <tr>
+                    <td><strong>Psychology</strong></td>
+                    <td>Linear thought, human emotions</td>
+                    <td>Non-linear perception, emotionally distant</td>
+                </tr>
+                <tr>
+                    <td><strong>Magic</strong></td>
+                    <td>Moderate leyline manipulation</td>
+                    <td>Reality-bending Feywild mastery</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>The Return (Year 412): When the Lost Came Home</h2>
+
+        <h3>How the Sundering Brought Them Back</h3>
+
+        <p class="manuscript-text">
+            The Theslar Event (Year 0) didn't just tear open the Void—it <strong>supercharged Earth's dormant leyline network</strong>. By Year 412, enough leylines had regenerated that the Eye of the Sahara's twelve-fold nexus <em>reignited</em>.
+        </p>
+
+        <p class="manuscript-text">
+            From the Feywild, the Atlanteans detected the gateway reopening. After 50,000 years of exile, the door home had opened. Over three days, they debated whether to return to a transformed, hostile Earth... or remain safe in the Feywild forever.
+        </p>
+
+        <p class="manuscript-text">
+            <strong>They chose home.</strong> Even if home no longer recognized them.
+        </p>
+
+        <h3>Atlantis in Year 437: The Dual-Reality City</h3>
+
+        <p class="manuscript-text">
+            Modern Atlantis exists <em>simultaneously</em> in Material Plane and Feywild, creating bizarre phenomena:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Quantum Architecture:</strong> Buildings phase in/out of visibility. Streets exist in one reality but not the other. Rooms are bigger inside than outside</li>
+            <li><strong>Temporal Distortion:</strong> Time flows 20% slower inside city borders. 5 days outside = 4 days inside. Clocks behave erratically</li>
+            <li><strong>Reality Bleeding:</strong> Feywild entities (sprites, wisps, minor Fae) randomly manifest in city streets, then vanish</li>
+            <li><strong>Leyline Glow:</strong> Entire city emits soft teal bioluminescence from leyline-powered infrastructure. Visible from orbit (if satellites still existed)</li>
+            <li><strong>Perception Distortion:</strong> Visitors report intense déjà vu, temporal disorientation, feeling watched by something just out of sight</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>The Three Iconic Atlanteans</h2>
+
+        <h3>1. High Architect Thalassar, The First Exile</h3>
+
+        <p class="manuscript-text">
+            <strong>Age:</strong> 52,000 years old (subjectively experienced 800 years) | <strong>Role:</strong> Political leader, quest-giver, tragic figure
+        </p>
+
+        <h4>Physical Description</h4>
+        <ul class="manuscript-list">
+            <li><strong>Height:</strong> 6'8", impossibly slender</li>
+            <li><strong>Skin:</strong> Deep ocean blue with silver iridescence. Leyline veins glow bright teal across entire body</li>
+            <li><strong>Eyes:</strong> Solid aquamarine, no pupils. Appear to focus on things not present</li>
+            <li><strong>Hair:</strong> White with bioluminescent blue streaks. Flows constantly as if underwater</li>
+            <li><strong>Presence:</strong> When he speaks, nearby water levitates. Small objects orbit him slowly</li>
+        </ul>
+
+        <h4>Personality & Tragedy</h4>
+        <p class="manuscript-text">
+            Thalassar led the exodus into the Feywild in -50,000 BCE. He remembers Earth before agriculture, before writing, before any modern human civilization. Everyone he knew outside Atlantis—friends, rivals, allies—died 50,000 years ago.
+        </p>
+        <p class="manuscript-text">
+            He returned to Earth in Year 412 hoping to find <em>something</em> familiar. Instead, he found a world ravaged by Void corruption, ruled by factions that view Atlanteans as alien invaders. He maintains strict isolationism because every interaction reminds him: <strong>this is not the Earth he remembers. His home died millennia ago.</strong>
+        </p>
+
+        <h4>Story Hooks</h4>
+        <ul class="manuscript-list">
+            <li><strong>Quest:</strong> "Retrieve artifacts from pre-Sundering civilizations. I must understand what happened to Earth while we were gone."</li>
+            <li><strong>Leyline Expertise:</strong> Can identify leyline disruptions, predict leyline surges, teach players leyline navigation</li>
+            <li><strong>Diplomatic Mediator:</strong> Atlantis is neutral ground. Thalassar can broker truces between hostile factions</li>
+            <li><strong>Temporal Knowledge:</strong> Occasionally experiences precognitive visions. Can warn players of future dangers (cryptic, 50% accurate)</li>
+        </ul>
+
+        <h3>2. Archivist Thessia, The Memory Keeper</h3>
+
+        <p class="manuscript-text">
+            <strong>Age:</strong> 43,000 years old (subjectively 600 years) | <strong>Role:</strong> Lore keeper, historian, questgiver
+        </p>
+
+        <h4>Physical Description</h4>
+        <ul class="manuscript-list">
+            <li><strong>Height:</strong> 6'4"</li>
+            <li><strong>Skin:</strong> Pale teal with silver patterns resembling circuit boards (leyline pathways)</li>
+            <li><strong>Eyes:</strong> Solid silver, reflect images like mirrors</li>
+            <li><strong>Hair:</strong> Deep midnight blue, constantly flows as if in slow-motion water</li>
+            <li><strong>Distinctive:</strong> Wears robes woven from crystallized memories (shimmer with recorded events when touched)</li>
+        </ul>
+
+        <h4>Personality</h4>
+        <p class="manuscript-text">
+            Thessia is Atlantis's chief archivist. She maintains the Memory Crystals—leyline-infused gems storing 62,000 years of Atlantean history. She views the post-Sundering world with scholarly detachment: "Fascinating tragedy. Humanity repeated our mistake."
+        </p>
+
+        <h4>Story Hooks</h4>
+        <ul class="manuscript-list">
+            <li><strong>Quest:</strong> "I need comparative data. Bring me records of pre-Sundering civilizations. I'm documenting how your world died."</li>
+            <li><strong>Memory Crystal Trade:</strong> Can encode knowledge into crystals. Sells information about Void entities, leyline mechanics, ancient technologies</li>
+            <li><strong>Historical Context:</strong> Explains connections between First Cataclysm (their exile) and Third Cataclysm (Theslar Event)</li>
+        </ul>
+
+        <h3>3. Warden Kael'thas, The Phase Guardian</h3>
+
+        <p class="manuscript-text">
+            <strong>Age:</strong> 38,000 years old (subjectively 500 years) | <strong>Role:</strong> Combat support NPC, dimensional warrior, boss fight (if players threaten Atlantis)
+        </p>
+
+        <h4>Physical Description</h4>
+        <ul class="manuscript-list">
+            <li><strong>Height:</strong> 6'10", more muscular than typical Atlantean</li>
+            <li><strong>Skin:</strong> Teal with scars that glow bright silver (dimensional tears from combat)</li>
+            <li><strong>Eyes:</strong> Solid teal, emit faint light in darkness</li>
+            <li><strong>Armor:</strong> Crystalline plate armor that phases in/out of visibility (exists partially in Feywild)</li>
+            <li><strong>Weapon:</strong> Leyline Blade—sword forged from solidified leyline energy (cuts through magical defenses)</li>
+        </ul>
+
+        <h4>Combat Abilities (If Allied Support NPC)</h4>
+        <ul class="manuscript-list">
+            <li><strong>Phase Strike:</strong> Attacks ignore Defense, can strike incorporeal enemies</li>
+            <li><strong>Dimensional Shield:</strong> Projects barrier that redirects damage to Feywild (absorbs 10 damage/turn)</li>
+            <li><strong>Leyline Surge:</strong> Channel leyline energy into massive AoE blast (8 damage, 5-hex cone)</li>
+            <li><strong>Temporal Dodge:</strong> Once per combat, negate attack by phasing out of timeline briefly</li>
+        </ul>
+
+        <h4>Kael'thas's Aid (Mercenary Support)</h4>
+        <p class="manuscript-text">
+            <strong>Cost:</strong> 1,000 Credits or significant favor (rescue Atlantean scout, retrieve Memory Crystal) | <strong>Effect:</strong> Kael'thas joins party for 1 mission as ally NPC. Specializes in anti-Void combat and dimensional threats.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>Atlantean Technology & Lore</h2>
+
+        <h3>Leyline Engineering</h3>
+
+        <p class="manuscript-text">
+            Atlanteans are masters of leyline manipulation—technology 50,000 years more advanced than any post-Sundering faction:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Memory Crystals:</strong> Store knowledge, memories, skills. Players can learn abilities by interfacing with crystals</li>
+            <li><strong>Dimensional Anchors:</strong> Portable devices stabilizing reality rifts. Essential for Void exploration</li>
+            <li><strong>Leyline Capacitors:</strong> Store leyline energy for later use. Superior to Soulstones (rechargeable, non-corruptive)</li>
+            <li><strong>Phase Cloth:</strong> Fabric existing in Material + Feywild. Provides protection against Void corruption</li>
+            <li><strong>Temporal Beacons:</strong> Mark locations in spacetime. Allow recall to previous positions (limited teleportation)</li>
+        </ul>
+
+        <h3>Atlantean Trade Goods</h3>
+
+        <p class="manuscript-text">
+            Atlanteans rarely trade, but when they do, they offer items impossible to replicate:
+        </p>
+
+        <h4>What They Want:</h4>
+        <ul class="manuscript-list">
+            <li>Pre-Sundering artifacts (historical documentation)</li>
+            <li>Samples of Void-corrupted materials (research purposes)</li>
+            <li>Information about post-Sundering civilizations</li>
+            <li>Rare leyline-attuned minerals</li>
+        </ul>
+
+        <h4>What They Offer:</h4>
+        <ul class="manuscript-list">
+            <li><strong>Memory Crystal (Common):</strong> Contains skill training (grants +1 to specific stat after study). Cost: 800 Credits or equivalent favor</li>
+            <li><strong>Phase Cloth Cloak (Rare):</strong> +2 Defense, immune to Void spatial distortions. Cost: 2,000 Credits</li>
+            <li><strong>Dimensional Anchor (Rare):</strong> Stabilizes reality rifts within 50 feet. Prevents Void incursions. Cost: 3,500 Credits</li>
+            <li><strong>Leyline Capacitor (Legendary):</strong> Stores 20 leyline energy. Rechargeable. Superior Soulstone alternative. Cost: 5,000 Credits or major favor</li>
+            <li><strong>Temporal Recall Beacon (Legendary):</strong> Set waypoint, teleport back once. Single use. Cost: 7,000 Credits</li>
+        </ul>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>Political Status: Neutral Isolationists</h2>
+
+        <h3>Atlantean Foreign Policy</h3>
+
+        <ul class="manuscript-list">
+            <li><strong>No territorial expansion:</strong> Claims only Eye of the Sahara + 100km exclusion zone</li>
+            <li><strong>No alliances:</strong> Refuses diplomatic relations ("You are children playing with forces you don't understand")</li>
+            <li><strong>No trade routes:</strong> Self-sufficient via Feywild conjuration and leyline farming</li>
+            <li><strong>No military intervention:</strong> Will not participate in factional wars</li>
+            <li><strong>Defensive only:</strong> Attacks on Atlantis met with overwhelming dimensional retaliation</li>
+        </ul>
+
+        <h3>Faction Reactions to Atlanteans</h3>
+
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>Faction</th>
+                    <th>Reaction</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Draconid Remembrance</strong></td>
+                    <td>"We remember you. This is your third return. The second failed. Will this time be different?" (Cryptic warnings about temporal loops)</td>
+                </tr>
+                <tr>
+                    <td><strong>Wyrd Conclave (Fae)</strong></td>
+                    <td>"You reek of our home. Beautiful trespassers. You belong to us more than them." (Fascinated, possessive interest)</td>
+                </tr>
+                <tr>
+                    <td><strong>Church of Absolution</strong></td>
+                    <td>"Abominations who abandoned humanity and consort with demons. Heretics." (Hostile, declare them enemies of God)</td>
+                </tr>
+                <tr>
+                    <td><strong>Ossuarium</strong></td>
+                    <td>"Functionally immortal? Fascinating biology. Must study, contain, catalog." (Scientific interest, attempted kidnapping)</td>
+                </tr>
+                <tr>
+                    <td><strong>Exchange</strong></td>
+                    <td>"Won't trade. Can't bribe. Economic threat: zero. Political threat: unknowable." (Monitoring, waiting)</td>
+                </tr>
+                <tr>
+                    <td><strong>Forge-Guilds (Dwarves)</strong></td>
+                    <td>"Leyline technology beyond comprehension. Must reverse-engineer." (Attempted espionage, all failed)</td>
+                </tr>
+                <tr>
+                    <td><strong>Verdant Covenant (Elves)</strong></td>
+                    <td>"Balanced between worlds. Not corrupt, not pure. Harmonious chaos." (Respectful distance, occasional consultation)</td>
+                </tr>
+                <tr>
+                    <td><strong>Crucible Pacts</strong></td>
+                    <td>"Dimension-walkers. Unnatural. Their city insults reality itself." (Distrust, fear)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>The Grimdark Tragedy of Atlantis</h2>
+
+        <p class="manuscript-text">
+            Atlantis's return is not a <em>triumph</em>—it is a <strong>slow-motion extinction event</strong>. The Atlanteans came home to a world that no longer wants them, piloting bodies that can no longer reproduce, clinging to memories of an Earth that died 50,000 years ago.
+        </p>
+
+        <h3>Why Atlantis Is Doomed</h3>
+
+        <div class="atlantean-glow">
+            <p class="manuscript-text"><strong>1. Terminal Sterility</strong></p>
+            <p class="manuscript-text">
+                50,000 years in the Feywild rendered Atlanteans nearly sterile. Birth rate: 1 per 1,000 attempts. Current population: ~47,000. At current rates, Atlantis will be extinct in <strong>3,000-5,000 years</strong>. They returned home only to watch their species die.
+            </p>
+
+            <p class="manuscript-text"><strong>2. Feywild Dependency</strong></p>
+            <p class="manuscript-text">
+                Atlanteans can no longer survive purely in Material reality. They require periodic Feywild immersion (minimum 6 hours per week). If the leyline nexus fails again, they have <em>weeks</em> before physical degradation begins. Their immortality is conditional.
+            </p>
+
+            <p class="manuscript-text"><strong>3. Temporal Erosion</strong></p>
+            <p class="manuscript-text">
+                Living in non-linear time for 50,000 years damaged Atlantean neurology. They experience "temporal echoes"—memories of futures that never happened, dreams of pasts they didn't live. 8% suffer permanent temporal psychosis (lost in time, unable to distinguish past/present/future).
+            </p>
+
+            <p class="manuscript-text"><strong>4. Cultural Stagnation</strong></p>
+            <p class="manuscript-text">
+                Because they're functionally immortal, Atlantean culture has <em>stopped evolving</em>. No generational turnover means no new ideas, no fresh perspectives. They are a civilization frozen in amber, slowly forgetting how to change.
+            </p>
+
+            <p class="manuscript-text"><strong>5. Existential Loneliness</strong></p>
+            <p class="manuscript-text">
+                The Atlanteans are <strong>cosmically alone</strong>. They remember an Earth with megafauna, ice age glaciers, Neanderthals. Everyone they knew outside Atlantis died 50,000 years ago. They returned to a world of strangers who view them as aliens. Many suffer profound depression.
+            </p>
+        </div>
+
+        <div class="manuscript-quote">
+            "Why did you come back?" the Draconids ask.
+            <br><br>
+            "Because home is not a place," Thalassar answers. "Home is a promise. And we promised we would return. Even if no one remembers. Even if no one cares. We came home."
+            <span class="quote-attribution">— High Architect Thalassar, Year 425</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>Campaign Integration: Using Atlanteans</h2>
+
+        <h3>Early Game (Missions 1-3)</h3>
+        <p class="manuscript-text">
+            <strong>Rumor Hooks:</strong> Tales of "ghost city in the Sahara" where reality breaks. <strong>First Encounter:</strong> Players detect leyline anomaly leading to Atlantis border. Thalassar grants audience. <strong>Reward:</strong> Basic leyline navigation training, Memory Crystal with Void entity weaknesses.
+        </p>
+
+        <h3>Mid Game (Missions 4-6)</h3>
+        <p class="manuscript-text">
+            <strong>Quest Chain:</strong> Thessia requests pre-Sundering artifacts for Archive. <strong>Kael'thas Support:</strong> Can hire as ally for anti-Void missions. <strong>Trade Access:</strong> Unlock ability to purchase Atlantean technology. <strong>Choice Point:</strong> Ally with Atlanteans (lose Church favor, gain dimensional knowledge) OR reject them.
+        </p>
+
+        <h3>Late Game (Missions 7+)</h3>
+        <p class="manuscript-text">
+            <strong>Leyline Crisis:</strong> Eye of the Sahara nexus destabilizing. Atlantis may phase back to Feywild permanently. <strong>Final Quest:</strong> Help stabilize nexus (keeps Atlantis on Earth) OR sabotage it (forces them back to exile). <strong>Consequence:</strong> Decision affects ending—Atlantis becomes permanent ally OR vanishes forever, leaving only Memory Crystals behind.
+        </p>
+
+        <h3>Secret Endgame Hook</h3>
+        <p class="manuscript-text">
+            <strong>The Draconid Warning:</strong> Draconid archives reveal Atlantis has returned <em>three times</em> across history. Second return (~10,000 BCE) failed—Atlanteans forgot due to temporal damage. They're trapped in a loop: Return → Fail → Forget → Return. Will Year 437 break the cycle... or repeat it?
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: #008b8b;">&#10047;</span>
+        </div>
+
+        <h2>Design Philosophy (GM Notes)</h2>
+
+        <h3>Why NPC-Only?</h3>
+        <ul class="manuscript-list">
+            <li>Atlanteans are <strong>too powerful</strong> as playable (phase shifting, precognition, dimensional manipulation)</li>
+            <li>Their <strong>isolationist philosophy</strong> conflicts with player-driven adventure ("Why fight? We've seen civilizations rise and fall a hundred times.")</li>
+            <li>Serve better as <strong>quest-givers and lore dispensers</strong> than protagonists</li>
+            <li>Rarity preserves <strong>mystique and tragedy</strong>—every Atlantean encounter is meaningful</li>
+        </ul>
+
+        <h3>Thematic Role: The Ghosts of the Past</h3>
+        <ul class="manuscript-list">
+            <li><strong>Living History:</strong> Atlanteans are witnesses to 62,000 years of Earth's history. They know secrets buried before writing was invented</li>
+            <li><strong>Tragic Mirrors:</strong> Their exile mirrors the post-Sundering world—both are broken, changed, struggling to survive in transformed realities</li>
+            <li><strong>Existential Horror:</strong> They're functionally immortal but doomed to extinction. They survived 50,000 years only to die in the next 5,000</li>
+            <li><strong>The Unanswered Question:</strong> Why did they return? Nostalgia? Hope? Stubbornness? Players may never know</li>
+        </ul>
+
+        <div class="manuscript-quote">
+            "We are ghosts haunting our own graves. We returned to a world that buried us 50,000 years ago and moved on. But we remember. And memory, for us, is both prison and sanctuary."
+            <span class="quote-attribution">— Archivist Thessia, Year 437</span>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid #008b8b;">
+            <p style="font-style: italic; color: var(--bone-white);">
+                <a href="content-home.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">← Codex Home</a>
+                •
+                <a href="factions.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">Factions Index</a>
+                •
+                <a href="lore-atlantis-return.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">Full Atlantean Lore →</a>
+            </p>
+        </div>
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
