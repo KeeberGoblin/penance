@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules Index - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .rules-category {
+            background: linear-gradient(135deg, rgba(45, 31, 21, 0.3) 0%, rgba(26, 20, 16, 0.5) 100%);
+            border: 2px solid var(--medium-brown);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .rules-category:hover {
+            border-color: var(--aged-gold);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
+        }
+
+        .rules-category h2 {
+            color: var(--aged-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--medium-brown);
+            padding-bottom: 0.5rem;
+        }
+
+        .rules-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rules-category li {
+            margin: 0.75rem 0;
+        }
+
+        .rules-category a {
+            color: var(--parchment);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 0.5rem;
+            border-left: 3px solid transparent;
+        }
+
+        .rules-category a:hover {
+            color: var(--aged-gold);
+            border-left-color: var(--aged-gold);
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" target="_parent">CODEX</a> /
+            Rules Index
+        </nav>
+
+        <h1>Rules: How to Play Penance</h1>
+
+        <div class="manuscript-quote">
+            "The rules are not suggestions. They are the framework that keeps this grim world playable. Master them, and you master survival."
+            <span class="quote-attribution">— Game Master's Primer</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="rules-grid">
+            <!-- Core Rules -->
+            <div class="rules-category">
+                <h2>Core Rules</h2>
+                <ul>
+                    <li><a href="rules-quick-ref.html" target="_parent"><strong>Quick Reference</strong></a></li>
+                    <li><a href="rules-turn-structure.html" target="_parent"><strong>Turn Structure</strong></a></li>
+                    <li><a href="rules-dice.html" target="_parent"><strong>Dice Mechanics</strong></a></li>
+                    <li><a href="rules-dice-pool.html" target="_parent"><strong>Dice Pool System</strong></a></li>
+                    <li><a href="rules-common-mistakes.html" target="_parent"><strong>Common Mistakes</strong></a></li>
+                </ul>
+            </div>
+
+            <!-- Combat -->
+            <div class="rules-category">
+                <h2>Combat & Conflict</h2>
+                <ul>
+                    <li><a href="rules-combat.html" target="_parent"><strong>Combat Rules</strong></a></li>
+                    <li><a href="rules-combat-flowchart.html" target="_parent"><strong>Combat Flowchart</strong></a></li>
+                    <li><a href="rules-range-los.html" target="_parent"><strong>Range & Line of Sight</strong></a></li>
+                    <li><a href="rules-terrain.html" target="_parent"><strong>Terrain & Cover</strong></a></li>
+                </ul>
+            </div>
+
+            <!-- Caskets & Equipment -->
+            <div class="rules-category">
+                <h2>Caskets & Equipment</h2>
+                <ul>
+                    <li><a href="rules-casket-classes.html" target="_parent"><strong>Casket Classes</strong></a></li>
+                    <li><a href="rules-component-damage.html" target="_parent"><strong>Component Damage</strong></a></li>
+                    <li><a href="rules-deck-construction.html" target="_parent"><strong>Deck Construction</strong></a></li>
+                    <li><a href="rules-scrap-cards.html" target="_parent"><strong>Scrap Cards</strong></a></li>
+                    <li><a href="rules-support-as-main.html" target="_parent"><strong>Support Units as Main</strong></a></li>
+                </ul>
+            </div>
+
+            <!-- Soulstone & Energy -->
+            <div class="rules-category">
+                <h2>Soulstone & Energy</h2>
+                <ul>
+                    <li><a href="rules-soulstone-energy.html" target="_parent"><strong>Soulstone Energy System</strong></a></li>
+                    <li><a href="rules-thread-snap.html" target="_parent"><strong>Thread Snap</strong></a></li>
+                </ul>
+            </div>
+
+            <!-- v3.0 Optional Rules -->
+            <div class="rules-category">
+                <h2>v3.0 Optional Rules</h2>
+                <ul>
+                    <li><a href="rules-v3-optional.html" target="_parent"><strong>v3.0 Optional Rules Overview</strong></a></li>
+                    <li><a href="rules-taint-exploitation.html" target="_parent"><strong>Taint & Exploitation</strong></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
