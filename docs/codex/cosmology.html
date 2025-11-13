@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
         :root {
-            --void-purple: #1a0a2e;
-            --void-glow: #9d4edd;
+            --leather-dark: #2d1f15;
+            --leather-medium: #5c4033;
+            --leather-glow: #b8860b;
             --blood-red: #8b0000;
             --ancient-gold: #d4af37;
             --shadow-black: #0d0d0d;
@@ -73,11 +74,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(180deg, var(--void-purple) 0%, var(--shadow-black) 100%);
+            background: linear-gradient(180deg, var(--leather-dark) 0%, var(--shadow-black) 100%);
             overflow: hidden;
             margin: -2rem -2rem 3rem -2rem;
             padding: 4rem 2rem;
-            border-bottom: 3px solid var(--void-glow);
+            border-bottom: 3px solid var(--leather-glow);
         }
 
         .hero-section::before {
@@ -88,7 +89,7 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 50%, rgba(157, 78, 221, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
             animation: pulse-void 8s ease-in-out infinite;
         }
@@ -103,7 +104,7 @@
             font-family: 'Cinzel', serif;
             color: var(--ancient-gold);
             text-align: center;
-            text-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+            text-shadow: 0 0 20px rgba(184, 134, 11, 0.5);
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
@@ -112,7 +113,7 @@
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: var(--void-glow);
+            color: var(--leather-glow);
             text-align: center;
             font-style: italic;
             position: relative;
@@ -168,7 +169,7 @@
             top: 50%;
             width: 30%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--void-glow), transparent);
+            background: linear-gradient(90deg, transparent, var(--leather-glow), transparent);
         }
 
         .cosmic-divider::before {
@@ -181,7 +182,7 @@
 
         .cosmic-symbol {
             font-size: 2.5rem;
-            color: var(--void-glow);
+            color: var(--leather-glow);
             display: inline-block;
             animation: rotate-symbol 20s linear infinite;
         }
@@ -193,8 +194,8 @@
 
         /* Enhanced layer cards */
         .layer-card {
-            background: linear-gradient(135deg, rgba(26, 10, 46, 0.4) 0%, rgba(13, 13, 13, 0.6) 100%);
-            border: 2px solid var(--void-glow);
+            background: linear-gradient(135deg, rgba(45, 31, 21, 0.4) 0%, rgba(13, 13, 13, 0.6) 100%);
+            border: 2px solid var(--leather-glow);
             border-radius: 8px;
             padding: 2rem;
             margin: 2rem 0;
@@ -205,7 +206,7 @@
 
         .layer-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(157, 78, 221, 0.3);
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);
         }
 
         .layer-card::before {
@@ -215,7 +216,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(157, 78, 221, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -254,12 +255,12 @@
 
         .species-stat {
             display: inline-block;
-            background: rgba(157, 78, 221, 0.1);
+            background: rgba(184, 134, 11, 0.1);
             padding: 0.3rem 0.8rem;
             margin: 0.3rem;
             border-radius: 4px;
             font-size: 0.9rem;
-            border: 1px solid rgba(157, 78, 221, 0.3);
+            border: 1px solid rgba(184, 134, 11, 0.3);
         }
 
         /* Timeline table enhancement */
@@ -273,7 +274,7 @@
         }
 
         .timeline-table thead {
-            background: linear-gradient(135deg, var(--void-purple), var(--blood-red));
+            background: linear-gradient(135deg, var(--leather-dark), var(--blood-red));
         }
 
         .timeline-table th {
@@ -282,7 +283,7 @@
             color: var(--ancient-gold);
             font-family: 'Cinzel', serif;
             font-size: 1.1rem;
-            border-bottom: 2px solid var(--void-glow);
+            border-bottom: 2px solid var(--leather-glow);
         }
 
         .timeline-table tbody tr {
@@ -291,12 +292,12 @@
         }
 
         .timeline-table tbody tr:hover {
-            background: rgba(157, 78, 221, 0.1);
+            background: rgba(184, 134, 11, 0.1);
         }
 
         .timeline-table td {
             padding: 1rem;
-            border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+            border-bottom: 1px solid rgba(184, 134, 11, 0.2);
         }
 
         .timeline-table tbody tr:last-child td {
@@ -305,7 +306,7 @@
 
         /* Emphasis boxes */
         .void-callout {
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(26, 10, 46, 0.3));
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(45, 31, 21, 0.3));
             border: 2px solid var(--blood-red);
             border-radius: 8px;
             padding: 1.5rem;
@@ -315,12 +316,13 @@
         }
 
         .void-callout::before {
-            content: '⚠';
+            content: '!';
             position: absolute;
             top: 1rem;
             right: 1rem;
             font-size: 3rem;
             opacity: 0.1;
+            font-weight: bold;
             animation: pulse-warning 2s ease-in-out infinite;
         }
 
@@ -330,8 +332,8 @@
         }
 
         .gm-secret {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 10, 46, 0.6));
-            border: 3px double var(--void-glow);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(45, 31, 21, 0.6));
+            border: 3px double var(--leather-glow);
             border-radius: 8px;
             padding: 2rem;
             margin: 2rem 0;
@@ -339,21 +341,22 @@
         }
 
         .gm-secret::before {
-            content: '🔒 GM KNOWLEDGE ONLY';
+            content: '[GM KNOWLEDGE ONLY]';
             display: block;
-            color: var(--void-glow);
+            color: var(--leather-glow);
             font-family: 'Cinzel', serif;
             font-weight: bold;
             font-size: 1.2rem;
             margin-bottom: 1rem;
             text-align: center;
-            text-shadow: 0 0 10px var(--void-glow);
+            text-shadow: 0 0 10px var(--leather-glow);
+            letter-spacing: 0.1em;
         }
 
         /* Quote enhancement */
         .manuscript-quote {
-            background: linear-gradient(135deg, rgba(26, 10, 46, 0.3), rgba(13, 13, 13, 0.5));
-            border-left: 4px solid var(--void-glow);
+            background: linear-gradient(135deg, rgba(45, 31, 21, 0.3), rgba(13, 13, 13, 0.5));
+            border-left: 4px solid var(--leather-glow);
             padding: 1.5rem 2rem;
             margin: 2rem 0;
             font-style: italic;
@@ -367,7 +370,7 @@
             top: -10px;
             left: 10px;
             font-size: 4rem;
-            color: var(--void-glow);
+            color: var(--leather-glow);
             opacity: 0.3;
             font-family: Georgia, serif;
         }
@@ -383,7 +386,7 @@
 
         /* Theslar info box */
         .theslar-box {
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(26, 10, 46, 0.4));
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(45, 31, 21, 0.4));
             border: 3px solid var(--blood-red);
             border-radius: 12px;
             padding: 2rem;
@@ -409,7 +412,7 @@
 
         .theory-card {
             background: rgba(20, 20, 20, 0.6);
-            border: 2px solid rgba(157, 78, 221, 0.3);
+            border: 2px solid rgba(184, 134, 11, 0.3);
             border-radius: 8px;
             padding: 1.5rem;
             transition: all 0.3s ease;
@@ -417,8 +420,8 @@
         }
 
         .theory-card:hover {
-            border-color: var(--void-glow);
-            box-shadow: 0 5px 20px rgba(157, 78, 221, 0.3);
+            border-color: var(--leather-glow);
+            box-shadow: 0 5px 20px rgba(184, 134, 11, 0.3);
             transform: scale(1.02);
         }
 
@@ -433,11 +436,11 @@
             display: inline-block;
             width: 12px;
             height: 12px;
-            background: var(--void-glow);
+            background: var(--leather-glow);
             border-radius: 50%;
             margin: 0 0.5rem;
             animation: pulse-energy 2s ease-in-out infinite;
-            box-shadow: 0 0 10px var(--void-glow);
+            box-shadow: 0 0 10px var(--leather-glow);
         }
 
         @keyframes pulse-energy {
@@ -472,7 +475,7 @@
             top: 0;
             left: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--blood-red), var(--void-glow));
+            background: linear-gradient(90deg, var(--blood-red), var(--leather-glow));
             z-index: 9999;
             transform-origin: left;
             transition: transform 0.1s ease;
@@ -525,7 +528,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- The Three-Layered Cosmos -->
@@ -583,7 +586,7 @@
                             <td><strong>Year 0</strong></td>
                             <td><strong>THE SUNDERING</strong>—Theslar Engine tears reality apart</td>
                         </tr>
-                        <tr style="background: rgba(157, 78, 221, 0.1);">
+                        <tr style="background: rgba(184, 134, 11, 0.1);">
                             <td><strong>Year 437</strong></td>
                             <td><strong>PRESENT DAY</strong>—Nine factions war in the ruins</td>
                         </tr>
@@ -640,25 +643,73 @@
                         <strong>What are Abominations?</strong> Not creatures in the traditional sense. When Void energy bleeds into the Material World, it tries to take shape. Without conscious minds to guide it, Void energy becomes <em>wrong</em>—limbs in incorrect numbers, geometries that shouldn't exist, sounds that cause bleeding. Each Abomination is unique because chaos cannot repeat itself.
                     </p>
                 </div>
+
+                <h4 style="margin-top: 2rem;">Abomination Threat Levels</h4>
+                <table class="timeline-table">
+                    <thead>
+                        <tr>
+                            <th>Classification</th>
+                            <th>Description</th>
+                            <th>Lethality</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Minor</strong></td>
+                            <td>Void-touched animals (dogs with extra eyes, birds with reversed joints). 3-5 feet tall.</td>
+                            <td>Unarmored human: <30 seconds survival. Casket pilot: manageable solo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Standard</strong></td>
+                            <td>Humanoid-scale chaos manifestations. 6-10 feet. Wrong proportions, impossible movements.</td>
+                            <td>Requires Casket. 2-3 pilots recommended. Can kill solo Casket if pilot is inexperienced.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Major</strong></td>
+                            <td>Building-sized entities. Reality distorts near them. 15-30 feet. Limbs phase through matter.</td>
+                            <td>Requires squad (4-6 Caskets). Can TPK unprepared groups.</td>
+                        </tr>
+                        <tr style="background: rgba(139, 0, 0, 0.2);">
+                            <td><strong>Catastrophic</strong></td>
+                            <td>Kaiju-scale. 50+ feet. Physics break down in 100-yard radius. Reality becomes negotiable.</td>
+                            <td>Requires faction-level response (20+ Caskets, artillery support, ritual magic). Survival not guaranteed.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 style="margin-top: 2rem;">Behavior Patterns</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Nocturnal</strong>: Most active at night, avoid sunlight (daytime Void energy weaker)</li>
+                    <li><strong>Drawn to Soulstones</strong>: Attracted to concentrated energy signatures—Caskets, settlements with power cores, ley line nexuses</li>
+                    <li><strong>No Self-Preservation</strong>: Don't flee, don't feel pain. Fight until destroyed or enemy dead.</li>
+                    <li><strong>Learning Capability</strong>: Standard+ Abominations show pattern recognition. Major entities exhibit problem-solving. Catastrophic entities display <em>strategic intelligence</em>.</li>
+                    <li><strong>Territorial</strong>: Cluster near Void rifts (their spawning grounds). Settled areas within 50 miles of rifts face nightly incursions.</li>
+                </ul>
+
+                <div class="void-callout" style="margin-top: 2rem;">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Encounter Reality</strong>: The average settlement faces 2-3 Minor Abomination attacks per month, 1 Standard every 3 months, and 1 Major per year. Catastrophic events happen 1-2 times per decade and are faction-defining moments. Settlements without Casket protection typically last <5 years before being overrun. This is why factions hoard Caskets and pilots are treated as irreplaceable assets.
+                    </p>
+                </div>
             </div>
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- Species Origins -->
         <section class="reveal-section">
             <h2>Species Origins: Why Fantasy Creatures Exist</h2>
             <p class="manuscript-text">
-                Before the Theslar Event, humanity was not one species—it was <strong>six distinct subspecies</strong> of Homo sapiens, each adapted to extreme environments over 50,000+ years of geographic isolation. What fantasy calls "elves" and "dwarves" are actually evolutionary divergences shaped by volcanic caverns, ancient forests, and ley line exposure.
+                Before the Theslar Event, humanity was not one species—it was <strong>six distinct subspecies</strong> of Homo sapiens, each adapted to extreme environments over 25,000-50,000+ years of geographic isolation. What fantasy calls "elves" and "dwarves" are actually evolutionary divergences shaped by volcanic caverns, ancient forests, deserts, arctic tundra, and ley line exposure. Add the Fae (Feywild natives), three post-Sundering transformations (Undead, Vestige Bloodlines, Emergent Syndicate), and you have the nine major factions warring over the ruins.
             </p>
 
             <div class="void-callout">
                 <p class="manuscript-text" style="margin: 0;">
                     <strong>Total Surviving Population (Year 437):</strong> ~12.4 million<br>
-                    <strong>Pre-Sundering Global Population:</strong> ~1.8 billion<br>
-                    <strong>Casualties from Theslar Event:</strong> 99.3% mortality
+                    <strong>Pre-Sundering Global Population:</strong> ~9.7 billion (all subspecies combined)<br>
+                    <strong>Casualties from Theslar Event:</strong> 99.87% mortality
                 </p>
             </div>
 
@@ -678,9 +729,11 @@
                     <strong>Year 437</strong>: 8.2 million (68.3% of survivors)<br>
                     <strong>Primary Factions</strong>: Church of Absolution, Penitent Kingdoms, The Exchange, Ossuarium (undead)
                 </p>
-                <p class="manuscript-text">
-                    Most humans were unaware of non-human species before the Sundering. Nikolas Theslar himself had no idea his experiment would affect hidden civilizations. Now they form the Church, interpreting the Cataclysm as divine punishment requiring eternal penance.
-                </p>
+                <div class="void-callout">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Post-Sundering Devastation</strong>: 89% of humanity died in the first week—1.8 billion killed by exposure, starvation, violence, and Void incursions. Most humans were unaware of non-human species before the Sundering. Survivors turned to the Church of Absolution, interpreting the Cataclysm as divine punishment. They live under oppressive guilt culture, treating Casket pilots as penitent knights bearing the weight of humanity's sins. Every day is atonement. Every battle is penance.
+                    </p>
+                </div>
             </div>
 
             <!-- Elves -->
@@ -728,9 +781,89 @@
                     <strong>Year 437</strong>: 1.2 million (10% of survivors)<br>
                     <strong>Primary Factions</strong>: Forge-Guilds, Crucible Pacts
                 </p>
+                <div class="void-callout">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Post-Sundering Catastrophe</strong>: The magnitude 9.4 earthquake at Ground Zero destabilized tectonic plates worldwide. 214 dormant volcanoes awakened simultaneously. Dwarven underground cities—Ironhearth, Stoneroot, The Deeps—collapsed in cascading cave-ins. Magma flooded lower districts. Gas pockets exploded. 80% of dwarven population died crushed, burned, or suffocated. Survivors clawed their way to the surface for the first time in millennia, half-blind in sunlight, traumatized and displaced. They rebuilt what they could from ruins, becoming war-profiteers out of desperation—selling weapons and Caskets to all factions because they have nothing else left. Their forges run on survivor's guilt and the bones of buried cities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Desert Nomads -->
+            <div class="species-card reveal-section">
+                <h3>Desert Nomads (Homo Aquilus)</h3>
                 <p class="manuscript-text">
-                    <strong>Why They Survived</strong>: When the Sundering hit, dwarves were already underground, shielded from the initial Pulse. Their cities survived largely intact, making them the industrial powerhouses of the new world—selling weapons, Caskets, and runecraft to all factions.
+                    <strong>Origin</strong>: ~30,000 BCE divergence. Isolated in Sahara, Arabian, and Australian deserts for 29,000 years. Extreme heat and water scarcity forged them into endurance specialists.
                 </p>
+                <div>
+                    <span class="species-stat">Height: 5'6" - 6'2"</span>
+                    <span class="species-stat">Lifespan: 50-70 years</span>
+                    <span class="species-stat">Extreme endurance</span>
+                </div>
+                <p class="manuscript-text">
+                    <strong>Physical Traits</strong>: Deep bronze to copper-brown skin with reflective sheen (silicon-based UV deflection), no sweat glands (water conservation), double eyelids with nictitating membranes (sandstorm protection), kidneys extract 99% moisture from waste, can survive temperature extremes (120°F days to 40°F nights), capable of running 50+ miles per day.
+                </p>
+                <p class="manuscript-text">
+                    <strong>Pre-Sundering</strong>: ~3.2 million globally<br>
+                    <strong>Year 437</strong>: 1.8 million (15% of survivors)<br>
+                    <strong>Primary Faction</strong>: Nomad Collective
+                </p>
+                <div class="void-callout">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Post-Sundering Survival</strong>: Their desert adaptation saved them—they already knew how to survive without infrastructure. But the Ashfall Winter froze their desert homelands. Oases dried up. Ancient trade routes collapsed. They became eternal wanderers, trading scavenged goods between settlements. They trust no one, own nothing they can't carry, and bury their dead in unmarked graves because staying to mourn means death. "Home is where you survive" isn't philosophy—it's curse. They've been running for 437 years and can never stop.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Goblinoids -->
+            <div class="species-card reveal-section">
+                <h3>Goblinoids (Homo Infernus)</h3>
+                <p class="manuscript-text">
+                    <strong>Origin</strong>: ~35,000 BCE divergence. Descended into Icelandic volcanic rifts and Mediterranean sulfur caves. 33,000+ years of geothermal radiation and toxic gas exposure.
+                </p>
+                <div>
+                    <span class="species-stat">Height: 3'10" - 4'8"</span>
+                    <span class="species-stat">Lifespan: 35-50 years</span>
+                    <span class="species-stat">Extreme heat resistance</span>
+                </div>
+                <p class="manuscript-text">
+                    <strong>Physical Traits</strong>: Ash-gray to soot-black skin covered in 30-60% ritual burn scars (badges of honor), white-gray hair (thermal bleaching), yellow-orange eyes (sulfur-pigmented retinas), filed teeth (cultural practice), fast-twitch muscle fibers, pyrokinetic thermoregulation (body temp 102-105°F), sulfur toxin immunity, accelerated healing (wounds close in 1/3 normal time).
+                </p>
+                <p class="manuscript-text">
+                    <strong>Pre-Sundering</strong>: ~350,000 globally<br>
+                    <strong>Year 437</strong>: 220,000 (1.8% of survivors)<br>
+                    <strong>Primary Faction</strong>: Crucible Pacts
+                </p>
+                <div class="void-callout">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Post-Sundering Devastation</strong>: When the Ashveil Caldera erupted on Day 0, their entire volcanic homeland exploded. 80,000 died instantly—buried in pyroclastic flows, cooked alive in lava tubes. The 15,000 who survived in the deepest chambers crawled out to find their civilization erased. Now they worship the flames that killed their families, practicing fire-rituals and self-immolation rites. Burn scars are status—more scars mean more pain survived. They live fast, die young (38 is ancient), and believe suffering is the only truth. The Crucible Pacts aren't a faction. They're a death cult that refuses to stop screaming.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Frostborn -->
+            <div class="species-card reveal-section">
+                <h3>Frostborn (Homo Polaris)</h3>
+                <p class="manuscript-text">
+                    <strong>Origin</strong>: ~25,000 BCE divergence. Isolated in Arctic Circle (Siberia, Greenland, Northern Canada) for 25,000 years. Extreme cold adaptation specialists.
+                </p>
+                <div>
+                    <span class="species-stat">Height: 5'0" - 5'8"</span>
+                    <span class="species-stat">Lifespan: 70-100 years</span>
+                    <span class="species-stat">CRITICALLY ENDANGERED</span>
+                </div>
+                <p class="manuscript-text">
+                    <strong>Physical Traits</strong>: Alabaster white skin (complete melanin loss), semi-translucent with visible veins, thick subcutaneous fat (4x baseline), white/platinum blonde/ice-blue hair (50% more follicles), pale blue/gray/white eyes with reflective tapetum lucidum, compact build with short limbs (heat conservation), brown fat thermogenesis, hibernation capability, barrel-chested (increased lung capacity).
+                </p>
+                <p class="manuscript-text">
+                    <strong>Pre-Sundering</strong>: ~2.5 million<br>
+                    <strong>Year 437</strong>: ~50,000 (0.4% of survivors - 98% CASUALTIES)<br>
+                    <strong>Status</strong>: Scattered, nearly extinct
+                </p>
+                <div class="void-callout">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Post-Sundering Annihilation</strong>: The Theslar Engine epicenter was the North Pole—their homeland. The Arctic ice shelf vaporized in seconds. 98% died instantly—flash-frozen, then flash-boiled as reality tore. Survivors fled south into a world too hot for them to survive. Their eyes can't handle sunlight. Their bodies overheat in temperate climates. Genetic bottleneck from 2.5 million to 50,000 caused catastrophic inbreeding depression. Birth rates collapsed. Each generation is weaker, sicker, more deformed. They're extinct in 200 years without intervention. People stare at their ghost-white skin like they're already dead. They are.
+                    </p>
+                </div>
             </div>
 
             <!-- Ossuarium (Undead) -->
@@ -764,14 +897,16 @@
                     <span class="species-stat">Logic: Dream-based</span>
                 </div>
                 <p class="manuscript-text">
-                    <strong>Physiology</strong>: Fae don't have fixed forms—can appear as beautiful humanoids, talking animals, living shadows, or impossible geometries. Debatable if they even have true forms. More <em>concept</em> than creature.
+                    <strong>Physiology</strong>: Fae don't have fixed forms—can appear as beautiful humanoids, talking animals, living shadows, or impossible geometries. Debatable if they even have true forms. More <em>concept</em> than creature. They exist as narrative embodiments—tricksters, deal-makers, tempters.
                 </p>
                 <p class="manuscript-text">
-                    <strong>Psychology</strong>: Operate on dream-logic and narrative rules. Promises are more binding than physics. Value interesting outcomes over suffering or happiness. Everything is transactional—every bargain has a literal price.
+                    <strong>Psychology</strong>: Operate on dream-logic and narrative rules. Promises are more binding than physics. Value interesting outcomes over suffering or happiness. Everything is transactional—every bargain has a literal price. They don't lie—but truth through Fae lips becomes poison.
                 </p>
-                <p class="manuscript-text">
-                    <strong>Post-Sundering</strong>: Thriving. The Feywild merging with the Material World is the best thing that ever happened to them. They're the only faction genuinely <em>happy</em> about the Cataclysm.
-                </p>
+                <div class="void-callout">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Post-Sundering Horror</strong>: They're thriving. The Feywild merging with Material reality is the best thing that ever happened to them. While mortals die screaming, Fae laugh and dance in Shimmerlands where physics are negotiable. They offer desperate survivors bargains: "Your firstborn for food." "Your memories for safety." "Your face for weapons." And survivors accept, because starvation is worse than damnation. The Fae aren't evil—they're utterly alien. They harvest suffering like mortals harvest wheat. A child's laugh, a mother's grief, a soldier's final breath—these are currency. They're the only faction genuinely <em>happy</em> about the Cataclysm. That's what makes them monsters.
+                    </p>
+                </div>
             </div>
 
             <!-- Vestige Bloodlines -->
@@ -796,20 +931,157 @@
                 <p class="manuscript-text">
                     <strong>Origin</strong>: Human researchers at Siberia, ground zero, during the Sundering.
                 </p>
+                <div>
+                    <span class="species-stat">Height: 5'4" - 6'8" (variable)</span>
+                    <span class="species-stat">Lifespan: Unknown</span>
+                    <span class="species-stat">Hive-linked</span>
+                </div>
                 <p class="manuscript-text">
-                    <strong>Transformation</strong>: Void energy fused researchers with arthropod genetic samples from bio-labs. Not random mutation—<em>metamorphosis</em>. They became post-human: exoskeleton, multiple limbs (4-8 arms), compound eyes, hive-mind communication through pheromones and telepathy.
+                    <strong>Transformation</strong>: Void energy fused 182 researchers with arthropod genetic samples from bio-labs at Hour 0. Not random mutation—instantaneous <em>metamorphosis</em>. They became post-human: chitinous exoskeleton, multiple limbs (4-8 arms), compound eyes, mandibles, antennae, hive-mind communication through pheromones and forced telepathic resonance.
                 </p>
                 <p class="manuscript-text">
-                    <strong>Psychology</strong>: Still have human memories, but distant and irrelevant. Individuality exists but is secondary to hive efficiency. A single member will sacrifice itself without hesitation if it benefits the collective.
+                    <strong>Pre-Sundering</strong>: 182 humans (Theslar Station staff)<br>
+                    <strong>Year 437</strong>: ~15,000 (expansion through conversion)<br>
+                    <strong>Primary Faction</strong>: Emergent Syndicate
                 </p>
-                <p class="manuscript-text">
-                    <strong>Post-Sundering</strong>: Expanding through conversion—capture humans, expose to controlled Void + arthropod DNA. Universally feared and hated. They view their transformation as inevitable evolution—the only path to survival in a Void-tainted world.
-                </p>
+                <div class="void-callout">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Post-Sundering Abomination</strong>: They remember being human. That's the horror. They remember names, faces, families—but those memories are background noise beneath the hive's chorus. The collective is everything. They expand through forced conversion: capture humans, expose to controlled Void energy + arthropod DNA, watch them scream as chitin erupts from skin. Individuality exists but is meaningless—a worker will walk into fire if the hive commands. They don't see this as tragedy. They see it as <em>evolution</em>. "The flesh is obsolete. The hive is eternal." Universally feared and hated. Humans would rather die than join them. Most do.
+                    </p>
+                </div>
             </div>
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
+        </div>
+
+        <!-- Casket Technology -->
+        <section class="reveal-section">
+            <h2>Casket Technology: Iron Tombs of the Living</h2>
+
+            <p class="manuscript-text">
+                In a world where Abominations tear through unarmored flesh in seconds and rival factions wage war with Void-infused weaponry, <strong>Caskets are the only way to survive</strong>. They are 10-foot-tall mechanical war frames—half tank, half coffin—piloted by souls bound to Soulstone cores through neural thread interfaces.
+            </p>
+
+            <div class="layer-card">
+                <h3>What Are Caskets?</h3>
+                <p class="manuscript-text">
+                    <strong>Physical Description</strong>: A Casket is a 10-12 foot humanoid frame built from salvaged pre-Sundering machinery fused with post-Cataclysm runecraft. Think Victorian-era steam boiler welded to medieval plate armor, powered by a glowing Soulstone heart. Each is unique—cobbled together from whatever materials the pilot or faction could scavenge.
+                </p>
+
+                <h4>Core Components</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Frame</strong>: Reinforced steel chassis (pre-Sundering car frames, tank treads, industrial machinery repurposed)</li>
+                    <li><strong>Soulstone Core</strong>: Chest-mounted crystal housing pilot's consciousness, provides power and cognitive interface</li>
+                    <li><strong>Neural Threads</strong>: Fiber-optic tendrils extending from core to pilot's brainstem, creating direct mind-machine link</li>
+                    <li><strong>Hydraulic Servos</strong>: Steam/pneumatic muscle analogs for movement</li>
+                    <li><strong>Runic Circuitry</strong>: Engraved symbols channel Void energy through frame, replacing destroyed electronics</li>
+                </ul>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>How Piloting Works</h3>
+                <p class="manuscript-text">
+                    To pilot a Casket, the operator must undergo <strong>soul-binding</strong>—a one-time ritual where neural threads are surgically implanted into the brainstem, linking consciousness to the Soulstone core. From that moment forward, the pilot and Casket are permanently bonded.
+                </p>
+
+                <h4>The Piloting Experience</h4>
+                <div class="manuscript-quote">
+                    "It's not like wearing armor. It's like your body expanded. You feel the servos as muscles. The armor plates as skin. When someone shoots your Casket, you feel it—not pain exactly, but <em>damage</em>. Like a tooth breaking or a bone cracking. You know it's wrong, and you know where. Disconnecting after a mission feels like amputation."
+                    <span class="quote-attribution">— Pilot Testament, Church Casketeer</span>
+                </div>
+
+                <ul class="manuscript-list">
+                    <li><strong>Sensory Fusion</strong>: Pilot sees through Casket's optical sensors, feels impacts as pressure/pain</li>
+                    <li><strong>Thought-Speed Control</strong>: Movement responds to intent (think "raise arm" and it happens)</li>
+                    <li><strong>Energy Management</strong>: Pilot consciously allocates Soulstone energy to movement, weapons, or defense</li>
+                    <li><strong>Thread Snap Risk</strong>: If damage exceeds pilot's mental fortitude, neural threads can sever, causing permanent brain damage or death</li>
+                </ul>
+            </div>
+
+            <div class="void-callout">
+                <p class="manuscript-text" style="margin: 0;">
+                    <strong>Why Caskets Exist</strong>: An unarmored human facing a minor Abomination survives <30 seconds. Conventional weapons (bullets, swords) barely slow Void-tainted creatures. <strong>Only Caskets provide</strong>: (1) Physical protection from Abomination claws/energy, (2) Soulstone-powered weapons that can actually kill Void entities, (3) Neural interface speed to react to reality-warping threats, (4) Void energy channeling to fight magic with magic. Without Caskets, humanity would have gone extinct by Year 50.
+                </p>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>Manufacturing & Scarcity</h3>
+                <p class="manuscript-text">
+                    <strong>Who Makes Them</strong>: Primarily Dwarven Forge-Guilds, with some production from Crucible Pacts (volcanic forges) and rogue human smiths. The Exchange brokers sales. The Ossuarium uses undead labor for mass production (inferior quality but cheap).
+                </p>
+
+                <p class="manuscript-text">
+                    <strong>Resource Costs</strong>: Building a single Casket requires:
+                </p>
+                <ul class="manuscript-list">
+                    <li>500-800 lbs salvaged steel (pre-Sundering machinery, vehicles, building frames)</li>
+                    <li>1 Soulstone core (fist-sized, takes 50-100 years to naturally form, or extracted from dead pilots)</li>
+                    <li>50+ hours master smith labor (runecraft engraving, servo calibration)</li>
+                    <li>Neural thread implantation surgery (requires trained surgeon or necromancer)</li>
+                </ul>
+
+                <div class="void-callout">
+                    <p class="manuscript-text" style="margin: 0;">
+                        <strong>Estimated Active Caskets (Year 437)</strong>: ~80,000-100,000 globally. With 12.4 million survivors, that's less than 1% of the population piloting. Caskets are rare, valuable, and <em>fought over</em>. Losing your Casket in battle doesn't just mean defeat—it means your faction loses irreplaceable military power. Salvaging enemy Caskets is standard practice. Pilots know: if you fall, someone will cut you out and reuse your frame.
+                    </p>
+                </div>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>Factional Variations</h3>
+                <table class="timeline-table">
+                    <thead>
+                        <tr>
+                            <th>Faction</th>
+                            <th>Casket Style</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Church of Absolution</strong></td>
+                            <td>Heavy armor, cathedral aesthetics, emphasis on defense. Pilots take vows of penance.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Verdant Covenant (Elves)</strong></td>
+                            <td>Living wood frames, vine servos, bio-mechanical fusion. Powered by grove-linked Soulstones.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Forge-Guilds (Dwarves)</strong></td>
+                            <td>Industrial, utilitarian, mass-produced. Reliable but aesthetically brutal.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ossuarium (Undead)</strong></td>
+                            <td>Bone-plated frames, no living pilot required. Powered by enslaved souls.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Crucible Pacts (Goblinoids)</strong></td>
+                            <td>Superheated frames, flame-spewing, burn-scarred pilots. Self-immolation as tactical doctrine.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nomad Collective</strong></td>
+                            <td>Light, mobile, built for speed over armor. Scavenged aesthetic—no two alike.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wyrd Conclave (Fae)</strong></td>
+                            <td>Reality-optional. Frames shift shape mid-combat. Powered by bargains, not Soulstones.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Emergent Syndicate</strong></td>
+                            <td>Bio-mechanical hybrids. Exoskeletons grown from chitin. Hive-linked consciousness.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="manuscript-text" style="text-align: center; margin: 2rem 0; font-style: italic; color: var(--crimson-text);">
+                For detailed Casket mechanics, see <a href="lore-caskets-overview.html" style="color: var(--leather-glow);">Casket Technology Overview</a>
+            </p>
+        </section>
+
+        <div class="cosmic-divider">
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- Nikolas Theslar -->
@@ -860,13 +1132,54 @@
                 <span class="quote-attribution">— Dr. Nikolas Theslar, Final Transmission (Year 0, Hour 0)</span>
             </div>
 
+            <h3 style="margin-top: 2rem;">The Theslar Engine: Still Running After 437 Years</h3>
+
             <p class="manuscript-text">
-                Theslar did not die in the Cataclysm. He became <strong>fused with the Theslar Engine itself</strong>, his consciousness trapped in the core for 437 years. He conducts the "Screaming Choir"—the voices of everyone who tried to shut down the Engine and failed. Players who reach the Core will meet him. And he will beg for death.
+                Theslar did not die in the Cataclysm. He became <strong>fused with the Theslar Engine itself</strong>, his consciousness trapped in the core for 437 years, unable to move, unable to die, forced to witness every consequence of his hubris.
             </p>
+
+            <div class="layer-card" style="margin-top: 2rem;">
+                <h4>Physical Description of the Engine</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Location</strong>: North Pole (Ground Zero), hovering 2 miles above a 12-mile-wide crater of glass and twisted metal</li>
+                    <li><strong>Size</strong>: 3-mile diameter sphere composed of rotating dimensional fragments—pieces of Material World, Feywild, and Void locked in perpetual collision</li>
+                    <li><strong>Appearance</strong>: Imagine a massive gyroscope made from reality shards. Sections phase in/out of existence. One moment you see industrial machinery, next moment crystalline forests, next moment screaming Void. The whole structure pulses with blood-red light synchronized to a heartbeat rhythm.</li>
+                    <li><strong>The Scar</strong>: The tear in reality directly beneath it—a vertical wound leaking Void energy like a severed artery bleeds blood. This is the source of all post-Sundering Void contamination.</li>
+                    <li><strong>Accessibility</strong>: Impassable. The surrounding 50-mile "Dead Zone" kills unprotected humans in minutes from radiation/Void exposure. Even Casket-equipped expeditions rarely penetrate beyond 20 miles. No one has reached the core in 437 years.</li>
+                </ul>
+            </div>
+
+            <div class="void-callout" style="margin-top: 2rem;">
+                <p class="manuscript-text" style="margin: 0;">
+                    <strong>The Screaming Choir</strong>: When the Engine activated, 182 souls were consumed instantly—the Theslar Station research staff. Their consciousnesses weren't destroyed. They were trapped in the Engine's dimensional matrix, experiencing non-linear time. For them, the Cataclysm happens simultaneously forever. Their screams echo across all radio frequencies as psychic static—a constant background noise that every radio operator, Soulstone-linked pilot, and sensitive mage can hear if they listen. It sounds like 182 voices trying to warn you about something that already happened. Theslar himself is the conductor—forced to experience their suffering on loop, unable to shut it down, unable to die.
+                </p>
+            </div>
+
+            <div class="layer-card" style="margin-top: 2rem;">
+                <h4>What It's Doing (Year 437)</h4>
+                <p class="manuscript-text">
+                    The Engine is still <em>running</em>. It's drawing Void energy through the Scar and broadcasting it across planetary ley lines like Theslar originally intended—except instead of wireless power, it's transmitting reality corruption. This is why:
+                </p>
+                <ul class="manuscript-list">
+                    <li>Soulstones recharge passively (Void saturation)</li>
+                    <li>Magic is 100x stronger post-Sundering (ambient Void energy)</li>
+                    <li>Abominations spawn constantly (Void leakage)</li>
+                    <li>Technology doesn't work (electromagnetic pulse + ongoing interference)</li>
+                </ul>
+
+                <p class="manuscript-text">
+                    <strong>Shutting It Down</strong>: The central plot question. Can it be stopped? Theslar built failsafes—manual shutdown protocols requiring access to the core. But reaching the core means surviving the Dead Zone, navigating dimensional instability, and confronting Theslar himself. And even if you succeed, shutting down the Engine might collapse the Void/Material boundary entirely, finishing what the Sundering started. Or it might stabilize reality. No one knows. The Draconids won't say.
+                </p>
+            </div>
+
+            <div class="manuscript-quote" style="margin-top: 2rem;">
+                "They ask if we can shut it down. Wrong question. <em>Should</em> we shut it down? The Engine is the only thing keeping the Scar from expanding. It's a tourniquet on a severed artery. Remove it, and the wound bleeds out. But leave it, and the infection spreads. We chose slow death over instant annihilation. Was that mercy or cowardice?"
+                <span class="quote-attribution">— Archivist Memories, Draconid Remembrance</span>
+            </div>
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- The Veil Accords -->
@@ -905,7 +1218,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- Metaphysics -->
@@ -1074,12 +1387,297 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
+        </div>
+
+        <!-- Daily Life in Year 437 -->
+        <section class="reveal-section">
+            <h2>Daily Life in Year 437: Survival in the Wasteland</h2>
+
+            <p class="manuscript-text">
+                The grand cosmology matters, but on the ground, survivors care about simpler things: food, water, safety, and whether they'll see tomorrow. Here's what daily existence looks like in the ruins of civilization.
+            </p>
+
+            <div class="layer-card">
+                <h3>Food & Water</h3>
+
+                <h4>Food Sources (In Order of Safety)</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Scavenged Pre-Sundering Supplies</strong>: Canned goods, dried rations, sealed containers. Safe but increasingly rare (437 years of scavenging). Finding an intact cache is like striking gold.</li>
+                    <li><strong>Cultivated Crops</strong>: Ash-resistant grains (engineered by Elven botanists), fungus farms (Dwarven specialty), root vegetables. Bland, nutritious, requires arable land and protection.</li>
+                    <li><strong>Hunted Game</strong>: Deer, rabbits, fish—if they're not Void-corrupted. Experienced hunters can identify safe meat (check eyes, blood color, smell). 30% of wild game shows minor mutation.</li>
+                    <li><strong>Void-Tainted Flora/Fauna</strong>: Edible if cooked properly (heat denatures Void proteins). Tastes bitter, causes nausea in 10% of consumers. Repeated consumption risks Void corruption.</li>
+                    <li><strong>Nomad Rations</strong>: Dried mystery meat, preserved insects, cactus paste. Reliable but expensive (Nomad trade goods).</li>
+                    <li><strong>Ossuarium "Sustenance Contracts"</strong>: Sign your soul over, receive lifetime food supply. Desperate option. Irreversible.</li>
+                </ul>
+
+                <h4>Water Sources</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Wells</strong>: Must be dug 100+ feet deep to avoid surface contamination. Requires ritual purification (Church blessings or Elven water-singing).</li>
+                    <li><strong>Rain Collection</strong>: Safe in most regions, but near Void rifts, rainwater shows acidic properties. Always boil.</li>
+                    <li><strong>Rivers/Lakes</strong>: 50/50 gamble. Test with Soulstone shard—if it glows, water is Void-tainted. Filtration systems exist but require Dwarven engineering.</li>
+                    <li><strong>Bartered from Nomads</strong>: Clean water hauled from safe zones. Expensive but guaranteed pure.</li>
+                </ul>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>Economy & Trade</h3>
+                <p class="manuscript-text">
+                    Pre-Sundering currency is worthless. The modern economy runs on three systems:
+                </p>
+
+                <h4>Exchange Scrip (Official Currency)</h4>
+                <p class="manuscript-text">
+                    Backed by the Exchange's Ledger Orthodox and Rational House. Metal coins stamped with faction seals. Value guaranteed by threat of excommunication + economic sanctions. Accepted in all neutral zones.
+                </p>
+
+                <h4>Barter (Common Practice)</h4>
+                <ul class="manuscript-list">
+                    <li><strong>Ammunition</strong>: Universal currency. 1 rifle round = 1 day's food</li>
+                    <li><strong>Soulstone Shards</strong>: Small fragments. 1 shard = 1 week's shelter</li>
+                    <li><strong>Medical Supplies</strong>: Antibiotics worth their weight in gold</li>
+                    <li><strong>Tools</strong>: Hammers, nails, saws—irreplaceable</li>
+                </ul>
+
+                <h4>Soul Contracts (Ossuarium Exclusive)</h4>
+                <p class="manuscript-text">
+                    "Sign here, receive immediate payment. When you die, your soul powers our Caskets for eternity." Legally binding. Enforced by necromantic compulsion. 15-20% of survivors have signed.
+                </p>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>Typical Day (Settlement Resident)</h3>
+                <table class="timeline-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Activity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dawn (0600)</strong></td>
+                            <td>Wake armed. Check perimeter for Abomination tracks. Morning prayer/ritual (faction-dependent).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Morning (0700-1200)</strong></td>
+                            <td>Work detail: farming, smithing, scavenging ruins, repairing defenses. Everyone works. No exceptions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Midday (1200-1300)</strong></td>
+                            <td>Meal (rationed). Community gathering. News shared, disputes mediated.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Afternoon (1300-1800)</strong></td>
+                            <td>Continued work. Children trained in survival skills (weapon use, Void recognition, first aid).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dusk (1800-1900)</strong></td>
+                            <td>Fortify settlement. Light torches (Abominations avoid fire). Assign night watch.</td>
+                        </tr>
+                        <tr style="background: rgba(139, 0, 0, 0.1);">
+                            <td><strong>Night (1900-0600)</strong></td>
+                            <td>Inside walls. Armed. Sleep in shifts. Abominations most active. Casket pilots on standby.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="void-callout">
+                <p class="manuscript-text" style="margin: 0;">
+                    <strong>Life Expectancy</strong>: Pre-Sundering average was 70 years. Year 437 average is 38 years. Causes: Abomination attacks (40%), disease (25%), faction warfare (20%), starvation (10%), Void corruption (5%). Children born post-Sundering have 60% chance of reaching adulthood. This is why every pilot, every smith, every functioning adult is irreplaceable. There are no spare people.
+                </p>
+            </div>
+        </section>
+
+        <div class="cosmic-divider">
+            <span class="cosmic-symbol">*</span>
+        </div>
+
+        <!-- Faction Diplomacy & Interaction -->
+        <section class="reveal-section">
+            <h2>Faction Diplomacy: How the Nine Interact</h2>
+
+            <p class="manuscript-text">
+                The factions are at war, but not constant total war. Resources are scarce, Caskets are irreplaceable, and Abominations threaten everyone. This creates complex web of temporary alliances, trade agreements, and neutral zones.
+            </p>
+
+            <div class="layer-card">
+                <h3>Neutral Zones (Where War is Forbidden)</h3>
+
+                <h4>Exchange Clearinghouses</h4>
+                <p class="manuscript-text">
+                    Enforced neutral ground. Armed Exchange peacekeepers patrol. All factions trade here. Violence results in lifetime ban + economic sanctions. The Exchange maintains 12 major Clearinghouses globally.
+                </p>
+
+                <h4>Draconid Archives (Skyhold)</h4>
+                <p class="manuscript-text">
+                    Sacred library-fortress. Draconids allow researchers from all factions to access pre-Sundering records—for a price (usually knowledge exchange). Violence within 10 miles of Skyhold results in Draconid intervention (always fatal for aggressor).
+                </p>
+
+                <h4>Shimmerlands (Feywild Overlap Zones)</h4>
+                <p class="manuscript-text">
+                    Reality-optional territories where physics break down. Factions avoid combat here because:  (1) Weapons behave unpredictably, (2) Fae use confusion to broker deals, (3) Entering angry means exiting transformed (literally). De facto neutral, but not by treaty—just mutual fear.
+                </p>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>Arena Combat (Dispute Resolution)</h3>
+                <p class="manuscript-text">
+                    When factions dispute territory/resources but want to avoid full war:
+                </p>
+                <ul class="manuscript-list">
+                    <li><strong>Challenge Issued</strong>: Formal declaration via Exchange mediators</li>
+                    <li><strong>Terms Negotiated</strong>: What's at stake, rules of engagement, Casket limits</li>
+                    <li><strong>Combat</strong>: Designated neutral ground, Exchange referees, usually 1v1 or 3v3 Casket duels</li>
+                    <li><strong>Binding Result</strong>: Winner takes disputed resource, loser withdraws. Enforced by all factions (breaking arena results = universal sanctions)</li>
+                </ul>
+
+                <p class="manuscript-text">
+                    <strong>Example</strong>: Church claims pre-Sundering hospital contains sacred medical supplies. Nomads already scavenging. Arena duel: 3 Church Casketeers vs 3 Nomad scouts. Nomads win 2-1. Church withdraws, keeps 1/3 salvage as consolation (standard split).
+                </p>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>Trade Networks</h3>
+                <table class="timeline-table">
+                    <thead>
+                        <tr>
+                            <th>Faction</th>
+                            <th>Exports</th>
+                            <th>Imports</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dwarves (Forge-Guilds)</strong></td>
+                            <td>Caskets, weapons, tools, runecraft</td>
+                            <td>Food, surface scavenged materials, Soulstones</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Elves (Verdant Covenant)</strong></td>
+                            <td>Purified water, healing herbs, wood, bio-engineering</td>
+                            <td>Metal, pre-Sundering tech, protection contracts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nomads</strong></td>
+                            <td>Transportation, scavenged goods, intelligence/maps</td>
+                            <td>Weapons, fuel, Casket repairs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Church</strong></td>
+                            <td>Exorcism services, purification rituals, soldiers</td>
+                            <td>Everything (Church poor, pays in faith-labor)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ossuarium</strong></td>
+                            <td>Undead labor, Casket pilots (bound souls), necromantic services</td>
+                            <td>Living recruits (voluntary contracts), Soulstones</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wyrd Conclave (Fae)</strong></td>
+                            <td>Bargains (anything you want...for a price)</td>
+                            <td>Stories, emotions, "interesting" outcomes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="void-callout">
+                <p class="manuscript-text" style="margin: 0;">
+                    <strong>Current Alliances (Year 437)</strong>: Temporary, shifting constantly. Right now: Church + Elves (anti-Ossuarium pact), Dwarves + Nomads (trade treaty), Crucible Pacts + Emergent Syndicate (mutual Abomination defense). Wyrd Conclave allied with no one. Exchange neutral to all. Draconids observe only. Expect betrayals.
+                </p>
+            </div>
+        </section>
+
+        <div class="cosmic-divider">
+            <span class="cosmic-symbol">*</span>
+        </div>
+
+        <!-- Void Corruption Stages -->
+        <section class="reveal-section">
+            <h2>Void Corruption: How Reality Poisoning Progresses</h2>
+
+            <p class="manuscript-text">
+                Void exposure isn't instant death—it's slow transformation. Understanding the stages helps survivors recognize when someone (or themselves) is too far gone.
+            </p>
+
+            <div class="layer-card">
+                <h3>Corruption Stages & Timeline</h3>
+                <table class="timeline-table">
+                    <thead>
+                        <tr>
+                            <th>Stage</th>
+                            <th>Timeline</th>
+                            <th>Symptoms</th>
+                            <th>Reversibility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: rgba(184, 134, 11, 0.05);">
+                            <td><strong>Stage 1: Exposure</strong></td>
+                            <td>1-30 days</td>
+                            <td>Nightmares (Void imagery), paranoia, veins darken (visible under skin), metallic taste, mild nausea</td>
+                            <td><strong>High</strong>: Church exorcism, Elven purification rituals, rest in ley line-free zones</td>
+                        </tr>
+                        <tr style="background: rgba(184, 134, 11, 0.1);">
+                            <td><strong>Stage 2: Mutation</strong></td>
+                            <td>30-90 days</td>
+                            <td>Minor physical changes (extra finger, eyes change color/shape, skin texture shifts), personality alterations (aggression, apathy, obsession), intrusive thoughts</td>
+                            <td><strong>Moderate</strong>: Requires intensive ritual magic + Soulstone purging. Success rate 60%. Permanent scarring likely.</td>
+                        </tr>
+                        <tr style="background: rgba(139, 0, 0, 0.1);">
+                            <td><strong>Stage 3: Transformation</strong></td>
+                            <td>90-180 days</td>
+                            <td>Major mutations (limb changes, biology alterations), memory fragmentation (forgets loved ones, own name), reality distortion (sees things that aren't there), violent outbursts</td>
+                            <td><strong>Low</strong>: Experimental Elven grove-binding or Ossuarium soul-extraction might work. Success rate <20%. Usually fatal.</td>
+                        </tr>
+                        <tr style="background: rgba(139, 0, 0, 0.2);">
+                            <td><strong>Stage 4: Abomination</strong></td>
+                            <td>180+ days</td>
+                            <td>Complete transformation. Original consciousness destroyed or subsumed. Entity no longer recognizably human. Hostile to all structured reality.</td>
+                            <td><strong>None</strong>: Mercy killing recommended. Some factions capture Stage 4s for study/weaponization. Ethical debate ongoing.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>Exposure Sources</h3>
+                <ul class="manuscript-list">
+                    <li><strong>Proximity to Void Rifts</strong>: Living within 50 miles = Stage 1 in 6 months. Within 10 miles = Stage 1 in weeks.</li>
+                    <li><strong>Abomination Contact</strong>: Physical touch transfers Void residue. Wounds from Abomination claws always Stage 1 corruption.</li>
+                    <li><strong>Void Storms</strong>: Weather phenomena where reality cracks. Exposure = immediate Stage 1, progresses rapidly.</li>
+                    <li><strong>Consuming Tainted Food/Water</strong>: Repeated consumption over months = gradual Stage 1.</li>
+                    <li><strong>Soulstone Overuse</strong>: Casket pilots using max energy repeatedly risk Void bleed-through. Professional hazard.</li>
+                </ul>
+            </div>
+
+            <div class="void-callout">
+                <p class="manuscript-text" style="margin: 0;">
+                    <strong>Population Impact</strong>: Estimated 5-10% of survivors show Stage 1 symptoms at any given time. 2-3% are Stage 2. Stage 3 are usually quarantined or exiled. Stage 4 are hunted. The Vestige Bloodlines are survivors of controlled Stage 2-3 corruption—stabilized but permanently mutated. The Emergent Syndicate are willing Stage 4 transformations (but arthropod-directed, not random chaos).
+                </p>
+            </div>
+
+            <div class="layer-card reveal-section">
+                <h3>Treatment Options by Faction</h3>
+                <ul class="manuscript-list">
+                    <li><strong>Church of Absolution</strong>: Exorcism rituals, prayer-fasting, holy water (ley line water blessed by Inquisitor). Stage 1: 80% success. Stage 2: 40%.</li>
+                    <li><strong>Verdant Covenant (Elves)</strong>: Grove immersion (patient lives in sacred forest for weeks), fungal symbiosis treatment, water-singing. Stage 1: 90% success. Stage 2: 60%.</li>
+                    <li><strong>Forge-Guilds (Dwarves)</strong>: Soulstone purging (extract corruption into crystal, destroy crystal). Stage 1: 70% success. Stage 2: 50%. Expensive.</li>
+                    <li><strong>Ossuarium</strong>: "Controlled transformation"—bind soul before Stage 4, extract into Casket. You die, but consciousness preserved. Not a cure. An alternative.</li>
+                    <li><strong>Wyrd Conclave (Fae)</strong>: Bargain away your corruption (costs: memories, emotions, future potential). 100% effective for Stage 1-2. Price always higher than you think.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="cosmic-divider">
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- The Secret Truth -->
         <section class="gm-secret reveal-section">
-            <h2 style="color: var(--void-glow); text-align: center;">The Draconids Were Right</h2>
+            <h2 style="color: var(--leather-glow); text-align: center;">The Draconids Were Right</h2>
             <p class="manuscript-text" style="font-style: italic;">
                 The Cataclysm has happened <strong>three times total</strong> (including the current one):
             </p>
@@ -1108,7 +1706,7 @@
                         <td>Year 0</td>
                         <td>Void (Theslar's Engine)</td>
                     </tr>
-                    <tr style="background: rgba(157, 78, 221, 0.2);">
+                    <tr style="background: rgba(184, 134, 11, 0.2);">
                         <td><strong>Fourth?</strong></td>
                         <td><strong>~Year 20,000+</strong></td>
                         <td><strong>???</strong></td>
@@ -1126,7 +1724,7 @@
         </section>
 
         <div class="cosmic-divider">
-            <span class="cosmic-symbol">✦</span>
+            <span class="cosmic-symbol">*</span>
         </div>
 
         <!-- Conclusion -->
@@ -1151,7 +1749,7 @@
         </section>
 
         <div style="text-align: center; margin: 4rem 0;">
-            <span style="font-size: 4rem; color: var(--void-glow);">✦</span>
+            <span style="font-size: 4rem; color: var(--leather-glow);">*</span>
         </div>
     </main>
 
