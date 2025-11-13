@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomalous Event Tables - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+        /* Tier-specific glow boxes */
+        .tier-sanctus {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(184, 134, 11, 0.15) 100%);
+            border-left: 4px solid #daa520;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tier-minoris {
+            background: linear-gradient(135deg, rgba(173, 216, 230, 0.1) 0%, rgba(135, 206, 250, 0.15) 100%);
+            border-left: 4px solid #87ceeb;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tier-communis {
+            background: linear-gradient(135deg, rgba(144, 238, 144, 0.1) 0%, rgba(60, 179, 113, 0.15) 100%);
+            border-left: 4px solid #90ee90;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tier-peculiaris {
+            background: linear-gradient(135deg, rgba(186, 85, 211, 0.1) 0%, rgba(147, 112, 219, 0.15) 100%);
+            border-left: 4px solid #ba55d3;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tier-gravis {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 165, 0, 0.15) 100%);
+            border-left: 4px solid #ff8c00;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tier-periculosus {
+            background: linear-gradient(135deg, rgba(255, 69, 0, 0.1) 0%, rgba(220, 20, 60, 0.15) 100%);
+            border-left: 4px solid #ff4500;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tier-horrificus {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(178, 34, 34, 0.15) 100%);
+            border-left: 4px solid #8b0000;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .tier-terminus {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.1) 0%, rgba(138, 43, 226, 0.15) 100%);
+            border-left: 4px solid #4b0082;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        /* Interactive table hover effects */
+        .manuscript-table tbody tr {
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .manuscript-table tbody tr:hover {
+            background: rgba(218, 165, 32, 0.1);
+            transform: translateX(4px);
+        }
+
+        .event-table {
+            width: 100%;
+            margin: 1rem 0;
+            border-collapse: collapse;
+        }
+
+        .event-table th {
+            background: rgba(90, 70, 50, 0.3);
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 2px solid var(--aged-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        .event-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid rgba(90, 70, 50, 0.2);
+            vertical-align: top;
+        }
+
+        .event-table tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        .event-table tbody tr:hover {
+            background: rgba(218, 165, 32, 0.08);
+        }
+
+        .roll-column {
+            width: 60px;
+            font-weight: bold;
+            color: var(--aged-gold);
+        }
+
+        .manuscript-quote {
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .manuscript-quote:hover {
+            background: rgba(218, 165, 32, 0.05);
+            box-shadow: 0 2px 8px rgba(218, 165, 32, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="content-home.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" target="_parent">CODEX</a> /
+            <a href="rules.html" target="_parent">RULES</a> /
+            Anomalous Event Tables
+        </nav>
+
+        <h1>Anomalous Event Tables</h1>
+
+        <div class="manuscript-quote">
+            "The wasteland is not empty. It watches. It remembers. And sometimes, it reaches out."
+            <span class="quote-attribution">— Nomad Proverb</span>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <h2>How to Use These Tables</h2>
+
+        <p class="manuscript-text">
+            The wasteland is unpredictable. Reality itself is fractured from the Sundering, and strange phenomena occur without warning. Use these tables when traveling between missions, exploring ruins, or whenever the GM wants to introduce chaos.
+        </p>
+
+        <div class="tier-sanctus">
+            <h3>Rolling for Anomalous Events</h3>
+            <ol class="manuscript-list">
+                <li><strong>Roll 1d10</strong> to determine the event tier (severity level)</li>
+                <li><strong>Roll 1d20</strong> within that tier to determine the specific event</li>
+                <li><strong>Apply the event immediately</strong> and narrate the consequences</li>
+            </ol>
+        </div>
+
+        <h3>Event Tier Reference</h3>
+        <table class="manuscript-table">
+            <thead>
+                <tr>
+                    <th>1d10 Roll</th>
+                    <th>Tier Name</th>
+                    <th>Severity</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1-2</td>
+                    <td><strong>Sanctus</strong></td>
+                    <td>Beneficial</td>
+                    <td>Blessed occurrences, helpful discoveries, or minor boons</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>Minoris</strong></td>
+                    <td>Minor</td>
+                    <td>Small inconveniences or curiosities with little impact</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Communis</strong></td>
+                    <td>Common</td>
+                    <td>Everyday wasteland occurrences, neutral effects</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><strong>Peculiaris</strong></td>
+                    <td>Strange</td>
+                    <td>Odd phenomena that require attention but aren't dangerous</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><strong>Gravis</strong></td>
+                    <td>Serious</td>
+                    <td>Significant threats that demand immediate response</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><strong>Periculosus</strong></td>
+                    <td>Dangerous</td>
+                    <td>Life-threatening situations requiring tactical decisions</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><strong>Horrificus</strong></td>
+                    <td>Horrific</td>
+                    <td>Nightmare scenarios with lasting consequences</td>
+                </tr>
+                <tr>
+                    <td>9-10</td>
+                    <td><strong>Terminus</strong></td>
+                    <td>Catastrophic</td>
+                    <td>World-ending threats that may kill the party outright</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- SANCTUS TIER -->
+        <div class="tier-sanctus">
+            <h2>Tier I: Sanctus (Rolls 1-2 on 1d10)</h2>
+            <p class="manuscript-text"><em>Beneficial events, blessings, and fortunate discoveries</em></p>
+        </div>
+
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th class="roll-column">1d20</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="roll-column">1</td>
+                    <td><strong>Soulstone Cache:</strong> Discover an undamaged lockbox containing 3 pristine Soulstones (6 Energy each). No Taint.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">2</td>
+                    <td><strong>Nomad Trading Caravan:</strong> Friendly Nomads offer to trade at 20% discount. They have rumors about nearby ruins.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">3</td>
+                    <td><strong>Church Blessing:</strong> A wandering Penitent performs a purification ritual. Remove 1 Taint from all party members.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">4</td>
+                    <td><strong>Leyline Confluence:</strong> Caskets regenerate 3 Energy per turn for the next 3 turns (stacks with normal regen).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">5</td>
+                    <td><strong>Salvage Jackpot:</strong> Find a perfectly preserved Equipment Deck (random faction) in working condition.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">6</td>
+                    <td><strong>Weather Shift:</strong> Clear skies and calm winds. Visibility increases; gain +1 to all ranged attacks for the day.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">7</td>
+                    <td><strong>Atlantean Echo:</strong> Brief vision of ancient Atlantis. Gain knowledge of a safe route (skip next random encounter).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">8</td>
+                    <td><strong>Draconid Marker:</strong> Ancient stone inscribed with directions to a Soulstone deposit 2 hexes away.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">9</td>
+                    <td><strong>Ossuarium Memorial:</strong> Respectfully maintained grave site. Rest here to heal 5 HP to all Caskets.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">10</td>
+                    <td><strong>Wyrd Gift:</strong> Fae sprites leave a token (shimmering gemstone). Grants one auto-success on any skill check.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">11</td>
+                    <td><strong>Exchange Supply Drop:</strong> Parachute crate contains 500 Credits worth of goods (your choice of items).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">12</td>
+                    <td><strong>Crucible Prototype:</strong> Find experimental component. Upgrade one Equipment card permanently (+1 damage or -1 cost).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">13</td>
+                    <td><strong>Bloodlines Relic:</strong> Ancient vampiric trinket. Grants +2 HP regeneration per turn for one mission.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">14</td>
+                    <td><strong>Emergent Data Node:</strong> Upload tactical data. All party members draw +1 card next combat.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">15</td>
+                    <td><strong>Elven Sanctuary:</strong> Hidden grove with clean water and edible plants. Full rest restores all HP.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">16</td>
+                    <td><strong>Dwarven Rune:</strong> Etched protection sigil on nearby rock. +2 Defense to all party members until next rest.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">17</td>
+                    <td><strong>Lucky Find:</strong> Intact pre-Sundering item (compass, binoculars, or map). Worth 300 Credits to collectors.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">18</td>
+                    <td><strong>Friendly Encounter:</strong> Meet NPC ally who joins for one mission (GM choice of faction support unit).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">19</td>
+                    <td><strong>Void Recession:</strong> Local Void corruption temporarily weakens. Gain immunity to Taint for 24 hours.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">20</td>
+                    <td><strong>Perfect Conditions:</strong> Everything goes right. Gain 1 Favor Token (spend for automatic mission success or enemy reroll).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- MINORIS TIER -->
+        <div class="tier-minoris">
+            <h2>Tier II: Minoris (Roll 3 on 1d10)</h2>
+            <p class="manuscript-text"><em>Minor inconveniences and small curiosities</em></p>
+        </div>
+
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th class="roll-column">1d20</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="roll-column">1</td>
+                    <td><strong>Compass Malfunction:</strong> Magnetic interference from nearby leyline. Navigation checks at -1 for 1 hour.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">2</td>
+                    <td><strong>Light Rain:</strong> Visibility reduced slightly. All ranged attacks beyond 6 hexes at -1 to hit.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">3</td>
+                    <td><strong>Static Discharge:</strong> Casket sensors fritz. Lose 1 Energy from each Casket's pool.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">4</td>
+                    <td><strong>Phantom Voices:</strong> Hear whispers in unknown language. Unnerving but harmless. Party is distracted (-1 to Perception).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">5</td>
+                    <td><strong>Mirage:</strong> See shimmering illusion of water/oasis ahead. Lose 30 minutes investigating before realizing it's fake.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">6</td>
+                    <td><strong>Sandstorm:</strong> Brief dust devil obscures vision. All ranged attacks miss for 1 turn, then dissipates.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">7</td>
+                    <td><strong>Scavenger Birds:</strong> Carrion crows circle overhead. Ominous but not dangerous. Local predators may investigate later.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">8</td>
+                    <td><strong>Broken Equipment:</strong> One random non-weapon item (rope, bedroll, etc.) malfunctions. Costs 50 Credits to replace.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">9</td>
+                    <td><strong>Wrong Turn:</strong> Misread map. Add 1 hour to travel time. No other consequences.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">10</td>
+                    <td><strong>Casket Hydraulic Leak:</strong> Minor fluid loss. One random Casket's movement reduced by 1 hex until repaired (10 minutes).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">11</td>
+                    <td><strong>Soulstone Flicker:</strong> Briefly unstable energy. All party members must discard 1 card, then draw 1 card.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">12</td>
+                    <td><strong>Fae Prank:</strong> Mischievous sprites rearrange supplies. Lose 1d6×10 Credits worth of mundane goods (food, water).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">13</td>
+                    <td><strong>Unstable Ground:</strong> Terrain shifts slightly. Next combat starts with difficult terrain in 1d6 random hexes.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">14</td>
+                    <td><strong>Signal Interference:</strong> Can't communicate via radio for 1 hour. Isolated but safe.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">15</td>
+                    <td><strong>Nausea Wave:</strong> Brief sickness from minor Void exposure. All party members -1 to next attack roll.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">16</td>
+                    <td><strong>Equipment Jam:</strong> One random weapon misfires on first use in next combat (deals no damage, still consumes Energy).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">17</td>
+                    <td><strong>Bad Rations:</strong> Spoiled food. Lose 1 day's supplies. Party is hungry (-1 HP until proper meal).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">18</td>
+                    <td><strong>Insect Swarm:</strong> Annoying flies/locusts. All Perception checks at -2 for 30 minutes.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">19</td>
+                    <td><strong>Casket Sensor Error:</strong> False threat detected. Waste 15 minutes preparing for combat that never comes.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">20</td>
+                    <td><strong>Minor Paranoia:</strong> Feel watched (nothing there). One random party member nervous: -1 to Initiative next combat.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- COMMUNIS TIER -->
+        <div class="tier-communis">
+            <h2>Tier III: Communis (Roll 4 on 1d10)</h2>
+            <p class="manuscript-text"><em>Common wasteland occurrences with neutral effects</em></p>
+        </div>
+
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th class="roll-column">1d20</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="roll-column">1</td>
+                    <td><strong>Nomad Scouts:</strong> Distant figures observe party. They radio coordinates to nearest trading post (neutral interaction).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">2</td>
+                    <td><strong>Abandoned Campsite:</strong> Recently vacated. Find 1d6×20 Credits in scrap, but owners might return.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">3</td>
+                    <td><strong>Leyline Pulse:</strong> Energy wave passes through. All Caskets gain 2 Energy, but also gain 1 Taint.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">4</td>
+                    <td><strong>Scavenger Competition:</strong> Another party is searching the same ruins. Roll Initiative; first to find loot keeps it.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">5</td>
+                    <td><strong>Territorial Animals:</strong> Non-hostile wildlife (deer, wild dogs) watching from distance. Won't attack unless provoked.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">6</td>
+                    <td><strong>Radiation Pocket:</strong> Detect low-level contamination. Must detour (add 30 minutes) or pass through (gain 1 Taint).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">7</td>
+                    <td><strong>Wandering Merchant:</strong> Lone trader offers standard prices. Has 2d6 random items from equipment list.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">8</td>
+                    <td><strong>Church Patrol:</strong> Penitents pass by. Neutral unless party has Taint 3+ (then hostile encounter).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">9</td>
+                    <td><strong>Ossuarium Ritual Site:</strong> Bone-walkers performing ceremony. They ignore party if undisturbed.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">10</td>
+                    <td><strong>Wyrd Crossing:</strong> Path intersects Fae territory. Roll 1d6: 1-3 nothing happens, 4-6 lose 1 hour to time distortion.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">11</td>
+                    <td><strong>Exchange Checkpoint:</strong> Mercenaries demand 100 Credits toll to pass safely. Can negotiate or fight.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">12</td>
+                    <td><strong>Crucible Test Site:</strong> Old battlefield with destroyed Caskets. Salvage 1d6×50 Credits in scrap (takes 1 hour).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">13</td>
+                    <td><strong>Bloodlines Territory:</strong> Vampire scouts observe from shadows. They leave unless party has bleeding/injured members.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">14</td>
+                    <td><strong>Emergent Anomaly:</strong> Void distortion creates visual glitch. Reality flickers but stabilizes (no mechanical effect).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">15</td>
+                    <td><strong>Elven Watchers:</strong> Hidden archers track party through forested area. Won't engage unless hostile intent shown.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">16</td>
+                    <td><strong>Dwarven Minefield:</strong> Detect old traps ahead. Can disarm (15 minutes) or detour (30 minutes).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">17</td>
+                    <td><strong>Weather Change:</strong> Temperature shifts 20 degrees (hotter or colder). Uncomfortable but manageable.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">18</td>
+                    <td><strong>Old Warning Sign:</strong> Pre-Sundering hazard marker (radiation, biohazard, etc.). Area ahead uncertain.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">19</td>
+                    <td><strong>Soulstone Deposit:</strong> Find 1d3 damaged Soulstones (3 Energy each, but each use gains 1 Taint).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">20</td>
+                    <td><strong>Traveler's Rest:</strong> Safe clearing for camping. Next long rest fully restores HP but provides no other bonuses.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- PECULIARIS TIER -->
+        <div class="tier-peculiaris">
+            <h2>Tier IV: Peculiaris (Roll 5 on 1d10)</h2>
+            <p class="manuscript-text"><em>Strange phenomena requiring attention</em></p>
+        </div>
+
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th class="roll-column">1d20</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="roll-column">1</td>
+                    <td><strong>Atlantean Mirage:</strong> See crystalline city shimmer in distance. Investigate to find ancient artifact (random equipment card).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">2</td>
+                    <td><strong>Draconid Memory Crystal:</strong> Touch ancient horn fragment; receive vision of past Cataclysm. Gain knowledge but lose 1 hour to trance.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">3</td>
+                    <td><strong>Gravity Anomaly:</strong> Local physics distorted. All movement costs +1 Energy for next combat.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">4</td>
+                    <td><strong>Temporal Echo:</strong> Witness ghost of pre-Sundering event. Disturbing but provides +1 to next Investigation check.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">5</td>
+                    <td><strong>Soulstone Resonance:</strong> All Soulstones hum in unison. Something powerful nearby. Next encounter is Elite/Boss tier.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">6</td>
+                    <td><strong>Fae Bargain:</strong> Sprite offers trade: Give 2 Taint, receive 1 random beneficial card. Refuse and gain 1 Taint from insult.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">7</td>
+                    <td><strong>Void Whispers:</strong> Hear alien thoughts. Make Willpower check (DC 12) or gain 2 Taint from mental intrusion.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">8</td>
+                    <td><strong>Living Shadows:</strong> Darkness moves independently. Not hostile but unnerving. -2 to Perception checks until next rest.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">9</td>
+                    <td><strong>Blood Rain:</strong> Sky weeps crimson. All party members gain 1 Taint. Ossuarium nearby; they're performing ritual.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">10</td>
+                    <td><strong>Crystalline Growth:</strong> Soulstone shards sprout from ground like plants. Harvest 1d6 shards (2 Energy each, fragile).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">11</td>
+                    <td><strong>Phantom Casket:</strong> See translucent war machine phase in/out. Follow to find battlefield loot (1d6×100 Credits).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">12</td>
+                    <td><strong>Magnetic Storm:</strong> All metal objects pulled in one direction. Discard 1 card per Casket; recover after 10 minutes.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">13</td>
+                    <td><strong>Emergent Glitch:</strong> Reality pixelates briefly. Each Casket swaps 1 random card with another party member.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">14</td>
+                    <td><strong>Dwarven Golem:</strong> Ancient automaton wanders aimlessly. Won't attack unless interfered with. Contains 200 Credits if dismantled.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">15</td>
+                    <td><strong>Elven Song:</strong> Haunting melody from unseen source. Heal 3 HP per Casket but become drowsy (-1 Initiative next combat).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">16</td>
+                    <td><strong>Vampire's Gaze:</strong> Feel watched by predatory eyes. Bloodlines scout tracking party. Next combat they may join as third faction.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">17</td>
+                    <td><strong>Leyline Intersection:</strong> Multiple energy streams cross. Choose: Gain 5 Energy and 2 Taint, or avoid and lose 1 hour.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">18</td>
+                    <td><strong>Church Miracle:</strong> Spontaneous healing light appears. Cleanses 1d3 Taint from each party member (divine intervention).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">19</td>
+                    <td><strong>Exchange Airdrop:</strong> Parachute lands nearby. Contains mission objective for different party. Steal for 300 Credits or leave.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">20</td>
+                    <td><strong>Nomad Prophecy:</strong> Elder shaman approaches with warning. Reveals location of next hazard (skip one dangerous encounter).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- GRAVIS TIER -->
+        <div class="tier-gravis">
+            <h2>Tier V: Gravis (Roll 6 on 1d10)</h2>
+            <p class="manuscript-text"><em>Serious threats demanding immediate response</em></p>
+        </div>
+
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th class="roll-column">1d20</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="roll-column">1</td>
+                    <td><strong>Ambush!</strong> 1d6 hostile Caskets attack from cover. Standard combat encounter (enemy faction: roll 1d8).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">2</td>
+                    <td><strong>Soulstone Overload:</strong> Nearby deposit explodes. All Caskets take 1d6 damage and gain 1d3 Taint from backlash.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">3</td>
+                    <td><strong>Void Rift:</strong> Reality tears open. Void creatures (3×Abomination adds, 5 HP each) pour through for 3 turns, then rift closes.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">4</td>
+                    <td><strong>Casket Malfunction:</strong> One random Casket's Soulstone cracks. Lose half current Energy, gain 2 Taint, -2 Defense until repaired.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">5</td>
+                    <td><strong>Toxic Cloud:</strong> Chemical weapon residue released. All party members take 3 damage, gain 2 Taint, -1 to all actions for 1 hour.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">6</td>
+                    <td><strong>Betrayal:</strong> NPC ally (if present) reveals hidden agenda. Steals 1d6×50 Credits and flees, or attacks if cornered.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">7</td>
+                    <td><strong>Leyline Surge:</strong> Massive energy spike. All Caskets gain 10 Energy but must immediately spend it or take overload damage (2×unspent Energy).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">8</td>
+                    <td><strong>Fae Curse:</strong> Angered sprite hexes party. All attacks deal -2 damage until curse lifted (requires Church ritual or Fae apology).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">9</td>
+                    <td><strong>Bloodlines Hunt:</strong> Vampire pack (4×Bloodline warriors) tracks wounded party member. Must fight or sacrifice 5 HP to feed them.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">10</td>
+                    <td><strong>Ossuarium Plague:</strong> Bone-dust infection spreads. Each party member makes DC 15 Endurance check or gain "Withering" (lose 1 HP/hour for 6 hours).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">11</td>
+                    <td><strong>Crucible Minefield:</strong> Stepped into trapped zone. Take 1d6×2 damage to random Casket, then combat with Crucible patrol (1d4 units).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">12</td>
+                    <td><strong>Exchange Bounty:</strong> Mercenaries reveal party has price on heads (500 Credits). Fight 1d6+2 Exchange soldiers or negotiate.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">13</td>
+                    <td><strong>Emergent Virus:</strong> Digital infection spreads to Casket systems. Each turn in next combat, discard 1 random card (cumulative).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">14</td>
+                    <td><strong>Elven Ambush:</strong> Archers fire from trees. All party members take 1d6 damage. Roll Initiative; elves flee after 3 turns if losing.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">15</td>
+                    <td><strong>Dwarven Collapse:</strong> Tunnel/ruin structure fails. All Caskets take 2d6 damage. Must dig out (lose 2 hours) or find alternate route.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">16</td>
+                    <td><strong>Nomad Hostility:</strong> Accidentally violated sacred ground. Nomad warriors demand 500 Credits compensation or fight (1d6+3 units).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">17</td>
+                    <td><strong>Church Inquisition:</strong> Zealots detect high Taint. Party must submit to purification (lose all Taint, 200 Credits) or fight (1d6 Penitents).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">18</td>
+                    <td><strong>Soulstone Parasites:</strong> Leeching entities attach to Energy cores. Lose 2 Energy/turn until purged (requires 3 turns of no combat).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">19</td>
+                    <td><strong>Sandstorm:</strong> Massive wall of dust hits. All Caskets blinded; can't make ranged attacks for 1d6 turns. Melee only.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">20</td>
+                    <td><strong>Void Corruption Spike:</strong> All party members gain 1d6 Taint immediately. One random Casket's weapon becomes Void-touched (+2 damage, +1 Taint/use).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- PERICULOSUS TIER -->
+        <div class="tier-periculosus">
+            <h2>Tier VI: Periculosus (Roll 7 on 1d10)</h2>
+            <p class="manuscript-text"><em>Life-threatening situations requiring tactical decisions</em></p>
+        </div>
+
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th class="roll-column">1d20</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="roll-column">1</td>
+                    <td><strong>Elite Ambush:</strong> 1d3 Elite-tier enemy Caskets with full decks. They have prepared positions (+2 Defense, high ground).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">2</td>
+                    <td><strong>Void Beast:</strong> Massive Abomination (30 HP, 5 Defense, AoE attacks) emerges from rift. Fight or flee (DC 18 to escape).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">3</td>
+                    <td><strong>Soulstone Detonation:</strong> Unstable core critical. All Caskets within 10 hexes take 3d6 damage. Must evacuate immediately or disarm (DC 20 tech check).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">4</td>
+                    <td><strong>Reality Collapse:</strong> Terrain becomes Void-warped. All movement costs double, random teleportation each turn (1d6 hexes in random direction).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">5</td>
+                    <td><strong>Atlantean Guardian:</strong> Ancient automaton activates (40 HP, 6 Defense). Defends ruins; won't pursue but won't let party pass without combat.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">6</td>
+                    <td><strong>Draconid Judgment:</strong> Ancient Draconid deems party unworthy. Petrifying gaze: Each Casket makes DC 18 save or stunned for 1d3 turns.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">7</td>
+                    <td><strong>Wyrd Hunt:</strong> Fae Wild Hunt rides forth. 2d6 mounted Fae warriors attack. They regenerate 2 HP/turn and can't be killed, only driven off.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">8</td>
+                    <td><strong>Blood Moon Rising:</strong> All Bloodlines gain +3 damage. 1d6+4 vampire Caskets attack with berserker fury (no retreat).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">9</td>
+                    <td><strong>Bonelord Appearance:</strong> Ossuarium commander (35 HP, summons 2 adds/turn) challenges party. Defeat to gain safe passage.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">10</td>
+                    <td><strong>Crucible Bombardment:</strong> Artillery strike incoming. Each turn, 1d3 random hexes take 8 damage AoE. Lasts 1d6 turns.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">11</td>
+                    <td><strong>Exchange Execution Squad:</strong> 6 elite mercenaries with anti-Casket weapons (ignore 3 Defense). No negotiation; fight to death.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">12</td>
+                    <td><strong>Emergent Hivemind:</strong> Void-touched machines merge into super-unit (50 HP, acts twice/turn). Separates if reduced below 25 HP.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">13</td>
+                    <td><strong>Elven Encirclement:</strong> 2d6 archers surround party. Each turn, 1d6 arrows rain down (3 damage each). Must break through or surrender.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">14</td>
+                    <td><strong>Dwarven War Machine:</strong> Ancient siege golem (45 HP, 7 Defense, AoE stomp) guards mountain pass. No way around.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">15</td>
+                    <td><strong>Nomad War Party:</strong> Violated sacred site. 2d6+2 Nomad Caskets attack. They fight honorably; surrender possible at half HP.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">16</td>
+                    <td><strong>Church Crusade:</strong> 1d6+4 Penitent Caskets on holy mission. Won't stop attacking until party submits to purification (lose all gear, kept alive).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">17</td>
+                    <td><strong>Leyline Overload:</strong> Energy tsunami approaches. All Caskets gain 20 Energy but take 4d6 damage and 1d6 Taint from surge.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">18</td>
+                    <td><strong>Void Possession:</strong> One random party Casket becomes Void-touched. Acts as enemy for 1d6 turns (attacks allies). Snap out at half HP.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">19</td>
+                    <td><strong>Three-Way Battle:</strong> Stumble into fight between two factions (1d8 units each). Both sides attack party as third combatant.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">20</td>
+                    <td><strong>Cascading Failure:</strong> All Caskets' Soulstones crack simultaneously. Each loses half HP, half Energy, gains 3 Taint. Repairs cost 500 Credits total.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- HORRIFICUS TIER -->
+        <div class="tier-horrificus">
+            <h2>Tier VII: Horrificus (Roll 8 on 1d10)</h2>
+            <p class="manuscript-text"><em>Nightmare scenarios with lasting consequences</em></p>
+        </div>
+
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th class="roll-column">1d20</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="roll-column">1</td>
+                    <td><strong>Void Gate Opens:</strong> Massive rift tears reality. 3d6 Void creatures spawn each turn for 1d6 turns. Must close gate (DC 25 check) or flee.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">2</td>
+                    <td><strong>Casket Corruption:</strong> All party Caskets gain "Void-Touched" permanent debuff: +3 damage dealt, +2 Taint gained per mission, max Taint reduced to 8.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">3</td>
+                    <td><strong>Boss Encounter:</strong> Named enemy commander (60 HP, 8 Defense, unique abilities) plus 1d6 elite adds. Retreat DC 22 or fight.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">4</td>
+                    <td><strong>Reality Storm:</strong> Physics unravels. Random effects each turn: Gravity reversal, time dilation, matter phase-shift. Combat impossible; survive 1d6 turns.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">5</td>
+                    <td><strong>Soulstone Plague:</strong> Infectious corruption spreads. All party members gain 2d6 Taint. Contagious; gain 1 Taint/day until purified (costs 1000 Credits).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">6</td>
+                    <td><strong>Atlantean Wrath:</strong> High Architect Thalassar appears. Dimensional powers erase 1 random Casket from existence. Others must flee or be erased (no save).</td>
+                </tr>
+                <tr>
+                    <td class="row-column">7</td>
+                    <td><strong>Draconid Petrification:</strong> Ancient curse activates. All Caskets turn to stone for 1d6 turns. Helpless; if attacked, shatter permanently (character death).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">8</td>
+                    <td><strong>Fae Realm Entrapment:</strong> Party pulled into Feywild. Time flows differently; lose 1d6 days in Material world. Must complete Fae quest to return.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">9</td>
+                    <td><strong>Bloodlines Exsanguination:</strong> Vampire lord (50 HP, life drain aura) attacks. Each turn, all party members lose 2 HP (heals vampire). Must kill quickly.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">10</td>
+                    <td><strong>Ossuarium Death March:</strong> Bone army rises (20 skeleton Caskets, 10 HP each). Defeat 1d6 per turn but more rise. Escape or be overwhelmed.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">11</td>
+                    <td><strong>Crucible Doomsday Weapon:</strong> Experimental weapon fires. 10-hex radius takes 10d6 damage. One turn to escape blast zone or be vaporized.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">12</td>
+                    <td><strong>Exchange Total War:</strong> Mercenary army (3d6 units) surrounds party. Negotiate with 1000 Credits or fight impossible odds (reinforcements arrive each turn).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">13</td>
+                    <td><strong>Emergent Singularity:</strong> Void AI awakens. Reality becomes code. All Caskets digitized; lose physical forms. Must defeat AI core (40 HP) to restore bodies.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">14</td>
+                    <td><strong>Elven Worldtree Rage:</strong> Ancient forest becomes hostile. Animated trees (6×40 HP) attack. Fire only weapon that works; using it angers elves permanently.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">15</td>
+                    <td><strong>Dwarven Forge Meltdown:</strong> Underground lava flow erupts. All hexes fill with molten rock in 1d6 turns. Take 5 damage/turn in lava. Must reach exit.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">16</td>
+                    <td><strong>Nomad Curse:</strong> Shaman hexes party with "Doom." Each party member dies in 1d6 days unless curse broken (requires rare components, 1500 Credits).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">17</td>
+                    <td><strong>Church Martyrdom:</strong> Cardinal performs mass sacrifice. All Penitents (2d6) explode for 8 damage AoE when killed. Cardinal becomes invincible until all die.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">18</td>
+                    <td><strong>Leyline Apocalypse:</strong> Multiple leylines explode simultaneously. All Caskets take 5d6 damage and 2d6 Taint. Terrain becomes Void-warped permanently.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">19</td>
+                    <td><strong>Void Ascension:</strong> One random party member's Casket becomes Void entity (50 HP, attacks allies). Must kill transformed friend or all die.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">20</td>
+                    <td><strong>Total Equipment Loss:</strong> EMP blast destroys all Soulstone-powered gear. All Equipment decks discarded. Can only use basic attacks until resupplied (2000 Credits).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <!-- TERMINUS TIER -->
+        <div class="tier-terminus">
+            <h2>Tier VIII: Terminus (Rolls 9-10 on 1d10)</h2>
+            <p class="manuscript-text"><em>Catastrophic world-ending threats - Party wipe possible</em></p>
+        </div>
+
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th class="roll-column">1d20</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="roll-column">1</td>
+                    <td><strong>Engine Reactivation:</strong> Theslar Engine briefly activates. Reality shatters. All Caskets take 10d6 damage and 10 Taint. Roll save DC 25 or be erased from existence.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">2</td>
+                    <td><strong>Void Titan:</strong> Kaiju-sized Abomination (100 HP, 10 Defense, 15 damage AoE attacks). Cannot be killed by party; must survive 10 turns then it leaves.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">3</td>
+                    <td><strong>Dimension Collapse:</strong> Material Plane and Feywild merge. All party members split into two versions (normal and Fae). Must reunify or both halves die in 1 hour.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">4</td>
+                    <td><strong>Atlantean Judgment:</strong> City of Atlantis phases into location. Dimensional energies disintegrate all non-Atlantean matter. Party has 3 turns to teleport away or die.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">5</td>
+                    <td><strong>Draconid Prophecy Fulfilled:</strong> Fourth Ending begins. Sky tears open, Void pours in. All Caskets gain 20 Taint immediately. World ends in 1 hour (campaign over unless stopped).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">6</td>
+                    <td><strong>Fae Court Arrives:</strong> Entire Wild Hunt (30+ units) descends. Archfae lord (80 HP, reality manipulation) demands tribute: One party member's soul or all die.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">7</td>
+                    <td><strong>Vampire Progenitor:</strong> First Bloodlines (100 HP, immortal regeneration) awakens. Cannot be killed; can only be sealed (requires ancient ritual, takes 1 hour uninterrupted).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">8</td>
+                    <td><strong>Necropolis Rising:</strong> All dead in 10-mile radius animate as Ossuarium undead. Millions of zombies. Party cannot fight; must evacuate region or be consumed.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">9</td>
+                    <td><strong>Crucible Self-Destruct:</strong> Failed war machine initiates core meltdown. Nuclear explosion in 10 turns. Blast radius 20 miles. No survival without teleportation.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">10</td>
+                    <td><strong>Exchange Warfleet:</strong> Entire mercenary armada (100+ Caskets, aerial bombardment) deployed. Party worth 10,000 Credits dead. Negotiate or flee; cannot win.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">11</td>
+                    <td><strong>Emergent Awakening:</strong> All machines in 50-mile radius gain sentience and turn hostile. Party's own Caskets rebel (must fight own equipment with 0 cards).</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">12</td>
+                    <td><strong>Elven Extinction Event:</strong> Worldtree dies; elves go berserk. Every elf (thousands) hunts party. Forest itself attacks. No sanctuary; must leave continent.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">13</td>
+                    <td><strong>Dwarven Ragnarok:</strong> Mountains collapse as ancient holds fail. Tectonic devastation. All terrain becomes avalanche/earthquake. DC 30 to survive each turn for 1d6 turns.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">14</td>
+                    <td><strong>Nomad Tribal War:</strong> All Nomad clans unite against party for unforgivable transgression. 200+ warriors. Execution imminent unless divine intervention occurs.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">15</td>
+                    <td><strong>Church Apocalypse:</strong> Cardinal Prime declares Crusade. All Church forces (1000+ Penitents) mobilize. Party branded heretics; hunted forever unless prove innocence.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">16</td>
+                    <td><strong>Leyline Detonation:</strong> Global leyline network explodes. Chain reaction engulfs continent. All Soulstones shatter. Caskets powerless. Civilization ends. Campaign over.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">17</td>
+                    <td><strong>Void Apotheosis:</strong> Party leader becomes Void god (80 HP, instant-kill powers). Other players must kill friend or be enslaved. No third option.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">18</td>
+                    <td><strong>Time Loop Trap:</strong> Caught in temporal recursion. Relive last 10 minutes forever. Each loop, party loses 1d6 HP and 1d6 Taint. Must break loop or die in 20 loops.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">19</td>
+                    <td><strong>Cosmic Horror:</strong> Entity from beyond Void arrives (1000 HP, cannot be harmed by mortals). Seeing it costs 10 Taint. Party goes insane unless flee immediately.</td>
+                </tr>
+                <tr>
+                    <td class="roll-column">20</td>
+                    <td><strong>Reality Deletion:</strong> GM choice: Party retroactively never existed. All accomplishments erased. Characters forgotten. Restart campaign from Year 0 with new party (total party wipe).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "We rolled Terminus. We knew what that meant. We weren't coming back."
+            <span class="quote-attribution">— Last transmission from Recon Unit Seven</span>
+        </div>
+
+        <h2>GM Notes: Using Anomalous Events</h2>
+
+        <p class="manuscript-text">
+            These tables are designed to inject unpredictability into your campaigns. Some guidelines:
+        </p>
+
+        <ul class="manuscript-list">
+            <li><strong>Frequency:</strong> Roll once per hex traveled in dangerous territory, or once per session in safe areas</li>
+            <li><strong>Context Matters:</strong> Adjust results to fit narrative. If party just fought, maybe skip combat encounters</li>
+            <li><strong>Terminus Tier:</strong> These are campaign-defining moments. Use sparingly. Some may end the campaign!</li>
+            <li><strong>Player Agency:</strong> Always give players choices, even in catastrophic scenarios</li>
+            <li><strong>Consequences:</strong> Make events matter. A "Terminus" encounter should be remembered for years</li>
+        </ul>
+
+        <p class="manuscript-text">
+            The wasteland is alive, watching, and utterly indifferent to survival. These events remind players that they are not the only force shaping this world.
+        </p>
+
+        <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 2px solid var(--dark-red);">
+            <p style="font-style: italic; color: var(--bone-white);">
+                <a href="content-home.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">← Codex Home</a>
+                •
+                <a href="rules.html" target="_parent" style="color: var(--bone-white); text-decoration: none;">Rules Reference</a>
+            </p>
+        </div>
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
