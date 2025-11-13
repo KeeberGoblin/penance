@@ -6,8 +6,217 @@
     <title>The Chronicles - Penance Codex</title>
     <link rel="stylesheet" href="manuscript-style.css">
     <style>
-        /* Navigation bar for direct page access (not in iframe) */
-/* Navigation bar for direct page access (not in iframe) */
+        /* Timeline Container */
+        .timeline-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2rem 1rem;
+        }
+
+        /* Central timeline line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg,
+                var(--dark-red) 0%,
+                var(--aged-gold) 50%,
+                var(--dark-red) 100%);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        /* Timeline Group */
+        .timeline-group {
+            position: relative;
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Timeline Event (Chronicle Entry) */
+        .timeline-event {
+            opacity: 0;
+            animation: slide-in linear forwards;
+            animation-timeline: view();
+            animation-range: contain 10% contain 40%;
+        }
+
+        .timeline-group:nth-child(odd) .timeline-event {
+            grid-column: 1;
+            transform: translateX(-100px);
+        }
+
+        .timeline-group:nth-child(even) .timeline-event {
+            grid-column: 3;
+            transform: translateX(100px);
+        }
+
+        /* Timeline Point (decorative circle) */
+        .timeline-point {
+            grid-column: 2;
+            width: 24px;
+            height: 24px;
+            background: var(--dark-red);
+            border: 4px solid var(--aged-gold);
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
+            animation: scale-up linear forwards;
+            animation-timeline: view();
+            animation-range: contain 20% contain 50%;
+        }
+
+        /* Timeline Date */
+        .timeline-date {
+            position: absolute;
+            top: -1.5rem;
+            font-size: 0.85rem;
+            color: var(--aged-gold);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fade-in linear forwards;
+            animation-timeline: view();
+            animation-range: contain 15% contain 45%;
+        }
+
+        .timeline-group:nth-child(odd) .timeline-date {
+            right: calc(50% + 3rem);
+        }
+
+        .timeline-group:nth-child(even) .timeline-date {
+            left: calc(50% + 3rem);
+        }
+
+        /* Chronicle Card Styling */
+        .chronicle-card {
+            background: linear-gradient(135deg, rgba(75, 14, 14, 0.3) 0%, rgba(26, 20, 16, 0.9) 100%);
+            border: 2px solid var(--dark-red);
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chronicle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(139, 0, 0, 0.4);
+        }
+
+        .chronicle-card h2 {
+            color: var(--crimson-text);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .chronicle-card h3 {
+            color: var(--aged-gold);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Scroll-Driven Animations */
+        @keyframes slide-in {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scale-up {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.4);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Fallback for browsers without scroll-driven animations */
+        @supports not (animation-timeline: view()) {
+            .timeline-event, .timeline-point, .timeline-date {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+
+            body::before {
+                content: 'Your browser does not support scroll-driven animations. Content is still viewable.';
+                display: block;
+                background: var(--dark-red);
+                color: var(--bone-white);
+                padding: 1rem;
+                text-align: center;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .timeline-container::before {
+                left: 2rem;
+            }
+
+            .timeline-group {
+                grid-template-columns: auto 1fr;
+                gap: 1rem;
+                padding-left: 1rem;
+            }
+
+            .timeline-group:nth-child(odd) .timeline-event,
+            .timeline-group:nth-child(even) .timeline-event {
+                grid-column: 2;
+                transform: translateX(50px);
+            }
+
+            .timeline-point {
+                grid-column: 1;
+                width: 16px;
+                height: 16px;
+            }
+
+            .timeline-date {
+                position: static;
+                margin-bottom: 0.5rem;
+                grid-column: 2;
+            }
+
+            .timeline-group:nth-child(odd) .timeline-date,
+            .timeline-group:nth-child(even) .timeline-date {
+                left: auto;
+                right: auto;
+            }
+        }
+
+        /* Decorative section dividers */
+        .section-divider {
+            text-align: center;
+            margin: 3rem 0;
+            font-size: 2rem;
+            color: var(--dark-red);
+            animation: fade-in linear forwards;
+            animation-timeline: view();
+            animation-range: contain 20% contain 50%;
+        }
 </style>
 </head>
 <body>
@@ -27,12 +236,16 @@
             "History is written by survivors. And we are all survivors of something."
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle I: The Final Transmission</h2>
-        <h3>Year 0, Hour 0 - The Sundering</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <div class="timeline-container">
+        <!-- Chronicle I -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 0</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle I: The Final Transmission</h2>
+                    <h3>Year 0, Hour 0 - The Sundering</h3>
+                    <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Recovered audio crystal, Siberian Wastes Research Station<br>
                 <strong>Credibility:</strong> Authenticated by Forge-Guild archivists
@@ -66,13 +279,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-ground-zero.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Ground Zero</a> | <a href="lore-engine.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">The Theslar Engine</a> | <a href="lore-theslar-overview.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Dr. Theslar</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle II: The Mercy of Sister Vex</h2>
-        <h3>Year 94 - The Penitent Kingdoms</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle II -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 94</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle II: The Mercy of Sister Vex</h2>
+                    <h3>Year 94 - The Penitent Kingdoms</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Confession log, Absolon Inquisition Archives<br>
                 <strong>Credibility:</strong> Official Church record (biased)
@@ -114,13 +333,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-npcs.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Sister Vex Profile</a> | <a href="lore-void.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Taint & Corruption</a> | <a href="faction-church.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Church of Absolution</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle III: The Pruning of Ashveil</h2>
-        <h3>Year 89 - Verdant Covenant Border</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle III -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 89</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle III: The Pruning of Ashveil</h2>
+                    <h3>Year 89 - Verdant Covenant Border</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Eyewitness account, refugee testimony<br>
                 <strong>Credibility:</strong> Unverified, corroborated by Orcish scouts
@@ -154,13 +379,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-void.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Taint & Void Corruption</a> | <a href="faction-elves.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Verdant Covenant</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle IV: The Abacus Miscalculation</h2>
-        <h3>Year 91 - Forge-Guild Expedition</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle IV -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 91</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle IV: The Abacus Miscalculation</h2>
+                    <h3>Year 91 - Forge-Guild Expedition</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Mission log, recovered from abandoned Casket<br>
                 <strong>Credibility:</strong> Authenticated, Forge-Guild official record
@@ -202,13 +433,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-npcs.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Forgemaster Durr Profile</a> | <a href="faction-dwarves.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Dwarven Forge-Guilds</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle V: The Ledger of Souls</h2>
-        <h3>Year 78 - The Ossuarium Territory</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle V -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 78</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle V: The Ledger of Souls</h2>
+                    <h3>Year 78 - The Ossuarium Territory</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Recovered contract, Karath's personal archives<br>
                 <strong>Credibility:</strong> Original document (horrifyingly authentic)
@@ -254,13 +491,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-bonelord-karath.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Bonelord Karath</a> | <a href="lore-soul-binding.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Soul-Binding Mechanics</a> | <a href="faction-undead.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">The Ossuarium</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle VI: The Bargain of Mirrors</h2>
-        <h3>Year 85 - Shimmerlands Border</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle VI -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 85</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle VI: The Bargain of Mirrors</h2>
+                    <h3>Year 85 - Shimmerlands Border</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Testimony of sole survivor<br>
                 <strong>Credibility:</strong> Debatable (witness is <em>different</em> now)
@@ -300,13 +543,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-npcs.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Mockingbird Profile</a> | <a href="wyrd_mechanic.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Wyrd Conclave</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle VII: The Dragon's Warning</h2>
-        <h3>Year 52 - Dragon Peaks</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle VII -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 52</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle VII: The Dragon's Warning</h2>
+                    <h3>Year 52 - Dragon Peaks</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Ancient Draconid inscription, translated<br>
                 <strong>Credibility:</strong> Authenticated (text is 1,200 years old - predates the Cataclysm)
@@ -350,13 +599,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="faction-draconid.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Draconid Remembrance</a> | <a href="lore-sundering.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">The Sundering</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle VIII: The First Casket</h2>
-        <h3>Year 52 - Penitent Kingdoms</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle VIII -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 52</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle VIII: The First Casket</h2>
+                    <h3>Year 52 - Penitent Kingdoms</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Engineer's diary, anonymous<br>
                 <strong>Credibility:</strong> Partial (later pages are bloodstained and illegible)
@@ -402,13 +657,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-caskets-overview.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Casket Technology</a> | <a href="lore-casket-origins.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Casket Origins</a> | <a href="lore-void.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Taint & Corruption</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle IX: The Screaming Choir</h2>
-        <h3>Year 83 - Siberian Wastes Expedition</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle IX -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 83</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle IX: The Screaming Choir</h2>
+                    <h3>Year 83 - Siberian Wastes Expedition</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Audio log, recovered from dead scout<br>
                 <strong>Credibility:</strong> Authenticated (but deeply disturbing)
@@ -454,13 +715,19 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-engine.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">The Theslar Engine</a> | <a href="lore-theslar-overview.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Dr. Nikolas Theslar</a> | <a href="lore-ground-zero.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Ground Zero</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
-
-        <h2>Chronicle X: The Truth About Soulstones</h2>
-        <h3>Year 97 - Recovered Research Notes</h3>
-
-        <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+        <!-- Chronicle X -->
+        <div class="timeline-group">
+            <div class="timeline-date">Year 97</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle X: The Truth About Soulstones</h2>
+                    <h3>Year 97 - Recovered Research Notes</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
                 <strong>Source:</strong> Anonymous researcher (suspected Forge-Guild defector)<br>
                 <strong>Credibility:</strong> Suppressed (this document is banned in all territories)
@@ -518,10 +785,14 @@
         <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
             <strong>Related Lore:</strong> <a href="lore-soulstone-system.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Soulstone System</a> | <a href="lore-void.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">The Void</a> | <a href="lore-factions-overview.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Faction Ideologies</a>
         </p>
+                </div>
+            </div>
+        </div>
 
-        <div style="text-align: center; margin: 2rem 0;"><span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span></div>
+        </div> <!-- end timeline-container -->
 
-        <h2>Using Chronicle Entries in Play</h2>
+
+<h2>Using Chronicle Entries in Play</h2>
 
         <h3>Flavor Text</h3>
         <p>Read these aloud at the start of sessions to establish tone and foreshadow events.</p>
@@ -542,6 +813,7 @@
         <div style="text-align: center; margin: 3rem 0; padding: 2rem; border-top: 3px double var(--dark-red); color: var(--aged-gold); font-size: 0.9rem;">
             <p><a href="lore-engine.html" target="_parent">Previous: The Engine</a> | <a href="content-home.html" target="_parent">Return to Codex Home</a></p>
         </div>
+    
     </main>
     <script src="codex-common.js"></script>
 </body>
