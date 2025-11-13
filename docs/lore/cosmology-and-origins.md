@@ -114,10 +114,11 @@ The Void doesn't want to consume reality - it wants to **merge** with it. It's e
 
 ### Species Demographics Overview
 
-Before the Theslar Event, humanity was not one species—it was **six distinct subspecies** of *Homo sapiens*, each adapted to extreme environments over 50,000+ years of geographic isolation. What fantasy calls "dwarves" and "elves" are actually **evolutionary divergences** shaped by volcanic caverns, ancient forests, and isolated ecosystems.
+Before the Theslar Event, humanity was not one species—it was **seven distinct subspecies/variants** of *Homo sapiens*, each adapted to extreme environments or dimensional exposure over 50,000+ years. What fantasy calls "dwarves" and "elves" are actually **evolutionary divergences** shaped by volcanic caverns, ancient forests, and isolated ecosystems. Atlanteans represent the oldest divergence—proto-humans transformed by 50,000 years of Feywild exile.
 
-**Total Surviving Population (Year 437):** ~12.4 million
-**Pre-Sundering Global Population:** ~1.8 billion
+**Total Surviving Population (Year 437):** ~12.45 million
+**Pre-Sundering Global Population:** ~1.8 billion (not including Atlantis, which was in Feywild exile)
+**Atlantean Population:** ~47,000 (returned Year 412 from dimensional exile)
 **Casualties from Theslar Event:** 99.3% mortality
 
 ---
@@ -375,7 +376,89 @@ Before the Theslar Event, humanity was not one species—it was **six distinct s
 
 ---
 
-### 7. The Ossuarium (Undead)
+### 7. Atlanteans (Homo Atlanticus) - **THE RETURNED EXILES**
+
+**Origin**: ~62,000 BCE - Earth's first great civilization. Proto-human evolutionary divergence that existed simultaneously in Material Plane and Feywild. Spent 50,000 years in Feywild exile after First Cataclysm, returned Year 412 Post-Sundering. Not mythological—they are **evolved proto-humans transformed by 50,000 years of dimensional exposure**.
+
+**Physical Characteristics**:
+
+**Skin**:
+- **Iridescent teal to silver-blue** (Feywild transformation - bioluminescent undertones)
+- Slightly translucent (leyline veins visible glowing beneath surface)
+- Shifts color based on light angle (oil-on-water effect)
+- Semi-permeable to Feywild energy (can absorb ambient magic)
+
+**Hair**:
+- **White to deep ocean blue** (thermal bleaching from dimensional exposure)
+- Flows as if underwater even in still air (perpetual low-gravity Feywild effect)
+- Some individuals have bioluminescent strands (glow faintly in darkness)
+- Texture like silk-fine kelp
+
+**Eyes**:
+- **Solid color, no visible pupils** (teal, aquamarine, silver)
+- Faint inner glow (leyline-infused optic nerves)
+- See in infrared and leyline spectra (detect energy flows invisible to others)
+- Non-blinking (nictitating membrane instead of eyelids)
+
+**Build**:
+- **Height**: 6'2" - 6'8" (189-203 cm) - elongated by Feywild low gravity
+- **Weight**: 140-180 lbs (hollow bones, reduced bone density)
+- Slender, graceful, elongated limbs (arboreal Fae influence)
+- Fingers 15% longer than baseline human (adapted for leyline manipulation)
+
+**Blood**:
+- **Luminescent silver-blue** (leyline-infused hemoglobin)
+- Glows faintly when exposed to air (oxidizes into bioluminescence)
+- Coagulates instantly (crystallizes into leyline-charged scabs)
+
+**Physiology**:
+- **Functionally immortal** (no observed natural deaths in 50,000 years - Feywild time dilation)
+- **Near-sterile** (1 in 1,000 conceptions succeed - Feywild exposure damaged fertility)
+- **Feywild dependency** (require 6+ hours/week Feywild immersion or suffer physical degradation)
+- **Phase shifting** (can partially phase into Feywild, becoming incorporeal for 30-60 seconds)
+- **Leyline sight** (see leylines as glowing threads connecting locations)
+- **Timeless perception** (experience time non-linearly, occasional precognition)
+- **Reality editing** (minor Feywild reality-bending within 10 feet - water flows uphill, light bends)
+- **Dimensional anchor** (cannot be forcibly teleported, banished, or displaced)
+- Lifespan: Functionally immortal (oldest living Atlantean is 52,000 years old, subjectively experienced 800 years)
+
+**Population**:
+- **Pre-Exile (~62,000 BCE)**: ~2 million
+- **Returned (Year 412)**: ~47,000 (sterility reduced population 98% during exile)
+- **Year 437**: ~47,100 (near-zero population growth)
+- **Prognosis**: Extinct in 3,000-5,000 years without intervention
+- **Territory**: Eye of the Sahara (Richat Structure, Mauritania) - 12-fold leyline nexus
+
+**Cultural Identity**:
+- **Language**: Ancient proto-language predating all modern human tongues (sounds like water flowing, wind chimes, harmonic resonance)
+- **Architecture**: Crystalline bio-luminescent cities existing simultaneously in Material + Feywild
+- **Philosophy**: "We are the Between People. Neither here nor there, human nor Fae, past nor present."
+- **Temporal psychosis**: 8% suffer permanent temporal disorientation (lost in non-linear time)
+- **Cosmic loneliness**: Everyone they knew outside Atlantis died 50,000 years ago
+- **Cultural stagnation**: Functionally immortal = no generational change, frozen civilization
+
+**How They Stayed Hidden (Pre-Sundering)**:
+They didn't. Atlantis **vanished** in -50,000 BCE. Humanity evolved after they left. Atlantean myths in human culture are genetic memory—stories passed down from pre-modern humans who witnessed the city before it disappeared.
+
+**Why They Survived First Cataclysm**:
+When leyline surge destroyed their dimensional bridge in -50,000 BCE, Atlantean architects chose to phase **entirely into the Feywild** rather than anchor to Material Plane and die in global floods. They survived... but were severed from Earth for 50,000 years.
+
+**Why They Returned**:
+The Theslar Event (Year 0) supercharged Earth's leyline network. By Year 412, dormant leylines reactivated, reopening the Eye of the Sahara's 12-fold nexus. The door home had opened. Despite Earth being transformed, hostile, and Void-corrupted, they chose to return: "Because home is a promise. We promised we would return."
+
+**Post-Sundering**:
+- **Status**: Neutral isolationists. Claim only Eye of the Sahara + 100km exclusion zone
+- **No alliances**: Refuse diplomatic relations with all factions
+- **Self-sufficient**: Feywild conjuration + leyline farming (no need for trade)
+- **Technology**: 50,000+ years ahead of post-Sundering factions (leyline engineering, dimensional anchors, memory crystals)
+- **Tragedy**: Returned home only to discover they're slowly going extinct. Terminal sterility + cultural stagnation = doomed species
+- **GM Secret**: Draconid archives reveal Atlantis has returned **three times** in history. Second return (~10,000 BCE) failed. They're trapped in temporal loop: Return → Fail → Forget → Return. Is Year 437 the cycle-breaker or another repetition?
+
+**Unique Threat**: Not hostile, but dangerously indifferent. View post-Sundering factions as "children playing with matches." Will not intervene to save humanity from itself. If Eye of the Sahara leyline nexus fails, Atlantis phases back to Feywild permanently—taking all their knowledge with them.
+
+---
+
+### 8. The Ossuarium (Undead)
 
 **Origin**: Not a species, but a **post-Sundering phenomenon**.
 
