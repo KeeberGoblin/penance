@@ -77,23 +77,27 @@
         .timeline-date {
             position: absolute;
             top: -1.5rem;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: var(--aged-gold);
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             opacity: 0;
             animation: fade-in linear forwards;
             animation-timeline: view();
             animation-range: contain 15% contain 45%;
+            white-space: nowrap;
+            max-width: 120px;
         }
 
         .timeline-group:nth-child(odd) .timeline-date {
-            right: calc(50% + 3rem);
+            right: calc(50% + 3.5rem);
+            text-align: right;
         }
 
         .timeline-group:nth-child(even) .timeline-date {
-            left: calc(50% + 3rem);
+            left: calc(50% + 3.5rem);
+            text-align: left;
         }
 
         /* Chronicle Card Styling */
@@ -721,11 +725,63 @@
 
         <!-- Chronicle X -->
         <div class="timeline-group">
+            <div class="timeline-date">Year 73</div>
+            <div class="timeline-point"></div>
+            <div class="timeline-event">
+                <div class="chronicle-card">
+                    <h2>Chronicle X: The City Between Worlds</h2>
+                    <h3>Year 73 - Mediterranean Survey</h3>
+<div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
+            <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
+                <strong>Source:</strong> Naval survey log, contradictory witness accounts<br>
+                <strong>Credibility:</strong> Multiple independent witnesses (yet maps show only ocean)
+            </p>
+        </div>
+
+        <div style="background: var(--shadow-black); border-left: 4px solid var(--dark-red); padding: 2rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.8; color: var(--aged-gold);">
+            <p style="margin-bottom: 1.3rem;">"Day 14. Chart coordinates: 36.4°N, 25.4°E. Open water. Nothing on sonar.</p>
+
+            <p style="margin-bottom: 1.3rem;">Then the horizon... <em>folded</em>.</p>
+
+            <p style="margin-bottom: 1.3rem;">One moment, empty sea. The next, there was a city. Not rising from the depths. Not sailing toward us. It was just... <em>there</em>. Like it had always been there and we'd only just noticed.</p>
+
+            <p style="margin-bottom: 1.3rem;">Spires of crystal and bronze, taller than anything I've seen. Perfectly preserved. No rust. No decay. The Engine's Pulses don't reach here—I can <em>feel</em> the difference. The air tastes wrong. Clean.</p>
+
+            <p style="margin-bottom: 1.3rem;">We sailed closer. Three of the crew swore they saw people on the docks. Beautiful people, they said. Sad eyes. Watching us like we were ghosts.</p>
+
+            <p style="margin-bottom: 1.3rem;">We got within a mile. Then the navigator screamed. His compass was spinning backward. Every instrument went mad. The water around the city started to <em>shimmer</em>, like heat haze, but cold.</p>
+
+            <p style="margin-bottom: 1.3rem;">And then it was gone.</p>
+
+            <p style="margin-bottom: 1.3rem;">Not sinking. Not fading. Just... absent. Like closing a door.</p>
+
+            <p style="margin-bottom: 1.3rem;">We stayed for three days. Searched the area. Nothing. Just ocean.</p>
+
+            <p style="margin-bottom: 1.3rem;">Day 18. It happened again. Same coordinates. City appeared for exactly four hours, then vanished.</p>
+
+            <p style="margin-bottom: 1.3rem;">Day 22. Again. Four hours.</p>
+
+            <p style="margin-bottom: 1.3rem;">It's <em>cycling</em>. In and out of... somewhere. Not our world. Not fully.</p>
+
+            <p style="margin: 0;">When I dream, I hear them calling. 'Come back,' they say. 'We've been waiting.'"</p>
+        </div>
+
+        <p style="font-style: italic; color: var(--aged-gold);">GM Note: Atlantis didn't sink—it <em>phases</em>. In and out of reality, caught between worlds. Some say it's a refuge from the Sundering. Others say it's a prison. The truth? It might be both. Players who find Atlantis during a phase-in have exactly four hours before it vanishes again.</p>
+
+        <p style="font-size: 0.9rem; color: var(--aged-gold); margin-top: 1rem;">
+            <strong>Related Lore:</strong> <a href="lore-atlantis-return.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">The Atlantean Mystery</a> | <a href="lore-sundering.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">The Sundering</a> | <a href="lore-void.html" target="_parent" style="color: var(--bone-white); text-decoration: underline;">Reality & The Void</a>
+        </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chronicle XI -->
+        <div class="timeline-group">
             <div class="timeline-date">Year 97</div>
             <div class="timeline-point"></div>
             <div class="timeline-event">
                 <div class="chronicle-card">
-                    <h2>Chronicle X: The Truth About Soulstones</h2>
+                    <h2>Chronicle XI: The Truth About Soulstones</h2>
                     <h3>Year 97 - Recovered Research Notes</h3>
 <div style="background: rgba(75, 14, 14, 0.15); padding: 1rem; border-left: 3px solid var(--aged-gold); margin: 1.5rem 0;">
             <p class="manuscript-text" style="margin: 0; font-size: 0.95rem;">
@@ -801,10 +857,10 @@
         <p>Players who research in Archives or question NPCs can uncover these as "loot" (knowledge instead of equipment).</p>
 
         <h3>Moral Dilemmas</h3>
-        <p>Several Chronicles (especially IX and X) present ethical questions players must grapple with.</p>
+        <p>Several Chronicles (especially IX and XI) present ethical questions players must grapple with.</p>
 
         <h3>Campaign Foreshadowing</h3>
-        <p>Chronicle VII (Dragon's Warning) and Chronicle IX (Screaming Choir) hint at late-game revelations.</p>
+        <p>Chronicle VII (Dragon's Warning), Chronicle IX (Screaming Choir), and Chronicle X (Atlantis) hint at late-game revelations about cycles and reality itself.</p>
 
         <div class="manuscript-quote">
             "History is written by survivors. And we are all survivors of something."
