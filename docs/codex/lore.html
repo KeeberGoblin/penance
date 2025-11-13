@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lore Index - Penance Codex</title>
+    <link rel="stylesheet" href="manuscript-style.css">
+    <style>
+        /* Navigation bar */
+        .codex-nav {
+            display: none;
+            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
+            border-bottom: 2px solid var(--aged-gold);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .codex-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .codex-nav a {
+            color: var(--aged-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .codex-nav a:hover {
+            color: var(--parchment);
+        }
+
+        .codex-nav .nav-home {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+
+        .codex-nav .nav-separator {
+            color: var(--medium-brown);
+            margin: 0 0.25rem;
+        }
+
+        .lore-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .lore-category {
+            background: linear-gradient(135deg, rgba(45, 31, 21, 0.3) 0%, rgba(26, 20, 16, 0.5) 100%);
+            border: 2px solid var(--medium-brown);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .lore-category:hover {
+            border-color: var(--aged-gold);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
+        }
+
+        .lore-category h2 {
+            color: var(--aged-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--medium-brown);
+            padding-bottom: 0.5rem;
+        }
+
+        .lore-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lore-category li {
+            margin: 0.75rem 0;
+        }
+
+        .lore-category a {
+            color: var(--parchment);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 0.5rem;
+            border-left: 3px solid transparent;
+        }
+
+        .lore-category a:hover {
+            color: var(--aged-gold);
+            border-left-color: var(--aged-gold);
+            padding-left: 1rem;
+        }
+
+        .lore-category .description {
+            font-size: 0.9rem;
+            color: var(--faded-text);
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
+    <nav class="codex-nav" id="codexNav">
+        <div class="codex-nav-content">
+            <a href="index.html" class="nav-home">← Return to Codex</a>
+            <span class="nav-separator">|</span>
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+    <script>
+        // Show navigation only if page is NOT in an iframe
+        if (window.self === window.top) {
+            document.getElementById('codexNav').style.display = 'block';
+        }
+    </script>
+
+    <main class="content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" target="_parent">CODEX</a> /
+            Lore Index
+        </nav>
+
+        <h1>Lore: The World of Penance</h1>
+
+        <div class="manuscript-quote">
+            "437 years after the Sundering. The world ended, but humanity didn't. We live in the ruins, piloting iron tombs, bound by Soulstones, hunted by Abominations. This is our penance."
+            <span class="quote-attribution">— Chronicler's Preface</span>
+        </div>
+
+        <p class="manuscript-text">
+            Welcome to the comprehensive lore index for Penance. This world is built on tragedy, survival, and the consequences of hubris. Browse by category to explore the deep history, factions, technology, and cosmic horror that defines this grimdark setting.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="lore-grid">
+            <!-- Core Worldbuilding -->
+            <div class="lore-category">
+                <h2>Core Worldbuilding</h2>
+                <ul>
+                    <li>
+                        <a href="cosmology.html" target="_parent">
+                            <strong>Cosmology & Origins</strong>
+                            <div class="description">Creation myths, species origins, metaphysics, and the two-layer reality</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-pre-sundering.html" target="_parent">
+                            <strong>Pre-Sundering World</strong>
+                            <div class="description">The hidden arcane layer, the Veil Accords, and life before Year 0</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-year-zero.html" target="_parent">
+                            <strong>Year Zero Timeline</strong>
+                            <div class="description">Hour-by-hour account of the Sundering and Day 0 catastrophe</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-sundering.html" target="_parent">
+                            <strong>The Sundering</strong>
+                            <div class="description">The Cataclysm that killed 90% of all life</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-chronicle.html" target="_parent">
+                            <strong>Chronicle of Years 0-437</strong>
+                            <div class="description">Major events from the Sundering to present day</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- The Void & Theslar Engine -->
+            <div class="lore-category">
+                <h2>The Void & Theslar Engine</h2>
+                <ul>
+                    <li>
+                        <a href="lore-void.html" target="_parent">
+                            <strong>The Void</strong>
+                            <div class="description">Extradimensional corruption, rifts, Abominations, and corruption stages</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-engine.html" target="_parent">
+                            <strong>The Theslar Engine</strong>
+                            <div class="description">The machine that broke reality, still running after 437 years</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-theslar-overview.html" target="_parent">
+                            <strong>Theslar Event Overview</strong>
+                            <div class="description">Summary of the man, the machine, and the mistake</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-ground-zero.html" target="_parent">
+                            <strong>Ground Zero (The Scar)</strong>
+                            <div class="description">The North Pole breach and Forbidden Zone</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Casket Technology -->
+            <div class="lore-category">
+                <h2>Casket Technology</h2>
+                <ul>
+                    <li>
+                        <a href="lore-caskets-overview.html" target="_parent">
+                            <strong>Caskets Overview</strong>
+                            <div class="description">10-foot mechanical war frames, half tank, half coffin</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-casket-origins.html" target="_parent">
+                            <strong>Casket Origins</strong>
+                            <div class="description">How the first Caskets were built in Year 3</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-casket-manufacturing.html" target="_parent">
+                            <strong>Casket Manufacturing</strong>
+                            <div class="description">Production methods, scarcity, and factional variations</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Soul Technology -->
+            <div class="lore-category">
+                <h2>Soul Technology</h2>
+                <ul>
+                    <li>
+                        <a href="lore-soulstone-system.html" target="_parent">
+                            <strong>Soulstone System</strong>
+                            <div class="description">How Soulstones work, their properties, and uses</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-soul-binding.html" target="_parent">
+                            <strong>Soul-Binding Mechanics</strong>
+                            <div class="description">Neural threads, consciousness transfer, and the binding process</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-neural-threads.html" target="_parent">
+                            <strong>Neural Threads</strong>
+                            <div class="description">The interface between soul and machine</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-soul-economics.html" target="_parent">
+                            <strong>Soul Economics</strong>
+                            <div class="description">The market for souls, contracts, and soul-debt</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-soulstone-volatility.html" target="_parent">
+                            <strong>Soulstone Volatility</strong>
+                            <div class="description">Instability, overload, and catastrophic failures</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Factions Overview -->
+            <div class="lore-category">
+                <h2>Factions</h2>
+                <ul>
+                    <li>
+                        <a href="lore-factions-overview.html" target="_parent">
+                            <strong>Factions Overview</strong>
+                            <div class="description">All major powers in Year 437</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-church.html" target="_parent">
+                            <strong>Church of Absolution</strong>
+                            <div class="description">Faith, penance, and redemption through suffering</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-undead.html" target="_parent">
+                            <strong>The Ossuarium</strong>
+                            <div class="description">Necrocracy where death is not the end</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-elves.html" target="_parent">
+                            <strong>Verdant Covenant (Elves)</strong>
+                            <div class="description">Bio-organic symbiosis and nature's patient wrath</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-dwarves.html" target="_parent">
+                            <strong>Forge-Guilds (Dwarves)</strong>
+                            <div class="description">War-profiteers and master crafters</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-nomads.html" target="_parent">
+                            <strong>Desert Nomads</strong>
+                            <div class="description">Eternal wanderers, home is survival</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-crucible.html" target="_parent">
+                            <strong>Crucible Pacts</strong>
+                            <div class="description">Demon-blooded survivors of experimentation</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-exchange.html" target="_parent">
+                            <strong>The Exchange</strong>
+                            <div class="description">Neutral trade network and economic power</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-fae.html" target="_parent">
+                            <strong>Wyrd Conclave (Fae)</strong>
+                            <div class="description">Reality manipulation and impossible bargains</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-emergent.html" target="_parent">
+                            <strong>Emergent Syndicate</strong>
+                            <div class="description">Arthropod-human hybrids, hivemind collective</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-bloodlines.html" target="_parent">
+                            <strong>Vestige Bloodlines</strong>
+                            <div class="description">Stabilized Void mutations, living experiments</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faction-draconid.html" target="_parent">
+                            <strong>Draconid Remembrance</strong>
+                            <div class="description">Dragon-blooded archivists who've seen it all before</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Daily Life & Culture -->
+            <div class="lore-category">
+                <h2>Daily Life & Culture</h2>
+                <ul>
+                    <li>
+                        <a href="lore-daily-life.html" target="_parent">
+                            <strong>Daily Life in Year 437</strong>
+                            <div class="description">Food, water, economy, typical day, life expectancy</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-settlements.html" target="_parent">
+                            <strong>Settlements & Cities</strong>
+                            <div class="description">Where people live in the wasteland</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-species-demographics.html" target="_parent">
+                            <strong>Species Demographics</strong>
+                            <div class="description">Population counts and distribution post-Sundering</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-crucible-culture.html" target="_parent">
+                            <strong>Crucible Pacts Culture</strong>
+                            <div class="description">Demon-blooded traditions and society</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-emergent-culture.html" target="_parent">
+                            <strong>Emergent Syndicate Culture</strong>
+                            <div class="description">Arthropod collective consciousness and society</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-bloodlines-culture.html" target="_parent">
+                            <strong>Vestige Bloodlines Culture</strong>
+                            <div class="description">Life as stabilized mutants</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-draconid-history.html" target="_parent">
+                            <strong>Draconid History</strong>
+                            <div class="description">The cycles they've witnessed</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- World & Magic -->
+            <div class="lore-category">
+                <h2>World & Magic</h2>
+                <ul>
+                    <li>
+                        <a href="lore-world-map.html" target="_parent">
+                            <strong>World Map</strong>
+                            <div class="description">Geography of post-Sundering Earth</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-climate.html" target="_parent">
+                            <strong>Climate & Geography</strong>
+                            <div class="description">Void corruption's environmental effects</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-magic-systems.html" target="_parent">
+                            <strong>Magic Systems</strong>
+                            <div class="description">How magic works in Void-saturated reality</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Notable NPCs -->
+            <div class="lore-category">
+                <h2>Notable NPCs</h2>
+                <ul>
+                    <li>
+                        <a href="lore-npcs.html" target="_parent">
+                            <strong>NPCs Overview</strong>
+                            <div class="description">Major figures across all factions</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-bonelord-karath.html" target="_parent">
+                            <strong>Bonelord Karath</strong>
+                            <div class="description">The first bound soul, Ossuarium leader</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-church.html" target="_parent">
+                            <strong>Church NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-ossuarium.html" target="_parent">
+                            <strong>Ossuarium NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-elves.html" target="_parent">
+                            <strong>Elven NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-dwarves.html" target="_parent">
+                            <strong>Dwarven NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-nomads.html" target="_parent">
+                            <strong>Nomad NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-crucible.html" target="_parent">
+                            <strong>Crucible NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-exchange.html" target="_parent">
+                            <strong>Exchange NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-wyrd.html" target="_parent">
+                            <strong>Wyrd Conclave NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-emergent.html" target="_parent">
+                            <strong>Emergent Syndicate NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-bloodlines.html" target="_parent">
+                            <strong>Bloodlines NPCs</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lore-npc-draconid.html" target="_parent">
+                            <strong>Draconid NPCs</strong>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <span style="font-size: 3rem; color: var(--dark-red);">&#10047;</span>
+        </div>
+
+        <div class="manuscript-quote">
+            "This is the world we inherited. Not the one we deserved. Not the one we wanted. But the one we must survive in, one day at a time, one Casket at a time, one soul at a time."
+            <span class="quote-attribution">— Forge-Guild motto</span>
+        </div>
+    </main>
+    <script src="codex-common.js"></script>
+</body>
+</html>
