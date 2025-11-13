@@ -46,6 +46,75 @@
             color: var(--medium-brown);
             margin: 0 0.25rem;
         }
+
+        /* Church-specific glow boxes (gold/divine theme) */
+        .church-glow {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(184, 134, 11, 0.2) 100%);
+            border-left: 4px solid #daa520;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .church-glow:hover {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.15) 0%, rgba(184, 134, 11, 0.25) 100%);
+            border-left-color: #ffd700;
+        }
+
+        /* Interactive table hover effects */
+        .manuscript-table tbody tr {
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .manuscript-table tbody tr:hover {
+            background: rgba(218, 165, 32, 0.1);
+            transform: translateX(4px);
+        }
+
+        /* Timeline entries */
+        .timeline-entry {
+            border-left: 3px solid var(--aged-gold);
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .timeline-entry:hover {
+            border-left-color: #daa520;
+        }
+
+        /* Enhanced manuscript quotes */
+        .manuscript-quote {
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .manuscript-quote:hover {
+            background: rgba(218, 165, 32, 0.05);
+            box-shadow: 0 2px 8px rgba(218, 165, 32, 0.2);
+        }
+
+        /* GM secrets box */
+        .gm-secret {
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid var(--blood-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            transition: background 0.3s ease;
+        }
+
+        .gm-secret:hover {
+            background: rgba(139, 0, 0, 0.15);
+        }
+
+        .gm-secret::before {
+            content: "[GM KNOWLEDGE ONLY]";
+            display: block;
+            color: var(--blood-red);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
     </style>
 </head>
 <body>

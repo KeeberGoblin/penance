@@ -47,6 +47,74 @@
             margin: 0 0.25rem;
         }
 
+        /* Draconid-specific glow boxes */
+        .draconid-glow {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(75, 0, 130, 0.2) 100%);
+            border-left: 4px solid #8a2be2;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .draconid-glow:hover {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.15) 0%, rgba(75, 0, 130, 0.25) 100%);
+            border-left-color: #9b4dff;
+        }
+
+        /* Interactive table hover effects */
+        .manuscript-table tbody tr {
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .manuscript-table tbody tr:hover {
+            background: rgba(138, 43, 226, 0.1);
+            transform: translateX(4px);
+        }
+
+        /* Timeline entries */
+        .timeline-entry {
+            border-left: 3px solid var(--aged-gold);
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .timeline-entry:hover {
+            border-left-color: #8a2be2;
+        }
+
+        /* Enhanced manuscript quotes */
+        .manuscript-quote {
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .manuscript-quote:hover {
+            background: rgba(138, 43, 226, 0.05);
+            box-shadow: 0 2px 8px rgba(138, 43, 226, 0.2);
+        }
+
+        /* GM secrets box */
+        .gm-secret {
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid var(--blood-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            transition: background 0.3s ease;
+        }
+
+        .gm-secret:hover {
+            background: rgba(139, 0, 0, 0.15);
+        }
+
+        .gm-secret::before {
+            content: "[GM KNOWLEDGE ONLY]";
+            display: block;
+            color: var(--blood-red);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
     </style>
 </head>
 <body>
@@ -152,23 +220,27 @@
         </div>
 
         <h3>Physical Traits: The Crystallized</h3>
-        <ul class="manuscript-list">
-            <li><strong>Skin:</strong> Not scales...<strong>crystallized stone skin</strong>. Flesh calcifying over millennia. Looks like <strong>cracked geodes</strong> (skin splits to reveal glowing crystal underneath)</li>
-            <li><strong>Eyes:</strong> <strong>Gemstone eyes</strong>...literal rubies, sapphires, emeralds embedded in eye sockets. Each eye color corresponds to draconic lineage (red=fire, blue=ice, green=poison)</li>
-            <li><strong>Horns/Crests:</strong> Not decorative...<strong>fossilized dragon bone</strong> grafted into skulls. Remnants of actual dead dragons they've inherited. Horns <strong>resonate</strong> with nearby Soulstones (hum/vibrate)</li>
-            <li><strong>Blood:</strong> When wounded, leak <strong>liquid crystal</strong> (molten gemstone, hardens instantly, seals wounds). Scar with crystal veins</li>
-            <li><strong>Build:</strong> 7-8 feet tall, gaunt (emaciated but impossibly strong). Hollow bones reinforced with crystalline lattice</li>
-            <li><strong>Voice:</strong> Echoing speech (calcified throats create harmonic overtoness). Sound like speaking from inside a cave</li>
-        </ul>
+        <div class="draconid-glow">
+            <ul class="manuscript-list">
+                <li><strong>Skin:</strong> Not scales...<strong>crystallized stone skin</strong>. Flesh calcifying over millennia. Looks like <strong>cracked geodes</strong> (skin splits to reveal glowing crystal underneath)</li>
+                <li><strong>Eyes:</strong> <strong>Gemstone eyes</strong>...literal rubies, sapphires, emeralds embedded in eye sockets. Each eye color corresponds to draconic lineage (red=fire, blue=ice, green=poison)</li>
+                <li><strong>Horns/Crests:</strong> Not decorative...<strong>fossilized dragon bone</strong> grafted into skulls. Remnants of actual dead dragons they've inherited. Horns <strong>resonate</strong> with nearby Soulstones (hum/vibrate)</li>
+                <li><strong>Blood:</strong> When wounded, leak <strong>liquid crystal</strong> (molten gemstone, hardens instantly, seals wounds). Scar with crystal veins</li>
+                <li><strong>Build:</strong> 7-8 feet tall, gaunt (emaciated but impossibly strong). Hollow bones reinforced with crystalline lattice</li>
+                <li><strong>Voice:</strong> Echoing speech (calcified throats create harmonic overtoness). Sound like speaking from inside a cave</li>
+            </ul>
+        </div>
 
         <h3>Cultural Adaptations: Eternal Exhaustion</h3>
-        <ul class="manuscript-list">
-            <li><strong>Hibernation Cycles:</strong> Sleep for decades to conserve energy. Most are 400+ years old but only awake for 100 of those years. Wake when history repeats</li>
-            <li><strong>Memory Crystals:</strong> Instead of writing, Draconids <strong>crystallize memories</strong>. Horns grow new layers each century, storing knowledge like tree rings. "Read" a Draconid by examining horn rings</li>
-            <li><strong>No Reproduction:</strong> Sterile...last generation. No new Draconids born in 200 years. Dying out and okay with it (they've seen enough)</li>
-            <li><strong>Breath Atrophy:</strong> Ancient Draconids can't use breath weapons anymore (ancestry too diluted). Only youngest (300+ years) can still breathe fire/ice</li>
-            <li><strong>Petrification:</strong> In 500 years, last Draconid will fully petrify into a <strong>living Soulstone</strong> (their "ascension"...become what they study)</li>
-        </ul>
+        <div class="draconid-glow">
+            <ul class="manuscript-list">
+                <li><strong>Hibernation Cycles:</strong> Sleep for decades to conserve energy. Most are 400+ years old but only awake for 100 of those years. Wake when history repeats</li>
+                <li><strong>Memory Crystals:</strong> Instead of writing, Draconids <strong>crystallize memories</strong>. Horns grow new layers each century, storing knowledge like tree rings. "Read" a Draconid by examining horn rings</li>
+                <li><strong>No Reproduction:</strong> Sterile...last generation. No new Draconids born in 200 years. Dying out and okay with it (they've seen enough)</li>
+                <li><strong>Breath Atrophy:</strong> Ancient Draconids can't use breath weapons anymore (ancestry too diluted). Only youngest (300+ years) can still breathe fire/ice</li>
+                <li><strong>Petrification:</strong> In 500 years, last Draconid will fully petrify into a <strong>living Soulstone</strong> (their "ascension"...become what they study)</li>
+            </ul>
+        </div>
 
         <div style="text-align: center; margin: 2rem 0;">
             <span style="font-size: 2rem; color: var(--dark-red);">&#10047;</span>

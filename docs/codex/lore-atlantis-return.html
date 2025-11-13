@@ -79,6 +79,36 @@
             margin-bottom: 1rem;
             font-size: 0.9rem;
         }
+
+        /* Interactive table hover effects */
+        .manuscript-table tbody tr, .timeline-table tbody tr {
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .manuscript-table tbody tr:hover, .timeline-table tbody tr:hover {
+            background: rgba(0, 128, 128, 0.1);
+            transform: translateX(4px);
+        }
+
+        /* Enhanced manuscript quotes */
+        .manuscript-quote {
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .manuscript-quote:hover {
+            background: rgba(0, 128, 128, 0.05);
+            box-shadow: 0 2px 8px rgba(0, 128, 128, 0.2);
+        }
+
+        .atlantean-glow:hover {
+            background: linear-gradient(135deg, rgba(0, 128, 128, 0.15) 0%, rgba(0, 64, 64, 0.25) 100%);
+            border-left-color: #20b2aa;
+        }
+
+        .timeline-entry:hover {
+            border-left-color: #008b8b;
+        }
+
     </style>
 </head>
 <body>
