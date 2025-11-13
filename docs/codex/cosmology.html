@@ -21,52 +21,7 @@
         }
 
         /* Navigation bar */
-        .codex-nav {
-            display: none;
-            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
-            border-bottom: 2px solid var(--aged-gold);
-            padding: 0.75rem 1.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-
-        .codex-nav-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .codex-nav a {
-            color: var(--aged-gold);
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            white-space: nowrap;
-        }
-
-        .codex-nav a:hover {
-            color: var(--parchment);
-        }
-
-        .codex-nav .nav-home {
-            color: var(--dark-red);
-            font-weight: 700;
-        }
-
-        .codex-nav .nav-separator {
-            color: var(--medium-brown);
-            margin: 0 0.25rem;
-        }
-
-        /* Hero Section with Parallax */
+/* Hero Section with Parallax */
         .hero-section {
             position: relative;
             min-height: 60vh;
@@ -485,17 +440,7 @@
 <body>
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-
-    <main class="content" role="main">
+<main class="content" role="main">
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="index.html" target="_parent">CODEX</a> /
             <a href="lore.html" target="_parent">LORE</a> /

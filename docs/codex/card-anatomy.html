@@ -70,65 +70,11 @@
             background: linear-gradient(135deg, #6b1a1a, #4a0e0e);
             box-shadow: 0 0 15px rgba(184, 149, 106, 0.5);
         }
-            /* Navigation bar for direct page access (not in iframe) */
-        .codex-nav {
-            display: none;
-            background: linear-gradient(135deg, #2b1f17 0%, #1a1410 100%);
-            border-bottom: 2px solid var(--aged-gold);
-            padding: 0.75rem 1.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-        .codex-nav-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .codex-nav a {
-            color: var(--aged-gold);
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            white-space: nowrap;
-        }
-        .codex-nav a:hover {
-            color: var(--parchment);
-        }
-        .codex-nav .nav-home {
-            color: var(--dark-red);
-            font-weight: 700;
-        }
-        .codex-nav .nav-separator {
-            color: var(--medium-brown);
-            margin: 0 0.25rem;
-        }
-
+            
 </style>
 </head>
 <body>
-    <!-- Navigation bar (only shows when page opened directly, not in iframe) -->
-    <nav class="codex-nav" id="codexNav">
-        <div class="codex-nav-content">
-            <a href="index.html" class="nav-home">← Return to Codex</a>
-            <span class="nav-separator">|</span>
-            <a href="content-home.html">Home</a>
-        </div>
-    </nav>
-    <script>
-        // Show navigation only if page is NOT in an iframe
-        if (window.self === window.top) {
-            document.getElementById('codexNav').style.display = 'block';
-        }
-    </script>
-    <div class="breadcrumb" style="position: fixed; top: 10px; left: 10px; background: rgba(26,20,16,0.9); padding: 0.5rem 1rem; border-radius: 4px; z-index: 1000;">
+<div class="breadcrumb" style="position: fixed; top: 10px; left: 10px; background: rgba(26,20,16,0.9); padding: 0.5rem 1rem; border-radius: 4px; z-index: 1000;">
     <a href="content-home.html" target="_parent" style="color: #d4c5b0; text-decoration: none;">CODEX</a> /
     <a href="#rules" style="color: #d4c5b0; text-decoration: none;">RULES</a> /
     <span style="color: #b8956a;">Card Anatomy</span>
@@ -415,11 +361,7 @@
                 <strong>9. Border:</strong> Gold standard border. Potential variants: Silver (rare), Red (legendary), or faction-specific colors.
             </div>
         </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="index.html" class="back-link">← Return to Codex</a>
-        </div>
-    </div>
+</div>
     <script src="codex-common.js"></script>
 </body>
 </html>
