@@ -45,3 +45,27 @@ scratchpad/
 docs/_build/
 docs/.doctrees/
 __pycache__/
+
+# Security & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.*
+config/secrets.yml
+.secrets/
+
+# Dependencies
+node_modules/
+*.pyc
+dist/
+.venv/
+venv/
+env/
+
+# IDE Metadata
+.vs/

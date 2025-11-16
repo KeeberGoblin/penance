@@ -1,0 +1,22 @@
+# Python dependencies for Penance: Absolution Through Steel
+# Install with: pip install -r requirements.txt
+
+# PDF Generation (optional - only needed for tools/generate-pdfs.py)
+WeasyPrint>=60.0
+
+# Image Processing (optional - used in some utilities)
+Pillow>=10.0.0
+
+# Markdown Processing (may be used in utilities)
+markdown>=3.4.0
+
+# Note: The project primarily uses Python standard library.
+# These dependencies are optional and only needed if you want to:
+# - Generate PDFs from markdown (WeasyPrint)
+# - Process images for TTS exports (Pillow)
+# - Parse markdown files (markdown)
+
+# For development/testing (optional):
+# pytest>=7.4.0
+# black>=23.0.0
+# flake8>=6.0.0
