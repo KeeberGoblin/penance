@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PENANCE: Card Database</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ===========================
@@ -1005,6 +1011,21 @@
     <!-- JAVASCRIPT -->
     <script>
         // ===========================
+        // SECURITY: HTML ESCAPING
+        // ===========================
+        /**
+         * Escapes HTML special characters to prevent XSS attacks
+         * @param {string} text - The text to escape
+         * @returns {string} - HTML-safe text
+         */
+        function escapeHtml(text) {
+            if (text === null || text === undefined) return '';
+            const div = document.createElement('div');
+            div.textContent = String(text);
+            return div.innerHTML;
+        }
+
+        // ===========================
         // DATA LOADING
         // ===========================
         let allCards = [];
@@ -1147,7 +1168,7 @@
             } catch (error) {
                 console.error('[Card DB] ERROR loading card data:', error);
                 console.error('[Card DB] Error stack:', error.stack);
-                document.getElementById('card-container').innerHTML = `<div class="no-results"><h3>Error loading cards</h3><p>${error.message}</p></div>`;
+                document.getElementById('card-container').innerHTML = `<div class="no-results"><h3>Error loading cards</h3><p>${escapeHtml(error.message)}</p></div>`;
             }
         }
 
@@ -1271,35 +1292,39 @@
 
         function renderGridView(container, cards) {
             container.className = 'card-grid';
-            container.innerHTML = cards.map(card => `
-                <div class="card-tile ${card.faction}" data-card-id="${card.id}" onclick="showCardDetail('${card.id}')">
+            container.innerHTML = cards.map(card => {
+                const escapedId = escapeHtml(card.id);
+                return `
+                <div class="card-tile ${escapeHtml(card.faction)}" data-card-id="${escapedId}" onclick="showCardDetail('${escapedId}')">
                     <div class="card-tile-header">
-                        <div class="card-tile-name">${card.name}</div>
-                        <div class="card-tile-cost">${card.cost}</div>
+                        <div class="card-tile-name">${escapeHtml(card.name)}</div>
+                        <div class="card-tile-cost">${escapeHtml(card.cost)}</div>
                     </div>
                     <div class="card-tile-badges">
-                        <span class="badge badge-type">${card.type}</span>
-                        ${card.damage ? `<span class="badge badge-damage">${card.damage} DMG</span>` : ''}
-                        ${card.range ? `<span class="badge badge-range">${card.range}</span>` : ''}
+                        <span class="badge badge-type">${escapeHtml(card.type)}</span>
+                        ${card.damage ? `<span class="badge badge-damage">${escapeHtml(card.damage)} DMG</span>` : ''}
+                        ${card.range ? `<span class="badge badge-range">${escapeHtml(card.range)}</span>` : ''}
                     </div>
-                    <div class="card-tile-effect">${card.effect || 'No effect text'}</div>
+                    <div class="card-tile-effect">${escapeHtml(card.effect || 'No effect text')}</div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         function renderListView(container, cards) {
             container.className = 'card-list';
-            container.innerHTML = cards.map(card => `
-                <div class="card-list-item ${card.faction}" data-card-id="${card.id}" onclick="showCardDetail('${card.id}')">
-                    <div class="list-item-cost">${card.cost}</div>
-                    <div class="list-item-name">${card.name}</div>
-                    <div class="list-item-text">${card.type}</div>
-                    <div class="list-item-text">${card.range || 'N/A'}</div>
-                    <div class="list-item-text">${card.damage || 'N/A'}</div>
-                    <div class="list-item-text">${card.heat || '0'}</div>
-                    <div class="list-item-effect">${card.effect || 'No effect'}</div>
+            container.innerHTML = cards.map(card => {
+                const escapedId = escapeHtml(card.id);
+                return `
+                <div class="card-list-item ${escapeHtml(card.faction)}" data-card-id="${escapedId}" onclick="showCardDetail('${escapedId}')">
+                    <div class="list-item-cost">${escapeHtml(card.cost)}</div>
+                    <div class="list-item-name">${escapeHtml(card.name)}</div>
+                    <div class="list-item-text">${escapeHtml(card.type)}</div>
+                    <div class="list-item-text">${escapeHtml(card.range || 'N/A')}</div>
+                    <div class="list-item-text">${escapeHtml(card.damage || 'N/A')}</div>
+                    <div class="list-item-text">${escapeHtml(card.heat || '0')}</div>
+                    <div class="list-item-effect">${escapeHtml(card.effect || 'No effect')}</div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         // ===========================
@@ -1317,24 +1342,24 @@
             statsGrid.innerHTML = `
                 <div class="detail-stat">
                     <div class="detail-stat-label">Cost</div>
-                    <div class="detail-stat-value">${card.cost} SP</div>
+                    <div class="detail-stat-value">${escapeHtml(card.cost)} SP</div>
                 </div>
                 <div class="detail-stat">
                     <div class="detail-stat-label">Type</div>
-                    <div class="detail-stat-value">${card.type}</div>
+                    <div class="detail-stat-value">${escapeHtml(card.type)}</div>
                 </div>
                 <div class="detail-stat">
                     <div class="detail-stat-label">Range</div>
-                    <div class="detail-stat-value">${card.range || 'N/A'}</div>
+                    <div class="detail-stat-value">${escapeHtml(card.range || 'N/A')}</div>
                 </div>
                 <div class="detail-stat">
                     <div class="detail-stat-label">Damage</div>
-                    <div class="detail-stat-value">${card.damage || 'N/A'}</div>
+                    <div class="detail-stat-value">${escapeHtml(card.damage || 'N/A')}</div>
                 </div>
                 ${card.heat ? `
                 <div class="detail-stat">
                     <div class="detail-stat-label">Heat</div>
-                    <div class="detail-stat-value">${card.heat}</div>
+                    <div class="detail-stat-value">${escapeHtml(card.heat)}</div>
                 </div>
                 ` : ''}
             `;
@@ -1348,7 +1373,7 @@
             if (card.keywords && card.keywords.length > 0) {
                 keywordsSection.classList.remove('hidden');
                 keywordsContainer.innerHTML = card.keywords.map(k =>
-                    `<span class="keyword-tag">${k}</span>`
+                    `<span class="keyword-tag">${escapeHtml(k)}</span>`
                 ).join('');
             } else {
                 keywordsSection.classList.add('hidden');
@@ -1362,23 +1387,23 @@
                 equipmentInfo.innerHTML = `
                     <div class="equipment-info-row">
                         <span class="equipment-info-label">Equipment:</span>
-                        <span class="equipment-info-value">${card.equipmentName || 'N/A'}</span>
+                        <span class="equipment-info-value">${escapeHtml(card.equipmentName || 'N/A')}</span>
                     </div>
                     <div class="equipment-info-row">
                         <span class="equipment-info-label">Slot:</span>
-                        <span class="equipment-info-value">${card.slot || 'N/A'}</span>
+                        <span class="equipment-info-value">${escapeHtml(card.slot || 'N/A')}</span>
                     </div>
                     <div class="equipment-info-row">
                         <span class="equipment-info-label">Weight:</span>
-                        <span class="equipment-info-value">${card.weight || 'N/A'}</span>
+                        <span class="equipment-info-value">${escapeHtml(card.weight || 'N/A')}</span>
                     </div>
                     <div class="equipment-info-row">
                         <span class="equipment-info-label">Crafting Cost:</span>
-                        <span class="equipment-info-value">${card.craftingCost || 'N/A'} Scrap</span>
+                        <span class="equipment-info-value">${escapeHtml(card.craftingCost || 'N/A')} Scrap</span>
                     </div>
                     <div class="equipment-info-row">
                         <span class="equipment-info-label">Card Count:</span>
-                        <span class="equipment-info-value">${card.cardCount || 'N/A'} cards</span>
+                        <span class="equipment-info-value">${escapeHtml(card.cardCount || 'N/A')} cards</span>
                     </div>
                 `;
             } else {

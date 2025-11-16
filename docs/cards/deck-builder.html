@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PENANCE: Deck Builder</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ===========================
@@ -1007,6 +1013,21 @@
 
     <script>
         // ===========================
+        // SECURITY: HTML ESCAPING
+        // ===========================
+        /**
+         * Escapes HTML special characters to prevent XSS attacks
+         * @param {string} text - The text to escape
+         * @returns {string} - HTML-safe text
+         */
+        function escapeHtml(text) {
+            if (text === null || text === undefined) return '';
+            const div = document.createElement('div');
+            div.textContent = String(text);
+            return div.innerHTML;
+        }
+
+        // ===========================
         // DATA & STATE
         // ===========================
         let allCards = [];
@@ -1234,19 +1255,20 @@
             container.innerHTML = filteredCards.map(card => {
                 const count = deck[card.id] || 0;
                 const inDeck = count > 0;
+                const escapedId = escapeHtml(card.id);
                 return `
-                    <div class="card-tile ${card.faction} ${inDeck ? 'in-deck' : ''}"
-                         onclick="addCardToDeck('${card.id}')"
-                         oncontextmenu="removeCardFromDeck('${card.id}'); return false;">
-                        ${count > 0 ? `<div class="card-count-badge">×${count}</div>` : ''}
+                    <div class="card-tile ${escapeHtml(card.faction)} ${inDeck ? 'in-deck' : ''}"
+                         onclick="addCardToDeck('${escapedId}')"
+                         oncontextmenu="removeCardFromDeck('${escapedId}'); return false;">
+                        ${count > 0 ? `<div class="card-count-badge">×${escapeHtml(count)}</div>` : ''}
                         <div class="card-tile-header">
-                            <div class="card-tile-name">${card.name}</div>
-                            <div class="card-tile-cost">${card.cost}</div>
+                            <div class="card-tile-name">${escapeHtml(card.name)}</div>
+                            <div class="card-tile-cost">${escapeHtml(card.cost)}</div>
                         </div>
                         <div class="card-tile-badges">
-                            <span class="badge badge-type">${card.type}</span>
+                            <span class="badge badge-type">${escapeHtml(card.type)}</span>
                         </div>
-                        <div class="card-tile-effect">${card.effect || 'No effect text'}</div>
+                        <div class="card-tile-effect">${escapeHtml(card.effect || 'No effect text')}</div>
                     </div>
                 `;
             }).join('');
@@ -1360,11 +1382,11 @@
             return `
                 <li class="deck-item">
                     <div class="deck-item-info">
-                        <div class="deck-item-name">${card.name}</div>
-                        <div class="deck-item-details">${card.type} • ${card.cost} SP</div>
+                        <div class="deck-item-name">${escapeHtml(card.name)}</div>
+                        <div class="deck-item-details">${escapeHtml(card.type)} • ${escapeHtml(card.cost)} SP</div>
                     </div>
-                    <span class="deck-item-count">×${count}</span>
-                    <button class="deck-item-remove" onclick="removeCardFromDeck('${card.id}')">−</button>
+                    <span class="deck-item-count">×${escapeHtml(count)}</span>
+                    <button class="deck-item-remove" onclick="removeCardFromDeck('${escapeHtml(card.id)}')">−</button>
                 </li>
             `;
         }
@@ -1397,7 +1419,7 @@
             const warningsEl = document.getElementById('validationWarnings');
             if (warnings.length > 0) {
                 warningsEl.classList.remove('hidden');
-                warningsEl.innerHTML = warnings.map(w => `<div class="validation-warning">${w}</div>`).join('');
+                warningsEl.innerHTML = warnings.map(w => `<div class="validation-warning">${escapeHtml(w)}</div>`).join('');
             } else {
                 warningsEl.classList.add('hidden');
             }
@@ -1496,21 +1518,23 @@
                 const pageCards = allCards.slice(i, i + 9);
                 pagesHTML += '<div class="print-page">';
                 pageCards.forEach(card => {
+                    const escapedKeywords = card.keywords && card.keywords.length > 0
+                        ? card.keywords.map(k => escapeHtml(k)).join(' • ')
+                        : '';
                     pagesHTML += `
                         <div class="print-card">
                             <div class="print-card-header">
-                                <div class="print-card-name">${card.name}</div>
+                                <div class="print-card-name">${escapeHtml(card.name)}</div>
                                 <div class="print-card-stats">
-                                    <span class="print-card-cost">Cost: ${card.cost} SP</span>
-                                    <span>${card.range || ''}</span>
+                                    <span class="print-card-cost">Cost: ${escapeHtml(card.cost)} SP</span>
+                                    <span>${escapeHtml(card.range || '')}</span>
                                 </div>
                             </div>
                             <div class="print-card-body">
-                                <div class="print-card-effect">${card.effect || ''}</div>
-                                ${card.keywords && card.keywords.length > 0 ?
-                                    `<div class="print-card-keywords">${card.keywords.join(' • ')}</div>` : ''}
+                                <div class="print-card-effect">${escapeHtml(card.effect || '')}</div>
+                                ${escapedKeywords ? `<div class="print-card-keywords">${escapedKeywords}</div>` : ''}
                             </div>
-                            <div class="print-card-footer">${card.faction} • ${card.type}</div>
+                            <div class="print-card-footer">${escapeHtml(card.faction)} • ${escapeHtml(card.type)}</div>
                         </div>
                     `;
                 });

@@ -386,6 +386,21 @@
     </div>
 
     <script>
+        // ===========================
+        // SECURITY: HTML ESCAPING
+        // ===========================
+        /**
+         * Escapes HTML special characters to prevent XSS attacks
+         * @param {string} text - The text to escape
+         * @returns {string} - HTML-safe text
+         */
+        function escapeHtml(text) {
+            if (text === null || text === undefined) return '';
+            const div = document.createElement('div');
+            div.textContent = String(text);
+            return div.innerHTML;
+        }
+
         // DATA: All pilot generation tables
         const pilotData = {
             backgrounds: [
@@ -651,28 +666,28 @@
         function displayPilot(pilot) {
             // Background
             document.getElementById('background').innerHTML = `
-                <strong>${pilot.background.data.name}</strong><br>
-                ${pilot.background.data.desc}<br>
-                <div class="trait-effect">"${pilot.background.data.hook}"</div>
+                <strong>${escapeHtml(pilot.background.data.name)}</strong><br>
+                ${escapeHtml(pilot.background.data.desc)}<br>
+                <div class="trait-effect">"${escapeHtml(pilot.background.data.hook)}"</div>
             `;
 
             // Traits
             document.getElementById('traits').innerHTML = `
-                <strong>1. ${pilot.traits[0].data.name}</strong><br>
-                <div class="trait-effect">${pilot.traits[0].data.effect}</div>
+                <strong>1. ${escapeHtml(pilot.traits[0].data.name)}</strong><br>
+                <div class="trait-effect">${escapeHtml(pilot.traits[0].data.effect)}</div>
                 <br>
-                <strong>2. ${pilot.traits[1].data.name}</strong> (Hybrid)<br>
-                <div class="trait-effect">${pilot.traits[1].data.effect}</div>
+                <strong>2. ${escapeHtml(pilot.traits[1].data.name)}</strong> (Hybrid)<br>
+                <div class="trait-effect">${escapeHtml(pilot.traits[1].data.effect)}</div>
             `;
 
             // Motivation
-            document.getElementById('motivation').innerHTML = `<strong>${pilot.motivation.data}</strong>`;
+            document.getElementById('motivation').innerHTML = `<strong>${escapeHtml(pilot.motivation.data)}</strong>`;
 
             // Quirk
-            document.getElementById('quirk').innerHTML = `<strong>${pilot.quirk.data}</strong>`;
+            document.getElementById('quirk').innerHTML = `<strong>${escapeHtml(pilot.quirk.data)}</strong>`;
 
             // Appearance
-            document.getElementById('appearance').innerHTML = `<strong>${pilot.appearance.data}</strong>`;
+            document.getElementById('appearance').innerHTML = `<strong>${escapeHtml(pilot.appearance.data)}</strong>`;
 
             // Stats
             let grit = 0;
@@ -733,35 +748,35 @@
 
             // Display background
             document.getElementById('manual-background-display').innerHTML = `
-                <strong>${background.name}</strong><br>
-                ${background.desc}<br>
-                <div class="trait-effect">"${background.hook}"</div>
+                <strong>${escapeHtml(background.name)}</strong><br>
+                ${escapeHtml(background.desc)}<br>
+                <div class="trait-effect">"${escapeHtml(background.hook)}"</div>
             `;
 
             // Display traits
             let traitsHTML = `
-                <strong>1. ${trait1.name}</strong><br>
-                <div class="trait-effect">${trait1.effect}</div>
+                <strong>1. ${escapeHtml(trait1.name)}</strong><br>
+                <div class="trait-effect">${escapeHtml(trait1.effect)}</div>
             `;
 
             if (hybridEnabled && trait2) {
                 traitsHTML += `
                     <br>
-                    <strong>2. ${trait2.name}</strong> (Hybrid)<br>
-                    <div class="trait-effect">${trait2.effect}</div>
+                    <strong>2. ${escapeHtml(trait2.name)}</strong> (Hybrid)<br>
+                    <div class="trait-effect">${escapeHtml(trait2.effect)}</div>
                 `;
             }
 
             document.getElementById('manual-traits-display').innerHTML = traitsHTML;
 
             // Display motivation
-            document.getElementById('manual-motivation-display').innerHTML = `<strong>${motivation}</strong>`;
+            document.getElementById('manual-motivation-display').innerHTML = `<strong>${escapeHtml(motivation)}</strong>`;
 
             // Display quirk
-            document.getElementById('manual-quirk-display').innerHTML = `<strong>${quirk}</strong>`;
+            document.getElementById('manual-quirk-display').innerHTML = `<strong>${escapeHtml(quirk)}</strong>`;
 
             // Display appearance
-            document.getElementById('manual-appearance-display').innerHTML = `<strong>${appearance}</strong>`;
+            document.getElementById('manual-appearance-display').innerHTML = `<strong>${escapeHtml(appearance)}</strong>`;
 
             // Calculate stats
             let grit = 0;
